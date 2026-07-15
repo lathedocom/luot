@@ -15,8 +15,7 @@ if (!GEMINI_API_KEY) {
 
 const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
 const flashModel = genAI.getGenerativeModel({ model: "gemini-3.5-flash" });
-const proModel = genAI.getGenerativeModel({ model: "gemini-2.5-pro" });
-
+const proModel = genAI.getGenerativeModel({ model: "gemini-3.5-flash" });
 const DATA_FILE_PATH = path.join(__dirname, '../news_data.json');
 
 // Hàm tiện ích: Tính mốc thời gian 7 ngày trước
