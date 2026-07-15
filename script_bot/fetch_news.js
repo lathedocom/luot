@@ -32,9 +32,12 @@ async function main() {
         const rawNewsData = []; // Mảng chứa tin tức thô
         const rawSocialData = []; // Mảng chứa tin MXH thô
 
-        // Ví dụ Crawl RSS (Cần mở rộng danh sách URL thực tế)
+        // Crawl RSS (Cần mở rộng danh sách URL thực tế)
         const rssFeeds = [
-            { url: 'https://vnexpress.net/rss/tin-moi-nhat.rss', source: 'VNExpress', logo: 'https://s1.vnecdn.net/vnexpress/restruct/i/v899/v2_2019/pc/graphics/logo.svg' }
+            { url: 'https://vnexpress.net/rss/tin-moi-nhat.rss', source: 'VNExpress', logo: 'https://s1.vnecdn.net/vnexpress/restruct/i/v899/v2_2019/pc/graphics/logo.svg' },
+            { url: 'https://tuoitre.vn/rss/tin-moi-nhat.rss', source: 'Tuổi Trẻ', logo: 'https://tuoitre.vn/assets/images/logo.png' },
+            { url: 'https://dantri.com.vn/rss/tin-moi-nhat.rss', source: 'Dân Trí', logo: 'https://icdn.dantri.com.vn/logo.svg' },
+            { url: 'https://thanhnien.vn/rss/home.rss', source: 'Thanh Niên', logo: 'https://static.thanhnien.vn/thanhnien.vn/image/logo.svg' }
         ];
 
         for (const feed of rssFeeds) {
@@ -52,12 +55,12 @@ async function main() {
         }
 
         // Mock lấy dữ liệu Social qua RapidAPI (Đổi URL/Headers theo API thực tế)
-        /*
+        
         const socialResponse = await axios.get('https://social-api.p.rapidapi.com/trending', {
             headers: { 'X-RapidAPI-Key': RAPID_API_KEY }
         });
         rawSocialData = socialResponse.data;
-        */
+        
 
         // BƯỚC 2: GOM NHÓM & DỊCH THUẬT (AI 1 - GEMINI FLASH)
         console.log("Bước 2: Gọi Gemini Flash để gom nhóm và dịch thuật...");
