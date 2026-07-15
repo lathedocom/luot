@@ -4,7 +4,7 @@
   "description": "Bot lấy tin và phân tích bằng AI",
   "main": "fetch_news.js",
   "dependencies": {
-    "@google/generative-ai": "^0.11.0",
+    "@google/generative-ai": "latest",
     "axios": "^1.6.8",
     "rss-parser": "^3.13.0"
   }
