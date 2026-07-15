@@ -55,12 +55,12 @@ async function main() {
         }
 
         // Mock lấy dữ liệu Social qua RapidAPI (Đổi URL/Headers theo API thực tế)
-        
+        /*
         const socialResponse = await axios.get('https://social-api.p.rapidapi.com/trending', {
             headers: { 'X-RapidAPI-Key': RAPID_API_KEY }
         });
         rawSocialData = socialResponse.data;
-        
+        */
 
         // BƯỚC 2: GOM NHÓM & DỊCH THUẬT (AI 1 - GEMINI FLASH)
         console.log("Bước 2: Gọi Gemini Flash để gom nhóm và dịch thuật...");
