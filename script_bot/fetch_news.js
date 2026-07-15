@@ -14,8 +14,8 @@ if (!GEMINI_API_KEY) {
 }
 
 const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
-const flashModel = genAI.getGenerativeModel({ model: "gemini-1.5-flash-latest" });
-const proModel = genAI.getGenerativeModel({ model: "gemini-1.5-pro-latest" });
+const flashModel = genAI.getGenerativeModel({ model: "gemini-pro" });
+const proModel = genAI.getGenerativeModel({ model: "gemini-pro" });
 
 const DATA_FILE_PATH = path.join(__dirname, '../news_data.json');
 
