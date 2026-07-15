@@ -1,0 +1,47 @@
+name: AI Newsroom Bot
+
+on:
+  schedule:
+    # Chạy vào lúc 7:00, 11:00, 16:00, 20:00 (Giờ VN - UTC+7)
+    # Tương đương 0:00, 4:00, 9:00, 13:00 (Giờ UTC)
+    - cron: '0 0,4,9,13 * * *'
+  workflow_dispatch: # Cho phép kích hoạt thủ công trên giao diện GitHub
+
+jobs:
+  fetch-and-process-news:
+    runs-on: ubuntu-latest
+    
+    # Cấp quyền ghi để Bot có thể commit file JSON lên repo
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Dependencies
+        run: |
+          cd script_bot
+          npm install
+
+      - name: Run AI Newsroom Bot
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          RAPID_API_KEY: ${{ secrets.RAPID_API_KEY }}
+        run: |
+          cd script_bot
+          node fetch_news.js
+
+      - name: Commit and Push Updated News Data
+        run: |
+          git config --global user.name "AI-Newsroom-Bot"
+          git config --global user.email "bot@ainewsroom.local"
+          git add news_data.json
+          # Chỉ commit nếu có sự thay đổi dữ liệu
+          git diff --quiet && git diff --staged --quiet || git commit -m "🤖 Cập nhật tin tức & phân tích AI tự động"
+          git push origin main
