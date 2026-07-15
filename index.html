@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Newsroom - Tòa Soạn Tự Động</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts: Roboto chuẩn Material Design -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <!-- Thanh điều hướng trên cùng -->
+    <header class="app-bar">
+        <div class="header-left">
+            <button id="menu-btn" class="icon-btn mobile-only"><span class="material-icons">menu</span></button>
+            <h1 class="logo">AI Newsroom</h1>
+        </div>
+        <button id="theme-toggle" class="icon-btn"><span class="material-icons">dark_mode</span></button>
+    </header>
+
+    <!-- Bố cục chính 3 cột -->
+    <main class="main-layout">
+        <!-- Cột 1: Sidebar Trái -->
+        <aside class="sidebar left-sidebar" id="left-sidebar">
+            <div class="widget card">
+                <h3><span class="material-icons">thermostat</span> Thời Tiết</h3>
+                <p>28°C - Nhiều mây (Hà Nội)</p>
+            </div>
+            <div class="widget card">
+                <h3><span class="material-icons">calendar_month</span> 7 Ngày Qua</h3>
+                <ul class="clean-list">
+                    <li>Hôm nay</li>
+                    <li>Hôm qua</li>
+                </ul>
+            </div>
+            <div class="widget card">
+                <h3><span class="material-icons">filter_alt</span> Bộ Lọc Nguồn</h3>
+                <label><input type="checkbox" checked> VNExpress</label><br>
+                <label><input type="checkbox" checked> Tuổi Trẻ</label>
+            </div>
+        </aside>
+
+        <!-- Cột 2: Cột Giữa (Feed Tin Tức) -->
+        <section class="news-feed" id="news-feed">
+            <!-- Tin tức sẽ được JavaScript đổ vào đây -->
+            <div class="loading">Đang tải tin tức...</div>
+        </section>
+
+        <!-- Cột 3: Sidebar Phải (Mạng Xã Hội) -->
+        <aside class="sidebar right-sidebar">
+            <h2 class="section-title">Nhịp Đập MXH</h2>
+            <div id="social-feed">
+                <!-- Tin MXH sẽ được JavaScript đổ vào đây -->
+            </div>
+        </aside>
+    </main>
+
+    <!-- Modal Chi Tiết Tin Tức (Ẩn mặc định) -->
+    <div class="modal-overlay" id="news-modal">
+        <div class="modal-dialog card">
+            <div class="modal-header">
+                <h2 id="modal-title">Tiêu đề cụm sự kiện</h2>
+                <button id="close-modal-btn" class="icon-btn"><span class="material-icons">close</span></button>
+            </div>
+            <div class="modal-body">
+                <p id="modal-content" class="detailed-text"></p>
+                
+                <!-- Khu vực AI Phân Tích (chỉ hiện khi có) -->
+                <div id="ai-analysis-container" class="ai-box hidden">
+                    <h3 class="ai-title"><span class="material-icons">smart_toy</span> Góc Nhìn Chuyên Gia AI</h3>
+                    <p id="ai-analysis-text"></p>
+                </div>
+
+                <div class="sources-container">
+                    <h3>Nguồn đưa tin:</h3>
+                    <div id="modal-sources" class="source-list">
+                        <!-- Nguồn sẽ đổ vào đây -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
