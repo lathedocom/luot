@@ -1,37 +1,34 @@
+require('dotenv').config();
 const fs = require('fs');
 const path = require('path');
 const axios = require('axios');
 const Parser = require('rss-parser');
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 
-// Khởi tạo các biến môi trường
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
-const RAPID_API_KEY = process.env.RAPID_API_KEY;
-
 if (!GEMINI_API_KEY) {
     console.error("LỖI: Thiếu GEMINI_API_KEY trong biến môi trường.");
     process.exit(1);
 }
 
 const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
+// Dùng gemini-3.5-flash cho tất cả tác vụ để tối ưu tốc độ và vượt giới hạn miễn phí
 const flashModel = genAI.getGenerativeModel({ model: "gemini-3.5-flash" });
 const proModel = genAI.getGenerativeModel({ model: "gemini-3.5-flash" });
-const DATA_FILE_PATH = path.join(__dirname, '../news_data.json');
 
-// Hàm tiện ích: Tính mốc thời gian 7 ngày trước
+const DATA_FILE_PATH = path.join(__dirname, '../news_data.json');
 const getSevenDaysAgo = () => new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).getTime();
 
 async function main() {
     try {
         console.log("=== BẮT ĐẦU QUY TRÌNH TÒA SOẠN AI ===");
 
-        // BƯỚC 1: CRAWL DỮ LIỆU THÔ (RSS & SOCIAL)
-        console.log("Bước 1: Kéo dữ liệu thô từ RSS và MXH...");
+        // BƯỚC 1: CRAWL DỮ LIỆU THÔ (RSS)
+        console.log("Bước 1: Kéo dữ liệu thô từ RSS...");
         const rssParser = new Parser();
-        const rawNewsData = []; // Mảng chứa tin tức thô
-        const rawSocialData = []; // Mảng chứa tin MXH thô
+        const rawNewsData = [];
 
-        // Crawl RSS (Cần mở rộng danh sách URL thực tế)
+        // Danh sách báo đã được mở rộng
         const rssFeeds = [
             { url: 'https://vnexpress.net/rss/tin-moi-nhat.rss', source: 'VNExpress', logo: 'https://s1.vnecdn.net/vnexpress/restruct/i/v899/v2_2019/pc/graphics/logo.svg' },
             { url: 'https://tuoitre.vn/rss/tin-moi-nhat.rss', source: 'Tuổi Trẻ', logo: 'https://tuoitre.vn/assets/images/logo.png' },
@@ -39,31 +36,27 @@ async function main() {
             { url: 'https://thanhnien.vn/rss/home.rss', source: 'Thanh Niên', logo: 'https://static.thanhnien.vn/thanhnien.vn/image/logo.svg' }
         ];
 
+        // Lớp khiên bảo vệ 1: Báo nào lỗi mạng thì bỏ qua, kéo báo khác
         for (const feed of rssFeeds) {
-            let parsed = await rssParser.parseURL(feed.url);
-            parsed.items.slice(0, 15).forEach(item => {
-                rawNewsData.push({
-                    title: item.title,
-                    link: item.link,
-                    contentSnippet: item.contentSnippet,
-                    source_name: feed.source,
-                    source_logo: feed.logo,
-                    pubDate: item.pubDate
+            try {
+                let parsed = await rssParser.parseURL(feed.url);
+                parsed.items.slice(0, 15).forEach(item => {
+                    rawNewsData.push({
+                        title: item.title,
+                        link: item.link,
+                        contentSnippet: item.contentSnippet,
+                        source_name: feed.source,
+                        source_logo: feed.logo,
+                        pubDate: item.pubDate
+                    });
                 });
-            });
+            } catch (e) {
+                console.log(`⚠️ Bỏ qua nguồn ${feed.source} do kết nối chậm.`);
+            }
         }
 
-        // Mock lấy dữ liệu Social qua RapidAPI (Đổi URL/Headers theo API thực tế)
-        /*
-        const socialResponse = await axios.get('https://social-api.p.rapidapi.com/trending', {
-            headers: { 'X-RapidAPI-Key': RAPID_API_KEY }
-        });
-        rawSocialData = socialResponse.data;
-        */
-
-        // BƯỚC 2: GOM NHÓM & DỊCH THUẬT (AI 1 - GEMINI FLASH)
-        console.log("Bước 2: Gọi Gemini Flash để gom nhóm và dịch thuật...");
-        
+        // BƯỚC 2: GOM NHÓM & TÓM TẮT
+        console.log("Bước 2: Gọi Gemini Flash để gom nhóm...");
         const promptFlash = `
             Đóng vai biên tập viên. Dưới đây là danh sách bài báo thô: ${JSON.stringify(rawNewsData)}.
             Nhiệm vụ của bạn:
@@ -72,8 +65,7 @@ async function main() {
             3. Viết 'short_summary' (2-3 câu).
             4. Viết 'detailed_summary' (khoảng 10 câu tổng hợp chi tiết).
             5. Gắn mảng 'sources' chứa danh sách các bài báo gốc của cụm đó.
-            Đồng thời, với mảng MXH thô sau: ${JSON.stringify(rawSocialData)}, hãy dịch nội dung sang tiếng Việt thành 'translated_text'.
-            Trả về JSON thuần túy gồm 2 mảng: { "news": [...], "social": [...] }. Không kèm markdown hay text thừa.
+            Trả về JSON thuần túy gồm mảng: { "news": [...] }. Không kèm markdown hay text thừa.
         `;
 
         const flashResult = await flashModel.generateContent(promptFlash);
@@ -86,42 +78,40 @@ async function main() {
             timestamp: Date.now()
         }));
 
-        let translatedSocial = processedData.social.map(item => ({
-            ...item,
-            id: 'soc_' + Date.now() + Math.random().toString(36).substring(7),
-            timestamp: Date.now()
-        }));
-
-        // BƯỚC 3: LỌC HOT TOPIC BẰNG JAVASCRIPT
+        // BƯỚC 3: LỌC HOT TOPIC
         console.log("Bước 3: Lọc Hot Topics (>= 3 nguồn đưa tin)...");
         const hotTopics = clusteredNews.filter(cluster => cluster.sources && cluster.sources.length >= 3);
 
-        // BƯỚC 4: PHÂN TÍCH CHUYÊN SÂU (AI 2 - GEMINI PRO)
+        // BƯỚC 4: PHÂN TÍCH CHUYÊN SÂU (BỌC KHIÊN CHỐNG SẬP 503)
         if (hotTopics.length > 0) {
-            console.log(`Bước 4: Gọi Gemini Pro phân tích chuyên sâu ${hotTopics.length} Hot Topics...`);
-            const promptPro = `
-                Đóng vai một chuyên gia phân tích tin tức chiến lược.
-                Dưới đây là các điểm nóng (Hot Topics): ${JSON.stringify(hotTopics.map(t => ({id: t.id, title: t.cluster_title, detail: t.detailed_summary})))}.
-                Hãy cung cấp phân tích đa chiều, dự báo tác động của mỗi sự kiện.
-                Trả về JSON định dạng mảng object: [{ "id": "id_sự_kiện", "expert_analysis": "Nội dung phân tích..." }]
-            `;
-            
-            const proResult = await proModel.generateContent(promptPro);
-            let proText = proResult.response.text().replace(/```json/g, '').replace(/```/g, '').trim();
-            const analyses = JSON.parse(proText);
+            console.log(`Bước 4: Gọi AI phân tích chuyên sâu ${hotTopics.length} Hot Topics...`);
+            try {
+                const promptPro = `
+                    Đóng vai một chuyên gia phân tích tin tức chiến lược.
+                    Dưới đây là các điểm nóng (Hot Topics): ${JSON.stringify(hotTopics.map(t => ({id: t.id, title: t.cluster_title, detail: t.detailed_summary}))) }.
+                    Hãy cung cấp phân tích đa chiều, dự báo tác động của mỗi sự kiện.
+                    Trả về JSON định dạng mảng object: [{ "id": "id_sự_kiện", "expert_analysis": "Nội dung phân tích..." }]
+                `;
+                
+                const proResult = await proModel.generateContent(promptPro);
+                let proText = proResult.response.text().replace(/```json/g, '').replace(/```/g, '').trim();
+                const analyses = JSON.parse(proText);
 
-            // Gắn phân tích vào tin tức tương ứng
-            clusteredNews = clusteredNews.map(news => {
-                const analysisMatch = analyses.find(a => a.id === news.id);
-                if (analysisMatch) {
-                    news.expert_analysis = analysisMatch.expert_analysis;
-                }
-                return news;
-            });
+                clusteredNews = clusteredNews.map(news => {
+                    const analysisMatch = analyses.find(a => a.id === news.id);
+                    if (analysisMatch) {
+                        news.expert_analysis = analysisMatch.expert_analysis;
+                    }
+                    return news;
+                });
+                console.log("✅ Hoàn tất phân tích chuyên sâu.");
+            } catch (aiError) {
+                console.log("⚠️ Máy chủ Google đang quá tải (Lỗi 503/429). Tạm bỏ qua phân tích AI đợt này để đưa tin lên web.");
+            }
         }
 
         // BƯỚC 5: LƯU & DỌN DẸP DỮ LIỆU CŨ
-        console.log("Bước 5: Gộp dữ liệu, xóa tin > 7 ngày và ghi file...");
+        console.log("Bước 5: Gộp dữ liệu, xóa tin > 7 ngày và cập nhật file...");
         let existingData = { news: [], social: [] };
         
         if (fs.existsSync(DATA_FILE_PATH)) {
@@ -130,21 +120,16 @@ async function main() {
         }
 
         const sevenDaysAgo = getSevenDaysAgo();
-
-        // Gộp và lọc
         const finalNews = [...clusteredNews, ...existingData.news].filter(n => n.timestamp >= sevenDaysAgo);
-        const finalSocial = [...translatedSocial, ...existingData.social].filter(s => s.timestamp >= sevenDaysAgo);
 
-        // Đảm bảo không trùng ID (Optional - Tùy logic nghiệp vụ)
-        
         const finalDataset = {
             last_updated: Date.now(),
             news: finalNews,
-            social: finalSocial
+            social: existingData.social
         };
 
         fs.writeFileSync(DATA_FILE_PATH, JSON.stringify(finalDataset, null, 2));
-        console.log("=== HOÀN TẤT. DỮ LIỆU ĐÃ ĐƯỢC CẬP NHẬT. ===");
+        console.log("=== HOÀN TẤT. TRANG WEB ĐÃ CÓ TIN MỚI. ===");
 
     } catch (error) {
         console.error("LỖI QUY TRÌNH:", error);
