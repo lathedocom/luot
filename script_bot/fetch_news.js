@@ -46,7 +46,7 @@ async function main() {
                     let imgMatch = contentStr.match(/<img[^>]+src=["']([^"']+)["']/i);
                     rawNewsData.push({
                         title: item.title,
-                        link: item.link,
+                        url: item.link,
                         image_url: imgMatch ? imgMatch[1] : feed.logo, // Lấy ảnh minh họa, nếu không có lấy logo báo
                         source_name: feed.source,
                         source_logo: feed.logo,
@@ -65,7 +65,7 @@ async function main() {
             Nhiệm vụ:
             1. Gộp các bài báo cùng sự kiện thành các cụm (clusters).
             2. Mỗi cụm tạo một 'cluster_title', 'short_summary' (2-3 câu), và 'detailed_summary' (khoảng 10 câu tổng hợp chi tiết).
-            3. Gắn mảng 'sources' chứa danh sách các bài báo gốc của cụm đó (bao gồm source_name, url, source_logo).
+            3. Gắn mảng 'sources' chứa danh sách các bài báo gốc của cụm đó. BẮT BUỘC giữ nguyên chính xác 'url', 'source_name' và 'source_logo' từ dữ liệu gốc. Không được làm mất 'url'.
             4. Chọn 1 'image_url' từ các bài báo trong cụm để làm 'thumbnail' (nếu có).
             Trả về JSON thuần túy gồm mảng: { "news": [...] }. Không kèm markdown hay text thừa.
         `;
