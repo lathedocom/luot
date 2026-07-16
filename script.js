@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (newsData.sources) {
             newsData.sources.forEach(src => {
                 const btn = document.createElement('a');
-                btn.href = src.url; // Đường link thực tế tới bài báo gốc
+                btn.href = src.url || src.link || '#';   // Quét tìm link gốc an toàn
                 btn.target = "_blank"; // Mở bài gốc trong Tab mới
                 btn.className = 'source-btn';
                 btn.innerHTML = `<img src="${src.source_logo || 'https://via.placeholder.com/20'}" alt=""> Xem gốc trên ${src.source_name} ↗`;
