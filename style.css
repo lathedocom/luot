@@ -190,3 +190,19 @@ body {
     }
     .left-sidebar.active { display: block; } /* Class được JS gọi để mở menu */
 }
+/* --- Giao diện hiển thị Thời gian --- */
+.news-time {
+    font-size: 13px;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 12px;
+}
+.news-time .material-icons {
+    font-size: 15px;
+}
+#modal-time {
+    margin-top: 8px;
+    margin-bottom: 0;
+}
