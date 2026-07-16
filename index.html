@@ -5,31 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>luot.lathedo.com - Tòa Soạn Tự Động</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts: Roboto chuẩn Material Design -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-    <!-- Thanh điều hướng trên cùng -->
     <header class="app-bar">
-        <!-- Hàng 1 trên Mobile (Logo) / Cột trái trên Desktop -->
         <div class="header-brand">
             <h1 class="logo">luot.lathedo.com</h1>
         </div>
-        
-        <!-- Hàng 2 trên Mobile (Cụm phím chức năng) / Cột phải trên Desktop -->
         <div class="header-actions">
-            <!-- Nút 3 gạch (Mobile) -->
             <button id="menu-btn" class="icon-btn mobile-only"><span class="material-icons">menu</span></button>
-            
-            <!-- Cụm Tìm kiếm thu gọn -->
             <div class="search-box">
                 <button id="search-icon-btn" class="icon-btn"><span class="material-icons">search</span></button>
                 <input type="text" id="search-input" placeholder="Nhập nội dung tìm kiếm...">
             </div>
-
-            <!-- Nút chuyển đổi Tin tức / MXH (Mobile) -->
             <button id="feed-toggle-btn" class="icon-btn mobile-only toggle-feed-btn">
                 <span class="material-icons" id="feed-toggle-icon">dynamic_feed</span>
                 <span id="feed-toggle-text" class="toggle-text">MXH</span>
@@ -37,9 +26,7 @@
         </div>
     </header>
 
-    <!-- Bố cục chính 3 cột -->
     <main class="main-layout">
-        <!-- Sidebar Trái -->
         <aside class="sidebar left-sidebar" id="left-sidebar">
             <div class="widget card">
                 <h3><span class="material-icons">thermostat</span> Thời Tiết</h3>
@@ -58,31 +45,25 @@
             </div>
         </aside>
 
-        <!-- Cột Giữa (Feed Tin Tức) -->
         <section class="news-feed" id="news-feed">
             <div class="loading">Đang tải tin tức...</div>
         </section>
 
-        <!-- Sidebar Phải (Mạng Xã Hội) -->
         <aside class="sidebar right-sidebar" id="social-feed-section">
             <h2 class="section-title">Nhịp Đập MXH</h2>
             <div id="social-feed">
-                <!-- Data MXH sẽ hiển thị ở đây. (Giao diện tạm) -->
                 <div class="card"><p>Tính năng đang cập nhật...</p></div>
             </div>
         </aside>
     </main>
 
-    <!-- Modal Chi Tiết Tin Tức -->
     <div class="modal-overlay" id="news-modal">
         <div class="modal-dialog">
             <button id="close-modal-btn" class="icon-btn close-floating-btn"><span class="material-icons">close</span></button>
-            
             <div class="modal-header">
                 <h2 id="modal-title">Tiêu đề</h2>
                 <div id="modal-time" class="news-time"></div>
             </div>
-            
             <div class="modal-body">
                 <div id="modal-content" class="detailed-text"></div>
                 <div id="ai-analysis-container" class="ai-box hidden">
@@ -90,8 +71,6 @@
                     <p id="ai-analysis-text"></p>
                 </div>
             </div>
-            
-            <!-- Footer: Nguồn tin dạng Nút Bấm Ẩn/Hiện -->
             <div class="modal-footer sources-container">
                 <button id="toggle-sources-btn" class="expand-sources-btn">
                     <span class="material-icons" id="toggle-sources-icon">expand_more</span> 
@@ -101,7 +80,6 @@
             </div>
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
