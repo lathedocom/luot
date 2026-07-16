@@ -129,51 +129,62 @@ async function main() {
             }
         }
 
-        // --- CA 2: PHÂN TÍCH CHUYÊN SÂU (GÓC NHÌN AI DÙNG INDEX) ---
-        const hotTopics = clusteredNews.filter(cluster => cluster.sources && cluster.sources.length >= 2);
+        // --- CA 2: PHÂN TÍCH CHUYÊN SÂU (GÓC NHÌN AI) ---
+        // SỬA LỖI: Lấy 4 bài viết mới nhất để phân tích, không ép buộc phải có >= 2 nguồn
+        const hotTopics = clusteredNews.slice(0, 4); 
+        
         if (hotTopics.length > 0) {
-            console.log(`Bước 3: Phân tích chuyên sâu cho ${hotTopics.length} sự kiện nóng...`);
+            console.log(`Bước 3: Phân tích chuyên sâu (Góc nhìn AI) cho ${hotTopics.length} sự kiện...`);
             try {
-                // SỬ DỤNG ai_index THAY VÌ id ĐỂ AI KHÔNG BỊ NHẦM LẪN
+                // Đánh số thứ tự đơn giản (1, 2, 3, 4) để AI dễ dàng trả lại chính xác
                 const hotTopicsForAI = hotTopics.map((t, index) => ({ 
-                    ai_index: index, 
+                    id_tam: index + 1, 
                     title: t.cluster_title, 
                     detail: t.detailed_summary 
                 }));
                 
                 const promptPro = `
                     Đóng vai chuyên gia vĩ mô, hãy phân tích sâu các sự kiện sau: ${JSON.stringify(hotTopicsForAI)}.
-                    TRẢ VỀ JSON:
+                    TRẢ VỀ ĐÚNG ĐỊNH DẠNG JSON SAU:
                     {
                         "analyses": [
                             {
-                                "ai_index": 0, // PHẢI giữ nguyên số ai_index tương ứng của sự kiện
-                                "expert_analysis": "Phân tích 80 từ về hệ quả, tác động sâu xa..."
+                                "id_tam": 1, // BẮT BUỘC giữ nguyên số id_tam tương ứng với sự kiện
+                                "expert_analysis": "Phân tích 80 từ về hệ quả, tác động sâu xa của sự kiện này..."
                             }
                         ]
                     }
                 `;
                 
-                const proResult = await jsonModel.generateContent(promptPro);
-                const cleanText = proResult.response.text().replace(/```json/g, '').replace(/```/g, '').trim();
-                const parsedObj = JSON.parse(cleanText);
-                const analyses = extractArrayFromAI(parsedObj);
-                
-                if (analyses && analyses.length > 0) {
-                    analyses.forEach(a => { 
-                        // MAP TRỞ LẠI DỰA TRÊN INDEX
-                        const targetNews = hotTopics[a.ai_index]; 
-                        if (targetNews) {
-                            targetNews.expert_analysis = a.expert_analysis;
+                // Thử chạy tối đa 2 lần để tránh lỗi mạng từ Gemini API
+                for (let i = 0; i < 2; i++) { 
+                    try {
+                        const proResult = await jsonModel.generateContent(promptPro);
+                        const cleanText = proResult.response.text().replace(/```json/g, '').replace(/```/g, '').trim();
+                        const parsedObj = JSON.parse(cleanText);
+                        const analyses = extractArrayFromAI(parsedObj);
+                        
+                        if (analyses && analyses.length > 0) {
+                            analyses.forEach(a => { 
+                                // Map ngược lại: id_tam 1 tương ứng với vị trí 0 trong mảng
+                                const realIndex = parseInt(a.id_tam) - 1;
+                                const targetNews = hotTopics[realIndex]; 
+                                if (targetNews) {
+                                    targetNews.expert_analysis = a.expert_analysis;
+                                }
+                            });
+                            console.log(`✅ Đã thêm "Góc nhìn AI" thành công cho ${analyses.length} tin.`);
+                            break; // Thoát vòng lặp khi xử lý thành công
                         }
-                    });
-                    console.log(`✅ Đã thêm "Góc nhìn AI" thành công cho ${analyses.length} tin.`);
+                    } catch (err) {
+                        console.log(`⏳ Lỗi AI phân tích chuyên sâu (Lần ${i+1}): ${err.message}`);
+                        await sleep(3000);
+                    }
                 }
             } catch (e) { 
-                console.log(`⚠️ Lỗi phân tích chuyên sâu: ${e.message}`); 
+                console.log(`⚠️ Lỗi cấu hình AI phân tích chuyên sâu: ${e.message}`); 
             }
         }
-
        // --- CA 3: MẠNG XÃ HỘI ---
         console.log("Bước 4: Thu thập MXH...");
         const rawSocialData = [];
