@@ -217,11 +217,12 @@ async function main() {
                     góc_nhìn_AI: n.expert_analysis || "Chưa có phân tích sâu" 
                 }));
                 
-                const promptBriefing = \`
-                    Dựa trên dữ liệu sự kiện và góc nhìn chuyên sâu sau: \${JSON.stringify(hotForBriefing)}.
+                // Đã fix lỗi cú pháp tại đây
+                const promptBriefing = `
+                    Dựa trên dữ liệu sự kiện và góc nhìn chuyên sâu sau: ${JSON.stringify(hotForBriefing)}.
                     Hãy viết "Bản Tin Tổng Hợp 24h" cực kỳ sắc sảo. Lồng ghép khéo léo "góc nhìn AI" vào từng sự kiện để bài viết có chiều sâu.
                     TRẢ VỀ DUY NHẤT MÃ HTML (dùng <h3>, <p>, <ul>, <li>, <strong>). KHÔNG bọc trong markdown.
-                \`;
+                `;
                 
                 const briefRes = await textModel.generateContent(promptBriefing);
                 dailyBriefingHTML = briefRes.response.text().replace(/```html/g, '').replace(/```/g, '').trim();
@@ -247,7 +248,7 @@ async function main() {
         };
 
         fs.writeFileSync(DATA_FILE_PATH, JSON.stringify(finalDataset, null, 2));
-        console.log(\`=== HOÀN TẤT: Sinh ra \${clusteredNews.length} cụm tin ===\`);
+        console.log(`=== HOÀN TẤT: Sinh ra ${clusteredNews.length} cụm tin ===`);
         process.exit(0);
     } catch (error) { 
         console.error("LỖI QUY TRÌNH TỔNG:", error.message);
