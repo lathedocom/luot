@@ -28,6 +28,20 @@ const DATA_FILE_PATH = path.join(__dirname, '../news_data.json');
 const getSevenDaysAgo = () => new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).getTime();
 const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
+// CỖ MÁY DÒ MÌN JSON: Tự động tìm mảng dữ liệu bất kể AI đặt tên là gì
+function extractArrayFromAI(parsedObj) {
+    if (Array.isArray(parsedObj)) return parsedObj;
+    if (parsedObj && typeof parsedObj === 'object') {
+        if (parsedObj.news && Array.isArray(parsedObj.news)) return parsedObj.news;
+        if (parsedObj.social && Array.isArray(parsedObj.social)) return parsedObj.social;
+        // Nếu AI tự chế tên khác (data, clusters, articles...), mò tìm mảng đầu tiên
+        for (let key in parsedObj) {
+            if (Array.isArray(parsedObj[key])) return parsedObj[key];
+        }
+    }
+    return null;
+}
+
 async function main() {
     try {
         console.log("=== BẮT ĐẦU QUY TRÌNH TÒA SOẠN AI CAO CẤP ===");
@@ -51,8 +65,7 @@ async function main() {
             try {
                 let parsed = await Promise.race([rssParser.parseURL(feed.url), new Promise((_, r) => setTimeout(() => r(new Error("Timeout")), 15000))]);
                 parsed.items.slice(0, 4).forEach(item => {
-                    // SỬA LỖI MÙ THÔNG TIN: Cung cấp snippet để AI có dữ liệu viết bài
-                    const snippetStr = (item.contentSnippet || item.content || '').substring(0, 200);
+                    const snippetStr = (item.contentSnippet || item.content || '').substring(0, 150);
                     rawNewsData.push({ title: item.title, snippet: snippetStr, url: item.link, source_name: feed.source, source_logo: feed.logo });
                 });
             } catch (e) { failedSources.push(feed.source); }
@@ -62,28 +75,30 @@ async function main() {
         if (rawNewsData.length > 0) {
             console.log(`Đang phân tích ${rawNewsData.length} tin thô...`);
             const promptFlash = `
-                Dữ liệu thô: ${JSON.stringify(rawNewsData)}.
-                Nhiệm vụ: Gộp các bài cùng sự kiện. CHỈ chọn ra TỐI ĐA 8 SỰ KIỆN QUAN TRỌNG NHẤT (Vĩ mô, Tài chính).
-                TRẢ VỀ ĐÚNG CẤU TRÚC JSON ARRAY SAU (Không bọc trong object nào khác):
-                [
-                  {
-                    "cluster_title": "Tiêu đề tiếng Việt",
-                    "short_summary": "Tóm tắt siêu nhanh 40 từ",
-                    "detailed_summary": "Tóm tắt chi tiết 150 từ, chia 2 đoạn bằng \\n\\n",
-                    "sources": [{"url": "...", "source_name": "...", "source_logo": "..."}],
-                    "image_url": "Link ảnh hoặc bỏ trống"
-                  }
-                ]
+                Dữ liệu: ${JSON.stringify(rawNewsData)}.
+                Nhiệm vụ: Gộp các bài cùng sự kiện. CHỈ chọn ra TỐI ĐA 6 SỰ KIỆN QUAN TRỌNG NHẤT.
+                TRẢ VỀ JSON:
+                {
+                  "news": [
+                    {
+                      "cluster_title": "Tiêu đề tiếng Việt",
+                      "short_summary": "Tóm tắt 40 từ",
+                      "detailed_summary": "Tóm tắt chi tiết 100 từ, chia 2 đoạn",
+                      "sources": [{"url": "...", "source_name": "...", "source_logo": "..."}],
+                      "image_url": "Link ảnh hoặc bỏ trống"
+                    }
+                  ]
+                }
             `;
             
             for (let i = 0; i < 3; i++) {
                 try {
                     const res = await jsonModel.generateContent(promptFlash);
                     const rawText = res.response.text().replace(/```json/g, '').replace(/```/g, '').trim();
-                    const parsed = JSON.parse(rawText);
+                    console.log(`Phản hồi AI lần ${i+1} (50 ký tự đầu):`, rawText.substring(0, 50)); // In ra để debug
                     
-                    // SỬA LỖI JSON LINH HOẠT: Chấp nhận cả { "news": [...] } lẫn [...]
-                    const newsArray = parsed.news ? parsed.news : (Array.isArray(parsed) ? parsed : null);
+                    const parsed = JSON.parse(rawText);
+                    const newsArray = extractArrayFromAI(parsed); // Dùng cỗ máy dò mìn
 
                     if (newsArray && newsArray.length > 0) {
                         clusteredNews = newsArray.map(item => ({
@@ -92,7 +107,7 @@ async function main() {
                         console.log(`✅ Thành công! Đã tạo ${clusteredNews.length} cụm tin.`);
                         break; 
                     } else {
-                        console.log(`⏳ Lần ${i+1}: AI trả về rỗng. Đang thử lại...`);
+                        console.log(`⏳ Lần ${i+1}: AI trả về định dạng rỗng. Đang thử lại...`);
                     }
                 } catch (e) { 
                     console.log(`⏳ Lỗi parse AI (Lần ${i+1}): ${e.message}`); 
@@ -107,16 +122,10 @@ async function main() {
             console.log(`Phân tích chuyên sâu ${hotTopics.length} sự kiện...`);
             try {
                 const hotTopicsForAI = hotTopics.map((t, index) => ({ ai_index: index, title: t.cluster_title, detail: t.detailed_summary }));
-                const promptPro = `
-                    Phân tích các sự kiện: ${JSON.stringify(hotTopicsForAI)}.
-                    TRẢ VỀ JSON ARRAY:
-                    [ { "ai_index": số, "expert_analysis": "Góc nhìn chuyên gia phân tích ngắn gọn..." } ]
-                `;
+                const promptPro = `Phân tích sự kiện: ${JSON.stringify(hotTopicsForAI)}. Trả về JSON: [ { "ai_index": số, "expert_analysis": "Phân tích 80 từ..." } ]`;
                 const proResult = await jsonModel.generateContent(promptPro);
-                const parsedAnalyses = JSON.parse(proResult.response.text());
-                const analyses = parsedAnalyses.expert_analysis ? parsedAnalyses.expert_analysis : (Array.isArray(parsedAnalyses) ? parsedAnalyses : []);
-                
-                analyses.forEach(a => { if (hotTopics[a.ai_index]) hotTopics[a.ai_index].expert_analysis = a.expert_analysis; });
+                const analyses = extractArrayFromAI(JSON.parse(proResult.response.text()));
+                if (analyses) analyses.forEach(a => { if (hotTopics[a.ai_index]) hotTopics[a.ai_index].expert_analysis = a.expert_analysis; });
             } catch (e) { console.log("⚠️ Bỏ qua phân tích chuyên sâu"); }
         }
 
@@ -141,19 +150,15 @@ async function main() {
         let processedSocial = [];
         if (rawSocialData.length > 0) {
             console.log("Dịch & Phân tích MXH...");
-            const promptSocial = `
-                Dịch sang tiếng Việt các bài MXH: ${JSON.stringify(rawSocialData)}. Ưu tiên phân tích sâu bài của Trump, Elon Musk.
-                TRẢ VỀ JSON ARRAY:
-                [ { "platform": "Tên", "icon": "Link", "content": "Nội dung...", "link": "Link" } ]
-            `;
+            const promptSocial = `Dịch sang tiếng Việt các bài MXH: ${JSON.stringify(rawSocialData)}. Trả về JSON: { "social": [ { "platform": "Tên", "icon": "Link", "content": "Nội dung...", "link": "Link" } ] }`;
             for (let i = 0; i < 2; i++) {
                 try {
                     const socRes = await jsonModel.generateContent(promptSocial);
-                    const parsedSoc = JSON.parse(socRes.response.text().replace(/```json/g, '').replace(/```/g, '').trim());
-                    const socArray = parsedSoc.social ? parsedSoc.social : (Array.isArray(parsedSoc) ? parsedSoc : []);
-                    
-                    processedSocial = socArray.map(s => ({ ...s, timestamp: Date.now() }));
-                    break;
+                    const socArray = extractArrayFromAI(JSON.parse(socRes.response.text()));
+                    if (socArray) {
+                        processedSocial = socArray.map(s => ({ ...s, timestamp: Date.now() }));
+                        break;
+                    }
                 } catch (e) { await sleep(5000); }
             }
         }
@@ -164,11 +169,7 @@ async function main() {
         if (clusteredNews.length > 0) {
             try {
                 const hotForBriefing = clusteredNews.slice(0, 6).map(n => n.short_summary);
-                const promptBriefing = `
-                    Dựa vào sự kiện: ${JSON.stringify(hotForBriefing)}.
-                    Viết "Bản Tin Tổng Hợp 24h". Phân tích ảnh hưởng tới Kinh tế vĩ mô, Đối tượng liên quan, Xã hội.
-                    TRẢ VỀ DUY NHẤT MÃ HTML (dùng <h3>, <p>, <ul>, <li>). Không Markdown.
-                `;
+                const promptBriefing = `Viết "Bản Tin Tổng Hợp 24h" dựa trên: ${JSON.stringify(hotForBriefing)}. TRẢ VỀ DUY NHẤT MÃ HTML (dùng <h3>, <p>, <ul>, <li>).`;
                 const briefRes = await textModel.generateContent(promptBriefing);
                 dailyBriefingHTML = briefRes.response.text().replace(/```html/g, '').replace(/```/g, '').trim();
             } catch (e) { console.log("Lỗi tạo Bản tin 24h"); }
@@ -185,19 +186,14 @@ async function main() {
 
         const finalDataset = {
             last_updated: Date.now(),
-            stats: { 
-                last_run: Date.now(), 
-                total_crawled: rawNewsData.length, 
-                total_processed: clusteredNews.length, 
-                failed_sources: failedSources 
-            },
+            stats: { last_run: Date.now(), total_crawled: rawNewsData.length, total_processed: clusteredNews.length, failed_sources: failedSources },
             daily_briefing: dailyBriefingHTML || existingData.daily_briefing,
             news: finalNews,
             social: finalSocial
         };
 
         fs.writeFileSync(DATA_FILE_PATH, JSON.stringify(finalDataset, null, 2));
-        console.log(`=== HOÀN TẤT: Đã ghi thành công ${clusteredNews.length} bài vào file JSON ===`);
+        console.log(`=== HOÀN TẤT: Sinh ra ${clusteredNews.length} cụm tin ===`);
         process.exit(0);
     } catch (error) { 
         console.error("LỖI QUY TRÌNH TỔNG:", error.message);
