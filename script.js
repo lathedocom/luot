@@ -174,17 +174,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- MỞ MODAL BẢN TIN 24H ---
+    // --- MỞ MODAL SỰ KIỆN 24H ---
     const briefingModal = document.getElementById('briefing-modal');
     const briefBtn = document.getElementById('daily-brief-btn');
+    const sidebarBriefBtn = document.getElementById('sidebar-brief-btn'); // Nút mới ở sidebar
     const closeBriefBtn = document.getElementById('close-briefing-btn');
+    
+    const openBriefing = () => {
+        briefingModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    };
 
-    if (briefBtn && briefingModal) {
-        briefBtn.addEventListener('click', () => {
-            briefingModal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
-    }
+    if (briefBtn && briefingModal) briefBtn.addEventListener('click', openBriefing);
+    if (sidebarBriefBtn && briefingModal) sidebarBriefBtn.addEventListener('click', openBriefing);
+
     if (closeBriefBtn) {
         closeBriefBtn.addEventListener('click', () => {
             briefingModal.classList.remove('active');
@@ -230,9 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const feedContainer = document.getElementById('news-feed');
         feedContainer.innerHTML = '';
         if(newsArray.length === 0) return feedContainer.innerHTML = '<p>Không tìm thấy bản tin nào.</p>';
-
         const sortedNews = newsArray.sort((a, b) => b.timestamp - a.timestamp); 
-
         sortedNews.forEach(news => {
             const isHot = news.sources && news.sources.length >= 2;
             const card = document.createElement('div');
@@ -241,9 +242,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const imageUrl = news.thumbnail || (news.sources && news.sources[0] ? news.sources[0].source_logo : '');
             const imageHtml = imageUrl ? `<img src="${imageUrl}" class="news-thumbnail" onerror="this.style.display='none'">` : '';
             const timeString = formatTime(news.timestamp);
-
+            
+            // CẬP NHẬT "Nổi bật" THAY CHO "Hot Topic"[cite: 1]
             card.innerHTML = `
-                ${isHot ? '<span class="hot-badge">🔥 Hot Topic</span>' : ''}
+                ${isHot ? '<span class="hot-badge">🔥 Nổi bật</span>' : ''} 
                 ${imageHtml}
                 <h3>${news.cluster_title}</h3>
                 <div class="news-time"><span class="material-icons">schedule</span> Cập nhật: ${timeString}</div>
@@ -253,7 +255,6 @@ document.addEventListener('DOMContentLoaded', () => {
             feedContainer.appendChild(card);
         });
     }
-
     const modal = document.getElementById('news-modal');
     function openModal(newsData) {
         resetSourceToggle(); 
