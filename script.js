@@ -176,30 +176,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- MỞ MODAL SỰ KIỆN 24H ---
     const briefingModal = document.getElementById('briefing-modal');
-    const briefBtn = document.getElementById('daily-brief-btn');
-    const sidebarBriefBtn = document.getElementById('sidebar-brief-btn'); // Nút mới ở sidebar
+    const sidebarBriefBtn = document.getElementById('sidebar-brief-btn'); // Chỉ dùng nút ở sidebar
     const closeBriefBtn = document.getElementById('close-briefing-btn');
     
     const openBriefing = () => {
-        briefingModal.classList.add('active');
-        document.body.style.overflow = 'hidden';
+        if(briefingModal) {
+            briefingModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
     };
 
-    if (briefBtn && briefingModal) briefBtn.addEventListener('click', openBriefing);
-    if (sidebarBriefBtn && briefingModal) sidebarBriefBtn.addEventListener('click', openBriefing);
+    // Gắn sự kiện click vào widget sidebar
+    if (sidebarBriefBtn) sidebarBriefBtn.addEventListener('click', openBriefing);
 
     if (closeBriefBtn) {
         closeBriefBtn.addEventListener('click', () => {
             briefingModal.classList.remove('active');
             document.body.style.overflow = '';
-        });
-    }
-    if (briefingModal) {
-        briefingModal.addEventListener('click', (e) => {
-            if (e.target === briefingModal) {
-                briefingModal.classList.remove('active');
-                document.body.style.overflow = '';
-            }
         });
     }
     // --- TẢI DỮ LIỆU & TÌM KIẾM ---
