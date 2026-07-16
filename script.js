@@ -180,11 +180,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!response.ok) throw new Error("Chưa có dữ liệu");
             const data = await response.json();
             
-            globalNewsData = data.news;
-            globalStats = data.stats; // Lưu thống kê
+            globalNewsData = data.news || []; // Nếu rỗng thì trả về mảng trống
+            globalStats = data.stats || null;
             
             renderNewsFeed(globalNewsData);
-            renderSocialFeed(data.social); // Đổ dữ liệu MXH ra màn hình
+            renderSocialFeed(data.social || []); // Truyền mảng trống nếu file cũ chưa có MXH
         } catch (error) { 
             document.getElementById('news-feed').innerHTML = `<div class="card"><p>Chưa có dữ liệu tin tức. Vui lòng chờ hệ thống AI tổng hợp.</p></div>`;
         }
