@@ -12,26 +12,24 @@ document.addEventListener('DOMContentLoaded', () => {
         return `${hours}:${minutes}, ${day}/${month}/${year}`;
     }
 
-   // --- 1. GIAO TIẾP GIAO DIỆN MOBILE & TÌM KIẾM ---
+    // --- 1. GIAO TIẾP GIAO DIỆN MOBILE & TÌM KIẾM ---
     const menuBtn = document.getElementById('menu-btn');
     const leftSidebar = document.getElementById('left-sidebar');
     if (menuBtn && leftSidebar) {
         menuBtn.addEventListener('click', () => leftSidebar.classList.toggle('active'));
     }
 
-    // Nút Tìm kiếm (Chạm để mở rộng)
     const searchIconBtn = document.getElementById('search-icon-btn');
     const searchInput = document.getElementById('search-input');
     if (searchIconBtn && searchInput) {
         searchIconBtn.addEventListener('click', () => {
             searchInput.classList.toggle('expanded');
             if (searchInput.classList.contains('expanded')) {
-                searchInput.focus(); // Tự động bật bàn phím
+                searchInput.focus(); 
             }
         });
     }
 
-    // Nút chuyển đổi Tin tức / MXH (Mobile)
     const feedToggleBtn = document.getElementById('feed-toggle-btn');
     if (feedToggleBtn) {
         feedToggleBtn.addEventListener('click', () => {
@@ -52,32 +50,25 @@ document.addEventListener('DOMContentLoaded', () => {
     // Nút Ẩn/Hiện Nguồn tham khảo trong Modal
     const toggleSourcesBtn = document.getElementById('toggle-sources-btn');
     const modalSources = document.getElementById('modal-sources');
-    const toggleSourcesIcon = document.getElementById('toggle-sources-icon');
     
     if (toggleSourcesBtn && modalSources) {
         toggleSourcesBtn.addEventListener('click', () => {
             if (modalSources.style.display === 'none') {
                 modalSources.style.display = 'flex';
-                toggleSourcesIcon.textContent = 'expand_less';
                 toggleSourcesBtn.innerHTML = `<span class="material-icons">expand_less</span> Ẩn nguồn tham khảo`;
             } else {
                 modalSources.style.display = 'none';
-                toggleSourcesIcon.textContent = 'expand_more';
                 toggleSourcesBtn.innerHTML = `<span class="material-icons">expand_more</span> Hiển thị nguồn tham khảo`;
             }
         });
     }
 
-    // Cần reset Nguồn tham khảo về trạng thái Ẩn mỗi khi mở Modal tin mới
-    // (Thêm dòng này vào hàm openModal)
     function resetSourceToggle() {
         if(modalSources) {
             modalSources.style.display = 'none';
-            toggleSourcesIcon.textContent = 'expand_more';
             if(toggleSourcesBtn) toggleSourcesBtn.innerHTML = `<span class="material-icons">expand_more</span> Hiển thị nguồn tham khảo`;
         }
     }
-
 
     // --- 2. TỰ ĐỘNG TẠO DANH SÁCH 7 NGÀY ---
     const daysList = document.getElementById('dynamic-days-list');
@@ -105,7 +96,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    const searchInput = document.getElementById('search-input');
     if(searchInput) {
         searchInput.addEventListener('input', (e) => {
             const keyword = e.target.value.toLowerCase();
@@ -123,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
         feedContainer.innerHTML = '';
         if(newsArray.length === 0) return feedContainer.innerHTML = '<p>Không tìm thấy bản tin nào.</p>';
 
-        const sortedNews = newsArray.sort((a, b) => b.timestamp - a.timestamp); // Xếp tin mới nhất lên đầu
+        const sortedNews = newsArray.sort((a, b) => b.timestamp - a.timestamp); 
 
         sortedNews.forEach(news => {
             const isHot = news.sources && news.sources.length >= 3;
@@ -146,19 +136,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-   // --- 5. RENDER BÀI TỔNG HỢP (MODAL) ---
+    // --- 5. RENDER BÀI TỔNG HỢP (MODAL) ---
     const modal = document.getElementById('news-modal');
     function openModal(newsData) {
-        resetSourceToggle(); // Cất gọn nguồn đi trước khi hiển thị tin
+        resetSourceToggle(); 
         document.getElementById('modal-title').textContent = newsData.cluster_title;
         document.getElementById('modal-time').innerHTML = `<span class="material-icons">schedule</span> Cập nhật lúc: ${formatTime(newsData.timestamp)}`;
         
-        // Tách các đoạn văn bằng AI sinh ra (\n) và bọc chúng trong thẻ <p> để căn lề đẹp mắt
         const paragraphs = newsData.detailed_summary.split('\n').filter(p => p.trim() !== '');
         const formattedContent = paragraphs.map(p => `<p>${p}</p>`).join('');
         document.getElementById('modal-content').innerHTML = formattedContent;
 
-        // Xử lý AI Analysis
         const aiContainer = document.getElementById('ai-analysis-container');
         if (newsData.expert_analysis) {
             document.getElementById('ai-analysis-text').textContent = newsData.expert_analysis;
@@ -167,7 +155,6 @@ document.addEventListener('DOMContentLoaded', () => {
             aiContainer.classList.add('hidden'); 
         }
 
-        // Xử lý nút xem bài gốc
         const sourcesContainer = document.getElementById('modal-sources');
         sourcesContainer.innerHTML = '';
         if (newsData.sources) {
@@ -184,7 +171,8 @@ document.addEventListener('DOMContentLoaded', () => {
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
     }
-// Xử lý nút đóng Modal
+
+    // Xử lý nút đóng Modal
     const btnCloseModal = document.getElementById('close-modal-btn');
     if(btnCloseModal) {
         btnCloseModal.addEventListener('click', () => { 
