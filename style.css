@@ -125,7 +125,7 @@ body {
 /* --- Modal Chi Tiết (Thiết kế Pro) --- */
 .modal-overlay {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background-color: rgba(0,0,0,0.75); /* Làm tối nền mạnh hơn */
+    background-color: rgba(0,0,0,0.75);
     display: flex; justify-content: center; align-items: center;
     z-index: 2000;
     opacity: 0; pointer-events: none;
@@ -135,9 +135,11 @@ body {
 
 .modal-dialog {
     background-color: var(--surface-color);
-    width: 95%; max-width: 800px; height: 90vh; /* Cố định chiều cao */
+    width: 95%; 
+    max-width: 900px; /* Tăng chiều rộng từ 800px lên 900px để không gian đọc rộng rãi hơn */
+    height: 90vh; 
     border-radius: 16px;
-    display: flex; flex-direction: column; /* Chia dọc */
+    display: flex; flex-direction: column; 
     position: relative;
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     overflow: hidden;
@@ -156,12 +158,12 @@ body {
 
 /* Khu vực Header (Tiêu đề) */
 .modal-header {
-    padding: 32px 32px 20px 32px;
+    padding: 24px 32px 16px 32px; /* Thu gọn khoảng cách trên/dưới */
     border-bottom: 1px solid var(--divider-color);
-    padding-right: 64px; /* Tránh chữ đè vào nút đóng */
+    padding-right: 64px; 
 }
 #modal-title {
-    font-size: 26px; line-height: 1.4; margin-bottom: 12px;
+    font-size: 24px; line-height: 1.4; margin-bottom: 8px;
     color: var(--primary-color);
 }
 .news-time {
@@ -170,18 +172,17 @@ body {
 }
 .news-time .material-icons { font-size: 16px; }
 
-/* Khu vực Body (Nội dung) */
+/* Khu vực Body (Nội dung chính) */
 .modal-body {
     padding: 24px 32px;
-    overflow-y: auto; /* Cho phép cuộn phần này */
-    flex-grow: 1; /* Tự động đẩy Footer xuống đáy */
+    overflow-y: auto; 
+    flex-grow: 1; 
 }
 .detailed-text {
     font-size: 17px; line-height: 1.8; color: var(--text-primary); text-align: justify;
 }
-/* Tạo khoảng cách rõ ràng giữa các đoạn văn */
 .detailed-text p {
-    margin-bottom: 18px; 
+    margin-bottom: 16px; 
 }
 
 /* AI Box Tinh Tế Hơn */
@@ -189,102 +190,37 @@ body {
     background-color: rgba(142, 36, 170, 0.04);
     border: 1px solid rgba(142, 36, 170, 0.15);
     border-left: 4px solid var(--ai-color);
-    padding: 24px; border-radius: 12px; margin-top: 32px; margin-bottom: 16px;
+    padding: 20px; border-radius: 12px; margin-top: 24px; margin-bottom: 16px;
 }
-.ai-title { color: var(--ai-color); display: flex; align-items: center; gap: 8px; margin-bottom: 12px; font-size: 18px;}
+.ai-title { color: var(--ai-color); display: flex; align-items: center; gap: 8px; margin-bottom: 8px; font-size: 17px;}
 
-/* Khu vực Footer (Nguồn tin) */
+/* Khu vực Footer (Nguồn tin) - ĐÃ ÉP MỎNG TIẾT KIỆM DIỆN TÍCH */
 .modal-footer {
-    padding: 20px 32px;
-    background-color: var(--bg-color); /* Màu nền nhạt tách biệt */
+    padding: 12px 32px 16px 32px; /* Giảm mạnh độ dày của Footer */
+    background-color: var(--bg-color); 
     border-top: 1px solid var(--divider-color);
 }
 .modal-footer h3 {
-    font-size: 14px; color: var(--text-secondary);
-    margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px;
+    font-size: 13px; color: var(--text-secondary); /* Thu nhỏ font chữ tiêu đề nguồn */
+    margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;
 }
-.source-list { display: flex; flex-wrap: wrap; gap: 12px; }
+.source-list { display: flex; flex-wrap: wrap; gap: 8px; } /* Thu hẹp khoảng cách giữa các nút */
 .source-btn {
-    display: flex; align-items: center; gap: 8px;
+    display: flex; align-items: center; gap: 6px;
     background-color: var(--surface-color); color: var(--text-primary);
     font-weight: 500; border: 1px solid var(--divider-color);
-    padding: 10px 20px; border-radius: 24px; text-decoration: none; font-size: 14px;
+    padding: 6px 14px; /* Nút thon gọn hơn rất nhiều */
+    border-radius: 20px; text-decoration: none; font-size: 13px; 
     transition: all 0.2s;
     box-shadow: 0 1px 2px rgba(0,0,0,0.05);
 }
 .source-btn:hover { border-color: var(--primary-color); color: var(--primary-color); transform: translateY(-1px);}
-.source-btn img { width: 20px; height: 20px; border-radius: 50%; }
+.source-btn img { width: 16px; height: 16px; border-radius: 50%; } /* Thu nhỏ Icon logo báo */
 
 /* Chỉnh lại giao diện Modal trên Mobile */
 @media (max-width: 992px) {
     .modal-dialog { width: 100%; height: 100%; max-height: 100vh; border-radius: 0; }
     .modal-header, .modal-body, .modal-footer { padding-left: 20px; padding-right: 20px; }
-    .modal-header { padding-top: 24px; padding-right: 50px; }
-    #modal-title { font-size: 22px; }
-}
-
-/* AI Box */
-.ai-box { background-color: rgba(142, 36, 170, 0.1); border-left: 4px solid var(--ai-color); padding: 16px; border-radius: 8px; margin-bottom: 24px;}
-.ai-title { color: var(--ai-color); display: flex; align-items: center; gap: 8px; margin-bottom: 8px; font-size: 16px;}
-.hidden { display: none; }
-
-/* Nguồn tin */
-.source-list { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px;}
-.source-btn {
-    display: flex; align-items: center; gap: 8px;
-    background-color: #e3f2fd; color: var(--primary-color);
-    font-weight: 500; border: 1px solid var(--primary-color);
-    padding: 8px 16px; border-radius: 20px; text-decoration: none; font-size: 14px;
-    transition: all 0.2s;
-}
-.source-btn:hover { background-color: var(--primary-color); color: white; }
-.source-btn img { width: 20px; height: 20px; border-radius: 50%; }
-
-/* --- Mobile Responsive & Xử lý Menu --- */
-.mobile-only { display: none; }
-@media (max-width: 992px) {
-    .main-layout { grid-template-columns: 1fr; }
-    .right-sidebar { display: none; } /* Giấu sidebar phải */
-    .mobile-only { display: block; }
-    .modal-dialog { width: 100%; height: 100%; max-height: 100vh; border-radius: 0; }
-    
-    /* Giao diện thanh Header trên mobile */
-    .app-bar { flex-wrap: wrap; padding: 12px 16px; gap: 8px; }
-    .header-left { flex: 1; }
-    .search-box { 
-        order: 3; width: 100%; max-width: 100%; margin-left: 0; margin-top: 8px; 
-        border: 1px solid var(--divider-color);
-    }
-
-    /* Logic ẩn/hiện Sidebar Trái */
-    .left-sidebar { 
-        display: none; 
-        position: fixed; 
-        top: 60px; /* Thụt xuống nhường chỗ cho thanh Header */
-        left: 0; 
-        width: 280px; 
-        height: calc(100vh - 60px); 
-        background: var(--surface-color); 
-        z-index: 1001; 
-        padding: 16px; 
-        overflow-y: auto; 
-        box-shadow: 4px 0 8px rgba(0,0,0,0.15);
-    }
-    .left-sidebar.active { display: block; } /* Class được JS gọi để mở menu */
-}
-/* --- Giao diện hiển thị Thời gian --- */
-.news-time {
-    font-size: 13px;
-    color: var(--text-secondary);
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    margin-bottom: 12px;
-}
-.news-time .material-icons {
-    font-size: 15px;
-}
-#modal-time {
-    margin-top: 8px;
-    margin-bottom: 0;
+    .modal-header { padding-top: 20px; padding-right: 50px; }
+    #modal-title { font-size: 20px; }
 }
