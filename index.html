@@ -60,24 +60,33 @@
         </aside>
     </main>
 
-    <!-- Modal Chi Tiết Tin Tức -->
+   <!-- Modal Chi Tiết Tin Tức (Bản Pro) -->
     <div class="modal-overlay" id="news-modal">
-        <div class="modal-dialog card">
+        <div class="modal-dialog">
+            <!-- Nút đóng đặt nổi để không xô đẩy tiêu đề -->
+            <button id="close-modal-btn" class="icon-btn close-floating-btn"><span class="material-icons">close</span></button>
+            
+            <!-- Phần 1: Header Tiêu đề -->
             <div class="modal-header">
                 <h2 id="modal-title">Tiêu đề cụm sự kiện</h2>
                 <div id="modal-time" class="news-time"></div>
-                <button id="close-modal-btn" class="icon-btn"><span class="material-icons">close</span></button>
             </div>
+            
+            <!-- Phần 2: Nội dung chính (Cho phép cuộn dọc) -->
             <div class="modal-body">
-                <p id="modal-content" class="detailed-text"></p>
+                <div id="modal-content" class="detailed-text"></div>
+                
+                <!-- Khu vực AI Phân Tích -->
                 <div id="ai-analysis-container" class="ai-box hidden">
-                    <h3 class="ai-title"><span class="material-icons">smart_toy</span> Góc Nhìn Chuyên Gia AI</h3>
+                    <h3 class="ai-title"><span class="material-icons">smart_toy</span> Góc Nhìn AI</h3>
                     <p id="ai-analysis-text"></p>
                 </div>
-                <div class="sources-container">
-                    <h3>Nguồn đưa tin:</h3>
-                    <div id="modal-sources" class="source-list"></div>
-                </div>
+            </div>
+            
+            <!-- Phần 3: Footer Nguồn tin (Tách biệt màu sắc nền) -->
+            <div class="modal-footer sources-container">
+                <h3>Nguồn tham khảo:</h3>
+                <div id="modal-sources" class="source-list"></div>
             </div>
         </div>
     </div>
