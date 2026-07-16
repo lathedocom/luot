@@ -114,23 +114,29 @@ async function main() {
         if (hotTopics.length > 0) {
             console.log(`Bước 4: Gọi AI phân tích chuyên sâu ${hotTopics.length} Hot Topics...`);
             try {
+                // Ép AI dùng số thứ tự (0, 1, 2) thay vì ID ngẫu nhiên dài dòng
+                const hotTopicsForAI = hotTopics.map((t, index) => ({
+                    ai_index: index,
+                    title: t.cluster_title,
+                    detail: t.detailed_summary
+                }));
+
                 const promptPro = `
                     Đóng vai một chuyên gia phân tích tin tức chiến lược.
-                    Dưới đây là các điểm nóng (Hot Topics): ${JSON.stringify(hotTopics.map(t => ({id: t.id, title: t.cluster_title, detail: t.detailed_summary}))) }.
+                    Dưới đây là các điểm nóng: ${JSON.stringify(hotTopicsForAI)}.
                     Hãy cung cấp phân tích đa chiều, dự báo tác động của mỗi sự kiện.
-                    Trả về JSON định dạng mảng object: [{ "id": "id_sự_kiện", "expert_analysis": "Nội dung phân tích..." }]
+                    BẮT BUỘC trả về JSON định dạng mảng object: [{ "ai_index": số_thứ_tự_tương_ứng, "expert_analysis": "Nội dung phân tích..." }]
                 `;
                 
                 const proResult = await proModel.generateContent(promptPro);
                 let proText = proResult.response.text().replace(/```json/g, '').replace(/```/g, '').trim();
                 const analyses = JSON.parse(proText);
 
-                clusteredNews = clusteredNews.map(news => {
-                    const analysisMatch = analyses.find(a => a.id === news.id);
-                    if (analysisMatch) {
-                        news.expert_analysis = analysisMatch.expert_analysis;
+                // Ghép nối phân tích AI vào đúng vị trí nhờ ai_index
+                analyses.forEach(a => {
+                    if (hotTopics[a.ai_index]) {
+                        hotTopics[a.ai_index].expert_analysis = a.expert_analysis;
                     }
-                    return news;
                 });
                 console.log("✅ Hoàn tất phân tích chuyên sâu.");
             } catch (aiError) {
