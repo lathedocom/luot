@@ -174,40 +174,71 @@ async function main() {
             }
         }
 
-        // --- CA 3: MẠNG XÃ HỘI ---
+       // --- CA 3: MẠNG XÃ HỘI ---
         console.log("Bước 4: Thu thập MXH...");
         const rawSocialData = [];
+        
+        // THAY BẰNG CÁC NGUỒN ỔN ĐỊNH 100% ĐỂ TRÁNH BỊ CHẶN (BLOCK)
         const socialFeeds = [
-            { url: 'https://www.reddit.com/r/worldnews/top/.rss?t=day&limit=3', platform: 'Reddit', icon: 'https://www.redditinc.com/assets/images/site/reddit-logo.png' },
-            { url: 'https://rsshub.app/twitter/user/elonmusk', platform: 'X (Elon Musk)', icon: 'https://abs.twimg.com/favicons/twitter.3.ico' },
+            { url: 'https://trends.google.com/trends/trendingsearches/daily/rss?geo=VN', platform: 'Google Trends VN', icon: 'https://ssl.gstatic.com/trends_nrtr/3200_RC01/favicon.ico' },
+            { url: 'https://hnrss.org/frontpage?points=100', platform: 'Hacker News (Tech)', icon: 'https://news.ycombinator.com/favicon.ico' },
             { url: 'https://www.youtube.com/feeds/videos.xml?channel_id=UCIALMKvObZNtJ6AmdTo-85A', platform: 'YouTube', icon: 'https://www.youtube.com/favicon.ico' }
         ];
         
+        // Bổ sung User-Agent mạnh hơn để giả lập trình duyệt thực, tránh bị chặn RSS
+        const socialParser = new Parser({ 
+            timeout: 10000, 
+            headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' } 
+        });
+
         for (const feed of socialFeeds) {
             try {
-                let parsed = await Promise.race([rssParser.parseURL(feed.url), new Promise((_, r) => setTimeout(() => r(new Error("Timeout")), 10000))]);
+                let parsed = await Promise.race([
+                    socialParser.parseURL(feed.url), 
+                    new Promise((_, r) => setTimeout(() => r(new Error("Timeout")), 10000))
+                ]);
+                
                 parsed.items.slice(0, 3).forEach(item => {
-                    // FIX LỖI: BỔ SUNG LẤY RA CONTENT THAY VÌ CHỈ TIÊU ĐỀ
-                    const contentStr = (item.contentSnippet || item.content || item.title || '').substring(0, 300);
-                    rawSocialData.push({ title: item.title, content: contentStr, link: item.link, platform: feed.platform, icon: feed.icon });
+                    // Ưu tiên lấy contentSnippet, nếu không có lấy nội dung, nếu vẫn không có lấy title
+                    let contentStr = (item.contentSnippet || item.content || item.title || '').substring(0, 300);
+                    // Dọn dẹp các thẻ HTML rác nếu có
+                    contentStr = contentStr.replace(/<[^>]*>?/gm, '').trim(); 
+                    
+                    rawSocialData.push({ 
+                        title: item.title, 
+                        content: contentStr, 
+                        link: item.link, 
+                        platform: feed.platform, 
+                        icon: feed.icon 
+                    });
                 });
-            } catch (e) { failedSources.push("Social: " + feed.platform); }
+            } catch (e) { 
+                console.log(`Lỗi tải nguồn MXH ${feed.platform}:`, e.message);
+                failedSources.push("Social: " + feed.platform); 
+            }
         }
+        
         let processedSocial = [];
         if (rawSocialData.length > 0) {
             console.log("Bước 5: Dịch & Phân tích MXH...");
-            // ĐÃ ĐƯỢC CẬP NHẬT TRUYỀN NỘI DUNG MXH THỰC TẾ LÊN AI
-            const promptSocial = `Dịch sang tiếng Việt các bài MXH: ${JSON.stringify(rawSocialData)}. Trả về JSON: { "social": [ { "platform": "Tên", "icon": "Link", "content": "Nội dung bài viết...", "link": "Link" } ] }`;
+            const promptSocial = `Dịch sang tiếng Việt tóm tắt các bài MXH sau: ${JSON.stringify(rawSocialData)}. 
+            TRẢ VỀ ĐỊNH DẠNG JSON: { "social": [ { "platform": "Tên", "icon": "Link", "content": "Nội dung bài viết...", "link": "Link" } ] }`;
+            
             for (let i = 0; i < 2; i++) {
                 try {
                     const socRes = await jsonModel.generateContent(promptSocial);
                     const cleanText = socRes.response.text().replace(/```json/g, '').replace(/```/g, '').trim();
                     const socArray = extractArrayFromAI(JSON.parse(cleanText));
-                    if (socArray) {
+                    
+                    if (socArray && socArray.length > 0) {
                         processedSocial = socArray.map(s => ({ ...s, timestamp: Date.now() }));
+                        console.log(`✅ Lấy thành công ${processedSocial.length} tin MXH.`);
                         break;
                     }
-                } catch (e) { await sleep(5000); }
+                } catch (e) { 
+                    console.log(`⏳ Lỗi AI phân tích MXH (Lần ${i+1})...`);
+                    await sleep(3000); 
+                }
             }
         }
 
