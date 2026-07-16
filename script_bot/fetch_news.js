@@ -3,12 +3,18 @@ const fs = require('fs');
 const path = require('path');
 const Parser = require('rss-parser');
 const { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } = require('@google/generative-ai');
+const { Groq } = require('groq-sdk'); // Khai báo thêm Groq
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+const GROQ_API_KEY = process.env.GROQ_API_KEY; // Lấy key Groq
+
 if (!GEMINI_API_KEY) { 
     console.error("LỖI: Thiếu GEMINI_API_KEY."); 
     process.exit(1); 
 }
+
+// Khởi tạo Groq
+const groq = GROQ_API_KEY ? new Groq({ apiKey: GROQ_API_KEY }) : null;
 
 const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
 
@@ -31,6 +37,37 @@ const textModel = genAI.getGenerativeModel({
     model: "gemini-3.5-flash", 
     safetySettings 
 });
+
+// HÀM GỌI AI THÔNG MINH CÓ CƠ CHẾ DỰ PHÒNG (FALLBACK)
+async function askAI(prompt, isJson = true) {
+    try {
+        // Ưu tiên 1: Gọi Gemini
+        const model = isJson ? jsonModel : textModel;
+        const res = await model.generateContent(prompt);
+        let text = res.response.text();
+        return isJson ? text.replace(/```json/g, '').replace(/```/g, '').trim() : text;
+    } catch (geminiError) {
+        console.log(`⚠️ Gemini lỗi (${geminiError.message}). Kích hoạt AI dự phòng (Groq)...`);
+        
+        if (!groq) {
+            console.log("❌ Không có GROQ_API_KEY. Hệ thống dừng bước này.");
+            throw geminiError; // Ném lỗi nếu không có AI dự phòng
+        }
+
+        // Ưu tiên 2: Gọi Groq (Llama 3 8B)
+        // Note: Ép thêm lệnh bắt buộc trả JSON vì các model LLM hay nói chuyện luyên thuyên
+        const finalPrompt = isJson ? prompt + "\nLƯU Ý QUAN TRỌNG: TRẢ VỀ ĐÚNG CẤU TRÚC JSON, KHÔNG BỔ SUNG BẤT KỲ VĂN BẢN NÀO KHÁC." : prompt;
+        
+        const chatCompletion = await groq.chat.completions.create({
+            messages: [{ role: "user", content: finalPrompt }],
+            model: "llama3-8b-8192", // Mô hình miễn phí, tốc độ cực cao
+            temperature: 0.3, // Nhiệt độ thấp để kết quả ổn định
+        });
+        
+        let text = chatCompletion.choices[0].message.content;
+        return isJson ? text.replace(/```json/g, '').replace(/```/g, '').trim() : text;
+    }
+}
 
 const DATA_FILE_PATH = path.join(__dirname, '../news_data.json');
 const getSevenDaysAgo = () => new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).getTime();
@@ -103,13 +140,8 @@ async function main() {
             
             for (let i = 0; i < 3; i++) {
                 try {
-                    const res = await jsonModel.generateContent(promptFlash);
-                    // Khi JSON mode bật, nội dung trả về là JSON thuần, ko cần cắt regex
-                    const rawText = res.response.text(); 
-                    
-                    // Fallback xoá regex nếu mô hình thi thoảng lỗi trả về markdown
-                    const cleanText = rawText.replace(/```json/g, '').replace(/```/g, '').trim();
-                    
+                    // Đã thay thế gọi AI cũ bằng askAI
+                    const cleanText = await askAI(promptFlash, true);
                     const parsed = JSON.parse(cleanText);
                     const newsArray = extractArrayFromAI(parsed); 
 
@@ -130,13 +162,11 @@ async function main() {
         }
 
         // --- CA 2: PHÂN TÍCH CHUYÊN SÂU (GÓC NHÌN AI) ---
-        // SỬA LỖI: Lấy 4 bài viết mới nhất để phân tích, không ép buộc phải có >= 2 nguồn
         const hotTopics = clusteredNews.slice(0, 4); 
         
         if (hotTopics.length > 0) {
             console.log(`Bước 3: Phân tích chuyên sâu (Góc nhìn AI) cho ${hotTopics.length} sự kiện...`);
             try {
-                // Đánh số thứ tự đơn giản (1, 2, 3, 4) để AI dễ dàng trả lại chính xác
                 const hotTopicsForAI = hotTopics.map((t, index) => ({ 
                     id_tam: index + 1, 
                     title: t.cluster_title, 
@@ -156,17 +186,15 @@ async function main() {
                     }
                 `;
                 
-                // Thử chạy tối đa 2 lần để tránh lỗi mạng từ Gemini API
                 for (let i = 0; i < 2; i++) { 
                     try {
-                        const proResult = await jsonModel.generateContent(promptPro);
-                        const cleanText = proResult.response.text().replace(/```json/g, '').replace(/```/g, '').trim();
+                        // Đã thay thế gọi AI cũ bằng askAI
+                        const cleanText = await askAI(promptPro, true);
                         const parsedObj = JSON.parse(cleanText);
                         const analyses = extractArrayFromAI(parsedObj);
                         
                         if (analyses && analyses.length > 0) {
                             analyses.forEach(a => { 
-                                // Map ngược lại: id_tam 1 tương ứng với vị trí 0 trong mảng
                                 const realIndex = parseInt(a.id_tam) - 1;
                                 const targetNews = hotTopics[realIndex]; 
                                 if (targetNews) {
@@ -174,7 +202,7 @@ async function main() {
                                 }
                             });
                             console.log(`✅ Đã thêm "Góc nhìn AI" thành công cho ${analyses.length} tin.`);
-                            break; // Thoát vòng lặp khi xử lý thành công
+                            break;
                         }
                     } catch (err) {
                         console.log(`⏳ Lỗi AI phân tích chuyên sâu (Lần ${i+1}): ${err.message}`);
@@ -185,18 +213,17 @@ async function main() {
                 console.log(`⚠️ Lỗi cấu hình AI phân tích chuyên sâu: ${e.message}`); 
             }
         }
+
        // --- CA 3: MẠNG XÃ HỘI ---
         console.log("Bước 4: Thu thập MXH...");
         const rawSocialData = [];
         
-        // THAY BẰNG CÁC NGUỒN ỔN ĐỊNH 100% ĐỂ TRÁNH BỊ CHẶN (BLOCK)
         const socialFeeds = [
             { url: 'https://trends.google.com/trends/trendingsearches/daily/rss?geo=VN', platform: 'Google Trends VN', icon: 'https://ssl.gstatic.com/trends_nrtr/3200_RC01/favicon.ico' },
             { url: 'https://hnrss.org/frontpage?points=100', platform: 'Hacker News (Tech)', icon: 'https://news.ycombinator.com/favicon.ico' },
             { url: 'https://www.youtube.com/feeds/videos.xml?channel_id=UCIALMKvObZNtJ6AmdTo-85A', platform: 'YouTube', icon: 'https://www.youtube.com/favicon.ico' }
         ];
         
-        // Bổ sung User-Agent mạnh hơn để giả lập trình duyệt thực, tránh bị chặn RSS
         const socialParser = new Parser({ 
             timeout: 10000, 
             headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' } 
@@ -210,9 +237,7 @@ async function main() {
                 ]);
                 
                 parsed.items.slice(0, 3).forEach(item => {
-                    // Ưu tiên lấy contentSnippet, nếu không có lấy nội dung, nếu vẫn không có lấy title
                     let contentStr = (item.contentSnippet || item.content || item.title || '').substring(0, 300);
-                    // Dọn dẹp các thẻ HTML rác nếu có
                     contentStr = contentStr.replace(/<[^>]*>?/gm, '').trim(); 
                     
                     rawSocialData.push({ 
@@ -237,8 +262,8 @@ async function main() {
             
             for (let i = 0; i < 2; i++) {
                 try {
-                    const socRes = await jsonModel.generateContent(promptSocial);
-                    const cleanText = socRes.response.text().replace(/```json/g, '').replace(/```/g, '').trim();
+                    // Đã thay thế gọi AI cũ bằng askAI
+                    const cleanText = await askAI(promptSocial, true);
                     const socArray = extractArrayFromAI(JSON.parse(cleanText));
                     
                     if (socArray && socArray.length > 0) {
@@ -263,15 +288,15 @@ async function main() {
                     góc_nhìn_AI: n.expert_analysis || "Chưa có phân tích sâu" 
                 }));
                 
-                // Đã fix lỗi cú pháp tại đây
                 const promptBriefing = `
                     Dựa trên dữ liệu sự kiện và góc nhìn chuyên sâu sau: ${JSON.stringify(hotForBriefing)}.
                     Hãy viết "Bản Tin Tổng Hợp 24h" cực kỳ sắc sảo. Lồng ghép khéo léo "góc nhìn AI" vào từng sự kiện để bài viết có chiều sâu.
                     TRẢ VỀ DUY NHẤT MÃ HTML (dùng <h3>, <p>, <ul>, <li>, <strong>). KHÔNG bọc trong markdown.
                 `;
                 
-                const briefRes = await textModel.generateContent(promptBriefing);
-                dailyBriefingHTML = briefRes.response.text().replace(/```html/g, '').replace(/```/g, '').trim();
+                // Đã thay thế gọi AI cũ bằng askAI (truyền false để không force JSON)
+                const briefText = await askAI(promptBriefing, false);
+                dailyBriefingHTML = briefText.replace(/```html/g, '').replace(/```/g, '').trim();
             } catch (e) { console.log("Lỗi tạo Bản tin 24h", e.message); }
         }
 
