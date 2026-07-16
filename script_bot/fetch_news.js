@@ -101,7 +101,6 @@ async function main() {
         const socialFeeds = [
             { url: 'https://www.reddit.com/r/worldnews/top/.rss?t=day&limit=3', platform: 'Reddit', icon: 'https://www.redditinc.com/assets/images/site/reddit-logo.png' },
             { url: 'https://www.reddit.com/r/Vietnam/top/.rss?t=day&limit=2', platform: 'Reddit VN', icon: 'https://www.redditinc.com/assets/images/site/reddit-logo.png' },
-            // Dùng RSSHub cho Weibo Trending (Trung Quốc)
             { url: 'https://rsshub.app/weibo/search/hot', platform: 'Weibo', icon: 'https://upload.wikimedia.org/wikipedia/vi/a/a2/Sina_Weibo_logo.png' }
         ];
 
@@ -134,12 +133,19 @@ async function main() {
             } catch (e) { console.log("Lỗi dịch MXH"); }
         }
 
-        // --- BƯỚC CUỐI: LƯU TRỮ ---
-        let existingData = { news: [], social: [] };
-        if (fs.existsSync(DATA_FILE_PATH)) existingData = JSON.parse(fs.readFileSync(DATA_FILE_PATH));
+        // --- BƯỚC CUỐI: LƯU TRỮ (VÁ LỖI XUNG ĐỘT DATA CŨ) ---
+        let existingData = { news: [], social: [] }; // Mặc định luôn có mảng rỗng
+        if (fs.existsSync(DATA_FILE_PATH)) {
+            const rawFile = fs.readFileSync(DATA_FILE_PATH);
+            const parsedOldData = JSON.parse(rawFile);
+            
+            // Nếu file cũ có dữ liệu, cập nhật lại. Nếu không có mảng 'social', ép nó thành mảng rỗng []
+            existingData.news = parsedOldData.news || [];
+            existingData.social = parsedOldData.social || []; 
+        }
         
         const finalNews = [...clusteredNews, ...existingData.news].filter(n => n.timestamp >= getSevenDaysAgo());
-        // Lọc giữ lại 20 bài MXH mới nhất để không làm nặng web
+        // Lọc giữ lại 20 bài MXH mới nhất (Ghép nối an toàn, không còn lỗi undefined)
         const finalSocial = [...processedSocial, ...existingData.social].slice(0, 20); 
 
         const finalDataset = {
@@ -155,9 +161,12 @@ async function main() {
         };
 
         fs.writeFileSync(DATA_FILE_PATH, JSON.stringify(finalDataset, null, 2));
-        console.log("=== HOÀN TẤT ===");
+        console.log("=== HOÀN TẤT VÀ ĐÃ LƯU ===");
         process.exit(0);
-    } catch (error) { process.exit(1); }
+    } catch (error) { 
+        console.error("LỖI QUY TRÌNH:", error.message);
+        process.exit(1); 
+    }
 }
 
 main();
