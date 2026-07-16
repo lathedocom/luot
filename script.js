@@ -27,19 +27,22 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('theme', newTheme);
     });
 
-    // --- 2. TỰ ĐỘNG TẠO DANH SÁCH 7 NGÀY QUA ---
+   // --- 2. TỰ ĐỘNG TẠO DANH SÁCH 7 NGÀY QUA ---
     const daysList = document.getElementById('dynamic-days-list');
-    for(let i = 0; i < 7; i++) {
-        let d = new Date();
-        d.setDate(d.getDate() - i);
-        let dateStr = `${d.getDate()}/${d.getMonth() + 1}`;
-        
-        let label = "";
-        if (i === 0) label = "Hôm nay";
-        else if (i === 1) label = "Hôm qua";
-        else label = `${i} ngày trước`;
+    if (daysList) {
+        daysList.innerHTML = ''; // Xóa trắng trước khi đổ data
+        for(let i = 0; i < 7; i++) {
+            let d = new Date();
+            d.setDate(d.getDate() - i);
+            let dateStr = `${d.getDate()}/${d.getMonth() + 1}`;
+            
+            let label = "";
+            if (i === 0) label = "Hôm nay";
+            else if (i === 1) label = "Hôm qua";
+            else label = `${i} ngày trước`;
 
-        daysList.innerHTML += `<li><label><input type="checkbox" checked> ${label} (${dateStr})</label></li>`;
+            daysList.innerHTML += `<li><label><input type="checkbox" checked> ${label} (${dateStr})</label></li>`;
+        }
     }
 
     // --- 3. TẢI DỮ LIỆU & TÌM KIẾM ---
