@@ -12,12 +12,72 @@ document.addEventListener('DOMContentLoaded', () => {
         return `${hours}:${minutes}, ${day}/${month}/${year}`;
     }
 
-    // --- 1. KÍCH HOẠT MENU MOBILE ---
+   // --- 1. GIAO TIẾP GIAO DIỆN MOBILE & TÌM KIẾM ---
     const menuBtn = document.getElementById('menu-btn');
     const leftSidebar = document.getElementById('left-sidebar');
     if (menuBtn && leftSidebar) {
         menuBtn.addEventListener('click', () => leftSidebar.classList.toggle('active'));
     }
+
+    // Nút Tìm kiếm (Chạm để mở rộng)
+    const searchIconBtn = document.getElementById('search-icon-btn');
+    const searchInput = document.getElementById('search-input');
+    if (searchIconBtn && searchInput) {
+        searchIconBtn.addEventListener('click', () => {
+            searchInput.classList.toggle('expanded');
+            if (searchInput.classList.contains('expanded')) {
+                searchInput.focus(); // Tự động bật bàn phím
+            }
+        });
+    }
+
+    // Nút chuyển đổi Tin tức / MXH (Mobile)
+    const feedToggleBtn = document.getElementById('feed-toggle-btn');
+    if (feedToggleBtn) {
+        feedToggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('show-social-mode');
+            const toggleText = document.getElementById('feed-toggle-text');
+            const toggleIcon = document.getElementById('feed-toggle-icon');
+            
+            if (document.body.classList.contains('show-social-mode')) {
+                toggleText.textContent = 'Tin Tức';
+                toggleIcon.textContent = 'article';
+            } else {
+                toggleText.textContent = 'MXH';
+                toggleIcon.textContent = 'dynamic_feed';
+            }
+        });
+    }
+
+    // Nút Ẩn/Hiện Nguồn tham khảo trong Modal
+    const toggleSourcesBtn = document.getElementById('toggle-sources-btn');
+    const modalSources = document.getElementById('modal-sources');
+    const toggleSourcesIcon = document.getElementById('toggle-sources-icon');
+    
+    if (toggleSourcesBtn && modalSources) {
+        toggleSourcesBtn.addEventListener('click', () => {
+            if (modalSources.style.display === 'none') {
+                modalSources.style.display = 'flex';
+                toggleSourcesIcon.textContent = 'expand_less';
+                toggleSourcesBtn.innerHTML = `<span class="material-icons">expand_less</span> Ẩn nguồn tham khảo`;
+            } else {
+                modalSources.style.display = 'none';
+                toggleSourcesIcon.textContent = 'expand_more';
+                toggleSourcesBtn.innerHTML = `<span class="material-icons">expand_more</span> Hiển thị nguồn tham khảo`;
+            }
+        });
+    }
+
+    // Cần reset Nguồn tham khảo về trạng thái Ẩn mỗi khi mở Modal tin mới
+    // (Thêm dòng này vào hàm openModal)
+    function resetSourceToggle() {
+        if(modalSources) {
+            modalSources.style.display = 'none';
+            toggleSourcesIcon.textContent = 'expand_more';
+            if(toggleSourcesBtn) toggleSourcesBtn.innerHTML = `<span class="material-icons">expand_more</span> Hiển thị nguồn tham khảo`;
+        }
+    }
+
 
     // --- 2. TỰ ĐỘNG TẠO DANH SÁCH 7 NGÀY ---
     const daysList = document.getElementById('dynamic-days-list');
@@ -89,6 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
    // --- 5. RENDER BÀI TỔNG HỢP (MODAL) ---
     const modal = document.getElementById('news-modal');
     function openModal(newsData) {
+        resetSourceToggle(); // Cất gọn nguồn đi trước khi hiển thị tin
         document.getElementById('modal-title').textContent = newsData.cluster_title;
         document.getElementById('modal-time').innerHTML = `<span class="material-icons">schedule</span> Cập nhật lúc: ${formatTime(newsData.timestamp)}`;
         
