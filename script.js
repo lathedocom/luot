@@ -1,36 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
-    let globalNewsData = []; // Lưu trữ để phục vụ thanh tìm kiếm
+    let globalNewsData = [];
 
-    // --- 1. GIAO DIỆN SÁNG/TỐI THEO HỆ ĐIỀU HÀNH ---
-    const themeToggle = document.getElementById('theme-toggle');
-    const htmlTag = document.documentElement;
-    const icon = themeToggle.querySelector('.material-icons');
+    // --- 1. KÍCH HOẠT MENU MOBILE (HAMBURGER) ---
+    const menuBtn = document.getElementById('menu-btn');
+    const leftSidebar = document.getElementById('left-sidebar');
     
-    // Kiểm tra xem hệ điều hành đang dùng dark hay light mode
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const savedTheme = localStorage.getItem('theme');
-    
-    // Ưu tiên lựa chọn cũ của user, nếu chưa chọn thì theo hệ thống
-    if (savedTheme) { 
-        htmlTag.setAttribute('data-theme', savedTheme); 
-        icon.textContent = savedTheme === 'dark' ? 'light_mode' : 'dark_mode';
-    } else if (prefersDark) { 
-        htmlTag.setAttribute('data-theme', 'dark'); 
-        icon.textContent = 'light_mode';
+    if (menuBtn && leftSidebar) {
+        menuBtn.addEventListener('click', () => {
+            // Thêm/Xóa class 'active' để trượt menu ra/vào
+            leftSidebar.classList.toggle('active');
+        });
     }
 
-    themeToggle.addEventListener('click', () => {
-        const current = htmlTag.getAttribute('data-theme') || (prefersDark ? 'dark' : 'light');
-        const newTheme = current === 'light' ? 'dark' : 'light';
-        htmlTag.setAttribute('data-theme', newTheme);
-        icon.textContent = newTheme === 'dark' ? 'light_mode' : 'dark_mode';
-        localStorage.setItem('theme', newTheme);
-    });
-
-   // --- 2. TỰ ĐỘNG TẠO DANH SÁCH 7 NGÀY QUA ---
+    // --- 2. TỰ ĐỘNG TẠO DANH SÁCH 7 NGÀY QUA ---
     const daysList = document.getElementById('dynamic-days-list');
     if (daysList) {
-        daysList.innerHTML = ''; // Xóa trắng trước khi đổ data
+        daysList.innerHTML = ''; 
         for(let i = 0; i < 7; i++) {
             let d = new Date();
             d.setDate(d.getDate() - i);
@@ -51,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const response = await fetch('./news_data.json');
             if (!response.ok) throw new Error("Chưa có file dữ liệu");
             const data = await response.json();
-            globalNewsData = data.news; // Lưu lại
+            globalNewsData = data.news;
             renderNewsFeed(globalNewsData);
         } catch (error) { 
             console.log("Lỗi tải dữ liệu. Hãy đợi Bot chạy xong lần 1:", error);
@@ -92,7 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const card = document.createElement('div');
             card.className = 'card news-card';
             
-            // Hiển thị ảnh minh họa (nếu AI bóc được), nếu không lấy logo báo đầu tiên
             const imageUrl = news.thumbnail || (news.sources && news.sources[0] ? news.sources[0].source_logo : '');
             const imageHtml = imageUrl ? `<img src="${imageUrl}" class="news-thumbnail" onerror="this.style.display='none'">` : '';
 
@@ -124,8 +108,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (newsData.sources) {
             newsData.sources.forEach(src => {
                 const btn = document.createElement('a');
-                btn.href = src.url || src.link || '#';   // Quét tìm link gốc an toàn
-                btn.target = "_blank"; // Mở bài gốc trong Tab mới
+                btn.href = src.url || src.link || '#';
+                btn.target = "_blank"; 
                 btn.className = 'source-btn';
                 btn.innerHTML = `<img src="${src.source_logo || 'https://via.placeholder.com/20'}" alt=""> Xem gốc trên ${src.source_name} ↗`;
                 sourcesContainer.appendChild(btn);
