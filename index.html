@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Newsroom - Tòa Soạn Tự Động</title>
+    <title>luot.lathedo.com - Tòa Soạn Tự Động</title>
     <link rel="stylesheet" href="style.css">
     <!-- Google Fonts: Roboto chuẩn Material Design -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -13,21 +13,33 @@
 <body>
     <!-- Thanh điều hướng trên cùng -->
     <header class="app-bar">
-        <div class="header-left">
-            <button id="menu-btn" class="icon-btn mobile-only"><span class="material-icons">menu</span></button>
-            <h1 class="logo">AI Newsroom</h1>
+        <!-- Hàng 1 trên Mobile (Logo) / Cột trái trên Desktop -->
+        <div class="header-brand">
+            <h1 class="logo">luot.lathedo.com</h1>
         </div>
         
-        <!-- Thanh tìm kiếm -->
-        <div class="search-box">
-            <span class="material-icons">search</span>
-            <input type="text" id="search-input" placeholder="Tìm kiếm sự kiện, tin tức...">
+        <!-- Hàng 2 trên Mobile (Cụm phím chức năng) / Cột phải trên Desktop -->
+        <div class="header-actions">
+            <!-- Nút 3 gạch (Mobile) -->
+            <button id="menu-btn" class="icon-btn mobile-only"><span class="material-icons">menu</span></button>
+            
+            <!-- Cụm Tìm kiếm thu gọn -->
+            <div class="search-box">
+                <button id="search-icon-btn" class="icon-btn"><span class="material-icons">search</span></button>
+                <input type="text" id="search-input" placeholder="Nhập nội dung tìm kiếm...">
+            </div>
+
+            <!-- Nút chuyển đổi Tin tức / MXH (Mobile) -->
+            <button id="feed-toggle-btn" class="icon-btn mobile-only toggle-feed-btn">
+                <span class="material-icons" id="feed-toggle-icon">dynamic_feed</span>
+                <span id="feed-toggle-text" class="toggle-text">MXH</span>
+            </button>
         </div>
     </header>
 
-    <!-- Bố cục chính -->
+    <!-- Bố cục chính 3 cột -->
     <main class="main-layout">
-        <!-- Sidebar Trái (Sẽ bị giấu đi và mở bằng nút Menu trên Mobile) -->
+        <!-- Sidebar Trái -->
         <aside class="sidebar left-sidebar" id="left-sidebar">
             <div class="widget card">
                 <h3><span class="material-icons">thermostat</span> Thời Tiết</h3>
@@ -35,9 +47,7 @@
             </div>
             <div class="widget card">
                 <h3><span class="material-icons">calendar_month</span> 7 Ngày Qua</h3>
-                <ul class="clean-list" id="dynamic-days-list">
-                    <!-- JS sẽ sinh ngày ở đây -->
-                </ul>
+                <ul class="clean-list" id="dynamic-days-list"></ul>
             </div>
             <div class="widget card">
                 <h3><span class="material-icons">filter_alt</span> Bộ Lọc Nguồn</h3>
@@ -48,45 +58,46 @@
             </div>
         </aside>
 
-        <!-- Feed Tin Tức -->
+        <!-- Cột Giữa (Feed Tin Tức) -->
         <section class="news-feed" id="news-feed">
             <div class="loading">Đang tải tin tức...</div>
         </section>
 
-        <!-- Sidebar Phải -->
-        <aside class="sidebar right-sidebar">
+        <!-- Sidebar Phải (Mạng Xã Hội) -->
+        <aside class="sidebar right-sidebar" id="social-feed-section">
             <h2 class="section-title">Nhịp Đập MXH</h2>
-            <div id="social-feed"></div>
+            <div id="social-feed">
+                <!-- Data MXH sẽ hiển thị ở đây. (Giao diện tạm) -->
+                <div class="card"><p>Tính năng đang cập nhật...</p></div>
+            </div>
         </aside>
     </main>
 
-   <!-- Modal Chi Tiết Tin Tức (Bản Pro) -->
+    <!-- Modal Chi Tiết Tin Tức -->
     <div class="modal-overlay" id="news-modal">
         <div class="modal-dialog">
-            <!-- Nút đóng đặt nổi để không xô đẩy tiêu đề -->
             <button id="close-modal-btn" class="icon-btn close-floating-btn"><span class="material-icons">close</span></button>
             
-            <!-- Phần 1: Header Tiêu đề -->
             <div class="modal-header">
-                <h2 id="modal-title">Tiêu đề cụm sự kiện</h2>
+                <h2 id="modal-title">Tiêu đề</h2>
                 <div id="modal-time" class="news-time"></div>
             </div>
             
-            <!-- Phần 2: Nội dung chính (Cho phép cuộn dọc) -->
             <div class="modal-body">
                 <div id="modal-content" class="detailed-text"></div>
-                
-                <!-- Khu vực AI Phân Tích -->
                 <div id="ai-analysis-container" class="ai-box hidden">
                     <h3 class="ai-title"><span class="material-icons">smart_toy</span> Góc Nhìn AI</h3>
                     <p id="ai-analysis-text"></p>
                 </div>
             </div>
             
-            <!-- Phần 3: Footer Nguồn tin (Tách biệt màu sắc nền) -->
+            <!-- Footer: Nguồn tin dạng Nút Bấm Ẩn/Hiện -->
             <div class="modal-footer sources-container">
-                <h3>Nguồn tham khảo:</h3>
-                <div id="modal-sources" class="source-list"></div>
+                <button id="toggle-sources-btn" class="expand-sources-btn">
+                    <span class="material-icons" id="toggle-sources-icon">expand_more</span> 
+                    Hiển thị nguồn tham khảo
+                </button>
+                <div id="modal-sources" class="source-list" style="display: none;"></div>
             </div>
         </div>
     </div>
