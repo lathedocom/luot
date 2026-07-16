@@ -24,12 +24,19 @@ async function main() {
     try {
         console.log("=== BẮT ĐẦU QUY TRÌNH TÒA SOẠN AI TOÀN CẦU ===");
 
-        // BƯỚC 1: CRAWL DỮ LIỆU THÔ ĐA QUỐC GIA (RSS)
+        // BƯỚC 1: CRAWL DỮ LIỆU THÔ ĐA QUỐC GIA (CÓ HẸN GIỜ 15 GIÂY)
         console.log("Bước 1: Kéo dữ liệu thô từ các đầu báo quốc tế và Việt Nam...");
-        const rssParser = new Parser();
+        
+        // Cấu hình ngụy trang trình duyệt (để không bị các báo quốc tế chặn) và hẹn giờ nội bộ
+        const rssParser = new Parser({
+            timeout: 15000,
+            headers: {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+            }
+        });
+        
         const rawNewsData = [];
 
-        // Danh sách báo chiến lược (Kinh tế, Chính trị, Tài chính)
         const rssFeeds = [
             // --- VIỆT NAM ---
             { url: 'https://vnexpress.net/rss/tin-moi-nhat.rss', source: 'VNExpress', logo: 'https://s1.vnecdn.net/vnexpress/restruct/i/v899/v2_2019/pc/graphics/logo.svg' },
@@ -46,7 +53,7 @@ async function main() {
             { url: 'https://www.economist.com/finance-and-economics/rss.xml', source: 'The Economist', logo: 'https://www.economist.com/favicon.ico' },
             { url: 'https://www.chinadaily.com.cn/rss/world_rss.xml', source: 'China Daily', logo: 'https://www.chinadaily.com.cn/favicon.ico' },
 
-            // --- TIẾNG TRUNG (Dùng cổng RSSHub để vượt rào) ---
+            // --- TIẾNG TRUNG ---
             { url: 'https://rsshub.app/caixin/latest', source: 'Caixin', logo: 'https://www.caixin.com/favicon.ico' },
             { url: 'https://rsshub.app/36kr/newsflashes', source: '36Kr', logo: 'https://36kr.com/favicon.ico' },
             { url: 'https://rsshub.app/sina/news/world', source: 'Sina News', logo: 'https://news.sina.com.cn/favicon.ico' },
@@ -55,8 +62,14 @@ async function main() {
 
         for (const feed of rssFeeds) {
             try {
-                let parsed = await rssParser.parseURL(feed.url);
-                // Lấy 5 bài mới nhất mỗi báo (5 x 15 báo = 75 tin) để AI không bị quá tải
+                process.stdout.write(`Đang đọc ${feed.source}... `);
+                
+                // Đồng hồ bấm giờ tuyệt đối: Đua giữa việc lấy tin và đồng hồ 15 giây
+                const feedPromise = rssParser.parseURL(feed.url);
+                const timeoutPromise = new Promise((_, reject) => setTimeout(() => reject(new Error("Quá thời gian 15s")), 15000));
+                
+                let parsed = await Promise.race([feedPromise, timeoutPromise]);
+                
                 parsed.items.slice(0, 5).forEach(item => {
                     let contentStr = item.content || item['content:encoded'] || '';
                     let imgMatch = contentStr.match(/<img[^>]+src=["']([^"']+)["']/i);
@@ -69,116 +82,94 @@ async function main() {
                         pubDate: item.pubDate
                     });
                 });
+                console.log(`✅ Xong.`);
             } catch (e) {
-                console.log(`⚠️ Bỏ qua nguồn ${feed.source} do kết nối chậm hoặc bị chặn.`);
+                console.log(`⚠️ Bỏ qua do kết nối chậm/bị chặn.`);
             }
         }
 
         // BƯỚC 2: GOM NHÓM & DỊCH THUẬT VỚI BỘ LỌC CHỦ ĐỀ
+        if (rawNewsData.length === 0) {
+            console.log("❌ Không lấy được bài báo nào. Dừng quy trình.");
+            return;
+        }
+
         console.log(`Bước 2: Gửi ${rawNewsData.length} tin thô cho AI dịch và lọc chủ đề...`);
         const promptFlash = `
-            Đóng vai Tổng biên tập chiến lược AI. Dưới đây là danh sách bài báo thô đa ngôn ngữ (Anh, Trung, Việt): ${JSON.stringify(rawNewsData)}.
+            Đóng vai Tổng biên tập chiến lược AI. Dưới đây là danh sách bài báo thô đa ngôn ngữ: ${JSON.stringify(rawNewsData)}.
             Thực hiện CÁC QUY TẮC NGHIÊM NGẶT sau:
             
-            1. BỘ LỌC CHỦ ĐỀ (QUAN TRỌNG NHẤT): CHỈ giữ lại các sự kiện thuộc lĩnh vực: Chính trị, Kinh tế, Tài chính, Ngoại giao, Văn hóa, Lối sống, Chính sách. LOẠI BỎ HOÀN TOÀN các bản tin về Giải trí, Showbiz, Tin lá cải, Bóng đá, Thể thao.
-            2. DỊCH THUẬT: BẤT KỂ NGÔN NGỮ GỐC LÀ GÌ, phải dịch và viết lại toàn bộ nội dung sang TIẾNG VIỆT tự nhiên, chuẩn văn phong báo chí.
-            3. GỘP NHÓM: Gộp các bài báo cùng nói về một sự kiện thành các cụm (clusters).
-            4. TẠO NỘI DUNG MỖI CỤM:
-               - 'cluster_title' (8-15 từ tiếng Việt).
-               - 'short_summary' (Đúng 50-60 từ tiếng Việt): Trả lời cực nhanh (Chuyện gì? Ai? Khi nào? Điểm mới nhất? Tại sao đáng quan tâm?).
-               - 'detailed_summary' (Đúng 400-500 từ tiếng Việt), dùng ký tự '\\n\\n' để ngắt đoạn. Bố cục bắt buộc: Mở đầu (~60 từ) -> Diễn biến (~150 từ) -> Góc nhìn (~120 từ) -> Tác động & Đánh giá (~80 từ) -> Kết luận (~50 từ).
+            1. BỘ LỌC CHỦ ĐỀ: CHỈ giữ lại sự kiện thuộc: Chính trị, Kinh tế, Tài chính, Ngoại giao, Văn hóa, Lối sống, Chính sách. LOẠI BỎ Giải trí, Thể thao.
+            2. DỊCH THUẬT: Viết lại toàn bộ sang TIẾNG VIỆT chuẩn báo chí.
+            3. GỘP NHÓM: Gộp bài báo cùng sự kiện thành cụm.
+            4. TẠO NỘI DUNG:
+               - 'cluster_title' (8-15 từ).
+               - 'short_summary' (Đúng 50-60 từ).
+               - 'detailed_summary' (Đúng 400-500 từ), dùng '\\n\\n' để ngắt đoạn. Bố cục: Mở đầu -> Diễn biến -> Góc nhìn -> Tác động -> Kết luận.
             5. Gắn mảng 'sources' chứa danh sách bài báo gốc (BẮT BUỘC giữ nguyên 'url', 'source_name', 'source_logo').
-            6. Chọn 1 'image_url' từ các bài báo để làm 'thumbnail' (nếu có).
+            6. Chọn 1 'image_url' từ các bài báo làm 'thumbnail'.
             
-            Trả về JSON thuần túy gồm mảng: { "news": [...] }. Không kèm markdown hay text thừa.
+            Trả về JSON thuần túy gồm mảng: { "news": [...] }.
         `;
 
         let flashText = "";
         let isSuccess = false;
-        const MAX_RETRIES = 3;
-
-        for (let i = 0; i < MAX_RETRIES; i++) {
+        
+        for (let i = 0; i < 3; i++) {
             try {
                 const flashResult = await flashModel.generateContent(promptFlash);
                 flashText = flashResult.response.text().replace(/```json/g, '').replace(/```/g, '').trim();
                 isSuccess = true;
                 break; 
             } catch (apiErr) {
-                console.log(`⏳ Lần ${i + 1} gọi AI thất bại. Đang đợi 10 giây để thử lại...`);
+                console.log(`⏳ Lần ${i + 1} gọi AI thất bại. Đang đợi 10s...`);
                 await sleep(10000); 
             }
         }
 
-        if (!isSuccess) {
-            console.log("❌ Máy chủ Google đang quá tải nặng. Bot chủ động dừng để giữ nguyên tin cũ.");
-            return; 
-        }
+        if (!isSuccess) return console.log("❌ Máy chủ AI quá tải. Dừng để giữ tin cũ.");
 
         const processedData = JSON.parse(flashText);
-        
         let clusteredNews = processedData.news.map(item => ({
             ...item,
             id: 'news_' + Date.now() + Math.random().toString(36).substring(7),
             timestamp: Date.now()
         }));
 
-        // BƯỚC 3: LỌC HOT TOPIC
-        console.log("Bước 3: Lọc Hot Topics (>= 2 nguồn đưa tin)...");
-        // Hạ điều kiện xuống 2 nguồn vì tính chất tin quốc tế đa dạng hơn
+        // BƯỚC 3 & 4: PHÂN TÍCH CHUYÊN SÂU
+        console.log("Bước 3: Lọc Hot Topics...");
         const hotTopics = clusteredNews.filter(cluster => cluster.sources && cluster.sources.length >= 2);
 
-        // BƯỚC 4: PHÂN TÍCH CHUYÊN SÂU
         if (hotTopics.length > 0) {
-            console.log(`Bước 4: Gọi AI phân tích chuyên sâu ${hotTopics.length} Hot Topics...`);
+            console.log(`Bước 4: Phân tích chuyên sâu ${hotTopics.length} Hot Topics...`);
             try {
-                const hotTopicsForAI = hotTopics.map((t, index) => ({
-                    ai_index: index,
-                    title: t.cluster_title,
-                    detail: t.detailed_summary
-                }));
-
+                const hotTopicsForAI = hotTopics.map((t, index) => ({ ai_index: index, title: t.cluster_title, detail: t.detailed_summary }));
                 const promptPro = `
-                    Đóng vai một chuyên gia phân tích tin tức chiến lược vĩ mô.
-                    Dưới đây là các điểm nóng: ${JSON.stringify(hotTopicsForAI)}.
-                    Hãy cung cấp phân tích đa chiều, dự báo tác động kinh tế/chính trị của mỗi sự kiện bằng Tiếng Việt.
-                    BẮT BUỘC trả về JSON định dạng mảng object: [{ "ai_index": số_thứ_tự_tương_ứng, "expert_analysis": "Nội dung phân tích..." }]
+                    Đóng vai chuyên gia phân tích vĩ mô. Điểm nóng: ${JSON.stringify(hotTopicsForAI)}.
+                    Dự báo tác động kinh tế/chính trị bằng Tiếng Việt.
+                    Trả về JSON: [{ "ai_index": số, "expert_analysis": "Phân tích..." }]
                 `;
-                
                 const proResult = await proModel.generateContent(promptPro);
                 let proText = proResult.response.text().replace(/```json/g, '').replace(/```/g, '').trim();
                 const analyses = JSON.parse(proText);
 
-                analyses.forEach(a => {
-                    if (hotTopics[a.ai_index]) {
-                        hotTopics[a.ai_index].expert_analysis = a.expert_analysis;
-                    }
-                });
-                console.log("✅ Hoàn tất phân tích chuyên sâu.");
+                analyses.forEach(a => { if (hotTopics[a.ai_index]) hotTopics[a.ai_index].expert_analysis = a.expert_analysis; });
+                console.log("✅ Xong phân tích chuyên sâu.");
             } catch (aiError) {
-                console.log("⚠️ Bỏ qua phân tích chuyên sâu đợt này do API bận.");
+                console.log("⚠️ Bỏ qua phân tích chuyên sâu do mạng bận.");
             }
         }
 
         // BƯỚC 5: LƯU DỮ LIỆU
-        console.log("Bước 5: Gộp dữ liệu, xóa tin > 7 ngày và cập nhật file...");
+        console.log("Bước 5: Cập nhật file...");
         let existingData = { news: [], social: [] };
-        
-        if (fs.existsSync(DATA_FILE_PATH)) {
-            const rawFile = fs.readFileSync(DATA_FILE_PATH);
-            existingData = JSON.parse(rawFile);
-        }
+        if (fs.existsSync(DATA_FILE_PATH)) existingData = JSON.parse(fs.readFileSync(DATA_FILE_PATH));
 
         const sevenDaysAgo = getSevenDaysAgo();
         const finalNews = [...clusteredNews, ...existingData.news].filter(n => n.timestamp >= sevenDaysAgo);
 
-        const finalDataset = {
-            last_updated: Date.now(),
-            news: finalNews,
-            social: existingData.social
-        };
-
-        fs.writeFileSync(DATA_FILE_PATH, JSON.stringify(finalDataset, null, 2));
-        console.log("=== HOÀN TẤT. TRANG WEB ĐÃ CÓ TIN MỚI. ===");
+        fs.writeFileSync(DATA_FILE_PATH, JSON.stringify({ last_updated: Date.now(), news: finalNews, social: existingData.social }, null, 2));
+        console.log("=== HOÀN TẤT ===");
 
     } catch (error) {
         console.error("LỖI QUY TRÌNH:", error.message);
