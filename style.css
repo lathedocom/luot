@@ -119,3 +119,28 @@ body { font-family: 'Roboto', sans-serif; background-color: var(--bg-color); col
     .modal-header, .modal-body, .modal-footer { padding-left: 20px; padding-right: 20px; }
     .modal-header { padding-top: 20px; padding-right: 50px; }
 }
+/* --- Thiết kế Thẻ Mạng Xã Hội --- */
+.social-card {
+    background: var(--surface-color);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: var(--shadow-1);
+    border-left: 3px solid var(--ai-color);
+    transition: transform 0.2s;
+}
+.social-card:hover { transform: translateX(4px); box-shadow: var(--shadow-2); }
+.social-header {
+    display: flex; align-items: center; gap: 8px; margin-bottom: 8px;
+}
+.social-header img { width: 20px; height: 20px; border-radius: 50%; }
+.social-platform-name { font-size: 13px; font-weight: bold; color: var(--text-secondary); text-transform: uppercase; }
+.social-content { font-size: 15px; color: var(--text-primary); margin-bottom: 12px; line-height: 1.5; }
+.social-action-btn {
+    display: inline-flex; align-items: center; gap: 4px;
+    font-size: 13px; font-weight: 500; color: var(--primary-color);
+    text-decoration: none; padding: 4px 12px; border-radius: 20px;
+    background: rgba(26, 115, 232, 0.1);
+}
+.social-action-btn:hover { background: var(--primary-color); color: white; }
+.social-action-btn .material-icons { font-size: 14px; }
