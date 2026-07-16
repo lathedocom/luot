@@ -16,10 +16,17 @@ const safetySettings = [
     { category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT, threshold: HarmBlockThreshold.BLOCK_NONE }
 ];
 
+// MODEL 1: Chuyên trả về JSON (Đã sửa lại đúng chuẩn gemini-3.5-flash của bạn)
 const jsonModel = genAI.getGenerativeModel({ 
-    model: "gemini-1.5-flash", 
+    model: "gemini-3.5-flash", 
     safetySettings,
     generationConfig: { responseMimeType: "application/json" }
+});
+
+// MODEL 2: Chuyên trả về Text/HTML (Dùng cho Bản tin 24h)
+const textModel = genAI.getGenerativeModel({ 
+    model: "gemini-3.5-flash", 
+    safetySettings 
 });
 
 const textModel = genAI.getGenerativeModel({ model: "gemini-1.5-flash", safetySettings });
