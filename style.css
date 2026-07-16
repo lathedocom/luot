@@ -129,3 +129,39 @@ body {
     .mobile-only { display: block; }
     .modal-dialog { width: 100%; height: 100%; max-height: 100vh; border-radius: 0; }
 }
+
+/* --- Tự động đổi màu theo hệ điều hành --- */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --bg-color: #18191a;
+        --surface-color: #242526;
+        --text-primary: #e4e6eb;
+        --text-secondary: #b0b3b8;
+        --divider-color: #3e4042;
+    }
+}
+
+/* --- Thanh tìm kiếm --- */
+.search-box {
+    display: flex; align-items: center; background: var(--bg-color);
+    padding: 8px 16px; border-radius: 24px; width: 40%; max-width: 400px;
+}
+.search-box input {
+    border: none; background: transparent; outline: none;
+    color: var(--text-primary); margin-left: 8px; width: 100%; font-size: 15px;
+}
+
+/* --- Ảnh minh họa thẻ tin tức --- */
+.news-thumbnail {
+    width: 100%; height: 180px; object-fit: cover;
+    border-radius: 8px; margin-bottom: 12px;
+}
+
+/* --- Làm nổi bật nút đọc bài gốc --- */
+.source-btn {
+    background-color: #e3f2fd; color: var(--primary-color);
+    font-weight: 500; border: 1px solid var(--primary-color);
+    transition: all 0.2s;
+}
+.source-btn:hover { background-color: var(--primary-color); color: white; }
+[data-theme="dark"] .source-btn { background-color: #1e293b; border-color: #3b82f6; color: #60a5fa;}
