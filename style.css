@@ -122,24 +122,106 @@ body {
 .clean-list li:last-child { border-bottom: none; }
 .clean-list input[type="checkbox"] { margin-right: 8px; cursor: pointer; }
 
-/* --- Modal Chi Tiết --- */
+/* --- Modal Chi Tiết (Thiết kế Pro) --- */
 .modal-overlay {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgba(0,0,0,0.75); /* Làm tối nền mạnh hơn */
     display: flex; justify-content: center; align-items: center;
     z-index: 2000;
     opacity: 0; pointer-events: none;
     transition: opacity 0.3s ease;
 }
 .modal-overlay.active { opacity: 1; pointer-events: auto; }
+
 .modal-dialog {
-    width: 90%; max-width: 700px; max-height: 90vh;
-    overflow-y: auto; position: relative;
+    background-color: var(--surface-color);
+    width: 95%; max-width: 800px; height: 90vh; /* Cố định chiều cao */
+    border-radius: 16px;
+    display: flex; flex-direction: column; /* Chia dọc */
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    overflow: hidden;
     transform: translateY(20px); transition: transform 0.3s ease;
 }
 .modal-overlay.active .modal-dialog { transform: translateY(0); }
-.modal-header { display: flex; justify-content: space-between; margin-bottom: 16px; align-items: flex-start;}
-.detailed-text { font-size: 16px; line-height: 1.8; margin-bottom: 24px; text-align: justify; }
+
+/* Nút Đóng Đặt Nổi */
+.close-floating-btn {
+    position: absolute;
+    top: 16px; right: 16px;
+    background: var(--bg-color);
+    z-index: 10;
+}
+.close-floating-btn:hover { background: #ff4d4f; color: white; }
+
+/* Khu vực Header (Tiêu đề) */
+.modal-header {
+    padding: 32px 32px 20px 32px;
+    border-bottom: 1px solid var(--divider-color);
+    padding-right: 64px; /* Tránh chữ đè vào nút đóng */
+}
+#modal-title {
+    font-size: 26px; line-height: 1.4; margin-bottom: 12px;
+    color: var(--primary-color);
+}
+.news-time {
+    font-size: 14px; color: var(--text-secondary);
+    display: flex; align-items: center; gap: 4px;
+}
+.news-time .material-icons { font-size: 16px; }
+
+/* Khu vực Body (Nội dung) */
+.modal-body {
+    padding: 24px 32px;
+    overflow-y: auto; /* Cho phép cuộn phần này */
+    flex-grow: 1; /* Tự động đẩy Footer xuống đáy */
+}
+.detailed-text {
+    font-size: 17px; line-height: 1.8; color: var(--text-primary); text-align: justify;
+}
+/* Tạo khoảng cách rõ ràng giữa các đoạn văn */
+.detailed-text p {
+    margin-bottom: 18px; 
+}
+
+/* AI Box Tinh Tế Hơn */
+.ai-box {
+    background-color: rgba(142, 36, 170, 0.04);
+    border: 1px solid rgba(142, 36, 170, 0.15);
+    border-left: 4px solid var(--ai-color);
+    padding: 24px; border-radius: 12px; margin-top: 32px; margin-bottom: 16px;
+}
+.ai-title { color: var(--ai-color); display: flex; align-items: center; gap: 8px; margin-bottom: 12px; font-size: 18px;}
+
+/* Khu vực Footer (Nguồn tin) */
+.modal-footer {
+    padding: 20px 32px;
+    background-color: var(--bg-color); /* Màu nền nhạt tách biệt */
+    border-top: 1px solid var(--divider-color);
+}
+.modal-footer h3 {
+    font-size: 14px; color: var(--text-secondary);
+    margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px;
+}
+.source-list { display: flex; flex-wrap: wrap; gap: 12px; }
+.source-btn {
+    display: flex; align-items: center; gap: 8px;
+    background-color: var(--surface-color); color: var(--text-primary);
+    font-weight: 500; border: 1px solid var(--divider-color);
+    padding: 10px 20px; border-radius: 24px; text-decoration: none; font-size: 14px;
+    transition: all 0.2s;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+.source-btn:hover { border-color: var(--primary-color); color: var(--primary-color); transform: translateY(-1px);}
+.source-btn img { width: 20px; height: 20px; border-radius: 50%; }
+
+/* Chỉnh lại giao diện Modal trên Mobile */
+@media (max-width: 992px) {
+    .modal-dialog { width: 100%; height: 100%; max-height: 100vh; border-radius: 0; }
+    .modal-header, .modal-body, .modal-footer { padding-left: 20px; padding-right: 20px; }
+    .modal-header { padding-top: 24px; padding-right: 50px; }
+    #modal-title { font-size: 22px; }
+}
 
 /* AI Box */
 .ai-box { background-color: rgba(142, 36, 170, 0.1); border-left: 4px solid var(--ai-color); padding: 16px; border-radius: 8px; margin-bottom: 24px;}
