@@ -40,35 +40,48 @@ const textModel = genAI.getGenerativeModel({
 
 // HÀM GỌI AI THÔNG MINH CÓ CƠ CHẾ DỰ PHÒNG (FALLBACK)
 async function askAI(prompt, isJson = true) {
+    // Hàm phụ: Dọn dẹp câu chữ thừa, chỉ lấy đoạn JSON
+    const extractJsonStr = (rawText) => {
+        if (!isJson) return rawText;
+        let text = rawText.replace(/```json/g, '').replace(/```/g, '').trim();
+        const start = Math.min(
+            text.indexOf('{') !== -1 ? text.indexOf('{') : Infinity,
+            text.indexOf('[') !== -1 ? text.indexOf('[') : Infinity
+        );
+        const end = Math.max(text.lastIndexOf('}'), text.lastIndexOf(']'));
+        if (start !== Infinity && end !== -1) {
+            return text.substring(start, end + 1);
+        }
+        return text;
+    };
+
     try {
         // Ưu tiên 1: Gọi Gemini
         const model = isJson ? jsonModel : textModel;
         const res = await model.generateContent(prompt);
-        let text = res.response.text();
-        return isJson ? text.replace(/```json/g, '').replace(/```/g, '').trim() : text;
+        return extractJsonStr(res.response.text());
     } catch (geminiError) {
-        console.log(`⚠️ Gemini lỗi (${geminiError.message}). Kích hoạt AI dự phòng (Groq)...`);
+        console.log(`⚠️ Gemini lỗi (${geminiError.status || 429}). Kích hoạt AI dự phòng (Groq)...`);
         
         if (!groq) {
-            console.log("❌ Không có GROQ_API_KEY. Hệ thống dừng bước này.");
-            throw geminiError; // Ném lỗi nếu không có AI dự phòng
+            console.log("❌ Không có GROQ_API_KEY. Hệ thống dừng.");
+            throw geminiError;
         }
 
-        // Ưu tiên 2: Gọi Groq (Llama 3 8B)
-        // Note: Ép thêm lệnh bắt buộc trả JSON vì các model LLM hay nói chuyện luyên thuyên
-        const finalPrompt = isJson ? prompt + "\nLƯU Ý QUAN TRỌNG: TRẢ VỀ ĐÚNG CẤU TRÚC JSON, KHÔNG BỔ SUNG BẤT KỲ VĂN BẢN NÀO KHÁC." : prompt;
+        // Ép Groq ngậm miệng, cấm chào hỏi
+        const finalPrompt = isJson 
+            ? prompt + "\nLỆNH TUYỆT ĐỐI: CHỈ TRẢ VỀ ĐÚNG CẤU TRÚC JSON. KHÔNG ĐƯỢC CÓ BẤT CỨ VĂN BẢN NÀO BÊN NGOÀI, KHÔNG CHÀO HỎI, KHÔNG GIẢI THÍCH (KHÔNG DÙNG CÁC CÂU NHƯ 'DƯỚI ĐÂY LÀ')." 
+            : prompt;
         
         const chatCompletion = await groq.chat.completions.create({
             messages: [{ role: "user", content: finalPrompt }],
-            model: "llama-3.1-8b-instant", // Mô hình miễn phí, tốc độ cực cao
-            temperature: 0.3, // Nhiệt độ thấp để kết quả ổn định
+            model: "llama-3.1-8b-instant",
+            temperature: 0.1, // Hạ nhiệt độ xuống rất thấp để AI làm việc như cái máy
         });
         
-        let text = chatCompletion.choices[0].message.content;
-        return isJson ? text.replace(/```json/g, '').replace(/```/g, '').trim() : text;
+        return extractJsonStr(chatCompletion.choices[0].message.content);
     }
 }
-
 const DATA_FILE_PATH = path.join(__dirname, '../news_data.json');
 const getSevenDaysAgo = () => new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).getTime();
 const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
@@ -219,9 +232,9 @@ async function main() {
         const rawSocialData = [];
         
         const socialFeeds = [
-            { url: 'https://trends.google.com/trends/trendingsearches/daily/rss?geo=VN', platform: 'Google Trends VN', icon: 'https://ssl.gstatic.com/trends_nrtr/3200_RC01/favicon.ico' },
+            //{ url: 'https://trends.google.com/trends/trendingsearches/daily/rss?geo=VN', platform: 'Google Trends VN', icon: 'https://ssl.gstatic.com/trends_nrtr/3200_RC01/favicon.ico' },
             { url: 'https://hnrss.org/frontpage?points=100', platform: 'Hacker News (Tech)', icon: 'https://news.ycombinator.com/favicon.ico' },
-            { url: 'https://www.youtube.com/feeds/videos.xml?channel_id=UCIALMKvObZNtJ6AmdTo-85A', platform: 'YouTube', icon: 'https://www.youtube.com/favicon.ico' }
+            //{ url: 'https://www.youtube.com/feeds/videos.xml?channel_id=UCIALMKvObZNtJ6AmdTo-85A', platform: 'YouTube', icon: 'https://www.youtube.com/favicon.ico' }
         ];
         
         const socialParser = new Parser({ 
