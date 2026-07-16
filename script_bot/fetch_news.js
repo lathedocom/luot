@@ -58,15 +58,22 @@ async function main() {
             }
         }
 
-        // BƯỚC 2: GOM NHÓM & TÓM TẮT
-        console.log("Bước 2: Gọi Gemini Flash để gom nhóm...");
+        // BƯỚC 2: GOM NHÓM & TÓM TẮT (Nâng cấp cấu trúc UX/UI)
+        console.log("Bước 2: Gọi Gemini Flash để gom nhóm và tổng hợp chuyên sâu...");
         const promptFlash = `
-            Đóng vai biên tập viên. Dưới đây là danh sách bài báo: ${JSON.stringify(rawNewsData)}.
+            Đóng vai Tổng biên tập AI chuyên nghiệp. Dưới đây là danh sách bài báo: ${JSON.stringify(rawNewsData)}.
             Nhiệm vụ:
             1. Gộp các bài báo cùng sự kiện thành các cụm (clusters).
-            2. Mỗi cụm tạo một 'cluster_title', 'short_summary' (2-3 câu), và 'detailed_summary' (khoảng 10 câu tổng hợp chi tiết).
-            3. Gắn mảng 'sources' chứa danh sách các bài báo gốc của cụm đó. BẮT BUỘC giữ nguyên chính xác 'url', 'source_name' và 'source_logo' từ dữ liệu gốc. Không được làm mất 'url'.
-            4. Chọn 1 'image_url' từ các bài báo trong cụm để làm 'thumbnail' (nếu có).
+            2. Tạo 'cluster_title' (8-15 từ).
+            3. Viết 'short_summary' (Đúng 50-60 từ): Trả lời cực nhanh 5 câu hỏi (Chuyện gì? Ai? Khi nào? Điểm mới nhất? Tại sao đáng quan tâm?).
+            4. Viết 'detailed_summary' (Đúng 400-500 từ), sử dụng ký tự '\\n\\n' để xuống dòng giữa các phần. Bố cục bắt buộc:
+               - Mở đầu (~60 từ): Tóm tắt toàn cảnh sự kiện.
+               - Diễn biến (~150 từ): Nêu rõ dòng sự kiện theo trình tự thời gian.
+               - Góc nhìn (~120 từ): Phân tích góc nhìn từ các báo và cộng đồng.
+               - Tác động & Đánh giá (~80 từ): Phân tích tác động tới người dùng/doanh nghiệp/thị trường.
+               - Kết luận (~50 từ): Những điều cần theo dõi tiếp theo.
+            5. Gắn mảng 'sources' chứa danh sách bài báo gốc (BẮT BUỘC giữ nguyên 'url', 'source_name', 'source_logo').
+            6. Chọn 1 'image_url' từ các bài báo để làm 'thumbnail' (nếu có).
             Trả về JSON thuần túy gồm mảng: { "news": [...] }. Không kèm markdown hay text thừa.
         `;
 
