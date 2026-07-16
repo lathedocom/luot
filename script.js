@@ -86,15 +86,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- 5. RENDER BÀI TỔNG HỢP (MODAL) ---
+   // --- 5. RENDER BÀI TỔNG HỢP (MODAL) ---
     const modal = document.getElementById('news-modal');
     function openModal(newsData) {
         document.getElementById('modal-title').textContent = newsData.cluster_title;
-        document.getElementById('modal-time').innerHTML = `<span class="material-icons">schedule</span> Đăng lúc: ${formatTime(newsData.timestamp)}`;
+        document.getElementById('modal-time').innerHTML = `<span class="material-icons">schedule</span> Cập nhật lúc: ${formatTime(newsData.timestamp)}`;
         
-        // Chuyển đổi ký tự xuống dòng (\n) của AI thành thẻ ngắt dòng HTML (<br>)
-        const formattedContent = newsData.detailed_summary.replace(/\n/g, '<br>');
+        // Tách các đoạn văn bằng AI sinh ra (\n) và bọc chúng trong thẻ <p> để căn lề đẹp mắt
+        const paragraphs = newsData.detailed_summary.split('\n').filter(p => p.trim() !== '');
+        const formattedContent = paragraphs.map(p => `<p>${p}</p>`).join('');
         document.getElementById('modal-content').innerHTML = formattedContent;
+
+        // Xử lý AI Analysis
+        const aiContainer = document.getElementById('ai-analysis-container');
+        if (newsData.expert_analysis) {
+            document.getElementById('ai-analysis-text').textContent = newsData.expert_analysis;
+            aiContainer.classList.remove('hidden');
+        } else { 
+            aiContainer.classList.add('hidden'); 
+        }
 
         // Xử lý nút xem bài gốc
         const sourcesContainer = document.getElementById('modal-sources');
@@ -105,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 btn.href = src.url || src.link || '#';
                 btn.target = "_blank"; 
                 btn.className = 'source-btn';
-                btn.innerHTML = `<img src="${src.source_logo}" alt=""> Đọc bài gốc trên ${src.source_name} ↗`;
+                btn.innerHTML = `<img src="${src.source_logo || 'https://via.placeholder.com/20'}" alt=""> ${src.source_name} ↗`;
                 sourcesContainer.appendChild(btn);
             });
         }
@@ -113,10 +123,3 @@ document.addEventListener('DOMContentLoaded', () => {
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
     }
-
-    const btnCloseModal = document.getElementById('close-modal-btn');
-    if(btnCloseModal) btnCloseModal.addEventListener('click', () => { modal.classList.remove('active'); document.body.style.overflow = ''; });
-    modal.addEventListener('click', (e) => { if (e.target === modal) { modal.classList.remove('active'); document.body.style.overflow = ''; } });
-
-    loadData();
-});
