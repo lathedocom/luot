@@ -1,10 +1,7 @@
 name: AI Newsroom Bot
 
 on:
-  schedule:
-    # Chạy vào lúc 7:17, 11:17, 16:17, 20:17 (Giờ VN)
-    - cron: '17 0,4,9,13 * * *'
-  workflow_dispatch:
+  workflow_dispatch: # Chỉ giữ lại cổng nhận lệnh thủ công và API
 
 jobs:
   fetch-and-process-news:
