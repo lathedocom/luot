@@ -60,7 +60,7 @@ async function askAI(prompt, isJson = true) {
         
         const chatCompletion = await groq.chat.completions.create({
             messages: [{ role: "user", content: finalPrompt }],
-            model: "llama3-8b-8192", // Mô hình miễn phí, tốc độ cực cao
+            model: "llama-3.1-8b-instant", // Mô hình miễn phí, tốc độ cực cao
             temperature: 0.3, // Nhiệt độ thấp để kết quả ổn định
         });
         
