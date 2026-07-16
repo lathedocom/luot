@@ -23,6 +23,7 @@ jobs:
         run: |
           cd script_bot
           npm install
+          npm install groq-sdk
 
       - name: Run AI Newsroom Bot
         env:
