@@ -9,7 +9,7 @@ if (!GEMINI_API_KEY) { console.error("LỖI: Thiếu GEMINI_API_KEY."); process.
 
 const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
 
-// BỘ LỌC THÉP: Tắt toàn bộ kiểm duyệt an toàn của AI (Rất quan trọng với tin Vĩ mô, Chiến tranh)
+// Tắt bộ lọc an toàn để đọc tin Vĩ mô/Chiến tranh
 const safetySettings = [
     { category: HarmCategory.HARM_CATEGORY_HARASSMENT, threshold: HarmBlockThreshold.BLOCK_NONE },
     { category: HarmCategory.HARM_CATEGORY_HATE_SPEECH, threshold: HarmBlockThreshold.BLOCK_NONE },
@@ -17,19 +17,22 @@ const safetySettings = [
     { category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT, threshold: HarmBlockThreshold.BLOCK_NONE }
 ];
 
-// Cập nhật model chuẩn gemini-1.5-flash
-const flashModel = genAI.getGenerativeModel({ model: "gemini-1.5-flash", safetySettings });
-const proModel = genAI.getGenerativeModel({ model: "gemini-1.5-flash", safetySettings });
+// MODEL 1: Chuyên trả về JSON (Ép chuẩn cấu trúc, chống đứt gãy)
+const jsonModel = genAI.getGenerativeModel({ 
+    model: "gemini-1.5-flash", 
+    safetySettings,
+    generationConfig: { responseMimeType: "application/json" }
+});
+
+// MODEL 2: Chuyên trả về Text/HTML (Dùng cho Bản tin 24h)
+const textModel = genAI.getGenerativeModel({ 
+    model: "gemini-1.5-flash", 
+    safetySettings 
+});
 
 const DATA_FILE_PATH = path.join(__dirname, '../news_data.json');
 const getSevenDaysAgo = () => new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).getTime();
 const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
-
-// Hàm bóc tách JSON thông minh chống lỗi cú pháp AI
-function extractJSON(text) {
-    const match = text.match(/\{[\s\S]*\}/);
-    return match ? match[0] : text;
-}
 
 async function main() {
     try {
@@ -64,23 +67,32 @@ async function main() {
         if (rawNewsData.length > 0) {
             console.log(`Dịch & Gộp ${rawNewsData.length} tin thô...`);
             const promptFlash = `
-                Xử lý: ${JSON.stringify(rawNewsData)}.
-                1. BỘ LỌC: CHỈ giữ Kinh tế, Chính trị, Tài chính. LOẠI Giải trí, Thể thao. Đánh giá cao phát ngôn của lãnh đạo cường quốc, tỷ phú kinh tế.
-                2. DỊCH: Tiếng Việt.
-                3. GỘP: Gộp bài cùng sự kiện.
-                4. FORMAT: 'cluster_title', 'short_summary' (50 từ), 'detailed_summary' (400 từ).
-                5. 'sources' (url, source_name, source_logo).
-                Trả về JSON: { "news": [...] }
+                Xử lý dữ liệu: ${JSON.stringify(rawNewsData)}.
+                1. BỘ LỌC: CHỈ giữ Kinh tế, Chính trị, Tài chính.
+                2. GỘP: Gộp các bài cùng sự kiện.
+                3. ĐẦU RA JSON BẮT BUỘC: 
+                {
+                  "news": [
+                    {
+                      "cluster_title": "Tiêu đề tiếng Việt",
+                      "short_summary": "Tóm tắt 50 từ",
+                      "detailed_summary": "Tóm tắt chi tiết 300 từ. Có xuống dòng \\n\\n",
+                      "sources": [{"url": "...", "source_name": "...", "source_logo": "..."}],
+                      "image_url": "Link ảnh hoặc bỏ trống"
+                    }
+                  ]
+                }
             `;
             
-            let jsonExtracted = null;
-            // Cho phép AI thử lại 3 lần, in ra lỗi nếu sập
             for (let i = 0; i < 3; i++) {
                 try {
-                    const res = await flashModel.generateContent(promptFlash);
-                    const parsed = JSON.parse(extractJSON(res.response.text()));
+                    // Dùng jsonModel để đảm bảo 100% ra JSON không bị cụt
+                    const res = await jsonModel.generateContent(promptFlash);
+                    const parsed = JSON.parse(res.response.text());
                     if (parsed && parsed.news) {
-                        jsonExtracted = parsed;
+                        clusteredNews = parsed.news.map(item => ({
+                            ...item, id: 'news_' + Date.now() + Math.random().toString(36).substring(7), timestamp: Date.now()
+                        }));
                         break; 
                     }
                 } catch (e) { 
@@ -88,12 +100,24 @@ async function main() {
                     await sleep(5000); 
                 }
             }
-            
-            if (jsonExtracted && jsonExtracted.news) {
-                clusteredNews = jsonExtracted.news.map(item => ({
-                    ...item, id: 'news_' + Date.now() + Math.random().toString(36).substring(7), timestamp: Date.now()
-                }));
-            }
+        }
+
+        // Phân tích chuyên sâu cho tin Hot (Dùng jsonModel)
+        const hotTopics = clusteredNews.filter(cluster => cluster.sources && cluster.sources.length >= 2);
+        if (hotTopics.length > 0) {
+            try {
+                const hotTopicsForAI = hotTopics.map((t, index) => ({ ai_index: index, title: t.cluster_title, detail: t.detailed_summary }));
+                const promptPro = `
+                    Phân tích vĩ mô các sự kiện: ${JSON.stringify(hotTopicsForAI)}.
+                    ĐẦU RA JSON BẮT BUỘC:
+                    [
+                      { "ai_index": số, "expert_analysis": "Nội dung phân tích..." }
+                    ]
+                `;
+                const proResult = await jsonModel.generateContent(promptPro);
+                const analyses = JSON.parse(proResult.response.text());
+                analyses.forEach(a => { if (hotTopics[a.ai_index]) hotTopics[a.ai_index].expert_analysis = a.expert_analysis; });
+            } catch (e) { console.log("⚠️ Bỏ qua phân tích chuyên sâu"); }
         }
 
         // --- CA 2: MẠNG XÃ HỘI ---
@@ -119,41 +143,40 @@ async function main() {
         if (rawSocialData.length > 0) {
             console.log("Dịch & Phân tích MXH...");
             const promptSocial = `
-                MXH: ${JSON.stringify(rawSocialData)}.
-                Dịch sang Tiếng Việt. 
-                QUY TẮC: Ưu tiên phân tích sâu bài của Trump, Elon Musk hoặc lãnh đạo. Lược bỏ phát biểu chung chung (như của Zelensky nếu không có tin quân sự).
-                Trả về JSON: { "social": [ { "platform": "Tên", "icon": "Link", "content": "Tiếng Việt...", "link": "Link" } ] }
+                Dịch sang tiếng Việt các bài MXH: ${JSON.stringify(rawSocialData)}.
+                ĐẦU RA JSON BẮT BUỘC:
+                {
+                  "social": [
+                    { "platform": "Tên", "icon": "Link", "content": "Nội dung...", "link": "Link" }
+                  ]
+                }
             `;
             for (let i = 0; i < 3; i++) {
                 try {
-                    const socRes = await flashModel.generateContent(promptSocial);
-                    processedSocial = JSON.parse(extractJSON(socRes.response.text())).social.map(s => ({ ...s, timestamp: Date.now() }));
+                    const socRes = await jsonModel.generateContent(promptSocial);
+                    processedSocial = JSON.parse(socRes.response.text()).social.map(s => ({ ...s, timestamp: Date.now() }));
                     break;
-                } catch (e) { 
-                    console.log(`⏳ Lỗi AI đọc MXH (Lần ${i+1}): ${e.message}`); 
-                    await sleep(5000); 
-                }
+                } catch (e) { await sleep(5000); }
             }
         }
 
-        // --- CA 3: BẢN TIN 24H ---
+        // --- CA 3: BẢN TIN 24H (Dùng textModel vì trả về HTML) ---
         console.log("Bước 7: AI tạo Báo cáo vĩ mô 24h...");
         let dailyBriefingHTML = "";
         if (clusteredNews.length > 0) {
             try {
                 const hotForBriefing = clusteredNews.slice(0, 8).map(n => n.short_summary);
                 const promptBriefing = `
-                    Dựa vào các sự kiện: ${JSON.stringify(hotForBriefing)}.
+                    Dựa vào sự kiện: ${JSON.stringify(hotForBriefing)}.
                     Viết "Bản Tin Tổng Hợp 24h". 
-                    Phân tích ảnh hưởng tới: 1. Kinh tế vĩ mô. 2. Đối tượng liên quan. 3. Xã hội.
-                    TRẢ VỀ DUY NHẤT MÃ HTML (dùng <h3>, <p>, <ul>, <li>). Không Markdown.
+                    TRẢ VỀ DUY NHẤT MÃ HTML (dùng <h3>, <p>, <ul>, <li>). Không dùng định dạng Markdown.
                 `;
-                const briefRes = await proModel.generateContent(promptBriefing);
+                const briefRes = await textModel.generateContent(promptBriefing);
                 dailyBriefingHTML = briefRes.response.text().replace(/```html/g, '').replace(/```/g, '').trim();
             } catch (e) { console.log("Lỗi tạo Bản tin 24h"); }
         }
 
-        // --- LƯU TRỮ VÀ XUẤT THỐNG KÊ ---
+        // --- LƯU TRỮ ---
         let existingData = { news: [], social: [], daily_briefing: "" };
         if (fs.existsSync(DATA_FILE_PATH)) {
             try { existingData = JSON.parse(fs.readFileSync(DATA_FILE_PATH)); } catch(e){}
@@ -176,7 +199,7 @@ async function main() {
         };
 
         fs.writeFileSync(DATA_FILE_PATH, JSON.stringify(finalDataset, null, 2));
-        console.log(`=== HOÀN TẤT: Thu thập ${rawNewsData.length} tin thô -> Sinh ra ${clusteredNews.length} cụm tin ===`);
+        console.log(`=== HOÀN TẤT: Sinh ra ${clusteredNews.length} cụm tin ===`);
         process.exit(0);
     } catch (error) { 
         console.error("LỖI QUY TRÌNH TỔNG:", error.message);
