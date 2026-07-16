@@ -68,17 +68,24 @@ async function askAI(prompt, isJson = true) {
             throw geminiError;
         }
 
-        // Ép Groq ngậm miệng, cấm chào hỏi
         const finalPrompt = isJson 
-            ? prompt + "\nLỆNH TUYỆT ĐỐI: CHỈ TRẢ VỀ ĐÚNG CẤU TRÚC JSON. KHÔNG ĐƯỢC CÓ BẤT CỨ VĂN BẢN NÀO BÊN NGOÀI, KHÔNG CHÀO HỎI, KHÔNG GIẢI THÍCH (KHÔNG DÙNG CÁC CÂU NHƯ 'DƯỚI ĐÂY LÀ')." 
+            ? prompt + "\nLỆNH TUYỆT ĐỐI: CHỈ TRẢ VỀ ĐÚNG CẤU TRÚC JSON HỢP LỆ. KHÔNG CÓ BẤT CỨ VĂN BẢN NÀO BÊN NGOÀI." 
             : prompt;
         
-        const chatCompletion = await groq.chat.completions.create({
+        // Cấu hình Groq nâng cao: Chống đứt đoạn và ép chuẩn JSON
+        const groqOptions = {
             messages: [{ role: "user", content: finalPrompt }],
             model: "llama-3.1-8b-instant",
-            temperature: 0.1, // Hạ nhiệt độ xuống rất thấp để AI làm việc như cái máy
-        });
+            temperature: 0.1,
+            max_tokens: 4000 // Tăng tối đa dung lượng để AI viết hết bài dài
+        };
+
+        // Nếu cần JSON, bật tính năng Native JSON Mode của Groq
+        if (isJson) {
+            groqOptions.response_format = { type: "json_object" };
+        }
         
+        const chatCompletion = await groq.chat.completions.create(groqOptions);
         return extractJsonStr(chatCompletion.choices[0].message.content);
     }
 }
