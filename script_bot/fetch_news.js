@@ -41,10 +41,13 @@ async function main() {
             try {
                 let parsed = await rssParser.parseURL(feed.url);
                 parsed.items.slice(0, 15).forEach(item => {
+                    // Logic bóc tách ảnh minh họa từ bài báo
+                    let contentStr = item.content || item['content:encoded'] || '';
+                    let imgMatch = contentStr.match(/<img[^>]+src=["']([^"']+)["']/i);
                     rawNewsData.push({
                         title: item.title,
                         link: item.link,
-                        contentSnippet: item.contentSnippet,
+                        image_url: imgMatch ? imgMatch[1] : feed.logo, // Lấy ảnh minh họa, nếu không có lấy logo báo
                         source_name: feed.source,
                         source_logo: feed.logo,
                         pubDate: item.pubDate
@@ -58,13 +61,12 @@ async function main() {
         // BƯỚC 2: GOM NHÓM & TÓM TẮT
         console.log("Bước 2: Gọi Gemini Flash để gom nhóm...");
         const promptFlash = `
-            Đóng vai biên tập viên. Dưới đây là danh sách bài báo thô: ${JSON.stringify(rawNewsData)}.
-            Nhiệm vụ của bạn:
-            1. Gộp các bài báo cùng nói về một sự kiện thành các cụm (clusters).
-            2. Mỗi cụm tạo một 'cluster_title'.
-            3. Viết 'short_summary' (2-3 câu).
-            4. Viết 'detailed_summary' (khoảng 10 câu tổng hợp chi tiết).
-            5. Gắn mảng 'sources' chứa danh sách các bài báo gốc của cụm đó.
+            Đóng vai biên tập viên. Dưới đây là danh sách bài báo: ${JSON.stringify(rawNewsData)}.
+            Nhiệm vụ:
+            1. Gộp các bài báo cùng sự kiện thành các cụm (clusters).
+            2. Mỗi cụm tạo một 'cluster_title', 'short_summary' (2-3 câu), và 'detailed_summary' (khoảng 10 câu tổng hợp chi tiết).
+            3. Gắn mảng 'sources' chứa danh sách các bài báo gốc của cụm đó (bao gồm source_name, url, source_logo).
+            4. Chọn 1 'image_url' từ các bài báo trong cụm để làm 'thumbnail' (nếu có).
             Trả về JSON thuần túy gồm mảng: { "news": [...] }. Không kèm markdown hay text thừa.
         `;
 
