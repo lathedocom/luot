@@ -4,7 +4,7 @@ on:
   schedule:
     # Chạy vào lúc 7:00, 11:00, 16:00, 20:00 (Giờ VN - UTC+7)
     # Tương đương 0:00, 4:00, 9:00, 13:00 (Giờ UTC)
-    - cron: '0 0,4,9,13 * * *'
+    - cron: '17 0,4,9,13 * * *'
   workflow_dispatch: # Cho phép kích hoạt thủ công trên giao diện GitHub
 
 jobs:
