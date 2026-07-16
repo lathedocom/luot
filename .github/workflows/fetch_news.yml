@@ -2,16 +2,14 @@ name: AI Newsroom Bot
 
 on:
   schedule:
-    # Chạy vào lúc 7:00, 11:00, 16:00, 20:00 (Giờ VN - UTC+7)
-    # Tương đương 0:00, 4:00, 9:00, 13:00 (Giờ UTC)
+    # Chạy vào lúc 7:17, 11:17, 16:17, 20:17 (Giờ VN)
     - cron: '17 0,4,9,13 * * *'
-  workflow_dispatch: # Cho phép kích hoạt thủ công trên giao diện GitHub
+  workflow_dispatch:
 
 jobs:
   fetch-and-process-news:
     runs-on: ubuntu-latest
     
-    # Cấp quyền ghi để Bot có thể commit file JSON lên repo
     permissions:
       contents: write
 
@@ -42,6 +40,5 @@ jobs:
           git config --global user.name "AI-Newsroom-Bot"
           git config --global user.email "bot@ainewsroom.local"
           git add news_data.json
-          # Chỉ commit nếu có sự thay đổi dữ liệu
           git diff --quiet && git diff --staged --quiet || git commit -m "🤖 Cập nhật tin tức & phân tích AI tự động"
           git push origin main
