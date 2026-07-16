@@ -81,13 +81,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function loadData() {
         try {
-            const response = await fetch('./news_data.json');
+            // TUYỆT CHIÊU DIỆT CACHE DỮ LIỆU BẰNG DẤU THỜI GIAN
+            const response = await fetch('./news_data.json?v=' + new Date().getTime(), { cache: 'no-store' });
             if (!response.ok) throw new Error("Chưa có dữ liệu");
             const data = await response.json();
             globalNewsData = data.news;
             renderNewsFeed(globalNewsData);
         } catch (error) { 
-            // Đã sửa lại chuỗi HTML bằng dấu Backtick (`) để chống lỗi xuống dòng
             document.getElementById('news-feed').innerHTML = `<div class="card"><p>Chưa có dữ liệu tin tức. Vui lòng chờ hệ thống AI tổng hợp.</p></div>`;
         }
     }
@@ -142,8 +142,12 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('modal-content').innerHTML = formattedContent;
 
         const aiContainer = document.getElementById('ai-analysis-container');
+        const aiText = document.getElementById('ai-analysis-text');
+        
+        aiText.textContent = ''; // Rửa sạch chữ của tin cũ (Giải quyết dứt điểm Vấn đề 1)
+        
         if (newsData.expert_analysis) {
-            document.getElementById('ai-analysis-text').textContent = newsData.expert_analysis;
+            aiText.textContent = newsData.expert_analysis;
             aiContainer.classList.remove('hidden');
         } else { 
             aiContainer.classList.add('hidden'); 
