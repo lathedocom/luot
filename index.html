@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="vi" data-theme="light">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,18 +18,16 @@
             <h1 class="logo">AI Newsroom</h1>
         </div>
         
-        <!-- Thanh tìm kiếm mới -->
+        <!-- Thanh tìm kiếm -->
         <div class="search-box">
             <span class="material-icons">search</span>
             <input type="text" id="search-input" placeholder="Tìm kiếm sự kiện, tin tức...">
         </div>
-        
-        <button id="theme-toggle" class="icon-btn"><span class="material-icons">contrast</span></button>
     </header>
 
-    <!-- Bố cục chính 3 cột -->
+    <!-- Bố cục chính -->
     <main class="main-layout">
-        <!-- Cột 1: Sidebar Trái -->
+        <!-- Sidebar Trái (Sẽ bị giấu đi và mở bằng nút Menu trên Mobile) -->
         <aside class="sidebar left-sidebar" id="left-sidebar">
             <div class="widget card">
                 <h3><span class="material-icons">thermostat</span> Thời Tiết</h3>
@@ -38,32 +36,31 @@
             <div class="widget card">
                 <h3><span class="material-icons">calendar_month</span> 7 Ngày Qua</h3>
                 <ul class="clean-list" id="dynamic-days-list">
-                    <!-- Danh sách ngày sẽ được JS tự động tính toán và đổ vào đây -->
+                    <!-- JS sẽ sinh ngày ở đây -->
                 </ul>
             </div>
             <div class="widget card">
                 <h3><span class="material-icons">filter_alt</span> Bộ Lọc Nguồn</h3>
                 <label><input type="checkbox" checked> VNExpress</label><br>
-                <label><input type="checkbox" checked> Tuổi Trẻ</label>
+                <label><input type="checkbox" checked> Tuổi Trẻ</label><br>
+                <label><input type="checkbox" checked> Dân Trí</label><br>
+                <label><input type="checkbox" checked> Thanh Niên</label>
             </div>
         </aside>
 
-        <!-- Cột 2: Cột Giữa (Feed Tin Tức) -->
+        <!-- Feed Tin Tức -->
         <section class="news-feed" id="news-feed">
-            <!-- Tin tức sẽ được JavaScript đổ vào đây -->
             <div class="loading">Đang tải tin tức...</div>
         </section>
 
-        <!-- Cột 3: Sidebar Phải (Mạng Xã Hội) -->
+        <!-- Sidebar Phải -->
         <aside class="sidebar right-sidebar">
             <h2 class="section-title">Nhịp Đập MXH</h2>
-            <div id="social-feed">
-                <!-- Tin MXH sẽ được JavaScript đổ vào đây -->
-            </div>
+            <div id="social-feed"></div>
         </aside>
     </main>
 
-    <!-- Modal Chi Tiết Tin Tức (Ẩn mặc định) -->
+    <!-- Modal Chi Tiết Tin Tức -->
     <div class="modal-overlay" id="news-modal">
         <div class="modal-dialog card">
             <div class="modal-header">
@@ -72,18 +69,13 @@
             </div>
             <div class="modal-body">
                 <p id="modal-content" class="detailed-text"></p>
-                
-                <!-- Khu vực AI Phân Tích (chỉ hiện khi có) -->
                 <div id="ai-analysis-container" class="ai-box hidden">
                     <h3 class="ai-title"><span class="material-icons">smart_toy</span> Góc Nhìn Chuyên Gia AI</h3>
                     <p id="ai-analysis-text"></p>
                 </div>
-
                 <div class="sources-container">
                     <h3>Nguồn đưa tin:</h3>
-                    <div id="modal-sources" class="source-list">
-                        <!-- Nguồn sẽ đổ vào đây -->
-                    </div>
+                    <div id="modal-sources" class="source-list"></div>
                 </div>
             </div>
         </div>
