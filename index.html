@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>luot.lathedo.com - Tòa Soạn Tự Động</title>
-    <link rel="stylesheet" href="style.css?v=2.0">
+    <!-- Đổi version thành 3.0 để ép trình duyệt xóa cache giao diện -->
+    <link rel="stylesheet" href="style.css?v=3.0">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
     <header class="app-bar">
         <div class="header-brand">
-            <h1 class="logo">luot.lathedo.com</h1>
+            <h1 class="logo" style="cursor: pointer;">luot.lathedo.com</h1>
         </div>
         <div class="header-actions">
             <button id="menu-btn" class="icon-btn mobile-only"><span class="material-icons">menu</span></button>
@@ -57,6 +58,7 @@
         </aside>
     </main>
 
+    <!-- Modal Chi Tiết Tin Tức -->
     <div class="modal-overlay" id="news-modal">
         <div class="modal-dialog">
             <button id="close-modal-btn" class="icon-btn close-floating-btn"><span class="material-icons">close</span></button>
@@ -80,6 +82,23 @@
             </div>
         </div>
     </div>
-    <script src="script.js?v=2.0"></script>
+
+    <!-- Modal Admin Dashboard (Cửa Bí Mật) -->
+    <div class="modal-overlay" id="admin-modal">
+        <div class="modal-dialog" style="max-width: 500px; height: auto;">
+            <button id="close-admin-btn" class="icon-btn close-floating-btn"><span class="material-icons">close</span></button>
+            <div class="modal-header" style="padding-bottom: 0; border-bottom: none;">
+                <h2 style="color: var(--primary-color); display: flex; align-items: center; gap: 8px;">
+                    <span class="material-icons">admin_panel_settings</span> Trạm Điều Khiển
+                </h2>
+            </div>
+            <div class="modal-body" id="admin-stats-content">
+                <!-- Javascript sẽ đổ biểu đồ vào đây -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Đổi version thành 3.0 để ép trình duyệt tải JS mới -->
+    <script src="script.js?v=3.0"></script>
 </body>
 </html>
