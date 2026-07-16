@@ -72,15 +72,15 @@ async function askAI(prompt, isJson = true) {
             ? prompt + "\nLỆNH TUYỆT ĐỐI: CHỈ TRẢ VỀ ĐÚNG CẤU TRÚC JSON HỢP LỆ. KHÔNG CÓ BẤT CỨ VĂN BẢN NÀO BÊN NGOÀI." 
             : prompt;
         
-        // Cấu hình Groq nâng cao: Chống đứt đoạn và ép chuẩn JSON
+        // Cấu hình Groq nâng cao: Cân đối Token để không dính lỗi 413
         const groqOptions = {
             messages: [{ role: "user", content: finalPrompt }],
             model: "llama-3.1-8b-instant",
             temperature: 0.1,
-            max_tokens: 4000 // Tăng tối đa dung lượng để AI viết hết bài dài
+            max_tokens: 2500 // Điều chỉnh xuống 2500 để tổng yêu cầu dưới 6000 TPM
         };
 
-        // Nếu cần JSON, bật tính năng Native JSON Mode của Groq
+        // Bật tính năng Native JSON Mode của Groq
         if (isJson) {
             groqOptions.response_format = { type: "json_object" };
         }
