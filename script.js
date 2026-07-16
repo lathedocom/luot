@@ -173,6 +173,32 @@ document.addEventListener('DOMContentLoaded', () => {
             socialContainer.appendChild(card);
         });
     }
+
+    // --- MỞ MODAL BẢN TIN 24H ---
+    const briefingModal = document.getElementById('briefing-modal');
+    const briefBtn = document.getElementById('daily-brief-btn');
+    const closeBriefBtn = document.getElementById('close-briefing-btn');
+
+    if (briefBtn && briefingModal) {
+        briefBtn.addEventListener('click', () => {
+            briefingModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    }
+    if (closeBriefBtn) {
+        closeBriefBtn.addEventListener('click', () => {
+            briefingModal.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    }
+    if (briefingModal) {
+        briefingModal.addEventListener('click', (e) => {
+            if (e.target === briefingModal) {
+                briefingModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    }
     // --- TẢI DỮ LIỆU & TÌM KIẾM ---
     async function loadData() {
         try {
@@ -182,7 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             globalNewsData = data.news || []; // Nếu rỗng thì trả về mảng trống
             globalStats = data.stats || null;
-            
+            document.getElementById('briefing-content').innerHTML = data.daily_briefing || "<p>Chưa có bản tin nào được tạo.</p>";
             renderNewsFeed(globalNewsData);
             renderSocialFeed(data.social || []); // Truyền mảng trống nếu file cũ chưa có MXH
         } catch (error) { 
