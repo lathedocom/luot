@@ -17,7 +17,14 @@
             <button id="menu-btn" class="icon-btn mobile-only"><span class="material-icons">menu</span></button>
             <h1 class="logo">AI Newsroom</h1>
         </div>
-        <button id="theme-toggle" class="icon-btn"><span class="material-icons">dark_mode</span></button>
+        
+        <!-- Thanh tìm kiếm mới -->
+        <div class="search-box">
+            <span class="material-icons">search</span>
+            <input type="text" id="search-input" placeholder="Tìm kiếm sự kiện, tin tức...">
+        </div>
+        
+        <button id="theme-toggle" class="icon-btn"><span class="material-icons">contrast</span></button>
     </header>
 
     <!-- Bố cục chính 3 cột -->
@@ -30,9 +37,8 @@
             </div>
             <div class="widget card">
                 <h3><span class="material-icons">calendar_month</span> 7 Ngày Qua</h3>
-                <ul class="clean-list">
-                    <li>Hôm nay</li>
-                    <li>Hôm qua</li>
+                <ul class="clean-list" id="dynamic-days-list">
+                    <!-- Danh sách ngày sẽ được JS tự động tính toán và đổ vào đây -->
                 </ul>
             </div>
             <div class="widget card">
