@@ -29,7 +29,6 @@ const textModel = genAI.getGenerativeModel({
     safetySettings 
 });
 
-const textModel = genAI.getGenerativeModel({ model: "gemini-1.5-flash", safetySettings });
 
 const DATA_FILE_PATH = path.join(__dirname, '../news_data.json');
 const getSevenDaysAgo = () => new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).getTime();
