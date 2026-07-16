@@ -144,6 +144,35 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // --- 6. RENDER MẠNG XÃ HỘI ---
+    function renderSocialFeed(socialArray) {
+        const socialContainer = document.getElementById('social-feed');
+        socialContainer.innerHTML = '';
+        
+        if(!socialArray || socialArray.length === 0) {
+            socialContainer.innerHTML = '<div class="card"><p>Hiện chưa có luồng thảo luận nào nổi bật.</p></div>';
+            return;
+        }
+
+        socialArray.forEach(post => {
+            const card = document.createElement('div');
+            card.className = 'social-card';
+            
+            card.innerHTML = `
+                <div class="social-header">
+                    <img src="${post.icon || 'https://via.placeholder.com/20'}" alt="icon">
+                    <span class="social-platform-name">${post.platform}</span>
+                </div>
+                <div class="social-content">
+                    ${post.content}
+                </div>
+                <a href="${post.link}" target="_blank" class="social-action-btn">
+                    Xem bài đăng gốc <span class="material-icons">open_in_new</span>
+                </a>
+            `;
+            socialContainer.appendChild(card);
+        });
+    }
     // --- TẢI DỮ LIỆU & TÌM KIẾM ---
     async function loadData() {
         try {
@@ -155,6 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
             globalStats = data.stats; // Lưu thống kê
             
             renderNewsFeed(globalNewsData);
+            renderSocialFeed(data.social); // Đổ dữ liệu MXH ra màn hình
         } catch (error) { 
             document.getElementById('news-feed').innerHTML = `<div class="card"><p>Chưa có dữ liệu tin tức. Vui lòng chờ hệ thống AI tổng hợp.</p></div>`;
         }
