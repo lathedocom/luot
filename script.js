@@ -123,3 +123,23 @@ document.addEventListener('DOMContentLoaded', () => {
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
     }
+// Xử lý nút đóng Modal
+    const btnCloseModal = document.getElementById('close-modal-btn');
+    if(btnCloseModal) {
+        btnCloseModal.addEventListener('click', () => { 
+            modal.classList.remove('active'); 
+            document.body.style.overflow = ''; 
+        });
+    }
+    
+    // Đóng Modal khi bấm ra ngoài khoảng đen
+    modal.addEventListener('click', (e) => { 
+        if (e.target === modal) { 
+            modal.classList.remove('active'); 
+            document.body.style.overflow = ''; 
+        } 
+    });
+
+    // Lệnh quan trọng nhất: Kích hoạt tải dữ liệu khi vừa vào web
+    loadData();
+});
