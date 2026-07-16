@@ -129,13 +129,14 @@ async function main() {
             }
         }
 
-        // --- CA 2: PHÂN TÍCH CHUYÊN SÂU (GÓC NHÌN AI DÙNG ID) ---
+        // --- CA 2: PHÂN TÍCH CHUYÊN SÂU (GÓC NHÌN AI DÙNG INDEX) ---
         const hotTopics = clusteredNews.filter(cluster => cluster.sources && cluster.sources.length >= 2);
         if (hotTopics.length > 0) {
-            console.log(`Bước 3: Phân tích chuyên sâu (Góc nhìn AI) cho ${hotTopics.length} sự kiện nóng...`);
+            console.log(`Bước 3: Phân tích chuyên sâu cho ${hotTopics.length} sự kiện nóng...`);
             try {
-                const hotTopicsForAI = hotTopics.map(t => ({ 
-                    id: t.id, 
+                // SỬ DỤNG ai_index THAY VÌ id ĐỂ AI KHÔNG BỊ NHẦM LẪN
+                const hotTopicsForAI = hotTopics.map((t, index) => ({ 
+                    ai_index: index, 
                     title: t.cluster_title, 
                     detail: t.detailed_summary 
                 }));
@@ -146,8 +147,8 @@ async function main() {
                     {
                         "analyses": [
                             {
-                                "id": "Giữ nguyên id gốc của sự kiện",
-                                "expert_analysis": "Phân tích 80 từ về hệ quả, tác động sâu xa của sự kiện..."
+                                "ai_index": 0, // PHẢI giữ nguyên số ai_index tương ứng của sự kiện
+                                "expert_analysis": "Phân tích 80 từ về hệ quả, tác động sâu xa..."
                             }
                         ]
                     }
@@ -160,7 +161,8 @@ async function main() {
                 
                 if (analyses && analyses.length > 0) {
                     analyses.forEach(a => { 
-                        const targetNews = clusteredNews.find(n => n.id === a.id);
+                        // MAP TRỞ LẠI DỰA TRÊN INDEX
+                        const targetNews = hotTopics[a.ai_index]; 
                         if (targetNews) {
                             targetNews.expert_analysis = a.expert_analysis;
                         }
@@ -180,20 +182,22 @@ async function main() {
             { url: 'https://rsshub.app/twitter/user/elonmusk', platform: 'X (Elon Musk)', icon: 'https://abs.twimg.com/favicons/twitter.3.ico' },
             { url: 'https://www.youtube.com/feeds/videos.xml?channel_id=UCIALMKvObZNtJ6AmdTo-85A', platform: 'YouTube', icon: 'https://www.youtube.com/favicon.ico' }
         ];
-
+        
         for (const feed of socialFeeds) {
             try {
                 let parsed = await Promise.race([rssParser.parseURL(feed.url), new Promise((_, r) => setTimeout(() => r(new Error("Timeout")), 10000))]);
                 parsed.items.slice(0, 3).forEach(item => {
-                    rawSocialData.push({ title: item.title, link: item.link, platform: feed.platform, icon: feed.icon });
+                    // FIX LỖI: BỔ SUNG LẤY RA CONTENT THAY VÌ CHỈ TIÊU ĐỀ
+                    const contentStr = (item.contentSnippet || item.content || item.title || '').substring(0, 300);
+                    rawSocialData.push({ title: item.title, content: contentStr, link: item.link, platform: feed.platform, icon: feed.icon });
                 });
             } catch (e) { failedSources.push("Social: " + feed.platform); }
         }
-
         let processedSocial = [];
         if (rawSocialData.length > 0) {
             console.log("Bước 5: Dịch & Phân tích MXH...");
-            const promptSocial = `Dịch sang tiếng Việt các bài MXH: ${JSON.stringify(rawSocialData)}. Trả về JSON: { "social": [ { "platform": "Tên", "icon": "Link", "content": "Nội dung...", "link": "Link" } ] }`;
+            // ĐÃ ĐƯỢC CẬP NHẬT TRUYỀN NỘI DUNG MXH THỰC TẾ LÊN AI
+            const promptSocial = `Dịch sang tiếng Việt các bài MXH: ${JSON.stringify(rawSocialData)}. Trả về JSON: { "social": [ { "platform": "Tên", "icon": "Link", "content": "Nội dung bài viết...", "link": "Link" } ] }`;
             for (let i = 0; i < 2; i++) {
                 try {
                     const socRes = await jsonModel.generateContent(promptSocial);
@@ -207,7 +211,7 @@ async function main() {
             }
         }
 
-        // --- CA 4: BẢN TIN 24H ---
+        // --- CA 4: SỰ KIỆN 24H ---
         console.log("Bước 6: AI tạo Báo cáo vĩ mô 24h...");
         let dailyBriefingHTML = "";
         if (clusteredNews.length > 0) {
