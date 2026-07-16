@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     let globalNewsData = [];
 
-    // Hàm chuyển đổi thời gian sang chuẩn: Giờ:Phút, Ngày/Tháng/Năm
     function formatTime(timestamp) {
         const d = new Date(timestamp);
         const hours = String(d.getHours()).padStart(2, '0');
@@ -12,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return `${hours}:${minutes}, ${day}/${month}/${year}`;
     }
 
-    // --- 1. GIAO TIẾP GIAO DIỆN MOBILE & TÌM KIẾM ---
     const menuBtn = document.getElementById('menu-btn');
     const leftSidebar = document.getElementById('left-sidebar');
     if (menuBtn && leftSidebar) {
@@ -47,7 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Nút Ẩn/Hiện Nguồn tham khảo trong Modal
     const toggleSourcesBtn = document.getElementById('toggle-sources-btn');
     const modalSources = document.getElementById('modal-sources');
     
@@ -70,7 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // --- 2. TỰ ĐỘNG TẠO DANH SÁCH 7 NGÀY ---
     const daysList = document.getElementById('dynamic-days-list');
     if (daysList) {
         daysList.innerHTML = ''; 
@@ -83,7 +79,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // --- 3. TẢI DỮ LIỆU & TÌM KIẾM ---
     async function loadData() {
         try {
             const response = await fetch('./news_data.json');
@@ -92,7 +87,8 @@ document.addEventListener('DOMContentLoaded', () => {
             globalNewsData = data.news;
             renderNewsFeed(globalNewsData);
         } catch (error) { 
-            document.getElementById('news-feed').innerHTML = '<div class="card"><p>Chưa có dữ liệu tin tức. Vui lòng chờ hệ thống AI tổng hợp.</p></div>';
+            // Đã sửa lại chuỗi HTML bằng dấu Backtick (`) để chống lỗi xuống dòng
+            document.getElementById('news-feed').innerHTML = `<div class="card"><p>Chưa có dữ liệu tin tức. Vui lòng chờ hệ thống AI tổng hợp.</p></div>`;
         }
     }
 
@@ -107,7 +103,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- 4. RENDER THẺ TIN TỨC ---
     function renderNewsFeed(newsArray) {
         const feedContainer = document.getElementById('news-feed');
         feedContainer.innerHTML = '';
@@ -136,7 +131,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- 5. RENDER BÀI TỔNG HỢP (MODAL) ---
     const modal = document.getElementById('news-modal');
     function openModal(newsData) {
         resetSourceToggle(); 
@@ -172,7 +166,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.overflow = 'hidden';
     }
 
-    // Xử lý nút đóng Modal
     const btnCloseModal = document.getElementById('close-modal-btn');
     if(btnCloseModal) {
         btnCloseModal.addEventListener('click', () => { 
@@ -181,7 +174,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    // Đóng Modal khi bấm ra ngoài khoảng đen
     modal.addEventListener('click', (e) => { 
         if (e.target === modal) { 
             modal.classList.remove('active'); 
@@ -189,6 +181,5 @@ document.addEventListener('DOMContentLoaded', () => {
         } 
     });
 
-    // Lệnh quan trọng nhất: Kích hoạt tải dữ liệu khi vừa vào web
     loadData();
 });
