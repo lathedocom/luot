@@ -13,10 +13,9 @@ if (!GEMINI_API_KEY) {
     process.exit(1); 
 }
 
-// Khởi tạo Groq
-const groq = GROQ_API_KEY ? new Groq({ apiKey: GROQ_API_KEY }) : null;
-
+// Khởi tạo SDK
 const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
+const groq = GROQ_API_KEY ? new Groq({ apiKey: GROQ_API_KEY }) : null;
 
 const safetySettings = [
     { category: HarmCategory.HARM_CATEGORY_HARASSMENT, threshold: HarmBlockThreshold.BLOCK_NONE },
@@ -25,22 +24,10 @@ const safetySettings = [
     { category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT, threshold: HarmBlockThreshold.BLOCK_NONE }
 ];
 
-// MODEL 1: Chuyên trả về JSON (Đã cấu hình gemini-3.5-flash theo yêu cầu)
-const jsonModel = genAI.getGenerativeModel({ 
-    model: "gemini-3.5-flash", 
-    safetySettings,
-    generationConfig: { responseMimeType: "application/json" }
-});
 
-// MODEL 2: Chuyên trả về Text/HTML (Dùng cho Bản tin 24h)
-const textModel = genAI.getGenerativeModel({ 
-    model: "gemini-3.5-flash", 
-    safetySettings 
-});
-
-// HÀM GỌI AI THÔNG MINH CÓ CƠ CHẾ DỰ PHÒNG (FALLBACK)
+// HÀM GỌI AI THÔNG MINH: 1 KEY + TRƯỢT 5 MODEL GEMINI + DỰ PHÒNG GROQ
 async function askAI(prompt, isJson = true) {
-    // Hàm phụ: Dọn dẹp câu chữ thừa, chỉ lấy đoạn JSON
+    // Hàm phụ: Dọn dẹp JSON rác
     const extractJsonStr = (rawText) => {
         if (!isJson) return rawText;
         let text = rawText.replace(/```json/g, '').replace(/```/g, '').trim();
@@ -55,40 +42,65 @@ async function askAI(prompt, isJson = true) {
         return text;
     };
 
-    try {
-        // Ưu tiên 1: Gọi Gemini
-        const model = isJson ? jsonModel : textModel;
-        const res = await model.generateContent(prompt);
-        return extractJsonStr(res.response.text());
-    } catch (geminiError) {
-        console.log(`⚠️ Gemini lỗi (${geminiError.status || 429}). Kích hoạt AI dự phòng (Groq)...`);
-        
-        if (!groq) {
-            console.log("❌ Không có GROQ_API_KEY. Hệ thống dừng.");
-            throw geminiError;
-        }
+    // Danh sách 5 Model Gemini được sắp xếp từ mạnh nhất đến Lite
+    const geminiModels = [
+        "gemini-3.5-flash",       // Ưu tiên 1 (20 RPD)
+        "gemini-3.0-flash",       // Ưu tiên 2 (20 RPD)
+        "gemini-2.5-flash",       // Ưu tiên 3 (20 RPD)
+        "gemini-3.1-flash-lite",  // Ưu tiên 4 (500 RPD - Trâu bò nhất)
+        "gemini-2.5-flash-lite"   // Ưu tiên 5 (20 RPD)
+    ];
 
-        const finalPrompt = isJson 
-            ? prompt + "\nLỆNH TUYỆT ĐỐI: CHỈ TRẢ VỀ ĐÚNG CẤU TRÚC JSON HỢP LỆ. KHÔNG CÓ BẤT CỨ VĂN BẢN NÀO BÊN NGOÀI." 
-            : prompt;
-        
-        // Cấu hình Groq nâng cao: Cân đối Token để không dính lỗi 413
-        const groqOptions = {
-            messages: [{ role: "user", content: finalPrompt }],
-            model: "llama-3.1-8b-instant",
-            temperature: 0.1,
-            max_tokens: 2500 // Điều chỉnh xuống 2500 để tổng yêu cầu dưới 6000 TPM
-        };
-
-        // Bật tính năng Native JSON Mode của Groq
-        if (isJson) {
-            groqOptions.response_format = { type: "json_object" };
+    // Vòng lặp "Trượt": Thử từng mô hình Gemini
+    for (const modelName of geminiModels) {
+        try {
+            const config = {
+                model: modelName,
+                safetySettings,
+            };
+            // Bật chế độ JSON nếu cần
+            if (isJson) config.generationConfig = { responseMimeType: "application/json" };
+            
+            const model = genAI.getGenerativeModel(config);
+            const res = await model.generateContent(prompt);
+            
+            // Nếu gọi thành công, trả kết quả và thoát hàm luôn
+            return extractJsonStr(res.response.text());
+            
+        } catch (err) {
+            console.log(`⚠️ Gemini lỗi (${err.status || 'Quota/Timeout'}) trên model [${modelName}]. Trượt sang model tiếp theo...`);
+            // Lỗi thì bỏ qua, vòng lặp tự động chuyển sang modelName kế tiếp
         }
-        
-        const chatCompletion = await groq.chat.completions.create(groqOptions);
-        return extractJsonStr(chatCompletion.choices[0].message.content);
     }
+
+    // NẾU TẤT CẢ 5 MODEL GEMINI ĐỀU SẬP -> GỌI GROQ CỨU CÁNH
+    console.log(`❌ Toàn bộ 5 model Gemini đã cạn kiệt. Kích hoạt chốt chặn cuối (Groq)...`);
+    
+    if (!groq) {
+        throw new Error("Hết sạch quota Gemini và không có Key Groq để dự phòng!");
+    }
+
+    // Ép Groq ngậm miệng, cấm chào hỏi
+    const finalPrompt = isJson 
+        ? prompt + "\nLỆNH TUYỆT ĐỐI: CHỈ TRẢ VỀ ĐÚNG CẤU TRÚC JSON HỢP LỆ. KHÔNG CÓ BẤT CỨ VĂN BẢN NÀO BÊN NGOÀI." 
+        : prompt;
+    
+    // Cấu hình Groq nâng cao: Cân đối Token để không dính lỗi 413
+    const groqOptions = {
+        messages: [{ role: "user", content: finalPrompt }],
+        model: "llama-3.1-8b-instant",
+        temperature: 0.1,
+        max_tokens: 2500 // Điều chỉnh xuống 2500 để tổng yêu cầu dưới 6000 TPM
+    };
+
+    if (isJson) {
+        groqOptions.response_format = { type: "json_object" };
+    }
+    
+    const chatCompletion = await groq.chat.completions.create(groqOptions);
+    return extractJsonStr(chatCompletion.choices[0].message.content);
 }
+
 const DATA_FILE_PATH = path.join(__dirname, '../news_data.json');
 const getSevenDaysAgo = () => new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).getTime();
 const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
