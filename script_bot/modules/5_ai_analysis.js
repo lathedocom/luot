@@ -1,14 +1,8 @@
 require('dotenv').config();
-const { GoogleGenerativeAI } = require('@google/generative-ai');
+const { GoogleGenAI } = require('@google/genai');
 
-// Lấy API Key
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-
-// Cấu hình bắt buộc AI trả về định dạng JSON
-const aiModel = genAI.getGenerativeModel({ 
-    model: "gemini-1.5-flash", // Lưu ý: Dùng bản Flash tiêu chuẩn để đảm bảo tính ổn định và tốc độ
-    generationConfig: { responseMimeType: "application/json" }
-});
+// Khởi tạo Client theo chuẩn mới
+const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
 async function analyzeClusters(clusters) {
     if (!clusters || clusters.length === 0) return [];
@@ -18,7 +12,6 @@ async function analyzeClusters(clusters) {
 
     for (const cluster of clusters) {
         try {
-            // Câu lệnh Prompt bám sát hoàn toàn vào Đặc tả dự án của bạn
             const prompt = `
 Bạn là một trợ lý phân tích tin tức tình báo. Hãy đọc khối tin tức sau và phân tích toàn cảnh.
 Nội dung thô: ${cluster.combined_text}
@@ -36,16 +29,24 @@ TRẢ VỀ ĐÚNG ĐỊNH DẠNG JSON SAU (không chứa văn bản nào khác n
   "follow_up": ["Điều 1 cần theo dõi trong tương lai"]
 }`;
 
-            const result = await aiModel.generateContent(prompt);
-            const aiResponse = JSON.parse(result.response.text());
+            // Cú pháp mới với tham số config được lồng chuẩn hóa
+            const response = await ai.models.generateContent({
+                model: 'gemini-1.5-flash',
+                contents: prompt,
+                config: {
+                    responseMimeType: "application/json"
+                }
+            });
 
-            // Ráp kết quả của AI vào dữ liệu chuẩn của Topic
+            // Lấy dữ liệu dạng thuộc tính (property)
+            const aiResponse = JSON.parse(response.text);
+
             analyzedClusters.push({
                 topic_key: cluster.topic_key,
                 article_count: cluster.article_count,
                 region: cluster.region,
                 sources: cluster.sources,
-                entities: cluster.entities, // Lấy từ Module 4
+                entities: cluster.entities,
                 
                 importance: aiResponse.importance || 50,
                 categories: aiResponse.categories || [],
@@ -57,19 +58,16 @@ TRẢ VỀ ĐÚNG ĐỊNH DẠNG JSON SAU (không chứa văn bản nào khác n
                 follow_up: aiResponse.follow_up || []
             });
             
-            // Tạm dừng 4 giây giữa các lần gọi AI để KHÔNG BỊ KHÓA QUOTA (15 RPM)
             console.log(`- Đã phân tích xong cụm: ${cluster.topic_key}`);
             await new Promise(resolve => setTimeout(resolve, 4000));
             
         } catch (error) {
             console.log(`❌ Lỗi AI phân tích cụm ${cluster.topic_key}:`, error.message);
-            // Dù lỗi vẫn đẩy dữ liệu thô vào để không làm đứt chuỗi hiển thị
             analyzedClusters.push(cluster);
         }
     }
     
     console.log(`✅ Phân tích AI hoàn tất toàn bộ.`);
-    // Có thể xóa trường combined_text cho nhẹ file JSON đầu ra
     analyzedClusters.forEach(c => delete c.combined_text);
     
     return analyzedClusters;
