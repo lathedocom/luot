@@ -14,9 +14,8 @@ if (!fs.existsSync(CACHE_FILE)) {
     fs.writeFileSync(CACHE_FILE, JSON.stringify([]));
 }
 
-// Danh sách các nguồn báo (Đã thêm region theo đặc tả của bạn)
+// Danh sách các nguồn báo (ĐÃ XÓA NGOẶC VUÔNG DƯ THỪA)
 const RSS_SOURCES = [
-    [
   {
     url: 'https://vnexpress.net/rss/tin-moi-nhat.rss',
     region: 'Việt Nam',
@@ -59,7 +58,6 @@ const RSS_SOURCES = [
     source_name: 'The Economist',
     logo: 'https://www.economist.com/favicon.ico'
   }
-]
 ];
 
 async function fetchAndNormalizeNews() {
