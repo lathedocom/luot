@@ -3,105 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>luot.lathedo.com - Tòa Soạn Tự Động</title>
-    <link rel="stylesheet" href="style.css?v=5.0">
+    <title>LƯỚT - Bản tin AI Tình báo</title>
+    
+    <!-- Bộ Font Roboto và Icon chuẩn Material Design -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    
+    <!-- Liên kết tới file thiết kế CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+    <!-- Thanh điều hướng trên cùng (App Bar) -->
     <header class="app-bar">
-        <div class="header-brand">
-            <h1 class="logo" style="cursor: pointer;">luot.lathedo.com</h1>
-        </div>
-        <div class="header-actions">
-            <button id="menu-btn" class="icon-btn mobile-only"><span class="material-icons">menu</span></button>
-            <div class="search-box">
-                <button id="search-icon-btn" class="icon-btn"><span class="material-icons">search</span></button>
-                <input type="text" id="search-input" placeholder="Nhập nội dung tìm kiếm...">
+        <div class="container header-content">
+            <h1 class="logo">LƯỚT <span>AI Newsroom</span></h1>
+            <div class="actions">
+                <button id="theme-toggle" class="icon-btn" title="Chuyển chế độ Sáng/Tối">
+                    <span class="material-icons-round">dark_mode</span>
+                </button>
             </div>
-            <button id="feed-toggle-btn" class="icon-btn mobile-only toggle-feed-btn">
-                <span class="material-icons" id="feed-toggle-icon">dynamic_feed</span>
-                <span id="feed-toggle-text" class="toggle-text">MXH</span>
-            </button>
         </div>
     </header>
-    <main class="main-layout">
-        <aside class="sidebar left-sidebar" id="left-sidebar">
-            <div class="widget card">
-                <h3><span class="material-icons">thermostat</span> Thời Tiết</h3>
-                <p>28°C - Nhiều mây (Hà Nội)</p>
-            </div>
-            <div class="widget card">
-                <h3><span class="material-icons">calendar_month</span> 7 Ngày Qua</h3>
-                <ul class="clean-list" id="dynamic-days-list"></ul>
-            </div>
-            <!-- THAY THẾ BỘ LỌC NGUỒN BẰNG WIDGET SỰ KIỆN 24H -->
-            <div class="widget card" id="sidebar-brief-btn" style="cursor: pointer; background-color: rgba(216, 27, 96, 0.05); border: 1px solid rgba(216, 27, 96, 0.2);">
-                <h3 style="color: #d81b60;"><span class="material-icons">auto_awesome</span> Sự kiện 24h</h3>
-                <p style="font-size: 14px; color: var(--text-secondary);">Xem tổng hợp các sự kiện nổi bật nhất trong ngày.</p>
-            </div>
-        </aside>
-        <section class="news-feed" id="news-feed">
-            <div class="loading">Đang tải tin tức...</div>
-        </section>
-        <aside class="sidebar right-sidebar" id="social-feed-section">
-            <h2 class="section-title">Nhịp Đập MXH</h2>
-            <div id="social-feed">
-                <div class="card"><p>Tính năng đang cập nhật...</p></div>
-            </div>
-        </aside>
-    </main>
-    <!-- Các Modal (Chi Tiết, Admin) giữ nguyên ... -->
-    <div class="modal-overlay" id="news-modal">
-        <div class="modal-dialog">
-            <button id="close-modal-btn" class="icon-btn close-floating-btn"><span class="material-icons">close</span></button>
-            <div class="modal-header">
-                <h2 id="modal-title">Tiêu đề</h2>
-                <div id="modal-time" class="news-time"></div>
-            </div>
-            <div class="modal-body">
-                <div id="modal-content" class="detailed-text"></div>
-                <div id="ai-analysis-container" class="ai-box hidden">
-                    <h3 class="ai-title"><span class="material-icons">smart_toy</span> Góc Nhìn AI</h3>
-                    <p id="ai-analysis-text"></p>
-                </div>
-            </div>
-            <div class="modal-footer sources-container">
-                <button id="toggle-sources-btn" class="expand-sources-btn">
-                    <span class="material-icons" id="toggle-sources-icon">expand_more</span> 
-                    Hiển thị nguồn tham khảo
-                </button>
-                <div id="modal-sources" class="source-list" style="display: none;"></div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="modal-overlay" id="admin-modal">
-        <div class="modal-dialog" style="max-width: 500px; height: auto;">
-            <button id="close-admin-btn" class="icon-btn close-floating-btn"><span class="material-icons">close</span></button>
-            <div class="modal-header" style="padding-bottom: 0; border-bottom: none;">
-                <h2 style="color: var(--primary-color); display: flex; align-items: center; gap: 8px;">
-                    <span class="material-icons">admin_panel_settings</span> Trạm Điều Khiển
-                </h2>
-            </div>
-            <div class="modal-body" id="admin-stats-content"></div>
-        </div>
-    </div>
 
-    <!-- Modal Sự Kiện 24h -->
-    <div class="modal-overlay" id="briefing-modal">
-        <div class="modal-dialog">
-            <button id="close-briefing-btn" class="icon-btn close-floating-btn"><span class="material-icons">close</span></button>
-            <div class="modal-header">
-                <h2 style="color: #d81b60;"><span class="material-icons">auto_awesome</span> SỰ KIỆN TỔNG HỢP 24H</h2>
-            </div>
-            <div class="modal-body">
-                <div id="briefing-content" class="detailed-text" style="line-height: 1.8;">
-                    <!-- AI Daily Briefing đổ vào đây -->
+    <main class="container">
+        <!-- Khu vực Thị trường & Xu hướng MXH (Sẽ chèn bằng JS) -->
+        <section class="top-dashboard" id="market-container"></section>
+
+        <!-- Lưới chia đôi màn hình: Tin tức (Trái) & Báo cáo AI (Phải) -->
+        <div class="news-grid">
+            <div class="main-content" id="news-container">
+                <!-- Trạng thái chờ tải dữ liệu -->
+                <div class="loading-state">
+                    <span class="material-icons-round spin">sync</span>
+                    <p>Hệ thống AI đang nạp dữ liệu phân tích...</p>
                 </div>
             </div>
+            
+            <aside class="sidebar" id="briefing-container">
+                <!-- Bản tin Daily Briefing sẽ nằm ở đây -->
+            </aside>
         </div>
-    </div>
-    <script src="script.js?v=5.0"></script>
+    </main>
+
+    <!-- Liên kết tới file logic xử lý dữ liệu -->
+    <script src="assets/js/app.js"></script>
 </body>
 </html>
