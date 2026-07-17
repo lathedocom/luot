@@ -1,7 +1,7 @@
 name: AI Newsroom Bot
 
 on:
-  workflow_dispatch: # Chỉ giữ lại cổng nhận lệnh thủ công và API
+  workflow_dispatch: # Cổng nhận lệnh từ Cron-job.org và bấm thủ công
 
 jobs:
   fetch-and-process-news:
@@ -23,7 +23,6 @@ jobs:
         run: |
           cd script_bot
           npm install
-          npm install groq-sdk
 
       - name: Run AI Newsroom Bot
         env:
@@ -34,7 +33,7 @@ jobs:
           cd script_bot
           node fetch_news.js
 
-      - name: Commit and Push Updated News Data
+      - name: Commit and Push Updated Data
         run: |
           git config --global user.name "AI-Newsroom-Bot"
           git config --global user.email "bot@ainewsroom.local"
@@ -42,7 +41,9 @@ jobs:
           # Bật tính năng tự động giấu file rác khi đồng bộ
           git config --global rebase.autoStash true
           
-          git add news_data.json
-          git diff --staged --quiet || git commit -m "🤖 Cập nhật tin tức & phân tích AI tự động"
+          # [QUAN TRỌNG] Lưu data chính, trạng thái hệ thống và toàn bộ thư mục cache (data/)
+          git add news_data.json pipeline_status.json data/ || true
+          
+          git diff --staged --quiet || git commit -m "🤖 Cập nhật tin tức, Cache & trạng thái V4"
           git pull --rebase origin main
           git push origin main
