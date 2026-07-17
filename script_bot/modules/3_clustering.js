@@ -1,8 +1,6 @@
-// Hàm tính độ tương đồng Cosine giữa 2 vector
+// Hàm tính khoảng cách Cosine (Cosine Similarity)
 function cosineSimilarity(vecA, vecB) {
-    let dotProduct = 0;
-    let normA = 0;
-    let normB = 0;
+    let dotProduct = 0, normA = 0, normB = 0;
     for (let i = 0; i < vecA.length; i++) {
         dotProduct += vecA[i] * vecB[i];
         normA += vecA[i] * vecA[i];
@@ -12,63 +10,88 @@ function cosineSimilarity(vecA, vecB) {
     return dotProduct / (Math.sqrt(normA) * Math.sqrt(normB));
 }
 
-// Ngưỡng tương đồng (có thể tinh chỉnh từ 0.75 đến 0.90)
-// 0.82 là mức khá chuẩn cho tin tức tiếng Việt và tiếng Anh
-const SIMILARITY_THRESHOLD = 0.82; 
+async function clusterArticles(articles) {
+    if (!articles || articles.length === 0) return [];
+    console.log(`Bước 3: Gom cụm (Clustering) ${articles.length} bài viết...`);
 
-function clusterArticles(embeddedArticles) {
-    if (!embeddedArticles || embeddedArticles.length === 0) return [];
-    
-    console.log(`Bước 3: Gom cụm (Clustering) ${embeddedArticles.length} bài viết bằng Cosine Similarity...`);
     const clusters = [];
+    // 1. HẠ NGƯỠNG SO SÁNH (VD: 0.65): Để AI nhận diện các bài báo viết về cùng 1 sự kiện dễ dàng hơn.
+    const THRESHOLD = 0.65; 
 
-    for (const article of embeddedArticles) {
-        let foundCluster = false;
+    for (const article of articles) {
+        if (!article.vector) continue;
+        let found = false;
 
-        // Duyệt qua các cụm đã có để tìm chỗ phù hợp
+        // Quét xem bài báo này có thuộc sự kiện nào đã tồn tại chưa
         for (const cluster of clusters) {
-            // So sánh bài viết hiện tại với bài đại diện (bài đầu tiên) của cụm
-            const repArticle = cluster.articles[0];
-            const similarity = cosineSimilarity(article.vector, repArticle.vector);
-
-            if (similarity >= SIMILARITY_THRESHOLD) {
+            const sim = cosineSimilarity(article.vector, cluster.main_vector);
+            if (sim >= THRESHOLD) {
                 cluster.articles.push(article);
-                foundCluster = true;
-                break; // Tìm thấy cụm phù hợp thì dừng tìm kiếm
+                
+                // Chỉ thêm vào danh sách sources nếu chưa có tờ báo này
+                if (!cluster.sources.some(s => s.url === article.url)) {
+                    cluster.sources.push({
+                        url: article.url,
+                        source_name: article.source_name,
+                        source_logo: article.source_logo
+                    });
+                }
+                found = true;
+                break;
             }
         }
 
-        // Nếu không thuộc cụm nào, tạo một cụm sự kiện hoàn toàn mới
-        if (!foundCluster) {
+        // Nếu là sự kiện mới hoàn toàn, tạo cụm mới
+        if (!found) {
             clusters.push({
-                id: 'topic_' + Date.now() + '_' + Math.random().toString(36).substring(2, 7),
-                articles: [article]
+                topic_key: 'topic_' + Date.now() + '_' + Math.random().toString(36).substring(7),
+                main_vector: article.vector,
+                articles: [article],
+                sources: [{
+                    url: article.url,
+                    source_name: article.source_name,
+                    source_logo: article.source_logo
+                }],
+                region: "Việt Nam & Thế giới"
             });
         }
     }
 
-    // Làm sạch và cấu trúc lại dữ liệu: Bỏ mảng vector nặng nề đi để giải phóng RAM
-    const cleanClusters = clusters.map(c => {
+    console.log(`- Đã gom thô thành ${clusters.length} cụm. Bắt đầu lọc "Toàn cảnh"...`);
+
+    // --- BỘ LỌC TIN TỨC CHẤT LƯỢNG CAO ---
+
+    // 2. LỌC TIN RÁC: Xóa sổ những sự kiện chỉ có 1 bài viết/1 tờ báo đưa tin
+    let topClusters = clusters.filter(c => c.articles.length >= 2);
+
+    // 3. SẮP XẾP ĐỘ HOT: Cụm nào có nhiều báo đưa tin nhất sẽ lên đầu
+    topClusters.sort((a, b) => b.articles.length - a.articles.length);
+
+    // Nếu bộ lọc >= 2 bài làm hụt mất danh sách 10 tin, ta có thể du di lấy thêm tin 1 bài để bù vào (Tùy chọn)
+    if (topClusters.length < 10) {
+        clusters.sort((a, b) => b.articles.length - a.articles.length);
+        topClusters = clusters.slice(0, 10);
+    } else {
+        // 4. CẮT LẤY TOP 10 SỰ KIỆN QUAN TRỌNG NHẤT
+        topClusters = topClusters.slice(0, 10);
+    }
+
+    // Đóng gói dữ liệu chuẩn bị cho AI phân tích
+    const finalClusters = topClusters.map(c => {
+        // Gộp tất cả văn bản của các báo lại để AI có góc nhìn 360 độ
+        const combinedText = c.articles.map(a => `${a.title} - ${a.summary}`).join(" | ");
         return {
-            topic_key: c.id,
+            topic_key: c.topic_key,
             article_count: c.articles.length,
-            // Ưu tiên dán nhãn Việt Nam nếu trong cụm có bài báo nguồn VN
-            region: c.articles.some(a => a.region === 'Việt Nam') ? 'Việt Nam' : c.articles[0].region,
-            sources: c.articles.map(a => ({
-                source_name: a.source,
-                url: a.url,
-                title: a.title
-            })),
-            // Gom nội dung thô của tất cả bài trong cụm để Module sau đưa cho AI phân tích
-            combined_text: c.articles.map(a => `[${a.source}] ${a.title}: ${a.summary}`).join('\n\n')
+            region: c.region,
+            sources: c.sources,
+            combined_text: combinedText,
+            image_url: c.articles[0].image_url || "" 
         };
     });
 
-    // Sắp xếp các cụm theo độ nóng (số lượng bài viết nói về nó giảm dần)
-    cleanClusters.sort((a, b) => b.article_count - a.article_count);
-
-    console.log(`✅ Đã gom thành công ${cleanClusters.length} cụm sự kiện (Topic).`);
-    return cleanClusters;
+    console.log(`✅ Đã lọc thành công ${finalClusters.length} cụm sự kiện TOÀN CẢNH (Top Trending).`);
+    return finalClusters;
 }
 
 module.exports = { clusterArticles };
