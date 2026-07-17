@@ -1,99 +1,54 @@
 const Parser = require('rss-parser');
-const fs = require('fs');
-const path = require('path');
-
 const parser = new Parser({ timeout: 15000, headers: { 'User-Agent': 'Mozilla/5.0' } });
-// File cache sẽ lưu ở script_bot/data/cache_urls.json
-const CACHE_FILE = path.join(__dirname, '../data/cache_urls.json');
-
-// Khởi tạo file cache nếu chưa có
-if (!fs.existsSync(path.dirname(CACHE_FILE))) {
-    fs.mkdirSync(path.dirname(CACHE_FILE), { recursive: true });
-}
-if (!fs.existsSync(CACHE_FILE)) {
-    fs.writeFileSync(CACHE_FILE, JSON.stringify([]));
-}
-
-// Danh sách các nguồn báo (ĐÃ XÓA NGOẶC VUÔNG DƯ THỪA)
-const RSS_SOURCES = [
-  {
-    url: 'https://vnexpress.net/rss/tin-moi-nhat.rss',
-    region: 'Việt Nam',
-    source_name: 'VNExpress',
-    source_logo: 'https://https://vnexpress.net/favicon.ico'
-  },
-  {
-    url: 'https://vneconomy.vn/rss/kinh-te-vi-mo.rss',
-    region: 'Việt Nam',
-    source_name: 'VnEconomy',
-    source_logo: 'https://vneconomy.vn/favicon.ico'
-  },
-  {
-    url: 'https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=10000664',
-    region: 'Thế giới',
-    source_name: 'CNBC',
-    source_logo: 'https://www.cnbc.com/favicon.ico'
-  },
-  {
-    url: 'https://www.aljazeera.com/xml/rss/all.xml',
-    region: 'Thế giới',
-    source_name: 'Al Jazeera',
-    source_logo: 'https://www.aljazeera.com/favicon_aje.ico'
-  },
-  {
-    url: 'http://feeds.bbci.co.uk/news/world/rss.xml',
-    region: 'Thế giới',
-    source_name: 'BBC News',
-    source_logo: 'https://www.bbc.co.uk/favicon.ico'
-  },
-  {
-    url: 'https://feeds.a.dj.com/rss/RSSWorldNews.xml',
-    region: 'Thế giới',
-    source_name: 'The Wall Street Journal',
-    source_logo: 'https://www.wsj.com/favicon.ico'
-  },
-  {
-    url: 'https://www.economist.com/finance-and-economics/rss.xml',
-    region: 'Thế giới',
-    source_name: 'The Economist',
-    source_logo: 'https://www.economist.com/favicon.ico'
-  }
-];
+const RSS_SOURCES = require('../config/rss_sources');
+const logger = require('./utils/logger');
+const { normalizeDateToTimestamp } = require('./utils/date');
+const { cleanHtmlTags, truncateText } = require('./utils/text');
+const { generateHash } = require('./utils/hash');
 
 async function fetchAndNormalizeNews() {
-    console.log("Bước 1: Bắt đầu thu thập RSS...");
-    let cachedUrls = JSON.parse(fs.readFileSync(CACHE_FILE, 'utf-8'));
+    logger.info("Bước 1: Bắt đầu Crawler & Normalize dữ liệu thô...");
     let newArticles = [];
 
     for (const feed of RSS_SOURCES) {
         try {
             const parsed = await parser.parseURL(feed.url);
             
-            // Lấy 10 bài mới nhất mỗi nguồn
-            parsed.items.slice(0, 10).forEach(item => {
-                if (!cachedUrls.includes(item.link)) {
-                    let snippetStr = (item.contentSnippet || item.content || '').substring(0, 200).replace(/\n/g, ' ').trim();
-                    newArticles.push({
-                        title: item.title,
-                        summary: snippetStr,
-                        url: item.link,
-                        publish_time: item.pubDate || new Date().toISOString(),
-                        source: feed.source_name,
-                        region: feed.region
-                    });
-                    cachedUrls.push(item.link);
-                }
+            // Chỉ lấy 15 bài mới nhất mỗi báo để tránh phình dữ liệu
+            parsed.items.slice(0, 15).forEach(item => {
+                const rawSummary = item.contentSnippet || item.content || '';
+                const cleanSummary = truncateText(cleanHtmlTags(rawSummary), 500);
+                const cleanTitle = cleanHtmlTags(item.title);
+                const articleUrl = item.link || '';
+                
+                if (!articleUrl) return;
+
+                // CHUẨN HÓA ĐÚNG 14 TRƯỜNG SCHEMA
+                const article = {
+                    id: generateHash(articleUrl),
+                    url: articleUrl,
+                    source_name: feed.source_name,
+                    source_logo: feed.source_logo,
+                    source_country: feed.country || 'Global',
+                    source_type: 'rss',
+                    publish_time: normalizeDateToTimestamp(item.pubDate),
+                    crawl_time: Date.now(),
+                    language: feed.language || 'vi',
+                    title: cleanTitle,
+                    summary: cleanSummary,
+                    thumbnail: item.enclosure ? item.enclosure.url : '',
+                    content: "", // Giữ rỗng để sau này có thể mở rộng Crawl Full-text
+                    tags: item.categories || []
+                };
+                
+                newArticles.push(article);
             });
         } catch (error) {
-            console.log(`❌ Lỗi tải RSS từ ${feed.source_name}:`, error.message);
+            logger.error(`Lỗi tải RSS từ ${feed.source_name}`, error);
         }
     }
-
-    // Giữ lại 1000 URL gần nhất để file cache không bị quá nặng
-    if (cachedUrls.length > 1000) cachedUrls = cachedUrls.slice(-1000);
-    fs.writeFileSync(CACHE_FILE, JSON.stringify(cachedUrls, null, 2));
-
-    console.log(`✅ Đã thu thập và chuẩn hóa ${newArticles.length} bài viết mới.`);
+    
+    logger.success(`Crawler hoàn tất. Thu được ${newArticles.length} bài viết chuẩn hóa.`);
     return newArticles;
 }
 
