@@ -12,7 +12,7 @@ module.exports = {
     FALLBACK_MODEL_2: 'gemini-3.5-flash',
     
     // Model chuyên dụng để tạo Vector
-    EMBEDDING_MODEL: 'embedding-001',
+    EMBEDDING_MODEL: 'text-embedding-004',
     
     // API Keys lấy từ biến môi trường (Bảo mật)
     API_KEYS: {
