@@ -40,4 +40,5 @@ jobs:
           git config --global user.email "bot@ainewsroom.local"
           git add news_data.json
           git diff --quiet && git diff --staged --quiet || git commit -m "🤖 Cập nhật tin tức & phân tích AI tự động"
+          git pull --rebase origin main
           git push origin main
