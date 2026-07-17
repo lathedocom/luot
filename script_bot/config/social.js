@@ -3,7 +3,7 @@
 
 module.exports = {
     ENABLED_PLATFORMS: {
-        REDDIT: true,      // Reddit dễ lấy dữ liệu, khuyên dùng
+        REDDIT: false,      // Reddit dễ lấy dữ liệu, khuyên dùng
         FACEBOOK: false,   // Facebook thường xuyên chặn bot, tạm tắt
         THREADS: false,
         TWITTER: false,    // Twitter API tốn phí, tạm tắt
