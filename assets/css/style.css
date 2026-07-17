@@ -1,0 +1,158 @@
+/* ==========================================================================
+   HỆ THỐNG BIẾN MÀU THEO CHUẨN MATERIAL DESIGN (MẶC ĐỊNH LIGHT MODE)
+   ========================================================================== */
+:root {
+    --md-sys-color-background: #fdfdfd;
+    --md-sys-color-surface: #ffffff;
+    --md-sys-color-on-surface: #1a1b1f;
+    --md-sys-color-primary: #0061a4;
+    --md-sys-color-outline: #e0e2ec;
+    --md-sys-color-surface-variant: #e1e2e8;
+    
+    /* Hiệu ứng đổ bóng 2 cấp độ */
+    --md-elevation-1: 0px 1px 2px 0px rgba(0,0,0,0.3), 0px 1px 3px 1px rgba(0,0,0,0.15);
+    --md-elevation-2: 0px 1px 2px 0px rgba(0,0,0,0.3), 0px 2px 6px 2px rgba(0,0,0,0.15);
+    --border-radius: 12px;
+}
+
+/* ==========================================================================
+   TỰ ĐỘNG CHUYỂN DARK MODE NẾU HỆ THỐNG ĐANG DÙNG NỀN TỐI
+   ========================================================================== */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --md-sys-color-background: #1a1b1f;
+        --md-sys-color-surface: #202124;
+        --md-sys-color-on-surface: #e3e2e6;
+        --md-sys-color-primary: #a0c9ff;
+        --md-sys-color-outline: #43474e;
+        --md-sys-color-surface-variant: #43474e;
+        --md-elevation-1: 0px 1px 3px 1px rgba(0,0,0,0.4);
+        --md-elevation-2: 0px 2px 6px 2px rgba(0,0,0,0.4);
+    }
+}
+
+/* Ghi đè class dark-theme khi người dùng bấm nút thủ công */
+body.dark-theme {
+    --md-sys-color-background: #1a1b1f;
+    --md-sys-color-surface: #202124;
+    --md-sys-color-on-surface: #e3e2e6;
+    --md-sys-color-primary: #a0c9ff;
+    --md-sys-color-outline: #43474e;
+    --md-sys-color-surface-variant: #43474e;
+}
+body.light-theme {
+    --md-sys-color-background: #fdfdfd;
+    --md-sys-color-surface: #ffffff;
+    --md-sys-color-on-surface: #1a1b1f;
+    --md-sys-color-primary: #0061a4;
+    --md-sys-color-outline: #e0e2ec;
+    --md-sys-color-surface-variant: #e1e2e8;
+}
+
+/* ==========================================================================
+   BỐ CỤC CHUNG & TYPOGRAPHY
+   ========================================================================== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--md-sys-color-background);
+    color: var(--md-sys-color-on-surface);
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* App Bar (Header) */
+.app-bar {
+    background-color: var(--md-sys-color-surface);
+    box-shadow: var(--md-elevation-1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.header-content {
+    height: 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--md-sys-color-primary);
+}
+.logo span {
+    font-weight: 300;
+    font-size: 14px;
+    color: var(--md-sys-color-on-surface);
+    opacity: 0.7;
+}
+.icon-btn {
+    background: none;
+    border: none;
+    color: var(--md-sys-color-on-surface);
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+.icon-btn:hover { background-color: var(--md-sys-color-surface-variant); }
+
+/* Bố cục chia Lưới (Grid) */
+.news-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Trái chiếm 2 phần, Phải chiếm 1 phần */
+    gap: 24px;
+    margin-top: 24px;
+}
+
+@media (max-width: 768px) {
+    .news-grid { grid-template-columns: 1fr; } /* Trên điện thoại xếp dọc 1 cột */
+}
+
+/* Component: Material Card */
+.card {
+    background-color: var(--md-sys-color-surface);
+    border: 1px solid var(--md-sys-color-outline);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    margin-bottom: 24px;
+    box-shadow: var(--md-elevation-1);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.card:hover {
+    box-shadow: var(--md-elevation-2);
+    transform: translateY(-2px);
+}
+.card-title {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+.card-summary {
+    font-size: 15px;
+    color: var(--md-sys-color-on-surface);
+    opacity: 0.85;
+}
+
+/* Loading State */
+.loading-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--md-sys-color-primary);
+}
+.spin { 
+    animation: spin 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite; 
+    font-size: 40px; 
+    margin-bottom: 16px;
+}
+@keyframes spin { 100% { transform: rotate(360deg); } }
