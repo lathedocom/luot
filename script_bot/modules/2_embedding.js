@@ -1,10 +1,8 @@
 require('dotenv').config();
-const { GoogleGenerativeAI } = require('@google/generative-ai');
+const { GoogleGenAI } = require('@google/genai');
 
-// Lấy Key từ cấu hình Secrets của GitHub Actions
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-// Sử dụng model Embedding rẻ và cho quota cao nhất theo bảng giá của bạn (1K RPD)
-const embeddingModel = genAI.getGenerativeModel({ model: "embedding-001" });
+// Khởi tạo Client theo chuẩn mới
+const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
 async function generateEmbeddings(articles) {
     if (articles.length === 0) return [];
@@ -14,18 +12,22 @@ async function generateEmbeddings(articles) {
 
     for (const article of articles) {
         try {
-            // Gom title và summary lại để AI hiểu ngữ cảnh trọn vẹn hơn
             const textToEmbed = `Tiêu đề: ${article.title}. Nội dung: ${article.summary}`;
             
-            const result = await embeddingModel.embedContent(textToEmbed);
-            const embedding = result.embedding.values;
+            // Cú pháp gọi Embedding thế hệ mới
+            const response = await ai.models.embedContent({
+                model: 'text-embedding-004',
+                contents: textToEmbed,
+            });
+            
+            // Trích xuất vector (cấu trúc mảng trả về đã được làm gọn hơn)
+            const embedding = response.embeddings[0].values;
             
             embeddedArticles.push({
                 ...article,
                 vector: embedding
             });
             
-            // Nghỉ 300ms giữa các request để đảm bảo không vượt quá RPM (Request Per Minute) của API miễn phí
             await new Promise(resolve => setTimeout(resolve, 300));
         } catch (error) {
             console.log(`❌ Lỗi nhúng Vector cho bài: ${article.title}`, error.message);
