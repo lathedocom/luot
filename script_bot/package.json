@@ -1,10 +1,9 @@
 {
   "name": "ai-newsroom-bot",
-  "version": "2.0.0",
-  "description": "AI Daily Intelligence Platform Backend",
+  "version": "4.0.0",
+  "description": "AI Daily Intelligence Platform Backend V4",
   "main": "fetch_news.js",
   "dependencies": {
-    "@google/genai": "latest",
     "rss-parser": "^3.13.0",
     "dotenv": "^16.4.5",
     "compromise": "^14.12.0"
