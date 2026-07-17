@@ -10,9 +10,9 @@ async function generateEmbeddings(articles) {
     const embeddedArticles = [];
     const apiKey = configModels.API_KEYS.GEMINI;
 
-    // KIỂM TRA CHỐT CHẶN: Nếu GitHub Secrets chưa có API Key
+    // Chốt chặn an toàn
     if (!apiKey) {
-        logger.error("THIẾU API KEY: Hệ thống không tìm thấy GEMINI_API_KEY. Vui lòng kiểm tra lại GitHub Secrets.");
+        logger.error("THIẾU API KEY: Không tìm thấy GEMINI_API_KEY.");
         return [];
     }
 
@@ -21,6 +21,7 @@ async function generateEmbeddings(articles) {
 
     for (const article of articles) {
         try {
+            // Đọc cache trước để cứu Quota
             const cachedVector = getEmbedding(article.id);
             if (cachedVector) {
                 embeddedArticles.push({ ...article, vector: cachedVector });
@@ -29,12 +30,14 @@ async function generateEmbeddings(articles) {
 
             const textToEmbed = `Tiêu đề: ${article.title}. Nội dung: ${article.summary}`;
 
-            // Ép chuẩn gói dữ liệu theo yêu cầu khắt khe của Google
+            // Gói dữ liệu chuẩn xác 100% theo tài liệu mới nhất của Google
             const payload = {
                 model: `models/${modelName}`,
                 content: {
                     parts: [{ text: textToEmbed }]
-                }
+                },
+                // Bắt buộc phải khai báo mục đích là CLUSTERING (Gom cụm)
+                taskType: "CLUSTERING" 
             };
 
             const response = await fetch(apiUrl, {
@@ -44,25 +47,26 @@ async function generateEmbeddings(articles) {
             });
 
             if (response.status === 429) {
-                logger.warn("Đã đạt giới hạn Rate Limit (429). Ngừng fetch.");
+                logger.warn("Đã đạt giới hạn Rate Limit. Ngừng fetch.");
                 break;
             }
 
             const data = await response.json();
 
+            // Log lỗi chi tiết nếu Google vẫn từ chối
             if (data.error) {
-                logger.error(`Lỗi API Embedding cho bài: ${article.title}`, data.error);
+                logger.error(`Lỗi từ Google: ${data.error.message}`);
                 continue;
             }
 
             if (data.embedding && data.embedding.values) {
                 const vector = data.embedding.values;
                 quotaManager.recordUsage(modelName, 500);
-                saveEmbedding(article.id, vector);
+                saveEmbedding(article.id, vector); // Lưu vào ổ cứng ảo
                 embeddedArticles.push({ ...article, vector: vector });
             }
 
-            // Tăng thời gian nghỉ lên 500ms để đảm bảo không bị Google khóa do Spam
+            // Nghỉ 500ms mỗi bài để không bị Google đánh dấu là spam
             await new Promise(resolve => setTimeout(resolve, 500));
 
         } catch (error) {
