@@ -16,14 +16,50 @@ if (!fs.existsSync(CACHE_FILE)) {
 
 // Danh sách các nguồn báo (Đã thêm region theo đặc tả của bạn)
 const RSS_SOURCES = [
-    { url: 'https://vnexpress.net/rss/tin-moi-nhat.rss', region: 'Việt Nam', source_name: 'VNExpress' },
-    { url: 'https://vneconomy.vn/rss/kinh-te-vi-mo.rss', region: 'Việt Nam', source_name: 'VnEconomy' },
-    { url: 'https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=10000664', region: 'Thế giới', source_name: 'CNBC' },
-    { url: 'https://www.aljazeera.com/xml/rss/all.xml', source: 'Al Jazeera', region: 'Thế giới', logo: 'https://www.aljazeera.com/favicon.ico' },
-    { url: 'http://feeds.bbci.co.uk/news/world/rss.xml', source_name: 'BBC News', logo: 'https://www.bbc.co.uk/favicon.ico' },
-    { url: 'https://feeds.a.dj.com/rss/RSSWorldNews.xml', source_name: 'WSJ', region: 'Thế giới', logo: 'https://www.wsj.com/favicon.ico' },
-    { url: 'https://www.economist.com/finance-and-economics/rss.xml', source_name: 'The Economist', region: 'Thế giới', logo: 'https://www.economist.com/favicon.ico' }
-    // Copy thêm các nguồn khác từ file cũ vào đây
+    [
+  {
+    url: 'https://vnexpress.net/rss/tin-moi-nhat.rss',
+    region: 'Việt Nam',
+    source_name: 'VNExpress',
+    logo: 'https://s1.vnecdn.net/vnexpress/restruct/i/v937/v2_2019/pc/graphics/favicon.ico'
+  },
+  {
+    url: 'https://vneconomy.vn/rss/kinh-te-vi-mo.rss',
+    region: 'Việt Nam',
+    source_name: 'VnEconomy',
+    logo: 'https://vneconomy.vn/favicon.ico'
+  },
+  {
+    url: 'https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=10000664',
+    region: 'Thế giới',
+    source_name: 'CNBC',
+    logo: 'https://www.cnbc.com/favicon.ico'
+  },
+  {
+    url: 'https://www.aljazeera.com/xml/rss/all.xml',
+    region: 'Thế giới',
+    source_name: 'Al Jazeera',
+    logo: 'https://www.aljazeera.com/favicon.ico'
+  },
+  {
+    url: 'http://feeds.bbci.co.uk/news/world/rss.xml',
+    region: 'Thế giới',
+    source_name: 'BBC News',
+    logo: 'https://www.bbc.co.uk/favicon.ico'
+  },
+  {
+    url: 'https://feeds.a.dj.com/rss/RSSWorldNews.xml',
+    region: 'Thế giới',
+    source_name: 'The Wall Street Journal',
+    logo: 'https://www.wsj.com/favicon.ico'
+  },
+  {
+    url: 'https://www.economist.com/finance-and-economics/rss.xml',
+    region: 'Thế giới',
+    source_name: 'The Economist',
+    logo: 'https://www.economist.com/favicon.ico'
+  }
+]
 ];
 
 async function fetchAndNormalizeNews() {
