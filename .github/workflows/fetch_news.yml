@@ -39,14 +39,10 @@ jobs:
           git config --global user.name "AI-Newsroom-Bot"
           git config --global user.email "bot@ainewsroom.local"
           
-          # Chỉ đích danh file cần đưa vào giỏ hàng
+          # Bật tính năng tự động giấu file rác khi đồng bộ
+          git config --global rebase.autoStash true
+          
           git add news_data.json
-          
-          # Chỉ kiểm tra giỏ hàng (staged). Nếu có thay đổi mới commit, nếu không thì bỏ qua nhẹ nhàng.
-          git diff --staged --quiet || git commit -m "Cập nhật tin tức & phân tích AI tự động"
-          
-          # Kéo code mới về (nếu có) để tránh đụng độ
+          git diff --staged --quiet || git commit -m "🤖 Cập nhật tin tức & phân tích AI tự động"
           git pull --rebase origin main
-          
-          # Đẩy lên GitHub
           git push origin main
