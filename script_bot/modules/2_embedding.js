@@ -8,7 +8,7 @@ async function generateEmbeddings(articles) {
     const apiKey = process.env.GEMINI_API_KEY;
     
     // Gọi trực tiếp đến URL chuẩn của Google API
-    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:embedContent?key=${apiKey}`;
+   const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-2:embedContent?key=${apiKey}`;
 
     for (const article of articles) {
         try {
