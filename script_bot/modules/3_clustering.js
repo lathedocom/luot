@@ -1,4 +1,6 @@
-// Hàm tính khoảng cách Cosine (Cosine Similarity)
+const logger = require('./utils/logger');
+
+// Công thức toán học đo khoảng cách giữa 2 bài báo
 function cosineSimilarity(vecA, vecB) {
     let dotProduct = 0, normA = 0, normB = 0;
     for (let i = 0; i < vecA.length; i++) {
@@ -12,84 +14,55 @@ function cosineSimilarity(vecA, vecB) {
 
 function clusterArticles(articles) {
     if (!articles || articles.length === 0) return [];
-    console.log(`Bước 3: Gom cụm (Clustering) ${articles.length} bài viết...`);
-
+    logger.info(`Bước 3: Gom cụm (Clustering) bằng Cosine Similarity...`);
+    
     const clusters = [];
-    const THRESHOLD = 0.65; 
-
-    // URL ảnh icon mặc định siêu đẹp (Dùng khi báo lỗi hoặc không có logo)
-    const DEFAULT_LOGO = "https://cdn-icons-png.flaticon.com/512/2965/2965368.png"; 
+    const THRESHOLD = 0.70; // Độ tương đồng 70% thì tính là chung 1 sự kiện
 
     for (const article of articles) {
         if (!article.vector) continue;
         let found = false;
 
-        // CƠ CHẾ DÒ TÌM TỰ ĐỘNG: Bắt mọi thể loại tên biến từ Bước 1
-        const finalSourceName = article.source_name || article.source || article.publisher || "Báo điện tử";
-        const finalSourceLogo = article.source_logo || article.logo || article.icon || DEFAULT_LOGO;
-
         for (const cluster of clusters) {
             const sim = cosineSimilarity(article.vector, cluster.main_vector);
             if (sim >= THRESHOLD) {
                 cluster.articles.push(article);
-                
-                // Đẩy sources vào cụm với biến đã được dò chuẩn xác
-                if (!cluster.sources.some(s => s.url === article.url)) {
-                    cluster.sources.push({
-                        url: article.url,
-                        source_name: finalSourceName,
-                        source_logo: finalSourceLogo
-                    });
-                }
                 found = true;
                 break;
             }
         }
 
-        // Nếu là sự kiện mới
+        // Nếu bài viết không giống cụm nào, tạo cụm mới
         if (!found) {
             clusters.push({
-                topic_key: 'topic_' + Date.now() + '_' + Math.random().toString(36).substring(7),
                 main_vector: article.vector,
-                articles: [article],
-                sources: [{
-                    url: article.url,
-                    source_name: finalSourceName,
-                    source_logo: finalSourceLogo
-                }],
-                region: "Việt Nam & Thế giới"
+                articles: [article]
             });
         }
     }
 
-    console.log(`- Đã gom thô thành ${clusters.length} cụm. Bắt đầu lọc "Toàn cảnh"...`);
-
-    // BỘ LỌC TIN TỨC CHẤT LƯỢNG CAO
-    let topClusters = clusters.filter(c => c.articles.length >= 2);
-    topClusters.sort((a, b) => b.articles.length - a.articles.length);
-
-    // Đảm bảo đủ 10 tin
-    if (topClusters.length < 10) {
-        clusters.sort((a, b) => b.articles.length - a.articles.length);
-        topClusters = clusters.slice(0, 10);
-    } else {
-        topClusters = topClusters.slice(0, 10);
-    }
-
-    // Đóng gói trả về Bước 4
-    const finalClusters = topClusters.map(c => {
-        const combinedText = c.articles.map(a => `${a.title} - ${a.summary}`).join(" | ");
-        return {
-            topic_key: c.topic_key,
-            article_count: c.articles.length,
-            region: c.region,
-            sources: c.sources, // Danh sách báo chí với logo sạch sẽ 100%
+    // Làm sạch và chuẩn bị dữ liệu cho bước trích xuất Thực thể (NLP)
+    const finalClusters = [];
+    clusters.forEach(c => {
+        // Gom văn bản của tất cả các bài trong cụm lại để AI đọc dễ hơn
+        const combinedText = c.articles.map(a => `${a.title}. ${a.summary}`).join(" | ");
+        
+        // Lấy ảnh đại diện từ bài viết đầu tiên có ảnh
+        const firstArticleWithImage = c.articles.find(a => a.thumbnail);
+        
+        finalClusters.push({
+            articles: c.articles,
             combined_text: combinedText,
-            image_url: c.articles[0].image_url || c.articles[0].thumbnail || "" 
-        };
+            article_count: c.articles.length,
+            thumbnail: firstArticleWithImage ? firstArticleWithImage.thumbnail : "",
+            timestamp: Math.max(...c.articles.map(a => a.publish_time))
+        });
     });
 
-    console.log(`✅ Đã lọc thành công ${finalClusters.length} cụm sự kiện TOÀN CẢNH (Top Trending).`);
+    // Ưu tiên xử lý các cụm sự kiện có nhiều báo đưa tin nhất
+    finalClusters.sort((a, b) => b.article_count - a.article_count);
+
+    logger.success(`Đã gom thành công ${finalClusters.length} cụm sự kiện (Topic thô).`);
     return finalClusters;
 }
 
