@@ -4,7 +4,7 @@ const { GoogleGenerativeAI } = require('@google/generative-ai');
 // Lấy Key từ cấu hình Secrets của GitHub Actions
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 // Sử dụng model Embedding rẻ và cho quota cao nhất theo bảng giá của bạn (1K RPD)
-const embeddingModel = genAI.getGenerativeModel({ model: "text-embedding-004" });
+const embeddingModel = genAI.getGenerativeModel({ model: "embedding-001" });
 
 async function generateEmbeddings(articles) {
     if (articles.length === 0) return [];
