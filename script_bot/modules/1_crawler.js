@@ -20,7 +20,7 @@ const RSS_SOURCES = [
     url: 'https://vnexpress.net/rss/tin-moi-nhat.rss',
     region: 'Việt Nam',
     source_name: 'VNExpress',
-    logo: 'https://s1.vnecdn.net/vnexpress/restruct/i/v937/v2_2019/pc/graphics/favicon.ico'
+    logo: 'https://https://vnexpress.net/favicon.ico'
   },
   {
     url: 'https://vneconomy.vn/rss/kinh-te-vi-mo.rss',
@@ -38,7 +38,7 @@ const RSS_SOURCES = [
     url: 'https://www.aljazeera.com/xml/rss/all.xml',
     region: 'Thế giới',
     source_name: 'Al Jazeera',
-    logo: 'https://www.aljazeera.com/favicon.ico'
+    logo: 'https://www.aljazeera.com/favicon_aje.ico'
   },
   {
     url: 'http://feeds.bbci.co.uk/news/world/rss.xml',
