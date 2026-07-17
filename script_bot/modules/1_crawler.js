@@ -20,43 +20,43 @@ const RSS_SOURCES = [
     url: 'https://vnexpress.net/rss/tin-moi-nhat.rss',
     region: 'Việt Nam',
     source_name: 'VNExpress',
-    logo: 'https://https://vnexpress.net/favicon.ico'
+    source_logo: 'https://https://vnexpress.net/favicon.ico'
   },
   {
     url: 'https://vneconomy.vn/rss/kinh-te-vi-mo.rss',
     region: 'Việt Nam',
     source_name: 'VnEconomy',
-    logo: 'https://vneconomy.vn/favicon.ico'
+    source_logo: 'https://vneconomy.vn/favicon.ico'
   },
   {
     url: 'https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=10000664',
     region: 'Thế giới',
     source_name: 'CNBC',
-    logo: 'https://www.cnbc.com/favicon.ico'
+    source_logo: 'https://www.cnbc.com/favicon.ico'
   },
   {
     url: 'https://www.aljazeera.com/xml/rss/all.xml',
     region: 'Thế giới',
     source_name: 'Al Jazeera',
-    logo: 'https://www.aljazeera.com/favicon_aje.ico'
+    source_logo: 'https://www.aljazeera.com/favicon_aje.ico'
   },
   {
     url: 'http://feeds.bbci.co.uk/news/world/rss.xml',
     region: 'Thế giới',
     source_name: 'BBC News',
-    logo: 'https://www.bbc.co.uk/favicon.ico'
+    source_logo: 'https://www.bbc.co.uk/favicon.ico'
   },
   {
     url: 'https://feeds.a.dj.com/rss/RSSWorldNews.xml',
     region: 'Thế giới',
     source_name: 'The Wall Street Journal',
-    logo: 'https://www.wsj.com/favicon.ico'
+    source_logo: 'https://www.wsj.com/favicon.ico'
   },
   {
     url: 'https://www.economist.com/finance-and-economics/rss.xml',
     region: 'Thế giới',
     source_name: 'The Economist',
-    logo: 'https://www.economist.com/favicon.ico'
+    source_logo: 'https://www.economist.com/favicon.ico'
   }
 ];
 
