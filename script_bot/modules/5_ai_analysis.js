@@ -6,33 +6,29 @@ const groq = process.env.GROQ_API_KEY ? new Groq({ apiKey: process.env.GROQ_API_
 
 async function analyzeClusters(clusters) {
     if (!clusters || clusters.length === 0) return [];
-    console.log(`Bước 5: Phân tích đa chiều cho ${clusters.length} sự kiện (Dùng Gemini 3.1 Flash Lite / Dự phòng Groq)...`);
+    console.log(`Bước 5: Phân tích đa chiều cho ${clusters.length} sự kiện (Đồng bộ Format Frontend)...`);
     
     const analyzedClusters = [];
     const apiKey = process.env.GEMINI_API_KEY;
     
-    // Chỉ định chính xác model có 500 RPD để gánh số lượng lớn Topic
+    // Sử dụng model có 500 RPD để gánh số lượng lớn Topic
     const modelName = 'gemini-3.1-flash-lite';
     const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`;
 
     for (let i = 0; i < clusters.length; i++) {
         const cluster = clusters[i];
         
+        // Yêu cầu AI trả về đúng tên biến mà Web HTML đang chờ đợi
         const prompt = `
-Bạn là trợ lý phân tích tin tức tình báo. Đọc khối tin tức sau và phân tích.
+Bạn là biên tập viên tin tức tình báo. Đọc khối tin thô sau và viết lại thành 1 bản tin hoàn chỉnh.
 Nội dung thô: ${cluster.combined_text}
-Khu vực: ${cluster.region}
 
 LỆNH TUYỆT ĐỐI: CHỈ TRẢ VỀ ĐÚNG CẤU TRÚC JSON SAU. KHÔNG CÓ BẤT CỨ VĂN BẢN NÀO BÊN NGOÀI.
 {
-  "importance": 80,
-  "categories": ["Thể loại 1"],
-  "summary": "Tóm tắt sự kiện xảy ra (khoảng 50 từ)",
-  "analysis": "Phân tích nguyên nhân và bối cảnh (khoảng 70 từ)",
-  "causes": ["Nguyên nhân 1"],
-  "effects": ["Tác động ngắn hạn"],
-  "affected_groups": ["Nhóm bị ảnh hưởng 1"],
-  "follow_up": ["Điều 1 cần theo dõi"]
+  "cluster_title": "Tiêu đề tiếng Việt hấp dẫn và ngắn gọn (dưới 15 từ)",
+  "short_summary": "Tóm tắt sự kiện xảy ra (khoảng 40-50 từ)",
+  "detailed_summary": "Tóm tắt chi tiết diễn biến (khoảng 80 từ)",
+  "expert_analysis": "Phân tích nguyên nhân và bối cảnh (khoảng 70 từ)"
 }`;
 
         let aiResponse = null;
@@ -59,13 +55,13 @@ LỆNH TUYỆT ĐỐI: CHỈ TRẢ VỀ ĐÚNG CẤU TRÚC JSON SAU. KHÔNG CÓ 
             responseText = responseText.replace(/```json/g, '').replace(/```/g, '').trim();
             aiResponse = JSON.parse(responseText);
             success = true;
-            console.log(`[${i+1}/${clusters.length}] ✅ Xong (Gemini): ${cluster.topic_key}`);
+            console.log(`[${i+1}/${clusters.length}] ✅ Xong (Gemini): ${aiResponse.cluster_title}`);
 
         } catch (err) {
             console.log(`[${i+1}/${clusters.length}] ⚠️ Gemini lỗi: ${err.message}. Kích hoạt chốt chặn Groq...`);
         }
 
-        // THỬ NGHIỆM 2: Nếu Gemini sập, gọi Groq cứu cánh (Logic từ code cũ của bạn)
+        // THỬ NGHIỆM 2: Nếu Gemini sập, gọi Groq cứu cánh
         if (!success && groq) {
             try {
                 const groqOptions = {
@@ -81,40 +77,30 @@ LỆNH TUYỆT ĐỐI: CHỈ TRẢ VỀ ĐÚNG CẤU TRÚC JSON SAU. KHÔNG CÓ 
                 responseText = responseText.replace(/```json/g, '').replace(/```/g, '').trim();
                 aiResponse = JSON.parse(responseText);
                 success = true;
-                console.log(`[${i+1}/${clusters.length}] ✅ Xong (Groq): ${cluster.topic_key}`);
+                console.log(`[${i+1}/${clusters.length}] ✅ Xong (Groq): ${aiResponse.cluster_title}`);
                 
             } catch (groqErr) {
                 console.log(`[${i+1}/${clusters.length}] ❌ Lỗi cả 2 AI. Bỏ qua cụm này.`);
             }
         }
 
-        // Ráp dữ liệu
+        // RÁP DỮ LIỆU ĐÚNG CHUẨN FRONTEND
         analyzedClusters.push({
-            topic_key: cluster.topic_key,
-            article_count: cluster.article_count,
-            region: cluster.region,
-            sources: cluster.sources,
-            entities: cluster.entities,
-            
-            importance: success ? (aiResponse.importance || 50) : 50,
-            categories: success ? (aiResponse.categories || []) : [],
-            summary: success ? (aiResponse.summary || "Chưa có tóm tắt.") : cluster.combined_text.substring(0, 100) + '...',
-            analysis: success ? (aiResponse.analysis || "Chưa có phân tích.") : "Lỗi AI không thể phân tích.",
-            causes: success ? (aiResponse.causes || []) : [],
-            effects: success ? (aiResponse.effects || []) : [],
-            affected_groups: success ? (aiResponse.affected_groups || []) : [],
-            follow_up: success ? (aiResponse.follow_up || []) : []
+            id: cluster.topic_key || 'news_' + Date.now() + Math.random().toString(36).substring(7),
+            cluster_title: success ? (aiResponse.cluster_title || "Tin tức tổng hợp") : "Tin tức tổng hợp",
+            short_summary: success ? (aiResponse.short_summary || "Chưa có tóm tắt.") : cluster.combined_text.substring(0, 100) + '...',
+            detailed_summary: success ? (aiResponse.detailed_summary || "") : "",
+            expert_analysis: success ? (aiResponse.expert_analysis || "Chưa có phân tích.") : "Lỗi AI không thể phân tích.",
+            sources: cluster.sources || [],
+            image_url: cluster.image_url || "",
+            timestamp: Date.now()
         });
 
-        // NGHỈ 4100ms: Để đảm bảo không vượt quá 15 RPM (Request Per Minute) của gói miễn phí Gemini
+        // NGHỈ 4100ms để không dính Rate Limit
         await new Promise(resolve => setTimeout(resolve, 4100));
     }
     
     console.log(`✅ Phân tích AI đa chiều hoàn tất.`);
-    
-    // Xóa nội dung thô để giảm dung lượng file xuất ra
-    analyzedClusters.forEach(c => delete c.combined_text);
-    
     return analyzedClusters;
 }
 
