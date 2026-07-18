@@ -1,10 +1,9 @@
 /* ==========================================================================
-   HỆ THỐNG BIẾN MÀU THEO CHUẨN (TỰ ĐỘNG THEO HỆ ĐIỀU HÀNH)
+   HỆ THỐNG BIẾN MÀU THEO CHUẨN 
    ========================================================================== */
 :root {
     --md-sys-color-ai: #a855f7;
     --border-radius: 16px; 
-    /* Mặc định là Dark Theme */
     --md-sys-color-background: #0f172a; 
     --md-sys-color-surface: #1e293b;
     --md-sys-color-on-surface: #f8fafc;
@@ -12,8 +11,6 @@
     --md-sys-color-outline: #334155;
     --md-sys-color-surface-variant: #2dd4bf;
 }
-
-/* Hệ điều hành đang bật Sáng thì Web tự chuyển Sáng */
 @media (prefers-color-scheme: light) {
     :root {
         --md-sys-color-background: #f1f5f9;
@@ -25,15 +22,13 @@
     }
 }
 
-/* ==========================================================================
-   BỐ CỤC APP LAYOUT & SIDEBAR
-   ========================================================================== */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: 'Roboto', sans-serif; background-color: var(--md-sys-color-background); color: var(--md-sys-color-on-surface); height: 100vh; overflow: hidden; }
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--md-sys-color-outline); border-radius: 10px; }
 
+/* BỐ CỤC APP LAYOUT */
 .app-layout { display: grid; grid-template-columns: 240px 1fr; height: 100vh; }
 .sidebar-left { background-color: var(--md-sys-color-surface); border-right: 1px solid var(--md-sys-color-outline); display: flex; flex-direction: column; padding: 20px 0; z-index: 1000; }
 .logo-container { padding: 0 20px 24px; border-bottom: 1px solid var(--md-sys-color-outline); margin-bottom: 16px; }
@@ -45,14 +40,16 @@ body { font-family: 'Roboto', sans-serif; background-color: var(--md-sys-color-b
 .nav-item.active { background-color: rgba(59, 130, 246, 0.1); color: var(--md-sys-color-primary); font-weight: 500; opacity: 1; border-left: 3px solid var(--md-sys-color-primary); }
 .nav-footer { padding: 20px; font-size: 12px; opacity: 0.5; text-align: center; }
 
-/* HEADER & KHU VỰC CHÍNH */
-.main-wrapper { display: flex; flex-direction: column; height: 100vh; overflow: hidden; width: 100%; }
+/* HEADER & MAIN CONTENT */
+.main-wrapper { display: flex; flex-direction: column; height: 100vh; overflow: hidden; width: 100%; position: relative; }
 .app-header { height: 64px; background-color: var(--md-sys-color-surface); border-bottom: 1px solid var(--md-sys-color-outline); display: flex; align-items: center; justify-content: space-between; padding: 0 24px; flex-shrink: 0; }
-.search-box { display: flex; align-items: center; background-color: var(--md-sys-color-background); padding: 8px 16px; border-radius: 20px; width: 350px; border: 1px solid var(--md-sys-color-outline); }
+.header-actions { display: flex; align-items: center; gap: 12px; position: relative; }
+.icon-btn { background: none; border: none; color: var(--md-sys-color-on-surface); cursor: pointer; display: flex; align-items: center; opacity: 0.7; transition: 0.2s; padding: 6px; }
+
+/* SEARCH BOX GỌN GÀNG CHO WEB */
+.search-box { display: flex; align-items: center; background-color: var(--md-sys-color-background); padding: 8px 16px; border-radius: 24px; width: 240px; border: 1px solid var(--md-sys-color-outline); transition: width 0.3s; }
+.search-box:focus-within { width: 300px; border-color: var(--md-sys-color-primary); }
 .search-box input { background: transparent; border: none; color: var(--md-sys-color-on-surface); outline: none; margin-left: 8px; width: 100%; font-size: 14px; }
-.header-actions { display: flex; align-items: center; gap: 16px; }
-.update-time { font-size: 13px; opacity: 0.7; }
-.icon-btn { background: none; border: none; color: var(--md-sys-color-on-surface); cursor: pointer; display: flex; align-items: center; opacity: 0.7; transition: 0.2s; }
 
 .dashboard-content { flex-grow: 1; padding: 24px; overflow-y: auto; }
 .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
@@ -74,11 +71,7 @@ body { font-family: 'Roboto', sans-serif; background-color: var(--md-sys-color-b
 .news-card p { font-size: 14px; opacity: 0.7; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .news-footer { margin-top: 16px; display: flex; gap: 8px; font-size: 13px; opacity: 0.6; align-items: center; border-top: 1px dashed var(--md-sys-color-outline); padding-top: 12px; }
 
-/* Sidebar Phải (Widget) */
 .widget { background-color: var(--md-sys-color-surface); border-radius: var(--border-radius); border: 1px solid var(--md-sys-color-outline); padding: 20px; margin-bottom: 16px; }
-.widget-content { font-size: 14px; line-height: 1.6; opacity: 0.85; }
-.market-row { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px dashed var(--md-sys-color-outline); font-size: 14px; }
-.market-row:last-child { border-bottom: none; }
 
 /* SKELETON LOADING */
 .skeleton { background: linear-gradient(90deg, var(--md-sys-color-surface) 25%, var(--md-sys-color-outline) 50%, var(--md-sys-color-surface) 75%); background-size: 200% 100%; animation: shimmer 1.5s infinite; border-radius: 6px; }
@@ -87,24 +80,31 @@ body { font-family: 'Roboto', sans-serif; background-color: var(--md-sys-color-b
 .skeleton-card { background-color: var(--md-sys-color-surface); border: 1px solid var(--md-sys-color-outline); border-radius: var(--border-radius); padding: 20px; margin-bottom: 16px; }
 @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
 
-/* MODAL TÌNH BÁO */
-.modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.8); display: flex; justify-content: center; align-items: center; z-index: 2000; opacity: 0; pointer-events: none; transition: 0.3s ease; }
+/* ==========================================================================
+   FIX MODAL BỊ CẮT TRÊN MOBILE BẰNG ALIGN-ITEMS: FLEX-START
+   ========================================================================== */
+.modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.8); display: flex; justify-content: center; align-items: flex-start; padding-top: 5vh; z-index: 2000; opacity: 0; pointer-events: none; transition: 0.3s ease; }
 .modal-overlay.active { opacity: 1; pointer-events: auto; }
-.modal-dialog { background: var(--md-sys-color-background); width: 95%; max-width: 800px; max-height: 85vh; border-radius: var(--border-radius); display: flex; flex-direction: column; border: 1px solid var(--md-sys-color-outline); transform: translateY(20px); transition: 0.3s ease; box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+.modal-dialog { background: var(--md-sys-color-background); width: 95%; max-width: 800px; max-height: 90vh; border-radius: var(--border-radius); display: flex; flex-direction: column; border: 1px solid var(--md-sys-color-outline); transform: translateY(20px); transition: 0.3s ease; box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
 .modal-overlay.active .modal-dialog { transform: translateY(0); }
-.modal-header { padding: 20px 24px; border-bottom: 1px solid var(--md-sys-color-outline); display: flex; justify-content: space-between; align-items: flex-start; }
+.modal-header { padding: 20px 24px; border-bottom: 1px solid var(--md-sys-color-outline); display: flex; justify-content: space-between; align-items: flex-start; flex-shrink: 0; }
 .modal-title { font-size: 22px; color: var(--md-sys-color-primary); font-weight: bold; line-height: 1.4; }
 .modal-body { padding: 24px; overflow-y: auto; flex-grow: 1; font-size: 15px; }
 .intelligence-box { background: var(--md-sys-color-surface); padding: 16px; border-radius: 12px; margin-bottom: 16px; border-left: 4px solid var(--md-sys-color-ai); }
 .intelligence-title { font-weight: bold; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; color: var(--md-sys-color-ai); font-size: 14px; text-transform: uppercase; }
-.modal-footer { padding: 16px 24px; border-top: 1px solid var(--md-sys-color-outline); background: var(--md-sys-color-surface); border-radius: 0 0 var(--border-radius) var(--border-radius); }
+.modal-footer { padding: 16px 24px; border-top: 1px solid var(--md-sys-color-outline); background: var(--md-sys-color-surface); border-radius: 0 0 var(--border-radius) var(--border-radius); flex-shrink: 0; }
 .source-chip { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; background: var(--md-sys-color-background); border: 1px solid var(--md-sys-color-outline); border-radius: 20px; text-decoration: none; color: var(--md-sys-color-on-surface); font-size: 13px; font-weight: 500; }
 
 /* ==========================================================================
    THIẾT KẾ RESPONSIVE CHO MOBILE & TABLET
    ========================================================================== */
-.mobile-only { display: none; }
+.mobile-only { display: none !important; }
 .mobile-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.6); z-index: 900; opacity: 0; transition: opacity 0.3s; }
+
+/* THANH CHUYỂN TAB TRÊN MOBILE */
+.mobile-tab-toggle { display: flex; background: var(--md-sys-color-surface); border-radius: 8px; padding: 4px; margin-bottom: 16px; border: 1px solid var(--md-sys-color-outline); }
+.mobile-tab-toggle button { flex: 1; border: none; background: transparent; padding: 10px; border-radius: 6px; color: var(--md-sys-color-on-surface); font-weight: bold; opacity: 0.6; transition: 0.2s; }
+.mobile-tab-toggle button.active { background: var(--md-sys-color-primary); color: #fff; opacity: 1; }
 
 @media (max-width: 1024px) {
     .content-grid { grid-template-columns: 1.5fr 1fr; }
@@ -112,29 +112,29 @@ body { font-family: 'Roboto', sans-serif; background-color: var(--md-sys-color-b
 }
 
 @media (max-width: 768px) {
-    body, .app-layout, .main-wrapper { 
-        height: 100dvh; /* Chống lỗi bị thanh địa chỉ iOS/Android đè lên */
-    }
-    
-    .app-layout { display: flex; flex-direction: column; }
-    .mobile-only { display: flex !important; align-items: center; }
+    body, .app-layout, .main-wrapper { height: 100dvh; }
+    .mobile-only { display: flex !important; }
     
     .sidebar-left { position: fixed; left: -260px; top: 0; bottom: 0; width: 260px; transition: left 0.3s ease; box-shadow: 2px 0 12px rgba(0,0,0,0.2); }
     .sidebar-left.active { left: 0; }
     .mobile-overlay.active { display: block; opacity: 1; }
 
     .app-header { padding: 0 16px; }
-    
-    /* Ô tìm kiếm tự động co giãn vừa khung chữ */
-    .search-box { width: auto; flex-grow: 1; padding: 8px 12px; }
-    .search-box input { font-size: 13px; } /* Chữ nhỏ lại 1 chút trên mobile */
-    
-    .update-time { display: none; } 
     .dashboard-content { padding: 16px; -webkit-overflow-scrolling: touch; }
     .content-grid { grid-template-columns: 1fr; }
     
-    .modal-dialog { width: 100%; max-height: 100dvh; border-radius: 0; }
+    /* Ẩn sidebar MXH mặc định trên mobile */
+    #social-section { display: none; }
+
+    /* FIX LỖI MODAL BỊ CẮT TRÊN MOBILE */
+    .modal-overlay { padding-top: 0; }
+    .modal-dialog { width: 100%; height: 100dvh; max-height: 100dvh; border-radius: 0; transform: translateY(100%); transition: transform 0.3s ease-out; }
+    .modal-overlay.active .modal-dialog { transform: translateY(0); }
     .modal-footer { border-radius: 0; }
+    
+    /* SEARCH MOBILE: Nút mở rộng */
+    .search-box { display: none; position: absolute; top: 12px; right: 16px; width: calc(100vw - 80px); background: var(--md-sys-color-surface); z-index: 100; padding: 8px 16px; box-shadow: var(--md-elevation-1); }
+    .search-box.active { display: flex; }
 }
 
 @media (max-width: 480px) {
