@@ -105,7 +105,8 @@ async function runPipeline() {
         ]);
 
         // 7. Đồng bộ vào cấu trúc JSON Tĩnh
-        db.news = currentTopics.sort((a, b) => b.hot_score - a.hot_score); // Đẩy tin nóng lên đầu bảng
+       // Ưu tiên 1: Thời gian mới nhất. Ưu tiên 2: Độ nóng. (Giúp tin mới luôn lên đầu)
+db.news = currentTopics.sort((a, b) => b.timestamp - a.timestamp || b.hot_score - a.hot_score);
         db.market_data = marketData;
         db.social_trends = socialTrends;
         db.daily_briefing = reports.daily || "";
