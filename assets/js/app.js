@@ -75,29 +75,7 @@ function initMobileTabs() {
     });
 }
 
-function initMobileSearch() {
-    const searchBtn = document.getElementById('mobile-search-btn');
-    const searchBox = document.getElementById('header-search-box');
-    const searchInput = document.getElementById('search-input');
-    
-    if(searchBtn) {
-        searchBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            searchBox.classList.toggle('active');
-            if(searchBox.classList.contains('active')) {
-                searchInput.focus();
-            }
-        });
-    }
-    
-    document.addEventListener('click', (e) => {
-        if (window.innerWidth <= 768 && searchBox.classList.contains('active')) {
-            if (!searchBox.contains(e.target) && e.target !== searchBtn) {
-                searchBox.classList.remove('active');
-            }
-        }
-    });
-}
+
 
 function initMobileMenu() {
     const menuBtn = document.getElementById('mobile-menu-btn');
@@ -116,22 +94,88 @@ function initMobileMenu() {
     }
 }
 
+// ==========================================================
+// CÁC HÀM XỬ LÝ TÌM KIẾM ĐÃ ĐƯỢC NÂNG CẤP
+// ==========================================================
+
+// 1. Hàm hỗ trợ: Ép hiển thị kết quả mà KHÔNG làm tụt bàn phím ảo
+function forceShowNewsFeed() {
+    // Ép về tab Tổng quan (nếu đang ở tab khác)
+    const overviewBtn = document.getElementById('nav-overview');
+    if (overviewBtn && !overviewBtn.classList.contains('active')) {
+        document.querySelectorAll('.view-section').forEach(el => el.style.display = 'none');
+        document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+        document.getElementById('view-overview').style.display = 'block';
+        overviewBtn.classList.add('active');
+    }
+
+    // Ép hiển thị cột Tin tức trên Mobile (để tránh lỗi đang xem MXH thì không thấy kết quả)
+    const btnNews = document.getElementById('tab-news');
+    const btnSocial = document.getElementById('tab-social');
+    const secFeed = document.getElementById('feed-section');
+    const secSocial = document.getElementById('social-section');
+
+    if (window.innerWidth <= 768 && btnNews && secFeed) {
+        btnNews.classList.add('active');
+        if (btnSocial) btnSocial.classList.remove('active');
+        secFeed.style.display = 'block';
+        if (secSocial) secSocial.style.display = 'none';
+    }
+}
+
+// 2. Logic Tìm kiếm (Gõ phím thời gian thực)
 function initSearch() {
     const searchInput = document.getElementById('search-input');
     searchInput.addEventListener('input', (e) => {
         const term = e.target.value.toLowerCase().trim();
-        if (!term) {
-            renderNewsFeed(globalNewsData); 
-            return;
-        }
-        const filtered = globalNewsData.filter(cluster => {
-            const title = (cluster.title || cluster.cluster_title || '').toLowerCase();
-            const summary = (cluster.short_summary || '').toLowerCase();
-            return title.includes(term) || summary.includes(term);
-        });
-        renderNewsFeed(filtered);
         
-        document.getElementById('nav-overview').click(); 
+        if (!term) {
+            renderNewsFeed(globalNewsData);
+        } else {
+            const filtered = globalNewsData.filter(cluster => {
+                const title = (cluster.title || cluster.cluster_title || '').toLowerCase();
+                const summary = (cluster.short_summary || '').toLowerCase();
+                return title.includes(term) || summary.includes(term);
+            });
+            renderNewsFeed(filtered);
+        }
+        
+        // Gọi hàm xử lý UI ngầm định thay vì dùng .click()
+        forceShowNewsFeed();
+    });
+}
+
+// 3. Xử lý nút ẩn/hiện thanh tìm kiếm trên Mobile
+function initMobileSearch() {
+    const searchBtn = document.getElementById('mobile-search-btn');
+    const searchBox = document.getElementById('header-search-box');
+    const searchInput = document.getElementById('search-input');
+    
+    if(searchBtn) {
+        searchBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            searchBox.classList.toggle('active');
+            
+            if(searchBox.classList.contains('active')) {
+                // Thêm độ trễ 50ms để CSS bung khung ra xong mới gọi bàn phím ảo (chống giật lag)
+                setTimeout(() => searchInput.focus(), 50); 
+            } else {
+                searchInput.blur();
+                searchInput.value = ''; // Tự động xóa chữ nếu đóng thanh tìm kiếm
+                renderNewsFeed(globalNewsData); // Trả lại toàn bộ tin tức
+            }
+        });
+    }
+    
+    // Tự động đóng tìm kiếm khi chạm ngón tay ra ngoài vùng trống
+    document.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768 && searchBox.classList.contains('active')) {
+            // Sửa logic so sánh nút search an toàn tuyệt đối
+            if (!searchBox.contains(e.target) && !searchBtn.contains(e.target)) {
+                searchBox.classList.remove('active');
+                searchInput.blur(); 
+            }
+        }
     });
 }
 
