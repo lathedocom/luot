@@ -36,20 +36,24 @@
         <!-- KHU VỰC NỘI DUNG CHÍNH -->
         <div class="main-wrapper">
             <!-- Header -->
+            <!-- Header -->
             <header class="app-header">
                 <div style="display: flex; align-items: center; gap: 12px; width: 100%;">
                     <!-- Nút Menu (Chỉ hiện trên Mobile) -->
                     <button id="mobile-menu-btn" class="icon-btn mobile-only"><span class="material-icons-round">menu</span></button>
                     
-                    <div class="search-box">
+                    <!-- BỔ SUNG LOGO CHO MOBILE (Sẽ tự ẩn trên Máy tính) -->
+                    <h1 class="logo mobile-only" style="font-size: 20px; flex-shrink: 0; cursor: pointer;" title="Bấm 5 lần">LƯỚT</h1>
+                    
+                    <div class="search-box" style="flex-grow: 1;">
                         <span class="material-icons-round">search</span>
-                        <input type="text" id="search-input" placeholder="Tìm kiếm chủ đề, quốc gia...">
+                        <!-- Rút gọn chữ Placeholder để không bị tràn trên điện thoại nhỏ -->
+                        <input type="text" id="search-input" placeholder="Tìm kiếm...">
                     </div>
                 </div>
 
                 <div class="header-actions">
                     <span class="update-time" id="last-update-time">Đang cập nhật...</span>
-                    <!-- Đã gỡ bỏ nút Sáng/Tối và nút Thông báo theo yêu cầu -->
                 </div>
             </header>
 
