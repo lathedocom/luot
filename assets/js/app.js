@@ -3,6 +3,9 @@ let totalCrawledArticles = 0;
 
 document.addEventListener('DOMContentLoaded', () => {
     initMobileMenu();
+    initNavigation(); // Xử lý Menu Sidebar Trái
+    initMobileTabs(); // Nút chuyển Tin tức / MXH
+    initMobileSearch(); // Khung search ẩn hiện trên Mobile
     initModalEvents();
     initAdminEasterEgg();
     initSearch();
@@ -10,7 +13,95 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchNewsData();
 });
 
-// 1. MENU RESPONSIVE CHO MOBILE
+// 1. ĐIỀU HƯỚNG VIEW (SPA ROUTING TỪ SIDEBAR TRÁI)
+function initNavigation() {
+    const tabs = ['overview', 'briefing', 'market'];
+    tabs.forEach(tab => {
+        const navBtn = document.getElementById(`nav-${tab}`);
+        if (navBtn) {
+            navBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                // Ẩn tất cả View
+                document.querySelectorAll('.view-section').forEach(el => el.style.display = 'none');
+                // Bỏ Active tất cả Nav
+                document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+                
+                // Kích hoạt View và Nav tương ứng
+                document.getElementById(`view-${tab}`).style.display = 'block';
+                navBtn.classList.add('active');
+
+                // Đóng sidebar trên mobile nếu đang mở
+                const sidebar = document.getElementById('app-sidebar');
+                const overlay = document.getElementById('sidebar-overlay');
+                if (sidebar.classList.contains('active')) {
+                    sidebar.classList.remove('active');
+                    overlay.classList.remove('active');
+                }
+            });
+        }
+    });
+}
+
+// 2. CHUYỂN TAB TIN TỨC / MXH TRÊN MOBILE
+function initMobileTabs() {
+    const btnNews = document.getElementById('tab-news');
+    const btnSocial = document.getElementById('tab-social');
+    const secFeed = document.getElementById('feed-section');
+    const secSocial = document.getElementById('social-section');
+
+    if(btnNews && btnSocial) {
+        btnNews.addEventListener('click', () => {
+            btnNews.classList.add('active');
+            btnSocial.classList.remove('active');
+            secFeed.style.display = 'block';
+            secSocial.style.display = 'none';
+        });
+        btnSocial.addEventListener('click', () => {
+            btnSocial.classList.add('active');
+            btnNews.classList.remove('active');
+            secFeed.style.display = 'none';
+            secSocial.style.display = 'block';
+        });
+    }
+
+    // Đảm bảo không bị lỗi giao diện khi xoay ngang màn hình hoặc chuyển qua lại PC
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            secFeed.style.display = 'block';
+            secSocial.style.display = 'block';
+        } else {
+            if(btnNews.classList.contains('active')) secSocial.style.display = 'none';
+            else secFeed.style.display = 'none';
+        }
+    });
+}
+
+// 3. TÌM KIẾM ẨN HIỆN TRÊN MOBILE
+function initMobileSearch() {
+    const searchBtn = document.getElementById('mobile-search-btn');
+    const searchBox = document.getElementById('header-search-box');
+    const searchInput = document.getElementById('search-input');
+    
+    if(searchBtn) {
+        searchBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            searchBox.classList.toggle('active');
+            if(searchBox.classList.contains('active')) {
+                searchInput.focus();
+            }
+        });
+    }
+    // Tự đóng khi bấm ra ngoài
+    document.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768 && searchBox.classList.contains('active')) {
+            if (!searchBox.contains(e.target) && e.target !== searchBtn) {
+                searchBox.classList.remove('active');
+            }
+        }
+    });
+}
+
+// 4. MENU & SEARCH LOGIC
 function initMobileMenu() {
     const menuBtn = document.getElementById('mobile-menu-btn');
     const sidebar = document.getElementById('app-sidebar');
@@ -21,7 +112,6 @@ function initMobileMenu() {
             sidebar.classList.add('active');
             overlay.classList.add('active');
         });
-
         overlay.addEventListener('click', () => {
             sidebar.classList.remove('active');
             overlay.classList.remove('active');
@@ -29,7 +119,6 @@ function initMobileMenu() {
     }
 }
 
-// 2. TÌM KIẾM THỜI GIAN THỰC
 function initSearch() {
     const searchInput = document.getElementById('search-input');
     searchInput.addEventListener('input', (e) => {
@@ -38,20 +127,20 @@ function initSearch() {
             renderNewsFeed(globalNewsData); 
             return;
         }
-        
         const filtered = globalNewsData.filter(cluster => {
             const title = (cluster.title || cluster.cluster_title || '').toLowerCase();
             const summary = (cluster.short_summary || '').toLowerCase();
             return title.includes(term) || summary.includes(term);
         });
-        
         renderNewsFeed(filtered);
+        
+        // Tự động chuyển về tab Tổng quan nếu đang tìm kiếm
+        document.getElementById('nav-overview').click(); 
     });
 }
 
-// 3. ADMIN BẨN (BẤM LOGO 5 LẦN)
+// 5. ADMIN BẨN (BẤM LOGO)
 function initAdminEasterEgg() {
-    // Sửa thành querySelectorAll để bắt được cả 2 Logo (Desktop & Mobile)
     const logos = document.querySelectorAll('.logo');
     let clickCount = 0;
     let clickTimer;
@@ -60,7 +149,6 @@ function initAdminEasterEgg() {
         logo.addEventListener('click', () => {
             clickCount++;
             clearTimeout(clickTimer);
-            
             if (clickCount === 5) {
                 document.getElementById('admin-raw-count').textContent = totalCrawledArticles;
                 document.getElementById('admin-topic-count').textContent = globalNewsData.length;
@@ -71,7 +159,6 @@ function initAdminEasterEgg() {
             }
         });
     });
-
     document.querySelector('.close-admin-action').addEventListener('click', () => {
         document.getElementById('admin-modal').classList.remove('active');
     });
@@ -91,6 +178,7 @@ function renderSkeletons() {
     newsContainer.innerHTML = skeletons;
 }
 
+// 6. FETCH VÀ RENDER DỮ LIỆU
 async function fetchNewsData() {
     try {
         const response = await fetch(`news_data.json?v=${new Date().getTime()}`);
@@ -99,17 +187,12 @@ async function fetchNewsData() {
         
         globalNewsData = data.news || [];
         totalCrawledArticles = data.stats ? data.stats.total_crawled : 0;
-        
-        const updateTimeEl = document.getElementById('last-update-time');
-        if(data.stats && data.stats.last_run) {
-            const d = new Date(data.stats.last_run);
-            updateTimeEl.textContent = `Cập nhật: ${d.getHours().toString().padStart(2,'0')}:${d.getMinutes().toString().padStart(2,'0')}`;
-        }
 
         renderStats(data);
         renderNewsFeed(globalNewsData);
-        renderMarket(data.market_data || []);
         renderBriefing(data.daily_briefing);
+        renderMarket(data.market_data || []);
+        renderSocial(data.social || []); // Gọi hàm render mạng xã hội
 
     } catch (error) {
         document.getElementById('news-container').innerHTML = `<div class="news-card"><p>Lỗi kết nối. Không thể tải dữ liệu Intelligence.</p></div>`;
@@ -176,10 +259,19 @@ function renderNewsFeed(newsData) {
     });
 }
 
+function renderBriefing(briefingText) {
+    const briefingContainer = document.getElementById('briefing-container');
+    if (briefingText) {
+        briefingContainer.innerHTML = `<p style="white-space: pre-wrap;">${briefingText}</p>`;
+    } else {
+        briefingContainer.innerHTML = '<p style="opacity:0.7;">Chưa có bản tin tóm tắt cho chu kỳ này.</p>';
+    }
+}
+
 function renderMarket(marketData) {
     const marketContainer = document.getElementById('market-container');
     if (marketData.length === 0) {
-        marketContainer.innerHTML = '<p>Đang chờ dữ liệu thị trường...</p>';
+        marketContainer.innerHTML = '<p style="opacity:0.7;">Đang chờ dữ liệu thị trường...</p>';
         return;
     }
     let html = '';
@@ -189,27 +281,37 @@ function renderMarket(marketData) {
         const icon = isUp ? 'trending_up' : 'trending_down';
 
         html += `
-            <div class="market-row">
-                <strong>${item.symbol}</strong>
-                <span style="color: ${color}; font-weight: bold; display: flex; align-items: center; gap: 4px;">
-                    ${item.price} <span class="material-icons-round" style="font-size: 16px;">${icon}</span>
+            <div style="background: var(--md-sys-color-surface); padding: 20px; border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px solid var(--md-sys-color-outline); box-shadow: var(--md-elevation-1);">
+                <strong style="font-size: 16px; margin-bottom: 8px; opacity: 0.8;">${item.symbol}</strong>
+                <span style="color: ${color}; font-size: 22px; font-weight: bold; display: flex; align-items: center; gap: 4px;">
+                    ${item.price} <span class="material-icons-round">${icon}</span>
                 </span>
             </div>`;
     });
     marketContainer.innerHTML = html;
 }
 
-function renderBriefing(briefingText) {
-    const briefingContainer = document.getElementById('briefing-container');
-    if (briefingText) {
-        briefingContainer.innerHTML = `<p style="white-space: pre-wrap;">${briefingText}</p>`;
+function renderSocial(socialData) {
+    const container = document.getElementById('social-container');
+    if (!socialData || socialData.length === 0) {
+        container.innerHTML = '<p style="opacity: 0.7; font-size: 13px;">Chưa có dữ liệu thảo luận.</p>';
+        return;
     }
+    let html = '';
+    socialData.forEach(item => {
+        html += `
+            <div style="padding: 16px 0; border-bottom: 1px dashed var(--md-sys-color-outline);">
+                <div style="font-weight: bold; font-size: 15px; margin-bottom: 8px; color: var(--md-sys-color-primary);">#${item.keyword || 'Trending'}</div>
+                <div style="font-size: 14px; opacity: 0.85; line-height: 1.5;">${item.summary || item.content || 'Thảo luận đang tăng cao...'}</div>
+            </div>
+        `;
+    });
+    container.innerHTML = html;
 }
 
-// 4. LOGIC MODAL & ẨN/HIỆN NGUỒN BÁO
+// 7. LOGIC MODAL TÌNH BÁO
 function initModalEvents() {
     const modal = document.getElementById('intelligence-modal');
-    
     document.querySelector('.close-modal-action').addEventListener('click', () => modal.classList.remove('active'));
     modal.addEventListener('click', (e) => { if(e.target === modal) modal.classList.remove('active'); });
 
