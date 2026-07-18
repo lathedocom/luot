@@ -17,7 +17,9 @@ function clusterArticles(articles) {
     logger.info(`Bước 3: Gom cụm (Clustering) bằng Cosine Similarity...`);
     
     const clusters = [];
-    const THRESHOLD = 0.995; // Độ tương đồng 99,5% thì tính là chung 1 sự kiện
+    
+    // HẠ NGƯỠNG XUỐNG 0.82 ĐỂ CÁC BÀI BÁO CÙNG CHỦ ĐỀ GỘP ĐƯỢC VÀO NHAU
+    const THRESHOLD = 0.82; 
 
     for (const article of articles) {
         if (!article.vector) continue;
@@ -41,16 +43,13 @@ function clusterArticles(articles) {
         }
     }
 
-    // Làm sạch và chuẩn bị dữ liệu cho bước trích xuất Thực thể (NLP)
-    const finalClusters = [];
+    // Làm sạch và chuẩn bị dữ liệu
+    const formattedClusters = [];
     clusters.forEach(c => {
-        // Gom văn bản của tất cả các bài trong cụm lại để AI đọc dễ hơn
         const combinedText = c.articles.map(a => `${a.title}. ${a.summary}`).join(" | ");
-        
-        // Lấy ảnh đại diện từ bài viết đầu tiên có ảnh
         const firstArticleWithImage = c.articles.find(a => a.thumbnail);
         
-        finalClusters.push({
+        formattedClusters.push({
             articles: c.articles,
             combined_text: combinedText,
             article_count: c.articles.length,
@@ -59,11 +58,21 @@ function clusterArticles(articles) {
         });
     });
 
-    // Ưu tiên xử lý các cụm sự kiện có nhiều báo đưa tin nhất
-    finalClusters.sort((a, b) => b.article_count - a.article_count);
+    // =========================================================
+    // ÁP DỤNG BỘ LỌC BIÊN TẬP VIÊN (CHỈ LẤY TIN CHẤT LƯỢNG CAO)
+    // =========================================================
+    
+    // 1. Xóa bỏ các tin lẻ tẻ, CHỈ GIỮ LẠI sự kiện có TỪ 2 BÁO TRỞ LÊN đưa tin
+    let topTopics = formattedClusters.filter(c => c.article_count >= 2);
 
-    logger.success(`Đã gom thành công ${finalClusters.length} cụm sự kiện (Topic thô).`);
-    return finalClusters;
+    // 2. Sắp xếp ưu tiên: Sự kiện nào NHIỀU BÁO ĐƯA TIN NHẤT sẽ đứng trên cùng
+    topTopics.sort((a, b) => b.article_count - a.article_count);
+
+    // 3. CẮT NGỌN: Chỉ lấy đúng 10 CỤM SỰ KIỆN quan trọng nhất
+    topTopics = topTopics.slice(0, 10);
+
+    logger.success(`Đã lọc thành công ${topTopics.length} cụm sự kiện TOÀN CẢNH (Top Trending).`);
+    return topTopics;
 }
 
 module.exports = { clusterArticles };
