@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const logger = require('../utils/logger');
 
-const CACHE_FILE = path.join(__dirname, '../../../../data/ai_cache.json');
+const CACHE_FILE = path.join(__dirname, '../../../data/ai_cache.json');
 
 function initCache() {
     const dir = path.dirname(CACHE_FILE);
