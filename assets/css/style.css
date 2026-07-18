@@ -23,13 +23,21 @@
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* KHÓA CHẶT LỖI TRÀN BỀ NGANG GÂY TRẮNG MÀN HÌNH BÊN PHẢI */
+html, body { 
+    width: 100%; 
+    max-width: 100%; 
+    overflow-x: hidden !important; 
+}
+
 body { font-family: 'Roboto', sans-serif; background-color: var(--md-sys-color-background); color: var(--md-sys-color-on-surface); height: 100vh; overflow: hidden; }
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--md-sys-color-outline); border-radius: 10px; }
 
 /* BỐ CỤC APP LAYOUT */
-.app-layout { display: grid; grid-template-columns: 240px 1fr; height: 100vh; overflow: hidden; }
+.app-layout { display: grid; grid-template-columns: 240px 1fr; height: 100vh; overflow: hidden; width: 100%; max-width: 100%; }
 .sidebar-left { background-color: var(--md-sys-color-surface); border-right: 1px solid var(--md-sys-color-outline); display: flex; flex-direction: column; padding: 20px 0; z-index: 1000; }
 .logo-container { padding: 0 20px 24px; border-bottom: 1px solid var(--md-sys-color-outline); margin-bottom: 16px; }
 .logo { font-size: 22px; font-weight: 700; color: var(--md-sys-color-on-surface); }
@@ -41,7 +49,7 @@ body { font-family: 'Roboto', sans-serif; background-color: var(--md-sys-color-b
 .nav-footer { padding: 20px; font-size: 12px; opacity: 0.5; text-align: center; }
 
 /* HEADER & MAIN CONTENT */
-.main-wrapper { display: flex; flex-direction: column; height: 100vh; overflow: hidden; width: 100%; position: relative; }
+.main-wrapper { display: flex; flex-direction: column; height: 100vh; overflow: hidden; width: 100%; max-width: 100%; position: relative; }
 .app-header { height: 64px; background-color: var(--md-sys-color-surface); border-bottom: 1px solid var(--md-sys-color-outline); display: flex; align-items: center; justify-content: space-between; padding: 0 24px; flex-shrink: 0; position: relative; }
 .header-actions { display: flex; align-items: center; gap: 12px; }
 .icon-btn { background: none; border: none; color: var(--md-sys-color-on-surface); cursor: pointer; display: flex; align-items: center; justify-content: center; opacity: 0.7; transition: 0.2s; padding: 8px; border-radius: 8px; }
@@ -54,8 +62,9 @@ body { font-family: 'Roboto', sans-serif; background-color: var(--md-sys-color-b
 .dashboard-content { flex-grow: 1; padding: 24px; overflow-y: auto; overflow-x: hidden; }
 .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
 .stat-card { background-color: var(--md-sys-color-surface); padding: 16px; border-radius: var(--border-radius); border: 1px solid var(--md-sys-color-outline); display: flex; align-items: center; gap: 16px; }
-.stat-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; }
-.stat-info h3 { font-size: 13px; opacity: 0.7; font-weight: normal; margin-bottom: 4px; text-transform: uppercase; }
+.stat-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0; }
+.stat-info { display: flex; flex-direction: column; overflow: hidden; }
+.stat-info h3 { font-size: 13px; opacity: 0.7; font-weight: normal; margin-bottom: 4px; text-transform: uppercase; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
 .stat-info p { font-size: 22px; font-weight: bold; }
 
 .content-grid { display: grid; grid-template-columns: 2.5fr 1fr; gap: 24px; }
@@ -80,9 +89,7 @@ body { font-family: 'Roboto', sans-serif; background-color: var(--md-sys-color-b
 .skeleton-card { background-color: var(--md-sys-color-surface); border: 1px solid var(--md-sys-color-outline); border-radius: var(--border-radius); padding: 20px; margin-bottom: 16px; }
 @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
 
-/* ==========================================================================
-   MODAL MẶC ĐỊNH CHO WEB (PC)
-   ========================================================================== */
+/* MODAL MẶC ĐỊNH CHO WEB (PC) */
 .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.8); display: flex; justify-content: center; align-items: flex-start; padding-top: 5vh; z-index: 2000; opacity: 0; pointer-events: none; transition: 0.3s ease; }
 .modal-overlay.active { opacity: 1; pointer-events: auto; }
 .modal-dialog { background: var(--md-sys-color-background); width: 95%; max-width: 800px; max-height: 90vh; border-radius: var(--border-radius); display: flex; flex-direction: column; border: 1px solid var(--md-sys-color-outline); transform: translateY(20px); transition: 0.3s ease; box-shadow: 0 20px 40px rgba(0,0,0,0.4); overflow: hidden; }
@@ -97,12 +104,11 @@ body { font-family: 'Roboto', sans-serif; background-color: var(--md-sys-color-b
 .close-btn { background: var(--md-sys-color-background); border: 1px solid var(--md-sys-color-outline); border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--md-sys-color-on-surface); flex-shrink: 0; }
 
 /* ==========================================================================
-   THIẾT KẾ RESPONSIVE CHO MOBILE (ĐÃ FIX LỖI)
+   THIẾT KẾ RESPONSIVE CHO MOBILE (ĐÃ FIX LỖI TRÀN KHUNG ZOOM OUT)
    ========================================================================== */
 .mobile-only { display: none !important; }
 .mobile-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.6); z-index: 900; opacity: 0; transition: opacity 0.3s; }
 
-/* THANH CHUYỂN TAB TRÊN MOBILE */
 .mobile-tab-toggle { display: flex; background: var(--md-sys-color-surface); border-radius: 8px; padding: 4px; margin-bottom: 16px; border: 1px solid var(--md-sys-color-outline); }
 .mobile-tab-toggle button { flex: 1; border: none; background: transparent; padding: 10px; border-radius: 6px; color: var(--md-sys-color-on-surface); font-weight: bold; opacity: 0.6; transition: 0.2s; }
 .mobile-tab-toggle button.active { background: var(--md-sys-color-primary); color: #fff; opacity: 1; }
@@ -113,25 +119,24 @@ body { font-family: 'Roboto', sans-serif; background-color: var(--md-sys-color-b
 }
 
 @media (max-width: 768px) {
-    /* 1. Sửa lỗi chiều cao màn hình */
     body, .app-layout, .main-wrapper { height: 100vh; height: 100dvh; }
-    .app-layout { display: flex; flex-direction: column; width: 100vw; }
+    
+    /* Gắn cứng 100% thay vì 100vw để tránh lệch scrollbar */
+    .app-layout { display: flex; flex-direction: column; width: 100%; }
     .mobile-only { display: flex !important; }
     
-    /* 2. Menu trượt */
     .sidebar-left { position: fixed; left: -280px; top: 0; bottom: 0; width: 260px; transition: left 0.3s ease; box-shadow: 2px 0 12px rgba(0,0,0,0.3); }
     .sidebar-left.active { left: 0; }
     .mobile-overlay.active { display: block; opacity: 1; }
 
-    /* 3. Sửa lỗi Ô Tìm kiếm đâm xuyên màn hình */
     .app-header { padding: 0 16px; position: relative; }
     .search-box { 
         display: none; 
         position: absolute; 
         top: 10px; 
-        left: 60px; /* Chừa góc trái cho nút Menu */
-        right: 16px; /* Chừa góc phải */
-        width: auto; /* Tự động co giãn theo viền trái phải */
+        left: 60px; 
+        right: 16px; 
+        width: auto; 
         background: var(--md-sys-color-surface); 
         z-index: 100; 
         padding: 8px 16px; 
@@ -139,25 +144,32 @@ body { font-family: 'Roboto', sans-serif; background-color: var(--md-sys-color-b
     }
     .search-box.active { display: flex; }
 
-    /* 4. Nội dung chính */
     .dashboard-content { padding: 16px; -webkit-overflow-scrolling: touch; width: 100%; }
     .content-grid { grid-template-columns: 1fr; }
     #social-section { display: none; }
-    .stats-row { grid-template-columns: 1fr 1fr; }
-
-    /* 5. THIẾT KẾ MODAL DẠNG BOTTOM SHEET (Fix lỗi cắt đầu) */
-    .modal-overlay { 
-        align-items: flex-end; /* Đẩy modal xuống dưới cùng */
-        padding-top: 0; 
+    
+    /* THIẾT KẾ LẠI THỐNG KÊ ĐỂ CHỐNG TRÀN */
+    .stats-row { grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; }
+    .stat-card { 
+        padding: 12px; 
+        gap: 8px; 
+        flex-direction: column; /* Đảo dọc Icon và Chữ */
+        align-items: flex-start; 
+        justify-content: center;
     }
+    .stat-icon { width: 34px; height: 34px; font-size: 18px; border-radius: 8px; }
+    .stat-info h3 { font-size: 11px; white-space: normal; } /* Cho phép chữ rớt dòng */
+    .stat-info p { font-size: 18px; line-height: 1; }
+
+    /* MODAL DẠNG BOTTOM SHEET */
+    .modal-overlay { align-items: flex-end; padding-top: 0; }
     .modal-dialog { 
         width: 100%; 
-        height: 88vh; /* Chỉ chiếm 88% màn hình, hở 12% ở trên để không bị vướng tai thỏ iOS */
-        height: 88dvh; 
+        height: 88vh; height: 88dvh; 
         max-height: 88dvh; 
-        border-radius: 24px 24px 0 0; /* Bo tròn nắp trên cho đẹp */
+        border-radius: 24px 24px 0 0; 
         transform: translateY(100%); 
-        transition: transform 0.35s cubic-bezier(0.1, 0.7, 0.1, 1); /* Hiệu ứng vuốt siêu mượt */
+        transition: transform 0.35s cubic-bezier(0.1, 0.7, 0.1, 1); 
         margin: 0; 
     }
     .modal-overlay.active .modal-dialog { transform: translateY(0); }
