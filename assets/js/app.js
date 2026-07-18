@@ -1,8 +1,8 @@
 let globalNewsData = [];
-let totalCrawledArticles = 0; // Lưu tạm để hiển thị trong Admin Modal
+let totalCrawledArticles = 0;
 
 document.addEventListener('DOMContentLoaded', () => {
-    initThemeToggle();
+    initMobileMenu();
     initModalEvents();
     initAdminEasterEgg();
     initSearch();
@@ -10,55 +10,32 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchNewsData();
 });
 
-// 1. TỰ ĐỘNG THEO HỆ ĐIỀU HÀNH & NÚT ĐỔI THEME THỦ CÔNG
-function initThemeToggle() {
-    const btn = document.getElementById('theme-toggle');
-    const icon = btn.querySelector('.material-icons-round');
-    const savedTheme = localStorage.getItem('theme');
-    
-    // Kiểm tra xem hệ điều hành đang dùng Light hay Dark
-    const osPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+// 1. MENU RESPONSIVE CHO MOBILE
+function initMobileMenu() {
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const sidebar = document.getElementById('app-sidebar');
+    const overlay = document.getElementById('sidebar-overlay');
 
-    function applyTheme(isDark) {
-        if (isDark) {
-            document.body.classList.remove('light-theme');
-            document.body.classList.add('dark-theme');
-            icon.textContent = 'light_mode';
-        } else {
-            document.body.classList.remove('dark-theme');
-            document.body.classList.add('light-theme');
-            icon.textContent = 'dark_mode';
-        }
+    if (menuBtn && sidebar && overlay) {
+        menuBtn.addEventListener('click', () => {
+            sidebar.classList.add('active');
+            overlay.classList.add('active');
+        });
+
+        overlay.addEventListener('click', () => {
+            sidebar.classList.remove('active');
+            overlay.classList.remove('active');
+        });
     }
-
-    // Nếu người dùng đã từng bấm nút thủ công thì ưu tiên lựa chọn đó
-    if (savedTheme) {
-        applyTheme(savedTheme === 'dark-theme');
-    } else {
-        applyTheme(osPrefersDark.matches);
-    }
-
-    // Nếu OS đổi theme (khi đổi buổi sáng/tối), web đổi theo (nếu chưa fix cứng)
-    osPrefersDark.addEventListener('change', (e) => {
-        if (!localStorage.getItem('theme')) applyTheme(e.matches);
-    });
-
-    btn.addEventListener('click', () => {
-        const isCurrentlyDark = document.body.classList.contains('dark-theme') || 
-            (!document.body.classList.contains('light-theme') && osPrefersDark.matches);
-        
-        applyTheme(!isCurrentlyDark);
-        localStorage.setItem('theme', !isCurrentlyDark ? 'dark-theme' : 'light-theme');
-    });
 }
 
-// 2. TÍNH NĂNG TÌM KIẾM THEO THỜI GIAN THỰC
+// 2. TÌM KIẾM THỜI GIAN THỰC
 function initSearch() {
     const searchInput = document.getElementById('search-input');
     searchInput.addEventListener('input', (e) => {
         const term = e.target.value.toLowerCase().trim();
         if (!term) {
-            renderNewsFeed(globalNewsData); // Nếu xóa trắng ô tìm kiếm thì hiện lại tất cả
+            renderNewsFeed(globalNewsData); 
             return;
         }
         
@@ -72,7 +49,7 @@ function initSearch() {
     });
 }
 
-// 3. TÍNH NĂNG ADMIN ẨN (BẤM LOGO 5 LẦN)
+// 3. ADMIN BẨN (BẤM LOGO 5 LẦN)
 function initAdminEasterEgg() {
     const logo = document.querySelector('.logo');
     let clickCount = 0;
@@ -83,17 +60,15 @@ function initAdminEasterEgg() {
         clearTimeout(clickTimer);
         
         if (clickCount === 5) {
-            // Hiển thị Modal Admin
             document.getElementById('admin-raw-count').textContent = totalCrawledArticles;
             document.getElementById('admin-topic-count').textContent = globalNewsData.length;
             document.getElementById('admin-modal').classList.add('active');
-            clickCount = 0; // Reset
+            clickCount = 0; 
         } else {
-            clickTimer = setTimeout(() => { clickCount = 0; }, 1200); // Cho 1.2s để bấm liên tục
+            clickTimer = setTimeout(() => { clickCount = 0; }, 1200);
         }
     });
 
-    // Nút đóng modal Admin
     document.querySelector('.close-admin-action').addEventListener('click', () => {
         document.getElementById('admin-modal').classList.remove('active');
     });
@@ -228,15 +203,13 @@ function renderBriefing(briefingText) {
     }
 }
 
-// 4. LOGIC ẨN/HIỆN NGUỒN BÁO TRONG MODAL
+// 4. LOGIC MODAL & ẨN/HIỆN NGUỒN BÁO
 function initModalEvents() {
     const modal = document.getElementById('intelligence-modal');
     
-    // Nút tắt Modal
     document.querySelector('.close-modal-action').addEventListener('click', () => modal.classList.remove('active'));
     modal.addEventListener('click', (e) => { if(e.target === modal) modal.classList.remove('active'); });
 
-    // Nút tắt/bật khu vực nguồn báo
     const toggleBtn = document.getElementById('toggle-sources-btn');
     const sourcesDiv = document.getElementById('modal-sources');
     const toggleIcon = document.getElementById('toggle-sources-icon');
@@ -272,10 +245,9 @@ function openModal(cluster) {
 
     document.getElementById('modal-body').innerHTML = bodyHtml;
 
-    // Đổ danh sách nguồn báo chí (mặc định ẩn)
     const sourcesContainer = document.getElementById('modal-sources');
     sourcesContainer.innerHTML = '';
-    sourcesContainer.style.display = 'none'; // Luôn luôn đóng khi mở thẻ tin tức mới
+    sourcesContainer.style.display = 'none'; 
     document.getElementById('toggle-sources-icon').textContent = 'visibility';
     document.getElementById('toggle-sources-text').textContent = 'Xem danh sách các nguồn báo chí';
 
