@@ -7,6 +7,2063 @@
   },
   "news": [
     {
+      "event_key": "evt_3014be75",
+      "topic_key": "evt_3014be75_intelligence_2026",
+      "title": "Giao thoa văn hóa thể thao và dư chấn nhân đạo toàn cầu",
+      "timestamp": 1784380846455,
+      "importance": 50,
+      "hot_score": 30,
+      "categories": [
+        "uncategorized"
+      ],
+      "regions": [
+        "global"
+      ],
+      "short_summary": "Dữ liệu ghi nhận làn sóng hâm mộ bóng đá Argentina cuồng nhiệt tại Bangladesh, sự kỳ vọng của cộng đồng di dân tại New York, cùng báo cáo y tế về tình trạng thương tích nghiêm trọng của con tin Israel sau khi được giải thoát.",
+      "detailed_summary": "Sự kiện phản ánh hai mảng đối lập trong bức tranh toàn cầu: sức mạnh kết nối văn hóa của bóng đá (Argentina là tâm điểm tại Bangladesh và NYC) và sự khốc liệt của xung đột địa chính trị. Việc người dân Bangladesh ủng hộ Argentina minh chứng cho quyền lực mềm của thể thao, trong khi thông tin về con tin Israel nhấn mạnh hậu quả tàn khốc của xung đột Trung Đông. Cả hai luồng sự kiện cho thấy sự tương tác phức tạp giữa cảm xúc cộng đồng và thực trạng nhân đạo trong thế giới hiện đại.",
+      "causes": [
+        "Sức hút văn hóa toàn cầu của đội tuyển bóng đá quốc gia Argentina",
+        "Hậu quả tâm lý và thể chất kéo dài từ các cuộc tấn công vũ trang tại Trung Đông"
+      ],
+      "effects": [
+        "Gia tăng tinh thần đoàn kết quốc tế thông qua các sự kiện thể thao",
+        "Gây áp lực dư luận về tình trạng nhân đạo đối với các nạn nhân trong xung đột Israel-Hamas"
+      ],
+      "affected_groups": [
+        "Cộng đồng người hâm mộ bóng đá quốc tế",
+        "Nạn nhân xung đột và gia đình con tin",
+        "Các tổ chức y tế nhân đạo"
+      ],
+      "market_impact": "Không có tác động tài chính trực tiếp rõ rệt, tuy nhiên các sự kiện thể thao lớn thường thúc đẩy chi tiêu tiêu dùng, dịch vụ giải trí và du lịch tại các khu vực cộng đồng người hâm mộ chính.",
+      "follow_up": "Theo dõi phản ứng y tế tiếp theo đối với các con tin vừa được giải cứu và các hoạt động cộng đồng liên quan đến World Cup 2026.",
+      "entities": [
+        "Bangladesh",
+        "Argentinas New York",
+        "NYC",
+        "Argentinas team"
+      ],
+      "graph": {
+        "nodes": [
+          {
+            "id": "Bangladesh",
+            "label": "Bangladesh"
+          },
+          {
+            "id": "Argentinas New York",
+            "label": "Argentinas New York"
+          },
+          {
+            "id": "NYC",
+            "label": "NYC"
+          },
+          {
+            "id": "Argentinas team",
+            "label": "Argentinas team"
+          }
+        ],
+        "edges": [
+          {
+            "source": "Bangladesh",
+            "target": "Argentinas New York",
+            "weight": 1
+          },
+          {
+            "source": "Bangladesh",
+            "target": "NYC",
+            "weight": 1
+          },
+          {
+            "source": "Bangladesh",
+            "target": "Argentinas team",
+            "weight": 1
+          }
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.nytimes.com/2026/07/18/world/asia/world-cup-bangladesh-argentina-fans.html",
+          "source_name": "New York Times",
+          "source_logo": "https://www.nytimes.com/favicon.ico"
+        },
+        {
+          "url": "https://www.wsj.com/articles/freed-israeli-hostages-still-had-shrapnel-in-their-bodies-from-oct-7-attack-3de8cd1e",
+          "source_name": "Wall Street Journal",
+          "source_logo": "https://www.wsj.com/favicon.ico"
+        },
+        {
+          "url": "https://www.aljazeera.com/sports/2026/7/18/argentinas-new-york-fans-share-hopes-ahead-of-2026-world-cup-final?traffic_source=rss",
+          "source_name": "Al Jazeera",
+          "source_logo": "https://www.aljazeera.com/favicon_aje.ico"
+        }
+      ],
+      "timeline": [
+        {
+          "title": "Giao thoa văn hóa thể thao và dư chấn nhân đạo toàn cầu",
+          "timestamp": null,
+          "url": "https://www.nytimes.com/2026/07/18/world/asia/world-cup-bangladesh-argentina-fans.html"
+        }
+      ]
+    },
+    {
+      "event_key": "evt_1dc961b5",
+      "topic_key": "evt_1dc961b5_intelligence_2026",
+      "title": "Căng thẳng địa chính trị Nga-Ukraine và nỗ lực ngoại giao đa phương",
+      "timestamp": 1784380843838,
+      "importance": 50,
+      "hot_score": 30,
+      "categories": [
+        "uncategorized"
+      ],
+      "regions": [
+        "global"
+      ],
+      "short_summary": "Tổng thống Iran chuẩn bị tham dự hội nghị BRICS tại Ấn Độ trong bối cảnh Nga cáo buộc Ukraine tấn công thường dân và yêu cầu sự can thiệp từ các tổ chức quốc tế.",
+      "detailed_summary": "Sự kiện phản ánh hai diễn biến song song: một là bước đi ngoại giao của Iran trong khuôn khổ BRICS nhằm củng cố vị thế tại Ấn Độ; hai là cuộc chiến truyền thông và pháp lý gay gắt giữa Nga và Ukraine. Moscow liên tục tố cáo Kiev tấn công trẻ em bằng thiết bị bay không người lái, đồng thời đẩy mạnh việc cung cấp bằng chứng cho Liên Hợp Quốc. Các tuyên bố này nhằm quốc tế hóa các cáo buộc vi phạm nhân đạo, gia tăng sức ép ngoại giao trong khi xung đột quân sự vẫn tiếp diễn.",
+      "causes": [
+        "Sự gia tăng xung đột quân sự Nga-Ukraine tại các khu vực nhạy cảm",
+        "Mong muốn của Iran trong việc tăng cường quan hệ kinh tế thông qua khối BRICS"
+      ],
+      "effects": [
+        "Gia tăng căng thẳng ngoại giao tại các diễn đàn quốc tế như Liên Hợp Quốc",
+        "Tăng cường tính phân cực trong dư luận về đạo đức trong chiến tranh"
+      ],
+      "affected_groups": [
+        "Các nhà lãnh đạo chính trị khối BRICS",
+        "Cơ quan nhân đạo quốc tế và LHQ"
+      ],
+      "market_impact": "Sự kiện tạo rủi ro chính trị kéo dài, có thể gây biến động nhẹ cho giá năng lượng và hàng hóa thiết yếu khi các lệnh trừng phạt hoặc bất ổn tiềm ẩn làm gián đoạn chuỗi cung ứng.",
+      "follow_up": "Theo dõi kết quả các báo cáo từ Liên Hợp Quốc về cáo buộc của Nga và động thái cụ thể của các quốc gia BRICS trong hội nghị tại New Delhi.",
+      "entities": [
+        "India ",
+        "New Delhi",
+        "Kiev",
+        "Moscow",
+        "Russia"
+      ],
+      "graph": {
+        "nodes": [
+          {
+            "id": "India ",
+            "label": "India "
+          },
+          {
+            "id": "New Delhi",
+            "label": "New Delhi"
+          },
+          {
+            "id": "Kiev",
+            "label": "Kiev"
+          },
+          {
+            "id": "Moscow",
+            "label": "Moscow"
+          },
+          {
+            "id": "Russia",
+            "label": "Russia"
+          }
+        ],
+        "edges": [
+          {
+            "source": "India ",
+            "target": "New Delhi",
+            "weight": 1
+          },
+          {
+            "source": "India ",
+            "target": "Kiev",
+            "weight": 1
+          },
+          {
+            "source": "India ",
+            "target": "Moscow",
+            "weight": 1
+          },
+          {
+            "source": "India ",
+            "target": "Russia",
+            "weight": 1
+          }
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://tass.com/world/2161985",
+          "source_name": "TASS",
+          "source_logo": "https://tass.com/favicon.ico"
+        },
+        {
+          "url": "https://tass.com/politics/2161975",
+          "source_name": "TASS",
+          "source_logo": "https://tass.com/favicon.ico"
+        },
+        {
+          "url": "https://tass.com/politics/2161973",
+          "source_name": "TASS",
+          "source_logo": "https://tass.com/favicon.ico"
+        }
+      ],
+      "timeline": [
+        {
+          "title": "Căng thẳng địa chính trị Nga-Ukraine và nỗ lực ngoại giao đa phương",
+          "timestamp": null,
+          "url": "https://tass.com/world/2161985"
+        }
+      ]
+    },
+    {
+      "event_key": "evt_59d99946",
+      "topic_key": "evt_59d99946_intelligence_2026",
+      "title": "Bất động sản Hong Kong hồi phục và sự sôi động của thị trường vốn châu Á",
+      "timestamp": 1784380841453,
+      "importance": 50,
+      "hot_score": 50,
+      "categories": [
+        "tech"
+      ],
+      "regions": [
+        "global"
+      ],
+      "short_summary": "Thị trường bất động sản Hong Kong chứng kiến nhu cầu mua nhà mạnh mẽ tại Garden Regency, đồng thời thị trường tài chính khu vực ghi nhận sự bùng nổ IPO tại Ấn Độ và các biến động cổ phiếu lớn.",
+      "detailed_summary": "Thị trường ghi nhận hai xu hướng trái chiều nhưng tích cực: Sun Hung Kai Properties bán sạch 138 căn hộ tại Garden Regency, báo hiệu niềm tin người mua nhà Hong Kong phục hồi. Song song đó, lĩnh vực tài chính Ấn Độ gây chú ý với đợt IPO kỷ lục trị giá 31 tỷ USD, phản ánh làn sóng đầu tư mạnh mẽ từ các tổ chức. Trong khi đó, biến động trên thị trường chứng khoán quốc tế tập trung vào kết quả kinh doanh của các tập đoàn lớn như Netflix, UnitedHealth và TSMC.",
+      "causes": [
+        "Sự hồi phục niềm tin của người mua đối với phân khúc bất động sản cao cấp tại Hong Kong",
+        "Sự hưng phấn của các nhà đầu tư tổ chức đối với các cơ hội IPO tại thị trường Ấn Độ"
+      ],
+      "effects": [
+        "Thúc đẩy thanh khoản cho các tập đoàn bất động sản lớn tại Hong Kong",
+        "Tăng cường dòng vốn đầu tư nước ngoài vào thị trường chứng khoán Ấn Độ"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư bất động sản tại Hong Kong",
+        "Tổ chức tài chính và thị trường chứng khoán toàn cầu"
+      ],
+      "market_impact": "Việc bán hết dự án bất động sản và IPO kỷ lục cho thấy dòng tiền đang tập trung mạnh vào các tài sản chiến lược, làm tăng giá trị vốn hóa của các doanh nghiệp dẫn đầu.",
+      "follow_up": "Theo dõi phản ứng của giá cổ phiếu các công ty công nghệ và tác động từ lãi suất lên nhu cầu bất động sản.",
+      "entities": [
+        "Hung Kai Properties",
+        "Hong Kong",
+        "Garden Regency",
+        "Hong Kongs",
+        "Indias",
+        "Netflix",
+        "IPO"
+      ],
+      "graph": {
+        "nodes": [
+          {
+            "id": "Hung Kai Properties",
+            "label": "Hung Kai Properties"
+          },
+          {
+            "id": "Hong Kong",
+            "label": "Hong Kong"
+          },
+          {
+            "id": "Garden Regency",
+            "label": "Garden Regency"
+          },
+          {
+            "id": "Hong Kongs",
+            "label": "Hong Kongs"
+          },
+          {
+            "id": "Indias",
+            "label": "Indias"
+          },
+          {
+            "id": "Netflix",
+            "label": "Netflix"
+          },
+          {
+            "id": "IPO",
+            "label": "IPO"
+          }
+        ],
+        "edges": [
+          {
+            "source": "Hung Kai Properties",
+            "target": "Hong Kong",
+            "weight": 1
+          },
+          {
+            "source": "Hung Kai Properties",
+            "target": "Garden Regency",
+            "weight": 1
+          },
+          {
+            "source": "Hung Kai Properties",
+            "target": "Hong Kongs",
+            "weight": 1
+          },
+          {
+            "source": "Hung Kai Properties",
+            "target": "Indias",
+            "weight": 1
+          },
+          {
+            "source": "Hung Kai Properties",
+            "target": "Netflix",
+            "weight": 1
+          },
+          {
+            "source": "Hung Kai Properties",
+            "target": "IPO",
+            "weight": 1
+          }
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.scmp.com/business/article/3361052/hong-kong-homebuyers-snap-138-garden-regency-flats-new-territories-project?utm_source=rss_feed",
+          "source_name": "South China Morning Post",
+          "source_logo": "https://www.scmp.com/favicon.ico"
+        },
+        {
+          "url": "https://www.cnbc.com/2026/07/17/stocks-making-the-biggest-moves-premarket-nflx-spcx-googl-and-more.html",
+          "source_name": "CNBC",
+          "source_logo": "https://www.cnbc.com/favicon.ico"
+        },
+        {
+          "url": "https://www.cnbc.com/2026/07/17/indias-biggest-ipo-this-year-rakes-in-bids-worth-31-billion-powered-by-institutional-frenzy.html",
+          "source_name": "CNBC",
+          "source_logo": "https://www.cnbc.com/favicon.ico"
+        },
+        {
+          "url": "https://www.cnbc.com/2026/07/16/stocks-making-the-biggest-moves-midday-man-abt-unh-tsm-more.html",
+          "source_name": "CNBC",
+          "source_logo": "https://www.cnbc.com/favicon.ico"
+        },
+        {
+          "url": "https://www.cnbc.com/2026/07/16/stocks-making-the-biggest-moves-premarket-.html",
+          "source_name": "CNBC",
+          "source_logo": "https://www.cnbc.com/favicon.ico"
+        }
+      ],
+      "timeline": [
+        {
+          "title": "Bất động sản Hong Kong hồi phục và sự sôi động của thị trường vốn châu Á",
+          "timestamp": null,
+          "url": "https://www.scmp.com/business/article/3361052/hong-kong-homebuyers-snap-138-garden-regency-flats-new-territories-project?utm_source=rss_feed"
+        }
+      ]
+    },
+    {
+      "event_key": "evt_4828f2e7",
+      "topic_key": "evt_4828f2e7_intelligence_2026",
+      "title": "Biến động chính trị và tranh chấp pháp lý tại Malaysia và quốc tế",
+      "timestamp": 1784380838876,
+      "importance": 50,
+      "hot_score": 50,
+      "categories": [
+        "tech"
+      ],
+      "regions": [
+        "global"
+      ],
+      "short_summary": "Dữ liệu bao gồm các diễn biến bầu cử tại Negeri Sembilan, tranh chấp pháp lý tại Forest City, vấn đề ngôi vị hoàng gia Malaysia, bầu cử tại Sao Tome và Principe cùng sự thay đổi lãnh đạo tại Anh.",
+      "detailed_summary": "Tình hình chính trị tại Malaysia trở nên phức tạp với chiến dịch tranh cử tại Negeri Sembilan và tranh chấp ngôi vị hoàng gia gây áp lực lên ổn định chính trị. Tại Johor, chính quyền địa phương siết chặt quy định tại Forest City gây ảnh hưởng đến các startup. Đồng thời, bối cảnh quốc tế ghi nhận sự kiện chuyển giao quyền lực tại Anh và diễn biến địa chính trị tại Sao Tome và Principe, phản ánh sự bất ổn trong quản trị toàn cầu.",
+      "causes": [
+        "Quá trình bầu cử bang tại Negeri Sembilan làm gia tăng cạnh tranh chính trị.",
+        "Vi phạm quy định hành chính và tranh chấp di sản hoàng gia tại địa phương."
+      ],
+      "effects": [
+        "Sự phân hóa liên minh chính trị BN-PN tại Malaysia.",
+        "Nguy cơ gián đoạn hoạt động kinh doanh tại các đặc khu kinh tế như Forest City."
+      ],
+      "affected_groups": [
+        "Cộng đồng doanh nghiệp startup tại Johor",
+        "Cử tri và chính trị gia tại Negeri Sembilan",
+        "Các nhà đầu tư quốc tế tại Anh và Sao Tome"
+      ],
+      "market_impact": "Việc đình chỉ hoạt động tại Forest City và thay đổi chính phủ tại Anh gây tâm lý bất ổn cho nhà đầu tư, có thể làm sụt giảm dòng vốn FDI ngắn hạn vào các dự án bất động sản và startup.",
+      "follow_up": "Theo dõi kết quả bầu cử Negeri Sembilan và phản ứng của thị trường tài chính Anh đối với tân Thủ tướng Andy Burnham.",
+      "entities": [
+        "Andy Burnham",
+        "Forest City site",
+        "Iskandar Puteri City Council",
+        "Russia",
+        "Network School"
+      ],
+      "graph": {
+        "nodes": [
+          {
+            "id": "Andy Burnham",
+            "label": "Andy Burnham"
+          },
+          {
+            "id": "Forest City site",
+            "label": "Forest City site"
+          },
+          {
+            "id": "Iskandar Puteri City Council",
+            "label": "Iskandar Puteri City Council"
+          },
+          {
+            "id": "Russia",
+            "label": "Russia"
+          },
+          {
+            "id": "Network School",
+            "label": "Network School"
+          }
+        ],
+        "edges": [
+          {
+            "source": "Andy Burnham",
+            "target": "Forest City site",
+            "weight": 1
+          },
+          {
+            "source": "Andy Burnham",
+            "target": "Iskandar Puteri City Council",
+            "weight": 1
+          },
+          {
+            "source": "Andy Burnham",
+            "target": "Russia",
+            "weight": 1
+          },
+          {
+            "source": "Andy Burnham",
+            "target": "Network School",
+            "weight": 1
+          }
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.channelnewsasia.com/asia/negeri-sembilan-state-election-nomination-day-6262536",
+          "source_name": "CNA",
+          "source_logo": "https://www.channelnewsasia.com/favicon.ico"
+        },
+        {
+          "url": "https://www.channelnewsasia.com/asia/johor-network-school-forest-city-israel-links-6262326",
+          "source_name": "CNA",
+          "source_logo": "https://www.channelnewsasia.com/favicon.ico"
+        },
+        {
+          "url": "https://www.channelnewsasia.com/asia/malaysia-negeri-sembilan-state-election-royalty-undang-6257906",
+          "source_name": "CNA",
+          "source_logo": "https://www.channelnewsasia.com/favicon.ico"
+        },
+        {
+          "url": "https://www.dw.com/en/amid-elections-sao-tome-and-principe-balances-global-powers/a-77884067?maca=en-rss-en-world-4025-rdf",
+          "source_name": "DW (Deutsche Welle)",
+          "source_logo": "https://www.dw.com/favicon.ico"
+        },
+        {
+          "url": "https://www.nytimes.com/2026/07/17/world/europe/burnham-labour-leader.html",
+          "source_name": "New York Times",
+          "source_logo": "https://www.nytimes.com/favicon.ico"
+        }
+      ],
+      "timeline": [
+        {
+          "title": "Biến động chính trị và tranh chấp pháp lý tại Malaysia và quốc tế",
+          "timestamp": null,
+          "url": "https://www.channelnewsasia.com/asia/negeri-sembilan-state-election-nomination-day-6262536"
+        }
+      ]
+    },
+    {
+      "event_key": "evt_ea6fa1b1",
+      "topic_key": "evt_ea6fa1b1_intelligence_2026",
+      "title": "Tổng hợp tin tức thời sự Hàn Quốc ngày 18 tháng 7",
+      "timestamp": 1784380836553,
+      "importance": 50,
+      "hot_score": 70,
+      "categories": [
+        "uncategorized"
+      ],
+      "regions": [
+        "global"
+      ],
+      "short_summary": "Sự kiện nổi bật bao gồm vụ cháy tại trung tâm logistics Coupang ở Incheon, chuyến thăm Moscow của Ngoại trưởng Triều Tiên, các diễn biến chính trị nội bộ và thông tin thể thao đáng chú ý.",
+      "detailed_summary": "Ngày 18/7, Hàn Quốc ghi nhận vụ hỏa hoạn nghiêm trọng tại trung tâm logistics Coupang, Incheon, gây thương tích cho một lính cứu hỏa. Về mặt địa chính trị, Ngoại trưởng Triều Tiên Choe Son-hui thăm Moscow, thu hút sự chú ý về quan hệ song phương. Trong nước, cựu Bộ trưởng Đất đai Won Hee-ryong đối mặt với thẩm vấn về dự án đường cao tốc. Đồng thời, tin tức thể thao ghi nhận thay đổi nhân sự tại đội bóng chày KT Wiz và bàn thắng đầu mùa của cầu thủ Son Heung-min.",
+      "causes": [
+        "Sự cố hỏa hoạn tại kho bãi hậu cần Coupang",
+        "Hoạt động ngoại giao chiến lược giữa Triều Tiên và Nga",
+        "Quy trình điều tra pháp lý đối với cựu quan chức chính phủ"
+      ],
+      "effects": [
+        "Gián đoạn dịch vụ hậu cần tại Incheon",
+        "Gia tăng căng thẳng hoặc thay đổi trong dự đoán chính sách đối ngoại",
+        "Tiến trình điều tra dự án hạ tầng trọng điểm"
+      ],
+      "affected_groups": [
+        "Khách hàng và nhân viên Coupang",
+        "Cơ quan ngoại giao và chính trị gia",
+        "Người hâm mộ thể thao"
+      ],
+      "market_impact": "Vụ cháy có thể ảnh hưởng ngắn hạn đến cổ phiếu của Coupang và gián đoạn chuỗi cung ứng logistics nội địa, đồng thời tin tức chính trị có khả năng gây biến động tâm lý trên thị trường chứng khoán.",
+      "follow_up": "Theo dõi sát sao báo cáo điều tra nguyên nhân cháy và các kết luận từ phía cơ quan công tố về dự án đường cao tốc.",
+      "entities": [
+        "Allen",
+        "Incheon",
+        "SEOUL",
+        "Moscow",
+        "North Koreas",
+        "LEAD N Korean FM",
+        "Russian media"
+      ],
+      "graph": {
+        "nodes": [
+          {
+            "id": "Allen",
+            "label": "Allen"
+          },
+          {
+            "id": "Incheon",
+            "label": "Incheon"
+          },
+          {
+            "id": "SEOUL",
+            "label": "SEOUL"
+          },
+          {
+            "id": "Moscow",
+            "label": "Moscow"
+          },
+          {
+            "id": "North Koreas",
+            "label": "North Koreas"
+          },
+          {
+            "id": "LEAD N Korean FM",
+            "label": "LEAD N Korean FM"
+          },
+          {
+            "id": "Russian media",
+            "label": "Russian media"
+          }
+        ],
+        "edges": [
+          {
+            "source": "Allen",
+            "target": "Incheon",
+            "weight": 1
+          },
+          {
+            "source": "Allen",
+            "target": "SEOUL",
+            "weight": 1
+          },
+          {
+            "source": "Allen",
+            "target": "Moscow",
+            "weight": 1
+          },
+          {
+            "source": "Allen",
+            "target": "North Koreas",
+            "weight": 1
+          },
+          {
+            "source": "Allen",
+            "target": "LEAD N Korean FM",
+            "weight": 1
+          },
+          {
+            "source": "Allen",
+            "target": "Russian media",
+            "weight": 1
+          }
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://en.yna.co.kr/view/AEN20260718000854320",
+          "source_name": "Yonhap",
+          "source_logo": "https://en.yna.co.kr/favicon.ico"
+        },
+        {
+          "url": "https://en.yna.co.kr/view/AEN20260718000853320",
+          "source_name": "Yonhap",
+          "source_logo": "https://en.yna.co.kr/favicon.ico"
+        },
+        {
+          "url": "https://en.yna.co.kr/view/AEN20260718000852320",
+          "source_name": "Yonhap",
+          "source_logo": "https://en.yna.co.kr/favicon.ico"
+        },
+        {
+          "url": "https://en.yna.co.kr/view/AEN20260718001551320",
+          "source_name": "Yonhap",
+          "source_logo": "https://en.yna.co.kr/favicon.ico"
+        },
+        {
+          "url": "https://en.yna.co.kr/view/AEN20260718002200315",
+          "source_name": "Yonhap",
+          "source_logo": "https://en.yna.co.kr/favicon.ico"
+        },
+        {
+          "url": "https://en.yna.co.kr/view/AEN20260718001600320",
+          "source_name": "Yonhap",
+          "source_logo": "https://en.yna.co.kr/favicon.ico"
+        },
+        {
+          "url": "https://en.yna.co.kr/view/AEN20260718001400315",
+          "source_name": "Yonhap",
+          "source_logo": "https://en.yna.co.kr/favicon.ico"
+        }
+      ],
+      "timeline": [
+        {
+          "title": "Tổng hợp tin tức thời sự Hàn Quốc ngày 18 tháng 7",
+          "timestamp": null,
+          "url": "https://en.yna.co.kr/view/AEN20260718000854320"
+        }
+      ]
+    },
+    {
+      "event_key": "evt_612bb8ca",
+      "topic_key": "evt_612bb8ca_intelligence_2026",
+      "title": "Biến động chính trị, công nghệ và an ninh toàn cầu",
+      "timestamp": 1784380833987,
+      "importance": 50,
+      "hot_score": 70,
+      "categories": [
+        "tech"
+      ],
+      "regions": [
+        "global"
+      ],
+      "short_summary": "Tổng hợp các sự kiện nóng về tham nhũng, biểu tình, cạnh tranh công nghệ AI và an ninh mạng đang diễn ra tại nhiều quốc gia trên thế giới.",
+      "detailed_summary": "Thế giới đang đối mặt với sự bất ổn đa chiều: từ làn sóng tham nhũng tại Trung Quốc và Haiti đến các cuộc biểu tình vì giáo dục tại Ấn Độ. Trong lĩnh vực công nghệ, Alibaba thách thức Nvidia nhằm chiếm lĩnh thị trường AI, trong khi Liên Hợp Quốc kêu gọi quản trị AI mang tính nhân văn. Đồng thời, Israel đang tăng cường phòng thủ chống lại các chiến dịch tình báo mạng của Iran, phản ánh sự leo thang trong cả cạnh tranh địa chính trị lẫn an ninh kỹ thuật số.",
+      "causes": [
+        "Sự suy giảm niềm tin vào các cơ quan quản lý và thể chế nhà nước",
+        "Cuộc đua giành quyền kiểm soát công nghệ AI và hạ tầng số toàn cầu"
+      ],
+      "effects": [
+        "Sự dịch chuyển quyền lực trong ngành công nghiệp chip bán dẫn",
+        "Gia tăng rủi ro an ninh mạng và thao túng thông tin trên không gian mạng"
+      ],
+      "affected_groups": [
+        "Giới công nghệ và các tập đoàn bán dẫn",
+        "Chính phủ và các cơ quan an ninh quốc gia"
+      ],
+      "market_impact": "Việc Alibaba mở mã nguồn AI stack tạo áp lực cạnh tranh lên Nvidia, có khả năng làm giảm giá các dịch vụ điện toán đám mây và thúc đẩy sự phân mảnh hệ sinh thái AI toàn cầu.",
+      "follow_up": "Theo dõi phản ứng của thị trường chứng khoán đối với chiến lược AI của Alibaba và diễn biến sức khỏe của Sonam Wangchuk tại Ấn Độ.",
+      "entities": [
+        "General António Guterres",
+        "Beijings",
+        "Indias",
+        "Delhi",
+        "Israel",
+        "Haiti",
+        "Nvidias",
+        "Alibaba Group",
+        "United Nations"
+      ],
+      "graph": {
+        "nodes": [
+          {
+            "id": "General António Guterres",
+            "label": "General António Guterres"
+          },
+          {
+            "id": "Beijings",
+            "label": "Beijings"
+          },
+          {
+            "id": "Indias",
+            "label": "Indias"
+          },
+          {
+            "id": "Delhi",
+            "label": "Delhi"
+          },
+          {
+            "id": "Israel",
+            "label": "Israel"
+          },
+          {
+            "id": "Haiti",
+            "label": "Haiti"
+          },
+          {
+            "id": "Nvidias",
+            "label": "Nvidias"
+          },
+          {
+            "id": "Alibaba Group",
+            "label": "Alibaba Group"
+          },
+          {
+            "id": "United Nations",
+            "label": "United Nations"
+          }
+        ],
+        "edges": [
+          {
+            "source": "General António Guterres",
+            "target": "Beijings",
+            "weight": 1
+          },
+          {
+            "source": "General António Guterres",
+            "target": "Indias",
+            "weight": 1
+          },
+          {
+            "source": "General António Guterres",
+            "target": "Delhi",
+            "weight": 1
+          },
+          {
+            "source": "General António Guterres",
+            "target": "Israel",
+            "weight": 1
+          },
+          {
+            "source": "General António Guterres",
+            "target": "Haiti",
+            "weight": 1
+          },
+          {
+            "source": "General António Guterres",
+            "target": "Nvidias",
+            "weight": 1
+          },
+          {
+            "source": "General António Guterres",
+            "target": "Alibaba Group",
+            "weight": 1
+          },
+          {
+            "source": "General António Guterres",
+            "target": "United Nations",
+            "weight": 1
+          }
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.scmp.com/news/china/politics/article/3361056/chinese-social-media-accounts-profit-leaking-official-corruption-scandals?utm_source=rss_feed",
+          "source_name": "South China Morning Post",
+          "source_logo": "https://www.scmp.com/favicon.ico"
+        },
+        {
+          "url": "https://www.scmp.com/news/asia/south-asia/article/3361055/sonam-wangchuk-hospitalised-after-21-day-hunger-strike-over-exam-leaks?utm_source=rss_feed",
+          "source_name": "South China Morning Post",
+          "source_logo": "https://www.scmp.com/favicon.ico"
+        },
+        {
+          "url": "https://www.scmp.com/tech/tech-war/article/3361048/alibaba-targets-nvidias-dominant-software-ecosystem-open-source-ai-stack?utm_source=rss_feed",
+          "source_name": "South China Morning Post",
+          "source_logo": "https://www.scmp.com/favicon.ico"
+        },
+        {
+          "url": "https://www.nytimes.com/2026/07/18/world/middleeast/israel-recruits-rabbis-iran.html",
+          "source_name": "New York Times",
+          "source_logo": "https://www.nytimes.com/favicon.ico"
+        },
+        {
+          "url": "https://news.un.org/feed/view/en/story/2026/07/1167965",
+          "source_name": "UN News",
+          "source_logo": "https://news.un.org/favicon.ico"
+        },
+        {
+          "url": "https://news.un.org/feed/view/en/story/2026/07/1167931",
+          "source_name": "UN News",
+          "source_logo": "https://news.un.org/favicon.ico"
+        },
+        {
+          "url": "https://techcrunch.com/2026/07/17/the-zoom-hack-that-says-dont-record-me/",
+          "source_name": "TechCrunch",
+          "source_logo": "https://techcrunch.com/favicon.ico"
+        }
+      ],
+      "timeline": [
+        {
+          "title": "Biến động chính trị, công nghệ và an ninh toàn cầu",
+          "timestamp": null,
+          "url": "https://www.scmp.com/news/china/politics/article/3361056/chinese-social-media-accounts-profit-leaking-official-corruption-scandals?utm_source=rss_feed"
+        }
+      ]
+    },
+    {
+      "event_key": "evt_955dfdf6",
+      "topic_key": "evt_955dfdf6_intelligence_2026",
+      "title": "Biến động địa chính trị toàn cầu và khủng hoảng ngoại giao phương Tây",
+      "timestamp": 1784380831619,
+      "importance": 50,
+      "hot_score": 90,
+      "categories": [
+        "tech"
+      ],
+      "regions": [
+        "global"
+      ],
+      "short_summary": "Loạt sự kiện địa chính trị diễn ra trên toàn cầu từ căng thẳng ngoại giao Mỹ-Úc, sự cô lập của Iran, đến các bê bối chính trị nội bộ tại Đức và động thái điều hành chính sách tiền tệ tại Mỹ.",
+      "detailed_summary": "Tình hình thế giới ghi nhận sự bất ổn đa tầng: căng thẳng ngoại giao Mỹ-Úc do thiếu hụt đại sứ, biến động nhân sự cấp cao tại Đức liên quan đến vấn đề đạo đức, và các động thái tiếp cận Nga của Triều Tiên cũng như quan chức Mỹ. Đồng thời, chính sách tiền tệ tại Mỹ có dấu hiệu thắt chặt trở lại thông qua phát biểu của giới chức FED, trong khi các điểm nóng nhân đạo và chính trị tại Kashmir, Italy tiếp tục gây áp lực lên quan hệ quốc tế.",
+      "causes": [
+        "Sự xáo trộn trong bộ máy nhân sự ngoại giao và chính trị cấp cao",
+        "Sự trỗi dậy của các vấn đề đạo đức xã hội tác động lên ổn định chính trị",
+        "Sự điều chỉnh chiến lược ngoại giao giữa các cường quốc"
+      ],
+      "effects": [
+        "Suy yếu niềm tin trong liên minh chiến lược",
+        "Gia tăng áp lực lên thị trường tài chính toàn cầu",
+        "Thay đổi cấu trúc ưu tiên trong quan hệ quốc tế"
+      ],
+      "affected_groups": [
+        "Các cơ quan hoạch định chính sách đối ngoại",
+        "Nhà đầu tư thị trường tài chính",
+        "Cộng đồng chính trị phương Tây"
+      ],
+      "market_impact": "Dự báo lãi suất tăng từ FED có thể gây áp lực lên thị trường chứng khoán, làm tăng lợi suất trái phiếu và tạo biến động tỷ giá khi các nhà đầu tư thắt chặt danh mục rủi ro.",
+      "follow_up": "Theo dõi sát sao động thái của FED về lãi suất và các cuộc đối thoại ngoại giao Nga-Triều Tiên.",
+      "entities": [
+        "Tim Fischer",
+        "Jens Spahn",
+        "President Donald Trump",
+        "Rodney Mims Cook Jr",
+        "President Vladimir Putin",
+        "President",
+        "President Logan",
+        "Australia",
+        "Moscow",
+        "SEOUL"
+      ],
+      "graph": {
+        "nodes": [
+          {
+            "id": "Tim Fischer",
+            "label": "Tim Fischer"
+          },
+          {
+            "id": "Jens Spahn",
+            "label": "Jens Spahn"
+          },
+          {
+            "id": "President Donald Trump",
+            "label": "President Donald Trump"
+          },
+          {
+            "id": "Rodney Mims Cook Jr",
+            "label": "Rodney Mims Cook Jr"
+          },
+          {
+            "id": "President Vladimir Putin",
+            "label": "President Vladimir Putin"
+          },
+          {
+            "id": "President",
+            "label": "President"
+          },
+          {
+            "id": "President Logan",
+            "label": "President Logan"
+          },
+          {
+            "id": "Australia",
+            "label": "Australia"
+          },
+          {
+            "id": "Moscow",
+            "label": "Moscow"
+          },
+          {
+            "id": "SEOUL",
+            "label": "SEOUL"
+          }
+        ],
+        "edges": [
+          {
+            "source": "Tim Fischer",
+            "target": "Jens Spahn",
+            "weight": 1
+          },
+          {
+            "source": "Tim Fischer",
+            "target": "President Donald Trump",
+            "weight": 1
+          },
+          {
+            "source": "Tim Fischer",
+            "target": "Rodney Mims Cook Jr",
+            "weight": 1
+          },
+          {
+            "source": "Tim Fischer",
+            "target": "President Vladimir Putin",
+            "weight": 1
+          },
+          {
+            "source": "Tim Fischer",
+            "target": "President",
+            "weight": 1
+          },
+          {
+            "source": "Tim Fischer",
+            "target": "President Logan",
+            "weight": 1
+          },
+          {
+            "source": "Tim Fischer",
+            "target": "Australia",
+            "weight": 1
+          },
+          {
+            "source": "Tim Fischer",
+            "target": "Moscow",
+            "weight": 1
+          },
+          {
+            "source": "Tim Fischer",
+            "target": "SEOUL",
+            "weight": 1
+          }
+        ]
+      },
+      "sources": [
+        {
+          "url": "http://www.xinhuanet.com/english/2018-01/03/c_136868968.htm",
+          "source_name": "Xinhua",
+          "source_logo": "http://www.xinhuanet.com/favicon.ico"
+        },
+        {
+          "url": "https://en.yna.co.kr/view/AEN20260718001500320",
+          "source_name": "Yonhap",
+          "source_logo": "https://en.yna.co.kr/favicon.ico"
+        },
+        {
+          "url": "https://www.dw.com/en/germany-cdu-s-jens-spahn-resigns-amid-surrogacy-controversy/a-78019238?maca=en-rss-en-world-4025-rdf",
+          "source_name": "DW (Deutsche Welle)",
+          "source_logo": "https://www.dw.com/favicon.ico"
+        },
+        {
+          "url": "https://www.politico.eu/article/german-conservative-parliamentary-leader-resigns-over-surrogacy-debate-jens-spahn/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+          "source_name": "Politico Europe",
+          "source_logo": "https://www.politico.eu/favicon.ico"
+        },
+        {
+          "url": "https://tass.com/world/2161983",
+          "source_name": "TASS",
+          "source_logo": "https://tass.com/favicon.ico"
+        },
+        {
+          "url": "https://tass.com/world/2161977",
+          "source_name": "TASS",
+          "source_logo": "https://tass.com/favicon.ico"
+        },
+        {
+          "url": "https://www.nytimes.com/2026/07/18/world/europe/tilman-fertitta-superyacht-italy-ambassador.html",
+          "source_name": "New York Times",
+          "source_logo": "https://www.nytimes.com/favicon.ico"
+        },
+        {
+          "url": "https://www.cnbc.com/2026/07/16/dallas-fed-president-logan-calls-for-modestly-higher-interest-rates.html",
+          "source_name": "CNBC",
+          "source_logo": "https://www.cnbc.com/favicon.ico"
+        },
+        {
+          "url": "https://news.un.org/feed/view/en/story/2026/07/1167970",
+          "source_name": "UN News",
+          "source_logo": "https://news.un.org/favicon.ico"
+        }
+      ],
+      "timeline": [
+        {
+          "title": "Biến động địa chính trị toàn cầu và khủng hoảng ngoại giao phương Tây",
+          "timestamp": null,
+          "url": "http://www.xinhuanet.com/english/2018-01/03/c_136868968.htm"
+        }
+      ]
+    },
+    {
+      "event_key": "evt_64af1f25",
+      "topic_key": "evt_64af1f25_intelligence_2026",
+      "title": "Bất ổn địa chính trị và biến đổi khí hậu tác động đến kinh tế toàn cầu",
+      "timestamp": 1784380829022,
+      "importance": 30,
+      "hot_score": 120,
+      "categories": [
+        "tech"
+      ],
+      "regions": [
+        "asean"
+      ],
+      "short_summary": "Thế giới đối mặt với làn sóng biến động từ khủng hoảng bất động sản Trung Quốc, căng thẳng thương mại quốc tế, đến các thảm họa thiên tai nghiêm trọng liên quan mật thiết tới biến đổi khí hậu.",
+      "detailed_summary": "Dữ liệu phản ánh bức tranh kinh tế thế giới đầy thách thức, từ sự lung lay của ngành bất động sản Trung Quốc đến tranh chấp thương mại tôm tại Thái Lan và các rủi ro vận tải tại Biển Đỏ. Đồng thời, biến đổi khí hậu đang trở thành mối đe dọa trực tiếp khi thiên tai tại Nhật Bản, Đức và cháy rừng tại Canada gây áp lực lên cơ sở hạ tầng. Sự trỗi dậy của công nghệ AI trong tài chính và sản xuất cho thấy nỗ lực của doanh nghiệp nhằm thích ứng với sự bất định.",
+      "causes": [
+        "Khủng hoảng nợ và bất động sản tại Trung Quốc",
+        "Biến đổi khí hậu gây ra các thảm họa thời tiết cực đoan",
+        "Căng thẳng địa chính trị và chủ nghĩa bảo hộ thương mại"
+      ],
+      "effects": [
+        "Gián đoạn chuỗi cung ứng toàn cầu và vận tải biển",
+        "Sụt giảm niềm tin đầu tư và bất ổn định tài chính",
+        "Áp lực chi phí y tế và vận hành doanh nghiệp"
+      ],
+      "affected_groups": [
+        "Ngành bất động sản và đầu tư tài chính",
+        "Doanh nghiệp logistics và xuất nhập khẩu",
+        "Các chính phủ và tổ chức quản lý rủi ro thiên tai"
+      ],
+      "market_impact": "Thị trường tài chính chịu áp lực từ bất ổn địa chính trị và kỳ vọng lãi suất. Các ngành bất động sản, vận tải và công nghệ đang trải qua sự phân hóa mạnh mẽ về giá trị cổ phiếu.",
+      "follow_up": "Theo dõi phản ứng của Chính phủ Trung Quốc với khủng hoảng bất động sản và diễn biến an ninh tại Biển Đỏ.",
+      "entities": [
+        "President Donald Trump",
+        "Mark Carney",
+        "Robert Koch",
+        "Malaysia",
+        "Thailands",
+        "Japan",
+        "Japans Pacific coast",
+        "Canada",
+        "India",
+        "Chennai"
+      ],
+      "graph": {
+        "nodes": [
+          {
+            "id": "President Donald Trump",
+            "label": "President Donald Trump"
+          },
+          {
+            "id": "Mark Carney",
+            "label": "Mark Carney"
+          },
+          {
+            "id": "Robert Koch",
+            "label": "Robert Koch"
+          },
+          {
+            "id": "Malaysia",
+            "label": "Malaysia"
+          },
+          {
+            "id": "Thailands",
+            "label": "Thailands"
+          },
+          {
+            "id": "Japan",
+            "label": "Japan"
+          },
+          {
+            "id": "Japans Pacific coast",
+            "label": "Japans Pacific coast"
+          },
+          {
+            "id": "Canada",
+            "label": "Canada"
+          },
+          {
+            "id": "India",
+            "label": "India"
+          },
+          {
+            "id": "Chennai",
+            "label": "Chennai"
+          }
+        ],
+        "edges": [
+          {
+            "source": "President Donald Trump",
+            "target": "Mark Carney",
+            "weight": 1
+          },
+          {
+            "source": "President Donald Trump",
+            "target": "Robert Koch",
+            "weight": 1
+          },
+          {
+            "source": "President Donald Trump",
+            "target": "Malaysia",
+            "weight": 1
+          },
+          {
+            "source": "President Donald Trump",
+            "target": "Thailands",
+            "weight": 1
+          },
+          {
+            "source": "President Donald Trump",
+            "target": "Japan",
+            "weight": 1
+          },
+          {
+            "source": "President Donald Trump",
+            "target": "Japans Pacific coast",
+            "weight": 1
+          },
+          {
+            "source": "President Donald Trump",
+            "target": "Canada",
+            "weight": 1
+          },
+          {
+            "source": "President Donald Trump",
+            "target": "India",
+            "weight": 1
+          },
+          {
+            "source": "President Donald Trump",
+            "target": "Chennai",
+            "weight": 1
+          }
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.bangkokpost.com/business/general/3287785/whats-on-tap-for-the-thai-shrimp-industry",
+          "source_name": "Bangkok Post",
+          "source_logo": "https://www.bangkokpost.com/favicon.ico"
+        },
+        {
+          "url": "https://www.bangkokpost.com/business/general/3287755/upward-trend-persists-but-more-stocks-fully-valued",
+          "source_name": "Bangkok Post",
+          "source_logo": "https://www.bangkokpost.com/favicon.ico"
+        },
+        {
+          "url": "http://www.xinhuanet.com/english/2017-10/23/c_136699146.htm",
+          "source_name": "Xinhua",
+          "source_logo": "http://www.xinhuanet.com/favicon.ico"
+        },
+        {
+          "url": "http://www.xinhuanet.com/english/2017-10/13/c_136677360.htm",
+          "source_name": "Xinhua",
+          "source_logo": "http://www.xinhuanet.com/favicon.ico"
+        },
+        {
+          "url": "https://www.bbc.co.uk/news/articles/cwyq93j34lgo?at_medium=RSS&at_campaign=rss",
+          "source_name": "BBC News",
+          "source_logo": "https://www.bbc.co.uk/favicon.ico"
+        },
+        {
+          "url": "https://www.dw.com/en/india-launches-first-private-rocket-into-space/a-78016562?maca=en-rss-en-world-4025-rdf",
+          "source_name": "DW (Deutsche Welle)",
+          "source_logo": "https://www.dw.com/favicon.ico"
+        },
+        {
+          "url": "https://www.dw.com/en/germany-s-5-000-heat-deaths-what-the-numbers-reveal/a-78010353?maca=en-rss-en-world-4025-rdf",
+          "source_name": "DW (Deutsche Welle)",
+          "source_logo": "https://www.dw.com/favicon.ico"
+        },
+        {
+          "url": "https://www.wsj.com/articles/even-chinas-property-stalwart-isnt-immune-from-the-crisis-19799863",
+          "source_name": "Wall Street Journal",
+          "source_logo": "https://www.wsj.com/favicon.ico"
+        },
+        {
+          "url": "https://www.wsj.com/articles/shippers-wary-of-red-sea-routes-despite-houthi-pledge-to-end-targeting-4dde35c2",
+          "source_name": "Wall Street Journal",
+          "source_logo": "https://www.wsj.com/favicon.ico"
+        },
+        {
+          "url": "https://www.cnbc.com/2026/07/18/warshgpt-federal-reserve-communications-task-force-warsh.html",
+          "source_name": "CNBC",
+          "source_logo": "https://www.cnbc.com/favicon.ico"
+        },
+        {
+          "url": "https://techcrunch.com/2026/07/17/ai-driven-memory-crunch-jolts-indias-smartphone-market/",
+          "source_name": "TechCrunch",
+          "source_logo": "https://techcrunch.com/favicon.ico"
+        },
+        {
+          "url": "https://www.wired.com/story/fifa-doesnt-have-plan-to-deal-with-climate-change/",
+          "source_name": "Wired",
+          "source_logo": "https://www.wired.com/favicon.ico"
+        }
+      ],
+      "timeline": [
+        {
+          "title": "Bất ổn địa chính trị và biến đổi khí hậu tác động đến kinh tế toàn cầu",
+          "timestamp": null,
+          "url": "https://www.bangkokpost.com/business/general/3287785/whats-on-tap-for-the-thai-shrimp-industry"
+        }
+      ]
+    },
+    {
+      "event_key": "evt_8d38ce84",
+      "topic_key": "evt_8d38ce84_intelligence_2026",
+      "title": "Bất ổn địa chính trị và làn sóng công nghệ mới toàn cầu",
+      "timestamp": 1784380826321,
+      "importance": 50,
+      "hot_score": 270,
+      "categories": [
+        "uncategorized"
+      ],
+      "regions": [
+        "global"
+      ],
+      "short_summary": "Thế giới đối mặt với căng thẳng quân sự leo thang tại Nga-Ukraine, biến đổi khí hậu khắc nghiệt và sự trỗi dậy mạnh mẽ của công nghệ AI, không gian cùng các xu hướng chính trị mới tại Mỹ Latinh.",
+      "detailed_summary": "Bối cảnh toàn cầu đang dịch chuyển nhanh chóng với các cuộc tấn công bằng drone vào logistics Nga, sự kiện phóng tên lửa thương mại của Ấn Độ, và những cảnh báo về vũ khí thời tiết. Cùng lúc đó, các quốc gia Mỹ Latinh chuyển dịch sang hữu khuynh, trong khi WHO và LHQ cảnh báo về khủng hoảng y tế và lương thực. Công nghệ AI đang thâm nhập sâu vào đời sống nhưng đối mặt với rủi ro bảo mật và sự phản kháng từ các cơ chế phòng thủ kỹ thuật số.",
+      "causes": [
+        "Căng thẳng quân sự Nga-Ukraine và cạnh tranh địa chính trị cường quốc",
+        "Biến đổi khí hậu gây thiên tai cực đoan và khủng hoảng tài nguyên"
+      ],
+      "effects": [
+        "Gián đoạn chuỗi cung ứng logistics và năng lượng",
+        "Gia tăng rủi ro an ninh mạng và quyền riêng tư cá nhân"
+      ],
+      "affected_groups": [
+        "Các tập đoàn công nghệ và an ninh quốc phòng",
+        "Người dân tại các vùng chịu ảnh hưởng thiên tai và khủng hoảng lương thực"
+      ],
+      "market_impact": "Các cổ phiếu công nghệ AI và năng lượng chịu biến động do lo ngại an ninh. Đầu tư vào không gian và hạ tầng bền vững tăng lên trong khi các ngành hàng tiêu dùng bị ảnh hưởng bởi lạm phát.",
+      "follow_up": "Theo dõi diễn biến các cuộc tấn công bằng drone tại Nga và phản ứng từ các chính phủ về quản lý AI.",
+      "entities": [
+        "Mayor Sergey Sobyanin",
+        "spike",
+        "Neil Rimer",
+        "Professor Bailey",
+        "Diana Grass",
+        "PhD",
+        "Professor Pat Pataranutaporn",
+        "Assam",
+        "India",
+        "New Delhis"
+      ],
+      "graph": {
+        "nodes": [
+          {
+            "id": "Mayor Sergey Sobyanin",
+            "label": "Mayor Sergey Sobyanin"
+          },
+          {
+            "id": "spike",
+            "label": "spike"
+          },
+          {
+            "id": "Neil Rimer",
+            "label": "Neil Rimer"
+          },
+          {
+            "id": "Professor Bailey",
+            "label": "Professor Bailey"
+          },
+          {
+            "id": "Diana Grass",
+            "label": "Diana Grass"
+          },
+          {
+            "id": "PhD",
+            "label": "PhD"
+          },
+          {
+            "id": "Professor Pat Pataranutaporn",
+            "label": "Professor Pat Pataranutaporn"
+          },
+          {
+            "id": "Assam",
+            "label": "Assam"
+          },
+          {
+            "id": "India",
+            "label": "India"
+          },
+          {
+            "id": "New Delhis",
+            "label": "New Delhis"
+          }
+        ],
+        "edges": [
+          {
+            "source": "Mayor Sergey Sobyanin",
+            "target": "spike",
+            "weight": 1
+          },
+          {
+            "source": "Mayor Sergey Sobyanin",
+            "target": "Neil Rimer",
+            "weight": 1
+          },
+          {
+            "source": "Mayor Sergey Sobyanin",
+            "target": "Professor Bailey",
+            "weight": 1
+          },
+          {
+            "source": "Mayor Sergey Sobyanin",
+            "target": "Diana Grass",
+            "weight": 1
+          },
+          {
+            "source": "Mayor Sergey Sobyanin",
+            "target": "PhD",
+            "weight": 1
+          },
+          {
+            "source": "Mayor Sergey Sobyanin",
+            "target": "Professor Pat Pataranutaporn",
+            "weight": 1
+          },
+          {
+            "source": "Mayor Sergey Sobyanin",
+            "target": "Assam",
+            "weight": 1
+          },
+          {
+            "source": "Mayor Sergey Sobyanin",
+            "target": "India",
+            "weight": 1
+          },
+          {
+            "source": "Mayor Sergey Sobyanin",
+            "target": "New Delhis",
+            "weight": 1
+          }
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.scmp.com/news/china/diplomacy/article/3360967/weather-weapons-why-atmosphere-could-become-next-geopolitical-battleground?utm_source=rss_feed",
+          "source_name": "South China Morning Post",
+          "source_logo": "https://www.scmp.com/favicon.ico"
+        },
+        {
+          "url": "https://www.bbc.co.uk/news/articles/clyxlm877p2o?at_medium=RSS&at_campaign=rss",
+          "source_name": "BBC News",
+          "source_logo": "https://www.bbc.co.uk/favicon.ico"
+        },
+        {
+          "url": "https://www.bbc.co.uk/news/articles/clyekv7rld3o?at_medium=RSS&at_campaign=rss",
+          "source_name": "BBC News",
+          "source_logo": "https://www.bbc.co.uk/favicon.ico"
+        },
+        {
+          "url": "https://www.france24.com/en/tv-shows/world-cup-debrief/20260718-world-cup-2026-the-match-no-one-wants-to-play-england-france-in-third-place-game",
+          "source_name": "France24",
+          "source_logo": "https://www.france24.com/favicon.ico"
+        },
+        {
+          "url": "https://www.france24.com/en/canada-wildfires-affect-air-quality-before-world-cup-final",
+          "source_name": "France24",
+          "source_logo": "https://www.france24.com/favicon.ico"
+        },
+        {
+          "url": "https://www.france24.com/en/video/20260718-why-is-latin-america-shifting-to-the-right",
+          "source_name": "France24",
+          "source_logo": "https://www.france24.com/favicon.ico"
+        },
+        {
+          "url": "https://tass.com/emergencies/2161971",
+          "source_name": "TASS",
+          "source_logo": "https://tass.com/favicon.ico"
+        },
+        {
+          "url": "https://www.wsj.com/articles/italy-supports-saudi-arabia-joining-gcap-fighter-jet-program-pm-meloni-says-bbd9cec1",
+          "source_name": "Wall Street Journal",
+          "source_logo": "https://www.wsj.com/favicon.ico"
+        },
+        {
+          "url": "https://www.aljazeera.com/opinions/2026/7/18/europe-should-look-to-africa-for-heatwave-solutions?traffic_source=rss",
+          "source_name": "Al Jazeera",
+          "source_logo": "https://www.aljazeera.com/favicon_aje.ico"
+        },
+        {
+          "url": "https://www.aljazeera.com/news/2026/7/18/india-achieves-milestone-with-launch-of-first-private-sector-orbital-rocket?traffic_source=rss",
+          "source_name": "Al Jazeera",
+          "source_logo": "https://www.aljazeera.com/favicon_aje.ico"
+        },
+        {
+          "url": "https://www.aljazeera.com/video/101-east/2026/7/18/indias-salt-workers-the-human-cost-of-the-worlds-most-popular-seasoning?traffic_source=rss",
+          "source_name": "Al Jazeera",
+          "source_logo": "https://www.aljazeera.com/favicon_aje.ico"
+        },
+        {
+          "url": "https://news.un.org/feed/view/en/story/2026/07/1167971",
+          "source_name": "UN News",
+          "source_logo": "https://news.un.org/favicon.ico"
+        },
+        {
+          "url": "https://www.who.int/news/item/08-07-2026-who-calls-for-urgent-action-as-new-cancer-cases-are-projected-to-nearly-double-by-2050",
+          "source_name": "WHO",
+          "source_logo": "https://www.who.int/favicon.ico"
+        },
+        {
+          "url": "https://www.who.int/news/item/24-06-2026-655-million-people-still-living-without-electricity-underscore-urgent-need-to-deliver-on-universal-energy-access-target",
+          "source_name": "WHO",
+          "source_logo": "https://www.who.int/favicon.ico"
+        },
+        {
+          "url": "https://techcrunch.com/2026/07/17/neil-rimer-thinks-the-ai-money-is-coming-back-out/",
+          "source_name": "TechCrunch",
+          "source_logo": "https://techcrunch.com/favicon.ico"
+        },
+        {
+          "url": "https://techcrunch.com/2026/07/17/vertu-wants-executives-to-pay-6880-for-an-ai-agent-heres-how-it-actually-performs/",
+          "source_name": "TechCrunch",
+          "source_logo": "https://techcrunch.com/favicon.ico"
+        },
+        {
+          "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+          "source_name": "TechCrunch",
+          "source_logo": "https://techcrunch.com/favicon.ico"
+        },
+        {
+          "url": "https://www.wired.com/story/best-motion-sensors-private-alternatives-security/",
+          "source_name": "Wired",
+          "source_logo": "https://www.wired.com/favicon.ico"
+        },
+        {
+          "url": "https://www.wired.com/story/security-news-this-week-your-period-tracker-is-probably-spying-on-you/",
+          "source_name": "Wired",
+          "source_logo": "https://www.wired.com/favicon.ico"
+        },
+        {
+          "url": "https://www.wired.com/story/best-tech-gear-back-to-school/",
+          "source_name": "Wired",
+          "source_logo": "https://www.wired.com/favicon.ico"
+        },
+        {
+          "url": "https://www.wired.com/story/prompt-injection-attacks-are-thwarting-ai-hacking-agents/",
+          "source_name": "Wired",
+          "source_logo": "https://www.wired.com/favicon.ico"
+        },
+        {
+          "url": "https://news.mit.edu/2026/following-questions-where-they-lead-bailey-flanigan-0717",
+          "source_name": "MIT News",
+          "source_logo": "https://news.mit.edu/favicon.ico"
+        },
+        {
+          "url": "https://news.mit.edu/2026/how-influx-salt-may-affect-microbial-ecosystems-0717",
+          "source_name": "MIT News",
+          "source_logo": "https://news.mit.edu/favicon.ico"
+        },
+        {
+          "url": "https://news.mit.edu/2026/diana-grass-listens-to-bodys-language-0717",
+          "source_name": "MIT News",
+          "source_logo": "https://news.mit.edu/favicon.ico"
+        },
+        {
+          "url": "https://news.mit.edu/2026/energy-systems-reliable-grid-future-is-about-location-0716",
+          "source_name": "MIT News",
+          "source_logo": "https://news.mit.edu/favicon.ico"
+        },
+        {
+          "url": "https://news.mit.edu/2026/turning-2d-designs-into-3d-models-for-rapid-prototyping-0716",
+          "source_name": "MIT News",
+          "source_logo": "https://news.mit.edu/favicon.ico"
+        },
+        {
+          "url": "https://news.mit.edu/2026/3-questions-neural-transparency-and-future-of-ai-design-0715",
+          "source_name": "MIT News",
+          "source_logo": "https://news.mit.edu/favicon.ico"
+        }
+      ],
+      "timeline": [
+        {
+          "title": "Bất ổn địa chính trị và làn sóng công nghệ mới toàn cầu",
+          "timestamp": null,
+          "url": "https://www.scmp.com/news/china/diplomacy/article/3360967/weather-weapons-why-atmosphere-could-become-next-geopolitical-battleground?utm_source=rss_feed"
+        }
+      ]
+    },
+    {
+      "event_key": "evt_dd44d469",
+      "topic_key": "evt_dd44d469_intelligence_2026",
+      "title": "Căng thẳng leo thang giữa Mỹ và Iran cùng bất ổn địa chính trị toàn cầu",
+      "timestamp": 1784380823846,
+      "importance": 50,
+      "hot_score": 930,
+      "categories": [
+        "politics"
+      ],
+      "regions": [
+        "global"
+      ],
+      "short_summary": "Xung đột Mỹ-Iran gia tăng cường độ với các đợt tấn công vào cơ sở hạ tầng trọng yếu, song song với bất ổn tại Ukraine, tác động môi trường từ cháy rừng Canada và các biến động chính trị nội bộ tại Mỹ.",
+      "detailed_summary": "Tình hình địa chính trị trở nên vô cùng căng thẳng sau khi Tổng thống Trump tuyên bố chấm dứt thỏa thuận hòa bình với Iran, dẫn đến chuỗi không kích liên tiếp từ Mỹ và các đòn trả đũa của Iran vào cơ sở hạ tầng dân sự vùng Vịnh. Song song đó, mặt trận Ukraine tiếp tục đối mặt với áp lực quân sự lớn từ Nga. Các vấn đề nội bộ Mỹ như cháy rừng gây ô nhiễm, tranh cãi bầu cử và chính sách quân sự cũng đang tạo ra những biến động đáng kể về ổn định xã hội và đối ngoại.",
+      "causes": [
+        "Sự sụp đổ của thỏa thuận hòa bình Mỹ-Iran",
+        "Áp lực quân sự gia tăng tại mặt trận Donetsk và tranh chấp địa chính trị kéo dài"
+      ],
+      "effects": [
+        "Cơ sở hạ tầng năng lượng và khử mặn vùng Vịnh bị hư hại nghiêm trọng",
+        "Khủng hoảng chất lượng không khí tại Mỹ do khói cháy rừng xuyên biên giới"
+      ],
+      "affected_groups": [
+        "Cư dân vùng Vịnh và Trung Đông",
+        "Quân đội các bên tham chiến",
+        "Cộng đồng cư dân Bắc Mỹ chịu ảnh hưởng ô nhiễm"
+      ],
+      "market_impact": "Giá năng lượng và dầu thô chịu biến động mạnh do rủi ro tắc nghẽn eo biển Hormuz và các cuộc tấn công nhắm vào cơ sở hạ tầng dầu khí phương Tây tại Iraq.",
+      "follow_up": "Theo dõi khả năng mở rộng chiến dịch không kích của Mỹ vào Iran và phản ứng của thị trường năng lượng toàn cầu.",
+      "entities": [
+        "túi",
+        "Lorenzo Salgado Araujo",
+        "giá",
+        "dân sự",
+        "đòn ở",
+        "Jordan",
+        "đòn",
+        "King Faisal",
+        "Anh Thomas Tuchel",
+        "dân"
+      ],
+      "graph": {
+        "nodes": [
+          {
+            "id": "túi",
+            "label": "túi"
+          },
+          {
+            "id": "Lorenzo Salgado Araujo",
+            "label": "Lorenzo Salgado Araujo"
+          },
+          {
+            "id": "giá",
+            "label": "giá"
+          },
+          {
+            "id": "dân sự",
+            "label": "dân sự"
+          },
+          {
+            "id": "đòn ở",
+            "label": "đòn ở"
+          },
+          {
+            "id": "Jordan",
+            "label": "Jordan"
+          },
+          {
+            "id": "đòn",
+            "label": "đòn"
+          },
+          {
+            "id": "King Faisal",
+            "label": "King Faisal"
+          },
+          {
+            "id": "Anh Thomas Tuchel",
+            "label": "Anh Thomas Tuchel"
+          },
+          {
+            "id": "dân",
+            "label": "dân"
+          }
+        ],
+        "edges": [
+          {
+            "source": "túi",
+            "target": "Lorenzo Salgado Araujo",
+            "weight": 1
+          },
+          {
+            "source": "túi",
+            "target": "giá",
+            "weight": 1
+          },
+          {
+            "source": "túi",
+            "target": "dân sự",
+            "weight": 1
+          },
+          {
+            "source": "túi",
+            "target": "đòn ở",
+            "weight": 1
+          },
+          {
+            "source": "túi",
+            "target": "Jordan",
+            "weight": 1
+          },
+          {
+            "source": "túi",
+            "target": "đòn",
+            "weight": 1
+          },
+          {
+            "source": "túi",
+            "target": "King Faisal",
+            "weight": 1
+          },
+          {
+            "source": "túi",
+            "target": "Anh Thomas Tuchel",
+            "weight": 1
+          },
+          {
+            "source": "túi",
+            "target": "dân",
+            "weight": 1
+          }
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://vnexpress.net/luat-su-bac-tin-co-ma-tuy-tren-xe-cua-nguoi-nhap-cu-bi-dac-vu-ice-ban-chet-5098974.html",
+          "source_name": "VnExpress",
+          "source_logo": "https://s1.vnecdn.net/vnexpress/restruct/i/v863/v2_2019/pc/graphics/favicon.ico"
+        },
+        {
+          "url": "https://vnexpress.net/bo-truong-my-canh-bao-an-tu-voi-cac-quan-chuc-bau-cu-cap-bang-5098830.html",
+          "source_name": "VnExpress",
+          "source_logo": "https://s1.vnecdn.net/vnexpress/restruct/i/v863/v2_2019/pc/graphics/favicon.ico"
+        },
+        {
+          "url": "https://vnexpress.net/nga-co-the-sap-tien-cong-khu-vuc-quan-trong-nhat-tren-tien-tuyen-ukraine-5098979.html",
+          "source_name": "VnExpress",
+          "source_logo": "https://s1.vnecdn.net/vnexpress/restruct/i/v863/v2_2019/pc/graphics/favicon.ico"
+        },
+        {
+          "url": "https://vnexpress.net/cach-world-cup-giup-nuoc-my-chinh-phuc-nguoi-ham-mo-toan-cau-5098813.html",
+          "source_name": "VnExpress",
+          "source_logo": "https://s1.vnecdn.net/vnexpress/restruct/i/v863/v2_2019/pc/graphics/favicon.ico"
+        },
+        {
+          "url": "https://vnexpress.net/kuwait-cao-buoc-iran-tap-kich-ha-tang-dan-su-co-so-trong-yeu-5098951.html",
+          "source_name": "VnExpress",
+          "source_logo": "https://s1.vnecdn.net/vnexpress/restruct/i/v863/v2_2019/pc/graphics/favicon.ico"
+        },
+        {
+          "url": "https://vnexpress.net/iran-cong-bo-anh-khu-nha-linh-my-trung-don-o-can-cu-jordan-5098835.html",
+          "source_name": "VnExpress",
+          "source_logo": "https://s1.vnecdn.net/vnexpress/restruct/i/v863/v2_2019/pc/graphics/favicon.ico"
+        },
+        {
+          "url": "https://vnexpress.net/ong-trump-thac-mac-ve-chien-thuat-cua-tuyen-anh-o-world-cup-5098829.html",
+          "source_name": "VnExpress",
+          "source_logo": "https://s1.vnecdn.net/vnexpress/restruct/i/v863/v2_2019/pc/graphics/favicon.ico"
+        },
+        {
+          "url": "https://vnexpress.net/my-doa-tang-thue-voi-canada-vi-khoi-chay-rung-5098811.html",
+          "source_name": "VnExpress",
+          "source_logo": "https://s1.vnecdn.net/vnexpress/restruct/i/v863/v2_2019/pc/graphics/favicon.ico"
+        },
+        {
+          "url": "https://tuoitre.vn/tuyet-thuc-doi-bo-truong-giao-duc-tu-chuc-nha-hoat-dong-an-do-duoc-dua-vao-benh-vien-100260718185529079.htm",
+          "source_name": "Tuổi Trẻ",
+          "source_logo": "https://tuoitre.vn/favicon.ico"
+        },
+        {
+          "url": "https://tuoitre.vn/ukraine-tap-kich-loat-kho-hang-va-kho-dau-nga-it-nhat-7-nguoi-chet-100260718173328585.htm",
+          "source_name": "Tuổi Trẻ",
+          "source_logo": "https://tuoitre.vn/favicon.ico"
+        },
+        {
+          "url": "https://tuoitre.vn/tap-doan-dau-khi-my-bat-tay-iraq-mo-tuyen-van-chuyen-thay-the-eo-bien-hormuz-100260718160643043.htm",
+          "source_name": "Tuổi Trẻ",
+          "source_logo": "https://tuoitre.vn/favicon.ico"
+        },
+        {
+          "url": "https://tuoitre.vn/ong-zelensky-dua-ra-lo-trinh-5-diem-de-han-gan-quan-he-voi-ba-lan-100260718153716738.htm",
+          "source_name": "Tuổi Trẻ",
+          "source_logo": "https://tuoitre.vn/favicon.ico"
+        },
+        {
+          "url": "https://tuoitre.vn/nhieu-thanh-pho-lon-o-my-chim-trong-khoi-mu-nguy-hai-do-chay-rung-tu-canada-100260718135801587.htm",
+          "source_name": "Tuổi Trẻ",
+          "source_logo": "https://tuoitre.vn/favicon.ico"
+        },
+        {
+          "url": "https://tuoitre.vn/my-dieu-hang-chuc-may-bay-tiep-dau-den-israel-bao-hieu-sap-khong-kich-lon-vao-iran-100260718141310022.htm",
+          "source_name": "Tuổi Trẻ",
+          "source_logo": "https://tuoitre.vn/favicon.ico"
+        },
+        {
+          "url": "https://tuoitre.vn/may-bay-hai-quan-my-bay-sat-dau-dam-dong-ong-hung-cao-noi-khong-van-de-chi-huy-thua-nhan-khong-an-toan-100260718141609192.htm",
+          "source_name": "Tuổi Trẻ",
+          "source_logo": "https://tuoitre.vn/favicon.ico"
+        },
+        {
+          "url": "https://tuoitre.vn/ukraine-cong-bo-video-vu-danh-bom-gia-dinh-tai-phiet-goc-ukraine-o-monaco-100260718133649874.htm",
+          "source_name": "Tuổi Trẻ",
+          "source_logo": "https://tuoitre.vn/favicon.ico"
+        },
+        {
+          "url": "https://thanhnien.vn/tranh-cai-lenh-xet-nghiem-testosterone-trong-quan-doi-my-18526071819152366.htm",
+          "source_name": "Thanh Niên",
+          "source_logo": "https://thanhnien.vn/favicon.ico"
+        },
+        {
+          "url": "https://thanhnien.vn/ong-tap-can-binh-muon-giup-thai-lan-campuchia-hoa-giai-185260718193521605.htm",
+          "source_name": "Thanh Niên",
+          "source_logo": "https://thanhnien.vn/favicon.ico"
+        },
+        {
+          "url": "https://thanhnien.vn/co-the-tra-tien-de-biet-truoc-tuyen-bo-cua-ong-trump-tren-mang-xa-hoi-185260718101634515.htm",
+          "source_name": "Thanh Niên",
+          "source_logo": "https://thanhnien.vn/favicon.ico"
+        },
+        {
+          "url": "https://thanhnien.vn/nhieu-bang-my-bao-dong-vi-khoi-chay-rung-ban-to-chuc-world-cup-theo-doi-chat-185260718085910425.htm",
+          "source_name": "Thanh Niên",
+          "source_logo": "https://thanhnien.vn/favicon.ico"
+        },
+        {
+          "url": "https://thanhnien.vn/ong-trump-doa-danh-thue-canada-vi-de-khoi-chay-rung-bay-sang-my-185260718084239992.htm",
+          "source_name": "Thanh Niên",
+          "source_logo": "https://thanhnien.vn/favicon.ico"
+        },
+        {
+          "url": "https://thanhnien.vn/my-dieu-nhieu-may-bay-tiep-dau-den-israel-bao-hieu-dot-oanh-tac-lon-185260718073546687.htm",
+          "source_name": "Thanh Niên",
+          "source_logo": "https://thanhnien.vn/favicon.ico"
+        },
+        {
+          "url": "https://thanhnien.vn/don-dap-dien-bien-nong-khi-my-7-ngay-lien-tiep-tan-cong-iran-185260718073547917.htm",
+          "source_name": "Thanh Niên",
+          "source_logo": "https://thanhnien.vn/favicon.ico"
+        },
+        {
+          "url": "https://thanhnien.vn/eo-bien-hormuz-vinh-vien-khong-con-nhu-xua-185260717224747389.htm",
+          "source_name": "Thanh Niên",
+          "source_logo": "https://thanhnien.vn/favicon.ico"
+        },
+        {
+          "url": "https://vietnamnet.vn/nga-cai-thien-vi-tri-o-slavyansk-to-ukraine-tan-cong-nhieu-co-so-hau-can-2536947.html",
+          "source_name": "VietnamNet",
+          "source_logo": "https://vietnamnet.vn/favicon.ico"
+        },
+        {
+          "url": "https://vietnamnet.vn/iran-to-my-tan-cong-nha-may-khu-man-canh-bao-cac-quoc-gia-vung-vinh-2536943.html",
+          "source_name": "VietnamNet",
+          "source_logo": "https://vietnamnet.vn/favicon.ico"
+        },
+        {
+          "url": "https://vietnamnet.vn/ukraine-tan-cong-13-tau-thuoc-ham-doi-bong-toi-cong-bo-ton-that-cua-nga-2536918.html",
+          "source_name": "VietnamNet",
+          "source_logo": "https://vietnamnet.vn/favicon.ico"
+        },
+        {
+          "url": "https://vietnamnet.vn/iran-chan-loat-tau-dan-su-muon-vuot-hormuz-canh-bao-tra-dua-toan-dien-vao-my-2536900.html",
+          "source_name": "VietnamNet",
+          "source_logo": "https://vietnamnet.vn/favicon.ico"
+        },
+        {
+          "url": "https://vietnamnet.vn/my-ton-bao-nhieu-de-thanh-ly-tau-san-bay-hat-nhan-dau-tien-2536639.html",
+          "source_name": "VietnamNet",
+          "source_logo": "https://vietnamnet.vn/favicon.ico"
+        },
+        {
+          "url": "https://vietnamnet.vn/nghi-si-dan-chu-doi-luan-toi-ong-trump-vi-phat-ngon-danh-cap-bau-cu-2536865.html",
+          "source_name": "VietnamNet",
+          "source_logo": "https://vietnamnet.vn/favicon.ico"
+        },
+        {
+          "url": "https://vietnamnet.vn/video-tau-cho-hang-quan-su-cho-ukraine-boc-chay-sau-don-tan-cong-cua-uav-nga-2536855.html",
+          "source_name": "VietnamNet",
+          "source_logo": "https://vietnamnet.vn/favicon.ico"
+        },
+        {
+          "url": "https://vietnamnet.vn/my-bac-tin-tau-cho-dau-trung-min-gan-hormuz-iran-tuyen-bo-ban-ha-uav-mq-9-2536841.html",
+          "source_name": "VietnamNet",
+          "source_logo": "https://vietnamnet.vn/favicon.ico"
+        },
+        {
+          "url": "https://vtv.vn/trung-quoc-lu-tren-609-con-song-vuot-muc-canh-bao-100260718144100337.htm",
+          "source_name": "VTV News",
+          "source_logo": "https://vtv.vn/favicon.ico"
+        },
+        {
+          "url": "https://vtv.vn/chay-lon-thieu-rui-hon-100-ngoi-nha-tai-na-uy-100260718145835439.htm",
+          "source_name": "VTV News",
+          "source_logo": "https://vtv.vn/favicon.ico"
+        },
+        {
+          "url": "https://vtv.vn/dong-dat-manh-ngoai-khoi-mexico-100260718145334346.htm",
+          "source_name": "VTV News",
+          "source_logo": "https://vtv.vn/favicon.ico"
+        },
+        {
+          "url": "https://vtv.vn/ao-trung-bay-300-buc-tuong-mozart-1002607162344107.htm",
+          "source_name": "VTV News",
+          "source_logo": "https://vtv.vn/favicon.ico"
+        },
+        {
+          "url": "https://vtv.vn/thuong-hai-xay-dung-mang-luoi-cham-soc-nguoi-cao-tuoi-tich-hop-ba-cap-100260716231219965.htm",
+          "source_name": "VTV News",
+          "source_logo": "https://vtv.vn/favicon.ico"
+        },
+        {
+          "url": "https://vtv.vn/cong-truong-nhat-ban-ha-nhiet-mua-he-100260717232802043.htm",
+          "source_name": "VTV News",
+          "source_logo": "https://vtv.vn/favicon.ico"
+        },
+        {
+          "url": "https://vtv.vn/iran-tuyen-bo-ban-ha-may-bay-tiep-nhien-lieu-cua-my-100260718000644399.htm",
+          "source_name": "VTV News",
+          "source_logo": "https://vtv.vn/favicon.ico"
+        },
+        {
+          "url": "https://vtv.vn/lau-nam-goc-se-xet-nghiem-testosterone-dinh-ky-cho-binh-si-tu-30-tuoi-100260716211600393.htm",
+          "source_name": "VTV News",
+          "source_logo": "https://vtv.vn/favicon.ico"
+        },
+        {
+          "url": "https://www.channelnewsasia.com/asia/laos-authorities-cannot-determine-tourist-death-linked-tainted-alcohol-6262581",
+          "source_name": "CNA",
+          "source_logo": "https://www.channelnewsasia.com/favicon.ico"
+        },
+        {
+          "url": "https://www.channelnewsasia.com/asia/vietnam-flash-flood-4-killed-6262571",
+          "source_name": "CNA",
+          "source_logo": "https://www.channelnewsasia.com/favicon.ico"
+        },
+        {
+          "url": "https://www.channelnewsasia.com/asia/india-sonam-wangchuk-hunger-strike-medicine-exam-protest-6262421",
+          "source_name": "CNA",
+          "source_logo": "https://www.channelnewsasia.com/favicon.ico"
+        },
+        {
+          "url": "https://www.channelnewsasia.com/asia/rubio-visit-southeast-asia-in-bid-reaffirm-partnerships-6261556",
+          "source_name": "CNA",
+          "source_logo": "https://www.channelnewsasia.com/favicon.ico"
+        },
+        {
+          "url": "https://www.channelnewsasia.com/east-asia/hong-kong-fire-probe-wang-fuk-court-6260761",
+          "source_name": "CNA",
+          "source_logo": "https://www.channelnewsasia.com/favicon.ico"
+        },
+        {
+          "url": "https://www.bangkokpost.com/world/3287940/laos-defends-handling-of-taintedalcohol-deaths",
+          "source_name": "Bangkok Post",
+          "source_logo": "https://www.bangkokpost.com/favicon.ico"
+        },
+        {
+          "url": "https://www.bangkokpost.com/thailand/general/3287932/married-couple-73-cats-die-in-bangkok-townhouse-fire",
+          "source_name": "Bangkok Post",
+          "source_logo": "https://www.bangkokpost.com/favicon.ico"
+        },
+        {
+          "url": "https://www.bangkokpost.com/thailand/general/3287919/vietnamese-gang-linked-to-tokyobound-ice-in-tamarind-paste",
+          "source_name": "Bangkok Post",
+          "source_logo": "https://www.bangkokpost.com/favicon.ico"
+        },
+        {
+          "url": "https://www.bangkokpost.com/opinion/opinion/3287892/no-more-lessons-to-learn",
+          "source_name": "Bangkok Post",
+          "source_logo": "https://www.bangkokpost.com/favicon.ico"
+        },
+        {
+          "url": "https://www.bangkokpost.com/thailand/general/3287500/interior-ministry-cancels-tainted-recruitment-list",
+          "source_name": "Bangkok Post",
+          "source_logo": "https://www.bangkokpost.com/favicon.ico"
+        },
+        {
+          "url": "https://www.bangkokpost.com/thailand/politics/3287860/political-amnesty-fault-line",
+          "source_name": "Bangkok Post",
+          "source_logo": "https://www.bangkokpost.com/favicon.ico"
+        },
+        {
+          "url": "http://www.xinhuanet.com/english/world/2018-01/24/c_136919909.htm",
+          "source_name": "Xinhua",
+          "source_logo": "http://www.xinhuanet.com/favicon.ico"
+        },
+        {
+          "url": "http://www.xinhuanet.com/english/2017-10/13/c_136677613.htm",
+          "source_name": "Xinhua",
+          "source_logo": "http://www.xinhuanet.com/favicon.ico"
+        },
+        {
+          "url": "http://www.xinhuanet.com/english/2017-10/13/c_136677591.htm",
+          "source_name": "Xinhua",
+          "source_logo": "http://www.xinhuanet.com/favicon.ico"
+        },
+        {
+          "url": "http://www.xinhuanet.com/english/2017-10/13/c_136677533.htm",
+          "source_name": "Xinhua",
+          "source_logo": "http://www.xinhuanet.com/favicon.ico"
+        },
+        {
+          "url": "https://www.scmp.com/news/hong-kong/law-and-crime/article/3361054/3-arrested-after-131kg-ketamine-declared-sugar-cubes-found-air-cargo?utm_source=rss_feed",
+          "source_name": "South China Morning Post",
+          "source_logo": "https://www.scmp.com/favicon.ico"
+        },
+        {
+          "url": "https://www.scmp.com/news/hong-kong/society/article/3361053/call-merge-housing-checking-unit-buildings-department-after-tai-po-fire?utm_source=rss_feed",
+          "source_name": "South China Morning Post",
+          "source_logo": "https://www.scmp.com/favicon.ico"
+        },
+        {
+          "url": "https://www.scmp.com/news/hong-kong/society/article/3361047/litany-failures-blamed-hong-kongs-tai-po-fire-inquiry-concludes?utm_source=rss_feed",
+          "source_name": "South China Morning Post",
+          "source_logo": "https://www.scmp.com/favicon.ico"
+        },
+        {
+          "url": "https://www.bbc.co.uk/news/articles/cvg8w4dpjkwo?at_medium=RSS&at_campaign=rss",
+          "source_name": "BBC News",
+          "source_logo": "https://www.bbc.co.uk/favicon.ico"
+        },
+        {
+          "url": "https://www.bbc.co.uk/news/articles/cy748n8zx8ro?at_medium=RSS&at_campaign=rss",
+          "source_name": "BBC News",
+          "source_logo": "https://www.bbc.co.uk/favicon.ico"
+        },
+        {
+          "url": "https://www.bbc.co.uk/news/articles/cdx8rj99endo?at_medium=RSS&at_campaign=rss",
+          "source_name": "BBC News",
+          "source_logo": "https://www.bbc.co.uk/favicon.ico"
+        },
+        {
+          "url": "https://www.bbc.co.uk/news/articles/cx2rmjk0740o?at_medium=RSS&at_campaign=rss",
+          "source_name": "BBC News",
+          "source_logo": "https://www.bbc.co.uk/favicon.ico"
+        },
+        {
+          "url": "https://www.dw.com/en/japan-s-superstitions-make-some-homes-hard-to-sell-or-rent/a-78005455?maca=en-rss-en-world-4025-rdf",
+          "source_name": "DW (Deutsche Welle)",
+          "source_logo": "https://www.dw.com/favicon.ico"
+        },
+        {
+          "url": "https://www.dw.com/en/gaza-officials-say-several-killed-in-israeli-strike/a-78014902?maca=en-rss-en-world-4025-rdf",
+          "source_name": "DW (Deutsche Welle)",
+          "source_logo": "https://www.dw.com/favicon.ico"
+        },
+        {
+          "url": "https://www.dw.com/en/japan-revises-imperial-succession-rules-but-still-excludes-women/a-78009893?maca=en-rss-en-world-4025-rdf",
+          "source_name": "DW (Deutsche Welle)",
+          "source_logo": "https://www.dw.com/favicon.ico"
+        },
+        {
+          "url": "https://www.dw.com/en/why-the-us-is-going-after-the-international-criminal-court/a-78006596?maca=en-rss-en-world-4025-rdf",
+          "source_name": "DW (Deutsche Welle)",
+          "source_logo": "https://www.dw.com/favicon.ico"
+        },
+        {
+          "url": "https://www.france24.com/en/tv-shows/scoop/20260718-fight-or-flight-trump-administration-subpoenas-journalists-over-air-force-one-reporting",
+          "source_name": "France24",
+          "source_logo": "https://www.france24.com/favicon.ico"
+        },
+        {
+          "url": "https://www.france24.com/en/middle-east/20260718-middle-east-live-tehran-threatens-full-scale-offensive-as-us-launches-seventh-night-of-attacks",
+          "source_name": "France24",
+          "source_logo": "https://www.france24.com/favicon.ico"
+        },
+        {
+          "url": "https://www.politico.com/news/2026/07/18/pulte-got-really-scared-inside-the-white-house-debate-over-trumps-elections-speech-01003920?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+          "source_name": "Politico Europe",
+          "source_logo": "https://www.politico.eu/favicon.ico"
+        },
+        {
+          "url": "https://www.politico.eu/article/water-infrastructure-hit-in-iran-kuwait-amid-latest-gulf-war-flare-up/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+          "source_name": "Politico Europe",
+          "source_logo": "https://www.politico.eu/favicon.ico"
+        },
+        {
+          "url": "https://www.politico.com/news/2026/07/17/trump-spares-beijing-in-probe-of-alleged-chinese-election-plot-01004011?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+          "source_name": "Politico Europe",
+          "source_logo": "https://www.politico.eu/favicon.ico"
+        },
+        {
+          "url": "https://www.politico.com/news/magazine/2026/07/17/ai-safety-regulation-debate-factions-00990453?_sp_pass_consent=true&utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+          "source_name": "Politico Europe",
+          "source_logo": "https://www.politico.eu/favicon.ico"
+        },
+        {
+          "url": "https://www.politico.com/news/2026/07/16/united-states-womens-world-cup-2031-01002399?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+          "source_name": "Politico Europe",
+          "source_logo": "https://www.politico.eu/favicon.ico"
+        },
+        {
+          "url": "https://www.politico.com/news/2026/07/17/israel-has-had-a-tough-month-in-the-u-s-its-fighting-back-01002367?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+          "source_name": "Politico Europe",
+          "source_logo": "https://www.politico.eu/favicon.ico"
+        },
+        {
+          "url": "https://www.politico.eu/article/ukraine-front-line-food-crisis-un-convoys-russian-drones/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+          "source_name": "Politico Europe",
+          "source_logo": "https://www.politico.eu/favicon.ico"
+        },
+        {
+          "url": "https://tass.com/world/2161987",
+          "source_name": "TASS",
+          "source_logo": "https://tass.com/favicon.ico"
+        },
+        {
+          "url": "https://tass.com/world/2161979",
+          "source_name": "TASS",
+          "source_logo": "https://tass.com/favicon.ico"
+        },
+        {
+          "url": "https://www.nytimes.com/live/2026/07/18/world/iran-war-strikes-trump-hormuz",
+          "source_name": "New York Times",
+          "source_logo": "https://www.nytimes.com/favicon.ico"
+        },
+        {
+          "url": "https://www.nytimes.com/2026/07/18/world/europe/spain-lamine-yamal.html",
+          "source_name": "New York Times",
+          "source_logo": "https://www.nytimes.com/favicon.ico"
+        },
+        {
+          "url": "https://www.nytimes.com/2026/07/18/world/asia/sonam-wangchuk-hunger-strike-delhi-police.html",
+          "source_name": "New York Times",
+          "source_logo": "https://www.nytimes.com/favicon.ico"
+        },
+        {
+          "url": "https://www.wsj.com/articles/palestinians-flock-back-to-northern-gaza-on-foot-after-hostage-release-breakthrough-3f60e2db",
+          "source_name": "Wall Street Journal",
+          "source_logo": "https://www.wsj.com/favicon.ico"
+        },
+        {
+          "url": "https://www.wsj.com/articles/suspected-sabotage-of-deep-sea-cable-triggers-first-nato-led-response-337119ba",
+          "source_name": "Wall Street Journal",
+          "source_logo": "https://www.wsj.com/favicon.ico"
+        },
+        {
+          "url": "https://www.wsj.com/articles/rwanda-backed-rebels-enter-congo-safe-haven-city-aid-hub-09fdccb8",
+          "source_name": "Wall Street Journal",
+          "source_logo": "https://www.wsj.com/favicon.ico"
+        },
+        {
+          "url": "https://www.wsj.com/articles/cocaine-funded-gangs-shake-colombia-years-after-peace-pact-a45a28da",
+          "source_name": "Wall Street Journal",
+          "source_logo": "https://www.wsj.com/favicon.ico"
+        },
+        {
+          "url": "https://www.cnbc.com/2026/07/16/trumps-cfpb-overhaul-cost-americans-26point5-billion-sen-warren-says.html",
+          "source_name": "CNBC",
+          "source_logo": "https://www.cnbc.com/favicon.ico"
+        },
+        {
+          "url": "https://www.aljazeera.com/news/2026/7/18/iran-accuses-us-of-striking-critical-infrastructure-as-war-intensifies?traffic_source=rss",
+          "source_name": "Al Jazeera",
+          "source_logo": "https://www.aljazeera.com/favicon_aje.ico"
+        },
+        {
+          "url": "https://www.aljazeera.com/video/newsfeed/2026/7/18/ukrainian-strikes-hit-russian-logistics-center?traffic_source=rss",
+          "source_name": "Al Jazeera",
+          "source_logo": "https://www.aljazeera.com/favicon_aje.ico"
+        },
+        {
+          "url": "https://www.aljazeera.com/news/2026/7/18/ukrainian-drone-attacks-on-russia-kill-at-least-8-wound-dozens?traffic_source=rss",
+          "source_name": "Al Jazeera",
+          "source_logo": "https://www.aljazeera.com/favicon_aje.ico"
+        },
+        {
+          "url": "https://www.aljazeera.com/news/2026/7/18/indian-police-forcibly-hospitalise-activist-after-20-day-hunger-strike?traffic_source=rss",
+          "source_name": "Al Jazeera",
+          "source_logo": "https://www.aljazeera.com/favicon_aje.ico"
+        },
+        {
+          "url": "https://news.un.org/feed/view/en/story/2026/07/1167954",
+          "source_name": "UN News",
+          "source_logo": "https://news.un.org/favicon.ico"
+        },
+        {
+          "url": "https://news.un.org/feed/view/en/story/2026/07/1167973",
+          "source_name": "UN News",
+          "source_logo": "https://news.un.org/favicon.ico"
+        },
+        {
+          "url": "https://news.un.org/feed/view/en/story/2026/07/1167967",
+          "source_name": "UN News",
+          "source_logo": "https://news.un.org/favicon.ico"
+        },
+        {
+          "url": "https://techcrunch.com/2026/07/17/apple-and-google-ordered-to-purge-nudify-apps-from-app-stores/",
+          "source_name": "TechCrunch",
+          "source_logo": "https://techcrunch.com/favicon.ico"
+        }
+      ],
+      "timeline": [
+        {
+          "title": "Căng thẳng leo thang giữa Mỹ và Iran cùng bất ổn địa chính trị toàn cầu",
+          "timestamp": null,
+          "url": "https://vnexpress.net/luat-su-bac-tin-co-ma-tuy-tren-xe-cua-nguoi-nhap-cu-bi-dac-vu-ice-ban-chet-5098974.html"
+        }
+      ]
+    },
+    {
       "event_key": "evt_37a33793",
       "topic_key": "evt_37a33793_intelligence_2026",
       "title": "Biến động văn hóa và khí hậu tại khu vực Trung Âu",
@@ -24586,7 +26643,7 @@
       "price": "NaN",
       "change_percent": "NaN%",
       "trend": "↓",
-      "updated_at": 1784368007203
+      "updated_at": 1784380846659
     },
     {
       "symbol": "GOLD",
@@ -24594,7 +26651,7 @@
       "price": "2350.50",
       "change_percent": "+0.5%",
       "trend": "↑",
-      "updated_at": 1784368007045
+      "updated_at": 1784380846459
     },
     {
       "symbol": "USD/VND",
@@ -24602,7 +26659,7 @@
       "price": "25450",
       "change_percent": "-0.1%",
       "trend": "↓",
-      "updated_at": 1784368007045
+      "updated_at": 1784380846459
     },
     {
       "symbol": "VNINDEX",
@@ -24610,7 +26667,7 @@
       "price": "1280.15",
       "change_percent": "+1.2%",
       "trend": "↑",
-      "updated_at": 1784368007045
+      "updated_at": 1784380846459
     }
   ],
   "social_trends": [
@@ -24620,13 +26677,13 @@
       "content": "Tin nóng: Cập nhật tình hình kinh tế vĩ mô quý 3",
       "url": "https://youtube.com",
       "trend_icon": "📈",
-      "time": 1784368007045
+      "time": 1784380846459
     }
   ],
   "daily_briefing": "<h3>Bức tranh Toàn cảnh 24h</h3><p>Hệ thống AI đang được nâng cấp, bản tin thực tế sẽ xuất hiện tại đây sau khi kết nối API.</p>",
   "statistics": {
-    "total_topics": 469,
-    "total_articles": 184
+    "total_topics": 479,
+    "total_articles": 192
   },
-  "generated_at": 1784368007204
+  "generated_at": 1784380846659
 }
