@@ -2,8 +2,6 @@
  * LƯỚT AI Newsroom - Giao diện hiển thị (Front-end Logic)
  */
 
-const DATA_URL = '../../news_data.json'; // Đường dẫn trỏ tới file dữ liệu (có thể sửa thành 'news_data.json' tùy cấu trúc thư mục)
-
 document.addEventListener('DOMContentLoaded', () => {
     initThemeToggle();
     fetchNewsData();
@@ -42,7 +40,7 @@ function initThemeToggle() {
 // 2. TẢI DỮ LIỆU TỪ FILE JSON CỦA BOT
 async function fetchNewsData() {
     try {
-        // Thêm timestamp (?v=...) để ép trình duyệt luôn tải file mới nhất, không bị kẹt cache
+        // Tải dữ liệu từ thư mục gốc
         const response = await fetch(`news_data.json?v=${new Date().getTime()}`);
         if (!response.ok) throw new Error('Không thể tải file news_data.json');
         
@@ -61,14 +59,14 @@ async function fetchNewsData() {
     }
 }
 
-// 3. LẮP RÁP DỮ LIỆU LÊN GIAO DIỆN
+// 3. LẮP RÁP DỮ LIỆU LÊN GIAO DIỆN (ĐÃ ĐỒNG BỘ CẤU TRÚC JSON V4)
 function renderDashboard(data) {
-    // A. Render Thị trường (Nếu có)
+    // A. Render Thị trường
     const marketContainer = document.getElementById('market-container');
-    if (data.market && data.market.length > 0) {
+    if (data.market_data && data.market_data.length > 0) {
         let marketHTML = `<div class="card" style="display:flex; gap:16px; overflow-x:auto; padding:12px 20px;">`;
-        data.market.forEach(item => {
-            const isUp = item.trend === 'up';
+        data.market_data.forEach(item => {
+            const isUp = item.trend === '↑' || item.trend === 'up'; // Tương thích ký hiệu mũi tên
             const color = isUp ? '#00b050' : '#ff0000';
             const icon = isUp ? 'trending_up' : 'trending_down';
             marketHTML += `
@@ -86,14 +84,14 @@ function renderDashboard(data) {
 
     // B. Render Báo cáo AI (Sidebar)
     const briefingContainer = document.getElementById('briefing-container');
-    if (data.reports && data.reports.daily_briefing) {
+    if (data.daily_briefing) {
         briefingContainer.innerHTML = `
             <div class="card" style="background-color: var(--md-sys-color-surface-variant); border: none;">
                 <h3 class="card-title" style="display:flex; align-items:center; gap:8px;">
                     <span class="material-icons-round" style="color:var(--md-sys-color-primary)">smart_toy</span>
                     AI Briefing
                 </h3>
-                <div class="card-summary" style="white-space: pre-wrap;">${data.reports.daily_briefing}</div>
+                <div class="card-summary" style="white-space: pre-wrap;">${data.daily_briefing}</div>
             </div>
         `;
     } else {
@@ -102,28 +100,31 @@ function renderDashboard(data) {
 
     // C. Render Cụm Tin Tức (Cột chính)
     const newsContainer = document.getElementById('news-container');
-    if (data.clusters && data.clusters.length > 0) {
+    if (data.news && data.news.length > 0) {
         let newsHTML = '';
-        data.clusters.forEach((cluster, index) => {
-            // Lấy bài viết đầu tiên làm đại diện cho cụm
-            const leadArticle = cluster.articles[0];
-            const otherArticlesCount = cluster.articles.length - 1;
+        data.news.forEach((cluster, index) => {
+            const leadSource = cluster.sources && cluster.sources.length > 0 ? cluster.sources[0] : { url: '#', source_name: 'Tổng hợp' };
+            const otherArticlesCount = cluster.sources ? cluster.sources.length - 1 : 0;
             
+            const timeObj = new Date(cluster.timestamp);
+            const timeString = timeObj.toLocaleTimeString('vi-VN', {hour: '2-digit', minute:'2-digit'}) + ' - ' + timeObj.toLocaleDateString('vi-VN');
+            const hotBadge = (cluster.hot_score && cluster.hot_score >= 20) ? '<span style="color:#e53935; margin-left:4px; font-size:11px;">🔥 HOT</span>' : '';
+
             newsHTML += `
                 <article class="card">
                     <span style="font-size:12px; font-weight:bold; color:var(--md-sys-color-primary); text-transform:uppercase;">
-                        CỤM SỰ KIỆN #${index + 1}
+                        CỤM SỰ KIỆN #${index + 1} ${hotBadge}
                     </span>
                     <h2 class="card-title" style="margin-top:8px;">
-                        <a href="${leadArticle.url}" target="_blank" style="color:inherit; text-decoration:none;">
-                            ${cluster.topic || leadArticle.title}
+                        <a href="${leadSource.url}" target="_blank" style="color:inherit; text-decoration:none;">
+                            ${cluster.title}
                         </a>
                     </h2>
-                    <p class="card-summary">${leadArticle.summary}</p>
+                    <p class="card-summary">${cluster.short_summary}</p>
                     
                     <div style="margin-top:16px; font-size:13px; opacity:0.7; display:flex; gap:16px;">
-                        <span><span class="material-icons-round" style="font-size:14px; vertical-align:middle;">newspaper</span> ${leadArticle.source}</span>
-                        <span><span class="material-icons-round" style="font-size:14px; vertical-align:middle;">schedule</span> ${leadArticle.time}</span>
+                        <span><span class="material-icons-round" style="font-size:14px; vertical-align:middle;">newspaper</span> ${leadSource.source_name}</span>
+                        <span><span class="material-icons-round" style="font-size:14px; vertical-align:middle;">schedule</span> ${timeString}</span>
                     </div>
                     
                     ${otherArticlesCount > 0 ? `
