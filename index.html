@@ -15,17 +15,18 @@
         <!-- Lớp phủ nền mờ cho Mobile -->
         <div id="sidebar-overlay" class="mobile-overlay"></div>
 
-        <!-- SIDEBAR TRÁI (Sẽ tự ẩn trên Mobile) -->
+        <!-- SIDEBAR TRÁI -->
         <aside class="sidebar-left" id="app-sidebar">
             <div class="logo-container">
                 <h1 class="logo" style="cursor: pointer; user-select: none;" title="Bấm 5 lần để xem số liệu ngầm">LƯỚT <span>Intelligence</span></h1>
             </div>
             <nav class="side-nav">
-                <a href="#" class="nav-item active"><span class="material-icons-round">dashboard</span> Tổng quan</a>
-                <a href="#" class="nav-item"><span class="material-icons-round">feed</span> Bản tin 24h</a>
+                <!-- Thêm các ID để xử lý sự kiện chuyển Tab -->
+                <a href="#" class="nav-item active" id="nav-overview"><span class="material-icons-round">dashboard</span> Tổng quan</a>
+                <a href="#" class="nav-item" id="nav-briefing"><span class="material-icons-round">feed</span> Bản tin 24h</a>
                 <a href="#" class="nav-item"><span class="material-icons-round">timeline</span> Timeline</a>
                 <a href="#" class="nav-item"><span class="material-icons-round">hub</span> Knowledge Graph</a>
-                <a href="#" class="nav-item"><span class="material-icons-round">trending_up</span> Thị trường</a>
+                <a href="#" class="nav-item" id="nav-market"><span class="material-icons-round">trending_up</span> Thị trường</a>
                 <a href="#" class="nav-item"><span class="material-icons-round">public</span> Khu vực</a>
             </nav>
             <div class="nav-footer">
@@ -35,60 +36,85 @@
 
         <!-- KHU VỰC NỘI DUNG CHÍNH -->
         <div class="main-wrapper">
-            <!-- Header -->
-            <!-- Header -->
+            <!-- HEADER -->
             <header class="app-header">
-                <div style="display: flex; align-items: center; gap: 12px; width: 100%;">
-                    <!-- Nút Menu (Chỉ hiện trên Mobile) -->
+                <div style="display: flex; align-items: center; gap: 12px;">
                     <button id="mobile-menu-btn" class="icon-btn mobile-only"><span class="material-icons-round">menu</span></button>
-                    
-                    <!-- BỔ SUNG LOGO CHO MOBILE (Sẽ tự ẩn trên Máy tính) -->
-                    <h1 class="logo mobile-only" style="font-size: 20px; flex-shrink: 0; cursor: pointer;" title="Bấm 5 lần">LƯỚT</h1>
-                    
-                    <div class="search-box" style="flex-grow: 1;">
-                        <span class="material-icons-round">search</span>
-                        <!-- Rút gọn chữ Placeholder để không bị tràn trên điện thoại nhỏ -->
-                        <input type="text" id="search-input" placeholder="Tìm kiếm...">
-                    </div>
                 </div>
 
                 <div class="header-actions">
-                    <span class="update-time" id="last-update-time">Đang cập nhật...</span>
+                    <!-- Nút tìm kiếm hiển thị trên Mobile -->
+                    <button id="mobile-search-btn" class="icon-btn mobile-only"><span class="material-icons-round">search</span></button>
+                    <!-- Thanh tìm kiếm (Ngắn lại trên Web, Ẩn/Mở rộng trên Mobile) -->
+                    <div class="search-box" id="header-search-box">
+                        <span class="material-icons-round">search</span>
+                        <input type="text" id="search-input" placeholder="Tìm kiếm...">
+                    </div>
                 </div>
             </header>
 
-            <!-- Dashboard Content -->
+            <!-- NỘI DUNG ĐỘNG (ROUTING) -->
             <main class="dashboard-content">
-                <div class="stats-row" id="stats-container"></div>
-                <div class="content-grid">
-                    <section class="feed-section">
-                        <div class="section-header">
-                            <h2 class="section-title"><span class="material-icons-round">article</span> BẢN TIN NỔI BẬT</h2>
-                        </div>
-                        <div id="news-container"></div>
-                    </section>
+                
+                <!-- VIEW 1: TỔNG QUAN (Mặc định) -->
+                <div id="view-overview" class="view-section active">
+                    <div class="stats-row" id="stats-container"></div>
                     
-                    <aside class="sidebar-right">
-                        <div class="widget">
-                            <div class="section-header">
-                                <h2 class="section-title" style="color: var(--md-sys-color-ai);"><span class="material-icons-round">smart_toy</span> AI DAILY BRIEFING</h2>
-                            </div>
-                            <div id="briefing-container" class="widget-content">
-                                <div class="skeleton skeleton-text"></div>
-                                <div class="skeleton skeleton-text"></div>
-                            </div>
-                        </div>
+                    <!-- Nút chuyển Tab Tin Tức / MXH chỉ hiện trên Mobile -->
+                    <div class="mobile-tab-toggle mobile-only">
+                        <button class="active" id="tab-news">Tin tức</button>
+                        <button id="tab-social">Mạng xã hội</button>
+                    </div>
 
-                        <div class="widget">
+                    <div class="content-grid">
+                        <section class="feed-section" id="feed-section">
                             <div class="section-header">
-                                <h2 class="section-title" style="color: #f59e0b;"><span class="material-icons-round">insights</span> THỊ TRƯỜNG HÔM NAY</h2>
+                                <h2 class="section-title"><span class="material-icons-round">article</span> BẢN TIN NỔI BẬT</h2>
                             </div>
-                            <div id="market-container" class="widget-content">
-                                <div class="skeleton skeleton-text" style="height: 30px; margin-bottom: 12px;"></div>
+                            <div id="news-container"></div>
+                        </section>
+                        
+                        <!-- Sidebar Phải giờ đây dành riêng cho MXH -->
+                        <aside class="sidebar-right" id="social-section">
+                            <div class="widget">
+                                <div class="section-header">
+                                    <h2 class="section-title" style="color: #3b82f6;"><span class="material-icons-round">forum</span> NHỊP ĐẬP MXH</h2>
+                                </div>
+                                <div id="social-container" class="widget-content">
+                                    <div class="skeleton skeleton-text"></div>
+                                    <div class="skeleton skeleton-text"></div>
+                                </div>
                             </div>
-                        </div>
-                    </aside>
+                        </aside>
+                    </div>
                 </div>
+
+                <!-- VIEW 2: BẢN TIN 24H (AI BRIEFING) -->
+                <div id="view-briefing" class="view-section" style="display: none;">
+                    <div class="widget">
+                        <div class="section-header">
+                            <h2 class="section-title" style="color: var(--md-sys-color-ai); font-size: 18px;"><span class="material-icons-round">smart_toy</span> AI DAILY BRIEFING</h2>
+                        </div>
+                        <div id="briefing-container" class="widget-content" style="font-size: 16px; line-height: 1.8;">
+                            <div class="skeleton skeleton-text"></div>
+                            <div class="skeleton skeleton-text"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VIEW 3: THỊ TRƯỜNG -->
+                <div id="view-market" class="view-section" style="display: none;">
+                    <div class="widget">
+                        <div class="section-header">
+                            <h2 class="section-title" style="color: #f59e0b; font-size: 18px;"><span class="material-icons-round">insights</span> THỊ TRƯỜNG HÔM NAY</h2>
+                        </div>
+                        <!-- Sử dụng Grid để rải đều các mã thị trường thay vì xếp dọc -->
+                        <div id="market-container" class="widget-content" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;">
+                            <div class="skeleton skeleton-text" style="height: 40px;"></div>
+                        </div>
+                    </div>
+                </div>
+
             </main>
         </div>
     </div>
@@ -113,7 +139,7 @@
 
     <!-- MODAL ADMIN ẨN -->
     <div id="admin-modal" class="modal-overlay">
-        <div class="modal-dialog" style="max-width: 400px;">
+        <div class="modal-dialog" style="max-width: 400px; height: auto;">
             <div class="modal-header" style="border-bottom: none; padding-bottom: 0;">
                 <h2 class="modal-title" style="color: #10b981;"><span class="material-icons-round">admin_panel_settings</span> System Stats</h2>
                 <button class="close-btn close-admin-action"><span class="material-icons-round">close</span></button>
@@ -122,7 +148,6 @@
                 <p style="font-size: 14px; opacity: 0.7; margin-bottom: 16px;">Hiệu suất thu thập dữ liệu chu kỳ này:</p>
                 <div style="font-size: 48px; font-weight: bold; color: var(--md-sys-color-primary);" id="admin-raw-count">0</div>
                 <div style="font-size: 14px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 24px;">Tin thô thu thập</div>
-                
                 <div style="font-size: 48px; font-weight: bold; color: var(--md-sys-color-ai);" id="admin-topic-count">0</div>
                 <div style="font-size: 14px; text-transform: uppercase; letter-spacing: 1px;">Sự kiện tinh gọn</div>
             </div>
