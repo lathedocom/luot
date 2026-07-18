@@ -1,13 +1,10 @@
 /* ==========================================================================
-   HỆ THỐNG BIẾN MÀU THEO CHUẨN
+   HỆ THỐNG BIẾN MÀU THEO CHUẨN (TỰ ĐỘNG THEO HỆ ĐIỀU HÀNH)
    ========================================================================== */
 :root {
     --md-sys-color-ai: #a855f7;
-    --border-radius: 16px; /* Tăng độ bo góc mềm mại cho các thẻ đóng khung */
-}
-
-/* CSS Mặc định (Dark Theme) */
-body, body.dark-theme {
+    --border-radius: 16px; 
+    /* Mặc định là Dark Theme */
     --md-sys-color-background: #0f172a; 
     --md-sys-color-surface: #1e293b;
     --md-sys-color-on-surface: #f8fafc;
@@ -16,24 +13,15 @@ body, body.dark-theme {
     --md-sys-color-surface-variant: #2dd4bf;
 }
 
-/* Override Light Theme */
-body.light-theme {
-    --md-sys-color-background: #f1f5f9;
-    --md-sys-color-surface: #ffffff;
-    --md-sys-color-on-surface: #0f172a;
-    --md-sys-color-primary: #2563eb;
-    --md-sys-color-outline: #e2e8f0;
-    --md-sys-color-surface-variant: #0f766e;
-}
-
-/* TỰ ĐỘNG CHUYỂN MÀU THEO HỆ ĐIỀU HÀNH */
+/* Hệ điều hành đang bật Sáng thì Web tự chuyển Sáng */
 @media (prefers-color-scheme: light) {
-    body:not(.dark-theme) {
+    :root {
         --md-sys-color-background: #f1f5f9;
         --md-sys-color-surface: #ffffff;
         --md-sys-color-on-surface: #0f172a;
         --md-sys-color-primary: #2563eb;
         --md-sys-color-outline: #e2e8f0;
+        --md-sys-color-surface-variant: #0f766e;
     }
 }
 
@@ -41,31 +29,30 @@ body.light-theme {
    BỐ CỤC APP LAYOUT & SIDEBAR
    ========================================================================== */
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Roboto', sans-serif; background-color: var(--md-sys-color-background); color: var(--md-sys-color-on-surface); height: 100vh; overflow: hidden; transition: background-color 0.3s, color 0.3s; }
+body { font-family: 'Roboto', sans-serif; background-color: var(--md-sys-color-background); color: var(--md-sys-color-on-surface); height: 100vh; overflow: hidden; }
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--md-sys-color-outline); border-radius: 10px; }
 
 .app-layout { display: grid; grid-template-columns: 240px 1fr; height: 100vh; }
-.sidebar-left { background-color: var(--md-sys-color-surface); border-right: 1px solid var(--md-sys-color-outline); display: flex; flex-direction: column; padding: 20px 0; }
+.sidebar-left { background-color: var(--md-sys-color-surface); border-right: 1px solid var(--md-sys-color-outline); display: flex; flex-direction: column; padding: 20px 0; z-index: 1000; }
 .logo-container { padding: 0 20px 24px; border-bottom: 1px solid var(--md-sys-color-outline); margin-bottom: 16px; }
 .logo { font-size: 22px; font-weight: 700; color: var(--md-sys-color-on-surface); }
 .logo span { font-weight: 300; font-size: 14px; color: var(--md-sys-color-primary); display: block; }
 .side-nav { display: flex; flex-direction: column; flex-grow: 1; padding: 0 12px; }
 .nav-item { display: flex; align-items: center; gap: 12px; padding: 12px 16px; color: var(--md-sys-color-on-surface); text-decoration: none; font-size: 15px; border-radius: 8px; margin-bottom: 4px; transition: background 0.2s; opacity: 0.7; }
-.nav-item:hover { background-color: rgba(255,255,255,0.05); opacity: 1; }
+.nav-item:hover { background-color: rgba(150,150,150,0.1); opacity: 1; }
 .nav-item.active { background-color: rgba(59, 130, 246, 0.1); color: var(--md-sys-color-primary); font-weight: 500; opacity: 1; border-left: 3px solid var(--md-sys-color-primary); }
 .nav-footer { padding: 20px; font-size: 12px; opacity: 0.5; text-align: center; }
 
 /* HEADER & KHU VỰC CHÍNH */
-.main-wrapper { display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+.main-wrapper { display: flex; flex-direction: column; height: 100vh; overflow: hidden; width: 100%; }
 .app-header { height: 64px; background-color: var(--md-sys-color-surface); border-bottom: 1px solid var(--md-sys-color-outline); display: flex; align-items: center; justify-content: space-between; padding: 0 24px; flex-shrink: 0; }
 .search-box { display: flex; align-items: center; background-color: var(--md-sys-color-background); padding: 8px 16px; border-radius: 20px; width: 350px; border: 1px solid var(--md-sys-color-outline); }
 .search-box input { background: transparent; border: none; color: var(--md-sys-color-on-surface); outline: none; margin-left: 8px; width: 100%; font-size: 14px; }
 .header-actions { display: flex; align-items: center; gap: 16px; }
 .update-time { font-size: 13px; opacity: 0.7; }
 .icon-btn { background: none; border: none; color: var(--md-sys-color-on-surface); cursor: pointer; display: flex; align-items: center; opacity: 0.7; transition: 0.2s; }
-.icon-btn:hover { opacity: 1; }
 
 .dashboard-content { flex-grow: 1; padding: 24px; overflow-y: auto; }
 .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
@@ -78,7 +65,7 @@ body { font-family: 'Roboto', sans-serif; background-color: var(--md-sys-color-b
 .section-header { display: flex; align-items: center; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--md-sys-color-outline); }
 .section-title { font-size: 14px; font-weight: bold; display: flex; align-items: center; gap: 8px; color: var(--md-sys-color-on-surface); letter-spacing: 0.5px; }
 
-/* THẺ TIN TỨC ĐÓNG KHUNG BO GÓC */
+/* THẺ TIN TỨC */
 .news-card { background-color: var(--md-sys-color-surface); border: 1.5px solid var(--md-sys-color-outline); border-radius: var(--border-radius); padding: 20px; margin-bottom: 16px; cursor: pointer; transition: all 0.2s ease; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
 .news-card:hover { transform: translateY(-3px); border-color: var(--md-sys-color-primary); box-shadow: 0 8px 12px rgba(0,0,0,0.1); }
 .news-meta { display: flex; justify-content: space-between; align-items: center; font-size: 12px; margin-bottom: 12px; opacity: 0.8; }
@@ -111,6 +98,40 @@ body { font-family: 'Roboto', sans-serif; background-color: var(--md-sys-color-b
 .intelligence-box { background: var(--md-sys-color-surface); padding: 16px; border-radius: 12px; margin-bottom: 16px; border-left: 4px solid var(--md-sys-color-ai); }
 .intelligence-title { font-weight: bold; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; color: var(--md-sys-color-ai); font-size: 14px; text-transform: uppercase; }
 .modal-footer { padding: 16px 24px; border-top: 1px solid var(--md-sys-color-outline); background: var(--md-sys-color-surface); border-radius: 0 0 var(--border-radius) var(--border-radius); }
-.source-chip { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; background: var(--md-sys-color-background); border: 1px solid var(--md-sys-color-outline); border-radius: 20px; text-decoration: none; color: var(--md-sys-color-on-surface); font-size: 13px; transition: 0.2s; font-weight: 500; }
-.source-chip:hover { border-color: var(--md-sys-color-primary); color: var(--md-sys-color-primary); }
-.close-btn { background: none; border: none; cursor: pointer; color: var(--md-sys-color-on-surface); padding: 4px; }
+.source-chip { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; background: var(--md-sys-color-background); border: 1px solid var(--md-sys-color-outline); border-radius: 20px; text-decoration: none; color: var(--md-sys-color-on-surface); font-size: 13px; font-weight: 500; }
+
+/* ==========================================================================
+   THIẾT KẾ RESPONSIVE CHO MOBILE & TABLET
+   ========================================================================== */
+.mobile-only { display: none; }
+.mobile-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.6); z-index: 900; opacity: 0; transition: opacity 0.3s; }
+
+@media (max-width: 1024px) {
+    .content-grid { grid-template-columns: 1.5fr 1fr; }
+    .stats-row { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .app-layout { display: flex; flex-direction: column; }
+    .mobile-only { display: flex; }
+    
+    /* Chuyển Sidebar thành dạng Menu ẩn (Drawer) */
+    .sidebar-left { position: fixed; left: -260px; top: 0; bottom: 0; width: 260px; transition: left 0.3s ease; box-shadow: 2px 0 12px rgba(0,0,0,0.2); }
+    .sidebar-left.active { left: 0; }
+    .mobile-overlay.active { display: block; opacity: 1; }
+
+    /* Cấu trúc Header & Grid trên Mobile */
+    .app-header { padding: 0 16px; }
+    .search-box { width: 100%; }
+    .update-time { display: none; } /* Ẩn text thời gian để lấy chỗ cho thanh tìm kiếm */
+    .dashboard-content { padding: 16px; }
+    .content-grid { grid-template-columns: 1fr; }
+    
+    /* Modal chiếm toàn màn hình */
+    .modal-dialog { width: 100%; max-height: 100vh; border-radius: 0; }
+    .modal-footer { border-radius: 0; }
+}
+
+@media (max-width: 480px) {
+    .stats-row { grid-template-columns: 1fr; }
+}
