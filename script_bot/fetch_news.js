@@ -69,7 +69,7 @@ async function runPipeline() {
                     event_key: eventKey,
                     topic_key: generateTopicKey(eventKey, 'intelligence'),
                     title: aiIntelligence.cluster_title,
-                    timestamp: cluster.timestamp,
+                    timestamp: Date.now(),
                     importance: cluster.articles[0].importance,
                     hot_score: cluster.article_count * 10,
                     categories: cluster.articles[0].categories,
