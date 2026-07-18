@@ -17,7 +17,7 @@ function clusterArticles(articles) {
     logger.info(`Bước 3: Gom cụm (Clustering) bằng Cosine Similarity...`);
     
     const clusters = [];
-    const THRESHOLD = 0.88; // Độ tương đồng 88% thì tính là chung 1 sự kiện
+    const THRESHOLD = 0.995; // Độ tương đồng 99,5% thì tính là chung 1 sự kiện
 
     for (const article of articles) {
         if (!article.vector) continue;
