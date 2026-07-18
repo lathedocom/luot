@@ -114,7 +114,7 @@ db.news = currentTopics.sort((a, b) => b.timestamp - a.timestamp || b.hot_score 
         
         topicStore.writeData(db);
 
-        // 8. Xuất trạng thái kiểm định Pipeline
+                // 8. Xuất trạng thái kiểm định Pipeline
         const durationMs = Date.now() - startTime;
         const status = {
             status: { success: true, duration_ms: durationMs, last_run: new Date().toISOString() },
@@ -125,12 +125,19 @@ db.news = currentTopics.sort((a, b) => b.timestamp - a.timestamp || b.hot_score 
         fs.writeFileSync(PIPELINE_STATUS_FILE, JSON.stringify(status, null, 2));
         
         logger.success(`=== PIPELINE HOÀN TẤT TUYỆT ĐỐI SAU ${durationMs}ms ===`);
+        
+        // [THÊM DÒNG NÀY]: Ép buộc tắt tiến trình thành công
+        process.exit(0);
 
     } catch (error) {
         logger.error("PIPELINE THẤT BẠI CẤP ĐỘ HỆ THỐNG!", error);
         const failStatus = { status: { success: false, last_run: new Date().toISOString() }, errors: logger.getErrorLogs() };
         fs.writeFileSync(PIPELINE_STATUS_FILE, JSON.stringify(failStatus, null, 2));
+        
+        // [THÊM DÒNG NÀY]: Ép buộc tắt tiến trình khi có lỗi
+        process.exit(1);
     }
 }
 
 runPipeline();
+
