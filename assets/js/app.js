@@ -3,9 +3,9 @@ let totalCrawledArticles = 0;
 
 document.addEventListener('DOMContentLoaded', () => {
     initMobileMenu();
-    initNavigation(); // Xử lý Menu Sidebar Trái
-    initMobileTabs(); // Nút chuyển Tin tức / MXH
-    initMobileSearch(); // Khung search ẩn hiện trên Mobile
+    initNavigation(); 
+    initMobileTabs(); 
+    initMobileSearch(); 
     initModalEvents();
     initAdminEasterEgg();
     initSearch();
@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchNewsData();
 });
 
-// 1. ĐIỀU HƯỚNG VIEW (SPA ROUTING TỪ SIDEBAR TRÁI)
 function initNavigation() {
     const tabs = ['overview', 'briefing', 'market'];
     tabs.forEach(tab => {
@@ -21,16 +20,12 @@ function initNavigation() {
         if (navBtn) {
             navBtn.addEventListener('click', (e) => {
                 e.preventDefault();
-                // Ẩn tất cả View
                 document.querySelectorAll('.view-section').forEach(el => el.style.display = 'none');
-                // Bỏ Active tất cả Nav
                 document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
                 
-                // Kích hoạt View và Nav tương ứng
                 document.getElementById(`view-${tab}`).style.display = 'block';
                 navBtn.classList.add('active');
 
-                // Đóng sidebar trên mobile nếu đang mở
                 const sidebar = document.getElementById('app-sidebar');
                 const overlay = document.getElementById('sidebar-overlay');
                 if (sidebar.classList.contains('active')) {
@@ -42,7 +37,6 @@ function initNavigation() {
     });
 }
 
-// 2. CHUYỂN TAB TIN TỨC / MXH TRÊN MOBILE
 function initMobileTabs() {
     const btnNews = document.getElementById('tab-news');
     const btnSocial = document.getElementById('tab-social');
@@ -64,19 +58,23 @@ function initMobileTabs() {
         });
     }
 
-    // Đảm bảo không bị lỗi giao diện khi xoay ngang màn hình hoặc chuyển qua lại PC
+    // Logic đảm bảo không bị lỗi UI khi chuyển đổi ngang dọc điện thoại
     window.addEventListener('resize', () => {
         if (window.innerWidth > 768) {
             secFeed.style.display = 'block';
             secSocial.style.display = 'block';
         } else {
-            if(btnNews.classList.contains('active')) secSocial.style.display = 'none';
-            else secFeed.style.display = 'none';
+            if(btnNews && btnNews.classList.contains('active')) {
+                secFeed.style.display = 'block';
+                secSocial.style.display = 'none';
+            } else {
+                secFeed.style.display = 'none';
+                secSocial.style.display = 'block';
+            }
         }
     });
 }
 
-// 3. TÌM KIẾM ẨN HIỆN TRÊN MOBILE
 function initMobileSearch() {
     const searchBtn = document.getElementById('mobile-search-btn');
     const searchBox = document.getElementById('header-search-box');
@@ -91,7 +89,7 @@ function initMobileSearch() {
             }
         });
     }
-    // Tự đóng khi bấm ra ngoài
+    
     document.addEventListener('click', (e) => {
         if (window.innerWidth <= 768 && searchBox.classList.contains('active')) {
             if (!searchBox.contains(e.target) && e.target !== searchBtn) {
@@ -101,7 +99,6 @@ function initMobileSearch() {
     });
 }
 
-// 4. MENU & SEARCH LOGIC
 function initMobileMenu() {
     const menuBtn = document.getElementById('mobile-menu-btn');
     const sidebar = document.getElementById('app-sidebar');
@@ -134,12 +131,10 @@ function initSearch() {
         });
         renderNewsFeed(filtered);
         
-        // Tự động chuyển về tab Tổng quan nếu đang tìm kiếm
         document.getElementById('nav-overview').click(); 
     });
 }
 
-// 5. ADMIN BẨN (BẤM LOGO)
 function initAdminEasterEgg() {
     const logos = document.querySelectorAll('.logo');
     let clickCount = 0;
@@ -178,7 +173,6 @@ function renderSkeletons() {
     newsContainer.innerHTML = skeletons;
 }
 
-// 6. FETCH VÀ RENDER DỮ LIỆU
 async function fetchNewsData() {
     try {
         const response = await fetch(`news_data.json?v=${new Date().getTime()}`);
@@ -192,7 +186,7 @@ async function fetchNewsData() {
         renderNewsFeed(globalNewsData);
         renderBriefing(data.daily_briefing);
         renderMarket(data.market_data || []);
-        renderSocial(data.social || []); // Gọi hàm render mạng xã hội
+        renderSocial(data.social || []); 
 
     } catch (error) {
         document.getElementById('news-container').innerHTML = `<div class="news-card"><p>Lỗi kết nối. Không thể tải dữ liệu Intelligence.</p></div>`;
@@ -262,7 +256,7 @@ function renderNewsFeed(newsData) {
 function renderBriefing(briefingText) {
     const briefingContainer = document.getElementById('briefing-container');
     if (briefingText) {
-        briefingContainer.innerHTML = `<p style="white-space: pre-wrap;">${briefingText}</p>`;
+        briefingContainer.innerHTML = `<p style="white-space: pre-wrap; font-size: 15px;">${briefingText}</p>`;
     } else {
         briefingContainer.innerHTML = '<p style="opacity:0.7;">Chưa có bản tin tóm tắt cho chu kỳ này.</p>';
     }
@@ -281,7 +275,7 @@ function renderMarket(marketData) {
         const icon = isUp ? 'trending_up' : 'trending_down';
 
         html += `
-            <div style="background: var(--md-sys-color-surface); padding: 20px; border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px solid var(--md-sys-color-outline); box-shadow: var(--md-elevation-1);">
+            <div style="background: var(--md-sys-color-surface); padding: 20px; border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px solid var(--md-sys-color-outline); box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
                 <strong style="font-size: 16px; margin-bottom: 8px; opacity: 0.8;">${item.symbol}</strong>
                 <span style="color: ${color}; font-size: 22px; font-weight: bold; display: flex; align-items: center; gap: 4px;">
                     ${item.price} <span class="material-icons-round">${icon}</span>
@@ -309,7 +303,6 @@ function renderSocial(socialData) {
     container.innerHTML = html;
 }
 
-// 7. LOGIC MODAL TÌNH BÁO
 function initModalEvents() {
     const modal = document.getElementById('intelligence-modal');
     document.querySelector('.close-modal-action').addEventListener('click', () => modal.classList.remove('active'));
@@ -336,7 +329,7 @@ function initModalEvents() {
 function openModal(cluster) {
     document.getElementById('modal-title').textContent = cluster.title || cluster.cluster_title;
     
-    let bodyHtml = `<p style="margin-bottom:20px; font-size: 16px; line-height: 1.6;">${cluster.detailed_summary || cluster.short_summary}</p>`;
+    let bodyHtml = `<p style="margin-bottom:20px; font-size: 15px; line-height: 1.6;">${cluster.detailed_summary || cluster.short_summary}</p>`;
     
     if (cluster.causes && cluster.causes.length > 0 && cluster.causes[0] !== "Đang cập nhật dữ liệu bối cảnh") {
         bodyHtml += `<div class="intelligence-box"><div class="intelligence-title"><span class="material-icons-round">troubleshoot</span> Căn nguyên / Bối cảnh</div><ul style="padding-left: 20px;">${cluster.causes.map(c => `<li style="margin-bottom:4px;">${c}</li>`).join('')}</ul></div>`;
