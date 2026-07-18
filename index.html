@@ -3,65 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LƯỚT - Bản tin AI Tình báo</title>
+    <title>LƯỚT - AI Intelligence Dashboard</title>
     
-    <!-- Bộ Font Roboto và Icon chuẩn Material Design -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
-    
-    <!-- Liên kết tới file thiết kế CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
-    <!-- Thanh điều hướng trên cùng (App Bar) -->
-    <header class="app-bar">
-        <div class="container header-content">
-            <h1 class="logo">LƯỚT <span>AI Newsroom</span></h1>
-            <div class="actions">
-                <button id="theme-toggle" class="icon-btn" title="Chuyển chế độ Sáng/Tối">
-                    <span class="material-icons-round">dark_mode</span>
-                </button>
+<body class="dark-theme"> <!-- Mặc định giao diện Tối (Dark Navy) -->
+    
+    <div class="app-layout">
+        <!-- 1. SIDEBAR TRÁI: MENU ĐIỀU HƯỚNG -->
+        <aside class="sidebar-left">
+            <div class="logo-container">
+                <h1 class="logo">LƯỚT <span>Intelligence</span></h1>
             </div>
-        </div>
-    </header>
+            <nav class="side-nav">
+                <a href="#" class="nav-item active"><span class="material-icons-round">dashboard</span> Tổng quan</a>
+                <a href="#" class="nav-item"><span class="material-icons-round">feed</span> Bản tin 24h</a>
+                <a href="#" class="nav-item"><span class="material-icons-round">timeline</span> Timeline</a>
+                <a href="#" class="nav-item"><span class="material-icons-round">hub</span> Knowledge Graph</a>
+                <a href="#" class="nav-item"><span class="material-icons-round">trending_up</span> Thị trường</a>
+                <a href="#" class="nav-item"><span class="material-icons-round">public</span> Khu vực</a>
+            </nav>
+            <div class="nav-footer">
+                <p>© 2026 Lướt AI Newsroom</p>
+            </div>
+        </aside>
 
-    <main class="container">
-        <!-- Khu vực Thị trường & Xu hướng MXH (Sẽ chèn bằng JS) -->
-        <section class="top-dashboard" id="market-container"></section>
-
-        <!-- Lưới chia đôi màn hình: Tin tức (Trái) & Báo cáo AI (Phải) -->
-        <div class="news-grid">
-            <div class="main-content" id="news-container">
-                <!-- Trạng thái chờ tải dữ liệu -->
-                <div class="loading-state">
-                    <span class="material-icons-round spin">sync</span>
-                    <p>Hệ thống AI đang nạp dữ liệu phân tích...</p>
+        <!-- 2. KHU VỰC NỘI DUNG CHÍNH -->
+        <div class="main-wrapper">
+            <!-- Header -->
+            <header class="app-header">
+                <div class="search-box">
+                    <span class="material-icons-round">search</span>
+                    <input type="text" id="search-input" placeholder="Tìm kiếm chủ đề, thực thể, quốc gia...">
                 </div>
-            </div>
-            
-            <aside class="sidebar" id="briefing-container">
-                <!-- Bản tin Daily Briefing sẽ nằm ở đây -->
-            </aside>
+                <div class="header-actions">
+                    <span class="update-time" id="last-update-time">Đang cập nhật...</span>
+                    <button id="theme-toggle" class="icon-btn"><span class="material-icons-round">light_mode</span></button>
+                    <button class="icon-btn"><span class="material-icons-round">notifications</span></button>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <main class="dashboard-content">
+                <!-- Hàng thống kê tổng quan (Top Widgets) -->
+                <div class="stats-row" id="stats-container">
+                    <!-- Sẽ được render bằng JS -->
+                </div>
+
+                <!-- Lưới hiển thị: Bản tin (Trái) & Báo cáo (Phải) -->
+                <div class="content-grid">
+                    <!-- Khu vực Bản tin chính -->
+                    <section class="feed-section">
+                        <div class="section-header">
+                            <h2 class="section-title"><span class="material-icons-round">article</span> BẢN TIN NỔI BẬT</h2>
+                        </div>
+                        <div id="news-container">
+                            <!-- Skeleton Loading sẽ hiển thị ở đây lúc mới vào -->
+                        </div>
+                    </section>
+                    
+                    <!-- Sidebar Phải (Thị trường & Daily Briefing) -->
+                    <aside class="sidebar-right">
+                        <!-- Daily Briefing -->
+                        <div class="widget">
+                            <div class="section-header">
+                                <h2 class="section-title" style="color: var(--md-sys-color-ai);"><span class="material-icons-round">smart_toy</span> AI DAILY BRIEFING</h2>
+                            </div>
+                            <div id="briefing-container" class="widget-content">
+                                <div class="skeleton skeleton-text"></div>
+                                <div class="skeleton skeleton-text"></div>
+                                <div class="skeleton skeleton-text"></div>
+                            </div>
+                        </div>
+
+                        <!-- Market Dashboard -->
+                        <div class="widget">
+                            <div class="section-header">
+                                <h2 class="section-title" style="color: #f59e0b;"><span class="material-icons-round">insights</span> THỊ TRƯỜNG HÔM NAY</h2>
+                            </div>
+                            <div id="market-container" class="widget-content">
+                                <div class="skeleton skeleton-text" style="height: 30px; margin-bottom: 12px;"></div>
+                                <div class="skeleton skeleton-text" style="height: 30px; margin-bottom: 12px;"></div>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </main>
         </div>
-        <!-- Modal Hiển thị Chi tiết Intelligence -->
+    </div>
+
+    <!-- 3. MODAL CHI TIẾT TÌNH BÁO AI -->
     <div id="intelligence-modal" class="modal-overlay">
         <div class="modal-dialog">
             <div class="modal-header">
-                <h2 id="modal-title" class="modal-title">Tiêu đề</h2>
+                <h2 id="modal-title" class="modal-title">Đang tải...</h2>
                 <button id="close-modal-btn" class="close-btn"><span class="material-icons-round">close</span></button>
             </div>
-            <div class="modal-body" id="modal-body">
-                <!-- Nội dung AI sẽ đổ vào đây -->
-            </div>
+            <div class="modal-body" id="modal-body"></div>
             <div class="modal-footer">
-                <strong style="width:100%; display:block; margin-bottom:8px; font-size:14px;">Báo cáo dẫn nguồn:</strong>
-                <div id="modal-sources" style="display:flex; flex-wrap:wrap;"></div>
+                <strong style="width:100%; display:block; margin-bottom:8px; font-size:13px; color: var(--md-sys-color-primary);">NGUỒN BÁO CÁO:</strong>
+                <div id="modal-sources" style="display:flex; flex-wrap:wrap; gap: 8px;"></div>
             </div>
         </div>
     </div>
-    </main>
 
-    <!-- Liên kết tới file logic xử lý dữ liệu -->
     <script src="assets/js/app.js"></script>
 </body>
 </html>
