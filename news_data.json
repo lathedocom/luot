@@ -7,6 +7,449 @@
   },
   "news": [
     {
+      "event_key": "evt_01df4ed1",
+      "topic_key": "evt_01df4ed1_intelligence_2026",
+      "title": "Bất ổn địa chính trị và khủng hoảng kinh tế toàn cầu leo thang",
+      "timestamp": 1784345259000,
+      "importance": 30,
+      "hot_score": 600,
+      "categories": [
+        "uncategorized"
+      ],
+      "regions": [
+        "vietnam"
+      ],
+      "short_summary": "Thế giới đối mặt với xung đột quân sự tại Trung Đông, căng thẳng ngoại giao, cùng áp lực lạm phát và suy thoái kinh tế tại các thị trường trọng điểm Mỹ, Trung Quốc và châu Âu.",
+      "detailed_summary": "Tình hình toàn cầu diễn biến phức tạp với các cuộc xung đột quân sự từ dải Gaza, Iran đến các hành động phá hoại hạ tầng tại Baltic. Căng thẳng địa chính trị kết hợp với chính sách bảo hộ thương mại của Mỹ và khủng hoảng bất động sản tại Trung Quốc tạo ra áp lực lớn lên chuỗi cung ứng. Đồng thời, biến động thị trường tài chính, lãi suất cao và rủi ro từ các vụ tấn công mạng làm suy yếu niềm tin của nhà đầu tư, dẫn đến sự bất ổn định kéo dài.",
+      "causes": [
+        "Xung đột quân sự và tranh chấp lãnh thổ tại Trung Đông và Đông Âu",
+        "Áp lực lạm phát cao và sự suy yếu của các nền kinh tế lớn"
+      ],
+      "effects": [
+        "Đứt gãy chuỗi cung ứng hàng hóa toàn cầu",
+        "Gia tăng làn sóng di cư và khủng hoảng nhân đạo tại các vùng chiến sự"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư tài chính quốc tế",
+        "Doanh nghiệp logistics và xuất nhập khẩu",
+        "Người dân tại vùng chiến sự"
+      ],
+      "market_impact": "Thị trường tài chính biến động mạnh do lãi suất tăng, cổ phiếu công nghệ và bất động sản suy giảm, giá vàng tăng cao trong khi các nhà đầu tư đẩy mạnh bán khống SpaceX và các tài sản rủi ro.",
+      "follow_up": "Theo dõi sát diễn biến đàm phán con tin tại Gaza và các quyết định lãi suất mới nhất từ Fed cùng chính sách thuế quan từ chính quyền Mỹ.",
+      "entities": [
+        "dân",
+        "Gia Bảo",
+        "chung",
+        "Giá",
+        "giá",
+        "lên",
+        "Nguyên nhân",
+        "làng",
+        "Quốc tìm",
+        "President Logan"
+      ],
+      "graph": {
+        "nodes": [
+          {
+            "id": "dân",
+            "label": "dân"
+          },
+          {
+            "id": "Gia Bảo",
+            "label": "Gia Bảo"
+          },
+          {
+            "id": "chung",
+            "label": "chung"
+          },
+          {
+            "id": "Giá",
+            "label": "Giá"
+          },
+          {
+            "id": "giá",
+            "label": "giá"
+          },
+          {
+            "id": "lên",
+            "label": "lên"
+          },
+          {
+            "id": "Nguyên nhân",
+            "label": "Nguyên nhân"
+          },
+          {
+            "id": "làng",
+            "label": "làng"
+          },
+          {
+            "id": "Quốc tìm",
+            "label": "Quốc tìm"
+          },
+          {
+            "id": "President Logan",
+            "label": "President Logan"
+          }
+        ],
+        "edges": [
+          {
+            "source": "dân",
+            "target": "Gia Bảo",
+            "weight": 1
+          },
+          {
+            "source": "dân",
+            "target": "chung",
+            "weight": 1
+          },
+          {
+            "source": "dân",
+            "target": "Giá",
+            "weight": 1
+          },
+          {
+            "source": "dân",
+            "target": "giá",
+            "weight": 1
+          },
+          {
+            "source": "dân",
+            "target": "lên",
+            "weight": 1
+          },
+          {
+            "source": "dân",
+            "target": "Nguyên nhân",
+            "weight": 1
+          },
+          {
+            "source": "dân",
+            "target": "làng",
+            "weight": 1
+          },
+          {
+            "source": "dân",
+            "target": "Quốc tìm",
+            "weight": 1
+          },
+          {
+            "source": "dân",
+            "target": "President Logan",
+            "weight": 1
+          }
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://vnexpress.net/toi-mung-500-k-du-an-cuoi-o-nha-hang-5-sao-5098861.html",
+          "source_name": "VNExpress",
+          "source_logo": "https://s1.vnecdn.net/vnexpress/restruct/i/v895/v2_2019/pc/graphics/favicon.ico"
+        },
+        {
+          "url": "https://vnexpress.net/be-trai-gan-3-tuoi-nguy-kich-sau-buoi-hoc-tai-lop-can-thiep-5098831.html",
+          "source_name": "VNExpress",
+          "source_logo": "https://s1.vnecdn.net/vnexpress/restruct/i/v895/v2_2019/pc/graphics/favicon.ico"
+        },
+        {
+          "url": "https://vnexpress.net/nguoi-new-york-chat-vat-vi-khoi-chay-rung-tu-canada-5098792.html",
+          "source_name": "VNExpress",
+          "source_logo": "https://s1.vnecdn.net/vnexpress/restruct/i/v895/v2_2019/pc/graphics/favicon.ico"
+        },
+        {
+          "url": "https://vnexpress.net/trung-ve-tay-ban-nha-trong-tai-bo-qua-nhieu-loi-cua-argentina-5098854.html",
+          "source_name": "VNExpress",
+          "source_logo": "https://s1.vnecdn.net/vnexpress/restruct/i/v895/v2_2019/pc/graphics/favicon.ico"
+        },
+        {
+          "url": "https://vnexpress.net/9-chuyen-it-biet-ve-tran-tranh-giai-ba-world-cup-5098810.html",
+          "source_name": "VNExpress",
+          "source_logo": "https://s1.vnecdn.net/vnexpress/restruct/i/v895/v2_2019/pc/graphics/favicon.ico"
+        },
+        {
+          "url": "https://vnexpress.net/gia-vang-moi-nhat-hom-nay-ngay-18-7-5098824.html",
+          "source_name": "VNExpress",
+          "source_logo": "https://s1.vnecdn.net/vnexpress/restruct/i/v895/v2_2019/pc/graphics/favicon.ico"
+        },
+        {
+          "url": "https://vnexpress.net/ai-nen-kiem-tra-tuyen-giap-truoc-mang-thai-5098796.html",
+          "source_name": "VNExpress",
+          "source_logo": "https://s1.vnecdn.net/vnexpress/restruct/i/v895/v2_2019/pc/graphics/favicon.ico"
+        },
+        {
+          "url": "https://vnexpress.net/vi-sao-tre-de-viem-tai-giua-vao-mua-mua-5098791.html",
+          "source_name": "VNExpress",
+          "source_logo": "https://s1.vnecdn.net/vnexpress/restruct/i/v895/v2_2019/pc/graphics/favicon.ico"
+        },
+        {
+          "url": "https://vnexpress.net/sieu-thi-aeon-maxvalu-dau-tien-khai-truong-tai-tp-hcm-5098569.html",
+          "source_name": "VNExpress",
+          "source_logo": "https://s1.vnecdn.net/vnexpress/restruct/i/v895/v2_2019/pc/graphics/favicon.ico"
+        },
+        {
+          "url": "https://vnexpress.net/hang-nghin-runner-nhan-race-kit-vnexpress-marathon-da-nang-ngay-dau-5098528.html",
+          "source_name": "VNExpress",
+          "source_logo": "https://s1.vnecdn.net/vnexpress/restruct/i/v895/v2_2019/pc/graphics/favicon.ico"
+        },
+        {
+          "url": "https://vnexpress.net/chuoi-hoat-dong-keo-dai-24-gio-huong-ung-chung-ket-world-cup-2026-5098162.html",
+          "source_name": "VNExpress",
+          "source_logo": "https://s1.vnecdn.net/vnexpress/restruct/i/v895/v2_2019/pc/graphics/favicon.ico"
+        },
+        {
+          "url": "https://vnexpress.net/cai-gi-cang-thap-thi-lai-cang-cao-5098147.html",
+          "source_name": "VNExpress",
+          "source_logo": "https://s1.vnecdn.net/vnexpress/restruct/i/v895/v2_2019/pc/graphics/favicon.ico"
+        },
+        {
+          "url": "https://vnexpress.net/hoa-hau-a-hau-catwalk-cung-thi-sinh-miss-grand-vietnam-2026-5098033.html",
+          "source_name": "VNExpress",
+          "source_logo": "https://s1.vnecdn.net/vnexpress/restruct/i/v895/v2_2019/pc/graphics/favicon.ico"
+        },
+        {
+          "url": "https://vnexpress.net/mua-sam-gia-thu-vui-moi-cua-gioi-tre-han-quoc-5098584.html",
+          "source_name": "VNExpress",
+          "source_logo": "https://s1.vnecdn.net/vnexpress/restruct/i/v895/v2_2019/pc/graphics/favicon.ico"
+        },
+        {
+          "url": "https://vnexpress.net/iran-tan-cong-gay-hu-hai-nha-may-khu-man-o-kuwait-5098797.html",
+          "source_name": "VNExpress",
+          "source_logo": "https://s1.vnecdn.net/vnexpress/restruct/i/v895/v2_2019/pc/graphics/favicon.ico"
+        },
+        {
+          "url": "https://www.cnbc.com/2026/07/17/stocks-making-the-biggest-moves-premarket-nflx-spcx-googl-and-more.html",
+          "source_name": "CNBC",
+          "source_logo": "https://www.cnbc.com/favicon.ico"
+        },
+        {
+          "url": "https://www.cnbc.com/2026/07/17/indias-biggest-ipo-this-year-rakes-in-bids-worth-31-billion-powered-by-institutional-frenzy.html",
+          "source_name": "CNBC",
+          "source_logo": "https://www.cnbc.com/favicon.ico"
+        },
+        {
+          "url": "https://www.cnbc.com/2026/07/16/dallas-fed-president-logan-calls-for-modestly-higher-interest-rates.html",
+          "source_name": "CNBC",
+          "source_logo": "https://www.cnbc.com/favicon.ico"
+        },
+        {
+          "url": "https://www.cnbc.com/2026/07/16/stocks-making-the-biggest-moves-midday-man-abt-unh-tsm-more.html",
+          "source_name": "CNBC",
+          "source_logo": "https://www.cnbc.com/favicon.ico"
+        },
+        {
+          "url": "https://www.cnbc.com/2026/07/16/short-sellers-load-up-against-spacex-as-stock-retreats-back-to-ipo-price.html",
+          "source_name": "CNBC",
+          "source_logo": "https://www.cnbc.com/favicon.ico"
+        },
+        {
+          "url": "https://www.cnbc.com/2026/07/16/trumps-cfpb-overhaul-cost-americans-26point5-billion-sen-warren-says.html",
+          "source_name": "CNBC",
+          "source_logo": "https://www.cnbc.com/favicon.ico"
+        },
+        {
+          "url": "https://www.cnbc.com/2026/07/16/stocks-making-the-biggest-moves-premarket-.html",
+          "source_name": "CNBC",
+          "source_logo": "https://www.cnbc.com/favicon.ico"
+        },
+        {
+          "url": "https://www.cnbc.com/2026/07/15/anthropic-ipo-banks-investor-meetings.html",
+          "source_name": "CNBC",
+          "source_logo": "https://www.cnbc.com/favicon.ico"
+        },
+        {
+          "url": "https://www.cnbc.com/2026/07/15/stocks-making-the-biggest-moves-midday-spcx-aapl-pypl-cava-pgr-mu.html",
+          "source_name": "CNBC",
+          "source_logo": "https://www.cnbc.com/favicon.ico"
+        },
+        {
+          "url": "https://www.cnbc.com/2026/07/15/watch-fed-chairman-kevin-warsh-testify-live-before-senate-banking-committee.html",
+          "source_name": "CNBC",
+          "source_logo": "https://www.cnbc.com/favicon.ico"
+        },
+        {
+          "url": "https://www.cnbc.com/2026/07/15/jamie-dimon-jpmorgan-chase-defense.html",
+          "source_name": "CNBC",
+          "source_logo": "https://www.cnbc.com/favicon.ico"
+        },
+        {
+          "url": "https://www.cnbc.com/2026/07/15/warren-buffett-on-the-market-today-its-tough-to-find-values-when-everybody-is-preferring-gambling.html",
+          "source_name": "CNBC",
+          "source_logo": "https://www.cnbc.com/favicon.ico"
+        },
+        {
+          "url": "https://www.cnbc.com/2026/07/15/new-york-fed-president-williams-says-inflation-has-peaked-rates-well-positioned.html",
+          "source_name": "CNBC",
+          "source_logo": "https://www.cnbc.com/favicon.ico"
+        },
+        {
+          "url": "https://www.cnbc.com/2026/07/15/buffett-says-trumps-pick-of-kevin-warsh-for-fed-chair-was-good-choice.html",
+          "source_name": "CNBC",
+          "source_logo": "https://www.cnbc.com/favicon.ico"
+        },
+        {
+          "url": "https://www.cnbc.com/2026/07/15/star-analyst-dan-ives-forms-yorkville-ives-merchant-bank-after-leaving-wedbush.html",
+          "source_name": "CNBC",
+          "source_logo": "https://www.cnbc.com/favicon.ico"
+        },
+        {
+          "url": "https://www.bbc.co.uk/news/articles/cwyq93j34lgo?at_medium=RSS&at_campaign=rss",
+          "source_name": "BBC News",
+          "source_logo": "https://www.bbc.co.uk/favicon.ico"
+        },
+        {
+          "url": "https://www.bbc.co.uk/news/articles/cy748n8zx8ro?at_medium=RSS&at_campaign=rss",
+          "source_name": "BBC News",
+          "source_logo": "https://www.bbc.co.uk/favicon.ico"
+        },
+        {
+          "url": "https://www.bbc.co.uk/news/articles/cvg8w4dpjkwo?at_medium=RSS&at_campaign=rss",
+          "source_name": "BBC News",
+          "source_logo": "https://www.bbc.co.uk/favicon.ico"
+        },
+        {
+          "url": "https://www.bbc.co.uk/news/articles/cx2rmjk0740o?at_medium=RSS&at_campaign=rss",
+          "source_name": "BBC News",
+          "source_logo": "https://www.bbc.co.uk/favicon.ico"
+        },
+        {
+          "url": "https://www.bbc.co.uk/news/articles/cn0n3y6ewn4o?at_medium=RSS&at_campaign=rss",
+          "source_name": "BBC News",
+          "source_logo": "https://www.bbc.co.uk/favicon.ico"
+        },
+        {
+          "url": "https://www.bbc.co.uk/news/articles/ckgv0zd497zo?at_medium=RSS&at_campaign=rss",
+          "source_name": "BBC News",
+          "source_logo": "https://www.bbc.co.uk/favicon.ico"
+        },
+        {
+          "url": "https://www.bbc.co.uk/news/articles/cwyjv3815yxo?at_medium=RSS&at_campaign=rss",
+          "source_name": "BBC News",
+          "source_logo": "https://www.bbc.co.uk/favicon.ico"
+        },
+        {
+          "url": "https://www.bbc.co.uk/news/articles/c9d8ylw60e9o?at_medium=RSS&at_campaign=rss",
+          "source_name": "BBC News",
+          "source_logo": "https://www.bbc.co.uk/favicon.ico"
+        },
+        {
+          "url": "https://www.bbc.co.uk/news/articles/c7vg6dml34vo?at_medium=RSS&at_campaign=rss",
+          "source_name": "BBC News",
+          "source_logo": "https://www.bbc.co.uk/favicon.ico"
+        },
+        {
+          "url": "https://www.bbc.co.uk/news/articles/cjd4kvxpd3do?at_medium=RSS&at_campaign=rss",
+          "source_name": "BBC News",
+          "source_logo": "https://www.bbc.co.uk/favicon.ico"
+        },
+        {
+          "url": "https://www.bbc.co.uk/news/articles/cx2k9wvv5wyo?at_medium=RSS&at_campaign=rss",
+          "source_name": "BBC News",
+          "source_logo": "https://www.bbc.co.uk/favicon.ico"
+        },
+        {
+          "url": "https://www.bbc.co.uk/news/articles/c151gegwqv1o?at_medium=RSS&at_campaign=rss",
+          "source_name": "BBC News",
+          "source_logo": "https://www.bbc.co.uk/favicon.ico"
+        },
+        {
+          "url": "https://www.bbc.co.uk/news/articles/c79gw4lj89eo?at_medium=RSS&at_campaign=rss",
+          "source_name": "BBC News",
+          "source_logo": "https://www.bbc.co.uk/favicon.ico"
+        },
+        {
+          "url": "https://www.bbc.co.uk/news/articles/c0m7n427xd8o?at_medium=RSS&at_campaign=rss",
+          "source_name": "BBC News",
+          "source_logo": "https://www.bbc.co.uk/favicon.ico"
+        },
+        {
+          "url": "https://www.bbc.co.uk/news/articles/cy07rz79zg9o?at_medium=RSS&at_campaign=rss",
+          "source_name": "BBC News",
+          "source_logo": "https://www.bbc.co.uk/favicon.ico"
+        },
+        {
+          "url": "https://www.wsj.com/articles/palestinians-flock-back-to-northern-gaza-on-foot-after-hostage-release-breakthrough-3f60e2db",
+          "source_name": "The Wall Street Journal",
+          "source_logo": "https://www.wsj.com/favicon.ico"
+        },
+        {
+          "url": "https://www.wsj.com/articles/even-chinas-property-stalwart-isnt-immune-from-the-crisis-19799863",
+          "source_name": "The Wall Street Journal",
+          "source_logo": "https://www.wsj.com/favicon.ico"
+        },
+        {
+          "url": "https://www.wsj.com/articles/freed-israeli-hostages-still-had-shrapnel-in-their-bodies-from-oct-7-attack-3de8cd1e",
+          "source_name": "The Wall Street Journal",
+          "source_logo": "https://www.wsj.com/favicon.ico"
+        },
+        {
+          "url": "https://www.wsj.com/articles/suspected-sabotage-of-deep-sea-cable-triggers-first-nato-led-response-337119ba",
+          "source_name": "The Wall Street Journal",
+          "source_logo": "https://www.wsj.com/favicon.ico"
+        },
+        {
+          "url": "https://www.wsj.com/articles/rwanda-backed-rebels-enter-congo-safe-haven-city-aid-hub-09fdccb8",
+          "source_name": "The Wall Street Journal",
+          "source_logo": "https://www.wsj.com/favicon.ico"
+        },
+        {
+          "url": "https://www.wsj.com/articles/cocaine-funded-gangs-shake-colombia-years-after-peace-pact-a45a28da",
+          "source_name": "The Wall Street Journal",
+          "source_logo": "https://www.wsj.com/favicon.ico"
+        },
+        {
+          "url": "https://www.wsj.com/articles/italy-supports-saudi-arabia-joining-gcap-fighter-jet-program-pm-meloni-says-bbd9cec1",
+          "source_name": "The Wall Street Journal",
+          "source_logo": "https://www.wsj.com/favicon.ico"
+        },
+        {
+          "url": "https://www.wsj.com/articles/shippers-wary-of-red-sea-routes-despite-houthi-pledge-to-end-targeting-4dde35c2",
+          "source_name": "The Wall Street Journal",
+          "source_logo": "https://www.wsj.com/favicon.ico"
+        },
+        {
+          "url": "https://www.wsj.com/articles/kim-jong-un-is-doing-everything-he-can-to-keep-north-koreas-youth-in-line-0866a1de",
+          "source_name": "The Wall Street Journal",
+          "source_logo": "https://www.wsj.com/favicon.ico"
+        },
+        {
+          "url": "https://www.wsj.com/articles/trump-says-colombia-will-face-25-tariffs-amid-fight-over-deportation-flights-e32dc497",
+          "source_name": "The Wall Street Journal",
+          "source_logo": "https://www.wsj.com/favicon.ico"
+        },
+        {
+          "url": "https://www.wsj.com/articles/jeju-air-crash-probe-focuses-on-engine-damage-after-bird-strike-3bafc2ff",
+          "source_name": "The Wall Street Journal",
+          "source_logo": "https://www.wsj.com/favicon.ico"
+        },
+        {
+          "url": "https://www.wsj.com/articles/germany-economic-model-broken-exports-095a488d",
+          "source_name": "The Wall Street Journal",
+          "source_logo": "https://www.wsj.com/favicon.ico"
+        },
+        {
+          "url": "https://www.wsj.com/articles/trump-says-he-wants-to-clean-out-gaza-send-refugees-to-egypt-and-jordan-d90beccc",
+          "source_name": "The Wall Street Journal",
+          "source_logo": "https://www.wsj.com/favicon.ico"
+        },
+        {
+          "url": "https://www.wsj.com/articles/israel-hamas-four-hostages-release-gaza-3ffd66f6",
+          "source_name": "The Wall Street Journal",
+          "source_logo": "https://www.wsj.com/favicon.ico"
+        },
+        {
+          "url": "https://www.wsj.com/articles/hamas-hostages-israel-gaza-41432124",
+          "source_name": "The Wall Street Journal",
+          "source_logo": "https://www.wsj.com/favicon.ico"
+        }
+      ],
+      "timeline": [
+        {
+          "title": "Bất ổn địa chính trị và khủng hoảng kinh tế toàn cầu leo thang",
+          "timestamp": 1784345259000,
+          "url": "https://vnexpress.net/toi-mung-500-k-du-an-cuoi-o-nha-hang-5-sao-5098861.html"
+        }
+      ]
+    },
+    {
       "id": "topic_1784311267801_11ofk",
       "cluster_title": "Biến động thị trường toàn cầu và căng thẳng địa chính trị leo thang",
       "short_summary": "Thị trường tài chính toàn cầu biến động mạnh với sự trỗi dậy của Apple và các đợt IPO lớn, trong khi rủi ro địa chính trị gia tăng từ xung đột tại Trung Đông, nguy cơ phá hoại hạ tầng tại Baltic và khủng hoảng bất động sản tại Trung Quốc gây lo ngại lớn cho nhà đầu tư.",
@@ -5819,27 +6262,6 @@
       "timestamp": 1784201573582
     },
     {
-      "cluster_title": "Quản lý môi trường và hạ tầng tại TP.HCM: Siết chặt xử lý chất thải và thúc đẩy tái chế",
-      "short_summary": "TP.HCM đang siết chặt kiểm soát bùn thải và chất thải nạo vét kênh rạch từ các công trình xây dựng. Đồng thời, UBND Thành phố đã chỉ đạo nghiên cứu giải pháp khoa học nhằm tái chế rác thải xây dựng thành vật liệu san lấp, hướng tới phát triển đô thị xanh bền vững.",
-      "detailed_summary": "Nhằm nâng cao hiệu quả quản lý đô thị và bảo vệ cảnh quan môi trường, Ủy ban Nhân dân TP.HCM đã đưa ra những chỉ đạo vô cùng quyết liệt liên quan đến việc xử lý chất thải xây dựng và bùn nạo vét trên địa bàn. Cụ thể, lãnh đạo thành phố đã giao Sở Xây dựng phối hợp với các đơn vị liên quan khẩn trương nghiên cứu các phương án công nghệ và pháp lý để tái chế nguồn rác thải từ các công trình xây dựng, biến chúng thành vật liệu san lấp hợp chuẩn. Giải pháp này được đánh giá là một bước đi mang tính chiến lược, không chỉ giúp giảm thiểu áp lực khổng lồ lên các bãi chôn lấp vốn đã quá tải, mà còn giải quyết hiệu quả bài toán thiếu hụt nguồn cát san lấp nghiêm trọng hiện nay cho các dự án giao thông và đô thị trọng điểm.\n\nSong song với các giải pháp tái chế, TP.HCM cũng chính thức siết chặt quy trình quản lý đối với bùn thải và chất thải phát sinh từ hoạt động nạo vét hệ thống kênh rạch và các công trình xây dựng lớn. Theo quy định mới, các chủ nguồn thải và đơn vị thi công bắt buộc phải thực hiện phân loại bùn đất ngay tại công trường, đồng thời ký hợp đồng với các đơn vị xử lý có đủ năng lực được cấp phép. Quá trình vận chuyển chất thải phải được giám sát chặt chẽ thông qua các thiết bị định vị hành trình nhằm ngăn chặn triệt để tình trạng đổ thải trộm ra các khu vực đất trống hoặc lòng sông, gây ô nhiễm nguồn nước và tắc nghẽn dòng chảy. Thành phố cũng sẽ tăng cường thanh tra, kiểm tra đột xuất và áp dụng các hình phạt hành chính ở mức cao nhất, thậm chí thu hồi giấy phép hoạt động đối với các nhà thầu vi phạm nghiêm trọng. Sự kết hợp đồng bộ giữa chế tài quản lý cứng rắn và việc mở đường cho các giải pháp kinh tế tuần hoàn được kỳ vọng sẽ giúp TP.HCM giải quyết tận gốc cuộc khủng hoảng chất thải đô thị, hướng tới mục tiêu xây dựng một đô thị xanh, sạch và phát triển bền vững trong tương lai.",
-      "thumbnail": "https://icdn.dantri.com.vn/2026/07/16/rachxuyentambaoquyen-1773919064587-1784190895645.jpg",
-      "sources": [
-        {
-          "url": "https://tuoitre.vn/ubnd-tphcm-chi-dao-nghien-cuu-tai-che-rac-thai-xay-dung-de-san-lap-100260716155355412.htm",
-          "source_name": "Tuổi Trẻ",
-          "source_logo": "https://tuoitre.vn/assets/images/logo.png"
-        },
-        {
-          "url": "https://dantri.com.vn/thoi-su/tphcm-siet-quan-ly-bun-chat-thai-tu-nao-vet-kenh-rach-va-cong-trinh-20260716153604564.htm",
-          "source_name": "Dân Trí",
-          "source_logo": "https://icdn.dantri.com.vn/logo.svg"
-        }
-      ],
-      "id": "news_17842003172016jfeec",
-      "timestamp": 1784200317201,
-      "expert_analysis": "Về mặt kinh tế, chính sách thúc đẩy tái chế xà bần và bùn thải tại TP.HCM sẽ mở ra thị trường mới cho ngành kinh tế tuần hoàn, giúp giảm chi phí xây dựng nhờ nguồn vật liệu san lấp thay thế trong bối cảnh khan hiếm cát tự nhiên, đồng thời giảm thiểu chi phí xử lý môi trường cho ngân sách. Về mặt chính trị, động thái siết chặt quản lý và áp dụng chế tài mạnh tay thể hiện quyết tâm nâng cao hiệu lực, hiệu quả quản lý đô thị của chính quyền thành phố, củng cố lòng tin của người dân vào mục tiêu phát triển bền vững và bảo vệ môi trường sống."
-    },
-    {
       "cluster_title": "Công tác tìm kiếm, quy tập hài cốt liệt sĩ tại Cần Thơ và Đồng Nai",
       "short_summary": "Công tác quy tập hài cốt liệt sĩ tại khu vực phía Nam đạt tiến triển mới. Trong khi tỉnh Đồng Nai phát hiện một ngôi mộ tập thể chứa 4 hài cốt liệt sĩ cùng nhiều di vật chiến tranh, thì TP Cần Thơ cũng khẩn trương xác minh tọa độ nghi có hố chôn 12 liệt sĩ.",
       "detailed_summary": "Công tác đền ơn đáp nghĩa và tìm kiếm, quy tập hài cốt liệt sĩ luôn được Đảng và Nhà nước Việt Nam đặc biệt quan tâm. Mới đây, tại tỉnh Đồng Nai, lực lượng chức năng đã tìm thấy một ngôi mộ tập thể chứa hài cốt của 4 liệt sĩ tại khu vực chiến trường xưa, đi kèm với nhiều di vật thiêng liêng như bình tông nước, cúc áo quân trang và một số vật dụng cá nhân. Việc phát hiện này có ý nghĩa vô cùng to lớn, giúp xoa dịu nỗi đau của thân nhân các gia đình liệt sĩ sau nhiều thập kỷ mòn mỏi ngóng trông tin tức từ chiến trường. Ngay sau khi phát hiện, Bộ Chỉ huy Quân sự tỉnh Đồng Nai đã tổ chức lễ đón nhận, bàn giao và chuẩn bị tổ chức lễ truy điệu, an táng các anh hùng liệt sĩ một cách trang nghiêm nhất theo đúng nghi thức quân đội.\n\nCùng thời điểm, tại thành phố Cần Thơ, chính quyền địa phương và các cơ quan quân sự cũng đang khẩn trương triển khai công tác tìm kiếm, khảo sát thực địa tại một vị trí được người dân cung cấp thông tin nghi có hố chôn tập thể của 12 liệt sĩ hy sinh trong thời kỳ kháng chiến chống Mỹ. Lực lượng tìm kiếm chuyên trách đã huy động trang thiết bị hiện đại cùng các nhân chứng lịch sử nhằm xác định chính xác tọa độ để tiến hành khai quật một cách thận trọng và tôn kính nhất. Do địa hình khu vực có nhiều thay đổi sau hàng chục năm đô thị hóa, công tác tìm kiếm gặp không ít khó khăn thực tế. Tuy nhiên, với tinh thần trách nhiệm cao nhất trước hương hồn các anh hùng đã ngã xuống vì độc lập tự do của Tổ quốc, ban chỉ đạo tìm kiếm quy tập hài cốt liệt sĩ thành phố Cần Thơ khẳng định sẽ dồn toàn lực, không bỏ sót bất kỳ manh mối nào để sớm đưa các anh về với đất mẹ. Các hoạt động này tiếp tục khẳng định truyền thống 'Uống nước nhớ nguồn' tốt đẹp của dân tộc Việt Nam.",
@@ -6040,6 +6462,27 @@
       ],
       "id": "news_1784200317202n2czr9",
       "timestamp": 1784200317202
+    },
+    {
+      "cluster_title": "Quản lý môi trường và hạ tầng tại TP.HCM: Siết chặt xử lý chất thải và thúc đẩy tái chế",
+      "short_summary": "TP.HCM đang siết chặt kiểm soát bùn thải và chất thải nạo vét kênh rạch từ các công trình xây dựng. Đồng thời, UBND Thành phố đã chỉ đạo nghiên cứu giải pháp khoa học nhằm tái chế rác thải xây dựng thành vật liệu san lấp, hướng tới phát triển đô thị xanh bền vững.",
+      "detailed_summary": "Nhằm nâng cao hiệu quả quản lý đô thị và bảo vệ cảnh quan môi trường, Ủy ban Nhân dân TP.HCM đã đưa ra những chỉ đạo vô cùng quyết liệt liên quan đến việc xử lý chất thải xây dựng và bùn nạo vét trên địa bàn. Cụ thể, lãnh đạo thành phố đã giao Sở Xây dựng phối hợp với các đơn vị liên quan khẩn trương nghiên cứu các phương án công nghệ và pháp lý để tái chế nguồn rác thải từ các công trình xây dựng, biến chúng thành vật liệu san lấp hợp chuẩn. Giải pháp này được đánh giá là một bước đi mang tính chiến lược, không chỉ giúp giảm thiểu áp lực khổng lồ lên các bãi chôn lấp vốn đã quá tải, mà còn giải quyết hiệu quả bài toán thiếu hụt nguồn cát san lấp nghiêm trọng hiện nay cho các dự án giao thông và đô thị trọng điểm.\n\nSong song với các giải pháp tái chế, TP.HCM cũng chính thức siết chặt quy trình quản lý đối với bùn thải và chất thải phát sinh từ hoạt động nạo vét hệ thống kênh rạch và các công trình xây dựng lớn. Theo quy định mới, các chủ nguồn thải và đơn vị thi công bắt buộc phải thực hiện phân loại bùn đất ngay tại công trường, đồng thời ký hợp đồng với các đơn vị xử lý có đủ năng lực được cấp phép. Quá trình vận chuyển chất thải phải được giám sát chặt chẽ thông qua các thiết bị định vị hành trình nhằm ngăn chặn triệt để tình trạng đổ thải trộm ra các khu vực đất trống hoặc lòng sông, gây ô nhiễm nguồn nước và tắc nghẽn dòng chảy. Thành phố cũng sẽ tăng cường thanh tra, kiểm tra đột xuất và áp dụng các hình phạt hành chính ở mức cao nhất, thậm chí thu hồi giấy phép hoạt động đối với các nhà thầu vi phạm nghiêm trọng. Sự kết hợp đồng bộ giữa chế tài quản lý cứng rắn và việc mở đường cho các giải pháp kinh tế tuần hoàn được kỳ vọng sẽ giúp TP.HCM giải quyết tận gốc cuộc khủng hoảng chất thải đô thị, hướng tới mục tiêu xây dựng một đô thị xanh, sạch và phát triển bền vững trong tương lai.",
+      "thumbnail": "https://icdn.dantri.com.vn/2026/07/16/rachxuyentambaoquyen-1773919064587-1784190895645.jpg",
+      "sources": [
+        {
+          "url": "https://tuoitre.vn/ubnd-tphcm-chi-dao-nghien-cuu-tai-che-rac-thai-xay-dung-de-san-lap-100260716155355412.htm",
+          "source_name": "Tuổi Trẻ",
+          "source_logo": "https://tuoitre.vn/assets/images/logo.png"
+        },
+        {
+          "url": "https://dantri.com.vn/thoi-su/tphcm-siet-quan-ly-bun-chat-thai-tu-nao-vet-kenh-rach-va-cong-trinh-20260716153604564.htm",
+          "source_name": "Dân Trí",
+          "source_logo": "https://icdn.dantri.com.vn/logo.svg"
+        }
+      ],
+      "id": "news_17842003172016jfeec",
+      "timestamp": 1784200317201,
+      "expert_analysis": "Về mặt kinh tế, chính sách thúc đẩy tái chế xà bần và bùn thải tại TP.HCM sẽ mở ra thị trường mới cho ngành kinh tế tuần hoàn, giúp giảm chi phí xây dựng nhờ nguồn vật liệu san lấp thay thế trong bối cảnh khan hiếm cát tự nhiên, đồng thời giảm thiểu chi phí xử lý môi trường cho ngân sách. Về mặt chính trị, động thái siết chặt quản lý và áp dụng chế tài mạnh tay thể hiện quyết tâm nâng cao hiệu lực, hiệu quả quản lý đô thị của chính quyền thành phố, củng cố lòng tin của người dân vào mục tiêu phát triển bền vững và bảo vệ môi trường sống."
     },
     {
       "cluster_title": "Diễn biến mới trong xung đột Israel-Hamas và tình hình nhân đạo tại Gaza",
@@ -7395,5 +7838,55 @@
       "id": "news_17841447945816nji3",
       "timestamp": 1784144794581
     }
-  ]
+  ],
+  "market_data": [
+    {
+      "symbol": "BTC",
+      "name": "Bitcoin",
+      "price": "NaN",
+      "change_percent": "NaN%",
+      "trend": "↓",
+      "updated_at": 1784347006168
+    },
+    {
+      "symbol": "GOLD",
+      "name": "Giá Vàng (XAU)",
+      "price": "2350.50",
+      "change_percent": "+0.5%",
+      "trend": "↑",
+      "updated_at": 1784347006011
+    },
+    {
+      "symbol": "USD/VND",
+      "name": "Tỷ giá Đô la",
+      "price": "25450",
+      "change_percent": "-0.1%",
+      "trend": "↓",
+      "updated_at": 1784347006011
+    },
+    {
+      "symbol": "VNINDEX",
+      "name": "VN-Index",
+      "price": "1280.15",
+      "change_percent": "+1.2%",
+      "trend": "↑",
+      "updated_at": 1784347006011
+    }
+  ],
+  "social_trends": [
+    {
+      "platform": "YouTube",
+      "icon": "https://www.youtube.com/s/desktop/114cbab0/img/favicon.ico",
+      "content": "Tin nóng: Cập nhật tình hình kinh tế vĩ mô quý 3",
+      "url": "https://youtube.com",
+      "trend_icon": "📈",
+      "time": 1784347006011
+    }
+  ],
+  "daily_briefing": "<h3>Bức tranh Toàn cảnh 24h</h3><p>Hệ thống AI đang được nâng cấp, bản tin thực tế sẽ xuất hiện tại đây sau khi kết nối API.</p>",
+  "statistics": {
+    "total_topics": 262,
+    "total_articles": 60
+  },
+  "generated_at": 1784347006168
 }
