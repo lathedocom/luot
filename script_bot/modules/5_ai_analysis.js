@@ -1,40 +1,51 @@
 require('dotenv').config();
 const { Groq } = require('groq-sdk');
+const { getAiResult, saveAiResult } = require('./cache/ai_cache');
+const quotaManager = require('./quota/quota_manager');
+const configModels = require('../config/models');
+const logger = require('./utils/logger');
 
-// Khởi tạo Groq dự phòng (nếu có)
 const groq = process.env.GROQ_API_KEY ? new Groq({ apiKey: process.env.GROQ_API_KEY }) : null;
 
-async function analyzeClusters(clusters) {
-    if (!clusters || clusters.length === 0) return [];
-    console.log(`Bước 5: Phân tích đa chiều cho ${clusters.length} sự kiện (Đồng bộ Format Frontend)...`);
-    
-    const analyzedClusters = [];
-    const apiKey = process.env.GEMINI_API_KEY;
-    
-    // Sử dụng model có 500 RPD để gánh số lượng lớn Topic
-    const modelName = 'gemini-3.1-flash-lite';
+/**
+ * Phân tích đa chiều cho một cụm sự kiện (Topic).
+ * Kiểm tra Cache trước, ưu tiên Gemini 3.1 Flash Lite, Fallback sang Groq hoặc Rule-based mặc định.
+ */
+async function analyzeClusterMultiDimensional(cluster, eventKey) {
+    // 1. Kiểm tra bộ nhớ đệm Cache để đưa chi phí về 0
+    const cachedResult = getAiResult(eventKey);
+    if (cachedResult) {
+        logger.info(`⚡ [Cache Hit] Sử dụng lại kết quả AI cho Event: ${eventKey}`);
+        return cachedResult;
+    }
+
+    const apiKey = (configModels.API_KEYS.GEMINI || '').trim();
+    const modelName = 'gemini-3.1-flash-lite'; // Model tối ưu 500 RPD[cite: 1]
     const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`;
 
-    for (let i = 0; i < clusters.length; i++) {
-        const cluster = clusters[i];
-        
-        // Yêu cầu AI trả về đúng tên biến mà Web HTML đang chờ đợi
-        const prompt = `
-Bạn là biên tập viên tin tức tình báo. Đọc khối tin thô sau và viết lại thành 1 bản tin hoàn chỉnh.
-Nội dung thô: ${cluster.combined_text}
+    const prompt = `
+Bạn là một chuyên gia phân tích tin tức tình báo cao cấp. Đọc khối dữ liệu tin tức thô sau đây:
+"${cluster.combined_text}"
 
-LỆNH TUYỆT ĐỐI: CHỈ TRẢ VỀ ĐÚNG CẤU TRÚC JSON SAU. KHÔNG CÓ BẤT CỨ VĂN BẢN NÀO BÊN NGOÀI.
+Nhiệm vụ của bạn là tổng hợp và phân tích đa chiều sự kiện này theo cấu trúc yêu cầu.
+LỆNH TUYỆT ĐỐI: CHỈ TRẢ VỀ ĐÚNG MỘT OBJECT JSON THEO CẤU TRÚC SAU. KHÔNG ĐƯỢC CHÈN BẤT KỲ VĂN BẢN GIẢI THÍCH NÀO KHÁC NGOÀI JSON.
+
 {
-  "cluster_title": "Tiêu đề tiếng Việt hấp dẫn và ngắn gọn (dưới 15 từ)",
-  "short_summary": "Tóm tắt sự kiện xảy ra (khoảng 40-50 từ)",
-  "detailed_summary": "Tóm tắt chi tiết diễn biến (khoảng 80 từ)",
-  "expert_analysis": "Phân tích nguyên nhân và bối cảnh (khoảng 70 từ)"
+  "cluster_title": "Tiêu đề tiếng Việt mang tính thời sự vĩ mô, ngắn gọn dưới 15 từ",
+  "short_summary": "Tóm tắt sự việc cốt lõi diễn ra trong 40 từ",
+  "detailed_summary": "Phân tích diễn biến chi tiết và logic nội tại của sự kiện khoảng 80 từ",
+  "causes": ["Nguyên nhân cốt lõi 1", "Nguyên nhân cốt lõi 2"],
+  "effects": ["Hệ quả trực tiếp 1", "Hệ quả trực tiếp 2"],
+  "affected_groups": ["Nhóm đối tượng/ngành nghề bị ảnh hưởng chính 1", "Nhóm 2"],
+  "market_impact": "Tác động cụ thể đến kinh tế, tài chính, thị trường hoặc giá cả tài sản (nếu có, khoảng 30 từ)",
+  "follow_up": "Điểm mấu chốt cần tiếp tục theo dõi sát sao trong vài ngày tới (1 câu ngắn gọn)"
 }`;
 
-        let aiResponse = null;
-        let success = false;
+    let aiResponse = null;
+    let success = false;
 
-        // THỬ NGHIỆM 1: Dùng Gemini 3.1 Flash Lite qua REST API
+    // THỬ NGHIỆM 1: Gọi Gemini 3.1 Flash Lite
+    if (apiKey) {
         try {
             const response = await fetch(apiUrl, {
                 method: 'POST',
@@ -45,63 +56,60 @@ LỆNH TUYỆT ĐỐI: CHỈ TRẢ VỀ ĐÚNG CẤU TRÚC JSON SAU. KHÔNG CÓ 
                 })
             });
 
-            const data = await response.json();
-
-            if (data.error) {
-                throw new Error(data.error.message);
+            if (response.status === 429) {
+                logger.warn(`Gemini API dính Rate Limit (429). Không retry, chuẩn bị chuyển hướng Fallback.`);
+            } else if (response.ok) {
+                const data = await response.json();
+                if (data.candidates && data.candidates[0].content.parts[0].text) {
+                    let responseText = data.candidates[0].content.parts[0].text;
+                    responseText = responseText.replace(/```json/g, '').replace(/```/g, '').trim();
+                    aiResponse = JSON.parse(responseText);
+                    quotaManager.recordUsage(modelName, 1200);
+                    success = true;
+                }
             }
-
-            let responseText = data.candidates[0].content.parts[0].text;
-            responseText = responseText.replace(/```json/g, '').replace(/```/g, '').trim();
-            aiResponse = JSON.parse(responseText);
-            success = true;
-            console.log(`[${i+1}/${clusters.length}] ✅ Xong (Gemini): ${aiResponse.cluster_title}`);
-
         } catch (err) {
-            console.log(`[${i+1}/${clusters.length}] ⚠️ Gemini lỗi: ${err.message}. Kích hoạt chốt chặn Groq...`);
+            logger.error(`Lỗi kết nối Gemini API: ${err.message}`);
         }
-
-        // THỬ NGHIỆM 2: Nếu Gemini sập, gọi Groq cứu cánh
-        if (!success && groq) {
-            try {
-                const groqOptions = {
-                    messages: [{ role: "user", content: prompt }],
-                    model: "llama-3.1-8b-instant",
-                    temperature: 0.1,
-                    max_tokens: 1000,
-                    response_format: { type: "json_object" }
-                };
-                
-                const chatCompletion = await groq.chat.completions.create(groqOptions);
-                let responseText = chatCompletion.choices[0].message.content;
-                responseText = responseText.replace(/```json/g, '').replace(/```/g, '').trim();
-                aiResponse = JSON.parse(responseText);
-                success = true;
-                console.log(`[${i+1}/${clusters.length}] ✅ Xong (Groq): ${aiResponse.cluster_title}`);
-                
-            } catch (groqErr) {
-                console.log(`[${i+1}/${clusters.length}] ❌ Lỗi cả 2 AI. Bỏ qua cụm này.`);
-            }
-        }
-
-        // RÁP DỮ LIỆU ĐÚNG CHUẨN FRONTEND
-        analyzedClusters.push({
-            id: cluster.topic_key || 'news_' + Date.now() + Math.random().toString(36).substring(7),
-            cluster_title: success ? (aiResponse.cluster_title || "Tin tức tổng hợp") : "Tin tức tổng hợp",
-            short_summary: success ? (aiResponse.short_summary || "Chưa có tóm tắt.") : cluster.combined_text.substring(0, 100) + '...',
-            detailed_summary: success ? (aiResponse.detailed_summary || "") : "",
-            expert_analysis: success ? (aiResponse.expert_analysis || "Chưa có phân tích.") : "Lỗi AI không thể phân tích.",
-            sources: cluster.sources || [],
-            image_url: cluster.image_url || "",
-            timestamp: Date.now()
-        });
-
-        // NGHỈ 4100ms để không dính Rate Limit
-        await new Promise(resolve => setTimeout(resolve, 4100));
     }
+
+    // THỬ NGHIỆM 2: Cứu cánh bằng Groq nếu Gemini thất bại hoặc hết hạn mức
+    if (!success && groq) {
+        try {
+            logger.info("Kích hoạt tầng cứu cánh Groq (Llama-3.1)...");
+            const chatCompletion = await groq.chat.completions.create({
+                messages: [{ role: "user", content: prompt }],
+                model: "llama-3.1-8b-instant",
+                temperature: 0.1,
+                response_format: { type: "json_object" }
+            });
+            let responseText = chatCompletion.choices[0].message.content;
+            aiResponse = JSON.parse(responseText.trim());
+            success = true;
+        } catch (groqErr) {
+            logger.error(`Lỗi cả chốt chặn Groq: ${groqErr.message}`);
+        }
+    }
+
+    // XỬ LÝ KẾT QUẢ CUỐI CÙNG
+    const finalTopicAnalysis = {
+        cluster_title: success ? (aiResponse.cluster_title || "Sự kiện vĩ mô tổng hợp") : cluster.articles[0].title,
+        short_summary: success ? (aiResponse.short_summary || "Chưa có tóm tắt cốt lõi.") : cluster.articles[0].summary,
+        detailed_summary: success ? (aiResponse.detailed_summary || "Chi tiết sự kiện đang được cập nhật thêm.") : cluster.combined_text.substring(0, 200) + "...",
+        causes: success && Array.isArray(aiResponse.causes) ? aiResponse.causes : ["Đang cập nhật dữ liệu bối cảnh"],
+        effects: success && Array.isArray(aiResponse.effects) ? aiResponse.effects : ["Đang phân tích chuỗi hệ quả"],
+        affected_groups: success && Array.isArray(aiResponse.affected_groups) ? aiResponse.affected_groups : ["Cộng đồng người dùng hệ thống"],
+        market_impact: success ? (aiResponse.market_impact || "Chưa có ghi nhận tác động tài chính rõ rệt.") : "Đang theo dõi biến động thị trường.",
+        follow_up: success ? (aiResponse.follow_up || "Theo dõi các cổng thông tin chính thức.") : "Chờ cập nhật tình tiết mới từ các báo."
+    };
+
+    // Lưu kết quả vào Cache để tái sử dụng trọn đời sự kiện
+    saveAiResult(eventKey, finalTopicAnalysis);
     
-    console.log(`✅ Phân tích AI đa chiều hoàn tất.`);
-    return analyzedClusters;
+    // Giãn cách nhẹ 500ms giữa các cụm để bảo vệ RPM an toàn
+    await new Promise(resolve => setTimeout(resolve, 500));
+
+    return finalTopicAnalysis;
 }
 
-module.exports = { analyzeClusters };
+module.exports = { analyzeClusterMultiDimensional };
