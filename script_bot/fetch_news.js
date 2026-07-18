@@ -7,6 +7,7 @@ const { generateEmbeddings } = require('./modules/2_embedding');
 const { clusterArticles } = require('./modules/3_clustering');
 const { extractEntities } = require('./modules/4_nlp_entity');
 const { buildRuleBasedGraph } = require('./modules/5_knowledge_graph');
+const { analyzeClusterMultiDimensional } = require('./modules/5_ai_analysis'); // Tích hợp module mới
 const { generateEventKey, generateTopicKey } = require('./modules/topic/topic_key');
 const topicStore = require('./modules/topic/topic_store');
 const { mergeIntoExistingTopic } = require('./modules/topic/topic_merger');
@@ -21,13 +22,13 @@ const PIPELINE_STATUS_FILE = path.join(__dirname, '../pipeline_status.json');
 async function runPipeline() {
     const startTime = Date.now();
     logger.clearErrorLogs();
-    logger.info("=== KHỞI ĐỘNG HỆ THỐNG TIN TỨC V4 ===");
+    logger.info("=== KHỞI ĐỘNG HỆ THỐNG TIN TỨC INTELLIGENCE V4 ===");
 
     try {
         // 1. Crawler & Normalize
         let articles = await fetchAndNormalizeNews();
 
-        // 2. Rule Engine & Scoring (Không dùng AI)
+        // 2. Rule Engine & Scoring (Rule-based siêu tốc, không tốn AI quota)
         articles = articles.map(article => {
             const categories = extractCategories(article.title + " " + article.summary);
             const regions = extractRegions(article.title + " " + article.summary, article.source_name);
@@ -39,59 +40,72 @@ async function runPipeline() {
         const embeddedArticles = await generateEmbeddings(articles);
         const clusters = clusterArticles(embeddedArticles);
 
-        // 4. Load Database Cũ
+        // 4. Load Database Cũ từ file tin tĩnh
         const db = topicStore.readData();
         let currentTopics = db.news || [];
         let newTopicsCount = 0;
 
-        // 5. Xử lý từng cụm Sự Kiện (NLP -> Graph -> AI Analysis)
+        // 5. Xử lý từng cụm Sự Kiện (NLP -> Graph -> AI Intelligence Analysis)
         for (const cluster of clusters) {
             const entities = extractEntities(cluster.combined_text);
             const eventKey = generateEventKey(entities);
             const ruleGraph = buildRuleBasedGraph(entities);
             
-            // So khớp Timeline
+            // So khớp xem sự kiện đã tồn tại trong dòng thời gian chưa
             const existingTopic = topicStore.findTopicByEventKey(eventKey, currentTopics);
             
             if (existingTopic) {
-                // Update sự kiện cũ
+                // Sự kiện cũ: Nối thêm diễn biến vào mảng Timeline, không gọi AI phân tích lại toàn bộ
                 const updatedTopic = mergeIntoExistingTopic(existingTopic, cluster.articles, cluster.articles[0].title);
                 const index = currentTopics.findIndex(t => t.event_key === eventKey);
                 currentTopics[index] = updatedTopic;
-                logger.info(`Đã nối thêm diễn biến vào Topic cũ: ${eventKey}`);
+                logger.info(`Gộp diễn biến mới thành công vào Topic cũ: ${eventKey}`);
             } else {
-                // Tạo Topic mới
+                // Sự kiện mới hoàn toàn: Gọi module AI để bóc tách 9 lớp thông tin tình báo
+                logger.info(`Đang chạy phân tích AI chuyên sâu cho cụm sự kiện mới...`);
+                const aiIntelligence = await analyzeClusterMultiDimensional(cluster, eventKey);
+
                 const newTopic = {
                     event_key: eventKey,
-                    topic_key: generateTopicKey(eventKey, 'new_event'),
-                    title: cluster.articles[0].title,
+                    topic_key: generateTopicKey(eventKey, 'intelligence'),
+                    title: aiIntelligence.cluster_title,
                     timestamp: cluster.timestamp,
                     importance: cluster.articles[0].importance,
                     hot_score: cluster.article_count * 10,
                     categories: cluster.articles[0].categories,
                     regions: cluster.articles[0].regions,
-                    short_summary: cluster.articles[0].summary,
+                    
+                    // Nạp 9 trường dữ liệu cốt lõi chuẩn Schema V4 phục vụ Frontend Dashboard
+                    short_summary: aiIntelligence.short_summary,
+                    detailed_summary: aiIntelligence.detailed_summary,
+                    causes: aiIntelligence.causes,
+                    effects: aiIntelligence.effects,
+                    affected_groups: aiIntelligence.affected_groups,
+                    market_impact: aiIntelligence.market_impact,
+                    follow_up: aiIntelligence.follow_up,
+                    
                     entities: entities,
                     graph: ruleGraph,
                     sources: cluster.articles.map(a => ({ url: a.url, source_name: a.source_name, source_logo: a.source_logo })),
-                    timeline: [{ title: cluster.articles[0].title, timestamp: cluster.timestamp, url: cluster.articles[0].url }]
+                    timeline: [{ title: aiIntelligence.cluster_title, timestamp: cluster.timestamp, url: cluster.articles[0].url }]
                 };
+                
                 currentTopics.push(newTopic);
                 newTopicsCount++;
-                logger.success(`Đã tạo Topic mới: ${newTopic.title}`);
+                logger.success(`Đã tạo và nạp thành công Topic Intelligence mới: ${newTopic.title}`);
             }
         }
 
-        // 6. Xử lý Market, Social & Reports (Chạy song song)
-        logger.info("Đang tải dữ liệu Market, Social và sinh Reports...");
+        // 6. Xử lý các luồng Thị trường, Mạng xã hội & Tổng hợp Báo cáo định kỳ
+        logger.info("Đang tích hợp song song Market, Social và sinh bản tin Briefing...");
         const [marketData, socialTrends, reports] = await Promise.all([
             fetchAllMarketData(),
             fetchAllSocialTrends(),
             generateAllReports(currentTopics)
         ]);
 
-        // 7. Ghi vào JSON Chính
-        db.news = currentTopics.sort((a, b) => b.hot_score - a.hot_score); // Xếp bài Hot lên đầu
+        // 7. Đồng bộ vào cấu trúc JSON Tĩnh
+        db.news = currentTopics.sort((a, b) => b.hot_score - a.hot_score); // Đẩy tin nóng lên đầu bảng
         db.market_data = marketData;
         db.social_trends = socialTrends;
         db.daily_briefing = reports.daily || "";
@@ -99,24 +113,23 @@ async function runPipeline() {
         
         topicStore.writeData(db);
 
-        // 8. Ghi file pipeline_status.json
+        // 8. Xuất trạng thái kiểm định Pipeline
         const durationMs = Date.now() - startTime;
         const status = {
             status: { success: true, duration_ms: durationMs, last_run: new Date().toISOString() },
             metrics: { articles_processed: articles.length, clusters_formed: clusters.length, new_topics: newTopicsCount },
-            quota: { gemini_calls_estimated: clusters.length * 2, embedding_calls: articles.length },
+            quota: { embedding_calls: articles.length },
             errors: logger.getErrorLogs()
         };
         fs.writeFileSync(PIPELINE_STATUS_FILE, JSON.stringify(status, null, 2));
         
-        logger.success(`=== PIPELINE HOÀN TẤT SAU ${durationMs}ms ===`);
+        logger.success(`=== PIPELINE HOÀN TẤT TUYỆT ĐỐI SAU ${durationMs}ms ===`);
 
     } catch (error) {
-        logger.error("PIPELINE THẤT BẠI TẠI LỖI CHÍNH!", error);
+        logger.error("PIPELINE THẤT BẠI CẤP ĐỘ HỆ THỐNG!", error);
         const failStatus = { status: { success: false, last_run: new Date().toISOString() }, errors: logger.getErrorLogs() };
         fs.writeFileSync(PIPELINE_STATUS_FILE, JSON.stringify(failStatus, null, 2));
     }
 }
 
-// Kích hoạt chạy
 runPipeline();
