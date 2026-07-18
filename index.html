@@ -9,13 +9,14 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body class="dark-theme"> <!-- Mặc định giao diện Tối (Dark Navy) -->
+<!-- Đã bỏ class="dark-theme" ở body để JS tự động nhận diện theo Hệ điều hành -->
+<body> 
     
     <div class="app-layout">
-        <!-- 1. SIDEBAR TRÁI: MENU ĐIỀU HƯỚNG -->
+        <!-- SIDEBAR TRÁI -->
         <aside class="sidebar-left">
             <div class="logo-container">
-                <h1 class="logo">LƯỚT <span>Intelligence</span></h1>
+                <h1 class="logo" style="cursor: pointer; user-select: none;" title="Bấm 5 lần để xem số liệu ngầm">LƯỚT <span>Intelligence</span></h1>
             </div>
             <nav class="side-nav">
                 <a href="#" class="nav-item active"><span class="material-icons-round">dashboard</span> Tổng quan</a>
@@ -30,43 +31,34 @@
             </div>
         </aside>
 
-        <!-- 2. KHU VỰC NỘI DUNG CHÍNH -->
+        <!-- KHU VỰC NỘI DUNG CHÍNH -->
         <div class="main-wrapper">
             <!-- Header -->
             <header class="app-header">
                 <div class="search-box">
                     <span class="material-icons-round">search</span>
+                    <!-- Đã bật tính năng tìm kiếm cho ô Input này -->
                     <input type="text" id="search-input" placeholder="Tìm kiếm chủ đề, thực thể, quốc gia...">
                 </div>
                 <div class="header-actions">
                     <span class="update-time" id="last-update-time">Đang cập nhật...</span>
-                    <button id="theme-toggle" class="icon-btn"><span class="material-icons-round">light_mode</span></button>
+                    <button id="theme-toggle" class="icon-btn" title="Giao diện Sáng/Tối"><span class="material-icons-round">light_mode</span></button>
                     <button class="icon-btn"><span class="material-icons-round">notifications</span></button>
                 </div>
             </header>
 
             <!-- Dashboard Content -->
             <main class="dashboard-content">
-                <!-- Hàng thống kê tổng quan (Top Widgets) -->
-                <div class="stats-row" id="stats-container">
-                    <!-- Sẽ được render bằng JS -->
-                </div>
-
-                <!-- Lưới hiển thị: Bản tin (Trái) & Báo cáo (Phải) -->
+                <div class="stats-row" id="stats-container"></div>
                 <div class="content-grid">
-                    <!-- Khu vực Bản tin chính -->
                     <section class="feed-section">
                         <div class="section-header">
                             <h2 class="section-title"><span class="material-icons-round">article</span> BẢN TIN NỔI BẬT</h2>
                         </div>
-                        <div id="news-container">
-                            <!-- Skeleton Loading sẽ hiển thị ở đây lúc mới vào -->
-                        </div>
+                        <div id="news-container"></div>
                     </section>
                     
-                    <!-- Sidebar Phải (Thị trường & Daily Briefing) -->
                     <aside class="sidebar-right">
-                        <!-- Daily Briefing -->
                         <div class="widget">
                             <div class="section-header">
                                 <h2 class="section-title" style="color: var(--md-sys-color-ai);"><span class="material-icons-round">smart_toy</span> AI DAILY BRIEFING</h2>
@@ -74,17 +66,14 @@
                             <div id="briefing-container" class="widget-content">
                                 <div class="skeleton skeleton-text"></div>
                                 <div class="skeleton skeleton-text"></div>
-                                <div class="skeleton skeleton-text"></div>
                             </div>
                         </div>
 
-                        <!-- Market Dashboard -->
                         <div class="widget">
                             <div class="section-header">
                                 <h2 class="section-title" style="color: #f59e0b;"><span class="material-icons-round">insights</span> THỊ TRƯỜNG HÔM NAY</h2>
                             </div>
                             <div id="market-container" class="widget-content">
-                                <div class="skeleton skeleton-text" style="height: 30px; margin-bottom: 12px;"></div>
                                 <div class="skeleton skeleton-text" style="height: 30px; margin-bottom: 12px;"></div>
                             </div>
                         </div>
@@ -94,17 +83,39 @@
         </div>
     </div>
 
-    <!-- 3. MODAL CHI TIẾT TÌNH BÁO AI -->
+    <!-- MODAL TÌNH BÁO CHI TIẾT -->
     <div id="intelligence-modal" class="modal-overlay">
         <div class="modal-dialog">
             <div class="modal-header">
                 <h2 id="modal-title" class="modal-title">Đang tải...</h2>
-                <button id="close-modal-btn" class="close-btn"><span class="material-icons-round">close</span></button>
+                <button class="close-btn close-modal-action"><span class="material-icons-round">close</span></button>
             </div>
             <div class="modal-body" id="modal-body"></div>
             <div class="modal-footer">
-                <strong style="width:100%; display:block; margin-bottom:8px; font-size:13px; color: var(--md-sys-color-primary);">NGUỒN BÁO CÁO:</strong>
-                <div id="modal-sources" style="display:flex; flex-wrap:wrap; gap: 8px;"></div>
+                <!-- Nút ẩn/hiện nguồn báo -->
+                <button id="toggle-sources-btn" style="background: none; border: none; color: var(--md-sys-color-primary); cursor: pointer; font-weight: bold; display: flex; align-items: center; gap: 4px; padding: 4px 0;">
+                    <span class="material-icons-round" id="toggle-sources-icon">visibility</span> 
+                    <span id="toggle-sources-text">Xem các nguồn báo chí</span>
+                </button>
+                <div id="modal-sources" style="display:none; flex-wrap:wrap; gap: 8px; margin-top: 12px;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL ADMIN ẨN (Bấm Logo 5 lần) -->
+    <div id="admin-modal" class="modal-overlay">
+        <div class="modal-dialog" style="max-width: 400px;">
+            <div class="modal-header" style="border-bottom: none; padding-bottom: 0;">
+                <h2 class="modal-title" style="color: #10b981;"><span class="material-icons-round">admin_panel_settings</span> System Stats</h2>
+                <button class="close-btn close-admin-action"><span class="material-icons-round">close</span></button>
+            </div>
+            <div class="modal-body" style="text-align: center; padding-top: 12px;">
+                <p style="font-size: 14px; opacity: 0.7; margin-bottom: 16px;">Hiệu suất thu thập dữ liệu chu kỳ này:</p>
+                <div style="font-size: 48px; font-weight: bold; color: var(--md-sys-color-primary);" id="admin-raw-count">0</div>
+                <div style="font-size: 14px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 24px;">Tin thô thu thập</div>
+                
+                <div style="font-size: 48px; font-weight: bold; color: var(--md-sys-color-ai);" id="admin-topic-count">0</div>
+                <div style="font-size: 14px; text-transform: uppercase; letter-spacing: 1px;">Sự kiện tinh gọn</div>
             </div>
         </div>
     </div>
