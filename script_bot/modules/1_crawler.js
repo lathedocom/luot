@@ -7,7 +7,7 @@ const { RSS_SOURCES } = require('../config/rss_sources');
 // Tối ưu Crawler cho quy mô 200+ nguồn: Tăng timeout và thêm customFields để bắt ảnh
 const parser = new Parser({ 
     timeout: 20000, // Tăng timeout lên 20s cho các báo nước ngoài
-    headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Lướt News Bot V4' }
+    headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Luot News Bot V4' }
 });
 
 const CACHE_FILE = path.join(__dirname, '../data/cache_urls.json');
