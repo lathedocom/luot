@@ -112,23 +112,28 @@ body { font-family: 'Roboto', sans-serif; background-color: var(--md-sys-color-b
 }
 
 @media (max-width: 768px) {
-    .app-layout { display: flex; flex-direction: column; }
-    .mobile-only { display: flex; }
+    body, .app-layout, .main-wrapper { 
+        height: 100dvh; /* Chống lỗi bị thanh địa chỉ iOS/Android đè lên */
+    }
     
-    /* Chuyển Sidebar thành dạng Menu ẩn (Drawer) */
+    .app-layout { display: flex; flex-direction: column; }
+    .mobile-only { display: flex !important; align-items: center; }
+    
     .sidebar-left { position: fixed; left: -260px; top: 0; bottom: 0; width: 260px; transition: left 0.3s ease; box-shadow: 2px 0 12px rgba(0,0,0,0.2); }
     .sidebar-left.active { left: 0; }
     .mobile-overlay.active { display: block; opacity: 1; }
 
-    /* Cấu trúc Header & Grid trên Mobile */
     .app-header { padding: 0 16px; }
-    .search-box { width: 100%; }
-    .update-time { display: none; } /* Ẩn text thời gian để lấy chỗ cho thanh tìm kiếm */
-    .dashboard-content { padding: 16px; }
+    
+    /* Ô tìm kiếm tự động co giãn vừa khung chữ */
+    .search-box { width: auto; flex-grow: 1; padding: 8px 12px; }
+    .search-box input { font-size: 13px; } /* Chữ nhỏ lại 1 chút trên mobile */
+    
+    .update-time { display: none; } 
+    .dashboard-content { padding: 16px; -webkit-overflow-scrolling: touch; }
     .content-grid { grid-template-columns: 1fr; }
     
-    /* Modal chiếm toàn màn hình */
-    .modal-dialog { width: 100%; max-height: 100vh; border-radius: 0; }
+    .modal-dialog { width: 100%; max-height: 100dvh; border-radius: 0; }
     .modal-footer { border-radius: 0; }
 }
 
