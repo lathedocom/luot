@@ -51,22 +51,25 @@ function initSearch() {
 
 // 3. ADMIN BẨN (BẤM LOGO 5 LẦN)
 function initAdminEasterEgg() {
-    const logo = document.querySelector('.logo');
+    // Sửa thành querySelectorAll để bắt được cả 2 Logo (Desktop & Mobile)
+    const logos = document.querySelectorAll('.logo');
     let clickCount = 0;
     let clickTimer;
 
-    logo.addEventListener('click', () => {
-        clickCount++;
-        clearTimeout(clickTimer);
-        
-        if (clickCount === 5) {
-            document.getElementById('admin-raw-count').textContent = totalCrawledArticles;
-            document.getElementById('admin-topic-count').textContent = globalNewsData.length;
-            document.getElementById('admin-modal').classList.add('active');
-            clickCount = 0; 
-        } else {
-            clickTimer = setTimeout(() => { clickCount = 0; }, 1200);
-        }
+    logos.forEach(logo => {
+        logo.addEventListener('click', () => {
+            clickCount++;
+            clearTimeout(clickTimer);
+            
+            if (clickCount === 5) {
+                document.getElementById('admin-raw-count').textContent = totalCrawledArticles;
+                document.getElementById('admin-topic-count').textContent = globalNewsData.length;
+                document.getElementById('admin-modal').classList.add('active');
+                clickCount = 0; 
+            } else {
+                clickTimer = setTimeout(() => { clickCount = 0; }, 1200);
+            }
+        });
     });
 
     document.querySelector('.close-admin-action').addEventListener('click', () => {
