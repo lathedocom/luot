@@ -9,12 +9,14 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<!-- Đã bỏ class="dark-theme" ở body để JS tự động nhận diện theo Hệ điều hành -->
 <body> 
     
     <div class="app-layout">
-        <!-- SIDEBAR TRÁI -->
-        <aside class="sidebar-left">
+        <!-- Lớp phủ nền mờ cho Mobile -->
+        <div id="sidebar-overlay" class="mobile-overlay"></div>
+
+        <!-- SIDEBAR TRÁI (Sẽ tự ẩn trên Mobile) -->
+        <aside class="sidebar-left" id="app-sidebar">
             <div class="logo-container">
                 <h1 class="logo" style="cursor: pointer; user-select: none;" title="Bấm 5 lần để xem số liệu ngầm">LƯỚT <span>Intelligence</span></h1>
             </div>
@@ -35,15 +37,19 @@
         <div class="main-wrapper">
             <!-- Header -->
             <header class="app-header">
-                <div class="search-box">
-                    <span class="material-icons-round">search</span>
-                    <!-- Đã bật tính năng tìm kiếm cho ô Input này -->
-                    <input type="text" id="search-input" placeholder="Tìm kiếm chủ đề, thực thể, quốc gia...">
+                <div style="display: flex; align-items: center; gap: 12px; width: 100%;">
+                    <!-- Nút Menu (Chỉ hiện trên Mobile) -->
+                    <button id="mobile-menu-btn" class="icon-btn mobile-only"><span class="material-icons-round">menu</span></button>
+                    
+                    <div class="search-box">
+                        <span class="material-icons-round">search</span>
+                        <input type="text" id="search-input" placeholder="Tìm kiếm chủ đề, quốc gia...">
+                    </div>
                 </div>
+
                 <div class="header-actions">
                     <span class="update-time" id="last-update-time">Đang cập nhật...</span>
-                    <button id="theme-toggle" class="icon-btn" title="Giao diện Sáng/Tối"><span class="material-icons-round">light_mode</span></button>
-                    <button class="icon-btn"><span class="material-icons-round">notifications</span></button>
+                    <!-- Đã gỡ bỏ nút Sáng/Tối và nút Thông báo theo yêu cầu -->
                 </div>
             </header>
 
@@ -92,7 +98,6 @@
             </div>
             <div class="modal-body" id="modal-body"></div>
             <div class="modal-footer">
-                <!-- Nút ẩn/hiện nguồn báo -->
                 <button id="toggle-sources-btn" style="background: none; border: none; color: var(--md-sys-color-primary); cursor: pointer; font-weight: bold; display: flex; align-items: center; gap: 4px; padding: 4px 0;">
                     <span class="material-icons-round" id="toggle-sources-icon">visibility</span> 
                     <span id="toggle-sources-text">Xem các nguồn báo chí</span>
@@ -102,7 +107,7 @@
         </div>
     </div>
 
-    <!-- MODAL ADMIN ẨN (Bấm Logo 5 lần) -->
+    <!-- MODAL ADMIN ẨN -->
     <div id="admin-modal" class="modal-overlay">
         <div class="modal-dialog" style="max-width: 400px;">
             <div class="modal-header" style="border-bottom: none; padding-bottom: 0;">
