@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 // Import Cấu trúc Nguồn tin ma trận từ file config
 const { RSS_SOURCES } = require('../config/rss_sources');
+const { generateHash } = require('./utils/hash'); // <-- BỔ SUNG DÒNG NÀY
 
 // Tối ưu Crawler cho quy mô 200+ nguồn: Tăng timeout và thêm customFields để bắt ảnh
 const parser = new Parser({ 
@@ -41,6 +42,7 @@ async function fetchAndNormalizeNews() {
                     
                     // Lắp ráp dữ liệu chuẩn với TẤT CẢ metadata từ ma trận nguồn
                     newArticles.push({
+                        id: generateHash(item.link), // <-- BỔ SUNG DÒNG NÀY
                         title: item.title,
                         summary: snippetStr,
                         url: item.link,
