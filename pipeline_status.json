@@ -1,8 +1,8 @@
 {
   "status": {
     "success": true,
-    "duration_ms": 125030,
-    "last_run": "2026-07-19T15:39:29.963Z"
+    "duration_ms": 234264,
+    "last_run": "2026-07-19T15:48:27.305Z"
   },
   "metrics": {
     "articles_processed": 183,
@@ -12,11 +12,5 @@
   "quota": {
     "embedding_calls": 183
   },
-  "errors": [
-    {
-      "time": "[15:38:19]",
-      "message": "[Gateway] Batch Embedding thất bại: HTTP Lỗi 429: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 100, model: gemini-embedding-2\\nPlease retry in 40.124661533s.\",\n    \"status\": \"RESOURCE_EXHAUSTED\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.Help\",\n        \"links\": [\n          {\n            \"description\": \"Learn more about Gemini API quotas\",\n            \"url\": \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.QuotaFailure\",\n        \"violations\": [\n          {\n            \"quotaMetric\": \"generativelanguage.googleapis.com/embed_content_free_tier_requests\",\n            \"quotaId\": \"EmbedContentRequestsPerMinutePerUserPerProjectPerModel-FreeTier\",\n            \"quotaDimensions\": {\n              \"model\": \"gemini-embedding-2\",\n              \"location\": \"global\"\n            },\n            \"quotaValue\": \"100\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.RetryInfo\",\n        \"retryDelay\": \"40s\"\n      }\n    ]\n  }\n}\n\n\n🎯 [AUTO-DEBUG] API Key của bạn không hỗ trợ 'gemini-embedding-2'.\nDanh sách các Model Vector bạn CÓ QUYỀN sử dụng là: [ gemini-embedding-001, gemini-embedding-2-preview, gemini-embedding-2 ].\nHãy copy một tên trong danh sách này và thay thế vào code.",
-      "detail": ""
-    }
-  ]
+  "errors": []
 }
