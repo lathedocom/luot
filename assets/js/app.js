@@ -390,33 +390,94 @@ function openModal(cluster) {
     
     let bodyHtml = `<p style="margin-bottom:20px; font-size: 15px; line-height: 1.6;">${cluster.detailed_summary || cluster.short_summary}</p>`;
     
-    if (cluster.causes && cluster.causes.length > 0 && cluster.causes[0] !== "Đang cập nhật dữ liệu bối cảnh") {
-        bodyHtml += `<div class="intelligence-box"><div class="intelligence-title"><span class="material-icons-round">troubleshoot</span> Căn nguyên / Bối cảnh</div><ul style="padding-left: 20px;">${cluster.causes.map(c => `<li style="margin-bottom:4px;">${c}</li>`).join('')}</ul></div>`;
+    // 1. CĂN NGUYÊN / BỐI CẢNH
+    if (cluster.causes && cluster.causes.length > 0) {
+        bodyHtml += `
+        <div class="intelligence-box" style="margin-top: 16px; background: rgba(245, 158, 11, 0.05); border-left: 4px solid #f59e0b; padding: 12px; border-radius: 4px;">
+            <div class="intelligence-title" style="color: #f59e0b; font-weight: bold; display: flex; align-items: center; gap: 6px;">
+                <span class="material-icons-round" style="font-size: 18px;">explore</span> Căn nguyên / Bối cảnh
+            </div>
+            <ul style="padding-left: 20px; font-size: 14px; margin-top: 12px; margin-bottom: 0; line-height: 1.6;">
+                ${cluster.causes.map(cause => `<li style="margin-bottom: 8px;">${cause}</li>`).join('')}
+            </ul>
+        </div>`;
     }
-    if (cluster.effects && cluster.effects.length > 0 && cluster.effects[0] !== "Đang phân tích chuỗi hệ quả") {
-        bodyHtml += `<div class="intelligence-box"><div class="intelligence-title"><span class="material-icons-round">query_stats</span> Tác động & Hệ quả</div><ul style="padding-left: 20px;">${cluster.effects.map(c => `<li style="margin-bottom:4px;">${c}</li>`).join('')}</ul></div>`;
+
+    // 2. TÁC ĐỘNG / ẢNH HƯỞNG
+    if (cluster.effects && cluster.effects.length > 0) {
+        bodyHtml += `
+        <div class="intelligence-box" style="margin-top: 16px; background: rgba(239, 68, 68, 0.05); border-left: 4px solid #ef4444; padding: 12px; border-radius: 4px;">
+            <div class="intelligence-title" style="color: #ef4444; font-weight: bold; display: flex; align-items: center; gap: 6px;">
+                <span class="material-icons-round" style="font-size: 18px;">bolt</span> Tác động / Ảnh hưởng
+            </div>
+            <ul style="padding-left: 20px; font-size: 14px; margin-top: 12px; margin-bottom: 0; line-height: 1.6;">
+                ${cluster.effects.map(effect => `<li style="margin-bottom: 8px;">${effect}</li>`).join('')}
+            </ul>
+        </div>`;
     }
+
+    // 3. TIMELINE 24H (Đã sửa lỗi 1970)
+    if (cluster.timeline && cluster.timeline.length > 0) {
+        let timelineHtml = `<div class="timeline-container">`;
+        cluster.timeline.forEach(item => {
+            // SỬA LỖI 1970: Kiểm tra nếu timestamp là giây thì nhân với 1000 để ra mili-giây
+            let safeTimestamp = item.timestamp;
+            if (typeof safeTimestamp === 'number' && safeTimestamp < 10000000000) {
+                safeTimestamp = safeTimestamp * 1000;
+            }
+            
+            const timeObj = new Date(safeTimestamp || Date.now());
+            const timeStr = `${timeObj.getHours().toString().padStart(2,'0')}:${timeObj.getMinutes().toString().padStart(2,'0')} - ${timeObj.toLocaleDateString('vi-VN')}`;
+            
+            timelineHtml += `
+                <div class="timeline-node">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-time">${timeStr}</span>
+                        ${item.title}
+                    </div>
+                </div>`;
+        });
+        timelineHtml += `</div>`;
+
+        bodyHtml += `
+        <div class="intelligence-box" style="background: transparent; border: none; padding: 0; margin-top: 20px;">
+            <div class="intelligence-title" style="color: var(--md-sys-color-primary); font-weight: bold; display: flex; align-items: center; gap: 6px;">
+                <span class="material-icons-round" style="font-size: 18px;">history</span> Diễn biến sự kiện
+            </div>
+            ${timelineHtml}
+        </div>`;
+    }
+
+    // 4. INSIGHT: ĐIỀU CẦN THEO DÕI TIẾP THEO
     if (cluster.follow_up) {
-        bodyHtml += `<div class="intelligence-box" style="border-left-color: #f59e0b; background-color: rgba(245, 158, 11, 0.05);"><div class="intelligence-title" style="color: #f59e0b;"><span class="material-icons-round">radar</span> Insight: Điểm cần theo dõi</div><p>${cluster.follow_up}</p></div>`;
+        bodyHtml += `
+        <div class="intelligence-box" style="margin-top: 20px; background: rgba(59, 130, 246, 0.05); border-left: 4px solid #3b82f6; padding: 12px; border-radius: 4px;">
+            <div class="intelligence-title" style="color: #3b82f6; font-weight: bold; display: flex; align-items: center; gap: 6px;">
+                <span class="material-icons-round" style="font-size: 18px;">radar</span> Điều cần theo dõi tiếp theo
+            </div>
+            <p style="font-weight: 500; font-size: 14px; margin-top: 8px; margin-bottom: 0; line-height: 1.6;">${cluster.follow_up}</p>
+        </div>`;
     }
 
     document.getElementById('modal-body').innerHTML = bodyHtml;
-
+    
+    // 5. XỬ LÝ NGUỒN BÁO CHÍ
     const sourcesContainer = document.getElementById('modal-sources');
     sourcesContainer.innerHTML = '';
     sourcesContainer.style.display = 'none'; 
     document.getElementById('toggle-sources-icon').textContent = 'visibility';
     document.getElementById('toggle-sources-text').textContent = 'Xem danh sách các nguồn báo chí';
-
-    if (cluster.sources) {
+    
+    if (cluster.sources && cluster.sources.length > 0) {
         cluster.sources.forEach(src => {
             sourcesContainer.innerHTML += `
-                <a href="${src.url}" target="_blank" class="source-chip">
-                    <img src="${src.source_logo || 'https://via.placeholder.com/16'}" width="16" height="16" style="border-radius:50%; object-fit: cover;"> 
+                <a href="${src.url}" target="_blank" class="source-chip" style="display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: var(--md-sys-color-surface); border: 1px solid var(--md-sys-color-outline); border-radius: 16px; font-size: 12px; text-decoration: none; color: inherit; margin-right: 8px; margin-bottom: 8px;">
+                    <img src="${src.source_logo || 'https://via.placeholder.com/16'}" width="16" height="16" style="border-radius:50%; object-fit: cover; background: #fff;"> 
                     ${src.source_name}
                 </a>`;
         });
     }
-
+    
     document.getElementById('intelligence-modal').classList.add('active');
 }
