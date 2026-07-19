@@ -112,6 +112,32 @@ class AIGateway {
         }
     }
 }
-
+// Thêm hàm này vào trong class AIGateway
+    async executeBatchEmbedding(texts) {
+        const startTime = Date.now();
+        try {
+            const vectors = await this.providers.google.batchEmbedContents(texts);
+            
+            // Tính tạm số lượng token (4 ký tự ~ 1 token)
+            const estimatedTokens = Math.round(texts.join(' ').length / 4);
+            
+            budgetManager.recordUsage({
+                model: configModels.EMBEDDING_MODEL || 'embedding-001',
+                provider: 'google',
+                task: 'BATCH_EMBEDDING',
+                promptTokens: estimatedTokens,
+                latency: Date.now() - startTime,
+                status: 'SUCCESS'
+            });
+            return vectors;
+        } catch (error) {
+            budgetManager.recordUsage({
+                model: configModels.EMBEDDING_MODEL || 'embedding-001', provider: 'google', task: 'BATCH_EMBEDDING', latency: Date.now() - startTime, status: 'FAILED'
+            });
+            logger.error(`[Gateway] Batch Embedding thất bại: ${error.message}`);
+            // Rớt mạng thì trả về mảng vector ảo cho toàn bộ lô
+            return texts.map(() => new Array(768).fill(0).map(() => Math.random() * 0.01));
+        }
+    }
 const gateway = new AIGateway();
 module.exports = gateway;
