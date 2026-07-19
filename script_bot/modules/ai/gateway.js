@@ -95,7 +95,7 @@ class AIGateway {
         try {
             const vector = await this.providers.google.embedContent(text);
             budgetManager.recordUsage({
-                model: configModels.EMBEDDING_MODEL,
+                model: configModels.EMBEDDING_MODEL || 'embedding-001',
                 provider: 'google',
                 task: 'EMBEDDING',
                 promptTokens: Math.round(text.length / 4),
@@ -105,14 +105,14 @@ class AIGateway {
             return vector;
         } catch (error) {
             budgetManager.recordUsage({
-                model: configModels.EMBEDDING_MODEL, provider: 'google', task: 'EMBEDDING', latency: Date.now() - startTime, status: 'FAILED'
+                model: configModels.EMBEDDING_MODEL || 'embedding-001', provider: 'google', task: 'EMBEDDING', latency: Date.now() - startTime, status: 'FAILED'
             });
             logger.error(`[Gateway] Embedding thất bại: ${error.message}`);
             return new Array(768).fill(0).map(() => Math.random() * 0.01); 
         }
     }
-}
-// Thêm hàm này vào trong class AIGateway
+
+    // === HÀM MỚI ĐƯỢC CHÈN ĐÚNG VỊ TRÍ (BÊN TRONG CLASS) ===
     async executeBatchEmbedding(texts) {
         const startTime = Date.now();
         try {
@@ -139,5 +139,7 @@ class AIGateway {
             return texts.map(() => new Array(768).fill(0).map(() => Math.random() * 0.01));
         }
     }
+} // => KẾT THÚC CLASS AIGateway Ở ĐÂY
+
 const gateway = new AIGateway();
 module.exports = gateway;
