@@ -9,6 +9,8 @@ class AIGateway {
     constructor() {
         this.providers = {
             google: new GoogleProvider(configModels.API_KEYS.GEMINI),
+            // Khởi tạo thêm Provider dự phòng nếu đọc được KEY 2 từ môi trường
+            googleBackup: process.env.GEMINI_API_KEY_1 ? new GoogleProvider(process.env.GEMINI_API_KEY_1) : null,
             groq: new GroqProvider(configModels.API_KEYS.GROQ)
         };
     }
@@ -17,22 +19,21 @@ class AIGateway {
         logger.info(`[Gateway] Đang xử lý task: ${taskName}...`);
         
         let attempts = 0;
-        const maxRetries = 2; // Chỉ Retry cho Timeout/Mạng rớt
+        const maxRetries = 2; 
 
         while (attempts <= maxRetries) {
             const startTime = Date.now();
             try {
-                // Thử gọi Google
+                // Thử gọi Key 1
                 const resultText = await this.providers.google.generateContent(prompt);
-                const latency = Date.now() - startTime;
                 
                 budgetManager.recordUsage({
                     model: configModels.PRIMARY_MODEL,
                     provider: 'google',
                     task: taskName,
-                    promptTokens: Math.round(prompt.length / 4), // Ước lượng tạm 4 char = 1 token
+                    promptTokens: Math.round(prompt.length / 4),
                     completionTokens: Math.round(resultText.length / 4),
-                    latency: latency,
+                    latency: Date.now() - startTime,
                     status: 'SUCCESS'
                 });
 
@@ -41,16 +42,32 @@ class AIGateway {
             } catch (error) {
                 const latency = Date.now() - startTime;
                 
-                // Lỗi Rate Limit 429 -> TUYỆT ĐỐI KHÔNG RETRY, FALLBACK NGAY LẬP TỨC
-                if (error.message === "RATE_LIMIT" || fallbackToGroq) {
-                    logger.warn(`[Gateway] Google dính Rate Limit (429). Đổi sang Groq...`);
+                // NẾU LỖI 429 -> KÍCH HOẠT KEY DỰ PHÒNG TRƯỚC KHI GỌI GROQ
+                if (error.message === "RATE_LIMIT" || error.message.includes('429')) {
+                    if (this.providers.googleBackup) {
+                        logger.warn(`[Gateway] Key 1 dính Rate Limit (429). Đổi sang Key Dự phòng (KEY 1)...`);
+                        try {
+                            const backupStart = Date.now();
+                            const backupText = await this.providers.googleBackup.generateContent(prompt);
+                            
+                            budgetManager.recordUsage({
+                                model: configModels.PRIMARY_MODEL, provider: 'google_backup', task: taskName, latency: Date.now() - backupStart, status: 'SUCCESS'
+                            });
+                            return parseAIResponse(backupText);
+                        } catch (backupErr) {
+                            logger.warn(`[Gateway] Key Dự phòng cũng thất bại. Bắt đầu Fallback sang Groq...`);
+                        }
+                    } else {
+                        logger.warn(`[Gateway] Google dính Rate Limit (429). Bắt đầu Fallback sang Groq...`);
+                    }
+                    
                     budgetManager.recordUsage({
                         model: configModels.PRIMARY_MODEL, provider: 'google', task: taskName, latency, status: 'HTTP_429'
                     });
-                    return await this._runFallbackGroq(taskName, prompt);
+                    if (fallbackToGroq) return await this._runFallbackGroq(taskName, prompt);
                 }
 
-                // Nếu là lỗi Timeout hoặc mạng -> Cho phép Retry tối đa 2 lần
+                // Xử lý các lỗi khác (Mạng, Timeout...) -> Cho phép Retry
                 logger.warn(`[Gateway] Google lỗi kết nối: ${error.message}. Thử lại lần ${attempts + 1}/${maxRetries}`);
                 budgetManager.recordUsage({
                     model: configModels.PRIMARY_MODEL, provider: 'google', task: taskName, latency, status: 'TIMEOUT_RETRY'
@@ -59,10 +76,10 @@ class AIGateway {
                 attempts++;
                 if (attempts > maxRetries) {
                     logger.error(`[Gateway] Hết lượt Retry. Ép Fallback sang Groq.`);
-                    return await this._runFallbackGroq(taskName, prompt);
+                    if (fallbackToGroq) return await this._runFallbackGroq(taskName, prompt);
                 }
                 
-                await new Promise(res => setTimeout(res, 2000)); // Nghỉ 2s trước khi retry
+                await new Promise(res => setTimeout(res, 2000));
             }
         }
     }
@@ -95,7 +112,7 @@ class AIGateway {
         try {
             const vector = await this.providers.google.embedContent(text);
             budgetManager.recordUsage({
-                model: configModels.EMBEDDING_MODEL || 'embedding-001',
+                model: configModels.EMBEDDING_MODEL || 'gemini-embedding-2',
                 provider: 'google',
                 task: 'EMBEDDING',
                 promptTokens: Math.round(text.length / 4),
@@ -105,41 +122,55 @@ class AIGateway {
             return vector;
         } catch (error) {
             budgetManager.recordUsage({
-                model: configModels.EMBEDDING_MODEL || 'embedding-001', provider: 'google', task: 'EMBEDDING', latency: Date.now() - startTime, status: 'FAILED'
+                model: configModels.EMBEDDING_MODEL || 'gemini-embedding-2', provider: 'google', task: 'EMBEDDING', latency: Date.now() - startTime, status: 'FAILED'
             });
             logger.error(`[Gateway] Embedding thất bại: ${error.message}`);
             return new Array(768).fill(0).map(() => Math.random() * 0.01); 
         }
     }
 
-    // === HÀM MỚI ĐƯỢC CHÈN ĐÚNG VỊ TRÍ (BÊN TRONG CLASS) ===
     async executeBatchEmbedding(texts) {
         const startTime = Date.now();
         try {
             const vectors = await this.providers.google.batchEmbedContents(texts);
             
-            // Tính tạm số lượng token (4 ký tự ~ 1 token)
-            const estimatedTokens = Math.round(texts.join(' ').length / 4);
-            
             budgetManager.recordUsage({
-                model: configModels.EMBEDDING_MODEL || 'embedding-001',
+                model: configModels.EMBEDDING_MODEL || 'gemini-embedding-2',
                 provider: 'google',
                 task: 'BATCH_EMBEDDING',
-                promptTokens: estimatedTokens,
+                promptTokens: Math.round(texts.join(' ').length / 4),
                 latency: Date.now() - startTime,
                 status: 'SUCCESS'
             });
             return vectors;
         } catch (error) {
+            // NẾU LÔ BATCH BỊ 429 VÀ CÓ KEY DỰ PHÒNG -> CHUYỂN NGAY LẬP TỨC
+            if (error.message.includes('429') && this.providers.googleBackup) {
+                logger.warn(`[Gateway] Batch Embedding Key 1 bị giới hạn. Gánh tải bằng Key Dự phòng...`);
+                try {
+                    const backupStart = Date.now();
+                    const backupVectors = await this.providers.googleBackup.batchEmbedContents(texts);
+                    
+                    budgetManager.recordUsage({
+                        model: configModels.EMBEDDING_MODEL || 'gemini-embedding-2', provider: 'google_backup', task: 'BATCH_EMBEDDING', latency: Date.now() - backupStart, status: 'SUCCESS'
+                    });
+                    return backupVectors;
+                } catch (backupError) {
+                    logger.error(`[Gateway] Cả 2 Key Gemini đều sập khi chạy Batch Vector.`);
+                }
+            } else {
+                logger.error(`[Gateway] Batch Embedding thất bại: ${error.message}`);
+            }
+
             budgetManager.recordUsage({
-                model: configModels.EMBEDDING_MODEL || 'embedding-001', provider: 'google', task: 'BATCH_EMBEDDING', latency: Date.now() - startTime, status: 'FAILED'
+                model: configModels.EMBEDDING_MODEL || 'gemini-embedding-2', provider: 'google', task: 'BATCH_EMBEDDING', latency: Date.now() - startTime, status: 'FAILED'
             });
-            logger.error(`[Gateway] Batch Embedding thất bại: ${error.message}`);
-            // Rớt mạng thì trả về mảng vector ảo cho toàn bộ lô
+            
+            // Trả về mảng vector ảo nếu tất cả phương án đều cạn kiệt
             return texts.map(() => new Array(768).fill(0).map(() => Math.random() * 0.01));
         }
     }
-} // => KẾT THÚC CLASS AIGateway Ở ĐÂY
+} 
 
 const gateway = new AIGateway();
 module.exports = gateway;
