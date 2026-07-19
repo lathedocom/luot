@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const logger = require('../utils/logger');
 
-const PROMPT_DAILY = fs.readFileSync(path.join(__dirname, '../../../prompts/reports/daily_report.md'), 'utf8');
+const PROMPT_DAILY = fs.readFileSync(path.join(__dirname, '../../prompts/reports/daily_report.md'), 'utf8');
 
 async function generateDailyBriefing(allTopics) {
     const oneDayAgo = Date.now() - (24 * 60 * 60 * 1000);
