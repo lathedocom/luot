@@ -385,7 +385,7 @@ function initModalEvents() {
     }
 }
 
-function openModal(cluster) {
+                function openModal(cluster) {
     document.getElementById('modal-title').textContent = cluster.title || cluster.cluster_title;
     
     let bodyHtml = `<p style="margin-bottom:20px; font-size: 15px; line-height: 1.6;">${cluster.detailed_summary || cluster.short_summary}</p>`;
@@ -403,7 +403,7 @@ function openModal(cluster) {
         </div>`;
     }
 
-    // 2. TÁC ĐỘNG / ẢNH HƯỞNG
+    // 2. TÁC ĐỘNG / ẢNH HƯỞNG CHUNG
     if (cluster.effects && cluster.effects.length > 0) {
         bodyHtml += `
         <div class="intelligence-box" style="margin-top: 16px; background: rgba(239, 68, 68, 0.05); border-left: 4px solid #ef4444; padding: 12px; border-radius: 4px;">
@@ -416,40 +416,33 @@ function openModal(cluster) {
         </div>`;
     }
 
-    // 3. TIMELINE 24H (Đã sửa lỗi 1970)
-    if (cluster.timeline && cluster.timeline.length > 0) {
-        let timelineHtml = `<div class="timeline-container">`;
-        cluster.timeline.forEach(item => {
-            // SỬA LỖI 1970: Kiểm tra nếu timestamp là giây thì nhân với 1000 để ra mili-giây
-            let safeTimestamp = item.timestamp;
-            if (typeof safeTimestamp === 'number' && safeTimestamp < 10000000000) {
-                safeTimestamp = safeTimestamp * 1000;
-            }
-            
-            const timeObj = new Date(safeTimestamp || Date.now());
-            const timeStr = `${timeObj.getHours().toString().padStart(2,'0')}:${timeObj.getMinutes().toString().padStart(2,'0')} - ${timeObj.toLocaleDateString('vi-VN')}`;
-            
-            timelineHtml += `
-                <div class="timeline-node">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-time">${timeStr}</span>
-                        ${item.title}
-                    </div>
-                </div>`;
-        });
-        timelineHtml += `</div>`;
-
+    // 3. NHÓM BỊ ẢNH HƯỞNG (AFFECTED GROUPS - Thêm mới)
+    if (cluster.affected_groups && cluster.affected_groups.length > 0) {
         bodyHtml += `
-        <div class="intelligence-box" style="background: transparent; border: none; padding: 0; margin-top: 20px;">
-            <div class="intelligence-title" style="color: var(--md-sys-color-primary); font-weight: bold; display: flex; align-items: center; gap: 6px;">
-                <span class="material-icons-round" style="font-size: 18px;">history</span> Diễn biến sự kiện
+        <div class="intelligence-box" style="margin-top: 16px; background: rgba(139, 92, 246, 0.05); border-left: 4px solid #8b5cf6; padding: 12px; border-radius: 4px;">
+            <div class="intelligence-title" style="color: #8b5cf6; font-weight: bold; display: flex; align-items: center; gap: 6px;">
+                <span class="material-icons-round" style="font-size: 18px;">groups</span> Đối tượng / Nhóm bị ảnh hưởng
             </div>
-            ${timelineHtml}
+            <ul style="padding-left: 20px; font-size: 14px; margin-top: 12px; margin-bottom: 0; line-height: 1.6;">
+                ${cluster.affected_groups.map(group => `<li style="margin-bottom: 8px;">${group}</li>`).join('')}
+            </ul>
         </div>`;
     }
 
-    // 4. INSIGHT: ĐIỀU CẦN THEO DÕI TIẾP THEO
+    // 4. TÁC ĐỘNG THỊ TRƯỜNG (MARKET IMPACT - Thêm mới)
+    if (cluster.market_impact && cluster.market_impact.length > 0) {
+        bodyHtml += `
+        <div class="intelligence-box" style="margin-top: 16px; background: rgba(16, 185, 129, 0.05); border-left: 4px solid #10b981; padding: 12px; border-radius: 4px;">
+            <div class="intelligence-title" style="color: #10b981; font-weight: bold; display: flex; align-items: center; gap: 6px;">
+                <span class="material-icons-round" style="font-size: 18px;">trending_up</span> Tác động thị trường
+            </div>
+            <ul style="padding-left: 20px; font-size: 14px; margin-top: 12px; margin-bottom: 0; line-height: 1.6;">
+                ${cluster.market_impact.map(impact => `<li style="margin-bottom: 8px;">${impact}</li>`).join('')}
+            </ul>
+        </div>`;
+    }
+
+    // 5. INSIGHT: ĐIỀU CẦN THEO DÕI TIẾP THEO
     if (cluster.follow_up) {
         bodyHtml += `
         <div class="intelligence-box" style="margin-top: 20px; background: rgba(59, 130, 246, 0.05); border-left: 4px solid #3b82f6; padding: 12px; border-radius: 4px;">
@@ -462,7 +455,7 @@ function openModal(cluster) {
 
     document.getElementById('modal-body').innerHTML = bodyHtml;
     
-    // 5. XỬ LÝ NGUỒN BÁO CHÍ
+    // 6. XỬ LÝ NGUỒN BÁO CHÍ
     const sourcesContainer = document.getElementById('modal-sources');
     sourcesContainer.innerHTML = '';
     sourcesContainer.style.display = 'none'; 
