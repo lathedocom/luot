@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const logger = require('../utils/logger');
 
-const PROMPT_WEEKLY = fs.readFileSync(path.join(__dirname, '../../../prompts/reports/weekly_report.md'), 'utf8');
+const PROMPT_WEEKLY = fs.readFileSync(path.join(__dirname, '../../prompts/reports/weekly_report.md'), 'utf8');
 
 async function generateWeeklyBriefing(allTopics) {
     const sevenDaysAgo = Date.now() - (7 * 24 * 60 * 60 * 1000);
