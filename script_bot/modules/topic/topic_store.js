@@ -2,12 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const logger = require('../utils/logger');
 
-// Trỏ file lưu trữ ra thư mục gốc dự án (ngang hàng với script_bot)
 const DATA_FILE_PATH = path.join(__dirname, '../../../news_data.json');
 
-/**
- * Đọc toàn bộ dữ liệu từ file JSON hiện tại
- */
 function readData() {
     try {
         if (fs.existsSync(DATA_FILE_PATH)) {
@@ -18,25 +14,21 @@ function readData() {
         logger.error('Lỗi khi đọc file news_data.json', error);
     }
     
-    // Trả về cấu trúc mặc định nếu file chưa có hoặc bị lỗi
     return {
-        schema_version: "2.0",
+        schema_version: "4.5",
         generated_at: Date.now(),
-        pipeline_version: "2.0",
+        pipeline_version: "4.5",
         statistics: {},
         market_data: [],
         daily_briefing: {},
         social_trends: [],
-        news: []
+        news: [] // Đây chính là Existing Topics
     };
 }
 
-/**
- * Ghi đè dữ liệu mới vào file JSON
- */
 function writeData(dataObject) {
     try {
-        dataObject.generated_at = Date.now(); // Luôn cập nhật thời gian mới nhất
+        dataObject.generated_at = Date.now(); 
         fs.writeFileSync(DATA_FILE_PATH, JSON.stringify(dataObject, null, 2), 'utf-8');
         logger.success('Đã lưu dữ liệu thành công vào news_data.json');
         return true;
@@ -46,9 +38,6 @@ function writeData(dataObject) {
     }
 }
 
-/**
- * Tìm kiếm một Topic cũ dựa trên event_key
- */
 function findTopicByEventKey(eventKey, newsArray) {
     if (!newsArray) return null;
     return newsArray.find(topic => topic.event_key === eventKey);
