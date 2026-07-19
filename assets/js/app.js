@@ -385,7 +385,7 @@ function initModalEvents() {
     }
 }
 
-                function openModal(cluster) {
+function openModal(cluster) {
     document.getElementById('modal-title').textContent = cluster.title || cluster.cluster_title;
     
     let bodyHtml = `<p style="margin-bottom:20px; font-size: 15px; line-height: 1.6;">${cluster.detailed_summary || cluster.short_summary}</p>`;
