@@ -4,8 +4,8 @@ const { getAiResult, saveAiResult } = require('./cache/ai_cache');
 const gateway = require('./ai/gateway');
 const logger = require('./utils/logger');
 
-const PROMPT_DEEP_ANALYSIS = fs.readFileSync(path.join(__dirname, '../../prompts/deep_analysis.md'), 'utf8');
-const SCHEMA_TOPIC = fs.readFileSync(path.join(__dirname, '../../schemas/topic.schema.json'), 'utf8');
+const PROMPT_DEEP_ANALYSIS = fs.readFileSync(path.join(__dirname, '../prompts/deep_analysis.md'), 'utf8');
+const SCHEMA_TOPIC = fs.readFileSync(path.join(__dirname, '../schemas/topic.schema.json'), 'utf8');
 
 async function analyzeClusterMultiDimensional(cluster, eventKey) {
     const cachedResult = getAiResult(eventKey);
