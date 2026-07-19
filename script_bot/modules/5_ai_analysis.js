@@ -1,15 +1,9 @@
-require('dotenv').config();
 const fs = require('fs');
 const path = require('path');
-const { Groq } = require('groq-sdk');
 const { getAiResult, saveAiResult } = require('./cache/ai_cache');
-const quotaManager = require('./quota/quota_manager');
-const configModels = require('../config/models');
+const gateway = require('./ai/gateway');
 const logger = require('./utils/logger');
 
-const groq = process.env.GROQ_API_KEY ? new Groq({ apiKey: process.env.GROQ_API_KEY }) : null;
-
-// ĐỌC PROMPT VÀ SCHEMA TỪ FILE TĨNH (GIAI ĐOẠN 1)
 const PROMPT_DEEP_ANALYSIS = fs.readFileSync(path.join(__dirname, '../../prompts/deep_analysis.md'), 'utf8');
 const SCHEMA_TOPIC = fs.readFileSync(path.join(__dirname, '../../schemas/topic.schema.json'), 'utf8');
 
@@ -20,58 +14,17 @@ async function analyzeClusterMultiDimensional(cluster, eventKey) {
         return cachedResult;
     }
 
-    const apiKey = (configModels.API_KEYS.GEMINI || '').trim();
-    const modelName = 'gemini-3.1-flash-lite';
-    const apiUrl = `[https://generativelanguage.googleapis.com/v1beta/models/$](https://generativelanguage.googleapis.com/v1beta/models/$){modelName}:generateContent?key=${apiKey}`;
-    
-    // NẠP BIẾN VÀO PROMPT
     const prompt = PROMPT_DEEP_ANALYSIS.replace('{{COMBINED_TEXT}}', cluster.combined_text) + `\n\nCẤU TRÚC JSON YÊU CẦU:\n${SCHEMA_TOPIC}`;
-
+    
     let aiResponse = null;
     let success = false;
 
-    if (apiKey) {
-        try {
-            const response = await fetch(apiUrl, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    contents: [{ parts: [{ text: prompt }] }],
-                    generationConfig: { responseMimeType: "application/json" }
-                })
-            });
-            if (response.status === 429) {
-                logger.warn(`Gemini API dính Rate Limit (429). Không retry, chuẩn bị chuyển hướng Fallback.`);
-            } else if (response.ok) {
-                const data = await response.json();
-                if (data.candidates && data.candidates[0].content.parts[0].text) {
-                    let responseText = data.candidates[0].content.parts[0].text;
-                    responseText = responseText.replace(/```json/g, '').replace(/```/g, '').trim();
-                    aiResponse = JSON.parse(responseText);
-                    quotaManager.recordUsage(modelName, 1200);
-                    success = true;
-                }
-            }
-        } catch (err) {
-            logger.error(`Lỗi kết nối Gemini API: ${err.message}`);
-        }
-    }
-
-    if (!success && groq) {
-        try {
-            logger.info("Kích hoạt tầng cứu cánh Groq (Llama-3.1)...");
-            const chatCompletion = await groq.chat.completions.create({
-                messages: [{ role: "user", content: prompt }],
-                model: "llama-3.1-8b-instant",
-                temperature: 0.1,
-                response_format: { type: "json_object" }
-            });
-            let responseText = chatCompletion.choices[0].message.content;
-            aiResponse = JSON.parse(responseText.trim());
-            success = true;
-        } catch (groqErr) {
-            logger.error(`Lỗi cả chốt chặn Groq: ${groqErr.message}`);
-        }
+    try {
+        // GỌI QUA GATEWAY (GIAI ĐOẠN 3) - Code cực kỳ gọn gàng!
+        aiResponse = await gateway.executeGeneration('DEEP_ANALYSIS', prompt);
+        success = true;
+    } catch (error) {
+        logger.error(`Phân tích AI thất bại hoàn toàn: ${error.message}`);
     }
 
     const finalTopicAnalysis = {
