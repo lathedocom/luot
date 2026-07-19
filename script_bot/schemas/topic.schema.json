@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "properties": {
+    "cluster_title": { "type": "string", "description": "Tiêu đề tiếng Việt mang tính thời sự vĩ mô, ngắn gọn dưới 15 từ" },
+    "short_summary": { "type": "string", "description": "Tóm tắt sự việc cốt lõi diễn ra trong 40 từ" },
+    "detailed_summary": { "type": "string", "description": "Phân tích diễn biến chi tiết và logic nội tại của sự kiện khoảng 80 từ" },
+    "causes": { "type": "array", "items": { "type": "string" }, "description": "Nguyên nhân cốt lõi" },
+    "effects": { "type": "array", "items": { "type": "string" }, "description": "Hệ quả trực tiếp" },
+    "affected_groups": { "type": "array", "items": { "type": "string" }, "description": "Nhóm đối tượng/ngành nghề bị ảnh hưởng chính" },
+    "market_impact": { "type": "string", "description": "Tác động cụ thể đến kinh tế, tài chính, thị trường hoặc giá cả tài sản (nếu có, khoảng 30 từ)" },
+    "follow_up": { "type": "string", "description": "Điểm mấu chốt cần tiếp tục theo dõi sát sao trong vài ngày tới (1 câu ngắn gọn)" }
+  },
+  "required": ["cluster_title", "short_summary", "detailed_summary", "causes", "effects", "affected_groups", "market_impact", "follow_up"]
+}
