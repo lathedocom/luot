@@ -40,11 +40,17 @@ class GoogleProvider extends BaseProvider {
             })
         });
 
+        // BẮT LỖI HTTP THẬT SỰ Ở ĐÂY
+        if (!response.ok) {
+            const errData = await response.text();
+            throw new Error(`HTTP Lỗi ${response.status}: ${errData}`);
+        }
+
         const data = await response.json();
         if (data.embedding && data.embedding.values) {
             return data.embedding.values;
         }
-        throw new Error("Failed to generate embedding from Google");
+        throw new Error("Google trả về 200 OK nhưng thiếu dữ liệu vector.");
     }
 }
 
