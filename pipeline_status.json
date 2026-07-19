@@ -1,8 +1,8 @@
 {
   "status": {
     "success": true,
-    "duration_ms": 56789,
-    "last_run": "2026-07-19T15:30:22.549Z"
+    "duration_ms": 59435,
+    "last_run": "2026-07-19T15:34:18.108Z"
   },
   "metrics": {
     "articles_processed": 183,
@@ -14,18 +14,18 @@
   },
   "errors": [
     {
-      "time": "[15:30:10]",
-      "message": "[Gateway] Batch Embedding thất bại: HTTP Lỗi 404: {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"models/embedding-001 is not found for API version v1beta, or is not supported for embedContent. Call ModelService.ListModels to see the list of available models and their supported methods.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n",
+      "time": "[15:34:05]",
+      "message": "[Gateway] Batch Embedding thất bại: HTTP Lỗi 404: {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"models/text-embedding-004 is not found for API version v1beta, or is not supported for embedContent. Call ModelService.ListModels to see the list of available models and their supported methods.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n\n\n🎯 [AUTO-DEBUG] API Key của bạn không hỗ trợ 'text-embedding-004'.\nDanh sách các Model Vector bạn CÓ QUYỀN sử dụng là: [ gemini-embedding-001, gemini-embedding-2-preview, gemini-embedding-2 ].\nHãy copy một tên trong danh sách này và thay thế vào chữ 'text-embedding-004' trong code.",
       "detail": ""
     },
     {
-      "time": "[15:30:15]",
-      "message": "[Gateway] Batch Embedding thất bại: HTTP Lỗi 404: {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"models/embedding-001 is not found for API version v1beta, or is not supported for embedContent. Call ModelService.ListModels to see the list of available models and their supported methods.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n",
+      "time": "[15:34:10]",
+      "message": "[Gateway] Batch Embedding thất bại: HTTP Lỗi 404: {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"models/text-embedding-004 is not found for API version v1beta, or is not supported for embedContent. Call ModelService.ListModels to see the list of available models and their supported methods.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n\n\n🎯 [AUTO-DEBUG] API Key của bạn không hỗ trợ 'text-embedding-004'.\nDanh sách các Model Vector bạn CÓ QUYỀN sử dụng là: [ gemini-embedding-001, gemini-embedding-2-preview, gemini-embedding-2 ].\nHãy copy một tên trong danh sách này và thay thế vào chữ 'text-embedding-004' trong code.",
       "detail": ""
     },
     {
-      "time": "[15:30:22]",
-      "message": "[Gateway] Batch Embedding thất bại: HTTP Lỗi 404: {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"models/embedding-001 is not found for API version v1beta, or is not supported for embedContent. Call ModelService.ListModels to see the list of available models and their supported methods.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n",
+      "time": "[15:34:17]",
+      "message": "[Gateway] Batch Embedding thất bại: HTTP Lỗi 404: {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"models/text-embedding-004 is not found for API version v1beta, or is not supported for embedContent. Call ModelService.ListModels to see the list of available models and their supported methods.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n\n\n🎯 [AUTO-DEBUG] API Key của bạn không hỗ trợ 'text-embedding-004'.\nDanh sách các Model Vector bạn CÓ QUYỀN sử dụng là: [ gemini-embedding-001, gemini-embedding-2-preview, gemini-embedding-2 ].\nHãy copy một tên trong danh sách này và thay thế vào chữ 'text-embedding-004' trong code.",
       "detail": ""
     }
   ]
