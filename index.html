@@ -14,7 +14,6 @@
     <div class="app-layout">
         <!-- Lớp phủ nền mờ cho Mobile -->
         <div id="sidebar-overlay" class="mobile-overlay"></div>
-
         <!-- SIDEBAR TRÁI -->
         <aside class="sidebar-left" id="app-sidebar">
             <div class="logo-container">
@@ -33,7 +32,6 @@
                 <p>© 2026 Lướt AI Newsroom</p>
             </div>
         </aside>
-
         <!-- KHU VỰC NỘI DUNG CHÍNH -->
         <div class="main-wrapper">
             <!-- HEADER -->
@@ -41,7 +39,6 @@
                 <div style="display: flex; align-items: center; gap: 12px;">
                     <button id="mobile-menu-btn" class="icon-btn mobile-only"><span class="material-icons-round">menu</span></button>
                 </div>
-
                 <div class="header-actions">
                     <!-- Nút tìm kiếm hiển thị trên Mobile -->
                     <button id="mobile-search-btn" class="icon-btn mobile-only"><span class="material-icons-round">search</span></button>
@@ -52,22 +49,39 @@
                     </div>
                 </div>
             </header>
-
             <!-- NỘI DUNG ĐỘNG (ROUTING) -->
             <main class="dashboard-content">
                 
                 <!-- VIEW 1: TỔNG QUAN (Mặc định) -->
                 <div id="view-overview" class="view-section active">
                     
-                    <!-- Đã gỡ bỏ id="stats-container" khỏi đây để chuyển vào Modal 5 clicks -->
-                    
                     <!-- Nút chuyển Tab Tin Tức / MXH chỉ hiện trên Mobile -->
                     <div class="mobile-tab-toggle mobile-only">
                         <button class="active" id="tab-news">Tin tức</button>
                         <button id="tab-social">Mạng xã hội</button>
                     </div>
-
                     <div class="content-grid">
+                        
+                        <!-- BỘ LỌC INTELLIGENCE (Thêm mới) -->
+                        <div class="intelligence-filters" style="display: flex; gap: 10px; margin-bottom: 20px; overflow-x: auto; padding-bottom: 8px;">
+                            <select id="filter-region" class="filter-select">
+                                <option value="all">🌍 Mọi khu vực</option>
+                                <option value="Việt Nam">🇻🇳 Việt Nam</option>
+                                <option value="Mỹ">🇺🇸 Mỹ</option>
+                                <option value="Trung Quốc">🇨🇳 Trung Quốc</option>
+                                <option value="Châu Âu">🇪🇺 Châu Âu</option>
+                                <option value="Thế giới">🌐 Toàn cầu</option>
+                            </select>
+                            
+                            <select id="filter-category" class="filter-select">
+                                <option value="all">📊 Mọi ngành nghề</option>
+                                <option value="economy">Kinh tế - Vĩ mô</option>
+                                <option value="finance">Tài chính - Thị trường</option>
+                                <option value="tech">Công nghệ</option>
+                                <option value="politics">Chính trị - Luật</option>
+                            </select>
+                        </div>
+
                         <section class="feed-section" id="feed-section">
                             <div class="section-header">
                                 <h2 class="section-title"><span class="material-icons-round">article</span> BẢN TIN NỔI BẬT</h2>
@@ -89,7 +103,6 @@
                         </aside>
                     </div>
                 </div>
-
                 <!-- VIEW 2: BẢN TIN 24H (AI BRIEFING) -->
                 <div id="view-briefing" class="view-section" style="display: none;">
                     <div class="widget">
@@ -102,7 +115,6 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- VIEW 3: THỊ TRƯỜNG -->
                 <div id="view-market" class="view-section" style="display: none;">
                     <div class="widget">
@@ -115,11 +127,9 @@
                         </div>
                     </div>
                 </div>
-
             </main>
         </div>
     </div>
-
     <!-- MODAL TÌNH BÁO CHI TIẾT -->
     <div id="intelligence-modal" class="modal-overlay">
         <div class="modal-dialog">
@@ -137,7 +147,6 @@
             </div>
         </div>
     </div>
-
     <!-- MODAL ADMIN ẨN -->
     <div id="admin-modal" class="modal-overlay">
         <!-- Đã nới rộng max-width từ 400px lên 900px để chứa đủ 4 thẻ ngang -->
@@ -152,7 +161,6 @@
             </div>
         </div>
     </div>
-
     <script src="assets/js/app.js"></script>
 </body>
 </html>
