@@ -180,27 +180,66 @@ function initMobileSearch() {
 }
 
 function initAdminEasterEgg() {
-    const logos = document.querySelectorAll('.logo');
-    let clickCount = 0;
-    let clickTimer;
+    const logos = document.querySelectorAll('.logo');[cite: 1]
+    let clickCount = 0;[cite: 1]
+    let clickTimer;[cite: 1]
 
     logos.forEach(logo => {
         logo.addEventListener('click', () => {
-            clickCount++;
-            clearTimeout(clickTimer);
-            if (clickCount === 5) {
-                document.getElementById('admin-raw-count').textContent = totalCrawledArticles;
-                document.getElementById('admin-topic-count').textContent = globalNewsData.length;
-                document.getElementById('admin-modal').classList.add('active');
-                clickCount = 0; 
+            clickCount++;[cite: 1]
+            clearTimeout(clickTimer);[cite: 1]
+            if (clickCount === 5) {[cite: 1]
+                // 1. Tính toán dữ liệu thị trường
+                const marketTopics = globalNewsData.filter(t => 
+                    (t.categories && t.categories.includes('economy')) || 
+                    (t.market_impact && t.market_impact.length > 20)
+                ).length;[cite: 1]
+
+                // 2. Chèn 4 thẻ thống kê vào bảng System Stats (Admin Modal)
+                // Lưu ý: Đảm bảo class 'modal-body' tồn tại trong #admin-modal của bạn ở index.html
+                const adminModal = document.getElementById('admin-modal');[cite: 1]
+                const modalBody = adminModal.querySelector('.modal-body') || adminModal; 
+                
+                modalBody.innerHTML = `
+                    <div class="section-header" style="margin-top: 10px;">
+                        <div class="section-title">System Stats</div>
+                    </div>
+                    <div class="stats-row">
+                        <div class="stat-card">
+                            <div class="stat-icon blue"><span class="material-icons-round">language</span></div>
+                            <div class="stat-info"><h3>Sự kiện Toàn cảnh</h3><p>${globalNewsData.length}</p></div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon purple"><span class="material-icons-round">memory</span></div>
+                            <div class="stat-info"><h3>Báo cáo AI Xử lý</h3><p>${totalCrawledArticles}</p></div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon orange"><span class="material-icons-round">trending_up</span></div>
+                            <div class="stat-info"><h3>Biến động Thị trường</h3><p>${marketTopics}</p></div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon blue" style="background-color: rgba(16, 185, 129, 0.1); color: #10b981;"><span class="material-icons-round">check_circle</span></div>
+                            <div class="stat-info"><h3>Trạng thái Bot</h3><p style="font-size: 16px;">Sẵn sàng</p></div>
+                        </div>
+                    </div>
+                `;[cite: 1]
+
+                // 3. Hiển thị modal
+                adminModal.classList.add('active');[cite: 1]
+                clickCount = 0; [cite: 1]
             } else {
-                clickTimer = setTimeout(() => { clickCount = 0; }, 1200);
+                clickTimer = setTimeout(() => { clickCount = 0; }, 1200);[cite: 1]
             }
         });
     });
-    document.querySelector('.close-admin-action').addEventListener('click', () => {
-        document.getElementById('admin-modal').classList.remove('active');
-    });
+
+    // Sự kiện đóng modal
+    const closeAdminBtn = document.querySelector('.close-admin-action') || document.getElementById('close-admin-btn');
+    if (closeAdminBtn) {
+        closeAdminBtn.addEventListener('click', () => {
+            document.getElementById('admin-modal').classList.remove('active');[cite: 1]
+        });
+    }
 }
 
 function renderSkeletons() {
@@ -226,7 +265,6 @@ async function fetchNewsData() {
         globalNewsData = data.news || [];
         totalCrawledArticles = data.stats ? data.stats.total_crawled : 0;
 
-        renderStats(data);
         renderNewsFeed(globalNewsData);
         renderBriefing(data.daily_briefing);
         renderMarket(data.market_data || []);
