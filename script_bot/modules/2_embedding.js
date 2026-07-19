@@ -22,7 +22,7 @@ async function generateEmbeddings(articles) {
     // 2. Gom bài mới thành lô 90 bài / Request
     if (articlesToEmbed.length > 0) {
         logger.info(`Có ${articlesToEmbed.length} bài mới cần gọi AI Vector. Bắt đầu chia lô...`);
-        const BATCH_SIZE = 90; // Nhỏ hơn 100 để an toàn tuyệt đối
+        const BATCH_SIZE = 90; 
         
         for (let i = 0; i < articlesToEmbed.length; i += BATCH_SIZE) {
             const batch = articlesToEmbed.slice(i, i + BATCH_SIZE);
@@ -30,21 +30,20 @@ async function generateEmbeddings(articles) {
             
             logger.info(`Đang gửi Lô Vector thứ ${Math.floor(i / BATCH_SIZE) + 1} (${batch.length} bài báo)...`);
             
-            // GỌI 1 REQUEST DUY NHẤT LẤY 90 VECTOR
             const vectors = await gateway.executeBatchEmbedding(textsToEmbed);
             
-            // Lắp Vector trả về vào bài báo và lưu Cache
             for (let j = 0; j < batch.length; j++) {
                 const article = batch[j];
-                const vector = vectors[j] || new Array(768).fill(0).map(() => Math.random() * 0.01); // Fallback an toàn
+                const vector = vectors[j] || new Array(768).fill(0).map(() => Math.random() * 0.01);
                 
                 setCache('embedding_cache', article.id, vector, 5256000);
                 embeddedArticles.push({ ...article, vector: vector });
             }
             
-            // Trễ 4 giây giữa các Lô để tránh nghẽn
+            // ĐÃ SỬA: Nghỉ 60 giây (60000ms) để reset Quota 100 bài/phút của Google
             if (i + BATCH_SIZE < articlesToEmbed.length) {
-                await new Promise(resolve => setTimeout(resolve, 4000));
+                logger.info(`⏳ Đã chạm ngưỡng Free Tier. Đang chờ 60 giây để Google hồi phục Quota...`);
+                await new Promise(resolve => setTimeout(resolve, 60000));
             }
         }
     }
