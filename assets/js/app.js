@@ -75,8 +75,6 @@ function initMobileTabs() {
     });
 }
 
-
-
 function initMobileMenu() {
     const menuBtn = document.getElementById('mobile-menu-btn');
     const sidebar = document.getElementById('app-sidebar');
@@ -180,28 +178,30 @@ function initMobileSearch() {
 }
 
 function initAdminEasterEgg() {
-    const logos = document.querySelectorAll('.logo');[cite: 1]
-    let clickCount = 0;[cite: 1]
-    let clickTimer;[cite: 1]
+    const logos = document.querySelectorAll('.logo');
+    let clickCount = 0;
+    let clickTimer;
 
     logos.forEach(logo => {
         logo.addEventListener('click', () => {
-            clickCount++;[cite: 1]
-            clearTimeout(clickTimer);[cite: 1]
-            if (clickCount === 5) {[cite: 1]
+            clickCount++;
+            clearTimeout(clickTimer);
+            if (clickCount === 5) {
                 // 1. Tính toán dữ liệu thị trường
                 const marketTopics = globalNewsData.filter(t => 
                     (t.categories && t.categories.includes('economy')) || 
                     (t.market_impact && t.market_impact.length > 20)
-                ).length;[cite: 1]
+                ).length;
 
                 // 2. Chèn 4 thẻ thống kê vào bảng System Stats (Admin Modal)
-                // Lưu ý: Đảm bảo class 'modal-body' tồn tại trong #admin-modal của bạn ở index.html
-                const adminModal = document.getElementById('admin-modal');[cite: 1]
-                const modalBody = adminModal.querySelector('.modal-body') || adminModal; 
+                const adminModal = document.getElementById('admin-modal');
+                let modalBody = adminModal.querySelector('.modal-body');
+                
+                // Tránh ghi đè nếu adminModal không có modal-body 
+                if (!modalBody) modalBody = adminModal;
                 
                 modalBody.innerHTML = `
-                    <div class="section-header" style="margin-top: 10px;">
+                    <div class="section-header" style="margin-top: 10px; margin-bottom: 20px;">
                         <div class="section-title">System Stats</div>
                     </div>
                     <div class="stats-row">
@@ -222,22 +222,20 @@ function initAdminEasterEgg() {
                             <div class="stat-info"><h3>Trạng thái Bot</h3><p style="font-size: 16px;">Sẵn sàng</p></div>
                         </div>
                     </div>
-                `;[cite: 1]
+                `;
 
-                // 3. Hiển thị modal
-                adminModal.classList.add('active');[cite: 1]
-                clickCount = 0; [cite: 1]
+                adminModal.classList.add('active');
+                clickCount = 0; 
             } else {
-                clickTimer = setTimeout(() => { clickCount = 0; }, 1200);[cite: 1]
+                clickTimer = setTimeout(() => { clickCount = 0; }, 1200);
             }
         });
     });
 
-    // Sự kiện đóng modal
     const closeAdminBtn = document.querySelector('.close-admin-action') || document.getElementById('close-admin-btn');
     if (closeAdminBtn) {
         closeAdminBtn.addEventListener('click', () => {
-            document.getElementById('admin-modal').classList.remove('active');[cite: 1]
+            document.getElementById('admin-modal').classList.remove('active');
         });
     }
 }
@@ -265,6 +263,7 @@ async function fetchNewsData() {
         globalNewsData = data.news || [];
         totalCrawledArticles = data.stats ? data.stats.total_crawled : 0;
 
+        // Render dữ liệu (Bỏ renderStats)
         renderNewsFeed(globalNewsData);
         renderBriefing(data.daily_briefing);
         renderMarket(data.market_data || []);
@@ -274,7 +273,6 @@ async function fetchNewsData() {
         document.getElementById('news-container').innerHTML = `<div class="news-card"><p>Lỗi kết nối. Không thể tải dữ liệu Intelligence.</p></div>`;
     }
 }
-
 
 function renderNewsFeed(newsData) {
     const newsContainer = document.getElementById('news-container');
@@ -361,7 +359,10 @@ function renderSocial(socialData) {
 
 function initModalEvents() {
     const modal = document.getElementById('intelligence-modal');
-    document.querySelector('.close-modal-action').addEventListener('click', () => modal.classList.remove('active'));
+    const closeAction = document.querySelector('.close-modal-action');
+    if(closeAction) {
+        closeAction.addEventListener('click', () => modal.classList.remove('active'));
+    }
     modal.addEventListener('click', (e) => { if(e.target === modal) modal.classList.remove('active'); });
 
     const toggleBtn = document.getElementById('toggle-sources-btn');
@@ -369,17 +370,19 @@ function initModalEvents() {
     const toggleIcon = document.getElementById('toggle-sources-icon');
     const toggleText = document.getElementById('toggle-sources-text');
 
-    toggleBtn.addEventListener('click', () => {
-        if (sourcesDiv.style.display === 'none') {
-            sourcesDiv.style.display = 'flex';
-            toggleIcon.textContent = 'visibility_off';
-            toggleText.textContent = 'Ẩn danh sách nguồn báo';
-        } else {
-            sourcesDiv.style.display = 'none';
-            toggleIcon.textContent = 'visibility';
-            toggleText.textContent = 'Xem danh sách các nguồn báo chí';
-        }
-    });
+    if (toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
+            if (sourcesDiv.style.display === 'none') {
+                sourcesDiv.style.display = 'flex';
+                toggleIcon.textContent = 'visibility_off';
+                toggleText.textContent = 'Ẩn danh sách nguồn báo';
+            } else {
+                sourcesDiv.style.display = 'none';
+                toggleIcon.textContent = 'visibility';
+                toggleText.textContent = 'Xem danh sách các nguồn báo chí';
+            }
+        });
+    }
 }
 
 function openModal(cluster) {
