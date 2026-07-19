@@ -39,7 +39,7 @@ async function analyzeClusterMultiDimensional(cluster, eventKey) {
     };
 
     saveAiResult(eventKey, finalTopicAnalysis);
-    await new Promise(resolve => setTimeout(resolve, 500));
+    await new Promise(resolve => setTimeout(resolve, 4000));
     return finalTopicAnalysis;
 }
 
