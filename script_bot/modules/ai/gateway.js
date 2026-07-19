@@ -3,8 +3,7 @@ const GoogleProvider = require('./providers/google');
 const GroqProvider = require('./providers/groq');
 const { parseAIResponse } = require('./parser');
 const logger = require('../utils/logger');
-// [TODO]: Sẽ thay thế quotaManager bằng BudgetManager ở Giai đoạn 4
-const quotaManager = require('../quota/quota_manager'); 
+const budgetManager = require('../../budget/budget_manager'); 
 
 class AIGateway {
     constructor() {
@@ -14,51 +13,105 @@ class AIGateway {
         };
     }
 
-    /**
-     * Phương thức thực thi trung tâm cho mọi truy vấn AI (Phân tích, Tóm tắt, v.v.)
-     */
     async executeGeneration(taskName, prompt, fallbackToGroq = true) {
         logger.info(`[Gateway] Đang xử lý task: ${taskName}...`);
         
-        try {
-            // Thử chạy Google trước
-            const resultText = await this.providers.google.generateContent(prompt);
-            quotaManager.recordUsage(configModels.PRIMARY_MODEL, 1000); 
-            
-            const parsedJson = parseAIResponse(resultText);
-            return parsedJson;
+        let attempts = 0;
+        const maxRetries = 2; // Chỉ Retry cho Timeout/Mạng rớt
 
-        } catch (error) {
-            if (error.message === "RATE_LIMIT" || fallbackToGroq) {
-                logger.warn(`[Gateway] Google Provider thất bại (${error.message}). Fallback sang Groq...`);
-                try {
-                    const groqText = await this.providers.groq.generateContent(prompt);
-                    return parseAIResponse(groqText);
-                } catch (groqErr) {
-                    logger.error(`[Gateway] Groq Fallback cũng thất bại: ${groqErr.message}`);
-                    throw new Error("All AI Providers failed");
+        while (attempts <= maxRetries) {
+            const startTime = Date.now();
+            try {
+                // Thử gọi Google
+                const resultText = await this.providers.google.generateContent(prompt);
+                const latency = Date.now() - startTime;
+                
+                budgetManager.recordUsage({
+                    model: configModels.PRIMARY_MODEL,
+                    provider: 'google',
+                    task: taskName,
+                    promptTokens: Math.round(prompt.length / 4), // Ước lượng tạm 4 char = 1 token
+                    completionTokens: Math.round(resultText.length / 4),
+                    latency: latency,
+                    status: 'SUCCESS'
+                });
+
+                return parseAIResponse(resultText);
+
+            } catch (error) {
+                const latency = Date.now() - startTime;
+                
+                // Lỗi Rate Limit 429 -> TUYỆT ĐỐI KHÔNG RETRY, FALLBACK NGAY LẬP TỨC
+                if (error.message === "RATE_LIMIT" || fallbackToGroq) {
+                    logger.warn(`[Gateway] Google dính Rate Limit (429). Đổi sang Groq...`);
+                    budgetManager.recordUsage({
+                        model: configModels.PRIMARY_MODEL, provider: 'google', task: taskName, latency, status: 'HTTP_429'
+                    });
+                    return await this._runFallbackGroq(taskName, prompt);
                 }
+
+                // Nếu là lỗi Timeout hoặc mạng -> Cho phép Retry tối đa 2 lần
+                logger.warn(`[Gateway] Google lỗi kết nối: ${error.message}. Thử lại lần ${attempts + 1}/${maxRetries}`);
+                budgetManager.recordUsage({
+                    model: configModels.PRIMARY_MODEL, provider: 'google', task: taskName, latency, status: 'TIMEOUT_RETRY'
+                });
+                
+                attempts++;
+                if (attempts > maxRetries) {
+                    logger.error(`[Gateway] Hết lượt Retry. Ép Fallback sang Groq.`);
+                    return await this._runFallbackGroq(taskName, prompt);
+                }
+                
+                await new Promise(res => setTimeout(res, 2000)); // Nghỉ 2s trước khi retry
             }
-            throw error;
         }
     }
 
-    /**
-     * Phương thức thực thi trung tâm cho Vector Embedding
-     */
+    async _runFallbackGroq(taskName, prompt) {
+        const startTime = Date.now();
+        try {
+            const groqText = await this.providers.groq.generateContent(prompt);
+            budgetManager.recordUsage({
+                model: 'llama-3.1-8b-instant',
+                provider: 'groq',
+                task: taskName,
+                promptTokens: Math.round(prompt.length / 4),
+                completionTokens: Math.round(groqText.length / 4),
+                latency: Date.now() - startTime,
+                status: 'SUCCESS'
+            });
+            return parseAIResponse(groqText);
+        } catch (groqErr) {
+            budgetManager.recordUsage({
+                model: 'llama-3.1-8b-instant', provider: 'groq', task: taskName, latency: Date.now() - startTime, status: 'FAILED'
+            });
+            logger.error(`[Gateway] Groq Fallback cũng thất bại: ${groqErr.message}`);
+            throw new Error("All AI Providers failed");
+        }
+    }
+
     async executeEmbedding(text) {
+        const startTime = Date.now();
         try {
             const vector = await this.providers.google.embedContent(text);
-            quotaManager.recordUsage(configModels.EMBEDDING_MODEL, 500);
+            budgetManager.recordUsage({
+                model: configModels.EMBEDDING_MODEL,
+                provider: 'google',
+                task: 'EMBEDDING',
+                promptTokens: Math.round(text.length / 4),
+                latency: Date.now() - startTime,
+                status: 'SUCCESS'
+            });
             return vector;
         } catch (error) {
+            budgetManager.recordUsage({
+                model: configModels.EMBEDDING_MODEL, provider: 'google', task: 'EMBEDDING', latency: Date.now() - startTime, status: 'FAILED'
+            });
             logger.error(`[Gateway] Embedding thất bại: ${error.message}`);
-            // Fallback trả về vector ảo để không sập pipeline
             return new Array(768).fill(0).map(() => Math.random() * 0.01); 
         }
     }
 }
 
-// Xuất ra một instance duy nhất (Singleton Pattern)
 const gateway = new AIGateway();
 module.exports = gateway;
