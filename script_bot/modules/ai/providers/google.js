@@ -29,16 +29,14 @@ class GoogleProvider extends BaseProvider {
         throw new Error("Empty response from Google");
     }
 
-    // ĐÃ SỬA: Đổi sang mô hình 'embedding-001' và cấu trúc lại body
     async embedContent(text, modelName = 'embedding-001') {
         const url = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:embedContent?key=${this.apiKey}`;
         const response = await fetch(url, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                model: `models/${modelName}`, // Bổ sung khai báo model trực tiếp trong body
+                model: `models/${modelName}`,
                 content: { parts: [{ text: text }] }
-                // Đã gỡ bỏ taskType để chống kén API
             })
         });
 
@@ -53,7 +51,8 @@ class GoogleProvider extends BaseProvider {
         }
         throw new Error("Google trả về 200 OK nhưng thiếu dữ liệu vector.");
     }
-}
+
+    // === HÀM MỚI ĐƯỢC CHÈN ĐÚNG VỊ TRÍ (BÊN TRONG CLASS) ===
     async batchEmbedContents(texts, modelName = 'embedding-001') {
         const url = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:batchEmbedContents?key=${this.apiKey}`;
         
@@ -80,4 +79,6 @@ class GoogleProvider extends BaseProvider {
         }
         throw new Error("Google trả về 200 OK nhưng thiếu dữ liệu vector batch.");
     }
+} // => KẾT THÚC CLASS GOOGLE PROVIDER Ở ĐÂY
+
 module.exports = GoogleProvider;
