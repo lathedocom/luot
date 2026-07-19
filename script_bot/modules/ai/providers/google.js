@@ -29,8 +29,8 @@ class GoogleProvider extends BaseProvider {
         throw new Error("Empty response from Google");
     }
 
-    // Trả về mô hình text-embedding-004 tiêu chuẩn
-    async embedContent(text, modelName = 'text-embedding-004') {
+    // Đã thay thế thành gemini-embedding-2
+    async embedContent(text, modelName = 'gemini-embedding-2') {
         const url = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:embedContent?key=${this.apiKey}`;
         const response = await fetch(url, {
             method: 'POST',
@@ -53,8 +53,8 @@ class GoogleProvider extends BaseProvider {
         throw new Error("Google trả về 200 OK nhưng thiếu dữ liệu vector.");
     }
 
-    // Trả về mô hình text-embedding-004 tiêu chuẩn
-    async batchEmbedContents(texts, modelName = 'text-embedding-004') {
+    // Đã thay thế thành gemini-embedding-2
+    async batchEmbedContents(texts, modelName = 'gemini-embedding-2') {
         const url = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:batchEmbedContents?key=${this.apiKey}`;
         
         const requests = texts.map(text => ({
@@ -71,19 +71,17 @@ class GoogleProvider extends BaseProvider {
         if (!response.ok) {
             const errData = await response.text();
             
-            // KÍCH HOẠT AUTO-DEBUG ĐỂ QUÉT DANH SÁCH MODEL
             let availableModels = "";
             try {
                 const listUrl = `https://generativelanguage.googleapis.com/v1beta/models?key=${this.apiKey}`;
                 const listRes = await fetch(listUrl);
                 const listData = await listRes.json();
                 
-                // Lọc ra các model có chứa chữ 'embed'
                 const embedModels = listData.models
                     .filter(m => m.name.includes('embed'))
                     .map(m => m.name.replace('models/', ''));
                     
-                availableModels = `\n\n🎯 [AUTO-DEBUG] API Key của bạn không hỗ trợ '${modelName}'.\nDanh sách các Model Vector bạn CÓ QUYỀN sử dụng là: [ ${embedModels.join(', ')} ].\nHãy copy một tên trong danh sách này và thay thế vào chữ 'text-embedding-004' trong code.`;
+                availableModels = `\n\n🎯 [AUTO-DEBUG] API Key của bạn không hỗ trợ '${modelName}'.\nDanh sách các Model Vector bạn CÓ QUYỀN sử dụng là: [ ${embedModels.join(', ')} ].\nHãy copy một tên trong danh sách này và thay thế vào code.`;
             } catch(e) {
                 availableModels = `\n(Không thể tự động quét danh sách model do lỗi mạng phụ)`;
             }
