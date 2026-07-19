@@ -1,42 +1,13 @@
-const fs = require('fs');
-const path = require('path');
-const logger = require('../utils/logger');
+const { getCache, setCache } = require('./cache_manager');
 
-const CACHE_FILE = path.join(__dirname, '../../../data/ai_cache.json');
-
-function initCache() {
-    const dir = path.dirname(CACHE_FILE);
-    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
-    if (!fs.existsSync(CACHE_FILE)) fs.writeFileSync(CACHE_FILE, JSON.stringify({}));
-}
-
-/**
- * Kiểm tra xem Topic này đã được AI phân tích trước đó chưa
- * @param {string} topicKey - Mã chuỗi sự kiện (Ví dụ: evt_123_update_2026)
- */
 function getAiResult(topicKey) {
-    initCache();
-    try {
-        const cache = JSON.parse(fs.readFileSync(CACHE_FILE, 'utf-8'));
-        return cache[topicKey] || null;
-    } catch (e) {
-        logger.error("Lỗi đọc file ai_cache.json", e);
-        return null;
-    }
+    // Gọi TTL cực lớn (10 năm) vì kết quả AI của một tình tiết là vĩnh viễn không đổi
+    return getCache('ai_cache', topicKey);
 }
 
-/**
- * Lưu trữ kết quả JSON nguyên bản mà AI vừa trả về
- */
 function saveAiResult(topicKey, resultData) {
-    initCache();
-    try {
-        const cache = JSON.parse(fs.readFileSync(CACHE_FILE, 'utf-8'));
-        cache[topicKey] = resultData;
-        fs.writeFileSync(CACHE_FILE, JSON.stringify(cache, null, 2));
-    } catch (e) {
-        logger.error("Lỗi ghi file ai_cache.json", e);
-    }
+    // Lưu với TTL = 5256000 phút (10 năm)
+    setCache('ai_cache', topicKey, resultData, 5256000, '4.5');
 }
 
 module.exports = { getAiResult, saveAiResult };
