@@ -21,7 +21,8 @@ function initCacheFile(filePath) {
  * @param {string} key Khóa định danh
  */
 function getCache(cacheName, key) {
-    const filePath = path.join(__dirname, `../../../cache/${cacheName}.json`);
+    const filePath = path.join(__dirname, `../../cache/${cacheName}.json`);
+
     initCacheFile(filePath);
     try {
         const cache = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
@@ -53,7 +54,8 @@ function getCache(cacheName, key) {
  * @param {string} version Phiên bản cấu trúc
  */
 function setCache(cacheName, key, data, ttlMinutes = 60, version = '1.0') {
-    const filePath = path.join(__dirname, `../../../cache/${cacheName}.json`);
+    const filePath = path.join(__dirname, `../../cache/${cacheName}.json`);
+
     initCacheFile(filePath);
     try {
         const cache = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
@@ -77,7 +79,8 @@ function setCache(cacheName, key, data, ttlMinutes = 60, version = '1.0') {
  * Xóa rác: Quét và loại bỏ các item đã hết hạn để chống phình to Repo
  */
 function cleanupCache(cacheName) {
-    const filePath = path.join(__dirname, `../../../cache/${cacheName}.json`);
+    const filePath = path.join(__dirname, `../../cache/${cacheName}.json`);
+ 
     initCacheFile(filePath);
     try {
         const cache = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
