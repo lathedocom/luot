@@ -26,7 +26,7 @@ async function generateEmbeddings(articles) {
             setCache('embedding_cache', article.id, vector, 5256000); // Lưu 10 năm
             
             embeddedArticles.push({ ...article, vector: vector });
-            await new Promise(resolve => setTimeout(resolve, 300)); // Delay chống spam
+            await new Promise(resolve => setTimeout(resolve, 4000));
             
         } catch (error) {
             logger.error(`Lỗi khi tạo Vector bài [${article.title.substring(0, 30)}...]: ${error.message}`);
