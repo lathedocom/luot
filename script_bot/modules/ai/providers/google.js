@@ -29,7 +29,8 @@ class GoogleProvider extends BaseProvider {
         throw new Error("Empty response from Google");
     }
 
-    async embedContent(text, modelName = 'embedding-001') {
+    // Trả về mô hình text-embedding-004 tiêu chuẩn
+    async embedContent(text, modelName = 'text-embedding-004') {
         const url = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:embedContent?key=${this.apiKey}`;
         const response = await fetch(url, {
             method: 'POST',
@@ -52,11 +53,10 @@ class GoogleProvider extends BaseProvider {
         throw new Error("Google trả về 200 OK nhưng thiếu dữ liệu vector.");
     }
 
-    // === HÀM MỚI ĐƯỢC CHÈN ĐÚNG VỊ TRÍ (BÊN TRONG CLASS) ===
-    async batchEmbedContents(texts, modelName = 'embedding-001') {
+    // Trả về mô hình text-embedding-004 tiêu chuẩn
+    async batchEmbedContents(texts, modelName = 'text-embedding-004') {
         const url = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:batchEmbedContents?key=${this.apiKey}`;
         
-        // Đóng gói mảng text thành định dạng batch mà Google yêu cầu
         const requests = texts.map(text => ({
             model: `models/${modelName}`,
             content: { parts: [{ text: text }] }
@@ -70,7 +70,25 @@ class GoogleProvider extends BaseProvider {
 
         if (!response.ok) {
             const errData = await response.text();
-            throw new Error(`HTTP Lỗi ${response.status}: ${errData}`);
+            
+            // KÍCH HOẠT AUTO-DEBUG ĐỂ QUÉT DANH SÁCH MODEL
+            let availableModels = "";
+            try {
+                const listUrl = `https://generativelanguage.googleapis.com/v1beta/models?key=${this.apiKey}`;
+                const listRes = await fetch(listUrl);
+                const listData = await listRes.json();
+                
+                // Lọc ra các model có chứa chữ 'embed'
+                const embedModels = listData.models
+                    .filter(m => m.name.includes('embed'))
+                    .map(m => m.name.replace('models/', ''));
+                    
+                availableModels = `\n\n🎯 [AUTO-DEBUG] API Key của bạn không hỗ trợ '${modelName}'.\nDanh sách các Model Vector bạn CÓ QUYỀN sử dụng là: [ ${embedModels.join(', ')} ].\nHãy copy một tên trong danh sách này và thay thế vào chữ 'text-embedding-004' trong code.`;
+            } catch(e) {
+                availableModels = `\n(Không thể tự động quét danh sách model do lỗi mạng phụ)`;
+            }
+
+            throw new Error(`HTTP Lỗi ${response.status}: ${errData}${availableModels}`);
         }
 
         const data = await response.json();
@@ -79,6 +97,6 @@ class GoogleProvider extends BaseProvider {
         }
         throw new Error("Google trả về 200 OK nhưng thiếu dữ liệu vector batch.");
     }
-} // => KẾT THÚC CLASS GOOGLE PROVIDER Ở ĐÂY
+} 
 
 module.exports = GoogleProvider;
