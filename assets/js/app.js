@@ -275,32 +275,6 @@ async function fetchNewsData() {
     }
 }
 
-function renderStats(data) {
-    const statsContainer = document.getElementById('stats-container');
-    const marketTopics = globalNewsData.filter(t => 
-        (t.categories && t.categories.includes('economy')) || 
-        (t.market_impact && t.market_impact.length > 20)
-    ).length;
-
-    statsContainer.innerHTML = `
-        <div class="stat-card">
-            <div class="stat-icon blue"><span class="material-icons-round">language</span></div>
-            <div class="stat-info"><h3>Sự kiện Toàn cảnh</h3><p>${globalNewsData.length}</p></div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-icon purple"><span class="material-icons-round">memory</span></div>
-            <div class="stat-info"><h3>Báo cáo AI Xử lý</h3><p>${totalCrawledArticles}</p></div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-icon orange"><span class="material-icons-round">trending_up</span></div>
-            <div class="stat-info"><h3>Biến động Thị trường</h3><p>${marketTopics}</p></div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-icon blue" style="background-color: rgba(16, 185, 129, 0.1); color: #10b981;"><span class="material-icons-round">check_circle</span></div>
-            <div class="stat-info"><h3>Trạng thái Bot</h3><p style="font-size: 16px;">Sẵn sàng</p></div>
-        </div>
-    `;
-}
 
 function renderNewsFeed(newsData) {
     const newsContainer = document.getElementById('news-container');
