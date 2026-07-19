@@ -1,108 +1,39 @@
 const logger = require('./utils/logger');
-const { getEmbedding, saveEmbedding } = require('./cache/embedding_cache');
-const quotaManager = require('./quota/quota_manager');
-const configModels = require('../config/models');
+// File cache_manager chưa có hàm getEmbedding nên ta giữ tạm đường dẫn cũ nếu bạn chưa chuyển đổi hàm này ở GĐ 2.
+// Để an toàn, cập nhật hàm dùng từ cache_manager.
+const { getCache, setCache } = require('./cache/cache_manager');
+const gateway = require('./ai/gateway');
 
 async function generateEmbeddings(articles) {
     if (articles.length === 0) return [];
-    logger.info(`Bước 2: Tạo Vector Embedding cho ${articles.length} bài viết...`);
-
+    logger.info(`Bước 2: Tạo Vector Embedding cho ${articles.length} bài viết qua AI Gateway...`);
+    
     const embeddedArticles = [];
-    const apiKey = (configModels.API_KEYS.GEMINI || '').trim();
-
-    if (!apiKey) {
-        logger.warn("CẢNH BÁO: Không có API Key. Hệ thống sẽ tự động dùng Vector dự phòng.");
-    }
-
-    let finalModelName = null;
-
-    // BƯỚC ĐỘT PHÁ: Tự động dò tìm Model khả dụng trên API Key (ListModels)
-    if (apiKey) {
-        try {
-            logger.info("Đang dò tìm model Embedding khả dụng trên API Key của bạn...");
-            const listRes = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${apiKey}`);
-            const listData = await listRes.json();
-
-            if (listData.models) {
-                // Lọc ra các model có hỗ trợ phương thức "embedContent"
-                const embedModels = listData.models.filter(m => 
-                    m.supportedGenerationMethods && 
-                    m.supportedGenerationMethods.includes("embedContent")
-                );
-
-                if (embedModels.length > 0) {
-                    // Ưu tiên text-embedding-004, nếu không có thì lấy model đầu tiên mà Google cấp phép
-                    const preferred = embedModels.find(m => m.name.includes("text-embedding-004"));
-                    // Tách chữ 'models/' ra để lấy đúng tên lõi
-                    finalModelName = preferred ? preferred.name.replace('models/', '') : embedModels[0].name.replace('models/', '');
-                    logger.success(`Đã tự động tìm thấy và kết nối Model: ${finalModelName}`);
-                } else {
-                    logger.warn("API Key của bạn không được cấp quyền dùng bất kỳ model Embedding nào từ Google.");
-                }
-            } else if (listData.error) {
-                logger.error("Lỗi xác thực API Key từ Google: ", listData.error.message);
-            }
-        } catch (error) {
-            logger.error("Lỗi khi dò danh sách model: ", error.message);
-        }
-    }
-
-    // Nếu dò tìm thành công thì tạo URL, nếu không thì URL = null để kích hoạt Fallback
-    const apiUrl = finalModelName 
-        ? `https://generativelanguage.googleapis.com/v1beta/models/${finalModelName}:embedContent?key=${apiKey}`
-        : null;
 
     for (const article of articles) {
         try {
-            const cachedVector = getEmbedding(article.id);
+            const cachedVector = getCache('embedding_cache', article.id);
             if (cachedVector) {
                 embeddedArticles.push({ ...article, vector: cachedVector });
                 continue;
             }
-
-            let vector = null;
-
-            if (apiUrl) {
-                const textToEmbed = `Tiêu đề: ${article.title}. Nội dung: ${article.summary}`;
-                
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        content: { parts: [{ text: textToEmbed }] },
-                        taskType: "CLUSTERING"
-                    })
-                });
-
-                const data = await response.json();
-
-                if (data.embedding && data.embedding.values) {
-                    vector = data.embedding.values;
-                    quotaManager.recordUsage(finalModelName, 500);
-                    saveEmbedding(article.id, vector); 
-                } else if (data.error) {
-                    logger.error(`Google API từ chối bài [${article.title.substring(0, 30)}...]: ${data.error.message}`);
-                }
-            }
-
-            // Cơ chế Fallback an toàn
-            if (!vector) {
-                vector = new Array(768).fill(0).map(() => Math.random() * 0.01);
-            }
-
+            
+            const textToEmbed = `Tiêu đề: ${article.title}. Nội dung: ${article.summary}`;
+            
+            // GỌI QUA GATEWAY (GIAI ĐOẠN 3)
+            const vector = await gateway.executeEmbedding(textToEmbed);
+            
+            setCache('embedding_cache', article.id, vector, 5256000); // Lưu 10 năm
+            
             embeddedArticles.push({ ...article, vector: vector });
-
-            if (apiUrl) {
-                await new Promise(resolve => setTimeout(resolve, 500));
-            }
-
+            await new Promise(resolve => setTimeout(resolve, 300)); // Delay chống spam
+            
         } catch (error) {
-            logger.error(`Lỗi mạng khi Embedding: ${error.message}`);
+            logger.error(`Lỗi khi tạo Vector bài [${article.title.substring(0, 30)}...]: ${error.message}`);
             const fallbackVector = new Array(768).fill(0).map(() => Math.random() * 0.01);
             embeddedArticles.push({ ...article, vector: fallbackVector });
         }
     }
-
     logger.success(`Hoàn tất. Đã xử lý an toàn Vector cho ${embeddedArticles.length} bài.`);
     return embeddedArticles;
 }
