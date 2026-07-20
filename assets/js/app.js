@@ -286,9 +286,40 @@ function renderNewsFeed(newsData) {
     newsData.forEach(cluster => {
         const timeObj = new Date(cluster.timestamp);
         const timeString = `${timeObj.getHours().toString().padStart(2,'0')}:${timeObj.getMinutes().toString().padStart(2,'0')} - ${timeObj.toLocaleDateString('vi-VN')}`;
-        const sourceCount = cluster.sources ? cluster.sources.length : 1;
         const mainRegion = (cluster.regions && cluster.regions.length > 0) ? cluster.regions[0] : 'Thế giới';
 
+        // ==========================================
+        // XỬ LÝ CHÚ THÍCH NGUỒN MINH BẠCH (VẤN ĐỀ 2)
+        // ==========================================
+        const sources = cluster.sources || [];
+        const sourceCount = sources.length; // Tổng số bài báo
+        
+        // Lọc danh sách các báo độc lập (dựa theo source_name, loại bỏ trùng lặp)
+        const uniqueSourceNames = [...new Set(sources.map(s => s.source_name).filter(Boolean))];
+        const uniqueCount = uniqueSourceNames.length; // Số lượng cơ quan báo chí
+        
+        let sourceFooterHtml = '';
+        
+        if (sourceCount === 0) {
+            sourceFooterHtml = `<span class="material-icons-round" style="font-size: 15px; color: var(--md-sys-color-primary);">smart_toy</span> Tổng hợp bởi AI`;
+        } 
+        else if (uniqueCount === 1) {
+            if (sourceCount > 1) {
+                // Nhiều bài nhưng cùng 1 cơ quan
+                sourceFooterHtml = `<span class="material-icons-round" style="font-size: 15px; color: var(--md-sys-color-primary);">dynamic_feed</span> Tổng hợp từ nhiều bài viết của cùng một cơ quan báo chí`;
+            } else {
+                // Chỉ có đúng 1 bài, 1 báo
+                sourceFooterHtml = `<span class="material-icons-round" style="font-size: 15px; color: var(--md-sys-color-primary);">article</span> Nguồn: ${uniqueSourceNames[0]}`;
+            }
+        } 
+        else {
+            // Nhiều nguồn độc lập (Ví dụ: Nguồn: Reuters, BBC • Tổng hợp từ 3 nguồn)
+            const topSources = uniqueSourceNames.slice(0, 2).join(', ');
+            const hasMore = uniqueCount > 2 ? ', ...' : '';
+            sourceFooterHtml = `<span class="material-icons-round" style="font-size: 15px; color: var(--md-sys-color-primary);">fact_check</span> Nguồn: ${topSources}${hasMore} • Đối chiếu từ ${uniqueCount} nguồn báo chí`;
+        }
+
+        // Tạo thẻ bài viết
         const card = document.createElement('div');
         card.className = 'news-card';
         card.innerHTML = `
@@ -299,9 +330,11 @@ function renderNewsFeed(newsData) {
             <h3>${cluster.title || cluster.cluster_title}</h3>
             <p>${cluster.short_summary}</p>
             <div class="news-footer">
-                <span class="material-icons-round" style="font-size: 15px; color: var(--md-sys-color-primary);">dynamic_feed</span> ${sourceCount} cơ quan báo chí xác nhận
+                ${sourceFooterHtml}
             </div>
         `;
+        
+        // Gắn sự kiện click mở Modal
         card.addEventListener('click', () => openModal(cluster));
         newsContainer.appendChild(card);
     });
