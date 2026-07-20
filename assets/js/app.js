@@ -1,6 +1,6 @@
 let globalNewsData = [];
 let totalCrawledArticles = 0;
-
+ 
 document.addEventListener('DOMContentLoaded', () => {
     initMobileMenu();
     initNavigation(); 
@@ -12,9 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
     renderSkeletons();
     fetchNewsData();
 });
-
+ 
 function initNavigation() {
-    const tabs = ['overview', 'briefing', 'market'];
+    // Thêm 'timeline' vào mảng
+    const tabs = ['overview', 'briefing', 'timeline', 'market'];
     tabs.forEach(tab => {
         const navBtn = document.getElementById(`nav-${tab}`);
         if (navBtn) {
@@ -25,7 +26,7 @@ function initNavigation() {
                 
                 document.getElementById(`view-${tab}`).style.display = 'block';
                 navBtn.classList.add('active');
-
+ 
                 const sidebar = document.getElementById('app-sidebar');
                 const overlay = document.getElementById('sidebar-overlay');
                 if (sidebar.classList.contains('active')) {
@@ -36,13 +37,13 @@ function initNavigation() {
         }
     });
 }
-
+ 
 function initMobileTabs() {
     const btnNews = document.getElementById('tab-news');
     const btnSocial = document.getElementById('tab-social');
     const secFeed = document.getElementById('feed-section');
     const secSocial = document.getElementById('social-section');
-
+ 
     if(btnNews && btnSocial) {
         btnNews.addEventListener('click', () => {
             btnNews.classList.add('active');
@@ -57,7 +58,7 @@ function initMobileTabs() {
             secSocial.style.display = 'block';
         });
     }
-
+ 
     // Logic đảm bảo không bị lỗi UI khi chuyển đổi ngang dọc điện thoại
     window.addEventListener('resize', () => {
         if (window.innerWidth > 768) {
@@ -74,12 +75,12 @@ function initMobileTabs() {
         }
     });
 }
-
+ 
 function initMobileMenu() {
     const menuBtn = document.getElementById('mobile-menu-btn');
     const sidebar = document.getElementById('app-sidebar');
     const overlay = document.getElementById('sidebar-overlay');
-
+ 
     if (menuBtn && sidebar && overlay) {
         menuBtn.addEventListener('click', () => {
             sidebar.classList.add('active');
@@ -91,11 +92,11 @@ function initMobileMenu() {
         });
     }
 }
-
+ 
 // ==========================================================
 // CÁC HÀM XỬ LÝ TÌM KIẾM ĐÃ ĐƯỢC NÂNG CẤP
 // ==========================================================
-
+ 
 // 1. Hàm hỗ trợ: Ép hiển thị kết quả mà KHÔNG làm tụt bàn phím ảo
 function forceShowNewsFeed() {
     // Ép về tab Tổng quan (nếu đang ở tab khác)
@@ -106,13 +107,13 @@ function forceShowNewsFeed() {
         document.getElementById('view-overview').style.display = 'block';
         overviewBtn.classList.add('active');
     }
-
+ 
     // Ép hiển thị cột Tin tức trên Mobile (để tránh lỗi đang xem MXH thì không thấy kết quả)
     const btnNews = document.getElementById('tab-news');
     const btnSocial = document.getElementById('tab-social');
     const secFeed = document.getElementById('feed-section');
     const secSocial = document.getElementById('social-section');
-
+ 
     if (window.innerWidth <= 768 && btnNews && secFeed) {
         btnNews.classList.add('active');
         if (btnSocial) btnSocial.classList.remove('active');
@@ -120,7 +121,7 @@ function forceShowNewsFeed() {
         if (secSocial) secSocial.style.display = 'none';
     }
 }
-
+ 
 // 2. Logic Tìm kiếm (Gõ phím thời gian thực)
 function initSearch() {
     const searchInput = document.getElementById('search-input');
@@ -142,7 +143,7 @@ function initSearch() {
         forceShowNewsFeed();
     });
 }
-
+ 
 // 3. Xử lý nút ẩn/hiện thanh tìm kiếm trên Mobile
 function initMobileSearch() {
     const searchBtn = document.getElementById('mobile-search-btn');
@@ -176,12 +177,12 @@ function initMobileSearch() {
         }
     });
 }
-
+ 
 function initAdminEasterEgg() {
     const logos = document.querySelectorAll('.logo');
     let clickCount = 0;
     let clickTimer;
-
+ 
     logos.forEach(logo => {
         logo.addEventListener('click', () => {
             clickCount++;
@@ -192,7 +193,7 @@ function initAdminEasterEgg() {
                     (t.categories && t.categories.includes('economy')) || 
                     (t.market_impact && t.market_impact.length > 20)
                 ).length;
-
+ 
                 // 2. Chèn 4 thẻ thống kê vào bảng System Stats (Admin Modal)
                 const adminModal = document.getElementById('admin-modal');
                 let modalBody = adminModal.querySelector('.modal-body');
@@ -223,7 +224,7 @@ function initAdminEasterEgg() {
                         </div>
                     </div>
                 `;
-
+ 
                 adminModal.classList.add('active');
                 clickCount = 0; 
             } else {
@@ -231,7 +232,7 @@ function initAdminEasterEgg() {
             }
         });
     });
-
+ 
     const closeAdminBtn = document.querySelector('.close-admin-action') || document.getElementById('close-admin-btn');
     if (closeAdminBtn) {
         closeAdminBtn.addEventListener('click', () => {
@@ -239,7 +240,7 @@ function initAdminEasterEgg() {
         });
     }
 }
-
+ 
 function renderSkeletons() {
     const newsContainer = document.getElementById('news-container');
     let skeletons = '';
@@ -253,7 +254,7 @@ function renderSkeletons() {
     }
     newsContainer.innerHTML = skeletons;
 }
-
+ 
 async function fetchNewsData() {
     try {
         const response = await fetch(`news_data.json?v=${new Date().getTime()}`);
@@ -262,32 +263,35 @@ async function fetchNewsData() {
         
         globalNewsData = data.news || [];
         totalCrawledArticles = data.stats ? data.stats.total_crawled : 0;
-
+ 
         // Render dữ liệu (Bỏ renderStats)
         renderNewsFeed(globalNewsData);
         renderBriefing(data.daily_briefing);
         renderMarket(data.market_data || []);
         renderSocial(data.social || []); 
-
+        
+        // Đã thêm: Gọi hàm render trang Timeline
+        renderTimelinePage(globalNewsData);
+ 
     } catch (error) {
         document.getElementById('news-container').innerHTML = `<div class="news-card"><p>Lỗi kết nối. Không thể tải dữ liệu Intelligence.</p></div>`;
     }
 }
-
+ 
 function renderNewsFeed(newsData) {
     const newsContainer = document.getElementById('news-container');
     newsContainer.innerHTML = ''; 
-
+ 
     if(newsData.length === 0) {
         newsContainer.innerHTML = `<p style="padding: 20px; opacity: 0.7;">Không tìm thấy chủ đề nào phù hợp.</p>`;
         return;
     }
-
+ 
     newsData.forEach(cluster => {
         const timeObj = new Date(cluster.timestamp);
         const timeString = `${timeObj.getHours().toString().padStart(2,'0')}:${timeObj.getMinutes().toString().padStart(2,'0')} - ${timeObj.toLocaleDateString('vi-VN')}`;
         const mainRegion = (cluster.regions && cluster.regions.length > 0) ? cluster.regions[0] : 'Thế giới';
-
+ 
         // ==========================================
         // XỬ LÝ CHÚ THÍCH NGUỒN MINH BẠCH (VẤN ĐỀ 2)
         // ==========================================
@@ -318,7 +322,7 @@ function renderNewsFeed(newsData) {
             const hasMore = uniqueCount > 2 ? ', ...' : '';
             sourceFooterHtml = `<span class="material-icons-round" style="font-size: 15px; color: var(--md-sys-color-primary);">fact_check</span> Nguồn: ${topSources}${hasMore} • Đối chiếu từ ${uniqueCount} nguồn báo chí`;
         }
-
+ 
         // Tạo thẻ bài viết
         const card = document.createElement('div');
         card.className = 'news-card';
@@ -339,7 +343,7 @@ function renderNewsFeed(newsData) {
         newsContainer.appendChild(card);
     });
 }
-
+ 
 function renderBriefing(briefingText) {
     const briefingContainer = document.getElementById('briefing-container');
     if (briefingText) {
@@ -348,7 +352,7 @@ function renderBriefing(briefingText) {
         briefingContainer.innerHTML = '<p style="opacity:0.7;">Chưa có bản tin tóm tắt cho chu kỳ này.</p>';
     }
 }
-
+ 
 function renderMarket(marketData) {
     const marketContainer = document.getElementById('market-container');
     if (marketData.length === 0) {
@@ -360,7 +364,7 @@ function renderMarket(marketData) {
         const isUp = item.trend === '↑' || item.trend === 'up';
         const color = isUp ? '#10b981' : '#ef4444'; 
         const icon = isUp ? 'trending_up' : 'trending_down';
-
+ 
         html += `
             <div style="background: var(--md-sys-color-surface); padding: 20px; border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px solid var(--md-sys-color-outline); box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
                 <strong style="font-size: 16px; margin-bottom: 8px; opacity: 0.8;">${item.symbol}</strong>
@@ -371,7 +375,7 @@ function renderMarket(marketData) {
     });
     marketContainer.innerHTML = html;
 }
-
+ 
 function renderSocial(socialData) {
     const container = document.getElementById('social-container');
     if (!socialData || socialData.length === 0) {
@@ -389,7 +393,7 @@ function renderSocial(socialData) {
     });
     container.innerHTML = html;
 }
-
+ 
 function initModalEvents() {
     const modal = document.getElementById('intelligence-modal');
     const closeAction = document.querySelector('.close-modal-action');
@@ -397,12 +401,12 @@ function initModalEvents() {
         closeAction.addEventListener('click', () => modal.classList.remove('active'));
     }
     modal.addEventListener('click', (e) => { if(e.target === modal) modal.classList.remove('active'); });
-
+ 
     const toggleBtn = document.getElementById('toggle-sources-btn');
     const sourcesDiv = document.getElementById('modal-sources');
     const toggleIcon = document.getElementById('toggle-sources-icon');
     const toggleText = document.getElementById('toggle-sources-text');
-
+ 
     if (toggleBtn) {
         toggleBtn.addEventListener('click', () => {
             if (sourcesDiv.style.display === 'none') {
@@ -417,7 +421,7 @@ function initModalEvents() {
         });
     }
 }
-
+ 
 function openModal(cluster) {
     try {
         // 1. Kiểm tra an toàn tiêu đề
@@ -434,7 +438,7 @@ function openModal(cluster) {
             }
             return `<li style="margin-bottom: 8px;">${data}</li>`; // Nếu là chuỗi, bọc vào 1 thẻ li
         };
-
+ 
         // 2. CĂN NGUYÊN / BỐI CẢNH
         if (cluster.causes && (Array.isArray(cluster.causes) ? cluster.causes.length > 0 : true)) {
             bodyHtml += `
@@ -447,7 +451,7 @@ function openModal(cluster) {
                 </ul>
             </div>`;
         }
-
+ 
         // 3. TÁC ĐỘNG / ẢNH HƯỞNG CHUNG
         if (cluster.effects && (Array.isArray(cluster.effects) ? cluster.effects.length > 0 : true)) {
             bodyHtml += `
@@ -460,7 +464,7 @@ function openModal(cluster) {
                 </ul>
             </div>`;
         }
-
+ 
         // 4. NHÓM BỊ ẢNH HƯỞNG (AFFECTED GROUPS - Màu Tím)
         if (cluster.affected_groups && (Array.isArray(cluster.affected_groups) ? cluster.affected_groups.length > 0 : true)) {
             bodyHtml += `
@@ -473,7 +477,7 @@ function openModal(cluster) {
                 </ul>
             </div>`;
         }
-
+ 
         // 5. TÁC ĐỘNG THỊ TRƯỜNG (MARKET IMPACT - Màu Xanh lá)
         if (cluster.market_impact && (Array.isArray(cluster.market_impact) ? cluster.market_impact.length > 0 : true)) {
             bodyHtml += `
@@ -486,7 +490,7 @@ function openModal(cluster) {
                 </ul>
             </div>`;
         }
-
+ 
         // 6. INSIGHT: ĐIỀU CẦN THEO DÕI TIẾP THEO
         if (cluster.follow_up) {
             bodyHtml += `
@@ -497,7 +501,7 @@ function openModal(cluster) {
                 <p style="font-weight: 500; font-size: 14px; margin-top: 8px; margin-bottom: 0; line-height: 1.6;">${cluster.follow_up}</p>
             </div>`;
         }
-
+ 
         const modalBody = document.getElementById('modal-body');
         if (modalBody) modalBody.innerHTML = bodyHtml;
         
@@ -517,7 +521,7 @@ function openModal(cluster) {
                 });
             }
         }
-
+ 
         const toggleIcon = document.getElementById('toggle-sources-icon');
         if (toggleIcon) toggleIcon.textContent = 'visibility';
         
@@ -531,8 +535,81 @@ function openModal(cluster) {
         } else {
             console.error("Không tìm thấy ID 'intelligence-modal' trong giao diện.");
         }
-
+ 
     } catch (error) {
         console.error("Đã xảy ra lỗi khi render Modal:", error);
     }
+}
+
+// ==========================================
+// THÊM MỚI: HÀM RENDER TRANG TIMELINE 
+// ==========================================
+function renderTimelinePage(newsData) {
+    const container = document.getElementById('timeline-page-container');
+    if (!container) return;
+
+    // Lọc: Chỉ lấy những sự kiện có diễn biến liên tục (timeline có nhiều hơn 1 mốc)
+    // Hoặc những sự kiện cực kỳ nóng (hot_score > 30)
+    const ongoingEvents = newsData.filter(topic => 
+        (topic.timeline && topic.timeline.length > 1) || (topic.hot_score && topic.hot_score > 30)
+    );
+
+    // Sắp xếp các sự kiện có cập nhật mới nhất lên đầu
+    ongoingEvents.sort((a, b) => b.timestamp - a.timestamp);
+
+    if (ongoingEvents.length === 0) {
+        container.innerHTML = '<p style="padding: 20px; opacity: 0.7;">Chưa có chuỗi sự kiện nào đủ dài để hiển thị.</p>';
+        return;
+    }
+
+    let html = '';
+    ongoingEvents.forEach(topic => {
+        let timelineNodes = '';
+        
+        if (topic.timeline && topic.timeline.length > 0) {
+            topic.timeline.forEach((item, index) => {
+                // Sửa lỗi hiển thị thời gian 1970
+                let safeTimestamp = item.timestamp;
+                if (typeof safeTimestamp === 'number' && safeTimestamp < 10000000000) safeTimestamp *= 1000;
+                
+                const timeObj = new Date(safeTimestamp || Date.now());
+                const timeStr = `${timeObj.getHours().toString().padStart(2,'0')}:${timeObj.getMinutes().toString().padStart(2,'0')} - ${timeObj.toLocaleDateString('vi-VN')}`;
+                
+                timelineNodes += `
+                    <div style="display: flex; gap: 16px; margin-bottom: 16px; position: relative;">
+                        <!-- Đường kẻ dọc nối các mốc -->
+                        ${index !== topic.timeline.length - 1 ? '<div style="position: absolute; left: 5px; top: 20px; bottom: -20px; width: 2px; background: var(--md-sys-color-outline);"></div>' : ''}
+                        
+                        <!-- Dấu chấm tròn -->
+                        <div style="width: 12px; height: 12px; border-radius: 50%; background: var(--md-sys-color-primary); margin-top: 5px; position: relative; z-index: 2; flex-shrink: 0;"></div>
+                        
+                        <!-- Nội dung mốc thời gian -->
+                        <div>
+                            <div style="font-size: 12px; color: var(--md-sys-color-primary); font-weight: bold; margin-bottom: 4px;">${timeStr}</div>
+                            <div style="font-size: 14px; line-height: 1.5;">
+                                <a href="${item.url}" target="_blank" style="color: var(--md-sys-color-on-surface); text-decoration: none; transition: 0.2s;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='var(--md-sys-color-on-surface)'">${item.title}</a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        html += `
+            <div class="widget" style="margin-bottom: 24px; border-left: 4px solid var(--md-sys-color-primary);">
+                <div class="news-meta" style="margin-bottom: 12px;">
+                    <span class="news-tag" style="background: rgba(16, 185, 129, 0.1); color: #10b981;">Đang tiếp diễn</span>
+                    <span style="font-size: 12px; opacity: 0.7;">Độ nóng: ${topic.hot_score || 10}</span>
+                </div>
+                <h3 style="margin-bottom: 12px; font-size: 18px; line-height: 1.4;">${topic.title || topic.cluster_title}</h3>
+                <p style="font-size: 14px; opacity: 0.7; margin-bottom: 20px; line-height: 1.6;">${topic.short_summary}</p>
+                
+                <div style="background: rgba(0,0,0,0.1); padding: 16px; border-radius: 8px; border: 1px solid var(--md-sys-color-outline);">
+                    ${timelineNodes}
+                </div>
+            </div>
+        `;
+    });
+    
+    container.innerHTML = html;
 }
