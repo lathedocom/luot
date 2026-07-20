@@ -271,8 +271,6 @@ async function fetchNewsData() {
         renderMarket(data.market_data || []);
         renderSocial(data.social || []); 
         
-        // Đã thêm: Gọi hàm render trang Timeline
-        renderTimelinePage(globalNewsData);
  
     } catch (error) {
         document.getElementById('news-container').innerHTML = `<div class="news-card"><p>Lỗi kết nối. Không thể tải dữ liệu Intelligence.</p></div>`;
