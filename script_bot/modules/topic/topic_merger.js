@@ -7,9 +7,10 @@ const { addEventToTimeline } = require('./timeline_manager');
  */
 function mergeIntoExistingTopic(existingTopic, newArticles, newActionTitle) {
     let updatedTopic = { ...existingTopic };
-
+// ĐÃ THÊM: Lấy thời gian đăng bài gốc của bài báo mới nhất (publish_time)
+    const latestArticleTime = Math.max(...newArticles.map(a => a.publish_time || Date.now()));
     // 1. Cập nhật thời gian mới nhất cho Cụm
-    updatedTopic.timestamp = Date.now();
+    updatedTopic.timestamp = latestArticleTime;
 
     // 2. Gộp thêm nguồn bài báo mới (Tránh trùng lặp URL)
     const existingUrls = new Set(updatedTopic.sources.map(s => s.url));
@@ -32,7 +33,7 @@ function mergeIntoExistingTopic(existingTopic, newArticles, newActionTitle) {
         updatedTopic = addEventToTimeline(
             updatedTopic, 
             newActionTitle || newArticles[0].title, 
-            Date.now(), 
+            latestArticleTime,
             newArticles[0].url
         );
     }
