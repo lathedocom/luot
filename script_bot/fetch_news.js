@@ -5,6 +5,7 @@ const path = require('path');
 const PIPELINE_STATUS_FILE = path.join(__dirname, '../pipeline_status.json');
 
 // IMPORT CÁC MODULE XỬ LÝ LÕI
+const { processTopicIntoStory } = require('./modules/story/story_engine');
 const { fetchAndNormalizeNews } = require('./modules/1_crawler');
 const { extractCategories } = require('./modules/rule_engine/category');
 const { extractRegions } = require('./modules/rule_engine/region');
@@ -108,19 +109,24 @@ eventBus.on('CLUSTER_CREATED', async (clusters) => {
                 continue;
             }
             
-            // Các trường hợp còn lại: CREATE_NEW, VERIFY_BY_AI, LIGHT_UPDATE
-            logger.info(`[${action}] Đang gọi AI Gateway phân tích cụm sự kiện...`);
+            // Động cơ Similarity (Chỉ dùng để loại bỏ rác trùng lặp chính xác 100%)
+            const { action, bestMatch } = evaluateClusterAction(cluster.main_vector, state.currentTopics);
+            
+            if (action === 'SKIP') {
+                logger.info(`[SKIP] Bỏ qua cụm tin trùng lặp cao: ${cluster.articles[0].title}`);
+                continue;
+            }
+            
+            logger.info(`Đang gọi AI phân tích Topic mới...`);
             const aiIntelligence = await analyzeClusterMultiDimensional(cluster, eventKey);
             
+            // Tạo đối tượng Topic (Chỉ chứa dữ liệu tĩnh của thời điểm này, KHÔNG có mảng timeline)
             const newTopic = {
                 event_key: eventKey,
                 topic_key: generateTopicKey(eventKey, 'intelligence'),
                 title: aiIntelligence.cluster_title,
                 timestamp: cluster.timestamp || Date.now(),
-                importance: cluster.articles[0].importance,
-                hot_score: cluster.article_count * 10,
-                categories: cluster.articles[0].categories,
-                regions: cluster.articles[0].regions,
+                vector: cluster.main_vector, // Quan trọng: Phải truyền vector đi để Story Engine tính toán
                 short_summary: aiIntelligence.short_summary,
                 detailed_summary: aiIntelligence.detailed_summary,
                 causes: aiIntelligence.causes,
@@ -128,14 +134,14 @@ eventBus.on('CLUSTER_CREATED', async (clusters) => {
                 affected_groups: aiIntelligence.affected_groups,
                 market_impact: aiIntelligence.market_impact,
                 follow_up: aiIntelligence.follow_up,
-                entities: entities,
-                graph: ruleGraph,
-                sources: cluster.articles.map(a => ({ url: a.url, source_name: a.source_name, source_logo: a.source_logo })),
-                timeline: [{ title: aiIntelligence.cluster_title, timestamp: cluster.timestamp || Date.now(), url: cluster.articles[0].url }]
+                sources: cluster.articles.map(a => ({ url: a.url, source_name: a.source_name, source_logo: a.source_logo }))
             };
             
             state.currentTopics.push(newTopic);
             state.newTopicsCount++;
+
+            // [MỚI] Chuyển Topic mới sinh sang Story Engine để xếp vào dòng chảy
+            await processTopicIntoStory(newTopic);
         }
         
         eventBus.emit('TOPIC_UPDATED', state.currentTopics);
