@@ -2,21 +2,21 @@
   "last_reset": "2026-07-20",
   "usage": {
     "text-embedding-004": {
-      "rpd": 6,
-      "rpm": 6,
+      "rpd": 7,
+      "rpm": 7,
       "promptTokens": 21645,
       "completionTokens": 0,
       "cost": 0,
       "successCount": 5,
-      "failCount": 1
+      "failCount": 2
     },
     "gemini-3.1-flash-lite": {
-      "rpd": 28,
-      "rpm": 28,
-      "promptTokens": 11886,
-      "completionTokens": 11767,
+      "rpd": 30,
+      "rpm": 30,
+      "promptTokens": 12413,
+      "completionTokens": 12449,
       "cost": 0,
-      "successCount": 28,
+      "successCount": 30,
       "failCount": 0
     },
     "undefined": {
@@ -72,6 +72,15 @@
       "cost": 0,
       "successCount": 0,
       "failCount": 2
+    },
+    "gemma-4-26b-a4b-it": {
+      "rpd": 2,
+      "rpm": 2,
+      "promptTokens": 517,
+      "completionTokens": 180,
+      "cost": 0,
+      "successCount": 2,
+      "failCount": 0
     }
   }
 }

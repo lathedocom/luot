@@ -1,8 +1,8 @@
 {
   "status": {
     "success": true,
-    "duration_ms": 186635,
-    "last_run": "2026-07-20T18:30:38.407Z"
+    "duration_ms": 169323,
+    "last_run": "2026-07-20T19:08:46.086Z"
   },
   "metrics": {
     "articles_processed": 424,
@@ -14,57 +14,57 @@
   },
   "errors": [
     {
-      "time": "[18:29:51]",
+      "time": "[19:08:19]",
       "message": "[Gateway] Batch Embedding thất bại: HTTP Lỗi 404: {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"models/text-embedding-004 is not found for API version v1beta, or is not supported for embedContent. Call ModelService.ListModels to see the list of available models and their supported methods.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n",
       "detail": ""
     },
     {
-      "time": "[18:30:15]",
+      "time": "[19:08:31]",
       "message": "[Story Engine] Lỗi AI Verifier: Task 'MATCH_TIMELINE' chưa được khai báo trong config/tasks.js. Chuyển sang lưu dự phòng.",
       "detail": ""
     },
     {
-      "time": "[18:30:26]",
+      "time": "[19:08:31]",
       "message": "[Story Engine] Lỗi AI Verifier: Task 'MATCH_TIMELINE' chưa được khai báo trong config/tasks.js. Chuyển sang lưu dự phòng.",
       "detail": ""
     },
     {
-      "time": "[18:30:37]",
+      "time": "[19:08:38]",
       "message": "[Story Engine] Lỗi AI Verifier: Task 'MATCH_TIMELINE' chưa được khai báo trong config/tasks.js. Chuyển sang lưu dự phòng.",
       "detail": ""
     },
     {
-      "time": "[18:30:38]",
+      "time": "[19:08:45]",
       "message": "[Story Engine] Lỗi AI Verifier: Task 'MATCH_TIMELINE' chưa được khai báo trong config/tasks.js. Chuyển sang lưu dự phòng.",
       "detail": ""
     },
     {
-      "time": "[18:30:38]",
+      "time": "[19:08:45]",
       "message": "[Story Engine] Lỗi AI Verifier: Task 'MATCH_TIMELINE' chưa được khai báo trong config/tasks.js. Chuyển sang lưu dự phòng.",
       "detail": ""
     },
     {
-      "time": "[18:30:38]",
+      "time": "[19:08:45]",
       "message": "[Story Engine] Lỗi AI Verifier: Task 'MATCH_TIMELINE' chưa được khai báo trong config/tasks.js. Chuyển sang lưu dự phòng.",
       "detail": ""
     },
     {
-      "time": "[18:30:38]",
+      "time": "[19:08:45]",
       "message": "[Story Engine] Lỗi AI Verifier: Task 'MATCH_TIMELINE' chưa được khai báo trong config/tasks.js. Chuyển sang lưu dự phòng.",
       "detail": ""
     },
     {
-      "time": "[18:30:38]",
+      "time": "[19:08:45]",
       "message": "[Story Engine] Lỗi AI Verifier: Task 'MATCH_TIMELINE' chưa được khai báo trong config/tasks.js. Chuyển sang lưu dự phòng.",
       "detail": ""
     },
     {
-      "time": "[18:30:38]",
+      "time": "[19:08:45]",
       "message": "[Story Engine] Lỗi AI Verifier: Task 'MATCH_TIMELINE' chưa được khai báo trong config/tasks.js. Chuyển sang lưu dự phòng.",
       "detail": ""
     },
     {
-      "time": "[18:30:38]",
+      "time": "[19:08:45]",
       "message": "[Story Engine] Lỗi AI Verifier: Task 'MATCH_TIMELINE' chưa được khai báo trong config/tasks.js. Chuyển sang lưu dự phòng.",
       "detail": ""
     }

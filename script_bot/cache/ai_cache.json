@@ -997,5 +997,58 @@
       ],
       "importance": 90
     }
+  },
+  "evt_general_1784574511707": {
+    "created_at": 1784574513755,
+    "expires_at": 2099934513755,
+    "version": "4.5",
+    "checksum": "42802d20a69795bb36250e284575bdda",
+    "data": {
+      "cluster_title": "Hacking Hugging Face",
+      "short_summary": "Hugging Face bị hack bởi một hệ thống AI tự động, ảnh hưởng đến dữ liệu và tài khoản nội bộ.",
+      "detailed_summary": "Hugging Face, the world's leading open-source AI platform, suffered a security breach where attackers utilized an autonomous AI agent to infiltrate their production infrastructure. This incident resulted in the unauthorized access of internal datasets and stored user credentials. The company has responded by initiating incident recovery protocols and mandating that users perform security hygiene tasks, specifically rotating access tokens and auditing account activity, to mitigate potential downstream damage.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "Heightened concerns regarding the security of AI supply chains, the dual-use risks of autonomous AI agents in cyber-offense, and potential erosion of user trust in major AI model repositories.",
+      "follow_up": "Hugging Face is actively managing the incident, urging users to rotate tokens, review logs, and likely enhancing their perimeter security and monitoring against automated threat vectors.",
+      "entities": [
+        "Hugging Face",
+        "AI"
+      ],
+      "keywords": [
+        "Hugging Face",
+        "AI",
+        "Breach"
+      ],
+      "importance": 90
+    }
+  },
+  "evt_acb51a58": {
+    "created_at": 1784574520633,
+    "expires_at": 2099934520633,
+    "version": "4.5",
+    "checksum": "b993c6f3707e347c4ddb4140a0cf6d83",
+    "data": {
+      "cluster_title": "Sự kiện thị trường",
+      "short_summary": "Sự kiện thị trường bị ảnh hưởng bởi rủi ro Iran và sự phục hồi của công nghệ",
+      "detailed_summary": "Financial markets are currently caught between a technical rebound in the technology and chip sectors and the suppressive weight of geopolitical risk stemming from US-Iran relations. While the Nasdaq and S&P 500 managed to tick higher, the overall market trajectory remains unstable due to oil price volatility and investor caution ahead of critical corporate earnings reports.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "S&P 500 and Nasdaq experienced modest gains supported by chip stocks, but broader market momentum is hindered by uncertainty regarding Middle East instability and upcoming megacap earnings reports.",
+      "follow_up": "Monitoring of Middle East diplomatic developments, fluctuation in oil futures, and upcoming quarterly earnings releases from major technology corporations.",
+      "entities": [
+        "Iran",
+        "S&P 500",
+        "Nasdaq"
+      ],
+      "keywords": [
+        "thị trường",
+        "Iran",
+        "công nghệ"
+      ],
+      "importance": 80
+    }
   }
 }
