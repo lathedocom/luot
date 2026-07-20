@@ -7,6 +7,1375 @@
   },
   "news": [
     {
+      "event_key": "evt_732fae18",
+      "topic_key": "evt_732fae18_intelligence_2026",
+      "title": "Leo thang căng thẳng quân sự giữa Mỹ và Iran tại Trung Đông",
+      "timestamp": 1784544051261,
+      "importance": 50,
+      "hot_score": 30,
+      "categories": [
+        "uncategorized"
+      ],
+      "regions": [
+        "global"
+      ],
+      "short_summary": "Loạt vụ tấn công của Iran khiến quân nhân Mỹ tử vong tại Jordan và Iraq, thúc đẩy Mỹ đáp trả bằng các cuộc không kích mạnh mẽ, gây lo ngại về xung đột lan rộng.",
+      "detailed_summary": "Tình hình khu vực Trung Đông trở nên cực kỳ nguy cấp khi các cuộc tấn công nhắm vào căn cứ Mỹ tại Jordan và Iraq làm thiệt mạng binh lính Mỹ, buộc Washington phải triển khai chiến dịch trả đũa quân sự. Phản ứng từ phía Iran lan rộng đến Syria và các vùng biển chiến lược. Sự kiện này cho thấy sự đứt gãy trong các nỗ lực kiềm chế, đẩy Mỹ và Iran vào thế đối đầu trực diện, gia tăng rủi ro về một cuộc chiến tranh toàn diện ảnh hưởng đến an ninh toàn cầu.",
+      "causes": [
+        "Sự thù địch kéo dài giữa Mỹ và Iran",
+        "Sự hiện diện quân sự của Mỹ tại Iraq và Jordan",
+        "Các cuộc tấn công ủy nhiệm do Iran hậu thuẫn nhắm vào mục tiêu Mỹ"
+      ],
+      "effects": [
+        "Quân nhân Mỹ tử vong và bị thương",
+        "Mỹ thực hiện các cuộc không kích đáp trả",
+        "Bất ổn an ninh tại Syria, Jordan và Iraq",
+        "Báo cáo về các vụ nổ tàu tại eo biển Hormuz"
+      ],
+      "affected_groups": [
+        "Quân đội Mỹ tại Trung Đông",
+        "Chính phủ Iran",
+        "Các quốc gia vùng Vịnh",
+        "Ngành vận tải biển quốc tế"
+      ],
+      "market_impact": "Giá dầu thô dự kiến biến động mạnh do lo ngại gián đoạn nguồn cung tại eo biển Hormuz; thị trường tài chính có thể chuyển dịch sang các tài sản trú ẩn an toàn như vàng và USD.",
+      "follow_up": "Theo dõi phản ứng của Iran sau các đợt không kích trả đũa của Mỹ và các thông báo mới về an ninh hàng hải tại eo biển Hormuz.",
+      "entities": [
+        "Jordan",
+        "Iran",
+        "Iraq",
+        "Syria",
+        "Strait of Hormuz"
+      ],
+      "graph": {
+        "nodes": [
+          {
+            "id": "Jordan",
+            "label": "Jordan"
+          },
+          {
+            "id": "Iran",
+            "label": "Iran"
+          },
+          {
+            "id": "Iraq",
+            "label": "Iraq"
+          },
+          {
+            "id": "Syria",
+            "label": "Syria"
+          },
+          {
+            "id": "Strait of Hormuz",
+            "label": "Strait of Hormuz"
+          }
+        ],
+        "edges": [
+          {
+            "source": "Jordan",
+            "target": "Iran",
+            "weight": 1
+          },
+          {
+            "source": "Jordan",
+            "target": "Iraq",
+            "weight": 1
+          },
+          {
+            "source": "Jordan",
+            "target": "Syria",
+            "weight": 1
+          },
+          {
+            "source": "Jordan",
+            "target": "Strait of Hormuz",
+            "weight": 1
+          }
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.taipeitimes.com/News/front/archives/2026/07/20/2003861039",
+          "source_name": "Taipei Times",
+          "source_logo": "https://www.taipeitimes.com/favicon.ico"
+        },
+        {
+          "url": "https://www.bbc.co.uk/news/articles/cgk417jp83po?at_medium=RSS&at_campaign=rss",
+          "source_name": "BBC News",
+          "source_logo": "https://www.bbc.co.uk/favicon.ico"
+        },
+        {
+          "url": "https://www.bbc.co.uk/news/articles/cly52xzjd3qo?at_medium=RSS&at_campaign=rss",
+          "source_name": "BBC News",
+          "source_logo": "https://www.bbc.co.uk/favicon.ico"
+        }
+      ],
+      "timeline": [
+        {
+          "title": "Leo thang căng thẳng quân sự giữa Mỹ và Iran tại Trung Đông",
+          "timestamp": null,
+          "url": "https://www.taipeitimes.com/News/front/archives/2026/07/20/2003861039"
+        }
+      ]
+    },
+    {
+      "event_key": "evt_38492165",
+      "topic_key": "evt_38492165_intelligence_2026",
+      "title": "Bất ổn chính trị tại Ấn Độ do bê bối lộ đề thi cử",
+      "timestamp": 1784544045017,
+      "importance": 50,
+      "hot_score": 30,
+      "categories": [
+        "uncategorized"
+      ],
+      "regions": [
+        "global"
+      ],
+      "short_summary": "Hàng chục ngàn người biểu tình tại Ấn Độ đụng độ cảnh sát khi phản đối vụ bê bối lộ đề thi y khoa quốc gia, gây áp lực lớn lên chính quyền Thủ tướng Modi.",
+      "detailed_summary": "Làn sóng biểu tình bùng phát sau khi kỳ thi tuyển sinh y khoa lớn nhất Ấn Độ bị rò rỉ đề, buộc hàng triệu thí sinh phải thi lại. Sự kiện nhanh chóng leo thang thành phong trào chính trị quy mô lớn, với sự tham gia của các đảng đối lập như CJP. Việc cảnh sát sử dụng hơi cay và dùi cui trấn áp người biểu tình gần tòa nhà Quốc hội đã làm gia tăng căng thẳng, đánh dấu thách thức công chúng nghiêm trọng nhất đối với chính quyền Thủ tướng Narendra Modi trong nhiệm kỳ thứ ba.",
+      "causes": [
+        "Rò rỉ đề thi tuyển sinh y khoa quy mô quốc gia",
+        "Sự bất mãn tích tụ đối với chính sách điều hành",
+        "Sự tham gia dẫn dắt của các lực lượng đối lập"
+      ],
+      "effects": [
+        "Xung đột bạo lực giữa người biểu tình và cảnh sát",
+        "Gia tăng bất ổn xã hội tại thủ đô",
+        "Áp lực chính trị lên Chính phủ Ấn Độ"
+      ],
+      "affected_groups": [
+        "Hàng triệu thí sinh y khoa",
+        "Hệ thống giáo dục quốc gia",
+        "Chính phủ của Thủ tướng Narendra Modi"
+      ],
+      "market_impact": "Sự bất ổn chính trị có thể làm giảm niềm tin của nhà đầu tư, gây biến động ngắn hạn đối với thị trường chứng khoán Ấn Độ và tâm lý e ngại rủi ro trong lĩnh vực giáo dục tư nhân.",
+      "follow_up": "Cần theo dõi sát phản ứng của Chính phủ Modi về các cải cách kỳ thi và khả năng phong trào biểu tình lan rộng sang các lĩnh vực khác.",
+      "entities": [
+        "Indias",
+        "Indian",
+        "PM Modis government"
+      ],
+      "graph": {
+        "nodes": [
+          {
+            "id": "Indias",
+            "label": "Indias"
+          },
+          {
+            "id": "Indian",
+            "label": "Indian"
+          },
+          {
+            "id": "PM Modis government",
+            "label": "PM Modis government"
+          }
+        ],
+        "edges": [
+          {
+            "source": "Indias",
+            "target": "Indian",
+            "weight": 1
+          },
+          {
+            "source": "Indias",
+            "target": "PM Modis government",
+            "weight": 1
+          }
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.channelnewsasia.com/asia/india-cockroach-janta-party-protest-education-minister-resign-6264606",
+          "source_name": "CNA",
+          "source_logo": "https://www.channelnewsasia.com/favicon.ico"
+        },
+        {
+          "url": "https://www.nytimes.com/2026/07/20/world/asia/india-protest-cjp-cockroach-jantar-mantar.html",
+          "source_name": "New York Times",
+          "source_logo": "https://www.nytimes.com/favicon.ico"
+        },
+        {
+          "url": "https://www.aljazeera.com/news/2026/7/20/police-attack-cockroach-activists-as-thousands-march-on-indian-parliament?traffic_source=rss",
+          "source_name": "Al Jazeera",
+          "source_logo": "https://www.aljazeera.com/favicon_aje.ico"
+        }
+      ],
+      "timeline": [
+        {
+          "title": "Bất ổn chính trị tại Ấn Độ do bê bối lộ đề thi cử",
+          "timestamp": null,
+          "url": "https://www.channelnewsasia.com/asia/india-cockroach-janta-party-protest-education-minister-resign-6264606"
+        }
+      ]
+    },
+    {
+      "event_key": "evt_b7737ff1",
+      "topic_key": "evt_b7737ff1_intelligence_2026",
+      "title": "Thủ tướng Hungary đề cử huyền thoại cờ vua Judit Polgár làm Tổng thống",
+      "timestamp": 1784544038888,
+      "importance": 30,
+      "hot_score": 30,
+      "categories": [
+        "politics"
+      ],
+      "regions": [
+        "vietnam"
+      ],
+      "short_summary": "Thủ tướng Hungary Peter Magyar dự kiến gặp gỡ đại kiện tướng cờ vua Judit Polgár để thuyết phục bà đảm nhiệm cương vị Tổng thống lâm thời sau khi quốc hội bãi miễn tổng thống đương nhiệm.",
+      "detailed_summary": "Sự kiện diễn ra trong bối cảnh chính trị Hungary biến động sau khi các nhà lập pháp thông qua sửa đổi hiến pháp nhằm cách chức tổng thống hiện tại. Thủ tướng Peter Magyar đã công khai ý định mời Judit Polgár, một biểu tượng trí tuệ quốc tế, vào vị trí đứng đầu nhà nước để tạo sự ổn định tạm thời cho đến khi hiến pháp mới được thông qua. Động thái này cho thấy nỗ lực của chính quyền trong việc tìm kiếm các nhân vật phi chính trị có uy tín để xoa dịu dư luận.",
+      "causes": [
+        "Việc bãi miễn tổng thống đương nhiệm bởi quốc hội Hungary",
+        "Nhu cầu cấp thiết tìm kiếm nhân vật trung lập, uy tín để ổn định chính trị",
+        "Sự cần thiết của một vị thế đại diện quốc gia trong thời gian chờ hiến pháp mới"
+      ],
+      "effects": [
+        "Tạo làn sóng dư luận tích cực về sự chuyển dịch sang nhân sự phi chính trị",
+        "Gây áp lực lên quyết định cá nhân của Judit Polgár",
+        "Thay đổi cấu trúc quản trị nhà nước tạm thời tại Hungary"
+      ],
+      "affected_groups": [
+        "Cộng đồng chính trị Hungary",
+        "Cộng đồng trí thức quốc tế",
+        "Thị trường tài chính khu vực Trung Âu"
+      ],
+      "market_impact": "Thông tin mang tính chính trị nội bộ có thể gây biến động nhẹ cho đồng Forint (HUF) và tâm lý nhà đầu tư chứng khoán Hungary do lo ngại về sự ổn định quyền lực ngắn hạn.",
+      "follow_up": "Theo dõi phản hồi chính thức từ Judit Polgár sau cuộc gặp với Thủ tướng vào thứ Hai tới.",
+      "entities": [
+        "Peter Magyar",
+        "Péter Magyar",
+        "Hungary",
+        "Hungarys",
+        "Facebook"
+      ],
+      "graph": {
+        "nodes": [
+          {
+            "id": "Peter Magyar",
+            "label": "Peter Magyar"
+          },
+          {
+            "id": "Péter Magyar",
+            "label": "Péter Magyar"
+          },
+          {
+            "id": "Hungary",
+            "label": "Hungary"
+          },
+          {
+            "id": "Hungarys",
+            "label": "Hungarys"
+          },
+          {
+            "id": "Facebook",
+            "label": "Facebook"
+          }
+        ],
+        "edges": [
+          {
+            "source": "Peter Magyar",
+            "target": "Péter Magyar",
+            "weight": 1
+          },
+          {
+            "source": "Peter Magyar",
+            "target": "Hungary",
+            "weight": 1
+          },
+          {
+            "source": "Peter Magyar",
+            "target": "Hungarys",
+            "weight": 1
+          },
+          {
+            "source": "Peter Magyar",
+            "target": "Facebook",
+            "weight": 1
+          }
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://tuoitre.vn/huyen-thoai-co-vua-judit-polgar-duoc-de-cu-lam-tong-thong-hungary-100260720113733071.htm",
+          "source_name": "Tuổi Trẻ",
+          "source_logo": "https://tuoitre.vn/favicon.ico"
+        },
+        {
+          "url": "https://www.france24.com/en/europe/20260720-hungary-pm-magyar-proposes-chess-grandmaster-judit-polgar-for-president",
+          "source_name": "France24",
+          "source_logo": "https://www.france24.com/favicon.ico"
+        },
+        {
+          "url": "http://www.euronews.com/my-europe/2026/07/20/hungarys-pm-peter-magyar-it-would-be-great-honour-if-judit-polgar-accepted-the-presidency",
+          "source_name": "Euronews",
+          "source_logo": "https://www.euronews.com/favicon.ico"
+        }
+      ],
+      "timeline": [
+        {
+          "title": "Thủ tướng Hungary đề cử huyền thoại cờ vua Judit Polgár làm Tổng thống",
+          "timestamp": null,
+          "url": "https://tuoitre.vn/huyen-thoai-co-vua-judit-polgar-duoc-de-cu-lam-tong-thong-hungary-100260720113733071.htm"
+        }
+      ]
+    },
+    {
+      "event_key": "evt_edd748d3",
+      "topic_key": "evt_edd748d3_intelligence_2026",
+      "title": "Căng thẳng ngoại giao giữa Israel và giới chức chính trị New York",
+      "timestamp": 1784544033064,
+      "importance": 40,
+      "hot_score": 30,
+      "categories": [
+        "politics"
+      ],
+      "regions": [
+        "vietnam",
+        "usa"
+      ],
+      "short_summary": "Thủ tướng Israel Benjamin Netanyahu đáp trả gay gắt tuyên bố của nghị sĩ/thị trưởng Zohran Mamdani về việc bắt giữ ông nếu đến New York vào tháng 9, coi đây là chiêu bài chính trị nhằm đánh lạc hướng dư luận.",
+      "detailed_summary": "Sự việc nổ ra khi Zohran Mamdani đe dọa thực thi lệnh bắt giữ ông Netanyahu, một động thái thách thức ngoại giao chưa từng có đối với một nhà lãnh đạo nước ngoài. Văn phòng Thủ tướng Israel lập tức phản bác, cáo buộc Mamdani lợi dụng các vấn đề chính sách đối ngoại để che đậy các thất bại trong quản trị địa phương tại New York. Căng thẳng này phản ánh sự phân cực sâu sắc trong dư luận Mỹ về cuộc xung đột tại Trung Đông và các quy chuẩn miễn trừ ngoại giao.",
+      "causes": [
+        "Sự phản đối gay gắt của giới chính trị cánh tả tại Mỹ đối với chính sách quân sự của Israel",
+        "Sự bất ổn trong quản trị đô thị tại New York thúc đẩy các hành động gây chú ý của giới chính trị",
+        "Sự khác biệt trong việc giải thích luật pháp quốc tế và quyền miễn trừ ngoại giao"
+      ],
+      "effects": [
+        "Gia tăng rạn nứt trong quan hệ ngoại giao giữa Israel và giới chức địa phương Mỹ",
+        "Tạo tiền lệ tranh cãi pháp lý về quyền bắt giữ các nhà lãnh đạo quốc tế trên đất Mỹ",
+        "Gây sức ép lên các chính trị gia Mỹ trong việc thể hiện lập trường đối với Israel"
+      ],
+      "affected_groups": [
+        "Chính phủ Israel",
+        "Chính quyền thành phố New York",
+        "Cộng đồng Do Thái tại Mỹ",
+        "Các tổ chức hoạt động vì quyền lợi người Palestine"
+      ],
+      "market_impact": "Chưa có tác động trực tiếp đến thị trường tài chính toàn cầu. Tuy nhiên, căng thẳng ngoại giao kéo dài có thể gây tâm lý bất ổn trong các lĩnh vực có liên quan đến hợp tác quốc phòng và an ninh.",
+      "follow_up": "Theo dõi khả năng thực tế của các động thái pháp lý và các phản ứng từ Bộ Ngoại giao Mỹ để làm rõ tính khả thi của việc bắt giữ.",
+      "entities": [
+        "Benjamin",
+        "Israel",
+        "New York",
+        "Jewish state",
+        "Netanyahus office"
+      ],
+      "graph": {
+        "nodes": [
+          {
+            "id": "Benjamin",
+            "label": "Benjamin"
+          },
+          {
+            "id": "Israel",
+            "label": "Israel"
+          },
+          {
+            "id": "New York",
+            "label": "New York"
+          },
+          {
+            "id": "Jewish state",
+            "label": "Jewish state"
+          },
+          {
+            "id": "Netanyahus office",
+            "label": "Netanyahus office"
+          }
+        ],
+        "edges": [
+          {
+            "source": "Benjamin",
+            "target": "Israel",
+            "weight": 1
+          },
+          {
+            "source": "Benjamin",
+            "target": "New York",
+            "weight": 1
+          },
+          {
+            "source": "Benjamin",
+            "target": "Jewish state",
+            "weight": 1
+          },
+          {
+            "source": "Benjamin",
+            "target": "Netanyahus office",
+            "weight": 1
+          }
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://vnexpress.net/thu-tuong-israel-dap-tra-loi-de-doa-bat-giu-tu-thi-truong-new-york-5099348.html",
+          "source_name": "VnExpress",
+          "source_logo": "https://vnexpress.net/favicon.ico"
+        },
+        {
+          "url": "https://tuoitre.vn/tuyen-bo-xem-xet-bat-ong-netanyahu-thi-truong-new-york-bi-israel-chi-trich-gay-gat-100260720131531347.htm",
+          "source_name": "Tuổi Trẻ",
+          "source_logo": "https://tuoitre.vn/favicon.ico"
+        },
+        {
+          "url": "https://www.foxnews.com/world/netanyahu-fires-back-nyc-mayor-mamdani-vow-enforce-bogus-arrest-warrant",
+          "source_name": "Fox News",
+          "source_logo": "https://www.foxnews.com/favicon.ico"
+        }
+      ],
+      "timeline": [
+        {
+          "title": "Căng thẳng ngoại giao giữa Israel và giới chức chính trị New York",
+          "timestamp": null,
+          "url": "https://vnexpress.net/thu-tuong-israel-dap-tra-loi-de-doa-bat-giu-tu-thi-truong-new-york-5099348.html"
+        }
+      ]
+    },
+    {
+      "event_key": "evt_a223aafc",
+      "topic_key": "evt_a223aafc_intelligence_2026",
+      "title": "Nga và Ukraine đẩy mạnh tấn công tên lửa quy mô lớn vào lãnh thổ đối phương",
+      "timestamp": 1784544026879,
+      "importance": 50,
+      "hot_score": 40,
+      "categories": [
+        "tech"
+      ],
+      "regions": [
+        "global"
+      ],
+      "short_summary": "Nga triển khai đợt tấn công tên lửa đạn đạo lớn nhất từ đầu chiến sự vào các thành phố Ukraine, trong khi Kyiv đáp trả bằng các đợt tập kích cơ sở hạ tầng tại Nga, gây thương vong nghiêm trọng cho cả hai bên.",
+      "detailed_summary": "Chiến sự leo thang khi Nga sử dụng số lượng kỷ lục tên lửa đạn đạo tấn công vào Kyiv và nhiều thành phố khác, gây hỏa hoạn và thương vong lớn. Hành động này được cho là bước tăng cường quân sự quyết liệt của Moscow trong những tuần gần đây. Ngược lại, phía Ukraine đã thực hiện đòn tấn công vào các kho bãi tại Nga, khiến ít nhất 8 người thiệt mạng và hàng chục người bị thương. Diễn biến này đánh dấu giai đoạn đối đầu trực tiếp khốc liệt, nhắm thẳng vào hạ tầng trọng yếu.",
+      "causes": [
+        "Chiến thuật leo thang quân sự từ phía Nga nhằm gây sức ép tối đa",
+        "Chiến dịch phản công và đáp trả của Ukraine vào cơ sở hạ tầng nội địa Nga",
+        "Sự gia tăng sử dụng kho vũ khí đạn đạo trong chiến lược hiện tại"
+      ],
+      "effects": [
+        "Thương vong lớn cho dân thường và binh lính ở cả hai bên",
+        "Hạ tầng dân sự và kho vận tại các thành phố bị hư hại nghiêm trọng",
+        "Gia tăng tâm lý bất ổn tại khu vực xung đột"
+      ],
+      "affected_groups": [
+        "Dân cư tại Kyiv và các thành phố mục tiêu",
+        "Công nhân và nhân sự quản lý cơ sở hạ tầng kho vận",
+        "Lực lượng phòng vệ và cứu hộ khẩn cấp"
+      ],
+      "market_impact": "Sự leo thang có thể đẩy giá năng lượng và dầu thô toàn cầu biến động, đồng thời gây gián đoạn chuỗi cung ứng logistics khu vực Đông Âu, tạo áp lực lên tâm lý nhà đầu tư tài chính.",
+      "follow_up": "Theo dõi phản ứng đáp trả tiếp theo của Nga và khả năng thay đổi trong chính sách phòng không của Ukraine.",
+      "entities": [
+        "Russia",
+        "Kyiv",
+        "Russias",
+        "Ukraine",
+        "Ukrainian capital"
+      ],
+      "graph": {
+        "nodes": [
+          {
+            "id": "Russia",
+            "label": "Russia"
+          },
+          {
+            "id": "Kyiv",
+            "label": "Kyiv"
+          },
+          {
+            "id": "Russias",
+            "label": "Russias"
+          },
+          {
+            "id": "Ukraine",
+            "label": "Ukraine"
+          },
+          {
+            "id": "Ukrainian capital",
+            "label": "Ukrainian capital"
+          }
+        ],
+        "edges": [
+          {
+            "source": "Russia",
+            "target": "Kyiv",
+            "weight": 1
+          },
+          {
+            "source": "Russia",
+            "target": "Russias",
+            "weight": 1
+          },
+          {
+            "source": "Russia",
+            "target": "Ukraine",
+            "weight": 1
+          },
+          {
+            "source": "Russia",
+            "target": "Ukrainian capital",
+            "weight": 1
+          }
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.bbc.co.uk/news/articles/c2el7xpnzrpo?at_medium=RSS&at_campaign=rss",
+          "source_name": "BBC News",
+          "source_logo": "https://www.bbc.co.uk/favicon.ico"
+        },
+        {
+          "url": "https://www.dw.com/en/russia-s-largest-ballistic-assault-of-war-rocks-kyiv/a-78022851?maca=en-rss-en-world-4025-rdf",
+          "source_name": "DW",
+          "source_logo": "https://www.dw.com/favicon.ico"
+        },
+        {
+          "url": "https://www.themoscowtimes.com/2026/07/19/russia-hits-ukraine-with-largest-number-of-ballistic-missiles-kyiv-says-a93281",
+          "source_name": "The Moscow Times",
+          "source_logo": "https://www.themoscowtimes.com/favicon.ico"
+        },
+        {
+          "url": "https://www.nytimes.com/2026/07/19/world/europe/russia-ukraine-strikes.html",
+          "source_name": "New York Times",
+          "source_logo": "https://www.nytimes.com/favicon.ico"
+        }
+      ],
+      "timeline": [
+        {
+          "title": "Nga và Ukraine đẩy mạnh tấn công tên lửa quy mô lớn vào lãnh thổ đối phương",
+          "timestamp": null,
+          "url": "https://www.bbc.co.uk/news/articles/c2el7xpnzrpo?at_medium=RSS&at_campaign=rss"
+        }
+      ]
+    },
+    {
+      "event_key": "evt_50c94ec0",
+      "topic_key": "evt_50c94ec0_intelligence_2026",
+      "title": "Căng thẳng leo thang tại Biển Đông sau vụ va chạm Philippines - Trung Quốc",
+      "timestamp": 1784544020825,
+      "importance": 50,
+      "hot_score": 40,
+      "categories": [
+        "tech"
+      ],
+      "regions": [
+        "global"
+      ],
+      "short_summary": "Quân đội Philippines cáo buộc Lực lượng Hải cảnh Trung Quốc tấn công bằng gậy gỗ, khiến một thủy thủ hải quân nước này bị thương tại khu vực Bãi Cỏ Mây (Ayungin Shoal) trên Biển Đông.",
+      "detailed_summary": "Sự kiện xảy ra khi tàu Hải cảnh Trung Quốc ngăn cản hoạt động tiếp tế của Philippines tại Bãi Cỏ Mây. Phía Manila tố cáo hành vi sử dụng vũ lực thô bạo, bao gồm việc dùng gậy gỗ đánh vào đầu thủy thủ, gây thương tích nghiêm trọng. Đây là diễn biến mới nhất trong chuỗi các vụ chạm trán leo thang tại khu vực tranh chấp, làm gia tăng lo ngại về nguy cơ xung đột vũ trang trực tiếp giữa hai quốc gia trong bối cảnh tranh chấp chủ quyền phức tạp.",
+      "causes": [
+        "Tranh chấp chủ quyền kéo dài tại Bãi Cỏ Mây (Ayungin Shoal)",
+        "Chính sách thực thi quyền kiểm soát quyết liệt của Trung Quốc trên Biển Đông",
+        "Hoạt động tiếp tế định kỳ của Philippines bị phía Trung Quốc ngăn cản trái phép"
+      ],
+      "effects": [
+        "Một quân nhân Philippines bị thương",
+        "Gia tăng căng thẳng ngoại giao và quân sự giữa Manila và Bắc Kinh",
+        "Rủi ro đụng độ quân sự ngoài ý muốn tăng cao"
+      ],
+      "affected_groups": [
+        "Quân đội Philippines (AFP)",
+        "Hải cảnh Trung Quốc (CCG)",
+        "Cư dân và ngư dân hoạt động tại Biển Đông",
+        "Các nước trong khu vực Đông Nam Á"
+      ],
+      "market_impact": "Sự kiện tạo rủi ro địa chính trị tiềm tàng, có thể gây biến động tỷ giá đồng Peso Philippines và gây áp lực lên tâm lý nhà đầu tư tại khu vực châu Á.",
+      "follow_up": "Theo dõi phản ứng ngoại giao chính thức từ Manila và các động thái điều chuyển lực lượng quân sự của hai bên tại khu vực tranh chấp.",
+      "entities": [
+        "China",
+        "Chinese coast",
+        "South China",
+        "MANILA",
+        "China Coast Guard",
+        "Ayungin Shoal ",
+        "Ayungin",
+        "Thomas Shoal",
+        "Philippine military",
+        "CCG"
+      ],
+      "graph": {
+        "nodes": [
+          {
+            "id": "China",
+            "label": "China"
+          },
+          {
+            "id": "Chinese coast",
+            "label": "Chinese coast"
+          },
+          {
+            "id": "South China",
+            "label": "South China"
+          },
+          {
+            "id": "MANILA",
+            "label": "MANILA"
+          },
+          {
+            "id": "China Coast Guard",
+            "label": "China Coast Guard"
+          },
+          {
+            "id": "Ayungin Shoal ",
+            "label": "Ayungin Shoal "
+          },
+          {
+            "id": "Ayungin",
+            "label": "Ayungin"
+          },
+          {
+            "id": "Thomas Shoal",
+            "label": "Thomas Shoal"
+          },
+          {
+            "id": "Philippine military",
+            "label": "Philippine military"
+          },
+          {
+            "id": "CCG",
+            "label": "CCG"
+          }
+        ],
+        "edges": [
+          {
+            "source": "China",
+            "target": "Chinese coast",
+            "weight": 1
+          },
+          {
+            "source": "China",
+            "target": "South China",
+            "weight": 1
+          },
+          {
+            "source": "China",
+            "target": "MANILA",
+            "weight": 1
+          },
+          {
+            "source": "China",
+            "target": "China Coast Guard",
+            "weight": 1
+          },
+          {
+            "source": "China",
+            "target": "Ayungin Shoal ",
+            "weight": 1
+          },
+          {
+            "source": "China",
+            "target": "Ayungin",
+            "weight": 1
+          },
+          {
+            "source": "China",
+            "target": "Thomas Shoal",
+            "weight": 1
+          },
+          {
+            "source": "China",
+            "target": "Philippine military",
+            "weight": 1
+          },
+          {
+            "source": "China",
+            "target": "CCG",
+            "weight": 1
+          }
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.channelnewsasia.com/asia/philippines-sailor-injured-china-south-china-sea-spratly-clash-6265481",
+          "source_name": "CNA",
+          "source_logo": "https://www.channelnewsasia.com/favicon.ico"
+        },
+        {
+          "url": "https://www.straitstimes.com/asia/se-asia/philippine-military-says-china-injured-sailor-in-sea-clash",
+          "source_name": "The Straits Times",
+          "source_logo": "https://www.straitstimes.com/favicon.ico"
+        },
+        {
+          "url": "https://www.straitstimes.com/asia/chinese-coast-guard-struck-navy-sailor-in-south-china-sea-encounter-says-philippine-military",
+          "source_name": "The Straits Times",
+          "source_logo": "https://www.straitstimes.com/favicon.ico"
+        },
+        {
+          "url": "https://cebudailynews.inquirer.net/749289/china-coast-guard-assaults-ph-navy-personnel-at-ayungin-shoal-afp",
+          "source_name": "Philippine Daily Inquirer",
+          "source_logo": "https://www.inquirer.net/favicon.ico"
+        }
+      ],
+      "timeline": [
+        {
+          "title": "Căng thẳng leo thang tại Biển Đông sau vụ va chạm Philippines - Trung Quốc",
+          "timestamp": null,
+          "url": "https://www.channelnewsasia.com/asia/philippines-sailor-injured-china-south-china-sea-spratly-clash-6265481"
+        }
+      ]
+    },
+    {
+      "event_key": "evt_b347053b",
+      "topic_key": "evt_b347053b_intelligence_2026",
+      "title": "Chiến sự Nga-Ukraine leo thang với các cuộc tập kích quy mô lớn",
+      "timestamp": 1784544014717,
+      "importance": 60,
+      "hot_score": 40,
+      "categories": [
+        "tech",
+        "world"
+      ],
+      "regions": [
+        "global"
+      ],
+      "short_summary": "Ukraine triển khai loạt drone tấn công Matxcơva nhắm vào hạ tầng logistics và kho bãi, trong khi Nga đáp trả bằng các vụ tập kích tên lửa đạn đạo vào cảng Odesa, gây thương vong đáng kể cho cả hai phía.",
+      "detailed_summary": "Xung đột Nga-Ukraine chuyển sang giai đoạn căng thẳng mới với chiến thuật sử dụng drone quy mô lớn từ Ukraine nhằm vào các mục tiêu kinh tế như kho hàng Wildberries và cơ sở lọc dầu tại vùng Matxcơva. Đáp lại, Nga gia tăng sử dụng tên lửa đạn đạo tập kích cảng Odesa, gây thiệt hại nhân mạng và hạ tầng nghiêm trọng. Chuỗi hành động ăn miếng trả miếng này cho thấy sự mở rộng mục tiêu sang hạ tầng kinh tế trọng yếu, làm suy yếu chuỗi cung ứng và leo thang nguy cơ an ninh khu vực.",
+      "causes": [
+        "Sự leo thang trong chiến thuật tấn công tầm xa bằng drone của Ukraine",
+        "Nỗ lực của Nga nhằm phá hủy hạ tầng cảng biển và hậu cần của Ukraine",
+        "Chiến lược nhắm vào các mục tiêu kinh tế cốt lõi để làm suy yếu khả năng duy trì chiến tranh"
+      ],
+      "effects": [
+        "Thiệt hại về cơ sở vật chất kho bãi và lọc dầu tại Nga",
+        "Thương vong dân thường tại cảng Odesa và vùng ngoại ô Matxcơva",
+        "Gián đoạn chuỗi cung ứng hàng hóa và hoạt động logisitics"
+      ],
+      "affected_groups": [
+        "Ngành bán lẻ trực tuyến (Wildberries)",
+        "Ngành dầu khí Nga",
+        "Cư dân vùng chiến sự",
+        "Hệ thống logistics vận tải biển"
+      ],
+      "market_impact": "Gây áp lực tăng giá dầu thô cục bộ do lo ngại về an ninh nguồn cung tại các cơ sở lọc dầu Nga và rủi ro gián đoạn xuất khẩu nông sản từ cảng Odesa.",
+      "follow_up": "Theo dõi khả năng đáp trả bằng vũ khí hạng nặng của Nga và phản ứng của phương Tây trước việc mở rộng mục tiêu vào cơ sở hạ tầng kinh tế.",
+      "entities": [
+        "hơn",
+        "President Volodymyr Zelensky",
+        "Ukraine",
+        "Moscow region",
+        "Moscow region Monday",
+        "Moscow",
+        "Russia",
+        "Ukraines",
+        "Kyiv",
+        "Warehouse Workers"
+      ],
+      "graph": {
+        "nodes": [
+          {
+            "id": "hơn",
+            "label": "hơn"
+          },
+          {
+            "id": "President Volodymyr Zelensky",
+            "label": "President Volodymyr Zelensky"
+          },
+          {
+            "id": "Ukraine",
+            "label": "Ukraine"
+          },
+          {
+            "id": "Moscow region",
+            "label": "Moscow region"
+          },
+          {
+            "id": "Moscow region Monday",
+            "label": "Moscow region Monday"
+          },
+          {
+            "id": "Moscow",
+            "label": "Moscow"
+          },
+          {
+            "id": "Russia",
+            "label": "Russia"
+          },
+          {
+            "id": "Ukraines",
+            "label": "Ukraines"
+          },
+          {
+            "id": "Kyiv",
+            "label": "Kyiv"
+          },
+          {
+            "id": "Warehouse Workers",
+            "label": "Warehouse Workers"
+          }
+        ],
+        "edges": [
+          {
+            "source": "hơn",
+            "target": "President Volodymyr Zelensky",
+            "weight": 1
+          },
+          {
+            "source": "hơn",
+            "target": "Ukraine",
+            "weight": 1
+          },
+          {
+            "source": "hơn",
+            "target": "Moscow region",
+            "weight": 1
+          },
+          {
+            "source": "hơn",
+            "target": "Moscow region Monday",
+            "weight": 1
+          },
+          {
+            "source": "hơn",
+            "target": "Moscow",
+            "weight": 1
+          },
+          {
+            "source": "hơn",
+            "target": "Russia",
+            "weight": 1
+          },
+          {
+            "source": "hơn",
+            "target": "Ukraines",
+            "weight": 1
+          },
+          {
+            "source": "hơn",
+            "target": "Kyiv",
+            "weight": 1
+          },
+          {
+            "source": "hơn",
+            "target": "Warehouse Workers",
+            "weight": 1
+          }
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://tuoitre.vn/ukraine-doi-hon-400-drone-vao-matxcova-nga-tap-kich-cang-odesa-khien-10-nguoi-chet-100260720134644232.htm",
+          "source_name": "Tuổi Trẻ",
+          "source_logo": "https://tuoitre.vn/favicon.ico"
+        },
+        {
+          "url": "https://www.france24.com/en/europe/20260720-ukraine-drone-attack-on-moscow-region-wounds-10-people",
+          "source_name": "France24",
+          "source_logo": "https://www.france24.com/favicon.ico"
+        },
+        {
+          "url": "http://www.euronews.com/2026/07/20/ukraine-fires-400-drones-at-moscow-as-russia-steps-up-ballistic-missile-attacks",
+          "source_name": "Euronews",
+          "source_logo": "https://www.euronews.com/favicon.ico"
+        },
+        {
+          "url": "https://www.themoscowtimes.com/2026/07/18/ukrainian-drone-attacks-kill-7-warehouse-workers-in-russia-a93280",
+          "source_name": "The Moscow Times",
+          "source_logo": "https://www.themoscowtimes.com/favicon.ico"
+        }
+      ],
+      "timeline": [
+        {
+          "title": "Chiến sự Nga-Ukraine leo thang với các cuộc tập kích quy mô lớn",
+          "timestamp": null,
+          "url": "https://tuoitre.vn/ukraine-doi-hon-400-drone-vao-matxcova-nga-tap-kich-cang-odesa-khien-10-nguoi-chet-100260720134644232.htm"
+        }
+      ]
+    },
+    {
+      "event_key": "evt_5fcc87ce",
+      "topic_key": "evt_5fcc87ce_intelligence_2026",
+      "title": "Argentina thất bại tại chung kết World Cup: Kỷ nguyên Lionel Messi khép lại",
+      "timestamp": 1784544008486,
+      "importance": 50,
+      "hot_score": 50,
+      "categories": [
+        "tech"
+      ],
+      "regions": [
+        "global"
+      ],
+      "short_summary": "Argentina để thua Tây Ban Nha trong trận chung kết World Cup, chấm dứt hy vọng vô địch của Lionel Messi. Sự kiện đánh dấu sự kết thúc của một thế hệ vàng và gây xúc động mạnh mẽ tại quốc gia Nam Mỹ.",
+      "detailed_summary": "Argentina thất bại trước Tây Ban Nha trong trận chung kết World Cup, khiến giấc mơ giành cúp vàng của Lionel Messi tan thành mây khói. Truyền thông và người hâm mộ cả nước bày tỏ sự tiếc nuối sâu sắc trước màn trình diễn này, đồng thời tôn vinh những cống hiến của Messi và huấn luyện viên Scaloni. Sự kiện không chỉ là một trận thua đơn thuần mà còn báo hiệu thời kỳ chuyển giao khó khăn cho bóng đá Argentina khi cả đội trưởng lẫn huấn luyện viên đều đối mặt với tương lai bất định.",
+      "causes": [
+        "Sức mạnh vượt trội từ đội tuyển Tây Ban Nha trong trận chung kết",
+        "Áp lực kỳ vọng quá lớn đối với cá nhân Lionel Messi",
+        "Sự suy giảm phong độ tự nhiên do yếu tố tuổi tác của dàn cầu thủ chủ chốt"
+      ],
+      "effects": [
+        "Sự tiếc nuối và hoài niệm bao trùm cộng đồng người hâm mộ bóng đá",
+        "Sự bất định về tương lai của đội ngũ ban huấn luyện và các ngôi sao trụ cột",
+        "Làn sóng tri ân sự nghiệp quốc tế của Lionel Messi trên toàn quốc"
+      ],
+      "affected_groups": [
+        "Người hâm mộ bóng đá Argentina",
+        "Liên đoàn bóng đá Argentina",
+        "Các nhà tài trợ thể thao liên quan đến Messi",
+        "Ngành truyền thông thể thao"
+      ],
+      "market_impact": "Sự thất bại có thể gây áp lực giảm nhẹ lên giá trị thương mại của các nhãn hàng gắn liền với hình ảnh Messi và giảm nhu cầu tiêu dùng các sản phẩm lưu niệm thể thao tại Argentina.",
+      "follow_up": "Theo dõi sát thông báo chính thức về quyết định giải nghệ của Lionel Messi và tương lai của huấn luyện viên Lionel Scaloni.",
+      "entities": [
+        "Messi",
+        "Lionel Messi",
+        "Lionel Scaloni",
+        "Messis",
+        "Spain",
+        "Argentinas",
+        "Argentina",
+        "Qatar"
+      ],
+      "graph": {
+        "nodes": [
+          {
+            "id": "Messi",
+            "label": "Messi"
+          },
+          {
+            "id": "Lionel Messi",
+            "label": "Lionel Messi"
+          },
+          {
+            "id": "Lionel Scaloni",
+            "label": "Lionel Scaloni"
+          },
+          {
+            "id": "Messis",
+            "label": "Messis"
+          },
+          {
+            "id": "Spain",
+            "label": "Spain"
+          },
+          {
+            "id": "Argentinas",
+            "label": "Argentinas"
+          },
+          {
+            "id": "Argentina",
+            "label": "Argentina"
+          },
+          {
+            "id": "Qatar",
+            "label": "Qatar"
+          }
+        ],
+        "edges": [
+          {
+            "source": "Messi",
+            "target": "Lionel Messi",
+            "weight": 1
+          },
+          {
+            "source": "Messi",
+            "target": "Lionel Scaloni",
+            "weight": 1
+          },
+          {
+            "source": "Messi",
+            "target": "Messis",
+            "weight": 1
+          },
+          {
+            "source": "Messi",
+            "target": "Spain",
+            "weight": 1
+          },
+          {
+            "source": "Messi",
+            "target": "Argentinas",
+            "weight": 1
+          },
+          {
+            "source": "Messi",
+            "target": "Argentina",
+            "weight": 1
+          },
+          {
+            "source": "Messi",
+            "target": "Qatar",
+            "weight": 1
+          }
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.batimes.com.ar/news/sports/the-last-of-messi-argentines-mourn-world-cup-final-loss-and-end-of-an-era.phtml",
+          "source_name": "Buenos Aires Times",
+          "source_logo": "https://www.batimes.com.ar/favicon.ico"
+        },
+        {
+          "url": "https://www.batimes.com.ar/news/sports/argentines-flood-onto-streets-to-salute-team-despite-world-cup-final-defeat.phtml",
+          "source_name": "Buenos Aires Times",
+          "source_logo": "https://www.batimes.com.ar/favicon.ico"
+        },
+        {
+          "url": "https://www.batimes.com.ar/news/sports/argentinas-press-laments-albiceleste-defeat-hails-end-of-an-era.phtml",
+          "source_name": "Buenos Aires Times",
+          "source_logo": "https://www.batimes.com.ar/favicon.ico"
+        },
+        {
+          "url": "https://www.batimes.com.ar/news/sports/messi-denied-dream-farewell-as-argentina-disappoint-in-world-cup-final.phtml",
+          "source_name": "Buenos Aires Times",
+          "source_logo": "https://www.batimes.com.ar/favicon.ico"
+        },
+        {
+          "url": "https://www.batimes.com.ar/news/sports/scaloni-on-final-defeat-spain-deserved-to-win-world-cup.phtml",
+          "source_name": "Buenos Aires Times",
+          "source_logo": "https://www.batimes.com.ar/favicon.ico"
+        }
+      ],
+      "timeline": [
+        {
+          "title": "Argentina thất bại tại chung kết World Cup: Kỷ nguyên Lionel Messi khép lại",
+          "timestamp": null,
+          "url": "https://www.batimes.com.ar/news/sports/the-last-of-messi-argentines-mourn-world-cup-final-loss-and-end-of-an-era.phtml"
+        }
+      ]
+    },
+    {
+      "event_key": "evt_be7a8cef",
+      "topic_key": "evt_be7a8cef_intelligence_2026",
+      "title": "Andy Burnham chính thức trở thành Thủ tướng Anh kế nhiệm Keir Starmer",
+      "timestamp": 1784544002296,
+      "importance": 50,
+      "hot_score": 50,
+      "categories": [
+        "tech"
+      ],
+      "regions": [
+        "global"
+      ],
+      "short_summary": "Andy Burnham sẽ nhậm chức Thủ tướng Anh vào ngày 20/7 sau khi ông Keir Starmer từ chức, với cam kết ưu tiên giải quyết khủng hoảng chi phí sinh hoạt và các vấn đề nội bộ cấp bách của đất nước.",
+      "detailed_summary": "Sự kiện chuyển giao quyền lực diễn ra trong bối cảnh chính trị Anh đầy biến động với việc Andy Burnham trở thành vị Thủ tướng thứ bảy trong một thập kỷ. Sau khi ông Keir Starmer từ chức, Burnham tiếp quản quyền lực với áp lực lớn từ danh sách dài các thách thức quốc gia. Trong bài phát biểu đầu tiên tại 10 Downing Street, ông dự kiến tập trung vào cải thiện mức sống và các ưu tiên nội địa nhằm lấy lại niềm tin công chúng trước những khó khăn kinh tế hiện hữu.",
+      "causes": [
+        "Sự từ chức của đương kim Thủ tướng Keir Starmer sau hai năm cầm quyền",
+        "Kết quả vận động chính trị thành công của lãnh đạo Công đảng Andy Burnham",
+        "Áp lực từ cuộc khủng hoảng chi phí sinh hoạt kéo dài tại Anh"
+      ],
+      "effects": [
+        "Sự thay đổi thượng tầng lãnh đạo chính phủ Anh",
+        "Điều chỉnh ưu tiên chính sách từ đối ngoại sang giải quyết khủng hoảng nội địa",
+        "Tạo ra kỳ vọng mới về sự cải thiện mức sống cho người dân Anh"
+      ],
+      "affected_groups": [
+        "Công dân Anh chịu ảnh hưởng bởi chi phí sinh hoạt",
+        "Các doanh nghiệp nội địa Anh",
+        "Giới đầu tư tài chính và thị trường chứng khoán Anh"
+      ],
+      "market_impact": "Thị trường tài chính có thể biến động ngắn hạn do phản ứng với chính sách mới của chính phủ Burnham, đặc biệt là các quyết định về thuế, lãi suất và kiểm soát lạm phát ảnh hưởng trực tiếp đến bảng Anh.",
+      "follow_up": "Theo dõi sát sao bài phát biểu chính sách đầu tiên của Andy Burnham vào ngày 20/7 để đánh giá các biện pháp cụ thể cho nền kinh tế.",
+      "entities": [
+        "Andy Burnham",
+        "Keir Starmer",
+        "King Charles",
+        "Andy",
+        "Awaiting Andy Burnham When",
+        "Keir Starmer",
+        "UKs",
+        "10 Downing Street",
+        "Buckingham Palace",
+        "United Kingdoms"
+      ],
+      "graph": {
+        "nodes": [
+          {
+            "id": "Andy Burnham",
+            "label": "Andy Burnham"
+          },
+          {
+            "id": "Keir Starmer",
+            "label": "Keir Starmer"
+          },
+          {
+            "id": "King Charles",
+            "label": "King Charles"
+          },
+          {
+            "id": "Andy",
+            "label": "Andy"
+          },
+          {
+            "id": "Awaiting Andy Burnham When",
+            "label": "Awaiting Andy Burnham When"
+          },
+          {
+            "id": "Keir Starmer",
+            "label": "Keir Starmer"
+          },
+          {
+            "id": "UKs",
+            "label": "UKs"
+          },
+          {
+            "id": "10 Downing Street",
+            "label": "10 Downing Street"
+          },
+          {
+            "id": "Buckingham Palace",
+            "label": "Buckingham Palace"
+          },
+          {
+            "id": "United Kingdoms",
+            "label": "United Kingdoms"
+          }
+        ],
+        "edges": [
+          {
+            "source": "Andy Burnham",
+            "target": "Keir Starmer",
+            "weight": 1
+          },
+          {
+            "source": "Andy Burnham",
+            "target": "King Charles",
+            "weight": 1
+          },
+          {
+            "source": "Andy Burnham",
+            "target": "Andy",
+            "weight": 1
+          },
+          {
+            "source": "Andy Burnham",
+            "target": "Awaiting Andy Burnham When",
+            "weight": 1
+          },
+          {
+            "source": "Andy Burnham",
+            "target": "Keir Starmer",
+            "weight": 1
+          },
+          {
+            "source": "Andy Burnham",
+            "target": "UKs",
+            "weight": 1
+          },
+          {
+            "source": "Andy Burnham",
+            "target": "10 Downing Street",
+            "weight": 1
+          },
+          {
+            "source": "Andy Burnham",
+            "target": "Buckingham Palace",
+            "weight": 1
+          },
+          {
+            "source": "Andy Burnham",
+            "target": "United Kingdoms",
+            "weight": 1
+          }
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.france24.com/en/andy-burnham-expected-to-focus-on-uk-s-cost-of-living-in-first-speech",
+          "source_name": "France24",
+          "source_logo": "https://www.france24.com/favicon.ico"
+        },
+        {
+          "url": "https://www.france24.com/en/uk-prepares-to-get-its-seventh-prime-minister-in-a-decade",
+          "source_name": "France24",
+          "source_logo": "https://www.france24.com/favicon.ico"
+        },
+        {
+          "url": "https://www.france24.com/en/tv-shows/business/20260720-andy-burnham-s-promise-to-deliver-tangible-improvements-to-britons-lives-put-to-the-test",
+          "source_name": "France24",
+          "source_logo": "https://www.france24.com/favicon.ico"
+        },
+        {
+          "url": "https://www.nytimes.com/2026/07/20/world/europe/britain-new-prime-minister-challenges.html",
+          "source_name": "New York Times",
+          "source_logo": "https://www.nytimes.com/favicon.ico"
+        },
+        {
+          "url": "https://www.aljazeera.com/news/liveblog/2026/7/20/live-andy-burnham-to-become-uk-pm-deliver-first-speech-at-10-downing?traffic_source=rss",
+          "source_name": "Al Jazeera",
+          "source_logo": "https://www.aljazeera.com/favicon_aje.ico"
+        }
+      ],
+      "timeline": [
+        {
+          "title": "Andy Burnham chính thức trở thành Thủ tướng Anh kế nhiệm Keir Starmer",
+          "timestamp": null,
+          "url": "https://www.france24.com/en/andy-burnham-expected-to-focus-on-uk-s-cost-of-living-in-first-speech"
+        }
+      ]
+    },
+    {
+      "event_key": "evt_7defe57d",
+      "topic_key": "evt_7defe57d_intelligence_2026",
+      "title": "Tây Ban Nha vô địch World Cup 2026 sau chiến thắng nghẹt thở trước Argentina",
+      "timestamp": 1784543996179,
+      "importance": 50,
+      "hot_score": 60,
+      "categories": [
+        "tech"
+      ],
+      "regions": [
+        "global"
+      ],
+      "short_summary": "Tây Ban Nha giành chức vô địch World Cup lần thứ hai lịch sử sau khi đánh bại Argentina 1-0 nhờ bàn thắng ở phút 106 của Ferran Torres trong hiệp phụ tại sân vận động MetLife, New Jersey.",
+      "detailed_summary": "Trong trận chung kết World Cup 2026, Tây Ban Nha đã thể hiện sự vượt trội về kiểm soát bóng và chiến thuật trước Argentina. Trận đấu diễn ra căng thẳng và kéo dài đến hiệp phụ do sự kiên cường của Argentina, dù họ phải chơi thiếu người. Bước ngoặt xảy ra ở phút 106 khi Ferran Torres ghi bàn thắng duy nhất từ đường chuyền của Pedro Porro, chính thức đưa Tây Ban Nha lên ngôi vương. Thất bại này là cú sốc lớn đối với Lionel Messi và tham vọng giành cúp vàng của đội tuyển Argentina.",
+      "causes": [
+        "Sự vượt trội về mặt chiến thuật và khả năng kiểm soát thế trận của đội tuyển Tây Ban Nha",
+        "Pha kiến tạo chuẩn xác của Pedro Porro cho Ferran Torres dứt điểm thành công ở phút 106",
+        "Lợi thế về quân số khi Argentina phải thi đấu với 10 người trong trận chung kết"
+      ],
+      "effects": [
+        "Tây Ban Nha giành chức vô địch World Cup lần thứ hai trong lịch sử",
+        "Argentina thất bại trong việc chinh phục cúp vàng, để lại sự nuối tiếc cho Lionel Messi",
+        "Tây Ban Nha thâu tóm nhiều giải thưởng cá nhân danh giá của giải đấu"
+      ],
+      "affected_groups": [
+        "Liên đoàn bóng đá Tây Ban Nha (RFEF)",
+        "Liên đoàn bóng đá Argentina (AFA)",
+        "Người hâm mộ bóng đá toàn cầu",
+        "Ngành công nghiệp thể thao và du lịch tại khu vực Bắc Mỹ"
+      ],
+      "market_impact": "Sự kiện thúc đẩy doanh thu từ bản quyền truyền hình, du lịch tại Bắc Mỹ và tăng giá trị thương hiệu cá nhân cũng như các hợp đồng quảng cáo liên quan đến cầu thủ Tây Ban Nha.",
+      "follow_up": "Theo dõi các phản ứng chính thức từ truyền thông Argentina và kế hoạch vinh danh đội tuyển Tây Ban Nha tại quê nhà.",
+      "entities": [
+        "Messis",
+        "Ferran Torres",
+        "Ferran Torres",
+        "Lionel Messi",
+        "Pedro Porro",
+        "Spain",
+        "Argentina",
+        "Spains",
+        "Argentinas",
+        "Barcelona"
+      ],
+      "graph": {
+        "nodes": [
+          {
+            "id": "Messis",
+            "label": "Messis"
+          },
+          {
+            "id": "Ferran Torres",
+            "label": "Ferran Torres"
+          },
+          {
+            "id": "Ferran Torres",
+            "label": "Ferran Torres"
+          },
+          {
+            "id": "Lionel Messi",
+            "label": "Lionel Messi"
+          },
+          {
+            "id": "Pedro Porro",
+            "label": "Pedro Porro"
+          },
+          {
+            "id": "Spain",
+            "label": "Spain"
+          },
+          {
+            "id": "Argentina",
+            "label": "Argentina"
+          },
+          {
+            "id": "Spains",
+            "label": "Spains"
+          },
+          {
+            "id": "Argentinas",
+            "label": "Argentinas"
+          },
+          {
+            "id": "Barcelona",
+            "label": "Barcelona"
+          }
+        ],
+        "edges": [
+          {
+            "source": "Messis",
+            "target": "Ferran Torres",
+            "weight": 1
+          },
+          {
+            "source": "Messis",
+            "target": "Ferran Torres",
+            "weight": 1
+          },
+          {
+            "source": "Messis",
+            "target": "Lionel Messi",
+            "weight": 1
+          },
+          {
+            "source": "Messis",
+            "target": "Pedro Porro",
+            "weight": 1
+          },
+          {
+            "source": "Messis",
+            "target": "Spain",
+            "weight": 1
+          },
+          {
+            "source": "Messis",
+            "target": "Argentina",
+            "weight": 1
+          },
+          {
+            "source": "Messis",
+            "target": "Spains",
+            "weight": 1
+          },
+          {
+            "source": "Messis",
+            "target": "Argentinas",
+            "weight": 1
+          },
+          {
+            "source": "Messis",
+            "target": "Barcelona",
+            "weight": 1
+          }
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.ft.com/content/9f8b8f8d-cc2e-45a3-b4fb-3f57fb415c16?syn-25a6b1a6=1",
+          "source_name": "Financial Times",
+          "source_logo": "https://www.ft.com/favicon.ico"
+        },
+        {
+          "url": "https://www.bangkokpost.com/sports/3288700/spain-silences-argentina-to-win-world-cup-crown",
+          "source_name": "Bangkok Post",
+          "source_logo": "https://www.bangkokpost.com/favicon.ico"
+        },
+        {
+          "url": "https://www.france24.com/en/the-winners-are-those-that-played-football-spanish-fans-celebrate-world-cup-win",
+          "source_name": "France24",
+          "source_logo": "https://www.france24.com/favicon.ico"
+        },
+        {
+          "url": "https://www.batimes.com.ar/news/sports/spain-shatters-argentinas-dream-with-1-0-win-in-world-cup-final.phtml",
+          "source_name": "Buenos Aires Times",
+          "source_logo": "https://www.batimes.com.ar/favicon.ico"
+        },
+        {
+          "url": "https://en.mercopress.com/2026/07/20/spain-crowned-world-champions-with-1-0-extra-time-win-over-argentina-in-the-final?utm_source=feed&utm_medium=rss&utm_content=main&utm_campaign=rss",
+          "source_name": "MercoPress",
+          "source_logo": "https://en.mercopress.com/favicon.ico"
+        },
+        {
+          "url": "https://www.aljazeera.com/video/2026/7/20/video-world-cup-2026-highlights?traffic_source=rss",
+          "source_name": "Al Jazeera",
+          "source_logo": "https://www.aljazeera.com/favicon_aje.ico"
+        }
+      ],
+      "timeline": [
+        {
+          "title": "Tây Ban Nha vô địch World Cup 2026 sau chiến thắng nghẹt thở trước Argentina",
+          "timestamp": null,
+          "url": "https://www.ft.com/content/9f8b8f8d-cc2e-45a3-b4fb-3f57fb415c16?syn-25a6b1a6=1"
+        }
+      ]
+    },
+    {
       "event_key": "evt_2b5b3db9",
       "topic_key": "evt_2b5b3db9_intelligence_2026",
       "title": "Bộ trưởng Singapore từ chức do bê bối quan hệ cá nhân",
@@ -39348,10 +40717,10 @@
     {
       "symbol": "BTC",
       "name": "Bitcoin",
-      "price": "64157.99",
-      "change_percent": "-0.62%",
+      "price": "NaN",
+      "change_percent": "NaN%",
       "trend": "↓",
-      "updated_at": 1784539328349
+      "updated_at": 1784544051361
     },
     {
       "symbol": "GOLD",
@@ -39359,7 +40728,7 @@
       "price": "2350.50",
       "change_percent": "+0.5%",
       "trend": "↑",
-      "updated_at": 1784539327773
+      "updated_at": 1784544051264
     },
     {
       "symbol": "USD/VND",
@@ -39367,7 +40736,7 @@
       "price": "25450",
       "change_percent": "-0.1%",
       "trend": "↓",
-      "updated_at": 1784539327773
+      "updated_at": 1784544051264
     },
     {
       "symbol": "VNINDEX",
@@ -39375,7 +40744,7 @@
       "price": "1280.15",
       "change_percent": "+1.2%",
       "trend": "↑",
-      "updated_at": 1784539327773
+      "updated_at": 1784544051264
     }
   ],
   "social_trends": [
@@ -39385,13 +40754,13 @@
       "content": "Tin nóng: Cập nhật tình hình kinh tế vĩ mô quý 3",
       "url": "https://youtube.com",
       "trend_icon": "📈",
-      "time": 1784539327773
+      "time": 1784544051264
     }
   ],
   "daily_briefing": "<h3>Bức tranh Toàn cảnh 24h</h3><p>Hệ thống AI đang được nâng cấp, bản tin thực tế sẽ xuất hiện tại đây sau khi hoàn tất Giai đoạn 3 (AI Gateway).</p>",
   "statistics": {
-    "total_topics": 567,
-    "total_articles": 184
+    "total_topics": 577,
+    "total_articles": 424
   },
-  "generated_at": 1784539328367
+  "generated_at": 1784544051380
 }
