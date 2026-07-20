@@ -416,7 +416,7 @@ function openModal(cluster) {
         </div>`;
     }
 
-    // 3. NHÓM BỊ ẢNH HƯỞNG (AFFECTED GROUPS - Thêm mới)
+    // 3. NHÓM BỊ ẢNH HƯỞNG (AFFECTED GROUPS - Màu Tím)
     if (cluster.affected_groups && cluster.affected_groups.length > 0) {
         bodyHtml += `
         <div class="intelligence-box" style="margin-top: 16px; background: rgba(139, 92, 246, 0.05); border-left: 4px solid #8b5cf6; padding: 12px; border-radius: 4px;">
@@ -429,7 +429,7 @@ function openModal(cluster) {
         </div>`;
     }
 
-    // 4. TÁC ĐỘNG THỊ TRƯỜNG (MARKET IMPACT - Thêm mới)
+    // 4. TÁC ĐỘNG THỊ TRƯỜNG (MARKET IMPACT - Màu Xanh lá)
     if (cluster.market_impact && cluster.market_impact.length > 0) {
         bodyHtml += `
         <div class="intelligence-box" style="margin-top: 16px; background: rgba(16, 185, 129, 0.05); border-left: 4px solid #10b981; padding: 12px; border-radius: 4px;">
