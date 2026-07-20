@@ -53,19 +53,30 @@ class AIGateway {
                 const latency = Date.now() - startTime;
                 logger.warn(`[Gateway] Task ${taskName} (Model: ${targetModel}) bị lỗi: ${error.message}`);
                 
-                if (targetModel === configModels.LAYER1_MODEL_PRIMARY) {
-                    logger.warn(`[Gateway] Chuyển Fallback sang ${configModels.LAYER1_MODEL_FALLBACK} cho tác vụ nhẹ...`);
-                    targetModel = configModels.LAYER1_MODEL_FALLBACK;
-                } else if (targetModel === configModels.LAYER2_MODEL_PRIMARY) {
-                    logger.warn(`[Gateway] Chuyển Fallback sang ${configModels.LAYER2_MODEL_FALLBACK} cho tác vụ sâu...`);
-                    targetModel = configModels.LAYER2_MODEL_FALLBACK;
-                } else if ((error.message === "RATE_LIMIT" || error.message.includes('429')) && this.providers.googleBackup && targetProvider === 'google') {
-                     logger.warn(`[Gateway] Dính Rate Limit Key chính. Đổi sang Key Dự phòng...`);
-                     targetProvider = 'googleBackup';
-                } else if (this.providers.groq && targetProvider !== 'groq') {
-                     logger.warn(`[Gateway] Đổi sang mạng Groq dự phòng...`);
-                     targetProvider = 'groq';
-                     targetModel = 'llama-3.1-8b-instant';
+                // Phân loại lỗi mạng và quota
+                const isQuotaOrNetworkError = error.message === "RATE_LIMIT" || 
+                                              error.message.includes('429') || 
+                                              error.message.includes('404') || 
+                                              error.message.includes('503');
+
+                // Ưu tiên 1: Đổi sang Key Google dự phòng
+                if (isQuotaOrNetworkError && this.providers.googleBackup && targetProvider === 'google') {
+                    logger.warn(`[Gateway] Phát hiện lỗi API Key chính. Đang chuyển sang Key Dự phòng (googleBackup)...`);
+                    targetProvider = 'googleBackup';
+                } 
+                // Ưu tiên 2: Hạ cấp Model hoặc chuyển sang Groq nếu không thể dùng key dự phòng
+                else {
+                    if (targetModel === configModels.LAYER1_MODEL_PRIMARY) {
+                        logger.warn(`[Gateway] Chuyển Fallback sang ${configModels.LAYER1_MODEL_FALLBACK} cho tác vụ nhẹ...`);
+                        targetModel = configModels.LAYER1_MODEL_FALLBACK;
+                    } else if (targetModel === configModels.LAYER2_MODEL_PRIMARY) {
+                        logger.warn(`[Gateway] Chuyển Fallback sang ${configModels.LAYER2_MODEL_FALLBACK} cho tác vụ sâu...`);
+                        targetModel = configModels.LAYER2_MODEL_FALLBACK;
+                    } else if (this.providers.groq && targetProvider !== 'groq') {
+                        logger.warn(`[Gateway] Đổi sang mạng Groq dự phòng...`);
+                        targetProvider = 'groq';
+                        targetModel = 'llama-3.1-8b-instant';
+                    }
                 }
 
                 budgetManager.recordUsage({
