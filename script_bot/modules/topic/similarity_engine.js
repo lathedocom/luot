@@ -34,16 +34,16 @@ function evaluateClusterAction(newClusterVector, existingTopics) {
         }
     }
 
-    let action = 'CREATE_NEW'; // Mặc định < 0.72
-
-    if (highestScore >= 0.98) {
-        action = 'SKIP'; // Giống y hệt, không cần làm gì
-    } else if (highestScore >= 0.95) {
-        action = 'MERGE'; // Rất giống, chỉ gộp link bài báo mới vào nguồn, không gọi AI
-    } else if (highestScore >= 0.85) {
-        action = 'LIGHT_UPDATE'; // Giống, gọi AI nhẹ cập nhật thêm Timeline
-    } else if (highestScore >= 0.72) {
-        action = 'VERIFY_BY_AI'; // Hơi giống, cần AI xác minh xem có phải chung sự kiện không
+   let action = 'CREATE_NEW'; // Mặc định < 0.60
+    
+    if (highestScore >= 0.95) {
+        action = 'SKIP'; // Giống y hệt (Trùng lặp báo)
+    } else if (highestScore >= 0.80) { // HẠ TỪ 0.95 XUỐNG 0.80
+        action = 'MERGE'; // Rất giống, cùng 1 chuỗi sự kiện sát sườn
+    } else if (highestScore >= 0.70) { // HẠ TỪ 0.85 XUỐNG 0.70
+        action = 'LIGHT_UPDATE'; // Cùng 1 chủ đề vĩ mô (vd: Nga-Ukraine)
+    } else if (highestScore >= 0.60) {
+        action = 'VERIFY_BY_AI'; 
     }
 
     return { action, bestMatch, score: highestScore };
