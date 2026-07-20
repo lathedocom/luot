@@ -2,14 +2,13 @@
 require('dotenv').config();
 
 module.exports = {
-    // Ưu tiên 1: Gemini 3.1 Flash Lite (Rẻ, nhanh, quota cao)
-    PRIMARY_MODEL: 'gemini-3.1-flash-lite',
+    // TẦNG 1 (AI Layer 1): Xử lý metadata, phân loại, entity, short summary
+    LAYER1_MODEL_PRIMARY: 'gemma-4-31b',
+    LAYER1_MODEL_FALLBACK: 'gemma-4-26b',
     
-    // Ưu tiên 2: Kích hoạt khi model chính bị lỗi hoặc hết Quota
-    FALLBACK_MODEL_1: 'gemini-2.5-flash-lite',
-    
-    // Ưu tiên 3: Model lớn nhất, dùng làm chốt chặn cuối cùng
-    FALLBACK_MODEL_2: 'gemini-3.5-flash',
+    // TẦNG 2 & 3 (AI Layer 2 & 3): Phân tích sâu, Daily Briefing, chuỗi hệ quả
+    LAYER2_MODEL_PRIMARY: 'gemini-3.1-flash-lite',
+    LAYER2_MODEL_FALLBACK: 'gemini-3.5-flash',
     
     // Model chuyên dụng để tạo Vector
     EMBEDDING_MODEL: 'text-embedding-004',
