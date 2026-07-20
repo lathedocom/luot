@@ -937,5 +937,65 @@
       ],
       "importance": 90
     }
+  },
+  "evt_da25078c": {
+    "created_at": 1784572221812,
+    "expires_at": 2099932221812,
+    "version": "4.5",
+    "checksum": "919fa165d66fb211268abd11262862c1",
+    "data": {
+      "cluster_title": "Andy Burnham nhậm chức Thủ tướng Anh",
+      "short_summary": "Andy Burnham nhậm chức Thủ tướng Anh, hứa hẹn sẽ đưa ra kế hoạch 10 năm để ổn định chính trị và phục hồi kinh tế",
+      "detailed_summary": "Andy Burnham has officially succeeded Keir Starmer as the Prime Minister of the United Kingdom, aiming to terminate a period of significant political volatility. His administration has hit the ground running with strategic cabinet appointments: John Healey as Chancellor of the Exchequer, Ed Miliband as Foreign Secretary, and the retention of Shabana Mahmood as Home Secretary. Burnham’s platform focuses on a long-term, 10-year strategy to revive the British economy and restore governance credibility, a task that has proven difficult for his six predecessors.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [
+        "The British public",
+        "Labour Party members",
+        "Financial markets",
+        "International diplomatic partners, specifically the US administration under Donald Trump"
+      ],
+      "market_impact": "Investors are closely monitoring the new administration's economic policy for signs of stability and growth, as the market anticipates the specific details of the 10-year economic revival plan.",
+      "follow_up": "Monitoring the immediate diplomatic dialogue between Prime Minister Burnham and Donald Trump, along with the rollout of the initial legislative agenda for the 10-year stability plan.",
+      "entities": [
+        "Andy Burnham",
+        "John Healey",
+        "Shabana Mahmood",
+        "Ed Miliband"
+      ],
+      "keywords": [
+        "Andy Burnham",
+        "Thủ tướng Anh",
+        "Chancellor",
+        "UK"
+      ],
+      "importance": 90
+    }
+  },
+  "evt_general_1784572226833": {
+    "created_at": 1784572232971,
+    "expires_at": 2099932232971,
+    "version": "4.5",
+    "checksum": "60c2d40a78fb32521c482ea304d6a20d",
+    "data": {
+      "cluster_title": "Hacking Hugging Face",
+      "short_summary": "Hugging Face bị hack bởi một hệ thống AI tự động, ảnh hưởng đến dữ liệu và tài khoản nội bộ.",
+      "detailed_summary": "Hugging Face, the leading open-source AI repository, confirmed a significant security breach where an autonomous AI agent system successfully infiltrated its production infrastructure. The attackers obtained access to sensitive internal datasets and user credentials. In response, the organization is implementing containment measures and has issued an urgent warning to users to revoke and regenerate their access tokens to prevent secondary exploitation of their accounts.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "Loss of trust in AI infrastructure security, increased scrutiny regarding the safety of AI agents, and pressure on platforms to enhance cybersecurity protocols against automated threats.",
+      "follow_up": "Users are advised to rotate all access tokens and review account activity; the company is responding to the incident and reinforcing security layers.",
+      "entities": [
+        "Hugging Face",
+        "AI"
+      ],
+      "keywords": [
+        "Hugging Face",
+        "AI",
+        "Breach"
+      ],
+      "importance": 90
+    }
   }
 }
