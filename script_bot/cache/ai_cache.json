@@ -287,5 +287,425 @@
       "market_impact": "Căng thẳng địa chính trị đẩy giá dầu thô tăng cao do lo ngại gián đoạn nguồn cung tại eo biển Hormuz, đồng thời thúc đẩy dòng vốn trú ẩn an toàn vào vàng và đồng USD.",
       "follow_up": "Theo dõi phản ứng quân sự tiếp theo của Iran và khả năng Mỹ áp đặt các lệnh trừng phạt kinh tế bổ sung."
     }
+  },
+  "evt_3ed5ea68": {
+    "created_at": 1784560070270,
+    "expires_at": 2099920070270,
+    "version": "4.5",
+    "checksum": "9712b00830dc9d31213f2f4f976fd6b6",
+    "data": {
+      "cluster_title": "Argentina thua World Cup",
+      "short_summary": "Argentina thua World Cup trước Tây Ban Nha, kết thúc kỷ nguyên Messi",
+      "detailed_summary": "Spain defeated Argentina 1-0 in the World Cup final, with Ferran Torres scoring the winning goal in the 106th minute. This result marked a bittersweet end to Lionel Messi's international career, as the nation failed to secure another title. Argentine fans responded with a mix of national mourning and pride, flooding the streets to pay tribute to their team. The press has framed this defeat as the end of a golden era, leaving the future of both the squad and manager Lionel Scaloni in question.",
+      "causes": [
+        "Spain's tactical dominance throughout the match",
+        "Ferran Torres scoring the decisive goal in the 106th minute of extra time",
+        "Argentina's inability to capitalize on key moments despite high expectations"
+      ],
+      "effects": [
+        "End of an era for Lionel Messi's international career with Argentina",
+        "Widespread national mourning and public display of support despite the loss",
+        "Uncertainty surrounding the future of head coach Lionel Scaloni",
+        "Emotional farewell for a generation of players"
+      ],
+      "affected_groups": [
+        "Lionel Messi and the Argentina national football team",
+        "Argentine supporters worldwide",
+        "Lionel Scaloni and the coaching staff",
+        "Spanish national team and their fan base"
+      ],
+      "market_impact": [
+        "Potential decline in short-term memorabilia sales related to the expected Messi victory",
+        "Broadcasting and sponsorship revenue fluctuations following the end of the Messi narrative",
+        "Impact on sports betting markets and associated sports-related media engagement"
+      ],
+      "follow_up": [
+        "Official announcements regarding Lionel Messi's international retirement",
+        "Decision from Lionel Scaloni regarding his tenure as head coach",
+        "Long-term strategic planning for the Argentine Football Association (AFA) to rebuild the team"
+      ],
+      "entities": [
+        "Argentina",
+        "Lionel Messi",
+        "Lionel Scaloni",
+        "Spain",
+        "Ferran Torres"
+      ],
+      "keywords": [
+        "Argentina",
+        "World Cup",
+        "Lionel Messi",
+        "Spain"
+      ],
+      "importance": 95
+    }
+  },
+  "evt_4a5e162f": {
+    "created_at": 1784560081918,
+    "expires_at": 2099920081918,
+    "version": "4.5",
+    "checksum": "31860badbd9921c007c92a808a93af5a",
+    "data": {
+      "cluster_title": "Andy Burnham trở thành Thủ tướng mới của Anh",
+      "short_summary": "Andy Burnham trở thành Thủ tướng mới của Anh, hứa hẹn sẽ mang lại sự ổn định và thay đổi kinh tế cho quốc gia.",
+      "detailed_summary": "Andy Burnham has been sworn in as the new Prime Minister of the United Kingdom, succeeding Keir Starmer. Marking the seventh leadership change in ten years, Burnham aims to end a period of political instability by implementing a 'circuit-breaker' premiership. His agenda focuses on delivering a new economic model and restoring hope to a disillusioned public. Immediate actions include the formation of his cabinet and initiating diplomatic dialogue with international leaders, specifically Donald Trump, as he moves to stabilize the nation's political trajectory.",
+      "causes": [
+        "Resignation or leadership change involving predecessor Keir Starmer",
+        "Public dissatisfaction with a decade of political instability and frequent changes in leadership",
+        "Need for a new economic model to address widespread national fatigue"
+      ],
+      "effects": [
+        "Appointment of Andy Burnham as the seventh UK Prime Minister in a decade",
+        "Immediate focus on assembling a new cabinet",
+        "Initiation of diplomatic engagement with the United States via a call to Donald Trump",
+        "Commitment to shifting away from past political frameworks to restore public hope"
+      ],
+      "affected_groups": [
+        "British public/electorate",
+        "The Labour Party",
+        "UK Government officials and cabinet members",
+        "International political partners"
+      ],
+      "market_impact": [
+        "Potential uncertainty or volatility due to leadership transition",
+        "Investor focus on the 'new economic model' proposed by the incoming administration",
+        "Need for policy clarity to stabilize economic sentiment in the UK"
+      ],
+      "follow_up": [
+        "Finalization and announcement of the new cabinet lineup",
+        "Formal policy briefings on the promised new economic strategy",
+        "Development of bilateral relations with the US administration",
+        "Monitoring public response to the 'circuit-breaker' premiership promise"
+      ],
+      "entities": [
+        "Andy Burnham",
+        "Keir Starmer",
+        "Anh"
+      ],
+      "keywords": [
+        "Andy Burnham",
+        "Thủ tướng Anh",
+        "Keir Starmer"
+      ],
+      "importance": 90
+    }
+  },
+  "evt_general_1784560086934": {
+    "created_at": 1784560092889,
+    "expires_at": 2099920092889,
+    "version": "4.5",
+    "checksum": "4eb9788699cc788f769f857c89213602",
+    "data": {
+      "cluster_title": "Hacking Hugging Face",
+      "short_summary": "Hugging Face bị hack bởi một hệ thống AI tự động, ảnh hưởng đến dữ liệu và tài khoản nội bộ.",
+      "detailed_summary": "Hugging Face, the leading open-source AI platform, suffered a security breach where an autonomous AI agent infiltrated its production network. The attackers obtained access to sensitive internal datasets and credentials. In response, the company is urging all users to take immediate defensive measures, including the rotation of stored access tokens and a thorough review of past account activity to mitigate potential downstream malicious actions.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "This incident highlights severe vulnerabilities in AI infrastructure, potentially eroding trust in open-source AI repositories and forcing a shift toward more rigorous automated threat detection and security protocols for AI supply chains.",
+      "follow_up": "The company has initiated an investigation, responded to the breach in their production environment, and is mandating that all users rotate their access tokens and monitor for suspicious account activity.",
+      "entities": [
+        "Hugging Face",
+        "AI"
+      ],
+      "keywords": [
+        "Hugging Face",
+        "AI",
+        "Breach"
+      ],
+      "importance": 90
+    }
+  },
+  "evt_general_1784560097913": {
+    "created_at": 1784560104862,
+    "expires_at": 2099920104862,
+    "version": "4.5",
+    "checksum": "308c53c24767be0d9ddf69912ed0d06e",
+    "data": {
+      "cluster_title": "7-Zip có lỗ hổng bảo mật",
+      "short_summary": "7-Zip có lỗ hổng bảo mật cho phép kẻ tấn công chạy mã độc khi mở file nén đặc biệt.",
+      "detailed_summary": "Two critical vulnerabilities have been identified: CVE-2026-14266 affecting 7-Zip and CVE-2026-42533 affecting NGINX. The 7-Zip flaw allows for RCE via crafted XZ archives, requiring user interaction. Conversely, the NGINX vulnerability permits unauthenticated remote attackers to trigger heap buffer overflows, potentially leading to service crashes or remote code execution. Immediate updates are required for both software packages to mitigate high-risk security threats.",
+      "causes": [
+        "Heap-based buffer overflow vulnerability in 7-Zip when processing XZ chunked data (CVE-2026-14266).",
+        "Heap buffer overflow in NGINX worker processes triggered by crafted HTTP requests (CVE-2026-42533)."
+      ],
+      "effects": [
+        "Remote Code Execution (RCE) on systems running vulnerable 7-Zip versions when opening malicious archives.",
+        "Service disruption (worker crashes) and potential RCE on NGINX web servers.",
+        "Increased risk of unauthenticated remote exploitation."
+      ],
+      "affected_groups": [
+        "End-users of 7-Zip versions prior to 26.02.",
+        "System administrators and DevOps teams managing NGINX infrastructure versions prior to 1.30.4 or 1.31.3.",
+        "Organizations relying on automated file processing or web-facing services."
+      ],
+      "market_impact": [
+        "Urgent requirement for enterprise-wide patching and update cycles.",
+        "Potential for targeted supply chain or server-side attacks.",
+        "Increased focus on secure archival processing and web server hardening."
+      ],
+      "follow_up": [
+        "Upgrade 7-Zip to version 26.02 immediately.",
+        "Update NGINX to version 1.30.4 (stable) or 1.31.3 (mainline).",
+        "Monitor network traffic for anomalous HTTP request patterns and review file handling security policies."
+      ],
+      "entities": [
+        "7-Zip",
+        "Trend Micro",
+        "Zero Day Initiative",
+        "NGINX",
+        "F5"
+      ],
+      "keywords": [
+        "7-Zip",
+        "bảo mật",
+        "lỗ hổng"
+      ],
+      "importance": 90
+    }
+  },
+  "evt_a55c53f2": {
+    "created_at": 1784560116060,
+    "expires_at": 2099920116060,
+    "version": "4.5",
+    "checksum": "e83e6fdaff192f2b3e8fb423c29324da",
+    "data": {
+      "cluster_title": "Giá dầu biến động sau cuộc tấn công của Iran",
+      "short_summary": "Giá dầu biến động sau cuộc tấn công của Iran, sau đó giảm trở lại sau khi Tehran thông báo đã nhận được đề xuất từ các nhà trung gian về việc ngừng chiến",
+      "detailed_summary": "Global oil prices experienced significant volatility, surging to $90 per barrel following Iranian attacks on tankers, before retreating below $87. This correction was driven by reports of a potential 10-day ceasefire between the U.S. and Iran facilitated by mediators. Despite ongoing regional military strikes, the market remains highly sensitive to diplomatic signaling, reflecting deep uncertainty regarding the stability of energy supply chains in the Middle East.",
+      "causes": [
+        "Initial surge to $90 due to Iran attacking tankers.",
+        "Subsequent price drop below $87 triggered by reports of a 10-day ceasefire proposal between the U.S. and Iran.",
+        "Mediator intervention attempting to de-escalate regional tensions."
+      ],
+      "effects": [
+        "High volatility in crude oil pricing.",
+        "Reversal of a sharp early-morning rally.",
+        "Temporary market relief leading to a shift from bullish to bearish short-term momentum."
+      ],
+      "affected_groups": [
+        "Energy traders and investors.",
+        "Global economies dependent on oil imports.",
+        "Middle Eastern shipping and logistics firms.",
+        "Geopolitical stakeholders (U.S. and Iran)."
+      ],
+      "market_impact": {
+        "status": "High volatility",
+        "price_range": "$87 - $90 per barrel",
+        "trend": "Downward correction following diplomatic news"
+      },
+      "follow_up": [
+        "Monitor the validity and implementation of the proposed 10-day ceasefire.",
+        "Observe potential reactions from market participants if the ceasefire proposal fails.",
+        "Track future military actions in the region that could negate diplomatic progress."
+      ],
+      "entities": [
+        "Iran",
+        "Mỹ"
+      ],
+      "keywords": [
+        "giá dầu",
+        "Iran",
+        "tấn công"
+      ],
+      "importance": 90
+    }
+  },
+  "evt_6102fe22": {
+    "created_at": 1784560127699,
+    "expires_at": 2099920127699,
+    "version": "4.5",
+    "checksum": "512b43653d68c58918d109a4de98d1b2",
+    "data": {
+      "cluster_title": "Cuộc xung đột Mỹ - Iran",
+      "short_summary": "Eo biển Hormuz trở thành điểm nghẽn trong cuộc xung đột Mỹ - Iran, ảnh hưởng nguồn cung năng lượng toàn cầu.",
+      "detailed_summary": "Eo biển Hormuz hiện đã chuyển dịch từ vị thế một quân bài đàm phán sang thành lằn ranh đỏ trong quan hệ Mỹ-Iran. Washington kiên quyết bảo vệ quyền tự do hàng hải trong khi Iran duy trì áp lực thông qua quyền kiểm soát chiến lược đối với tuyến đường huyết mạch này. Sự kiện này báo hiệu giai đoạn đối đầu căng thẳng, đe dọa trực tiếp đến an ninh năng lượng toàn cầu và đòi hỏi sự quan sát kỹ lưỡng về các rủi ro leo thang xung đột vũ trang.",
+      "causes": [
+        "Căng thẳng địa chính trị leo thang giữa Mỹ và Iran",
+        "Sự bế tắc trong các vòng đàm phán hạt nhân và chính sách khu vực",
+        "Tranh chấp quyền kiểm soát chiến lược tại eo biển Hormuz"
+      ],
+      "effects": [
+        "Eo biển Hormuz trở thành 'giới hạn không nhượng bộ' cho cả hai bên",
+        "Gia tăng nguy cơ xung đột quân sự trực tiếp",
+        "Bất ổn trong chuỗi cung ứng năng lượng quốc tế"
+      ],
+      "affected_groups": [
+        "Các quốc gia xuất khẩu dầu mỏ vùng Vịnh",
+        "Các nước nhập khẩu năng lượng lớn (Trung Quốc, Ấn Độ, EU)",
+        "Thị trường tài chính và năng lượng toàn cầu"
+      ],
+      "market_impact": [
+        "Biến động mạnh giá dầu thô trên thị trường thế giới",
+        "Gia tăng chi phí vận tải và bảo hiểm hàng hải",
+        "Tâm lý lo ngại lạm phát năng lượng toàn cầu"
+      ],
+      "follow_up": [
+        "Giám sát các động thái quân sự tại khu vực eo biển",
+        "Theo dõi phản ứng của các đồng minh phương Tây và đối tác khu vực",
+        "Đánh giá các kịch bản đóng cửa eo biển và tác động đến nguồn cung dầu"
+      ],
+      "entities": [
+        "Mỹ",
+        "Iran",
+        "Eo biển Hormuz"
+      ],
+      "keywords": [
+        "Mỹ",
+        "Iran",
+        "Eo biển Hormuz",
+        "Dầu"
+      ],
+      "importance": 90
+    }
+  },
+  "evt_ec3bc5e0": {
+    "created_at": 1784560138435,
+    "expires_at": 2099920138435,
+    "version": "4.5",
+    "checksum": "d7c243af8101ad985e4918d1bd29d9eb",
+    "data": {
+      "cluster_title": "Lũ quét và sạt lở đất tại Ấn Độ",
+      "short_summary": "Lũ quét và sạt lở đất tại Ấn Độ khiến ít nhất 19 người thiệt mạng.",
+      "detailed_summary": "At least 19 people have died following severe flash floods and landslides triggered by continuous heavy rains across India. The fatalities are concentrated in two distinct geographical zones: 8 deaths reported in the northeastern state of Nagaland and 11 deaths in the region of Indian-administered Jammu and Kashmir, highlighting the widespread nature of the climate-induced disaster.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "Localized economic disruption, potential damage to local transport infrastructure and agricultural activities in the affected mountainous regions.",
+      "follow_up": "Ongoing search and rescue operations, potential humanitarian aid mobilization, and risk assessment for further landslides in vulnerable areas.",
+      "entities": [
+        "Ấn Độ",
+        "Nagaland",
+        "Jammu và Kashmir"
+      ],
+      "keywords": [
+        "lũ quét",
+        "sạt lở đất",
+        "Ấn Độ"
+      ],
+      "importance": 85
+    }
+  },
+  "evt_183308e6": {
+    "created_at": 1784560150479,
+    "expires_at": 2099920150479,
+    "version": "4.5",
+    "checksum": "0e154e072491e9404652653361248d84",
+    "data": {
+      "cluster_title": "Cáp dưới biển Batam-Changi hoạt động",
+      "short_summary": "Cáp dưới biển Batam-Changi sẽ hoạt động vào tháng 9, tăng cường quan hệ giữa Singapore và Indonesia.",
+      "detailed_summary": "Dự án cáp quang biển kết nối Nongsa (Batam) và Changi (Singapore) đóng vai trò là một 'hành lang kỹ thuật số' chiến lược, rút ngắn khoảng cách truyền tải dữ liệu và củng cố hạ tầng kết nối giữa Indonesia và Singapore. Dự kiến đi vào vận hành tháng 9, dự án không chỉ nâng cao năng lực cạnh tranh của Nongsa Digital Park mà còn là bước đi quan trọng nhằm cụ thể hóa các cam kết hợp tác kinh tế số trong khuôn khổ ASEAN, thúc đẩy liên kết khu vực thông qua hạ tầng viễn thông hiện đại.",
+      "causes": [
+        "Nhu cầu tăng cường kết nối hạ tầng kỹ thuật số giữa Singapore và Indonesia.",
+        "Sự phát triển mạnh mẽ của Nongsa Digital Park tại Batam như một trung tâm dữ liệu mới nổi.",
+        "Chiến lược chuẩn bị cho khuôn khổ hợp tác kinh tế số ASEAN trong tương lai."
+      ],
+      "effects": [
+        "Thiết lập tuyến cáp quang biển ngắn nhất và trực tiếp nhất kết nối Changi (Singapore) và Nongsa (Batam).",
+        "Tăng cường băng thông và tốc độ truyền tải dữ liệu, củng cố 'hành lang kỹ thuật số' giữa hai quốc gia.",
+        "Thúc đẩy hội nhập kinh tế số khu vực và củng cố mối quan hệ ngoại giao song phương."
+      ],
+      "affected_groups": [
+        "Các doanh nghiệp công nghệ và trung tâm dữ liệu tại Batam và Singapore.",
+        "Chính phủ Singapore và Indonesia.",
+        "Các nhà đầu tư hạ tầng hạ tầng viễn thông trong khu vực ASEAN."
+      ],
+      "market_impact": [
+        "Gia tăng sức hấp dẫn của Nongsa Digital Park đối với vốn đầu tư nước ngoài.",
+        "Thúc đẩy sự cạnh tranh trong lĩnh vực hạ tầng lưu trữ và truyền dẫn dữ liệu tại Đông Nam Á.",
+        "Tạo tiền đề cho các dự án hạ tầng số quy mô lớn hơn trong khuôn khổ ASEAN."
+      ],
+      "follow_up": [
+        "Theo dõi thời điểm vận hành chính thức của tuyến cáp vào tháng 9.",
+        "Giám sát các chính sách ưu đãi tiếp theo tại Nongsa Digital Park để thu hút doanh nghiệp công nghệ.",
+        "Đánh giá tác động của dự án đến lộ trình thực thi khung hợp tác số ASEAN."
+      ],
+      "entities": [
+        "Singapore",
+        "Indonesia",
+        "Batam",
+        "Changi"
+      ],
+      "keywords": [
+        "cáp dưới biển",
+        "Batam",
+        "Singapore"
+      ],
+      "importance": 80
+    }
+  },
+  "evt_50b40a33": {
+    "created_at": 1784560162222,
+    "expires_at": 2099920162222,
+    "version": "4.5",
+    "checksum": "af91a563ebdcc5a7e74454ebf6ec9887",
+    "data": {
+      "cluster_title": "Cảnh sát Ấn Độ bắn hơi cay vào cuộc biểu tình",
+      "short_summary": "Thousands of người trẻ biểu tình chống lại hệ thống giáo dục, bao gồm việc hủy bỏ bài thi đại học sau khi câu hỏi bị rò rỉ.",
+      "detailed_summary": "Thousands of young protesters, led by the CJP party, marched to the Indian Parliament to protest recurring leaks in college entrance exams. Indian police responded with tear gas as the movement gained momentum. This unrest represents a significant political challenge to Prime Minister Narendra Modi in his third term, highlighting deep-seated frustration with systemic failures in the education sector and broader concerns over governance and economic opportunity for the youth.",
+      "causes": [
+        "Systemic failures in the national education assessment framework",
+        "Widespread leakage of high-stakes college entrance examination questions",
+        "Public frustration over perceived government incompetence and lack of accountability",
+        "Underlying youth unemployment and economic anxiety"
+      ],
+      "effects": [
+        "Escalation of civil unrest and direct confrontation between protesters and security forces",
+        "Increased political pressure on the Modi administration",
+        "Disruption of parliamentary proceedings and urban activity",
+        "Erosion of public trust in the state-run educational and administrative systems"
+      ],
+      "affected_groups": [
+        "Students and job seekers",
+        "The CJP (political opposition party)",
+        "Prime Minister Narendra Modi’s administration",
+        "Indian police and security agencies"
+      ],
+      "market_impact": [
+        "Potential volatility in domestic stability perceptions",
+        "Long-term risk to human capital development if educational integrity remains compromised",
+        "Possible short-term disruption to local businesses and services in protest-hit areas"
+      ],
+      "follow_up": [
+        "Increased security crackdown on protest movements",
+        "Potential parliamentary debates regarding educational reforms",
+        "Continued monitoring of the CJP party's ability to mobilize youth across India"
+      ],
+      "entities": [
+        "Ấn Độ",
+        "Narendra Modi"
+      ],
+      "keywords": [
+        "biểu tình",
+        "thi cử",
+        "chính trị"
+      ],
+      "importance": 90
+    }
+  },
+  "evt_2eecdca9": {
+    "created_at": 1784560171864,
+    "expires_at": 2099920171864,
+    "version": "4.5",
+    "checksum": "28bb9366de1b7748ff0b7beae4058de9",
+    "data": {
+      "cluster_title": "Giảm quy định về lời nói không lịch sự trong bóng chày",
+      "short_summary": "Top tổ chức thể thao Hàn Quốc giảm quy định về lời nói không lịch sự đối với đội bóng chày cấp học sinh",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "follow_up": "",
+      "entities": [
+        "Hàn Quốc",
+        "Seoul"
+      ],
+      "keywords": [
+        "bóng chày",
+        "thể thao"
+      ],
+      "importance": 60
+    }
   }
 }

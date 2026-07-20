@@ -148,5 +148,413 @@
     "completionTokens": 426,
     "latency": 2353,
     "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-07-20T15:05:57.468Z",
+    "provider": "google",
+    "task": "BATCH_EMBEDDING",
+    "promptTokens": 0,
+    "completionTokens": 0,
+    "latency": 180,
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-07-20T15:07:23.446Z",
+    "provider": "google",
+    "task": "BATCH_EMBEDDING",
+    "promptTokens": 0,
+    "completionTokens": 0,
+    "latency": 157,
+    "status": "FAILED"
+  },
+  {
+    "timestamp": "2026-07-20T15:07:43.964Z",
+    "model": "gemma-4-26b",
+    "provider": "google",
+    "task": "EXTRACT_METADATA",
+    "promptTokens": 0,
+    "completionTokens": 0,
+    "latency": 108,
+    "status": "FAILED_RETRY"
+  },
+  {
+    "timestamp": "2026-07-20T15:07:46.071Z",
+    "model": "llama-3.1-8b-instant",
+    "provider": "groq",
+    "task": "EXTRACT_METADATA",
+    "promptTokens": 0,
+    "completionTokens": 0,
+    "latency": 104,
+    "status": "FAILED_RETRY"
+  },
+  {
+    "timestamp": "2026-07-20T15:07:48.374Z",
+    "model": "llama-3.1-8b-instant",
+    "provider": "groq",
+    "task": "EXTRACT_METADATA",
+    "promptTokens": 476,
+    "completionTokens": 102,
+    "latency": 302,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-07-20T15:07:50.269Z",
+    "model": "gemini-3.1-flash-lite",
+    "provider": "google",
+    "task": "DEEP_ANALYSIS",
+    "promptTokens": 481,
+    "completionTokens": 466,
+    "latency": 1894,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-07-20T15:07:55.410Z",
+    "model": "gemma-4-26b",
+    "provider": "google",
+    "task": "EXTRACT_METADATA",
+    "promptTokens": 0,
+    "completionTokens": 0,
+    "latency": 112,
+    "status": "FAILED_RETRY"
+  },
+  {
+    "timestamp": "2026-07-20T15:07:57.508Z",
+    "model": "llama-3.1-8b-instant",
+    "provider": "groq",
+    "task": "EXTRACT_METADATA",
+    "promptTokens": 0,
+    "completionTokens": 0,
+    "latency": 96,
+    "status": "FAILED_RETRY"
+  },
+  {
+    "timestamp": "2026-07-20T15:07:59.917Z",
+    "model": "llama-3.1-8b-instant",
+    "provider": "groq",
+    "task": "EXTRACT_METADATA",
+    "promptTokens": 345,
+    "completionTokens": 112,
+    "latency": 408,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-07-20T15:08:01.917Z",
+    "model": "gemini-3.1-flash-lite",
+    "provider": "google",
+    "task": "DEEP_ANALYSIS",
+    "promptTokens": 350,
+    "completionTokens": 483,
+    "latency": 2000,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-07-20T15:08:07.041Z",
+    "model": "gemma-4-26b",
+    "provider": "google",
+    "task": "EXTRACT_METADATA",
+    "promptTokens": 0,
+    "completionTokens": 0,
+    "latency": 106,
+    "status": "FAILED_RETRY"
+  },
+  {
+    "timestamp": "2026-07-20T15:08:09.131Z",
+    "model": "llama-3.1-8b-instant",
+    "provider": "groq",
+    "task": "EXTRACT_METADATA",
+    "promptTokens": 0,
+    "completionTokens": 0,
+    "latency": 88,
+    "status": "FAILED_RETRY"
+  },
+  {
+    "timestamp": "2026-07-20T15:08:11.365Z",
+    "model": "llama-3.1-8b-instant",
+    "provider": "groq",
+    "task": "EXTRACT_METADATA",
+    "promptTokens": 324,
+    "completionTokens": 91,
+    "latency": 233,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-07-20T15:08:12.889Z",
+    "model": "gemini-3.1-flash-lite",
+    "provider": "google",
+    "task": "DEEP_ANALYSIS",
+    "promptTokens": 329,
+    "completionTokens": 387,
+    "latency": 1523,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-07-20T15:08:18.020Z",
+    "model": "gemma-4-26b",
+    "provider": "google",
+    "task": "EXTRACT_METADATA",
+    "promptTokens": 0,
+    "completionTokens": 0,
+    "latency": 105,
+    "status": "FAILED_RETRY"
+  },
+  {
+    "timestamp": "2026-07-20T15:08:20.119Z",
+    "model": "llama-3.1-8b-instant",
+    "provider": "groq",
+    "task": "EXTRACT_METADATA",
+    "promptTokens": 0,
+    "completionTokens": 0,
+    "latency": 97,
+    "status": "FAILED_RETRY"
+  },
+  {
+    "timestamp": "2026-07-20T15:08:22.733Z",
+    "model": "llama-3.1-8b-instant",
+    "provider": "groq",
+    "task": "EXTRACT_METADATA",
+    "promptTokens": 356,
+    "completionTokens": 98,
+    "latency": 613,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-07-20T15:08:24.861Z",
+    "model": "gemini-3.1-flash-lite",
+    "provider": "google",
+    "task": "DEEP_ANALYSIS",
+    "promptTokens": 361,
+    "completionTokens": 445,
+    "latency": 2128,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-07-20T15:08:30.001Z",
+    "model": "gemma-4-26b",
+    "provider": "google",
+    "task": "EXTRACT_METADATA",
+    "promptTokens": 0,
+    "completionTokens": 0,
+    "latency": 124,
+    "status": "FAILED_RETRY"
+  },
+  {
+    "timestamp": "2026-07-20T15:08:32.099Z",
+    "model": "llama-3.1-8b-instant",
+    "provider": "groq",
+    "task": "EXTRACT_METADATA",
+    "promptTokens": 0,
+    "completionTokens": 0,
+    "latency": 95,
+    "status": "FAILED_RETRY"
+  },
+  {
+    "timestamp": "2026-07-20T15:08:34.411Z",
+    "model": "llama-3.1-8b-instant",
+    "provider": "groq",
+    "task": "EXTRACT_METADATA",
+    "promptTokens": 239,
+    "completionTokens": 109,
+    "latency": 312,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-07-20T15:08:36.059Z",
+    "model": "gemini-3.1-flash-lite",
+    "provider": "google",
+    "task": "DEEP_ANALYSIS",
+    "promptTokens": 244,
+    "completionTokens": 409,
+    "latency": 1646,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-07-20T15:08:41.182Z",
+    "model": "gemma-4-26b",
+    "provider": "google",
+    "task": "EXTRACT_METADATA",
+    "promptTokens": 0,
+    "completionTokens": 0,
+    "latency": 112,
+    "status": "FAILED_RETRY"
+  },
+  {
+    "timestamp": "2026-07-20T15:08:43.277Z",
+    "model": "llama-3.1-8b-instant",
+    "provider": "groq",
+    "task": "EXTRACT_METADATA",
+    "promptTokens": 0,
+    "completionTokens": 0,
+    "latency": 93,
+    "status": "FAILED_RETRY"
+  },
+  {
+    "timestamp": "2026-07-20T15:08:45.632Z",
+    "model": "llama-3.1-8b-instant",
+    "provider": "groq",
+    "task": "EXTRACT_METADATA",
+    "promptTokens": 226,
+    "completionTokens": 99,
+    "latency": 354,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-07-20T15:08:47.698Z",
+    "model": "gemini-3.1-flash-lite",
+    "provider": "google",
+    "task": "DEEP_ANALYSIS",
+    "promptTokens": 231,
+    "completionTokens": 371,
+    "latency": 2066,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-07-20T15:08:52.820Z",
+    "model": "gemma-4-26b",
+    "provider": "google",
+    "task": "EXTRACT_METADATA",
+    "promptTokens": 0,
+    "completionTokens": 0,
+    "latency": 112,
+    "status": "FAILED_RETRY"
+  },
+  {
+    "timestamp": "2026-07-20T15:08:54.920Z",
+    "model": "llama-3.1-8b-instant",
+    "provider": "groq",
+    "task": "EXTRACT_METADATA",
+    "promptTokens": 0,
+    "completionTokens": 0,
+    "latency": 97,
+    "status": "FAILED_RETRY"
+  },
+  {
+    "timestamp": "2026-07-20T15:08:57.218Z",
+    "model": "llama-3.1-8b-instant",
+    "provider": "groq",
+    "task": "EXTRACT_METADATA",
+    "promptTokens": 206,
+    "completionTokens": 90,
+    "latency": 299,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-07-20T15:08:58.434Z",
+    "model": "gemini-3.1-flash-lite",
+    "provider": "google",
+    "task": "DEEP_ANALYSIS",
+    "promptTokens": 211,
+    "completionTokens": 262,
+    "latency": 1216,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-07-20T15:09:03.560Z",
+    "model": "gemma-4-26b",
+    "provider": "google",
+    "task": "EXTRACT_METADATA",
+    "promptTokens": 0,
+    "completionTokens": 0,
+    "latency": 112,
+    "status": "FAILED_RETRY"
+  },
+  {
+    "timestamp": "2026-07-20T15:09:05.658Z",
+    "model": "llama-3.1-8b-instant",
+    "provider": "groq",
+    "task": "EXTRACT_METADATA",
+    "promptTokens": 0,
+    "completionTokens": 0,
+    "latency": 96,
+    "status": "FAILED_RETRY"
+  },
+  {
+    "timestamp": "2026-07-20T15:09:08.039Z",
+    "model": "llama-3.1-8b-instant",
+    "provider": "groq",
+    "task": "EXTRACT_METADATA",
+    "promptTokens": 259,
+    "completionTokens": 104,
+    "latency": 381,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-07-20T15:09:10.479Z",
+    "model": "gemini-3.1-flash-lite",
+    "provider": "google",
+    "task": "DEEP_ANALYSIS",
+    "promptTokens": 264,
+    "completionTokens": 478,
+    "latency": 2438,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-07-20T15:09:15.598Z",
+    "model": "gemma-4-26b",
+    "provider": "google",
+    "task": "EXTRACT_METADATA",
+    "promptTokens": 0,
+    "completionTokens": 0,
+    "latency": 104,
+    "status": "FAILED_RETRY"
+  },
+  {
+    "timestamp": "2026-07-20T15:09:17.677Z",
+    "model": "llama-3.1-8b-instant",
+    "provider": "groq",
+    "task": "EXTRACT_METADATA",
+    "promptTokens": 0,
+    "completionTokens": 0,
+    "latency": 76,
+    "status": "FAILED_RETRY"
+  },
+  {
+    "timestamp": "2026-07-20T15:09:20.182Z",
+    "model": "llama-3.1-8b-instant",
+    "provider": "groq",
+    "task": "EXTRACT_METADATA",
+    "promptTokens": 224,
+    "completionTokens": 107,
+    "latency": 504,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-07-20T15:09:22.221Z",
+    "model": "gemini-3.1-flash-lite",
+    "provider": "google",
+    "task": "DEEP_ANALYSIS",
+    "promptTokens": 229,
+    "completionTokens": 467,
+    "latency": 2038,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-07-20T15:09:27.344Z",
+    "model": "gemma-4-26b",
+    "provider": "google",
+    "task": "EXTRACT_METADATA",
+    "promptTokens": 0,
+    "completionTokens": 0,
+    "latency": 111,
+    "status": "FAILED_RETRY"
+  },
+  {
+    "timestamp": "2026-07-20T15:09:29.447Z",
+    "model": "llama-3.1-8b-instant",
+    "provider": "groq",
+    "task": "EXTRACT_METADATA",
+    "promptTokens": 0,
+    "completionTokens": 0,
+    "latency": 100,
+    "status": "FAILED_RETRY"
+  },
+  {
+    "timestamp": "2026-07-20T15:09:31.864Z",
+    "model": "llama-3.1-8b-instant",
+    "provider": "groq",
+    "task": "EXTRACT_METADATA",
+    "promptTokens": 199,
+    "completionTokens": 100,
+    "latency": 416,
+    "status": "SUCCESS"
   }
 ]
