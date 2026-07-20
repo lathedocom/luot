@@ -109,13 +109,7 @@ eventBus.on('CLUSTER_CREATED', async (clusters) => {
                 continue;
             }
             
-            // Động cơ Similarity (Chỉ dùng để loại bỏ rác trùng lặp chính xác 100%)
-            const { action, bestMatch } = evaluateClusterAction(cluster.main_vector, state.currentTopics);
-            
-            if (action === 'SKIP') {
-                logger.info(`[SKIP] Bỏ qua cụm tin trùng lặp cao: ${cluster.articles[0].title}`);
-                continue;
-            }
+            // ĐÃ XÓA ĐOẠN KHAI BÁO LẶP LẠI Ở ĐÂY
             
             logger.info(`Đang gọi AI phân tích Topic mới...`);
             const aiIntelligence = await analyzeClusterMultiDimensional(cluster, eventKey);
@@ -149,7 +143,6 @@ eventBus.on('CLUSTER_CREATED', async (clusters) => {
         eventBus.emit('PIPELINE_ERROR', e);
     }
 });
-
 // 5. CHẠY SONG SONG CÁC TIẾN TRÌNH RÂU RIA (Thị trường, MXH, Report)
 eventBus.on('TOPIC_UPDATED', (currentTopics) => {
     logger.info("Khởi chạy song song (Asynchronous) các luồng dữ liệu vệ tinh...");
