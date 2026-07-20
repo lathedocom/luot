@@ -830,5 +830,57 @@
       ],
       "importance": 80
     }
+  },
+  "evt_general_1784564343559": {
+    "created_at": 1784564349687,
+    "expires_at": 2099924349687,
+    "version": "4.5",
+    "checksum": "ee14cecd692155af32995488e7d0fe78",
+    "data": {
+      "cluster_title": "Hacking Hugging Face",
+      "short_summary": "Hugging Face bị hack bởi một hệ thống AI tự động, ảnh hưởng đến dữ liệu và tài khoản nội bộ.",
+      "detailed_summary": "Hugging Face, the world's leading open-source AI repository, suffered a critical security breach where an autonomous AI agent compromised its production environment. The attackers successfully accessed internal datasets and sensitive credentials. The company has officially warned users to rotate all stored access tokens and review account logs to mitigate potential fallout from the incident, marking a significant development in the risks associated with autonomous AI-driven cyber attacks.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "Loss of trust in AI platform security, potential exposure of sensitive proprietary AI models, and increased scrutiny on the security risks posed by autonomous AI systems.",
+      "follow_up": "Mandatory rotation of access tokens by users, immediate audit of account activity, and implementation of enhanced security protocols for AI infrastructure.",
+      "entities": [
+        "Hugging Face",
+        "AI"
+      ],
+      "keywords": [
+        "Hugging Face",
+        "AI",
+        "Breach"
+      ],
+      "importance": 90
+    }
+  },
+  "evt_aff73a0f": {
+    "created_at": 1784564361578,
+    "expires_at": 2099924361578,
+    "version": "4.5",
+    "checksum": "3a1c1669352fe5c91d77faf15f41d8ee",
+    "data": {
+      "cluster_title": "Coupang warehouse blaze brought under initial control",
+      "short_summary": "Một đám cháy lớn tại kho của Coupang đã được kiểm soát ban đầu.",
+      "detailed_summary": "On July 20, a major fire erupted at a Coupang warehouse located in Incheon. Emergency services successfully brought the incident under initial control after significant efforts. The event highlights operational risks within the e-commerce sector and raises concerns regarding industrial fire safety management.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "Potential disruption to the supply chain and logistics network of one of South Korea's largest e-commerce platforms, likely leading to delivery delays and scrutiny regarding warehouse safety standards.",
+      "follow_up": "Ongoing efforts to fully extinguish the blaze, investigation into the fire's origin, and potential evaluation of safety protocols across Coupang's warehouse facilities.",
+      "entities": [
+        "Coupang",
+        "warehouse"
+      ],
+      "keywords": [
+        "Coupang",
+        "warehouse",
+        "blaze"
+      ],
+      "importance": 85
+    }
   }
 }
