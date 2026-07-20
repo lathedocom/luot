@@ -99,11 +99,12 @@ eventBus.on('CLUSTER_CREATED', async (clusters) => {
                 continue;
             }
             
-            if (action === 'MERGE' && bestMatch) {
+           // SỬA: Cho phép cả MERGE và LIGHT_UPDATE được gộp chung vào 1 Timeline
+            if ((action === 'MERGE' || action === 'LIGHT_UPDATE') && bestMatch) {
                 const updatedTopic = mergeIntoExistingTopic(bestMatch, cluster.articles, cluster.articles[0].title);
                 const index = state.currentTopics.findIndex(t => t.event_key === bestMatch.event_key);
                 if (index !== -1) state.currentTopics[index] = updatedTopic;
-                logger.info(`[MERGE] Gộp diễn biến mới thành công vào Topic cũ: ${eventKey}`);
+                logger.info(`[${action}] Gộp diễn biến mới thành công vào Topic cũ: ${eventKey}`);
                 continue;
             }
             
