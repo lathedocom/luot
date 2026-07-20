@@ -5,6 +5,7 @@ const path = require('path');
 const PIPELINE_STATUS_FILE = path.join(__dirname, '../pipeline_status.json');
 
 // IMPORT CÁC MODULE XỬ LÝ LÕI
+const { processEventIntoTimeline } = require('./modules/6_timeline_manager');
 const { processTopicIntoStory } = require('./modules/story/story_engine');
 const { fetchAndNormalizeNews } = require('./modules/1_crawler');
 const { extractCategories } = require('./modules/rule_engine/category');
@@ -131,11 +132,37 @@ eventBus.on('CLUSTER_CREATED', async (clusters) => {
                 sources: cluster.articles.map(a => ({ url: a.url, source_name: a.source_name, source_logo: a.source_logo }))
             };
             
+         
+
             state.currentTopics.push(newTopic);
             state.newTopicsCount++;
-
-            // [MỚI] Chuyển Topic mới sinh sang Story Engine để xếp vào dòng chảy
-            await processTopicIntoStory(newTopic);
+            
+            // --- BẮT ĐẦU ĐOẠN CODE MỚI ---
+            // Trích xuất các tham số cần thiết từ newTopic (hoặc cluster/aiAnalysis tương ứng)
+            const eventDate = newTopic.timestamp ? new Date(newTopic.timestamp).toISOString() : new Date().toISOString();
+            
+            // Trích xuất URL từ bài viết đầu tiên trong mảng articles
+            const eventUrl = (newTopic.articles && newTopic.articles.length > 0) 
+                ? (newTopic.articles[0].link || newTopic.articles[0].url) 
+                : "#"; 
+                
+            // Trích xuất danh mục và vector
+            const eventCategories = newTopic.category || ["Tin tức chung"]; 
+            const eventVector = newTopic.vector; // Đảm bảo newTopic đã chứa vector từ bước Embedding
+            
+            // Gọi hàm mới với bộ lọc 3 lớp
+            await processEventIntoTimeline(
+                newTopic.id, 
+                newTopic.title || newTopic.cluster_title, // Tùy thuộc vào cách bạn đặt tên key trong AI analysis
+                newTopic.summary || newTopic.short_summary, 
+                eventDate,
+                eventCategories,
+                eventVector,
+                eventUrl
+            );
+        }
+        
+        eventBus.emit('TOPIC_UPDATED', state.currentTopics);
         }
         
         eventBus.emit('TOPIC_UPDATED', state.currentTopics);
