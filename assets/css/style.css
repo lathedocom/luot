@@ -90,8 +90,17 @@ body { font-family: 'Roboto', sans-serif; background-color: var(--md-sys-color-b
 @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
 
 /* MODAL MẶC ĐỊNH CHO WEB (PC) */
-.modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.8); display: flex; justify-content: center; align-items: flex-start; padding-top: 5vh; z-index: 2000; opacity: 0; pointer-events: none; transition: 0.3s ease; }
-.modal-overlay.active { opacity: 1; pointer-events: auto; }
+.modal-overlay { 
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0; 
+    background: rgba(0,0,0,0.8); display: flex; justify-content: center; 
+    align-items: flex-start; padding-top: 5vh; z-index: 2000; 
+    opacity: 0; pointer-events: none; visibility: hidden; /* Thêm visibility khóa triệt để */
+    transition: 0.3s ease; 
+}
+
+.modal-overlay.active { 
+    opacity: 1; pointer-events: auto; visibility: visible; /* Kích hoạt hiển thị trở lại */
+}
 .modal-dialog { background: var(--md-sys-color-background); width: 95%; max-width: 800px; max-height: 90vh; border-radius: var(--border-radius); display: flex; flex-direction: column; border: 1px solid var(--md-sys-color-outline); transform: translateY(20px); transition: 0.3s ease; box-shadow: 0 20px 40px rgba(0,0,0,0.4); overflow: hidden; }
 .modal-overlay.active .modal-dialog { transform: translateY(0); }
 .modal-header { padding: 20px 24px; border-bottom: 1px solid var(--md-sys-color-outline); display: flex; justify-content: space-between; align-items: flex-start; flex-shrink: 0; background: var(--md-sys-color-surface); }
