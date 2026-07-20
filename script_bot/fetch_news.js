@@ -110,18 +110,16 @@ eventBus.on('CLUSTER_CREATED', async (clusters) => {
                 continue;
             }
             
-            // ĐÃ XÓA ĐOẠN KHAI BÁO LẶP LẠI Ở ĐÂY
-            
             logger.info(`Đang gọi AI phân tích Topic mới...`);
             const aiIntelligence = await analyzeClusterMultiDimensional(cluster, eventKey);
             
-            // Tạo đối tượng Topic (Chỉ chứa dữ liệu tĩnh của thời điểm này, KHÔNG có mảng timeline)
+            // Tạo đối tượng Topic
             const newTopic = {
                 event_key: eventKey,
                 topic_key: generateTopicKey(eventKey, 'intelligence'),
                 title: aiIntelligence.cluster_title,
                 timestamp: cluster.timestamp || Date.now(),
-                vector: cluster.main_vector, // Quan trọng: Phải truyền vector đi để Story Engine tính toán
+                vector: cluster.main_vector, 
                 short_summary: aiIntelligence.short_summary,
                 detailed_summary: aiIntelligence.detailed_summary,
                 causes: aiIntelligence.causes,
@@ -132,28 +130,22 @@ eventBus.on('CLUSTER_CREATED', async (clusters) => {
                 sources: cluster.articles.map(a => ({ url: a.url, source_name: a.source_name, source_logo: a.source_logo }))
             };
             
-         
-
             state.currentTopics.push(newTopic);
             state.newTopicsCount++;
             
             // --- BẮT ĐẦU ĐOẠN CODE MỚI ---
-            // Trích xuất các tham số cần thiết từ newTopic (hoặc cluster/aiAnalysis tương ứng)
             const eventDate = newTopic.timestamp ? new Date(newTopic.timestamp).toISOString() : new Date().toISOString();
             
-            // Trích xuất URL từ bài viết đầu tiên trong mảng articles
             const eventUrl = (newTopic.articles && newTopic.articles.length > 0) 
                 ? (newTopic.articles[0].link || newTopic.articles[0].url) 
                 : "#"; 
                 
-            // Trích xuất danh mục và vector
             const eventCategories = newTopic.category || ["Tin tức chung"]; 
-            const eventVector = newTopic.vector; // Đảm bảo newTopic đã chứa vector từ bước Embedding
+            const eventVector = newTopic.vector;
             
-            // Gọi hàm mới với bộ lọc 3 lớp
             await processEventIntoTimeline(
                 newTopic.id, 
-                newTopic.title || newTopic.cluster_title, // Tùy thuộc vào cách bạn đặt tên key trong AI analysis
+                newTopic.title || newTopic.cluster_title,
                 newTopic.summary || newTopic.short_summary, 
                 eventDate,
                 eventCategories,
@@ -162,10 +154,9 @@ eventBus.on('CLUSTER_CREATED', async (clusters) => {
             );
         }
         
+        // Chỉ giữ lại một lệnh emit này, nằm ngoài vòng lặp for và trong khối try
         eventBus.emit('TOPIC_UPDATED', state.currentTopics);
-        }
         
-        eventBus.emit('TOPIC_UPDATED', state.currentTopics);
     } catch (e) {
         eventBus.emit('PIPELINE_ERROR', e);
     }
