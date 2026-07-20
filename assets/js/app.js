@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initSearch();
     renderSkeletons();
     fetchNewsData();
+    fetchTimelineData();
 });
  
 function initNavigation() {
