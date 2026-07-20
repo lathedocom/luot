@@ -126,14 +126,13 @@ CHỈ TRẢ VỀ JSON:
             }
 
             // Thêm mốc thời gian mới
-            tl.timeline.push({
-                time: Date.now(),
-                title: eventTitle,
-                summary: eventSummary,
-                topic_id: clusterId,
-                url: eventUrl,
-                importance: 90
-            });
+            tl.events.push({
+    timestamp: eventTimestamp || Date.now(), // Phải lưu số ms (VD: 1784553895457)
+    title: eventTitle,
+    summary: eventSummary,
+    url: clusterUrl || "#", // Lưu URL bài báo, nếu không có để dấu #
+    related_clusters: [clusterId]
+});
             tl.last_updated = eventDate;
             
             // Cập nhật lại vector chính để câu chuyện luôn "bám sát" diễn biến mới nhất
