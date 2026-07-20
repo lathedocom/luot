@@ -15,6 +15,8 @@ module.exports = {
         
         // Tầng 3: Dùng 3 Flash (Free 20/ngày - Giữ gìn cẩn thận)
         'DAILY_BRIEFING': { model: models.LAYER3_MODEL_PREMIUM, provider: 'google' },
-        'MONTHLY_REPORT': { model: models.LAYER3_MODEL_PREMIUM, provider: 'google' }
+        'MONTHLY_REPORT': { model: models.LAYER3_MODEL_PREMIUM, provider: 'google' },
+        // Thêm vào khối TASK_ROUTING
+        'STORY_MATCHING': { model: models.LAYER2_MODEL_PRIMARY, provider: 'google' }, // Dùng Flash Lite nhanh và rẻ
     }
 };
