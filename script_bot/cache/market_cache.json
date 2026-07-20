@@ -1,1 +1,42 @@
-{}
+{
+  "latest_market": {
+    "created_at": 1784553895508,
+    "expires_at": 1784555695508,
+    "version": "1.0",
+    "checksum": "d003a846d41eac2371c70ec0ecf73520",
+    "data": [
+      {
+        "symbol": "BTC",
+        "name": "Bitcoin",
+        "price": "NaN",
+        "change_percent": "NaN%",
+        "trend": "↓",
+        "updated_at": 1784553895508
+      },
+      {
+        "symbol": "GOLD",
+        "name": "Giá Vàng (XAU)",
+        "price": "2350.50",
+        "change_percent": "+0.5%",
+        "trend": "↑",
+        "updated_at": 1784553895456
+      },
+      {
+        "symbol": "USD/VND",
+        "name": "Tỷ giá Đô la",
+        "price": "25450",
+        "change_percent": "-0.1%",
+        "trend": "↓",
+        "updated_at": 1784553895456
+      },
+      {
+        "symbol": "VNINDEX",
+        "name": "VN-Index",
+        "price": "1280.15",
+        "change_percent": "+1.2%",
+        "trend": "↑",
+        "updated_at": 1784553895456
+      }
+    ]
+  }
+}
