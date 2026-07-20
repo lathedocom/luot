@@ -4,7 +4,7 @@ const gateway = require('./ai/gateway');
 const logger = require('./utils/logger');
 
 // Đổi tên file lưu trữ thành timeline_data.json cho đúng chuẩn Story-centric
-const STORY_FILE = path.join(__dirname, '../../data/timeline_data.json');
+const STORY_FILE = path.join(__dirname, '../../timeline_data.json');
 
 // Khởi tạo file nếu chưa tồn tại
 function loadStories() {
