@@ -6,16 +6,13 @@ class BaseProvider {
     constructor(apiKey) {
         this.apiKey = apiKey;
     }
-
-    // Hàm gọi AI sinh text/json
-    async generateContent(prompt, systemInstruction = "") {
+    // Hàm gọi AI sinh text/json, có thêm modelName để linh hoạt
+    async generateContent(prompt, systemInstruction = "", modelName = null) {
         throw new Error("Method 'generateContent()' must be implemented.");
     }
-
     // Hàm gọi AI tạo vector (nếu Provider đó có hỗ trợ)
-    async embedContent(text) {
+    async embedContent(text, modelName = null) {
         throw new Error("Method 'embedContent()' must be implemented.");
     }
 }
-
 module.exports = BaseProvider;
