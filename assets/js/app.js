@@ -571,10 +571,37 @@ function renderTimelinePage(stories) {
     validStories.forEach(story => {
         let timelineNodes = '';
         
+        // --- XỬ LÝ TRẠNG THÁI HIỂN THỊ (ONGOING / ENDED) ---
+        const statusText = story.status === 'ongoing' ? 'Đang tiếp diễn' : 'Đã kết thúc';
+        const statusColor = story.status === 'ongoing' ? '#10b981' : '#6b7280'; // Xanh ngọc cho ongoing, xám cho ended
+
         story.timeline.forEach((item, index) => {
-            const timeObj = new Date(item.time);
-            const timeStr = `${timeObj.getHours().toString().padStart(2,'0')}:${timeObj.getMinutes().toString().padStart(2,'0')} - ${timeObj.toLocaleDateString('vi-VN')}`;
+            // --- XỬ LÝ THỜI GIAN AN TOÀN (CHỐNG LỖI NaN:NaN) ---
+            let safeTimestamp = item.timestamp || item.time || item.date || story.last_updated;
             
+            // Ép kiểu nếu timestamp đang ở dạng chuỗi số
+            if (typeof safeTimestamp === 'string' && !isNaN(safeTimestamp)) {
+                safeTimestamp = parseInt(safeTimestamp, 10);
+            }
+            
+            const timeObj = new Date(safeTimestamp);
+            let timeStr = "";
+            
+            // Kiểm tra tính hợp lệ của thời gian
+            if (!isNaN(timeObj.getTime())) {
+                timeStr = `${timeObj.getHours().toString().padStart(2,'0')}:${timeObj.getMinutes().toString().padStart(2,'0')} - ${timeObj.toLocaleDateString('vi-VN')}`;
+            } else {
+                timeStr = "Vừa cập nhật"; // Fallback an toàn
+            }
+
+            // --- XỬ LÝ URL BÀI VIẾT TỪ FRONTEND ---
+            const safeUrl = (item.url && item.url !== "undefined") ? item.url : "#";
+            
+            // Bọc thẻ <a> vào tiêu đề nếu có link hợp lệ
+            const titleHtml = safeUrl !== "#" 
+                ? `<a href="${safeUrl}" target="_blank" style="color: inherit; text-decoration: underline;">${item.title}</a>` 
+                : item.title;
+
             timelineNodes += `
                 <div style="display: flex; gap: 16px; margin-bottom: 16px; position: relative;">
                     ${index !== story.timeline.length - 1 ? '<div style="position: absolute; left: 5px; top: 20px; bottom: -20px; width: 2px; background: var(--md-sys-color-outline);"></div>' : ''}
@@ -582,7 +609,7 @@ function renderTimelinePage(stories) {
                     <div>
                         <div style="font-size: 12px; color: var(--md-sys-color-primary); font-weight: bold; margin-bottom: 4px;">${timeStr}</div>
                         <div style="font-size: 14px; line-height: 1.5; font-weight: 500;">
-                            ${item.title}
+                            ${titleHtml}
                         </div>
                         <div style="font-size: 13px; opacity: 0.7; margin-top: 4px;">${item.summary}</div>
                     </div>
@@ -593,8 +620,8 @@ function renderTimelinePage(stories) {
         html += `
             <div class="widget" style="margin-bottom: 24px; border-left: 4px solid var(--md-sys-color-primary);">
                 <div class="news-meta" style="margin-bottom: 12px;">
-                    <span class="news-tag" style="background: rgba(16, 185, 129, 0.1); color: #10b981;">
-                        ${story.status === 'ongoing' ? 'Đang tiếp diễn' : 'Đã kết thúc'}
+                    <span class="news-tag" style="background: ${statusColor}20; color: ${statusColor};">
+                        ${statusText}
                     </span>
                 </div>
                 <h3 style="margin-bottom: 12px; font-size: 18px; line-height: 1.4;">${story.title}</h3>
