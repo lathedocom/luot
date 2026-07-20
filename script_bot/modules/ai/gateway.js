@@ -9,10 +9,13 @@ const budgetManager = require('../../budget/budget_manager');
 class AIGateway {
     constructor() {
         this.providers = {
+            this.providers = {
             google: new GoogleProvider(configModels.API_KEYS.GEMINI),
-            googleBackup: process.env.GEMINI_API_KEY_1 ? new GoogleProvider(process.env.GEMINI_API_KEY_1) : null,
+            
+            // Đã gọi thông qua config/models.js thay vì process.env
+            googleBackup: configModels.API_KEYS.GEMINI_BACKUP ? new GoogleProvider(configModels.API_KEYS.GEMINI_BACKUP) : null,
+            
             groq: new GroqProvider(configModels.API_KEYS.GROQ)
-        };
     }
 
     async executeTask(taskName, prompt, systemInstruction = "") {
