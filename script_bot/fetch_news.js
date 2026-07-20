@@ -116,7 +116,7 @@ eventBus.on('CLUSTER_CREATED', async (clusters) => {
                 event_key: eventKey,
                 topic_key: generateTopicKey(eventKey, 'intelligence'),
                 title: aiIntelligence.cluster_title,
-                timestamp: Date.now(),
+                timestamp: cluster.timestamp || Date.now(),
                 importance: cluster.articles[0].importance,
                 hot_score: cluster.article_count * 10,
                 categories: cluster.articles[0].categories,
@@ -131,7 +131,7 @@ eventBus.on('CLUSTER_CREATED', async (clusters) => {
                 entities: entities,
                 graph: ruleGraph,
                 sources: cluster.articles.map(a => ({ url: a.url, source_name: a.source_name, source_logo: a.source_logo })),
-                timeline: [{ title: aiIntelligence.cluster_title, timestamp: cluster.timestamp, url: cluster.articles[0].url }]
+                timeline: [{ title: aiIntelligence.cluster_title, timestamp: cluster.timestamp || Date.now(), url: cluster.articles[0].url }]
             };
             
             state.currentTopics.push(newTopic);
