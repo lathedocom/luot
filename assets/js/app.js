@@ -569,10 +569,16 @@ function renderTimelinePage(newsData) {
         if (topic.timeline && topic.timeline.length > 0) {
             topic.timeline.forEach((item, index) => {
                 // Sửa lỗi hiển thị thời gian 1970
-                let safeTimestamp = item.timestamp;
-                if (typeof safeTimestamp === 'number' && safeTimestamp < 10000000000) safeTimestamp *= 1000;
+                // Tự động tìm thời gian sự kiện. Nếu mốc sự kiện cũ không có, lấy thời gian của cả cụm (topic.timestamp)
+                let safeTimestamp = item.timestamp || item.date || item.time || topic.timestamp;
                 
-                const timeObj = new Date(safeTimestamp || Date.now());
+                // Chuẩn hóa định dạng timestamp
+                if (typeof safeTimestamp === 'number' && safeTimestamp < 10000000000) {
+                    safeTimestamp *= 1000;
+                }
+                
+                // ĐÃ XÓA Date.now() - Tuyệt đối không lấy giờ F5 trang web nữa
+                const timeObj = new Date(safeTimestamp);
                 const timeStr = `${timeObj.getHours().toString().padStart(2,'0')}:${timeObj.getMinutes().toString().padStart(2,'0')} - ${timeObj.toLocaleDateString('vi-VN')}`;
                 
                 timelineNodes += `
