@@ -544,73 +544,63 @@ function openModal(cluster) {
 // ==========================================
 // THÊM MỚI: HÀM RENDER TRANG TIMELINE 
 // ==========================================
-function renderTimelinePage(newsData) {
+async function fetchTimelineData() {
+    try {
+        const response = await fetch(`timeline_data.json?v=${new Date().getTime()}`);
+        if (!response.ok) throw new Error('Network error');
+        const data = await response.json();
+        renderTimelinePage(data.stories || []);
+    } catch (error) {
+        document.getElementById('timeline-page-container').innerHTML = `<p>Lỗi tải Timeline.</p>`;
+    }
+}
+
+function renderTimelinePage(stories) {
     const container = document.getElementById('timeline-page-container');
     if (!container) return;
 
-    // Lọc: Chỉ lấy những sự kiện có diễn biến liên tục (timeline có nhiều hơn 1 mốc)
-    // Hoặc những sự kiện cực kỳ nóng (hot_score > 30)
-    const ongoingEvents = newsData.filter(topic => 
-        (topic.timeline && topic.timeline.length > 1) || (topic.hot_score && topic.hot_score > 30)
-    );
+    // Lọc các Story có từ 2 diễn biến trở lên
+    const validStories = stories.filter(story => story.timeline && story.timeline.length > 1);
+    validStories.sort((a, b) => b.last_updated - a.last_updated);
 
-    // Sắp xếp các sự kiện có cập nhật mới nhất lên đầu
-    ongoingEvents.sort((a, b) => b.timestamp - a.timestamp);
-
-    if (ongoingEvents.length === 0) {
+    if (validStories.length === 0) {
         container.innerHTML = '<p style="padding: 20px; opacity: 0.7;">Chưa có chuỗi sự kiện nào đủ dài để hiển thị.</p>';
         return;
     }
 
     let html = '';
-    ongoingEvents.forEach(topic => {
+    validStories.forEach(story => {
         let timelineNodes = '';
         
-        if (topic.timeline && topic.timeline.length > 0) {
-            topic.timeline.forEach((item, index) => {
-                // Sửa lỗi hiển thị thời gian 1970
-                // Tự động tìm thời gian sự kiện. Nếu mốc sự kiện cũ không có, lấy thời gian của cả cụm (topic.timestamp)
-                let safeTimestamp = item.timestamp || item.date || item.time || topic.timestamp;
-                
-                // Chuẩn hóa định dạng timestamp
-                if (typeof safeTimestamp === 'number' && safeTimestamp < 10000000000) {
-                    safeTimestamp *= 1000;
-                }
-                
-                // ĐÃ XÓA Date.now() - Tuyệt đối không lấy giờ F5 trang web nữa
-                const timeObj = new Date(safeTimestamp);
-                const timeStr = `${timeObj.getHours().toString().padStart(2,'0')}:${timeObj.getMinutes().toString().padStart(2,'0')} - ${timeObj.toLocaleDateString('vi-VN')}`;
-                
-                timelineNodes += `
-                    <div style="display: flex; gap: 16px; margin-bottom: 16px; position: relative;">
-                        <!-- Đường kẻ dọc nối các mốc -->
-                        ${index !== topic.timeline.length - 1 ? '<div style="position: absolute; left: 5px; top: 20px; bottom: -20px; width: 2px; background: var(--md-sys-color-outline);"></div>' : ''}
-                        
-                        <!-- Dấu chấm tròn -->
-                        <div style="width: 12px; height: 12px; border-radius: 50%; background: var(--md-sys-color-primary); margin-top: 5px; position: relative; z-index: 2; flex-shrink: 0;"></div>
-                        
-                        <!-- Nội dung mốc thời gian -->
-                        <div>
-                            <div style="font-size: 12px; color: var(--md-sys-color-primary); font-weight: bold; margin-bottom: 4px;">${timeStr}</div>
-                            <div style="font-size: 14px; line-height: 1.5;">
-                                <a href="${item.url}" target="_blank" style="color: var(--md-sys-color-on-surface); text-decoration: none; transition: 0.2s;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='var(--md-sys-color-on-surface)'">${item.title}</a>
-                            </div>
+        story.timeline.forEach((item, index) => {
+            const timeObj = new Date(item.time);
+            const timeStr = `${timeObj.getHours().toString().padStart(2,'0')}:${timeObj.getMinutes().toString().padStart(2,'0')} - ${timeObj.toLocaleDateString('vi-VN')}`;
+            
+            timelineNodes += `
+                <div style="display: flex; gap: 16px; margin-bottom: 16px; position: relative;">
+                    ${index !== story.timeline.length - 1 ? '<div style="position: absolute; left: 5px; top: 20px; bottom: -20px; width: 2px; background: var(--md-sys-color-outline);"></div>' : ''}
+                    <div style="width: 12px; height: 12px; border-radius: 50%; background: var(--md-sys-color-primary); margin-top: 5px; position: relative; z-index: 2; flex-shrink: 0;"></div>
+                    <div>
+                        <div style="font-size: 12px; color: var(--md-sys-color-primary); font-weight: bold; margin-bottom: 4px;">${timeStr}</div>
+                        <div style="font-size: 14px; line-height: 1.5; font-weight: 500;">
+                            ${item.title}
                         </div>
+                        <div style="font-size: 13px; opacity: 0.7; margin-top: 4px;">${item.summary}</div>
                     </div>
-                `;
-            });
-        }
+                </div>
+            `;
+        });
 
         html += `
             <div class="widget" style="margin-bottom: 24px; border-left: 4px solid var(--md-sys-color-primary);">
                 <div class="news-meta" style="margin-bottom: 12px;">
-                    <span class="news-tag" style="background: rgba(16, 185, 129, 0.1); color: #10b981;">Đang tiếp diễn</span>
-                    <span style="font-size: 12px; opacity: 0.7;">Độ nóng: ${topic.hot_score || 10}</span>
+                    <span class="news-tag" style="background: rgba(16, 185, 129, 0.1); color: #10b981;">
+                        ${story.status === 'ongoing' ? 'Đang tiếp diễn' : 'Đã kết thúc'}
+                    </span>
                 </div>
-                <h3 style="margin-bottom: 12px; font-size: 18px; line-height: 1.4;">${topic.title || topic.cluster_title}</h3>
-                <p style="font-size: 14px; opacity: 0.7; margin-bottom: 20px; line-height: 1.6;">${topic.short_summary}</p>
+                <h3 style="margin-bottom: 12px; font-size: 18px; line-height: 1.4;">${story.title}</h3>
                 
-                <div style="background: rgba(0,0,0,0.1); padding: 16px; border-radius: 8px; border: 1px solid var(--md-sys-color-outline);">
+                <div style="background: rgba(0,0,0,0.1); padding: 16px; border-radius: 8px; border: 1px solid var(--md-sys-color-outline); margin-top: 20px;">
                     ${timelineNodes}
                 </div>
             </div>
@@ -619,3 +609,5 @@ function renderTimelinePage(newsData) {
     
     container.innerHTML = html;
 }
+
+// Gọi fetchTimelineData() song song với fetchNewsData() ở sự kiện DOMContentLoaded
