@@ -7,7 +7,7 @@ const RSS_SOURCES = [
     {
         id: "vnexpress_world", name: "VnExpress", country: "Vietnam", region: "Southeast Asia", language: "vi",
         category: ["general", "world"], type: "newspaper", priority: 10, credibility: 9,
-        rss: "https://vnexpress.net/rss/the-gioi.rss", homepage: "https://vnexpress.net", logo: "https://s1.vnecdn.net/vnexpress/restruct/i/v863/v2_2019/pc/graphics/favicon.ico", enabled: true
+        rss: "https://vnexpress.net/rss/the-gioi.rss", homepage: "https://vnexpress.net", logo: "https://vnexpress.net/favicon.ico", enabled: true
     },
     {
         id: "tuoitre_world", name: "Tuổi Trẻ", country: "Vietnam", region: "Southeast Asia", language: "vi",
@@ -28,11 +28,6 @@ const RSS_SOURCES = [
         id: "vtv_news", name: "VTV News", country: "Vietnam", region: "Southeast Asia", language: "vi",
         category: ["general", "politics"], type: "state_media", priority: 10, credibility: 10,
         rss: "https://vtv.vn/rss/the-gioi.rss", homepage: "https://vtv.vn", logo: "https://vtv.vn/favicon.ico", enabled: true
-    },
-    {
-        id: "cafef_macro", name: "CafeF", country: "Vietnam", region: "Southeast Asia", language: "vi",
-        category: ["economy", "finance", "macro"], type: "economic_news", priority: 9, credibility: 8,
-        rss: "https://cafef.vn/kinh-te-vi-mo-dau-tu.rss", homepage: "https://cafef.vn", logo: "https://cafef.vn/favicon.ico", enabled: true
     },
 
     // ==========================================
