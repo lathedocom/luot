@@ -23,8 +23,10 @@ const { evaluateClusterAction } = require('./modules/topic/similarity_engine');
 const { fetchAllMarketData } = require('./modules/market/index');
 const { fetchAllSocialTrends } = require('./modules/social/index');
 const { generateAllReports } = require('./modules/reports/index');
-// BỔ SUNG IMPORT GATEWAY ĐỂ GỌI AI GATEKEEPER CHO NHÁNH VERIFY_BY_AI
+// BỔ SUNG IMPORT GATEWAY
 const gateway = require('./modules/ai/gateway'); 
+// BỔ SUNG IMPORT JACCARD (LỚP PHÒNG THỦ MỚI)
+const { jaccardSimilarity } = require('./modules/utils/text_similarity');
 
 // BIẾN TRẠNG THÁI TOÀN CỤC CHO PIPELINE
 const state = {
@@ -36,14 +38,13 @@ const state = {
     marketData: [],
     socialTrends: [],
     reports: {},
-    pendingParallelTasks: 3 // Market, Social, Reports
+    pendingParallelTasks: 3 
 };
 
 // ============================================================================
 // HỆ THỐNG ĐỊNH TUYẾN SỰ KIỆN (EVENT ROUTING)
 // ============================================================================
 
-// 1. BẮT ĐẦU PIPELINE
 eventBus.on('START_PIPELINE', async () => {
     logger.clearErrorLogs();
     logger.info("=== KHỞI ĐỘNG HỆ THỐNG TIN TỨC V4.5 (EVENT-DRIVEN ARCHITECTURE) ===");
@@ -55,7 +56,6 @@ eventBus.on('START_PIPELINE', async () => {
     }
 });
 
-// 2. CHUẨN HÓA VÀ EMBEDDING
 eventBus.on('RSS_FETCHED', async (articles) => {
     try {
         const enriched = articles.map(article => ({
@@ -77,14 +77,12 @@ eventBus.on('RSS_FETCHED', async (articles) => {
     }
 });
 
-// 3. GOM CỤM
 eventBus.on('EMBEDDING_DONE', (embeddedArticles) => {
     const clusters = clusterArticles(embeddedArticles);
     state.clusters = clusters;
     eventBus.emit('CLUSTER_CREATED', clusters);
 });
 
-// 4. KIỂM ĐỊNH SIMILARITY & PHÂN TÍCH AI
 eventBus.on('CLUSTER_CREATED', async (clusters) => {
     try {
         const db = topicStore.readData();
@@ -95,7 +93,6 @@ eventBus.on('CLUSTER_CREATED', async (clusters) => {
             const eventKey = generateEventKey(entities);
             const ruleGraph = buildRuleBasedGraph(entities);
             
-            // Động cơ Similarity đưa ra phán quyết tiết kiệm Quota
             const { action, bestMatch } = evaluateClusterAction(cluster.main_vector, state.currentTopics);
             
             if (action === 'SKIP') {
@@ -111,7 +108,6 @@ eventBus.on('CLUSTER_CREATED', async (clusters) => {
                 continue;
             }
 
-            // --- 🐛 BẢN VÁ: THÊM NHÁNH XỬ LÝ VERIFY_BY_AI ---
             if (action === 'VERIFY_BY_AI' && bestMatch) {
                 logger.info(`[AI Gatekeeper] Cần xác minh AI cho cụm tin mới với chủ đề: ${bestMatch.title}`);
                 
@@ -128,12 +124,10 @@ LỆNH TUYỆT ĐỐI: CHỈ trả về JSON duy nhất định dạng:
 }`;
 
                 try {
-                    // Dùng MATCH_TIMELINE (hoặc task hệ thống tương đương có trả JSON)
                     const aiDecision = await gateway.executeTask('MATCH_TIMELINE', prompt); 
                     
                     if (aiDecision && aiDecision.is_same_event) {
                         logger.info(`[AI Gatekeeper] Quyết định: GỘP (Lý do: ${aiDecision.reason})`);
-                        // Thực thi việc gộp tin giống y hệt nhánh MERGE
                         const updatedTopic = mergeIntoExistingTopic(bestMatch, cluster.articles, cluster.articles[0].title);
                         const index = state.currentTopics.findIndex(t => t.event_key === bestMatch.event_key);
                         if (index !== -1) state.currentTopics[index] = updatedTopic;
@@ -141,18 +135,41 @@ LỆNH TUYỆT ĐỐI: CHỈ trả về JSON duy nhất định dạng:
                         continue; 
                     } else {
                         logger.info(`[AI Gatekeeper] Quyết định: TÁCH TẠO MỚI (Lý do: ${aiDecision.reason})`);
-                        // AI bảo khác nhau -> Để luồng trôi xuống chạy CREATE_NEW
                     }
                 } catch (error) {
                     logger.warn(`[AI Gatekeeper] Lỗi xác minh: ${error.message}. Fallback: Tách tạo mới để an toàn.`);
                 }
             }
-            // ------------------------------------------------
+
+            // --- 🛡️ BẢN VÁ LỚP PHÒNG THỦ 2: SO KHỚP VĂN BẢN KHẮT KHE ---
+            const TWO_DAYS_MS = 48 * 60 * 60 * 1000;
+            const recentTopics = state.currentTopics.filter(t => Date.now() - (t.timestamp || Date.now()) < TWO_DAYS_MS);
+
+            const duplicateTopic = recentTopics.find(t => {
+                const titleSim = jaccardSimilarity(t.title, cluster.articles[0].title);
+                const fullSim = jaccardSimilarity(
+                    t.title + ' ' + (t.short_summary || ''), 
+                    cluster.articles[0].title + ' ' + cluster.articles[0].summary
+                );
+                // Tiêu chí gắt gao: Tiêu đề giống >= 55% HOẶC tổng thể giống >= 50%
+                return titleSim >= 0.55 || fullSim >= 0.50;
+            });
+
+            if (duplicateTopic) {
+                logger.info(`[TEXT-DEDUP] Phát hiện trùng lặp văn bản với: "${duplicateTopic.title}". Tiến hành gộp nguồn.`);
+                
+                // ĐÃ SỬA: Truyền cluster.articles[0].title để giữ dấu vết cập nhật (không dùng duplicateTopic.title)
+                const merged = mergeIntoExistingTopic(duplicateTopic, cluster.articles, cluster.articles[0].title);
+                const idx = state.currentTopics.findIndex(t => t.event_key === duplicateTopic.event_key);
+                if (idx !== -1) state.currentTopics[idx] = merged;
+                
+                continue; // Thoát vòng lặp, bỏ qua gọi AI
+            }
+            // ------------------------------------------------------------
             
             logger.info(`Đang gọi AI phân tích Topic mới...`);
             const aiIntelligence = await analyzeClusterMultiDimensional(cluster, eventKey);
             
-            // Tạo đối tượng Topic
             const newTopic = {
                 event_key: eventKey,
                 topic_key: generateTopicKey(eventKey, 'intelligence'),
@@ -172,13 +189,10 @@ LỆNH TUYỆT ĐỐI: CHỈ trả về JSON duy nhất định dạng:
             state.currentTopics.push(newTopic);
             state.newTopicsCount++;
             
-            // --- BẮT ĐẦU ĐOẠN CODE MỚI ---
             const eventDate = newTopic.timestamp ? new Date(newTopic.timestamp).toISOString() : new Date().toISOString();
-            
             const eventUrl = (newTopic.articles && newTopic.articles.length > 0) 
                 ? (newTopic.articles[0].link || newTopic.articles[0].url) 
                 : "#"; 
-                
             const eventCategories = newTopic.category || ["Tin tức chung"]; 
             const eventVector = newTopic.vector;
             
@@ -199,7 +213,7 @@ LỆNH TUYỆT ĐỐI: CHỈ trả về JSON duy nhất định dạng:
         eventBus.emit('PIPELINE_ERROR', e);
     }
 });
-// 5. CHẠY SONG SONG CÁC TIẾN TRÌNH RÂU RIA (Thị trường, MXH, Report)
+
 eventBus.on('TOPIC_UPDATED', (currentTopics) => {
     logger.info("Khởi chạy song song (Asynchronous) các luồng dữ liệu vệ tinh...");
     
@@ -216,7 +230,6 @@ eventBus.on('TOPIC_UPDATED', (currentTopics) => {
         .catch(e => eventBus.emit('PIPELINE_ERROR', e));
 });
 
-// LẮNG NGHE VÀ ĐỒNG BỘ TIẾN TRÌNH SONG SONG
 const synchronizeParallelTasks = () => {
     state.pendingParallelTasks--;
     if (state.pendingParallelTasks === 0) {
@@ -227,12 +240,10 @@ eventBus.on('MARKET_UPDATED', synchronizeParallelTasks);
 eventBus.on('SOCIAL_UPDATED', synchronizeParallelTasks);
 eventBus.on('REPORT_CREATED', synchronizeParallelTasks);
 
-// 6. ĐỒNG BỘ HÓA DỮ LIỆU CUỐI CÙNG VÀO FILE TĨNH
 eventBus.on('SYNC_DATABASE', () => {
     try {
         const db = topicStore.readData();
         
-        // --- BỘ LỌC KHỬ TRÙNG (DEDUPLICATION) ---
         const uniqueTopics = new Map();
         if (state.currentTopics && state.currentTopics.length > 0) {
             for (const topic of state.currentTopics) {
@@ -260,7 +271,6 @@ eventBus.on('SYNC_DATABASE', () => {
     }
 });
 
-// 7. KẾT THÚC THÀNH CÔNG VÀ LƯU LOG
 eventBus.on('PIPELINE_FINISHED', () => {
     const durationMs = Date.now() - state.startTime;
     const status = {
@@ -274,7 +284,6 @@ eventBus.on('PIPELINE_FINISHED', () => {
     process.exit(0);
 });
 
-// 8. XỬ LÝ SỰ CỐ NGẮT MẠCH (CIRCUIT BREAKER)
 eventBus.on('PIPELINE_ERROR', (error) => {
     logger.error("PIPELINE THẤT BẠI CẤP ĐỘ HỆ THỐNG!", error);
     const failStatus = { status: { success: false, last_run: new Date().toISOString() }, errors: logger.getErrorLogs() };
@@ -282,7 +291,4 @@ eventBus.on('PIPELINE_ERROR', (error) => {
     process.exit(1); 
 });
 
-// ============================================================================
-// BÓP CÒ KHỞI ĐỘNG HỆ THỐNG
-// ============================================================================
 eventBus.emit('START_PIPELINE');
