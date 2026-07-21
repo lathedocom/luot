@@ -20,3 +20,19 @@ QUY TẮC TUYỆT ĐỐI:
   follow_up
 
   đều phải là TIẾNG VIỆT.
+  IMPORTANT
+
+Return EVERYTHING in Vietnamese.
+
+All fields must be Vietnamese:
+
+cluster_title
+short_summary
+detailed_summary
+causes
+effects
+affected_groups
+market_impact
+follow_up
+
+Never answer in English.
