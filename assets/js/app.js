@@ -424,6 +424,10 @@ function initModalEvents() {
 
 
 
+/* ==========================================================================
+  TOÀN BỘ HÀM openModal(cluster)
+   ========================================================================== */
+
 function openModal(cluster) {
     try {
         // 1. Kiểm tra an toàn tiêu đề
@@ -475,7 +479,7 @@ function openModal(cluster) {
             return `<li style="margin-bottom: 8px;">${data}</li>`;
         };
 
-        // [NEW] 2. Ý NGHĨA CỐT LÕI (Từ JSON mới)
+        // [NEW] 2. Ý NGHĨA CỐT LÕI
         if (cluster.significance) {
             bodyHtml += `
             <div class="intelligence-box" style="margin-top: 16px; background: rgba(59, 130, 246, 0.05); border-left: 4px solid #3b82f6; padding: 12px; border-radius: 4px;">
@@ -512,7 +516,33 @@ function openModal(cluster) {
             </div>`;
         }
 
-        // [NEW] 5. ĐIỂM CHƯA RÕ (Unknowns)
+        // [RESTORED] 5. NHÓM BỊ ẢNH HƯỞNG (AFFECTED GROUPS - Màu Tím)
+        if (cluster.affected_groups && (Array.isArray(cluster.affected_groups) ? cluster.affected_groups.length > 0 : true)) {
+            bodyHtml += `
+            <div class="intelligence-box" style="margin-top: 16px; background: rgba(139, 92, 246, 0.05); border-left: 4px solid #8b5cf6; padding: 12px; border-radius: 4px;">
+                <div class="intelligence-title" style="color: #8b5cf6; font-weight: bold; display: flex; align-items: center; gap: 6px;">
+                    <span class="material-icons-round" style="font-size: 18px;">groups</span> Đối tượng / Nhóm bị ảnh hưởng
+                </div>
+                <ul style="padding-left: 20px; font-size: 14px; margin-top: 12px; margin-bottom: 0; line-height: 1.6;">
+                    ${renderList(cluster.affected_groups)}
+                </ul>
+            </div>`;
+        }
+ 
+        // [RESTORED] 6. TÁC ĐỘNG THỊ TRƯỜNG (MARKET IMPACT - Màu Xanh lá)
+        if (cluster.market_impact && (Array.isArray(cluster.market_impact) ? cluster.market_impact.length > 0 : true)) {
+            bodyHtml += `
+            <div class="intelligence-box" style="margin-top: 16px; background: rgba(16, 185, 129, 0.05); border-left: 4px solid #10b981; padding: 12px; border-radius: 4px;">
+                <div class="intelligence-title" style="color: #10b981; font-weight: bold; display: flex; align-items: center; gap: 6px;">
+                    <span class="material-icons-round" style="font-size: 18px;">trending_up</span> Tác động thị trường
+                </div>
+                <ul style="padding-left: 20px; font-size: 14px; margin-top: 12px; margin-bottom: 0; line-height: 1.6;">
+                    ${renderList(cluster.market_impact)}
+                </ul>
+            </div>`;
+        }
+
+        // [NEW] 7. ĐIỂM CHƯA RÕ (Unknowns)
         if (cluster.unknowns && (Array.isArray(cluster.unknowns) ? cluster.unknowns.length > 0 : true)) {
             bodyHtml += `
             <div class="intelligence-box" style="margin-top: 16px; background: rgba(107, 114, 128, 0.05); border-left: 4px solid #6b7280; padding: 12px; border-radius: 4px;">
@@ -525,7 +555,7 @@ function openModal(cluster) {
             </div>`;
         }
  
-        // [NEW] 6. KỊCH BẢN TIẾP THEO (Thay thế follow_up cũ)
+        // [NEW] 8. KỊCH BẢN TIẾP THEO (Thay thế follow_up cũ)
         if (cluster.scenarios && (Array.isArray(cluster.scenarios) ? cluster.scenarios.length > 0 : true)) {
             const scenariosHtml = cluster.scenarios.map(sc => {
                 let color = sc.likelihood === 'cao' ? '#ef4444' : (sc.likelihood === 'trung bình' ? '#f59e0b' : '#10b981');
@@ -562,7 +592,7 @@ function openModal(cluster) {
         const modalBody = document.getElementById('modal-body');
         if (modalBody) modalBody.innerHTML = bodyHtml;
         
-        // 7. XỬ LÝ NGUỒN BÁO CHÍ 
+        // 9. XỬ LÝ NGUỒN BÁO CHÍ 
         const sourcesContainer = document.getElementById('modal-sources');
         if (sourcesContainer) {
             sourcesContainer.innerHTML = '';
@@ -572,7 +602,7 @@ function openModal(cluster) {
                 cluster.sources.forEach(src => {
                     sourcesContainer.innerHTML += `
                         <a href="${src.url || '#'}" target="_blank" class="source-chip" style="display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: var(--md-sys-color-surface); border: 1px solid var(--md-sys-color-outline); border-radius: 16px; font-size: 12px; text-decoration: none; color: inherit; margin-right: 8px; margin-bottom: 8px;">
-                            <img src="${src.source_logo || '[https://via.placeholder.com/16](https://via.placeholder.com/16)'}" width="16" height="16" style="border-radius:50%; object-fit: cover; background: #fff;"> 
+                            <img src="${src.source_logo || 'https://via.placeholder.com/16'}" width="16" height="16" style="border-radius:50%; object-fit: cover; background: #fff;"> 
                             ${src.source_name || 'Nguồn báo'}
                         </a>`;
                 });
@@ -585,7 +615,7 @@ function openModal(cluster) {
         const toggleText = document.getElementById('toggle-sources-text');
         if (toggleText) toggleText.textContent = 'Xem danh sách các nguồn báo chí';
         
-        // 8. HIỂN THỊ MODAL
+        // 10. HIỂN THỊ MODAL
         const modal = document.getElementById('intelligence-modal');
         if (modal) {
             modal.classList.add('active');
