@@ -638,7 +638,7 @@ function openModal(cluster) {
         console.error("Đã xảy ra lỗi khi render Modal:", error);
     }
 }
-}
+
 
 // ==========================================
 // THÊM MỚI: HÀM RENDER TRANG TIMELINE 
