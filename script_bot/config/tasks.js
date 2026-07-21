@@ -17,7 +17,8 @@ module.exports = {
         'MONTHLY_REPORT': { model: models.LAYER3_MODEL_PREMIUM, provider: 'google' },
         
         // Thêm vào khối TASK_ROUTING
-        'STORY_MATCHING': { model: models.LAYER2_MODEL_PRIMARY, provider: 'google' }
+        'STORY_MATCHING': { model: models.LAYER2_MODEL_PRIMARY, provider: 'google' },
+        'MATCH_TIMELINE': { model: models.LAYER2_MODEL_PRIMARY, provider: 'google' } // <--- ĐÃ BỔ SUNG DÒNG NÀY
     }, // Dấu phẩy ngăn cách rất quan trọng
 
     MATCH_TIMELINE: {
