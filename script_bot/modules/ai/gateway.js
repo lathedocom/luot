@@ -1,7 +1,6 @@
 const configModels = require('../../config/models');
-// Sửa đổi import một chút để lấy được toàn bộ nội dung file tasks.js (chứa system_prompt)
-const tasksConfig = require('../../config/tasks'); 
-const TASK_ROUTING = tasksConfig.TASK_ROUTING || tasksConfig; 
+const tasksConfig = require('../../config/tasks');
+const TASK_ROUTING = tasksConfig.TASK_ROUTING || tasksConfig;
 
 const GoogleProvider = require('./providers/google');
 const GroqProvider = require('./providers/groq');
@@ -29,8 +28,7 @@ class AIGateway {
         let targetModel = taskConfig.model;
         let targetProvider = taskConfig.provider;
 
-        // --- 🐛 BẢN VÁ LỖI TẠI ĐÂY ---
-        // Nếu hàm gọi bên ngoài không truyền systemInstruction, tự động tìm và kéo system_prompt từ config/tasks.js vào
+        // Tự động tìm và kéo system_prompt từ config/tasks.js nếu không được truyền vào
         let finalSystemInstruction = systemInstruction;
         if (!finalSystemInstruction) {
             const taskDetails = tasksConfig[taskName];
@@ -40,7 +38,6 @@ class AIGateway {
                 finalSystemInstruction = taskConfig.system_prompt;
             }
         }
-        // ------------------------------
 
         let attempts = 0;
         const maxRetries = 2; 
@@ -51,7 +48,6 @@ class AIGateway {
                 const providerInstance = this.providers[targetProvider];
                 if (!providerInstance) throw new Error(`Provider ${targetProvider} không tồn tại.`);
 
-                // TRUYỀN finalSystemInstruction ĐÃ ĐƯỢC FIX VÀO ĐÂY
                 const resultText = await providerInstance.generateContent(prompt, finalSystemInstruction, targetModel);
                 
                 budgetManager.recordUsage({
@@ -70,19 +66,15 @@ class AIGateway {
                 const latency = Date.now() - startTime;
                 logger.warn(`[Gateway] Task ${taskName} (Model: ${targetModel}) bị lỗi: ${error.message}`);
                 
-                // Phân loại lỗi mạng và quota
                 const isQuotaOrNetworkError = error.message === "RATE_LIMIT" || 
                                               error.message.includes('429') || 
                                               error.message.includes('404') || 
                                               error.message.includes('503');
 
-                // Ưu tiên 1: Đổi sang Key Google dự phòng
                 if (isQuotaOrNetworkError && this.providers.googleBackup && targetProvider === 'google') {
                     logger.warn(`[Gateway] Phát hiện lỗi API Key chính. Đang chuyển sang Key Dự phòng (googleBackup)...`);
                     targetProvider = 'googleBackup';
-                } 
-                // Ưu tiên 2: Hạ cấp Model hoặc chuyển sang Groq nếu không thể dùng key dự phòng
-                else {
+                } else {
                     if (targetModel === configModels.LAYER1_MODEL_PRIMARY) {
                         logger.warn(`[Gateway] Chuyển Fallback sang ${configModels.LAYER1_MODEL_FALLBACK} cho tác vụ nhẹ...`);
                         targetModel = configModels.LAYER1_MODEL_FALLBACK;
@@ -93,7 +85,6 @@ class AIGateway {
                         logger.warn(`[Gateway] Đổi sang mạng Groq dự phòng...`);
                         targetProvider = 'groq';
                         
-                        // ĐÃ SỬA: Lựa chọn tự động model Groq dựa trên model ban đầu
                         if (targetModel.includes('flash-lite') || targetModel.includes('gemma')) {
                             targetModel = configModels.GROQ_MODEL_FAST || 'llama-3.1-8b-instant';
                         } else {
@@ -132,10 +123,30 @@ class AIGateway {
             });
             return vector;
         } catch (error) {
+            // Đã bổ sung dự phòng cho cả hàm Embedding đơn
+            const isQuotaOrNetworkError = error.message === "RATE_LIMIT" || 
+                                          error.message.includes('429') || 
+                                          error.message.includes('503');
+                                          
+            if (isQuotaOrNetworkError && this.providers.googleBackup) {
+                logger.warn(`[Gateway] Embedding Key 1 bị giới hạn. Gánh tải bằng Key Dự phòng...`);
+                try {
+                    const backupStart = Date.now();
+                    const backupVector = await this.providers.googleBackup.embedContent(text, modelName);
+                    budgetManager.recordUsage({
+                        model: modelName, provider: 'google_backup', task: 'EMBEDDING', latency: Date.now() - backupStart, status: 'SUCCESS'
+                    });
+                    return backupVector;
+                } catch (backupError) {
+                    logger.error(`[Gateway] Cả 2 Key Gemini đều sập khi chạy Vector đơn.`);
+                }
+            } else {
+                logger.error(`[Gateway] Embedding thất bại: ${error.message}`);
+            }
+
             budgetManager.recordUsage({
                 model: modelName, provider: 'google', task: 'EMBEDDING', latency: Date.now() - startTime, status: 'FAILED'
             });
-            logger.error(`[Gateway] Embedding thất bại: ${error.message}`);
             return new Array(768).fill(0).map(() => Math.random() * 0.01); 
         }
     }
@@ -155,7 +166,12 @@ class AIGateway {
             });
             return vectors;
         } catch (error) {
-            if (error.message.includes('429') && this.providers.googleBackup) {
+            // --- BẢN VÁ THEO ĐÚNG LOGIC PHÂN TÍCH CỦA BẠN ---
+            const isQuotaOrNetworkError = error.message === "RATE_LIMIT" || 
+                                          error.message.includes('429') || 
+                                          error.message.includes('503');
+
+            if (isQuotaOrNetworkError && this.providers.googleBackup) {
                 logger.warn(`[Gateway] Batch Embedding Key 1 bị giới hạn. Gánh tải bằng Key Dự phòng...`);
                 try {
                     const backupStart = Date.now();
@@ -170,6 +186,8 @@ class AIGateway {
             } else {
                 logger.error(`[Gateway] Batch Embedding thất bại: ${error.message}`);
             }
+            // ------------------------------------------------
+
             budgetManager.recordUsage({
                 model: modelName, provider: 'google', task: 'BATCH_EMBEDDING', latency: Date.now() - startTime, status: 'FAILED'
             });
