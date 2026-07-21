@@ -136,12 +136,18 @@
         </div>
     </div>
  
+   
     <!-- MODAL TÌNH BÁO CHI TIẾT -->
     <div id="intelligence-modal" class="modal-overlay">
         <div class="modal-dialog">
-            <div class="modal-header">
-                <h2 id="modal-title" class="modal-title">Đang tải...</h2>
-                <button class="close-btn close-modal-action"><span class="material-icons-round">close</span></button>
+            <div class="modal-header" style="flex-direction: column;"> <!-- [NEW] Sửa flex để rớt dòng -->
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; width: 100%;">
+                    <h2 id="modal-title" class="modal-title">Đang tải...</h2>
+                    <button class="close-btn close-modal-action"><span class="material-icons-round">close</span></button>
+                </div>
+                <!-- [NEW] Container cho Độ xác thực và Timeline thu gọn -->
+                <div id="modal-reliability" style="margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px;"></div>
+                <div id="modal-mini-timeline" style="width: 100%; margin-top: 16px; display: none;"></div>
             </div>
             <div class="modal-body" id="modal-body"></div>
             <div class="modal-footer">
