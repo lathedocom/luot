@@ -1,26 +1,41 @@
 {
   "status": {
     "success": true,
-    "duration_ms": 283965,
-    "last_run": "2026-07-20T23:22:04.763Z"
+    "duration_ms": 202772,
+    "last_run": "2026-07-21T00:29:36.471Z"
   },
   "metrics": {
-    "articles_processed": 424,
-    "clusters_formed": 8,
-    "new_topics": 8
+    "articles_processed": 416,
+    "clusters_formed": 7,
+    "new_topics": 7
   },
   "quota": {
-    "embedding_calls": 424
+    "embedding_calls": 416
   },
   "errors": [
     {
-      "time": "[23:19:53]",
+      "time": "[00:29:01]",
       "message": "[Gateway] Batch Embedding thất bại: HTTP Lỗi 404: {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"models/text-embedding-004 is not found for API version v1beta, or is not supported for embedContent. Call ModelService.ListModels to see the list of available models and their supported methods.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n",
       "detail": ""
     },
     {
-      "time": "[23:21:32]",
-      "message": "[Gateway] Batch Embedding thất bại: HTTP Lỗi 404: {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"models/text-embedding-004 is not found for API version v1beta, or is not supported for embedContent. Call ModelService.ListModels to see the list of available models and their supported methods.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n",
+      "time": "[00:29:21]",
+      "message": "[Story Engine] Lỗi AI Verifier: Task 'MATCH_TIMELINE' chưa được khai báo trong config/tasks.js. Chuyển sang lưu dự phòng.",
+      "detail": ""
+    },
+    {
+      "time": "[00:29:21]",
+      "message": "[Story Engine] Lỗi AI Verifier: Task 'MATCH_TIMELINE' chưa được khai báo trong config/tasks.js. Chuyển sang lưu dự phòng.",
+      "detail": ""
+    },
+    {
+      "time": "[00:29:36]",
+      "message": "[Story Engine] Lỗi AI Verifier: Task 'MATCH_TIMELINE' chưa được khai báo trong config/tasks.js. Chuyển sang lưu dự phòng.",
+      "detail": ""
+    },
+    {
+      "time": "[00:29:36]",
+      "message": "[Story Engine] Lỗi AI Verifier: Task 'MATCH_TIMELINE' chưa được khai báo trong config/tasks.js. Chuyển sang lưu dự phòng.",
       "detail": ""
     }
   ]

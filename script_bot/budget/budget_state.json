@@ -1,27 +1,27 @@
 {
-  "last_reset": "2026-07-20",
+  "last_reset": "2026-07-21",
   "usage": {
     "text-embedding-004": {
-      "rpd": 12,
-      "rpm": 12,
-      "promptTokens": 21645,
+      "rpd": 1,
+      "rpm": 1,
+      "promptTokens": 0,
       "completionTokens": 0,
       "cost": 0,
       "successCount": 5,
-      "failCount": 7
+      "failCount": 8
     },
     "gemini-3.1-flash-lite": {
-      "rpd": 41,
-      "rpm": 41,
-      "promptTokens": 14849,
-      "completionTokens": 16852,
+      "rpd": 2,
+      "rpm": 2,
+      "promptTokens": 393,
+      "completionTokens": 924,
       "cost": 0,
-      "successCount": 41,
+      "successCount": 43,
       "failCount": 0
     },
     "undefined": {
-      "rpd": 2,
-      "rpm": 2,
+      "rpd": 0,
+      "rpm": 0,
       "promptTokens": 0,
       "completionTokens": 0,
       "cost": 0,
@@ -29,8 +29,8 @@
       "failCount": 2
     },
     "gemma-4-26b": {
-      "rpd": 10,
-      "rpm": 10,
+      "rpd": 0,
+      "rpm": 0,
       "promptTokens": 0,
       "completionTokens": 0,
       "cost": 0,
@@ -38,17 +38,17 @@
       "failCount": 10
     },
     "llama-3.1-8b-instant": {
-      "rpd": 38,
-      "rpm": 38,
-      "promptTokens": 5635,
-      "completionTokens": 1937,
+      "rpd": 0,
+      "rpm": 0,
+      "promptTokens": 0,
+      "completionTokens": 0,
       "cost": 0,
       "successCount": 19,
       "failCount": 19
     },
     "gemini-embedding-1": {
-      "rpd": 4,
-      "rpm": 4,
+      "rpd": 0,
+      "rpm": 0,
       "promptTokens": 0,
       "completionTokens": 0,
       "cost": 0,
@@ -56,8 +56,8 @@
       "failCount": 4
     },
     "gemma-2-9b-it": {
-      "rpd": 7,
-      "rpm": 7,
+      "rpd": 0,
+      "rpm": 0,
       "promptTokens": 0,
       "completionTokens": 0,
       "cost": 0,
@@ -65,8 +65,8 @@
       "failCount": 7
     },
     "gemma-4-31b": {
-      "rpd": 2,
-      "rpm": 2,
+      "rpd": 0,
+      "rpm": 0,
       "promptTokens": 0,
       "completionTokens": 0,
       "cost": 0,
@@ -74,12 +74,12 @@
       "failCount": 2
     },
     "gemma-4-26b-a4b-it": {
-      "rpd": 13,
-      "rpm": 13,
-      "promptTokens": 2898,
-      "completionTokens": 1255,
+      "rpd": 2,
+      "rpm": 2,
+      "promptTokens": 383,
+      "completionTokens": 184,
       "cost": 0,
-      "successCount": 13,
+      "successCount": 15,
       "failCount": 0
     }
   }
