@@ -1,8 +1,8 @@
 {
   "status": {
     "success": true,
-    "duration_ms": 272646,
-    "last_run": "2026-07-21T03:57:33.586Z"
+    "duration_ms": 166082,
+    "last_run": "2026-07-21T04:20:02.712Z"
   },
   "metrics": {
     "articles_processed": 480,
@@ -14,12 +14,7 @@
   },
   "errors": [
     {
-      "time": "[03:55:14]",
-      "message": "[Gateway] Batch Embedding thất bại: RATE_LIMIT",
-      "detail": ""
-    },
-    {
-      "time": "[03:56:49]",
+      "time": "[04:19:29]",
       "message": "[Gateway] Batch Embedding thất bại: RATE_LIMIT",
       "detail": ""
     }
