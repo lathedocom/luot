@@ -117,9 +117,9 @@ class AIGateway {
                 model: modelName,
                 provider: 'google',
                 task: 'EMBEDDING',
-                promptTokens: Math.round(text.length / 4),
+                //promptTokens: Math.round(text.length / 4),
                 latency: Date.now() - startTime,
-                status: 'SUCCESS'
+                status: 'FAILED'
             });
             return vector;
         } catch (error) {
@@ -147,7 +147,8 @@ class AIGateway {
             budgetManager.recordUsage({
                 model: modelName, provider: 'google', task: 'EMBEDDING', latency: Date.now() - startTime, status: 'FAILED'
             });
-            return new Array(768).fill(0).map(() => Math.random() * 0.01); 
+            // 🐛 XÓA DÒNG NÀY: return new Array(768).fill(0).map(() => Math.random() * 0.01);
+            throw new Error("Tất cả API Key Embedding đều thất bại."); // Bắn thẳng lỗi ra ngoài 
         }
     }
 
@@ -160,9 +161,9 @@ class AIGateway {
                 model: modelName,
                 provider: 'google',
                 task: 'BATCH_EMBEDDING',
-                promptTokens: Math.round(texts.join(' ').length / 4),
+                //promptTokens: Math.round(texts.join(' ').length / 4),
                 latency: Date.now() - startTime,
-                status: 'SUCCESS'
+                status: 'FAILED'
             });
             return vectors;
         } catch (error) {
@@ -192,7 +193,8 @@ class AIGateway {
                 model: modelName, provider: 'google', task: 'BATCH_EMBEDDING', latency: Date.now() - startTime, status: 'FAILED'
             });
             
-            return texts.map(() => new Array(768).fill(0).map(() => Math.random() * 0.01));
+           // 🐛 XÓA DÒNG NÀY: return texts.map(() => new Array(768).fill(0).map(() => Math.random() * 0.01));
+            throw new Error("Tất cả API Key Batch Embedding đều thất bại."); // Bắn thẳng lỗi ra ngoài để kịch bản xử lý retry sau
         }
     }
 } 
