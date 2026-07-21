@@ -193,12 +193,32 @@ eventBus.on('REPORT_CREATED', synchronizeParallelTasks);
 eventBus.on('SYNC_DATABASE', () => {
     try {
         const db = topicStore.readData();
-        db.news = state.currentTopics.sort((a, b) => b.timestamp - a.timestamp || b.hot_score - a.hot_score);
-        db.market_data = state.marketData;
-        db.social_trends = state.socialTrends;
-        db.daily_briefing = state.reports.daily || "";
-        db.statistics = { total_topics: state.currentTopics.length, total_articles: state.articles.length };
         
+        // --- BỘ LỌC KHỬ TRÙNG (DEDUPLICATION) ---
+        // Dùng Map để đảm bảo mỗi event_key chỉ tồn tại 1 lần duy nhất (giữ bản mới nhất)
+        const uniqueTopics = new Map();
+        if (state.currentTopics && state.currentTopics.length > 0) {
+            for (const topic of state.currentTopics) {
+                if (topic && topic.event_key) {
+                    uniqueTopics.set(topic.event_key, topic);
+                }
+            }
+        }
+        
+        // Chuyển lại từ Map sang Array và sắp xếp
+        const filteredTopics = [...uniqueTopics.values()];
+        db.news = filteredTopics.sort((a, b) => b.timestamp - a.timestamp || (b.hot_score || 0) - (a.hot_score || 0));
+        
+        // Cập nhật các dữ liệu vệ tinh
+        db.market_data = state.marketData || [];
+        db.social_trends = state.socialTrends || [];
+        db.daily_briefing = (state.reports && state.reports.daily) ? state.reports.daily : "";
+        db.statistics = { 
+            total_topics: filteredTopics.length, 
+            total_articles: state.articles ? state.articles.length : 0 
+        };
+        
+        // Ghi xuống file JSON
         topicStore.writeData(db);
         eventBus.emit('PIPELINE_FINISHED');
     } catch (e) {
