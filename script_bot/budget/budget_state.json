@@ -11,12 +11,12 @@
       "failCount": 10
     },
     "gemini-3.1-flash-lite": {
-      "rpd": 14,
-      "rpm": 14,
-      "promptTokens": 3120,
-      "completionTokens": 2756,
+      "rpd": 17,
+      "rpm": 17,
+      "promptTokens": 3893,
+      "completionTokens": 3203,
       "cost": 0,
-      "successCount": 55,
+      "successCount": 58,
       "failCount": 0
     },
     "undefined": {
@@ -74,22 +74,22 @@
       "failCount": 2
     },
     "gemma-4-26b-a4b-it": {
-      "rpd": 6,
-      "rpm": 6,
-      "promptTokens": 955,
-      "completionTokens": 501,
+      "rpd": 7,
+      "rpm": 7,
+      "promptTokens": 1098,
+      "completionTokens": 578,
       "cost": 0,
-      "successCount": 19,
+      "successCount": 20,
       "failCount": 0
     },
     "gemini-embedding-2": {
-      "rpd": 3,
-      "rpm": 3,
-      "promptTokens": 0,
+      "rpd": 5,
+      "rpm": 5,
+      "promptTokens": 1594,
       "completionTokens": 0,
       "cost": 0,
-      "successCount": 0,
-      "failCount": 3
+      "successCount": 1,
+      "failCount": 4
     }
   }
 }
