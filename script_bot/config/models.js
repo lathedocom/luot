@@ -15,8 +15,8 @@ module.exports = {
     LAYER3_MODEL_LITE_FALLBACK: 'gemini-2.5-flash-lite',
     
     // --- TẦNG 0: Embedding (Chuyển đổi Vector) ---
-    EMBEDDING_MODEL_PRIMARY: 'text-embedding-004', 
-    EMBEDDING_MODEL_FALLBACK: 'embedding-001', // Dùng embedding-001 làm dự phòng siêu an toàn
+    EMBEDDING_MODEL_PRIMARY: 'gemini-embedding-2', 
+    EMBEDDING_MODEL_FALLBACK: 'gemini-embedding-2',
     
     // API Keys
     API_KEYS: {
