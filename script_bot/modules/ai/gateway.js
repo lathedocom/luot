@@ -119,7 +119,7 @@ class AIGateway {
 
     async executeBatchEmbedding(texts) {
         const startTime = Date.now();
-        const modelName = configModels.EMBEDDING_MODEL_PRIMARY || 'gemini-embedding-1';
+        const modelName = configModels.EMBEDDING_MODEL_PRIMARY || 'gemini-embedding-2';
         try {
             const vectors = await this.providers.google.batchEmbedContents(texts, modelName);
             budgetManager.recordUsage({
