@@ -430,11 +430,15 @@ function initModalEvents() {
 
 function openModal(cluster) {
     try {
-        // 1. Kiểm tra an toàn tiêu đề
+        // ==========================================
+        // PHẦN 1: HEADER & TIÊU ĐỀ
+        // ==========================================
         const modalTitle = document.getElementById('modal-title');
         if (modalTitle) modalTitle.textContent = cluster.title || cluster.cluster_title || 'Chi tiết sự kiện';
         
-        // [NEW] RENDER ĐỘ XÁC THỰC (Dùng logic số lượng nguồn báo)
+        // ==========================================
+        // PHẦN 2: TÍNH NĂNG MỚI - ĐỘ XÁC THỰC
+        // ==========================================
         const sources = cluster.sources || [];
         const uniqueSourceNames = [...new Set(sources.map(s => s.source_name).filter(Boolean))];
         const uniqueCount = uniqueSourceNames.length; 
@@ -452,7 +456,9 @@ function openModal(cluster) {
             }
         }
 
-        // [NEW] RENDER MINI TIMELINE
+        // ==========================================
+        // PHẦN 3: TÍNH NĂNG MỚI - MINI TIMELINE
+        // ==========================================
         const miniTimelineContainer = document.getElementById('modal-mini-timeline');
         if (miniTimelineContainer) {
             if (cluster.timeline_events && cluster.timeline_events.length > 0) {
@@ -469,17 +475,21 @@ function openModal(cluster) {
             }
         }
 
+        // ==========================================
+        // PHẦN 4: NỘI DUNG CHÍNH (BODY HTML)
+        // ==========================================
         let bodyHtml = `<p style="margin-bottom:20px; font-size: 15px; line-height: 1.6;">${cluster.detailed_summary || cluster.short_summary || ''}</p>`;
         
+        // Hàm hỗ trợ vẽ danh sách an toàn
         const renderList = (data) => {
             if (!data) return '';
             if (Array.isArray(data)) {
                 return data.map(item => `<li style="margin-bottom: 8px;">${item}</li>`).join('');
             }
-            return `<li style="margin-bottom: 8px;">${data}</li>`;
+            return `<li style="margin-bottom: 8px;">${data}</li>`; // Nếu là chuỗi, bọc vào 1 thẻ li
         };
 
-        // [NEW] 2. Ý NGHĨA CỐT LÕI
+        // --- TÍNH NĂNG MỚI: Ý NGHĨA CỐT LÕI ---
         if (cluster.significance) {
             bodyHtml += `
             <div class="intelligence-box" style="margin-top: 16px; background: rgba(59, 130, 246, 0.05); border-left: 4px solid #3b82f6; padding: 12px; border-radius: 4px;">
@@ -490,7 +500,7 @@ function openModal(cluster) {
             </div>`;
         }
  
-        // 3. CĂN NGUYÊN / BỐI CẢNH
+        // --- CŨ: CĂN NGUYÊN / BỐI CẢNH ---
         if (cluster.causes && (Array.isArray(cluster.causes) ? cluster.causes.length > 0 : true)) {
             bodyHtml += `
             <div class="intelligence-box" style="margin-top: 16px; background: rgba(245, 158, 11, 0.05); border-left: 4px solid #f59e0b; padding: 12px; border-radius: 4px;">
@@ -503,7 +513,7 @@ function openModal(cluster) {
             </div>`;
         }
  
-        // 4. TÁC ĐỘNG / ẢNH HƯỞNG CHUNG
+        // --- CŨ: TÁC ĐỘNG / ẢNH HƯỞNG CHUNG ---
         if (cluster.effects && (Array.isArray(cluster.effects) ? cluster.effects.length > 0 : true)) {
             bodyHtml += `
             <div class="intelligence-box" style="margin-top: 16px; background: rgba(239, 68, 68, 0.05); border-left: 4px solid #ef4444; padding: 12px; border-radius: 4px;">
@@ -516,7 +526,7 @@ function openModal(cluster) {
             </div>`;
         }
 
-        // [RESTORED] 5. NHÓM BỊ ẢNH HƯỞNG (AFFECTED GROUPS - Màu Tím)
+        // --- CŨ (ĐÃ KHÔI PHỤC): NHÓM BỊ ẢNH HƯỞNG ---
         if (cluster.affected_groups && (Array.isArray(cluster.affected_groups) ? cluster.affected_groups.length > 0 : true)) {
             bodyHtml += `
             <div class="intelligence-box" style="margin-top: 16px; background: rgba(139, 92, 246, 0.05); border-left: 4px solid #8b5cf6; padding: 12px; border-radius: 4px;">
@@ -529,7 +539,7 @@ function openModal(cluster) {
             </div>`;
         }
  
-        // [RESTORED] 6. TÁC ĐỘNG THỊ TRƯỜNG (MARKET IMPACT - Màu Xanh lá)
+        // --- CŨ (ĐÃ KHÔI PHỤC): TÁC ĐỘNG THỊ TRƯỜNG ---
         if (cluster.market_impact && (Array.isArray(cluster.market_impact) ? cluster.market_impact.length > 0 : true)) {
             bodyHtml += `
             <div class="intelligence-box" style="margin-top: 16px; background: rgba(16, 185, 129, 0.05); border-left: 4px solid #10b981; padding: 12px; border-radius: 4px;">
@@ -542,7 +552,7 @@ function openModal(cluster) {
             </div>`;
         }
 
-        // [NEW] 7. ĐIỂM CHƯA RÕ (Unknowns)
+        // --- TÍNH NĂNG MỚI: ĐIỂM CHƯA RÕ (Unknowns) ---
         if (cluster.unknowns && (Array.isArray(cluster.unknowns) ? cluster.unknowns.length > 0 : true)) {
             bodyHtml += `
             <div class="intelligence-box" style="margin-top: 16px; background: rgba(107, 114, 128, 0.05); border-left: 4px solid #6b7280; padding: 12px; border-radius: 4px;">
@@ -555,7 +565,7 @@ function openModal(cluster) {
             </div>`;
         }
  
-        // [NEW] 8. KỊCH BẢN TIẾP THEO (Thay thế follow_up cũ)
+        // --- NÂNG CẤP: KỊCH BẢN TIẾP THEO (Gộp chung logic với follow_up cũ) ---
         if (cluster.scenarios && (Array.isArray(cluster.scenarios) ? cluster.scenarios.length > 0 : true)) {
             const scenariosHtml = cluster.scenarios.map(sc => {
                 let color = sc.likelihood === 'cao' ? '#ef4444' : (sc.likelihood === 'trung bình' ? '#f59e0b' : '#10b981');
@@ -572,27 +582,29 @@ function openModal(cluster) {
                 </ul>
             </div>`;
         } else if (cluster.follow_up) {
-             // Fallback cho dữ liệu cũ
+             // Hiển thị lại follow_up nếu dữ liệu JSON cũ chưa có scenarios
              bodyHtml += `
-             <div class="intelligence-box" style="margin-top: 20px; background: rgba(139, 92, 246, 0.05); border-left: 4px solid #8b5cf6; padding: 12px; border-radius: 4px;">
-                 <div class="intelligence-title" style="color: #8b5cf6; font-weight: bold; display: flex; align-items: center; gap: 6px;">
+             <div class="intelligence-box" style="margin-top: 20px; background: rgba(59, 130, 246, 0.05); border-left: 4px solid #3b82f6; padding: 12px; border-radius: 4px;">
+                 <div class="intelligence-title" style="color: #3b82f6; font-weight: bold; display: flex; align-items: center; gap: 6px;">
                      <span class="material-icons-round" style="font-size: 18px;">radar</span> Điều cần theo dõi tiếp theo
                  </div>
                  <p style="font-weight: 500; font-size: 14px; margin-top: 8px; margin-bottom: 0; line-height: 1.6;">${cluster.follow_up}</p>
              </div>`;
         }
 
-        // [NEW] THÊM GHI CHÚ ĐỘ TIN CẬY Ở CUỐI
+        // --- TÍNH NĂNG MỚI: GHI CHÚ ĐỘ TIN CẬY ---
         if (cluster.confidence_note) {
             bodyHtml += `<div style="font-size: 12px; opacity: 0.7; font-style: italic; margin-top: 16px; border-top: 1px dashed var(--md-sys-color-outline); padding-top: 12px;">
                 * Ghi chú AI: ${cluster.confidence_note}
             </div>`;
         }
  
+        // ==========================================
+        // PHẦN 5: GẮN VÀO DOM VÀ HIỂN THỊ NGUỒN BÁO
+        // ==========================================
         const modalBody = document.getElementById('modal-body');
         if (modalBody) modalBody.innerHTML = bodyHtml;
         
-        // 9. XỬ LÝ NGUỒN BÁO CHÍ 
         const sourcesContainer = document.getElementById('modal-sources');
         if (sourcesContainer) {
             sourcesContainer.innerHTML = '';
@@ -615,15 +627,17 @@ function openModal(cluster) {
         const toggleText = document.getElementById('toggle-sources-text');
         if (toggleText) toggleText.textContent = 'Xem danh sách các nguồn báo chí';
         
-        // 10. HIỂN THỊ MODAL
         const modal = document.getElementById('intelligence-modal');
         if (modal) {
             modal.classList.add('active');
+        } else {
+            console.error("Không tìm thấy ID 'intelligence-modal' trong giao diện.");
         }
  
     } catch (error) {
         console.error("Đã xảy ra lỗi khi render Modal:", error);
     }
+}
 }
 
 // ==========================================
