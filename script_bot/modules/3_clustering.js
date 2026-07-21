@@ -36,7 +36,7 @@ function clusterArticles(articles) {
         const firstArticleWithImage = c.articles.find(a => a.thumbnail);
         
         formattedClusters.push({
-            main_vector: c.main_vector, // Lưu lại vector đại diện để Similarity Engine dùng sau
+            main_vector: c.main_vector, 
             articles: c.articles,
             combined_text: combinedText,
             article_count: c.articles.length,
@@ -45,10 +45,13 @@ function clusterArticles(articles) {
         });
     });
 
-    // Lọc sự kiện có từ 2 báo trở lên và lấy Top 10
+    // Giữ nguyên chuẩn lọc nguồn (>= 2 bài báo) để đảm bảo chất lượng
     let topTopics = formattedClusters.filter(c => c.article_count >= 2);
     topTopics.sort((a, b) => b.article_count - a.article_count);
-    topTopics = topTopics.slice(0, 10);
+    
+    // --- 🐛 BẢN VÁ: Nới phễu lên 20 để không lọt tin mới ---
+    topTopics = topTopics.slice(0, 20);
+    // --------------------------------------------------------
     
     logger.success(`Đã gom thành công ${topTopics.length} cụm sự kiện TOÀN CẢNH trong ngày.`);
     return topTopics;
