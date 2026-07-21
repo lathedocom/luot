@@ -9,10 +9,11 @@ const RSS_SOURCES = [
         category: ["world", "politics", "society"], type: "news_agency", priority: 10, credibility: 10,
         rss: "https://feeds.npr.org/1004/rss.xml", homepage: "https://www.npr.org", logo: "https://www.npr.org/favicon.ico", enabled: true
     },
+    // Thay AP News bằng Yahoo News World (Ổn định, không bị chặn 403, tổng hợp tin rất nhanh)
     {
-        id: "ap_news", name: "Associated Press", country: "USA", region: "Global", language: "en",
-        category: ["general", "world"], type: "news_agency", priority: 10, credibility: 10,
-        rss: "https://rsshub.app/apnews/topics/ap-top-news", homepage: "https://apnews.com", logo: "https://apnews.com/favicon.ico", enabled: true
+        id: "yahoo_world", name: "Yahoo News", country: "USA", region: "Global", language: "en",
+        category: ["general", "world"], type: "news_agency", priority: 10, credibility: 9,
+        rss: "https://news.yahoo.com/rss/world", homepage: "https://news.yahoo.com", logo: "https://news.yahoo.com/favicon.ico", enabled: true
     },
     {
         id: "bloomberg_world", name: "Bloomberg", country: "USA", region: "Global", language: "en",
@@ -43,10 +44,10 @@ const RSS_SOURCES = [
         category: ["general", "politics"], type: "state_media", priority: 10, credibility: 9,
         rss: "https://vtv.vn/rss/the-gioi.rss", homepage: "https://vtv.vn", logo: "https://vtv.vn/favicon.ico", enabled: true
     },
-    {
-        id: "vneconomy", name: "VnEconomy", country: "Vietnam", region: "Southeast Asia", language: "vi",
-        category: ["economy", "finance", "business"], type: "economic_news", priority: 10, credibility: 9,
-        rss: "https://vneconomy.vn/rss/home.rss", homepage: "https://vneconomy.vn", logo: "https://vneconomy.vn/favicon.ico", enabled: true
+   {
+        id: "vnexpress_biz", name: "VnExpress Kinh Doanh", country: "Vietnam", region: "Southeast Asia", language: "vi",
+        category: ["economy", "finance", "markets"], type: "economic_news", priority: 10, credibility: 9,
+        rss: "https://vnexpress.net/rss/kinh-doanh.rss", homepage: "https://vnexpress.net", logo: "https://vnexpress.net/favicon.ico", enabled: true
     },
     {
         id: "cafef_home", name: "CafeF", country: "Vietnam", region: "Southeast Asia", language: "vi",
@@ -58,10 +59,11 @@ const RSS_SOURCES = [
         category: ["general", "world"], type: "newspaper", priority: 9, credibility: 9,
         rss: "https://dantri.com.vn/rss/the-gioi.rss", homepage: "https://dantri.com.vn", logo: "https://dantri.com.vn/favicon.ico", enabled: true
     },
+   // Thay VietnamPlus (Lỗi Parse) bằng Báo Nhân Dân (Chính thống, chuẩn XML)
     {
-        id: "vietnamplus", name: "VietnamPlus (TTXVN)", country: "Vietnam", region: "Southeast Asia", language: "vi",
+        id: "nhandan_news", name: "Báo Nhân Dân", country: "Vietnam", region: "Southeast Asia", language: "vi",
         category: ["politics", "policy", "general"], type: "state_media", priority: 10, credibility: 10,
-        rss: "https://www.vietnamplus.vn/rss/thoi-su.rss", homepage: "https://www.vietnamplus.vn", logo: "https://www.vietnamplus.vn/favicon.ico", enabled: true
+        rss: "https://nhandan.vn/rss/thoi-su-chinhtri.rss", homepage: "https://nhandan.vn", logo: "https://nhandan.vn/favicon.ico", enabled: true
     },
 
     // ==========================================
@@ -77,10 +79,11 @@ const RSS_SOURCES = [
         category: ["general", "asia"], type: "newspaper", priority: 9, credibility: 9,
         rss: "https://www.straitstimes.com/news/asia/rss.xml", homepage: "https://www.straitstimes.com", logo: "https://www.straitstimes.com/favicon.ico", enabled: true
     },
+   // Thay The Star (404) bằng Malay Mail (Của Malaysia)
     {
-        id: "thestar_my", name: "The Star", country: "Malaysia", region: "Southeast Asia", language: "en",
-        category: ["general"], type: "newspaper", priority: 8, credibility: 8,
-        rss: "https://www.thestar.com.my/rss/editors-choice", homepage: "https://www.thestar.com.my", logo: "https://www.thestar.com.my/favicon.ico", enabled: true
+        id: "malaymail", name: "Malay Mail", country: "Malaysia", region: "Southeast Asia", language: "en",
+        category: ["general", "politics"], type: "newspaper", priority: 8, credibility: 8,
+        rss: "https://www.malaymail.com/feed/rss/", homepage: "https://www.malaymail.com", logo: "https://www.malaymail.com/favicon.ico", enabled: true
     },
     {
         id: "antara_id", name: "Antara News", country: "Indonesia", region: "Southeast Asia", language: "en",
@@ -121,10 +124,11 @@ const RSS_SOURCES = [
         category: ["general", "politics"], type: "news_agency", priority: 9, credibility: 9,
         rss: "https://en.yna.co.kr/RSS/news.xml", homepage: "https://en.yna.co.kr", logo: "https://en.yna.co.kr/favicon.ico", enabled: true
     },
+   // Thay The Korea Times (Lỗi DNS) bằng Korea JoongAng Daily
     {
-        id: "koreatimes_kr", name: "The Korea Times", country: "South Korea", region: "East Asia", language: "en",
-        category: ["general", "economy"], type: "newspaper", priority: 8, credibility: 8,
-        rss: "https://www.koreatimes.co.kr/www/rss/rss.xml", homepage: "https://www.koreatimes.co.kr", logo: "https://www.koreatimes.co.kr/favicon.ico", enabled: true
+        id: "joongang_kr", name: "Korea JoongAng Daily", country: "South Korea", region: "East Asia", language: "en",
+        category: ["general", "politics"], type: "newspaper", priority: 9, credibility: 9,
+        rss: "https://koreajoongangdaily.joins.com/rss", homepage: "https://koreajoongangdaily.joins.com", logo: "https://koreajoongangdaily.joins.com/favicon.ico", enabled: true
     },
 
     // ==========================================
@@ -140,10 +144,10 @@ const RSS_SOURCES = [
         category: ["economy", "finance", "business"], type: "economic_news", priority: 10, credibility: 9,
         rss: "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=19832390", homepage: "https://www.cnbc.com/asia-world/", logo: "https://www.cnbc.com/favicon.ico", enabled: true
     },
-    {
-        id: "cgtn_cn", name: "CGTN", country: "China", region: "East Asia", language: "en",
-        category: ["general", "politics"], type: "state_media", priority: 9, credibility: 7,
-        rss: "https://www.cgtn.com/rss", homepage: "https://www.cgtn.com", logo: "https://www.cgtn.com/favicon.ico", enabled: true
+ {
+        id: "rti_tw", name: "RTI", country: "Taiwan", region: "East Asia", language: "en",
+        category: ["general", "politics"], type: "state_media", priority: 9, credibility: 9,
+        rss: "https://en.rti.org.tw/rss", homepage: "https://en.rti.org.tw", logo: "https://en.rti.org.tw/favicon.ico", enabled: true
     },
     {
         id: "scmp_hk", name: "South China Morning Post", country: "Hong Kong", region: "East Asia", language: "en",
@@ -323,20 +327,22 @@ const RSS_SOURCES = [
     // ==========================================
     // 18. TỔ CHỨC QUỐC TẾ
     // ==========================================
+    // Thay UN News (Lỗi Parse) bằng Human Rights Watch
     {
-        id: "un_news", name: "UN News", country: "Global", region: "Global", language: "en",
-        category: ["diplomacy", "humanitarian"], type: "international_org", priority: 10, credibility: 10,
-        rss: "https://news.un.org/feed/subscribe/en/news/all/rss.xml", homepage: "https://news.un.org", logo: "https://news.un.org/favicon.ico", enabled: true
+        id: "hrw_news", name: "Human Rights Watch", country: "Global", region: "Global", language: "en",
+        category: ["diplomacy", "humanitarian"], type: "international_org", priority: 10, credibility: 9,
+        rss: "https://www.hrw.org/rss/news", homepage: "https://www.hrw.org", logo: "https://www.hrw.org/favicon.ico", enabled: true
     },
     {
         id: "who_news", name: "WHO", country: "Global", region: "Global", language: "en",
         category: ["health", "science"], type: "international_org", priority: 10, credibility: 10,
         rss: "https://www.who.int/rss-feeds/news-english.xml", homepage: "https://www.who.int", logo: "https://www.who.int/favicon.ico", enabled: true
     },
+    // Thay World Bank (404) bằng Asian Development Bank (ADB)
     {
-        id: "worldbank_news", name: "World Bank", country: "Global", region: "Global", language: "en",
+        id: "adb_news", name: "Asian Development Bank", country: "Global", region: "Global", language: "en",
         category: ["economy", "finance"], type: "international_org", priority: 10, credibility: 10,
-        rss: "https://www.worldbank.org/en/news/all.rss", homepage: "https://www.worldbank.org", logo: "https://www.worldbank.org/favicon.ico", enabled: true
+        rss: "https://www.adb.org/rss/news", homepage: "https://www.adb.org", logo: "https://www.adb.org/favicon.ico", enabled: true
     },
 
     // ==========================================
@@ -439,10 +445,11 @@ const RSS_SOURCES = [
         category: ["sports"], type: "news_agency", priority: 10, credibility: 9,
         rss: "https://sports.yahoo.com/rss/", homepage: "https://sports.yahoo.com", logo: "https://sports.yahoo.com/favicon.ico", enabled: true
     },
+   // Thay NIH (404) bằng STAT News (Chuyên trang y tế/khoa học cực kỳ uy tín tại Mỹ)
     {
-        id: "nih_health", name: "NIH", country: "USA", region: "Global", language: "en",
+        id: "statnews_health", name: "STAT News", country: "USA", region: "Global", language: "en",
         category: ["health", "science"], type: "science_news", priority: 10, credibility: 10,
-        rss: "https://www.nih.gov/news-events/news-releases/rss.xml", homepage: "https://www.nih.gov", logo: "https://www.nih.gov/favicon.ico", enabled: true
+        rss: "https://www.statnews.com/feed/", homepage: "https://www.statnews.com", logo: "https://www.statnews.com/favicon.ico", enabled: true
     }
 ];
 
