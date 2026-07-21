@@ -420,25 +420,73 @@ function initModalEvents() {
         });
     }
 }
- 
+
+
+
+
 function openModal(cluster) {
     try {
         // 1. Kiểm tra an toàn tiêu đề
         const modalTitle = document.getElementById('modal-title');
         if (modalTitle) modalTitle.textContent = cluster.title || cluster.cluster_title || 'Chi tiết sự kiện';
         
+        // [NEW] RENDER ĐỘ XÁC THỰC (Dùng logic số lượng nguồn báo)
+        const sources = cluster.sources || [];
+        const uniqueSourceNames = [...new Set(sources.map(s => s.source_name).filter(Boolean))];
+        const uniqueCount = uniqueSourceNames.length; 
+        const reliabilityContainer = document.getElementById('modal-reliability');
+        
+        if (reliabilityContainer) {
+            if (uniqueCount >= 3) {
+                reliabilityContainer.innerHTML = `<span class="badge bg-success"><i class="material-icons-round">verified</i> Xác thực cao (${uniqueCount} nguồn độc lập)</span>`;
+            } else if (uniqueCount === 2) {
+                reliabilityContainer.innerHTML = `<span class="badge bg-warning"><i class="material-icons-round">rule</i> Đang kiểm chứng (${uniqueCount} nguồn)</span>`;
+            } else if (uniqueCount === 1) {
+                reliabilityContainer.innerHTML = `<span class="badge bg-secondary"><i class="material-icons-round">info</i> Tin đơn lẻ (1 nguồn)</span>`;
+            } else {
+                reliabilityContainer.innerHTML = `<span class="badge bg-secondary"><i class="material-icons-round">smart_toy</i> AI Tổng hợp</span>`;
+            }
+        }
+
+        // [NEW] RENDER MINI TIMELINE
+        const miniTimelineContainer = document.getElementById('modal-mini-timeline');
+        if (miniTimelineContainer) {
+            if (cluster.timeline_events && cluster.timeline_events.length > 0) {
+                const recentEvents = cluster.timeline_events.slice(0, 3);
+                const timelineHtml = recentEvents.map(event => `
+                    <div class="mini-timeline-item">
+                        <strong>${event.date}</strong>: ${event.summary}
+                    </div>
+                `).join('');
+                miniTimelineContainer.innerHTML = `<div style="font-weight:bold; font-size: 13px; color: var(--md-sys-color-primary); margin-bottom: 8px;">TÓM TẮT DIỄN BIẾN:</div>${timelineHtml}`;
+                miniTimelineContainer.style.display = 'block';
+            } else {
+                miniTimelineContainer.style.display = 'none';
+            }
+        }
+
         let bodyHtml = `<p style="margin-bottom:20px; font-size: 15px; line-height: 1.6;">${cluster.detailed_summary || cluster.short_summary || ''}</p>`;
         
-        // Hàm hỗ trợ vẽ danh sách an toàn (chống lỗi nếu dữ liệu là String thay vì Array)
         const renderList = (data) => {
             if (!data) return '';
             if (Array.isArray(data)) {
                 return data.map(item => `<li style="margin-bottom: 8px;">${item}</li>`).join('');
             }
-            return `<li style="margin-bottom: 8px;">${data}</li>`; // Nếu là chuỗi, bọc vào 1 thẻ li
+            return `<li style="margin-bottom: 8px;">${data}</li>`;
         };
+
+        // [NEW] 2. Ý NGHĨA CỐT LÕI (Từ JSON mới)
+        if (cluster.significance) {
+            bodyHtml += `
+            <div class="intelligence-box" style="margin-top: 16px; background: rgba(59, 130, 246, 0.05); border-left: 4px solid #3b82f6; padding: 12px; border-radius: 4px;">
+                <div class="intelligence-title" style="color: #3b82f6; font-weight: bold; display: flex; align-items: center; gap: 6px;">
+                    <span class="material-icons-round" style="font-size: 18px;">lightbulb</span> Ý nghĩa cốt lõi
+                </div>
+                <p style="font-weight: 500; font-size: 14px; margin-top: 8px; margin-bottom: 0; line-height: 1.6;">${cluster.significance}</p>
+            </div>`;
+        }
  
-        // 2. CĂN NGUYÊN / BỐI CẢNH
+        // 3. CĂN NGUYÊN / BỐI CẢNH
         if (cluster.causes && (Array.isArray(cluster.causes) ? cluster.causes.length > 0 : true)) {
             bodyHtml += `
             <div class="intelligence-box" style="margin-top: 16px; background: rgba(245, 158, 11, 0.05); border-left: 4px solid #f59e0b; padding: 12px; border-radius: 4px;">
@@ -451,7 +499,7 @@ function openModal(cluster) {
             </div>`;
         }
  
-        // 3. TÁC ĐỘNG / ẢNH HƯỞNG CHUNG
+        // 4. TÁC ĐỘNG / ẢNH HƯỞNG CHUNG
         if (cluster.effects && (Array.isArray(cluster.effects) ? cluster.effects.length > 0 : true)) {
             bodyHtml += `
             <div class="intelligence-box" style="margin-top: 16px; background: rgba(239, 68, 68, 0.05); border-left: 4px solid #ef4444; padding: 12px; border-radius: 4px;">
@@ -463,48 +511,58 @@ function openModal(cluster) {
                 </ul>
             </div>`;
         }
- 
-        // 4. NHÓM BỊ ẢNH HƯỞNG (AFFECTED GROUPS - Màu Tím)
-        if (cluster.affected_groups && (Array.isArray(cluster.affected_groups) ? cluster.affected_groups.length > 0 : true)) {
+
+        // [NEW] 5. ĐIỂM CHƯA RÕ (Unknowns)
+        if (cluster.unknowns && (Array.isArray(cluster.unknowns) ? cluster.unknowns.length > 0 : true)) {
             bodyHtml += `
-            <div class="intelligence-box" style="margin-top: 16px; background: rgba(139, 92, 246, 0.05); border-left: 4px solid #8b5cf6; padding: 12px; border-radius: 4px;">
+            <div class="intelligence-box" style="margin-top: 16px; background: rgba(107, 114, 128, 0.05); border-left: 4px solid #6b7280; padding: 12px; border-radius: 4px;">
+                <div class="intelligence-title" style="color: #6b7280; font-weight: bold; display: flex; align-items: center; gap: 6px;">
+                    <span class="material-icons-round" style="font-size: 18px;">help_outline</span> Điểm mờ / Cần kiểm chứng
+                </div>
+                <ul style="padding-left: 20px; font-size: 14px; margin-top: 12px; margin-bottom: 0; line-height: 1.6;">
+                    ${renderList(cluster.unknowns)}
+                </ul>
+            </div>`;
+        }
+ 
+        // [NEW] 6. KỊCH BẢN TIẾP THEO (Thay thế follow_up cũ)
+        if (cluster.scenarios && (Array.isArray(cluster.scenarios) ? cluster.scenarios.length > 0 : true)) {
+            const scenariosHtml = cluster.scenarios.map(sc => {
+                let color = sc.likelihood === 'cao' ? '#ef4444' : (sc.likelihood === 'trung bình' ? '#f59e0b' : '#10b981');
+                return `<li style="margin-bottom: 8px;">${sc.text} <span style="color:${color}; font-weight:bold; font-size: 12px;">[Khả năng: ${sc.likelihood}]</span></li>`;
+            }).join('');
+
+            bodyHtml += `
+            <div class="intelligence-box" style="margin-top: 20px; background: rgba(139, 92, 246, 0.05); border-left: 4px solid #8b5cf6; padding: 12px; border-radius: 4px;">
                 <div class="intelligence-title" style="color: #8b5cf6; font-weight: bold; display: flex; align-items: center; gap: 6px;">
-                    <span class="material-icons-round" style="font-size: 18px;">groups</span> Đối tượng / Nhóm bị ảnh hưởng
+                    <span class="material-icons-round" style="font-size: 18px;">alt_route</span> Kịch bản tiếp theo
                 </div>
                 <ul style="padding-left: 20px; font-size: 14px; margin-top: 12px; margin-bottom: 0; line-height: 1.6;">
-                    ${renderList(cluster.affected_groups)}
+                    ${scenariosHtml}
                 </ul>
             </div>`;
+        } else if (cluster.follow_up) {
+             // Fallback cho dữ liệu cũ
+             bodyHtml += `
+             <div class="intelligence-box" style="margin-top: 20px; background: rgba(139, 92, 246, 0.05); border-left: 4px solid #8b5cf6; padding: 12px; border-radius: 4px;">
+                 <div class="intelligence-title" style="color: #8b5cf6; font-weight: bold; display: flex; align-items: center; gap: 6px;">
+                     <span class="material-icons-round" style="font-size: 18px;">radar</span> Điều cần theo dõi tiếp theo
+                 </div>
+                 <p style="font-weight: 500; font-size: 14px; margin-top: 8px; margin-bottom: 0; line-height: 1.6;">${cluster.follow_up}</p>
+             </div>`;
         }
- 
-        // 5. TÁC ĐỘNG THỊ TRƯỜNG (MARKET IMPACT - Màu Xanh lá)
-        if (cluster.market_impact && (Array.isArray(cluster.market_impact) ? cluster.market_impact.length > 0 : true)) {
-            bodyHtml += `
-            <div class="intelligence-box" style="margin-top: 16px; background: rgba(16, 185, 129, 0.05); border-left: 4px solid #10b981; padding: 12px; border-radius: 4px;">
-                <div class="intelligence-title" style="color: #10b981; font-weight: bold; display: flex; align-items: center; gap: 6px;">
-                    <span class="material-icons-round" style="font-size: 18px;">trending_up</span> Tác động thị trường
-                </div>
-                <ul style="padding-left: 20px; font-size: 14px; margin-top: 12px; margin-bottom: 0; line-height: 1.6;">
-                    ${renderList(cluster.market_impact)}
-                </ul>
-            </div>`;
-        }
- 
-        // 6. INSIGHT: ĐIỀU CẦN THEO DÕI TIẾP THEO
-        if (cluster.follow_up) {
-            bodyHtml += `
-            <div class="intelligence-box" style="margin-top: 20px; background: rgba(59, 130, 246, 0.05); border-left: 4px solid #3b82f6; padding: 12px; border-radius: 4px;">
-                <div class="intelligence-title" style="color: #3b82f6; font-weight: bold; display: flex; align-items: center; gap: 6px;">
-                    <span class="material-icons-round" style="font-size: 18px;">radar</span> Điều cần theo dõi tiếp theo
-                </div>
-                <p style="font-weight: 500; font-size: 14px; margin-top: 8px; margin-bottom: 0; line-height: 1.6;">${cluster.follow_up}</p>
+
+        // [NEW] THÊM GHI CHÚ ĐỘ TIN CẬY Ở CUỐI
+        if (cluster.confidence_note) {
+            bodyHtml += `<div style="font-size: 12px; opacity: 0.7; font-style: italic; margin-top: 16px; border-top: 1px dashed var(--md-sys-color-outline); padding-top: 12px;">
+                * Ghi chú AI: ${cluster.confidence_note}
             </div>`;
         }
  
         const modalBody = document.getElementById('modal-body');
         if (modalBody) modalBody.innerHTML = bodyHtml;
         
-        // 7. XỬ LÝ NGUỒN BÁO CHÍ (Phòng hờ lỗi HTML thiếu ID)
+        // 7. XỬ LÝ NGUỒN BÁO CHÍ 
         const sourcesContainer = document.getElementById('modal-sources');
         if (sourcesContainer) {
             sourcesContainer.innerHTML = '';
@@ -514,7 +572,7 @@ function openModal(cluster) {
                 cluster.sources.forEach(src => {
                     sourcesContainer.innerHTML += `
                         <a href="${src.url || '#'}" target="_blank" class="source-chip" style="display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: var(--md-sys-color-surface); border: 1px solid var(--md-sys-color-outline); border-radius: 16px; font-size: 12px; text-decoration: none; color: inherit; margin-right: 8px; margin-bottom: 8px;">
-                            <img src="${src.source_logo || 'https://via.placeholder.com/16'}" width="16" height="16" style="border-radius:50%; object-fit: cover; background: #fff;"> 
+                            <img src="${src.source_logo || '[https://via.placeholder.com/16](https://via.placeholder.com/16)'}" width="16" height="16" style="border-radius:50%; object-fit: cover; background: #fff;"> 
                             ${src.source_name || 'Nguồn báo'}
                         </a>`;
                 });
@@ -531,8 +589,6 @@ function openModal(cluster) {
         const modal = document.getElementById('intelligence-modal');
         if (modal) {
             modal.classList.add('active');
-        } else {
-            console.error("Không tìm thấy ID 'intelligence-modal' trong giao diện.");
         }
  
     } catch (error) {
