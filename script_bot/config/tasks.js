@@ -16,10 +16,14 @@ module.exports = {
         'DAILY_BRIEFING': { model: models.LAYER3_MODEL_PREMIUM, provider: 'google' },
         'MONTHLY_REPORT': { model: models.LAYER3_MODEL_PREMIUM, provider: 'google' },
         
-        // Thêm vào khối TASK_ROUTING
+        // Luồng gộp sự kiện
         'STORY_MATCHING': { model: models.LAYER2_MODEL_PRIMARY, provider: 'google' },
-        'MATCH_TIMELINE': { model: models.LAYER2_MODEL_PRIMARY, provider: 'google' } // <--- ĐÃ BỔ SUNG DÒNG NÀY
-    }, // Dấu phẩy ngăn cách rất quan trọng
+        'MATCH_TIMELINE': { model: models.LAYER2_MODEL_PRIMARY, provider: 'google' } 
+    },
+
+    // ==========================================
+    // KHỐI CẤU HÌNH PROMPT CHO TỪNG TÁC VỤ
+    // ==========================================
 
     MATCH_TIMELINE: {
         model: "gemini-3.1-flash-lite", 
@@ -45,5 +49,25 @@ Hãy trả về ĐÚNG cấu trúc JSON sau (không kèm text khác):
   "reason": "Lý do ngắn gọn dưới 20 chữ"
 }
         `
+    },
+
+    // Bổ sung luồng tóm tắt ngắn, ép buộc Tiếng Việt
+    SHORT_SUMMARY: {
+        model: "gemma-4-26b-a4b-it",
+        temperature: 0.3,
+        system_prompt: `Bạn là trợ lý tổng hợp tin tức. BẮT BUỘC TRẢ LỜI BẰNG TIẾNG VIỆT (VIETNAMESE). Dịch toàn bộ ý chính sang tiếng Việt nếu văn bản gốc là tiếng nước ngoài. Tuyệt đối không giữ lại tiếng Anh.`,
+        prompt_template: (data) => `Tóm tắt ngắn gọn bài báo sau bằng Tiếng Việt:
+Tiêu đề: ${data.title}
+Nội dung: ${data.content}`
+    },
+
+    // Bổ sung luồng phân tích sâu, ép buộc Tiếng Việt
+    DEEP_ANALYSIS: {
+        model: "gemini-3.1-flash-lite",
+        temperature: 0.3,
+        system_prompt: `Bạn là một biên tập viên báo chí kỳ cựu. BẮT BUỘC PHẢI TRẢ LỜI 100% BẰNG TIẾNG VIỆT (VIETNAMESE) CHUẨN MỰC, tự nhiên và dễ hiểu, bất kể ngôn ngữ của bài viết gốc là gì. Tuyệt đối không giữ lại nguyên văn tiếng nước ngoài trong phần phân tích.`,
+        prompt_template: (data) => `Hãy phân tích chi tiết bài báo sau đây bằng Tiếng Việt:
+Tiêu đề: ${data.title}
+Nội dung: ${data.content}`
     }
 };
