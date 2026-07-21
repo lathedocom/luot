@@ -9,9 +9,10 @@ const STORY_FILE = path.join(__dirname, '../../timeline_data.json');
 // Khởi tạo file nếu chưa tồn tại
 function loadStories() {
     if (!fs.existsSync(STORY_FILE)) {
-        fs.writeFileSync(STORY_FILE, JSON.stringify({}, null, 2));
+        fs.writeFileSync(STORY_FILE, JSON.stringify({ stories: [] }, null, 2));
     }
-    return JSON.parse(fs.readFileSync(STORY_FILE, 'utf8'));
+    const data = JSON.parse(fs.readFileSync(STORY_FILE, 'utf8'));
+    return data;
 }
 
 function saveStories(data) {
@@ -35,58 +36,62 @@ function cosineSimilarity(vecA, vecB) {
  * AI Gatekeeper & Thuật toán lọc 3 lớp
  */
 async function processEventIntoTimeline(clusterId, eventTitle, eventSummary, eventDate, eventCategories = [], eventVector = null, eventUrl = "#") {
-    const stories = loadStories();
+    const data = loadStories();
     
+    // Chuẩn hóa định dạng danh sách câu chuyện để an toàn khi map
+    const storiesArray = data.stories ? data.stories : (Array.isArray(data) ? data : Object.values(data));
+    const storiesMap = storiesArray.reduce((acc, s) => { acc[s.id || `story_${Date.now()}`] = s; return acc; }, {});
+
     // LỚP LỌC 1 & 2: Dùng Code cứng để chặn khác chuyên mục và tính điểm Vector
-    const activeStories = Object.keys(stories)
-        .filter(id => stories[id].status === 'ONGOING')
+    const activeStories = Object.keys(storiesMap)
+        .filter(id => storiesMap[id].status === 'ONGOING' || storiesMap[id].status === 'ongoing')
         .filter(id => {
             // LỚP 1: LỌC CHUYÊN MỤC
-            // Nếu bài báo mới và dòng sự kiện cũ không có chung chuyên mục nào -> Loại ngay!
-            const storyCategories = stories[id].categories || [];
-            if (storyCategories.length === 0 || eventCategories.length === 0) return true; // Bỏ qua nếu thiếu data
-            const hasCommonCategory = storyCategories.some(c => eventCategories.includes(c));
-            return hasCommonCategory;
+            const storyCategories = storiesMap[id].categories || [];
+            if (storyCategories.length === 0 || eventCategories.length === 0) return true;
+            return storyCategories.some(c => eventCategories.includes(c));
         })
         .filter(id => {
             // LỚP 2: LỌC VECTOR
-            // Tính độ giống nhau, nếu < 0.65 thì xem như không liên quan -> Loại!
-            if (!stories[id].main_vector || !eventVector) return true;
-            const score = cosineSimilarity(eventVector, stories[id].main_vector);
+            if (!storiesMap[id].main_vector || !eventVector) return true;
+            const score = cosineSimilarity(eventVector, storiesMap[id].main_vector);
             return score >= 0.65;
         })
         .map(id => ({
             id: id,
-            topic: stories[id].title,
-            latest_event: stories[id].timeline[stories[id].timeline.length - 1].title
+            topic: storiesMap[id].title,
+            latest_event: storiesMap[id].timeline && storiesMap[id].timeline.length > 0 
+                ? storiesMap[id].timeline[storiesMap[id].timeline.length - 1].title 
+                : "N/A"
         }));
 
     // Hàm tạo Story mới
     const createNewStory = (id, title, desc) => {
-        stories[id] = {
+        storiesMap[id] = {
+            id: id,
             title: title || eventTitle,
-            status: 'ONGOING',
+            status: 'ongoing',
             first_seen: eventDate,
             last_updated: eventDate,
-            categories: eventCategories, // Lưu lại chuyên mục để so sánh lần sau
-            main_vector: eventVector,    // Lưu lại vector của sự kiện gốc
+            categories: eventCategories, 
+            main_vector: eventVector,    
             timeline: [{
-                time: Date.now(), // Lưu chính xác mili-giây để hiển thị giao diện
+                time: eventDate ? new Date(eventDate).getTime() : Date.now(),
                 title: eventTitle,
                 summary: desc || eventSummary,
                 topic_id: clusterId,
-                url: eventUrl,
+                url: eventUrl || "#",
                 importance: 85
             }]
         };
-        logger.info(`[Story Engine] Đã khởi tạo Câu chuyện mới: ${stories[id].title}`);
+        logger.info(`[Story Engine] Đã khởi tạo Câu chuyện mới: ${storiesMap[id].title}`);
     };
 
     // NẾU KHÔNG CÒN ỨNG VIÊN NÀO QUA ĐƯỢC 2 LỚP LỌC -> TẠO MỚI LUÔN, KHÔNG GỌI AI
     if (activeStories.length === 0) {
         const newId = `story_${Date.now().toString(36)}`;
         createNewStory(newId, eventTitle, eventSummary);
-        saveStories(stories);
+        saveStories({ stories: Object.values(storiesMap) });
         return;
     }
 
@@ -100,57 +105,52 @@ Dưới đây là các DÒNG SỰ KIỆN đang theo dõi có khả năng liên q
 ${JSON.stringify(activeStories, null, 2)}
 
 Nhiệm vụ:
-1. Tình tiết mới có phải là diễn biến tiếp theo hoặc chi tiết bổ sung cho Dòng sự kiện nào không? (Trả về APPEND và ghi rõ ID).
-2. Hay đây là một chủ đề hoàn toàn độc lập? (Trả về NEW_STORY).
-
-CHỈ TRẢ VỀ JSON:
+Tình tiết mới có phải là diễn biến tiếp theo hoặc chi tiết bổ sung cho Dòng sự kiện nào không?
+LỆNH TUYỆT ĐỐI: CHỈ trả về JSON duy nhất với định dạng:
 {
-  "action": "APPEND" | "NEW_STORY",
-  "story_id": "Mã ID (nếu APPEND)",
-  "new_title": "Tên bao quát cho câu chuyện này (nếu NEW_STORY)"
+  "action": "APPEND" hoặc "NEW",
+  "target_id": "điền id của sự kiện nếu APPEND",
+  "reason": "Giải thích ngắn gọn"
 }`;
 
     try {
-        logger.info(`[Story Engine] Đang nhờ AI duyệt tình tiết: ${eventTitle}`);
-        const decision = await gateway.executeTask('MATCH_TIMELINE', prompt); // Dùng Gemma
+        const aiResponse = await gateway.executeTask('MATCH_TIMELINE', prompt);
+        
+        let cleanResponse = aiResponse;
+        if (typeof aiResponse === 'string') {
+            cleanResponse = aiResponse.replace(/```json/g, '').replace(/```/g, '').trim();
+        }
+        const decision = typeof cleanResponse === 'string' ? JSON.parse(cleanResponse) : cleanResponse;
 
-        if (decision.action === 'APPEND' && decision.story_id && stories[decision.story_id]) {
-            // Lấy event cuối cùng để kiểm tra trùng lặp
-            const tl = stories[decision.story_id];
-            const lastEvent = tl.timeline[tl.timeline.length - 1];
+        if (decision.action === 'APPEND' && decision.target_id && storiesMap[decision.target_id]) {
+            const tl = storiesMap[decision.target_id];
             
-            // Deduplication cơ bản: Nếu tiêu đề quá giống nhau thì không tạo thêm node
-            if (lastEvent.title === eventTitle) {
-                logger.info(`[Story Engine] Sự kiện trùng lặp, bỏ qua.`);
-                return;
-            }
-
-            // Thêm mốc thời gian mới
-            tl.events.push({
-    timestamp: eventTimestamp || Date.now(), // Phải lưu số ms (VD: 1784553895457)
-    title: eventTitle,
-    summary: eventSummary,
-    url: clusterUrl || "#", // Lưu URL bài báo, nếu không có để dấu #
-    related_clusters: [clusterId]
-});
+            // --- 🐛 SỬA LỖI 1 TẠI ĐÂY ---
+            tl.timeline.push({
+                time: eventDate ? new Date(eventDate).getTime() : Date.now(),
+                title: eventTitle,
+                summary: eventSummary,
+                topic_id: clusterId,
+                url: eventUrl || "#",
+                importance: 85
+            });
             tl.last_updated = eventDate;
             
-            // Cập nhật lại vector chính để câu chuyện luôn "bám sát" diễn biến mới nhất
-            if (eventVector) tl.main_vector = eventVector; 
-            
-            logger.info(`[Story Engine] Đã cập nhật tình tiết mới cho: ${tl.title}`);
+            logger.info(`[Story Engine] Nối sự kiện vào truyện cũ: ${tl.title} (Lý do: ${decision.reason || 'AI tự quyết định'})`);
         } else {
             const newId = `story_${Date.now().toString(36)}`;
-            createNewStory(newId, decision.new_title, eventSummary);
+            createNewStory(newId, eventTitle, eventSummary);
         }
-
-        saveStories(stories);
     } catch (error) {
-        logger.error(`[Story Engine] Lỗi AI Verifier: ${error.message}. Chuyển sang lưu dự phòng.`);
-        const newId = `story_fallback_${Date.now().toString(36)}`;
+        logger.error(`[Story Engine] Lỗi khi gọi AI Gatekeeper: ${error.message}. Tự động Fallback tạo Story mới.`);
+        const newId = `story_${Date.now().toString(36)}`;
         createNewStory(newId, eventTitle, eventSummary);
-        saveStories(stories);
     }
+
+    // Cập nhật lại Database Timeline với định dạng đúng
+    saveStories({ stories: Object.values(storiesMap) });
 }
 
-module.exports = { processEventIntoTimeline };
+module.exports = {
+    processEventIntoTimeline
+};
