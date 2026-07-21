@@ -1,5 +1,8 @@
 const configModels = require('../../config/models');
-const { TASK_ROUTING } = require('../../config/tasks');
+// Sửa đổi import một chút để lấy được toàn bộ nội dung file tasks.js (chứa system_prompt)
+const tasksConfig = require('../../config/tasks'); 
+const TASK_ROUTING = tasksConfig.TASK_ROUTING || tasksConfig; 
+
 const GoogleProvider = require('./providers/google');
 const GroqProvider = require('./providers/groq');
 const { parseAIResponse } = require('./parser');
@@ -26,6 +29,19 @@ class AIGateway {
         let targetModel = taskConfig.model;
         let targetProvider = taskConfig.provider;
 
+        // --- 🐛 BẢN VÁ LỖI TẠI ĐÂY ---
+        // Nếu hàm gọi bên ngoài không truyền systemInstruction, tự động tìm và kéo system_prompt từ config/tasks.js vào
+        let finalSystemInstruction = systemInstruction;
+        if (!finalSystemInstruction) {
+            const taskDetails = tasksConfig[taskName];
+            if (taskDetails && taskDetails.system_prompt) {
+                finalSystemInstruction = taskDetails.system_prompt;
+            } else if (taskConfig.system_prompt) {
+                finalSystemInstruction = taskConfig.system_prompt;
+            }
+        }
+        // ------------------------------
+
         let attempts = 0;
         const maxRetries = 2; 
 
@@ -35,7 +51,8 @@ class AIGateway {
                 const providerInstance = this.providers[targetProvider];
                 if (!providerInstance) throw new Error(`Provider ${targetProvider} không tồn tại.`);
 
-                const resultText = await providerInstance.generateContent(prompt, systemInstruction, targetModel);
+                // TRUYỀN finalSystemInstruction ĐÃ ĐƯỢC FIX VÀO ĐÂY
+                const resultText = await providerInstance.generateContent(prompt, finalSystemInstruction, targetModel);
                 
                 budgetManager.recordUsage({
                     model: targetModel,
