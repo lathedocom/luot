@@ -42,10 +42,8 @@ jobs:
           # Bật tính năng tự động giấu file rác khi đồng bộ
           git config --global rebase.autoStash true
 
-          git add news_data.json pipeline_status.json script_bot/cache/ script_bot/budget/ || true
-          
-          # [QUAN TRỌNG] Lưu data chính, trạng thái hệ thống và toàn bộ thư mục cache (data/)
-          git add news_data.json pipeline_status.json data/ || true
+          # ĐÃ VÁ LỖI: Thêm timeline_data.json và gỡ bỏ lệnh git add data/ thừa thãi
+          git add news_data.json timeline_data.json pipeline_status.json script_bot/cache/ script_bot/budget/ || true
           
           git diff --staged --quiet || git commit -m "🤖 Cập nhật tin tức, Cache & trạng thái V4"
           git pull --rebase origin main
