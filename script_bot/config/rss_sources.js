@@ -5,14 +5,14 @@ const RSS_SOURCES = [
     // 1. GLOBAL (Ưu tiên cao nhất)
     // ==========================================
     {
-        id: "reuters_world", name: "Reuters", country: "Global", region: "Global", language: "en",
-        category: ["world", "economy", "politics", "business"], type: "news_agency", priority: 10, credibility: 10,
-        rss: "https://www.reutersagency.com/feed/?best-topics=political-general&post_type=best", homepage: "https://www.reuters.com", logo: "https://www.reuters.com/favicon.ico", enabled: true
+        id: "npr_world", name: "NPR World", country: "USA", region: "Global", language: "en",
+        category: ["world", "politics", "society"], type: "news_agency", priority: 10, credibility: 10,
+        rss: "https://feeds.npr.org/1004/rss.xml", homepage: "https://www.npr.org", logo: "https://www.npr.org/favicon.ico", enabled: true
     },
     {
         id: "ap_news", name: "Associated Press", country: "USA", region: "Global", language: "en",
         category: ["general", "world"], type: "news_agency", priority: 10, credibility: 10,
-        rss: "https://apnews.com/hub/ap-top-news?output=rss", homepage: "https://apnews.com", logo: "https://apnews.com/favicon.ico", enabled: true
+        rss: "https://rsshub.app/apnews/topics/ap-top-news", homepage: "https://apnews.com", logo: "https://apnews.com/favicon.ico", enabled: true
     },
     {
         id: "bloomberg_world", name: "Bloomberg", country: "USA", region: "Global", language: "en",
@@ -51,7 +51,7 @@ const RSS_SOURCES = [
     {
         id: "cafef_home", name: "CafeF", country: "Vietnam", region: "Southeast Asia", language: "vi",
         category: ["economy", "finance", "markets"], type: "economic_news", priority: 9, credibility: 8,
-        rss: "https://cafef.vn/trang-chu.rss", homepage: "https://cafef.vn", logo: "https://cafef.vn/favicon.ico", enabled: true
+        rss: "https://cafef.vn/tin-moi-nhat.rss", homepage: "https://cafef.vn", logo: "https://cafef.vn/favicon.ico", enabled: true
     },
     {
         id: "dantri_world", name: "Dân Trí", country: "Vietnam", region: "Southeast Asia", language: "vi",
@@ -59,9 +59,9 @@ const RSS_SOURCES = [
         rss: "https://dantri.com.vn/rss/the-gioi.rss", homepage: "https://dantri.com.vn", logo: "https://dantri.com.vn/favicon.ico", enabled: true
     },
     {
-        id: "baochinhphu", name: "Báo Chính Phủ", country: "Vietnam", region: "Southeast Asia", language: "vi",
-        category: ["politics", "policy"], type: "state_media", priority: 10, credibility: 10,
-        rss: "https://baochinhphu.vn/Rss/tin-moi-nhat.rss", homepage: "https://baochinhphu.vn", logo: "https://baochinhphu.vn/favicon.ico", enabled: true
+        id: "vietnamplus", name: "VietnamPlus (TTXVN)", country: "Vietnam", region: "Southeast Asia", language: "vi",
+        category: ["politics", "policy", "general"], type: "state_media", priority: 10, credibility: 10,
+        rss: "https://www.vietnamplus.vn/rss/thoi-su.rss", homepage: "https://www.vietnamplus.vn", logo: "https://www.vietnamplus.vn/favicon.ico", enabled: true
     },
 
     // ==========================================
@@ -80,12 +80,12 @@ const RSS_SOURCES = [
     {
         id: "thestar_my", name: "The Star", country: "Malaysia", region: "Southeast Asia", language: "en",
         category: ["general"], type: "newspaper", priority: 8, credibility: 8,
-        rss: "https://www.thestar.com.my/rss/news/regional", homepage: "https://www.thestar.com.my", logo: "https://www.thestar.com.my/favicon.ico", enabled: true
+        rss: "https://www.thestar.com.my/rss/editors-choice", homepage: "https://www.thestar.com.my", logo: "https://www.thestar.com.my/favicon.ico", enabled: true
     },
     {
-        id: "jakartapost_id", name: "Jakarta Post", country: "Indonesia", region: "Southeast Asia", language: "en",
-        category: ["general", "politics"], type: "newspaper", priority: 9, credibility: 8,
-        rss: "https://www.thejakartapost.com/news/asia/rss", homepage: "https://www.thejakartapost.com", logo: "https://www.thejakartapost.com/favicon.ico", enabled: true
+        id: "antara_id", name: "Antara News", country: "Indonesia", region: "Southeast Asia", language: "en",
+        category: ["general", "politics"], type: "news_agency", priority: 9, credibility: 9,
+        rss: "https://en.antaranews.com/rss/news.xml", homepage: "https://en.antaranews.com", logo: "https://en.antaranews.com/favicon.ico", enabled: true
     },
     {
         id: "inquirer_ph", name: "Philippine Daily Inquirer", country: "Philippines", region: "Southeast Asia", language: "en",
@@ -102,19 +102,19 @@ const RSS_SOURCES = [
     // 4. NHẬT BẢN & 5. HÀN QUỐC
     // ==========================================
     {
-        id: "kyodo_jp", name: "Kyodo News", country: "Japan", region: "East Asia", language: "en",
-        category: ["general", "politics"], type: "news_agency", priority: 9, credibility: 9,
-        rss: "https://english.kyodonews.net/rss/news.xml", homepage: "https://english.kyodonews.net", logo: "https://english.kyodonews.net/favicon.ico", enabled: true
+        id: "japantoday_jp", name: "Japan Today", country: "Japan", region: "East Asia", language: "en",
+        category: ["general", "politics"], type: "newspaper", priority: 9, credibility: 8,
+        rss: "https://japantoday.com/feed", homepage: "https://japantoday.com", logo: "https://japantoday.com/favicon.ico", enabled: true
     },
     {
-        id: "nhk_world", name: "NHK World", country: "Japan", region: "East Asia", language: "en",
-        category: ["general", "politics", "economy"], type: "state_media", priority: 10, credibility: 10,
-        rss: "https://www3.nhk.or.jp/nhkworld/upld/medias/en/radio/podcast/rss_latest_news.xml", homepage: "https://www3.nhk.or.jp/nhkworld/", logo: "https://www3.nhk.or.jp/favicon.ico", enabled: true
+        id: "japantimes_jp", name: "The Japan Times", country: "Japan", region: "East Asia", language: "en",
+        category: ["general", "politics", "economy"], type: "newspaper", priority: 10, credibility: 9,
+        rss: "https://www.japantimes.co.jp/feed/", homepage: "https://www.japantimes.co.jp", logo: "https://www.japantimes.co.jp/favicon.ico", enabled: true
     },
     {
         id: "nikkei_asia", name: "Nikkei Asia", country: "Japan", region: "East Asia", language: "en",
         category: ["economy", "finance", "business"], type: "economic_news", priority: 10, credibility: 10,
-        rss: "https://asia.nikkei.com/rss/feed/category/Politics-Economy", homepage: "https://asia.nikkei.com", logo: "https://asia.nikkei.com/favicon.ico", enabled: true
+        rss: "https://asia.nikkei.com/rss/feed/nar", homepage: "https://asia.nikkei.com", logo: "https://asia.nikkei.com/favicon.ico", enabled: true
     },
     {
         id: "yonhap_kr", name: "Yonhap", country: "South Korea", region: "East Asia", language: "en",
@@ -122,9 +122,9 @@ const RSS_SOURCES = [
         rss: "https://en.yna.co.kr/RSS/news.xml", homepage: "https://en.yna.co.kr", logo: "https://en.yna.co.kr/favicon.ico", enabled: true
     },
     {
-        id: "koreaherald_kr", name: "Korea Herald", country: "South Korea", region: "East Asia", language: "en",
+        id: "koreatimes_kr", name: "The Korea Times", country: "South Korea", region: "East Asia", language: "en",
         category: ["general", "economy"], type: "newspaper", priority: 8, credibility: 8,
-        rss: "https://www.koreaherald.com/common/rss_biz.php", homepage: "https://www.koreaherald.com", logo: "https://www.koreaherald.com/favicon.ico", enabled: true
+        rss: "https://www.koreatimes.co.kr/www/rss/rss.xml", homepage: "https://www.koreatimes.co.kr", logo: "https://www.koreatimes.co.kr/favicon.ico", enabled: true
     },
 
     // ==========================================
@@ -136,14 +136,14 @@ const RSS_SOURCES = [
         rss: "http://www.xinhuanet.com/english/rss/worldrss.xml", homepage: "http://www.xinhuanet.com/english/", logo: "http://www.xinhuanet.com/favicon.ico", enabled: true
     },
     {
-        id: "caixin_cn", name: "Caixin Global", country: "China", region: "East Asia", language: "en",
+        id: "cnbc_asia", name: "CNBC Asia", country: "Hong Kong", region: "East Asia", language: "en",
         category: ["economy", "finance", "business"], type: "economic_news", priority: 10, credibility: 9,
-        rss: "https://www.caixinglobal.com/rss/rss.xml", homepage: "https://www.caixinglobal.com", logo: "https://www.caixinglobal.com/favicon.ico", enabled: true
+        rss: "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=19832390", homepage: "https://www.cnbc.com/asia-world/", logo: "https://www.cnbc.com/favicon.ico", enabled: true
     },
     {
-        id: "globaltimes_cn", name: "Global Times", country: "China", region: "East Asia", language: "en",
-        category: ["general", "politics"], type: "state_media", priority: 8, credibility: 6,
-        rss: "https://www.globaltimes.cn/rss/rss.xml", homepage: "https://www.globaltimes.cn", logo: "https://www.globaltimes.cn/favicon.ico", enabled: true
+        id: "cgtn_cn", name: "CGTN", country: "China", region: "East Asia", language: "en",
+        category: ["general", "politics"], type: "state_media", priority: 9, credibility: 7,
+        rss: "https://www.cgtn.com/rss", homepage: "https://www.cgtn.com", logo: "https://www.cgtn.com/favicon.ico", enabled: true
     },
     {
         id: "scmp_hk", name: "South China Morning Post", country: "Hong Kong", region: "East Asia", language: "en",
@@ -156,9 +156,9 @@ const RSS_SOURCES = [
         rss: "https://hongkongfp.com/feed/", homepage: "https://hongkongfp.com", logo: "https://hongkongfp.com/favicon.ico", enabled: true
     },
     {
-        id: "focustaiwan_tw", name: "Focus Taiwan (CNA)", country: "Taiwan", region: "East Asia", language: "en",
-        category: ["general", "politics"], type: "news_agency", priority: 9, credibility: 9,
-        rss: "https://focustaiwan.tw/rss/news/all", homepage: "https://focustaiwan.tw", logo: "https://focustaiwan.tw/favicon.ico", enabled: true
+        id: "taiwannews_tw", name: "Taiwan News", country: "Taiwan", region: "East Asia", language: "en",
+        category: ["general", "politics"], type: "newspaper", priority: 9, credibility: 8,
+        rss: "https://www.taiwannews.com.tw/rss/news.xml", homepage: "https://www.taiwannews.com.tw", logo: "https://www.taiwannews.com.tw/favicon.ico", enabled: true
     },
     {
         id: "taipeitimes_tw", name: "Taipei Times", country: "Taiwan", region: "East Asia", language: "en",
@@ -235,12 +235,12 @@ const RSS_SOURCES = [
     {
         id: "kyivindependent_ua", name: "Kyiv Independent", country: "Ukraine", region: "Eastern Europe", language: "en",
         category: ["politics", "conflict"], type: "newspaper", priority: 9, credibility: 8,
-        rss: "https://kyivindependent.com/rss/", homepage: "https://kyivindependent.com", logo: "https://kyivindependent.com/favicon.ico", enabled: true
+        rss: "https://kyivindependent.com/feed/", homepage: "https://kyivindependent.com", logo: "https://kyivindependent.com/favicon.ico", enabled: true
     },
     {
-        id: "ukrinform_ua", name: "Ukrinform", country: "Ukraine", region: "Eastern Europe", language: "en",
-        category: ["general", "conflict"], type: "state_media", priority: 8, credibility: 8,
-        rss: "https://www.ukrinform.net/block-lastnews", homepage: "https://www.ukrinform.net", logo: "https://www.ukrinform.net/favicon.ico", enabled: true
+        id: "interfax_ua", name: "Interfax-Ukraine", country: "Ukraine", region: "Eastern Europe", language: "en",
+        category: ["general", "conflict"], type: "news_agency", priority: 8, credibility: 8,
+        rss: "https://en.interfax.com.ua/news/last.rss", homepage: "https://en.interfax.com.ua", logo: "https://en.interfax.com.ua/favicon.ico", enabled: true
     },
 
     // ==========================================
@@ -269,7 +269,7 @@ const RSS_SOURCES = [
     {
         id: "cbc_ca", name: "CBC News", country: "Canada", region: "North America", language: "en",
         category: ["general", "politics"], type: "state_media", priority: 9, credibility: 9,
-        rss: "https://www.cbc.ca/cmlink/rss-world", homepage: "https://www.cbc.ca", logo: "https://www.cbc.ca/favicon.ico", enabled: true
+        rss: "https://www.cbc.ca/cmlink/rss-topstories", homepage: "https://www.cbc.ca", logo: "https://www.cbc.ca/favicon.ico", enabled: true
     },
 
     // ==========================================
@@ -291,9 +291,9 @@ const RSS_SOURCES = [
         rss: "https://allafrica.com/tools/headlines/rdf/latest/headlines.rdf", homepage: "https://allafrica.com", logo: "https://allafrica.com/favicon.ico", enabled: true
     },
     {
-        id: "news24_za", name: "News24", country: "South Africa", region: "Africa", language: "en",
-        category: ["general", "politics"], type: "newspaper", priority: 8, credibility: 8,
-        rss: "https://feeds.news24.com/articles/news24/TopStories/rss", homepage: "https://www.news24.com", logo: "https://www.news24.com/favicon.ico", enabled: true
+        id: "sabc_za", name: "SABC News", country: "South Africa", region: "Africa", language: "en",
+        category: ["general", "politics"], type: "state_media", priority: 8, credibility: 8,
+        rss: "https://www.sabcnews.com/sabcnews/feed/", homepage: "https://www.sabcnews.com", logo: "https://www.sabcnews.com/favicon.ico", enabled: true
     },
 
     // ==========================================
@@ -305,14 +305,14 @@ const RSS_SOURCES = [
         rss: "https://www.aljazeera.com/xml/rss/all.xml", homepage: "https://www.aljazeera.com", logo: "https://www.aljazeera.com/favicon_aje.ico", enabled: true
     },
     {
-        id: "timesofisrael_il", name: "Times of Israel", country: "Israel", region: "Middle East", language: "en",
+        id: "jpost_il", name: "Jerusalem Post", country: "Israel", region: "Middle East", language: "en",
         category: ["general", "politics"], type: "newspaper", priority: 9, credibility: 8,
-        rss: "https://www.timesofisrael.com/feed/", homepage: "https://www.timesofisrael.com", logo: "https://www.timesofisrael.com/favicon.ico", enabled: true
+        rss: "https://www.jpost.com/rss/rssfeedsfrontpage", homepage: "https://www.jpost.com", logo: "https://www.jpost.com/favicon.ico", enabled: true
     },
     {
-        id: "arabnews", name: "Arab News", country: "Saudi Arabia", region: "Middle East", language: "en",
+        id: "khaleejtimes", name: "Khaleej Times", country: "UAE", region: "Middle East", language: "en",
         category: ["general", "economy"], type: "newspaper", priority: 8, credibility: 8,
-        rss: "https://www.arabnews.com/rss.xml", homepage: "https://www.arabnews.com", logo: "https://www.arabnews.com/favicon.ico", enabled: true
+        rss: "https://www.khaleejtimes.com/feed", homepage: "https://www.khaleejtimes.com", logo: "https://www.khaleejtimes.com/favicon.ico", enabled: true
     },
     {
         id: "middleeasteye", name: "Middle East Eye", country: "UK", region: "Middle East", language: "en",
@@ -334,9 +334,9 @@ const RSS_SOURCES = [
         rss: "https://www.who.int/rss-feeds/news-english.xml", homepage: "https://www.who.int", logo: "https://www.who.int/favicon.ico", enabled: true
     },
     {
-        id: "imf_news", name: "IMF", country: "Global", region: "Global", language: "en",
+        id: "worldbank_news", name: "World Bank", country: "Global", region: "Global", language: "en",
         category: ["economy", "finance"], type: "international_org", priority: 10, credibility: 10,
-        rss: "https://www.imf.org/en/News/RSS", homepage: "https://www.imf.org", logo: "https://www.imf.org/favicon.ico", enabled: true
+        rss: "https://www.worldbank.org/en/news/all.rss", homepage: "https://www.worldbank.org", logo: "https://www.worldbank.org/favicon.ico", enabled: true
     },
 
     // ==========================================
@@ -435,14 +435,14 @@ const RSS_SOURCES = [
         rss: "https://variety.com/feed/", homepage: "https://variety.com", logo: "https://variety.com/favicon.ico", enabled: true
     },
     {
-        id: "espn_top", name: "ESPN", country: "USA", region: "Global", language: "en",
+        id: "yahoo_sports", name: "Yahoo Sports", country: "USA", region: "Global", language: "en",
         category: ["sports"], type: "news_agency", priority: 10, credibility: 9,
-        rss: "https://www.espn.com/espn/rss/news", homepage: "https://www.espn.com", logo: "https://www.espn.com/favicon.ico", enabled: true
+        rss: "https://sports.yahoo.com/rss/", homepage: "https://sports.yahoo.com", logo: "https://sports.yahoo.com/favicon.ico", enabled: true
     },
     {
-        id: "mayoclinic", name: "Mayo Clinic", country: "USA", region: "Global", language: "en",
+        id: "nih_health", name: "NIH", country: "USA", region: "Global", language: "en",
         category: ["health", "science"], type: "science_news", priority: 10, credibility: 10,
-        rss: "https://newsnetwork.mayoclinic.org/feed/", homepage: "https://newsnetwork.mayoclinic.org", logo: "https://newsnetwork.mayoclinic.org/favicon.ico", enabled: true
+        rss: "https://www.nih.gov/news-events/news-releases/rss.xml", homepage: "https://www.nih.gov", logo: "https://www.nih.gov/favicon.ico", enabled: true
     }
 ];
 
