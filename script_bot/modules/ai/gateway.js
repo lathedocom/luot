@@ -15,7 +15,7 @@ class AIGateway {
         };
     }
 
-    async executeTask(taskName, prompt, systemInstruction = "") {
+   async executeTask(taskName, prompt, systemInstruction = "") {
         logger.info(`[Gateway] Đang xử lý task: ${taskName}...`);
         
         const taskConfig = TASK_ROUTING[taskName];
@@ -75,7 +75,13 @@ class AIGateway {
                     } else if (this.providers.groq && targetProvider !== 'groq') {
                         logger.warn(`[Gateway] Đổi sang mạng Groq dự phòng...`);
                         targetProvider = 'groq';
-                        targetModel = 'llama-3.1-8b-instant';
+                        
+                        // ĐÃ SỬA: Lựa chọn tự động model Groq dựa trên model ban đầu
+                        if (targetModel.includes('flash-lite') || targetModel.includes('gemma')) {
+                            targetModel = configModels.GROQ_MODEL_FAST || 'llama-3.1-8b-instant';
+                        } else {
+                            targetModel = configModels.GROQ_MODEL_SMART || 'llama-3.3-70b-versatile';
+                        }
                     }
                 }
 
