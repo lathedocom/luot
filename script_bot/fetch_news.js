@@ -23,6 +23,8 @@ const { evaluateClusterAction } = require('./modules/topic/similarity_engine');
 const { fetchAllMarketData } = require('./modules/market/index');
 const { fetchAllSocialTrends } = require('./modules/social/index');
 const { generateAllReports } = require('./modules/reports/index');
+// BỔ SUNG IMPORT GATEWAY ĐỂ GỌI AI GATEKEEPER CHO NHÁNH VERIFY_BY_AI
+const gateway = require('./modules/ai/gateway'); 
 
 // BIẾN TRẠNG THÁI TOÀN CỤC CHO PIPELINE
 const state = {
@@ -101,7 +103,6 @@ eventBus.on('CLUSTER_CREATED', async (clusters) => {
                 continue;
             }
             
-           // SỬA: Cho phép cả MERGE và LIGHT_UPDATE được gộp chung vào 1 Timeline
             if ((action === 'MERGE' || action === 'LIGHT_UPDATE') && bestMatch) {
                 const updatedTopic = mergeIntoExistingTopic(bestMatch, cluster.articles, cluster.articles[0].title);
                 const index = state.currentTopics.findIndex(t => t.event_key === bestMatch.event_key);
@@ -109,6 +110,44 @@ eventBus.on('CLUSTER_CREATED', async (clusters) => {
                 logger.info(`[${action}] Gộp diễn biến mới thành công vào Topic cũ: ${eventKey}`);
                 continue;
             }
+
+            // --- 🐛 BẢN VÁ: THÊM NHÁNH XỬ LÝ VERIFY_BY_AI ---
+            if (action === 'VERIFY_BY_AI' && bestMatch) {
+                logger.info(`[AI Gatekeeper] Cần xác minh AI cho cụm tin mới với chủ đề: ${bestMatch.title}`);
+                
+                const prompt = `
+Tôi có một chủ đề đang theo dõi: "${bestMatch.title}"
+Và một cụm tin tức mới vừa thu thập: "${cluster.articles[0].title}"
+Tóm tắt tin mới: "${cluster.articles[0].summary}"
+
+Hai thông tin này có phải nói về cùng một sự kiện/chủ đề không, hay là hai sự kiện riêng biệt?
+LỆNH TUYỆT ĐỐI: CHỈ trả về JSON duy nhất định dạng:
+{
+  "is_same_event": true hoặc false,
+  "reason": "Giải thích ngắn gọn 1 câu"
+}`;
+
+                try {
+                    // Dùng MATCH_TIMELINE (hoặc task hệ thống tương đương có trả JSON)
+                    const aiDecision = await gateway.executeTask('MATCH_TIMELINE', prompt); 
+                    
+                    if (aiDecision && aiDecision.is_same_event) {
+                        logger.info(`[AI Gatekeeper] Quyết định: GỘP (Lý do: ${aiDecision.reason})`);
+                        // Thực thi việc gộp tin giống y hệt nhánh MERGE
+                        const updatedTopic = mergeIntoExistingTopic(bestMatch, cluster.articles, cluster.articles[0].title);
+                        const index = state.currentTopics.findIndex(t => t.event_key === bestMatch.event_key);
+                        if (index !== -1) state.currentTopics[index] = updatedTopic;
+                        logger.info(`[MERGE-AI] Gộp diễn biến mới thành công vào Topic cũ: ${eventKey}`);
+                        continue; 
+                    } else {
+                        logger.info(`[AI Gatekeeper] Quyết định: TÁCH TẠO MỚI (Lý do: ${aiDecision.reason})`);
+                        // AI bảo khác nhau -> Để luồng trôi xuống chạy CREATE_NEW
+                    }
+                } catch (error) {
+                    logger.warn(`[AI Gatekeeper] Lỗi xác minh: ${error.message}. Fallback: Tách tạo mới để an toàn.`);
+                }
+            }
+            // ------------------------------------------------
             
             logger.info(`Đang gọi AI phân tích Topic mới...`);
             const aiIntelligence = await analyzeClusterMultiDimensional(cluster, eventKey);
@@ -154,7 +193,6 @@ eventBus.on('CLUSTER_CREATED', async (clusters) => {
             );
         }
         
-        // Chỉ giữ lại một lệnh emit này, nằm ngoài vòng lặp for và trong khối try
         eventBus.emit('TOPIC_UPDATED', state.currentTopics);
         
     } catch (e) {
@@ -195,7 +233,6 @@ eventBus.on('SYNC_DATABASE', () => {
         const db = topicStore.readData();
         
         // --- BỘ LỌC KHỬ TRÙNG (DEDUPLICATION) ---
-        // Dùng Map để đảm bảo mỗi event_key chỉ tồn tại 1 lần duy nhất (giữ bản mới nhất)
         const uniqueTopics = new Map();
         if (state.currentTopics && state.currentTopics.length > 0) {
             for (const topic of state.currentTopics) {
@@ -205,11 +242,9 @@ eventBus.on('SYNC_DATABASE', () => {
             }
         }
         
-        // Chuyển lại từ Map sang Array và sắp xếp
         const filteredTopics = [...uniqueTopics.values()];
         db.news = filteredTopics.sort((a, b) => b.timestamp - a.timestamp || (b.hot_score || 0) - (a.hot_score || 0));
         
-        // Cập nhật các dữ liệu vệ tinh
         db.market_data = state.marketData || [];
         db.social_trends = state.socialTrends || [];
         db.daily_briefing = (state.reports && state.reports.daily) ? state.reports.daily : "";
@@ -218,7 +253,6 @@ eventBus.on('SYNC_DATABASE', () => {
             total_articles: state.articles ? state.articles.length : 0 
         };
         
-        // Ghi xuống file JSON
         topicStore.writeData(db);
         eventBus.emit('PIPELINE_FINISHED');
     } catch (e) {
@@ -245,7 +279,7 @@ eventBus.on('PIPELINE_ERROR', (error) => {
     logger.error("PIPELINE THẤT BẠI CẤP ĐỘ HỆ THỐNG!", error);
     const failStatus = { status: { success: false, last_run: new Date().toISOString() }, errors: logger.getErrorLogs() };
     fs.writeFileSync(PIPELINE_STATUS_FILE, JSON.stringify(failStatus, null, 2));
-    process.exit(1); // Ép tắt luồng để GitHub Actions nhận diện fail
+    process.exit(1); 
 });
 
 // ============================================================================
