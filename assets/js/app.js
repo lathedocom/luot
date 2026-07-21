@@ -1,6 +1,6 @@
 let globalNewsData = [];
 let totalCrawledArticles = 0;
- 
+
 document.addEventListener('DOMContentLoaded', () => {
     initMobileMenu();
     initNavigation(); 
@@ -13,9 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchNewsData();
     fetchTimelineData();
 });
- 
+
 function initNavigation() {
-    // Thêm 'timeline' vào mảng
     const tabs = ['overview', 'briefing', 'timeline', 'market'];
     tabs.forEach(tab => {
         const navBtn = document.getElementById(`nav-${tab}`);
@@ -27,7 +26,7 @@ function initNavigation() {
                 
                 document.getElementById(`view-${tab}`).style.display = 'block';
                 navBtn.classList.add('active');
- 
+
                 const sidebar = document.getElementById('app-sidebar');
                 const overlay = document.getElementById('sidebar-overlay');
                 if (sidebar.classList.contains('active')) {
@@ -38,13 +37,13 @@ function initNavigation() {
         }
     });
 }
- 
+
 function initMobileTabs() {
     const btnNews = document.getElementById('tab-news');
     const btnSocial = document.getElementById('tab-social');
     const secFeed = document.getElementById('feed-section');
     const secSocial = document.getElementById('social-section');
- 
+
     if(btnNews && btnSocial) {
         btnNews.addEventListener('click', () => {
             btnNews.classList.add('active');
@@ -59,8 +58,7 @@ function initMobileTabs() {
             secSocial.style.display = 'block';
         });
     }
- 
-    // Logic đảm bảo không bị lỗi UI khi chuyển đổi ngang dọc điện thoại
+
     window.addEventListener('resize', () => {
         if (window.innerWidth > 768) {
             secFeed.style.display = 'block';
@@ -76,12 +74,12 @@ function initMobileTabs() {
         }
     });
 }
- 
+
 function initMobileMenu() {
     const menuBtn = document.getElementById('mobile-menu-btn');
     const sidebar = document.getElementById('app-sidebar');
     const overlay = document.getElementById('sidebar-overlay');
- 
+
     if (menuBtn && sidebar && overlay) {
         menuBtn.addEventListener('click', () => {
             sidebar.classList.add('active');
@@ -93,14 +91,8 @@ function initMobileMenu() {
         });
     }
 }
- 
-// ==========================================================
-// CÁC HÀM XỬ LÝ TÌM KIẾM ĐÃ ĐƯỢC NÂNG CẤP
-// ==========================================================
- 
-// 1. Hàm hỗ trợ: Ép hiển thị kết quả mà KHÔNG làm tụt bàn phím ảo
+
 function forceShowNewsFeed() {
-    // Ép về tab Tổng quan (nếu đang ở tab khác)
     const overviewBtn = document.getElementById('nav-overview');
     if (overviewBtn && !overviewBtn.classList.contains('active')) {
         document.querySelectorAll('.view-section').forEach(el => el.style.display = 'none');
@@ -108,13 +100,12 @@ function forceShowNewsFeed() {
         document.getElementById('view-overview').style.display = 'block';
         overviewBtn.classList.add('active');
     }
- 
-    // Ép hiển thị cột Tin tức trên Mobile (để tránh lỗi đang xem MXH thì không thấy kết quả)
+
     const btnNews = document.getElementById('tab-news');
     const btnSocial = document.getElementById('tab-social');
     const secFeed = document.getElementById('feed-section');
     const secSocial = document.getElementById('social-section');
- 
+
     if (window.innerWidth <= 768 && btnNews && secFeed) {
         btnNews.classList.add('active');
         if (btnSocial) btnSocial.classList.remove('active');
@@ -122,8 +113,7 @@ function forceShowNewsFeed() {
         if (secSocial) secSocial.style.display = 'none';
     }
 }
- 
-// 2. Logic Tìm kiếm (Gõ phím thời gian thực)
+
 function initSearch() {
     const searchInput = document.getElementById('search-input');
     searchInput.addEventListener('input', (e) => {
@@ -140,12 +130,10 @@ function initSearch() {
             renderNewsFeed(filtered);
         }
         
-        // Gọi hàm xử lý UI ngầm định thay vì dùng .click()
         forceShowNewsFeed();
     });
 }
- 
-// 3. Xử lý nút ẩn/hiện thanh tìm kiếm trên Mobile
+
 function initMobileSearch() {
     const searchBtn = document.getElementById('mobile-search-btn');
     const searchBox = document.getElementById('header-search-box');
@@ -157,20 +145,17 @@ function initMobileSearch() {
             searchBox.classList.toggle('active');
             
             if(searchBox.classList.contains('active')) {
-                // Thêm độ trễ 50ms để CSS bung khung ra xong mới gọi bàn phím ảo (chống giật lag)
                 setTimeout(() => searchInput.focus(), 50); 
             } else {
                 searchInput.blur();
-                searchInput.value = ''; // Tự động xóa chữ nếu đóng thanh tìm kiếm
-                renderNewsFeed(globalNewsData); // Trả lại toàn bộ tin tức
+                searchInput.value = ''; 
+                renderNewsFeed(globalNewsData); 
             }
         });
     }
     
-    // Tự động đóng tìm kiếm khi chạm ngón tay ra ngoài vùng trống
     document.addEventListener('click', (e) => {
         if (window.innerWidth <= 768 && searchBox.classList.contains('active')) {
-            // Sửa logic so sánh nút search an toàn tuyệt đối
             if (!searchBox.contains(e.target) && !searchBtn.contains(e.target)) {
                 searchBox.classList.remove('active');
                 searchInput.blur(); 
@@ -178,28 +163,25 @@ function initMobileSearch() {
         }
     });
 }
- 
+
 function initAdminEasterEgg() {
     const logos = document.querySelectorAll('.logo');
     let clickCount = 0;
     let clickTimer;
- 
+
     logos.forEach(logo => {
         logo.addEventListener('click', () => {
             clickCount++;
             clearTimeout(clickTimer);
             if (clickCount === 5) {
-                // 1. Tính toán dữ liệu thị trường
                 const marketTopics = globalNewsData.filter(t => 
                     (t.categories && t.categories.includes('economy')) || 
                     (t.market_impact && t.market_impact.length > 20)
                 ).length;
- 
-                // 2. Chèn 4 thẻ thống kê vào bảng System Stats (Admin Modal)
+
                 const adminModal = document.getElementById('admin-modal');
                 let modalBody = adminModal.querySelector('.modal-body');
                 
-                // Tránh ghi đè nếu adminModal không có modal-body 
                 if (!modalBody) modalBody = adminModal;
                 
                 modalBody.innerHTML = `
@@ -225,7 +207,7 @@ function initAdminEasterEgg() {
                         </div>
                     </div>
                 `;
- 
+
                 adminModal.classList.add('active');
                 clickCount = 0; 
             } else {
@@ -233,7 +215,7 @@ function initAdminEasterEgg() {
             }
         });
     });
- 
+
     const closeAdminBtn = document.querySelector('.close-admin-action') || document.getElementById('close-admin-btn');
     if (closeAdminBtn) {
         closeAdminBtn.addEventListener('click', () => {
@@ -241,7 +223,7 @@ function initAdminEasterEgg() {
         });
     }
 }
- 
+
 function renderSkeletons() {
     const newsContainer = document.getElementById('news-container');
     let skeletons = '';
@@ -255,7 +237,7 @@ function renderSkeletons() {
     }
     newsContainer.innerHTML = skeletons;
 }
- 
+
 async function fetchNewsData() {
     try {
         const response = await fetch(`news_data.json?v=${new Date().getTime()}`);
@@ -264,42 +246,36 @@ async function fetchNewsData() {
         
         globalNewsData = data.news || [];
         totalCrawledArticles = data.stats ? data.stats.total_crawled : 0;
- 
-        // Render dữ liệu (Bỏ renderStats)
+
         renderNewsFeed(globalNewsData);
         renderBriefing(data.daily_briefing);
         renderMarket(data.market_data || []);
         renderSocial(data.social || []); 
-        
- 
+
     } catch (error) {
         document.getElementById('news-container').innerHTML = `<div class="news-card"><p>Lỗi kết nối. Không thể tải dữ liệu Intelligence.</p></div>`;
     }
 }
- 
+
 function renderNewsFeed(newsData) {
     const newsContainer = document.getElementById('news-container');
     newsContainer.innerHTML = ''; 
- 
+
     if(newsData.length === 0) {
         newsContainer.innerHTML = `<p style="padding: 20px; opacity: 0.7;">Không tìm thấy chủ đề nào phù hợp.</p>`;
         return;
     }
- 
+
     newsData.forEach(cluster => {
         const timeObj = new Date(cluster.timestamp);
         const timeString = `${timeObj.getHours().toString().padStart(2,'0')}:${timeObj.getMinutes().toString().padStart(2,'0')} - ${timeObj.toLocaleDateString('vi-VN')}`;
         const mainRegion = (cluster.regions && cluster.regions.length > 0) ? cluster.regions[0] : 'Thế giới';
- 
-        // ==========================================
-        // XỬ LÝ CHÚ THÍCH NGUỒN MINH BẠCH (VẤN ĐỀ 2)
-        // ==========================================
+
         const sources = cluster.sources || [];
-        const sourceCount = sources.length; // Tổng số bài báo
+        const sourceCount = sources.length;
         
-        // Lọc danh sách các báo độc lập (dựa theo source_name, loại bỏ trùng lặp)
         const uniqueSourceNames = [...new Set(sources.map(s => s.source_name).filter(Boolean))];
-        const uniqueCount = uniqueSourceNames.length; // Số lượng cơ quan báo chí
+        const uniqueCount = uniqueSourceNames.length;
         
         let sourceFooterHtml = '';
         
@@ -308,21 +284,17 @@ function renderNewsFeed(newsData) {
         } 
         else if (uniqueCount === 1) {
             if (sourceCount > 1) {
-                // Nhiều bài nhưng cùng 1 cơ quan
                 sourceFooterHtml = `<span class="material-icons-round" style="font-size: 15px; color: var(--md-sys-color-primary);">dynamic_feed</span> Tổng hợp từ nhiều bài viết của cùng một cơ quan báo chí`;
             } else {
-                // Chỉ có đúng 1 bài, 1 báo
                 sourceFooterHtml = `<span class="material-icons-round" style="font-size: 15px; color: var(--md-sys-color-primary);">article</span> Nguồn: ${uniqueSourceNames[0]}`;
             }
         } 
         else {
-            // Nhiều nguồn độc lập (Ví dụ: Nguồn: Reuters, BBC • Tổng hợp từ 3 nguồn)
             const topSources = uniqueSourceNames.slice(0, 2).join(', ');
             const hasMore = uniqueCount > 2 ? ', ...' : '';
             sourceFooterHtml = `<span class="material-icons-round" style="font-size: 15px; color: var(--md-sys-color-primary);">fact_check</span> Nguồn: ${topSources}${hasMore} • Đối chiếu từ ${uniqueCount} nguồn báo chí`;
         }
- 
-        // Tạo thẻ bài viết
+
         const card = document.createElement('div');
         card.className = 'news-card';
         card.innerHTML = `
@@ -337,12 +309,11 @@ function renderNewsFeed(newsData) {
             </div>
         `;
         
-        // Gắn sự kiện click mở Modal
         card.addEventListener('click', () => openModal(cluster));
         newsContainer.appendChild(card);
     });
 }
- 
+
 function renderBriefing(briefingText) {
     const briefingContainer = document.getElementById('briefing-container');
     if (briefingText) {
@@ -351,7 +322,7 @@ function renderBriefing(briefingText) {
         briefingContainer.innerHTML = '<p style="opacity:0.7;">Chưa có bản tin tóm tắt cho chu kỳ này.</p>';
     }
 }
- 
+
 function renderMarket(marketData) {
     const marketContainer = document.getElementById('market-container');
     if (marketData.length === 0) {
@@ -363,7 +334,7 @@ function renderMarket(marketData) {
         const isUp = item.trend === '↑' || item.trend === 'up';
         const color = isUp ? '#10b981' : '#ef4444'; 
         const icon = isUp ? 'trending_up' : 'trending_down';
- 
+
         html += `
             <div style="background: var(--md-sys-color-surface); padding: 20px; border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px solid var(--md-sys-color-outline); box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
                 <strong style="font-size: 16px; margin-bottom: 8px; opacity: 0.8;">${item.symbol}</strong>
@@ -374,7 +345,7 @@ function renderMarket(marketData) {
     });
     marketContainer.innerHTML = html;
 }
- 
+
 function renderSocial(socialData) {
     const container = document.getElementById('social-container');
     if (!socialData || socialData.length === 0) {
@@ -392,7 +363,7 @@ function renderSocial(socialData) {
     });
     container.innerHTML = html;
 }
- 
+
 function initModalEvents() {
     const modal = document.getElementById('intelligence-modal');
     const closeAction = document.querySelector('.close-modal-action');
@@ -400,12 +371,12 @@ function initModalEvents() {
         closeAction.addEventListener('click', () => modal.classList.remove('active'));
     }
     modal.addEventListener('click', (e) => { if(e.target === modal) modal.classList.remove('active'); });
- 
+
     const toggleBtn = document.getElementById('toggle-sources-btn');
     const sourcesDiv = document.getElementById('modal-sources');
     const toggleIcon = document.getElementById('toggle-sources-icon');
     const toggleText = document.getElementById('toggle-sources-text');
- 
+
     if (toggleBtn) {
         toggleBtn.addEventListener('click', () => {
             if (sourcesDiv.style.display === 'none') {
@@ -421,24 +392,11 @@ function initModalEvents() {
     }
 }
 
-
-
-
-/* ==========================================================================
-  TOÀN BỘ HÀM openModal(cluster)
-   ========================================================================== */
-
 function openModal(cluster) {
     try {
-        // ==========================================
-        // PHẦN 1: HEADER & TIÊU ĐỀ
-        // ==========================================
         const modalTitle = document.getElementById('modal-title');
         if (modalTitle) modalTitle.textContent = cluster.title || cluster.cluster_title || 'Chi tiết sự kiện';
         
-        // ==========================================
-        // PHẦN 2: TÍNH NĂNG MỚI - ĐỘ XÁC THỰC
-        // ==========================================
         const sources = cluster.sources || [];
         const uniqueSourceNames = [...new Set(sources.map(s => s.source_name).filter(Boolean))];
         const uniqueCount = uniqueSourceNames.length; 
@@ -456,9 +414,6 @@ function openModal(cluster) {
             }
         }
 
-        // ==========================================
-        // PHẦN 3: TÍNH NĂNG MỚI - MINI TIMELINE
-        // ==========================================
         const miniTimelineContainer = document.getElementById('modal-mini-timeline');
         if (miniTimelineContainer) {
             if (cluster.timeline_events && cluster.timeline_events.length > 0) {
@@ -475,21 +430,16 @@ function openModal(cluster) {
             }
         }
 
-        // ==========================================
-        // PHẦN 4: NỘI DUNG CHÍNH (BODY HTML)
-        // ==========================================
         let bodyHtml = `<p style="margin-bottom:20px; font-size: 15px; line-height: 1.6;">${cluster.detailed_summary || cluster.short_summary || ''}</p>`;
         
-        // Hàm hỗ trợ vẽ danh sách an toàn
         const renderList = (data) => {
             if (!data) return '';
             if (Array.isArray(data)) {
                 return data.map(item => `<li style="margin-bottom: 8px;">${item}</li>`).join('');
             }
-            return `<li style="margin-bottom: 8px;">${data}</li>`; // Nếu là chuỗi, bọc vào 1 thẻ li
+            return `<li style="margin-bottom: 8px;">${data}</li>`;
         };
 
-        // --- TÍNH NĂNG MỚI: Ý NGHĨA CỐT LÕI ---
         if (cluster.significance) {
             bodyHtml += `
             <div class="intelligence-box" style="margin-top: 16px; background: rgba(59, 130, 246, 0.05); border-left: 4px solid #3b82f6; padding: 12px; border-radius: 4px;">
@@ -500,7 +450,6 @@ function openModal(cluster) {
             </div>`;
         }
  
-        // --- CŨ: CĂN NGUYÊN / BỐI CẢNH ---
         if (cluster.causes && (Array.isArray(cluster.causes) ? cluster.causes.length > 0 : true)) {
             bodyHtml += `
             <div class="intelligence-box" style="margin-top: 16px; background: rgba(245, 158, 11, 0.05); border-left: 4px solid #f59e0b; padding: 12px; border-radius: 4px;">
@@ -513,7 +462,6 @@ function openModal(cluster) {
             </div>`;
         }
  
-        // --- CŨ: TÁC ĐỘNG / ẢNH HƯỞNG CHUNG ---
         if (cluster.effects && (Array.isArray(cluster.effects) ? cluster.effects.length > 0 : true)) {
             bodyHtml += `
             <div class="intelligence-box" style="margin-top: 16px; background: rgba(239, 68, 68, 0.05); border-left: 4px solid #ef4444; padding: 12px; border-radius: 4px;">
@@ -526,7 +474,6 @@ function openModal(cluster) {
             </div>`;
         }
 
-        // --- CŨ (ĐÃ KHÔI PHỤC): NHÓM BỊ ẢNH HƯỞNG ---
         if (cluster.affected_groups && (Array.isArray(cluster.affected_groups) ? cluster.affected_groups.length > 0 : true)) {
             bodyHtml += `
             <div class="intelligence-box" style="margin-top: 16px; background: rgba(139, 92, 246, 0.05); border-left: 4px solid #8b5cf6; padding: 12px; border-radius: 4px;">
@@ -539,7 +486,6 @@ function openModal(cluster) {
             </div>`;
         }
  
-        // --- CŨ (ĐÃ KHÔI PHỤC): TÁC ĐỘNG THỊ TRƯỜNG ---
         if (cluster.market_impact && (Array.isArray(cluster.market_impact) ? cluster.market_impact.length > 0 : true)) {
             bodyHtml += `
             <div class="intelligence-box" style="margin-top: 16px; background: rgba(16, 185, 129, 0.05); border-left: 4px solid #10b981; padding: 12px; border-radius: 4px;">
@@ -552,7 +498,6 @@ function openModal(cluster) {
             </div>`;
         }
 
-        // --- TÍNH NĂNG MỚI: ĐIỂM CHƯA RÕ (Unknowns) ---
         if (cluster.unknowns && (Array.isArray(cluster.unknowns) ? cluster.unknowns.length > 0 : true)) {
             bodyHtml += `
             <div class="intelligence-box" style="margin-top: 16px; background: rgba(107, 114, 128, 0.05); border-left: 4px solid #6b7280; padding: 12px; border-radius: 4px;">
@@ -565,7 +510,6 @@ function openModal(cluster) {
             </div>`;
         }
  
-        // --- NÂNG CẤP: KỊCH BẢN TIẾP THEO (Gộp chung logic với follow_up cũ) ---
         if (cluster.scenarios && (Array.isArray(cluster.scenarios) ? cluster.scenarios.length > 0 : true)) {
             const scenariosHtml = cluster.scenarios.map(sc => {
                 let color = sc.likelihood === 'cao' ? '#ef4444' : (sc.likelihood === 'trung bình' ? '#f59e0b' : '#10b981');
@@ -582,7 +526,6 @@ function openModal(cluster) {
                 </ul>
             </div>`;
         } else if (cluster.follow_up) {
-             // Hiển thị lại follow_up nếu dữ liệu JSON cũ chưa có scenarios
              bodyHtml += `
              <div class="intelligence-box" style="margin-top: 20px; background: rgba(59, 130, 246, 0.05); border-left: 4px solid #3b82f6; padding: 12px; border-radius: 4px;">
                  <div class="intelligence-title" style="color: #3b82f6; font-weight: bold; display: flex; align-items: center; gap: 6px;">
@@ -592,16 +535,12 @@ function openModal(cluster) {
              </div>`;
         }
 
-        // --- TÍNH NĂNG MỚI: GHI CHÚ ĐỘ TIN CẬY ---
         if (cluster.confidence_note) {
             bodyHtml += `<div style="font-size: 12px; opacity: 0.7; font-style: italic; margin-top: 16px; border-top: 1px dashed var(--md-sys-color-outline); padding-top: 12px;">
                 * Ghi chú AI: ${cluster.confidence_note}
             </div>`;
         }
  
-        // ==========================================
-        // PHẦN 5: GẮN VÀO DOM VÀ HIỂN THỊ NGUỒN BÁO
-        // ==========================================
         const modalBody = document.getElementById('modal-body');
         if (modalBody) modalBody.innerHTML = bodyHtml;
         
@@ -639,10 +578,6 @@ function openModal(cluster) {
     }
 }
 
-
-// ==========================================
-// THÊM MỚI: HÀM RENDER TRANG TIMELINE 
-// ==========================================
 async function fetchTimelineData() {
     try {
         const response = await fetch(`timeline_data.json?v=${new Date().getTime()}`);
@@ -658,7 +593,6 @@ function renderTimelinePage(stories) {
     const container = document.getElementById('timeline-page-container');
     if (!container) return;
 
-    // Lọc các Story có từ 2 diễn biến trở lên
     const validStories = stories.filter(story => story.timeline && story.timeline.length > 1);
     validStories.sort((a, b) => b.last_updated - a.last_updated);
 
@@ -671,15 +605,12 @@ function renderTimelinePage(stories) {
     validStories.forEach(story => {
         let timelineNodes = '';
         
-        // --- XỬ LÝ TRẠNG THÁI HIỂN THỊ (ONGOING / ENDED) ---
         const statusText = story.status === 'ongoing' ? 'Đang tiếp diễn' : 'Đã kết thúc';
-        const statusColor = story.status === 'ongoing' ? '#10b981' : '#6b7280'; // Xanh ngọc cho ongoing, xám cho ended
+        const statusColor = story.status === 'ongoing' ? '#10b981' : '#6b7280'; 
 
         story.timeline.forEach((item, index) => {
-            // --- XỬ LÝ THỜI GIAN AN TOÀN (CHỐNG LỖI NaN:NaN) ---
             let safeTimestamp = item.timestamp || item.time || item.date || story.last_updated;
             
-            // Ép kiểu nếu timestamp đang ở dạng chuỗi số
             if (typeof safeTimestamp === 'string' && !isNaN(safeTimestamp)) {
                 safeTimestamp = parseInt(safeTimestamp, 10);
             }
@@ -687,17 +618,14 @@ function renderTimelinePage(stories) {
             const timeObj = new Date(safeTimestamp);
             let timeStr = "";
             
-            // Kiểm tra tính hợp lệ của thời gian
             if (!isNaN(timeObj.getTime())) {
                 timeStr = `${timeObj.getHours().toString().padStart(2,'0')}:${timeObj.getMinutes().toString().padStart(2,'0')} - ${timeObj.toLocaleDateString('vi-VN')}`;
             } else {
-                timeStr = "Vừa cập nhật"; // Fallback an toàn
+                timeStr = "Vừa cập nhật";
             }
 
-            // --- XỬ LÝ URL BÀI VIẾT TỪ FRONTEND ---
             const safeUrl = (item.url && item.url !== "undefined") ? item.url : "#";
             
-            // Bọc thẻ <a> vào tiêu đề nếu có link hợp lệ
             const titleHtml = safeUrl !== "#" 
                 ? `<a href="${safeUrl}" target="_blank" style="color: inherit; text-decoration: underline;">${item.title}</a>` 
                 : item.title;
@@ -735,5 +663,3 @@ function renderTimelinePage(stories) {
     
     container.innerHTML = html;
 }
-
-// Gọi fetchTimelineData() song song với fetchNewsData() ở sự kiện DOMContentLoaded
