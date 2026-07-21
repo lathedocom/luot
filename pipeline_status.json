@@ -1,20 +1,20 @@
 {
   "status": {
     "success": true,
-    "duration_ms": 158910,
-    "last_run": "2026-07-21T01:10:00.506Z"
+    "duration_ms": 158988,
+    "last_run": "2026-07-21T01:31:10.913Z"
   },
   "metrics": {
-    "articles_processed": 408,
+    "articles_processed": 416,
     "clusters_formed": 5,
     "new_topics": 5
   },
   "quota": {
-    "embedding_calls": 408
+    "embedding_calls": 416
   },
   "errors": [
     {
-      "time": "[01:09:31]",
+      "time": "[01:30:52]",
       "message": "[Gateway] Batch Embedding thất bại: HTTP Lỗi 404: {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"models/text-embedding-004 is not found for API version v1beta, or is not supported for embedContent. Call ModelService.ListModels to see the list of available models and their supported methods.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n",
       "detail": ""
     }
