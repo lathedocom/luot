@@ -22,7 +22,6 @@ async function analyzeClusterMultiDimensional(cluster, eventKey) {
         // --- TẦNG 1: Gọi Gemma để kiểm tra Metadata & Đánh giá có cần phân tích sâu không ---
         const metadataPrompt = `Trích xuất thông tin từ khối dữ liệu tin tức thô sau đây:
 "${cluster.combined_text}"
-
 LỆNH TUYỆT ĐỐI: CHỈ TRẢ VỀ JSON VỚI CÁC TRƯỜNG SAU:
 {
   "event": "Tên sự kiện ngắn gọn",
@@ -35,6 +34,7 @@ LỆNH TUYỆT ĐỐI: CHỈ TRẢ VỀ JSON VỚI CÁC TRƯỜNG SAU:
   "short_summary": "Tóm tắt 30-50 từ"
 }`;
         
+        // Nhờ cập nhật gateway.js, biến EXTRACT_METADATA giờ đã được đính kèm system_prompt từ config/tasks.js tự động.
         const gemmaResult = await gateway.executeTask('EXTRACT_METADATA', metadataPrompt);
         
         // --- TẦNG 2: Gọi Gemini (Chỉ khi Gemma xác nhận need_deep_analysis = true) ---
@@ -91,9 +91,12 @@ LỆNH TUYỆT ĐỐI: CHỈ TRẢ VỀ JSON VỚI CÁC TRƯỜNG SAU:
             follow_up: "Chờ cập nhật tình tiết mới từ các báo."
         };
     }
-
+    
     saveAiResult(eventKey, finalTopicAnalysis);
+    
+    // Ngủ 5 giây chống Rate Limit
     await new Promise(resolve => setTimeout(resolve, 5000));
+    
     return finalTopicAnalysis;
 }
 
