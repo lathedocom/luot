@@ -169,7 +169,24 @@ body { font-family: 'Roboto', sans-serif; background-color: var(--md-sys-color-b
     .stat-icon { width: 34px; height: 34px; font-size: 18px; border-radius: 8px; }
     .stat-info h3 { font-size: 11px; white-space: normal; } /* Cho phép chữ rớt dòng */
     .stat-info p { font-size: 18px; line-height: 1; }
+/* ==========================================================================
+   [NEW] CSS CHO ĐỘ XÁC THỰC VÀ MINI TIMELINE (INTELLIGENCE DASHBOARD)
+   ========================================================================== */
+.badge {
+    display: inline-flex; align-items: center; gap: 4px; padding: 6px 12px;
+    border-radius: 20px; font-size: 13px; font-weight: 600; text-transform: uppercase;
+}
+.bg-success { background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); }
+.bg-warning { background: rgba(245, 158, 11, 0.15); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.3); }
+.bg-secondary { background: rgba(107, 114, 128, 0.15); color: #9ca3af; border: 1px solid rgba(107, 114, 128, 0.3); }
+.badge .material-icons-round { font-size: 16px; }
 
+.mini-timeline-item {
+    font-size: 13px; margin-bottom: 6px; padding-left: 12px; position: relative; color: var(--md-sys-color-on-surface); opacity: 0.85;
+}
+.mini-timeline-item::before {
+    content: ''; position: absolute; left: 0; top: 6px; width: 6px; height: 6px; border-radius: 50%; background: var(--md-sys-color-primary);
+}
     /* MODAL DẠNG BOTTOM SHEET */
     .modal-overlay { align-items: flex-end; padding-top: 0; }
     .modal-dialog { 
