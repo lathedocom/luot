@@ -46,8 +46,10 @@ const state = {
 // ============================================================================
 
 eventBus.on('START_PIPELINE', async () => {
-    logger.clearErrorLogs();
-    logger.info("=== KHỞI ĐỘNG HỆ THỐNG TIN TỨC V4.5 (EVENT-DRIVEN ARCHITECTURE) ===");
+  logger.clearErrorLogs();
+  cleanupCache('embedding_cache');
+  cleanupCache('ai_cache');
+  logger.info("=== KHỞI ĐỘNG HỆ THỐNG TIN TỨC V4.5 (EVENT-DRIVEN ARCHITECTURE) ===");
     try {
         const articles = await fetchAndNormalizeNews();
         eventBus.emit('RSS_FETCHED', articles);
@@ -92,83 +94,77 @@ eventBus.on('CLUSTER_CREATED', async (clusters) => {
             const entities = extractEntities(cluster.combined_text);
             const eventKey = generateEventKey(entities);
             const ruleGraph = buildRuleBasedGraph(entities);
+
+
+
             
-            const { action, bestMatch } = evaluateClusterAction(cluster.main_vector, state.currentTopics);
-            
-            if (action === 'SKIP') {
-                logger.info(`[SKIP] Bỏ qua cụm tin trùng lặp cao: ${cluster.articles[0].title}`);
-                continue;
-            }
-            
-            if ((action === 'MERGE' || action === 'LIGHT_UPDATE') && bestMatch) {
-                const updatedTopic = mergeIntoExistingTopic(bestMatch, cluster.articles, cluster.articles[0].title);
-                const index = state.currentTopics.findIndex(t => t.event_key === bestMatch.event_key);
-                if (index !== -1) state.currentTopics[index] = updatedTopic;
-                logger.info(`[${action}] Gộp diễn biến mới thành công vào Topic cũ: ${eventKey}`);
-                continue;
-            }
+           const { action, bestMatch } = evaluateClusterAction(cluster.main_vector, state.currentTopics);
 
-            if (action === 'VERIFY_BY_AI' && bestMatch) {
-                logger.info(`[AI Gatekeeper] Cần xác minh AI cho cụm tin mới với chủ đề: ${bestMatch.title}`);
-                
-                const prompt = `
-Tôi có một chủ đề đang theo dõi: "${bestMatch.title}"
-Và một cụm tin tức mới vừa thu thập: "${cluster.articles[0].title}"
-Tóm tắt tin mới: "${cluster.articles[0].summary}"
+if (action === 'SKIP') {
+  logger.info(`[SKIP] Bỏ qua cụm tin trùng lặp cao: ${cluster.articles[0].title}`);
+  continue;
+}
 
-Hai thông tin này có phải nói về cùng một sự kiện/chủ đề không, hay là hai sự kiện riêng biệt?
-LỆNH TUYỆT ĐỐI: CHỈ trả về JSON duy nhất định dạng:
-{
-  "is_same_event": true hoặc false,
-  "reason": "Giải thích ngắn gọn 1 câu"
-}`;
+if ((action === 'MERGE' || action === 'LIGHT_UPDATE') && bestMatch) {
+  const updatedTopic = mergeIntoExistingTopic(bestMatch, cluster.articles, cluster.articles[0].title);
+  const index = state.currentTopics.findIndex(t => t.event_key === bestMatch.event_key);
+  if (index !== -1) state.currentTopics[index] = updatedTopic;
+  logger.info(`[${action}] Gộp diễn biến mới thành công vào Topic cũ: ${eventKey}`);
+  continue;
+}
 
-                try {
-                    const aiDecision = await gateway.executeTask('MATCH_TIMELINE', prompt); 
-                    
-                    if (aiDecision && aiDecision.is_same_event) {
-                        logger.info(`[AI Gatekeeper] Quyết định: GỘP (Lý do: ${aiDecision.reason})`);
-                        const updatedTopic = mergeIntoExistingTopic(bestMatch, cluster.articles, cluster.articles[0].title);
-                        const index = state.currentTopics.findIndex(t => t.event_key === bestMatch.event_key);
-                        if (index !== -1) state.currentTopics[index] = updatedTopic;
-                        logger.info(`[MERGE-AI] Gộp diễn biến mới thành công vào Topic cũ: ${eventKey}`);
-                        continue; 
-                    } else {
-                        logger.info(`[AI Gatekeeper] Quyết định: TÁCH TẠO MỚI (Lý do: ${aiDecision.reason})`);
-                    }
-                } catch (error) {
-                    logger.warn(`[AI Gatekeeper] Lỗi xác minh: ${error.message}. Fallback: Tách tạo mới để an toàn.`);
-                }
-            }
+// --- 🛡️ LỚP PHÒNG THỦ A: SO KHỚP EVENT_KEY CHÍNH XÁC (miễn phí, ưu tiên cao nhất) ---
+const exactMatch = state.currentTopics.find(t => t.event_key === eventKey);
+if (exactMatch) {
+  const merged = mergeIntoExistingTopic(exactMatch, cluster.articles, cluster.articles[0].title);
+  const idx = state.currentTopics.findIndex(t => t.event_key === eventKey);
+  if (idx !== -1) state.currentTopics[idx] = merged;
+  logger.info(`[EXACT-KEY] Trùng thực thể với: "${exactMatch.title}". Đã gộp, không tốn AI.`);
+  continue;
+}
 
-            // --- 🛡️ BẢN VÁ LỚP PHÒNG THỦ 2: SO KHỚP VĂN BẢN KHẮT KHE ---
-            const TWO_DAYS_MS = 48 * 60 * 60 * 1000;
-            const recentTopics = state.currentTopics.filter(t => Date.now() - (t.timestamp || Date.now()) < TWO_DAYS_MS);
+// --- 🛡️ LỚP PHÒNG THỦ B: SO KHỚP VĂN BẢN JACCARD (miễn phí) ---
+const TWO_DAYS_MS = 48 * 60 * 60 * 1000;
+const recentTopics = state.currentTopics.filter(t => Date.now() - (t.timestamp || Date.now()) < TWO_DAYS_MS);
+const jaccardMatch = recentTopics.find(t => {
+  const titleSim = jaccardSimilarity(t.title, cluster.articles[0].title);
+  const fullSim = jaccardSimilarity(
+    t.title + ' ' + (t.short_summary || ''),
+    cluster.articles[0].title + ' ' + cluster.articles[0].summary
+  );
+  return titleSim >= 0.55 || fullSim >= 0.5;
+});
+if (jaccardMatch) {
+  const merged = mergeIntoExistingTopic(jaccardMatch, cluster.articles, cluster.articles[0].title);
+  const idx = state.currentTopics.findIndex(t => t.event_key === jaccardMatch.event_key);
+  if (idx !== -1) state.currentTopics[idx] = merged;
+  logger.info(`[TEXT-DEDUP] Trùng văn bản với: "${jaccardMatch.title}". Đã gộp, không tốn AI.`);
+  continue;
+}
 
-            const duplicateTopic = recentTopics.find(t => {
-                const titleSim = jaccardSimilarity(t.title, cluster.articles[0].title);
-                const fullSim = jaccardSimilarity(
-                    t.title + ' ' + (t.short_summary || ''), 
-                    cluster.articles[0].title + ' ' + cluster.articles[0].summary
-                );
-                // Tiêu chí gắt gao: Tiêu đề giống >= 55% HOẶC tổng thể giống >= 50%
-                return titleSim >= 0.55 || fullSim >= 0.50;
-            });
+// --- 🛡️ LỚP PHÒNG THỦ C: VERIFY_BY_AI (chỉ dùng cho vùng điểm mơ hồ 0.60-0.70) ---
+if (action === 'VERIFY_BY_AI' && bestMatch) {
+  const verifyPrompt = `
+[SỰ KIỆN ĐANG XÉT]: ${cluster.articles[0].title} - ${cluster.articles[0].summary}
+[SỰ KIỆN ĐÃ CÓ TRONG DB]: ${bestMatch.title} - ${bestMatch.short_summary}
+Hai sự kiện trên có phải cùng nói về 1 sự việc không? CHỈ TRẢ VỀ JSON:
+{ "is_same_event": true/false }`;
+  try {
+    const verifyResult = await gateway.executeTask('MATCH_TIMELINE', verifyPrompt);
+    if (verifyResult && verifyResult.is_same_event) {
+      const merged = mergeIntoExistingTopic(bestMatch, cluster.articles, cluster.articles[0].title);
+      const idx = state.currentTopics.findIndex(t => t.event_key === bestMatch.event_key);
+      if (idx !== -1) state.currentTopics[idx] = merged;
+      logger.info(`[VERIFY_BY_AI] Xác nhận trùng với: "${bestMatch.title}". Đã gộp.`);
+      continue;
+    }
+  } catch (e) {
+    logger.warn(`[VERIFY_BY_AI] Lỗi xác minh, xử lý như tin mới: ${e.message}`);
+  }
+}
 
-            if (duplicateTopic) {
-                logger.info(`[TEXT-DEDUP] Phát hiện trùng lặp văn bản với: "${duplicateTopic.title}". Tiến hành gộp nguồn.`);
-                
-                // ĐÃ SỬA: Truyền cluster.articles[0].title để giữ dấu vết cập nhật (không dùng duplicateTopic.title)
-                const merged = mergeIntoExistingTopic(duplicateTopic, cluster.articles, cluster.articles[0].title);
-                const idx = state.currentTopics.findIndex(t => t.event_key === duplicateTopic.event_key);
-                if (idx !== -1) state.currentTopics[idx] = merged;
-                
-                continue; // Thoát vòng lặp, bỏ qua gọi AI
-            }
-            // ------------------------------------------------------------
-            
-            logger.info(`Đang gọi AI phân tích Topic mới...`);
-            const aiIntelligence = await analyzeClusterMultiDimensional(cluster, eventKey);
+logger.info(`Đang gọi AI phân tích Topic mới...`);
+const aiIntelligence = await analyzeClusterMultiDimensional(cluster, eventKey);
             
             const newTopic = {
                 event_key: eventKey,
