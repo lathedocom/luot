@@ -255,7 +255,10 @@ eventBus.on('SYNC_DATABASE', () => {
 
         const filteredTopics = [...uniqueTopics.values()];
         db.news = filteredTopics.sort((a, b) => b.timestamp - a.timestamp || (b.hot_score || 0) - (a.hot_score || 0));
-
+        db.news = db.news.map(t => ({
+            ...t,
+            timestamp: (t.timestamp && !isNaN(t.timestamp) && t.timestamp !== null) ? t.timestamp : Date.now()
+        }));
         db.market_data = state.marketData || [];
         db.social_trends = state.socialTrends || [];
         db.daily_briefing = (state.reports && state.reports.daily) ? state.reports.daily : "";
