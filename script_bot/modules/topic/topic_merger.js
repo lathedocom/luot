@@ -7,8 +7,17 @@ const { addEventToTimeline } = require('./timeline_manager');
  */
 function mergeIntoExistingTopic(existingTopic, newArticles, newActionTitle) {
     let updatedTopic = { ...existingTopic };
-// ĐÃ THÊM: Lấy thời gian đăng bài gốc của bài báo mới nhất (publish_time)
-    const latestArticleTime = Math.max(...newArticles.map(a => a.publish_time || Date.now()));
+
+    // SỬA: Chuẩn hoá publish_time về timestamp số (ms) trước khi so sánh,
+    // tránh Math.max() nhận chuỗi ISO date gây NaN
+    const toTimestamp = (t) => {
+        if (!t) return Date.now();
+        const ms = new Date(t).getTime();
+        return isNaN(ms) ? Date.now() : ms;
+    };
+
+    const latestArticleTime = Math.max(...newArticles.map(a => toTimestamp(a.publish_time)));
+
     // 1. Cập nhật thời gian mới nhất cho Cụm
     updatedTopic.timestamp = latestArticleTime;
 
@@ -31,13 +40,12 @@ function mergeIntoExistingTopic(existingTopic, newArticles, newActionTitle) {
     // 4. Thêm tình tiết mới vào Timeline
     if (newArticles.length > 0) {
         updatedTopic = addEventToTimeline(
-            updatedTopic, 
-            newActionTitle || newArticles[0].title, 
+            updatedTopic,
+            newActionTitle || newArticles[0].title,
             latestArticleTime,
             newArticles[0].url
         );
     }
-
     return updatedTopic;
 }
 
