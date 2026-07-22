@@ -36,7 +36,7 @@ async function generateEmbeddings(articles) {
                 const article = batch[j];
                 const vector = vectors[j] || new Array(768).fill(0).map(() => Math.random() * 0.01);
                 
-                setCache('embedding_cache', article.id, vector, 5256000);
+                setCache('embedding_cache', article.id, vector, 4320); // 3 ngày
                 embeddedArticles.push({ ...article, vector: vector });
             }
             
