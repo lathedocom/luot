@@ -20,8 +20,9 @@ async function analyzeClusterMultiDimensional(cluster, eventKey) {
         logger.info(`[Phân tích] Bắt đầu gọi AI Tầng 1 (Gemma) cho sự kiện: ${eventKey}`);
         
         // --- TẦNG 1: Gọi Gemma để kiểm tra Metadata & Đánh giá có cần phân tích sâu không ---
-        const metadataPrompt = `Trích xuất thông tin từ khối dữ liệu tin tức thô sau đây:
+        const metadataPrompt = `Trích xuất thông tin từ khối dữ liệu tin tức thô sau đây (có thể là tiếng nước ngoài):
 "${cluster.combined_text}"
+LƯU Ý BẮT BUỘC: Trường "event" và "short_summary" PHẢI viết bằng Tiếng Việt chuẩn mực. Nếu văn bản gốc là tiếng nước ngoài, hãy dịch sang tiếng Việt, tuyệt đối không giữ nguyên văn tiếng Anh.
 LỆNH TUYỆT ĐỐI: CHỈ TRẢ VỀ JSON VỚI CÁC TRƯỜNG SAU:
 {
   "event": "Tên sự kiện ngắn gọn",
