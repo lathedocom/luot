@@ -23,6 +23,12 @@ jobs:
         run: |
           cd script_bot
           npm install
+          
+      - name: Reset oversized embedding cache
+        run: |
+           rm -f script_bot/cache/embedding_cache.json
+           rm -f script_bot/cache/ai_cache.json
+
 
       - name: Run AI Newsroom Bot
         env:
