@@ -49,9 +49,10 @@ function clusterArticles(articles) {
     let topTopics = formattedClusters.filter(c => c.article_count >= 2);
     topTopics.sort((a, b) => b.article_count - a.article_count);
     
-    // --- 🐛 BẢN VÁ: Nới phễu lên 20 để không lọt tin mới ---
-    topTopics = topTopics.slice(0, 20);
-    // --------------------------------------------------------
+     // KHÔNG cắt Top N ở đây nữa — để toàn bộ cụm đi qua bước dedup ở fetch_news.js
+    // Giới hạn hiển thị sẽ áp dụng SAU khi biết cụm nào là tin thực sự mới
+   // topTopics = topTopics.slice(0, 20);
+    
     
     logger.success(`Đã gom thành công ${topTopics.length} cụm sự kiện TOÀN CẢNH trong ngày.`);
     return topTopics;
