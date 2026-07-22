@@ -6,8 +6,8 @@ function getAiResult(topicKey) {
 }
 
 function saveAiResult(topicKey, resultData) {
-    // Lưu với TTL = 5256000 phút (10 năm)
-    setCache('ai_cache', topicKey, resultData, 5256000, '4.5');
+  // Lưu với TTL = 30 ngày, đủ để cache trong vòng đời hoạt động của 1 topic
+  setCache('ai_cache', topicKey, resultData, 43200, '4.5');
 }
 
 module.exports = { getAiResult, saveAiResult };
