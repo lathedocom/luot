@@ -1,5 +1,4 @@
 const logger = require('./utils/logger');
-// Import hàm tính toán từ Similarity Engine để tái sử dụng, đảm bảo code chuẩn DRY
 const { cosineSimilarity } = require('./topic/similarity_engine');
 
 function clusterArticles(articles) {
@@ -45,14 +44,9 @@ function clusterArticles(articles) {
         });
     });
 
-    // Giữ nguyên chuẩn lọc nguồn (>= 2 bài báo) để đảm bảo chất lượng
-    let topTopics = formattedClusters.filter(c => c.article_count >= 2);
+    // Cho phép tất cả các cụm đi tiếp, kể cả cụm chỉ có 1 bài báo (>=1) thay vì >=2
+    let topTopics = formattedClusters.filter(c => c.article_count >= 1);
     topTopics.sort((a, b) => b.article_count - a.article_count);
-    
-     // KHÔNG cắt Top N ở đây nữa — để toàn bộ cụm đi qua bước dedup ở fetch_news.js
-    // Giới hạn hiển thị sẽ áp dụng SAU khi biết cụm nào là tin thực sự mới
-   // topTopics = topTopics.slice(0, 20);
-    
     
     logger.success(`Đã gom thành công ${topTopics.length} cụm sự kiện TOÀN CẢNH trong ngày.`);
     return topTopics;
