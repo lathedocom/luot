@@ -42,7 +42,7 @@ LỆNH TUYỆT ĐỐI: CHỈ TRẢ VỀ JSON VỚI CÁC TRƯỜNG SAU:
         if (gemmaResult && gemmaResult.need_deep_analysis) {
             logger.info(`[Phân tích] Gemma đánh giá CẦN phân tích sâu. Đang gọi Tầng 2 (Gemini)...`);
             
-            const deepPrompt = PROMPT_DEEP_ANALYSIS.replace('{{COMBINED_TEXT}}', cluster.combined_text) + `\n\nCẤU TRÚC JSON YÊU CẦU: Chỉ trả về JSON gồm { "causes", "effects", "affected_groups", "market_impact", "follow_up", "detailed_summary" }. Không kèm \`\`\`json.`;
+const deepPrompt = PROMPT_DEEP_ANALYSIS.replace('{{COMBINED_TEXT}}', cluster.combined_text);
             
             const geminiResult = await gateway.executeTask('DEEP_ANALYSIS', deepPrompt);
             
@@ -56,6 +56,12 @@ LỆNH TUYỆT ĐỐI: CHỈ TRẢ VỀ JSON VỚI CÁC TRƯỜNG SAU:
                 affected_groups: Array.isArray(geminiResult.affected_groups) ? geminiResult.affected_groups : [],
                 market_impact: geminiResult.market_impact || "",
                 follow_up: geminiResult.follow_up || "",
+                
+                significance: geminiResult.significance || "",
+                unknowns: Array.isArray(geminiResult.unknowns) ? geminiResult.unknowns : [],
+                confidence_note: geminiResult.confidence_note || "",
+                scenarios: Array.isArray(geminiResult.scenarios) ? geminiResult.scenarios : [],
+                
                 entities: gemmaResult.entities || [],
                 keywords: gemmaResult.keywords || [],
                 importance: gemmaResult.importance || cluster.articles[0].importance
