@@ -269,7 +269,8 @@ function renderNewsFeed(newsData) {
     newsData.forEach(cluster => {
         const timeObj = new Date(cluster.timestamp);
         const timeString = `${timeObj.getHours().toString().padStart(2,'0')}:${timeObj.getMinutes().toString().padStart(2,'0')} - ${timeObj.toLocaleDateString('vi-VN')}`;
-        const mainRegion = (cluster.regions && cluster.regions.length > 0) ? cluster.regions[0] : 'Thế giới';
+        const mainRegion = (cluster.regions && cluster.regions.length > 0) ? getRegionLabel(cluster.regions[0]) : 'Thế giới';
+
 
         const sources = cluster.sources || [];
         const sourceCount = sources.length;
