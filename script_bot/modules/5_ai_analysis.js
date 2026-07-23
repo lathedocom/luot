@@ -22,6 +22,14 @@ async function analyzeClusterMultiDimensional(cluster, eventKey) {
         // --- TẦNG 1: Gọi Gemma để kiểm tra Metadata & Đánh giá có cần phân tích sâu không ---
         const metadataPrompt = `Trích xuất thông tin từ khối dữ liệu tin tức thô sau đây (có thể là tiếng nước ngoài):
 "${cluster.combined_text}"
+
+[ĐÁNH GIÁ PHẠM VI ẢNH HƯỞNG - SCOPE]
+Dựa vào nội dung, hãy phân loại tác động của sự kiện vào 1 trong 4 mức (chỉ trả về text tiếng Anh):
+- personal: Chỉ ảnh hưởng cá nhân, giới showbiz, sự việc đơn lẻ.
+- business: Ảnh hưởng một ngành nghề, chuỗi cung ứng, doanh nghiệp cụ thể.
+- national: Tác động đến chính trị, kinh tế, xã hội của một quốc gia.
+- global: Ảnh hưởng toàn cầu, đa quốc gia, kinh tế vĩ mô.
+
 LƯU Ý BẮT BUỘC: Trường "event" và "short_summary" PHẢI viết bằng Tiếng Việt chuẩn mực. Nếu văn bản gốc là tiếng nước ngoài, hãy dịch sang tiếng Việt, tuyệt đối không giữ nguyên văn tiếng Anh.
 LỆNH TUYỆT ĐỐI: CHỈ TRẢ VỀ JSON VỚI CÁC TRƯỜNG SAU:
 {
@@ -31,18 +39,18 @@ LỆNH TUYỆT ĐỐI: CHỈ TRẢ VỀ JSON VỚI CÁC TRƯỜNG SAU:
   "region": "Khu vực chính",
   "category": ["Danh mục 1", "Danh mục 2"],
   "importance": 85,
+  "scope": "personal | business | national | global",
   "need_deep_analysis": true/false (chỉ true nếu sự kiện có tính chất vĩ mô, phức tạp, tác động lớn),
   "short_summary": "Tóm tắt 30-50 từ"
 }`;
         
-        // Nhờ cập nhật gateway.js, biến EXTRACT_METADATA giờ đã được đính kèm system_prompt từ config/tasks.js tự động.
         const gemmaResult = await gateway.executeTask('EXTRACT_METADATA', metadataPrompt);
         
         // --- TẦNG 2: Gọi Gemini (Chỉ khi Gemma xác nhận need_deep_analysis = true) ---
         if (gemmaResult && gemmaResult.need_deep_analysis) {
             logger.info(`[Phân tích] Gemma đánh giá CẦN phân tích sâu. Đang gọi Tầng 2 (Gemini)...`);
             
-const deepPrompt = PROMPT_DEEP_ANALYSIS.replace('{{COMBINED_TEXT}}', cluster.combined_text);
+            const deepPrompt = PROMPT_DEEP_ANALYSIS.replace('{{COMBINED_TEXT}}', cluster.combined_text);
             
             const geminiResult = await gateway.executeTask('DEEP_ANALYSIS', deepPrompt);
             
@@ -64,7 +72,8 @@ const deepPrompt = PROMPT_DEEP_ANALYSIS.replace('{{COMBINED_TEXT}}', cluster.com
                 
                 entities: gemmaResult.entities || [],
                 keywords: gemmaResult.keywords || [],
-                importance: gemmaResult.importance || cluster.articles[0].importance
+                importance: gemmaResult.importance || cluster.articles[0].importance,
+                scope: gemmaResult.scope || geminiResult.scope || "business"
             };
         } else {
             logger.info(`[Phân tích] Gemma đánh giá sự kiện NGẮN, không cần Tầng 2.`);
@@ -81,7 +90,8 @@ const deepPrompt = PROMPT_DEEP_ANALYSIS.replace('{{COMBINED_TEXT}}', cluster.com
                 follow_up: "",
                 entities: gemmaResult.entities || [],
                 keywords: gemmaResult.keywords || [],
-                importance: gemmaResult.importance || cluster.articles[0].importance
+                importance: gemmaResult.importance || cluster.articles[0].importance,
+                scope: gemmaResult.scope || "business"
             };
         }
     } catch (error) {
@@ -95,7 +105,9 @@ const deepPrompt = PROMPT_DEEP_ANALYSIS.replace('{{COMBINED_TEXT}}', cluster.com
             effects: ["Đang phân tích chuỗi hệ quả"],
             affected_groups: ["Cộng đồng người dùng hệ thống"],
             market_impact: "Đang theo dõi biến động thị trường.",
-            follow_up: "Chờ cập nhật tình tiết mới từ các báo."
+            follow_up: "Chờ cập nhật tình tiết mới từ các báo.",
+            scope: "business",
+            importance: 50
         };
     }
     
