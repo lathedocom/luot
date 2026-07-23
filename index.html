@@ -72,8 +72,11 @@
  
                     <div class="content-grid">
                         <section class="feed-section" id="feed-section">
-                            <div class="section-header">
+                         <div class="section-header" style="justify-content: space-between;">
                                 <h2 class="section-title"><span class="material-icons-round">article</span> BẢN TIN NỔI BẬT</h2>
+                                <button id="view-all-news-btn" data-view-all="false" style="background: rgba(59, 130, 246, 0.1); border: none; color: var(--md-sys-color-primary); cursor: pointer; font-size: 13px; font-weight: 600; padding: 6px 12px; border-radius: 16px; display: flex; align-items: center; gap: 4px; transition: background 0.2s;">
+                                    Xem tất cả <span class="material-icons-round" style="font-size: 16px;">arrow_forward</span>
+                                </button>
                             </div>
                             <div id="news-container"></div>
                         </section>
