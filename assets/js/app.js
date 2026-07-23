@@ -443,8 +443,6 @@ function openQuickBriefsModal(quickItems, regionLabel) {
 function renderNewsCard(cluster) {
     const timeObj = new Date(cluster.timestamp);
     const timeString = `${timeObj.getHours().toString().padStart(2,'0')}:${timeObj.getMinutes().toString().padStart(2,'0')} - ${timeObj.toLocaleDateString('vi-VN')}`;
-    
-    // BẢN VÁ: Hiển thị tên khu vực tiếng Việt bằng hàm getRegionLabel
     const mainRegion = (cluster.regions && cluster.regions.length > 0) ? getRegionLabel(cluster.regions[0]) : 'Thế giới';
 
     const sources = cluster.sources || [];
@@ -452,7 +450,7 @@ function renderNewsCard(cluster) {
     const uniqueSourceNames = [...new Set(sources.map(s => s.source_name).filter(Boolean))];
     const uniqueCount = uniqueSourceNames.length;
 
-   let sourceFooterHtml = '';
+    let sourceFooterHtml = '';
     if (sourceCount === 0) {
         sourceFooterHtml = `<span class="material-icons-round" style="font-size: 15px; color: var(--md-sys-color-primary);">smart_toy</span> Tổng hợp bởi AI`;
     } else if (uniqueCount === 1) {
@@ -463,15 +461,6 @@ function renderNewsCard(cluster) {
         const topSources = uniqueSourceNames.slice(0, 2).map(escapeHtml).join(', ');
         const hasMore = uniqueCount > 2 ? ', ...' : '';
         sourceFooterHtml = `<span class="material-icons-round" style="font-size: 15px; color: var(--md-sys-color-primary);">fact_check</span> Nguồn: ${topSources}${hasMore} • Đối chiếu từ ${uniqueCount} nguồn báo chí`;
-    }
-
-    // NHẬN DIỆN TIN VẮN
-    const isQuickUpdate = cluster.detailed_summary === "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.";
-    const sourceUrl = (cluster.sources && cluster.sources.length > 0) ? cluster.sources[0].url : '#';
-
-    // Bổ sung icon mở link ra ngoài nếu là tin vắn
-    if (isQuickUpdate) {
-        sourceFooterHtml += `<span style="margin-left: auto; color: var(--md-sys-color-primary);" class="material-icons-round">open_in_new</span>`;
     }
 
     const card = document.createElement('div');
@@ -486,38 +475,41 @@ function renderNewsCard(cluster) {
         <div class="news-footer">${sourceFooterHtml}</div>
     `;
     
-    // GẮN SỰ KIỆN CLICK ĐÚNG THEO LOẠI TIN
-    if (isQuickUpdate) {
-        card.addEventListener('click', () => {
-            if(sourceUrl !== '#') window.open(sourceUrl, '_blank');
-        });
-    } else {
-        card.addEventListener('click', () => openModal(cluster));
-    }
+    // Vì renderNewsCard giờ chỉ xử lý tin phân tích sâu, ta gán trực tiếp sự kiện mở Modal
+    card.addEventListener('click', () => openModal(cluster));
     
     return card;
 }
-
 function renderNewsFeed(newsData) {
     const newsContainer = document.getElementById('news-container');
     newsContainer.innerHTML = '';
+    
     if (newsData.length === 0) {
         newsContainer.innerHTML = `<p style="padding: 20px; opacity: 0.7;">Không tìm thấy chủ đề nào phù hợp.</p>`;
         return;
     }
-    newsData.forEach(cluster => newsContainer.appendChild(renderNewsCard(cluster)));
-}
 
-function renderBriefing(briefingText) {
-    const briefingContainer = document.getElementById('briefing-container');
-    if (briefingText) {
-        // Cho phép render HTML giới hạn từ báo cáo của AI (cần cẩn trọng nếu AI sinh lỗi)
-        // Hiện tại Briefing chỉ có paragraph đơn giản, nhưng escape sẽ vô hiệu hóa <p> tags. 
-        // Nên ở đây chỉ giữ thẻ br hoặc escape thuần nếu không cần markup. 
-        // Ở phiên bản này, giả định briefingText đã an toàn hoặc chỉ có text thuần.
-        briefingContainer.innerHTML = `<p style="white-space: pre-wrap; font-size: 15px;">${briefingText}</p>`;
-    } else {
-        briefingContainer.innerHTML = '<p style="opacity:0.7;">Chưa có bản tin tóm tắt cho chu kỳ này.</p>';
+    const deepItems = [];
+    const quickItems = [];
+
+    // Tách tin phân tích sâu và tin vắn
+    newsData.forEach(cluster => {
+        if (cluster.detailed_summary === "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.") {
+            quickItems.push(cluster);
+        } else {
+            deepItems.push(cluster);
+        }
+    });
+
+    // 1. Render tin sâu thành các Card độc lập
+    deepItems.forEach(cluster => {
+        newsContainer.appendChild(renderNewsCard(cluster));
+    });
+
+    // 2. Render gom nhóm toàn bộ tin vắn thành 1 Card duy nhất ở cuối danh sách
+    if (quickItems.length > 0) {
+        // Truyền nhãn 'Toàn cảnh' vì ở chế độ này các tin không bị chia cắt theo khu vực
+        newsContainer.appendChild(renderQuickBriefsCard(quickItems, 'Toàn cảnh'));
     }
 }
 
