@@ -1,13 +1,21 @@
 const { CATEGORIES } = require('../../config/categories');
 
+// Hàm hỗ trợ: Khớp từ khóa chính xác (word-boundary) để tránh false-positive
+function matchesKeyword(text, keyword) {
+    const escaped = keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    // Sử dụng \b để đảm bảo chỉ khớp từ nguyên vẹn
+    const pattern = new RegExp(`\\b${escaped}\\b`, 'i');
+    return pattern.test(text);
+}
+
 // Hàm lọc bài viết giả định/xã luận để tránh AI hallucination
 function isHypotheticalOrOpinion(text) {
     const skipKeywords = [
         "what if", "hypothetical", "opinion", "editorial", "column",
         "nếu", "giả sử", "kịch bản", "góc nhìn", "bình luận", "quan điểm"
     ];
-    const lowerText = text.toLowerCase();
-    return skipKeywords.some(keyword => lowerText.includes(keyword));
+    // Áp dụng regex word-boundary để tránh nhận diện nhầm (VD: không nhầm "column" trong "columnist")
+    return skipKeywords.some(keyword => matchesKeyword(text, keyword));
 }
 
 /**
@@ -21,12 +29,12 @@ function extractCategories(text) {
         return ['opinion_analysis'];
     }
     
-    const lowerText = text.toLowerCase();
     const matched = [];
     
     for (const cat of CATEGORIES) {
         for (const kw of cat.keywords) {
-            if (lowerText.includes(kw.toLowerCase())) {
+            // ĐÃ SỬA: Dùng regex matchesKeyword thay vì includes()
+            if (matchesKeyword(text, kw)) {
                 matched.push(cat.id);
                 break; 
             }
