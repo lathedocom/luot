@@ -28,6 +28,7 @@ module.exports = {
     API_KEYS: {
         GEMINI: process.env.GEMINI_API_KEY || "",
         GEMINI_BACKUP: process.env.GEMINI_API_KEY_1 || "",
+        GEMINI_BACKUP2: process.env.GEMINI_API_KEY_2 || "", 
         GROQ: process.env.GROQ_API_KEY || "" 
     }
 };
