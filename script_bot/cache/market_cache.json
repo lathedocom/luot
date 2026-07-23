@@ -1,41 +1,42 @@
 {
   "latest_market": {
-    "created_at": 1784813375265,
-    "expires_at": 1784815175265,
+    "created_at": 1784849997547,
+    "expires_at": 1784850897547,
     "version": "1.0",
-    "checksum": "2147ff860e917050c3a037499cf1df90",
+    "checksum": "0894a614717a6d74a8b8dbf9a27b7f30",
     "data": [
       {
-        "symbol": "BTC",
-        "name": "Bitcoin",
-        "price": "NaN",
-        "change_percent": "NaN%",
-        "trend": "↓",
-        "updated_at": 1784813375265
-      },
-      {
-        "symbol": "GOLD",
-        "name": "Giá Vàng (XAU)",
-        "price": "2350.50",
-        "change_percent": "+0.5%",
+        "id": "GOLD_SJC",
+        "name": "Vàng SJC",
+        "type": "metal",
+        "price": "Đang cập nhật",
+        "change_percent": "0.0%",
         "trend": "↑",
-        "updated_at": 1784813375145
+        "updated_at": 1784849997547,
+        "is_alert": false,
+        "context": null
       },
       {
-        "symbol": "USD/VND",
-        "name": "Tỷ giá Đô la",
-        "price": "25450",
-        "change_percent": "-0.1%",
-        "trend": "↓",
-        "updated_at": 1784813375145
-      },
-      {
-        "symbol": "VNINDEX",
-        "name": "VN-Index",
-        "price": "1280.15",
-        "change_percent": "+1.2%",
+        "id": "GOLD_RING",
+        "name": "Vàng nhẫn",
+        "type": "metal",
+        "price": "Đang cập nhật",
+        "change_percent": "0.0%",
         "trend": "↑",
-        "updated_at": 1784813375145
+        "updated_at": 1784849997547,
+        "is_alert": false,
+        "context": null
+      },
+      {
+        "id": "GAS_VN",
+        "name": "Xăng RON95",
+        "type": "energy",
+        "price": "Đang cập nhật",
+        "change_percent": "0.0%",
+        "trend": "↑",
+        "updated_at": 1784849997547,
+        "is_alert": false,
+        "context": null
       }
     ]
   }
