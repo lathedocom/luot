@@ -13,6 +13,7 @@ class AIGateway {
         this.providers = {
             google: new GoogleProvider(configModels.API_KEYS.GEMINI),
             googleBackup: configModels.API_KEYS.GEMINI_BACKUP ? new GoogleProvider(configModels.API_KEYS.GEMINI_BACKUP) : null,
+            googleBackup2: configModels.API_KEYS.GEMINI_BACKUP2 ? new GoogleProvider(configModels.API_KEYS.GEMINI_BACKUP2) : null,
             groq: new GroqProvider(configModels.API_KEYS.GROQ)
         };
     }
