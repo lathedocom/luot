@@ -8,7 +8,32 @@
     "effects": { "type": "array", "items": { "type": "string" }, "description": "Hệ quả trực tiếp" },
     "affected_groups": { "type": "array", "items": { "type": "string" }, "description": "Nhóm đối tượng/ngành nghề bị ảnh hưởng chính" },
     "market_impact": { "type": "string", "description": "Tác động cụ thể đến kinh tế, tài chính, thị trường hoặc giá cả tài sản (nếu có, khoảng 30 từ)" },
-    "follow_up": { "type": "string", "description": "Điểm mấu chốt cần tiếp tục theo dõi sát sao trong vài ngày tới (1 câu ngắn gọn)" }
+    "follow_up": { "type": "string", "description": "Điểm mấu chốt cần tiếp tục theo dõi sát sao trong vài ngày tới (1 câu ngắn gọn)" },
+    "value_score": { "type": "number", "description": "Điểm Information Value tổng hợp từ 5 lớp lọc" },
+    "scope": { "type": "string", "enum": ["personal", "business", "national", "global"], "description": "Mức độ/phạm vi tác động của sự kiện" },
+    "update_count": { "type": "number", "description": "Số lần sự kiện có tình tiết/bài báo mới" },
+    "last_updated": { "type": "number", "description": "Thời điểm cập nhật mới nhất (Timestamp MS)" },
+    "sources": {
+      "type": "array",
+      "description": "Danh sách các nguồn độc lập đã đưa tin",
+      "items": {
+        "type": "object",
+        "properties": {
+          "url": { "type": "string" },
+          "source_name": { "type": "string" },
+          "source_logo": { "type": "string" }
+        }
+      }
+    }
   },
-  "required": ["cluster_title", "short_summary", "detailed_summary", "causes", "effects", "affected_groups", "market_impact", "follow_up"]
+  "required": [
+    "cluster_title", 
+    "short_summary", 
+    "detailed_summary", 
+    "causes", 
+    "effects", 
+    "affected_groups", 
+    "market_impact", 
+    "follow_up"
+  ]
 }
