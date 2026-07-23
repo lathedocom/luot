@@ -589,6 +589,8 @@ function initModalEvents() {
 
 function openModal(cluster) {
     try {
+        const toggleBtn = document.getElementById('toggle-sources-btn');
+        if (toggleBtn) toggleBtn.style.display = 'flex';
         const modalTitle = document.getElementById('modal-title');
         if (modalTitle) modalTitle.textContent = cluster.title || cluster.cluster_title || 'Chi tiết sự kiện';
         
