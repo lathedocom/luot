@@ -245,7 +245,7 @@ async function fetchNewsData() {
         const data = await response.json();
         
         globalNewsData = data.news || [];
-        totalCrawledArticles = data.stats ? data.stats.total_crawled : 0;
+        totalCrawledArticles = data.statistics ? data.statistics.total_articles : 0;
 
         renderNewsFeed(globalNewsData);
         renderBriefing(data.daily_briefing);
