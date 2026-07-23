@@ -1,5 +1,36 @@
+// ==========================================================================
+// FILE: assets/js/app.js
+// ==========================================================================
+
 let globalNewsData = [];
+let globalDigestData = { vietnam: [], asia: [], global: [] };
 let totalCrawledArticles = 0;
+
+// Ánh xạ id khu vực (khớp với config/regions.js ở backend) sang tên hiển thị tiếng Việt
+const REGION_NAMES = {
+    vietnam: 'Việt Nam',
+    usa: 'Mỹ',
+    china: 'Trung Quốc',
+    eu: 'Châu Âu',
+    asean: 'Đông Nam Á',
+    global: 'Toàn cầu'
+};
+
+function getRegionLabel(regionId) {
+    return REGION_NAMES[regionId] || 'Thế giới';
+}
+
+// Hàm chống XSS: Mã hóa các ký tự đặc biệt HTML trước khi chèn vào DOM
+function escapeHtml(unsafe) {
+    if (!unsafe) return '';
+    if (typeof unsafe !== 'string') return String(unsafe);
+    return unsafe
+         .replace(/&/g, "&amp;")
+         .replace(/</g, "&lt;")
+         .replace(/>/g, "&gt;")
+         .replace(/"/g, "&quot;")
+         .replace(/'/g, "&#039;");
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     initMobileMenu();
@@ -26,7 +57,6 @@ function initNavigation() {
                 
                 document.getElementById(`view-${tab}`).style.display = 'block';
                 navBtn.classList.add('active');
-
                 const sidebar = document.getElementById('app-sidebar');
                 const overlay = document.getElementById('sidebar-overlay');
                 if (sidebar.classList.contains('active')) {
@@ -43,7 +73,6 @@ function initMobileTabs() {
     const btnSocial = document.getElementById('tab-social');
     const secFeed = document.getElementById('feed-section');
     const secSocial = document.getElementById('social-section');
-
     if(btnNews && btnSocial) {
         btnNews.addEventListener('click', () => {
             btnNews.classList.add('active');
@@ -58,7 +87,6 @@ function initMobileTabs() {
             secSocial.style.display = 'block';
         });
     }
-
     window.addEventListener('resize', () => {
         if (window.innerWidth > 768) {
             secFeed.style.display = 'block';
@@ -79,7 +107,6 @@ function initMobileMenu() {
     const menuBtn = document.getElementById('mobile-menu-btn');
     const sidebar = document.getElementById('app-sidebar');
     const overlay = document.getElementById('sidebar-overlay');
-
     if (menuBtn && sidebar && overlay) {
         menuBtn.addEventListener('click', () => {
             sidebar.classList.add('active');
@@ -100,12 +127,10 @@ function forceShowNewsFeed() {
         document.getElementById('view-overview').style.display = 'block';
         overviewBtn.classList.add('active');
     }
-
     const btnNews = document.getElementById('tab-news');
     const btnSocial = document.getElementById('tab-social');
     const secFeed = document.getElementById('feed-section');
     const secSocial = document.getElementById('social-section');
-
     if (window.innerWidth <= 768 && btnNews && secFeed) {
         btnNews.classList.add('active');
         if (btnSocial) btnSocial.classList.remove('active');
@@ -120,14 +145,15 @@ function initSearch() {
         const term = e.target.value.toLowerCase().trim();
         
         if (!term) {
-            renderNewsFeed(globalNewsData);
+            renderDigestFeed(globalDigestData); // Khôi phục hiển thị Digest
         } else {
+            // Tìm kiếm trên toàn bộ dữ liệu (news_data phẳng)
             const filtered = globalNewsData.filter(cluster => {
                 const title = (cluster.title || cluster.cluster_title || '').toLowerCase();
                 const summary = (cluster.short_summary || '').toLowerCase();
                 return title.includes(term) || summary.includes(term);
             });
-            renderNewsFeed(filtered);
+            renderNewsFeed(filtered); 
         }
         
         forceShowNewsFeed();
@@ -149,7 +175,7 @@ function initMobileSearch() {
             } else {
                 searchInput.blur();
                 searchInput.value = ''; 
-                renderNewsFeed(globalNewsData); 
+                renderDigestFeed(globalDigestData); // Khôi phục Digest
             }
         });
     }
@@ -168,7 +194,6 @@ function initAdminEasterEgg() {
     const logos = document.querySelectorAll('.logo');
     let clickCount = 0;
     let clickTimer;
-
     logos.forEach(logo => {
         logo.addEventListener('click', () => {
             clickCount++;
@@ -178,7 +203,6 @@ function initAdminEasterEgg() {
                     (t.categories && t.categories.includes('economy')) || 
                     (t.market_impact && t.market_impact.length > 20)
                 ).length;
-
                 const adminModal = document.getElementById('admin-modal');
                 let modalBody = adminModal.querySelector('.modal-body');
                 
@@ -207,7 +231,6 @@ function initAdminEasterEgg() {
                         </div>
                     </div>
                 `;
-
                 adminModal.classList.add('active');
                 clickCount = 0; 
             } else {
@@ -215,7 +238,6 @@ function initAdminEasterEgg() {
             }
         });
     });
-
     const closeAdminBtn = document.querySelector('.close-admin-action') || document.getElementById('close-admin-btn');
     if (closeAdminBtn) {
         closeAdminBtn.addEventListener('click', () => {
@@ -245,79 +267,110 @@ async function fetchNewsData() {
         const data = await response.json();
         
         globalNewsData = data.news || [];
+        globalDigestData = data.digest || { vietnam: [], asia: [], global: [] };
+        
+        // BẢN VÁ: Đồng bộ tên field với payload backend trả về
         totalCrawledArticles = data.statistics ? data.statistics.total_articles : 0;
-
-        renderNewsFeed(globalNewsData);
+        
+        renderDigestFeed(globalDigestData); // Render theo cấu trúc vùng lãnh thổ
         renderBriefing(data.daily_briefing);
         renderMarket(data.market_data || []);
         renderSocial(data.social || []); 
-
     } catch (error) {
         document.getElementById('news-container').innerHTML = `<div class="news-card"><p>Lỗi kết nối. Không thể tải dữ liệu Intelligence.</p></div>`;
     }
 }
 
-function renderNewsFeed(newsData) {
+function renderDigestFeed(digest) {
     const newsContainer = document.getElementById('news-container');
-    newsContainer.innerHTML = ''; 
+    newsContainer.innerHTML = '';
 
-    if(newsData.length === 0) {
-        newsContainer.innerHTML = `<p style="padding: 20px; opacity: 0.7;">Không tìm thấy chủ đề nào phù hợp.</p>`;
+    const groups = [
+        { key: 'vietnam', label: '🇻🇳 Việt Nam', items: digest.vietnam || [] },
+        { key: 'asia',    label: '🌏 Châu Á',     items: digest.asia || [] },
+        { key: 'global',  label: '🌍 Thế giới',   items: digest.global || [] }
+    ];
+
+    const totalItems = groups.reduce((sum, g) => sum + g.items.length, 0);
+    if (totalItems === 0) {
+        newsContainer.innerHTML = `<p style="padding: 20px; opacity: 0.7;">Chưa có sự kiện nổi bật nào trong chu kỳ này.</p>`;
         return;
     }
 
-    newsData.forEach(cluster => {
-        const timeObj = new Date(cluster.timestamp);
-        const timeString = `${timeObj.getHours().toString().padStart(2,'0')}:${timeObj.getMinutes().toString().padStart(2,'0')} - ${timeObj.toLocaleDateString('vi-VN')}`;
-        const mainRegion = (cluster.regions && cluster.regions.length > 0) ? getRegionLabel(cluster.regions[0]) : 'Thế giới';
+    groups.forEach(group => {
+        if (group.items.length === 0) return;
 
+        const groupHeader = document.createElement('div');
+        groupHeader.className = 'section-header';
+        groupHeader.style.marginTop = '20px';
+        groupHeader.innerHTML = `<h2 class="section-title">${group.label} (${group.items.length})</h2>`;
+        newsContainer.appendChild(groupHeader);
 
-        const sources = cluster.sources || [];
-        const sourceCount = sources.length;
-        
-        const uniqueSourceNames = [...new Set(sources.map(s => s.source_name).filter(Boolean))];
-        const uniqueCount = uniqueSourceNames.length;
-        
-        let sourceFooterHtml = '';
-        
-        if (sourceCount === 0) {
-            sourceFooterHtml = `<span class="material-icons-round" style="font-size: 15px; color: var(--md-sys-color-primary);">smart_toy</span> Tổng hợp bởi AI`;
-        } 
-        else if (uniqueCount === 1) {
-            if (sourceCount > 1) {
-                sourceFooterHtml = `<span class="material-icons-round" style="font-size: 15px; color: var(--md-sys-color-primary);">dynamic_feed</span> Tổng hợp từ nhiều bài viết của cùng một cơ quan báo chí`;
-            } else {
-                sourceFooterHtml = `<span class="material-icons-round" style="font-size: 15px; color: var(--md-sys-color-primary);">article</span> Nguồn: ${uniqueSourceNames[0]}`;
-            }
-        } 
-        else {
-            const topSources = uniqueSourceNames.slice(0, 2).join(', ');
-            const hasMore = uniqueCount > 2 ? ', ...' : '';
-            sourceFooterHtml = `<span class="material-icons-round" style="font-size: 15px; color: var(--md-sys-color-primary);">fact_check</span> Nguồn: ${topSources}${hasMore} • Đối chiếu từ ${uniqueCount} nguồn báo chí`;
-        }
-
-        const card = document.createElement('div');
-        card.className = 'news-card';
-        card.innerHTML = `
-            <div class="news-meta">
-                <span class="news-tag">${mainRegion}</span>
-                <span>${timeString}</span>
-            </div>
-            <h3>${cluster.title || cluster.cluster_title}</h3>
-            <p>${cluster.short_summary}</p>
-            <div class="news-footer">
-                ${sourceFooterHtml}
-            </div>
-        `;
-        
-        card.addEventListener('click', () => openModal(cluster));
-        newsContainer.appendChild(card);
+        group.items.forEach(item => {
+            // Tra lại đối tượng hoàn chỉnh từ bộ DB phẳng
+            const fullTopic = globalNewsData.find(t => t.event_key === item.event_key) || item;
+            newsContainer.appendChild(renderNewsCard(fullTopic));
+        });
     });
+}
+
+function renderNewsCard(cluster) {
+    const timeObj = new Date(cluster.timestamp);
+    const timeString = `${timeObj.getHours().toString().padStart(2,'0')}:${timeObj.getMinutes().toString().padStart(2,'0')} - ${timeObj.toLocaleDateString('vi-VN')}`;
+    
+    // BẢN VÁ: Hiển thị tên khu vực tiếng Việt bằng hàm getRegionLabel
+    const mainRegion = (cluster.regions && cluster.regions.length > 0) ? getRegionLabel(cluster.regions[0]) : 'Thế giới';
+
+    const sources = cluster.sources || [];
+    const sourceCount = sources.length;
+    const uniqueSourceNames = [...new Set(sources.map(s => s.source_name).filter(Boolean))];
+    const uniqueCount = uniqueSourceNames.length;
+
+    let sourceFooterHtml = '';
+    if (sourceCount === 0) {
+        sourceFooterHtml = `<span class="material-icons-round" style="font-size: 15px; color: var(--md-sys-color-primary);">smart_toy</span> Tổng hợp bởi AI`;
+    } else if (uniqueCount === 1) {
+        sourceFooterHtml = sourceCount > 1
+            ? `<span class="material-icons-round" style="font-size: 15px; color: var(--md-sys-color-primary);">dynamic_feed</span> Tổng hợp từ nhiều bài viết của cùng một cơ quan báo chí`
+            : `<span class="material-icons-round" style="font-size: 15px; color: var(--md-sys-color-primary);">article</span> Nguồn: ${escapeHtml(uniqueSourceNames[0])}`;
+    } else {
+        const topSources = uniqueSourceNames.slice(0, 2).map(escapeHtml).join(', ');
+        const hasMore = uniqueCount > 2 ? ', ...' : '';
+        sourceFooterHtml = `<span class="material-icons-round" style="font-size: 15px; color: var(--md-sys-color-primary);">fact_check</span> Nguồn: ${topSources}${hasMore} • Đối chiếu từ ${uniqueCount} nguồn báo chí`;
+    }
+
+    const card = document.createElement('div');
+    card.className = 'news-card';
+    card.innerHTML = `
+        <div class="news-meta">
+            <span class="news-tag">${escapeHtml(mainRegion)}</span>
+            <span>${timeString}</span>
+        </div>
+        <h3>${escapeHtml(cluster.title || cluster.cluster_title)}</h3>
+        <p>${escapeHtml(cluster.short_summary)}</p>
+        <div class="news-footer">${sourceFooterHtml}</div>
+    `;
+    card.addEventListener('click', () => openModal(cluster));
+    return card;
+}
+
+function renderNewsFeed(newsData) {
+    const newsContainer = document.getElementById('news-container');
+    newsContainer.innerHTML = '';
+    if (newsData.length === 0) {
+        newsContainer.innerHTML = `<p style="padding: 20px; opacity: 0.7;">Không tìm thấy chủ đề nào phù hợp.</p>`;
+        return;
+    }
+    newsData.forEach(cluster => newsContainer.appendChild(renderNewsCard(cluster)));
 }
 
 function renderBriefing(briefingText) {
     const briefingContainer = document.getElementById('briefing-container');
     if (briefingText) {
+        // Cho phép render HTML giới hạn từ báo cáo của AI (cần cẩn trọng nếu AI sinh lỗi)
+        // Hiện tại Briefing chỉ có paragraph đơn giản, nhưng escape sẽ vô hiệu hóa <p> tags. 
+        // Nên ở đây chỉ giữ thẻ br hoặc escape thuần nếu không cần markup. 
+        // Ở phiên bản này, giả định briefingText đã an toàn hoặc chỉ có text thuần.
         briefingContainer.innerHTML = `<p style="white-space: pre-wrap; font-size: 15px;">${briefingText}</p>`;
     } else {
         briefingContainer.innerHTML = '<p style="opacity:0.7;">Chưa có bản tin tóm tắt cho chu kỳ này.</p>';
@@ -335,12 +388,11 @@ function renderMarket(marketData) {
         const isUp = item.trend === '↑' || item.trend === 'up';
         const color = isUp ? '#10b981' : '#ef4444'; 
         const icon = isUp ? 'trending_up' : 'trending_down';
-
         html += `
             <div style="background: var(--md-sys-color-surface); padding: 20px; border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px solid var(--md-sys-color-outline); box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-                <strong style="font-size: 16px; margin-bottom: 8px; opacity: 0.8;">${item.symbol}</strong>
+                <strong style="font-size: 16px; margin-bottom: 8px; opacity: 0.8;">${escapeHtml(item.symbol)}</strong>
                 <span style="color: ${color}; font-size: 22px; font-weight: bold; display: flex; align-items: center; gap: 4px;">
-                    ${item.price} <span class="material-icons-round">${icon}</span>
+                    ${escapeHtml(item.price)} <span class="material-icons-round">${icon}</span>
                 </span>
             </div>`;
     });
@@ -357,8 +409,8 @@ function renderSocial(socialData) {
     socialData.forEach(item => {
         html += `
             <div style="padding: 16px 0; border-bottom: 1px dashed var(--md-sys-color-outline);">
-                <div style="font-weight: bold; font-size: 15px; margin-bottom: 8px; color: var(--md-sys-color-primary);">#${item.keyword || 'Trending'}</div>
-                <div style="font-size: 14px; opacity: 0.85; line-height: 1.5;">${item.summary || item.content || 'Thảo luận đang tăng cao...'}</div>
+                <div style="font-weight: bold; font-size: 15px; margin-bottom: 8px; color: var(--md-sys-color-primary);">#${escapeHtml(item.keyword || 'Trending')}</div>
+                <div style="font-size: 14px; opacity: 0.85; line-height: 1.5;">${escapeHtml(item.summary || item.content || 'Thảo luận đang tăng cao...')}</div>
             </div>
         `;
     });
@@ -372,12 +424,10 @@ function initModalEvents() {
         closeAction.addEventListener('click', () => modal.classList.remove('active'));
     }
     modal.addEventListener('click', (e) => { if(e.target === modal) modal.classList.remove('active'); });
-
     const toggleBtn = document.getElementById('toggle-sources-btn');
     const sourcesDiv = document.getElementById('modal-sources');
     const toggleIcon = document.getElementById('toggle-sources-icon');
     const toggleText = document.getElementById('toggle-sources-text');
-
     if (toggleBtn) {
         toggleBtn.addEventListener('click', () => {
             if (sourcesDiv.style.display === 'none') {
@@ -414,14 +464,14 @@ function openModal(cluster) {
                 reliabilityContainer.innerHTML = `<span class="badge bg-secondary"><i class="material-icons-round">smart_toy</i> AI Tổng hợp</span>`;
             }
         }
-
+        
         const miniTimelineContainer = document.getElementById('modal-mini-timeline');
         if (miniTimelineContainer) {
             if (cluster.timeline_events && cluster.timeline_events.length > 0) {
                 const recentEvents = cluster.timeline_events.slice(0, 3);
                 const timelineHtml = recentEvents.map(event => `
                     <div class="mini-timeline-item">
-                        <strong>${event.date}</strong>: ${event.summary}
+                        <strong>${escapeHtml(event.date)}</strong>: ${escapeHtml(event.summary)}
                     </div>
                 `).join('');
                 miniTimelineContainer.innerHTML = `<div style="font-weight:bold; font-size: 13px; color: var(--md-sys-color-primary); margin-bottom: 8px;">TÓM TẮT DIỄN BIẾN:</div>${timelineHtml}`;
@@ -430,24 +480,24 @@ function openModal(cluster) {
                 miniTimelineContainer.style.display = 'none';
             }
         }
-
-        let bodyHtml = `<p style="margin-bottom:20px; font-size: 15px; line-height: 1.6;">${cluster.detailed_summary || cluster.short_summary || ''}</p>`;
+        
+        let bodyHtml = `<p style="margin-bottom:20px; font-size: 15px; line-height: 1.6;">${escapeHtml(cluster.detailed_summary || cluster.short_summary || '')}</p>`;
         
         const renderList = (data) => {
             if (!data) return '';
             if (Array.isArray(data)) {
-                return data.map(item => `<li style="margin-bottom: 8px;">${item}</li>`).join('');
+                return data.map(item => `<li style="margin-bottom: 8px;">${escapeHtml(item)}</li>`).join('');
             }
-            return `<li style="margin-bottom: 8px;">${data}</li>`;
+            return `<li style="margin-bottom: 8px;">${escapeHtml(data)}</li>`;
         };
-
+        
         if (cluster.significance) {
             bodyHtml += `
             <div class="intelligence-box" style="margin-top: 16px; background: rgba(59, 130, 246, 0.05); border-left: 4px solid #3b82f6; padding: 12px; border-radius: 4px;">
                 <div class="intelligence-title" style="color: #3b82f6; font-weight: bold; display: flex; align-items: center; gap: 6px;">
                     <span class="material-icons-round" style="font-size: 18px;">lightbulb</span> Ý nghĩa cốt lõi
                 </div>
-                <p style="font-weight: 500; font-size: 14px; margin-top: 8px; margin-bottom: 0; line-height: 1.6;">${cluster.significance}</p>
+                <p style="font-weight: 500; font-size: 14px; margin-top: 8px; margin-bottom: 0; line-height: 1.6;">${escapeHtml(cluster.significance)}</p>
             </div>`;
         }
  
@@ -474,7 +524,7 @@ function openModal(cluster) {
                 </ul>
             </div>`;
         }
-
+        
         if (cluster.affected_groups && (Array.isArray(cluster.affected_groups) ? cluster.affected_groups.length > 0 : true)) {
             bodyHtml += `
             <div class="intelligence-box" style="margin-top: 16px; background: rgba(139, 92, 246, 0.05); border-left: 4px solid #8b5cf6; padding: 12px; border-radius: 4px;">
@@ -498,7 +548,7 @@ function openModal(cluster) {
                 </ul>
             </div>`;
         }
-
+        
         if (cluster.unknowns && (Array.isArray(cluster.unknowns) ? cluster.unknowns.length > 0 : true)) {
             bodyHtml += `
             <div class="intelligence-box" style="margin-top: 16px; background: rgba(107, 114, 128, 0.05); border-left: 4px solid #6b7280; padding: 12px; border-radius: 4px;">
@@ -514,9 +564,8 @@ function openModal(cluster) {
         if (cluster.scenarios && (Array.isArray(cluster.scenarios) ? cluster.scenarios.length > 0 : true)) {
             const scenariosHtml = cluster.scenarios.map(sc => {
                 let color = sc.likelihood === 'cao' ? '#ef4444' : (sc.likelihood === 'trung bình' ? '#f59e0b' : '#10b981');
-                return `<li style="margin-bottom: 8px;">${sc.text} <span style="color:${color}; font-weight:bold; font-size: 12px;">[Khả năng: ${sc.likelihood}]</span></li>`;
+                return `<li style="margin-bottom: 8px;">${escapeHtml(sc.text)} <span style="color:${color}; font-weight:bold; font-size: 12px;">[Khả năng: ${escapeHtml(sc.likelihood)}]</span></li>`;
             }).join('');
-
             bodyHtml += `
             <div class="intelligence-box" style="margin-top: 20px; background: rgba(139, 92, 246, 0.05); border-left: 4px solid #8b5cf6; padding: 12px; border-radius: 4px;">
                 <div class="intelligence-title" style="color: #8b5cf6; font-weight: bold; display: flex; align-items: center; gap: 6px;">
@@ -532,13 +581,13 @@ function openModal(cluster) {
                  <div class="intelligence-title" style="color: #3b82f6; font-weight: bold; display: flex; align-items: center; gap: 6px;">
                      <span class="material-icons-round" style="font-size: 18px;">radar</span> Điều cần theo dõi tiếp theo
                  </div>
-                 <p style="font-weight: 500; font-size: 14px; margin-top: 8px; margin-bottom: 0; line-height: 1.6;">${cluster.follow_up}</p>
+                 <p style="font-weight: 500; font-size: 14px; margin-top: 8px; margin-bottom: 0; line-height: 1.6;">${escapeHtml(cluster.follow_up)}</p>
              </div>`;
         }
-
+        
         if (cluster.confidence_note) {
             bodyHtml += `<div style="font-size: 12px; opacity: 0.7; font-style: italic; margin-top: 16px; border-top: 1px dashed var(--md-sys-color-outline); padding-top: 12px;">
-                * Ghi chú AI: ${cluster.confidence_note}
+                * Ghi chú AI: ${escapeHtml(cluster.confidence_note)}
             </div>`;
         }
  
@@ -553,9 +602,9 @@ function openModal(cluster) {
             if (cluster.sources && Array.isArray(cluster.sources) && cluster.sources.length > 0) {
                 cluster.sources.forEach(src => {
                     sourcesContainer.innerHTML += `
-                        <a href="${src.url || '#'}" target="_blank" class="source-chip" style="display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: var(--md-sys-color-surface); border: 1px solid var(--md-sys-color-outline); border-radius: 16px; font-size: 12px; text-decoration: none; color: inherit; margin-right: 8px; margin-bottom: 8px;">
-                            <img src="${src.source_logo || 'https://via.placeholder.com/16'}" width="16" height="16" style="border-radius:50%; object-fit: cover; background: #fff;"> 
-                            ${src.source_name || 'Nguồn báo'}
+                        <a href="${escapeHtml(src.url || '#')}" target="_blank" class="source-chip" style="display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: var(--md-sys-color-surface); border: 1px solid var(--md-sys-color-outline); border-radius: 16px; font-size: 12px; text-decoration: none; color: inherit; margin-right: 8px; margin-bottom: 8px;">
+                            <img src="${escapeHtml(src.source_logo || 'https://via.placeholder.com/16')}" width="16" height="16" style="border-radius:50%; object-fit: cover; background: #fff;"> 
+                            ${escapeHtml(src.source_name || 'Nguồn báo')}
                         </a>`;
                 });
             }
@@ -593,22 +642,18 @@ async function fetchTimelineData() {
 function renderTimelinePage(stories) {
     const container = document.getElementById('timeline-page-container');
     if (!container) return;
-
     const validStories = stories.filter(story => story.timeline && story.timeline.length > 1);
     validStories.sort((a, b) => b.last_updated - a.last_updated);
-
     if (validStories.length === 0) {
         container.innerHTML = '<p style="padding: 20px; opacity: 0.7;">Chưa có chuỗi sự kiện nào đủ dài để hiển thị.</p>';
         return;
     }
-
     let html = '';
     validStories.forEach(story => {
         let timelineNodes = '';
         
         const statusText = story.status === 'ongoing' ? 'Đang tiếp diễn' : 'Đã kết thúc';
         const statusColor = story.status === 'ongoing' ? '#10b981' : '#6b7280'; 
-
         story.timeline.forEach((item, index) => {
             let safeTimestamp = item.timestamp || item.time || item.date || story.last_updated;
             
@@ -624,13 +669,12 @@ function renderTimelinePage(stories) {
             } else {
                 timeStr = "Vừa cập nhật";
             }
-
             const safeUrl = (item.url && item.url !== "undefined") ? item.url : "#";
             
             const titleHtml = safeUrl !== "#" 
-                ? `<a href="${safeUrl}" target="_blank" style="color: inherit; text-decoration: underline;">${item.title}</a>` 
-                : item.title;
-
+                ? `<a href="${escapeHtml(safeUrl)}" target="_blank" style="color: inherit; text-decoration: underline;">${escapeHtml(item.title)}</a>` 
+                : escapeHtml(item.title);
+                
             timelineNodes += `
                 <div style="display: flex; gap: 16px; margin-bottom: 16px; position: relative;">
                     ${index !== story.timeline.length - 1 ? '<div style="position: absolute; left: 5px; top: 20px; bottom: -20px; width: 2px; background: var(--md-sys-color-outline);"></div>' : ''}
@@ -640,12 +684,11 @@ function renderTimelinePage(stories) {
                         <div style="font-size: 14px; line-height: 1.5; font-weight: 500;">
                             ${titleHtml}
                         </div>
-                        <div style="font-size: 13px; opacity: 0.7; margin-top: 4px;">${item.summary}</div>
+                        <div style="font-size: 13px; opacity: 0.7; margin-top: 4px;">${escapeHtml(item.summary)}</div>
                     </div>
                 </div>
             `;
         });
-
         html += `
             <div class="widget" style="margin-bottom: 24px; border-left: 4px solid var(--md-sys-color-primary);">
                 <div class="news-meta" style="margin-bottom: 12px;">
@@ -653,7 +696,7 @@ function renderTimelinePage(stories) {
                         ${statusText}
                     </span>
                 </div>
-                <h3 style="margin-bottom: 12px; font-size: 18px; line-height: 1.4;">${story.title}</h3>
+                <h3 style="margin-bottom: 12px; font-size: 18px; line-height: 1.4;">${escapeHtml(story.title)}</h3>
                 
                 <div style="background: rgba(0,0,0,0.1); padding: 16px; border-radius: 8px; border: 1px solid var(--md-sys-color-outline); margin-top: 20px;">
                     ${timelineNodes}
