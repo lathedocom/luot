@@ -167,8 +167,14 @@ function initSearch() {
         
         if (!term) {
             renderDigestFeed(globalDigestData); // Khôi phục hiển thị Digest
+            
+            // BẢN VÁ: Reset lại trạng thái nút
+            const viewAllBtn = document.getElementById('view-all-news-btn');
+            if (viewAllBtn) {
+                viewAllBtn.setAttribute('data-view-all', 'false');
+                viewAllBtn.innerHTML = `Xem tất cả <span class="material-icons-round" style="font-size: 16px;">arrow_forward</span>`;
+            }
         } else {
-            // Tìm kiếm trên toàn bộ dữ liệu (news_data phẳng)
             const filtered = globalNewsData.filter(cluster => {
                 const title = (cluster.title || cluster.cluster_title || '').toLowerCase();
                 const summary = (cluster.short_summary || '').toLowerCase();
@@ -197,6 +203,13 @@ function initMobileSearch() {
                 searchInput.blur();
                 searchInput.value = ''; 
                 renderDigestFeed(globalDigestData); // Khôi phục Digest
+                
+                // BẢN VÁ: Reset lại trạng thái nút trên mobile
+                const viewAllBtn = document.getElementById('view-all-news-btn');
+                if (viewAllBtn) {
+                    viewAllBtn.setAttribute('data-view-all', 'false');
+                    viewAllBtn.innerHTML = `Xem tất cả <span class="material-icons-round" style="font-size: 16px;">arrow_forward</span>`;
+                }
             }
         });
     }
