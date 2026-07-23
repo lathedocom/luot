@@ -58,17 +58,28 @@ eventBus.on('START_PIPELINE', async () => {
 
 eventBus.on('RSS_FETCHED', async (articles) => {
     try {
-        const enriched = articles.map(article => ({
-            ...article,
-            categories: extractCategories(article.title + " " + article.summary),
-            regions: extractRegions(article.title + " " + article.summary, article.source_name),
-            importance: calculateImportance(
-                extractCategories(article.title + " " + article.summary),
-                extractRegions(article.title + " " + article.summary, article.source_name)
-            )
-        }));
-        state.articles = enriched;
-        const embedded = await generateEmbeddings(enriched);
+        // 1. Gán Category, Region và Tính điểm Importance ngay từ khi mới cào về
+        const enriched = articles.map(article => {
+            const cats = extractCategories(article.title + " " + article.summary);
+            const regs = extractRegions(article.title + " " + article.summary, article.source_name);
+            return {
+                ...article,
+                categories: cats,
+                regions: regs,
+                importance: calculateImportance(cats, regs)
+            };
+        });
+
+        // 2. LỚP CHẶN TIẾT KIỆM QUOTA (Cực kỳ quan trọng)
+        // Lọc bỏ ngay lập tức những tin tức rác, không thuộc 11 lĩnh vực quan tâm (< 50 điểm)
+        const relevantArticles = enriched.filter(article => article.importance >= 50);
+
+        logger.info(`[Tối ưu Quota] Đã lọc bỏ ${enriched.length - relevantArticles.length} tin rác. Chỉ mang ${relevantArticles.length} tin vĩ mô đi tạo Vector.`);
+
+        state.articles = relevantArticles;
+        
+        // 3. Bây giờ chỉ Embedding những bài báo thực sự có giá trị
+        const embedded = await generateEmbeddings(relevantArticles);
         eventBus.emit('EMBEDDING_DONE', embedded);
     } catch (e) {
         eventBus.emit('PIPELINE_ERROR', e);
