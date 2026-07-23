@@ -9,10 +9,10 @@ const PIPELINE_STATUS_FILE = path.join(__dirname, '../pipeline_status.json');
 const { processEventIntoTimeline } = require('./modules/6_timeline_manager');
 const { processTopicIntoStory } = require('./modules/story/story_engine');
 const { fetchAndNormalizeNews } = require('./modules/1_crawler');
-const { extractCategories, getClusterCredibility } = require('./modules/rule_engine/category'); // MỚI
+const { extractCategories, getClusterCredibility } = require('./modules/rule_engine/category');
 const { extractRegions } = require('./modules/rule_engine/region');
 const { calculateImportance } = require('./modules/scoring/importance');
-const { calculateValueScore } = require('./modules/scoring/value_score'); // MỚI
+const { calculateValueScore } = require('./modules/scoring/value_score'); 
 const { generateEmbeddings } = require('./modules/2_embedding');
 const { clusterArticles } = require('./modules/3_clustering');
 const { extractEntities } = require('./modules/4_nlp_entity');
@@ -25,6 +25,8 @@ const { evaluateClusterAction } = require('./modules/topic/similarity_engine');
 const { fetchAllMarketData } = require('./modules/market/index');
 const { fetchAllSocialTrends } = require('./modules/social/index');
 const { generateAllReports } = require('./modules/reports/index');
+const { buildDigest } = require('./modules/digest/digest_builder'); // MỚI
+
 const gateway = require('./modules/ai/gateway');
 const { jaccardSimilarity } = require('./modules/utils/text_similarity');
 const { cleanupCache } = require('./modules/cache/cache_manager');
@@ -62,8 +64,7 @@ eventBus.on('RSS_FETCHED', async (articles) => {
             regions: extractRegions(article.title + " " + article.summary, article.source_name),
             importance: calculateImportance(
                 extractCategories(article.title + " " + article.summary),
-                extractRegions(article.title + " " + article.summary, article.source_name),
-                1
+                extractRegions(article.title + " " + article.summary, article.source_name)
             )
         }));
         state.articles = enriched;
@@ -160,12 +161,11 @@ Hai sự kiện trên có phải cùng nói về 1 sự việc không? CHỈ TR�
                 continue;
             }
             
-           const ruleImportance = calculateImportance(
+            const ruleImportance = calculateImportance(
                 ruleCategories, 
                 extractRegions(cluster.combined_text, cluster.articles[0].source_name)
             );
             
-            // TỐI ƯU: Nâng ngưỡng lên 75 để lọc các tin vĩ mô quốc tế hoặc đa lĩnh vực
             if (ruleImportance < 75) {
                 logger.info(`[RULE-SKIP] Điểm rule thấp (${ruleImportance}), bỏ qua Tầng AI: "${cluster.articles[0].title}"`);
                 continue;
@@ -174,7 +174,6 @@ Hai sự kiện trên có phải cùng nói về 1 sự việc không? CHỈ TR�
             logger.info(`Đang gọi AI phân tích Topic mới...`);
             const aiIntelligence = await analyzeClusterMultiDimensional(cluster, eventKey);
             
-            // TÍNH ĐIỂM VALUE SCORE TẠI ĐÂY LÚC TẠO MỚI (LỚP MỚI)
             const valueScore = calculateValueScore({
                 importance: aiIntelligence.importance || ruleImportance,
                 scope: aiIntelligence.scope || 'business',
@@ -200,7 +199,10 @@ Hai sự kiện trên có phải cùng nói về 1 sự việc không? CHỈ TR�
                 unknowns: aiIntelligence.unknowns,
                 confidence_note: aiIntelligence.confidence_note,
                 scenarios: aiIntelligence.scenarios,
-                // CÁC FIELD MỚI
+                
+                importance: aiIntelligence.importance || ruleImportance,
+                categories: ruleCategories,
+                regions: extractRegions(cluster.combined_text, cluster.articles[0].source_name), // MỚI
                 value_score: valueScore,
                 scope: aiIntelligence.scope || 'business',
                 update_count: 1,
@@ -208,7 +210,8 @@ Hai sự kiện trên có phải cùng nói về 1 sự việc không? CHỈ TR�
                 sources: cluster.articles.map(a => ({ 
                     url: a.link || a.url, 
                     source_name: a.source_name, 
-                    source_logo: a.source_logo 
+                    source_logo: a.source_logo,
+                    source_credibility: a.source_credibility || 5
                 }))
             };
             
@@ -274,12 +277,17 @@ eventBus.on('SYNC_DATABASE', () => {
             }
         }
         const filteredTopics = [...uniqueTopics.values()];
-        db.news = filteredTopics.sort((a, b) => b.timestamp - a.timestamp || (b.value_score || 0) - (a.value_score || 0)); // ĐÃ ĐỔI: Ưu tiên sort theo value_score thay vì hot_score
+        
+        db.news = filteredTopics.sort((a, b) => 
+            (b.value_score || 0) - (a.value_score || 0) || b.timestamp - a.timestamp
+        );
         
         db.news = db.news.map(t => ({
             ...t,
             timestamp: (t.timestamp && !isNaN(t.timestamp) && t.timestamp !== null) ? t.timestamp : Date.now()
         }));
+        
+        db.digest = buildDigest(db.news, { limitPerRegion: 7 }); // MỚI
         
         db.market_data = state.marketData || [];
         db.social_trends = state.socialTrends || [];
