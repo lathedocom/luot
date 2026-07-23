@@ -41,7 +41,7 @@ class AIGateway {
         }
 
         let attempts = 0;
-        const maxRetries = 2; 
+        const maxRetries = 3; 
 
         while (attempts <= maxRetries) {
             const startTime = Date.now();
@@ -75,6 +75,9 @@ class AIGateway {
                 if (isQuotaOrNetworkError && this.providers.googleBackup && targetProvider === 'google') {
                     logger.warn(`[Gateway] Phát hiện lỗi API Key chính. Đang chuyển sang Key Dự phòng (googleBackup)...`);
                     targetProvider = 'googleBackup';
+                } else if (isQuotaOrNetworkError && this.providers.googleBackup2 && targetProvider === 'googleBackup') {
+                    logger.warn(`[Gateway] Key Dự phòng 1 cũng bị giới hạn. Đang chuyển sang Key Dự phòng 2 (googleBackup2)...`);
+                    targetProvider = 'googleBackup2';
                 } else {
                     if (targetModel === configModels.LAYER1_MODEL_PRIMARY) {
                         logger.warn(`[Gateway] Chuyển Fallback sang ${configModels.LAYER1_MODEL_FALLBACK} cho tác vụ nhẹ...`);
@@ -139,7 +142,22 @@ class AIGateway {
                     });
                     return backupVector;
                 } catch (backupError) {
-                    logger.error(`[Gateway] Cả 2 Key Gemini đều sập khi chạy Vector đơn.`);
+                    logger.warn(`[Gateway] Key Dự phòng 1 cũng bị giới hạn khi chạy Vector đơn.`);
+
+                    if (this.providers.googleBackup2) {
+                        try {
+                            const backup2Start = Date.now();
+                            const backup2Vector = await this.providers.googleBackup2.embedContent(text, modelName);
+                            budgetManager.recordUsage({
+                                model: modelName, provider: 'google_backup2', task: 'EMBEDDING', latency: Date.now() - backup2Start, status: 'SUCCESS'
+                            });
+                            return backup2Vector;
+                        } catch (backup2Error) {
+                            logger.error(`[Gateway] Cả 3 Key Gemini đều sập khi chạy Vector đơn.`);
+                        }
+                    } else {
+                        logger.error(`[Gateway] Cả 2 Key Gemini đều sập khi chạy Vector đơn.`);
+                    }
                 }
             } else {
                 logger.error(`[Gateway] Embedding thất bại: ${error.message}`);
@@ -183,7 +201,22 @@ class AIGateway {
                     });
                     return backupVectors;
                 } catch (backupError) {
-                    logger.error(`[Gateway] Cả 2 Key Gemini đều sập khi chạy Batch Vector.`);
+                    logger.warn(`[Gateway] Batch Embedding Key Dự phòng 1 cũng bị giới hạn.`);
+
+                    if (this.providers.googleBackup2) {
+                        try {
+                            const backup2Start = Date.now();
+                            const backup2Vectors = await this.providers.googleBackup2.batchEmbedContents(texts, modelName);
+                            budgetManager.recordUsage({
+                                model: modelName, provider: 'google_backup2', task: 'BATCH_EMBEDDING', latency: Date.now() - backup2Start, status: 'SUCCESS'
+                            });
+                            return backup2Vectors;
+                        } catch (backup2Error) {
+                            logger.error(`[Gateway] Cả 3 Key Gemini đều sập khi chạy Batch Vector.`);
+                        }
+                    } else {
+                        logger.error(`[Gateway] Cả 2 Key Gemini đều sập khi chạy Batch Vector.`);
+                    }
                 }
             } else {
                 logger.error(`[Gateway] Batch Embedding thất bại: ${error.message}`);
