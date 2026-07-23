@@ -40,11 +40,32 @@ document.addEventListener('DOMContentLoaded', () => {
     initModalEvents();
     initAdminEasterEgg();
     initSearch();
+    initViewAllButton();
     renderSkeletons();
     fetchNewsData();
     fetchTimelineData();
 });
+function initViewAllButton() {
+    const btn = document.getElementById('view-all-news-btn');
+    if (!btn) return;
 
+    btn.addEventListener('click', () => {
+        const isViewingAll = btn.getAttribute('data-view-all') === 'true';
+        
+        if (!isViewingAll) {
+            // Chuyển sang chế độ Xem tất cả (Load DB phẳng globalNewsData)
+            btn.setAttribute('data-view-all', 'true');
+            btn.innerHTML = `Bản tin rút gọn <span class="material-icons-round" style="font-size: 16px;">unfold_less</span>`;
+            // globalNewsData đã được backend sort theo value_score từ cao xuống thấp
+            renderNewsFeed(globalNewsData); 
+        } else {
+            // Quay về chế độ Digest (Load DB phân cụm globalDigestData)
+            btn.setAttribute('data-view-all', 'false');
+            btn.innerHTML = `Xem tất cả <span class="material-icons-round" style="font-size: 16px;">arrow_forward</span>`;
+            renderDigestFeed(globalDigestData);
+        }
+    });
+}
 function initNavigation() {
     const tabs = ['overview', 'briefing', 'timeline', 'market'];
     tabs.forEach(tab => {
