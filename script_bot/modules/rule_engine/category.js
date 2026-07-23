@@ -17,7 +17,6 @@ function isHypotheticalOrOpinion(text) {
 function extractCategories(text) {
     if (!text) return ['uncategorized'];
     
-    // Kiểm tra nếu là bài xã luận/giả định thì gán nhãn riêng, loại khỏi luồng tin chuẩn
     if (isHypotheticalOrOpinion(text)) {
         return ['opinion_analysis'];
     }
@@ -27,16 +26,24 @@ function extractCategories(text) {
     
     for (const cat of CATEGORIES) {
         for (const kw of cat.keywords) {
-            // Nếu văn bản chứa từ khóa của chuyên mục này
             if (lowerText.includes(kw.toLowerCase())) {
                 matched.push(cat.id);
-                break; // Khớp 1 từ khóa là đủ để nhận diện chuyên mục này
+                break; 
             }
         }
     }
     
-    // Nếu không khớp từ khóa nào, gán nhãn mặc định
     return matched.length > 0 ? matched : ['uncategorized'];
 }
 
-module.exports = { extractCategories, isHypotheticalOrOpinion };
+/**
+ * Lấy điểm tin cậy trung bình của cả cụm (Dựa vào uy tín nguồn)
+ */
+function getClusterCredibility(cluster) {
+    if (!cluster.articles || cluster.articles.length === 0) return 5;
+    const scores = cluster.articles.map(a => a.source_credibility || 5);
+    const sum = scores.reduce((acc, val) => acc + val, 0);
+    return Number((sum / scores.length).toFixed(1));
+}
+
+module.exports = { extractCategories, isHypotheticalOrOpinion, getClusterCredibility };
