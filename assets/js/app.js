@@ -362,52 +362,82 @@ function renderDigestFeed(digest) {
 
         // 2. Render gom nhóm toàn bộ tin vắn thành 1 Card duy nhất ở cuối khu vực
         if (quickItems.length > 0) {
-            newsContainer.appendChild(renderQuickBriefsCard(quickItems));
+            newsContainer.appendChild(renderQuickBriefsCard(quickItems, group.label));
         }
     });
 }
 
-function renderQuickBriefsCard(quickItems) {
+function renderQuickBriefsCard(quickItems, regionLabel) {
     const card = document.createElement('div');
     card.className = 'news-card';
-    // Style tĩnh: bỏ hiệu ứng hover nhảy lên vì đây là khối chứa nhiều link
-    card.style.transform = 'none'; 
-    card.style.cursor = 'default';
     card.style.borderLeft = '4px solid var(--md-sys-color-surface-variant)';
+
+    card.innerHTML = `
+        <div class="news-meta">
+            <span class="news-tag" style="background: rgba(15, 118, 110, 0.1); color: var(--md-sys-color-surface-variant);">${escapeHtml(regionLabel)}</span>
+            <span>${quickItems.length} bản tin</span>
+        </div>
+        <h3><span class="material-icons-round" style="vertical-align: middle; color: var(--md-sys-color-surface-variant); font-size: 20px;">bolt</span> Điểm tin nhanh & Cập nhật</h3>
+        <p>Tổng hợp ${quickItems.length} sự kiện vắn tắt, các thông báo và tình tiết đang phát triển không yêu cầu phân tích chuyên sâu.</p>
+        <div class="news-footer">
+            <span class="material-icons-round" style="font-size: 15px; color: var(--md-sys-color-surface-variant);">format_list_bulleted</span> Nhấn để xem danh sách chi tiết
+        </div>
+    `;
+    
+    // Khi click vào thẻ sẽ mở Modal riêng dành cho tin vắn
+    card.addEventListener('click', () => openQuickBriefsModal(quickItems, regionLabel));
+    return card;
+}
+
+function openQuickBriefsModal(quickItems, regionLabel) {
+    const modalTitle = document.getElementById('modal-title');
+    if (modalTitle) modalTitle.textContent = `Điểm tin nhanh - ${regionLabel}`;
+    
+    const reliabilityContainer = document.getElementById('modal-reliability');
+    if (reliabilityContainer) reliabilityContainer.innerHTML = ''; 
+    
+    const miniTimelineContainer = document.getElementById('modal-mini-timeline');
+    if (miniTimelineContainer) miniTimelineContainer.style.display = 'none';
+    
+    const sourcesContainer = document.getElementById('modal-sources');
+    if (sourcesContainer) sourcesContainer.style.display = 'none';
+
+    // Ẩn nút Toggle Nguồn vì mỗi tin trong list đã gắn sẵn link
+    const toggleBtn = document.getElementById('toggle-sources-btn');
+    if (toggleBtn) toggleBtn.style.display = 'none';
 
     let listHtml = '';
     quickItems.forEach((item, index) => {
         const timeObj = new Date(item.timestamp);
-        const timeString = `${timeObj.getHours().toString().padStart(2,'0')}:${timeObj.getMinutes().toString().padStart(2,'0')}`;
-        
-        // Lấy link đầu tiên làm link nguồn
+        const timeString = `${timeObj.getHours().toString().padStart(2,'0')}:${timeObj.getMinutes().toString().padStart(2,'0')} - ${timeObj.toLocaleDateString('vi-VN')}`;
         const sourceUrl = (item.sources && item.sources.length > 0) ? item.sources[0].url : '#';
-        const regionLabel = item.regions && item.regions.length > 0 ? getRegionLabel(item.regions[0]) : 'Thế giới';
         
-        // Căn chỉnh CSS bỏ border-bottom cho item cuối cùng
         const borderStyle = index === quickItems.length - 1 
             ? 'margin-bottom: 0; padding-bottom: 0;' 
             : 'margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px dashed var(--md-sys-color-outline);';
 
         listHtml += `
             <div style="${borderStyle}">
-                <div style="font-size: 12px; opacity: 0.7; margin-bottom: 6px;">${timeString} • ${escapeHtml(regionLabel)}</div>
+                <div style="font-size: 12px; opacity: 0.7; margin-bottom: 6px;">${timeString}</div>
                 <a href="${escapeHtml(sourceUrl)}" target="_blank" style="font-weight: 600; font-size: 16px; color: var(--md-sys-color-on-surface); text-decoration: none; display: block; margin-bottom: 6px; line-height: 1.4; transition: color 0.2s;" onmouseover="this.style.color='var(--md-sys-color-primary)'" onmouseout="this.style.color='var(--md-sys-color-on-surface)'">
-                    ${escapeHtml(item.title || item.cluster_title)} <span class="material-icons-round" style="font-size: 14px; vertical-align: middle; color: var(--md-sys-color-primary); margin-left: 2px;">open_in_new</span>
+                    ${escapeHtml(item.title || item.cluster_title)} <span class="material-icons-round" style="font-size: 14px; vertical-align: middle; color: var(--md-sys-color-primary);">open_in_new</span>
                 </a>
                 <p style="font-size: 14px; opacity: 0.8; margin: 0; line-height: 1.5;">${escapeHtml(item.short_summary)}</p>
             </div>
         `;
     });
 
-    card.innerHTML = `
-        <h3 style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px; font-size: 14px; color: var(--md-sys-color-surface-variant); text-transform: uppercase;">
-            <span class="material-icons-round">bolt</span> ĐIỂM TIN NHANH
-        </h3>
-        <div>${listHtml}</div>
-    `;
-    
-    return card;
+    const modalBody = document.getElementById('modal-body');
+    if (modalBody) {
+        modalBody.innerHTML = `
+            <div class="intelligence-box" style="background: rgba(15, 118, 110, 0.05); border-left: 4px solid var(--md-sys-color-surface-variant); padding: 16px; border-radius: 8px;">
+                ${listHtml}
+            </div>
+        `;
+    }
+
+    const modal = document.getElementById('intelligence-modal');
+    if (modal) modal.classList.add('active');
 }
 
 function renderNewsCard(cluster) {
