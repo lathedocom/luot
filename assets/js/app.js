@@ -340,12 +340,74 @@ function renderDigestFeed(digest) {
         groupHeader.innerHTML = `<h2 class="section-title">${group.label} (${group.items.length})</h2>`;
         newsContainer.appendChild(groupHeader);
 
+        // Tách tin phân tích sâu và tin vắn
+        const deepItems = [];
+        const quickItems = [];
+
         group.items.forEach(item => {
-            // Tra lại đối tượng hoàn chỉnh từ bộ DB phẳng
             const fullTopic = globalNewsData.find(t => t.event_key === item.event_key) || item;
+            
+            // Nhận diện tin vắn dựa trên đoạn text mặc định của AI Tầng 1
+            if (fullTopic.detailed_summary === "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.") {
+                quickItems.push(fullTopic);
+            } else {
+                deepItems.push(fullTopic);
+            }
+        });
+
+        // 1. Render tin sâu thành các Card độc lập
+        deepItems.forEach(fullTopic => {
             newsContainer.appendChild(renderNewsCard(fullTopic));
         });
+
+        // 2. Render gom nhóm toàn bộ tin vắn thành 1 Card duy nhất ở cuối khu vực
+        if (quickItems.length > 0) {
+            newsContainer.appendChild(renderQuickBriefsCard(quickItems));
+        }
     });
+}
+
+function renderQuickBriefsCard(quickItems) {
+    const card = document.createElement('div');
+    card.className = 'news-card';
+    // Style tĩnh: bỏ hiệu ứng hover nhảy lên vì đây là khối chứa nhiều link
+    card.style.transform = 'none'; 
+    card.style.cursor = 'default';
+    card.style.borderLeft = '4px solid var(--md-sys-color-surface-variant)';
+
+    let listHtml = '';
+    quickItems.forEach((item, index) => {
+        const timeObj = new Date(item.timestamp);
+        const timeString = `${timeObj.getHours().toString().padStart(2,'0')}:${timeObj.getMinutes().toString().padStart(2,'0')}`;
+        
+        // Lấy link đầu tiên làm link nguồn
+        const sourceUrl = (item.sources && item.sources.length > 0) ? item.sources[0].url : '#';
+        const regionLabel = item.regions && item.regions.length > 0 ? getRegionLabel(item.regions[0]) : 'Thế giới';
+        
+        // Căn chỉnh CSS bỏ border-bottom cho item cuối cùng
+        const borderStyle = index === quickItems.length - 1 
+            ? 'margin-bottom: 0; padding-bottom: 0;' 
+            : 'margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px dashed var(--md-sys-color-outline);';
+
+        listHtml += `
+            <div style="${borderStyle}">
+                <div style="font-size: 12px; opacity: 0.7; margin-bottom: 6px;">${timeString} • ${escapeHtml(regionLabel)}</div>
+                <a href="${escapeHtml(sourceUrl)}" target="_blank" style="font-weight: 600; font-size: 16px; color: var(--md-sys-color-on-surface); text-decoration: none; display: block; margin-bottom: 6px; line-height: 1.4; transition: color 0.2s;" onmouseover="this.style.color='var(--md-sys-color-primary)'" onmouseout="this.style.color='var(--md-sys-color-on-surface)'">
+                    ${escapeHtml(item.title || item.cluster_title)} <span class="material-icons-round" style="font-size: 14px; vertical-align: middle; color: var(--md-sys-color-primary); margin-left: 2px;">open_in_new</span>
+                </a>
+                <p style="font-size: 14px; opacity: 0.8; margin: 0; line-height: 1.5;">${escapeHtml(item.short_summary)}</p>
+            </div>
+        `;
+    });
+
+    card.innerHTML = `
+        <h3 style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px; font-size: 14px; color: var(--md-sys-color-surface-variant); text-transform: uppercase;">
+            <span class="material-icons-round">bolt</span> ĐIỂM TIN NHANH
+        </h3>
+        <div>${listHtml}</div>
+    `;
+    
+    return card;
 }
 
 function renderNewsCard(cluster) {
@@ -360,7 +422,7 @@ function renderNewsCard(cluster) {
     const uniqueSourceNames = [...new Set(sources.map(s => s.source_name).filter(Boolean))];
     const uniqueCount = uniqueSourceNames.length;
 
-    let sourceFooterHtml = '';
+   let sourceFooterHtml = '';
     if (sourceCount === 0) {
         sourceFooterHtml = `<span class="material-icons-round" style="font-size: 15px; color: var(--md-sys-color-primary);">smart_toy</span> Tổng hợp bởi AI`;
     } else if (uniqueCount === 1) {
@@ -371,6 +433,15 @@ function renderNewsCard(cluster) {
         const topSources = uniqueSourceNames.slice(0, 2).map(escapeHtml).join(', ');
         const hasMore = uniqueCount > 2 ? ', ...' : '';
         sourceFooterHtml = `<span class="material-icons-round" style="font-size: 15px; color: var(--md-sys-color-primary);">fact_check</span> Nguồn: ${topSources}${hasMore} • Đối chiếu từ ${uniqueCount} nguồn báo chí`;
+    }
+
+    // NHẬN DIỆN TIN VẮN
+    const isQuickUpdate = cluster.detailed_summary === "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.";
+    const sourceUrl = (cluster.sources && cluster.sources.length > 0) ? cluster.sources[0].url : '#';
+
+    // Bổ sung icon mở link ra ngoài nếu là tin vắn
+    if (isQuickUpdate) {
+        sourceFooterHtml += `<span style="margin-left: auto; color: var(--md-sys-color-primary);" class="material-icons-round">open_in_new</span>`;
     }
 
     const card = document.createElement('div');
@@ -384,7 +455,16 @@ function renderNewsCard(cluster) {
         <p>${escapeHtml(cluster.short_summary)}</p>
         <div class="news-footer">${sourceFooterHtml}</div>
     `;
-    card.addEventListener('click', () => openModal(cluster));
+    
+    // GẮN SỰ KIỆN CLICK ĐÚNG THEO LOẠI TIN
+    if (isQuickUpdate) {
+        card.addEventListener('click', () => {
+            if(sourceUrl !== '#') window.open(sourceUrl, '_blank');
+        });
+    } else {
+        card.addEventListener('click', () => openModal(cluster));
+    }
+    
     return card;
 }
 
