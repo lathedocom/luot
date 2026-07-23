@@ -12,6 +12,7 @@ QUY TẮC TUYỆT ĐỐI (MUST FOLLOW):
 CẤU TRÚC JSON YÊU CẦU:
 {
   "categories": ["Lĩnh vực 1", "Lĩnh vực 2"],
+  "scope": "personal | business | national | global",
   "cluster_title": "Tiêu đề ngắn gọn, súc tích (Tiếng Việt)",
   "short_summary": "Tóm tắt nhanh gọn ý chính (Tiếng Việt)",
   "detailed_summary": "Tóm tắt chi tiết diễn biến sự kiện (Tiếng Việt)",
