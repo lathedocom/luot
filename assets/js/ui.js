@@ -3,7 +3,7 @@
 // ==========================================================================
 import { escapeHtml, getRegionLabel } from './utils.js';
 import { openQuickBriefsModal, openModal } from './modal.js';
-import { getGlobalNewsData } from './api.js'; // Lấy getter để tra cứu dữ liệu
+import { getGlobalNewsData } from './api.js';
 
 export function renderSkeletons() {
     const newsContainer = document.getElementById('news-container');
@@ -18,6 +18,69 @@ export function renderSkeletons() {
     }
     newsContainer.innerHTML = skeletons;
 }
+
+// -------------------------------------------------------------------------
+// [HÀM HELPER MỚI] - Xử lý gom nhóm theo ngày & Đẩy Modal tin vắn vào cuối mỗi ngày
+// -------------------------------------------------------------------------
+function renderGroupedItems(container, items, regionLabel) {
+    // 1. Sắp xếp giảm dần theo thời gian (mới nhất lên đầu)
+    const sortedItems = [...items].sort((a, b) => {
+        const timeA = a.timestamp ? new Date(a.timestamp).getTime() : 0;
+        const timeB = b.timestamp ? new Date(b.timestamp).getTime() : 0;
+        return timeB - timeA;
+    });
+
+    // 2. Gom nhóm theo chuỗi ngày (VD: "24/07/2026")
+    const grouped = [];
+    sortedItems.forEach(item => {
+        const timeObj = item.timestamp ? new Date(item.timestamp) : new Date();
+        const dateStr = timeObj.toLocaleDateString('vi-VN');
+        
+        let group = grouped.find(g => g.dateStr === dateStr);
+        if (!group) {
+            group = { dateStr, items: [] };
+            grouped.push(group);
+        }
+        group.items.push(item);
+    });
+
+    // 3. Render giao diện cho từng nhóm ngày
+    grouped.forEach(group => {
+        // Vẽ dải phân cách ngày
+        const separator = document.createElement('div');
+        separator.className = 'date-separator';
+        separator.style.cssText = 'display: flex; align-items: center; margin: 24px 0 16px; opacity: 0.8;';
+        separator.innerHTML = `
+            <div style="flex-grow: 1; height: 1px; background: var(--md-sys-color-outline);"></div>
+            <span style="padding: 0 12px; font-size: 13px; font-weight: 600; color: var(--md-sys-color-primary); text-transform: uppercase;">Ngày ${escapeHtml(group.dateStr)}</span>
+            <div style="flex-grow: 1; height: 1px; background: var(--md-sys-color-outline);"></div>
+        `;
+        container.appendChild(separator);
+
+        // Phân tách tin sâu và tin vắn của RIÊNG ngày này
+        const deepItems = [];
+        const quickItems = [];
+
+        group.items.forEach(cluster => {
+            if (cluster.detailed_summary === "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.") {
+                quickItems.push(cluster);
+            } else {
+                deepItems.push(cluster);
+            }
+        });
+
+        // Lần lượt render các tin phân tích chuyên sâu của ngày
+        deepItems.forEach(cluster => {
+            container.appendChild(renderNewsCard(cluster));
+        });
+
+        // Chốt lại ngày bằng 1 Thẻ "Điểm tin nhanh" gom tất cả sự kiện phụ của ngày đó
+        if (quickItems.length > 0) {
+            container.appendChild(renderQuickBriefsCard(quickItems, `${regionLabel} - ${group.dateStr}`));
+        }
+    });
+}
+// -------------------------------------------------------------------------
 
 export function renderDigestFeed(digest) {
     const newsContainer = document.getElementById('news-container');
@@ -35,7 +98,6 @@ export function renderDigestFeed(digest) {
         return;
     }
 
-    // Dùng Getter để lấy dữ liệu toàn cục hiện tại
     const currentGlobalNewsData = getGlobalNewsData();
 
     groups.forEach(group => {
@@ -47,26 +109,12 @@ export function renderDigestFeed(digest) {
         groupHeader.innerHTML = `<h2 class="section-title">${group.label} (${group.items.length})</h2>`;
         newsContainer.appendChild(groupHeader);
 
-        const deepItems = [];
-        const quickItems = [];
-
-        group.items.forEach(item => {
-            const fullTopic = currentGlobalNewsData.find(t => t.event_key === item.event_key) || item;
-
-            if (fullTopic.detailed_summary === "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.") {
-                quickItems.push(fullTopic);
-            } else {
-                deepItems.push(fullTopic);
-            }
+        const mappedItems = group.items.map(item => {
+            return currentGlobalNewsData.find(t => t.event_key === item.event_key) || item;
         });
 
-        deepItems.forEach(fullTopic => {
-            newsContainer.appendChild(renderNewsCard(fullTopic));
-        });
-
-        if (quickItems.length > 0) {
-            newsContainer.appendChild(renderQuickBriefsCard(quickItems, group.label));
-        }
+        // Áp dụng hàm helper mới cho "Bản tin nổi bật"
+        renderGroupedItems(newsContainer, mappedItems, group.label);
     });
 }
 
@@ -79,24 +127,8 @@ export function renderNewsFeed(newsData) {
         return;
     }
 
-    const deepItems = [];
-    const quickItems = [];
-
-    newsData.forEach(cluster => {
-        if (cluster.detailed_summary === "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.") {
-            quickItems.push(cluster);
-        } else {
-            deepItems.push(cluster);
-        }
-    });
-
-    deepItems.forEach(cluster => {
-        newsContainer.appendChild(renderNewsCard(cluster));
-    });
-
-    if (quickItems.length > 0) {
-        newsContainer.appendChild(renderQuickBriefsCard(quickItems, 'Toàn cảnh'));
-    }
+    // Áp dụng hàm helper mới cho "Tất cả bản tin"
+    renderGroupedItems(newsContainer, newsData, 'Toàn cảnh');
 }
 
 export function renderQuickBriefsCard(quickItems, regionLabel) {
