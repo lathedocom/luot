@@ -31,9 +31,8 @@ module.exports = {
         { id: 'DOW', name: 'Dow Jones', type: 'stock', threshold: 1.5, api_source: 'yahoo', api_symbol: '^DJI', keywords: ['dow jones', 'chứng khoán mỹ'] },
 
         // --- TIỀN SỐ (Binance) ---
-        { id: 'BTC', name: 'Bitcoin', type: 'crypto', threshold: 3.0, api_source: 'binance', api_symbol: 'BTCUSDT', keywords: ['bitcoin', 'btc', 'tiền ảo', 'tiền mã hóa'] },
-        { id: 'ETH', name: 'Ethereum', type: 'crypto', threshold: 4.0, api_source: 'binance', api_symbol: 'ETHUSDT', keywords: ['ethereum', 'eth'] },
-
+        { id: 'BTC', name: 'Bitcoin', type: 'crypto', threshold: 3.0, api_source: 'coingecko', api_symbol: 'bitcoin', keywords: ['bitcoin', 'btc', 'tiền ảo', 'tiền mã hóa'] },
+        { id: 'ETH', name: 'Ethereum', type: 'crypto', threshold: 4.0, api_source: 'coingecko', api_symbol: 'ethereum', keywords: ['ethereum', 'eth'] },
         // --- NÔNG SẢN & LOGISTICS (Yahoo Finance) ---
         { id: 'COFFEE', name: 'Cà phê', type: 'agriculture', threshold: 2.0, api_source: 'yahoo', api_symbol: 'KC=F', keywords: ['cà phê', 'robusta', 'arabica', 'xuất khẩu nông sản'] },
         { id: 'RICE', name: 'Gạo', type: 'agriculture', threshold: 2.0, api_source: 'yahoo', api_symbol: 'ZR=F', keywords: ['gạo', 'xuất khẩu gạo', 'lương thực'] },
