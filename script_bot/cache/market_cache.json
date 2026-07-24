@@ -1,10 +1,197 @@
 {
   "latest_market": {
-    "created_at": 1784849997547,
-    "expires_at": 1784850897547,
+    "created_at": 1784868142832,
+    "expires_at": 1784869042832,
     "version": "1.0",
-    "checksum": "0894a614717a6d74a8b8dbf9a27b7f30",
+    "checksum": "d779a87bd6bdbd3b2874ca14071522eb",
     "data": [
+      {
+        "id": "USD_VND",
+        "name": "USD/VND",
+        "type": "currency",
+        "price": 26314,
+        "change_percent": "0%",
+        "trend": "↑",
+        "updated_at": 1784868142832,
+        "is_alert": false,
+        "context": null
+      },
+      {
+        "id": "DXY",
+        "name": "Dollar Index (DXY)",
+        "type": "currency",
+        "price": 101.43,
+        "change_percent": "0%",
+        "trend": "↑",
+        "updated_at": 1784868142796,
+        "is_alert": false,
+        "context": null
+      },
+      {
+        "id": "EUR_USD",
+        "name": "EUR/USD",
+        "type": "currency",
+        "price": 1.14,
+        "change_percent": "0%",
+        "trend": "↑",
+        "updated_at": 1784868142764,
+        "is_alert": false,
+        "context": null
+      },
+      {
+        "id": "USD_JPY",
+        "name": "USD/JPY",
+        "type": "currency",
+        "price": 163.82,
+        "change_percent": "0%",
+        "trend": "↑",
+        "updated_at": 1784868142728,
+        "is_alert": false,
+        "context": null
+      },
+      {
+        "id": "GOLD_W",
+        "name": "Vàng thế giới",
+        "type": "metal",
+        "price": 4032.3,
+        "change_percent": "0%",
+        "trend": "↑",
+        "updated_at": 1784868142797,
+        "is_alert": false,
+        "context": null
+      },
+      {
+        "id": "SILVER",
+        "name": "Bạc",
+        "type": "metal",
+        "price": 57.65,
+        "change_percent": "0%",
+        "trend": "↑",
+        "updated_at": 1784868142730,
+        "is_alert": false,
+        "context": null
+      },
+      {
+        "id": "BRENT",
+        "name": "Dầu Brent",
+        "type": "energy",
+        "price": 100.29,
+        "change_percent": "0%",
+        "trend": "↑",
+        "updated_at": 1784868142736,
+        "is_alert": false,
+        "context": null
+      },
+      {
+        "id": "WTI",
+        "name": "Dầu WTI",
+        "type": "energy",
+        "price": 91.69,
+        "change_percent": "0%",
+        "trend": "↑",
+        "updated_at": 1784868142792,
+        "is_alert": false,
+        "context": null
+      },
+      {
+        "id": "NAT_GAS",
+        "name": "Khí tự nhiên",
+        "type": "energy",
+        "price": 2.93,
+        "change_percent": "0%",
+        "trend": "↑",
+        "updated_at": 1784868142775,
+        "is_alert": false,
+        "context": null
+      },
+      {
+        "id": "SP500",
+        "name": "S&P 500",
+        "type": "stock",
+        "price": 7408.3,
+        "change_percent": "0%",
+        "trend": "↑",
+        "updated_at": 1784868142744,
+        "is_alert": false,
+        "context": null
+      },
+      {
+        "id": "NASDAQ",
+        "name": "Nasdaq",
+        "type": "stock",
+        "price": 25137.69,
+        "change_percent": "0%",
+        "trend": "↑",
+        "updated_at": 1784868142783,
+        "is_alert": false,
+        "context": null
+      },
+      {
+        "id": "DOW",
+        "name": "Dow Jones",
+        "type": "stock",
+        "price": 51711.65,
+        "change_percent": "0%",
+        "trend": "↑",
+        "updated_at": 1784868142775,
+        "is_alert": false,
+        "context": null
+      },
+      {
+        "id": "COFFEE",
+        "name": "Cà phê",
+        "type": "agriculture",
+        "price": 310.75,
+        "change_percent": "0%",
+        "trend": "↑",
+        "updated_at": 1784868142747,
+        "is_alert": false,
+        "context": null
+      },
+      {
+        "id": "RICE",
+        "name": "Gạo",
+        "type": "agriculture",
+        "price": 14.2,
+        "change_percent": "0%",
+        "trend": "↑",
+        "updated_at": 1784868142742,
+        "is_alert": false,
+        "context": null
+      },
+      {
+        "id": "COPPER",
+        "name": "Đồng",
+        "type": "metal",
+        "price": 6.32,
+        "change_percent": "0%",
+        "trend": "↑",
+        "updated_at": 1784868142827,
+        "is_alert": false,
+        "context": null
+      },
+      {
+        "id": "BTC",
+        "name": "Bitcoin",
+        "type": "crypto",
+        "price": 65269,
+        "change_percent": "-0.49%",
+        "trend": "↓",
+        "updated_at": 1784868142763,
+        "is_alert": false,
+        "context": null
+      },
+      {
+        "id": "ETH",
+        "name": "Ethereum",
+        "type": "crypto",
+        "price": 1875.26,
+        "change_percent": "-2.39%",
+        "trend": "↓",
+        "updated_at": 1784868142763,
+        "is_alert": false,
+        "context": null
+      },
       {
         "id": "GOLD_SJC",
         "name": "Vàng SJC",
@@ -12,7 +199,7 @@
         "price": "Đang cập nhật",
         "change_percent": "0.0%",
         "trend": "↑",
-        "updated_at": 1784849997547,
+        "updated_at": 1784868142832,
         "is_alert": false,
         "context": null
       },
@@ -23,7 +210,7 @@
         "price": "Đang cập nhật",
         "change_percent": "0.0%",
         "trend": "↑",
-        "updated_at": 1784849997547,
+        "updated_at": 1784868142832,
         "is_alert": false,
         "context": null
       },
@@ -34,7 +221,7 @@
         "price": "Đang cập nhật",
         "change_percent": "0.0%",
         "trend": "↑",
-        "updated_at": 1784849997547,
+        "updated_at": 1784868142832,
         "is_alert": false,
         "context": null
       }
