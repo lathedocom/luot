@@ -1,16 +1,27 @@
 {
   "status": {
     "success": true,
-    "duration_ms": 1506609,
-    "last_run": "2026-07-24T04:42:23.009Z"
+    "duration_ms": 1493589,
+    "last_run": "2026-07-24T09:42:31.154Z"
   },
   "metrics": {
-    "articles_processed": 150,
-    "clusters_formed": 119,
-    "new_topics": 89
+    "articles_processed": 186,
+    "clusters_formed": 163,
+    "new_topics": 125
   },
   "quota": {
-    "embedding_calls": 150
+    "embedding_calls": 186
   },
-  "errors": []
+  "errors": [
+    {
+      "time": "[09:32:16]",
+      "message": "[Gateway] Hết lượt Retry cho Task DEEP_ANALYSIS.",
+      "detail": ""
+    },
+    {
+      "time": "[09:32:16]",
+      "message": "Phân tích AI thất bại hoàn toàn: Task DEEP_ANALYSIS thất bại sau 3 lần thử.",
+      "detail": ""
+    }
+  ]
 }
