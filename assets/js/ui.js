@@ -288,14 +288,50 @@ export function renderSocial(socialData) {
         return;
     }
     let html = '';
+    
     socialData.forEach(item => {
+        // 1. Xác định Icon và Màu sắc nhận diện theo Nguồn
+        let sourceIcon = 'tag'; // Mặc định là icon hashtag
+        let iconColor = 'var(--md-sys-color-primary)';
+        
+        if (item.source === 'x') {
+            sourceIcon = 'close'; // Tạm dùng icon close cho giống chữ X
+            iconColor = 'var(--md-sys-color-on-surface)'; // Thích ứng tự động Light/Dark mode
+        } else if (item.source === 'telegram') {
+            sourceIcon = 'send'; // Icon máy bay giấy đặc trưng
+            iconColor = '#24A1DE'; // Màu xanh Telegram chuẩn
+        } else if (item.source === 'youtube' || (item.platform && item.platform.toLowerCase() === 'youtube')) {
+            sourceIcon = 'play_circle';
+            iconColor = '#FF0000';
+        }
+
+        // 2. Tạo khối Tiêu đề (Có link click được nếu có URL)
+        const keywordText = escapeHtml(item.keyword || 'Trending');
+        const titleHtml = item.url 
+            ? `<a href="${escapeHtml(item.url)}" target="_blank" style="color: inherit; text-decoration: none; display: flex; align-items: flex-start; gap: 6px;">
+                 <span class="material-icons-round" style="font-size: 18px; color: ${iconColor}; margin-top: -1px;">${sourceIcon}</span>
+                 <span>${keywordText}</span>
+               </a>`
+            : `<span style="display: flex; align-items: flex-start; gap: 6px;">
+                 <span class="material-icons-round" style="font-size: 18px; color: ${iconColor}; margin-top: -1px;">${sourceIcon}</span>
+                 <span>${keywordText}</span>
+               </span>`;
+
+        // 3. Render khối HTML
         html += `
             <div style="padding: 16px 0; border-bottom: 1px dashed var(--md-sys-color-outline);">
-                <div style="font-weight: bold; font-size: 15px; margin-bottom: 8px; color: var(--md-sys-color-primary);">#${escapeHtml(item.keyword || 'Trending')}</div>
-                <div style="font-size: 14px; opacity: 0.85; line-height: 1.5;">${escapeHtml(item.summary || item.content || 'Thảo luận đang tăng cao...')}</div>
+                <div style="font-weight: 600; font-size: 15px; margin-bottom: 8px; color: var(--md-sys-color-on-surface); transition: color 0.2s;" 
+                     onmouseover="this.style.color='var(--md-sys-color-primary)'" 
+                     onmouseout="this.style.color='var(--md-sys-color-on-surface)'">
+                    ${titleHtml}
+                </div>
+                <div style="font-size: 14px; opacity: 0.85; line-height: 1.5; word-break: break-word;">
+                    ${escapeHtml(item.summary || item.content || 'Thảo luận đang tăng cao...')}
+                </div>
             </div>
         `;
     });
+    
     container.innerHTML = html;
 }
 
