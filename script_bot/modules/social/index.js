@@ -1,42 +1,40 @@
-const { ENABLED_PLATFORMS } = require('../../config/social');
-const { fetchRedditTrends } = require('./reddit');
-const { fetchYouTubeTrends } = require('./youtube');
+// FILE: script_bot/modules/social/index.js
 const logger = require('../utils/logger');
-const { getCache, setCache } = require('../cache/cache_manager');
+const { fetchXTweets } = require('./x_apify');
+const { fetchTelegramNews } = require('./telegram_scraper');
+// Nếu bạn có file reddit.js, youtube.js cũ thì có thể import vào đây
+// Ví dụ: const { fetchRedditTrends } = require('./reddit');
 
 async function fetchAllSocialTrends() {
-    logger.info('Đang tổng hợp Nhịp đập Mạng xã hội...');
-    
-    // 1. Kiểm tra Cache (TTL 60 phút cho MXH)
-    const cachedData = getCache('social_cache', 'latest_social');
-    if (cachedData) {
-        logger.info('⚡ [Cache Hit] Trả về dữ liệu MXH từ Bộ đệm Cache');
-        return cachedData;
-    }
+    logger.info("[Social] Khởi động luồng thu thập Mạng Xã Hội...");
 
-    const activePlugins = [];
-    if (ENABLED_PLATFORMS.REDDIT) activePlugins.push(fetchRedditTrends());
-    if (ENABLED_PLATFORMS.YOUTUBE) activePlugins.push(fetchYouTubeTrends());
-    
-    if (activePlugins.length === 0) {
-        logger.warn('Không có plugin MXH nào đang bật.');
-        return [];
+    try {
+        // Dùng Promise.allSettled để đảm bảo lỗi ở 1 nguồn không đánh sập toàn bộ
+        const results = await Promise.allSettled([
+            fetchXTweets(),
+            fetchTelegramNews()
+            // fetchRedditTrends() // Uncomment nếu có module cũ
+        ]);
+
+        let combinedTrends = [];
+
+        results.forEach((result, index) => {
+            if (result.status === 'fulfilled' && Array.isArray(result.value)) {
+                combinedTrends = combinedTrends.concat(result.value);
+            } else if (result.status === 'rejected') {
+                logger.warn(`[Social] Một module thu thập MXH thất bại (Index: ${index}): ${result.reason}`);
+            }
+        });
+
+        // Xáo trộn nhẹ hoặc sắp xếp theo thời gian/ưu tiên nếu cần, ở đây trả về mảng phẳng
+        logger.info(`[Social] Tổng hợp hoàn tất ${combinedTrends.length} xu hướng MXH mới.`);
+        
+        return combinedTrends;
+
+    } catch (error) {
+        logger.error(`[Social] Lỗi nghiêm trọng khi điều phối Social: ${error.message}`);
+        return []; // Trả về mảng rỗng để không làm hỏng pipeline
     }
-    
-    // 2. Gọi song song
-    const results = await Promise.allSettled(activePlugins);
-    let allTrends = [];
-    results.forEach(result => {
-        if (result.status === 'fulfilled' && Array.isArray(result.value)) {
-            allTrends = allTrends.concat(result.value);
-        }
-    });
-    
-    // 3. Lưu Cache
-    setCache('social_cache', 'latest_social', allTrends, 60);
-    logger.success(`Đã thu thập được ${allTrends.length} luồng thảo luận MXH và lưu Cache.`);
-    
-    return allTrends;
 }
 
 module.exports = { fetchAllSocialTrends };
