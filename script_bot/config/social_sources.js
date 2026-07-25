@@ -79,7 +79,6 @@ const YOUTUBE_CHANNELS_TO_WATCH = [
 
     // Chính phủ
     { channelId: 'UCYxRlFDqcWM4y7FfpiAN3KQ', label: 'The White House' },
-    { channelId: 'UCDNfD5f4rM-jKxeb0q1Wp5Q', label: 'UK Prime Minister' },
     { channelId: 'UCMPaviJxybo1RTdzvYcU91A', label: 'European Commission' },
     { channelId: 'UCHlEaKbepQ_S9iIoZPKVQew', label: 'NATO' },
     { channelId: 'UC5O114-PQNYkurlTg6hekZw', label: 'United Nations' },
