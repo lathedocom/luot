@@ -7,16 +7,16 @@ const { REDDIT_SUBREDDITS_TO_WATCH } = require('../../config/social_sources');
 
 const CACHE_FILE = path.join(__dirname, '../../data/cache_reddit.json');
 
-// Reddit rất nhạy cảm với bot, BẮT BUỘC phải giả lập User-Agent của trình duyệt
-const parser = new Parser({
-    timeout: 15000,
-    headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 LuotSocialBot/1.0' }
-});
-
 function initCache() {
     const dir = path.dirname(CACHE_FILE);
     if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
     if (!fs.existsSync(CACHE_FILE)) fs.writeFileSync(CACHE_FILE, JSON.stringify([]));
+}
+
+// Hàm sinh User-Agent ngẫu nhiên để tránh bị nhận diện là Bot
+function getRandomUserAgent() {
+    const chromeVersion = Math.floor(Math.random() * 20) + 100; // Random bản Chrome từ 100 - 120
+    return `Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/${chromeVersion}.0.0.0 Safari/537.36 LuotSocialBot/1.0`;
 }
 
 async function fetchRedditTrends() {
@@ -28,11 +28,18 @@ async function fetchRedditTrends() {
 
     logger.info(`[Reddit] Đang quét ${REDDIT_SUBREDDITS_TO_WATCH.length} subreddits...`);
 
+    // Khởi tạo Parser với cấu hình Timeout an toàn
+    const parser = new Parser({ timeout: 15000 });
+
     for (const sub of REDDIT_SUBREDDITS_TO_WATCH) {
         try {
-            // Lấy top bài viết trong ngày để lọc ra những tin tức thực sự nóng
+            // Thay đổi headers linh động trong mỗi lượt Request
             const feedUrl = `https://www.reddit.com/r/${sub.name}/top.rss?t=day`;
-            const feed = await parser.parseURL(feedUrl);
+            
+            // Ép rss-parser dùng thư viện HTTP nội bộ kèm headers tự chế
+            const feed = await parser.parseURL(feedUrl, {
+                headers: { 'User-Agent': getRandomUserAgent() }
+            });
             
             // Chỉ lấy tối đa 3 tin top đầu mỗi subreddit để tránh làm loãng widget
             const topItems = feed.items.slice(0, 3);
@@ -55,8 +62,8 @@ async function fetchRedditTrends() {
             logger.warn(`[Reddit] Bỏ qua r/${sub.name} (Lỗi: ${error.message})`);
         }
         
-        // Ngủ 1 giây giữa các request để tránh bị Reddit chặn IP (Rate limit)
-        await new Promise(resolve => setTimeout(resolve, 1000));
+        // BẮT BUỘC: Ngủ 4 giây giữa các request để vượt qua Rate Limit (Lỗi 429) của Reddit
+        await new Promise(resolve => setTimeout(resolve, 4000));
     }
 
     let updatedCache = Array.from(cachedIds);
