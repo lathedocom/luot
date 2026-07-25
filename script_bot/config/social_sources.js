@@ -82,7 +82,16 @@ const YOUTUBE_CHANNELS_TO_WATCH = [
     { channelId: 'UCDNfD5f4rM-jKxeb0q1Wp5Q', label: 'UK Prime Minister' },
     { channelId: 'UCMPaviJxybo1RTdzvYcU91A', label: 'European Commission' },
     { channelId: 'UCHlEaKbepQ_S9iIoZPKVQew', label: 'NATO' },
-    { channelId: 'UC5O114-PQNYkurlTg6hekZw', label: 'United Nations' }
+    { channelId: 'UC5O114-PQNYkurlTg6hekZw', label: 'United Nations' },
+    
+    { channelId: 'UCabsTV34JwALXKGMqHpvUiA', label: 'VTV24' },
+    { channelId: 'UCcLK3j-XWdGBnt5bR9NJHaQ', label: 'CCTV' },
+    { channelId: 'UCSPEjw8F2nQDtmUKPFNF7_A', label: 'NHK' },
+
+     { channelId: 'UCyHZbOStDIcwXgV3P7DXQ1w', label: 'RT News Network' },
+    { channelId: 'UC_gUM8rL-Lrg6O3adPW9K1g', label: 'WION' },
+    { channelId: 'UCgKjHnMbrOK8xLzAwHO0aSg', label: 'govsg' }
+    
 ];
 
 // ==========================================
