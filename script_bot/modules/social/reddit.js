@@ -13,12 +13,6 @@ function initCache() {
     if (!fs.existsSync(CACHE_FILE)) fs.writeFileSync(CACHE_FILE, JSON.stringify([]));
 }
 
-// Hàm sinh User-Agent ngẫu nhiên để tránh bị nhận diện là Bot
-function getRandomUserAgent() {
-    const chromeVersion = Math.floor(Math.random() * 20) + 100; // Random bản Chrome từ 100 - 120
-    return `Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/${chromeVersion}.0.0.0 Safari/537.36 LuotSocialBot/1.0`;
-}
-
 async function fetchRedditTrends() {
     if (!REDDIT_SUBREDDITS_TO_WATCH || REDDIT_SUBREDDITS_TO_WATCH.length === 0) return [];
 
@@ -26,28 +20,27 @@ async function fetchRedditTrends() {
     let cachedIds = new Set(JSON.parse(fs.readFileSync(CACHE_FILE, 'utf-8')));
     const newTrends = [];
 
-    logger.info(`[Reddit] Đang quét ${REDDIT_SUBREDDITS_TO_WATCH.length} subreddits...`);
+    // CHIẾN LƯỢC CHIA NHỎ: Trộn ngẫu nhiên và chỉ lấy 6 subreddits mỗi lần chạy (chạy 4 lần/ngày = 24 sub)
+    const shuffledSubreddits = [...REDDIT_SUBREDDITS_TO_WATCH].sort(() => 0.5 - Math.random());
+    const targetSubreddits = shuffledSubreddits.slice(0, 6);
 
-    for (const sub of REDDIT_SUBREDDITS_TO_WATCH) {
+    logger.info(`[Reddit] Đang quét ${targetSubreddits.length} subreddits ngẫu nhiên (Chiến lược chống 429)...`);
+
+    for (const sub of targetSubreddits) {
         try {
-            // ĐÃ SỬA: Đưa việc khởi tạo Parser vào trong vòng lặp 
-            // để gán Headers (User-Agent) ngay từ lúc khởi tạo
+            // CHIẾN LƯỢC MINH BẠCH: Khai báo User-Agent chuẩn theo yêu cầu của Reddit
             const parser = new Parser({
                 timeout: 15000,
-                headers: { 'User-Agent': getRandomUserAgent() }
+                headers: { 
+                    'User-Agent': 'LuotNewsBot/4.5 (by u/admin)' 
+                }
             });
 
             const feedUrl = `https://www.reddit.com/r/${sub.name}/top.rss?t=day`;
-            
-            // ĐÃ SỬA: parseURL chỉ nhận 1 tham số duy nhất là URL
             const feed = await parser.parseURL(feedUrl);
             
-            // ĐÃ SỬA: Thêm lớp bảo vệ chống lỗi Undefined 'slice'
-            if (!feed || !feed.items || feed.items.length === 0) {
-                continue;
-            }
+            if (!feed || !feed.items || feed.items.length === 0) continue;
 
-            // Chỉ lấy tối đa 3 tin top đầu mỗi subreddit
             const topItems = feed.items.slice(0, 3);
 
             for (const item of topItems) {
@@ -56,7 +49,7 @@ async function fetchRedditTrends() {
 
                 newTrends.push({
                     keyword: sub.label,
-                    summary: item.title, // Tiêu đề Reddit thường chứa đủ thông tin
+                    summary: item.title, 
                     source: 'reddit',
                     url: item.link,
                     timestamp: item.pubDate ? new Date(item.pubDate).getTime() : Date.now()
@@ -68,8 +61,8 @@ async function fetchRedditTrends() {
             logger.warn(`[Reddit] Bỏ qua r/${sub.name} (Lỗi: ${error.message})`);
         }
         
-        // Ngủ 4 giây giữa các request để vượt qua Rate Limit của Reddit
-        await new Promise(resolve => setTimeout(resolve, 4000));
+        // CHIẾN LƯỢC DELAY: Chờ 5 giây trước khi gọi sub tiếp theo
+        await new Promise(resolve => setTimeout(resolve, 5000));
     }
 
     let updatedCache = Array.from(cachedIds);
