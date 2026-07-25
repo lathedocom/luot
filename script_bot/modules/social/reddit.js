@@ -1,37 +1,70 @@
+// FILE: script_bot/modules/social/reddit.js
+const Parser = require('rss-parser');
+const fs = require('fs');
+const path = require('path');
 const logger = require('../utils/logger');
+const { REDDIT_SUBREDDITS_TO_WATCH } = require('../../config/social_sources');
 
-/**
- * Lấy các bài đăng Top Trending từ chuyên mục World News của Reddit
- */
+const CACHE_FILE = path.join(__dirname, '../../data/cache_reddit.json');
+
+// Reddit rất nhạy cảm với bot, BẮT BUỘC phải giả lập User-Agent của trình duyệt
+const parser = new Parser({
+    timeout: 15000,
+    headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 LuotSocialBot/1.0' }
+});
+
+function initCache() {
+    const dir = path.dirname(CACHE_FILE);
+    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+    if (!fs.existsSync(CACHE_FILE)) fs.writeFileSync(CACHE_FILE, JSON.stringify([]));
+}
+
 async function fetchRedditTrends() {
-    try {
-        // Đeo mặt nạ trình duyệt Chrome để không bị Reddit chặn bot
-        const response = await fetch('https://www.reddit.com/r/worldnews/top.json?limit=3', {
-            headers: {
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+    if (!REDDIT_SUBREDDITS_TO_WATCH || REDDIT_SUBREDDITS_TO_WATCH.length === 0) return [];
+
+    initCache();
+    let cachedIds = new Set(JSON.parse(fs.readFileSync(CACHE_FILE, 'utf-8')));
+    const newTrends = [];
+
+    logger.info(`[Reddit] Đang quét ${REDDIT_SUBREDDITS_TO_WATCH.length} subreddits...`);
+
+    for (const sub of REDDIT_SUBREDDITS_TO_WATCH) {
+        try {
+            // Lấy top bài viết trong ngày để lọc ra những tin tức thực sự nóng
+            const feedUrl = `https://www.reddit.com/r/${sub.name}/top.rss?t=day`;
+            const feed = await parser.parseURL(feedUrl);
+            
+            // Chỉ lấy tối đa 3 tin top đầu mỗi subreddit để tránh làm loãng widget
+            const topItems = feed.items.slice(0, 3);
+
+            for (const item of topItems) {
+                const itemId = item.id || item.link;
+                if (!itemId || cachedIds.has(itemId)) continue;
+
+                newTrends.push({
+                    keyword: sub.label,
+                    summary: item.title, // Tiêu đề Reddit thường chứa đủ thông tin
+                    source: 'reddit',
+                    url: item.link,
+                    timestamp: item.pubDate ? new Date(item.pubDate).getTime() : Date.now()
+                });
+
+                cachedIds.add(itemId);
             }
-        });
-        
-        if (!response.ok) {
-            throw new Error(`Mã lỗi Reddit: ${response.status}`);
+        } catch (error) {
+            logger.warn(`[Reddit] Bỏ qua r/${sub.name} (Lỗi: ${error.message})`);
         }
-
-        const data = await response.json();
         
-        const trends = data.data.children.map(post => ({
-            platform: 'Reddit',
-            icon: 'https://www.redditstatic.com/desktop2x/img/favicon/apple-icon-57x57.png',
-            content: post.data.title,
-            url: `https://www.reddit.com${post.data.permalink}`,
-            trend_icon: '🔥',
-            time: Date.now()
-        }));
-
-        return trends;
-    } catch (error) {
-        logger.error('Lỗi khi lấy dữ liệu từ Reddit Plugin', error);
-        return [];
+        // Ngủ 1 giây giữa các request để tránh bị Reddit chặn IP (Rate limit)
+        await new Promise(resolve => setTimeout(resolve, 1000));
     }
+
+    let updatedCache = Array.from(cachedIds);
+    if (updatedCache.length > 1500) updatedCache = updatedCache.slice(-1500);
+    fs.writeFileSync(CACHE_FILE, JSON.stringify(updatedCache, null, 2));
+
+    logger.info(`[Reddit] Thu thập thành công ${newTrends.length} thảo luận trending.`);
+    return newTrends;
 }
 
 module.exports = { fetchRedditTrends };
