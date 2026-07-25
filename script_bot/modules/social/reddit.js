@@ -28,20 +28,26 @@ async function fetchRedditTrends() {
 
     logger.info(`[Reddit] Đang quét ${REDDIT_SUBREDDITS_TO_WATCH.length} subreddits...`);
 
-    // Khởi tạo Parser với cấu hình Timeout an toàn
-    const parser = new Parser({ timeout: 15000 });
-
     for (const sub of REDDIT_SUBREDDITS_TO_WATCH) {
         try {
-            // Thay đổi headers linh động trong mỗi lượt Request
-            const feedUrl = `https://www.reddit.com/r/${sub.name}/top.rss?t=day`;
-            
-            // Ép rss-parser dùng thư viện HTTP nội bộ kèm headers tự chế
-            const feed = await parser.parseURL(feedUrl, {
+            // ĐÃ SỬA: Đưa việc khởi tạo Parser vào trong vòng lặp 
+            // để gán Headers (User-Agent) ngay từ lúc khởi tạo
+            const parser = new Parser({
+                timeout: 15000,
                 headers: { 'User-Agent': getRandomUserAgent() }
             });
+
+            const feedUrl = `https://www.reddit.com/r/${sub.name}/top.rss?t=day`;
             
-            // Chỉ lấy tối đa 3 tin top đầu mỗi subreddit để tránh làm loãng widget
+            // ĐÃ SỬA: parseURL chỉ nhận 1 tham số duy nhất là URL
+            const feed = await parser.parseURL(feedUrl);
+            
+            // ĐÃ SỬA: Thêm lớp bảo vệ chống lỗi Undefined 'slice'
+            if (!feed || !feed.items || feed.items.length === 0) {
+                continue;
+            }
+
+            // Chỉ lấy tối đa 3 tin top đầu mỗi subreddit
             const topItems = feed.items.slice(0, 3);
 
             for (const item of topItems) {
@@ -62,7 +68,7 @@ async function fetchRedditTrends() {
             logger.warn(`[Reddit] Bỏ qua r/${sub.name} (Lỗi: ${error.message})`);
         }
         
-        // BẮT BUỘC: Ngủ 4 giây giữa các request để vượt qua Rate Limit (Lỗi 429) của Reddit
+        // Ngủ 4 giây giữa các request để vượt qua Rate Limit của Reddit
         await new Promise(resolve => setTimeout(resolve, 4000));
     }
 
