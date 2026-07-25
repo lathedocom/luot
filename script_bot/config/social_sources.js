@@ -63,25 +63,25 @@ const YOUTUBE_CHANNELS_TO_WATCH = [
     { channelId: 'UCK7tptUDHh-RYDsdxO1-5QQ', label: 'Wall Street Journal' },
 
     // AI & Công nghệ
-    { channelId: 'UCXZCJLdBC09b8VMWsqE5jIQ', label: 'OpenAI' },
+    { channelId: 'UCXZCJLdBC09xxGZ6gcdrc6A', label: 'OpenAI' },
     { channelId: 'UCP7jMXSY2xbc3KCAE0MHQ-A', label: 'Google DeepMind' },
-    { channelId: 'UCfE3OAWkHwXqI57j-KtsA1A', label: 'Anthropic' },
-    { channelId: 'UCAWVzEqw2A832Gq_n38P0Cw', label: 'NVIDIA' },
-    { channelId: 'UCD4s_ZfX0jP1q7IeBpshD6g', label: 'Microsoft Developer' },
-    { channelId: 'UCiGz_uW4mD4a0w1L9oE9-7g', label: 'Hugging Face' },
+    { channelId: 'UCrDwWp7EBBv4NwvScIpBDOA', label: 'Anthropic' },
+    { channelId: 'UCHuiy8bXnmK5nisYHUd1J5g', label: 'NVIDIA' },
+    { channelId: 'UCsMica-v34Irf9KVTh6xx-g', label: 'Microsoft Developer' },
+    { channelId: 'UCHlNU7kIZhRgSbhHvFoy72w', label: 'Hugging Face' },
 
     // Khoa học
-    { channelId: 'UCA71L5Tq_XW6K856J6_2LhQ', label: 'NASA' },
+    { channelId: 'UCLA_DiR1FfKNvjuUpBHmylQ', label: 'NASA' },
     { channelId: 'UCIBaDdAbGlFDeS33shmlD0A', label: 'ESA' },
-    { channelId: 'UCdOIEhXN-B2oQvQpI8fX4sA', label: 'CERN' },
-    { channelId: 'UCc1Z_i0n99i0eEAS_9s9PJA', label: 'Nature' },
-    { channelId: 'UCeZxYmB87J4t8pZl10I465g', label: 'New Scientist' },
+    { channelId: 'UCrHXK2A9JtiexqwHuWGeSMg', label: 'CERN' },
+    { channelId: 'UC7c8mE90qCtu11z47U0KErg', label: 'Nature' },
+    { channelId: 'UCt5OA3LingpZBeEyPYmputQ', label: 'New Scientist' },
 
     // Chính phủ
     { channelId: 'UCYxRlFDqcWM4y7FfpiAN3KQ', label: 'The White House' },
     { channelId: 'UCDNfD5f4rM-jKxeb0q1Wp5Q', label: 'UK Prime Minister' },
-    { channelId: 'UCA7r7E-eWq61gQ9A0wYw8aQ', label: 'European Commission' },
-    { channelId: 'UC1Xo08wZp-1T752lMh-86gQ', label: 'NATO' },
+    { channelId: 'UCMPaviJxybo1RTdzvYcU91A', label: 'European Commission' },
+    { channelId: 'UCHlEaKbepQ_S9iIoZPKVQew', label: 'NATO' },
     { channelId: 'UC5O114-PQNYkurlTg6hekZw', label: 'United Nations' }
 ];
 
