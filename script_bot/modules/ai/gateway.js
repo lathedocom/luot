@@ -72,27 +72,26 @@ class AIGateway {
                                               error.message.includes('404') || 
                                               error.message.includes('503');
 
-                if (isQuotaOrNetworkError && this.providers.googleBackup && targetProvider === 'google') {
-                    logger.warn(`[Gateway] Phát hiện lỗi API Key chính. Đang chuyển sang Key Dự phòng (googleBackup)...`);
-                    targetProvider = 'googleBackup';
-                } else if (isQuotaOrNetworkError && this.providers.googleBackup2 && targetProvider === 'googleBackup') {
-                    logger.warn(`[Gateway] Key Dự phòng 1 cũng bị giới hạn. Đang chuyển sang Key Dự phòng 2 (googleBackup2)...`);
-                    targetProvider = 'googleBackup2';
-                } else {
-                    if (targetModel === configModels.LAYER1_MODEL_PRIMARY) {
-                        logger.warn(`[Gateway] Chuyển Fallback sang ${configModels.LAYER1_MODEL_FALLBACK} cho tác vụ nhẹ...`);
-                        targetModel = configModels.LAYER1_MODEL_FALLBACK;
-                    } else if (targetModel === configModels.LAYER2_MODEL_PRIMARY) {
-                        logger.warn(`[Gateway] Chuyển Fallback sang ${configModels.LAYER2_MODEL_FALLBACK} cho tác vụ sâu...`);
-                        targetModel = configModels.LAYER2_MODEL_FALLBACK;
-                    } else if (this.providers.groq && targetProvider !== 'groq') {
-                        logger.warn(`[Gateway] Đổi sang mạng Groq dự phòng...`);
-                        targetProvider = 'groq';
+                if (isQuotaOrNetworkError) {
+                    if (targetProvider === 'google' && this.providers.googleBackup) {
+                        logger.warn(`[Gateway] Phát hiện lỗi API Key chính. Đang chuyển sang Key Dự phòng 1 (googleBackup)...`);
+                        targetProvider = 'googleBackup';
+                    } 
+                    else if (targetProvider === 'googleBackup' && this.providers.googleBackup2) {
+                        logger.warn(`[Gateway] Key Dự phòng 1 bị giới hạn. Đang chuyển sang Key Dự phòng 2 (googleBackup2)...`);
+                        targetProvider = 'googleBackup2';
+                    } 
+                    else if (targetProvider.startsWith('google')) {
+                        // ĐÃ SỬA: Đổi CÙNG LÚC cả Provider và Model để không bị râu ông nọ cắm cằm bà kia
+                        logger.warn(`[Gateway] Hết Key Google dự phòng. Chuyển Fallback sang mạng Groq...`);
+                        targetProvider = 'groq'; 
                         
-                        if (targetModel.includes('flash-lite') || targetModel.includes('gemma')) {
-                            targetModel = configModels.GROQ_MODEL_FAST || 'llama-3.1-8b-instant';
+                        if (taskName === 'DEEP_ANALYSIS' || taskName === 'MATCH_TIMELINE' || taskName === 'DAILY_BRIEFING' || taskName === 'MONTHLY_REPORT') {
+                            targetModel = configModels.LAYER2_MODEL_FALLBACK || 'llama-3.3-70b-versatile';
+                            logger.warn(`[Gateway] Đã đổi model sang: ${targetModel}`);
                         } else {
-                            targetModel = configModels.GROQ_MODEL_SMART || 'llama-3.3-70b-versatile';
+                            targetModel = configModels.LAYER1_MODEL_FALLBACK || 'llama-3.1-8b-instant';
+                            logger.warn(`[Gateway] Đã đổi model sang: ${targetModel}`);
                         }
                     }
                 }
