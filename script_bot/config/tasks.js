@@ -1,3 +1,4 @@
+// FILE: script_bot/config/tasks.js
 const models = require('./models');
 
 module.exports = {
@@ -25,11 +26,18 @@ module.exports = {
     // KHỐI CẤU HÌNH PROMPT CHO TỪNG TÁC VỤ
     // ==========================================
 
+    // Bổ sung kỷ luật thép cho JSON của Tầng 1
+    EXTRACT_METADATA: {
+        model: models.LAYER1_MODEL_PRIMARY,
+        temperature: 0.1,
+        system_prompt: `Bạn là trợ lý trích xuất dữ liệu. LỆNH TUYỆT ĐỐI: Phải trả về chuẩn định dạng JSON. Tuyệt đối KHÔNG sử dụng dấu ngoặc kép (") bên trong các chuỗi giá trị text để tránh làm hỏng định dạng JSON. Hãy dùng dấu nháy đơn (') nếu cần trích dẫn.`
+    },
+
     MATCH_TIMELINE: {
         model: models.LAYER2_MODEL_PRIMARY, 
         temperature: 0.1, 
         max_tokens: 150,
-        system_prompt: `Bạn là một trợ lý báo chí khắt khe. Nhiệm vụ của bạn là đánh giá xem một [Sự kiện mới] có phải là diễn biến tiếp theo của [Câu chuyện đang theo dõi] hay không. Chỉ trả về định dạng JSON hợp lệ.`,
+        system_prompt: `Bạn là một trợ lý báo chí khắt khe. Nhiệm vụ của bạn là đánh giá xem một [Sự kiện mới] có phải là diễn biến tiếp theo của [Câu chuyện đang theo dõi] hay không. Chỉ trả về định dạng JSON hợp lệ. Tuyệt đối KHÔNG sử dụng dấu ngoặc kép (") bên trong các chuỗi text, hãy dùng nháy đơn (').`,
         prompt_template: (data) => `
 ĐÁNH GIÁ MỐI LIÊN QUAN CỦA DÒNG CHẢY SỰ KIỆN
 
