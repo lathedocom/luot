@@ -100,9 +100,7 @@ const TELEGRAM_CHANNELS_TO_WATCH = [
     // Chiến sự - OSINT
     { username: 'osintdefender', label: 'OSINTdefender' },
     { username: 'noel_reports', label: 'NOELREPORTS' },
-    { username: 'warmonitors', label: 'War Monitor' },
     { username: 'intelslava', label: 'Intel Slava Z' },
-    { username: 'UkraineNow', label: 'Ukraine NOW' },
     { username: 'DefenceHQ', label: 'Defence Intelligence UK' },
 
     // Kinh tế & Crypto
@@ -115,7 +113,6 @@ const TELEGRAM_CHANNELS_TO_WATCH = [
     { username: 'openai_news', label: 'OpenAI News' },
     { username: 'huggingface', label: 'Hugging Face' },
     { username: 'langchain', label: 'LangChain' },
-    { username: 'aibreakfast', label: 'AI Breakfast' },
     { username: 'nasa', label: 'NASA' },
     { username: 'esa', label: 'ESA' },
     { username: 'who', label: 'WHO' },
