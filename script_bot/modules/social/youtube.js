@@ -26,24 +26,12 @@ async function fetchYoutubeTrends() {
 
     for (const channel of YOUTUBE_CHANNELS_TO_WATCH) {
         try {
-            /* 
-             * Mẹo OSINT: YouTube hỗ trợ 2 dạng RSS
-             * 1. ID Kênh (bắt đầu bằng UC...): user/channel_id=UC...
-             * 2. Tên người dùng cũ: user=Tên
-             * Chúng ta dùng `user=` vì danh sách của bạn đa phần là username chuẩn.
-             * GHI CHÚ: Nếu kênh nào không cào được, bạn cần đổi channelId trong file config 
-             * thành chuẩn ID (VD: UCqvdSIvsOghg_0VdIg3M) và đổi tham số url bên dưới thành `channel_id=`
-             */
-            let feedUrl = `https://www.youtube.com/feeds/videos.xml?user=${channel.channelId}`;
+            // SỬ DỤNG CHUẨN MỚI: Bắt buộc dùng `channel_id=`
+            const feedUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=${channel.channelId}`;
             
-            // Xử lý thông minh nếu user lỡ nhập ID kênh chuẩn (bắt đầu bằng UC)
-            if (channel.channelId.startsWith('UC')) {
-                feedUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=${channel.channelId}`;
-            }
-
             const feed = await parser.parseURL(feedUrl);
             
-            // Chỉ lấy 1 video mới nhất để widget hiển thị gọn gàng
+            // Lấy video mới nhất để widget hiển thị
             const latestVideos = feed.items.slice(0, 1);
 
             for (const item of latestVideos) {
@@ -61,9 +49,12 @@ async function fetchYoutubeTrends() {
                 cachedIds.add(videoId);
             }
         } catch (error) {
-            // Tắt log đỏ chót để tránh rác console nếu kênh xài Handle mới thay vì Username
-            logger.warn(`[YouTube] Lỗi cào kênh ${channel.label}: Không tìm thấy RSS hợp lệ.`);
+            // Log nhẹ nhàng nếu ID bị điền sai cấu trúc
+            logger.warn(`[YouTube] Bỏ qua ${channel.label}: Không tìm thấy RSS (Kiểm tra lại ID kênh).`);
         }
+        
+        // Ngủ 1 giây tránh request quá gắt
+        await new Promise(resolve => setTimeout(resolve, 1000));
     }
 
     let updatedCache = Array.from(cachedIds);
