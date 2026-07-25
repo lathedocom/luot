@@ -41,47 +41,48 @@ const REDDIT_SUBREDDITS_TO_WATCH = [
 
 // ==========================================
 // 2. YOUTUBE (Nên dùng RSS XML của kênh để tiết kiệm Quota API)
+// Bắt buộc sử dụng Channel ID chuẩn bắt đầu bằng "UC..."
 // ==========================================
 const YOUTUBE_CHANNELS_TO_WATCH = [
     // Báo chí quốc tế
-    { channelId: 'Reuters', label: 'Reuters' },
-    { channelId: 'Bloomberg', label: 'Bloomberg Television' },
-    { channelId: 'AssociatedPress', label: 'Associated Press' },
-    { channelId: 'CNBC', label: 'CNBC' },
-    { channelId: 'BBCNews', label: 'BBC News' },
-    { channelId: 'DWNews', label: 'DW News' },
-    { channelId: 'SkyNews', label: 'Sky News' },
-    { channelId: 'France24_en', label: 'France 24 English' },
-    { channelId: 'NHKWORLDJAPAN', label: 'NHK WORLD-JAPAN' },
-    { channelId: 'aljazeeraenglish', label: 'Al Jazeera English' },
+    { channelId: 'UChqUTb7kYRX8-EiaN3XFrSQ', label: 'Reuters' },
+    { channelId: 'UCIALMKvObZNtJ6AmdCLP7Lg', label: 'Bloomberg Television' },
+    { channelId: 'UC52X5wxOL_s5yw0dQk7NtgA', label: 'Associated Press' },
+    { channelId: 'UCvJJ_dzjViJCoLf5uKUTwoA', label: 'CNBC' },
+    { channelId: 'UC16niRr50-MSBwiO3YDb3RA', label: 'BBC News' },
+    { channelId: 'UCknLrEdhRCp1aegoMqRaCZg', label: 'DW News' },
+    { channelId: 'UCzG5BnqHO8oNlrPDW9CYJog', label: 'Sky News' },  
+    { channelId: 'UCQfwfsi5VrQ8yKZ-UWmAEFg', label: 'France 24 English' },
+    { channelId: 'UCSPEjw8F2nQDtmUKPFNF7_A', label: 'NHK WORLD-JAPAN' },
+    { channelId: 'UCNye-wNBqNL5ZzHSJj3l8Bg', label: 'Al Jazeera English' },
 
     // Kinh tế
-    { channelId: 'FinancialTimes', label: 'Financial Times' },
-    { channelId: 'TheEconomist', label: 'The Economist' },
-    { channelId: 'YahooFinance', label: 'Yahoo Finance' },
-    { channelId: 'WSJ', label: 'Wall Street Journal' },
+    { channelId: 'UCoUxsWakJucWg46KW5RsvPw', label: 'Financial Times' },
+    { channelId: 'UC0p5jTq6Xx_DosDFxVXnWaQ', label: 'The Economist' },
+    { channelId: 'UCEAZeUIeJs0IjQiqTCdVSIg', label: 'Yahoo Finance' },
+    { channelId: 'UCK7tptUDHh-RYDsdxO1-5QQ', label: 'Wall Street Journal' },
 
     // AI & Công nghệ
-    { channelId: 'OpenAI', label: 'OpenAI' },
-    { channelId: 'GoogleDeepMind', label: 'Google DeepMind' },
-    { channelId: 'Anthropic', label: 'Anthropic' },
-    { channelId: 'NVIDIA', label: 'NVIDIA' },
-    { channelId: 'MicrosoftDeveloper', label: 'Microsoft Developer' },
-    { channelId: 'HuggingFace', label: 'Hugging Face' },
+    { channelId: 'UCXZCJLdBC09b8VMWsqE5jIQ', label: 'OpenAI' },
+    { channelId: 'UCP7jMXSY2xbc3KCAE0MHQ-A', label: 'Google DeepMind' },
+    { channelId: 'UCfE3OAWkHwXqI57j-KtsA1A', label: 'Anthropic' },
+    { channelId: 'UCAWVzEqw2A832Gq_n38P0Cw', label: 'NVIDIA' },
+    { channelId: 'UCD4s_ZfX0jP1q7IeBpshD6g', label: 'Microsoft Developer' },
+    { channelId: 'UCiGz_uW4mD4a0w1L9oE9-7g', label: 'Hugging Face' },
 
     // Khoa học
-    { channelId: 'NASA', label: 'NASA' },
-    { channelId: 'ESA', label: 'ESA' },
-    { channelId: 'CERN', label: 'CERN' },
-    { channelId: 'nature video', label: 'Nature' },
-    { channelId: 'NewScientist', label: 'New Scientist' },
+    { channelId: 'UCA71L5Tq_XW6K856J6_2LhQ', label: 'NASA' },
+    { channelId: 'UCIBaDdAbGlFDeS33shmlD0A', label: 'ESA' },
+    { channelId: 'UCdOIEhXN-B2oQvQpI8fX4sA', label: 'CERN' },
+    { channelId: 'UCc1Z_i0n99i0eEAS_9s9PJA', label: 'Nature' },
+    { channelId: 'UCeZxYmB87J4t8pZl10I465g', label: 'New Scientist' },
 
     // Chính phủ
-    { channelId: 'WhiteHouse', label: 'The White House' },
-    { channelId: '10DowningStreet', label: 'UK Prime Minister' },
-    { channelId: 'EuropeanCommission', label: 'European Commission' },
-    { channelId: 'NATO', label: 'NATO' },
-    { channelId: 'unitednations', label: 'United Nations' }
+    { channelId: 'UCYxRlFDqcWM4y7FfpiAN3KQ', label: 'The White House' },
+    { channelId: 'UCDNfD5f4rM-jKxeb0q1Wp5Q', label: 'UK Prime Minister' },
+    { channelId: 'UCA7r7E-eWq61gQ9A0wYw8aQ', label: 'European Commission' },
+    { channelId: 'UC1Xo08wZp-1T752lMh-86gQ', label: 'NATO' },
+    { channelId: 'UC5O114-PQNYkurlTg6hekZw', label: 'United Nations' }
 ];
 
 // ==========================================
@@ -129,26 +130,6 @@ const X_ACCOUNTS_TO_WATCH = [
     { handle: 'satyanadella', label: 'Satya Nadella' },
     { handle: 'demishassabis', label: 'Demis Hassabis' },
     { handle: 'sundarpichai', label: 'Sundar Pichai' },
-    // Jensen Huang và Mark Zuckerberg ít tweet/dùng nền tảng khác nên có thể theo dõi tài khoản công ty.
-
-    /* 
-     * [CẢNH BÁO TÀI CHÍNH APIFY] 
-     * Nếu bật hết danh sách dưới đây, bạn sẽ bị tính phí cho mỗi lần cào.
-     * Hãy chỉ "uncomment" (mở dấu //) những nguồn thực sự muốn cào tức thời.
-     */
-    
-    // { handle: 'OpenAI', label: 'OpenAI' },
-    // { handle: 'AnthropicAI', label: 'Anthropic' },
-    // { handle: 'GoogleDeepMind', label: 'Google DeepMind' },
-    // { handle: 'nvidia', label: 'NVIDIA' },
-    // { handle: 'UN', label: 'United Nations' },
-    // { handle: 'WHO', label: 'WHO' },
-    // { handle: 'IMFNews', label: 'IMF' },
-    // { handle: 'WorldBank', label: 'World Bank' },
-    // { handle: 'NATO', label: 'NATO' },
-    // { handle: 'Reuters', label: 'Reuters' },
-    // { handle: 'AP', label: 'AP News' },
-    // { handle: 'TheEconomist', label: 'The Economist' }
 ];
 
 module.exports = {
