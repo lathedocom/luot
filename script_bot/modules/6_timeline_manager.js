@@ -1,3 +1,4 @@
+// FILE: script_bot/modules/6_timeline_manager.js
 const fs = require('fs');
 const path = require('path');
 const gateway = require('./ai/gateway');
@@ -15,7 +16,33 @@ function loadStories() {
     return data;
 }
 
+// Hàm lưu dữ liệu TÍCH HỢP CƠ CHẾ DỌN RÁC TỰ ĐỘNG (Garbage Collection)
 function saveStories(data) {
+    if (data && data.stories && Array.isArray(data.stories)) {
+        // 1. Sắp xếp toàn bộ các câu chuyện theo thời gian cập nhật (Mới nhất lên đầu)
+        data.stories.sort((a, b) => {
+            const timeA = new Date(a.last_updated).getTime() || 0;
+            const timeB = new Date(b.last_updated).getTime() || 0;
+            return timeB - timeA;
+        });
+
+        // 2. Giới hạn độ dài của từng dòng thời gian (Chống tràn bên trong câu chuyện)
+        data.stories.forEach(story => {
+            if (story.timeline && story.timeline.length > 50) {
+                // Chỉ giữ lại 50 tình tiết mới nhất (cuối mảng)
+                story.timeline = story.timeline.slice(-50);
+            }
+        });
+
+        // 3. Cắt tỉa: Chỉ giữ lại đúng 30 câu chuyện mới nhất
+        const MAX_STORIES = 30;
+        if (data.stories.length > MAX_STORIES) {
+            const removedCount = data.stories.length - MAX_STORIES;
+            data.stories = data.stories.slice(0, MAX_STORIES);
+            logger.info(`[Garbage Collection] Đã xóa ${removedCount} câu chuyện cũ và tối ưu dung lượng timeline_data.json.`);
+        }
+    }
+
     fs.writeFileSync(STORY_FILE, JSON.stringify(data, null, 2));
 }
 
@@ -125,7 +152,7 @@ LỆNH TUYỆT ĐỐI: CHỈ trả về JSON duy nhất với định dạng:
         if (decision.action === 'APPEND' && decision.target_id && storiesMap[decision.target_id]) {
             const tl = storiesMap[decision.target_id];
             
-            // --- 🐛 SỬA LỖI 1 TẠI ĐÂY ---
+            // Nối sự kiện
             tl.timeline.push({
                 time: eventDate ? new Date(eventDate).getTime() : Date.now(),
                 title: eventTitle,
@@ -147,7 +174,7 @@ LỆNH TUYỆT ĐỐI: CHỈ trả về JSON duy nhất với định dạng:
         createNewStory(newId, eventTitle, eventSummary);
     }
 
-    // Cập nhật lại Database Timeline với định dạng đúng
+    // Cập nhật lại Database Timeline (Cơ chế dọn rác sẽ tự động kích hoạt tại đây)
     saveStories({ stories: Object.values(storiesMap) });
 }
 
