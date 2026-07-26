@@ -69,7 +69,7 @@ LỆNH TUYỆT ĐỐI: CHỈ TRẢ VỀ JSON VỚI CÁC TRƯỜNG SAU:
                 unknowns: Array.isArray(geminiResult.unknowns) ? geminiResult.unknowns : [],
                 confidence_note: geminiResult.confidence_note || "",
                 scenarios: Array.isArray(geminiResult.scenarios) ? geminiResult.scenarios : [],
-                
+                entity_relations: Array.isArray(geminiResult.entity_relations) ? geminiResult.entity_relations : [],
                 entities: gemmaResult.entities || [],
                 keywords: gemmaResult.keywords || [],
                 importance: gemmaResult.importance || cluster.articles[0].importance,
