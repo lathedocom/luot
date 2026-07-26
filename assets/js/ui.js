@@ -15,3 +15,4 @@ export { renderSocial } from './ui-social.js';
 export { renderTimelinePage } from './ui-timeline.js';
 export { renderBriefing } from './ui-briefing.js';
 export { renderRiskMap } from './ui-map.js';
+export { renderKnowledgeGraph } from './ui-graph.js';
