@@ -33,16 +33,23 @@ function buildGlobalGraph(allTopics) {
             if (!globalNodes.has(n.data.id)) globalNodes.set(n.data.id, n);
         });
 
-        // 2. Tạo Edges (Dùng dữ liệu AI nếu có, nếu không thì tự nối mặc định)
+       // 2. Tạo Edges (Dùng dữ liệu AI nếu có, nếu không thì tự nối mặc định)
         if (topic.entity_relations && topic.entity_relations.length > 0) {
             topic.entity_relations.forEach(rel => {
                 const sourceId = `node_${generateShortHash(rel.source)}`;
                 const targetId = `node_${generateShortHash(rel.target)}`;
                 
-                // Chỉ vẽ nếu cả 2 node đều tồn tại
                 if (globalNodes.has(sourceId) && globalNodes.has(targetId) && sourceId !== targetId) {
                     const edgeKey = `${sourceId}_${targetId}_${rel.relation_type}`;
-                    if (!globalEdges.has(edgeKey)) {
+                    const reverseEdgeKey = `${targetId}_${sourceId}_${rel.relation_type}`;
+                    
+                    // Thuật toán cộng dồn trọng số
+                    if (globalEdges.has(edgeKey)) {
+                        globalEdges.get(edgeKey).data.weight += 1;
+                    } else if (globalEdges.has(reverseEdgeKey) && rel.relation_type !== 'cause_effect') {
+                        // Nếu là quan hệ 2 chiều (không phải mũi tên nhân quả), tăng điểm chiều ngược lại
+                        globalEdges.get(reverseEdgeKey).data.weight += 1;
+                    } else {
                         globalEdges.set(edgeKey, {
                             data: {
                                 id: `edge_${generateShortHash(edgeKey + topic.event_key)}`,
@@ -50,7 +57,7 @@ function buildGlobalGraph(allTopics) {
                                 target: targetId,
                                 label: rel.label || '',
                                 relation_type: rel.relation_type || 'neutral',
-                                weight: 2
+                                weight: 2 // Khởi tạo trọng số cơ bản
                             }
                         });
                     }
@@ -63,7 +70,13 @@ function buildGlobalGraph(allTopics) {
                 const targetId = nodes[i].data.id;
                 if (sourceId !== targetId) {
                     const edgeKey = `${sourceId}_${targetId}_neutral`;
-                    if (!globalEdges.has(edgeKey)) {
+                    const reverseEdgeKey = `${targetId}_${sourceId}_neutral`;
+                    
+                    if (globalEdges.has(edgeKey)) {
+                        globalEdges.get(edgeKey).data.weight += 0.5; // Tăng nhẹ trọng số
+                    } else if (globalEdges.has(reverseEdgeKey)) {
+                        globalEdges.get(reverseEdgeKey).data.weight += 0.5;
+                    } else {
                         globalEdges.set(edgeKey, {
                             data: { id: `edge_${generateShortHash(edgeKey)}`, source: sourceId, target: targetId, label: 'Liên quan', relation_type: 'neutral', weight: 1 }
                         });
