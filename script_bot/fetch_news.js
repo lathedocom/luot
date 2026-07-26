@@ -6,6 +6,7 @@ const path = require('path');
 const PIPELINE_STATUS_FILE = path.join(__dirname, '../pipeline_status.json');
 
 // IMPORT CÁC MODULE XỬ LÝ LÕI
+const { buildDigest, buildRiskMapData } = require('./modules/digest/digest_builder');
 const { processEventIntoTimeline } = require('./modules/6_timeline_manager');
 const { processTopicIntoStory } = require('./modules/story/story_engine');
 const { fetchAndNormalizeNews } = require('./modules/1_crawler');
@@ -299,7 +300,7 @@ eventBus.on('SYNC_DATABASE', () => {
         }));
         
         db.digest = buildDigest(db.news, { limitPerRegion: 7 }); // MỚI
-        
+        db.risk_map = buildRiskMapData(db.news);
         db.market_data = state.marketData || [];
         db.social_trends = state.socialTrends || [];
         db.daily_briefing = (state.reports && state.reports.daily) ? state.reports.daily : "";
