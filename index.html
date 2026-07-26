@@ -19,6 +19,8 @@
     <script src="https://unpkg.com/jsvectormap"></script>
     <script src="https://unpkg.com/jsvectormap/dist/maps/world.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.30.0/cytoscape.min.js"></script>
+    <script src="https://unpkg.com/dagre@0.7.4/dist/dagre.js"></script>
+    <script src="https://unpkg.com/cytoscape-dagre@2.5.0/cytoscape-dagre.js"></script>
 </head>
 <body> 
     
@@ -173,6 +175,10 @@
                 
                 <button id="cy-reset-btn" style="padding: 10px 16px; border-radius: 8px; border: none; background: var(--md-sys-color-surface-variant); color: var(--md-sys-color-on-surface); cursor: pointer; display: flex; align-items: center; gap: 6px; font-weight: 500; font-size: 14px; transition: 0.2s;">
                     <span class="material-icons-round" style="font-size: 18px;">refresh</span> Khôi phục
+                </button>
+                <!-- Nút chuyển đổi Layout -->
+                <button id="cy-layout-btn" data-layout="cose" style="padding: 10px 16px; border-radius: 8px; border: none; background: var(--md-sys-color-primary-container, #e0e7ff); color: var(--md-sys-color-on-primary-container, #3730a3); cursor: pointer; display: flex; align-items: center; gap: 6px; font-weight: 500; font-size: 14px; transition: 0.2s;">
+                    <span class="material-icons-round" style="font-size: 18px;">account_tree</span> Phân cấp (Dagre)
                 </button>
             </div>
             <!-- KẾT THÚC THANH CÔNG CỤ -->
