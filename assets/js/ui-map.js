@@ -18,6 +18,7 @@ export function renderRiskMap(riskMapData) {
         map: 'world',
         zoomOnScroll: true,
         zoomButtons: true,
+        draggable: true,
         backgroundColor: 'transparent',
         
         regionStyle: {
