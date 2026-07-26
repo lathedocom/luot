@@ -133,56 +133,76 @@ function initCy(container) {
     });
 
     // ====================================================================
-    // [GIAI ĐOẠN 2] XỬ LÝ SỰ KIỆN CLICK VÀO NODE HIỂN THỊ MODAL BÀI BÁO
+    // [GIAI ĐOẠN 4] XỬ LÝ SỰ KIỆN CLICK: HIỂN THỊ HỒ SƠ RỦI RO & BÀI BÁO
     // ====================================================================
     cyInstance.on('tap', 'node', function(evt){
         const node = evt.target;
         const nodeLabel = node.data('label');
         const nodeType = node.data('type');
         const nodeColor = typeColors[nodeType] || typeColors['Unknown'];
+        
+        // Lấy dữ liệu tình báo từ Node
+        const trendScore = Math.round(node.data('trend_score') || 0);
+        const riskProfile = node.data('risk_profile') || {};
 
-        // 1. Lấy toàn bộ tin tức và Lọc ra các bài chứa thực thể này
+        // Lọc bài báo liên quan
         const allNews = getGlobalNewsData();
         const relatedEvents = allNews.filter(topic => {
             if (!topic.entities) return false;
             return topic.entities.some(e => {
-                // Nhận diện cả dạng object {name, type} và dạng chuỗi thuần
                 const entityName = typeof e === 'object' ? (e.name || '') : String(e);
                 return entityName.toLowerCase() === nodeLabel.toLowerCase();
             });
         });
 
-        // Nếu không có tin liên quan, thoát
         if (relatedEvents.length === 0) return;
-
-        // 2. Sắp xếp tin mới nhất lên đầu
         relatedEvents.sort((a, b) => b.timestamp - a.timestamp);
 
-        // 3. Chuẩn bị UI cho Modal
+        // Chuẩn bị UI Modal
         const modalTitle = document.getElementById('modal-title');
         const modalBody = document.getElementById('modal-body');
         
-        // Ẩn các thành phần thừa của modal tin tức thông thường
-        const reliabilityContainer = document.getElementById('modal-reliability');
-        const miniTimelineContainer = document.getElementById('modal-mini-timeline');
-        const toggleBtn = document.getElementById('toggle-sources-btn');
-        const sourcesContainer = document.getElementById('modal-sources');
-        
-        if (reliabilityContainer) reliabilityContainer.innerHTML = '';
-        if (miniTimelineContainer) miniTimelineContainer.style.display = 'none';
-        if (toggleBtn) toggleBtn.style.display = 'none';
-        if (sourcesContainer) sourcesContainer.style.display = 'none';
+        document.getElementById('modal-reliability').innerHTML = '';
+        document.getElementById('modal-mini-timeline').style.display = 'none';
+        document.getElementById('toggle-sources-btn').style.display = 'none';
+        document.getElementById('modal-sources').style.display = 'none';
 
-        // 4. Render danh sách bài viết
         modalTitle.innerHTML = `<span style="color:${nodeColor}">Thực thể: ${escapeHtml(nodeLabel)}</span>`;
+
+        // 1. Dựng khối Dự báo Xu hướng (Trend)
+        let trendHtml = '';
+        if (trendScore > 75) trendHtml = `<span style="color: #ef4444; font-weight:bold;">↑ ${trendScore}% (Khả năng tiếp tục nóng)</span>`;
+        else if (trendScore > 40) trendHtml = `<span style="color: #f59e0b; font-weight:bold;">→ ${trendScore}% (Ổn định)</span>`;
+        else trendHtml = `<span style="color: #10b981; font-weight:bold;">↓ ${trendScore}% (Tin đã hạ nhiệt)</span>`;
+
+        // 2. Dựng khối Chỉ số Rủi ro (Risk Graph)
+        let riskHtml = '';
+        const categoryLabels = { military: 'Quân sự / Xung đột', economy: 'Kinh tế', politics: 'Chính trị', finance: 'Tài chính', tech: 'Công nghệ', law: 'Pháp luật' };
         
+        if (Object.keys(riskProfile).length > 0) {
+            for (let cat in riskProfile) {
+                if (categoryLabels[cat]) {
+                    // Mỗi lần xuất hiện cộng 25% độ dài thanh bar (tối đa 100%)
+                    const barWidth = Math.min(100, riskProfile[cat] * 25); 
+                    riskHtml += `
+                    <div style="margin-bottom: 8px; display: flex; align-items: center; font-size: 13px;">
+                        <span style="width: 120px; display: inline-block; opacity: 0.8;">${categoryLabels[cat]}</span>
+                        <div style="flex-grow: 1; background: var(--md-sys-color-background); height: 10px; border-radius: 4px; overflow: hidden; border: 1px solid var(--md-sys-color-outline);">
+                            <div style="width: ${barWidth}%; background: ${nodeColor}; height: 100%; transition: width 0.5s ease;"></div>
+                        </div>
+                    </div>`;
+                }
+            }
+        } else {
+            riskHtml = '<p style="font-size: 13px; opacity: 0.6; margin: 0;">Chưa ghi nhận rủi ro cụ thể.</p>';
+        }
+
+        // 3. Dựng khối Danh sách bài báo
         let listHtml = '';
         relatedEvents.forEach((item, index) => {
             const timeObj = new Date(item.timestamp);
             const timeString = `${timeObj.getHours().toString().padStart(2,'0')}:${timeObj.getMinutes().toString().padStart(2,'0')} - ${timeObj.toLocaleDateString('vi-VN')}`;
-            
             const borderStyle = index === relatedEvents.length - 1 ? '' : 'border-bottom: 1px dashed var(--md-sys-color-outline); margin-bottom: 16px; padding-bottom: 16px;';
-
             listHtml += `
                 <div style="${borderStyle}">
                     <div style="font-size: 12px; opacity: 0.7; margin-bottom: 6px;">${timeString}</div>
@@ -192,12 +212,24 @@ function initCy(container) {
             `;
         });
 
-        // 5. Đổ vào Modal và hiển thị
+        // 4. Lắp ráp toàn bộ vào Modal Body
         modalBody.innerHTML = `
+            <!-- Khối Bảng điều khiển Tình báo -->
+            <div style="background: rgba(0,0,0,0.05); border: 1px solid var(--md-sys-color-outline); padding: 16px; border-radius: 8px; margin-bottom: 20px;">
+                <div style="margin-bottom: 16px; font-size: 14px;">
+                    <span style="opacity: 0.7; margin-right: 8px;">Dự báo xu hướng:</span> ${trendHtml}
+                </div>
+                <div style="font-size: 12px; text-transform: uppercase; color: var(--md-sys-color-on-surface); font-weight: bold; margin-bottom: 12px; opacity: 0.6;">
+                    Chỉ số rủi ro (Risk Graph)
+                </div>
+                ${riskHtml}
+            </div>
+
+            <!-- Khối Danh sách sự kiện -->
             <div style="background: rgba(0,0,0,0.05); border-left: 4px solid ${nodeColor}; padding: 16px; border-radius: 8px;">
                 <div style="font-size: 12px; text-transform: uppercase; color: ${nodeColor}; font-weight: bold; margin-bottom: 16px; display: flex; align-items: center; gap: 6px;">
                     <span class="material-icons-round" style="font-size: 16px;">library_books</span> 
-                    Các sự kiện liên quan (${relatedEvents.length})
+                    Các sự kiện đóng góp (${relatedEvents.length})
                 </div>
                 ${listHtml}
             </div>
@@ -205,4 +237,6 @@ function initCy(container) {
 
         document.getElementById('intelligence-modal').classList.add('active');
     });
+
+    
 }
