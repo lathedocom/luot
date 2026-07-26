@@ -201,3 +201,16 @@ body { font-family: 'Roboto', sans-serif; background-color: var(--md-sys-color-b
     .modal-overlay.active .modal-dialog { transform: translateY(0); }
     .modal-footer { border-radius: 0; padding-bottom: max(16px, env(safe-area-inset-bottom)); }
 }
+
+/* ==========================================================================
+   FIX LỖI ĐƠ BẢN ĐỒ TRÊN MOBILE (JSVECTORMAP)
+   ========================================================================== */
+#global-risk-map, 
+#global-risk-map .jvm-container, 
+#global-risk-map svg {
+    /* Khóa triệt để thao tác cuộn trang của trình duyệt khi chạm vào bản đồ */
+    touch-action: none !important; 
+    /* Ngăn chặn bôi đen/chọn text vô tình khi vuốt */
+    -webkit-user-select: none !important;
+    user-select: none !important;
+}
