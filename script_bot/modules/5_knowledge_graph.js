@@ -1,56 +1,19 @@
 const logger = require('./utils/logger');
 const { generateShortHash } = require('./utils/hash');
 
-function buildRuleBasedGraph(entities, eventKey = null) {
+function buildRuleBasedNodes(entities) {
     const nodes = [];
-    const edges = [];
-
-    if (!entities || entities.length < 2) return { nodes, edges };
-
-    // Chuẩn hóa dữ liệu đầu vào an toàn
     const normalizedEntities = entities.map(e => {
         if (typeof e === 'string') return { name: e, type: 'Unknown' };
         if (typeof e === 'object' && e !== null) return { name: e.name || 'Unknown', type: e.type || 'Unknown' };
         return { name: String(e), type: 'Unknown' };
     }).filter(e => e.name !== 'Unknown' && e.name.length > 0);
 
-    if (normalizedEntities.length < 2) return { nodes, edges };
-
-    // Tạo Nodes
     normalizedEntities.forEach(entity => {
         const nodeId = `node_${generateShortHash(entity.name)}`;
-        if (!nodes.some(n => n.data.id === nodeId)) {
-            nodes.push({
-                data: {
-                    id: nodeId,
-                    label: entity.name,
-                    type: entity.type
-                }
-            });
-        }
+        nodes.push({ data: { id: nodeId, label: entity.name, type: entity.type } });
     });
-
-    // Tạo Edges
-    const mainEntity = normalizedEntities[0];
-    const sourceId = `node_${generateShortHash(mainEntity.name)}`;
-
-    for (let i = 1; i < normalizedEntities.length; i++) {
-        const targetId = `node_${generateShortHash(normalizedEntities[i].name)}`;
-        if (sourceId !== targetId) {
-            edges.push({
-                data: {
-                    id: `edge_${sourceId}_${targetId}_${eventKey || Date.now()}`,
-                    source: sourceId,
-                    target: targetId,
-                    label: 'Liên quan',
-                    relation_type: 'neutral',
-                    weight: 1
-                }
-            });
-        }
-    }
-
-    return { nodes, edges };
+    return nodes;
 }
 
 function buildGlobalGraph(allTopics) {
@@ -64,22 +27,50 @@ function buildGlobalGraph(allTopics) {
     recentTopics.forEach(topic => {
         if (!topic.entities || topic.entities.length < 2) return;
         
-        const { nodes, edges } = buildRuleBasedGraph(topic.entities, topic.event_key);
-        
+        // 1. Tạo Nodes
+        const nodes = buildRuleBasedNodes(topic.entities);
         nodes.forEach(n => {
-            if (!globalNodes.has(n.data.id)) {
-                globalNodes.set(n.data.id, n);
-            }
+            if (!globalNodes.has(n.data.id)) globalNodes.set(n.data.id, n);
         });
 
-        edges.forEach(e => {
-            const edgeKey = `${e.data.source}_${e.data.target}`;
-            const reverseEdgeKey = `${e.data.target}_${e.data.source}`;
-            
-            if (!globalEdges.has(edgeKey) && !globalEdges.has(reverseEdgeKey)) {
-                globalEdges.set(edgeKey, e);
+        // 2. Tạo Edges (Dùng dữ liệu AI nếu có, nếu không thì tự nối mặc định)
+        if (topic.entity_relations && topic.entity_relations.length > 0) {
+            topic.entity_relations.forEach(rel => {
+                const sourceId = `node_${generateShortHash(rel.source)}`;
+                const targetId = `node_${generateShortHash(rel.target)}`;
+                
+                // Chỉ vẽ nếu cả 2 node đều tồn tại
+                if (globalNodes.has(sourceId) && globalNodes.has(targetId) && sourceId !== targetId) {
+                    const edgeKey = `${sourceId}_${targetId}_${rel.relation_type}`;
+                    if (!globalEdges.has(edgeKey)) {
+                        globalEdges.set(edgeKey, {
+                            data: {
+                                id: `edge_${generateShortHash(edgeKey + topic.event_key)}`,
+                                source: sourceId,
+                                target: targetId,
+                                label: rel.label || '',
+                                relation_type: rel.relation_type || 'neutral',
+                                weight: 2
+                            }
+                        });
+                    }
+                }
+            });
+        } else {
+            // [Dự phòng] Nối thực thể chính với các thực thể phụ
+            const sourceId = nodes[0].data.id;
+            for (let i = 1; i < nodes.length; i++) {
+                const targetId = nodes[i].data.id;
+                if (sourceId !== targetId) {
+                    const edgeKey = `${sourceId}_${targetId}_neutral`;
+                    if (!globalEdges.has(edgeKey)) {
+                        globalEdges.set(edgeKey, {
+                            data: { id: `edge_${generateShortHash(edgeKey)}`, source: sourceId, target: targetId, label: 'Liên quan', relation_type: 'neutral', weight: 1 }
+                        });
+                    }
+                }
             }
-        });
+        }
     });
 
     return {
@@ -88,4 +79,4 @@ function buildGlobalGraph(allTopics) {
     };
 }
 
-module.exports = { buildRuleBasedGraph, buildGlobalGraph };
+module.exports = { buildGlobalGraph };
