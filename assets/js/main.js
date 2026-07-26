@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 function initNavigation() {
-   const tabs = ['overview', 'briefing', 'timeline', 'market', 'region', 'knowledge'];
+    const tabs = ['overview', 'briefing', 'timeline', 'market', 'region', 'knowledge'];
     
     tabs.forEach(tab => {
         const navBtn = document.getElementById(`nav-${tab}`);
@@ -48,16 +48,11 @@ function initNavigation() {
                 document.getElementById(`view-${tab}`).style.display = 'block';
                 navBtn.classList.add('active');
                 
-                // [FIX LỖI BẢN ĐỒ ẨN] Ép trình duyệt tính toán lại kích thước sau khi thẻ div hiện lên
-                if (tab === 'region' || tab === 'market') {
-                    setTimeout(() => {
-                        window.dispatchEvent(new Event('resize'));
-                    }, 50);
+                // [ĐÃ SỬA] Gộp chung vào 1 lệnh if duy nhất cho cả 3 tab cần trigger resize
+                if (tab === 'region' || tab === 'market' || tab === 'knowledge') {
+                    setTimeout(() => window.dispatchEvent(new Event('resize')), 50);
                 }
-                // Bổ sung knowledge vào cơ chế kích hoạt resize
-    if (tab === 'region' || tab === 'market' || tab === 'knowledge') {
-        setTimeout(() => window.dispatchEvent(new Event('resize')), 50);
-    }
+                
                 // Đóng menu trên Mobile
                 const sidebar = document.getElementById('app-sidebar');
                 const overlay = document.getElementById('sidebar-overlay');
@@ -69,7 +64,6 @@ function initNavigation() {
         }
     });
 }
-
 
 
 function initMobileTabs() {
