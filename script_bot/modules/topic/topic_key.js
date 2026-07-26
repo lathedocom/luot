@@ -4,7 +4,13 @@ function generateEventKey(mainEntities) {
     if (!mainEntities || mainEntities.length === 0) {
         return 'evt_general_' + Date.now();
     }
-    const sortedEntities = mainEntities.map(e => e.toLowerCase().trim()).sort();
+    
+    // [ĐÃ SỬA] Nhận diện thông minh: nếu là object thì lấy e.name, nếu là chuỗi thì giữ nguyên
+    const sortedEntities = mainEntities.map(e => {
+        const text = typeof e === 'string' ? e : (e.name || '');
+        return text.toLowerCase().trim();
+    }).filter(Boolean).sort(); // filter(Boolean) để loại bỏ các chuỗi rỗng
+    
     const joinedText = sortedEntities.join('_');
     return 'evt_' + generateShortHash(joinedText);
 }
