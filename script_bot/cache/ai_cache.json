@@ -1,68 +1,41 @@
 {
-  "evt_617f512b": {
-    "created_at": 1785084661885,
-    "expires_at": 1787676661885,
+  "evt_general_1785085253715": {
+    "created_at": 1785085257738,
+    "expires_at": 1787677257738,
     "version": "4.5",
-    "checksum": "ac537df7e694559989b03f722612e5cc",
+    "checksum": "2be97fb27f105acb085625e7ea9899d2",
     "data": {
-      "cluster_title": "Traders có một công cụ mới để đặt cược vào cổ phiếu lớn nhất của Mỹ",
-      "short_summary": "Cổ phiếu của các công ty lớn như Nvidia Corp và SpaceX sẽ có thêm một cách để đặt cược mà không cần mua cổ phiếu.",
-      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
-      "causes": [],
-      "effects": [],
-      "affected_groups": [],
-      "market_impact": "",
-      "follow_up": "",
-      "entities": [
-        "Nvidia Corp",
-        "SpaceX"
-      ],
-      "keywords": [
-        "Traders",
-        "cổ phiếu",
-        "Nvidia Corp",
-        "SpaceX"
-      ],
-      "importance": 60,
-      "scope": "business"
-    }
-  },
-  "evt_general_1785084667645": {
-    "created_at": 1785084673358,
-    "expires_at": 1787676673358,
-    "version": "4.5",
-    "checksum": "5fb4f2337ae76c7cbb2ba5550fc83a7d",
-    "data": {
-      "cluster_title": "Sự kiện Big Tech Earnings",
-      "short_summary": "Các công ty công nghệ lớn ở Mỹ đang phải đối mặt với sự thay đổi trong cách tiếp cận của nhà đầu tư đối với chi tiêu cho trí tuệ nhân tạo.",
-      "detailed_summary": "Trong nhiều năm, các tập đoàn công nghệ Mỹ duy trì một thỏa thuận ngầm với giới đầu tư: doanh nghiệp được phép chi tiêu mạnh tay cho trí tuệ nhân tạo và sẽ được thị trường chứng khoán tưởng thưởng nếu doanh thu vẫn tăng trưởng. Hiện nay, cơ chế này đang dần mất hiệu lực khi thị trường bắt đầu phản ứng tiêu cực trước các báo cáo tài chính của nhóm Big Tech liên quan đến chi phí đầu tư hạ tầng AI.",
+      "cluster_title": "Sự kiện Big Tech bị ảnh hưởng bởi chi tiêu AI",
+      "short_summary": "Các công ty công nghệ lớn ở Mỹ đang phải đối mặt với sự thay đổi trong cách chi tiêu cho trí tuệ nhân tạo.",
+      "detailed_summary": "Trong nhiều năm qua, các tập đoàn công nghệ Mỹ duy trì một thỏa thuận ngầm với nhà đầu tư: họ được phép chi tiêu mạnh tay cho trí tuệ nhân tạo (AI) và đổi lại, thị trường sẽ ghi nhận lợi nhuận chừng nào doanh thu còn tăng trưởng. Hiện tại, thỏa thuận này đang đổ vỡ khi thị trường phản ứng tiêu cực với mức chi tiêu khổng lồ cho AI của các tập đoàn công nghệ.",
       "causes": [
-        "Chi phí đầu tư khổng lồ cho trí tuệ nhân tạo",
-        "Sự thay đổi trong kỳ vọng và thái độ của nhà đầu tư đối với hiệu quả tài chính từ các khoản chi cho AI"
+        "Chi tiêu quá mức cho hạ tầng và phát triển trí tuệ nhân tạo",
+        "Sự thay đổi trong kỳ vọng và mức độ kiên nhẫn của các nhà đầu tư"
       ],
       "effects": [
-        "Sự sụt giảm niềm tin từ phía các nhà đầu tư",
-        "Áp lực tài chính lên các công ty công nghệ lớn trong bối cảnh thị trường đang biến động"
+        "Áp lực giảm giá cổ phiếu đối với các tập đoàn công nghệ",
+        "Sự hoài nghi của thị trường đối với hiệu quả đầu tư vào trí tuệ nhân tạo"
       ],
       "affected_groups": [
         "Các tập đoàn công nghệ lớn (Big Tech)",
-        "Các nhà đầu tư trên thị trường chứng khoán"
+        "Nhà đầu tư tài chính",
+        "Thị trường chứng khoán Mỹ"
       ],
-      "market_impact": "Thị trường chứng khoán đang có sự phản kháng mạnh mẽ trước chiến lược chi tiêu cho AI của các tập đoàn công nghệ, làm rung chuyển kỳ vọng lợi nhuận trước đó.",
+      "market_impact": "Gây biến động mạnh và bất ổn tâm lý trong giới đầu tư đối với nhóm cổ phiếu công nghệ.",
       "follow_up": "",
-      "significance": "Đây là dấu mốc quan trọng cho thấy kỷ nguyên 'đầu tư không giới hạn vào AI' của các tập đoàn công nghệ đã chấm dứt, thay vào đó là sự kiểm soát khắt khe hơn về lợi nhuận đầu tư.",
+      "significance": "Sự kiện này đánh dấu bước ngoặt trong quan hệ giữa các tập đoàn công nghệ và cổ đông, nơi sự kiên nhẫn đối với các khoản đầu tư dài hạn vào AI đang dần cạn kiệt.",
       "unknowns": [
-        "Mức độ sụt giảm cụ thể của giá cổ phiếu trong dài hạn",
-        "Các tập đoàn sẽ thay đổi chiến lược đầu tư AI như thế nào để làm hài lòng cổ đông"
+        "Thời điểm và cách thức các tập đoàn điều chỉnh chiến lược chi tiêu",
+        "Mức độ ảnh hưởng cụ thể của việc cắt giảm chi phí lên tốc độ phát triển AI"
       ],
-      "confidence_note": "Thông tin có độ tin cậy cao dựa trên dữ liệu báo cáo tài chính và phản ứng hiện tại của thị trường tài chính.",
+      "confidence_note": "Thông tin phản ánh xu hướng thị trường hiện tại dựa trên phản ứng của giới đầu tư đối với báo cáo thu nhập của các tập đoàn Big Tech.",
       "scenarios": [
         {
-          "text": "Các tập đoàn công nghệ phải cắt giảm ngân sách đầu tư AI để bảo vệ giá cổ phiếu.",
+          "text": "Các tập đoàn công nghệ sẽ phải thắt chặt chi tiêu để làm hài lòng nhà đầu tư trong ngắn hạn",
           "likelihood": "cao"
         },
         {
-          "text": "Nhà đầu tư chấp nhận rủi ro dài hạn và thị trường ổn định trở lại sau một giai đoạn điều chỉnh.",
+          "text": "Thị trường sẽ tiếp tục bán tháo cổ phiếu công nghệ cho đến khi có minh chứng rõ ràng về lợi nhuận từ AI",
           "likelihood": "trung bình"
         }
       ],
@@ -73,65 +46,11 @@
       "keywords": [
         "Big Tech",
         "Earnings",
-        "AI Spending"
+        "AI",
+        "Spending"
       ],
       "importance": 85,
-      "scope": "global"
-    }
-  },
-  "evt_general_1785084679401": {
-    "created_at": 1785084684837,
-    "expires_at": 1787676684837,
-    "version": "4.5",
-    "checksum": "eb0fd9e08075bf449772db4f2aca0958",
-    "data": {
-      "cluster_title": "Sự kiện về sự phân cách giữa lương và năng suất",
-      "short_summary": "Sự phân cách giữa lương và năng suất có thể tăng lên do ảnh hưởng của AI và tỷ lệ lao động trong GDP giảm.",
-      "detailed_summary": "Dữ liệu chỉ ra xu hướng tiền lương không còn tăng trưởng tương ứng với năng suất lao động. Sự trỗi dậy của công nghệ trí tuệ nhân tạo cùng với xu hướng giảm tỉ trọng thu nhập từ lao động trong tổng sản phẩm quốc nội (GDP) đang thúc đẩy mạnh mẽ quá trình này trên quy mô toàn cầu, đặc biệt tại các quốc gia giàu có.",
-      "causes": [
-        "Sự phát triển và áp dụng rộng rãi của trí tuệ nhân tạo vào sản xuất",
-        "Sự sụt giảm tỉ trọng đóng góp của thu nhập từ lao động trong tổng sản phẩm quốc nội"
-      ],
-      "effects": [
-        "Tiền lương thực tế không tăng trưởng theo kịp năng suất lao động",
-        "Gia tăng sự mất cân bằng trong phân phối thu nhập tại các quốc gia phát triển",
-        "Thay đổi cấu trúc thị trường lao động toàn cầu"
-      ],
-      "affected_groups": [
-        "Người lao động làm công ăn lương",
-        "Các doanh nghiệp công nghệ và sản xuất",
-        "Các chính phủ các nước phát triển"
-      ],
-      "market_impact": "Áp lực lên tăng trưởng thu nhập hộ gia đình có thể làm thay đổi hành vi tiêu dùng và tạo ra những thách thức mới đối với chính sách tiền tệ và quản lý kinh tế.",
-      "follow_up": "",
-      "significance": "Đây là tín hiệu cảnh báo về bất bình đẳng kinh tế gia tăng do sự thay đổi cấu trúc công nghệ, đòi hỏi các chính sách điều tiết mới để cân bằng giữa năng suất và phúc lợi xã hội.",
-      "unknowns": [
-        "Mức độ ảnh hưởng cụ thể của trí tuệ nhân tạo đối với các ngành nghề khác nhau",
-        "Khả năng thích ứng của các thể chế kinh tế trong việc tái phân phối lợi ích từ năng suất tăng thêm"
-      ],
-      "confidence_note": "Thông tin dựa trên xu hướng phân tích kinh tế vĩ mô có cơ sở thực tế về sự chuyển dịch trong cấu trúc GDP.",
-      "scenarios": [
-        {
-          "text": "Khoảng cách giữa năng suất và tiền lương tiếp tục nới rộng, dẫn đến gia tăng bất bình đẳng xã hội.",
-          "likelihood": "cao"
-        },
-        {
-          "text": "Chính phủ các nước can thiệp thông qua chính sách thuế hoặc hỗ trợ xã hội để giảm thiểu tác động tiêu cực.",
-          "likelihood": "trung bình"
-        }
-      ],
-      "entities": [
-        "AI",
-        "GDP"
-      ],
-      "keywords": [
-        "wages",
-        "productivity",
-        "AI",
-        "labour share"
-      ],
-      "importance": 85,
-      "scope": "global"
+      "scope": "national"
     }
   }
 }
