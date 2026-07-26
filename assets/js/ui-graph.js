@@ -311,7 +311,23 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
-// 4. CHUYỂN ĐỔI THUẬT TOÁN LAYOUT (COSE <-> DAGRE)
+
+    // 3. NÚT KHÔI PHỤC (RESET)
+    if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+            if (!cyInstance) return;
+            if (searchInput) searchInput.value = '';
+            if (filterSelect) filterSelect.value = 'all';
+            
+            cyInstance.batch(() => {
+                cyInstance.elements().removeClass('faded');
+                cyInstance.edges().style('display', 'element');
+                // Chạy lại hiệu ứng vật lý để đồ thị bung đều ra
+                cyInstance.layout(cyInstance.options().layout).run();
+            });
+        });
+    }
+   // 4. CHUYỂN ĐỔI THUẬT TOÁN LAYOUT (COSE <-> DAGRE)
     const layoutBtn = document.getElementById('cy-layout-btn');
     if (layoutBtn) {
         layoutBtn.addEventListener('click', () => {
@@ -352,20 +368,5 @@ document.addEventListener('DOMContentLoaded', () => {
                 layoutBtn.style.color = 'var(--md-sys-color-on-primary-container, #3730a3)';
             }
         });
-    }
-    // 3. NÚT KHÔI PHỤC (RESET)
-    if (resetBtn) {
-        resetBtn.addEventListener('click', () => {
-            if (!cyInstance) return;
-            if (searchInput) searchInput.value = '';
-            if (filterSelect) filterSelect.value = 'all';
-            
-            cyInstance.batch(() => {
-                cyInstance.elements().removeClass('faded');
-                cyInstance.edges().style('display', 'element');
-                // Chạy lại hiệu ứng vật lý để đồ thị bung đều ra
-                cyInstance.layout(cyInstance.options().layout).run();
-            });
-        });
-    }
+    } 
 });
