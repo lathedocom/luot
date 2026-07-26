@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function initNavigation() {
-    const tabs = ['overview', 'briefing', 'timeline', 'market'];
+   const tabs = ['overview', 'briefing', 'timeline', 'market', 'region'];
     tabs.forEach(tab => {
         const navBtn = document.getElementById(`nav-${tab}`);
         if (navBtn) {
