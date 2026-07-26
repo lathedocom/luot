@@ -66,13 +66,51 @@ function initCy(container) {
                     'shape': 'round-rectangle'
                 }
             },
+            // Style chung cho đường nối và nhãn (Label)
             {
                 selector: 'edge',
                 style: {
                     'width': 2,
-                    'line-color': '#475569',
                     'curve-style': 'bezier',
-                    'opacity': 0.6
+                    'opacity': 0.8,
+                    'label': 'data(label)',
+                    'font-size': '10px',
+                    'color': '#94a3b8',
+                    'text-rotation': 'autorotate',
+                    'text-background-opacity': 1,
+                    'text-background-color': '#0f172a',
+                    'text-background-padding': '3px'
+                }
+            },
+            // [MỚI] Hợp tác: Xanh lá, đứt nét
+            {
+                selector: 'edge[relation_type = "cooperation"]',
+                style: {
+                    'line-color': '#10b981',
+                    'line-style': 'dashed'
+                }
+            },
+            // [MỚI] Xung đột: Đỏ
+            {
+                selector: 'edge[relation_type = "conflict"]',
+                style: {
+                    'line-color': '#ef4444'
+                }
+            },
+            // [MỚI] Nguyên nhân - Kết quả: Cam, có mũi tên
+            {
+                selector: 'edge[relation_type = "cause_effect"]',
+                style: {
+                    'line-color': '#f59e0b',
+                    'target-arrow-shape': 'triangle',
+                    'target-arrow-color': '#f59e0b'
+                }
+            },
+            // [MỚI] Liên quan thông thường: Xám
+            {
+                selector: 'edge[relation_type = "neutral"]',
+                style: {
+                    'line-color': '#475569'
                 }
             }
         ],
