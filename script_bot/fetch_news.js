@@ -17,7 +17,7 @@ const { calculateValueScore } = require('./modules/scoring/value_score');
 const { generateEmbeddings } = require('./modules/2_embedding');
 const { clusterArticles } = require('./modules/3_clustering');
 const { extractEntities } = require('./modules/4_nlp_entity');
-const { buildRuleBasedGraph, buildGlobalGraph } = require('./modules/5_knowledge_graph');
+const { buildGlobalGraph } = require('./modules/5_knowledge_graph');
 const { analyzeClusterMultiDimensional } = require('./modules/5_ai_analysis');
 const { generateEventKey, generateTopicKey } = require('./modules/topic/topic_key');
 const topicStore = require('./modules/topic/topic_store');
@@ -102,7 +102,6 @@ eventBus.on('CLUSTER_CREATED', async (clusters) => {
         for (const cluster of clusters) {
             const entities = extractEntities(cluster.combined_text);
             const eventKey = generateEventKey(entities);
-            const ruleGraph = buildRuleBasedGraph(entities);
             const { action, bestMatch } = evaluateClusterAction(cluster.main_vector, state.currentTopics);
             
             if (action === 'SKIP') {
