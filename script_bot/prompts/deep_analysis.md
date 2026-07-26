@@ -32,6 +32,15 @@ CẤU TRÚC JSON YÊU CẦU:
       "text": "Kịch bản có thể xảy ra thứ hai...",
       "likelihood": "trung bình"
     }
+  ],
+  "entity_relations": [
+    {
+      "source": "Tên thực thể A",
+      "target": "Tên thực thể B",
+      "relation_type": "cooperation", 
+      "label": "Mô tả ngắn gọn (VD: Trừng phạt kinh tế, Ký hiệp định, Nguyên nhân của...)"
+    }
   ]
 }
-*Lưu ý: Trường 'likelihood' trong 'scenarios' chỉ được nhận 1 trong 3 giá trị: "cao", "trung bình", "thấp".*
+*Lưu ý 1: Trường 'likelihood' trong 'scenarios' chỉ được nhận 1 trong 3 giá trị: "cao", "trung bình", "thấp".*
+*Lưu ý 2: Trường 'relation_type' trong 'entity_relations' BẮT BUỘC chỉ được chọn 1 trong 4 giá trị: "cooperation" (hợp tác), "conflict" (xung đột), "cause_effect" (nguyên nhân dẫn đến kết quả), hoặc "neutral" (liên quan chung chung).*
