@@ -16,6 +16,8 @@ function buildRuleBasedNodes(entities) {
     return nodes;
 }
 
+// ... (Phần code buildRuleBasedNodes giữ nguyên ở trên)
+
 function buildGlobalGraph(allTopics) {
     const globalNodes = new Map();
     const globalEdges = new Map();
@@ -27,13 +29,37 @@ function buildGlobalGraph(allTopics) {
     recentTopics.forEach(topic => {
         if (!topic.entities || topic.entities.length < 2) return;
         
-        // 1. Tạo Nodes
+        // --- TÍNH TOÁN XU HƯỚNG SỰ KIỆN ---
+        // Suy giảm 2 điểm mỗi giờ. Tối đa 100 (rất nóng), tối thiểu 0 (đã nguội)
+        const topicAgeHours = (now - (topic.timestamp || now)) / (1000 * 60 * 60);
+        let topicTrend = Math.max(0, 100 - (topicAgeHours * 1.5)); 
+        
+        // 1. Tạo Nodes và Bơm Dữ liệu Tình báo (Risk & Trend)
         const nodes = buildRuleBasedNodes(topic.entities);
         nodes.forEach(n => {
-            if (!globalNodes.has(n.data.id)) globalNodes.set(n.data.id, n);
+            if (!globalNodes.has(n.data.id)) {
+                // Khởi tạo Node mới với dữ liệu phân tích
+                n.data.trend_score = topicTrend;
+                n.data.mention_count = 1;
+                n.data.risk_profile = {};
+                globalNodes.set(n.data.id, n);
+            } else {
+                // Cập nhật Node đã có: Lấy độ nóng cao nhất và cộng dồn số lần nhắc
+                let existingNode = globalNodes.get(n.data.id);
+                existingNode.data.trend_score = Math.max(existingNode.data.trend_score, topicTrend);
+                existingNode.data.mention_count += 1;
+            }
+
+            // Cộng dồn Hồ sơ rủi ro dựa trên chuyên mục của bài báo
+            let currentNode = globalNodes.get(n.data.id);
+            if (topic.categories && topic.categories.length > 0) {
+                topic.categories.forEach(cat => {
+                    currentNode.data.risk_profile[cat] = (currentNode.data.risk_profile[cat] || 0) + 1;
+                });
+            }
         });
 
-       // 2. Tạo Edges (Dùng dữ liệu AI nếu có, nếu không thì tự nối mặc định)
+        // 2. Tạo Edges (Dùng dữ liệu AI nếu có, nếu không thì tự nối mặc định)
         if (topic.entity_relations && topic.entity_relations.length > 0) {
             topic.entity_relations.forEach(rel => {
                 const sourceId = `node_${generateShortHash(rel.source)}`;
@@ -43,11 +69,9 @@ function buildGlobalGraph(allTopics) {
                     const edgeKey = `${sourceId}_${targetId}_${rel.relation_type}`;
                     const reverseEdgeKey = `${targetId}_${sourceId}_${rel.relation_type}`;
                     
-                    // Thuật toán cộng dồn trọng số
                     if (globalEdges.has(edgeKey)) {
                         globalEdges.get(edgeKey).data.weight += 1;
                     } else if (globalEdges.has(reverseEdgeKey) && rel.relation_type !== 'cause_effect') {
-                        // Nếu là quan hệ 2 chiều (không phải mũi tên nhân quả), tăng điểm chiều ngược lại
                         globalEdges.get(reverseEdgeKey).data.weight += 1;
                     } else {
                         globalEdges.set(edgeKey, {
@@ -57,14 +81,14 @@ function buildGlobalGraph(allTopics) {
                                 target: targetId,
                                 label: rel.label || '',
                                 relation_type: rel.relation_type || 'neutral',
-                                weight: 2 // Khởi tạo trọng số cơ bản
+                                weight: 2 
                             }
                         });
                     }
                 }
             });
         } else {
-            // [Dự phòng] Nối thực thể chính với các thực thể phụ
+            // [Dự phòng] Nối thực thể chính với phụ
             const sourceId = nodes[0].data.id;
             for (let i = 1; i < nodes.length; i++) {
                 const targetId = nodes[i].data.id;
@@ -72,11 +96,9 @@ function buildGlobalGraph(allTopics) {
                     const edgeKey = `${sourceId}_${targetId}_neutral`;
                     const reverseEdgeKey = `${targetId}_${sourceId}_neutral`;
                     
-                    if (globalEdges.has(edgeKey)) {
-                        globalEdges.get(edgeKey).data.weight += 0.5; // Tăng nhẹ trọng số
-                    } else if (globalEdges.has(reverseEdgeKey)) {
-                        globalEdges.get(reverseEdgeKey).data.weight += 0.5;
-                    } else {
+                    if (globalEdges.has(edgeKey)) globalEdges.get(edgeKey).data.weight += 0.5;
+                    else if (globalEdges.has(reverseEdgeKey)) globalEdges.get(reverseEdgeKey).data.weight += 0.5;
+                    else {
                         globalEdges.set(edgeKey, {
                             data: { id: `edge_${generateShortHash(edgeKey)}`, source: sourceId, target: targetId, label: 'Liên quan', relation_type: 'neutral', weight: 1 }
                         });
@@ -92,4 +114,4 @@ function buildGlobalGraph(allTopics) {
     };
 }
 
-module.exports = { buildGlobalGraph };
+module.exports = { buildRuleBasedNodes, buildGlobalGraph };
