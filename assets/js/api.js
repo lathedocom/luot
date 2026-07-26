@@ -32,7 +32,9 @@ export async function fetchNewsData() {
         renderBriefing(data.daily_briefing);
         renderMarket(data.market_data || []);
         renderSocial(data.social_trends || data.social || []);
-        renderRiskMap(data.risk_map);
+        if (data.risk_map) {
+            renderRiskMap(data.risk_map);
+        }
     } catch (error) {
         console.error("Lỗi fetchNewsData:", error);
         document.getElementById('news-container').innerHTML = `<div class="news-card"><p>Lỗi kết nối. Không thể tải dữ liệu Intelligence. Chi tiết: ${error.message}</p></div>`;
