@@ -1,13 +1,7 @@
 // ==========================================================================
 // FILE: assets/js/api.js
 // ==========================================================================
-import { 
-    renderDigestFeed, 
-    renderBriefing, 
-    renderMarket, 
-    renderSocial, 
-    renderTimelinePage 
-} from './ui.js';
+import { renderDigestFeed, renderBriefing, renderMarket, renderSocial, renderTimelinePage, renderRiskMap } from './ui.js';
 
 let globalNewsData = [];
 let globalDigestData = { vietnam: [], asia: [], global: [] };
@@ -38,6 +32,7 @@ export async function fetchNewsData() {
         renderBriefing(data.daily_briefing);
         renderMarket(data.market_data || []);
         renderSocial(data.social_trends || data.social || []);
+        renderRiskMap(data.risk_map);
     } catch (error) {
         console.error("Lỗi fetchNewsData:", error);
         document.getElementById('news-container').innerHTML = `<div class="news-card"><p>Lỗi kết nối. Không thể tải dữ liệu Intelligence. Chi tiết: ${error.message}</p></div>`;
