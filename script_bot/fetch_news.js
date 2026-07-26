@@ -17,7 +17,7 @@ const { calculateValueScore } = require('./modules/scoring/value_score');
 const { generateEmbeddings } = require('./modules/2_embedding');
 const { clusterArticles } = require('./modules/3_clustering');
 const { extractEntities } = require('./modules/4_nlp_entity');
-const { buildRuleBasedGraph } = require('./modules/5_knowledge_graph');
+const { buildRuleBasedGraph, buildGlobalGraph } = require('./modules/5_knowledge_graph');
 const { analyzeClusterMultiDimensional } = require('./modules/5_ai_analysis');
 const { generateEventKey, generateTopicKey } = require('./modules/topic/topic_key');
 const topicStore = require('./modules/topic/topic_store');
@@ -26,7 +26,7 @@ const { evaluateClusterAction } = require('./modules/topic/similarity_engine');
 const { fetchAllMarketData } = require('./modules/market/index');
 const { fetchAllSocialTrends } = require('./modules/social/index');
 const { generateAllReports } = require('./modules/reports/index');
-const { buildRuleBasedGraph, buildGlobalGraph } = require('./modules/5_knowledge_graph');
+
 
 
 const gateway = require('./modules/ai/gateway');
