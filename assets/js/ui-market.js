@@ -13,30 +13,42 @@ export function renderMarket(marketData) {
     // 1. Phân loại dữ liệu theo lĩnh vực (category)
     const groupedData = {};
     marketData.forEach(item => {
-        const category = item.category || 'Thị trường chung'; // Mặc định nếu không có category
+        const category = item.category || 'Thị trường chung'; 
         if (!groupedData[category]) {
             groupedData[category] = [];
         }
         groupedData[category].push(item);
     });
 
-    // Thêm CSS xử lý layout 3 cột và chống đè/tràn layout
+    // CSS thiết lập giới hạn siêu chặt chẽ
     let finalHtml = `
         <style>
             .market-board {
                 display: grid;
-                /* Sử dụng minmax(0, 1fr) thay vì 1fr để ngăn lưới bị ép phình to bởi canvas/text dài */
                 grid-template-columns: repeat(3, minmax(0, 1fr)); 
                 gap: 24px;
                 align-items: start; 
                 width: 100%;
+                max-width: 100%; /* Ép không được to hơn container mẹ */
+                box-sizing: border-box;
             }
             .market-category-group {
                 display: flex;
                 flex-direction: column;
                 gap: 16px;
-                min-width: 0; /* Bắt buộc để flex item không bị tràn khỏi grid column */
+                min-width: 0;
                 width: 100%;
+                max-width: 100%;
+                box-sizing: border-box;
+            }
+            /* Thiết lập riêng cho canvas wrapper để trị lỗi Chart.js */
+            .chart-wrapper {
+                position: relative;
+                width: 100%;
+                height: 80px;
+                max-width: 100%;
+                margin-bottom: 8px;
+                overflow: hidden; /* Cắt bỏ mọi thứ thò ra ngoài */
             }
             /* Responsive cho tablet và mobile */
             @media (max-width: 1024px) {
@@ -45,78 +57,73 @@ export function renderMarket(marketData) {
             @media (max-width: 768px) {
                 .market-board { 
                     grid-template-columns: minmax(0, 1fr); 
-                    gap: 16px; /* Giảm gap trên mobile cho gọn */
+                    gap: 12px; /* Giảm gap cho mobile */
                 }
             }
         </style>
         <div class="market-board">
     `;
 
-    // 2. Render từng lĩnh vực (Mỗi lĩnh vực là 1 cột)
+    // 2. Render từng lĩnh vực
     for (const [category, items] of Object.entries(groupedData)) {
         finalHtml += `
             <div class="market-category-group">
                 <h3 style="font-size: 15px; text-transform: uppercase; color: var(--md-sys-color-primary); margin: 0 0 8px 0; display: flex; align-items: center; gap: 8px; border-bottom: 2px solid var(--md-sys-color-primary); padding-bottom: 8px;">
                     <span class="material-icons-round">category</span> ${escapeHtml(category)}
                 </h3>
-                <div style="display: flex; flex-direction: column; gap: 16px; min-width: 0;">
+                <div style="display: flex; flex-direction: column; gap: 16px; min-width: 0; width: 100%;">
         `;
 
-        // 3. Render từng thẻ chỉ số xếp dọc trong cột danh mục
+        // 3. Render từng thẻ chỉ số
         items.forEach((item, index) => {
             const isUp = item.trend === '↑' || item.trend === 'up' || (item.change_percent && item.change_percent.includes('+'));
             const color = isUp ? '#10b981' : '#ef4444'; 
             const icon = isUp ? 'trending_up' : 'trending_down';
             const bgBadge = isUp ? 'rgba(16, 185, 129, 0.1)' : 'rgba(239, 68, 68, 0.1)';
             
-            // Xử lý đơn vị
             const unitHtml = item.unit ? `<span style="font-size: 14px; font-weight: normal; opacity: 0.6; margin-left: 2px;">${escapeHtml(item.unit)}</span>` : '';
             
-            // Tạo ID duy nhất cho thẻ canvas để vẽ biểu đồ
             const chartId = `market-chart-${category.replace(/[^a-zA-Z0-9]/g, '-')}-${index}`;
 
-            // Xử lý hiển thị bảng lý do tác động
             let contextHtml = '';
             if (item.context && item.context.causes && item.context.causes.length > 0) {
                 contextHtml = `
-                    <div style="margin-top: 16px; padding-top: 12px; border-top: 1px dashed var(--md-sys-color-outline);">
+                    <div style="margin-top: 16px; padding-top: 12px; border-top: 1px dashed var(--md-sys-color-outline); width: 100%; max-width: 100%; box-sizing: border-box;">
                         <div style="font-size: 12px; font-weight: bold; color: var(--md-sys-color-surface-variant); margin-bottom: 8px; display: flex; align-items: center; gap: 4px;">
                             <span class="material-icons-round" style="font-size: 14px;">info</span> Nguyên nhân biến động
                         </div>
-                        <ul style="margin: 0; padding-left: 16px; font-size: 13px; opacity: 0.9; line-height: 1.5;">
+                        <ul style="margin: 0; padding-left: 16px; font-size: 13px; opacity: 0.9; line-height: 1.5; box-sizing: border-box;">
                             ${item.context.causes.map(c => `<li style="margin-bottom: 4px; word-break: break-word;">${escapeHtml(c)}</li>`).join('')}
                         </ul>
                         ${item.context.market_impact ? `
-                        <div style="font-size: 13px; color: ${color}; font-weight: 500; margin-top: 8px; display: flex; gap: 6px; align-items: flex-start;">
+                        <div style="font-size: 13px; color: ${color}; font-weight: 500; margin-top: 8px; display: flex; gap: 6px; align-items: flex-start; word-break: break-word;">
                             <span class="material-icons-round" style="font-size: 16px; flex-shrink: 0;">insights</span>
-                            <span style="line-height: 1.4; word-break: break-word;">${escapeHtml(item.context.market_impact)}</span>
+                            <span style="line-height: 1.4;">${escapeHtml(item.context.market_impact)}</span>
                         </div>` : ''}
                     </div>
                 `;
             }
 
             finalHtml += `
-                <div class="market-card" style="background: var(--md-sys-color-surface); padding: 16px; border-radius: 12px; border: 1px solid var(--md-sys-color-outline); box-shadow: 0 4px 6px rgba(0,0,0,0.02); display: flex; flex-direction: column; position: relative; overflow: hidden; width: 100%; box-sizing: border-box;">
+                <div class="market-card" style="background: var(--md-sys-color-surface); padding: 16px; border-radius: 12px; border: 1px solid var(--md-sys-color-outline); box-shadow: 0 4px 6px rgba(0,0,0,0.02); display: flex; flex-direction: column; position: relative; width: 100%; max-width: 100%; box-sizing: border-box;">
                     
-                    <!-- Dải màu thể hiện xu hướng ở cạnh trái -->
                     <div style="position: absolute; top: 0; left: 0; bottom: 0; width: 4px; background-color: ${color};"></div>
 
-                    <!-- Header: Tên, Giá, Phần trăm -->
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; padding-left: 8px; gap: 8px;">
-                        <!-- Thêm min-width: 0 ở đây để text tự động ngắt dòng, không đẩy card phình to -->
-                        <div style="flex: 1; min-width: 0;">
+                    <!-- Header -->
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; padding-left: 8px; gap: 8px; width: 100%; box-sizing: border-box;">
+                        <div style="flex: 1; min-width: 0; display: flex; flex-direction: column;">
                             <h4 style="margin: 0; font-size: 15px; font-weight: 600; color: var(--md-sys-color-on-surface); opacity: 0.8; word-break: break-word; line-height: 1.4;">${escapeHtml(item.name)}</h4>
-                            <div style="font-size: 20px; font-weight: bold; margin-top: 4px; color: var(--md-sys-color-on-surface); word-break: break-word;">
+                            <div style="font-size: 18px; font-weight: bold; margin-top: 4px; color: var(--md-sys-color-on-surface); word-break: break-word;">
                                 ${escapeHtml(item.price)} ${unitHtml}
                             </div>
                         </div>
-                        <span style="background: ${bgBadge}; color: ${color}; padding: 4px 8px; border-radius: 6px; font-weight: bold; font-size: 14px; display: flex; align-items: center; gap: 4px; flex-shrink: 0; white-space: nowrap;">
+                        <span style="background: ${bgBadge}; color: ${color}; padding: 4px 8px; border-radius: 6px; font-weight: bold; font-size: 14px; display: flex; align-items: center; gap: 2px; flex-shrink: 0; white-space: nowrap;">
                             ${escapeHtml(item.change_percent)} <span class="material-icons-round" style="font-size: 16px;">${icon}</span>
                         </span>
                     </div>
 
                     <!-- Khung chứa Biểu đồ -->
-                    <div style="width: 100%; height: 80px; margin-bottom: 8px; position: relative;">
+                    <div class="chart-wrapper">
                         <canvas id="${chartId}"></canvas>
                     </div>
 
@@ -126,16 +133,13 @@ export function renderMarket(marketData) {
             `;
         });
 
-        // Đóng các thẻ wrapper của danh mục
         finalHtml += `</div></div>`;
     }
 
-    // Đóng thẻ .market-board ngoài cùng
     finalHtml += `</div>`; 
-
     marketContainer.innerHTML = finalHtml;
 
-    // 4. Vẽ biểu đồ sau khi các thẻ canvas đã được đưa vào DOM
+    // 4. Vẽ biểu đồ 
     if (typeof Chart !== 'undefined') {
         for (const [category, items] of Object.entries(groupedData)) {
             items.forEach((item, idx) => {
@@ -144,11 +148,10 @@ export function renderMarket(marketData) {
             });
         }
     } else {
-        console.warn("Chưa tải thư viện Chart.js. Vui lòng chèn script Chart.js vào file HTML.");
+        console.warn("Chưa tải thư viện Chart.js.");
     }
 }
 
-// Hàm phụ trợ vẽ biểu đồ dạng Sparkline
 function drawMarketSparkline(canvasId, item) {
     const ctx = document.getElementById(canvasId);
     if (!ctx) return;
@@ -177,7 +180,7 @@ function drawMarketSparkline(canvasId, item) {
         },
         options: {
             responsive: true,
-            maintainAspectRatio: false,
+            maintainAspectRatio: false, // Bắt buộc false để đồ thị tự ép dẹt theo height của div cha
             plugins: { 
                 legend: { display: false }, 
                 tooltip: { 
