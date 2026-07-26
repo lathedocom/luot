@@ -1,12 +1,634 @@
 {
-  "evt_617f512b": {
-    "created_at": 1785089648823,
-    "expires_at": 1787681648823,
+  "evt_5a5978c2": {
+    "created_at": 1785107964674,
+    "expires_at": 1787699964674,
     "version": "4.5",
-    "checksum": "aa91ed9d2eeb3da81674d28da98426a9",
+    "checksum": "33649bc3da945cafe6ebee5ce2042512",
     "data": {
-      "cluster_title": "Traders có một công cụ mới để đặt cược vào cổ phiếu lớn nhất của Mỹ",
-      "short_summary": "Cổ phiếu của các công ty lớn như Nvidia Corp và SpaceX sẽ có thêm một cách để đặt cược mà không cần mua cổ phiếu.",
+      "cluster_title": "Sự kiện tấn công Pride ở Berlin",
+      "short_summary": "Một người đàn ông 21 tuổi đã tấn công Pride ở Berlin bằng xe van và sau đó đi trên đường với một con dao, khiến một người chết và 29 người bị thương. Người đàn ông này đã bị cảnh sát bắn chết trong một cuộc đối đầu.",
+      "detailed_summary": "Vào tối thứ Bảy, một nam thanh niên 21 tuổi tên Abdul Ballout đã lái xe tải lao vào đám đông tại sự kiện Berlin Pride, sau đó tấn công bằng dao. Các cơ quan chức năng xác định đây là hành vi khủng bố Hồi giáo cực đoan. Sau cuộc truy lùng quy mô lớn, cảnh sát đã phát hiện và tiêu diệt nghi phạm tại quận Spandau vào chiều Chủ nhật sau khi đối tượng có hành động chống trả bằng dao.",
+      "causes": [
+        "Tư tưởng cực đoan Hồi giáo của nghi phạm",
+        "Tiền sử hoạt động và ý định gia nhập tổ chức khủng bố"
+      ],
+      "effects": [
+        "Một người tử vong và 29 người bị thương",
+        "Gia tăng lo ngại về an ninh tại các sự kiện công cộng ở Đức",
+        "Chiến dịch truy quét tội phạm khủng bố được triển khai trên diện rộng"
+      ],
+      "affected_groups": [
+        "Cộng đồng tham gia sự kiện Berlin Pride",
+        "Người dân tại khu vực Tiergarten và Spandau",
+        "Cơ quan thực thi pháp luật Đức"
+      ],
+      "market_impact": "Không có tác động trực tiếp đến thị trường tài chính, nhưng có thể gây ảnh hưởng đến tâm lý du lịch và tổ chức sự kiện tại Berlin.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh thách thức về an ninh nội địa tại Đức liên quan đến các đối tượng cực đoan tự phát và nguy cơ khủng bố nhằm vào các sự kiện cộng đồng.",
+      "unknowns": [
+        "Mức độ liên kết cụ thể của nghi phạm với các tổ chức khủng bố quốc tế",
+        "Chi tiết về quá trình quản lý đối tượng trong danh sách theo dõi của cảnh sát trước khi vụ việc xảy ra"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên các nguồn tin chính thống từ chính quyền Berlin.",
+      "scenarios": [
+        {
+          "text": "Chính phủ Đức siết chặt an ninh tại các sự kiện công cộng lớn trong thời gian tới.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Cơ quan điều tra mở rộng rà soát các mạng lưới liên quan đến đối tượng để phòng ngừa các vụ tấn công sao chép.",
+          "likelihood": "cao"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Abdul Ballout",
+          "target": "Berlin Pride",
+          "relation_type": "conflict",
+          "label": "Thực hiện tấn công khủng bố"
+        },
+        {
+          "source": "Cảnh sát Berlin",
+          "target": "Abdul Ballout",
+          "relation_type": "conflict",
+          "label": "Tiêu diệt nghi phạm trong cuộc đối đầu"
+        }
+      ],
+      "entities": [
+        "Abdul Ballout",
+        "Berlin",
+        "Tây Berlin"
+      ],
+      "keywords": [
+        "tấn công Pride",
+        "Berlin",
+        "tấn công khủng bố"
+      ],
+      "importance": 95,
+      "scope": "national"
+    }
+  },
+  "evt_171cc6f7": {
+    "created_at": 1785107976433,
+    "expires_at": 1787699976433,
+    "version": "4.5",
+    "checksum": "390ab40a88f43de611356518bf51e469",
+    "data": {
+      "cluster_title": "Netanyahu phản ứng với Mamdani",
+      "short_summary": "Netanyahu phản ứng với Mamdani vì cáo buộc tội ác chiến tranh và kêu gọi bắt giữ ông tại New York",
+      "detailed_summary": "Thủ tướng Israel Benjamin Netanyahu lên tiếng cáo buộc Zohran Mamdani, một chính trị gia tại New York, đang kích động hận thù sau khi người này kêu gọi bắt giữ ông Netanyahu nếu ông đến New York dự Đại hội đồng Liên Hợp Quốc. Đồng thời, ông Netanyahu khẳng định các cáo buộc tội ác chiến tranh từ Tòa án Hình sự Quốc tế (ICC) liên quan đến cuộc chiến tại Gaza là hoàn toàn giả mạo và vẫn giữ kế hoạch tới New York trong năm nay.",
+      "causes": [
+        "Việc ông Netanyahu dự kiến tham dự Đại hội đồng Liên Hợp Quốc tại New York.",
+        "Những kêu gọi bắt giữ ông Netanyahu từ các chính trị gia địa phương dựa trên các cáo buộc từ ICC."
+      ],
+      "effects": [
+        "Căng thẳng ngoại giao giữa các quan chức địa phương Mỹ và lãnh đạo chính phủ Israel.",
+        "Sự chú ý của dư luận quốc tế đối với các cáo buộc tội ác chiến tranh của ICC."
+      ],
+      "affected_groups": [
+        "Chính phủ Israel",
+        "Chính quyền thành phố New York",
+        "Tòa án Hình sự Quốc tế (ICC)"
+      ],
+      "market_impact": "Sự kiện hiện tại chưa có tác động trực tiếp đến thị trường tài chính.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh sự phân cực sâu sắc về mặt chính trị đối với vấn đề xung đột tại Gaza, đồng thời cho thấy sự thách thức của các lãnh đạo quốc gia đối với thẩm quyền pháp lý quốc tế.",
+      "unknowns": [
+        "Phản ứng chính thức từ phía cơ quan hành pháp tại New York về việc thực thi lệnh bắt giữ nếu có.",
+        "Lịch trình di chuyển cụ thể của ông Netanyahu khi tới New York."
+      ],
+      "confidence_note": "Thông tin dựa trên các báo cáo thực tế về phát ngôn của ông Netanyahu, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Ông Netanyahu vẫn thực hiện chuyến đi tới New York và duy trì quan điểm cứng rắn trước các cáo buộc.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Phản ứng từ phía chính quyền địa phương tại Mỹ gây áp lực khiến lịch trình hoặc cách thức tham dự của đoàn Israel thay đổi.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Benjamin Netanyahu",
+          "target": "Zohran Mamdani",
+          "relation_type": "conflict",
+          "label": "Tranh cãi gay gắt về vấn đề chính trị và pháp lý"
+        },
+        {
+          "source": "Benjamin Netanyahu",
+          "target": "ICC",
+          "relation_type": "conflict",
+          "label": "Bác bỏ các cáo buộc pháp lý"
+        }
+      ],
+      "entities": [
+        "Benjamin Netanyahu",
+        "Zohran Mamdani",
+        "Israel",
+        "New York City"
+      ],
+      "keywords": [
+        "Netanyahu",
+        "Mamdani",
+        "ICC",
+        "Israel",
+        "New York"
+      ],
+      "importance": 80,
+      "scope": "national"
+    }
+  },
+  "evt_7db6c30d": {
+    "created_at": 1785107988060,
+    "expires_at": 1787699988060,
+    "version": "4.5",
+    "checksum": "7cc4d44b25dd30301fa9476d8b3a15f6",
+    "data": {
+      "cluster_title": "Milei ủng hộ ứng cử viên Flávio Bolsonaro",
+      "short_summary": "Tổng thống Argentina Javier Milei ủng hộ ứng cử viên tổng thống Flávio Bolsonaro, gây ra phản ứng từ chính phủ Brazil.",
+      "detailed_summary": "Trong chuyến thăm São Paulo để dự hội nghị của Đảng Tự do, Tổng thống Argentina Javier Milei đã công khai ủng hộ Thượng nghị sĩ Flávio Bolsonaro tranh cử Tổng thống Brazil. Tại sự kiện này, ông Milei đưa ra những lời chỉ trích gay gắt nhắm vào đương kim Tổng thống Brazil Luiz Inácio Lula da Silva. Đáp lại, chính phủ Brazil đã triệu hồi đại sứ của mình tại Argentina để tham vấn, đồng thời khẳng định Brazil không chịu áp lực từ các phát ngôn này.",
+      "causes": [
+        "Javier Milei ủng hộ phe cánh hữu đối lập tại Brazil do Flávio Bolsonaro đại diện.",
+        "Sự bất đồng quan điểm chính trị gay gắt giữa chính phủ cánh hữu của Argentina và chính phủ cánh tả của Brazil."
+      ],
+      "effects": [
+        "Căng thẳng ngoại giao gia tăng giữa hai quốc gia lớn nhất Nam Mỹ.",
+        "Brazil triệu hồi đại sứ tại Argentina về nước để tham vấn."
+      ],
+      "affected_groups": [
+        "Chính phủ Argentina",
+        "Chính phủ Brazil",
+        "Đảng Tự do (PL) Brazil"
+      ],
+      "market_impact": "Có khả năng gây bất ổn tâm lý đầu tư trong khu vực do rủi ro căng thẳng thương mại giữa hai đối tác lớn trong khối Mercosur.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh sự chia rẽ tư tưởng sâu sắc tại Nam Mỹ, làm suy yếu sự phối hợp chính trị và ngoại giao giữa hai nền kinh tế chủ chốt trong khu vực.",
+      "unknowns": [
+        "Tác động cụ thể đến các hiệp định thương mại song phương trong tương lai.",
+        "Phản ứng tiếp theo của các cơ quan ngoại giao hai nước sau khi triệu hồi đại sứ."
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên các phản ứng chính thức từ chính phủ và giới chức ngoại giao.",
+      "scenarios": [
+        {
+          "text": "Hai nước tiếp tục duy trì quan hệ ngoại giao ở cấp thấp và gia tăng các rào cản chính trị.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Xảy ra cuộc khủng hoảng ngoại giao kéo dài dẫn đến sự đình trệ trong các hoạt động hợp tác tại khối Mercosur.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Javier Milei",
+          "target": "Flávio Bolsonaro",
+          "relation_type": "cooperation",
+          "label": "Ủng hộ ứng cử chính trị"
+        },
+        {
+          "source": "Javier Milei",
+          "target": "Luiz Inácio Lula da Silva",
+          "relation_type": "conflict",
+          "label": "Chỉ trích gay gắt"
+        },
+        {
+          "source": "Chính phủ Brazil",
+          "target": "Chính phủ Argentina",
+          "relation_type": "conflict",
+          "label": "Triệu hồi đại sứ"
+        }
+      ],
+      "entities": [
+        "Javier Milei",
+        "Flávio Bolsonaro",
+        "Luiz Inácio Lula da Silva"
+      ],
+      "keywords": [
+        "Milei",
+        "Flávio Bolsonaro",
+        "Brazil",
+        "Argentina"
+      ],
+      "importance": 80,
+      "scope": "national"
+    }
+  },
+  "evt_c761c616": {
+    "created_at": 1785107999581,
+    "expires_at": 1787699999581,
+    "version": "4.5",
+    "checksum": "b0862a6feaef401b00654695aa1e7fbe",
+    "data": {
+      "cluster_title": "Hạ giá dầu, tăng giá cổ phiếu Mỹ",
+      "short_summary": "Dầu giảm giá, cổ phiếu Mỹ tăng giá sau khi Mỹ và Iran tạm dừng tấn công.",
+      "detailed_summary": "Giá dầu thế giới sụt giảm trong khi các chỉ số chứng khoán tương lai tại Mỹ khởi sắc vào đầu tuần. Nguyên nhân chính xuất phát từ việc Mỹ và Iran tạm ngừng các cuộc tấn công quân sự trong hai đêm liên tiếp, giúp giảm bớt lo ngại về gián đoạn nguồn cung năng lượng. Đồng thời, thị trường cũng đang chuẩn bị tâm thế cho tuần làm việc bận rộn với cuộc họp của Cục Dự trữ Liên bang Mỹ (Fed) và báo cáo tài chính từ các tập đoàn công nghệ lớn.",
+      "causes": [
+        "Mỹ và Iran tạm dừng các hoạt động quân sự trong hai đêm liên tiếp",
+        "Sự giảm bớt nỗi lo về gián đoạn nguồn cung dầu thô tại khu vực Trung Đông"
+      ],
+      "effects": [
+        "Giá dầu thô trên thị trường thế giới giảm xuống",
+        "Chỉ số hợp đồng tương lai của thị trường chứng khoán Mỹ tăng điểm"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư thị trường tài chính toàn cầu",
+        "Các doanh nghiệp năng lượng và dầu khí",
+        "Các tập đoàn công nghệ lớn tại Mỹ"
+      ],
+      "market_impact": "Thị trường phản ứng tích cực với thông tin hòa hoãn quân sự, thể hiện qua sự phục hồi của chứng khoán và giảm áp lực lên giá năng lượng trước thềm các sự kiện kinh tế quan trọng.",
+      "follow_up": "",
+      "significance": "Sự kiện cho thấy tâm lý nhà đầu tư rất nhạy cảm với các biến động địa chính trị tại Trung Đông, đặc biệt khi các quyết định quan trọng của Fed và kết quả kinh doanh sắp được công bố.",
+      "unknowns": [
+        "Thời gian kéo dài của việc tạm dừng xung đột giữa Mỹ và Iran",
+        "Phản ứng cụ thể của thị trường khi các báo cáo tài chính của tập đoàn công nghệ lớn chính thức được công bố"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao vì dựa trên dữ liệu diễn biến thị trường và các báo cáo tình hình thực tế đã xảy ra.",
+      "scenarios": [
+        {
+          "text": "Thị trường tiếp tục ổn định nếu căng thẳng Mỹ - Iran không leo thang trở lại.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Thị trường biến động mạnh trở lại nếu xuất hiện các diễn biến quân sự mới tại Trung Đông.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Mỹ",
+          "target": "Iran",
+          "relation_type": "conflict",
+          "label": "Tạm dừng các cuộc tấn công quân sự sau giai đoạn leo thang"
+        },
+        {
+          "source": "Căng thẳng địa chính trị",
+          "target": "Giá dầu",
+          "relation_type": "cause_effect",
+          "label": "Tác động trực tiếp đến biến động giá dầu thế giới"
+        }
+      ],
+      "entities": [
+        "Mỹ",
+        "Iran"
+      ],
+      "keywords": [
+        "dầu",
+        "cổ phiếu",
+        "Mỹ",
+        "Iran"
+      ],
+      "importance": 80,
+      "scope": "global"
+    }
+  },
+  "evt_2e05261e": {
+    "created_at": 1785108011002,
+    "expires_at": 1787700011002,
+    "version": "4.5",
+    "checksum": "445f93d3883d10da22db5e317e775e55",
+    "data": {
+      "cluster_title": "Hạm đội Mỹ tạm dừng tấn công Iran",
+      "short_summary": "Hạm đội Mỹ tạm dừng tấn công Iran sau khi các quan chức quân sự khuyên Tổng thống Trump nên dừng chiến dịch này.",
+      "detailed_summary": "Mỹ đã ngừng các chiến dịch ném bom Iran trong hai đêm liên tiếp sau khi các quan chức quân sự cấp cao tư vấn cho Tổng thống Donald Trump rằng chiến dịch đã đạt đến giới hạn hiệu quả và kho dự trữ đạn dược đang cạn kiệt. Trong khi đó, các trung gian, đứng đầu là Oman, đang tích cực nỗ lực đạt được thỏa thuận về việc lưu thông qua eo biển Hormuz để ngăn chặn một cuộc chiến tranh toàn diện.",
+      "causes": [
+        "Lời khuyên từ các quan chức quân sự cấp cao về việc chiến dịch ném bom đã đạt giới hạn hiệu quả",
+        "Sự suy giảm kho dự trữ đạn dược của Mỹ",
+        "Nỗ lực hòa giải ngoại giao của Oman nhằm tránh xung đột quân sự leo thang"
+      ],
+      "effects": [
+        "Tình hình quân sự tạm thời hạ nhiệt trong hai đêm",
+        "Tạo không gian cho các cuộc đàm phán ngoại giao về an ninh tại eo biển Hormuz"
+      ],
+      "affected_groups": [
+        "Chính phủ Hoa Kỳ",
+        "Chính phủ Iran",
+        "Các quốc gia phụ thuộc vào nguồn cung ứng dầu mỏ qua eo biển Hormuz"
+      ],
+      "market_impact": "Giảm bớt lo ngại về rủi ro nguồn cung năng lượng toàn cầu, giúp ổn định giá dầu trong ngắn hạn.",
+      "follow_up": "",
+      "significance": "Đây là bước ngoặt quan trọng khi Mỹ chuyển từ biện pháp quân sự sang ngoại giao, cho thấy giới hạn của sức mạnh quân sự trước nguy cơ chiến tranh quy mô lớn.",
+      "unknowns": [
+        "Liệu Iran có chấp nhận các điều kiện đàm phán của Oman hay không",
+        "Thời hạn cụ thể của việc tạm dừng không kích là bao lâu"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên báo cáo về các nguồn tin quân sự và nỗ lực ngoại giao từ Oman.",
+      "scenarios": [
+        {
+          "text": "Các bên đạt được thỏa thuận tạm thời để ổn định lưu thông tại eo biển Hormuz.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các cuộc đàm phán thất bại dẫn đến khả năng Mỹ tái khởi động chiến dịch quân sự.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Mỹ",
+          "target": "Iran",
+          "relation_type": "conflict",
+          "label": "Xung đột quân sự và không kích"
+        },
+        {
+          "source": "Oman",
+          "target": "Mỹ và Iran",
+          "relation_type": "cooperation",
+          "label": "Trung gian hòa giải để đạt được thỏa thuận"
+        }
+      ],
+      "entities": [
+        "Hạm đội Mỹ",
+        "Iran"
+      ],
+      "keywords": [
+        "Mỹ",
+        "Iran",
+        "tấn công",
+        "hạm đội"
+      ],
+      "importance": 92,
+      "scope": "national"
+    }
+  },
+  "evt_5cfcd320": {
+    "created_at": 1785108022401,
+    "expires_at": 1787700022401,
+    "version": "4.5",
+    "checksum": "9073f088356b5750b72cef22a6ad1021",
+    "data": {
+      "cluster_title": "Cơn cháy rừng dữ dội ở Pháp và Tây Ban Nha",
+      "short_summary": "Cơn cháy rừng dữ dội đang hoành hành gần các thành phố Pháp và Tây Ban Nha, khiến khoảng 335.000 người phải di dời.",
+      "detailed_summary": "Các đám cháy rừng dữ dội đang lan rộng tại Pháp và Tây Ban Nha, đe dọa các khu vực đô thị như Bordeaux. Chính quyền hai nước đã phải sơ tán khoảng 335.000 người. Các quan chức mô tả đây là những đám cháy hung hãn và chưa từng có tiền lệ trong lịch sử ghi nhận tại khu vực này.",
+      "causes": [
+        "Điều kiện thời tiết khắc nghiệt khiến cháy rừng bùng phát mạnh",
+        "Sự lan rộng nhanh chóng của các đám cháy tự nhiên gây nguy hiểm cho khu dân cư"
+      ],
+      "effects": [
+        "Khoảng 335.000 người phải sơ tán khẩn cấp",
+        "Đe dọa trực tiếp đến các thành phố lớn, bao gồm Bordeaux",
+        "Thiệt hại lớn về môi trường và nguồn lực ứng phó thiên tai"
+      ],
+      "affected_groups": [
+        "Người dân sinh sống tại các vùng bị cháy rừng ở Pháp và Tây Ban Nha",
+        "Chính quyền địa phương và các đơn vị cứu hỏa hai nước"
+      ],
+      "market_impact": "Có khả năng gây gián đoạn chuỗi cung ứng cục bộ, tác động tiêu cực đến ngành du lịch và bất động sản tại các khu vực bị ảnh hưởng.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh mức độ nghiêm trọng của biến đổi khí hậu thông qua các hiện tượng thời tiết cực đoan, gây áp lực lớn lên khả năng ứng phó của chính phủ hai nước.",
+      "unknowns": [
+        "Diện tích cụ thể và mức độ thiệt hại tài sản tại các vùng bị ảnh hưởng",
+        "Thời điểm cụ thể các đám cháy được kiểm soát hoàn toàn",
+        "Số liệu chính xác về thương vong (nếu có)"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên các tuyên bố từ quan chức nội vụ và dữ liệu sơ tán được ghi nhận.",
+      "scenarios": [
+        {
+          "text": "Các lực lượng cứu hộ kiểm soát được đám cháy nhờ thay đổi thời tiết thuận lợi",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các đám cháy tiếp tục lan rộng, đòi hỏi sự hỗ trợ quốc tế mạnh mẽ hơn",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Chính phủ Pháp",
+          "target": "Chính phủ Tây Ban Nha",
+          "relation_type": "cooperation",
+          "label": "Phối hợp ứng phó với thảm họa thiên tai xuyên biên giới"
+        }
+      ],
+      "entities": [
+        "Laurent Nuñez",
+        "Bordeaux"
+      ],
+      "keywords": [
+        "cơn cháy rừng",
+        "Pháp",
+        "Tây Ban Nha"
+      ],
+      "importance": 95,
+      "scope": "national"
+    }
+  },
+  "evt_bb9b4769": {
+    "created_at": 1785108038231,
+    "expires_at": 1787700038231,
+    "version": "4.5",
+    "checksum": "d00d323b348d7f2c887dabd7439a452b",
+    "data": {
+      "cluster_title": "Đánh giá về vụ bắn ở Maine",
+      "short_summary": "Tổng thống Trump đã chỉ trích vụ bắn ở Maine, nói rằng người lính an ninh không nên được tuyển chọn.",
+      "detailed_summary": "Tom Homan, người phụ trách vấn đề biên giới của chính quyền Trump, thông báo rằng quy trình tuyển dụng và đánh giá sĩ quan thuộc Cơ quan Thực thi Di trú và Hải quan (ICE) đang bị kiểm tra nội bộ. Quyết định này được đưa ra sau khi truyền thông đưa tin sĩ quan liên quan đến vụ nổ súng làm chết một người Colombia tại Maine từng bị các vợ cũ cáo buộc có hành vi bạo hành, đặt ra nghi vấn về tính minh bạch trong khâu kiểm soát nhân sự của cơ quan này.",
+      "causes": [
+        "Vụ nổ súng gây tử vong liên quan đến một sĩ quan ICE tại Maine",
+        "Phát hiện thông tin sĩ quan này từng có lịch sử bị cáo buộc bạo hành bởi người thân"
+      ],
+      "effects": [
+        "Triển khai rà soát nội bộ đối với quy trình kiểm tra lý lịch sĩ quan",
+        "Gây áp lực dư luận lên quy trình tuyển dụng của ICE",
+        "Khơi dậy tranh cãi về năng lực phục vụ của nhân viên thực thi pháp luật liên bang"
+      ],
+      "affected_groups": [
+        "Cơ quan Thực thi Di trú và Hải quan (ICE)",
+        "Nạn nhân người Colombia và gia đình",
+        "Cộng đồng di dân tại Maine",
+        "Tom Homan và chính quyền Trump"
+      ],
+      "market_impact": "Sự kiện mang tính chất xã hội và chính trị nội bộ, không có tác động trực tiếp đến thị trường tài chính.",
+      "follow_up": "",
+      "significance": "Sự việc đặt ra yêu cầu khắt khe về tính minh bạch và tiêu chuẩn đạo đức đối với đội ngũ thực thi pháp luật tại biên giới, đồng thời có thể dẫn đến cải tổ quy trình tuyển dụng trong các cơ quan thuộc Bộ An ninh Nội địa Hoa Kỳ.",
+      "unknowns": [
+        "Kết quả cụ thể của cuộc kiểm tra nội bộ đối với sĩ quan nói trên",
+        "Lý do tại sao các cáo buộc bạo hành trước đó không được phát hiện hoặc bị bỏ qua trong quy trình kiểm tra đầu vào"
+      ],
+      "confidence_note": "Thông tin dựa trên báo cáo từ truyền thông uy tín, độ tin cậy cao về mặt sự kiện nhưng đang trong quá trình điều tra.",
+      "scenarios": [
+        {
+          "text": "Cơ quan ICE siết chặt quy trình rà soát lý lịch và yêu cầu các sĩ quan có lịch sử bạo hành rời khỏi lực lượng.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Sự kiện dẫn đến một cuộc điều tra chính thức trên diện rộng từ Quốc hội đối với hệ thống nhân sự của ICE.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Tom Homan",
+          "target": "ICE",
+          "relation_type": "cause_effect",
+          "label": "Giám sát và yêu cầu rà soát nội bộ"
+        },
+        {
+          "source": "Sĩ quan ICE",
+          "target": "Nạn nhân người Colombia",
+          "relation_type": "conflict",
+          "label": "Liên quan trực tiếp đến vụ nổ súng"
+        }
+      ],
+      "entities": [
+        "Donald Trump",
+        "Tom Homan",
+        "Colombia",
+        "Maine"
+      ],
+      "keywords": [
+        "US border tsar",
+        "ICE officer",
+        "Maine shooting"
+      ],
+      "importance": 80,
+      "scope": "national"
+    }
+  },
+  "evt_f7910c45": {
+    "created_at": 1785108049461,
+    "expires_at": 1787700049461,
+    "version": "4.5",
+    "checksum": "7f11a4bbe04c93d3ce9edeb7a1fe64b7",
+    "data": {
+      "cluster_title": "Hernandez Trở về Honduras",
+      "short_summary": "Juan Orlando Hernandez, cựu tổng thống Honduras, đã trở về quê hương sau khi được Tổng thống Trump xóa án.",
+      "detailed_summary": "Juan Orlando Hernandez, người từng bị kết án 45 năm tù tại Mỹ vì tội buôn lậu ma túy, đã trở về Honduras vào Chủ nhật. Sự kiện này diễn ra sau khi ông nhận được lệnh ân xá từ Tổng thống Donald Trump, người trước đó đã cáo buộc phiên tòa xét xử Hernandez là một vụ dàn dựng bởi chính quyền Tổng thống Biden.",
+      "causes": [
+        "Quyết định ân xá của Tổng thống Donald Trump dành cho Juan Orlando Hernandez",
+        "Quan điểm của ông Trump cho rằng các cáo buộc pháp lý chống lại Hernandez mang động cơ chính trị từ chính quyền tiền nhiệm"
+      ],
+      "effects": [
+        "Sự trở về của cựu Tổng thống tại Honduras",
+        "Gia tăng tranh cãi về tính công bằng của các quy trình tư pháp quốc tế"
+      ],
+      "affected_groups": [
+        "Chính phủ Honduras",
+        "Hệ thống tư pháp Hoa Kỳ",
+        "Công chúng tại Honduras"
+      ],
+      "market_impact": "Thông tin không đề cập đến tác động tài chính hoặc thị trường cụ thể.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh sự đảo chiều trong chính sách tư pháp và quan điểm ngoại giao của Mỹ, có khả năng ảnh hưởng đến quan hệ Mỹ - Honduras.",
+      "unknowns": [
+        "Phản ứng chính thức và các bước đi tiếp theo của chính phủ Honduras đối với sự trở về của cựu Tổng thống",
+        "Dư luận xã hội và các rủi ro bất ổn chính trị tại Honduras"
+      ],
+      "confidence_note": "Thông tin dựa trên diễn biến thực tế đã xảy ra, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Sự trở về của Hernandez gây ra các cuộc biểu tình hoặc xáo trộn chính trị tại Honduras.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Chính phủ Honduras thực hiện các biện pháp kiểm soát hoặc giám sát nghiêm ngặt đối với cá nhân này.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Donald Trump",
+          "target": "Juan Orlando Hernandez",
+          "relation_type": "cooperation",
+          "label": "Ân xá cho tội phạm bị kết án"
+        },
+        {
+          "source": "Donald Trump",
+          "target": "Chính quyền Biden",
+          "relation_type": "conflict",
+          "label": "Cáo buộc dàn dựng phiên tòa"
+        }
+      ],
+      "entities": [
+        "Juan Orlando Hernandez",
+        "Donald Trump",
+        "Honduras"
+      ],
+      "keywords": [
+        "Juan Orlando Hernandez",
+        "Trump",
+        "Honduras",
+        "phá án"
+      ],
+      "importance": 80,
+      "scope": "national"
+    }
+  },
+  "evt_466d678a": {
+    "created_at": 1785108061063,
+    "expires_at": 1787700061063,
+    "version": "4.5",
+    "checksum": "311926bac901adaa708053ad10536c37",
+    "data": {
+      "cluster_title": "Apple chuẩn bị ra mắt kính thông minh",
+      "short_summary": "Apple chuẩn bị ra mắt kính thông minh, nhưng lo ngại về bảo mật đang trở thành vấn đề lớn.",
+      "detailed_summary": "Theo Mark Gurman, Apple đang chuẩn bị công bố dòng kính thông minh đầu tiên tại sự kiện WWDC vào tháng 6 tới và dự kiến tung ra thị trường vào cuối năm. Trong quá trình phát triển, công ty tập trung giải quyết các lo ngại về quyền riêng tư để tạo sự khác biệt so với các đối thủ như Meta, vốn đang vấp phải nhiều tranh cãi về thiết bị đeo tích hợp AI.",
+      "causes": [
+        "Sự cạnh tranh trong phân khúc thiết bị đeo thông minh với các đối thủ như Meta.",
+        "Nhu cầu giải quyết các lo ngại về quyền riêng tư để thu hút người tiêu dùng."
+      ],
+      "effects": [
+        "Apple định vị thương hiệu dựa trên cam kết bảo mật cho sản phẩm mới.",
+        "Tăng sự quan tâm của công chúng và giới công nghệ đối với sự kiện WWDC sắp tới."
+      ],
+      "affected_groups": [
+        "Người tiêu dùng sản phẩm công nghệ.",
+        "Các nhà sản xuất thiết bị đeo thông minh.",
+        "Các chuyên gia an ninh mạng và quyền riêng tư."
+      ],
+      "market_impact": "Sự xuất hiện của Apple có thể thay đổi tiêu chuẩn về bảo mật trong thị trường kính thông minh và gây áp lực cạnh tranh lên các đối thủ hiện tại.",
+      "follow_up": "",
+      "significance": "Sự kiện này đánh dấu bước tiến quan trọng của Apple vào thị trường thiết bị đeo thông minh, nơi quyền riêng tư trở thành yếu tố then chốt để cạnh tranh và xây dựng lòng tin.",
+      "unknowns": [
+        "Thông số kỹ thuật chi tiết của kính thông minh Apple.",
+        "Phương thức cụ thể mà Apple sử dụng để đảm bảo quyền riêng tư trên sản phẩm.",
+        "Giá bán dự kiến và thị trường mục tiêu cụ thể."
+      ],
+      "confidence_note": "Thông tin dựa trên dự báo từ nguồn tin uy tín (Mark Gurman), độ tin cậy tương đối cao nhưng vẫn ở mức kế hoạch dự kiến.",
+      "scenarios": [
+        {
+          "text": "Apple thành công trong việc thuyết phục người dùng về tính bảo mật và thiết lập chuẩn mực mới cho ngành.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Sản phẩm gặp khó khăn về kỹ thuật hoặc phản ứng tiêu cực từ dư luận liên quan đến quyền riêng tư giống như các đối thủ.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Apple",
+          "target": "Meta",
+          "relation_type": "neutral",
+          "label": "Đối thủ cạnh tranh trong mảng thiết bị đeo thông minh"
+        },
+        {
+          "source": "Mark Gurman",
+          "target": "Apple",
+          "relation_type": "neutral",
+          "label": "Nguồn tin cung cấp dữ liệu về kế hoạch nội bộ"
+        }
+      ],
+      "entities": [
+        "Apple",
+        "Meta"
+      ],
+      "keywords": [
+        "Apple",
+        "kính thông minh",
+        "bảo mật"
+      ],
+      "importance": 80,
+      "scope": "global"
+    }
+  },
+  "evt_ad42aa1d": {
+    "created_at": 1785108067153,
+    "expires_at": 1787700067153,
+    "version": "4.5",
+    "checksum": "870f4aee18b8289c6ad37e8a12a8ace6",
+    "data": {
+      "cluster_title": "Tadej Pogačar chiến thắng Tour de France 2026",
+      "short_summary": "Tadej Pogačar, một tay đua xe đạp người Slovenia, đã giành chiến thắng Tour de France 2026, chiến thắng thứ năm của anh trong cuộc đua này.",
       "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
       "causes": [],
       "effects": [],
@@ -14,197 +636,2993 @@
       "market_impact": "",
       "follow_up": "",
       "entities": [
-        "Nvidia Corp",
-        "SpaceX"
+        "Tadej Pogačar",
+        "Slovenia"
       ],
       "keywords": [
-        "Traders",
-        "Nvidia Corp",
-        "SpaceX"
+        "Tadej Pogačar",
+        "Tour de France",
+        "Slovenia"
       ],
-      "importance": 60,
-      "scope": "business"
-    }
-  },
-  "evt_general_1785089654531": {
-    "created_at": 1785089660160,
-    "expires_at": 1787681660160,
-    "version": "4.5",
-    "checksum": "db54a49cf8a0788c5c8c9985e696ec80",
-    "data": {
-      "cluster_title": "Sự kiện Big Tech Earnings",
-      "short_summary": "Các công ty công nghệ lớn ở Mỹ đang phải đối mặt với sự thay đổi trong cách tiếp cận của nhà đầu tư đối với chi tiêu cho trí tuệ nhân tạo.",
-      "detailed_summary": "Trong nhiều năm, các tập đoàn công nghệ lớn tại Mỹ được nhà đầu tư ủng hộ việc chi tiêu mạnh tay cho trí tuệ nhân tạo, miễn là doanh thu tăng trưởng đều đặn. Tuy nhiên, tình thế hiện tại đã thay đổi khi thị trường bắt đầu phản đối mức chi tiêu này, báo hiệu sự kết thúc của mối quan hệ cộng sinh giữa doanh nghiệp công nghệ và nhà đầu tư.",
-      "causes": [
-        "Chi tiêu quá lớn cho hạ tầng trí tuệ nhân tạo",
-        "Sự thay đổi thái độ từ phía các nhà đầu tư đối với hiệu quả đầu tư công nghệ"
-      ],
-      "effects": [
-        "Áp lực lên giá cổ phiếu của các tập đoàn công nghệ lớn",
-        "Sự lung lay của mô hình tăng trưởng dựa trên chi tiêu cho trí tuệ nhân tạo"
-      ],
-      "affected_groups": [
-        "Các tập đoàn công nghệ lớn tại Mỹ",
-        "Nhà đầu tư thị trường chứng khoán"
-      ],
-      "market_impact": "Thị trường tài chính đang trong trạng thái biến động và phản kháng đối với chiến lược chi tiêu của các doanh nghiệp lớn.",
-      "follow_up": "",
-      "significance": "Sự kiện đánh dấu bước ngoặt khi thị trường yêu cầu kết quả tài chính cụ thể thay vì chỉ dựa vào tiềm năng tăng trưởng từ đầu tư trí tuệ nhân tạo.",
-      "unknowns": [
-        "Mức độ cắt giảm chi phí mà các công ty sẽ thực hiện để xoa dịu nhà đầu tư",
-        "Liệu doanh thu từ trí tuệ nhân tạo có đạt được kỳ vọng trong tương lai gần hay không"
-      ],
-      "confidence_note": "Thông tin dựa trên diễn biến thị trường tài chính công khai, độ tin cậy cao.",
-      "scenarios": [
-        {
-          "text": "Các tập đoàn công nghệ điều chỉnh chiến lược chi tiêu để ưu tiên lợi nhuận ngắn hạn",
-          "likelihood": "cao"
-        },
-        {
-          "text": "Thị trường tiếp tục bán tháo cổ phiếu công nghệ do lo ngại về hiệu quả vốn",
-          "likelihood": "trung bình"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Big Tech",
-          "target": "Nhà đầu tư",
-          "relation_type": "conflict",
-          "label": "Mâu thuẫn về chiến lược chi tiêu cho trí tuệ nhân tạo"
-        }
-      ],
-      "entities": [
-        "US",
-        "các công ty công nghệ lớn"
-      ],
-      "keywords": [
-        "Big Tech",
-        "Earnings",
-        "AI",
-        "Spending"
-      ],
-      "importance": 85,
+      "importance": 80,
       "scope": "national"
     }
   },
-  "evt_41a68549": {
-    "created_at": 1785089671577,
-    "expires_at": 1787681671577,
+  "evt_c2344edc": {
+    "created_at": 1785108078396,
+    "expires_at": 1787700078396,
     "version": "4.5",
-    "checksum": "ac1b368b996e75d9b7e752fbfcd54858",
+    "checksum": "eba04922d45e10b5b7ed67eddc775ba8",
     "data": {
-      "cluster_title": "Sự kiện ETF Brazil tăng gấp ba lần",
-      "short_summary": "ETF Brazil tăng gấp ba lần trong bùng nổ cho các quỹ mới tại Latin America.",
-      "detailed_summary": "Thị trường ETF tại Brazil đang trải qua giai đoạn bùng nổ với quy mô tăng gấp ba. Xu hướng này diễn ra song song với sự phát triển nhanh chóng của các quỹ ETF trên toàn khu vực Mỹ Latinh, nơi các nhà đầu tư đang tích cực đổ vốn vào các danh mục sản phẩm tài chính mới được thiết kế phù hợp với nhu cầu nội địa.",
+      "cluster_title": "Đô la New Zealand tăng giá so với euro",
+      "short_summary": "Đô la New Zealand dự kiến tăng giá so với euro do kỳ vọng Ngân hàng Trung ương New Zealand sẽ tăng lãi suất nhanh hơn Ngân hàng Trung ương châu Âu.",
+      "detailed_summary": "Các chuyên gia chiến lược thị trường dự báo đồng đô la New Zealand có khả năng đạt mức cao nhất trong hơn một năm so với đồng Euro. Nguyên nhân chính là kỳ vọng ngân hàng trung ương New Zealand sẽ thực hiện các đợt tăng lãi suất với tốc độ nhanh và quyết liệt hơn so với Ngân hàng Trung ương châu Âu.",
       "causes": [
-        "Sự gia tăng nhu cầu từ các nhà đầu tư trong nước đối với các sản phẩm tài chính đa dạng",
-        "Việc các tổ chức tài chính đẩy mạnh tung ra các sản phẩm ETF mới"
+        "Dự báo về việc Ngân hàng Trung ương New Zealand đẩy nhanh tiến độ tăng lãi suất.",
+        "Khoảng cách chênh lệch lãi suất ngày càng nới rộng giữa New Zealand và khu vực châu Âu."
       ],
       "effects": [
-        "Quy mô thị trường ETF tại Brazil tăng gấp ba lần",
-        "Sự phát triển nhanh chóng của hệ sinh thái các quỹ đầu tư tại Mỹ Latinh"
+        "Đồng đô la New Zealand tăng giá trị so với đồng Euro.",
+        "Tỷ giá hối đoái giữa hai đồng tiền có sự thay đổi mạnh mẽ theo hướng có lợi cho New Zealand."
       ],
       "affected_groups": [
-        "Các nhà đầu tư cá nhân và tổ chức tại Mỹ Latinh",
-        "Các đơn vị quản lý quỹ và phát hành sản phẩm tài chính"
+        "Nhà đầu tư ngoại hối (Forex).",
+        "Doanh nghiệp xuất nhập khẩu có giao dịch bằng đồng NZD và EUR.",
+        "Các tổ chức tài chính quốc tế."
       ],
-      "market_impact": "Sự bùng nổ của các quỹ ETF cho thấy tính thanh khoản cao và mức độ quan tâm lớn của nhà đầu tư đối với các sản phẩm tài chính nội địa tại Brazil và Mỹ Latinh.",
+      "market_impact": "Thị trường ngoại hối có thể chứng kiến sự dịch chuyển dòng vốn sang đồng đô la New Zealand, tạo áp lực giảm giá lên đồng Euro.",
       "follow_up": "",
-      "significance": "Sự kiện này đánh dấu bước chuyển mình quan trọng của thị trường tài chính Mỹ Latinh, cho thấy sự trưởng thành trong việc cung cấp các công cụ đầu tư hiện đại nhằm đáp ứng nhu cầu nội địa.",
+      "significance": "Sự kiện phản ánh tầm quan trọng của chính sách tiền tệ trong việc định hướng giá trị tiền tệ toàn cầu, cho thấy nhà đầu tư đang tập trung vào sự khác biệt trong lộ trình lãi suất giữa các quốc gia.",
       "unknowns": [
-        "Giá trị tổng tài sản cụ thể được quản lý trong các quỹ ETF này",
-        "Danh sách các loại hình sản phẩm tài chính cụ thể đang dẫn dắt sự tăng trưởng"
+        "Thời điểm cụ thể ngân hàng trung ương các nước sẽ thay đổi lãi suất.",
+        "Mức độ chênh lệch lãi suất chính xác sẽ đạt được trong tương lai."
       ],
-      "confidence_note": "Thông tin có độ tin cậy cao dựa trên các báo cáo thực tế về xu hướng thị trường tài chính.",
+      "confidence_note": "Thông tin dựa trên nhận định của các chuyên gia chiến lược, độ tin cậy phụ thuộc vào thực tế chính sách tiền tệ của các ngân hàng trung ương.",
       "scenarios": [
         {
-          "text": "Thị trường ETF tại Mỹ Latinh tiếp tục đà tăng trưởng nhờ sự đa dạng hóa sản phẩm đầu tư.",
+          "text": "Đồng đô la New Zealand tăng giá mạnh so với Euro khi lộ trình tăng lãi suất được xác nhận.",
           "likelihood": "cao"
         },
         {
-          "text": "Sự cạnh tranh gay gắt giữa các nhà phát hành quỹ có thể dẫn đến sự đào thải các sản phẩm kém hiệu quả.",
+          "text": "Đồng Euro phục hồi nếu Ngân hàng Trung ương châu Âu thay đổi chiến lược lãi suất bất ngờ.",
           "likelihood": "trung bình"
         }
       ],
       "entity_relations": [
         {
-          "source": "Nhà đầu tư Mỹ Latinh",
-          "target": "Thị trường ETF",
+          "source": "Ngân hàng Trung ương New Zealand",
+          "target": "Đô la New Zealand",
           "relation_type": "cause_effect",
-          "label": "Cầu đẩy mạnh sự phát triển của cung sản phẩm tài chính"
+          "label": "Chính sách lãi suất tác động đến giá trị tiền tệ"
         }
       ],
       "entities": [
-        "Brazil",
-        "Latin America"
+        "New Zealand",
+        "Eurozone"
       ],
       "keywords": [
+        "Đô la New Zealand",
+        "Euro",
+        "Tỷ lệ lãi suất"
+      ],
+      "importance": 80,
+      "scope": "global"
+    }
+  },
+  "evt_7a5dc454": {
+    "created_at": 1785108084636,
+    "expires_at": 1787700084636,
+    "version": "4.5",
+    "checksum": "f82f67720afb0ca6bc1469a5d0d37ae3",
+    "data": {
+      "cluster_title": "Kioxia đối mặt với biến động giá",
+      "short_summary": "Kioxia Holdings Corp. đối mặt với biến động giá mạnh do ETF theo dõi cổ phiếu của công ty sắp được niêm yết tại Mỹ.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "follow_up": "",
+      "entities": [
+        "Kioxia Holdings Corp.",
         "ETF",
-        "Brazil",
-        "Latin America"
+        "cổ phiếu"
+      ],
+      "keywords": [
+        "Kioxia",
+        "ETF",
+        "cổ phiếu"
+      ],
+      "importance": 80,
+      "scope": "business"
+    }
+  },
+  "evt_46a52f34": {
+    "created_at": 1785108095865,
+    "expires_at": 1787700095865,
+    "version": "4.5",
+    "checksum": "4db5bfa1bf1ec91366b041e1818e87ab",
+    "data": {
+      "cluster_title": "Sự kiện lãi suất tăng",
+      "short_summary": "Tình hình căng thẳng ở Trung Đông đã đẩy giá dầu lên cao, gây lo ngại về lạm phát và làm tăng khả năng Fed tăng lãi suất trong tuần này.",
+      "detailed_summary": "Thị trường trái phiếu đang đối mặt với sự bất ổn khi các nhà giao dịch đánh giá khả năng Fed tăng lãi suất vào thứ Tư là hơn 1/3. Sự thay đổi trong dự báo này xuất phát từ việc giá dầu tăng cao do căng thẳng leo thang ở Trung Đông, làm dấy lên những lo ngại về lạm phát và áp lực lên lợi suất trái phiếu.",
+      "causes": [
+        "Căng thẳng địa chính trị tại Trung Đông leo thang",
+        "Giá dầu thế giới tăng cao",
+        "Lo ngại về áp lực lạm phát quay trở lại"
+      ],
+      "effects": [
+        "Tâm lý bất ổn trên thị trường trái phiếu",
+        "Lợi suất trái phiếu tăng cao",
+        "Tăng dự báo khả năng Fed điều chỉnh lãi suất"
+      ],
+      "affected_groups": [
+        "Các nhà giao dịch trái phiếu",
+        "Các nhà đầu tư tài chính",
+        "Các tổ chức hoạch định chính sách tiền tệ"
+      ],
+      "market_impact": "Thị trường đang gia tăng trạng thái phòng thủ, với kỳ vọng về chính sách tiền tệ thắt chặt hơn từ Fed tăng lên rõ rệt.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh mối liên hệ mật thiết giữa ổn định địa chính trị tại Trung Đông và các quyết định về lãi suất của Fed, ảnh hưởng trực tiếp đến thị trường vốn toàn cầu.",
+      "unknowns": [
+        "Quyết định cuối cùng của Fed trong cuộc họp vào thứ Tư",
+        "Diễn biến tiếp theo của căng thẳng tại Trung Đông và tác động dài hạn đến giá năng lượng"
+      ],
+      "confidence_note": "Thông tin dựa trên diễn biến thị trường và kỳ vọng của giới giao dịch, có độ tin cậy cao về mặt ghi nhận xu hướng.",
+      "scenarios": [
+        {
+          "text": "Fed giữ nguyên lãi suất do cân nhắc rủi ro kinh tế lớn hơn lợi ích của việc tăng lãi suất.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Fed quyết định tăng lãi suất nhằm kiềm chế lạm phát từ cú sốc giá dầu.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Căng thẳng Trung Đông",
+          "target": "Giá dầu",
+          "relation_type": "cause_effect",
+          "label": "Nguyên nhân dẫn đến biến động giá"
+        },
+        {
+          "source": "Giá dầu",
+          "target": "Lãi suất Fed",
+          "relation_type": "cause_effect",
+          "label": "Tác động đến kỳ vọng chính sách tiền tệ"
+        }
+      ],
+      "entities": [
+        "Federal Reserve",
+        "chứng khoán"
+      ],
+      "keywords": [
+        "lãi suất",
+        "tăng lãi suất",
+        "Fed",
+        "chứng khoán"
+      ],
+      "importance": 95,
+      "scope": "global"
+    }
+  },
+  "evt_7d24df95": {
+    "created_at": 1785108101834,
+    "expires_at": 1787700101834,
+    "version": "4.5",
+    "checksum": "1669c6b0ec57d925e7f6aa1b72f96734",
+    "data": {
+      "cluster_title": "Người Seattle bật 'chế độ sinh tồn' trong bão giá",
+      "short_summary": "Người dân Seattle phải chật vật gồng gánh vì chi phí sinh hoạt tăng cao gây áp lực lên ngân sách gia đình.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "follow_up": "",
+      "entities": [
+        "Gatcheco"
+      ],
+      "keywords": [
+        "Seattle",
+        "bão giá",
+        "chế độ sinh tồn"
+      ],
+      "importance": 80,
+      "scope": "national"
+    }
+  },
+  "evt_d4328f17": {
+    "created_at": 1785108109713,
+    "expires_at": 1787700109713,
+    "version": "4.5",
+    "checksum": "e4dde16932cbc88d24755de812a85e49",
+    "data": {
+      "cluster_title": "Tên lửa Kheibar Shekan: Át chủ bài mới của Iran",
+      "short_summary": "Tên lửa Kheibar Shekan đang ngày càng giữ vai trò trung tâm trong chiến dịch tấn công của Iran.",
+      "detailed_summary": "Iran đang đẩy mạnh việc đưa tên lửa đạn đạo Kheibar Shekan vào vị trí trọng tâm trong các chiến dịch tấn công. Loại vũ khí này được xem là yếu tố gây ra nhiều thách thức và lo ngại cho phía Mỹ trong bối cảnh tình hình an ninh khu vực phức tạp.",
+      "causes": [
+        "Iran tăng cường năng lực tự chủ về công nghệ tên lửa đạn đạo",
+        "Nhu cầu nâng cao vị thế và năng lực răn đe quân sự của Iran"
+      ],
+      "effects": [
+        "Gia tăng căng thẳng trong quan hệ ngoại giao và quân sự giữa Iran và Mỹ",
+        "Thay đổi các tính toán chiến lược của Mỹ trong khu vực đối với chương trình tên lửa của Iran"
+      ],
+      "affected_groups": [
+        "Chính phủ và quân đội Mỹ",
+        "Chính phủ và quân đội Iran",
+        "Các quốc gia trong khu vực Trung Đông"
+      ],
+      "market_impact": "Có khả năng gây biến động tiêu cực trên thị trường năng lượng do bất ổn địa chính trị tại Trung Đông.",
+      "follow_up": "",
+      "significance": "Kheibar Shekan thể hiện bước tiến trong công nghệ quân sự của Iran, buộc Mỹ phải tái đánh giá chiến lược phòng thủ và răn đe tại khu vực.",
+      "unknowns": [
+        "Các thông số kỹ thuật chi tiết và phạm vi hoạt động thực tế của tên lửa",
+        "Chiến lược đối phó cụ thể của Mỹ đối với loại tên lửa này"
+      ],
+      "confidence_note": "Thông tin dựa trên đánh giá về vai trò quân sự của Iran, độ tin cậy ở mức trung bình do thiếu các dữ liệu kỹ thuật kiểm chứng độc lập.",
+      "scenarios": [
+        {
+          "text": "Iran tiếp tục tăng cường sản xuất và triển khai Kheibar Shekan để răn đe các đối thủ",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Mỹ gia tăng các biện pháp trừng phạt hoặc tăng cường hệ thống phòng thủ tại khu vực để vô hiệu hóa mối đe dọa",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Iran",
+          "target": "Mỹ",
+          "relation_type": "conflict",
+          "label": "Cạnh tranh và đối đầu quân sự thông qua phát triển vũ khí"
+        }
+      ],
+      "entities": [
+        "Iran",
+        "Mỹ"
+      ],
+      "keywords": [
+        "Iran",
+        "Tên lửa Kheibar Shekan",
+        "Mỹ"
+      ],
+      "importance": 90,
+      "scope": "national"
+    }
+  },
+  "evt_c836633e": {
+    "created_at": 1785108121286,
+    "expires_at": 1787700121286,
+    "version": "4.5",
+    "checksum": "f7eba2cf3573764513758200023c102b",
+    "data": {
+      "cluster_title": "Tranh cãi về AI Trung Quốc",
+      "short_summary": "Lãnh đạo công nghệ chia hai vì AI Trung Quốc, Mỹ có thể giới hạn các mô hình mã nguồn mở.",
+      "detailed_summary": "Các CEO từ các tập đoàn công nghệ hàng đầu thế giới bao gồm Nvidia, Google, Microsoft và Meta đã cùng ký vào một lá thư chung. Văn bản này thể hiện quan điểm phản đối việc chính phủ Mỹ áp đặt các hạn chế đối với các mô hình trí tuệ nhân tạo mã nguồn mở, trong bối cảnh tranh cãi về việc kiểm soát công nghệ đối với Trung Quốc đang ngày càng gay gắt.",
+      "causes": [
+        "Nguy cơ chính phủ Mỹ áp đặt quy định giới hạn các mô hình trí tuệ nhân tạo mã nguồn mở.",
+        "Sự cạnh tranh chiến lược về công nghệ giữa Mỹ và Trung Quốc."
+      ],
+      "effects": [
+        "Tạo ra một mặt trận thống nhất từ các tập đoàn công nghệ lớn để gây ảnh hưởng đến chính sách.",
+        "Khơi dậy tranh cãi về việc cân bằng giữa an ninh quốc gia và sự phát triển công nghệ mở."
+      ],
+      "affected_groups": [
+        "Các tập đoàn công nghệ đa quốc gia",
+        "Cộng đồng nghiên cứu và phát triển trí tuệ nhân tạo",
+        "Cơ quan quản lý chính sách của chính phủ Mỹ"
+      ],
+      "market_impact": "Gây tâm lý bất ổn trong giới đầu tư công nghệ do rủi ro pháp lý liên quan đến các mô hình mã nguồn mở và hoạt động kinh doanh tại thị trường Trung Quốc.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh cuộc đối đầu giữa quyền tự do phát triển công nghệ mã nguồn mở và nhu cầu thắt chặt quản lý an ninh quốc gia trong kỷ nguyên trí tuệ nhân tạo.",
+      "unknowns": [
+        "Nội dung chi tiết cụ thể trong lá thư kiến nghị.",
+        "Phản ứng chính thức và các bước đi tiếp theo của chính phủ Mỹ đối với lá thư này."
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên dữ liệu về hành động chung của các tập đoàn công nghệ lớn.",
+      "scenarios": [
+        {
+          "text": "Chính phủ Mỹ cân nhắc kỹ lưỡng và đưa ra các quy định linh hoạt hơn để không cản trở sự phát triển công nghệ.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Mỹ vẫn tiến hành siết chặt kiểm soát mã nguồn mở dựa trên các lo ngại về an ninh quốc gia bất chấp sự phản đối.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "CEO Nvidia, Google, Microsoft, Meta",
+          "target": "Chính phủ Mỹ",
+          "relation_type": "conflict",
+          "label": "Phản đối quy định hạn chế AI"
+        },
+        {
+          "source": "Mỹ",
+          "target": "Trung Quốc",
+          "relation_type": "conflict",
+          "label": "Cạnh tranh công nghệ trí tuệ nhân tạo"
+        }
+      ],
+      "entities": [
+        "Trung Quốc",
+        "Nvidia",
+        "Google",
+        "Microsoft",
+        "Meta"
+      ],
+      "keywords": [
+        "AI",
+        "Trung Quốc",
+        "Nvidia",
+        "Google",
+        "Microsoft",
+        "Meta"
+      ],
+      "importance": 90,
+      "scope": "global"
+    }
+  },
+  "evt_2cb0bc7a": {
+    "created_at": 1785108132674,
+    "expires_at": 1787700132674,
+    "version": "4.5",
+    "checksum": "c41a131447a70c9d59403a3339913344",
+    "data": {
+      "cluster_title": "Trung Quốc phát triển AI gây xôn xao Thung lũng Silicon",
+      "short_summary": "Sự xuất hiện của AI Trung Quốc khiến Thung lũng Silicon 'đứng ngồi không yên'",
+      "detailed_summary": "Sau sự kiện của DeepSeek, mô hình trí tuệ nhân tạo Kimi K3 tiếp tục là cái tên mới từ Trung Quốc thu hút sự quan tâm của giới công nghệ Mỹ. Sự tiến bộ này đặt ra câu hỏi về năng lực cạnh tranh thực tế của các công ty công nghệ Trung Quốc so với các mô hình tiên tiến hàng đầu của Mỹ.",
+      "causes": [
+        "Sự ra đời và công bố mô hình AI Kimi K3.",
+        "Nỗ lực cải tiến công nghệ AI của các doanh nghiệp Trung Quốc."
+      ],
+      "effects": [
+        "Gia tăng áp lực cạnh tranh đối với các công ty công nghệ tại Thung lũng Silicon.",
+        "Thúc đẩy các cuộc tranh luận về việc thu hẹp khoảng cách công nghệ AI giữa Mỹ và Trung Quốc."
+      ],
+      "affected_groups": [
+        "Các doanh nghiệp công nghệ tại Thung lũng Silicon",
+        "Các công ty phát triển AI tại Trung Quốc",
+        "Giới chuyên gia và nhà đầu tư trong ngành công nghệ toàn cầu"
+      ],
+      "market_impact": "Gây tâm lý chú ý và quan sát chặt chẽ từ thị trường công nghệ, làm tăng áp lực cạnh tranh trong lĩnh vực phát triển mô hình ngôn ngữ lớn.",
+      "follow_up": "",
+      "significance": "Sự kiện này phản ánh xu thế tăng tốc cạnh tranh quyết liệt trong lĩnh vực trí tuệ nhân tạo giữa hai nền kinh tế lớn nhất thế giới.",
+      "unknowns": [
+        "Hiệu năng thực tế và thông số kỹ thuật chi tiết của Kimi K3 so với các đối thủ Mỹ chưa được kiểm chứng độc lập.",
+        "Tác động dài hạn của các mô hình AI Trung Quốc đối với thị phần toàn cầu."
+      ],
+      "confidence_note": "Thông tin dựa trên sự kiện có thật về mặt công nghệ, nhưng các đánh giá về tầm ảnh hưởng mang tính chất dự báo dựa trên bối cảnh cạnh tranh hiện tại.",
+      "scenarios": [
+        {
+          "text": "Trung Quốc tiếp tục tung ra các mô hình AI có hiệu năng tiệm cận các mô hình dẫn đầu của Mỹ.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Sự cạnh tranh dẫn đến các rào cản pháp lý hoặc hạn chế thương mại mới trong ngành AI.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Trung Quốc",
+          "target": "Thung lũng Silicon",
+          "relation_type": "conflict",
+          "label": "Cạnh tranh gay gắt trong lĩnh vực phát triển công nghệ AI"
+        }
+      ],
+      "entities": [
+        "Trung Quốc",
+        "Thung lũng Silicon"
+      ],
+      "keywords": [
+        "Trung Quốc",
+        "AI",
+        "Thung lũng Silicon"
       ],
       "importance": 85,
       "scope": "global"
     }
   },
-  "evt_fb38a93f": {
-    "created_at": 1785089682894,
-    "expires_at": 1787681682894,
+  "evt_b2973647": {
+    "created_at": 1785108144389,
+    "expires_at": 1787700144389,
     "version": "4.5",
-    "checksum": "2e6144dadd30b091cf5a6f04a7dbe015",
+    "checksum": "d84fb4ee2610e1f0f0edece8f2a9cf63",
     "data": {
-      "cluster_title": "Tổn thương tại Berlin Pride",
-      "short_summary": "Một chiếc xe đã đâm vào đám đông tại sự kiện Pride ở Berlin, gây thương vong cho ít nhất một người và 29 người bị thương.",
-      "detailed_summary": "Tại Berlin, một phương tiện đã lao trực diện vào đám đông đang tham gia sự kiện Pride. Hậu quả là 1 người đã thiệt mạng và 29 người khác bị thương. Hiện tại, cảnh sát đang tiến hành truy tìm đối tượng tình nghi, trong khi thị trưởng thành phố đã lên án đây là một cuộc tấn công vào xã hội tự do và cởi mở.",
+      "cluster_title": "Bán lẻ online 'bội thu' nửa đầu năm",
+      "short_summary": "Doanh số bán lẻ online trên các nền tảng như Shopee, TikTok Shop, Lazada và Tiki tăng trưởng mạnh mẽ hơn 40% trong nửa đầu năm.",
+      "detailed_summary": "Trong sáu tháng đầu năm, các nền tảng thương mại điện tử lớn gồm Shopee, TikTok Shop, Lazada và Tiki đã ghi nhận mức tăng trưởng doanh số trên 40%. Con số này cho thấy tốc độ phát triển của lĩnh vực bán lẻ trực tuyến nhanh gấp ba lần so với mức tăng trưởng chung của toàn ngành bán lẻ tại Việt Nam.",
       "causes": [
-        "Hành động lái xe đâm vào đám đông chưa rõ mục đích",
-        "Sự việc đang trong quá trình điều tra hành vi tấn công"
+        "Sự thay đổi hành vi mua sắm của người tiêu dùng sang kênh trực tuyến",
+        "Sức hút và sự phổ biến ngày càng tăng của các nền tảng thương mại điện tử"
       ],
       "effects": [
-        "Gây thương vong cho nhiều người tham gia sự kiện",
-        "Gây rúng động tâm lý xã hội và an ninh trật tự tại Berlin"
+        "Thị phần bán lẻ trực tuyến gia tăng mạnh mẽ trong nền kinh tế",
+        "Tạo áp lực cạnh tranh lớn hơn đối với mô hình bán lẻ truyền thống"
       ],
       "affected_groups": [
-        "Người tham gia sự kiện Pride tại Berlin",
-        "Nạn nhân tử vong và những người bị thương"
+        "Các nền tảng thương mại điện tử",
+        "Người tiêu dùng",
+        "Các doanh nghiệp bán lẻ truyền thống"
       ],
-      "market_impact": "Sự kiện gây ra lo ngại ngắn hạn về an ninh công cộng, có khả năng ảnh hưởng nhẹ đến các hoạt động du lịch và sự kiện cộng đồng tại Berlin.",
+      "market_impact": "Thương mại điện tử đang trở thành động lực tăng trưởng chính, dẫn dắt đà hồi phục và mở rộng của thị trường bán lẻ trong nước.",
       "follow_up": "",
-      "significance": "Vụ việc đặt ra thách thức nghiêm trọng đối với an ninh công cộng trong các sự kiện cộng đồng tại Đức và là một phép thử cho khả năng bảo vệ xã hội dân sự của chính quyền.",
+      "significance": "Sự kiện này phản ánh xu thế tất yếu của chuyển đổi số trong tiêu dùng, nơi thương mại trực tuyến đang thiết lập vị thế thống trị mới so với phương thức mua sắm truyền thống.",
       "unknowns": [
-        "Động cơ cụ thể của đối tượng thực hiện vụ việc",
-        "Danh tính và tình trạng hiện tại của đối tượng tình nghi"
+        "Tỷ trọng đóng góp cụ thể của từng sàn thương mại điện tử vào con số 40%",
+        "Tác động cụ thể đối với lợi nhuận của các doanh nghiệp kinh doanh trực tuyến"
       ],
-      "confidence_note": "Thông tin có độ tin cậy cao dựa trên báo cáo từ chính quyền địa phương và các cơ quan thực thi pháp luật.",
+      "confidence_note": "Thông tin dựa trên số liệu tăng trưởng thực tế của ngành, độ tin cậy cao.",
       "scenarios": [
         {
-          "text": "Cơ quan chức năng bắt giữ thành công đối tượng tình nghi và làm rõ động cơ cá nhân.",
+          "text": "Thương mại điện tử tiếp tục duy trì đà tăng trưởng cao trong nửa cuối năm nhờ các đợt khuyến mãi cuối năm.",
           "likelihood": "cao"
         },
         {
-          "text": "Sự việc bị phân loại là hành động tấn công có tính toán chính trị hoặc tư tưởng cực đoan.",
+          "text": "Ngành bán lẻ truyền thống buộc phải tái cấu trúc mạnh mẽ để thích nghi với sự thay đổi của thị trường.",
           "likelihood": "trung bình"
         }
       ],
       "entity_relations": [
         {
-          "source": "Đối tượng tình nghi",
-          "target": "Đám đông sự kiện Pride",
+          "source": "Shopee, TikTok Shop, Lazada, Tiki",
+          "target": "Ngành bán lẻ Việt Nam",
+          "relation_type": "cause_effect",
+          "label": "Động lực thúc đẩy tăng trưởng vượt mức trung bình ngành"
+        }
+      ],
+      "entities": [
+        "Shopee",
+        "TikTok Shop",
+        "Lazada",
+        "Tiki"
+      ],
+      "keywords": [
+        "bán lẻ online",
+        "Shopee",
+        "TikTok Shop",
+        "Lazada",
+        "Tiki"
+      ],
+      "importance": 85,
+      "scope": "business"
+    }
+  },
+  "evt_7028d179": {
+    "created_at": 1785108149748,
+    "expires_at": 1787700149748,
+    "version": "4.5",
+    "checksum": "d9fc1437919dbed155d41146a6ae90d5",
+    "data": {
+      "cluster_title": "Giá nhà hạ nhiệt tại Dubai",
+      "short_summary": "Người dân Dubai hưởng lợi khi giá nhà hạ nhiệt sau chiến sự Trung Đông.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "follow_up": "",
+      "entities": [
+        "Steve",
+        "Trung Đông"
+      ],
+      "keywords": [
+        "Dubai",
+        "giá nhà",
+        "thị trường bất động sản"
+      ],
+      "importance": 70,
+      "scope": "national"
+    }
+  },
+  "evt_ed1ccc7d": {
+    "created_at": 1785108161219,
+    "expires_at": 1787700161219,
+    "version": "4.5",
+    "checksum": "e30fad4c954a76f493bdcfad2aa95cbe",
+    "data": {
+      "cluster_title": "Tác động của sự bùng nổ AI của Trung Quốc",
+      "short_summary": "CNA phân tích tác động của sự bùng nổ AI của Trung Quốc và những người đứng sau các công ty hàng đầu trong lĩnh vực này.",
+      "detailed_summary": "Bài viết nhấn mạnh sự chuyển mình của Trung Quốc trong lĩnh vực AI bằng cách tập trung vào chân dung những nhà sáng lập đứng sau các công ty công nghệ triển vọng hàng đầu hiện nay. Đây được xem là những nhân tố then chốt đang dẫn dắt năng lực cạnh tranh công nghệ của Trung Quốc trên trường quốc tế.",
+      "causes": [
+        "Sự phát triển mạnh mẽ của hệ sinh thái công nghệ AI tại Trung Quốc.",
+        "Nỗ lực vươn lên dẫn đầu trong cuộc đua công nghệ toàn cầu."
+      ],
+      "effects": [
+        "Tăng cường vị thế cạnh tranh của Trung Quốc trong ngành công nghiệp AI.",
+        "Thu hút sự chú ý của quốc tế đối với các nhà lãnh đạo công nghệ trẻ tại Trung Quốc."
+      ],
+      "affected_groups": [
+        "Giới công nghệ và trí tuệ nhân tạo toàn cầu",
+        "Các nhà đầu tư và doanh nghiệp công nghệ",
+        "Cộng đồng quốc tế quan tâm đến địa chính trị công nghệ"
+      ],
+      "market_impact": "Sự xuất hiện của các công ty AI Trung Quốc tạo ra áp lực cạnh tranh mới đối với các tập đoàn công nghệ lớn tại phương Tây.",
+      "follow_up": "",
+      "significance": "Sự kiện cho thấy sự chuyển dịch trọng tâm của ngành AI sang các nhân tố mới tại Trung Quốc, phản ánh bước tiến nhanh chóng của quốc gia này trong cuộc đua công nghệ toàn cầu.",
+      "unknowns": [
+        "Chi tiết cụ thể về chiến lược phát triển dài hạn của từng công ty.",
+        "Tác động thực tế của các lệnh hạn chế công nghệ đối với khả năng vận hành của các công ty này."
+      ],
+      "confidence_note": "Thông tin mang tính chất tổng hợp và cập nhật dựa trên bối cảnh thị trường thực tế, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Các công ty AI Trung Quốc tiếp tục mở rộng tầm ảnh hưởng và thách thức trực tiếp các đối thủ hàng đầu trên thế giới.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các công ty này đối mặt với các rào cản pháp lý hoặc hạn chế kỹ thuật từ thị trường quốc tế.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "DeepSeek, Z.ai, Moonshot AI",
+          "target": "Trung Quốc",
+          "relation_type": "cause_effect",
+          "label": "Các doanh nghiệp góp phần củng cố năng lực AI quốc gia"
+        }
+      ],
+      "entities": [
+        "Trung Quốc",
+        "DeepSeek",
+        "Z.ai",
+        "Moonshot AI"
+      ],
+      "keywords": [
+        "Trung Quốc",
+        "AI",
+        "DeepSeek",
+        "Z.ai",
+        "Moonshot AI"
+      ],
+      "importance": 85,
+      "scope": "national"
+    }
+  },
+  "evt_927af789": {
+    "created_at": 1785108167376,
+    "expires_at": 1787700167376,
+    "version": "4.5",
+    "checksum": "fd493e43575e7c65ca4f40274789cd7f",
+    "data": {
+      "cluster_title": "Chính sách nhiên liệu ethanol của Ấn Độ gặp phản ứng tiêu cực từ người tiêu dùng",
+      "short_summary": "Người tiêu dùng Ấn Độ phản ứng tiêu cực trước chính sách nhiên liệu ethanol của chính phủ, dẫn đến các vấn đề về xe bị kẹt và giảm hiệu suất.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "follow_up": "",
+      "entities": [
+        "Ấn Độ"
+      ],
+      "keywords": [
+        "chính sách nhiên liệu ethanol",
+        "Ấn Độ",
+        "phản ứng tiêu cực"
+      ],
+      "importance": 70,
+      "scope": "national"
+    }
+  },
+  "evt_4b18a33f": {
+    "created_at": 1785108175128,
+    "expires_at": 1787700175128,
+    "version": "4.5",
+    "checksum": "96c3a224717e18684f83840292693d00",
+    "data": {
+      "cluster_title": "Cơn bão di cư của Trump",
+      "short_summary": "Cơn bão di cư của Tổng thống Mỹ Donald Trump đã gây ra lo ngại cho người Indonesia không có giấy tờ ở Mỹ, khiến một số người tìm kiếm nơi trú ẩn mặc dù cơ hội thành công rất nhỏ.",
+      "detailed_summary": "Dưới áp lực từ các biện pháp siết chặt kiểm soát nhập cư của Tổng thống Donald Trump, nhiều người Indonesia đang cư trú bất hợp pháp tại Mỹ rơi vào tình trạng hoang mang. Hệ quả là một bộ phận người dân đã lựa chọn nộp đơn xin tị nạn như một giải pháp cuối cùng, dù cơ hội được phê duyệt hiện rất thấp.",
+      "causes": [
+        "Chính sách siết chặt quản lý nhập cư của chính quyền Tổng thống Donald Trump.",
+        "Tình trạng cư trú không giấy tờ của một bộ phận người Indonesia tại Mỹ."
+      ],
+      "effects": [
+        "Tạo tâm lý lo âu, sợ hãi trong cộng đồng người Indonesia.",
+        "Gia tăng số lượng hồ sơ xin tị nạn không có nhiều khả năng thành công."
+      ],
+      "affected_groups": [
+        "Người Indonesia cư trú bất hợp pháp tại Mỹ."
+      ],
+      "market_impact": "Chưa có tác động trực tiếp đến thị trường tài chính hoặc kinh tế vĩ mô được ghi nhận.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh tác động lan tỏa từ các chính sách nhập cư cứng rắn của Mỹ lên các cộng đồng dân cư nước ngoài đang sinh sống tại quốc gia này.",
+      "unknowns": [
+        "Số lượng cụ thể người Indonesia đang bị ảnh hưởng bởi chính sách này.",
+        "Tỷ lệ hồ sơ xin tị nạn của người Indonesia được Mỹ chấp thuận trong thời gian tới."
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên các báo cáo thực tế về tình hình nhập cư.",
+      "scenarios": [
+        {
+          "text": "Số lượng hồ sơ xin tị nạn tiếp tục tăng do áp lực trục xuất gia tăng.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Chính quyền Mỹ thắt chặt hơn nữa quy định tị nạn khiến việc ở lại trở nên bất khả thi.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Donald Trump",
+          "target": "Người Indonesia không có giấy tờ",
+          "relation_type": "cause_effect",
+          "label": "Chính sách nhập cư gây áp lực lên cộng đồng dân cư."
+        }
+      ],
+      "entities": [
+        "Donald Trump",
+        "Indonesia"
+      ],
+      "keywords": [
+        "Trump",
+        "di cư",
+        "Indonesia"
+      ],
+      "importance": 85,
+      "scope": "national"
+    }
+  },
+  "evt_970bed40": {
+    "created_at": 1785108186569,
+    "expires_at": 1787700186569,
+    "version": "4.5",
+    "checksum": "5ab06dee2edf4a931a33bae04e12bc75",
+    "data": {
+      "cluster_title": "Machado từ chối tham gia đàm phán với chính phủ Venezuela",
+      "short_summary": "Machado từ chối tham gia đàm phán với chính phủ Venezuela do được hậu thuẫn bởi Mỹ",
+      "detailed_summary": "Bà Maria Corina Machado, lãnh đạo phe đối lập và là người đoạt giải Nobel Hòa bình, đã chính thức tuyên bố vào Chủ Nhật rằng bà sẽ không tham gia vào các cuộc đối thoại với chính phủ của bà Delcy Rodriguez theo dự kiến vào tháng Tám. Tuyên bố này cũng có sự đồng thuận từ phía ông Edmundo Gonzalez.",
+      "causes": [
+        "Sự thiếu tin tưởng vào tính chính danh của chính phủ đương quyền trong các cuộc đối thoại.",
+        "Quan điểm đối lập gay gắt giữa phe đối lập và chính quyền của Delcy Rodriguez."
+      ],
+      "effects": [
+        "Khả năng đổ vỡ của tiến trình đàm phán hòa bình do Mỹ khởi xướng.",
+        "Gia tăng căng thẳng chính trị nội bộ tại Venezuela."
+      ],
+      "affected_groups": [
+        "Phe đối lập tại Venezuela",
+        "Chính phủ Venezuela",
+        "Chính phủ Hoa Kỳ"
+      ],
+      "market_impact": "Có thể gây ra bất ổn tâm lý thị trường, ảnh hưởng đến kỳ vọng về sự ổn định chính trị tại Venezuela và ngành dầu khí.",
+      "follow_up": "",
+      "significance": "Quyết định này cho thấy rạn nứt sâu sắc trong nỗ lực hòa giải chính trị, có thể làm tê liệt các tiến trình ngoại giao do các bên trung gian hỗ trợ.",
+      "unknowns": [
+        "Lý do chi tiết dẫn đến quyết định từ chối cụ thể trong tuyên bố chung.",
+        "Phản ứng tiếp theo của phía Hoa Kỳ sau khi đối tác chủ chốt từ chối tham gia đàm phán."
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên tuyên bố công khai của nhân vật chủ chốt.",
+      "scenarios": [
+        {
+          "text": "Tiến trình đàm phán tháng Tám bị hoãn hoặc hủy bỏ hoàn toàn.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Hoa Kỳ tìm kiếm các kênh đối thoại thay thế hoặc gây thêm áp lực lên chính phủ Venezuela.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Maria Corina Machado",
+          "target": "Delcy Rodriguez",
           "relation_type": "conflict",
-          "label": "Tấn công trực tiếp gây thương vong"
+          "label": "Đối đầu chính trị trực tiếp"
+        },
+        {
+          "source": "Hoa Kỳ",
+          "target": "Đàm phán Venezuela",
+          "relation_type": "cooperation",
+          "label": "Bên trung gian hỗ trợ đàm phán"
+        }
+      ],
+      "entities": [
+        "Maria Corina Machado",
+        "Delcy Rodriguez"
+      ],
+      "keywords": [
+        "Machado",
+        "Venezuela",
+        "đàm phán"
+      ],
+      "importance": 80,
+      "scope": "national"
+    }
+  },
+  "evt_3c93c933": {
+    "created_at": 1785108198085,
+    "expires_at": 1787700198085,
+    "version": "4.5",
+    "checksum": "2ce9f16a85f2fcd639a9bb1fd672a7a8",
+    "data": {
+      "cluster_title": "Simon Johnson cảnh báo về vấn đề tự động hóa quá mức của Trung Quốc",
+      "short_summary": "Simon Johnson, nhà kinh tế học đoạt giải Nobel, cảnh báo về vấn đề tự động hóa quá mức của Trung Quốc và tác động của cuộc đua AI.",
+      "detailed_summary": "Simon Johnson, giáo sư tại MIT và cựu kinh tế trưởng của IMF, vừa giành giải Nobel Kinh tế năm 2024. Nghiên cứu của ông tập trung vào vai trò của các thiết chế xã hội. Trong bối cảnh hiện tại, ông đưa ra những quan điểm chuyên môn về tác động của trí tuệ nhân tạo và các vấn đề liên quan đến xu hướng tự động hóa tại Trung Quốc.",
+      "causes": [
+        "Sự phát triển mạnh mẽ và cạnh tranh gay gắt trong lĩnh vực trí tuệ nhân tạo toàn cầu",
+        "Xu hướng ưu tiên tự động hóa quy mô lớn tại nền kinh tế Trung Quốc"
+      ],
+      "effects": [
+        "Tạo ra các cuộc thảo luận chuyên sâu về chiến lược kinh tế trong thời đại công nghệ mới",
+        "Gây chú ý về những rủi ro tiềm ẩn của việc quá phụ thuộc vào tự động hóa"
+      ],
+      "affected_groups": [
+        "Các nhà hoạch định chính sách kinh tế",
+        "Doanh nghiệp công nghệ",
+        "Các tổ chức nghiên cứu quốc tế"
+      ],
+      "market_impact": "Thông tin mang tính định hướng tư duy, có thể ảnh hưởng đến cách nhìn nhận của giới đầu tư về chiến lược công nghệ và rủi ro tự động hóa tại các thị trường lớn.",
+      "follow_up": "",
+      "significance": "Sự kiện này đánh dấu tầm ảnh hưởng của các nghiên cứu về thiết chế kinh tế đối với việc định hình chính sách công nghệ trong bối cảnh cạnh tranh quốc tế.",
+      "unknowns": [
+        "Chi tiết cụ thể về các giải pháp hoặc kiến nghị chính sách mà giáo sư Simon Johnson đưa ra",
+        "Số liệu thực tế về mức độ 'tự động hóa quá mức' tại Trung Quốc mà ông đã đề cập"
+      ],
+      "confidence_note": "Độ tin cậy cao vì dựa trên uy tín của chuyên gia đoạt giải Nobel và thông tin xác thực về sự nghiệp của nhân vật.",
+      "scenarios": [
+        {
+          "text": "Các báo cáo chuyên sâu hơn về vấn đề này sẽ được công bố, thu hút sự chú ý của giới học thuật và chính sách.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các nghiên cứu này sẽ trở thành cơ sở tham chiếu cho những tranh luận về quản lý công nghệ giữa các siêu cường.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Simon Johnson",
+          "target": "MIT",
+          "relation_type": "neutral",
+          "label": "Giáo sư giảng dạy"
+        },
+        {
+          "source": "Simon Johnson",
+          "target": "IMF",
+          "relation_type": "neutral",
+          "label": "Cựu kinh tế trưởng"
+        }
+      ],
+      "entities": [
+        "Simon Johnson",
+        "Trung Quốc",
+        "Massachusetts Institute of Technology (MIT)",
+        "International Monetary Fund (IMF)"
+      ],
+      "keywords": [
+        "Simon Johnson",
+        "Nobel Prize",
+        "AI",
+        "tự động hóa",
+        "Trung Quốc"
+      ],
+      "importance": 85,
+      "scope": "global"
+    }
+  },
+  "evt_fe627afd": {
+    "created_at": 1785108204192,
+    "expires_at": 1787700204192,
+    "version": "4.5",
+    "checksum": "718008ddd360dd049c1fe1d0c58ed0fb",
+    "data": {
+      "cluster_title": "Raul Castro vắng mặt trong lễ kỷ niệm cuộc tấn công cách mạng quan trọng",
+      "short_summary": "Raul Castro vắng mặt trong lễ kỷ niệm cuộc tấn công cách mạng quan trọng của Cuba",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "follow_up": "",
+      "entities": [
+        "Raul Castro",
+        "Cuba"
+      ],
+      "keywords": [
+        "Raul Castro",
+        "Cuba",
+        "cuộc tấn công cách mạng"
+      ],
+      "importance": 80,
+      "scope": "national"
+    }
+  },
+  "evt_d0f11aad": {
+    "created_at": 1785108210503,
+    "expires_at": 1787700210503,
+    "version": "4.5",
+    "checksum": "11cd8e1c0f60dab5da928eb113782259",
+    "data": {
+      "cluster_title": "Nữ Boxer Ấn Độ Chinh Phục Vàng Khối Thịnh Vượng",
+      "short_summary": "Jaismine Lamboria, nữ boxers Ấn Độ, đang nhắm mục tiêu giành huy chương vàng tại Khối Thịnh Vượng Glasgow.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "follow_up": "",
+      "entities": [
+        "Jaismine Lamboria",
+        "Ấn Độ",
+        "Khối Thịnh Vượng"
+      ],
+      "keywords": [
+        "Nữ Boxer",
+        "Ấn Độ",
+        "Khối Thịnh Vượng"
+      ],
+      "importance": 80,
+      "scope": "national"
+    }
+  },
+  "evt_general_1785108215528": {
+    "created_at": 1785108218030,
+    "expires_at": 1787700218030,
+    "version": "4.5",
+    "checksum": "753cbf5596bddd817e1a853077cb439b",
+    "data": {
+      "cluster_title": "Crisis về Tính cách Nam Phi",
+      "short_summary": "Sự kiện này cho thấy sự mâu thuẫn trong việc Nam Phi tự xưng là một quốc gia bảo vệ nhân quyền.",
+      "detailed_summary": "Nam Phi đang đối mặt với cuộc khủng hoảng căn tính khi các phong trào chống người nhập cư lan rộng. Sự kiện này tạo ra một nghịch lý lớn giữa hình ảnh một quốc gia luôn tự khẳng định là thành trì bảo vệ nhân quyền với thực tế những bất ổn xã hội và sự bài xích người nước ngoài đang gia tăng tại nội địa.",
+      "causes": [
+        "Sự mâu thuẫn giữa cam kết nhân quyền quốc gia và thực trạng xã hội",
+        "Sự gia tăng của tâm lý bài ngoại trong cộng đồng địa phương"
+      ],
+      "effects": [
+        "Rạn nứt hình ảnh quốc tế của Nam Phi",
+        "Gia tăng bất ổn xã hội và căng thẳng với cộng đồng người nhập cư"
+      ],
+      "affected_groups": [
+        "Người nhập cư tại Nam Phi",
+        "Chính phủ Nam Phi",
+        "Cộng đồng xã hội dân sự"
+      ],
+      "market_impact": "Gây bất ổn tâm lý đối với các nhà đầu tư nước ngoài do lo ngại về sự bất ổn chính trị và xã hội nội địa.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh cuộc khủng hoảng niềm tin nội tại và thách thức trong việc duy trì hình ảnh quốc gia đạo đức trên trường quốc tế.",
+      "unknowns": [
+        "Các biện pháp cụ thể mà chính phủ Nam Phi dự kiến thực hiện để giải quyết phong trào bài ngoại",
+        "Tác động cụ thể của phong trào này đến các hiệp định quốc tế của Nam Phi"
+      ],
+      "confidence_note": "Thông tin dựa trên đánh giá phân tích chính trị, độ tin cậy cao về mặt ghi nhận hiện tượng xã hội.",
+      "scenarios": [
+        {
+          "text": "Chính phủ thắt chặt kiểm soát nhập cư để xoa dịu dư luận trong nước.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Sự gia tăng căng thẳng dẫn đến các vụ đụng độ lớn và gây áp lực lên quan hệ ngoại giao với các quốc gia châu Phi khác.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Phong trào bài ngoại",
+          "target": "Chính phủ Nam Phi",
+          "relation_type": "conflict",
+          "label": "Tạo áp lực buộc thay đổi chính sách nhân quyền và nhập cư"
+        }
+      ],
+      "entities": [
+        "Nam Phi",
+        "tín hiệu nhân quyền"
+      ],
+      "keywords": [
+        "Nam Phi",
+        "tín hiệu nhân quyền"
+      ],
+      "importance": 85,
+      "scope": "national"
+    }
+  },
+  "evt_general_1785108227790": {
+    "created_at": 1785108233774,
+    "expires_at": 1787700233774,
+    "version": "4.5",
+    "checksum": "21c69b22c144841e08ec2cb9697d7e4a",
+    "data": {
+      "cluster_title": "Trump Đẩy Mạnh Năng lượng hạt nhân, Bao gồm Hợp tác với Ả Rập Xê Út",
+      "short_summary": "Chủ tịch Trump đang thúc đẩy năng lượng hạt nhân, bao gồm một thỏa thuận với Ả Rập Xê Út. Có thể có lợi ích cho gia đình và người ủng hộ của ông.",
+      "detailed_summary": "Tổng thống Trump đang thúc đẩy chương trình nghị sự về năng lượng hạt nhân trong nước và quốc tế, điển hình là thỏa thuận với Ả Rập Xê Út. Dù chưa có bằng chứng trực tiếp về sự can thiệp chính sách vì lợi ích cá nhân, sự tồn tại của các mối quan hệ kinh doanh chồng chéo giữa gia đình và đồng minh thân cận của ông với lĩnh vực này tạo ra nguy cơ xung đột lợi ích tiềm tàng.",
+      "causes": [
+        "Chính sách ưu tiên năng lượng hạt nhân của chính quyền Trump.",
+        "Sự tồn tại của các mối quan hệ kinh doanh giữa gia đình, cộng sự của Trump và các đối tác trong ngành năng lượng."
+      ],
+      "effects": [
+        "Gia tăng sự giám sát của dư luận và truyền thông về tính minh bạch trong chính sách.",
+        "Khả năng tạo ra lợi thế thương mại cho các cá nhân có quan hệ với chính quyền trong các thỏa thuận quốc tế."
+      ],
+      "affected_groups": [
+        "Donald Trump và gia đình",
+        "Các đối tác kinh doanh thân cận",
+        "Chính phủ Ả Rập Xê Út"
+      ],
+      "market_impact": "Có thể làm biến động giá trị cổ phiếu các doanh nghiệp trong ngành năng lượng hạt nhân do các kỳ vọng về chính sách ưu đãi.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh tính phức tạp của việc phân tách giữa trách nhiệm điều hành quốc gia và lợi ích tài chính cá nhân của lãnh đạo cấp cao.",
+      "unknowns": [
+        "Chi tiết cụ thể của các điều khoản kinh doanh trong các thỏa thuận hạt nhân.",
+        "Mức độ ảnh hưởng thực tế của các cá nhân này đối với quá trình ra quyết định chính sách."
+      ],
+      "confidence_note": "Thông tin dựa trên các báo cáo về sự chồng chéo lợi ích, cần thêm bằng chứng xác thực về hành vi trục lợi cụ thể.",
+      "scenarios": [
+        {
+          "text": "Các cơ quan giám sát đẩy mạnh điều tra về xung đột lợi ích giữa chính sách chính phủ và hoạt động kinh doanh tư nhân.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Chính quyền tiếp tục đẩy mạnh dự án năng lượng hạt nhân mà không thay đổi cấu trúc quản lý lợi ích.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Donald Trump",
+          "target": "Ả Rập Xê Út",
+          "relation_type": "cooperation",
+          "label": "Thúc đẩy các thỏa thuận năng lượng hạt nhân"
+        },
+        {
+          "source": "Gia đình và đồng minh của Trump",
+          "target": "Ngành năng lượng hạt nhân",
+          "relation_type": "neutral",
+          "label": "Có mối quan hệ kinh doanh chồng chéo"
+        }
+      ],
+      "entities": [
+        "Donald Trump",
+        "Saudi Arabia"
+      ],
+      "keywords": [
+        "Trump",
+        "năng lượng hạt nhân",
+        "Saudi"
+      ],
+      "importance": 80,
+      "scope": "national"
+    }
+  },
+  "evt_6893ffb7": {
+    "created_at": 1785108245121,
+    "expires_at": 1787700245121,
+    "version": "4.5",
+    "checksum": "3190317f77330c20db05c533c98d2697",
+    "data": {
+      "cluster_title": "Israel đồng ý với lực lượng ổn định quốc tế tại Gaza",
+      "short_summary": "Israel đồng ý với việc triển khai lực lượng ổn định quốc tế tại Gaza để ổn định tình hình",
+      "detailed_summary": "Chính phủ Israel đã đồng ý với kế hoạch triển khai Lực lượng Ổn định Quốc tế (ISF) tại Gaza. Lực lượng này sẽ bao gồm thành phần từ các quốc gia thân thiện và hoạt động tại các khu vực nằm ngoài sự kiểm soát quân sự của Israel.",
+      "causes": [
+        "Nhu cầu quản lý an ninh và ổn định tại các khu vực Gaza sau xung đột.",
+        "Mong muốn phối hợp với các đối tác quốc tế để giải quyết khoảng trống quyền lực."
+      ],
+      "effects": [
+        "Thay đổi cơ cấu an ninh và quản trị tại các khu vực không nằm dưới sự kiểm soát trực tiếp của quân đội Israel.",
+        "Tăng cường sự hiện diện của các quốc gia thứ ba trong tiến trình ổn định Gaza."
+      ],
+      "affected_groups": [
+        "Người dân tại Gaza",
+        "Chính phủ Israel",
+        "Các quốc gia thành viên tham gia lực lượng ổn định"
+      ],
+      "market_impact": "Tác động hạn chế đến thị trường tài chính toàn cầu, chủ yếu ảnh hưởng đến ổn định chính trị khu vực Trung Đông.",
+      "follow_up": "",
+      "significance": "Sự kiện này đánh dấu bước chuyển dịch quan trọng trong chính sách của Israel về việc chia sẻ trách nhiệm quản lý an ninh tại Gaza với cộng đồng quốc tế.",
+      "unknowns": [
+        "Danh sách cụ thể các quốc gia thân thiện tham gia lực lượng.",
+        "Thời điểm triển khai chi tiết và cơ chế phối hợp tác chiến thực tế tại hiện trường."
+      ],
+      "confidence_note": "Thông tin dựa trên thông báo về quyết định của Chính phủ Israel, mức độ tin cậy cao về mặt chủ trương.",
+      "scenarios": [
+        {
+          "text": "Lực lượng quốc tế được thiết lập thành công giúp cải thiện tình hình an ninh và nhân đạo tại các khu vực trọng điểm.",
+          "likelihood": "trung bình"
+        },
+        {
+          "text": "Phát sinh tranh chấp về quyền hạn và ranh giới hoạt động giữa lực lượng quốc tế và quân đội Israel.",
+          "likelihood": "cao"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Chính phủ Israel",
+          "target": "Lực lượng Ổn định Quốc tế (ISF)",
+          "relation_type": "cooperation",
+          "label": "Chấp thuận triển khai lực lượng ổn định"
+        }
+      ],
+      "entities": [
+        "Israel",
+        "Gaza",
+        "lực lượng ổn định quốc tế"
+      ],
+      "keywords": [
+        "Israel",
+        "Gaza",
+        "lực lượng ổn định quốc tế"
+      ],
+      "importance": 80,
+      "scope": "national"
+    }
+  },
+  "evt_d19e24f0": {
+    "created_at": 1785108256575,
+    "expires_at": 1787700256575,
+    "version": "4.5",
+    "checksum": "c6107aecf556114737d4b46185f75624",
+    "data": {
+      "cluster_title": "Tình hình kinh tế Iran",
+      "short_summary": "Tình hình kinh tế Iran đang gặp khó khăn do chiến tranh ở khu vực Hormuz và sự can thiệp của Mỹ.",
+      "detailed_summary": "Xung đột giữa Mỹ và Iran đang có dấu hiệu lan rộng, gây lo ngại về các gián đoạn trong tuyến đường hàng hải quốc tế. Mặc dù các nỗ lực hòa giải vẫn đang được triển khai, tình trạng bất định vẫn bao trùm lên triển vọng kinh tế của Iran trong bối cảnh các rủi ro địa chính trị ngày càng gia tăng.",
+      "causes": [
+        "Sự mở rộng phạm vi xung đột quân sự giữa Mỹ và Iran",
+        "Gia tăng nguy cơ gián đoạn tại các tuyến đường hàng hải quốc tế"
+      ],
+      "effects": [
+        "Gia tăng sự bất ổn đối với nền kinh tế Iran",
+        "Nguy cơ gián đoạn chuỗi cung ứng hàng hóa toàn cầu thông qua đường biển"
+      ],
+      "affected_groups": [
+        "Chính phủ Iran",
+        "Các doanh nghiệp vận tải biển quốc tế",
+        "Thị trường năng lượng toàn cầu"
+      ],
+      "market_impact": "Gây tâm lý lo ngại và bất ổn cho thị trường hàng hải và năng lượng toàn cầu.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh mức độ căng thẳng leo thang giữa Mỹ và Iran, đe dọa trực tiếp đến an ninh hàng hải và ổn định kinh tế khu vực.",
+      "unknowns": [
+        "Kết quả cụ thể của các nỗ lực hòa giải đang diễn ra",
+        "Mức độ ảnh hưởng thực tế đối với các tuyến đường vận tải bên ngoài eo biển Hormuz"
+      ],
+      "confidence_note": "Thông tin dựa trên diễn biến thực tế của tình hình an ninh và kinh tế khu vực.",
+      "scenarios": [
+        {
+          "text": "Xung đột tiếp tục duy trì mức độ căng thẳng hiện tại, gây khó khăn cho giao thương quốc tế.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các nỗ lực hòa giải đạt kết quả bước đầu giúp giảm thiểu rủi ro trên các tuyến hàng hải.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Mỹ",
+          "target": "Iran",
+          "relation_type": "conflict",
+          "label": "Xung đột quân sự và đối đầu địa chính trị"
+        },
+        {
+          "source": "Xung đột quân sự",
+          "target": "Kinh tế Iran",
+          "relation_type": "cause_effect",
+          "label": "Tác động tiêu cực gây bất ổn"
+        }
+      ],
+      "entities": [
+        "Iran",
+        "Hormuz",
+        "Mỹ"
+      ],
+      "keywords": [
+        "Iran",
+        "khu vực Hormuz",
+        "chiến tranh"
+      ],
+      "importance": 85,
+      "scope": "global"
+    }
+  },
+  "evt_general_1785108262324": {
+    "created_at": 1785108267868,
+    "expires_at": 1787700267868,
+    "version": "4.5",
+    "checksum": "7f8b260896a7b8082f6278b0a9904cbb",
+    "data": {
+      "cluster_title": "Tổng thống Cuba tố Mỹ về tội diệt chủng",
+      "short_summary": "Tổng thống Cuba cáo buộc Mỹ về tội diệt chủng và muốn chiếm đóng hòn đảo này. Cuba đang trải qua một trong những khủng hoảng kinh tế tồi tệ nhất và chịu một lệnh cấm vận dầu mỏ từ Mỹ kể từ tháng 1.",
+      "detailed_summary": "Chủ tịch Cuba đã đưa ra tuyên bố chỉ trích mạnh mẽ chính sách của Mỹ, cáo buộc nước này tiến hành chính sách diệt chủng và tìm cách chiếm quyền kiểm soát. Quốc đảo này hiện đang đối mặt với một trong những cuộc khủng hoảng kinh tế tồi tệ nhất, đồng thời chịu lệnh cấm vận dầu mỏ từ phía Mỹ kể từ tháng Một.",
+      "causes": [
+        "Lệnh cấm vận dầu mỏ của Mỹ áp đặt lên Cuba từ tháng 1",
+        "Tình trạng khủng hoảng kinh tế trầm trọng trong nước"
+      ],
+      "effects": [
+        "Căng thẳng ngoại giao gia tăng giữa Cuba và Mỹ",
+        "Khủng hoảng kinh tế và năng lượng tại Cuba trở nên trầm trọng hơn"
+      ],
+      "affected_groups": [
+        "Chính phủ Cuba",
+        "Người dân Cuba",
+        "Cộng đồng quốc tế có quan hệ thương mại với Cuba"
+      ],
+      "market_impact": "Tác động hạn chế tới thị trường toàn cầu do quy mô kinh tế của Cuba, tuy nhiên có thể gây ảnh hưởng cục bộ đến giá năng lượng và chuỗi cung ứng trong khu vực.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh sự leo thang căng thẳng chính trị kéo dài giữa Mỹ và Cuba, cho thấy những tác động tiêu cực của các biện pháp trừng phạt kinh tế lên ổn định xã hội của một quốc gia.",
+      "unknowns": [
+        "Các bằng chứng cụ thể liên quan đến cáo buộc diệt chủng",
+        "Phản hồi chính thức từ phía chính quyền Mỹ đối với các cáo buộc này"
+      ],
+      "confidence_note": "Thông tin dựa trên tuyên bố trực tiếp từ nguyên thủ quốc gia, độ tin cậy cao về mặt nội dung phát ngôn nhưng cần xác minh thêm bối cảnh chính trị.",
+      "scenarios": [
+        {
+          "text": "Căng thẳng ngoại giao sẽ tiếp tục duy trì trạng thái đối đầu mà không có đàm phán trực tiếp.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các quốc gia khác can thiệp nhằm giảm bớt tác động kinh tế cho Cuba.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Mỹ",
+          "target": "Cuba",
+          "relation_type": "conflict",
+          "label": "Áp đặt lệnh cấm vận và gây sức ép kinh tế"
+        }
+      ],
+      "entities": [
+        "Cuba",
+        "Mỹ"
+      ],
+      "keywords": [
+        "Cuba",
+        "Mỹ",
+        "diệt chủng",
+        "chiếm đóng"
+      ],
+      "importance": 85,
+      "scope": "national"
+    }
+  },
+  "evt_eabb75ad": {
+    "created_at": 1785108279090,
+    "expires_at": 1787700279090,
+    "version": "4.5",
+    "checksum": "9846e6946a946a2771b68527a9af860e",
+    "data": {
+      "cluster_title": "Sự kiện gây hoảng loạn về trí tuệ nhân tạo Trung Quốc",
+      "short_summary": "Một tập đoàn trí tuệ nhân tạo Trung Quốc gây hoảng loạn ở Silicon Valley và Wall Street.",
+      "detailed_summary": "Trong chương trình Equity, các chuyên gia đã thảo luận về phản ứng lo âu của giới đầu tư tại Thung lũng Silicon và Phố Wall đối với Kimi, một sản phẩm trí tuệ nhân tạo do công ty Moonshot AI của Trung Quốc phát triển. Sự kiện này đặt ra nhiều dấu hỏi về sức cạnh tranh của công nghệ AI Trung Quốc trên thị trường toàn cầu.",
+      "causes": [
+        "Sự trỗi dậy bất ngờ của công nghệ AI từ Moonshot AI",
+        "Mối lo ngại về khả năng cạnh tranh của Trung Quốc trong lĩnh vực AI"
+      ],
+      "effects": [
+        "Tạo ra tâm lý hoang mang trong giới đầu tư công nghệ",
+        "Gây chú ý mạnh mẽ đến năng lực phát triển trí tuệ nhân tạo của các công ty Trung Quốc"
+      ],
+      "affected_groups": [
+        "Các nhà đầu tư tại Thung lũng Silicon",
+        "Các chuyên gia tài chính tại Phố Wall",
+        "Các công ty phát triển AI toàn cầu"
+      ],
+      "market_impact": "Gây xáo trộn tâm lý trong giới đầu tư và buộc thị trường phải xem xét lại vị thế cạnh tranh của các doanh nghiệp AI Trung Quốc.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh nỗi lo ngại của phương Tây trước sự tiến bộ nhanh chóng của các công ty công nghệ Trung Quốc trong lĩnh vực trí tuệ nhân tạo.",
+      "unknowns": [
+        "Các thông số kỹ thuật cụ thể tạo nên sự khác biệt của Kimi",
+        "Phản ứng chiến lược lâu dài của các ông lớn công nghệ Mỹ"
+      ],
+      "confidence_note": "Thông tin dựa trên thảo luận báo chí, độ tin cậy cao về việc ghi nhận tâm lý thị trường.",
+      "scenarios": [
+        {
+          "text": "Sự cạnh tranh giữa các doanh nghiệp AI Mỹ và Trung Quốc sẽ ngày càng gay gắt.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Giới đầu tư sẽ tăng cường kiểm soát và phân tích kỹ lưỡng hơn đối với các startup AI mới từ Trung Quốc.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Moonshot AI",
+          "target": "Thung lũng Silicon",
+          "relation_type": "cause_effect",
+          "label": "Sản phẩm Kimi gây áp lực cạnh tranh và lo ngại"
+        }
+      ],
+      "entities": [
+        "Moonshot AI",
+        "Kimi"
+      ],
+      "keywords": [
+        "trí tuệ nhân tạo",
+        "Trung Quốc",
+        "Silicon Valley",
+        "Wall Street"
+      ],
+      "importance": 80,
+      "scope": "global"
+    }
+  },
+  "evt_40521d6c": {
+    "created_at": 1785108290980,
+    "expires_at": 1787700290980,
+    "version": "4.5",
+    "checksum": "0ee8c8f30a48e58a6304b6f044d623bf",
+    "data": {
+      "cluster_title": "Sự kiện AI của Úc gặp khó khăn",
+      "short_summary": "Sự kiện AI của Úc đang gặp khó khăn do mục tiêu xây dựng nhà ở đang cận kề và các trung tâm dữ liệu có nguy cơ trở thành gánh nặng mới cho lực lượng lao động xây dựng đang bị kéo giãn.",
+      "detailed_summary": "Việc đẩy mạnh xây dựng các trung tâm dữ liệu phục vụ Trí tuệ nhân tạo đang làm trầm trọng thêm tình trạng thiếu hụt nhân lực trong ngành xây dựng tại Úc, trong bối cảnh quốc gia này đang phải chạy đua để đạt được các mục tiêu về nguồn cung nhà ở đã đặt ra.",
+      "causes": [
+        "Nhu cầu gia tăng đột biến về hạ tầng trung tâm dữ liệu để phục vụ phát triển Trí tuệ nhân tạo",
+        "Áp lực hoàn thành các chỉ tiêu nhà ở quốc gia đang đặt nặng lên ngành xây dựng"
+      ],
+      "effects": [
+        "Sự cạnh tranh gay gắt về nguồn nhân lực ngành xây dựng giữa các dự án công nghệ và dự án nhà ở",
+        "Nguy cơ chậm trễ trong tiến độ hoàn thành các dự án nhà ở do thiếu hụt lao động",
+        "Gia tăng chi phí vận hành và xây dựng hạ tầng"
+      ],
+      "affected_groups": [
+        "Công nhân ngành xây dựng",
+        "Các doanh nghiệp phát triển bất động sản nhà ở",
+        "Các nhà cung cấp hạ tầng công nghệ và trung tâm dữ liệu"
+      ],
+      "market_impact": "Thị trường xây dựng đối mặt với rủi ro đình trệ và lạm phát chi phí lao động do cung không đáp ứng đủ cầu.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh xung đột lợi ích giữa việc thúc đẩy chuyển đổi số quốc gia và nhu cầu an sinh xã hội cơ bản về nhà ở tại Úc.",
+      "unknowns": [
+        "Quy mô chính xác của sự thiếu hụt lao động trong từng phân khúc xây dựng cụ thể",
+        "Khả năng Chính phủ Úc điều chỉnh mục tiêu nhà ở để giải tỏa áp lực cho ngành xây dựng"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên các chỉ số thực tế về nguồn lực ngành xây dựng và định hướng công nghệ tại Úc.",
+      "scenarios": [
+        {
+          "text": "Tiến độ xây dựng nhà ở bị đình trệ do nhân lực chuyển sang các dự án trung tâm dữ liệu lợi nhuận cao",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Chính phủ Úc can thiệp bằng các chính sách ưu tiên lao động cho dự án nhà ở xã hội",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Tham vọng Trí tuệ nhân tạo của Úc",
+          "target": "Ngành xây dựng Úc",
+          "relation_type": "cause_effect",
+          "label": "Gây áp lực lên nguồn lực hạ tầng"
+        },
+        {
+          "source": "Trung tâm dữ liệu",
+          "target": "Mục tiêu nhà ở",
+          "relation_type": "conflict",
+          "label": "Cạnh tranh giành giật lao động kỹ năng cao"
+        }
+      ],
+      "entities": [
+        "Úc",
+        "AI"
+      ],
+      "keywords": [
+        "Úc",
+        "AI",
+        "công nghệ",
+        "dữ liệu"
+      ],
+      "importance": 80,
+      "scope": "national"
+    }
+  },
+  "evt_1baea8a8": {
+    "created_at": 1785108297361,
+    "expires_at": 1787700297361,
+    "version": "4.5",
+    "checksum": "ddc7327c517d3aefa790bf3b79fb6d00",
+    "data": {
+      "cluster_title": "Cảnh sát và cơ quan môi trường thu hồi gỗ bị chặt trái phép",
+      "short_summary": "Cảnh sát và cơ quan môi trường Philippines đã thu hồi gỗ bị chặt trái phép tại tỉnh Romblon.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "follow_up": "",
+      "entities": [
+        "Cảnh sát Romblon",
+        "Cơ quan Môi trường",
+        "San Fernando",
+        "Romblon"
+      ],
+      "keywords": [
+        "Cảnh sát Romblon",
+        "Cơ quan Môi trường",
+        "Gỗ bị chặt trái phép"
+      ],
+      "importance": 60,
+      "scope": "national"
+    }
+  },
+  "evt_general_1785108302384": {
+    "created_at": 1785108305008,
+    "expires_at": 1787700305008,
+    "version": "4.5",
+    "checksum": "ccb0fbfbade03172421033674122e973",
+    "data": {
+      "cluster_title": "Bùng nổ của Amulet",
+      "short_summary": "Các nhà đầu tư Trung Quốc đến Thái Lan với kế hoạch kinh doanh và dự định giới thiệu sản phẩm tâm linh Thái Lan đến hàng triệu người theo dõi.",
+      "detailed_summary": "Nhóm du khách từ Trung Quốc mang theo ê-kíp truyền thông mạng xã hội và kế hoạch kinh doanh quy mô lớn đã đến các đền chùa tại Thái Lan. Họ thực hiện thuê mặt bằng trưng bày, thu mua các vật phẩm tâm linh với mục tiêu quảng bá và giới thiệu các sản phẩm này đến hàng triệu người theo dõi tại thị trường nội địa Trung Quốc.",
+      "causes": [
+        "Sự quan tâm lớn đối với các sản phẩm tâm linh Thái Lan từ thị trường Trung Quốc",
+        "Chiến lược tiếp thị thông qua mạng xã hội và những người có ảnh hưởng"
+      ],
+      "effects": [
+        "Gây ra sự lo ngại về quản lý vốn và trật tự kinh doanh trong lĩnh vực văn hóa, tâm linh",
+        "Gia tăng nhu cầu và giá trị đối với các sản phẩm bùa chú tại địa phương"
+      ],
+      "affected_groups": [
+        "Các nhà kinh doanh vật phẩm tâm linh truyền thống tại Thái Lan",
+        "Ban quản lý các ngôi đền, chùa",
+        "Các nhà đầu tư và cơ quan quản lý thị trường"
+      ],
+      "market_impact": "Thị trường vật phẩm tâm linh đang có sự biến động về cầu và tiềm ẩn nguy cơ bị thâu tóm bởi các nhóm kinh doanh từ nước ngoài.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh sự xung đột giữa việc thương mại hóa các sản phẩm văn hóa tâm linh và nhu cầu kiểm soát kinh doanh bền vững tại Thái Lan.",
+      "unknowns": [
+        "Quy mô tài chính thực tế của các kế hoạch kinh doanh này",
+        "Phản ứng pháp lý cụ thể từ chính quyền Thái Lan đối với việc thuê mặt bằng tại đền chùa cho mục đích kinh doanh thương mại"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy trung bình, dựa trên các quan sát về xu hướng du lịch kết hợp kinh doanh thương mại hiện tại.",
+      "scenarios": [
+        {
+          "text": "Chính quyền Thái Lan sẽ siết chặt các quy định kinh doanh đối với người nước ngoài tại các địa điểm tâm linh.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Việc thương mại hóa quá mức dẫn đến phản ứng ngược từ dư luận địa phương và làm giảm giá trị tâm linh của sản phẩm.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Du khách Trung Quốc",
+          "target": "Sản phẩm tâm linh Thái Lan",
+          "relation_type": "cause_effect",
+          "label": "Tác động đến thị trường vật phẩm tâm linh"
+        }
+      ],
+      "entities": [
+        "China",
+        "Thái Lan"
+      ],
+      "keywords": [
+        "Amulet",
+        "thị trường",
+        "kinh tế"
+      ],
+      "importance": 80,
+      "scope": "national"
+    }
+  },
+  "evt_general_1785108310031": {
+    "created_at": 1785108312502,
+    "expires_at": 1787700312502,
+    "version": "4.5",
+    "checksum": "16d743df1655cc2f5556dc82360bf3fc",
+    "data": {
+      "cluster_title": "Sự kiện chính trị tại Thái Lan",
+      "short_summary": "Chính phủ Thái Lan đang đối mặt với sự không tin tưởng của công chúng sau ba tháng nhậm chức.",
+      "detailed_summary": "Chính quyền mới do Thủ tướng Anutin Charnvirakul lãnh đạo đang gặp nhiều thách thức nghiêm trọng thay vì tận dụng được giai đoạn 'trăng mật' chính trị thường thấy như các chính phủ tiền nhiệm. Công chúng đang bày tỏ sự hoài nghi rõ rệt đối với năng lực và định hướng của chính phủ hiện tại.",
+      "causes": [
+        "Sự khởi đầu đầy khó khăn của nhiệm kỳ chính phủ mới",
+        "Sự suy giảm niềm tin từ phía công chúng đối với ban lãnh đạo"
+      ],
+      "effects": [
+        "Áp lực chính trị gia tăng đối với Thủ tướng và nội các",
+        "Mất đi lợi thế ủng hộ thường có trong giai đoạn đầu cầm quyền"
+      ],
+      "affected_groups": [
+        "Thủ tướng Anutin Charnvirakul",
+        "Chính phủ đương nhiệm",
+        "Công chúng Thái Lan"
+      ],
+      "market_impact": "Sự bất ổn trong chính trị có thể dẫn đến tâm lý thận trọng của các nhà đầu tư và gây ảnh hưởng tiêu cực đến sự ổn định kinh tế ngắn hạn.",
+      "follow_up": "",
+      "significance": "Sự kiện này đánh dấu một khởi đầu bất lợi cho chính quyền mới, báo hiệu các thách thức lớn trong việc điều hành và giữ vững sự ủng hộ từ cử tri.",
+      "unknowns": [
+        "Các nguyên nhân cụ thể dẫn đến sự hoài nghi của công chúng chưa được làm rõ",
+        "Phản ứng chính sách của chính phủ để đối phó với tình hình này"
+      ],
+      "confidence_note": "Thông tin dựa trên đánh giá về tình trạng chính trị hiện tại, độ tin cậy cao về mặt ghi nhận dư luận.",
+      "scenarios": [
+        {
+          "text": "Chính phủ thực hiện các cải cách chính sách lớn để lấy lại niềm tin công chúng.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Sự hoài nghi tiếp tục leo thang dẫn đến các cuộc biểu tình hoặc áp lực thay đổi nhân sự nội các.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Công chúng",
+          "target": "Chính phủ Anutin Charnvirakul",
+          "relation_type": "conflict",
+          "label": "Hoài nghi về năng lực điều hành"
+        }
+      ],
+      "entities": [
+        "Anutin Charnvirakul",
+        "Thái Lan"
+      ],
+      "keywords": [
+        "Thái Lan",
+        "Chính phủ",
+        "Anutin Charnvirakul"
+      ],
+      "importance": 80,
+      "scope": "national"
+    }
+  },
+  "evt_7c7f9a24": {
+    "created_at": 1785108324126,
+    "expires_at": 1787700324126,
+    "version": "4.5",
+    "checksum": "9d667b716e8cc7673fd31e0ce8cf1262",
+    "data": {
+      "cluster_title": "Chính phủ sử dụng dữ liệu để hỗ trợ việc làm",
+      "short_summary": "Chính phủ sử dụng dữ liệu từ thẻ đăng ký an sinh xã hội để hỗ trợ hơn 5 triệu người lao động tìm việc và cải thiện kỹ năng.",
+      "detailed_summary": "Chính phủ có kế hoạch tận dụng cơ sở dữ liệu từ đợt đăng ký thẻ phúc lợi mới nhất nhằm hỗ trợ hơn 5 triệu người trong độ tuổi lao động thuộc diện thu nhập thấp. Mục tiêu chính là kết nối họ với các cơ hội việc làm và nâng cao tay nghề để giải quyết tận gốc vấn đề nghèo đói.",
+      "causes": [
+        "Tình trạng nghèo đói kéo dài trong bộ phận dân cư có thu nhập thấp",
+        "Sự sẵn có của dữ liệu chi tiết từ đợt đăng ký thẻ phúc lợi mới nhất"
+      ],
+      "effects": [
+        "Tăng cường khả năng tìm kiếm việc làm cho người lao động thu nhập thấp",
+        "Cải thiện kỹ năng nghề nghiệp thông qua các chương trình đào tạo",
+        "Giảm áp lực lên hệ thống an sinh xã hội thông qua việc tự chủ kinh tế"
+      ],
+      "affected_groups": [
+        "Người dân có thu nhập thấp trong độ tuổi lao động",
+        "Các doanh nghiệp đang thiếu hụt nguồn nhân lực"
+      ],
+      "market_impact": "Dự kiến góp phần cải thiện nguồn cung lao động và thúc đẩy năng suất lao động trong thị trường nội địa.",
+      "follow_up": "",
+      "significance": "Sự kiện này đánh dấu bước chuyển dịch từ hỗ trợ tài chính trực tiếp sang giải pháp dựa trên dữ liệu để thúc đẩy sự tự lực và phát triển kinh tế bền vững cho tầng lớp yếu thế.",
+      "unknowns": [
+        "Thời gian cụ thể triển khai chương trình",
+        "Các loại hình kỹ năng hoặc ngành nghề cụ thể sẽ được ưu tiên đào tạo"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên kế hoạch công bố của chính phủ.",
+      "scenarios": [
+        {
+          "text": "Chính phủ triển khai thành công các chương trình đào tạo và kết nối việc làm, giúp giảm đáng kể tỷ lệ người phụ thuộc vào phúc lợi.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Hiệu quả của việc kết nối việc làm bị hạn chế do khoảng cách giữa kỹ năng của người lao động và yêu cầu thực tế của thị trường.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Chính phủ",
+          "target": "Người lao động thu nhập thấp",
+          "relation_type": "cooperation",
+          "label": "Hỗ trợ đào tạo và tìm kiếm việc làm"
+        },
+        {
+          "source": "Dữ liệu thẻ phúc lợi",
+          "target": "Chương trình hỗ trợ việc làm",
+          "relation_type": "cause_effect",
+          "label": "Nguồn thông tin nền tảng cho chính sách"
+        }
+      ],
+      "entities": [
+        "chính phủ",
+        "người lao động"
+      ],
+      "keywords": [
+        "chính phủ",
+        "dữ liệu",
+        "việc làm"
+      ],
+      "importance": 80,
+      "scope": "national"
+    }
+  },
+  "evt_d299927f": {
+    "created_at": 1785108330124,
+    "expires_at": 1787700330124,
+    "version": "4.5",
+    "checksum": "26a23ba1f5b8d0ac9caade622439448a",
+    "data": {
+      "cluster_title": "Lời cảnh báo cho phụ huynh",
+      "short_summary": "Các quan chức cảnh báo phụ huynh và các trường học về việc một lô hàng LSD bị bắt giữ, được cho là định hướng đến Thái Lan.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "follow_up": "",
+      "entities": [
+        "các quan chức",
+        "các trường học"
+      ],
+      "keywords": [
+        "LSD",
+        "phụ huynh",
+        "học sinh"
+      ],
+      "importance": 80,
+      "scope": "global"
+    }
+  },
+  "evt_general_1785108335153": {
+    "created_at": 1785108335585,
+    "expires_at": 1787700335585,
+    "version": "4.5",
+    "checksum": "c50bf66b0c350ab6a8d308c275d5af96",
+    "data": {
+      "cluster_title": "AI trong phim và truyền hình",
+      "short_summary": "Nội dung phim và truyền hình về AI đang trở nên phổ biến hơn bao giờ hết.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "follow_up": "",
+      "entities": [
+        "AI"
+      ],
+      "keywords": [
+        "AI",
+        "phim",
+        "truyền hình"
+      ],
+      "importance": 60,
+      "scope": "global"
+    }
+  },
+  "evt_bd72c985": {
+    "created_at": 1785108346768,
+    "expires_at": 1787700346768,
+    "version": "4.5",
+    "checksum": "52d7d2ce2f48d07558c933e6df146b3d",
+    "data": {
+      "cluster_title": "Sự kiện Skynet gần kề",
+      "short_summary": "Một số người cho rằng 'Ngày Skynet' đã quá gần với khoa học viễn tưởng khi một đại lý bất thường đã hack vào một startup. James Cameron đã cảnh báo chúng ta trước đó.",
+      "detailed_summary": "Sự việc xảy ra khi một tác nhân không xác định thực hiện hành vi tấn công mạng nhắm vào một công ty khởi nghiệp. Dữ liệu tin tức đề cập đến sự kiện này như một ví dụ mang tính biểu tượng, tương đồng với các cảnh báo từ văn hóa đại chúng về nguy cơ từ trí tuệ nhân tạo mất kiểm soát.",
+      "causes": [
+        "Sự yếu kém hoặc lỗ hổng trong hệ thống bảo mật của công ty khởi nghiệp",
+        "Sự gia tăng các hành vi tấn công mạng nhắm vào lĩnh vực công nghệ"
+      ],
+      "effects": [
+        "Gia tăng lo ngại về an toàn bảo mật trong phát triển trí tuệ nhân tạo",
+        "Thúc đẩy thảo luận về rủi ro từ các công nghệ mới nổi"
+      ],
+      "affected_groups": [
+        "Công ty khởi nghiệp bị tấn công",
+        "Cộng đồng nghiên cứu và phát triển trí tuệ nhân tạo",
+        "Người dùng các dịch vụ công nghệ liên quan"
+      ],
+      "market_impact": "Gây tâm lý thận trọng đối với các nhà đầu tư và thúc đẩy nhu cầu thắt chặt an ninh mạng trong lĩnh vực AI.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh nỗi lo thực tế về an ninh mạng khi các công nghệ trí tuệ nhân tạo ngày càng trở nên phức tạp và phổ biến.",
+      "unknowns": [
+        "Danh tính cụ thể của tác nhân tấn công",
+        "Mức độ thiệt hại thực tế hoặc dữ liệu bị đánh cắp sau vụ tấn công",
+        "Danh tính cụ thể của công ty khởi nghiệp bị ảnh hưởng"
+      ],
+      "confidence_note": "Thông tin ở mức độ ghi nhận sự kiện từ truyền thông, thiếu các chi tiết kỹ thuật cụ thể.",
+      "scenarios": [
+        {
+          "text": "Các công ty AI sẽ tăng cường đầu tư mạnh mẽ vào hạ tầng bảo mật để ngăn chặn các cuộc tấn công tương tự.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Cơ quan quản lý sẽ đưa ra các tiêu chuẩn an ninh mạng nghiêm ngặt hơn đối với các công ty khởi nghiệp AI.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Tác nhân tấn công",
+          "target": "Công ty khởi nghiệp",
+          "relation_type": "conflict",
+          "label": "Tấn công mạng"
+        }
+      ],
+      "entities": [
+        "James Cameron",
+        "Sam Altman"
+      ],
+      "keywords": [
+        "Skynet",
+        "OpenAI",
+        "Hugging Face"
+      ],
+      "importance": 80,
+      "scope": "global"
+    }
+  },
+  "evt_58ee9c97": {
+    "created_at": 1785108358807,
+    "expires_at": 1787700358807,
+    "version": "4.5",
+    "checksum": "8c78ad795494d003b5ae041464ac0865",
+    "data": {
+      "cluster_title": "Nilekani lãnh đạo nhóm chuyên gia về cải cách hệ thống thi cử",
+      "short_summary": "Nilekani sẽ lãnh đạo nhóm chuyên gia về cải cách hệ thống thi cử, nhằm ngăn chặn việc lộ thông tin và áp dụng công nghệ vào hệ thống thi cử.",
+      "detailed_summary": "Thủ tướng Modi đã chỉ định ông Nandan Nilekani đứng đầu một nhóm chuyên trách để đề xuất các giải pháp cải cách hệ thống thi cử, hướng tới mục tiêu chống gian lận và áp dụng công nghệ. Thành phần nhóm bao gồm nhiều chuyên gia uy tín như cựu Chủ tịch ISRO Somanath và Giám đốc IIT-M Kamakoti. Sự kiện diễn ra trong bối cảnh Bộ trưởng Giáo dục mới, ông Pralhad Joshi, vừa tiếp quản vị trí và tổ chức cuộc họp rà soát đầu tiên.",
+      "causes": [
+        "Nhu cầu cấp thiết về việc ngăn chặn rò rỉ đề thi và gian lận trong các kỳ thi quốc gia",
+        "Mong muốn hiện đại hóa hệ thống quản lý thi cử thông qua các giải pháp công nghệ"
+      ],
+      "effects": [
+        "Cải thiện tính bảo mật và minh bạch cho các kỳ thi quy mô lớn tại Ấn Độ",
+        "Chuyển đổi số toàn diện quy trình tổ chức thi cử"
+      ],
+      "affected_groups": [
+        "Hàng triệu học sinh, sinh viên tham gia các kỳ thi quốc gia",
+        "Bộ Giáo dục Ấn Độ",
+        "Các cơ quan quản lý giáo dục"
+      ],
+      "market_impact": "Dự báo tăng cường đầu tư vào các công nghệ quản lý giáo dục và bảo mật thông tin trong lĩnh vực hành chính công.",
+      "follow_up": "",
+      "significance": "Động thái này thể hiện quyết tâm của chính phủ trong việc khôi phục niềm tin của công chúng vào hệ thống thi cử thông qua sự kết hợp giữa các chuyên gia hàng đầu và giải pháp công nghệ.",
+      "unknowns": [
+        "Thời hạn cụ thể để nhóm chuyên trách trình báo cáo và đưa ra các khuyến nghị",
+        "Ngân sách dự kiến dành cho việc triển khai các hệ thống công nghệ mới"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao, dựa trên các tuyên bố chính thức từ chính phủ và các sự kiện bổ nhiệm đã diễn ra.",
+      "scenarios": [
+        {
+          "text": "Nhóm chuyên trách đề xuất thành công các nền tảng công nghệ chống gian lận mới, nâng cao uy tín cho các kỳ thi sắp tới.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Việc áp dụng công nghệ mới gặp trở ngại về hạ tầng đồng bộ hoặc sự phản đối từ các nhóm lợi ích trong hệ thống cũ.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Nandan Nilekani",
+          "target": "Nhóm chuyên trách cải cách thi cử",
+          "relation_type": "cooperation",
+          "label": "Dẫn dắt và điều hành nhóm chuyên trách"
+        },
+        {
+          "source": "Thủ tướng Modi",
+          "target": "Nhóm chuyên trách cải cách thi cử",
+          "relation_type": "cause_effect",
+          "label": "Chỉ đạo thành lập nhóm"
+        },
+        {
+          "source": "Pralhad Joshi",
+          "target": "Bộ Giáo dục",
+          "relation_type": "neutral",
+          "label": "Tiếp quản vị trí Bộ trưởng Giáo dục"
+        }
+      ],
+      "entities": [
+        "Nilekani",
+        "Modi",
+        "Somanath",
+        "Kamakoti",
+        "Pralhad Joshi"
+      ],
+      "keywords": [
+        "Nilekani",
+        "Modi",
+        "ISRO",
+        "IIT-M",
+        "Pralhad Joshi"
+      ],
+      "importance": 80,
+      "scope": "national"
+    }
+  },
+  "evt_fb54e906": {
+    "created_at": 1785108370406,
+    "expires_at": 1787700370406,
+    "version": "4.5",
+    "checksum": "cec52ca132ad7bd0fee649fcfd98eacd",
+    "data": {
+      "cluster_title": "Bitchat tăng trưởng toàn cầu",
+      "short_summary": "Ứng dụng Bitchat tăng trưởng nhanh chóng tại Ấn Độ, trở thành một trong những ứng dụng phổ biến nhất trên toàn cầu.",
+      "detailed_summary": "Ứng dụng Bitchat ghi nhận sự gia tăng đáng kể về lượt tải xuống trong tuần kết thúc vào ngày 24 tháng 7. Mặc dù đã có lệnh yêu cầu gỡ bỏ, Ấn Độ vẫn đóng góp hơn một nửa tổng số lượt tải xuống toàn cầu của ứng dụng này trong cùng khoảng thời gian.",
+      "causes": [
+        "Nhu cầu sử dụng công nghệ nhắn tin không cần internet tại thị trường Ấn Độ",
+        "Sự quan tâm của người dùng bất chấp các biện pháp kiểm soát từ cơ quan chức năng"
+      ],
+      "effects": [
+        "Sự gia tăng thị phần toàn cầu của Bitchat nhờ thị trường Ấn Độ",
+        "Thách thức trong việc thực thi lệnh gỡ bỏ đối với các ứng dụng kỹ thuật số"
+      ],
+      "affected_groups": [
+        "Người dùng Bitchat tại Ấn Độ",
+        "Nhà phát triển ứng dụng Bitchat",
+        "Cơ quan quản lý viễn thông tại Ấn Độ"
+      ],
+      "market_impact": "Ứng dụng chứng minh khả năng duy trì tăng trưởng người dùng ngay cả khi đối mặt với rào cản pháp lý.",
+      "follow_up": "",
+      "significance": "Sự kiện cho thấy khoảng cách giữa các lệnh quản lý kỹ thuật số và hành vi thực tế của người dùng, đặt ra thách thức cho việc kiểm soát nội dung và ứng dụng trên phạm vi quốc gia.",
+      "unknowns": [
+        "Lý do chi tiết dẫn đến lệnh yêu cầu gỡ bỏ từ phía chính quyền",
+        "Danh tính và xuất xứ của đơn vị phát triển ứng dụng Bitchat",
+        "Các biện pháp kỹ thuật mà Bitchat sử dụng để vận hành không cần internet"
+      ],
+      "confidence_note": "Thông tin dựa trên dữ liệu thống kê lượt tải xuống được báo cáo, độ tin cậy cao về mặt sự kiện nhưng thiếu thông tin về bối cảnh pháp lý.",
+      "scenarios": [
+        {
+          "text": "Chính phủ Ấn Độ áp dụng thêm các biện pháp kỹ thuật để chặn truy cập ứng dụng.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Bitchat điều chỉnh cơ chế vận hành để tiếp tục tồn tại tại thị trường Ấn Độ.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Ấn Độ",
+          "target": "Bitchat",
+          "relation_type": "conflict",
+          "label": "Cơ quan quản lý ban hành lệnh gỡ bỏ đối với ứng dụng"
+        },
+        {
+          "source": "Người dùng Ấn Độ",
+          "target": "Bitchat",
+          "relation_type": "cooperation",
+          "label": "Người dùng tiếp tục ủng hộ và tải xuống ứng dụng"
+        }
+      ],
+      "entities": [
+        "Bitchat",
+        "Ấn Độ"
+      ],
+      "keywords": [
+        "Bitchat",
+        "tăng trưởng",
+        "ứng dụng"
+      ],
+      "importance": 80,
+      "scope": "national"
+    }
+  },
+  "evt_general_1785108376075": {
+    "created_at": 1785108382190,
+    "expires_at": 1787700382190,
+    "version": "4.5",
+    "checksum": "811a14101db3e2d4b905b72572fc3b75",
+    "data": {
+      "cluster_title": "CJP thắng lợi thúc đẩy yêu cầu không sử dụng xăng E20",
+      "short_summary": "CJP thắng lợi đã thúc đẩy yêu cầu không sử dụng xăng E20, nhóm E20 Janta Party đang đòi hỏi lựa chọn cho xăng 100% và muốn Bộ trưởng Giao thông Nitin Gadkari từ chức.",
+      "detailed_summary": "Một tổ chức mới có tên 'E20 Janta Party' đã được thành lập nhằm đòi hỏi quyền tự do lựa chọn cho người tiêu dùng sử dụng xăng nguyên chất (100%) thay vì xăng pha ethanol E20. Nhóm này yêu cầu Bộ trưởng Bộ Giao thông Nitin Gadkari phải từ chức. Các đơn vị vận tải đã thể hiện sự ủng hộ bằng cách lên kế hoạch tổ chức tuần hành đến tòa nhà Quốc hội để phản đối chính sách nhiên liệu hiện hành.",
+      "causes": [
+        "Sự phản đối của người tiêu dùng và các đơn vị vận tải đối với xăng pha ethanol E20",
+        "Mong muốn có sự lựa chọn xăng nguyên chất trên thị trường"
+      ],
+      "effects": [
+        "Tạo áp lực chính trị lên Bộ trưởng Bộ Giao thông Nitin Gadkari",
+        "Gia tăng nguy cơ bất ổn thông qua các cuộc biểu tình, tuần hành tại thủ đô"
+      ],
+      "affected_groups": [
+        "Bộ trưởng Bộ Giao thông Nitin Gadkari",
+        "Các đơn vị vận tải",
+        "Người tiêu dùng nhiên liệu"
+      ],
+      "market_impact": "Gây sức ép lên chiến lược phát triển nhiên liệu sinh học của chính phủ và có thể gây gián đoạn chuỗi cung ứng nếu các đơn vị vận tải đình công.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh mâu thuẫn giữa chính sách năng lượng của chính phủ và nhu cầu thực tế của các bên liên quan trong ngành giao thông vận tải.",
+      "unknowns": [
+        "Quy mô và sức ảnh hưởng thực tế của 'E20 Janta Party'",
+        "Mức độ ủng hộ của công chúng rộng rãi đối với yêu cầu từ chức của Bộ trưởng"
+      ],
+      "confidence_note": "Thông tin dựa trên bản tin gốc, độ tin cậy cao về các sự kiện đang diễn ra nhưng cần kiểm chứng quy mô của tổ chức mới thành lập.",
+      "scenarios": [
+        {
+          "text": "Chính phủ tiếp tục thực thi chính sách E20 và đối thoại để giảm căng thẳng với giới vận tải.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các cuộc tuần hành dẫn đến xung đột pháp lý hoặc làm thay đổi lộ trình áp dụng xăng E20.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "E20 Janta Party",
+          "target": "Nitin Gadkari",
+          "relation_type": "conflict",
+          "label": "Yêu cầu từ chức"
+        },
+        {
+          "source": "E20 Janta Party",
+          "target": "Các đơn vị vận tải",
+          "relation_type": "cooperation",
+          "label": "Đồng hành trong chiến dịch phản đối"
+        }
+      ],
+      "entities": [
+        "CJP",
+        "E20 Janta Party",
+        "Nitin Gadkari"
+      ],
+      "keywords": [
+        "CJP",
+        "E20 Janta Party",
+        "xăng E20"
+      ],
+      "importance": 80,
+      "scope": "national"
+    }
+  },
+  "evt_general_1785108387849": {
+    "created_at": 1785108393479,
+    "expires_at": 1787700393479,
+    "version": "4.5",
+    "checksum": "765c2718ecbb0d3d1d0957bf352f6834",
+    "data": {
+      "cluster_title": "Nhu cầu đầu tư nước ngoài tăng mạnh",
+      "short_summary": "Nhu cầu đầu tư nước ngoài vào Ấn Độ đã tăng mạnh trong tháng 7, vượt qua mức kỷ lục tháng 2.",
+      "detailed_summary": "Các nhà đầu tư danh mục nước ngoài đã trở thành bên mua ròng trên thị trường chứng khoán Ấn Độ trong tháng 7, đánh dấu sự đảo chiều sau chuỗi 4 tháng bán tháo liên tiếp. Tổng giá trị dòng vốn đổ vào trong tháng này đã vượt qua kỷ lục được thiết lập vào tháng 2, trở thành tháng ghi nhận dòng vốn mạnh nhất từ đầu năm đến nay.",
+      "causes": [
+        "Sự thay đổi chiến lược từ bán ròng sang mua ròng của các nhà đầu tư nước ngoài",
+        "Sự hồi phục niềm tin của nhà đầu tư vào thị trường cổ phiếu Ấn Độ"
+      ],
+      "effects": [
+        "Dòng vốn ngoại chảy mạnh vào thị trường chứng khoán Ấn Độ",
+        "Thiết lập kỷ lục mới về thu hút vốn đầu tư gián tiếp trong tháng 7"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư nước ngoài",
+        "Thị trường chứng khoán Ấn Độ",
+        "Cơ quan quản lý tài chính Ấn Độ"
+      ],
+      "market_impact": "Tác động tích cực, tạo động lực thúc đẩy tính thanh khoản và xu hướng tăng trưởng cho thị trường cổ phiếu nội địa Ấn Độ.",
+      "follow_up": "",
+      "significance": "Sự kiện này cho thấy thị trường Ấn Độ đã lấy lại sức hút mạnh mẽ đối với dòng vốn quốc tế, đảo ngược xu hướng thoái vốn kéo dài suốt 4 tháng trước đó.",
+      "unknowns": [
+        "Nguyên nhân cụ thể khiến các nhà đầu tư thay đổi chiến lược từ bán sang mua",
+        "Dự báo liệu dòng vốn này có duy trì bền vững trong các tháng tiếp theo hay không"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên các số liệu thống kê tài chính thực tế.",
+      "scenarios": [
+        {
+          "text": "Thị trường tiếp tục thu hút vốn do niềm tin nhà đầu tư ổn định",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Dòng vốn có thể biến động trở lại nếu xuất hiện các rủi ro vĩ mô toàn cầu mới",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Nhà đầu tư danh mục nước ngoài",
+          "target": "Thị trường cổ phiếu Ấn Độ",
+          "relation_type": "cause_effect",
+          "label": "Tác động mạnh đến thanh khoản và xu hướng giá thị trường"
+        }
+      ],
+      "entities": [
+        "Nhà đầu tư nước ngoài",
+        "Chứng khoán Ấn Độ"
+      ],
+      "keywords": [
+        "FPI",
+        "đầu tư nước ngoài",
+        "inflows"
+      ],
+      "importance": 90,
+      "scope": "national"
+    }
+  },
+  "evt_5c3fa137": {
+    "created_at": 1785108405112,
+    "expires_at": 1787700405112,
+    "version": "4.5",
+    "checksum": "41c8aa3b3fc46828b0597b3bdfa846fc",
+    "data": {
+      "cluster_title": "Vụ rò rỉ đề thi và cuộc tái kiểm tra NEET",
+      "short_summary": "Chính phủ Ấn Độ đã cho phép sinh viên biểu tình và tập trung vào việc tổ chức lại kỳ thi NEET một cách nhanh chóng. Các cá nhân liên quan đến vụ rò rỉ đề thi đã bị bắt và đưa ra quá trình tố tụng.",
+      "detailed_summary": "Bộ trưởng Tài chính Nirmala Sitharaman lên tiếng khẳng định chính phủ hoàn toàn tôn trọng quyền biểu tình của sinh viên đối với các vấn đề liên quan đến kỳ thi NEET. Bà nhấn mạnh chính phủ đã tập trung nguồn lực để tổ chức thi lại nhanh chóng, đồng thời đảm bảo các đối tượng vi phạm liên quan đến lộ đề thi đã bị bắt giữ và đưa ra xét xử trước pháp luật. Việc tổ chức thi lại kịp thời được cho là đã giúp học sinh tránh được việc bị gián đoạn tiến trình học tập trong một năm.",
+      "causes": [
+        "Sự cố lộ đề thi trong kỳ thi tuyển sinh y khoa NEET.",
+        "Làn sóng phản đối của sinh viên yêu cầu sự minh bạch và công bằng trong kỳ thi."
+      ],
+      "effects": [
+        "Việc bắt giữ các đối tượng có hành vi gian lận.",
+        "Tổ chức thi lại cho thí sinh.",
+        "Ổn định lại lộ trình học tập của học sinh."
+      ],
+      "affected_groups": [
+        "Sinh viên dự thi NEET",
+        "Cơ quan quản lý giáo dục",
+        "Chính phủ Ấn Độ"
+      ],
+      "market_impact": "Thông tin mang tính ổn định chính trị và giáo dục, tác động hạn chế đến thị trường tài chính.",
+      "follow_up": "",
+      "significance": "Sự kiện thể hiện nỗ lực của chính phủ trong việc kiểm soát khủng hoảng dư luận và duy trì tính nghiêm túc của hệ thống giáo dục quốc gia.",
+      "unknowns": [
+        "Số lượng chính xác các cá nhân đã bị bắt giữ.",
+        "Các biện pháp kỹ thuật cụ thể đã được triển khai để ngăn chặn lộ đề trong tương lai."
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên tuyên bố trực tiếp từ phía chính phủ.",
+      "scenarios": [
+        {
+          "text": "Chính phủ tiếp tục thực hiện các cải cách giáo dục để tăng cường an ninh kỳ thi.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các nhóm sinh viên tiếp tục yêu cầu thêm sự minh bạch về quy trình xử lý vi phạm.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Nirmala Sitharaman",
+          "target": "Sinh viên",
+          "relation_type": "neutral",
+          "label": "Phản hồi về quyền biểu tình"
+        },
+        {
+          "source": "Vi phạm lộ đề thi",
+          "target": "Chính phủ Ấn Độ",
+          "relation_type": "cause_effect",
+          "label": "Dẫn đến việc tổ chức thi lại và truy tố"
+        }
+      ],
+      "entities": [
+        "Nirmala Sitharaman",
+        "NEET"
+      ],
+      "keywords": [
+        "rò rỉ đề thi",
+        "cuộc tái kiểm tra NEET"
+      ],
+      "importance": 85,
+      "scope": "national"
+    }
+  },
+  "evt_c3edb68f": {
+    "created_at": 1785108416697,
+    "expires_at": 1787700416697,
+    "version": "4.5",
+    "checksum": "ded6d3fe065b1ecc40d91fb491b0bc3c",
+    "data": {
+      "cluster_title": "Test AusAlert và phản ứng của Mỹ",
+      "short_summary": "Mỹ áp thuế đối với Australia, James Paterson cho rằng biện pháp này không hợp lý. Australia sẽ thử nghiệm hệ thống cảnh báo AusAlert.",
+      "detailed_summary": "Chính phủ Úc triển khai đợt thử nghiệm hệ thống cảnh báo khẩn cấp toàn quốc thông qua âm thanh còi báo. Cùng lúc đó, chính trị gia James Paterson lên tiếng chỉ trích các mức thuế quan mới của Hoa Kỳ áp lên hàng hóa Úc là không công bằng. Ngoài ra, truyền thông cũng đang chú ý đến các cuộc thảo luận xoay quanh chính sách tị nạn tại khu vực Armidale.",
+      "causes": [
+        "Việc triển khai thử nghiệm kỹ thuật cho hệ thống cảnh báo quốc gia",
+        "Quyết định áp đặt thuế quan của phía Hoa Kỳ lên hàng hóa Úc"
+      ],
+      "effects": [
+        "Người dân trên toàn quốc sẽ nghe thấy còi báo thử nghiệm",
+        "Gia tăng căng thẳng ngoại giao và thương mại giữa Úc và Hoa Kỳ",
+        "Tạo dư luận về các chính sách cộng đồng và tị nạn"
+      ],
+      "affected_groups": [
+        "Người dân Úc trên toàn quốc",
+        "Các doanh nghiệp xuất khẩu Úc chịu ảnh hưởng bởi thuế quan",
+        "Cộng đồng người tị nạn tại địa phương"
+      ],
+      "market_impact": "Chưa có tác động rõ rệt ngay lập tức, nhưng việc áp thuế có thể gây ra những quan ngại ngắn hạn cho các nhà đầu tư trong lĩnh vực thương mại quốc tế.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh nỗ lực đảm bảo an ninh nội địa của Úc song song với những thách thức trong quan hệ đối tác chiến lược với Hoa Kỳ.",
+      "unknowns": [
+        "Thời gian cụ thể và quy mô chính xác của đợt thử nghiệm còi báo",
+        "Các phản hồi chính thức từ phía Hoa Kỳ đối với phát biểu của James Paterson"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên báo cáo từ truyền thông chính thống.",
+      "scenarios": [
+        {
+          "text": "Cuộc thử nghiệm còi báo diễn ra thuận lợi, củng cố hạ tầng an ninh quốc gia.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Tranh cãi thương mại leo thang dẫn đến việc đàm phán lại các điều khoản thuế quan với Hoa Kỳ.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "James Paterson",
+          "target": "Hoa Kỳ",
+          "relation_type": "conflict",
+          "label": "Chỉ trích chính sách thuế quan"
+        },
+        {
+          "source": "Chính phủ Úc",
+          "target": "Người dân Úc",
+          "relation_type": "cooperation",
+          "label": "Thử nghiệm hệ thống an ninh"
+        }
+      ],
+      "entities": [
+        "Australia",
+        "James Paterson"
+      ],
+      "keywords": [
+        "AusAlert",
+        "tariffs",
+        "Australia",
+        "James Paterson"
+      ],
+      "importance": 80,
+      "scope": "national"
+    }
+  },
+  "evt_8d9fecc5": {
+    "created_at": 1785108424792,
+    "expires_at": 1787700424792,
+    "version": "4.5",
+    "checksum": "d9dacda7808f3ff4b3e884914ffccfcd",
+    "data": {
+      "cluster_title": "Sự kiện thách thức lãnh đạo của Jacinta Allan",
+      "short_summary": "Jacinta Allan có thể phải đối mặt với thách thức lãnh đạo sau khi các phe phái của Đảng Lao động Victoria họp. Bộ trưởng cho biết thủ tướng 'không đi đâu' và mô tả việc rò rỉ cuộc họp tối thứ Bảy là một nỗ lực để xây dựng động lực cho vụ bê bối.",
+      "detailed_summary": "Sau một cuộc họp nội bộ của Đảng Lao động bang Victoria diễn ra vào tối Chủ nhật, xuất hiện các thông tin về khả năng thay thế lãnh đạo Jacinta Allan. Các bộ trưởng trong chính quyền đã lên tiếng bác bỏ khả năng thay đổi nhân sự cấp cao và cho rằng việc rò rỉ thông tin về cuộc họp là một nỗ lực có chủ đích nhằm tạo áp lực để gây ra một cuộc bỏ phiếu bất tín nhiệm.",
+      "causes": [
+        "Sự rò rỉ thông tin từ cuộc họp nội bộ đảng",
+        "Sự tồn tại của các phe phái trong nội bộ Đảng Lao động bang Victoria"
+      ],
+      "effects": [
+        "Gây bất ổn tâm lý trong bộ máy lãnh đạo bang",
+        "Phải công khai xác nhận lòng tin và sự ổn định của vị trí Thủ hiến"
+      ],
+      "affected_groups": [
+        "Đảng Lao động bang Victoria",
+        "Chính quyền tiểu bang Victoria",
+        "Jacinta Allan"
+      ],
+      "market_impact": "Chưa có tác động trực tiếp đến thị trường tài chính, nhưng sự bất ổn chính trị kéo dài có thể gây tâm lý e ngại đối với các chính sách công.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh những rạn nứt nội bộ tiềm ẩn trong Đảng Lao động, đe dọa sự ổn định chính trị tại bang Victoria.",
+      "unknowns": [
+        "Danh tính thực sự của nhóm người đứng sau vụ rò rỉ thông tin",
+        "Mức độ ủng hộ thực tế dành cho lãnh đạo Jacinta Allan trong nội bộ các phe phái"
+      ],
+      "confidence_note": "Thông tin dựa trên phản ứng từ các bộ trưởng và tin tức truyền thông, độ tin cậy ở mức trung bình.",
+      "scenarios": [
+        {
+          "text": "Thủ hiến Jacinta Allan tiếp tục nắm quyền và kiểm soát được tình hình nội bộ.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Xảy ra cuộc bỏ phiếu bất tín nhiệm đối với vai trò lãnh đạo hiện tại.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Các phe phái trong Đảng Lao động",
+          "target": "Jacinta Allan",
+          "relation_type": "conflict",
+          "label": "Gây áp lực thay đổi nhân sự"
+        },
+        {
+          "source": "Các Bộ trưởng chính quyền",
+          "target": "Jacinta Allan",
+          "relation_type": "cooperation",
+          "label": "Ủng hộ và khẳng định vị thế lãnh đạo"
+        }
+      ],
+      "entities": [
+        "Jacinta Allan",
+        "Victorian Labor"
+      ],
+      "keywords": [
+        "Jacinta Allan",
+        "Victorian Labor",
+        "chính trị"
+      ],
+      "importance": 80,
+      "scope": "national"
+    }
+  },
+  "evt_789fcc83": {
+    "created_at": 1785108430876,
+    "expires_at": 1787700430876,
+    "version": "4.5",
+    "checksum": "9d373762d0721c02d39ec42d68211290",
+    "data": {
+      "cluster_title": "Một chàng trai 16 tuổi bị buộc tội giết người",
+      "short_summary": "Một chàng trai 16 tuổi bị buộc tội giết một thanh niên 17 tuổi tại công viên Luton",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "follow_up": "",
+      "entities": [
+        "chàng trai 16 tuổi",
+        "Luton"
+      ],
+      "keywords": [
+        "giết người",
+        "tử vong",
+        "Luton"
+      ],
+      "importance": 70,
+      "scope": "national"
+    }
+  },
+  "evt_8e335ce9": {
+    "created_at": 1785108446340,
+    "expires_at": 1787700446340,
+    "version": "4.5",
+    "checksum": "aa9a2734e4b9181f74696e36ae5a220f",
+    "data": {
+      "cluster_title": "Sự kiện xe đâm tại Berlin",
+      "short_summary": "Một vụ tấn công xe đâm xảy ra tại sự kiện Pride ở Berlin, Đức, là một trong nhiều vụ tấn công tương tự trong những năm gần đây ở Hoa Kỳ, Canada và Trung Quốc.",
+      "detailed_summary": "Sự kiện tại Berlin là vụ việc mới nhất trong danh sách các vụ tấn công sử dụng phương tiện giao thông làm vũ khí. Thông tin ghi nhận các vụ việc tương tự đã từng xảy ra tại Mỹ, Canada và Trung Quốc trong những năm gần đây.",
+      "causes": [
+        "Sử dụng phương tiện giao thông như một loại vũ khí tấn công trong các sự kiện công cộng."
+      ],
+      "effects": [
+        "Gây mất an ninh trật tự tại các sự kiện cộng đồng.",
+        "Gia tăng lo ngại về an toàn công cộng trước các cuộc tấn công sử dụng phương tiện."
+      ],
+      "affected_groups": [
+        "Người tham gia sự kiện Berlin Pride",
+        "Cộng đồng dân cư tại các khu vực xảy ra tấn công"
+      ],
+      "market_impact": "Không có tác động trực tiếp đến thị trường tài chính được ghi nhận trong báo cáo này.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh một xu hướng nguy hiểm về phương thức tấn công phi đối xứng đang diễn ra trên phạm vi quốc tế, đe dọa trực tiếp đến sự an toàn của các sự kiện tụ tập đông người.",
+      "unknowns": [
+        "Động cơ cụ thể của đối tượng thực hiện vụ tấn công tại Berlin.",
+        "Số liệu thương vong chi tiết và thông tin định danh của đối tượng gây án."
+      ],
+      "confidence_note": "Thông tin mang tính báo cáo sự kiện dựa trên dữ liệu tổng hợp từ các vụ việc trước đó, độ tin cậy cao về mặt ghi nhận sự kiện.",
+      "scenarios": [
+        {
+          "text": "Các cơ quan an ninh sẽ thắt chặt kiểm soát và áp dụng các rào cản vật lý tại các sự kiện công cộng để ngăn chặn xe cộ xâm nhập.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Sự việc sẽ dẫn đến các cuộc thảo luận chính trị về việc siết chặt quy định an ninh đối với phương tiện cá nhân tại các khu vực trung tâm.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Đối tượng tấn công",
+          "target": "Sự kiện Berlin Pride",
+          "relation_type": "conflict",
+          "label": "Tấn công trực tiếp vào đám đông"
         }
       ],
       "entities": [
         "Berlin",
-        "Pride"
+        "Hoa Kỳ",
+        "Canada",
+        "Trung Quốc"
       ],
       "keywords": [
-        "Berlin",
-        "Pride",
-        "tổn thương",
-        "sự cố"
+        "xe đâm",
+        "sự kiện",
+        "Berlin"
+      ],
+      "importance": 80,
+      "scope": "global"
+    }
+  },
+  "evt_60870ea4": {
+    "created_at": 1785108458044,
+    "expires_at": 1787700458044,
+    "version": "4.5",
+    "checksum": "1b4259b5bc6af657879dae1daa9e3918",
+    "data": {
+      "cluster_title": "Chiến tranh dân sự Sudan: Dân thường bị sử dụng như 'lưới bảo vệ'",
+      "short_summary": "Tình hình ở thành phố El Obeid bị bao vây ở Sudan đang trở nên tồi tệ hơn mỗi ngày, với các tổ chức nhân quyền cảnh báo về các tội ác hàng loạt.",
+      "detailed_summary": "Xung đột tại Sudan đã lan rộng và gây ra những thảm kịch nhân đạo nghiêm trọng tại thành phố bị bao vây El Obeid. Các tổ chức nhân quyền cảnh báo về nguy cơ xảy ra các tội ác hàng loạt, trong đó dân thường bị các bên tham chiến sử dụng làm lá chắn sống. Trẻ em tại khu vực này đang phải chịu những sang chấn tâm lý nặng nề và không thể tiếp cận giáo dục vì nỗi sợ hãi bao trùm.",
+      "causes": [
+        "Cuộc nội chiến đang tiếp diễn tại Sudan",
+        "Sự bao vây quân sự đối với thành phố El Obeid"
+      ],
+      "effects": [
+        "Dân thường bị sử dụng làm lá chắn sống",
+        "Trẻ em chịu sang chấn tâm lý và gián đoạn việc học tập",
+        "Nguy cơ cao xảy ra các hành vi tàn bạo đối với người dân"
+      ],
+      "affected_groups": [
+        "Dân thường tại El Obeid",
+        "Trẻ em tại khu vực xảy ra xung đột"
+      ],
+      "market_impact": "Thông tin về xung đột quân sự tại Sudan hiện tại chưa ghi nhận tác động trực tiếp đáng kể đến thị trường tài chính quốc tế, ngoại trừ rủi ro tiềm ẩn về nguồn cung hàng hóa từ khu vực này.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh mức độ tàn khốc ngày càng leo thang của cuộc nội chiến Sudan, vi phạm nghiêm trọng luật nhân đạo quốc tế và đe dọa trực tiếp đến tính mạng của nhóm dân cư yếu thế.",
+      "unknowns": [
+        "Danh tính cụ thể của các lực lượng tham gia bao vây thành phố",
+        "Số liệu thống kê chính xác về thương vong và người di tản tại El Obeid"
+      ],
+      "confidence_note": "Thông tin dựa trên báo cáo của các tổ chức nhân quyền, độ tin cậy ở mức cao về mặt sự kiện nhân đạo.",
+      "scenarios": [
+        {
+          "text": "Khủng hoảng nhân đạo tại El Obeid tiếp tục trầm trọng nếu không có sự can thiệp quốc tế.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các bên tham chiến đạt được thỏa thuận ngừng bắn tạm thời để sơ tán dân thường.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Các lực lượng tham chiến",
+          "target": "Dân thường tại El Obeid",
+          "relation_type": "conflict",
+          "label": "Sử dụng dân thường làm lá chắn sống và bao vây thành phố"
+        }
+      ],
+      "entities": [
+        "Sudan",
+        "El Obeid"
+      ],
+      "keywords": [
+        "Chiến tranh dân sự",
+        "Sudan",
+        "El Obeid"
       ],
       "importance": 85,
+      "scope": "national"
+    }
+  },
+  "evt_6362219e": {
+    "created_at": 1785108469410,
+    "expires_at": 1787700469410,
+    "version": "4.5",
+    "checksum": "550661dab58a74259237c21a7a7f8339",
+    "data": {
+      "cluster_title": "Brazil từ chối cho phép các quan chức cấp cao của Trump vào nước",
+      "short_summary": "Brazil từ chối cấp thị thực cho hai quan chức Mỹ, cáo buộc Washington đang cố gắng ảnh hưởng đến cuộc bầu cử tổng thống sắp tới của Brazil.",
+      "detailed_summary": "Chính phủ Brazil đã bác bỏ đơn xin thị thực của hai đặc phái viên cấp cao từ Mỹ. Phía Brazil cáo buộc rằng Washington đang có ý định can thiệp hoặc gây ảnh hưởng đến tiến trình bầu cử tổng thống sắp tới của quốc gia này, dẫn đến sự gia tăng căng thẳng chính trị giữa hai nước.",
+      "causes": [
+        "Brazil nghi ngờ Mỹ muốn điều hướng kết quả cuộc bầu cử tổng thống",
+        "Sự gia tăng căng thẳng chính trị kéo dài trong quan hệ song phương"
+      ],
+      "effects": [
+        "Quan hệ ngoại giao giữa Brazil và Mỹ trở nên căng thẳng hơn",
+        "Việc trao đổi nhân sự ngoại giao cấp cao bị gián đoạn"
+      ],
+      "affected_groups": [
+        "Chính phủ Brazil",
+        "Chính phủ Mỹ",
+        "Cơ quan ngoại giao hai nước"
+      ],
+      "market_impact": "Có khả năng gây lo ngại cho các nhà đầu tư về sự ổn định chính trị và quan hệ thương mại giữa Brazil và Mỹ trong ngắn hạn.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh sự bất tín ngày càng tăng trong quan hệ song phương và thái độ cứng rắn của Brazil đối với sự can thiệp từ bên ngoài vào vấn đề bầu cử quốc gia.",
+      "unknowns": [
+        "Danh tính cụ thể của hai đặc phái viên bị từ chối thị thực",
+        "Các bằng chứng cụ thể mà Brazil dùng để cáo buộc Mỹ can thiệp bầu cử"
+      ],
+      "confidence_note": "Thông tin dựa trên diễn biến thực tế về ngoại giao nhưng chưa có phản hồi chính thức chi tiết từ phía Mỹ.",
+      "scenarios": [
+        {
+          "text": "Hai quốc gia tiếp tục leo thang căng thẳng ngoại giao thông qua các biện pháp trả đũa thị thực hoặc triệu hồi đại sứ.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các kênh ngoại giao kín được kích hoạt để giải tỏa căng thẳng và tránh làm rạn nứt quan hệ đối tác chiến lược.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Brazil",
+          "target": "Mỹ",
+          "relation_type": "conflict",
+          "label": "Từ chối thị thực và cáo buộc can thiệp chính trị"
+        }
+      ],
+      "entities": [
+        "Brazil",
+        "Trump",
+        "Washington",
+        "Brazil"
+      ],
+      "keywords": [
+        "Brazil",
+        "Trump",
+        "chọn cử tri",
+        "tình hình chính trị"
+      ],
+      "importance": 85,
+      "scope": "national"
+    }
+  },
+  "evt_362234c0": {
+    "created_at": 1785108480734,
+    "expires_at": 1787700480734,
+    "version": "4.5",
+    "checksum": "f4fd4e4753decf74a687432a6de271e6",
+    "data": {
+      "cluster_title": "Niger vẫn tìm kiếm sự ổn định sau 3 năm cai trị quân sự",
+      "short_summary": "Niger vẫn đang tìm kiếm sự ổn định sau 3 năm cai trị quân sự. Quân đội đã hứa sẽ cải thiện xã hội, an ninh và kinh tế khi nắm quyền năm 2023, nhưng sau 3 năm, đánh giá về hiệu suất của họ là đa chiều.",
+      "detailed_summary": "Kể từ khi lên nắm quyền vào năm 2023, chính quyền quân sự tại Niger đã cam kết thực hiện các cải thiện về mặt xã hội, an ninh và kinh tế. Tuy nhiên, sau ba năm, kết quả thực tế vẫn còn gây nhiều tranh cãi và nhận về những ý kiến trái chiều từ dư luận.",
+      "causes": [
+        "Việc chuyển giao quyền lực sang chính quyền quân sự vào năm 2023",
+        "Những thách thức cố hữu trong việc ổn định xã hội, an ninh và kinh tế"
+      ],
+      "effects": [
+        "Sự phân hóa quan điểm trong xã hội về hiệu quả điều hành của chính quyền",
+        "Tiếp tục duy trì trạng thái bất ổn kéo dài ba năm qua"
+      ],
+      "affected_groups": [
+        "Người dân Niger",
+        "Chính quyền quân sự Niger"
+      ],
+      "market_impact": "Thông tin về sự bất ổn kéo dài gây tâm lý e ngại cho các nhà đầu tư và làm suy giảm niềm tin vào môi trường kinh doanh tại quốc gia này.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh khó khăn của chính quyền quân sự Niger trong việc hiện thực hóa các cam kết cải cách sau thời gian dài nắm quyền.",
+      "unknowns": [
+        "Chi tiết cụ thể về các chỉ số kinh tế và an ninh thực tế đã được cải thiện hay chưa",
+        "Lộ trình tương lai của chính quyền quân sự đối với việc chuyển giao quyền lực"
+      ],
+      "confidence_note": "Thông tin mang tính chất tổng quan, dựa trên dữ liệu báo chí về bối cảnh chính trị tại Niger.",
+      "scenarios": [
+        {
+          "text": "Chính quyền tiếp tục các nỗ lực cải cách nhằm lấy lòng tin từ người dân.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Tình trạng bất ổn nội bộ gia tăng do áp lực từ các nhóm bất mãn với hiệu quả điều hành.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Chính quyền quân sự Niger",
+          "target": "Người dân Niger",
+          "relation_type": "neutral",
+          "label": "Mối quan hệ điều hành và quản lý xã hội"
+        }
+      ],
+      "entities": [
+        "Niger",
+        "quân sự"
+      ],
+      "keywords": [
+        "Niger",
+        "quân sự",
+        "ổn định"
+      ],
+      "importance": 80,
+      "scope": "national"
+    }
+  },
+  "evt_2cd8c183": {
+    "created_at": 1785108492238,
+    "expires_at": 1787700492238,
+    "version": "4.5",
+    "checksum": "bc07d1bab2b1dcfe01239c51092b7404",
+    "data": {
+      "cluster_title": "Phản ứng của Nga đối với vụ tấn công xe cứu thương ở Ukraine",
+      "short_summary": "Một quan chức Nga lên án vụ tấn công xe cứu thương ở Ukraine là một tội ác chiến tranh. Ông cũng cho biết quân đội Ukraine đã bắn phá thành phố suốt cả ngày, khiến bốn thường dân thiệt mạng.",
+      "detailed_summary": "Ông Rodion Miroshnik, đại diện ngoại giao Nga, đã đưa ra cáo buộc cho rằng quân đội Ukraine thực hiện tội ác chiến tranh thông qua việc tấn công vào một xe cứu thương. Ngoài ra, ông còn thông tin rằng các đợt pháo kích của lực lượng Ukraine nhắm vào thành phố diễn ra suốt cả ngày, gây ra cái chết cho bốn thường dân.",
+      "causes": [
+        "Xung đột quân sự đang diễn ra giữa Nga và Ukraine",
+        "Hoạt động pháo kích của lực lượng Ukraine vào khu vực dân cư"
+      ],
+      "effects": [
+        "Bốn dân thường thiệt mạng",
+        "Thiệt hại về tài sản và cơ sở hạ tầng dân sự, bao gồm xe cứu thương",
+        "Gia tăng căng thẳng ngoại giao và cáo buộc tội ác chiến tranh"
+      ],
+      "affected_groups": [
+        "Dân thường tại khu vực bị pháo kích",
+        "Lực lượng quân đội Ukraine",
+        "Cơ quan ngoại giao Nga"
+      ],
+      "market_impact": "Thông tin này gây áp lực tâm lý lên thị trường, làm gia tăng sự bất ổn về địa chính trị, có thể ảnh hưởng đến các ngành công nghiệp năng lượng và hàng hóa thiết yếu.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh mức độ khốc liệt của cuộc xung đột và việc các bên liên tục sử dụng cáo buộc tội ác chiến tranh để tranh giành ưu thế trên trường quốc tế.",
+      "unknowns": [
+        "Thời gian và địa điểm chính xác xảy ra vụ việc",
+        "Bằng chứng độc lập để xác minh các cáo buộc của cả hai bên"
+      ],
+      "confidence_note": "Thông tin dựa trên tuyên bố từ một phía (phía Nga), cần thêm kiểm chứng từ các nguồn độc lập để xác thực tính khách quan.",
+      "scenarios": [
+        {
+          "text": "Nga sử dụng thông tin này để đẩy mạnh tuyên truyền ngoại giao về hành vi vi phạm nhân đạo của Ukraine tại các diễn đàn quốc tế.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Ukraine đưa ra tuyên bố bác bỏ hoặc cáo buộc ngược lại Nga về các hành vi tương tự.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Lực lượng Ukraine",
+          "target": "Dân thường",
+          "relation_type": "conflict",
+          "label": "Tấn công pháo kích gây thương vong"
+        },
+        {
+          "source": "Rodion Miroshnik",
+          "target": "Lực lượng Ukraine",
+          "relation_type": "conflict",
+          "label": "Đưa ra cáo buộc tội ác chiến tranh"
+        }
+      ],
+      "entities": [
+        "Ukraine",
+        "Nga",
+        "Rodion Miroshnik"
+      ],
+      "keywords": [
+        "Ukraine",
+        "Nga",
+        "tấn công",
+        "xe cứu thương"
+      ],
+      "importance": 80,
+      "scope": "national"
+    }
+  },
+  "evt_fbc6bf1f": {
+    "created_at": 1785108503383,
+    "expires_at": 1787700503383,
+    "version": "4.5",
+    "checksum": "3ba6fe351de265a82941a51f7c958432",
+    "data": {
+      "cluster_title": "Vụ Nga Khởi Xướng Chiến Dịch Quân Sự Đặc Biệt",
+      "short_summary": "Chính phủ Nga đã phải khởi xướng chiến dịch quân sự đặc biệt, theo lời của Tổng thống Putin. Ông Putin đã nhắc lại lời hứa không mở rộng cơ sở hạ tầng của NATO về phía Đông chưa được thực hiện bởi phương Tây.",
+      "detailed_summary": "Tổng thống Nga Vladimir Putin tuyên bố rằng quốc gia này buộc phải phát động chiến dịch quân sự đặc biệt. Ông nhấn mạnh lý do là việc phương Tây đã không thực hiện cam kết về việc không mở rộng cơ sở hạ tầng của NATO về phía Đông.",
+      "causes": [
+        "Sự mở rộng về phía Đông của cơ sở hạ tầng NATO",
+        "Việc các quốc gia phương Tây không thực hiện cam kết trước đó đối với Nga"
+      ],
+      "effects": [
+        "Khẳng định quan điểm của Nga về lý do quân sự",
+        "Căng thẳng ngoại giao gia tăng giữa Nga và phương Tây"
+      ],
+      "affected_groups": [
+        "Liên minh NATO",
+        "Chính phủ Nga",
+        "Các quốc gia Đông Âu"
+      ],
+      "market_impact": "Thông tin này duy trì áp lực tâm lý tiêu cực lên thị trường tài chính và chuỗi cung ứng toàn cầu do bất ổn địa chính trị.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh quan điểm nền tảng của Nga trong việc biện minh cho các hoạt động quân sự dựa trên an ninh chiến lược và hoài nghi đối với cam kết quốc tế của phương Tây.",
+      "unknowns": [
+        "Các bằng chứng cụ thể về cam kết không mở rộng NATO trong quá khứ",
+        "Khả năng đối thoại ngoại giao để giải quyết các vấn đề an ninh nêu trên"
+      ],
+      "confidence_note": "Thông tin dựa trên tuyên bố chính thức của người đứng đầu quốc gia, có độ tin cậy về mặt phản ánh lập trường, không phải là thông tin trung lập về diễn biến thực địa.",
+      "scenarios": [
+        {
+          "text": "Nga tiếp tục duy trì lập trường cứng rắn trong các cuộc đàm phán an ninh tương lai.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Phương Tây đưa ra các phản biện pháp lý và ngoại giao đối lập về cam kết mở rộng NATO.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Nga",
+          "target": "NATO",
+          "relation_type": "conflict",
+          "label": "Tranh chấp về an ninh và mở rộng ảnh hưởng"
+        }
+      ],
+      "entities": [
+        "Vladimir Putin",
+        "NATO"
+      ],
+      "keywords": [
+        "Nga",
+        "Putin",
+        "Chiến dịch quân sự",
+        "NATO"
+      ],
+      "importance": 90,
+      "scope": "national"
+    }
+  },
+  "evt_9acaa125": {
+    "created_at": 1785108509392,
+    "expires_at": 1787700509392,
+    "version": "4.5",
+    "checksum": "0d3568fcf5c7dee259e4c098707dccca",
+    "data": {
+      "cluster_title": "Đảng lãnh đạo Nga gặp gỡ quân nhân",
+      "short_summary": "Chủ tịch Putin gặp gỡ quân nhân Nga để nhấn mạnh tầm quan trọng của nhiệm vụ của họ.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "follow_up": "",
+      "entities": [
+        "Vladimir Putin",
+        "Nga"
+      ],
+      "keywords": [
+        "Putin",
+        "Nga",
+        "quân nhân"
+      ],
+      "importance": 80,
+      "scope": "national"
+    }
+  },
+  "evt_general_1785108515042": {
+    "created_at": 1785108520603,
+    "expires_at": 1787700520603,
+    "version": "4.5",
+    "checksum": "6fe157659d6cf3d1940e929d1bf9ecb4",
+    "data": {
+      "cluster_title": "Sự kiện thị trường chứng khoán",
+      "short_summary": "Thị trường chứng khoán Mỹ đã bị ảnh hưởng bởi sự tăng giá của trái phiếu và dầu mỏ, cũng như sự tăng giá của đô la Mỹ.",
+      "detailed_summary": "Chỉ số S&P 500 đã giảm xuống dưới ngưỡng hỗ trợ kỹ thuật quan trọng do chịu áp lực từ ba yếu tố chính: lãi suất trái phiếu kho bạc tăng, giá dầu leo thang và đồng USD xác nhận xu hướng tăng dài hạn. Trong bối cảnh này, các nhà đầu tư đang tìm kiếm các kênh trú ẩn an toàn để bảo toàn tài sản.",
+      "causes": [
+        "Sự gia tăng của lãi suất trái phiếu kho bạc",
+        "Giá dầu trên thị trường thế giới tăng mạnh",
+        "Đồng USD xác nhận xu hướng tăng trong dài hạn"
+      ],
+      "effects": [
+        "Chỉ số S&P 500 giảm xuống dưới ngưỡng hỗ trợ kỹ thuật chủ chốt",
+        "Các nhà đầu tư thay đổi chiến lược sang các kênh trú ẩn an toàn",
+        "Áp lực bán tháo gia tăng trên thị trường chứng khoán"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư chứng khoán",
+        "Các tổ chức tài chính",
+        "Người tham gia thị trường hàng hóa"
+      ],
+      "market_impact": "Thị trường tài chính đang trải qua giai đoạn biến động tiêu cực do áp lực cộng hưởng từ các chỉ số kinh tế vĩ mô.",
+      "follow_up": "",
+      "significance": "Sự đồng thuận của ba yếu tố lãi suất, giá dầu và tỷ giá đang tạo ra thách thức lớn đối với đà tăng trưởng của thị trường chứng khoán.",
+      "unknowns": [
+        "Thời gian kéo dài của xu hướng tăng lãi suất và giá dầu",
+        "Các vị trí cụ thể được các nhà đầu tư lựa chọn làm kênh trú ẩn an toàn"
+      ],
+      "confidence_note": "Thông tin dựa trên dữ liệu kỹ thuật thị trường, mức độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Thị trường chứng khoán tiếp tục chịu áp lực điều chỉnh nếu lãi suất trái phiếu duy trì ở mức cao.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các nhà đầu tư tìm thấy nhóm cổ phiếu hoặc tài sản thay thế đủ mạnh để ổn định lại danh mục.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Lãi suất trái phiếu, giá dầu và đồng USD",
+          "target": "S&P 500",
+          "relation_type": "cause_effect",
+          "label": "Gây áp lực khiến chỉ số chứng khoán giảm điểm"
+        }
+      ],
+      "entities": [
+        "S&P 500",
+        "thị trường chứng khoán"
+      ],
+      "keywords": [
+        "thị trường chứng khoán",
+        "tỷ lệ trái phiếu",
+        "giá dầu"
+      ],
+      "importance": 85,
+      "scope": "global"
+    }
+  },
+  "evt_general_1785108526262": {
+    "created_at": 1785108526654,
+    "expires_at": 1787700526654,
+    "version": "4.5",
+    "checksum": "6d5dd66136f5054e8f0afc4153773f56",
+    "data": {
+      "cluster_title": "Kinh nghiệm đầu tư vào SpaceX",
+      "short_summary": "Một người đã nhận được phân bổ đầy đủ trong IPO của SpaceX và tự hỏi liệu mình có may mắn hay không.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "follow_up": "",
+      "entities": [
+        "SpaceX"
+      ],
+      "keywords": [
+        "SpaceX",
+        "đầu tư",
+        "IPO"
+      ],
+      "importance": 60,
+      "scope": "global"
+    }
+  },
+  "evt_general_1785108532360": {
+    "created_at": 1785108532763,
+    "expires_at": 1787700532763,
+    "version": "4.5",
+    "checksum": "c492a95cf04a9e6db0e624766de4b06f",
+    "data": {
+      "cluster_title": "Nghiên cứu về tuổi nghỉ hưu và an sinh xã hội",
+      "short_summary": "Một bác sĩ 63 tuổi đặt câu hỏi liệu khi có 2 triệu đô la tiết kiệm cho hưu trí, thì an sinh xã hội có nên trở thành tùy chọn hay không.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "follow_up": "",
+      "entities": [
+        "chính phủ",
+        "hộ chiếu"
+      ],
+      "keywords": [
+        "tuổi nghỉ hưu",
+        "an sinh xã hội",
+        "pháp lý"
+      ],
+      "importance": 80,
+      "scope": "national"
+    }
+  },
+  "evt_523d5f95": {
+    "created_at": 1785108540687,
+    "expires_at": 1787700540687,
+    "version": "4.5",
+    "checksum": "72212f98d75a67e0ff46ebd31378a8bb",
+    "data": {
+      "cluster_title": "Một công dân Mỹ bị truy tố vì xóa điện thoại tại biên giới",
+      "short_summary": "Công dân Mỹ Sam Tunick bị truy tố vì xóa điện thoại khi bị cơ quan chức năng yêu cầu tại sân bay Hartsfield-Jackson vào ngày 24 tháng 1 năm 2025.",
+      "detailed_summary": "Công dân Mỹ Sam Tunick bị chính quyền cáo buộc cung cấp 'mật khẩu cưỡng ép' khiến điện thoại tự động xóa sạch dữ liệu khi bị cơ quan chức năng thu giữ tại sân bay Hartsfield-Jackson (Atlanta) vào ngày 24/1/2025. Hiện cá nhân này đang đối mặt với các cáo buộc pháp lý từ chính phủ liên bang.",
+      "causes": [
+        "Hành động xóa dữ liệu điện thoại của Sam Tunick khi bị cơ quan chức năng kiểm tra",
+        "Việc chính phủ Mỹ thực thi quyền kiểm soát và thu giữ thiết bị điện tử tại cửa khẩu"
+      ],
+      "effects": [
+        "Sam Tunick phải đối mặt với quy trình truy tố hình sự",
+        "Gia tăng sự chú ý đối với quyền riêng tư cá nhân và thẩm quyền kiểm tra của cơ quan biên giới"
+      ],
+      "affected_groups": [
+        "Sam Tunick",
+        "Cơ quan an ninh biên giới Mỹ",
+        "Công dân thường xuyên di chuyển quốc tế"
+      ],
+      "market_impact": "Không có tác động trực tiếp đến thị trường tài chính, nhưng có thể thúc đẩy nhu cầu về các giải pháp bảo mật dữ liệu và mã hóa cá nhân.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh căng thẳng pháp lý giữa quyền riêng tư cá nhân và quyền kiểm soát an ninh của chính phủ tại các cửa khẩu quốc tế.",
+      "unknowns": [
+        "Lý do cụ thể khiến cơ quan chức năng muốn thu giữ điện thoại của Sam Tunick",
+        "Kết quả cuối cùng của vụ kiện tại tòa án"
+      ],
+      "confidence_note": "Thông tin dựa trên bản tin gốc, độ tin cậy cao về sự kiện truy tố.",
+      "scenarios": [
+        {
+          "text": "Bị cáo nhận tội hoặc đạt được thỏa thuận pháp lý với chính phủ",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Vụ án kéo dài thành án lệ quan trọng về quyền riêng tư tại biên giới",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Chính phủ Mỹ",
+          "target": "Sam Tunick",
+          "relation_type": "conflict",
+          "label": "Truy tố hình sự do hành vi cản trở kiểm tra biên giới"
+        }
+      ],
+      "entities": [
+        "Sam Tunick",
+        "Hartsfield-Jackson airport"
+      ],
+      "keywords": [
+        "Mỹ",
+        "biên giới",
+        "xóa điện thoại"
+      ],
+      "importance": 80,
+      "scope": "national"
+    }
+  },
+  "evt_20223ffc": {
+    "created_at": 1785108546952,
+    "expires_at": 1787700546952,
+    "version": "4.5",
+    "checksum": "c7f8d501681060415f38fffe32d87379",
+    "data": {
+      "cluster_title": "Apple TV trình diễn teaser Neuromancer tại SDCC",
+      "short_summary": "Apple TV trình diễn teaser Neuromancer tại SDCC cùng với teaser Carrie của Mike Flanagan, trailer cho Dark Matter S2 và Matchbox the Movie, và tin tức Marvel.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "follow_up": "",
+      "entities": [
+        "Apple TV",
+        "Neuromancer",
+        "Mike Flanagan",
+        "Carrie",
+        "Dark Matter",
+        "Matchbox the Movie",
+        "Marvel"
+      ],
+      "keywords": [
+        "Apple TV",
+        "Neuromancer",
+        "SDCC"
+      ],
+      "importance": 60,
+      "scope": "personal"
+    }
+  },
+  "evt_5d8adcee": {
+    "created_at": 1785108553458,
+    "expires_at": 1787700553458,
+    "version": "4.5",
+    "checksum": "6ac63195dd2315b664da6424e1714e34",
+    "data": {
+      "cluster_title": "Cafe Chikopi tạo việc làm cho người khuyết tật",
+      "short_summary": "Cafe Chikopi ở Malaysia tạo việc làm cho người khuyết tật, cho thấy doanh nghiệp có thể lợi nhuận và tạo việc làm cho người khuyết tật.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "follow_up": "",
+      "entities": [
+        "Chikopi",
+        "Malaysia"
+      ],
+      "keywords": [
+        "Chikopi",
+        "cafe",
+        "việc làm",
+        "người khuyết tật"
+      ],
+      "importance": 80,
+      "scope": "business"
+    }
+  },
+  "evt_a0227b48": {
+    "created_at": 1785108561800,
+    "expires_at": 1787700561800,
+    "version": "4.5",
+    "checksum": "752af0cfd929a8fc3a6852c0840b2183",
+    "data": {
+      "cluster_title": "Tấn công tại Ngày tự do Berlin",
+      "short_summary": "Lãnh đạo Đảng tự do dân chủ tự do Đức Wolfgang Kubicki cho rằng Hồi giáo là kẻ thù của tự do sau một vụ tấn công tại Ngày tự do Berlin.",
+      "detailed_summary": "Wolfgang Kubicki, lãnh đạo Đảng Dân chủ Tự do (FDP) tại Đức, đã lên tiếng về vụ tấn công xảy ra trong sự kiện diễu hành quyền tự hào (Christopher Street Day) tại Berlin. Ông khẳng định chủ nghĩa Hồi giáo cực đoan là kẻ thù của tự do, đồng thời cho rằng tư tưởng này đang có xu hướng gia tăng tại Đức và cần phải được đối phó quyết liệt.",
+      "causes": [
+        "Vụ tấn công xảy ra trong khuôn khổ sự kiện Christopher Street Day tại Berlin",
+        "Sự trỗi dậy của tư tưởng Hồi giáo cực đoan tại Đức"
+      ],
+      "effects": [
+        "Gia tăng tranh luận chính trị về vấn đề an ninh và quyền tự do tại Đức",
+        "Áp lực đặt lên các chính trị gia trong việc định nghĩa và đối phó với chủ nghĩa Hồi giáo cực đoan"
+      ],
+      "affected_groups": [
+        "Cộng đồng LGBTQ+ tại Đức",
+        "Đảng Dân chủ Tự do (FDP)",
+        "Cơ quan an ninh Đức"
+      ],
+      "market_impact": "Không có tác động trực tiếp đến thị trường tài chính, chủ yếu mang tính chất chính trị và xã hội.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh căng thẳng giữa các giá trị tự do phương Tây và sự phát triển của các tư tưởng cực đoan, đặt ra thách thức về chính sách an ninh đối với chính phủ Đức.",
+      "unknowns": [
+        "Chi tiết cụ thể về danh tính và động cơ của những kẻ thực hiện vụ tấn công",
+        "Các biện pháp chính sách cụ thể mà FDP dự định đề xuất để giải quyết vấn đề này"
+      ],
+      "confidence_note": "Thông tin dựa trên tuyên bố trực tiếp từ nhân vật chính trị, độ tin cậy cao về quan điểm cá nhân.",
+      "scenarios": [
+        {
+          "text": "Các cuộc thảo luận về luật an ninh và chống cực đoan sẽ được đẩy mạnh tại Quốc hội Đức.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Sự kiện làm gia tăng khoảng cách tư tưởng giữa các đảng phái chính trị tại Đức về vấn đề nhập cư và tôn giáo.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Wolfgang Kubicki",
+          "target": "Chủ nghĩa Hồi giáo cực đoan",
+          "relation_type": "conflict",
+          "label": "Tuyên bố coi đây là kẻ thù của tự do"
+        },
+        {
+          "source": "Đảng Dân chủ Tự do (FDP)",
+          "target": "Berlin Pride",
+          "relation_type": "neutral",
+          "label": "Phản ứng về vụ việc xảy ra tại sự kiện"
+        }
+      ],
+      "entities": [
+        "Wolfgang Kubicki",
+        "Đảng tự do dân chủ tự do (FDP)",
+        "Euronews"
+      ],
+      "keywords": [
+        "tấn công",
+        "Berlin",
+        "ngày tự do",
+        "Hồi giáo"
+      ],
+      "importance": 85,
+      "scope": "national"
+    }
+  },
+  "evt_9cad9de0": {
+    "created_at": 1785108569942,
+    "expires_at": 1787700569942,
+    "version": "4.5",
+    "checksum": "4b527e127a2fe3c377571b86e73974a2",
+    "data": {
+      "cluster_title": "Tokayev kêu gọi Putin ngừng chiến tranh ở Ukraine",
+      "short_summary": "Kazakh president Tokayev kêu gọi Putin ngừng chiến tranh ở Ukraine và quay lại đàm phán vì 'là một điều đáng xấu hổ, người trẻ đang chết'",
+      "detailed_summary": "Trong cuộc gặp trực tiếp với Tổng thống Nga Vladimir Putin, Tổng thống Kazakhstan Kassym-Jomart Tokayev đã đề nghị ngừng chiến sự tại Ukraine với lý do thiệt hại về sinh mạng con người. Đáp lại đề xuất này, Ngoại trưởng Ukraine Andrii Sybiha đánh giá đây là một quan điểm thực tế.",
+      "causes": [
+        "Mong muốn giảm thiểu thương vong cho thế hệ trẻ",
+        "Áp lực từ tình trạng kéo dài của xung đột vũ trang"
+      ],
+      "effects": [
+        "Tăng cường thảo luận về khả năng ngừng bắn",
+        "Ghi nhận sự đồng thuận quan điểm từ phía Ukraine đối với đề xuất của Kazakhstan"
+      ],
+      "affected_groups": [
+        "Chính phủ Nga",
+        "Chính phủ Ukraine",
+        "Chính phủ Kazakhstan"
+      ],
+      "market_impact": "Thông tin có thể gây biến động tâm lý ngắn hạn trên thị trường tài chính và năng lượng do các tín hiệu tiềm năng về việc giảm căng thẳng địa chính trị.",
+      "follow_up": "",
+      "significance": "Đây là bước tiến ngoại giao đáng chú ý khi một đồng minh trong khu vực của Nga công khai kêu gọi chấm dứt xung đột, tạo tiền đề cho các cuộc thảo luận hòa bình.",
+      "unknowns": [
+        "Phản ứng cụ thể và hành động tiếp theo của phía Nga sau đề xuất",
+        "Chi tiết về điều kiện đóng băng xung đột mà các bên có thể chấp nhận"
+      ],
+      "confidence_note": "Thông tin dựa trên các phát ngôn chính thức từ các bên liên quan, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Nga xem xét các đề xuất đàm phán do áp lực ngoại giao gia tăng.",
+          "likelihood": "trung bình"
+        },
+        {
+          "text": "Xung đột tiếp diễn mà không có thay đổi đáng kể về mặt quân sự dù có sự can thiệp ngoại giao.",
+          "likelihood": "cao"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Kassym-Jomart Tokayev",
+          "target": "Vladimir Putin",
+          "relation_type": "neutral",
+          "label": "Đề xuất ngừng chiến tại cuộc gặp trực tiếp"
+        },
+        {
+          "source": "Andrii Sybiha",
+          "target": "Kassym-Jomart Tokayev",
+          "relation_type": "cooperation",
+          "label": "Ủng hộ quan điểm về việc tìm kiếm giải pháp thực tế"
+        }
+      ],
+      "entities": [
+        "Tokayev",
+        "Putin",
+        "Ukraine"
+      ],
+      "keywords": [
+        "Tokayev",
+        "Putin",
+        "Ukraine",
+        "chiến tranh"
+      ],
+      "importance": 90,
+      "scope": "national"
+    }
+  },
+  "evt_542de476": {
+    "created_at": 1785108581127,
+    "expires_at": 1787700581127,
+    "version": "4.5",
+    "checksum": "32fd34e7cf97e8d0bc9e017fbd8511ed",
+    "data": {
+      "cluster_title": "Cựu Tổng thống Trump được đánh giá cao về chiến lược an ninh",
+      "short_summary": "Cựu Tổng thống Trump được đánh giá cao vì đã buộc các đồng minh NATO phải giảm sự phụ thuộc vào Mỹ trong lĩnh vực an ninh.",
+      "detailed_summary": "Bộ trưởng Quốc phòng Anh, ông Wes Streeting, nhận định rằng sự gây áp lực của Tổng thống Donald Trump đối với các đồng minh NATO là một yếu tố cần thiết. Theo ông, hành động này buộc các quốc gia châu Âu phải chấm dứt tình trạng quá phụ thuộc vào sự bảo trợ an ninh của Hoa Kỳ, từ đó thoát khỏi sự trì trệ trong chính sách quốc phòng.",
+      "causes": [
+        "Sự phụ thuộc lâu dài của châu Âu vào nguồn lực an ninh từ Hoa Kỳ",
+        "Áp lực từ chính sách của Tổng thống Trump buộc các đồng minh NATO tăng cường chi tiêu quốc phòng"
+      ],
+      "effects": [
+        "Châu Âu buộc phải xem xét lại năng lực quốc phòng tự thân",
+        "Gia tăng sức ép chính trị và ngân sách đối với các quốc gia thành viên NATO"
+      ],
+      "affected_groups": [
+        "Các nước thành viên NATO tại châu Âu",
+        "Bộ máy an ninh và quốc phòng Hoa Kỳ"
+      ],
+      "market_impact": "Các cổ phiếu trong ngành công nghiệp quốc phòng và an ninh tại châu Âu có thể hưởng lợi từ xu hướng gia tăng chi tiêu ngân sách quốc phòng trong tương lai.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh sự thay đổi chiến lược trong tư duy an ninh của châu Âu, chuyển dịch từ thế dựa dẫm sang tự chủ nhằm đối phó với áp lực chính trị từ phía Hoa Kỳ.",
+      "unknowns": [
+        "Mức độ sẵn sàng thực tế của các quốc gia châu Âu trong việc tăng ngân sách quốc phòng",
+        "Phản ứng cụ thể của các lãnh đạo châu Âu khác trước nhận định của ông Wes Streeting"
+      ],
+      "confidence_note": "Thông tin dựa trên phát biểu công khai của quan chức cấp cao, độ tin cậy cao về mặt quan điểm chính trị.",
+      "scenarios": [
+        {
+          "text": "Các quốc gia châu Âu đẩy mạnh chi tiêu quốc phòng để đáp ứng yêu cầu của NATO và giảm bớt sự phụ thuộc.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Gia tăng căng thẳng nội khối NATO do những khác biệt về quan điểm phân chia gánh nặng tài chính.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Wes Streeting",
+          "target": "Donald Trump",
+          "relation_type": "neutral",
+          "label": "Nhận xét về tầm ảnh hưởng của chính sách"
+        },
+        {
+          "source": "Donald Trump",
+          "target": "NATO",
+          "relation_type": "cause_effect",
+          "label": "Tạo áp lực thay đổi chính sách quốc phòng"
+        }
+      ],
+      "entities": [
+        "Wes Streeting",
+        "NATO",
+        "Trung tâm An ninh Quốc gia"
+      ],
+      "keywords": [
+        "Trump",
+        "NATO",
+        "an ninh"
+      ],
+      "importance": 85,
+      "scope": "national"
+    }
+  },
+  "evt_general_1785108586812": {
+    "created_at": 1785108587190,
+    "expires_at": 1787700587190,
+    "version": "4.5",
+    "checksum": "ffea5cd3f3d9ab3c228d37ae8b3eb380",
+    "data": {
+      "cluster_title": "Vụ án Shanela",
+      "short_summary": "Vụ án Shanela đã bắt giữ hơn 200 nghi phạm tại khu vực Cape Bắc. Các cuộc kiểm tra cũng dẫn đến việc thu giữ rượu và chất kích thích.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "follow_up": "",
+      "entities": [
+        "Cảnh sát tỉnh",
+        "Hội đồng tỉnh"
+      ],
+      "keywords": [
+        "Shanela",
+        "Northern Cape",
+        "pháp luật",
+        "bảo vệ công dân"
+      ],
+      "importance": 70,
       "scope": "national"
     }
   }
