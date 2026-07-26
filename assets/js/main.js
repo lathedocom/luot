@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 function initNavigation() {
-    const tabs = ['overview', 'briefing', 'timeline', 'market', 'region'];
+   const tabs = ['overview', 'briefing', 'timeline', 'market', 'region', 'knowledge'];
     
     tabs.forEach(tab => {
         const navBtn = document.getElementById(`nav-${tab}`);
@@ -54,7 +54,10 @@ function initNavigation() {
                         window.dispatchEvent(new Event('resize'));
                     }, 50);
                 }
-                
+                // Bổ sung knowledge vào cơ chế kích hoạt resize
+    if (tab === 'region' || tab === 'market' || tab === 'knowledge') {
+        setTimeout(() => window.dispatchEvent(new Event('resize')), 50);
+    }
                 // Đóng menu trên Mobile
                 const sidebar = document.getElementById('app-sidebar');
                 const overlay = document.getElementById('sidebar-overlay');
