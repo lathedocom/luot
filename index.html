@@ -160,7 +160,22 @@
             <h2 class="section-title" style="color: #8b5cf6; font-size: 18px;"><span class="material-icons-round">hub</span> KNOWLEDGE GRAPH</h2>
         </div>
         <p style="font-size: 14px; opacity: 0.7; margin-bottom: 16px;">Mạng lưới liên kết các thực thể (Người, Tổ chức, Địa điểm) từ các sự kiện nóng nhất 7 ngày qua.</p>
-
+<!-- [MỚI] THANH CÔNG CỤ TÌM KIẾM VÀ LỌC -->
+            <div class="graph-controls" style="display: flex; gap: 12px; margin-bottom: 16px; flex-wrap: wrap;">
+                <input type="text" id="cy-search-input" placeholder="🔍 Tìm thực thể (VD: Trump)..." style="flex-grow: 1; max-width: 300px; padding: 10px 14px; border-radius: 8px; border: 1px solid var(--md-sys-color-outline); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); font-size: 14px; outline: none;">
+                
+                <select id="cy-filter-edge" style="padding: 10px 14px; border-radius: 8px; border: 1px solid var(--md-sys-color-outline); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); font-size: 14px; outline: none; cursor: pointer;">
+                    <option value="all">Tất cả mối quan hệ</option>
+                    <option value="cooperation">🟢 Chỉ hiển thị Hợp tác</option>
+                    <option value="conflict">🔴 Chỉ hiển thị Xung đột</option>
+                    <option value="cause_effect">🟠 Nguyên nhân & Kết quả</option>
+                </select>
+                
+                <button id="cy-reset-btn" style="padding: 10px 16px; border-radius: 8px; border: none; background: var(--md-sys-color-surface-variant); color: var(--md-sys-color-on-surface); cursor: pointer; display: flex; align-items: center; gap: 6px; font-weight: 500; font-size: 14px; transition: 0.2s;">
+                    <span class="material-icons-round" style="font-size: 18px;">refresh</span> Khôi phục
+                </button>
+            </div>
+            <!-- KẾT THÚC THANH CÔNG CỤ -->
         <div id="cy-container" style="flex-grow: 1; min-height: 400px; background-color: var(--md-sys-color-background); border-radius: 12px; border: 1px solid var(--md-sys-color-outline); position: relative;"></div>
     </div>
 </div>
