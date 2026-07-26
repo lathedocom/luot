@@ -32,14 +32,20 @@ export async function fetchNewsData() {
         renderBriefing(data.daily_briefing);
         renderMarket(data.market_data || []);
         renderSocial(data.social_trends || data.social || []);
+        
         if (data.risk_map) {
             renderRiskMap(data.risk_map);
         }
+        
+        // [ĐÃ SỬA] Đưa vào bên trong khối try để nhận diện được biến data
+        if (data.knowledge_graph) {
+            renderKnowledgeGraph(data.knowledge_graph);
+        }
+        
     } catch (error) {
         console.error("Lỗi fetchNewsData:", error);
         document.getElementById('news-container').innerHTML = `<div class="news-card"><p>Lỗi kết nối. Không thể tải dữ liệu Intelligence. Chi tiết: ${error.message}</p></div>`;
     }
-    if (data.knowledge_graph) renderKnowledgeGraph(data.knowledge_graph);
 }
 
 export async function fetchTimelineData() {
