@@ -20,27 +20,33 @@ export function renderMarket(marketData) {
         groupedData[category].push(item);
     });
 
-    // Thêm CSS xử lý layout 3 cột và chống đè layout
+    // Thêm CSS xử lý layout 3 cột và chống đè/tràn layout
     let finalHtml = `
         <style>
             .market-board {
                 display: grid;
-                grid-template-columns: repeat(3, 1fr);
+                /* Sử dụng minmax(0, 1fr) thay vì 1fr để ngăn lưới bị ép phình to bởi canvas/text dài */
+                grid-template-columns: repeat(3, minmax(0, 1fr)); 
                 gap: 24px;
-                /* align-items: start cực kỳ quan trọng để ngăn grid tự động kéo dãn chiều cao gây lỗi đè thẻ */
                 align-items: start; 
+                width: 100%;
             }
             .market-category-group {
                 display: flex;
                 flex-direction: column;
                 gap: 16px;
+                min-width: 0; /* Bắt buộc để flex item không bị tràn khỏi grid column */
+                width: 100%;
             }
             /* Responsive cho tablet và mobile */
             @media (max-width: 1024px) {
-                .market-board { grid-template-columns: repeat(2, 1fr); }
+                .market-board { grid-template-columns: repeat(2, minmax(0, 1fr)); }
             }
             @media (max-width: 768px) {
-                .market-board { grid-template-columns: 1fr; }
+                .market-board { 
+                    grid-template-columns: minmax(0, 1fr); 
+                    gap: 16px; /* Giảm gap trên mobile cho gọn */
+                }
             }
         </style>
         <div class="market-board">
@@ -53,7 +59,7 @@ export function renderMarket(marketData) {
                 <h3 style="font-size: 15px; text-transform: uppercase; color: var(--md-sys-color-primary); margin: 0 0 8px 0; display: flex; align-items: center; gap: 8px; border-bottom: 2px solid var(--md-sys-color-primary); padding-bottom: 8px;">
                     <span class="material-icons-round">category</span> ${escapeHtml(category)}
                 </h3>
-                <div style="display: flex; flex-direction: column; gap: 16px;">
+                <div style="display: flex; flex-direction: column; gap: 16px; min-width: 0;">
         `;
 
         // 3. Render từng thẻ chỉ số xếp dọc trong cột danh mục
@@ -78,12 +84,12 @@ export function renderMarket(marketData) {
                             <span class="material-icons-round" style="font-size: 14px;">info</span> Nguyên nhân biến động
                         </div>
                         <ul style="margin: 0; padding-left: 16px; font-size: 13px; opacity: 0.9; line-height: 1.5;">
-                            ${item.context.causes.map(c => `<li style="margin-bottom: 4px;">${escapeHtml(c)}</li>`).join('')}
+                            ${item.context.causes.map(c => `<li style="margin-bottom: 4px; word-break: break-word;">${escapeHtml(c)}</li>`).join('')}
                         </ul>
                         ${item.context.market_impact ? `
                         <div style="font-size: 13px; color: ${color}; font-weight: 500; margin-top: 8px; display: flex; gap: 6px; align-items: flex-start;">
-                            <span class="material-icons-round" style="font-size: 16px;">insights</span>
-                            <span style="line-height: 1.4;">${escapeHtml(item.context.market_impact)}</span>
+                            <span class="material-icons-round" style="font-size: 16px; flex-shrink: 0;">insights</span>
+                            <span style="line-height: 1.4; word-break: break-word;">${escapeHtml(item.context.market_impact)}</span>
                         </div>` : ''}
                     </div>
                 `;
@@ -97,9 +103,10 @@ export function renderMarket(marketData) {
 
                     <!-- Header: Tên, Giá, Phần trăm -->
                     <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; padding-left: 8px; gap: 8px;">
-                        <div style="flex: 1;">
-                            <h4 style="margin: 0; font-size: 15px; font-weight: 600; color: var(--md-sys-color-on-surface); opacity: 0.8; word-break: break-word;">${escapeHtml(item.name)}</h4>
-                            <div style="font-size: 22px; font-weight: bold; margin-top: 4px; color: var(--md-sys-color-on-surface);">
+                        <!-- Thêm min-width: 0 ở đây để text tự động ngắt dòng, không đẩy card phình to -->
+                        <div style="flex: 1; min-width: 0;">
+                            <h4 style="margin: 0; font-size: 15px; font-weight: 600; color: var(--md-sys-color-on-surface); opacity: 0.8; word-break: break-word; line-height: 1.4;">${escapeHtml(item.name)}</h4>
+                            <div style="font-size: 20px; font-weight: bold; margin-top: 4px; color: var(--md-sys-color-on-surface); word-break: break-word;">
                                 ${escapeHtml(item.price)} ${unitHtml}
                             </div>
                         </div>
