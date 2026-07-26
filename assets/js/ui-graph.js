@@ -253,3 +253,75 @@ function initCy(container) {
         document.getElementById('intelligence-modal').classList.add('active');
     });
 }
+
+// ====================================================================
+// KHỞI TẠO THANH CÔNG CỤ ĐIỀU KHIỂN ĐỒ THỊ
+// ====================================================================
+document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.getElementById('cy-search-input');
+    const filterSelect = document.getElementById('cy-filter-edge');
+    const resetBtn = document.getElementById('cy-reset-btn');
+
+    // 1. TÌM KIẾM THỰC THỂ THỜI GIAN THỰC
+    if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+            if (!cyInstance) return;
+            const term = e.target.value.toLowerCase().trim();
+            
+            if (!term) {
+                cyInstance.elements().removeClass('faded');
+                return;
+            }
+
+            cyInstance.batch(() => {
+                // Làm mờ tất cả
+                cyInstance.elements().addClass('faded');
+                
+                // Tìm các node có tên chứa từ khóa
+                const matchedNodes = cyInstance.nodes().filter(node => {
+                    const label = node.data('label') || '';
+                    return label.toLowerCase().includes(term);
+                });
+
+                // Làm sáng các node tìm thấy và các cạnh/node lân cận của chúng
+                matchedNodes.removeClass('faded');
+                matchedNodes.neighborhood().removeClass('faded');
+            });
+        });
+    }
+
+    // 2. LỌC MỐI QUAN HỆ (EDGE FILTER)
+    if (filterSelect) {
+        filterSelect.addEventListener('change', (e) => {
+            if (!cyInstance) return;
+            const type = e.target.value;
+
+            cyInstance.batch(() => {
+                if (type === 'all') {
+                    cyInstance.edges().style('display', 'element'); // Hiện tất cả
+                } else {
+                    // Ẩn tất cả các cạnh trước
+                    cyInstance.edges().style('display', 'none');
+                    // Chỉ hiện các cạnh khớp với loại quan hệ đã chọn
+                    cyInstance.edges(`[relation_type = "${type}"]`).style('display', 'element');
+                }
+            });
+        });
+    }
+
+    // 3. NÚT KHÔI PHỤC (RESET)
+    if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+            if (!cyInstance) return;
+            if (searchInput) searchInput.value = '';
+            if (filterSelect) filterSelect.value = 'all';
+            
+            cyInstance.batch(() => {
+                cyInstance.elements().removeClass('faded');
+                cyInstance.edges().style('display', 'element');
+                // Chạy lại hiệu ứng vật lý để đồ thị bung đều ra
+                cyInstance.layout(cyInstance.options().layout).run();
+            });
+        });
+    }
+});
