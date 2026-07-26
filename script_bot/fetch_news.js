@@ -26,7 +26,7 @@ const { evaluateClusterAction } = require('./modules/topic/similarity_engine');
 const { fetchAllMarketData } = require('./modules/market/index');
 const { fetchAllSocialTrends } = require('./modules/social/index');
 const { generateAllReports } = require('./modules/reports/index');
-const { buildDigest } = require('./modules/digest/digest_builder'); // MỚI
+
 
 const gateway = require('./modules/ai/gateway');
 const { jaccardSimilarity } = require('./modules/utils/text_similarity');
