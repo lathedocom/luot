@@ -1,29 +1,47 @@
 // FILE: assets/js/ui-map.js
 
-export function renderRiskMap(riskMapData) {
-    const mapContainer = document.getElementById('global-risk-map');
-    if (!mapContainer || !riskMapData) return;
+let mapInstance = null; // Lưu trữ instance của bản đồ
+let savedRiskData = null; // Lưu trữ data chờ render
 
-    // Xóa bản đồ cũ nếu có
-    mapContainer.innerHTML = '';
+export function renderRiskMap(riskMapData) {
+    savedRiskData = riskMapData;
+    const mapContainer = document.getElementById('global-risk-map');
+    if (!mapContainer || !savedRiskData) return;
+
+    // API THEO DÕI: Canh lúc tab hiện lên (width > 0) thì mới vẽ bản đồ
+    const resizeObserver = new ResizeObserver(() => {
+        if (mapContainer.offsetWidth > 0) {
+            if (!mapInstance) {
+                initMap(mapContainer); // Lần đầu mở tab: Khởi tạo bản đồ
+            } else {
+                mapInstance.updateSize(); // Các lần sau: Chỉ cập nhật kích thước
+            }
+        }
+    });
+    
+    // Bắt đầu theo dõi thẻ div chứa bản đồ
+    resizeObserver.observe(mapContainer);
+}
+
+// Hàm khởi tạo bản đồ thực sự
+function initMap(mapContainer) {
+    mapContainer.innerHTML = ''; // Xóa sạch rác nếu có
 
     const regionValues = {};
-    for (const [isoCode, data] of Object.entries(riskMapData)) {
+    for (const [isoCode, data] of Object.entries(savedRiskData)) {
         regionValues[isoCode] = data.status;
     }
 
-    // [CẬP NHẬT] Gán vào biến "map" để có thể gọi hàm updateSize()
-    const map = new jsVectorMap({
+    mapInstance = new jsVectorMap({
         selector: '#global-risk-map',
         map: 'world',
         zoomOnScroll: true,
         zoomButtons: true,
-        draggable: true,
         backgroundColor: 'transparent',
         
         regionStyle: {
             initial: {
-                fill: '#334155',
+                fill: '#334155', // Màu xám mặc định
                 fillOpacity: 1,
                 stroke: 'none',
                 strokeWidth: 0,
@@ -49,7 +67,7 @@ export function renderRiskMap(riskMapData) {
         },
 
         onRegionTooltipShow(event, tooltip, code) {
-            const countryData = riskMapData[code];
+            const countryData = savedRiskData[code];
             if (countryData) {
                 tooltip.text(
                     `<div style="padding: 4px;">
@@ -65,7 +83,7 @@ export function renderRiskMap(riskMapData) {
         },
 
         onRegionClick(event, code) {
-            const countryData = riskMapData[code];
+            const countryData = savedRiskData[code];
             if (countryData && countryData.events.length > 0) {
                 const modalTitle = document.getElementById('modal-title');
                 const modalBody = document.getElementById('modal-body');
@@ -99,10 +117,4 @@ export function renderRiskMap(riskMapData) {
             }
         }
     });
-
-    // [NEW] API THEO DÕI KÍCH THƯỚC: Bắt buộc bản đồ bung ra 100% khi tab trên mobile được mở
-    const resizeObserver = new ResizeObserver(() => {
-        map.updateSize();
-    });
-    resizeObserver.observe(mapContainer);
 }
