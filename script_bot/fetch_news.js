@@ -215,7 +215,11 @@ Hai sự kiện trên có phải cùng nói về 1 sự việc không? CHỈ TR�
                 
                 importance: aiIntelligence.importance || ruleImportance,
                 categories: ruleCategories,
-                regions: extractRegions(cluster.combined_text, cluster.articles[0].source_name), // MỚI
+                regions: extractRegions(cluster.combined_text, cluster.articles[0].source_name),
+                
+                // [ĐÃ SỬA] Bổ sung lưu mảng thực thể vào database để vẽ Graph
+                entities: entities,
+
                 value_score: valueScore,
                 scope: aiIntelligence.scope || 'business',
                 update_count: 1,
