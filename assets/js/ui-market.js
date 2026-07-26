@@ -20,19 +20,43 @@ export function renderMarket(marketData) {
         groupedData[category].push(item);
     });
 
-    let finalHtml = '';
+    // Thêm CSS xử lý layout 3 cột và chống đè layout
+    let finalHtml = `
+        <style>
+            .market-board {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 24px;
+                /* align-items: start cực kỳ quan trọng để ngăn grid tự động kéo dãn chiều cao gây lỗi đè thẻ */
+                align-items: start; 
+            }
+            .market-category-group {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+            }
+            /* Responsive cho tablet và mobile */
+            @media (max-width: 1024px) {
+                .market-board { grid-template-columns: repeat(2, 1fr); }
+            }
+            @media (max-width: 768px) {
+                .market-board { grid-template-columns: 1fr; }
+            }
+        </style>
+        <div class="market-board">
+    `;
 
-    // 2. Render từng lĩnh vực
+    // 2. Render từng lĩnh vực (Mỗi lĩnh vực là 1 cột)
     for (const [category, items] of Object.entries(groupedData)) {
         finalHtml += `
-            <div style="margin-bottom: 32px;">
-                <h3 style="font-size: 15px; text-transform: uppercase; color: var(--md-sys-color-primary); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; border-bottom: 2px solid var(--md-sys-color-primary); padding-bottom: 8px;">
+            <div class="market-category-group">
+                <h3 style="font-size: 15px; text-transform: uppercase; color: var(--md-sys-color-primary); margin: 0 0 8px 0; display: flex; align-items: center; gap: 8px; border-bottom: 2px solid var(--md-sys-color-primary); padding-bottom: 8px;">
                     <span class="material-icons-round">category</span> ${escapeHtml(category)}
                 </h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px;">
+                <div style="display: flex; flex-direction: column; gap: 16px;">
         `;
 
-        // 3. Render từng thẻ chỉ số
+        // 3. Render từng thẻ chỉ số xếp dọc trong cột danh mục
         items.forEach((item, index) => {
             const isUp = item.trend === '↑' || item.trend === 'up' || (item.change_percent && item.change_percent.includes('+'));
             const color = isUp ? '#10b981' : '#ef4444'; 
@@ -66,20 +90,20 @@ export function renderMarket(marketData) {
             }
 
             finalHtml += `
-                <div class="market-card" style="background: var(--md-sys-color-surface); padding: 16px; border-radius: 12px; border: 1px solid var(--md-sys-color-outline); box-shadow: 0 4px 6px rgba(0,0,0,0.02); display: flex; flex-direction: column; position: relative; overflow: hidden;">
+                <div class="market-card" style="background: var(--md-sys-color-surface); padding: 16px; border-radius: 12px; border: 1px solid var(--md-sys-color-outline); box-shadow: 0 4px 6px rgba(0,0,0,0.02); display: flex; flex-direction: column; position: relative; overflow: hidden; width: 100%; box-sizing: border-box;">
                     
                     <!-- Dải màu thể hiện xu hướng ở cạnh trái -->
                     <div style="position: absolute; top: 0; left: 0; bottom: 0; width: 4px; background-color: ${color};"></div>
 
                     <!-- Header: Tên, Giá, Phần trăm -->
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; padding-left: 8px;">
-                        <div>
-                            <h4 style="margin: 0; font-size: 15px; font-weight: 600; color: var(--md-sys-color-on-surface); opacity: 0.8;">${escapeHtml(item.name)}</h4>
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; padding-left: 8px; gap: 8px;">
+                        <div style="flex: 1;">
+                            <h4 style="margin: 0; font-size: 15px; font-weight: 600; color: var(--md-sys-color-on-surface); opacity: 0.8; word-break: break-word;">${escapeHtml(item.name)}</h4>
                             <div style="font-size: 22px; font-weight: bold; margin-top: 4px; color: var(--md-sys-color-on-surface);">
                                 ${escapeHtml(item.price)} ${unitHtml}
                             </div>
                         </div>
-                        <span style="background: ${bgBadge}; color: ${color}; padding: 4px 8px; border-radius: 6px; font-weight: bold; font-size: 14px; display: flex; align-items: center; gap: 4px;">
+                        <span style="background: ${bgBadge}; color: ${color}; padding: 4px 8px; border-radius: 6px; font-weight: bold; font-size: 14px; display: flex; align-items: center; gap: 4px; flex-shrink: 0; white-space: nowrap;">
                             ${escapeHtml(item.change_percent)} <span class="material-icons-round" style="font-size: 16px;">${icon}</span>
                         </span>
                     </div>
@@ -95,8 +119,12 @@ export function renderMarket(marketData) {
             `;
         });
 
+        // Đóng các thẻ wrapper của danh mục
         finalHtml += `</div></div>`;
     }
+
+    // Đóng thẻ .market-board ngoài cùng
+    finalHtml += `</div>`; 
 
     marketContainer.innerHTML = finalHtml;
 
@@ -118,8 +146,6 @@ function drawMarketSparkline(canvasId, item) {
     const ctx = document.getElementById(canvasId);
     if (!ctx) return;
 
-    // Sử dụng dữ liệu mảng nếu API có trả về `history` (ví dụ: [1200, 1220, 1210, 1250])
-    // Nếu chưa có, tạo dữ liệu mờ (dummy data) để hiển thị tạm
     const data = item.history && item.history.length > 0 ? item.history : [10, 15, 13, 20, 18, 25];
     const labels = item.history_labels && item.history_labels.length > 0 ? item.history_labels : data.map((_, i) => `T${i}`);
     
@@ -136,10 +162,10 @@ function drawMarketSparkline(canvasId, item) {
                 borderColor: lineColor,
                 backgroundColor: bgColor,
                 borderWidth: 2,
-                pointRadius: 0, // Ẩn các chấm tròn để biểu đồ mượt như app chứng khoán
+                pointRadius: 0,
                 pointHoverRadius: 4,
                 fill: true,
-                tension: 0.3 // Làm cong nét vẽ
+                tension: 0.3
             }]
         },
         options: {
@@ -155,8 +181,8 @@ function drawMarketSparkline(canvasId, item) {
                 } 
             },
             scales: {
-                x: { display: false }, // Ẩn trục X (thời gian) để giao diện gọn gàng
-                y: { display: false }  // Ẩn trục Y (chỉ số)
+                x: { display: false }, 
+                y: { display: false }  
             },
             interaction: {
                 mode: 'nearest',
