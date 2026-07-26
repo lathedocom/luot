@@ -26,6 +26,7 @@ const { evaluateClusterAction } = require('./modules/topic/similarity_engine');
 const { fetchAllMarketData } = require('./modules/market/index');
 const { fetchAllSocialTrends } = require('./modules/social/index');
 const { generateAllReports } = require('./modules/reports/index');
+const { buildRuleBasedGraph, buildGlobalGraph } = require('./modules/5_knowledge_graph');
 
 
 const gateway = require('./modules/ai/gateway');
@@ -301,6 +302,7 @@ eventBus.on('SYNC_DATABASE', () => {
         
         db.digest = buildDigest(db.news, { limitPerRegion: 7 }); // MỚI
         db.risk_map = buildRiskMapData(db.news);
+        db.knowledge_graph = buildGlobalGraph(db.news); // [THÊM DÒNG NÀY] Đẩy Graph ra API
         db.market_data = state.marketData || [];
         db.social_trends = state.socialTrends || [];
         db.daily_briefing = (state.reports && state.reports.daily) ? state.reports.daily : "";
