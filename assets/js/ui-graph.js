@@ -48,7 +48,7 @@ function initCy(container) {
             nodes: savedGraphData.nodes,
             edges: savedGraphData.edges
         },
-        style: [
+       style: [
             {
                 selector: 'node',
                 style: {
@@ -66,11 +66,15 @@ function initCy(container) {
                     'shape': 'round-rectangle'
                 }
             },
-            // Style chung cho đường nối và nhãn (Label)
+            // [CẬP NHẬT] Style chung cho Cạnh (Edge)
             {
                 selector: 'edge',
                 style: {
-                    'width': 2,
+                    // Thuật toán tính độ dày: Lấy weight nhân 1.5, tối thiểu 2px và tối đa 8px để không bị thô
+                    'width': function(ele) { 
+                        const weight = ele.data('weight') || 1;
+                        return Math.min(8, Math.max(2, weight * 1.5)); 
+                    },
                     'curve-style': 'bezier',
                     'opacity': 0.8,
                     'label': 'data(label)',
@@ -82,7 +86,7 @@ function initCy(container) {
                     'text-background-padding': '3px'
                 }
             },
-            // [MỚI] Hợp tác: Xanh lá, đứt nét
+            // Hợp tác: Xanh lá, đứt nét
             {
                 selector: 'edge[relation_type = "cooperation"]',
                 style: {
@@ -90,14 +94,14 @@ function initCy(container) {
                     'line-style': 'dashed'
                 }
             },
-            // [MỚI] Xung đột: Đỏ
+            // Xung đột: Đỏ
             {
                 selector: 'edge[relation_type = "conflict"]',
                 style: {
                     'line-color': '#ef4444'
                 }
             },
-            // [MỚI] Nguyên nhân - Kết quả: Cam, có mũi tên
+            // Nguyên nhân - Kết quả: Cam, có mũi tên
             {
                 selector: 'edge[relation_type = "cause_effect"]',
                 style: {
@@ -106,7 +110,7 @@ function initCy(container) {
                     'target-arrow-color': '#f59e0b'
                 }
             },
-            // [MỚI] Liên quan thông thường: Xám
+            // Liên quan thông thường: Xám
             {
                 selector: 'edge[relation_type = "neutral"]',
                 style: {
