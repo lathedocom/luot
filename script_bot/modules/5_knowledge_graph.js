@@ -1,55 +1,43 @@
 const logger = require('./utils/logger');
 const { generateShortHash } = require('./utils/hash');
 
-/**
- * Xây dựng đồ thị tri thức chuẩn định dạng cấu trúc Cytoscape.js
- * Chấp nhận mảng entities dạng object { name, type } hoặc chuỗi (để tương thích ngược).
- */
 function buildRuleBasedGraph(entities, eventKey = null) {
     const nodes = [];
     const edges = [];
 
     if (!entities || entities.length < 2) return { nodes, edges };
 
-    // 1. Chuẩn hóa dữ liệu đầu vào
-    // Nếu đầu vào là chuỗi string (code cũ), ta bọc nó lại thành object có type để chờ UI tô màu
     const normalizedEntities = entities.map(e => {
         if (typeof e === 'string') return { name: e, type: 'Unknown' };
         return e;
     });
 
-    // 2. KHỞI TẠO NODES (CÁC NÚT) CHUẨN CYTOSCAPE
     normalizedEntities.forEach(entity => {
         const nodeId = `node_${generateShortHash(entity.name)}`;
-        
-        // Tránh đẩy trùng node vào mảng
         if (!nodes.some(n => n.data.id === nodeId)) {
             nodes.push({
                 data: {
                     id: nodeId,
                     label: entity.name,
-                    type: entity.type // Phục vụ Frontend gán icon: Person, Org, Location
+                    type: entity.type
                 }
             });
         }
     });
 
-    // 3. KHỞI TẠO EDGES (CÁC CẠNH NỐI) CHUẨN CYTOSCAPE
     const mainEntity = normalizedEntities[0];
     const sourceId = `node_${generateShortHash(mainEntity.name)}`;
 
     for (let i = 1; i < normalizedEntities.length; i++) {
         const targetId = `node_${generateShortHash(normalizedEntities[i].name)}`;
-        
-        // Ngăn chặn tạo cạnh tự trỏ vào chính nó
         if (sourceId !== targetId) {
             edges.push({
                 data: {
                     id: `edge_${sourceId}_${targetId}_${eventKey || Date.now()}`,
                     source: sourceId,
                     target: targetId,
-                    label: 'Liên quan',         // Tạm thời để mặc định cho MVP
-                    relation_type: 'neutral',   // Phục vụ Frontend tô màu cạnh (🟢 🔴 🟡)
+                    label: 'Liên quan',
+                    relation_type: 'neutral',
                     weight: 1
                 }
             });
@@ -59,4 +47,43 @@ function buildRuleBasedGraph(entities, eventKey = null) {
     return { nodes, edges };
 }
 
-module.exports = { buildRuleBasedGraph };
+// [HÀM MỚI] Gom nhóm toàn cục để xuất ra JSON
+function buildGlobalGraph(allTopics) {
+    const globalNodes = new Map();
+    const globalEdges = new Map();
+
+    // Giới hạn lấy dữ liệu 7 ngày qua để đồ thị web không quá tải
+    const SEVEN_DAYS = 7 * 24 * 60 * 60 * 1000;
+    const now = Date.now();
+    const recentTopics = allTopics.filter(t => (now - (t.timestamp || 0)) <= SEVEN_DAYS);
+
+    recentTopics.forEach(topic => {
+        if (!topic.entities || topic.entities.length < 2) return;
+        
+        const { nodes, edges } = buildRuleBasedGraph(topic.entities, topic.event_key);
+        
+        // Khử trùng lặp Node toàn cục
+        nodes.forEach(n => {
+            if (!globalNodes.has(n.data.id)) {
+                globalNodes.set(n.data.id, n);
+            }
+        });
+
+        // Khử trùng lặp Cạnh (không nối 2 lần giữa A và B)
+        edges.forEach(e => {
+            const edgeKey = `${e.data.source}_${e.data.target}`;
+            const reverseEdgeKey = `${e.data.target}_${e.data.source}`;
+            
+            if (!globalEdges.has(edgeKey) && !globalEdges.has(reverseEdgeKey)) {
+                globalEdges.set(edgeKey, e);
+            }
+        });
+    });
+
+    return {
+        nodes: Array.from(globalNodes.values()),
+        edges: Array.from(globalEdges.values())
+    };
+}
+
+module.exports = { buildRuleBasedGraph, buildGlobalGraph };
