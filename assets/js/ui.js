@@ -14,3 +14,4 @@ export { renderMarket } from './ui-market.js';
 export { renderSocial } from './ui-social.js';
 export { renderTimelinePage } from './ui-timeline.js';
 export { renderBriefing } from './ui-briefing.js';
+export { renderRiskMap } from './ui-map.js';
