@@ -31,18 +31,31 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchTimelineData();
 });
 
+
 function initNavigation() {
-   const tabs = ['overview', 'briefing', 'timeline', 'market', 'region'];
+    const tabs = ['overview', 'briefing', 'timeline', 'market', 'region'];
+    
     tabs.forEach(tab => {
         const navBtn = document.getElementById(`nav-${tab}`);
         if (navBtn) {
             navBtn.addEventListener('click', (e) => {
                 e.preventDefault();
+                // Ẩn tất cả các view
                 document.querySelectorAll('.view-section').forEach(el => el.style.display = 'none');
                 document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
                 
+                // Hiển thị view được chọn
                 document.getElementById(`view-${tab}`).style.display = 'block';
                 navBtn.classList.add('active');
+                
+                // [FIX LỖI BẢN ĐỒ ẨN] Ép trình duyệt tính toán lại kích thước sau khi thẻ div hiện lên
+                if (tab === 'region' || tab === 'market') {
+                    setTimeout(() => {
+                        window.dispatchEvent(new Event('resize'));
+                    }, 50);
+                }
+                
+                // Đóng menu trên Mobile
                 const sidebar = document.getElementById('app-sidebar');
                 const overlay = document.getElementById('sidebar-overlay');
                 if (sidebar.classList.contains('active')) {
@@ -53,6 +66,8 @@ function initNavigation() {
         }
     });
 }
+
+
 
 function initMobileTabs() {
     const btnNews = document.getElementById('tab-news');
