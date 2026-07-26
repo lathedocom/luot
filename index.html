@@ -18,6 +18,7 @@
     <!-- Dùng unpkg cho jsVectorMap -->
     <script src="https://unpkg.com/jsvectormap"></script>
     <script src="https://unpkg.com/jsvectormap/dist/maps/world.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.30.0/cytoscape.min.js"></script>
 </head>
 <body> 
     
@@ -33,7 +34,7 @@
                 <a href="#" class="nav-item active" id="nav-overview"><span class="material-icons-round">dashboard</span> Tổng quan</a>
                 <a href="#" class="nav-item" id="nav-briefing"><span class="material-icons-round">feed</span> Bản tin 24h</a>
                 <a href="#" class="nav-item" id="nav-timeline"><span class="material-icons-round">timeline</span> Timeline</a>
-                <a href="#" class="nav-item"><span class="material-icons-round">hub</span> Knowledge Graph</a>
+                <a href="#" class="nav-item" id="nav-knowledge"><span class="material-icons-round">hub</span> Knowledge Graph</a>
                 <a href="#" class="nav-item" id="nav-market"><span class="material-icons-round">trending_up</span> Thị trường</a>
                 <!-- [NEW] Bổ sung id="nav-region" -->
                 <a href="#" class="nav-item" id="nav-region"><span class="material-icons-round">public</span> Khu vực</a>
@@ -151,7 +152,19 @@
                         </div>
                     </div>
                 </div>
- 
+
+                <!-- VIEW 6: KNOWLEDGE GRAPH -->
+<div id="view-knowledge" class="view-section" style="display: none; height: 100%;">
+    <div class="widget" style="height: calc(100vh - 120px); display: flex; flex-direction: column;">
+        <div class="section-header">
+            <h2 class="section-title" style="color: #8b5cf6; font-size: 18px;"><span class="material-icons-round">hub</span> KNOWLEDGE GRAPH</h2>
+        </div>
+        <p style="font-size: 14px; opacity: 0.7; margin-bottom: 16px;">Mạng lưới liên kết các thực thể (Người, Tổ chức, Địa điểm) từ các sự kiện nóng nhất 7 ngày qua.</p>
+
+        <div id="cy-container" style="flex-grow: 1; min-height: 400px; background-color: var(--md-sys-color-background); border-radius: 12px; border: 1px solid var(--md-sys-color-outline); position: relative;"></div>
+    </div>
+</div>
+                
             </main>
         </div>
     </div>
