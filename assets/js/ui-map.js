@@ -7,13 +7,13 @@ export function renderRiskMap(riskMapData) {
     // Xóa bản đồ cũ nếu có
     mapContainer.innerHTML = '';
 
-    // Tạo object map Trạng thái (thay vì truyền màu trực tiếp)
     const regionValues = {};
     for (const [isoCode, data] of Object.entries(riskMapData)) {
-        regionValues[isoCode] = data.status; // Ví dụ truyền vào: 'Rủi ro cao'
+        regionValues[isoCode] = data.status;
     }
 
-    new jsVectorMap({
+    // [CẬP NHẬT] Gán vào biến "map" để có thể gọi hàm updateSize()
+    const map = new jsVectorMap({
         selector: '#global-risk-map',
         map: 'world',
         zoomOnScroll: true,
@@ -22,7 +22,7 @@ export function renderRiskMap(riskMapData) {
         
         regionStyle: {
             initial: {
-                fill: '#334155', // Màu xám cho quốc gia không có dữ liệu
+                fill: '#334155',
                 fillOpacity: 1,
                 stroke: 'none',
                 strokeWidth: 0,
@@ -34,7 +34,6 @@ export function renderRiskMap(riskMapData) {
             }
         },
         
-        // Dùng scale để map trạng thái sang màu sắc chuẩn của jsVectorMap
         series: {
             regions: [{
                 attribute: 'fill',
@@ -48,7 +47,6 @@ export function renderRiskMap(riskMapData) {
             }]
         },
 
-        // Tùy biến Tooltip khi rê chuột
         onRegionTooltipShow(event, tooltip, code) {
             const countryData = riskMapData[code];
             if (countryData) {
@@ -58,21 +56,19 @@ export function renderRiskMap(riskMapData) {
                         <div style="font-size: 12px;">Trạng thái: <span style="color:${countryData.color}">${countryData.status}</span></div>
                         <div style="font-size: 12px;">Điểm rủi ro: ${countryData.score}</div>
                     </div>`,
-                    true // true = render HTML
+                    true
                 );
             } else {
                 tooltip.text(`${tooltip.text()} (Thiếu dữ liệu)`);
             }
         },
 
-        // Bắt sự kiện Click để hiển thị danh sách sự kiện
         onRegionClick(event, code) {
             const countryData = riskMapData[code];
             if (countryData && countryData.events.length > 0) {
                 const modalTitle = document.getElementById('modal-title');
                 const modalBody = document.getElementById('modal-body');
                 
-                // Ẩn các nút không liên quan của Modal cũ
                 const reliabilityContainer = document.getElementById('modal-reliability');
                 const miniTimelineContainer = document.getElementById('modal-mini-timeline');
                 const toggleBtn = document.getElementById('toggle-sources-btn');
@@ -102,4 +98,10 @@ export function renderRiskMap(riskMapData) {
             }
         }
     });
+
+    // [NEW] API THEO DÕI KÍCH THƯỚC: Bắt buộc bản đồ bung ra 100% khi tab trên mobile được mở
+    const resizeObserver = new ResizeObserver(() => {
+        map.updateSize();
+    });
+    resizeObserver.observe(mapContainer);
 }
