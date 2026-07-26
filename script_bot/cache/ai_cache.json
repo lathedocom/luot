@@ -1,41 +1,69 @@
 {
-  "evt_general_1785085253715": {
-    "created_at": 1785085257738,
-    "expires_at": 1787677257738,
+  "evt_617f512b": {
+    "created_at": 1785085667403,
+    "expires_at": 1787677667403,
     "version": "4.5",
-    "checksum": "2be97fb27f105acb085625e7ea9899d2",
+    "checksum": "88b96ed6b903111e39d699c93440e361",
     "data": {
-      "cluster_title": "Sự kiện Big Tech bị ảnh hưởng bởi chi tiêu AI",
-      "short_summary": "Các công ty công nghệ lớn ở Mỹ đang phải đối mặt với sự thay đổi trong cách chi tiêu cho trí tuệ nhân tạo.",
-      "detailed_summary": "Trong nhiều năm qua, các tập đoàn công nghệ Mỹ duy trì một thỏa thuận ngầm với nhà đầu tư: họ được phép chi tiêu mạnh tay cho trí tuệ nhân tạo (AI) và đổi lại, thị trường sẽ ghi nhận lợi nhuận chừng nào doanh thu còn tăng trưởng. Hiện tại, thỏa thuận này đang đổ vỡ khi thị trường phản ứng tiêu cực với mức chi tiêu khổng lồ cho AI của các tập đoàn công nghệ.",
+      "cluster_title": "Traders có một công cụ mới để đặt cược vào cổ phiếu lớn nhất của Mỹ",
+      "short_summary": "Cổ phiếu của các công ty lớn như Nvidia Corp và SpaceX sẽ có thêm một cách để đặt cược mà không cần mua cổ phiếu.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "follow_up": "",
+      "entities": [
+        "Nvidia Corp",
+        "SpaceX"
+      ],
+      "keywords": [
+        "cổ phiếu",
+        "Nvidia Corp",
+        "SpaceX",
+        "đặt cược"
+      ],
+      "importance": 60,
+      "scope": "business"
+    }
+  },
+  "evt_general_1785085673113": {
+    "created_at": 1785085679282,
+    "expires_at": 1787677679282,
+    "version": "4.5",
+    "checksum": "8d5bae8a976afaa986ef7bd8b593150f",
+    "data": {
+      "cluster_title": "Sự kiện Big Tech Earnings",
+      "short_summary": "Các công ty công nghệ lớn ở Mỹ đang phải đối mặt với sự thay đổi trong cách họ chi tiêu cho trí tuệ nhân tạo.",
+      "detailed_summary": "Trong nhiều năm qua, các tập đoàn công nghệ hàng đầu tại Mỹ đã duy trì sự đồng thuận với các nhà đầu tư: việc chi tiêu mạnh tay cho trí tuệ nhân tạo sẽ được thị trường chấp nhận miễn là doanh thu tiếp tục tăng trưởng. Hiện nay, cơ chế này đang đối mặt với sự phản đối từ thị trường khi các kết quả kinh doanh mới nhất gây thất vọng trước kỳ vọng về chi phí đầu tư khổng lồ.",
       "causes": [
-        "Chi tiêu quá mức cho hạ tầng và phát triển trí tuệ nhân tạo",
-        "Sự thay đổi trong kỳ vọng và mức độ kiên nhẫn của các nhà đầu tư"
+        "Sự hoài nghi của nhà đầu tư về hiệu quả chi tiêu cho trí tuệ nhân tạo.",
+        "Kết quả kinh doanh của các tập đoàn công nghệ lớn không đáp ứng được kỳ vọng so với mức chi phí đầu tư khổng lồ."
       ],
       "effects": [
-        "Áp lực giảm giá cổ phiếu đối với các tập đoàn công nghệ",
-        "Sự hoài nghi của thị trường đối với hiệu quả đầu tư vào trí tuệ nhân tạo"
+        "Biến động tiêu cực đối với cổ phiếu của các tập đoàn công nghệ.",
+        "Phá vỡ sự tin tưởng giữa nhà đầu tư và doanh nghiệp trong lĩnh vực công nghệ."
       ],
       "affected_groups": [
-        "Các tập đoàn công nghệ lớn (Big Tech)",
-        "Nhà đầu tư tài chính",
-        "Thị trường chứng khoán Mỹ"
+        "Các tập đoàn công nghệ lớn tại Mỹ.",
+        "Nhà đầu tư trên thị trường chứng khoán.",
+        "Các quỹ đầu tư công nghệ."
       ],
-      "market_impact": "Gây biến động mạnh và bất ổn tâm lý trong giới đầu tư đối với nhóm cổ phiếu công nghệ.",
+      "market_impact": "Thị trường đang có phản ứng tiêu cực trước sự thay đổi trong cách nhìn nhận về hiệu quả đầu tư công nghệ, tạo áp lực giảm giá cổ phiếu nhóm ngành này.",
       "follow_up": "",
-      "significance": "Sự kiện này đánh dấu bước ngoặt trong quan hệ giữa các tập đoàn công nghệ và cổ đông, nơi sự kiên nhẫn đối với các khoản đầu tư dài hạn vào AI đang dần cạn kiệt.",
+      "significance": "Sự kiện này đánh dấu bước chuyển mình trong tâm lý thị trường, từ việc ưu tiên tăng trưởng bằng mọi giá sang yêu cầu khắt khe về hiệu quả tài chính từ các khoản đầu tư trí tuệ nhân tạo.",
       "unknowns": [
-        "Thời điểm và cách thức các tập đoàn điều chỉnh chiến lược chi tiêu",
-        "Mức độ ảnh hưởng cụ thể của việc cắt giảm chi phí lên tốc độ phát triển AI"
+        "Liệu các tập đoàn sẽ cắt giảm ngân sách đầu tư cho trí tuệ nhân tạo trong tương lai hay không.",
+        "Mức độ ảnh hưởng dài hạn của sự sụt giảm niềm tin này đến chỉ số chứng khoán công nghệ."
       ],
-      "confidence_note": "Thông tin phản ánh xu hướng thị trường hiện tại dựa trên phản ứng của giới đầu tư đối với báo cáo thu nhập của các tập đoàn Big Tech.",
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên các báo cáo kết quả kinh doanh và phản ứng thực tế của thị trường chứng khoán.",
       "scenarios": [
         {
-          "text": "Các tập đoàn công nghệ sẽ phải thắt chặt chi tiêu để làm hài lòng nhà đầu tư trong ngắn hạn",
+          "text": "Các tập đoàn công nghệ sẽ công bố lộ trình cắt giảm chi phí hoặc tối ưu hóa hiệu quả lợi nhuận từ trí tuệ nhân tạo để xoa dịu nhà đầu tư.",
           "likelihood": "cao"
         },
         {
-          "text": "Thị trường sẽ tiếp tục bán tháo cổ phiếu công nghệ cho đến khi có minh chứng rõ ràng về lợi nhuận từ AI",
+          "text": "Thị trường tiếp tục duy trì áp lực bán tháo cổ phiếu công nghệ cho đến khi có bằng chứng rõ ràng hơn về doanh thu từ trí tuệ nhân tạo.",
           "likelihood": "trung bình"
         }
       ],
@@ -46,8 +74,112 @@
       "keywords": [
         "Big Tech",
         "Earnings",
-        "AI",
-        "Spending"
+        "AI Spending"
+      ],
+      "importance": 85,
+      "scope": "global"
+    }
+  },
+  "evt_41a68549": {
+    "created_at": 1785085690657,
+    "expires_at": 1787677690657,
+    "version": "4.5",
+    "checksum": "0b6d68d05d52e70f9b8aa9e617919124",
+    "data": {
+      "cluster_title": "Sự kiện ETF Brazil tăng gấp ba lần",
+      "short_summary": "ETF Brazil tăng gấp ba lần trong bùng nổ cho các quỹ mới ở Latin America",
+      "detailed_summary": "Thị trường ETF tại Brazil đang trải qua giai đoạn bùng nổ với quy mô tăng gấp ba lần. Đồng thời, các sản phẩm tài chính tương tự đang xuất hiện nhanh chóng trên khắp các thị trường nội địa tại khu vực Mỹ Latinh nhằm đáp ứng nhu cầu đa dạng của nhà đầu tư trong nước.",
+      "causes": [
+        "Nhu cầu ngày càng tăng đối với các sản phẩm tài chính mới tại thị trường nội địa.",
+        "Xu hướng nhà đầu tư tập trung đổ dồn vào các loại hình sản phẩm đầu tư mới được thiết kế riêng."
+      ],
+      "effects": [
+        "Sự gia tăng nhanh chóng về số lượng các quỹ hoán đổi danh mục (ETF) tại Mỹ Latinh.",
+        "Thị trường tài chính khu vực trở nên sôi động hơn nhờ sự đa dạng hóa sản phẩm."
+      ],
+      "affected_groups": [
+        "Nhà đầu tư cá nhân và tổ chức tại Brazil.",
+        "Các đơn vị quản lý quỹ và phát hành sản phẩm tài chính tại Mỹ Latinh."
+      ],
+      "market_impact": "Thị trường tài chính khu vực Mỹ Latinh đang ghi nhận sự dịch chuyển tích cực về dòng vốn và sự phát triển mạnh mẽ của hạ tầng sản phẩm đầu tư ETF.",
+      "follow_up": "",
+      "significance": "Sự kiện này cho thấy thị trường tài chính tại Mỹ Latinh đang dần trưởng thành và đáp ứng tốt hơn nhu cầu chuyên biệt của nhà đầu tư thông qua các công cụ tài chính hiện đại.",
+      "unknowns": [
+        "Tỷ lệ lợi nhuận cụ thể hoặc hiệu suất của các quỹ ETF mới này.",
+        "Các yếu tố pháp lý hoặc rủi ro cụ thể đi kèm với sự bùng nổ của các quỹ này."
+      ],
+      "confidence_note": "Thông tin mang tính xác thực cao dựa trên xu hướng thị trường hiện tại.",
+      "scenarios": [
+        {
+          "text": "Thị trường ETF tiếp tục duy trì đà tăng trưởng nhờ sự tham gia của nhiều nhà đầu tư mới.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Sự bão hòa của thị trường sau giai đoạn bùng nổ nhanh chóng.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entities": [
+        "Brazil",
+        "Latin America"
+      ],
+      "keywords": [
+        "ETF",
+        "Brazil",
+        "Latin America"
+      ],
+      "importance": 85,
+      "scope": "global"
+    }
+  },
+  "evt_fb38a93f": {
+    "created_at": 1785085701948,
+    "expires_at": 1787677701948,
+    "version": "4.5",
+    "checksum": "b6d6e6712a11fb81490b6ce99c841ae0",
+    "data": {
+      "cluster_title": "Vụ tấn công tại lễ hội Pride Berlin",
+      "short_summary": "Một chiếc xe đã đâm vào đám đông tại lễ hội Pride ở Berlin, khiến một người chết và 29 người bị thương.",
+      "detailed_summary": "Sự việc xảy ra khi một xe ô tô bất ngờ lao vào đám đông tham gia sự kiện diễu hành Berlin Pride. Hậu quả làm một người thiệt mạng và 29 người chịu các mức độ thương tích khác nhau. Lực lượng cảnh sát đang tiến hành truy tìm nghi phạm, trong khi Thị trưởng Berlin đã lên tiếng chỉ trích hành động này là một cuộc tấn công nhằm vào xã hội tự do và cởi mở.",
+      "causes": [
+        "Phương tiện di chuyển đâm trực diện vào đám đông người tham gia diễu hành"
+      ],
+      "effects": [
+        "Một người tử vong",
+        "29 người bị thương",
+        "Gây rúng động dư luận và lo ngại về an ninh công cộng tại Berlin"
+      ],
+      "affected_groups": [
+        "Người tham gia sự kiện Berlin Pride",
+        "Cộng đồng dân cư Berlin"
+      ],
+      "market_impact": "Không có tác động trực tiếp đến thị trường tài chính, chủ yếu gây ảnh hưởng đến tâm lý xã hội và an ninh đô thị.",
+      "follow_up": "",
+      "significance": "Sự kiện được chính quyền coi là hành vi tấn công vào các giá trị tự do và cởi mở của xã hội, gây tác động tiêu cực đến an ninh tại các sự kiện công cộng lớn.",
+      "unknowns": [
+        "Danh tính của nghi phạm",
+        "Động cơ cụ thể của đối tượng gây án (chủ đích tấn công hay tai nạn ngoài ý muốn)",
+        "Chi tiết cụ thể về tình trạng của những người bị thương"
+      ],
+      "confidence_note": "Thông tin dựa trên báo cáo ban đầu từ cơ quan chức năng và giới truyền thông, độ tin cậy cao về số liệu thương vong.",
+      "scenarios": [
+        {
+          "text": "Cảnh sát bắt giữ nghi phạm và xác định đây là một vụ tấn công có chủ đích.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Kết quả điều tra cho thấy đây là một vụ tai nạn giao thông ngoài ý muốn do lỗi kỹ thuật hoặc vấn đề sức khỏe của tài xế.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entities": [
+        "lễ hội Pride",
+        "Thành phố Berlin"
+      ],
+      "keywords": [
+        "tấn công",
+        "lễ hội Pride",
+        "Berlin"
       ],
       "importance": 85,
       "scope": "national"

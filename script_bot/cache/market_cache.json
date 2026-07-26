@@ -1,9 +1,9 @@
 {
   "latest_market": {
-    "created_at": 1785084690755,
-    "expires_at": 1785085590755,
+    "created_at": 1785085707870,
+    "expires_at": 1785086607870,
     "version": "1.0",
-    "checksum": "768c3049ca9d75a341663bf8c5935ad4",
+    "checksum": "1bd70167a94de48f593a7db5ceb3fa39",
     "data": [
       {
         "id": "USD_VND",
@@ -30,7 +30,7 @@
           "23/7",
           "26/7"
         ],
-        "updated_at": 1785084690687,
+        "updated_at": 1785085707833,
         "is_alert": false,
         "context": null
       },
@@ -46,14 +46,16 @@
         "history": [
           101.18,
           101.14,
-          101.43
+          101.43,
+          101.47
         ],
         "history_labels": [
           "21/7",
           "22/7",
-          "23/7"
+          "23/7",
+          "24/7"
         ],
-        "updated_at": 1785084690753,
+        "updated_at": 1785085707828,
         "is_alert": false,
         "context": null
       },
@@ -82,7 +84,7 @@
           "23/7",
           "24/7"
         ],
-        "updated_at": 1785084690695,
+        "updated_at": 1785085707828,
         "is_alert": false,
         "context": null
       },
@@ -111,7 +113,7 @@
           "23/7",
           "24/7"
         ],
-        "updated_at": 1785084690714,
+        "updated_at": 1785085707833,
         "is_alert": false,
         "context": null
       },
@@ -136,7 +138,7 @@
           "23/7",
           "24/7"
         ],
-        "updated_at": 1785084690698,
+        "updated_at": 1785085707829,
         "is_alert": false,
         "context": null
       },
@@ -161,7 +163,7 @@
           "23/7",
           "24/7"
         ],
-        "updated_at": 1785084690688,
+        "updated_at": 1785085707856,
         "is_alert": false,
         "context": null
       },
@@ -186,7 +188,7 @@
           "23/7",
           "24/7"
         ],
-        "updated_at": 1785084690700,
+        "updated_at": 1785085707857,
         "is_alert": false,
         "context": null
       },
@@ -211,7 +213,7 @@
           "23/7",
           "24/7"
         ],
-        "updated_at": 1785084690720,
+        "updated_at": 1785085707845,
         "is_alert": false,
         "context": null
       },
@@ -236,7 +238,7 @@
           "23/7",
           "24/7"
         ],
-        "updated_at": 1785084690688,
+        "updated_at": 1785085707870,
         "is_alert": false,
         "context": null
       },
@@ -253,15 +255,17 @@
           7443.28,
           7509.2,
           7498.96,
-          7408.3
+          7408.3,
+          7411.98
         ],
         "history_labels": [
           "20/7",
           "21/7",
           "22/7",
-          "23/7"
+          "23/7",
+          "24/7"
         ],
-        "updated_at": 1785084690697,
+        "updated_at": 1785085707844,
         "is_alert": false,
         "context": null
       },
@@ -278,15 +282,17 @@
           25508.07,
           25837.21,
           25690.9,
-          25137.69
+          25137.69,
+          24975.82
         ],
         "history_labels": [
           "20/7",
           "21/7",
           "22/7",
-          "23/7"
+          "23/7",
+          "24/7"
         ],
-        "updated_at": 1785084690694,
+        "updated_at": 1785085707852,
         "is_alert": false,
         "context": null
       },
@@ -303,15 +309,17 @@
           51839.26,
           52224.64,
           52218.58,
-          51711.65
+          51711.65,
+          51947.25
         ],
         "history_labels": [
           "20/7",
           "21/7",
           "22/7",
-          "23/7"
+          "23/7",
+          "24/7"
         ],
-        "updated_at": 1785084690713,
+        "updated_at": 1785085707843,
         "is_alert": false,
         "context": null
       },
@@ -336,7 +344,7 @@
           "23/7",
           "24/7"
         ],
-        "updated_at": 1785084690697,
+        "updated_at": 1785085707842,
         "is_alert": false,
         "context": null
       },
@@ -361,7 +369,7 @@
           "23/7",
           "24/7"
         ],
-        "updated_at": 1785084690700,
+        "updated_at": 1785085707846,
         "is_alert": false,
         "context": null
       },
@@ -386,7 +394,7 @@
           "23/7",
           "24/7"
         ],
-        "updated_at": 1785084690696,
+        "updated_at": 1785085707846,
         "is_alert": false,
         "context": null
       },
@@ -396,16 +404,16 @@
         "type": "crypto",
         "category": "Tiền điện tử",
         "unit": "USD",
-        "price": 64779,
-        "change_percent": "+0.94%",
+        "price": 64695,
+        "change_percent": "+0.81%",
         "trend": "↑",
         "history": [
-          64174.75,
-          64265.39,
-          64416.45,
-          64567.51,
-          64688.36,
-          64779
+          64172.39,
+          64250.78,
+          64381.44,
+          64512.09,
+          64616.61,
+          64695
         ],
         "history_labels": [
           "T-24h",
@@ -415,16 +423,9 @@
           "T-2h",
           "Hiện tại"
         ],
-        "updated_at": 1785084690688,
+        "updated_at": 1785085707846,
         "is_alert": true,
-        "context": {
-          "event_title": "Sự kiện chip giá trị cao của Trung Quốc",
-          "causes": [
-            "Nhà đầu tư nước ngoài bị hạn chế tiếp cận các kênh niêm yết chính thống của công ty chip.",
-            "Nhu cầu tìm kiếm thị trường thay thế của các nhà đầu tư để sở hữu tài sản liên quan đến công ty chip trước khi IPO."
-          ],
-          "market_impact": "Sự xuất hiện của các thị trường thay thế không chính thống tạo ra rủi ro về định giá và tăng cường sự can thiệp của cơ quan quản lý đối với các sàn giao dịch tài sản số."
-        }
+        "context": null
       },
       {
         "id": "ETH",
@@ -432,16 +433,16 @@
         "type": "crypto",
         "category": "Tiền điện tử",
         "unit": "USD",
-        "price": 1918.99,
-        "change_percent": "+2.79%",
+        "price": 1914.24,
+        "change_percent": "+2.53%",
         "trend": "↑",
         "history": [
-          1866.91,
-          1874.73,
-          1887.74,
-          1900.76,
-          1911.18,
-          1918.99
+          1867.04,
+          1874.12,
+          1885.92,
+          1897.72,
+          1907.16,
+          1914.24
         ],
         "history_labels": [
           "T-24h",
@@ -451,7 +452,7 @@
           "T-2h",
           "Hiện tại"
         ],
-        "updated_at": 1785084690688,
+        "updated_at": 1785085707846,
         "is_alert": true,
         "context": null
       },
@@ -480,7 +481,7 @@
           "T5",
           "T6"
         ],
-        "updated_at": 1785084690753,
+        "updated_at": 1785085707870,
         "is_alert": false,
         "context": null
       },
@@ -509,7 +510,7 @@
           "T5",
           "T6"
         ],
-        "updated_at": 1785084690753,
+        "updated_at": 1785085707870,
         "is_alert": false,
         "context": null
       },
@@ -538,7 +539,7 @@
           "T5",
           "T6"
         ],
-        "updated_at": 1785084690753,
+        "updated_at": 1785085707870,
         "is_alert": false,
         "context": null
       }
