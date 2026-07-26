@@ -1,31 +1,28 @@
 // FILE: assets/js/ui-map.js
 
-let mapInstance = null; // Lưu trữ instance của bản đồ
-let savedRiskData = null; // Lưu trữ data chờ render
+let mapInstance = null;
+let savedRiskData = null;
 
 export function renderRiskMap(riskMapData) {
     savedRiskData = riskMapData;
     const mapContainer = document.getElementById('global-risk-map');
     if (!mapContainer || !savedRiskData) return;
 
-    // API THEO DÕI: Canh lúc tab hiện lên (width > 0) thì mới vẽ bản đồ
     const resizeObserver = new ResizeObserver(() => {
         if (mapContainer.offsetWidth > 0) {
             if (!mapInstance) {
-                initMap(mapContainer); // Lần đầu mở tab: Khởi tạo bản đồ
+                initMap(mapContainer); 
             } else {
-                mapInstance.updateSize(); // Các lần sau: Chỉ cập nhật kích thước
+                mapInstance.updateSize(); 
             }
         }
     });
     
-    // Bắt đầu theo dõi thẻ div chứa bản đồ
     resizeObserver.observe(mapContainer);
 }
 
-// Hàm khởi tạo bản đồ thực sự
 function initMap(mapContainer) {
-    mapContainer.innerHTML = ''; // Xóa sạch rác nếu có
+    mapContainer.innerHTML = ''; 
 
     const regionValues = {};
     for (const [isoCode, data] of Object.entries(savedRiskData)) {
@@ -37,11 +34,12 @@ function initMap(mapContainer) {
         map: 'world',
         zoomOnScroll: true,
         zoomButtons: true,
+        draggable: true, 
         backgroundColor: 'transparent',
         
         regionStyle: {
             initial: {
-                fill: '#334155', // Màu xám mặc định
+                fill: '#334155',
                 fillOpacity: 1,
                 stroke: 'none',
                 strokeWidth: 0,
@@ -82,6 +80,9 @@ function initMap(mapContainer) {
             }
         },
 
+        // ====================================================================
+        // [CẬP NHẬT] XỬ LÝ CLICK: THÊM NÚT NHẢY SANG KNOWLEDGE GRAPH
+        // ====================================================================
         onRegionClick(event, code) {
             const countryData = savedRiskData[code];
             if (countryData && countryData.events.length > 0) {
@@ -106,14 +107,34 @@ function initMap(mapContainer) {
                 });
                 listHtml += '</ul>';
 
+                // Bổ sung nút liên kết bên dưới danh sách rủi ro
                 modalBody.innerHTML = `
-                    <div style="background: rgba(0,0,0,0.05); border-left: 4px solid ${countryData.color}; padding: 16px; border-radius: 4px;">
+                    <div style="background: rgba(0,0,0,0.05); border-left: 4px solid ${countryData.color}; padding: 16px; border-radius: 4px; margin-bottom: 16px;">
                         <h4 style="margin: 0; color: ${countryData.color}; font-size: 15px;">Mức độ: ${countryData.status}</h4>
                         ${listHtml}
                     </div>
+                    <button id="jump-to-graph-btn" style="width: 100%; padding: 12px; background-color: var(--md-sys-color-primary, #8b5cf6); color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 14px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
+                        <span class="material-icons-round" style="font-size: 18px;">hub</span>
+                        Phân tích Mạng lưới tri thức
+                    </button>
                 `;
 
                 document.getElementById('intelligence-modal').classList.add('active');
+
+                // Lắng nghe sự kiện click cho nút vừa tạo
+                const jumpBtn = document.getElementById('jump-to-graph-btn');
+                if (jumpBtn) {
+                    jumpBtn.addEventListener('click', () => {
+                        // 1. Đóng Modal hiện tại
+                        document.getElementById('intelligence-modal').classList.remove('active');
+                        
+                        // 2. Kích hoạt tự động bấm vào Tab Knowledge Graph
+                        const navKnowledge = document.getElementById('nav-knowledge');
+                        if (navKnowledge) {
+                            navKnowledge.click();
+                        }
+                    });
+                }
             }
         }
     });
