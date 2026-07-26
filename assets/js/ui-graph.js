@@ -6,15 +6,20 @@ let savedGraphData = null;
 export function renderKnowledgeGraph(graphData) {
     savedGraphData = graphData;
     const cyContainer = document.getElementById('cy-container');
-    if (!cyContainer || !savedGraphData || !savedGraphData.nodes) return;
+    if (!cyContainer || !savedGraphData || !savedGraphData.nodes || savedGraphData.nodes.length === 0) {
+        if (cyContainer) {
+            cyContainer.innerHTML = '<p style="padding: 20px; opacity: 0.7; text-align: center;">Chưa có đủ dữ liệu thực thể để tạo Mạng lưới tri thức.</p>';
+        }
+        return;
+    }
 
-    // Canh lúc tab hiện lên mới vẽ đồ thị
     const resizeObserver = new ResizeObserver(() => {
-        if (cyContainer.offsetWidth > 0) {
+        if (cyContainer.offsetWidth > 0 && cyContainer.offsetHeight > 0) {
             if (!cyInstance) {
                 initCy(cyContainer);
             } else {
                 cyInstance.resize();
+                cyInstance.fit();
             }
         }
     });
@@ -22,12 +27,13 @@ export function renderKnowledgeGraph(graphData) {
 }
 
 function initCy(container) {
-    // Định nghĩa bảng màu cho từng loại thực thể
+    container.innerHTML = ''; // Xóa thông báo trống nếu có
+
     const typeColors = {
-        'Person': '#3b82f6',       // Xanh dương
-        'Organization': '#f59e0b', // Vàng cam
-        'Location': '#10b981',     // Xanh lá
-        'Unknown': '#64748b'       // Xám
+        'Person': '#3b82f6',
+        'Organization': '#f59e0b',
+        'Location': '#10b981',
+        'Unknown': '#64748b'
     };
 
     cyInstance = cytoscape({
@@ -50,7 +56,7 @@ function initCy(container) {
                     'text-halign': 'center',
                     'width': 'label',
                     'height': 'label',
-                    'padding': '8px',
+                    'padding': '10px',
                     'shape': 'round-rectangle'
                 }
             },
@@ -58,27 +64,23 @@ function initCy(container) {
                 selector: 'edge',
                 style: {
                     'width': 2,
-                    'line-color': '#334155',
+                    'line-color': '#475569',
                     'curve-style': 'bezier',
                     'opacity': 0.6
                 }
             }
         ],
         layout: {
-            name: 'cose', // Thuật toán giả lập lực hút-đẩy vật lý giúp các Node tự giãn cách đẹp mắt
-            animate: true,
-            nodeRepulsion: 400000,
-            idealEdgeLength: 100
+            name: 'cose',
+            animate: false,
+            nodeRepulsion: function(node){ return 2048; },
+            idealEdgeLength: function(edge){ return 64; },
+            edgeElasticity: function(edge){ return 32; }
         }
     });
 
-    // Bắt sự kiện Click vào Node
-    cyInstance.on('tap', 'node', function(evt){
-        const node = evt.target;
-        const nodeLabel = node.data('label');
-        const nodeType = node.data('type');
-        
-        // [TODO] Chờ làm tiếp ở Giai đoạn 2: Bấm vào Node hiện danh sách bài viết
-        console.log(`Đã bấm vào ${nodeType}: ${nodeLabel}`);
+    cyInstance.ready(() => {
+        cyInstance.resize();
+        cyInstance.fit();
     });
 }
