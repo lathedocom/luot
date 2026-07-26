@@ -7,11 +7,16 @@ function buildRuleBasedGraph(entities, eventKey = null) {
 
     if (!entities || entities.length < 2) return { nodes, edges };
 
+    // Chuẩn hóa dữ liệu đầu vào an toàn
     const normalizedEntities = entities.map(e => {
         if (typeof e === 'string') return { name: e, type: 'Unknown' };
-        return e;
-    });
+        if (typeof e === 'object' && e !== null) return { name: e.name || 'Unknown', type: e.type || 'Unknown' };
+        return { name: String(e), type: 'Unknown' };
+    }).filter(e => e.name !== 'Unknown' && e.name.length > 0);
 
+    if (normalizedEntities.length < 2) return { nodes, edges };
+
+    // Tạo Nodes
     normalizedEntities.forEach(entity => {
         const nodeId = `node_${generateShortHash(entity.name)}`;
         if (!nodes.some(n => n.data.id === nodeId)) {
@@ -25,6 +30,7 @@ function buildRuleBasedGraph(entities, eventKey = null) {
         }
     });
 
+    // Tạo Edges
     const mainEntity = normalizedEntities[0];
     const sourceId = `node_${generateShortHash(mainEntity.name)}`;
 
@@ -47,12 +53,10 @@ function buildRuleBasedGraph(entities, eventKey = null) {
     return { nodes, edges };
 }
 
-// [HÀM MỚI] Gom nhóm toàn cục để xuất ra JSON
 function buildGlobalGraph(allTopics) {
     const globalNodes = new Map();
     const globalEdges = new Map();
 
-    // Giới hạn lấy dữ liệu 7 ngày qua để đồ thị web không quá tải
     const SEVEN_DAYS = 7 * 24 * 60 * 60 * 1000;
     const now = Date.now();
     const recentTopics = allTopics.filter(t => (now - (t.timestamp || 0)) <= SEVEN_DAYS);
@@ -62,14 +66,12 @@ function buildGlobalGraph(allTopics) {
         
         const { nodes, edges } = buildRuleBasedGraph(topic.entities, topic.event_key);
         
-        // Khử trùng lặp Node toàn cục
         nodes.forEach(n => {
             if (!globalNodes.has(n.data.id)) {
                 globalNodes.set(n.data.id, n);
             }
         });
 
-        // Khử trùng lặp Cạnh (không nối 2 lần giữa A và B)
         edges.forEach(e => {
             const edgeKey = `${e.data.source}_${e.data.target}`;
             const reverseEdgeKey = `${e.data.target}_${e.data.source}`;
