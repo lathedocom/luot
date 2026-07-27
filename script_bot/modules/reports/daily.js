@@ -62,34 +62,44 @@ async function generateDailyBriefing(allTopics) {
 
         // --- BÓC TÁCH JSON VÀ RENDER THÀNH KHỐI HTML ĐẸP MẮT ---
         if (reportData && reportData.sections) {
+            
+            // Xóa rác markdown trên tiêu đề và description
+            const cleanTitle = (reportData.title || 'AI DAILY BRIEFING').replace(/\*/g, '');
+            const cleanSummary = (reportData.summary || '').replace(/\*/g, '').replace(/```/g, '');
+
             let html = `
             <div style="margin-bottom: 24px;">
                 <h3 style="color: var(--md-sys-color-primary); font-size: 18px; font-weight: 800; margin-bottom: 8px; line-height: 1.4;">
-                    ${reportData.title || 'AI DAILY BRIEFING'}
+                    ${cleanTitle}
                 </h3>
                 <div style="font-size: 13px; opacity: 0.7; margin-bottom: 16px; font-style: italic; display: flex; align-items: center; gap: 4px;">
                     <span class="material-icons-round" style="font-size: 16px;">calendar_today</span> Cập nhật ngày: ${todayStr}
                 </div>
-                <p style="font-weight: 500; font-size: 15px; margin-bottom: 24px; line-height: 1.6;">
-                    ${reportData.summary || ''}
+                <p style="font-weight: 500; font-size: 15px; margin-bottom: 24px; line-height: 1.6; color: var(--md-sys-color-on-surface);">
+                    ${cleanSummary}
                 </p>
             </div>`;
 
             // Vẽ từng khối khu vực (Thẻ Card)
             reportData.sections.forEach(sec => {
+                // Ép IN HOA chữ và gọt sạch rác markdown
+                const regionName = (sec.region || '').replace(/\*/g, '').toUpperCase();
+                const contentText = (sec.content || '').replace(/\*/g, '').replace(/```[\s\S]*?```/g, '').replace(/`/g, '');
+
                 html += `
                 <div style="margin-bottom: 20px; padding: 16px; background: var(--md-sys-color-surface); border: 1px solid var(--md-sys-color-outline); border-radius: 12px; border-left: 4px solid var(--md-sys-color-primary);">
                     <h4 style="font-size: 15px; font-weight: bold; margin-bottom: 12px; color: var(--md-sys-color-on-surface); text-transform: uppercase;">
-                        ${sec.region}
+                        ${regionName}
                     </h4>
-                    <p style="font-size: 14.5px; line-height: 1.7; opacity: 0.9; margin: 0;">
-                        ${sec.content}
+                    <p style="font-size: 14.5px; line-height: 1.7; opacity: 0.9; margin: 0; color: var(--md-sys-color-on-surface);">
+                        ${contentText}
                     </p>
                 </div>`;
             });
 
             if (reportData.closing) {
-                html += `<p style="font-size: 14px; opacity: 0.6; text-align: center; margin-top: 24px; font-style: italic;">${reportData.closing}</p>`;
+                const cleanClosing = reportData.closing.replace(/\*/g, '');
+                html += `<p style="font-size: 14px; opacity: 0.6; text-align: center; margin-top: 24px; font-style: italic;">${cleanClosing}</p>`;
             }
 
             return html;
