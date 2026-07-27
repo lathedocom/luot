@@ -56,11 +56,18 @@ function buildDigest(allTopics, { limitPerRegion = 7, windowMs = 48 * 60 * 60 * 
 const REGION_TO_ISO = {
     'vietnam': ['VN'],
     'usa': ['US'],
+    'canada': ['CA'],
     'china': ['CN', 'TW', 'HK'], 
-    'eu': ['GB', 'FR', 'DE', 'IT', 'ES', 'UA', 'RU'], 
-    'asean': ['SG', 'TH', 'MY', 'ID', 'PH'],
-    'asia': ['JP', 'KR', 'IN'],
-    'middle_east': ['IL', 'PS', 'IR', 'SY', 'LB']
+    'eu': ['GB', 'FR', 'DE', 'IT', 'ES', 'NL', 'CH', 'SE', 'PL'], 
+    'russia_ukraine': ['RU', 'UA', 'BY'],
+    // Đã thêm KH (Campuchia), LA (Lào)
+    'asean': ['SG', 'TH', 'MY', 'ID', 'PH', 'KH', 'LA', 'MM', 'BN'], 
+    'asia': ['JP', 'KR', 'IN', 'PK', 'BD', 'LK'],
+    'middle_east': ['IL', 'PS', 'IR', 'SY', 'LB', 'SA', 'AE', 'QA', 'IQ', 'YE'],
+    // [MỚI]
+    'oceania': ['AU', 'NZ'], 
+    'latin_america': ['BR', 'AR', 'MX', 'CO', 'CL', 'PE', 'VE'], 
+    'africa': ['ZA', 'GH', 'NG', 'EG', 'KE', 'ET'] 
 };
 
 // [MỚI] Bảng điểm Cơ sở dựa trên nhãn ảnh hưởng (Impact Level) của AI
