@@ -217,12 +217,23 @@ function initCy(container) {
                 }
             }
         ],
-        layout: {
+       layout: {
             name: 'cose',
             animate: false,
-            nodeRepulsion: function(node){ return 2048; },
-            idealEdgeLength: function(edge){ return 64; },
-            edgeElasticity: function(edge){ return 32; }
+            // Tăng lực đẩy từ trường tổng thể giữa tất cả các Node
+            nodeRepulsion: function(node){ return 4096; }, 
+            // Điều chỉnh độ dài lò xo nối giữa các Node
+            idealEdgeLength: function(edge){ 
+                if (edge.data('relation_type') === 'conflict') return 350; // Xung đột: Đẩy văng ra xa 350px
+                if (edge.data('relation_type') === 'cooperation') return 50; // Hợp tác: Kéo sát lại 50px
+                return 80; // Trung lập: Giữ khoảng cách 80px
+            },
+            // Điều chỉnh độ cứng/căng của lò xo
+            edgeElasticity: function(edge){ 
+                if (edge.data('relation_type') === 'conflict') return 150; // Xung đột: Lò xo cực cứng, ép buộc phải tách ra
+                if (edge.data('relation_type') === 'cooperation') return 100;
+                return 32; 
+            }
         }
     });
 
