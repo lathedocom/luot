@@ -153,44 +153,46 @@ function initCy(container) {
         }
     });
 
-    // Xử lý sự kiện Click vào Node
-    cyInstance.on('tap', 'node', function(evt){
-        const node = evt.target;
-        const nodeLabel = node.data('label');
-        const nodeType = node.data('type');
-        const nodeColor = typeColors[nodeType] || typeColors['Unknown'];
+    
+    // =================================================================
+    // Xử lý sự kiện Click vào Cạnh (Edge) -> Hiển thị Mạng lưới bằng chứng
+    // =================================================================
+    cyInstance.on('tap', 'edge', function(evt){
+        const edge = evt.target;
+        const edgeLabel = edge.data('label') || '';
+        const relationType = edge.data('relation_type');
+        const sourceName = edge.source().data('label');
+        const targetName = edge.target().data('label');
+        
+        // Lấy mảng ID sự kiện làm bằng chứng đã được Backend gắn vào
+        const supportingEvents = edge.data('supporting_events') || [];
 
         // --- 1. HIỆU ỨNG FOCUS TRÊN ĐỒ THỊ ---
         cyInstance.elements().addClass('faded');
-        node.neighborhood().add(node).removeClass('faded');
+        edge.removeClass('faded');
+        edge.source().removeClass('faded');
+        edge.target().removeClass('faded');
 
-        // --- 2. XỬ LÝ DỮ LIỆU TÌNH BÁO ---
-        const trendScore = Math.round(node.data('trend_score') || 0);
-        const riskProfile = node.data('risk_profile') || {};
-
+        // --- 2. TRA CỨU DỮ LIỆU TỪ RAM TRÌNH DUYỆT ---
         const allNews = getGlobalNewsData();
-        const relatedEvents = allNews.filter(topic => {
-            if (!topic.entities) return false;
-            return topic.entities.some(e => {
-                const entityName = typeof e === 'object' ? (e.name || '') : String(e);
-                return entityName.toLowerCase() === nodeLabel.toLowerCase();
-            });
+        const relatedEvents = allNews.filter(topic => supportingEvents.includes(topic.event_key));
+
+        // Gom nhóm và đếm số lượng các đầu báo (Tờ báo) đã đưa tin về mối quan hệ này
+        const uniqueSources = [];
+        const seenSources = new Set();
+        
+        relatedEvents.forEach(evt => {
+            if (evt.sources && Array.isArray(evt.sources)) {
+                evt.sources.forEach(src => {
+                    if (src.source_name && !seenSources.has(src.source_name)) {
+                        seenSources.add(src.source_name);
+                        uniqueSources.push(src);
+                    }
+                });
+            }
         });
 
-        if (relatedEvents.length === 0) return;
-        relatedEvents.sort((a, b) => b.timestamp - a.timestamp);
-
-        // --- 3. TRÍCH XUẤT THỰC THỂ LIÊN QUAN (BẠN NÊN ĐỌC TIẾP) ---
-        const connectedNodes = node.neighborhood('node');
-        let relatedEntitiesHtml = '';
-        if (connectedNodes.length > 0) {
-            connectedNodes.forEach(n => {
-                const nColor = typeColors[n.data('type')] || typeColors['Unknown'];
-                relatedEntitiesHtml += `<span style="display:inline-flex; align-items:center; padding: 4px 12px; margin: 0 8px 8px 0; background: ${nColor}15; color: ${nColor}; border: 1px solid ${nColor}40; border-radius: 16px; font-size: 13px; font-weight: 500;">${escapeHtml(n.data('label'))}</span>`;
-            });
-        }
-
-        // --- 4. RENDER MODAL UI ---
+        // --- 3. RENDER GIAO DIỆN MODAL BẰNG CHỨNG ---
         const modalTitle = document.getElementById('modal-title');
         const modalBody = document.getElementById('modal-body');
         
@@ -199,80 +201,70 @@ function initCy(container) {
         document.getElementById('toggle-sources-btn').style.display = 'none';
         document.getElementById('modal-sources').style.display = 'none';
 
-        modalTitle.innerHTML = `<span style="color:${nodeColor}">Thực thể: ${escapeHtml(nodeLabel)}</span>`;
+        // Phân loại màu sắc theo loại quan hệ
+        let typeText = 'Liên quan';
+        let typeColor = '#64748b'; // Xám
+        if (relationType === 'cause_effect') { typeText = 'Nguyên nhân ➔ Kết quả'; typeColor = '#f59e0b'; } // Cam
+        else if (relationType === 'cooperation') { typeText = 'Hợp tác'; typeColor = '#10b981'; } // Xanh lá
+        else if (relationType === 'conflict') { typeText = 'Xung đột'; typeColor = '#ef4444'; } // Đỏ
 
-        let trendHtml = '';
-        if (trendScore > 75) trendHtml = `<span style="color: #ef4444; font-weight:bold;">↑ ${trendScore}% (Khả năng tiếp tục nóng)</span>`;
-        else if (trendScore > 40) trendHtml = `<span style="color: #f59e0b; font-weight:bold;">→ ${trendScore}% (Ổn định)</span>`;
-        else trendHtml = `<span style="color: #10b981; font-weight:bold;">↓ ${trendScore}% (Tin đã hạ nhiệt)</span>`;
+        modalTitle.innerHTML = `<span style="color:${typeColor}; font-size: 16px;">Phân tích: ${escapeHtml(typeText)}</span>`;
 
-        let riskHtml = '';
-        const categoryLabels = { military: 'Quân sự / Xung đột', economy: 'Kinh tế', politics: 'Chính trị', finance: 'Tài chính', tech: 'Công nghệ', law: 'Pháp luật' };
-        
-        if (Object.keys(riskProfile).length > 0) {
-            for (let cat in riskProfile) {
-                if (categoryLabels[cat]) {
-                    const barWidth = Math.min(100, riskProfile[cat] * 25); 
-                    riskHtml += `
-                    <div style="margin-bottom: 8px; display: flex; align-items: center; font-size: 13px;">
-                        <span style="width: 130px; display: inline-block; opacity: 0.8;">${categoryLabels[cat]}</span>
-                        <div style="flex-grow: 1; background: var(--md-sys-color-background); height: 10px; border-radius: 4px; overflow: hidden; border: 1px solid var(--md-sys-color-outline);">
-                            <div style="width: ${barWidth}%; background: ${nodeColor}; height: 100%; transition: width 0.5s ease;"></div>
-                        </div>
-                    </div>`;
-                }
-            }
-        } else {
-            riskHtml = '<p style="font-size: 13px; opacity: 0.6; margin: 0;">Chưa ghi nhận rủi ro cụ thể.</p>';
-        }
+        // Tạo thẻ (Chips) cho các tờ báo
+        let sourcesHtml = '';
+        uniqueSources.forEach(src => {
+            sourcesHtml += `<span style="display:inline-flex; align-items:center; gap: 6px; padding: 4px 12px; background: var(--md-sys-color-surface); border: 1px solid var(--md-sys-color-outline); border-radius: 16px; font-size: 13px; font-weight: 500; margin: 0 8px 8px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.05);"><img src="${escapeHtml(src.source_logo || 'https://via.placeholder.com/16')}" width="16" height="16" style="border-radius:50%; background:#fff;"> ${escapeHtml(src.source_name)}</span>`;
+        });
 
+        // Tạo danh sách các bài báo chi tiết
         let listHtml = '';
-        relatedEvents.forEach((item, index) => {
-            const timeObj = new Date(item.timestamp);
-            const timeString = `${timeObj.getHours().toString().padStart(2,'0')}:${timeObj.getMinutes().toString().padStart(2,'0')} - ${timeObj.toLocaleDateString('vi-VN')}`;
-            const borderStyle = index === relatedEvents.length - 1 ? '' : 'border-bottom: 1px dashed var(--md-sys-color-outline); margin-bottom: 16px; padding-bottom: 16px;';
+        relatedEvents.forEach(item => {
             listHtml += `
-                <div style="${borderStyle}">
-                    <div style="font-size: 12px; opacity: 0.7; margin-bottom: 6px;">${timeString}</div>
-                    <h4 style="margin: 0 0 6px 0; font-size: 15px; color: var(--md-sys-color-on-surface); line-height: 1.4;">${escapeHtml(item.title || item.cluster_title)}</h4>
-                    <p style="font-size: 14px; opacity: 0.8; margin: 0; line-height: 1.5;">${escapeHtml(item.short_summary)}</p>
+                <div style="border-bottom: 1px dashed var(--md-sys-color-outline); margin-bottom: 12px; padding-bottom: 12px;">
+                    <div style="font-weight: 600; font-size: 14px; margin-bottom: 6px; color: var(--md-sys-color-on-surface); line-height: 1.4;">${escapeHtml(item.title || item.cluster_title)}</div>
+                    <div style="font-size: 13px; opacity: 0.8; line-height: 1.5;">${escapeHtml(item.short_summary)}</div>
                 </div>
             `;
         });
 
+        // Ghép toàn bộ vào Modal
         modalBody.innerHTML = `
-            <div style="background: rgba(0,0,0,0.05); border: 1px solid var(--md-sys-color-outline); padding: 16px; border-radius: 8px; margin-bottom: 20px;">
-                <div style="margin-bottom: 16px; font-size: 14px;">
-                    <span style="opacity: 0.7; margin-right: 8px;">Dự báo xu hướng:</span> ${trendHtml}
+            <!-- Khối mô tả cốt lõi của mối quan hệ -->
+            <div style="background: rgba(0,0,0,0.05); border: 1px solid var(--md-sys-color-outline); padding: 20px; border-radius: 12px; margin-bottom: 24px; text-align: center;">
+                <div style="font-size: 18px; font-weight: bold; color: var(--md-sys-color-on-surface); display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap;">
+                    <span>${escapeHtml(sourceName)}</span>
+                    <span class="material-icons-round" style="color: ${typeColor}; font-size: 24px;">${relationType === 'cause_effect' ? 'east' : 'sync_alt'}</span>
+                    <span>${escapeHtml(targetName)}</span>
                 </div>
-                <div style="font-size: 12px; text-transform: uppercase; color: var(--md-sys-color-on-surface); font-weight: bold; margin-bottom: 12px; opacity: 0.6;">
-                    Chỉ số rủi ro (Risk Graph)
-                </div>
-                ${riskHtml}
+                ${edgeLabel ? `<div style="font-size: 15px; color: ${typeColor}; margin-top: 12px; font-style: italic;">"${escapeHtml(edgeLabel)}"</div>` : ''}
             </div>
 
-            <!-- Khối Gợi ý thực thể liên quan -->
-            ${relatedEntitiesHtml ? `
-            <div style="margin-bottom: 20px;">
-                <div style="font-size: 12px; text-transform: uppercase; color: var(--md-sys-color-on-surface); font-weight: bold; margin-bottom: 12px; opacity: 0.6;">
-                    Có liên quan (Gợi ý đọc tiếp)
+            <!-- Khối Bằng chứng (Evidence) -->
+            <div style="margin-bottom: 24px;">
+                <div style="font-size: 12px; text-transform: uppercase; font-weight: bold; margin-bottom: 12px; opacity: 0.6; display: flex; align-items: center; gap: 6px;">
+                    <span class="material-icons-round" style="font-size: 16px;">verified_user</span> 
+                    Bằng chứng xác nhận (${uniqueSources.length} nguồn báo chí)
                 </div>
                 <div style="display: flex; flex-wrap: wrap;">
-                    ${relatedEntitiesHtml}
+                    ${sourcesHtml || '<span style="font-size:13px; opacity:0.6; font-style: italic;">(Quan hệ do AI tổng hợp suy luận)</span>'}
                 </div>
-            </div>` : ''}
+            </div>
 
-            <div style="background: rgba(0,0,0,0.05); border-left: 4px solid ${nodeColor}; padding: 16px; border-radius: 8px;">
-                <div style="font-size: 12px; text-transform: uppercase; color: ${nodeColor}; font-weight: bold; margin-bottom: 16px; display: flex; align-items: center; gap: 6px;">
-                    <span class="material-icons-round" style="font-size: 16px;">library_books</span> 
-                    Các sự kiện đóng góp (${relatedEvents.length})
+            <!-- Khối chi tiết các sự kiện -->
+            <div style="background: rgba(0,0,0,0.05); border-left: 4px solid ${typeColor}; padding: 16px; border-radius: 8px;">
+                <div style="font-size: 12px; text-transform: uppercase; color: ${typeColor}; font-weight: bold; margin-bottom: 16px; display: flex; align-items: center; gap: 6px;">
+                    <span class="material-icons-round" style="font-size: 16px;">format_list_bulleted</span> 
+                    Sự kiện hình thành nên kết nối này (${relatedEvents.length})
                 </div>
-                ${listHtml}
+                ${listHtml || '<div style="font-size:13px; opacity:0.6;">Không có dữ liệu bài viết chi tiết.</div>'}
             </div>
         `;
 
+        // Bật Modal lên
         document.getElementById('intelligence-modal').classList.add('active');
     });
+
+    
 }
 
 // ====================================================================
