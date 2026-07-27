@@ -1,47 +1,22 @@
 // FILE: script_bot/config/regions.js
-
 module.exports = {
     REGIONS: [
-        { 
-            id: 'vietnam', 
-            name: 'Việt Nam', 
-            keywords: ['việt nam', 'hà nội', 'tphcm', 'chính phủ', 'thủ tướng chính phủ', 'vnindex', 'nhà nước'] 
-        },
-        { 
-            id: 'usa', 
-            name: 'Mỹ', 
-            keywords: ['mỹ', 'hoa kỳ', 'washington', 'biden', 'fed', 'wall street', 'new york', 'trump', 'lầu năm góc'] 
-        },
-        { 
-            id: 'china', 
-            name: 'Trung Quốc', 
-            keywords: ['trung quốc', 'bắc kinh', 'tập cận bình', 'đài loan', 'thượng hải', 'hong kong'] 
-        },
-        { 
-            id: 'eu', 
-            name: 'Châu Âu', 
-            keywords: ['châu âu', 'eu', 'liên minh châu âu', 'anh', 'pháp', 'đức', 'ecb', 'ukraine', 'nga', 'moscow', 'kyiv', 'putin', 'zelensky'] 
-        },
-        { 
-            id: 'asean', 
-            name: 'Đông Nam Á', 
-            keywords: ['asean', 'đông nam á', 'thái lan', 'indonesia', 'malaysia', 'singapore', 'philippines', 'kuala lumpur'] 
-        },
-        { 
-            id: 'asia', 
-            name: 'Châu Á', 
-            keywords: ['châu á', 'nhật bản', 'hàn quốc', 'ấn độ', 'tokyo', 'seoul', 'new delhi', 'takaichi', 'yoon suk yeol', 'modi'] 
-        },
-        { 
-            id: 'middle_east', 
-            name: 'Trung Đông', 
-            keywords: ['trung đông', 'israel', 'iran', 'palestine', 'gaza', 'hamas', 'syria', 'lebanon', 'hezbollah'] 
-        },
-        { 
-            id: 'global', 
-            name: 'Toàn cầu', 
-            keywords: ['toàn cầu', 'thế giới', 'wto', 'who', 'world bank', 'imf', 'liên hợp quốc', 'nato'] 
-        }
+        { id: 'vietnam', name: 'Việt Nam', keywords: ['việt nam', 'hà nội', 'tphcm', 'chính phủ'] },
+        { id: 'usa', name: 'Mỹ', keywords: ['mỹ', 'hoa kỳ', 'washington', 'biden', 'trump', 'fed'] },
+        { id: 'canada', name: 'Canada', keywords: ['canada', 'ottawa', 'trudeau'] },
+        { id: 'china', name: 'Trung Quốc', keywords: ['trung quốc', 'bắc kinh', 'tập cận bình', 'đài loan'] },
+        { id: 'eu', name: 'Châu Âu', keywords: ['châu âu', 'eu', 'anh', 'pháp', 'đức', 'ecb'] },
+        { id: 'russia_ukraine', name: 'Nga & Ukraine', keywords: ['nga', 'ukraine', 'moscow', 'kyiv', 'putin', 'zelensky'] },
+        { id: 'asean', name: 'Đông Nam Á', keywords: ['asean', 'đông nam á', 'thái lan', 'indonesia', 'malaysia', 'singapore', 'philippines', 'campuchia', 'lào', 'myanmar'] },
+        { id: 'asia', name: 'Châu Á', keywords: ['châu á', 'nhật bản', 'hàn quốc', 'ấn độ', 'tokyo', 'seoul', 'new delhi'] },
+        { id: 'middle_east', name: 'Trung Đông', keywords: ['trung đông', 'israel', 'iran', 'palestine', 'gaza', 'syria', 'lebanon'] },
+        
+        // [MỚI] Các châu lục và khu vực được bổ sung
+        { id: 'oceania', name: 'Châu Úc', keywords: ['úc', 'australia', 'new zealand', 'sydney', 'melbourne'] },
+        { id: 'latin_america', name: 'Mỹ Latinh', keywords: ['châu mỹ', 'mỹ latinh', 'brazil', 'argentina', 'mexico', 'venezuela', 'colombia'] },
+        { id: 'africa', name: 'Châu Phi', keywords: ['châu phi', 'nam phi', 'ghana', 'nigeria', 'ai cập', 'kenya'] },
+        
+        { id: 'global', name: 'Toàn cầu', keywords: ['toàn cầu', 'thế giới', 'wto', 'who', 'world bank', 'imf', 'lHQ', 'nato'] }
     ],
     
     // Gán nhãn cứng khu vực dựa trên tên nguồn báo
