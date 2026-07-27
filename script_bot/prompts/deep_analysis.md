@@ -15,6 +15,7 @@ Chỉ lấy những mối quan hệ có tính chất "Nhân - Quả", "Hợp tá
 CẤU TRÚC JSON YÊU CẦU:
 {
   "scope": "personal | business | national | global",
+  "impact_level": "crisis | risk | monitor | development",
   "short_summary": "Tóm tắt nhanh gọn ý chính (Tiếng Việt)",
   "detailed_summary": "Tóm tắt chi tiết diễn biến sự kiện (Tiếng Việt)",
   "causes": ["Nguyên nhân 1", "Nguyên nhân 2"],
@@ -46,5 +47,6 @@ CẤU TRÚC JSON YÊU CẦU:
     }
   ]
 }
-*Lưu ý 1: Trường 'likelihood' trong 'scenarios' chỉ được nhận 1 trong 3 giá trị: "cao", "trung bình", "thấp".*
-*Lưu ý 2: Trường 'relation_type' trong 'entity_relations' BẮT BUỘC chỉ được chọn 1 trong 4 giá trị: "cooperation" (hợp tác), "conflict" (xung đột), "cause_effect" (nguyên nhân dẫn đến kết quả), hoặc "neutral" (liên quan chung chung).*
+*Lưu ý 1: Trường 'impact_level' BẮT BUỘC chọn 1 trong 4 giá trị: "crisis" (khủng hoảng, chiến tranh, thiên tai lớn), "risk" (rủi ro, bất ổn, cảnh báo), "monitor" (cần theo dõi, đàm phán, xu hướng), "development" (phát triển, thành tựu, hợp tác).*
+*Lưu ý 2: Trường 'likelihood' trong 'scenarios' chỉ được nhận 1 trong 3 giá trị: "cao", "trung bình", "thấp".*
+*Lưu ý 3: Trường 'relation_type' trong 'entity_relations' BẮT BUỘC chỉ được chọn 1 trong 4 giá trị: "cooperation" (hợp tác), "conflict" (xung đột), "cause_effect" (nguyên nhân dẫn đến kết quả), hoặc "neutral" (liên quan chung chung).*
