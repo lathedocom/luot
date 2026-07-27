@@ -1,136 +1,124 @@
-// Khai báo các chuyên mục (Category) và bộ từ khóa (Keywords) Song ngữ mở rộng
+// Khai báo 10 Trụ cột chuyên mục (Category) và bộ từ khóa (Keywords) Song ngữ
 module.exports = {
     CATEGORIES: [
         { 
-            id: 'money', 
-            name: 'Kiếm tiền', 
+            id: 'politics', 
+            name: 'Chính trị & Pháp luật', 
             keywords: [
                 // Tiếng Việt
-                'thu nhập', 'lương', 'kiếm tiền online', 'freelance', 'tiết kiệm', 'kiếm tiền', 
-                'làm giàu', 'chi tiêu', 'ngân sách', 'hưu trí', 'tài sản', 'thu nhập thụ động',
+                'chính trị', 'chính phủ', 'quốc hội', 'tổng thống', 'bầu cử', 'thủ tướng', 
+                'pháp luật', 'tòa án', 'luật pháp', 'chính sách', 'nghị định', 'biểu tình',
                 // Tiếng Anh
-                'income', 'salary', 'earn money', 'savings', 'wage', 'wealth', 
-                'budget', 'retirement', 'personal finance', 'side hustle', 'passive income', 'cash'
+                'politics', 'government', 'parliament', 'president', 'election', 'prime minister', 
+                'law', 'court', 'policy', 'legislation', 'protest', 'senate'
             ] 
         },
         { 
             id: 'economy', 
-            name: 'Kinh tế', 
+            name: 'Kinh tế & Thương mại', 
             keywords: [
                 // Tiếng Việt
                 'kinh tế', 'gdp', 'lạm phát', 'lãi suất', 'ngân hàng nhà nước', 'vĩ mô', 
-                'suy thoái', 'tăng trưởng', 'thất nghiệp', 'cpi', 'pmi', 'chính sách tiền tệ',
+                'suy thoái', 'thương mại', 'xuất khẩu', 'nhập khẩu', 'chuỗi cung ứng', 'thuế quan',
                 // Tiếng Anh
                 'economy', 'inflation', 'interest rate', 'recession', 'macroeconomic', 'central bank', 
-                'gdp', 'growth', 'unemployment', 'cpi', 'pmi', 'monetary policy', 'economic'
+                'gdp', 'trade', 'export', 'import', 'supply chain', 'tariff'
             ] 
         },
         { 
             id: 'finance', 
-            name: 'Tài chính', 
+            name: 'Tài chính & Đầu tư', 
             keywords: [
                 // Tiếng Việt
-                'tài chính', 'chứng khoán', 'cổ phiếu', 'trái phiếu', 'vnindex', 'fed', 'tỷ giá', 'tiền tệ', 
-                'quỹ etf', 'phái sinh', 'tiền ảo', 'bitcoin', 'crypto', 'ngân hàng', 'thanh khoản',
+                'tài chính', 'chứng khoán', 'cổ phiếu', 'trái phiếu', 'vnindex', 'fed', 'tỷ giá', 
+                'tiền điện tử', 'bitcoin', 'đầu tư', 'fdi', 'quỹ etf', 'thanh khoản',
                 // Tiếng Anh
                 'finance', 'stock', 'shares', 'bonds', 'wall street', 'currency', 'exchange rate', 
-                'fed', 'etf', 'derivatives', 'crypto', 'bitcoin', 'banking', 'equities', 'forex', 'liquidity'
-            ] 
-        },
-        { 
-            id: 'trade', 
-            name: 'Thương mại', 
-            keywords: [
-                // Tiếng Việt
-                'thương mại', 'xuất khẩu', 'nhập khẩu', 'thuế quan', 'fta', 'chuỗi cung ứng', 'bán lẻ', 
-                'logistics', 'vận tải', 'hải quan', 'wto', 'thương mại điện tử', 'e-commerce',
-                // Tiếng Anh
-                'trade', 'export', 'import', 'tariff', 'supply chain', 'retail', 'commerce', 
-                'logistics', 'shipping', 'customs', 'wto', 'fta', 'e-commerce'
-            ] 
-        },
-        { 
-            id: 'investment', 
-            name: 'Đầu tư', 
-            keywords: [
-                // Tiếng Việt
-                'đầu tư', 'quỹ đầu tư', 'm&a', 'gọi vốn', 'ipo', 'startup', 'fdi', 
-                'bất động sản', 'cổ đông', 'khởi nghiệp', 'sáp nhập', 'lợi nhuận', 'cổ tức',
-                // Tiếng Anh
-                'investment', 'fund', 'venture capital', 'funding', 'investors', 'acquisition', 
-                'ipo', 'startup', 'fdi', 'real estate', 'shareholders', 'merger', 'profit', 'roi', 'dividend'
-            ] 
-        },
-        { 
-            id: 'tech', 
-            name: 'Công nghệ', 
-            keywords: [
-                // Tiếng Việt
-                'công nghệ', 'ai', 'chip', 'bán dẫn', 'phần mềm', 'apple', 'nvidia', 'trí tuệ nhân tạo', 
-                'an ninh mạng', 'điện toán đám mây', 'ứng dụng', 'viễn thông', 'robot', 'smartphone',
-                // Tiếng Anh
-                'technology', 'artificial intelligence', 'semiconductor', 'software', 'silicon', 
-                'cyber', 'cloud', 'app', 'telecom', 'robot', 'smartphone', 'big tech', 'openai', 'microsoft'
-            ] 
-        },
-        { 
-            id: 'science', 
-            name: 'Khoa học', 
-            keywords: [
-                // Tiếng Việt
-                'khoa học', 'nghiên cứu', 'phát minh', 'vắc-xin', 'vật lý', 'pin thể rắn', 'sinh học', 
-                'hóa học', 'y tế', 'không gian', 'nasa', 'thiên văn', 'đột phá',
-                // Tiếng Anh
-                'science', 'research', 'discovery', 'vaccine', 'physics', 'biology', 'breakthrough', 
-                'chemistry', 'medical', 'space', 'nasa', 'astronomy', 'healthcare'
-            ] 
-        },
-        { 
-            id: 'politics', 
-            name: 'Chính trị', 
-            keywords: [
-                // Tiếng Việt
-                'chính trị', 'chính phủ', 'quốc hội', 'tổng thống', 'bầu cử', 'thủ tướng', 'ngoại giao', 
-                'đảng', 'biểu tình', 'nhân quyền', 'bộ trưởng', 'địa chính trị',
-                // Tiếng Anh
-                'politics', 'government', 'parliament', 'president', 'election', 'prime minister', 'diplomacy', 
-                'protest', 'party', 'human rights', 'minister', 'senate', 'congress', 'geopolitical'
-            ] 
-        },
-        { 
-            id: 'policy', 
-            name: 'Chính sách', 
-            keywords: [
-                // Tiếng Việt
-                'chính sách', 'nghị định', 'thông tư', 'quy định mới', 'chính sách thuế', 'quy hoạch', 
-                'luật pháp sửa đổi', 'dự thảo', 'cấp phép', 'cải cách',
-                // Tiếng Anh
-                'policy', 'regulation', 'decree', 'legislation', 'lawmakers', 'guidelines', 
-                'compliance', 'draft', 'licensing', 'regulatory', 'reform'
-            ] 
-        },
-        { 
-            id: 'law', 
-            name: 'Pháp luật', 
-            keywords: [
-                // Tiếng Việt
-                'pháp luật', 'luật', 'tòa án', 'kiện tụng', 'vi phạm', 'xử phạt', 'điều tra', 'công an', 
-                'tội phạm', 'cảnh sát', 'án mạng', 'lừa đảo', 'ma túy', 'xét xử',
-                // Tiếng Anh
-                'law', 'court', 'lawsuit', 'investigation', 'police', 'illegal', 'fines', 'guilty', 
-                'crime', 'murder', 'scam', 'drugs', 'justice', 'fbi', 'arrest', 'prison', 'trial'
+                'fed', 'crypto', 'bitcoin', 'investment', 'fdi', 'liquidity'
             ] 
         },
         { 
             id: 'military', 
-            name: 'Quân sự', 
+            name: 'Quân sự & Quốc phòng', 
             keywords: [
                 // Tiếng Việt
                 'quân sự', 'quân đội', 'vũ khí', 'xung đột', 'tên lửa', 'quốc phòng', 'chiến sự', 
-                'chiến tranh', 'hải quân', 'không quân', 'khủng bố', 'nato', 'lính đánh thuê', 'hạt nhân',
+                'chiến tranh', 'khủng bố', 'nato', 'hạt nhân', 'tình báo',
                 // Tiếng Anh
-                'military', 'army', 'weapon', 'conflict', 'missile', 'defense', 'war', 'troops', 'nuclear', 
-                'navy', 'air force', 'terrorism', 'nato', 'pentagon', 'weapons', 'mercenary'
+                'military', 'army', 'weapon', 'conflict', 'missile', 'defense', 'war', 
+                'terrorism', 'nato', 'nuclear', 'pentagon', 'intelligence'
+            ] 
+        },
+        { 
+            id: 'diplomacy', 
+            name: 'Quan hệ quốc tế', 
+            keywords: [
+                // Tiếng Việt
+                'ngoại giao', 'hiệp định', 'trừng phạt', 'liên minh', 'đàm phán', 'lãnh thổ', 
+                'đại sứ', 'lHQ', 'hội nghị thượng đỉnh', 'địa chính trị',
+                // Tiếng Anh
+                'diplomacy', 'treaty', 'sanctions', 'alliance', 'negotiation', 'territory', 
+                'ambassador', 'UN', 'summit', 'geopolitical'
+            ] 
+        },
+        { 
+            id: 'tech', 
+            name: 'Công nghệ & Khoa học', 
+            keywords: [
+                // Tiếng Việt
+                'công nghệ', 'ai', 'chip', 'bán dẫn', 'phần mềm', 'an ninh mạng', 'trí tuệ nhân tạo', 
+                'vệ tinh', 'khoa học', 'phát minh', 'đột phá', 'không gian',
+                // Tiếng Anh
+                'technology', 'artificial intelligence', 'semiconductor', 'software', 'cybersecurity', 
+                'satellite', 'science', 'breakthrough', 'innovation', 'space'
+            ] 
+        },
+        { 
+            id: 'health', 
+            name: 'Y tế & Sức khỏe', 
+            keywords: [
+                // Tiếng Việt
+                'y tế', 'dịch bệnh', 'vắc-xin', 'virus', 'bệnh viện', 'thuốc', 'tổ chức y tế', 
+                'đột biến', 'sức khỏe cộng đồng', 'lây nhiễm',
+                // Tiếng Anh
+                'health', 'disease', 'vaccine', 'virus', 'hospital', 'medicine', 'WHO', 
+                'mutation', 'public health', 'infection'
+            ] 
+        },
+        { 
+            id: 'environment', 
+            name: 'Môi trường & Thiên tai', 
+            keywords: [
+                // Tiếng Việt
+                'môi trường', 'thiên tai', 'động đất', 'bão', 'sóng thần', 'khí hậu', 'ô nhiễm', 
+                'lũ lụt', 'hạn hán', 'phát thải',
+                // Tiếng Anh
+                'environment', 'disaster', 'earthquake', 'storm', 'tsunami', 'climate', 'pollution', 
+                'flood', 'drought', 'emission'
+            ] 
+        },
+        { 
+            id: 'energy', 
+            name: 'Năng lượng', 
+            keywords: [
+                // Tiếng Việt
+                'năng lượng', 'giá dầu', 'khí đốt', 'điện', 'năng lượng tái tạo', 'opec', 
+                'xăng dầu', 'nhiên liệu', 'pin', 'năng lượng mặt trời',
+                // Tiếng Anh
+                'energy', 'oil price', 'gas', 'electricity', 'renewable', 'opec', 
+                'fuel', 'battery', 'solar'
+            ] 
+        },
+        { 
+            id: 'business', 
+            name: 'Doanh nghiệp', 
+            keywords: [
+                // Tiếng Việt
+                'doanh nghiệp', 'phá sản', 'sáp nhập', 'm&a', 'ipo', 'startup', 'tập đoàn', 
+                'ceo', 'lợi nhuận', 'sa thải', 'chuỗi cung ứng',
+                // Tiếng Anh
+                'business', 'bankruptcy', 'merger', 'm&a', 'ipo', 'startup', 'corporation', 
+                'ceo', 'profit', 'layoff', 'supply chain'
             ] 
         }
     ]
