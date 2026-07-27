@@ -1,6 +1,6 @@
 const { SYMBOLS } = require('../../config/market_symbols');
 const logger = require('../utils/logger');
-const cheerio = require('cheerio'); // Thêm thư viện phân tích HTML
+const cheerio = require('cheerio'); 
 
 // --- YAHOO FINANCE: Lấy tỷ giá, chứng khoán, hàng hóa quốc tế ---
 async function fetchFromYahoo(symbolsConfig) {
@@ -48,13 +48,14 @@ async function fetchFromYahoo(symbolsConfig) {
                 ...config,
                 category: config.category || 'Thị trường chung',
                 unit: config.unit || 'Điểm',
-                price: parseFloat(price.toFixed(2)).toLocaleString('vi-VN'), // Chuyển đổi định dạng số dễ nhìn
+                price: parseFloat(price.toFixed(2)).toLocaleString('vi-VN'), 
                 change_percent: (changePercent > 0 ? '+' : '') + parseFloat(changePercent.toFixed(2)) + '%',
                 raw_change: changePercent,
                 trend: changePercent >= 0 ? '↑' : '↓',
                 history: history,
                 history_labels: historyLabels,
-                updated_at: Date.now()
+                updated_at: Date.now(),
+                display_source: 'Yahoo Finance' // [MỚI] Khai báo nguồn
             };
         } catch (error) {
             logger.warn(`Lỗi fetch mã ${config.api_symbol} từ Yahoo: ${error.message}`);
@@ -111,7 +112,8 @@ async function fetchFromCoinGecko(symbolsConfig) {
                 trend: changePercent >= 0 ? '↑' : '↓',
                 history: history,
                 history_labels: ['T-24h', 'T-18h', 'T-12h', 'T-6h', 'T-2h', 'Hiện tại'],
-                updated_at: Date.now()
+                updated_at: Date.now(),
+                display_source: 'CoinGecko API' // [MỚI] Khai báo nguồn
             };
         }).filter(Boolean);
     } catch (error) {
@@ -127,7 +129,7 @@ async function fetchPetrolimexData() {
             headers: { 
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' 
             },
-            timeout: 10000 // Chờ tối đa 10s
+            timeout: 10000 
         });
         
         if (!response.ok) return null;
@@ -136,16 +138,11 @@ async function fetchPetrolimexData() {
         const $ = cheerio.load(html);
         let prices = { RON95: null, E5RON92: null, DIESEL: null };
 
-        // Quét các thẻ có khả năng chứa bảng giá
         $('tr, div, li').each((i, el) => {
             const rowText = $(el).text().replace(/\s+/g, ' ').trim().toUpperCase();
-            
-            // Tìm chuỗi định dạng tiền tệ (Ví dụ: 23.500 hoặc 23,500)
             const priceMatch = rowText.match(/([1-3][0-9][.,][0-9]{3})/);
             if (priceMatch) {
-                // Làm sạch dấu chấm/phẩy để lấy số nguyên (23500)
                 const priceValue = parseInt(priceMatch[1].replace(/[.,]/g, ''));
-                
                 if (rowText.includes('RON 95-III') && !prices.RON95) {
                     prices.RON95 = priceValue;
                 } else if (rowText.includes('E5 RON 92') && !prices.E5RON92) {
@@ -159,45 +156,42 @@ async function fetchPetrolimexData() {
         return prices;
     } catch (error) {
         logger.warn(`Lỗi cào dữ liệu Petrolimex: ${error.message}`);
-        return null; // Trả về null để kích hoạt cơ chế giả lập (Mocks)
+        return null; 
     }
 }
 
 // --- XỬ LÝ THỊ TRƯỜNG NỘI ĐỊA (Cào thực tế + Giả lập dự phòng) ---
 async function fetchLocalMarkets(symbolsConfig) {
-    // Gọi hàm cào Petrolimex
     const petrolimexPrices = await fetchPetrolimexData() || {};
 
     return symbolsConfig.map(config => {
         let base = config.base_price || 100;
         let isRealTime = false;
+        let sourceName = 'Dữ liệu mô phỏng (Mock)'; // [MỚI] Mặc định là mô phỏng
 
-        // Nếu là mã xăng dầu và cào được giá trị thực từ web
         if (config.api_symbol === 'RON95' && petrolimexPrices.RON95) {
             base = petrolimexPrices.RON95;
             isRealTime = true;
+            sourceName = 'Tập đoàn Xăng dầu Việt Nam'; // Đổi nguồn nếu cào thành công
         } else if (config.api_symbol === 'E5RON92' && petrolimexPrices.E5RON92) {
             base = petrolimexPrices.E5RON92;
             isRealTime = true;
+            sourceName = 'Tập đoàn Xăng dầu Việt Nam';
         } else if (config.api_symbol === 'DIESEL' && petrolimexPrices.DIESEL) {
             base = petrolimexPrices.DIESEL;
             isRealTime = true;
+            sourceName = 'Tập đoàn Xăng dầu Việt Nam';
         }
 
-        // Tạo mảng lịch sử dao động quanh mức giá
         const history = [];
         let currentPrice = base;
         for (let i = 0; i < 6; i++) {
-            // Dao động giả lập rất nhỏ để vẽ biểu đồ
             const fluctuation = (Math.random() * 0.01) - 0.005; 
-            
-            // Nếu là giá thực tế, ta neo cố định điểm cuối cùng (Hôm nay) bằng giá trị chuẩn
             if (i === 5 && isRealTime) {
                 currentPrice = base;
             } else {
                 currentPrice = currentPrice * (1 + fluctuation);
             }
-            
             if (base > 1000) history.push(Math.round(currentPrice)); 
             else history.push(parseFloat(currentPrice.toFixed(2)));   
         }
@@ -220,6 +214,7 @@ async function fetchLocalMarkets(symbolsConfig) {
             history: history,
             history_labels: ['T-5', 'T-4', 'T-3', 'T-2', 'T-1', 'Hôm nay'],
             updated_at: Date.now(),
+            display_source: sourceName, // [MỚI] Bổ sung Nguồn vào object trả về
             context: isRealTime ? null : {
                 causes: ['Dữ liệu đang chạy mô phỏng dự phòng (Mocks).'],
                 market_impact: 'Chưa lấy được dữ liệu thời gian thực.'
@@ -237,7 +232,7 @@ async function fetchAllLiveMarketData() {
     const [yahooData, cryptoData, localData] = await Promise.all([
         fetchFromYahoo(yahooSymbols),
         fetchFromCoinGecko(coinGeckoSymbols),
-        fetchLocalMarkets(localSymbols) // Chạy luồng nội địa đã tích hợp cào dữ liệu
+        fetchLocalMarkets(localSymbols) 
     ]);
 
     return [...yahooData, ...cryptoData, ...localData];
