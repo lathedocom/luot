@@ -43,7 +43,7 @@ async function generateDailyBriefing(allTopics) {
     if (grouped.asia.length > 0) { outlineStr += "\n=== KHU VỰC CHÂU Á ===\n"; grouped.asia.forEach(t => outlineStr += `- ${t.title}: ${t.short_summary}\n`); }
     if (grouped.global.length > 0) { outlineStr += "\n=== KHU VỰC THẾ GIỚI ===\n"; grouped.global.forEach(t => outlineStr += `- ${t.title}: ${t.short_summary}\n`); }
 
-    // Lấy ngày hiện tại để chống hiện tượng AI "ảo giác" thời gian
+    // Lấy ngày hiện tại
     const todayStr = new Date().toLocaleDateString('vi-VN', { day: '2-digit', month: '2-digit', year: 'numeric' });
     
     // Nhúng Dữ liệu & Ngày giờ vào Prompt
@@ -54,18 +54,15 @@ async function generateDailyBriefing(allTopics) {
         const response = await gateway.executeTask('DAILY_BRIEFING', prompt);
         
         let reportData = response;
-        
-        // Sửa lỗi mảng: Nếu AI tự ý bọc JSON trong một mảng (Array), ta lấy phần tử đầu tiên
         if (Array.isArray(response)) {
             reportData = response[0];
         }
 
-        // --- BÓC TÁCH JSON VÀ RENDER THÀNH KHỐI HTML ĐẸP MẮT ---
         if (reportData && reportData.sections) {
             
-            // Xóa rác markdown trên tiêu đề và description
-            const cleanTitle = (reportData.title || 'AI DAILY BRIEFING').replace(/\*/g, '');
-            const cleanSummary = (reportData.summary || '').replace(/\*/g, '').replace(/```/g, '');
+            // Ép xóa sạch mọi ký hiệu markdown có thể gây sinh thẻ HTML ẩn (gây lóa màu nền)
+            const cleanTitle = (reportData.title || 'BẢN TIN 24H').replace(/[*`_]/g, '');
+            const cleanSummary = (reportData.summary || '').replace(/[*`_]/g, '');
 
             let html = `
             <div style="margin-bottom: 24px;">
@@ -80,11 +77,10 @@ async function generateDailyBriefing(allTopics) {
                 </p>
             </div>`;
 
-            // Vẽ từng khối khu vực (Thẻ Card)
             reportData.sections.forEach(sec => {
-                // Ép IN HOA chữ và gọt sạch rác markdown
-                const regionName = (sec.region || '').replace(/\*/g, '').toUpperCase();
-                const contentText = (sec.content || '').replace(/\*/g, '').replace(/```[\s\S]*?```/g, '').replace(/`/g, '');
+                // Xóa backtick và in hoa để triệt tiêu highlight xanh
+                const regionName = (sec.region || '').replace(/[*`_]/g, '').replace(/<[^>]*>?/gm, '').toUpperCase();
+                const contentText = (sec.content || '').replace(/[*`_]/g, '');
 
                 html += `
                 <div style="margin-bottom: 20px; padding: 16px; background: var(--md-sys-color-surface); border: 1px solid var(--md-sys-color-outline); border-radius: 12px; border-left: 4px solid var(--md-sys-color-primary);">
@@ -98,14 +94,13 @@ async function generateDailyBriefing(allTopics) {
             });
 
             if (reportData.closing) {
-                const cleanClosing = reportData.closing.replace(/\*/g, '');
+                const cleanClosing = reportData.closing.replace(/[*`_]/g, '');
                 html += `<p style="font-size: 14px; opacity: 0.6; text-align: center; margin-top: 24px; font-style: italic;">${cleanClosing}</p>`;
             }
 
             return html;
         }
 
-        // Fallback an toàn nếu AI trả về cấu trúc lạ
         return `<p>Không thể phân giải cấu trúc bản tin. Dữ liệu gốc: ${JSON.stringify(reportData)}</p>`;
 
     } catch (error) {
