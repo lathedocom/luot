@@ -1,50 +1,131 @@
 {
-  "evt_general_1785177036659": {
-    "created_at": 1785177039642,
-    "expires_at": 1787769039642,
+  "evt_7da741b5": {
+    "created_at": 1785177859963,
+    "expires_at": 1787769859963,
     "version": "4.5",
-    "checksum": "6b980ba3d0e798caead5e6e88c183232",
+    "checksum": "ff0d870769a0be12d97cd858dcac5bdf",
     "data": {
-      "cluster_title": "Municipal Bonds Giảm Giá",
-      "short_summary": "Municipal bonds ở Mỹ đã giảm giá xuống mức thấp nhất kể từ mùa xuân sau khi lo ngại lạm phát khiến các trái phiếu địa phương có tuần giảm giá tồi tệ nhất kể từ tháng 4 năm 2025.",
-      "detailed_summary": "Thị trường nợ của chính quyền tiểu bang và địa phương tại Mỹ vừa trải qua tuần giao dịch tồi tệ nhất kể từ tháng 4 năm 2025. Sự sụt giảm lợi nhuận này được thúc đẩy bởi tâm lý lo ngại lạm phát của nhà đầu tư, khiến định giá của loại tài sản này rơi xuống mức thấp nhất kể từ tháng 3.",
+      "cluster_title": "Sự kiện nguy cơ tràn dầu",
+      "short_summary": "Macquarie Ltd cảnh báo nguy cơ tràn dầu trước cuộc bầu cử giữa kỳ ở Mỹ do áp lực gia tăng để chấm dứt xung đột Iran.",
+      "detailed_summary": "Các nhà phân tích từ Macquarie Ltd cho rằng thị trường dầu mỏ thế giới có nguy cơ chuyển dịch sang trạng thái dư cung trước cuối năm nay. Nguyên nhân chính là do sức ép chính trị khiến chính quyền Washington chịu áp lực phải sớm giải quyết bất đồng với Iran khi thời điểm bầu cử giữa nhiệm kỳ tại Mỹ đang đến gần.",
       "causes": [
-        "Tâm lý lo ngại về lạm phát gia tăng trong giới đầu tư",
-        "Áp lực bán tháo trên thị trường trái phiếu địa phương"
+        "Sức ép chính trị tại Mỹ trước thềm bầu cử giữa nhiệm kỳ",
+        "Nhu cầu đạt được thỏa thuận giải quyết xung đột với Iran"
       ],
       "effects": [
-        "Giá trái phiếu chính quyền địa phương giảm xuống mức rẻ nhất kể từ mùa xuân",
-        "Hiệu suất đầu tư của trái phiếu địa phương đạt mức thấp nhất kể từ tháng 4 năm 2025"
+        "Nguy cơ nguồn cung dầu mỏ thế giới vượt cầu",
+        "Biến động tiềm tàng đối với giá dầu thô"
       ],
       "affected_groups": [
-        "Nhà đầu tư trái phiếu",
-        "Các tổ chức phát hành trái phiếu chính quyền địa phương",
-        "Chính quyền các tiểu bang và địa phương tại Mỹ"
+        "Nhà đầu tư thị trường năng lượng",
+        "Các quốc gia xuất khẩu dầu mỏ",
+        "Các tập đoàn năng lượng toàn cầu"
       ],
-      "market_impact": "Thị trường trái phiếu địa phương đang đối mặt với sự điều chỉnh giá mạnh mẽ, tạo ra cơ hội mua vào với định giá rẻ nhưng đi kèm rủi ro biến động cao do lạm phát.",
+      "market_impact": "Dự báo có thể gây áp lực giảm giá lên thị trường dầu mỏ nếu thỏa thuận được ký kết và lượng dầu từ Iran quay trở lại thị trường.",
       "follow_up": "",
-      "significance": "Sự kiện phản ánh phản ứng nhạy cảm của thị trường nợ công Mỹ trước các chỉ số lạm phát, báo hiệu sự thay đổi trong chiến lược phân bổ tài sản của nhà đầu tư.",
+      "significance": "Sự kiện phản ánh mối liên hệ mật thiết giữa các diễn biến chính trị nội bộ tại Mỹ và tác động trực tiếp đến chiến lược nguồn cung năng lượng toàn cầu.",
       "unknowns": [
-        "Thời gian kéo dài của đợt sụt giảm giá này",
-        "Các dữ liệu kinh tế vĩ mô cụ thể thúc đẩy nỗi sợ lạm phát trong tuần qua"
+        "Chi tiết cụ thể của thỏa thuận tiềm năng giữa Mỹ và Iran",
+        "Thời điểm chính xác mà lượng dầu của Iran có thể được giải phóng ra thị trường"
+      ],
+      "confidence_note": "Thông tin dựa trên dự báo của tổ chức tài chính chuyên môn, độ tin cậy ở mức trung bình cao tùy thuộc vào tiến trình ngoại giao thực tế.",
+      "scenarios": [
+        {
+          "text": "Mỹ và Iran đạt được thỏa thuận, nguồn cung dầu tăng mạnh làm giá dầu giảm.",
+          "likelihood": "trung bình"
+        },
+        {
+          "text": "Đàm phán bế tắc, tình trạng cung cầu dầu mỏ duy trì trạng thái hiện tại.",
+          "likelihood": "cao"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Chính phủ Mỹ",
+          "target": "Iran",
+          "relation_type": "conflict",
+          "label": "Xung đột kéo dài liên quan đến thỏa thuận hạt nhân và cấm vận dầu mỏ"
+        },
+        {
+          "source": "Bầu cử giữa nhiệm kỳ Mỹ",
+          "target": "Chính sách đối ngoại Mỹ",
+          "relation_type": "cause_effect",
+          "label": "Tác động đến quyết định thúc đẩy đàm phán với Iran"
+        },
+        {
+          "source": "Thỏa thuận hạt nhân",
+          "target": "Nguồn cung dầu",
+          "relation_type": "cause_effect",
+          "label": "Yếu tố trực tiếp gây ra nguy cơ dư cung"
+        }
+      ],
+      "entities": [
+        "Macquarie Ltd",
+        "Iran",
+        "châu Mỹ"
+      ],
+      "keywords": [
+        "Macquarie",
+        "châu Mỹ",
+        "Iran",
+        "trung bình"
+      ],
+      "importance": 85,
+      "scope": "national"
+    }
+  },
+  "evt_general_1785177866192": {
+    "created_at": 1785177871774,
+    "expires_at": 1787769871774,
+    "version": "4.5",
+    "checksum": "c9853fe5d38b6ac0c52ad60afa98a577",
+    "data": {
+      "cluster_title": "Municipal Bonds Giảm Giá",
+      "short_summary": "Municipal bonds Mỹ giảm giá do lo ngại lạm phát, trở thành rẻ nhất kể từ mùa xuân.",
+      "detailed_summary": "Nợ chính quyền tiểu bang và địa phương tại Hoa Kỳ đã giảm giá trị xuống mức thấp nhất kể từ mùa xuân năm nay. Nguyên nhân chính dẫn đến tình trạng này là do áp lực từ lo ngại về lạm phát, khiến loại hình trái phiếu đô thị trải qua tuần sụt giảm lợi nhuận tồi tệ nhất kể từ tháng 4 năm 2025.",
+      "causes": [
+        "Tâm lý lo ngại về tình hình lạm phát gia tăng.",
+        "Sự sụt giảm lợi nhuận mạnh mẽ trong tuần giao dịch gần nhất."
+      ],
+      "effects": [
+        "Giá trái phiếu đô thị trở nên rẻ hơn so với các tháng trước.",
+        "Gia tăng rủi ro đối với các nhà đầu tư nắm giữ trái phiếu chính quyền địa phương."
+      ],
+      "affected_groups": [
+        "Các nhà đầu tư trái phiếu đô thị",
+        "Chính quyền tiểu bang và địa phương tại Hoa Kỳ",
+        "Các tổ chức tài chính quản lý danh mục nợ công"
+      ],
+      "market_impact": "Thị trường trái phiếu đô thị đang chịu áp lực điều chỉnh giá đáng kể, tạo ra cơ hội hoặc rủi ro tùy thuộc vào chiến lược định giá lại của nhà đầu tư.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh tác động trực tiếp của các yếu tố kinh tế vĩ mô như lạm phát lên thị trường nợ công địa phương, đòi hỏi sự theo dõi sát sao về biến động lãi suất.",
+      "unknowns": [
+        "Tác động cụ thể của chính sách tiền tệ tiếp theo từ cơ quan chức năng.",
+        "Khả năng phục hồi của thị trường trong ngắn hạn."
       ],
       "confidence_note": "Thông tin có độ tin cậy cao dựa trên dữ liệu báo cáo thị trường tài chính.",
       "scenarios": [
         {
-          "text": "Nhà đầu tư bắt đáy khi định giá trở nên hấp dẫn, giúp giá trái phiếu ổn định trở lại.",
+          "text": "Thị trường ổn định trở lại nếu các chỉ số lạm phát hạ nhiệt trong giai đoạn tiếp theo.",
           "likelihood": "cao"
         },
         {
-          "text": "Lạm phát tiếp tục leo thang khiến áp lực bán tháo kéo dài, đẩy lợi suất trái phiếu tăng cao hơn nữa.",
+          "text": "Giá trái phiếu tiếp tục giảm nếu lo ngại về lạm phát kéo dài vượt dự báo.",
           "likelihood": "trung bình"
         }
       ],
       "entity_relations": [
         {
           "source": "Lạm phát",
-          "target": "Trái phiếu chính quyền địa phương",
+          "target": "Trái phiếu đô thị Mỹ",
           "relation_type": "cause_effect",
-          "label": "Gây sụt giảm lợi nhuận và giá trị trái phiếu"
+          "label": "Nguyên nhân gây sụt giảm lợi nhuận"
+        },
+        {
+          "source": "Chính quyền địa phương Mỹ",
+          "target": "Trái phiếu đô thị",
+          "relation_type": "neutral",
+          "label": "Đơn vị phát hành nợ"
         }
       ],
       "entities": [
@@ -60,45 +141,44 @@
       "scope": "national"
     }
   },
-  "evt_general_1785177045586": {
-    "created_at": 1785177051250,
-    "expires_at": 1787769051250,
+  "evt_general_1785177877619": {
+    "created_at": 1785177883672,
+    "expires_at": 1787769883672,
     "version": "4.5",
-    "checksum": "5f47ebbbbe5c073ffffe3648947e5d59",
+    "checksum": "b0ecccc831bd49f56bf0830e173024f1",
     "data": {
       "cluster_title": "Amazon nhắm mục tiêu Starlink của Musk",
       "short_summary": "Amazon đang phát triển một hệ thống vệ tinh để cung cấp dịch vụ di động toàn cầu, nhắm mục tiêu vào Starlink của Musk.",
-      "detailed_summary": "Tập đoàn công nghệ Amazon đã nộp hồ sơ xin phép cơ quan chức năng để phóng mạng lưới hơn 5.000 vệ tinh. Mục tiêu của dự án là thiết lập một hệ thống vệ tinh toàn cầu, cung cấp dịch vụ internet và viễn thông di động cho người tiêu dùng, trực tiếp thách thức vị thế của Starlink thuộc sở hữu của Elon Musk.",
+      "detailed_summary": "Amazon đang đẩy mạnh tham vọng trong lĩnh vực không gian thông qua việc nộp hồ sơ xin phép phóng một mạng lưới vệ tinh quy mô lớn. Dự án này nhằm mục đích thiết lập hệ thống dịch vụ kết nối Internet di động cho người tiêu dùng trên toàn cầu, trực tiếp tạo ra thế đối trọng với Starlink thuộc sở hữu của tỷ phú Elon Musk.",
       "causes": [
-        "Nhu cầu mở rộng dịch vụ kết nối internet vệ tinh toàn cầu",
-        "Chiến lược cạnh tranh trực tiếp trong lĩnh vực hạ tầng viễn thông không gian"
+        "Nhu cầu gia tăng về dịch vụ Internet vệ tinh toàn cầu",
+        "Chiến lược mở rộng sang lĩnh vực viễn thông vệ tinh của Amazon"
       ],
       "effects": [
-        "Thúc đẩy sự cạnh tranh trong thị trường dịch vụ internet vệ tinh",
-        "Tăng cường sự hiện diện của Amazon trong ngành công nghiệp vũ trụ"
+        "Gia tăng mức độ cạnh tranh trong thị trường Internet vệ tinh",
+        "Thúc đẩy phát triển hạ tầng mạng lưới kết nối không gian"
       ],
       "affected_groups": [
-        "Người tiêu dùng dịch vụ internet vệ tinh",
-        "SpaceX (Starlink)",
-        "Amazon",
-        "Các đối tác trong chuỗi cung ứng hàng không vũ trụ"
+        "Người tiêu dùng Internet toàn cầu",
+        "Các đối thủ trong ngành công nghiệp vệ tinh",
+        "Cơ quan quản lý hàng không và viễn thông quốc tế"
       ],
-      "market_impact": "Gia tăng áp lực cạnh tranh về giá và chất lượng dịch vụ trong lĩnh vực internet vệ tinh, có thể tác động đến thị phần của SpaceX.",
+      "market_impact": "Dự báo sẽ tạo áp lực cạnh tranh về giá và chất lượng dịch vụ trong phân khúc Internet vệ tinh, đồng thời thúc đẩy các khoản đầu tư công nghệ không gian.",
       "follow_up": "",
-      "significance": "Sự kiện này đánh dấu bước tiến lớn của Amazon trong cuộc đua chiếm lĩnh hạ tầng không gian, làm thay đổi cục diện cạnh tranh viễn thông toàn cầu.",
+      "significance": "Sự kiện đánh dấu sự gia nhập của một đối thủ nặng ký vào thị trường Internet vệ tinh, hứa hẹn thay đổi cục diện cạnh tranh với nhà tiên phong Starlink.",
       "unknowns": [
-        "Thời gian cụ thể cho việc phóng số lượng vệ tinh này",
-        "Chi phí đầu tư dự kiến và lộ trình thương mại hóa dịch vụ"
+        "Thời điểm chính xác các vệ tinh sẽ được phóng",
+        "Chi phí dịch vụ dự kiến cho người tiêu dùng cuối cùng"
       ],
-      "confidence_note": "Thông tin dựa trên hồ sơ pháp lý công khai của Amazon, độ tin cậy cao.",
+      "confidence_note": "Thông tin dựa trên hồ sơ pháp lý công khai của Amazon, có độ tin cậy cao.",
       "scenarios": [
         {
-          "text": "Amazon triển khai thành công mạng lưới và giành được thị phần đáng kể từ Starlink.",
-          "likelihood": "trung bình"
+          "text": "Amazon triển khai thành công mạng lưới vệ tinh và giành thị phần từ các đối thủ hiện tại.",
+          "likelihood": "cao"
         },
         {
-          "text": "Hai bên duy trì thế cân bằng, cùng tồn tại nhờ nhu cầu thị trường toàn cầu tăng cao.",
-          "likelihood": "cao"
+          "text": "Các rào cản về quy định pháp lý quốc tế làm chậm tiến độ phóng vệ tinh của Amazon.",
+          "likelihood": "trung bình"
         }
       ],
       "entity_relations": [
@@ -106,13 +186,13 @@
           "source": "Amazon",
           "target": "Starlink",
           "relation_type": "conflict",
-          "label": "Cạnh tranh trực tiếp về dịch vụ internet vệ tinh"
+          "label": "Cạnh tranh trực tiếp giành thị phần Internet vệ tinh"
         },
         {
           "source": "Amazon",
-          "target": "Vệ tinh",
-          "relation_type": "cause_effect",
-          "label": "Phát triển hạ tầng viễn thông mới"
+          "target": "Elon Musk",
+          "relation_type": "conflict",
+          "label": "Đối đầu gián tiếp thông qua các thực thể doanh nghiệp"
         }
       ],
       "entities": [
