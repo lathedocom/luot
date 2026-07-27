@@ -20,7 +20,7 @@ export function renderSkeletons() {
 }
 
 // -------------------------------------------------------------------------
-// [HÀM HELPER MỚI] - Xử lý gom nhóm theo ngày & Đẩy Modal tin vắn vào cuối mỗi ngày
+// [HÀM HELPER] - Xử lý gom nhóm theo ĐỢT CẬP NHẬT (Khung giờ + Ngày)
 // -------------------------------------------------------------------------
 function renderGroupedItems(container, items, regionLabel) {
     // 1. Sắp xếp giảm dần theo thời gian (mới nhất lên đầu)
@@ -30,34 +30,38 @@ function renderGroupedItems(container, items, regionLabel) {
         return timeB - timeA;
     });
 
-    // 2. Gom nhóm theo chuỗi ngày (VD: "24/07/2026")
+    // 2. Gom nhóm theo LẦN CẬP NHẬT (Làm tròn theo giờ + Ngày)
     const grouped = [];
     sortedItems.forEach(item => {
         const timeObj = item.timestamp ? new Date(item.timestamp) : new Date();
         const dateStr = timeObj.toLocaleDateString('vi-VN');
         
-        let group = grouped.find(g => g.dateStr === dateStr);
+        // Làm tròn mốc thời gian theo giờ để gom thành "1 đợt cập nhật" (VD: 07:00, 21:00)
+        const hourStr = timeObj.getHours().toString().padStart(2, '0') + ':00';
+        const groupKey = `${dateStr}_${hourStr}`;
+        
+        let group = grouped.find(g => g.groupKey === groupKey);
         if (!group) {
-            group = { dateStr, items: [] };
+            group = { groupKey, dateStr, hourStr, items: [] };
             grouped.push(group);
         }
         group.items.push(item);
     });
 
-    // 3. Render giao diện cho từng nhóm ngày
+    // 3. Render giao diện cho từng Đợt cập nhật
     grouped.forEach(group => {
-        // Vẽ dải phân cách ngày
+        // Vẽ dải phân cách đợt cập nhật
         const separator = document.createElement('div');
         separator.className = 'date-separator';
         separator.style.cssText = 'display: flex; align-items: center; margin: 24px 0 16px; opacity: 0.8;';
         separator.innerHTML = `
             <div style="flex-grow: 1; height: 1px; background: var(--md-sys-color-outline);"></div>
-            <span style="padding: 0 12px; font-size: 13px; font-weight: 600; color: var(--md-sys-color-primary); text-transform: uppercase;">Ngày ${escapeHtml(group.dateStr)}</span>
+            <span style="padding: 0 12px; font-size: 13px; font-weight: 600; color: var(--md-sys-color-primary); text-transform: uppercase;">Cập nhật lúc ${escapeHtml(group.hourStr)} • ${escapeHtml(group.dateStr)}</span>
             <div style="flex-grow: 1; height: 1px; background: var(--md-sys-color-outline);"></div>
         `;
         container.appendChild(separator);
 
-        // Phân tách tin sâu và tin vắn của RIÊNG ngày này
+        // Phân tách tin sâu và tin vắn của RIÊNG đợt cập nhật này
         const deepItems = [];
         const quickItems = [];
 
@@ -69,14 +73,15 @@ function renderGroupedItems(container, items, regionLabel) {
             }
         });
 
-        // Lần lượt render các tin phân tích chuyên sâu của ngày
+        // Lần lượt render các tin phân tích chuyên sâu của đợt này
         deepItems.forEach(cluster => {
             container.appendChild(renderNewsCard(cluster));
         });
 
-        // Chốt lại ngày bằng 1 Thẻ "Điểm tin nhanh" gom tất cả sự kiện phụ của ngày đó
+        // Chốt lại đợt cập nhật bằng 1 Thẻ "Điểm tin nhanh" gom tất cả sự kiện phụ
         if (quickItems.length > 0) {
-            container.appendChild(renderQuickBriefsCard(quickItems, `${regionLabel} - ${group.dateStr}`));
+            // Đổi label khu vực thành "Khung giờ" để Modal hiển thị trực quan hơn
+            container.appendChild(renderQuickBriefsCard(quickItems, `${regionLabel} - Bản tin lúc ${group.hourStr}`));
         }
     });
 }
@@ -113,7 +118,6 @@ export function renderDigestFeed(digest) {
             return currentGlobalNewsData.find(t => t.event_key === item.event_key) || item;
         });
 
-        // Áp dụng hàm helper mới cho "Bản tin nổi bật"
         renderGroupedItems(newsContainer, mappedItems, group.label);
     });
 }
@@ -127,7 +131,6 @@ export function renderNewsFeed(newsData) {
         return;
     }
 
-    // Áp dụng hàm helper mới cho "Tất cả bản tin"
     renderGroupedItems(newsContainer, newsData, 'Toàn cảnh');
 }
 
@@ -177,7 +180,7 @@ export function renderNewsCard(cluster) {
         sourceFooterHtml = `<span class="material-icons-round" style="font-size: 15px; color: var(--md-sys-color-primary);">fact_check</span> Nguồn: ${topSources}${hasMore} • Đối chiếu từ ${uniqueCount} nguồn báo chí`;
     }
 
-    // [MỚI] Xử lý hiển thị Cấp độ ảnh hưởng (Impact Level)
+    // Hiển thị Cấp độ ảnh hưởng (Impact Level)
     let impactHtml = '';
     let borderStyle = '';
     
@@ -199,7 +202,7 @@ export function renderNewsCard(cluster) {
     const card = document.createElement('div');
     card.className = 'news-card';
     if (borderStyle) {
-        card.style.cssText = borderStyle; // Đổ viền màu cạnh trái dựa theo cấp độ ảnh hưởng
+        card.style.cssText = borderStyle; 
     }
 
     card.innerHTML = `
