@@ -50,7 +50,8 @@ function initCy(container) {
             edges: savedGraphData.edges
         },
         style: [
-            {
+            
+           {
                 selector: 'node',
                 style: {
                     'label': 'data(label)',
@@ -58,17 +59,34 @@ function initCy(container) {
                     'color': '#ffffff',
                     'text-outline-color': '#0f172a',
                     'text-outline-width': 2,
-                    'font-size': '12px',
+                    'font-size': function(ele) {
+                        // Tính toán cỡ chữ dựa trên số lần được nhắc đến (mention_count)
+                        const mentions = ele.data('mention_count') || 1;
+                        const size = 11 + Math.min(8, mentions * 1.5); 
+                        return `${size}px`;
+                    },
                     'text-valign': 'center',
                     'text-halign': 'center',
-                    'width': 'label',
-                    'height': 'label',
+                    // Tự động phình to Node dựa trên thuộc tính mention_count hoặc số lượng kết nối (degree)
+                    'width': function(ele) {
+                        const mentions = ele.data('mention_count') || 1;
+                        const degree = ele.degree(); // Số lượng cạnh nối vào Node
+                        const baseSize = 40;
+                        return `${baseSize + (mentions * 10) + (degree * 5)}px`;
+                    },
+                    'height': function(ele) {
+                        const mentions = ele.data('mention_count') || 1;
+                        const degree = ele.degree();
+                        const baseSize = 40;
+                        return `${baseSize + (mentions * 10) + (degree * 5)}px`;
+                    },
                     'padding': '10px',
-                    'shape': 'round-rectangle',
-                    'transition-property': 'opacity',
+                    'shape': 'round-rectangle', // Bạn có thể đổi thành 'ellipse' (hình tròn) để trông giống Heat Map hơn
+                    'transition-property': 'width, height, background-color',
                     'transition-duration': '0.3s'
                 }
             },
+            
             {
                 selector: 'edge',
                 style: {
