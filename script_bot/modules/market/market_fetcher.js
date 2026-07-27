@@ -136,14 +136,14 @@ async function fetchPetrolimexData() {
         
         const html = await response.text();
         const $ = cheerio.load(html);
-        let prices = { RON95: null, E5RON92: null, DIESEL: null };
+        let prices = { E10RON95: null, E5RON92: null, DIESEL: null };
 
         $('tr, div, li').each((i, el) => {
             const rowText = $(el).text().replace(/\s+/g, ' ').trim().toUpperCase();
             const priceMatch = rowText.match(/([1-3][0-9][.,][0-9]{3})/);
             if (priceMatch) {
                 const priceValue = parseInt(priceMatch[1].replace(/[.,]/g, ''));
-                if (rowText.includes('RON 95-III') && !prices.RON95) {
+                if (rowText.includes('E10 RON 95-III') && !prices.RON95) {
                     prices.RON95 = priceValue;
                 } else if (rowText.includes('E5 RON 92') && !prices.E5RON92) {
                     prices.E5RON92 = priceValue;
