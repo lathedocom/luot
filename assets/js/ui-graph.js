@@ -598,16 +598,26 @@ document.addEventListener('DOMContentLoaded', () => {
                 layoutBtn.innerHTML = '<span class="material-icons-round" style="font-size: 18px;">scatter_plot</span> Lực đẩy (Cose)';
                 layoutBtn.style.background = 'var(--md-sys-color-tertiary-container, #fce7f3)';
                 layoutBtn.style.color = 'var(--md-sys-color-on-tertiary-container, #831843)';
-            } else {
+           } else {
+                // Chuyển về dạng Lực hút vật lý (Cose) với lực đẩy phe phái
                 cyInstance.layout({
                     name: 'cose',
-                    animate: true,
-                    animationDuration: 600,
-                    nodeRepulsion: function(node){ return 2048; },
-                    idealEdgeLength: function(edge){ return 64; },
-                    edgeElasticity: function(edge){ return 32; }
+                    animate: true, // Bật animate để thấy rõ hiệu ứng đẩy nhau dạt ra 2 bên
+                    animationDuration: 1200, // Kéo dài thời gian đẩy để trông mượt hơn
+                    nodeRepulsion: function(node){ return 4096; },
+                    idealEdgeLength: function(edge){ 
+                        if (edge.data('relation_type') === 'conflict') return 350;
+                        if (edge.data('relation_type') === 'cooperation') return 50;
+                        return 80;
+                    },
+                    edgeElasticity: function(edge){ 
+                        if (edge.data('relation_type') === 'conflict') return 150;
+                        if (edge.data('relation_type') === 'cooperation') return 100;
+                        return 32; 
+                    }
                 }).run();
                 
+                // Đổi giao diện nút bấm
                 layoutBtn.setAttribute('data-layout', 'cose');
                 layoutBtn.innerHTML = '<span class="material-icons-round" style="font-size: 18px;">account_tree</span> Phân cấp (Dagre)';
                 layoutBtn.style.background = 'var(--md-sys-color-primary-container, #e0e7ff)';
