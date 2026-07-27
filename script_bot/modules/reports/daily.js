@@ -60,13 +60,13 @@ async function generateDailyBriefing(allTopics) {
 
         if (reportData && reportData.sections) {
             
-            // Ép xóa sạch mọi ký hiệu markdown có thể gây sinh thẻ HTML ẩn (gây lóa màu nền)
+            // Tăng cỡ chữ tiêu đề lên 32px (gấp đôi body), gọt rác markdown
             const cleanTitle = (reportData.title || 'BẢN TIN 24H').replace(/[*`_]/g, '');
-            const cleanSummary = (reportData.summary || '').replace(/[*`_]/g, '');
+            const cleanSummary = (reportData.summary || '').replace(/[*`_]/g, '').replace(/<[^>]*>?/gm, '');
 
             let html = `
-            <div style="margin-bottom: 24px;">
-                <h3 style="color: var(--md-sys-color-primary); font-size: 18px; font-weight: 800; margin-bottom: 8px; line-height: 1.4;">
+            <div style="margin-bottom: 32px;">
+                <h3 style="color: var(--md-sys-color-primary); font-size: 32px; font-weight: 800; margin-bottom: 12px; line-height: 1.3;">
                     ${cleanTitle}
                 </h3>
                 <div style="font-size: 13px; opacity: 0.7; margin-bottom: 16px; font-style: italic; display: flex; align-items: center; gap: 4px;">
@@ -78,23 +78,33 @@ async function generateDailyBriefing(allTopics) {
             </div>`;
 
             reportData.sections.forEach(sec => {
-                // Xóa backtick và in hoa để triệt tiêu highlight xanh
+                // Tên khu vực: Luôn in hoa
                 const regionName = (sec.region || '').replace(/[*`_]/g, '').replace(/<[^>]*>?/gm, '').toUpperCase();
-                const contentText = (sec.content || '').replace(/[*`_]/g, '');
+                
+                // Nội dung: Xóa sạch tag HTML để diệt highlight xanh
+                let contentText = (sec.content || '').replace(/[*`_]/g, '').replace(/<[^>]*>?/gm, '').trim();
+
+                // Bộ lọc làm dịu: Nếu AI lỡ viết IN HOA cả đoạn (như trong hình), ép về chữ thường và viết hoa chữ đầu câu
+                const uppercaseCount = (contentText.match(/[A-Z]/g) || []).length;
+                const letterCount = (contentText.match(/[a-zA-Z]/g) || []).length;
+                if (letterCount > 0 && uppercaseCount / letterCount > 0.5) {
+                    contentText = contentText.toLowerCase();
+                    contentText = contentText.charAt(0).toUpperCase() + contentText.slice(1);
+                }
 
                 html += `
                 <div style="margin-bottom: 20px; padding: 16px; background: var(--md-sys-color-surface); border: 1px solid var(--md-sys-color-outline); border-radius: 12px; border-left: 4px solid var(--md-sys-color-primary);">
                     <h4 style="font-size: 15px; font-weight: bold; margin-bottom: 12px; color: var(--md-sys-color-on-surface); text-transform: uppercase;">
                         ${regionName}
                     </h4>
-                    <p style="font-size: 14.5px; line-height: 1.7; opacity: 0.9; margin: 0; color: var(--md-sys-color-on-surface);">
+                    <p style="font-size: 14.5px; line-height: 1.7; opacity: 0.9; margin: 0; color: var(--md-sys-color-on-surface); text-transform: none;">
                         ${contentText}
                     </p>
                 </div>`;
             });
 
             if (reportData.closing) {
-                const cleanClosing = reportData.closing.replace(/[*`_]/g, '');
+                const cleanClosing = reportData.closing.replace(/[*`_]/g, '').replace(/<[^>]*>?/gm, '');
                 html += `<p style="font-size: 14px; opacity: 0.6; text-align: center; margin-top: 24px; font-style: italic;">${cleanClosing}</p>`;
             }
 
