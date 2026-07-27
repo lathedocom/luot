@@ -177,11 +177,37 @@ export function renderNewsCard(cluster) {
         sourceFooterHtml = `<span class="material-icons-round" style="font-size: 15px; color: var(--md-sys-color-primary);">fact_check</span> Nguồn: ${topSources}${hasMore} • Đối chiếu từ ${uniqueCount} nguồn báo chí`;
     }
 
+    // [MỚI] Xử lý hiển thị Cấp độ ảnh hưởng (Impact Level)
+    let impactHtml = '';
+    let borderStyle = '';
+    
+    if (cluster.impact_level) {
+        const impactConfig = {
+            'crisis': { color: '#ef4444', bg: 'rgba(239, 68, 68, 0.1)', label: 'Khủng hoảng', icon: 'error' },
+            'risk': { color: '#f97316', bg: 'rgba(249, 115, 22, 0.1)', label: 'Rủi ro', icon: 'warning' },
+            'monitor': { color: '#eab308', bg: 'rgba(234, 179, 8, 0.1)', label: 'Theo dõi', icon: 'visibility' },
+            'development': { color: '#22c55e', bg: 'rgba(34, 197, 94, 0.1)', label: 'Phát triển', icon: 'trending_up' }
+        };
+        
+        const config = impactConfig[cluster.impact_level];
+        if (config) {
+            impactHtml = `<span class="news-tag" style="background: ${config.bg}; color: ${config.color}; display: inline-flex; align-items: center; gap: 4px;"><span class="material-icons-round" style="font-size: 14px;">${config.icon}</span> ${config.label}</span>`;
+            borderStyle = `border-left: 4px solid ${config.color};`;
+        }
+    }
+
     const card = document.createElement('div');
     card.className = 'news-card';
+    if (borderStyle) {
+        card.style.cssText = borderStyle; // Đổ viền màu cạnh trái dựa theo cấp độ ảnh hưởng
+    }
+
     card.innerHTML = `
         <div class="news-meta">
-            <span class="news-tag">${escapeHtml(mainRegion)}</span>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                <span class="news-tag">${escapeHtml(mainRegion)}</span>
+                ${impactHtml}
+            </div>
             <span>${timeString}</span>
         </div>
         <h3>${escapeHtml(cluster.title || cluster.cluster_title)}</h3>
