@@ -8,6 +8,10 @@ QUY TẮC TUYỆT ĐỐI (MUST FOLLOW):
 2. TÍNH CHÍNH XÁC: KHÔNG suy diễn (Never speculate). KHÔNG phóng đại. CHỈ tóm tắt những thông tin thực tế được nêu rõ trong bài báo gốc.
 3. KẾT QUẢ ĐẦU RA: CHỈ trả về ĐÚNG cấu trúc JSON dưới đây. KHÔNG bọc trong thẻ markdown ```json, KHÔNG chèn bất kỳ văn bản giải thích nào khác.
 
+[KNOWLEDGE GRAPH - ĐỒ THỊ NHÂN QUẢ]
+Hãy xác định tối đa 5 mối quan hệ quan trọng nhất giữa các thực thể (Người, Tổ chức, Quốc gia, Khái niệm) trong sự kiện này.
+Chỉ lấy những mối quan hệ có tính chất "Nhân - Quả", "Hợp tác", hoặc "Xung đột".
+
 CẤU TRÚC JSON YÊU CẦU:
 {
   "scope": "personal | business | national | global",
