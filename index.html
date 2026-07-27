@@ -198,7 +198,21 @@
                 </button>
             </div>
             <!-- KẾT THÚC THANH CÔNG CỤ -->
-        <div id="cy-container" style="flex-grow: 1; min-height: 400px; background-color: var(--md-sys-color-background); border-radius: 12px; border: 1px solid var(--md-sys-color-outline); position: relative;"></div>
+    <div id="cy-container" style="flex-grow: 1; min-height: 400px; background-color: var(--md-sys-color-background); border-radius: 12px; border: 1px solid var(--md-sys-color-outline); position: relative; overflow: hidden;">
+            
+            <!-- [MỚI] Bảng xếp hạng Quyền lực nổi trên góc phải -->
+            <div id="influence-leaderboard" style="position: absolute; top: 16px; right: 16px; background: rgba(15, 23, 42, 0.85); border: 1px solid var(--md-sys-color-outline); border-radius: 12px; padding: 16px; width: 240px; box-shadow: 0 8px 24px rgba(0,0,0,0.3); z-index: 10; backdrop-filter: blur(10px); pointer-events: none;">
+                <h3 style="font-size: 13px; color: var(--md-sys-color-primary); margin: 0 0 16px 0; text-transform: uppercase; display: flex; align-items: center; gap: 6px; font-weight: 700; letter-spacing: 0.5px;">
+                    <span class="material-icons-round" style="font-size: 18px;">military_tech</span> Trung tâm Quyền lực
+                </h3>
+                <div id="leaderboard-list" style="display: flex; flex-direction: column; gap: 12px;">
+                    <div class="skeleton skeleton-text" style="height: 20px;"></div>
+                    <div class="skeleton skeleton-text" style="height: 20px; width: 80%;"></div>
+                </div>
+            </div>
+            
+        </div>   
+    
     </div>
 </div>
                 
