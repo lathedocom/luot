@@ -36,7 +36,7 @@ const RSS_SOURCES = [
         max_items: 12,
         rss: "https://vnexpress.net/rss/the-gioi.rss", homepage: "https://vnexpress.net", logo: "https://vnexpress.net/favicon.ico", enabled: true
     },
-   /* {
+    {
         id: "tuoitre_world", name: "Tuổi Trẻ", country: "Vietnam", region: "Southeast Asia", language: "vi",
         category: ["general", "world"], type: "newspaper", priority: 10, credibility: 9,
         max_items: 12,
@@ -503,7 +503,7 @@ const RSS_SOURCES = [
         category: ["health", "science"], type: "science_news", priority: 10, credibility: 10,
         max_items: 5,
         rss: "https://www.statnews.com/feed/", homepage: "https://www.statnews.com", logo: "https://www.statnews.com/favicon.ico", enabled: true
-    }    */
+    }    
 ];
 
 module.exports = { RSS_SOURCES };
