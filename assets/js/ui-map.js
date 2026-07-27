@@ -64,19 +64,29 @@ function initMap(mapContainer) {
             }]
         },
 
-        onRegionTooltipShow(event, tooltip, code) {
+       onRegionTooltipShow(event, tooltip, code) {
             const countryData = savedRiskData[code];
+            
+            // [MỚI] API tự động dịch mã ISO sang tiếng Việt có sẵn của trình duyệt
+            const translator = new Intl.DisplayNames(['vi'], { type: 'region' });
+            let viName = tooltip.text();
+            try {
+                viName = translator.of(code) || tooltip.text();
+            } catch (e) {
+                // Bỏ qua lỗi nếu mã ISO không hợp lệ
+            }
+
             if (countryData) {
                 tooltip.text(
                     `<div style="padding: 4px;">
-                        <div style="font-weight: bold; margin-bottom: 4px;">${tooltip.text()}</div>
+                        <div style="font-weight: bold; margin-bottom: 4px; font-size: 14px;">${viName}</div>
                         <div style="font-size: 12px;">Trạng thái: <span style="color:${countryData.color}">${countryData.status}</span></div>
                         <div style="font-size: 12px;">Điểm rủi ro: ${countryData.score}</div>
                     </div>`,
                     true
                 );
             } else {
-                tooltip.text(`${tooltip.text()} (Thiếu dữ liệu)`);
+                tooltip.text(`${viName} (Chưa có sự kiện nổi bật)`);
             }
         },
 
