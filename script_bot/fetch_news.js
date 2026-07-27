@@ -303,12 +303,34 @@ eventBus.on('SYNC_DATABASE', () => {
             timestamp: (t.timestamp && !isNaN(t.timestamp) && t.timestamp !== null) ? t.timestamp : Date.now()
         }));
         
-        db.digest = buildDigest(db.news, { limitPerRegion: 7 }); // MỚI
+        db.digest = buildDigest(db.news, { limitPerRegion: 7 });
         db.risk_map = buildRiskMapData(db.news);
-        db.knowledge_graph = buildGlobalGraph(db.news); // [THÊM DÒNG NÀY] Đẩy Graph ra API
+        db.knowledge_graph = buildGlobalGraph(db.news);
         db.market_data = state.marketData || [];
         db.social_trends = state.socialTrends || [];
-        db.daily_briefing = (state.reports && state.reports.daily) ? state.reports.daily : "";
+        
+        // --- XỬ LÝ LƯU TRỮ LỊCH SỬ BẢN TIN 24H (TỐI ĐA 7 NGÀY) ---
+        let briefingHistory = Array.isArray(db.daily_briefing) ? db.daily_briefing : [];
+        if (typeof db.daily_briefing === 'string' && db.daily_briefing.trim() !== '') {
+            briefingHistory = [{ date: new Date(Date.now() - 86400000).toISOString(), content: db.daily_briefing }];
+        } else if (typeof db.daily_briefing === 'string') {
+            briefingHistory = [];
+        }
+
+        const currentBriefingContent = (state.reports && state.reports.daily) ? state.reports.daily : "";
+        const todayStr = new Date().toISOString().split('T')[0];
+        const existingTodayIndex = briefingHistory.findIndex(b => b.date && b.date.startsWith(todayStr));
+
+        if (existingTodayIndex !== -1) {
+            briefingHistory[existingTodayIndex].content = currentBriefingContent;
+            briefingHistory[existingTodayIndex].date = new Date().toISOString();
+        } else {
+            briefingHistory.unshift({ date: new Date().toISOString(), content: currentBriefingContent });
+        }
+
+        db.daily_briefing = briefingHistory.slice(0, 7);
+        // ---------------------------------------------------------
+
         db.statistics = {
             total_topics: filteredTopics.length,
             total_articles: state.articles ? state.articles.length : 0
