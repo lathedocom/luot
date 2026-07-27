@@ -59,7 +59,8 @@ function buildGlobalGraph(allTopics) {
             }
         });
 
-        // 2. Tạo Edges (Dùng dữ liệu AI nếu có, nếu không thì tự nối mặc định)
+        
+       // 2. Tạo Edges (Dùng dữ liệu AI nếu có, nếu không thì tự nối mặc định)
         if (topic.entity_relations && topic.entity_relations.length > 0) {
             topic.entity_relations.forEach(rel => {
                 const sourceId = `node_${generateShortHash(rel.source)}`;
@@ -69,19 +70,29 @@ function buildGlobalGraph(allTopics) {
                     const edgeKey = `${sourceId}_${targetId}_${rel.relation_type}`;
                     const reverseEdgeKey = `${targetId}_${sourceId}_${rel.relation_type}`;
                     
-                    if (globalEdges.has(edgeKey)) {
-                        globalEdges.get(edgeKey).data.weight += 1;
-                    } else if (globalEdges.has(reverseEdgeKey) && rel.relation_type !== 'cause_effect') {
-                        globalEdges.get(reverseEdgeKey).data.weight += 1;
+                    let targetEdgeKey = edgeKey;
+                    if (globalEdges.has(reverseEdgeKey) && rel.relation_type !== 'cause_effect') {
+                        targetEdgeKey = reverseEdgeKey;
+                    }
+
+                    if (globalEdges.has(targetEdgeKey)) {
+                        let existingEdge = globalEdges.get(targetEdgeKey);
+                        existingEdge.data.weight += 1;
+                        // [MỚI] Thêm sự kiện hiện tại vào mảng bằng chứng nếu chưa có
+                        if (!existingEdge.data.supporting_events.includes(topic.event_key)) {
+                            existingEdge.data.supporting_events.push(topic.event_key);
+                        }
                     } else {
-                        globalEdges.set(edgeKey, {
+                        globalEdges.set(targetEdgeKey, {
                             data: {
-                                id: `edge_${generateShortHash(edgeKey + topic.event_key)}`,
+                                id: `edge_${generateShortHash(targetEdgeKey + topic.event_key)}`,
                                 source: sourceId,
                                 target: targetId,
                                 label: rel.label || '',
                                 relation_type: rel.relation_type || 'neutral',
-                                weight: 2 
+                                weight: 2,
+                                // [MỚI] Lưu lại mã sự kiện để làm "Bằng chứng" cho giao diện
+                                supporting_events: [topic.event_key]
                             }
                         });
                     }
