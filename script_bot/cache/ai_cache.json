@@ -1,664 +1,148 @@
 {
-  "evt_5c132d48": {
-    "created_at": 1785174276088,
-    "expires_at": 1787766276088,
+  "evt_general_1785176070833": {
+    "created_at": 1785176071425,
+    "expires_at": 1787768071425,
     "version": "4.5",
-    "checksum": "43cfc4cac71b901a952528a08180b4ed",
+    "checksum": "90d5bc364753c416099086bab08fe693",
     "data": {
-      "cluster_title": "Bonds Thua Tầm Quan Trọng Là Ống Thở Của Thị Trường Chứng Khoán",
-      "short_summary": "Chủ tịch Carlyle Group cho biết các khoản đầu tư truyền thống không còn đáng tin cậy như trước đây vì chúng đang trở nên liên quan chặt chẽ hơn với chứng khoán.",
-      "detailed_summary": "Ông Bansal, người đứng đầu mảng tài chính có tài sản đảm bảo tại Carlyle Group, chỉ ra rằng các khoản đầu tư thu nhập cố định truyền thống đang mất đi vai trò là bộ giảm xóc cho danh mục đầu tư. Nguyên nhân là do sự tương quan ngày càng tăng giữa trái phiếu và cổ phiếu, làm giảm khả năng phòng vệ của trái phiếu khi thị trường chứng khoán biến động.",
-      "causes": [
-        "Sự gia tăng tương quan giữa trái phiếu và cổ phiếu trong danh mục đầu tư.",
-        "Thay đổi trong cấu trúc vận hành của các loại hình tài sản thu nhập cố định truyền thống."
-      ],
-      "effects": [
-        "Nhà đầu tư cần tìm kiếm các chiến lược phân bổ tài sản mới để thay thế trái phiếu.",
-        "Giảm hiệu quả của các mô hình quản trị rủi ro truyền thống dựa trên trái phiếu."
-      ],
-      "affected_groups": [
-        "Các nhà quản lý danh mục đầu tư",
-        "Nhà đầu tư cá nhân và tổ chức sử dụng trái phiếu để phòng ngừa rủi ro",
-        "Các quỹ đầu tư lớn"
-      ],
-      "market_impact": "Gia tăng áp lực lên các chiến lược phân bổ tài sản truyền thống và thúc đẩy việc tìm kiếm các lớp tài sản thay thế.",
+      "cluster_title": "Cổ phiếu Muni đạt mức thấp nhất kể từ tháng Ba",
+      "short_summary": "Cổ phiếu Muni đạt mức thấp nhất kể từ tháng Ba sau khi tỷ lệ hoàn vốn của chúng gặp khó khăn do lo ngại lạm phát.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
       "follow_up": "",
-      "significance": "Sự kiện phản ánh một sự thay đổi cấu trúc trong mối quan hệ giữa các lớp tài sản, đòi hỏi các nhà đầu tư phải tái định nghĩa lại chiến lược giảm thiểu rủi ro.",
-      "unknowns": [
-        "Mức độ tương quan cụ thể giữa các loại trái phiếu khác nhau và cổ phiếu.",
-        "Các giải pháp đầu tư thay thế khả thi nào sẽ được thị trường ưu tiên lựa chọn."
-      ],
-      "confidence_note": "Thông tin dựa trên nhận định chuyên môn của lãnh đạo cấp cao tại Carlyle Group, phản ánh góc nhìn quản trị rủi ro hiện tại.",
-      "scenarios": [
-        {
-          "text": "Các nhà đầu tư chuyển dịch sang các lớp tài sản thay thế để duy trì sự đa dạng hóa danh mục.",
-          "likelihood": "cao"
-        },
-        {
-          "text": "Thị trường sẽ chứng kiến biến động gia tăng khi mô hình phòng ngừa rủi ro cũ không còn tác dụng.",
-          "likelihood": "trung bình"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Bansal",
-          "target": "Carlyle Group",
-          "relation_type": "cooperation",
-          "label": "Đại diện quản lý cấp cao"
-        },
-        {
-          "source": "Tương quan trái phiếu và cổ phiếu",
-          "target": "Hiệu quả bảo vệ danh mục",
-          "relation_type": "cause_effect",
-          "label": "Nguyên nhân làm giảm hiệu quả phòng vệ"
-        }
-      ],
       "entities": [
-        "Carlyle Group",
-        "Bonds"
+        "các chính quyền bang và địa phương Hoa Kỳ"
       ],
       "keywords": [
-        "Carlyle Group",
-        "Bonds",
-        "Chứng Khoán"
+        "cổ phiếu Muni",
+        "tỷ lệ hoàn vốn"
       ],
-      "importance": 85,
-      "scope": "global"
+      "importance": 80,
+      "scope": "national"
     }
   },
-  "evt_2bf89aef": {
-    "created_at": 1785174288064,
-    "expires_at": 1787766288064,
+  "evt_b508be2b": {
+    "created_at": 1785176083366,
+    "expires_at": 1787768083366,
     "version": "4.5",
-    "checksum": "db8616429abf5d5fbdef2bb46e9ffd99",
+    "checksum": "7ffc5eab21bf8047a0e0309d9ae624a9",
     "data": {
-      "cluster_title": "Tài chính Mỹ tăng lên",
-      "short_summary": "Tài chính Mỹ tăng lên sau khi Hoa Kỳ tạm dừng các cuộc tấn công vào Iran và giá dầu giảm.",
-      "detailed_summary": "Thị trường trái phiếu chính phủ Mỹ phục hồi khi các nhà đầu tư gia tăng mua vào các kỳ hạn ngắn trước kỳ họp quan trọng của Fed. Động thái này được hỗ trợ bởi sự hạ nhiệt của giá dầu và thông tin Mỹ tạm dừng các đợt không kích tại Iran, giúp giảm bớt căng thẳng địa chính trị và tâm lý lo ngại rủi ro.",
+      "cluster_title": "Trump cảnh báo Israel không thể tồn tại mà không có Mỹ",
+      "short_summary": "Trump cảnh báo Israel không thể tồn tại mà không có sự hỗ trợ của Mỹ, trước cuộc họp với Benjamin Netanyahu để thảo luận về việc mở rộng chiến tranh với Iran.",
+      "detailed_summary": "Cựu Tổng thống Mỹ Donald Trump đưa ra nhận định về sự phụ thuộc an ninh của Israel vào Mỹ ngay trước thời điểm dự kiến hội đàm với Thủ tướng Benjamin Netanyahu. Nội dung cuộc gặp được dự đoán sẽ tập trung vào việc Israel tìm kiếm sự ủng hộ để mở rộng phạm vi quân sự đối với Iran.",
       "causes": [
-        "Mỹ tạm dừng các hoạt động quân sự tại Iran",
-        "Giá dầu thế giới giảm",
-        "Nhà đầu tư tận dụng cơ hội khi lợi suất trái phiếu tăng cao trước đó"
+        "Sự phụ thuộc lâu dài về quân sự và ngoại giao của Israel vào Mỹ.",
+        "Áp lực từ tình hình căng thẳng leo thang giữa Israel và Iran."
       ],
       "effects": [
-        "Giá trái phiếu chính phủ Mỹ tăng",
-        "Lực cầu tại các phiên đấu giá trái phiếu kỳ hạn ngắn được cải thiện"
+        "Gia tăng sự chú ý vào chính sách đối ngoại của Mỹ đối với Trung Đông.",
+        "Tạo tiền đề cho các thảo luận về việc mở rộng xung đột quân sự tại khu vực."
       ],
       "affected_groups": [
-        "Nhà đầu tư trái phiếu",
-        "Cục Dự trữ Liên bang Mỹ (Fed)",
-        "Các doanh nghiệp năng lượng"
+        "Chính phủ Israel",
+        "Chính phủ Mỹ",
+        "Các quốc gia trong khu vực Trung Đông"
       ],
-      "market_impact": "Thị trường trái phiếu ổn định hơn nhờ tâm lý tìm kiếm tài sản an toàn và phản ứng tích cực trước thông tin địa chính trị hạ nhiệt.",
+      "market_impact": "Có thể gây ra tâm lý bất ổn ngắn hạn đối với thị trường dầu mỏ và các tài sản trú ẩn an toàn do lo ngại căng thẳng địa chính trị leo thang.",
       "follow_up": "",
-      "significance": "Sự kiện phản ánh phản ứng nhạy bén của thị trường tài chính trước các biến động địa chính trị và kỳ vọng về chính sách tiền tệ từ Fed.",
+      "significance": "Sự kiện này nhấn mạnh tầm quan trọng của cam kết từ phía Mỹ đối với an ninh Israel, đồng thời báo hiệu những thay đổi tiềm tàng trong chiến lược quân sự tại Trung Đông.",
       "unknowns": [
-        "Quyết định cụ thể của Fed về lãi suất trong cuộc họp sắp tới",
-        "Diễn biến tiếp theo của tình hình quân sự giữa Mỹ và Iran"
+        "Kết quả cụ thể của cuộc hội đàm giữa ông Donald Trump và ông Benjamin Netanyahu.",
+        "Phản ứng chính thức từ phía chính quyền đương nhiệm tại Mỹ về vấn đề này."
       ],
-      "confidence_note": "Thông tin dựa trên diễn biến thị trường thực tế và dữ liệu công khai, có độ tin cậy cao.",
+      "confidence_note": "Thông tin dựa trên các phát ngôn trực tiếp và báo cáo về kế hoạch ngoại giao, độ tin cậy cao.",
       "scenarios": [
         {
-          "text": "Nhà đầu tư tiếp tục thận trọng chờ đợi thông điệp từ Fed, khiến lợi suất trái phiếu đi ngang.",
+          "text": "Mỹ tiếp tục duy trì cam kết hỗ trợ an ninh quân sự mạnh mẽ để ngăn chặn xung đột lớn tại Trung Đông.",
           "likelihood": "cao"
         },
         {
-          "text": "Căng thẳng địa chính trị bùng phát trở lại làm đảo ngược đà phục hồi của giá trái phiếu.",
+          "text": "Israel mở rộng chiến dịch quân sự nhắm vào Iran sau khi đạt được sự đồng thuận chiến lược với các bên hữu quan.",
           "likelihood": "trung bình"
         }
       ],
       "entity_relations": [
         {
           "source": "Mỹ",
+          "target": "Israel",
+          "relation_type": "cooperation",
+          "label": "Hỗ trợ an ninh chiến lược"
+        },
+        {
+          "source": "Israel",
           "target": "Iran",
           "relation_type": "conflict",
-          "label": "Căng thẳng quân sự và ngoại giao"
+          "label": "Xung đột quân sự tiềm tàng"
         },
         {
-          "source": "Mỹ tạm dừng không kích",
-          "target": "Giá dầu",
-          "relation_type": "cause_effect",
-          "label": "Làm giảm áp lực lên giá dầu"
-        },
-        {
-          "source": "Giá dầu giảm",
-          "target": "Trái phiếu Mỹ",
-          "relation_type": "cause_effect",
-          "label": "Thúc đẩy nhu cầu đầu tư vào trái phiếu"
-        },
-        {
-          "source": "Fed",
-          "target": "Trái phiếu Mỹ",
-          "relation_type": "cause_effect",
-          "label": "Chính sách tiền tệ điều phối lợi suất"
-        }
-      ],
-      "entities": [
-        "Hoa Kỳ",
-        "Iran",
-        "Chính phủ liên bang Hoa Kỳ"
-      ],
-      "keywords": [
-        "Tài chính Mỹ",
-        "Lạm phát",
-        "Thị trường chứng khoán"
-      ],
-      "importance": 85,
-      "scope": "national"
-    }
-  },
-  "evt_1e2f6f81": {
-    "created_at": 1785174299876,
-    "expires_at": 1787766299876,
-    "version": "4.5",
-    "checksum": "b70057b663842605620e39b66e0531dc",
-    "data": {
-      "cluster_title": "Italy Giảm Thuế Xăng Diesel",
-      "short_summary": "Italy đã phê duyệt giảm thuế tạm thời trên xăng diesel để giảm tác động của giá năng lượng tăng cao sau khi xung đột ở Trung Đông mở rộng.",
-      "detailed_summary": "Nhằm đối phó với tình trạng giá năng lượng leo thang do căng thẳng địa chính trị tại Trung Đông, Chính phủ Italy đã phê duyệt chính sách giảm thuế tạm thời đối với dầu diesel đến hết ngày 6/8. Đồng thời, quốc gia này đang tìm kiếm sự linh hoạt trong các quy định tài khóa từ Liên minh châu Âu để có thêm dư địa ngân sách hỗ trợ cho các biện pháp trợ giá năng lượng.",
-      "causes": [
-        "Xung đột leo thang tại Trung Đông làm gián đoạn nguồn cung năng lượng",
-        "Áp lực từ việc giá năng lượng tăng cao ảnh hưởng đến đời sống người dân và doanh nghiệp"
-      ],
-      "effects": [
-        "Giảm chi phí nhiên liệu tạm thời cho người tiêu dùng và doanh nghiệp tại Italy",
-        "Gia tăng nhu cầu đàm phán về dư địa tài khóa với Liên minh châu Âu"
-      ],
-      "affected_groups": [
-        "Người tiêu dùng trong nước",
-        "Doanh nghiệp vận tải và sản xuất",
-        "Ngân sách quốc gia Italy"
-      ],
-      "market_impact": "Việc giảm thuế tạm thời có thể làm dịu áp lực lạm phát ngắn hạn trong nước, nhưng tạo áp lực lên thâm hụt ngân sách chính phủ.",
-      "follow_up": "",
-      "significance": "Sự kiện phản ánh nỗ lực của chính phủ Italy trong việc cân bằng giữa hỗ trợ an sinh xã hội và tuân thủ các quy định tài chính khắt khe của Liên minh châu Âu trong bối cảnh địa chính trị bất ổn.",
-      "unknowns": [
-        "Phản ứng chính thức và sự phê duyệt từ phía Liên minh châu Âu về việc nới lỏng tài khóa",
-        "Khả năng kéo dài thời hạn giảm thuế sau ngày 6 tháng 8"
-      ],
-      "confidence_note": "Thông tin dựa trên thông báo chính sách của chính phủ, độ tin cậy cao.",
-      "scenarios": [
-        {
-          "text": "Liên minh châu Âu chấp thuận nới lỏng quy định tài khóa, cho phép Italy mở rộng trợ cấp năng lượng.",
-          "likelihood": "trung bình"
-        },
-        {
-          "text": "Italy phải tự cân đối ngân sách trong nước nếu Liên minh châu Âu từ chối yêu cầu nới lỏng tài khóa.",
-          "likelihood": "cao"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Xung đột tại Trung Đông",
-          "target": "Giá năng lượng",
-          "relation_type": "cause_effect",
-          "label": "Gây tăng giá năng lượng"
-        },
-        {
-          "source": "Chính phủ Italy",
-          "target": "Liên minh châu Âu",
+          "source": "Donald Trump",
+          "target": "Benjamin Netanyahu",
           "relation_type": "cooperation",
-          "label": "Đàm phán về dư địa tài khóa"
+          "label": "Đối tác ngoại giao"
         },
         {
-          "source": "Chính phủ Italy",
-          "target": "Thuế dầu diesel",
+          "source": "Sự phụ thuộc an ninh",
+          "target": "Israel",
           "relation_type": "cause_effect",
-          "label": "Quyết định cắt giảm thuế"
+          "label": "Yếu tố quyết định sự tồn tại quốc gia"
         }
       ],
       "entities": [
-        "Italy",
-        "châu Âu"
+        "Donald Trump",
+        "Israel",
+        "Benjamin Netanyahu",
+        "Iran"
       ],
       "keywords": [
-        "Italy",
-        "xăng diesel",
-        "giảm thuế"
-      ],
-      "importance": 85,
-      "scope": "national"
-    }
-  },
-  "evt_3a96e606": {
-    "created_at": 1785174305916,
-    "expires_at": 1787766305916,
-    "version": "4.5",
-    "checksum": "36ff809151adfb9f679b0117c8296e5b",
-    "data": {
-      "cluster_title": "Keiko Fujimori chỉ định Elmer Cuba làm Bộ trưởng Tài chính",
-      "short_summary": "Keiko Fujimori đã chỉ định Elmer Cuba làm Bộ trưởng Tài chính Peru, một quyết định được coi là tín hiệu cho sự tiếp tục chính sách kinh tế ổn định ở một trong những nền kinh tế ổn định nhất ở Mỹ Latinh.",
-      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
-      "causes": [],
-      "effects": [],
-      "affected_groups": [],
-      "market_impact": "",
-      "follow_up": "",
-      "entities": [
-        "Keiko Fujimori",
-        "Elmer Cuba",
-        "Peru"
-      ],
-      "keywords": [
-        "Keiko Fujimori",
-        "Elmer Cuba",
-        "Peru"
-      ],
-      "importance": 80,
-      "scope": "national"
-    }
-  },
-  "evt_general_1785174311861": {
-    "created_at": 1785174317653,
-    "expires_at": 1787766317653,
-    "version": "4.5",
-    "checksum": "61baae0eadfee878022c587fb5d348af",
-    "data": {
-      "cluster_title": "Cổ phiếu Muni đạt mức giá thấp nhất kể từ tháng Ba",
-      "short_summary": "Cổ phiếu Muni đạt mức giá thấp nhất kể từ tháng Ba sau khi lo ngại lạm phát khiến các khoản đầu tư địa phương gặp tổn thất nặng nề trong tuần qua.",
-      "detailed_summary": "Thị trường trái phiếu chính quyền tiểu bang và địa phương tại Mỹ đã trải qua tuần giao dịch tồi tệ nhất kể từ tháng 4 năm 2025. Sự sụt giảm lợi nhuận này bắt nguồn từ tâm lý lo ngại lạm phát của nhà đầu tư, khiến định giá của loại tài sản này rơi xuống mức thấp nhất kể từ tháng 3.",
-      "causes": [
-        "Tâm lý lo ngại về tình trạng lạm phát gia tăng",
-        "Áp lực bán tháo trên thị trường trái phiếu làm giảm giá trị tài sản"
-      ],
-      "effects": [
-        "Trái phiếu chính quyền địa phương trở nên rẻ hơn đáng kể",
-        "Hiệu suất đầu tư tuần tồi tệ nhất kể từ tháng 4 năm 2025"
-      ],
-      "affected_groups": [
-        "Nhà đầu tư trái phiếu",
-        "Chính quyền tiểu bang và địa phương tại Mỹ",
-        "Các quỹ quản lý tài sản"
-      ],
-      "market_impact": "Thị trường trái phiếu đang đối mặt với sự điều chỉnh giá mạnh mẽ, mở ra cơ hội hoặc rủi ro tùy thuộc vào kỳ vọng lạm phát của nhà đầu tư trong tương lai gần.",
-      "follow_up": "",
-      "significance": "Sự kiện phản ánh mức độ nhạy cảm cao của thị trường nợ công tại Mỹ đối với các dữ liệu và kỳ vọng lạm phát, báo hiệu sự biến động kéo dài trong thời gian tới.",
-      "unknowns": [
-        "Mức độ duy trì của xu hướng lạm phát trong dài hạn",
-        "Phản ứng chính sách cụ thể từ các cơ quan quản lý trước diễn biến của thị trường trái phiếu"
-      ],
-      "confidence_note": "Thông tin có độ tin cậy cao dựa trên dữ liệu biến động thị trường ghi nhận được.",
-      "scenarios": [
-        {
-          "text": "Giá trái phiếu tiếp tục duy trì ở mức thấp nếu lạm phát không hạ nhiệt.",
-          "likelihood": "cao"
-        },
-        {
-          "text": "Thị trường phục hồi nếu các chỉ số lạm phát công bố thời gian tới thấp hơn kỳ vọng.",
-          "likelihood": "trung bình"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Lo ngại lạm phát",
-          "target": "Trái phiếu chính quyền địa phương",
-          "relation_type": "cause_effect",
-          "label": "Nguyên nhân chính dẫn đến sự sụt giảm giá trị tài sản"
-        }
-      ],
-      "entities": [
+        "Trump",
+        "Israel",
         "Mỹ",
-        "Tín dụng địa phương"
-      ],
-      "keywords": [
-        "Cổ phiếu Muni",
-        "Tín dụng địa phương",
-        "Lạm phát"
-      ],
-      "importance": 80,
-      "scope": "national"
-    }
-  },
-  "evt_8408af36": {
-    "created_at": 1785174329458,
-    "expires_at": 1787766329458,
-    "version": "4.5",
-    "checksum": "75a2e23b136f40f8112621ac7e987a67",
-    "data": {
-      "cluster_title": "Thăm dò hợp tác giữa Paschi và Banco BPM",
-      "short_summary": "Các cố vấn của Paschi và Banco BPM đang thảo luận về một khả năng hợp tác, bao gồm cả tiền mặt, như một lựa chọn thay thế cho đề xuất mua lại của Intesa Sanpaolo.",
-      "detailed_summary": "Các cố vấn của Banca Monte dei Paschi di Siena SpA và Banco BPM SpA đang tiến hành đàm phán về một thỏa thuận sáp nhập ngang hàng. Cấu trúc giao dịch dự kiến bao gồm cả cổ phiếu và tiền mặt, được xem xét như một lựa chọn thay thế cho đề nghị mua lại trị giá 35 tỷ euro (40 tỷ USD) từ Intesa Sanpaolo dành cho Monte Paschi.",
-      "causes": [
-        "Sự xuất hiện của đề nghị mua lại từ Intesa Sanpaolo đối với Monte Paschi",
-        "Nhu cầu tìm kiếm các phương án tái cấu trúc hoặc sáp nhập thay thế của các ngân hàng liên quan"
-      ],
-      "effects": [
-        "Thay đổi cục diện cạnh tranh trong ngành ngân hàng tại Ý",
-        "Áp lực lên kế hoạch thâu tóm của Intesa Sanpaolo"
-      ],
-      "affected_groups": [
-        "Cổ đông của Banca Monte dei Paschi di Siena",
-        "Cổ đông của Banco BPM",
-        "Intesa Sanpaolo",
-        "Nhà đầu tư trong lĩnh vực tài chính ngân hàng tại Ý"
-      ],
-      "market_impact": "Thông tin về cuộc đàm phán có thể gây biến động giá cổ phiếu của các ngân hàng liên quan và định hình lại kỳ vọng thị trường về sự hợp nhất ngành ngân hàng Ý.",
-      "follow_up": "",
-      "significance": "Sự kiện phản ánh nỗ lực chủ động của các ngân hàng trong việc tìm kiếm cấu trúc sở hữu tối ưu nhằm đối trọng với các lời đề nghị thâu tóm từ các đối thủ lớn hơn.",
-      "unknowns": [
-        "Các điều khoản tài chính chi tiết và tỷ lệ hoán đổi cổ phiếu",
-        "Phản ứng chính thức từ phía cơ quan quản lý tài chính và Intesa Sanpaolo"
-      ],
-      "confidence_note": "Thông tin dựa trên các báo cáo về hoạt động của đội ngũ cố vấn, cần theo dõi các xác nhận chính thức từ phía doanh nghiệp.",
-      "scenarios": [
-        {
-          "text": "Monte Paschi và Banco BPM đạt được thỏa thuận sáp nhập nhằm ngăn chặn việc bị Intesa Sanpaolo thâu tóm.",
-          "likelihood": "trung bình"
-        },
-        {
-          "text": "Các bên không đạt được tiếng nói chung và Intesa Sanpaolo tiếp tục theo đuổi thương vụ mua lại Monte Paschi.",
-          "likelihood": "cao"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Banca Monte dei Paschi di Siena",
-          "target": "Banco BPM",
-          "relation_type": "cooperation",
-          "label": "Đang đàm phán khả năng sáp nhập ngang hàng"
-        },
-        {
-          "source": "Intesa Sanpaolo",
-          "target": "Banca Monte dei Paschi di Siena",
-          "relation_type": "conflict",
-          "label": "Đưa ra đề nghị mua lại cạnh tranh"
-        },
-        {
-          "source": "Intesa Sanpaolo",
-          "target": "Thương vụ sáp nhập Monte Paschi - Banco BPM",
-          "relation_type": "cause_effect",
-          "label": "Đề nghị mua lại đóng vai trò là động lực thúc đẩy cuộc đàm phán sáp nhập thay thế"
-        }
-      ],
-      "entities": [
-        "Banca Monte dei Paschi di Siena SpA",
-        "Banco BPM SpA",
-        "Intesa Sanpaolo SpA"
-      ],
-      "keywords": [
-        "Paschi",
-        "Banco BPM",
-        "hợp tác",
-        "sự kiện tài chính"
-      ],
-      "importance": 80,
-      "scope": "national"
-    }
-  },
-  "evt_69a3cf79": {
-    "created_at": 1785174335605,
-    "expires_at": 1787766335605,
-    "version": "4.5",
-    "checksum": "243c3989034f4db18f8e3c5f34be6b51",
-    "data": {
-      "cluster_title": "Startup dầu mỏ do cựu chủ tịch Goldman Sachs chuẩn bị IPO",
-      "short_summary": "Cựu chủ tịch Goldman Sachs Jeff Currie chuẩn bị IPO cho startup dầu mỏ của mình với mục tiêu huy động 50 triệu bảng Anh",
-      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
-      "causes": [],
-      "effects": [],
-      "affected_groups": [],
-      "market_impact": "",
-      "follow_up": "",
-      "entities": [
-        "Jeff Currie",
-        "Goldman Sachs Group Inc.",
-        "London"
-      ],
-      "keywords": [
-        "dầu mỏ",
-        "startup",
-        "IPO",
-        "Goldman Sachs"
-      ],
-      "importance": 80,
-      "scope": "business"
-    }
-  },
-  "evt_8d4321d9": {
-    "created_at": 1785174347600,
-    "expires_at": 1787766347600,
-    "version": "4.5",
-    "checksum": "a4783971c192ddd137f841c14e458d1e",
-    "data": {
-      "cluster_title": "Nvidia gặp rủi ro tín dụng tăng vọt",
-      "short_summary": "Chi phí bảo vệ nợ của Nvidia tăng vọt sau thông tin về các cuộc đàm phán về cơ sở hạ tầng trí tuệ nhân tạo trị giá hơn 750 tỷ USD.",
-      "detailed_summary": "Thị trường hoán đổi rủi ro tín dụng (CDS) ghi nhận mức tăng kỷ lục về chi phí bảo hiểm vỡ nợ đối với nợ của Nvidia. Nguyên nhân bắt nguồn từ các báo cáo cho thấy tập đoàn này đang tham gia vào các cuộc đàm phán liên quan đến các thỏa thuận xây dựng hạ tầng trí tuệ nhân tạo với giá trị hơn 750 tỷ USD, làm dấy lên những lo ngại về sức khỏe tài chính của doanh nghiệp.",
-      "causes": [
-        "Các báo cáo về việc Nvidia tham gia đàm phán thỏa thuận hạ tầng trí tuệ nhân tạo trị giá hơn 750 tỷ USD",
-        "Tâm lý lo ngại của nhà đầu tư về rủi ro vỡ nợ doanh nghiệp"
-      ],
-      "effects": [
-        "Chi phí bảo vệ nợ của Nvidia tăng kỷ lục trên thị trường hoán đổi",
-        "Gia tăng rủi ro tín dụng đối với Nvidia trong mắt các nhà đầu tư"
-      ],
-      "affected_groups": [
-        "Cổ đông và nhà đầu tư của Nvidia",
-        "Các chủ nợ của Nvidia",
-        "Thị trường tài chính toàn cầu"
-      ],
-      "market_impact": "Sự gia tăng chi phí bảo hiểm nợ phản ánh mối lo ngại của thị trường về đòn bẩy tài chính và khả năng thực thi các hợp đồng quy mô lớn của Nvidia.",
-      "follow_up": "",
-      "significance": "Sự kiện cho thấy sự nhạy cảm của thị trường tài chính đối với các cam kết đầu tư hạ tầng khổng lồ của Nvidia, nơi rủi ro tín dụng được định giá lại trước những kỳ vọng quá cao.",
-      "unknowns": [
-        "Thông tin chi tiết về các đối tác tham gia đàm phán",
-        "Cấu trúc tài chính cụ thể của các thỏa thuận hạ tầng này"
-      ],
-      "confidence_note": "Thông tin dựa trên biến động thực tế tại thị trường hoán đổi rủi ro tín dụng và báo cáo truyền thông, có độ tin cậy cao về mặt dữ liệu thị trường.",
-      "scenarios": [
-        {
-          "text": "Nvidia làm rõ kế hoạch tài chính giúp trấn an nhà đầu tư và giảm áp lực lên phí bảo hiểm tín dụng.",
-          "likelihood": "cao"
-        },
-        {
-          "text": "Các lo ngại về khả năng thực thi thỏa thuận tiếp tục khiến phí bảo hiểm vỡ nợ duy trì ở mức cao.",
-          "likelihood": "trung bình"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Thỏa thuận hạ tầng AI",
-          "target": "Nvidia",
-          "relation_type": "cause_effect",
-          "label": "Gây ra sự gia tăng rủi ro tín dụng"
-        },
-        {
-          "source": "Thị trường hoán đổi rủi ro tín dụng",
-          "target": "Nvidia",
-          "relation_type": "neutral",
-          "label": "Ghi nhận mức phí bảo hiểm vỡ nợ tăng kỷ lục"
-        }
-      ],
-      "entities": [
-        "Nvidia Corp.",
-        "chips"
-      ],
-      "keywords": [
-        "Nvidia",
-        "tín dụng",
-        "rủi ro"
+        "Iran"
       ],
       "importance": 90,
       "scope": "global"
     }
   },
-  "evt_08682370": {
-    "created_at": 1785174359406,
-    "expires_at": 1787766359406,
+  "evt_general_1785176089160": {
+    "created_at": 1785176094991,
+    "expires_at": 1787768094991,
     "version": "4.5",
-    "checksum": "b47f86cd1751aed33438e3444428e036",
-    "data": {
-      "cluster_title": "Trump Khôi Phục Vách Thuế",
-      "short_summary": "Chủ tịch Mỹ Donald Trump đang chuyển chính sách thương mại của mình sang giai đoạn mới bằng cách khôi phục vách thuế.",
-      "detailed_summary": "Tổng thống Donald Trump đang triển khai bước tiếp theo trong chính sách thương mại đặc trưng của mình, đó là việc củng cố và mở rộng hàng rào thuế quan đối với hàng hóa nước ngoài, đánh dấu sự chuyển đổi sang một giai đoạn mới trong chiến lược kinh tế đối ngoại của Hoa Kỳ.",
-      "causes": [
-        "Mong muốn thay đổi chính sách thương mại hiện hành của Hoa Kỳ",
-        "Áp dụng tư duy chính sách đặc trưng của Donald Trump về bảo hộ thương mại"
-      ],
-      "effects": [
-        "Gia tăng rào cản thương mại đối với hàng hóa nhập khẩu vào Mỹ",
-        "Khả năng gây căng thẳng trong quan hệ thương mại quốc tế"
-      ],
-      "affected_groups": [
-        "Các đối tác thương mại quốc tế của Hoa Kỳ",
-        "Các doanh nghiệp xuất nhập khẩu",
-        "Người tiêu dùng trong nước"
-      ],
-      "market_impact": "Dự báo gây biến động đối với chuỗi cung ứng toàn cầu và tâm lý thị trường tài chính do lo ngại về chi phí gia tăng.",
-      "follow_up": "",
-      "significance": "Sự kiện này tái khẳng định xu hướng chủ nghĩa bảo hộ trong chính sách thương mại của Hoa Kỳ dưới thời Tổng thống Donald Trump, có khả năng làm thay đổi cục diện cạnh tranh kinh tế toàn cầu.",
-      "unknowns": [
-        "Danh mục các quốc gia và mặt hàng cụ thể sẽ chịu áp lực thuế quan mới",
-        "Mức độ phản ứng từ phía các đối tác thương mại quốc tế"
-      ],
-      "confidence_note": "Thông tin dựa trên thông báo về chính sách hiện tại, độ tin cậy cao về hướng đi của chính quyền.",
-      "scenarios": [
-        {
-          "text": "Các quốc gia đối tác thực hiện các biện pháp đáp trả thương mại dẫn đến xung đột kinh tế leo thang.",
-          "likelihood": "cao"
-        },
-        {
-          "text": "Các bên đạt được thỏa thuận thương mại mới sau các vòng đàm phán dựa trên áp lực thuế quan.",
-          "likelihood": "trung bình"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Donald Trump",
-          "target": "Hàng rào thuế quan",
-          "relation_type": "cause_effect",
-          "label": "Tái thiết lập chính sách thương mại"
-        },
-        {
-          "source": "Chính sách thương mại Hoa Kỳ",
-          "target": "Thương mại quốc tế",
-          "relation_type": "conflict",
-          "label": "Tạo rào cản thông qua thuế quan"
-        }
-      ],
-      "entities": [
-        "Donald Trump",
-        "chính phủ Mỹ"
-      ],
-      "keywords": [
-        "Donald Trump",
-        "tariff",
-        "trade policy"
-      ],
-      "importance": 85,
-      "scope": "national"
-    }
-  },
-  "evt_1d798be5": {
-    "created_at": 1785174371379,
-    "expires_at": 1787766371379,
-    "version": "4.5",
-    "checksum": "3b223aefbc540d0988f66a2e5a44b331",
-    "data": {
-      "cluster_title": "Nvidia đặt 5 tỷ USD vào đột phá AI của Ilya Sutskever",
-      "short_summary": "Nvidia đã đầu tư 5 tỷ USD vào công nghệ AI của Ilya Sutskever để mở rộng khả năng tính toán của Safe Superintelligence.",
-      "detailed_summary": "Tập đoàn công nghệ Nvidia đã quyết định rót khoản đầu tư trị giá 5 tỷ USD vào Safe Superintelligence, doanh nghiệp do cựu lãnh đạo nghiên cứu của OpenAI là Ilya Sutskever thành lập. Khoản đầu tư này được thực hiện dưới hình thức cung cấp chip xử lý thế hệ mới Vera Rubin, nhằm mục đích giúp SSI mở rộng nhanh chóng năng lực tính toán phục vụ cho các dự án nghiên cứu trí tuệ nhân tạo bí mật.",
-      "causes": [
-        "Nhu cầu gia tăng năng lực tính toán vượt trội cho các nghiên cứu AI cấp cao của Safe Superintelligence.",
-        "Chiến lược củng cố vị thế của Nvidia trong hệ sinh thái phát triển AI toàn cầu thông qua việc bắt tay với các đơn vị nghiên cứu đầu ngành."
-      ],
-      "effects": [
-        "Đẩy nhanh tiến độ nghiên cứu của Safe Superintelligence nhờ hạ tầng phần cứng mạnh mẽ.",
-        "Tăng cường sự hiện diện của chip Vera Rubin trong các dự án tiên phong về siêu trí tuệ nhân tạo."
-      ],
-      "affected_groups": [
-        "Nhà đầu tư trong lĩnh vực công nghệ",
-        "Các đối thủ cạnh tranh trong mảng chip AI",
-        "Cộng đồng nghiên cứu trí tuệ nhân tạo"
-      ],
-      "market_impact": "Khẳng định cam kết của Nvidia trong việc dẫn đầu chuỗi cung ứng phần cứng AI, đồng thời tạo làn sóng quan tâm lớn tới hướng đi nghiên cứu của Safe Superintelligence.",
-      "follow_up": "",
-      "significance": "Sự kiện này đánh dấu bước tiến quan trọng trong việc kết hợp nguồn lực phần cứng tối tân của Nvidia với tầm nhìn nghiên cứu về siêu trí tuệ an toàn của Ilya Sutskever, định hình lại bối cảnh phát triển AI trong tương lai.",
-      "unknowns": [
-        "Chi tiết cụ thể về lộ trình phát triển nghiên cứu của Safe Superintelligence.",
-        "Các điều khoản ràng buộc đi kèm trong thỏa thuận đầu tư giữa hai bên."
-      ],
-      "confidence_note": "Thông tin dựa trên báo cáo về thỏa thuận hợp tác đầu tư, độ tin cậy cao.",
-      "scenarios": [
-        {
-          "text": "Safe Superintelligence đạt được bước tiến công nghệ đột phá nhờ sự hỗ trợ hạ tầng từ Nvidia.",
-          "likelihood": "cao"
-        },
-        {
-          "text": "Sự hợp tác dẫn đến việc Nvidia nắm giữ ảnh hưởng chiến lược sâu rộng trong các dự án của Safe Superintelligence.",
-          "likelihood": "trung bình"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Nvidia",
-          "target": "Safe Superintelligence",
-          "relation_type": "cooperation",
-          "label": "Đầu tư và cung cấp công nghệ chip"
-        },
-        {
-          "source": "Ilya Sutskever",
-          "target": "Safe Superintelligence",
-          "relation_type": "cause_effect",
-          "label": "Người sáng lập điều hành tổ chức"
-        },
-        {
-          "source": "Vera Rubin chip",
-          "target": "Safe Superintelligence",
-          "relation_type": "cause_effect",
-          "label": "Công cụ hỗ trợ mở rộng năng lực tính toán"
-        }
-      ],
-      "entities": [
-        "Nvidia",
-        "Ilya Sutskever"
-      ],
-      "keywords": [
-        "Nvidia",
-        "Ilya Sutskever",
-        "AI",
-        "Vera Rubin"
-      ],
-      "importance": 80,
-      "scope": "global"
-    }
-  },
-  "evt_general_1785174377037": {
-    "created_at": 1785174383111,
-    "expires_at": 1787766383111,
-    "version": "4.5",
-    "checksum": "ac7f2dcb252e6ec24c40f0b0ca3414ff",
+    "checksum": "fdcbe4d1422fca97dc75aa4a4461f7c8",
     "data": {
       "cluster_title": "Amazon nhắm mục tiêu Starlink của Musk",
       "short_summary": "Amazon đang phát triển một hệ thống vệ tinh để cung cấp dịch vụ di động toàn cầu, nhắm mục tiêu vào Starlink của Musk.",
-      "detailed_summary": "Amazon đã nộp hồ sơ xin phép phóng một mạng lưới vệ tinh quy mô lớn gồm hơn 5.000 vệ tinh. Mục tiêu của tập đoàn là thiết lập hạ tầng viễn thông trên quỹ đạo để cung cấp dịch vụ di động cho người tiêu dùng toàn cầu, đặt ra thế đối đầu trực diện với Starlink – dịch vụ vệ tinh của SpaceX thuộc sở hữu của tỷ phú Elon Musk.",
+      "detailed_summary": "Tập đoàn công nghệ Amazon đã nộp hồ sơ xin phép phóng một mạng lưới vệ tinh quy mô lớn gồm hơn 5.000 vệ tinh. Mục tiêu chiến lược của dự án này là cung cấp dịch vụ viễn thông và internet di động trên phạm vi toàn cầu, trực tiếp đối đầu với hệ thống Starlink của Elon Musk.",
       "causes": [
-        "Nhu cầu mở rộng thị phần trong lĩnh vực dịch vụ kết nối toàn cầu.",
-        "Mong muốn cạnh tranh trực tiếp với sự thống trị của Starlink trên thị trường vệ tinh."
+        "Nhu cầu mở rộng sự hiện diện trong lĩnh vực hạ tầng viễn thông toàn cầu",
+        "Mong muốn giành thị phần trong phân khúc cung cấp internet vệ tinh cho người tiêu dùng cá nhân"
       ],
       "effects": [
-        "Thúc đẩy sự cạnh tranh trong thị trường dịch vụ viễn thông qua vệ tinh.",
-        "Tăng mật độ vệ tinh trên quỹ đạo tầm thấp của Trái Đất."
+        "Gia tăng sự cạnh tranh trong thị trường dịch vụ internet qua vệ tinh",
+        "Thúc đẩy tốc độ phát triển và mật độ vệ tinh trên quỹ đạo thấp của Trái đất"
       ],
       "affected_groups": [
-        "Người dùng Internet trên toàn thế giới.",
-        "Các đối thủ trong lĩnh vực viễn thông vệ tinh như SpaceX.",
-        "Cơ quan quản lý hàng không và viễn thông quốc tế."
+        "Công ty SpaceX",
+        "Người tiêu dùng dịch vụ internet vệ tinh",
+        "Các doanh nghiệp viễn thông toàn cầu"
       ],
-      "market_impact": "Gia tăng áp lực cạnh tranh giá cả và chất lượng dịch vụ trong phân khúc internet vệ tinh, có khả năng làm thay đổi cục diện thị phần cung cấp hạ tầng kết nối toàn cầu.",
+      "market_impact": "Tạo ra áp lực cạnh tranh trực tiếp về giá và công nghệ trong thị trường viễn thông vệ tinh, buộc các đối thủ phải điều chỉnh chiến lược phát triển.",
       "follow_up": "",
-      "significance": "Sự kiện đánh dấu bước tiến quan trọng của Amazon trong cuộc đua hạ tầng không gian, phản ánh xu hướng thương mại hóa quỹ đạo tầm thấp phục vụ mục đích thương mại di động.",
+      "significance": "Sự kiện này đánh dấu cuộc đua song mã trong lĩnh vực không gian giữa hai tập đoàn công nghệ hàng đầu, hứa hẹn thay đổi cách thức cung cấp internet toàn cầu.",
       "unknowns": [
-        "Thời gian cụ thể cho việc triển khai phóng vệ tinh.",
-        "Chi phí đầu tư chi tiết và lộ trình thương mại hóa dịch vụ đối với người dùng cuối."
+        "Thời gian cụ thể dự kiến bắt đầu quá trình phóng vệ tinh",
+        "Chi phí đầu tư tổng thể cho dự án mạng lưới vệ tinh này"
       ],
-      "confidence_note": "Thông tin có độ tin cậy cao dựa trên hồ sơ đệ trình của Amazon.",
+      "confidence_note": "Thông tin dựa trên hồ sơ pháp lý chính thức do Amazon đệ trình, độ tin cậy cao.",
       "scenarios": [
         {
-          "text": "Amazon đẩy nhanh việc phê duyệt và triển khai vệ tinh, tạo ra sự cạnh tranh khốc liệt về giá với Starlink.",
+          "text": "Amazon đẩy nhanh tiến độ triển khai hạ tầng vệ tinh để bắt kịp vị thế dẫn đầu của Starlink.",
           "likelihood": "cao"
         },
         {
-          "text": "Dự án gặp trở ngại về quy định pháp lý hoặc kỹ thuật khiến tiến độ triển khai bị trì hoãn so với dự kiến.",
+          "text": "Sự gia tăng số lượng vệ tinh dẫn đến những tranh chấp về quản lý không gian và rác thải vũ trụ.",
           "likelihood": "trung bình"
         }
       ],
@@ -667,13 +151,13 @@
           "source": "Amazon",
           "target": "Starlink",
           "relation_type": "conflict",
-          "label": "Cạnh tranh trực tiếp trên thị trường viễn thông vệ tinh"
+          "label": "Cạnh tranh trực tiếp trong thị phần dịch vụ internet toàn cầu"
         },
         {
           "source": "Amazon",
-          "target": "Cơ quan quản lý",
-          "relation_type": "cooperation",
-          "label": "Đệ trình hồ sơ xin cấp phép vận hành vệ tinh"
+          "target": "Elon Musk",
+          "relation_type": "conflict",
+          "label": "Đối đầu gián tiếp thông qua các dự án vệ tinh đối lập"
         }
       ],
       "entities": [
