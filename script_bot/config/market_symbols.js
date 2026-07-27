@@ -21,8 +21,8 @@ module.exports = {
 
         // --- NĂNG LƯỢNG & NHIÊN LIỆU SINH HOẠT ---
         { id: 'BRENT', name: 'Dầu thô Brent', type: 'energy', threshold: 2.0, api_source: 'yahoo', api_symbol: 'BZ=F', keywords: ['dầu brent', 'giá dầu', 'opec'], category: 'Nhiên liệu & Năng lượng', unit: 'USD/thùng' },
-        { id: 'XANG_RON95', name: 'Xăng RON 95-III', type: 'energy', threshold: 2.0, api_source: 'local', api_symbol: 'RON95', base_price: 23500, keywords: ['giá xăng', 'ron 95', 'điều hành giá xăng', 'liên bộ'], category: 'Nhiên liệu & Năng lượng', unit: 'VNĐ/lít' },
-        { id: 'XANG_E5', name: 'Xăng E5 RON 92', type: 'energy', threshold: 2.0, api_source: 'local', api_symbol: 'E5RON92', base_price: 22500, keywords: ['xăng e5', 'ron 92', 'giá nhiên liệu'], category: 'Nhiên liệu & Năng lượng', unit: 'VNĐ/lít' },
+        { id: 'XANG_E10_RON95', name: 'Xăng E10 RON 95-III', type: 'energy', threshold: 2.0, api_source: 'local', api_symbol: 'E10RON95', base_price: 23500, keywords: ['giá xăng', 'e10 ron 95', 'điều hành giá xăng', 'liên bộ'], category: 'Nhiên liệu & Năng lượng', unit: 'VNĐ/lít' },
+        { id: 'XANG_E5_RON92', name: 'Xăng E5 RON 92', type: 'energy', threshold: 2.0, api_source: 'local', api_symbol: 'E5RON92', base_price: 22500, keywords: ['xăng e5', 'ron 92', 'giá nhiên liệu'], category: 'Nhiên liệu & Năng lượng', unit: 'VNĐ/lít' },
         { id: 'DAU_DO', name: 'Dầu Diesel 0.05S', type: 'energy', threshold: 2.0, api_source: 'local', api_symbol: 'DIESEL', base_price: 20500, keywords: ['dầu do', 'dầu diesel', 'nhiên liệu'], category: 'Nhiên liệu & Năng lượng', unit: 'VNĐ/lít' },
 
         // --- NÔNG SẢN & VẬT LIỆU XÂY DỰNG ---
