@@ -101,10 +101,26 @@
                         <div class="section-header">
                             <h2 class="section-title" style="color: var(--md-sys-color-ai); font-size: 18px;"><span class="material-icons-round">smart_toy</span> AI DAILY BRIEFING</h2>
                         </div>
+                        
+                        <!-- Khung hiển thị nội dung bản tin -->
                         <div id="briefing-container" class="widget-content" style="font-size: 16px; line-height: 1.8;">
                             <div class="skeleton skeleton-text"></div>
                             <div class="skeleton skeleton-text"></div>
                         </div>
+
+                        <!-- [MỚI] Khu vực hiển thị nút xem bản tin 6 ngày trước -->
+                        <div id="briefing-history-wrapper" style="display: none; margin-top: 24px; padding-top: 20px; border-top: 1px dashed var(--md-sys-color-outline);">
+                            <div style="font-size: 12px; font-weight: bold; color: var(--md-sys-color-on-surface); opacity: 0.6; margin-bottom: 12px; text-transform: uppercase;">
+                                Xem lại bản tin các ngày trước
+                            </div>
+                            <!-- Vùng chứa các nút (cuộn ngang trên Mobile) -->
+                            <div id="briefing-history-buttons" style="display: flex; gap: 10px; overflow-x: auto; padding-bottom: 8px; scrollbar-width: none; -ms-overflow-style: none;">
+                                <!-- Nút sẽ được render bằng JS -->
+                            </div>
+                            <!-- Ẩn thanh cuộn webkit -->
+                            <style>#briefing-history-buttons::-webkit-scrollbar { display: none; }</style>
+                        </div>
+
                     </div>
                 </div>
 
