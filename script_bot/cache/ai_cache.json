@@ -1,131 +1,56 @@
 {
-  "evt_7da741b5": {
-    "created_at": 1785177859963,
-    "expires_at": 1787769859963,
+  "evt_general_1785178731711": {
+    "created_at": 1785178734712,
+    "expires_at": 1787770734712,
     "version": "4.5",
-    "checksum": "ff0d870769a0be12d97cd858dcac5bdf",
-    "data": {
-      "cluster_title": "Sự kiện nguy cơ tràn dầu",
-      "short_summary": "Macquarie Ltd cảnh báo nguy cơ tràn dầu trước cuộc bầu cử giữa kỳ ở Mỹ do áp lực gia tăng để chấm dứt xung đột Iran.",
-      "detailed_summary": "Các nhà phân tích từ Macquarie Ltd cho rằng thị trường dầu mỏ thế giới có nguy cơ chuyển dịch sang trạng thái dư cung trước cuối năm nay. Nguyên nhân chính là do sức ép chính trị khiến chính quyền Washington chịu áp lực phải sớm giải quyết bất đồng với Iran khi thời điểm bầu cử giữa nhiệm kỳ tại Mỹ đang đến gần.",
-      "causes": [
-        "Sức ép chính trị tại Mỹ trước thềm bầu cử giữa nhiệm kỳ",
-        "Nhu cầu đạt được thỏa thuận giải quyết xung đột với Iran"
-      ],
-      "effects": [
-        "Nguy cơ nguồn cung dầu mỏ thế giới vượt cầu",
-        "Biến động tiềm tàng đối với giá dầu thô"
-      ],
-      "affected_groups": [
-        "Nhà đầu tư thị trường năng lượng",
-        "Các quốc gia xuất khẩu dầu mỏ",
-        "Các tập đoàn năng lượng toàn cầu"
-      ],
-      "market_impact": "Dự báo có thể gây áp lực giảm giá lên thị trường dầu mỏ nếu thỏa thuận được ký kết và lượng dầu từ Iran quay trở lại thị trường.",
-      "follow_up": "",
-      "significance": "Sự kiện phản ánh mối liên hệ mật thiết giữa các diễn biến chính trị nội bộ tại Mỹ và tác động trực tiếp đến chiến lược nguồn cung năng lượng toàn cầu.",
-      "unknowns": [
-        "Chi tiết cụ thể của thỏa thuận tiềm năng giữa Mỹ và Iran",
-        "Thời điểm chính xác mà lượng dầu của Iran có thể được giải phóng ra thị trường"
-      ],
-      "confidence_note": "Thông tin dựa trên dự báo của tổ chức tài chính chuyên môn, độ tin cậy ở mức trung bình cao tùy thuộc vào tiến trình ngoại giao thực tế.",
-      "scenarios": [
-        {
-          "text": "Mỹ và Iran đạt được thỏa thuận, nguồn cung dầu tăng mạnh làm giá dầu giảm.",
-          "likelihood": "trung bình"
-        },
-        {
-          "text": "Đàm phán bế tắc, tình trạng cung cầu dầu mỏ duy trì trạng thái hiện tại.",
-          "likelihood": "cao"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Chính phủ Mỹ",
-          "target": "Iran",
-          "relation_type": "conflict",
-          "label": "Xung đột kéo dài liên quan đến thỏa thuận hạt nhân và cấm vận dầu mỏ"
-        },
-        {
-          "source": "Bầu cử giữa nhiệm kỳ Mỹ",
-          "target": "Chính sách đối ngoại Mỹ",
-          "relation_type": "cause_effect",
-          "label": "Tác động đến quyết định thúc đẩy đàm phán với Iran"
-        },
-        {
-          "source": "Thỏa thuận hạt nhân",
-          "target": "Nguồn cung dầu",
-          "relation_type": "cause_effect",
-          "label": "Yếu tố trực tiếp gây ra nguy cơ dư cung"
-        }
-      ],
-      "entities": [
-        "Macquarie Ltd",
-        "Iran",
-        "châu Mỹ"
-      ],
-      "keywords": [
-        "Macquarie",
-        "châu Mỹ",
-        "Iran",
-        "trung bình"
-      ],
-      "importance": 85,
-      "scope": "national"
-    }
-  },
-  "evt_general_1785177866192": {
-    "created_at": 1785177871774,
-    "expires_at": 1787769871774,
-    "version": "4.5",
-    "checksum": "c9853fe5d38b6ac0c52ad60afa98a577",
+    "checksum": "ef6de9eddf11f0a1e5c9e70b183cf936",
     "data": {
       "cluster_title": "Municipal Bonds Giảm Giá",
-      "short_summary": "Municipal bonds Mỹ giảm giá do lo ngại lạm phát, trở thành rẻ nhất kể từ mùa xuân.",
-      "detailed_summary": "Nợ chính quyền tiểu bang và địa phương tại Hoa Kỳ đã giảm giá trị xuống mức thấp nhất kể từ mùa xuân năm nay. Nguyên nhân chính dẫn đến tình trạng này là do áp lực từ lo ngại về lạm phát, khiến loại hình trái phiếu đô thị trải qua tuần sụt giảm lợi nhuận tồi tệ nhất kể từ tháng 4 năm 2025.",
+      "short_summary": "Municipal bonds Mỹ giảm giá do lo ngại lạm phát, trở nên rẻ nhất kể từ mùa xuân.",
+      "detailed_summary": "Dữ liệu thị trường cho thấy nợ công của các bang và chính quyền địa phương tại Mỹ đã chạm mức giá rẻ nhất kể từ mùa xuân năm nay. Sự sụt giảm giá trị này diễn ra sau một tuần đầy biến động, trong đó các yếu tố lo ngại về lạm phát đã gây ra sự sụt giảm hiệu suất đầu tư tồi tệ nhất đối với trái phiếu đô thị kể từ tháng 4/2025.",
       "causes": [
         "Tâm lý lo ngại về tình hình lạm phát gia tăng.",
-        "Sự sụt giảm lợi nhuận mạnh mẽ trong tuần giao dịch gần nhất."
+        "Áp lực bán tháo trên thị trường trái phiếu đô thị."
       ],
       "effects": [
-        "Giá trái phiếu đô thị trở nên rẻ hơn so với các tháng trước.",
-        "Gia tăng rủi ro đối với các nhà đầu tư nắm giữ trái phiếu chính quyền địa phương."
+        "Giá trái phiếu chính quyền địa phương giảm xuống mức thấp nhất kể từ tháng 3.",
+        "Hiệu suất đầu tư của trái phiếu đô thị sụt giảm mạnh trong tuần."
       ],
       "affected_groups": [
-        "Các nhà đầu tư trái phiếu đô thị",
-        "Chính quyền tiểu bang và địa phương tại Hoa Kỳ",
+        "Nhà đầu tư trái phiếu đô thị tại Mỹ",
+        "Các chính quyền bang và địa phương tại Mỹ",
         "Các tổ chức tài chính quản lý danh mục nợ công"
       ],
-      "market_impact": "Thị trường trái phiếu đô thị đang chịu áp lực điều chỉnh giá đáng kể, tạo ra cơ hội hoặc rủi ro tùy thuộc vào chiến lược định giá lại của nhà đầu tư.",
+      "market_impact": "Thị trường trái phiếu đô thị đang chịu áp lực điều chỉnh giá do các lo ngại vĩ mô về lạm phát, tạo ra điểm vào thị trường với mức định giá hấp dẫn hơn cho các nhà đầu tư.",
       "follow_up": "",
-      "significance": "Sự kiện phản ánh tác động trực tiếp của các yếu tố kinh tế vĩ mô như lạm phát lên thị trường nợ công địa phương, đòi hỏi sự theo dõi sát sao về biến động lãi suất.",
+      "significance": "Sự kiện phản ánh sự nhạy cảm của thị trường nợ công Mỹ trước áp lực lạm phát, báo hiệu sự thay đổi trong định giá tài sản cố định cấp địa phương.",
       "unknowns": [
-        "Tác động cụ thể của chính sách tiền tệ tiếp theo từ cơ quan chức năng.",
-        "Khả năng phục hồi của thị trường trong ngắn hạn."
+        "Dữ liệu lạm phát cụ thể gây ra phản ứng tiêu cực này chưa được làm rõ.",
+        "Thời gian kéo dài của đợt giảm giá này vẫn chưa thể dự báo chính xác."
       ],
       "confidence_note": "Thông tin có độ tin cậy cao dựa trên dữ liệu báo cáo thị trường tài chính.",
       "scenarios": [
         {
-          "text": "Thị trường ổn định trở lại nếu các chỉ số lạm phát hạ nhiệt trong giai đoạn tiếp theo.",
+          "text": "Nhà đầu tư tận dụng mức giá rẻ để gia tăng thu mua, giúp ổn định lại giá trái phiếu.",
           "likelihood": "cao"
         },
         {
-          "text": "Giá trái phiếu tiếp tục giảm nếu lo ngại về lạm phát kéo dài vượt dự báo.",
+          "text": "Lạm phát tiếp tục leo thang gây thêm áp lực bán tháo, đẩy giá trái phiếu xuống thấp hơn nữa.",
           "likelihood": "trung bình"
         }
       ],
       "entity_relations": [
         {
-          "source": "Lạm phát",
+          "source": "Lo ngại lạm phát",
           "target": "Trái phiếu đô thị Mỹ",
           "relation_type": "cause_effect",
-          "label": "Nguyên nhân gây sụt giảm lợi nhuận"
+          "label": "Nguyên nhân gây sụt giảm hiệu suất"
         },
         {
-          "source": "Chính quyền địa phương Mỹ",
-          "target": "Trái phiếu đô thị",
-          "relation_type": "neutral",
-          "label": "Đơn vị phát hành nợ"
+          "source": "Trái phiếu đô thị Mỹ",
+          "target": "Thị trường nợ công",
+          "relation_type": "cause_effect",
+          "label": "Thành phần cấu thành thị trường nợ công"
         }
       ],
       "entities": [
@@ -141,43 +66,113 @@
       "scope": "national"
     }
   },
-  "evt_general_1785177877619": {
-    "created_at": 1785177883672,
-    "expires_at": 1787769883672,
+  "evt_663b4595": {
+    "created_at": 1785178746226,
+    "expires_at": 1787770746226,
     "version": "4.5",
-    "checksum": "b0ecccc831bd49f56bf0830e173024f1",
+    "checksum": "9518147cac6357dbe9b95507ad22a362",
     "data": {
-      "cluster_title": "Amazon nhắm mục tiêu Starlink của Musk",
-      "short_summary": "Amazon đang phát triển một hệ thống vệ tinh để cung cấp dịch vụ di động toàn cầu, nhắm mục tiêu vào Starlink của Musk.",
-      "detailed_summary": "Amazon đang đẩy mạnh tham vọng trong lĩnh vực không gian thông qua việc nộp hồ sơ xin phép phóng một mạng lưới vệ tinh quy mô lớn. Dự án này nhằm mục đích thiết lập hệ thống dịch vụ kết nối Internet di động cho người tiêu dùng trên toàn cầu, trực tiếp tạo ra thế đối trọng với Starlink thuộc sở hữu của tỷ phú Elon Musk.",
+      "cluster_title": "Nhiệt độ cao và cháy rừng ở Pháp và Tây Ban Nha",
+      "short_summary": "Pháp và Tây Ban Nha chuẩn bị đối mặt với nhiệt độ cao và cháy rừng. Tổng thống Pháp Emmanuel Macron cảnh báo rằng những tuần tới sẽ rất khó khăn.",
+      "detailed_summary": "Tình trạng nắng nóng cực đoan đang bao trùm Pháp và Tây Ban Nha, gây ra các vụ cháy rừng nghiêm trọng tại nhiều khu vực. Tổng thống Pháp Emmanuel Macron đã trực tiếp đến thăm trung tâm chỉ huy cứu hỏa tại vùng Gironde và đưa ra cảnh báo về tình hình thời tiết khó khăn sẽ còn tiếp diễn trong nhiều tuần tới.",
       "causes": [
-        "Nhu cầu gia tăng về dịch vụ Internet vệ tinh toàn cầu",
-        "Chiến lược mở rộng sang lĩnh vực viễn thông vệ tinh của Amazon"
+        "Thời tiết nắng nóng cực đoan kéo dài",
+        "Điều kiện khí hậu thuận lợi cho cháy rừng phát triển"
       ],
       "effects": [
-        "Gia tăng mức độ cạnh tranh trong thị trường Internet vệ tinh",
-        "Thúc đẩy phát triển hạ tầng mạng lưới kết nối không gian"
+        "Cháy rừng bùng phát tại Pháp và Tây Ban Nha",
+        "Gia tăng áp lực lên lực lượng cứu hỏa và chính quyền địa phương",
+        "Nguy cơ tiếp diễn khủng hoảng thời tiết trong tương lai gần"
       ],
       "affected_groups": [
-        "Người tiêu dùng Internet toàn cầu",
-        "Các đối thủ trong ngành công nghiệp vệ tinh",
-        "Cơ quan quản lý hàng không và viễn thông quốc tế"
+        "Cư dân vùng Gironde",
+        "Lực lượng cứu hỏa",
+        "Người dân Pháp và Tây Ban Nha"
       ],
-      "market_impact": "Dự báo sẽ tạo áp lực cạnh tranh về giá và chất lượng dịch vụ trong phân khúc Internet vệ tinh, đồng thời thúc đẩy các khoản đầu tư công nghệ không gian.",
+      "market_impact": "Có khả năng gây gián đoạn các hoạt động kinh tế địa phương, du lịch và hạ tầng nông nghiệp tại các vùng bị ảnh hưởng nặng nề bởi cháy rừng.",
       "follow_up": "",
-      "significance": "Sự kiện đánh dấu sự gia nhập của một đối thủ nặng ký vào thị trường Internet vệ tinh, hứa hẹn thay đổi cục diện cạnh tranh với nhà tiên phong Starlink.",
+      "significance": "Sự kiện phản ánh tác động trực tiếp và nghiêm trọng của hiện tượng thời tiết cực đoan đối với an ninh quốc gia và sự an toàn của người dân tại châu Âu.",
       "unknowns": [
-        "Thời điểm chính xác các vệ tinh sẽ được phóng",
-        "Chi phí dịch vụ dự kiến cho người tiêu dùng cuối cùng"
+        "Diện tích rừng bị thiệt hại chính xác",
+        "Số liệu cụ thể về thiệt hại kinh tế và tài sản của người dân"
       ],
-      "confidence_note": "Thông tin dựa trên hồ sơ pháp lý công khai của Amazon, có độ tin cậy cao.",
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên phát ngôn trực tiếp của lãnh đạo quốc gia tại hiện trường.",
       "scenarios": [
         {
-          "text": "Amazon triển khai thành công mạng lưới vệ tinh và giành thị phần từ các đối thủ hiện tại.",
+          "text": "Tình hình cháy rừng được kiểm soát sau khi các đợt nắng nóng dịu đi.",
           "likelihood": "cao"
         },
         {
-          "text": "Các rào cản về quy định pháp lý quốc tế làm chậm tiến độ phóng vệ tinh của Amazon.",
+          "text": "Khủng hoảng cháy rừng kéo dài gây thiệt hại lớn về cơ sở hạ tầng và phải sơ tán người dân diện rộng.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Nắng nóng cực đoan",
+          "target": "Cháy rừng",
+          "relation_type": "cause_effect",
+          "label": "Tác nhân chính gây ra cháy rừng"
+        },
+        {
+          "source": "Emmanuel Macron",
+          "target": "Trung tâm cứu hỏa Gironde",
+          "relation_type": "cooperation",
+          "label": "Chỉ đạo và hỗ trợ công tác cứu hỏa"
+        }
+      ],
+      "entities": [
+        "Emmanuel Macron",
+        "Pháp",
+        "Tây Ban Nha"
+      ],
+      "keywords": [
+        "nhiệt độ cao",
+        "cháy rừng",
+        "Pháp",
+        "Tây Ban Nha"
+      ],
+      "importance": 80,
+      "scope": "national"
+    }
+  },
+  "evt_general_1785178751986": {
+    "created_at": 1785178757998,
+    "expires_at": 1787770757998,
+    "version": "4.5",
+    "checksum": "02c3e4ea69aa12fc5fef7a6e9989d221",
+    "data": {
+      "cluster_title": "Amazon nhắm mục tiêu Starlink của Musk",
+      "short_summary": "Amazon đang phát triển một hệ thống vệ tinh để cung cấp dịch vụ di động toàn cầu, nhắm mục tiêu vào Starlink của Musk.",
+      "detailed_summary": "Tập đoàn công nghệ Amazon đã chính thức gửi hồ sơ đăng ký phóng hơn 5.000 vệ tinh lên quỹ đạo. Mục tiêu của dự án này là xây dựng một chùm vệ tinh phục vụ cho các dịch vụ di động, nhằm cạnh tranh trực tiếp với mạng lưới vệ tinh Starlink của tỷ phú Elon Musk trên phạm vi toàn cầu.",
+      "causes": [
+        "Nhu cầu mở rộng thị phần trong mảng dịch vụ kết nối internet di động toàn cầu.",
+        "Chiến lược đối đầu trực tiếp với vị thế dẫn đầu của Starlink trong lĩnh vực hạ tầng internet vệ tinh."
+      ],
+      "effects": [
+        "Gia tăng mức độ cạnh tranh khốc liệt trong ngành công nghiệp vệ tinh quỹ đạo thấp.",
+        "Thúc đẩy tốc độ phát triển và cung cấp dịch vụ hạ tầng mạng toàn cầu cho người tiêu dùng."
+      ],
+      "affected_groups": [
+        "Công ty Starlink và tỷ phú Elon Musk",
+        "Amazon",
+        "Người tiêu dùng dịch vụ viễn thông toàn cầu"
+      ],
+      "market_impact": "Dự báo sẽ tạo ra áp lực cạnh tranh gay gắt về giá và chất lượng dịch vụ trong phân khúc internet vệ tinh, ảnh hưởng trực tiếp đến thị phần của các nhà cung cấp hiện hữu.",
+      "follow_up": "",
+      "significance": "Sự kiện này đánh dấu bước leo thang trong cuộc đua chinh phục không gian giữa các tập đoàn công nghệ lớn nhằm làm chủ hạ tầng kết nối di động toàn cầu.",
+      "unknowns": [
+        "Thời gian cụ thể cho việc phóng số lượng vệ tinh này.",
+        "Tổng chi phí dự kiến và lộ trình đạt được lợi nhuận của dự án."
+      ],
+      "confidence_note": "Thông tin dựa trên hồ sơ pháp lý công khai của Amazon, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Amazon triển khai thành công chùm vệ tinh và chia sẻ đáng kể thị phần của Starlink.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Dự án gặp trở ngại về kỹ thuật hoặc pháp lý khiến quá trình phóng vệ tinh bị chậm trễ.",
           "likelihood": "trung bình"
         }
       ],
@@ -186,13 +181,13 @@
           "source": "Amazon",
           "target": "Starlink",
           "relation_type": "conflict",
-          "label": "Cạnh tranh trực tiếp giành thị phần Internet vệ tinh"
+          "label": "Cạnh tranh trực tiếp trong lĩnh vực cung cấp dịch vụ internet vệ tinh"
         },
         {
           "source": "Amazon",
           "target": "Elon Musk",
           "relation_type": "conflict",
-          "label": "Đối đầu gián tiếp thông qua các thực thể doanh nghiệp"
+          "label": "Đối đầu về lợi ích chiến lược trong mảng hạ tầng công nghệ không gian"
         }
       ],
       "entities": [
