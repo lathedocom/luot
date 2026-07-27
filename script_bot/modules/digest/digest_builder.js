@@ -56,22 +56,30 @@ function buildDigest(allTopics, { limitPerRegion = 7, windowMs = 48 * 60 * 60 * 
 const REGION_TO_ISO = {
     'vietnam': ['VN'],
     'usa': ['US'],
-    'china': ['CN', 'TW', 'HK'], // Gộp rủi ro khu vực
-    'eu': ['GB', 'FR', 'DE', 'IT', 'ES', 'UA', 'RU'], // Tạm map các nước lớn và điểm nóng
+    'china': ['CN', 'TW', 'HK'], 
+    'eu': ['GB', 'FR', 'DE', 'IT', 'ES', 'UA', 'RU'], 
     'asean': ['SG', 'TH', 'MY', 'ID', 'PH'],
     'asia': ['JP', 'KR', 'IN'],
     'middle_east': ['IL', 'PS', 'IR', 'SY', 'LB']
 };
 
-// Bộ chấm điểm Mức độ nghiêm trọng (Severity) dựa trên categories
+// [MỚI] Bảng điểm Cơ sở dựa trên nhãn ảnh hưởng (Impact Level) của AI
+const IMPACT_SCORES = {
+    'crisis': 100,       // Khủng hoảng, chiến tranh, dịch bệnh lớn
+    'risk': 50,          // Bất ổn, cảnh báo rủi ro
+    'monitor': 20,       // Đàm phán, chính sách, biến động bình thường
+    'development': 5     // Phát triển, hợp tác (Gần như không tạo rủi ro)
+};
+
+// [Fallback] Dùng chuyên mục nếu bài báo cũ chưa có nhãn AI
 const SEVERITY_SCORES = {
-    'military': 100,  // Chiến tranh, xung đột
-    'law': 50,        // Tội phạm, pháp lý
-    'economy': 40,    // Khủng hoảng kinh tế
-    'finance': 40,    // Biến động tài chính
-    'politics': 30,   // Bất ổn chính trị, biểu tình
-    'tech': 10,
-    'science': 10
+    'military': 80, 
+    'law': 40,      
+    'economy': 30,  
+    'finance': 30,  
+    'politics': 20, 
+    'environment': 40,
+    'health': 40
 };
 
 function buildRiskMapData(allTopics) {
@@ -83,49 +91,56 @@ function buildRiskMapData(allTopics) {
     const activeTopics = allTopics.filter(t => (now - (t.timestamp || 0)) <= SEVEN_DAYS);
 
     activeTopics.forEach(topic => {
-        // 1. Tính TimeDecay (Hệ số suy giảm theo thời gian)
+        // 1. Tính TimeDecay (Hệ số suy giảm theo thời gian nhanh hơn)
         const ageHours = (now - topic.timestamp) / (1000 * 60 * 60);
         let timeDecay = 1.0;
-        if (ageHours > 72) timeDecay = 0.3;      // Tin > 3 ngày: 30% sức ảnh hưởng
-        else if (ageHours > 24) timeDecay = 0.7; // Tin > 1 ngày: 70% sức ảnh hưởng
+        if (ageHours > 72) timeDecay = 0.2;      // Tin > 3 ngày: Mờ nhạt (20% ảnh hưởng)
+        else if (ageHours > 24) timeDecay = 0.6; // Tin > 1 ngày: Giảm nhiệt (60% ảnh hưởng)
 
-        // 2. Tính Mức độ nghiêm trọng (Severity) từ Categories
-        let severity = 0;
-        if (topic.categories && topic.categories.length > 0) {
-            topic.categories.forEach(cat => {
-                if (SEVERITY_SCORES[cat]) severity += SEVERITY_SCORES[cat];
-            });
+        // 2. Tính Mức độ nghiêm trọng (Severity) - Ưu tiên cờ AI
+        let baseSeverity = 0;
+        if (topic.impact_level && IMPACT_SCORES[topic.impact_level]) {
+            baseSeverity = IMPACT_SCORES[topic.impact_level];
+        } else {
+            // Fallback: Nếu là tin cũ, lấy điểm cao nhất của chuyên mục (không cộng dồn)
+            if (topic.categories && topic.categories.length > 0) {
+                topic.categories.forEach(cat => {
+                    if (SEVERITY_SCORES[cat] && SEVERITY_SCORES[cat] > baseSeverity) {
+                        baseSeverity = SEVERITY_SCORES[cat];
+                    }
+                });
+            }
         }
-        // AI có thể đánh giá scope global -> tăng trọng số rủi ro
-        if (topic.scope === 'global') severity += 20; 
+
+        // Tăng sức nặng nếu AI xếp hạng sự kiện này lan rông toàn cầu
+        if (topic.scope === 'global') baseSeverity += 10; 
 
         // 3. Tính SourceWeight (Độ tin cậy nguồn)
         let sourceWeight = 1.0;
         if (topic.sources && topic.sources.length > 0) {
             const avgCredibility = topic.sources.reduce((sum, s) => sum + (s.source_credibility || 5), 0) / topic.sources.length;
-            sourceWeight = avgCredibility / 10; // Ví dụ: Reuters 10 -> 1.0, Báo lá cải 5 -> 0.5
+            sourceWeight = avgCredibility / 10; 
         }
 
-        // Tính điểm sự kiện
-        const eventRiskScore = severity * sourceWeight * timeDecay;
+        // Điểm sự kiện đơn lẻ
+        const eventRiskScore = baseSeverity * sourceWeight * timeDecay;
 
-        // Bỏ qua nếu điểm quá thấp không đáng ghi nhận là "Rủi ro"
-        if (eventRiskScore < 10) return;
+        // Bỏ qua nếu điểm quá thấp (tin tức rác)
+        if (eventRiskScore < 5) return;
 
-        // 4. Phân bổ điểm rủi ro cho các quốc gia tương ứng
+        // 4. Phân bổ điểm cho các quốc gia tương ứng
         if (topic.regions && topic.regions.length > 0) {
             topic.regions.forEach(regionId => {
                 const isoCodes = REGION_TO_ISO[regionId] || [];
                 isoCodes.forEach(iso => {
                     if (!mapData[iso]) {
-                        mapData[iso] = { score: 0, events: [] };
+                        mapData[iso] = { events: [] };
                     }
-                    mapData[iso].score += eventRiskScore;
                     
-                    // Chỉ lưu tóm tắt sự kiện để hiển thị Modal
+                    // Lưu tóm tắt sự kiện để hiển thị Modal (tối đa 5 tin)
                     if (mapData[iso].events.length < 5) {
                         mapData[iso].events.push({
-                            title: topic.title,
+                            title: topic.title || topic.cluster_title,
                             score: Math.round(eventRiskScore)
                         });
                     }
@@ -134,16 +149,33 @@ function buildRiskMapData(allTopics) {
         }
     });
 
-    // 5. Chuẩn hóa dữ liệu trả về cho Frontend
+    // 5. Chuẩn hóa và áp dụng thuật toán CHỐNG DỒN ĐIỂM
     const finalMap = {};
     for (const [iso, data] of Object.entries(mapData)) {
-        const totalScore = Math.round(data.score);
-        let color = '#22c55e'; // Xanh lá mặc định
+        
+        // Sắp xếp sự kiện từ nghiêm trọng nhất xuống thấp nhất
+        data.events.sort((a, b) => b.score - a.score);
+        
+        let totalScore = 0;
+        if (data.events.length > 0) {
+            // Sự kiện nghiêm trọng nhất giữ 100% sức mạnh
+            totalScore = data.events[0].score;
+            
+            // Các sự kiện phụ trợ chỉ đóng góp 15% dư chấn (tránh việc nhiều tin nhỏ làm đỏ bản đồ)
+            for (let i = 1; i < data.events.length; i++) {
+                totalScore += data.events[i].score * 0.15;
+            }
+        }
+
+        totalScore = Math.round(totalScore);
+        
+        let color = '#22c55e'; 
         let status = 'Bình thường';
 
-        if (totalScore >= 150) { color = '#ef4444'; status = 'Khủng hoảng nghiêm trọng'; }
-        else if (totalScore >= 80) { color = '#f97316'; status = 'Rủi ro cao'; }
-        else if (totalScore >= 30) { color = '#eab308'; status = 'Đang theo dõi'; }
+        // Thang đo mới phản chiếu chính xác nhãn của AI
+        if (totalScore >= 85) { color = '#ef4444'; status = 'Khủng hoảng nghiêm trọng'; }
+        else if (totalScore >= 45) { color = '#f97316'; status = 'Rủi ro cao'; }
+        else if (totalScore >= 15) { color = '#eab308'; status = 'Đang theo dõi'; }
 
         finalMap[iso] = {
             score: totalScore,
@@ -155,5 +187,6 @@ function buildRiskMapData(allTopics) {
 
     return finalMap;
 }
+
 
 module.exports = { buildDigest, buildRiskMapData };
