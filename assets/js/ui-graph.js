@@ -34,25 +34,97 @@ export function renderKnowledgeGraph(graphData) {
     resizeObserver.observe(cyContainer);
 }
 
+
 function initCy(container) {
     container.innerHTML = ''; 
 
     const typeColors = {
-        'Person': '#3b82f6',       // Xanh dương
-        'Organization': '#f59e0b', // Vàng cam
-        'Location': '#10b981',     // Xanh lá
-        'Unknown': '#64748b'       // Xám
+        'Person': '#3b82f6',       
+        'Organization': '#f59e0b', 
+        'Location': '#10b981',     
+        'Group': '#1e293b',        // Màu dành riêng cho Node Cụm liên minh
+        'Unknown': '#64748b'       
     };
+
+    // =================================================================
+    // BẮT ĐẦU: THUẬT TOÁN GOM NHÓM TỰ ĐỘNG (COMMUNITY DETECTION)
+    // =================================================================
+    const parentMap = new Map();
+    const groups = {};
+    let groupCounter = 1;
+
+    // 1. Quét tìm các liên kết Hợp tác (cooperation)
+    savedGraphData.edges.forEach(edge => {
+        if (edge.data.relation_type === 'cooperation') {
+            const source = edge.data.source;
+            const target = edge.data.target;
+
+            let parentS = parentMap.get(source);
+            let parentT = parentMap.get(target);
+
+            // Gộp các thực thể vào chung một ID nhóm
+            if (!parentS && !parentT) {
+                const newParentId = `alliance_${groupCounter++}`;
+                parentMap.set(source, newParentId);
+                parentMap.set(target, newParentId);
+                groups[newParentId] = [source, target];
+            } else if (parentS && !parentT) {
+                parentMap.set(target, parentS);
+                groups[parentS].push(target);
+            } else if (!parentS && parentT) {
+                parentMap.set(source, parentT);
+                groups[parentT].push(source);
+            } else if (parentS !== parentT) {
+                groups[parentS].push(...groups[parentT]);
+                groups[parentT].forEach(n => parentMap.set(n, parentS));
+                delete groups[parentT];
+            }
+        }
+    });
+
+    // 2. Khởi tạo Node Cha (Vùng bao bọc)
+    const parentNodes = [];
+    Object.keys(groups).forEach(groupId => {
+        if (groups[groupId].length > 1) {
+            parentNodes.push({
+                data: {
+                    id: groupId,
+                    label: `Cụm liên minh ${groupId.replace('alliance_', '')}`,
+                    type: 'Group'
+                }
+            });
+        } else {
+            delete groups[groupId];
+        }
+    });
+
+    // 3. Nhốt các Node con vào trong Node Cha
+    const processedNodes = [];
+    savedGraphData.nodes.forEach(node => {
+        const clonedNode = JSON.parse(JSON.stringify(node));
+        const parentId = parentMap.get(clonedNode.data.id);
+        if (parentId && groups[parentId]) {
+            clonedNode.data.parent = parentId; // Khai báo Node Cha
+        }
+        processedNodes.push(clonedNode);
+    });
+
+    // Gộp toàn bộ Node lại để đưa vào bản đồ
+    const finalNodes = [...parentNodes, ...processedNodes];
+    // =================================================================
+    // KẾT THÚC THUẬT TOÁN
+    // =================================================================
 
     cyInstance = cytoscape({
         container: container,
         elements: {
-            nodes: savedGraphData.nodes,
+            nodes: finalNodes, // Sử dụng dữ liệu đã được phân nhóm
             edges: savedGraphData.edges
         },
         style: [
+            // Style cho các Node thông thường
             {
-                selector: 'node',
+                selector: 'node[^parent]', 
                 style: {
                     'label': 'data(label)',
                     'background-color': function(ele){ return typeColors[ele.data('type')] || typeColors['Unknown']; },
@@ -84,6 +156,23 @@ function initCy(container) {
                     'transition-duration': '0.3s'
                 }
             },
+            // [MỚI] Style cho Node Cha (Vùng bao bọc Cụm liên minh)
+            {
+                selector: ':parent',
+                style: {
+                    'background-color': 'rgba(59, 130, 246, 0.05)',
+                    'border-width': 1,
+                    'border-color': '#3b82f6',
+                    'border-style': 'dashed',
+                    'label': 'data(label)',
+                    'font-size': '12px',
+                    'color': '#94a3b8',
+                    'text-valign': 'top',
+                    'text-halign': 'center',
+                    'padding': '15px'
+                }
+            },
+            // Style cho Cạnh nối (Edges)
             {
                 selector: 'edge',
                 style: {
@@ -141,12 +230,10 @@ function initCy(container) {
         cyInstance.resize();
         cyInstance.fit();
 
-        // =================================================================
-        // THUẬT TOÁN PAGERANK - TÍNH ĐIỂM INFLUENCE SCORE
-        // =================================================================
+        // Thuật toán PageRank tính điểm Influence Score
         const pageRank = cyInstance.elements().pageRank({ dampingFactor: 0.85 });
         
-        const rankedNodes = cyInstance.nodes().map(node => {
+        const rankedNodes = cyInstance.nodes('[^parent]').map(node => {
             const score = pageRank.rank(node);
             node.data('influence_score', score);
             return {
@@ -184,17 +271,14 @@ function initCy(container) {
         }
     });
 
-    // Bắt sự kiện Click ra nền trống để bỏ focus
     cyInstance.on('tap', function(evt){
         if (evt.target === cyInstance) {
             cyInstance.elements().removeClass('faded');
         }
     });
 
-    // =================================================================
-    // PHỤC HỒI: Xử lý sự kiện Click vào Node -> Hiện thông tin Thực thể
-    // =================================================================
-    cyInstance.on('tap', 'node', function(evt){
+    // Xử lý click Node
+    cyInstance.on('tap', 'node[^parent]', function(evt){
         const node = evt.target;
         const nodeLabel = node.data('label');
         const nodeType = node.data('type');
@@ -202,6 +286,11 @@ function initCy(container) {
 
         cyInstance.elements().addClass('faded');
         node.neighborhood().add(node).removeClass('faded');
+        
+        // Hiện luôn Node Cha nếu Node này thuộc Cụm liên minh
+        if (node.isChild()) {
+            node.parent().removeClass('faded');
+        }
 
         const trendScore = Math.round(node.data('trend_score') || 0);
         const riskProfile = node.data('risk_profile') || {};
@@ -220,7 +309,7 @@ function initCy(container) {
         if (relatedEvents.length === 0) return;
         relatedEvents.sort((a, b) => b.timestamp - a.timestamp);
 
-        const connectedNodes = node.neighborhood('node');
+        const connectedNodes = node.neighborhood('node[^parent]');
         let relatedEntitiesHtml = '';
         if (connectedNodes.length > 0) {
             connectedNodes.forEach(n => {
@@ -320,9 +409,7 @@ function initCy(container) {
         document.getElementById('intelligence-modal').classList.add('active');
     });
 
-    // =================================================================
-    // Xử lý sự kiện Click vào Cạnh (Edge) -> Hiển thị Mạng lưới bằng chứng
-    // =================================================================
+    // Xử lý click Edge
     cyInstance.on('tap', 'edge', function(evt){
         const edge = evt.target;
         const edgeLabel = edge.data('label') || '';
