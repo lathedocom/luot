@@ -104,10 +104,19 @@ export function renderMarket(marketData) {
                 `;
             }
 
+            // [MỚI] Tạo thẻ hiển thị Nguồn
+            let sourceColor = item.display_source && item.display_source.includes('Mô phỏng') ? '#f59e0b' : 'var(--md-sys-color-on-surface)';
+            const sourceHtml = `
+                <div style="margin-top: auto; padding-top: 12px; font-size: 11px; color: ${sourceColor}; opacity: 0.6; display: flex; justify-content: flex-end; align-items: center; gap: 4px; border-top: 1px solid rgba(128,128,128,0.1);">
+                    <span class="material-icons-round" style="font-size: 14px;">${item.display_source && item.display_source.includes('Mô phỏng') ? 'warning_amber' : 'source'}</span>
+                    ${escapeHtml(item.display_source || 'Tổng hợp')}
+                </div>
+            `;
+
             finalHtml += `
-                <div class="market-card" style="background: var(--md-sys-color-surface); padding: 16px; border-radius: 12px; border: 1px solid var(--md-sys-color-outline); box-shadow: 0 4px 6px rgba(0,0,0,0.02); display: flex; flex-direction: column; position: relative; width: 100%; max-width: 100%; box-sizing: border-box;">
+                <div class="market-card" style="background: var(--md-sys-color-surface); padding: 16px; border-radius: 12px; border: 1px solid var(--md-sys-color-outline); box-shadow: 0 4px 6px rgba(0,0,0,0.02); display: flex; flex-direction: column; position: relative; width: 100%; max-width: 100%; box-sizing: border-box; min-height: 220px;">
                     
-                    <div style="position: absolute; top: 0; left: 0; bottom: 0; width: 4px; background-color: ${color};"></div>
+                    <div style="position: absolute; top: 0; left: 0; bottom: 0; width: 4px; background-color: ${color}; border-top-left-radius: 12px; border-bottom-left-radius: 12px;"></div>
 
                     <!-- Header -->
                     <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; padding-left: 8px; gap: 8px; width: 100%; box-sizing: border-box;">
@@ -129,6 +138,9 @@ export function renderMarket(marketData) {
 
                     <!-- Nguyên nhân thay đổi -->
                     ${contextHtml}
+
+                    <!-- Nguồn dữ liệu -->
+                    ${sourceHtml}
                 </div>
             `;
         });
@@ -180,7 +192,7 @@ function drawMarketSparkline(canvasId, item) {
         },
         options: {
             responsive: true,
-            maintainAspectRatio: false, // Bắt buộc false để đồ thị tự ép dẹt theo height của div cha
+            maintainAspectRatio: false, 
             plugins: { 
                 legend: { display: false }, 
                 tooltip: { 
