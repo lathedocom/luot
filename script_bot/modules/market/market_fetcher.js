@@ -55,7 +55,7 @@ async function fetchFromYahoo(symbolsConfig) {
                 history: history,
                 history_labels: historyLabels,
                 updated_at: Date.now(),
-                display_source: 'Yahoo Finance' // [MỚI] Khai báo nguồn
+                display_source: 'Yahoo Finance' 
             };
         } catch (error) {
             logger.warn(`Lỗi fetch mã ${config.api_symbol} từ Yahoo: ${error.message}`);
@@ -113,7 +113,7 @@ async function fetchFromCoinGecko(symbolsConfig) {
                 history: history,
                 history_labels: ['T-24h', 'T-18h', 'T-12h', 'T-6h', 'T-2h', 'Hiện tại'],
                 updated_at: Date.now(),
-                display_source: 'CoinGecko API' // [MỚI] Khai báo nguồn
+                display_source: 'CoinGecko API' 
             };
         }).filter(Boolean);
     } catch (error) {
@@ -136,16 +136,16 @@ async function fetchPetrolimexData() {
         
         const html = await response.text();
         const $ = cheerio.load(html);
-        let prices = { E10RON95: null, E5RON92: null, DIESEL: null };
+        let prices = { RON95: null, E5RON92: null, DIESEL: null };
 
         $('tr, div, li').each((i, el) => {
             const rowText = $(el).text().replace(/\s+/g, ' ').trim().toUpperCase();
             const priceMatch = rowText.match(/([1-3][0-9][.,][0-9]{3})/);
             if (priceMatch) {
                 const priceValue = parseInt(priceMatch[1].replace(/[.,]/g, ''));
-                if (rowText.includes('E10 RON 95-III') && !prices.RON95) {
+                if ((rowText.includes('RON 95') || rowText.includes('E10')) && !prices.RON95) {
                     prices.RON95 = priceValue;
-                } else if (rowText.includes('E5 RON 92') && !prices.E5RON92) {
+                } else if ((rowText.includes('E5') || rowText.includes('RON 92')) && !prices.E5RON92) {
                     prices.E5RON92 = priceValue;
                 } else if ((rowText.includes('DIESEL') || rowText.includes('DO 0,05S') || rowText.includes('DO 0.05S')) && !prices.DIESEL) {
                     prices.DIESEL = priceValue;
@@ -160,27 +160,83 @@ async function fetchPetrolimexData() {
     }
 }
 
+// --- CÀO DỮ LIỆU VÀNG SJC (THỜI GIAN THỰC) ---
+async function fetchGoldData() {
+    try {
+        const response = await fetch('https://sjc.com.vn/xml/tygiavang.xml', {
+            headers: { 
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' 
+            },
+            timeout: 10000 
+        });
+        
+        if (!response.ok) return null;
+        
+        const xml = await response.text();
+        const $ = cheerio.load(xml, { xmlMode: true });
+        let prices = { SJC: null, RING: null };
+
+        $('item').each((i, el) => {
+            const typeName = $(el).attr('type') ? $(el).attr('type').toUpperCase() : '';
+            const sellPrice = parseFloat($(el).attr('sell'));
+
+            if (typeName && sellPrice) {
+                // Đổi đơn vị sang Triệu VNĐ / Lượng
+                const priceInMillions = sellPrice / 1000000;
+                
+                if (typeName.includes('VÀNG SJC') && !prices.SJC) {
+                    prices.SJC = priceInMillions;
+                } else if ((typeName.includes('NHẪN') || typeName.includes('99,99')) && !prices.RING) {
+                    prices.RING = priceInMillions;
+                }
+            }
+        });
+
+        return prices;
+    } catch (error) {
+        logger.warn(`Lỗi cào dữ liệu Vàng SJC: ${error.message}`);
+        return null; 
+    }
+}
+
 // --- XỬ LÝ THỊ TRƯỜNG NỘI ĐỊA (Cào thực tế + Giả lập dự phòng) ---
 async function fetchLocalMarkets(symbolsConfig) {
-    const petrolimexPrices = await fetchPetrolimexData() || {};
+    const [petrolimexPrices, goldPrices] = await Promise.all([
+        fetchPetrolimexData(),
+        fetchGoldData()
+    ]);
+    
+    const pPrices = petrolimexPrices || {};
+    const gPrices = goldPrices || {};
 
     return symbolsConfig.map(config => {
         let base = config.base_price || 100;
         let isRealTime = false;
-        let sourceName = 'Dữ liệu mô phỏng (Mock)'; // [MỚI] Mặc định là mô phỏng
+        let sourceName = 'Dữ liệu mô phỏng (Mock)'; 
 
-        if (config.api_symbol === 'RON95' && petrolimexPrices.RON95) {
-            base = petrolimexPrices.RON95;
-            isRealTime = true;
-            sourceName = 'Tập đoàn Xăng dầu Việt Nam'; // Đổi nguồn nếu cào thành công
-        } else if (config.api_symbol === 'E5RON92' && petrolimexPrices.E5RON92) {
-            base = petrolimexPrices.E5RON92;
+        // Nhóm Xăng Dầu
+        if (config.api_symbol === 'RON95' && pPrices.RON95) {
+            base = pPrices.RON95;
             isRealTime = true;
             sourceName = 'Tập đoàn Xăng dầu Việt Nam';
-        } else if (config.api_symbol === 'DIESEL' && petrolimexPrices.DIESEL) {
-            base = petrolimexPrices.DIESEL;
+        } else if (config.api_symbol === 'E5RON92' && pPrices.E5RON92) {
+            base = pPrices.E5RON92;
             isRealTime = true;
             sourceName = 'Tập đoàn Xăng dầu Việt Nam';
+        } else if (config.api_symbol === 'DIESEL' && pPrices.DIESEL) {
+            base = pPrices.DIESEL;
+            isRealTime = true;
+            sourceName = 'Tập đoàn Xăng dầu Việt Nam';
+        } 
+        // Nhóm Vàng
+        else if (config.api_symbol === 'SJC' && gPrices.SJC) {
+            base = gPrices.SJC;
+            isRealTime = true;
+            sourceName = 'Công ty Vàng Bạc Đá Quý Sài Gòn';
+        } else if (config.api_symbol === 'RING' && gPrices.RING) {
+            base = gPrices.RING;
+            isRealTime = true;
+            sourceName = 'Công ty Vàng Bạc Đá Quý Sài Gòn';
         }
 
         const history = [];
@@ -214,7 +270,7 @@ async function fetchLocalMarkets(symbolsConfig) {
             history: history,
             history_labels: ['T-5', 'T-4', 'T-3', 'T-2', 'T-1', 'Hôm nay'],
             updated_at: Date.now(),
-            display_source: sourceName, // [MỚI] Bổ sung Nguồn vào object trả về
+            display_source: sourceName, 
             context: isRealTime ? null : {
                 causes: ['Dữ liệu đang chạy mô phỏng dự phòng (Mocks).'],
                 market_impact: 'Chưa lấy được dữ liệu thời gian thực.'
