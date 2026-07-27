@@ -1,10 +1,10 @@
 const { SYMBOLS } = require('../../config/market_symbols');
 const logger = require('../utils/logger');
+const cheerio = require('cheerio'); // Thêm thư viện phân tích HTML
 
-// --- YAHOO FINANCE: Cập nhật lấy lịch sử 5 ngày để vẽ biểu đồ ---
+// --- YAHOO FINANCE: Lấy tỷ giá, chứng khoán, hàng hóa quốc tế ---
 async function fetchFromYahoo(symbolsConfig) {
     const results = await Promise.all(symbolsConfig.map(async (config) => {
-        // Cập nhật URL thêm range=5d để lấy mảng lịch sử
         const url = `https://query1.finance.yahoo.com/v8/finance/chart/${config.api_symbol}?range=5d&interval=1d`;
         try {
             const response = await fetch(url, {
@@ -24,7 +24,6 @@ async function fetchFromYahoo(symbolsConfig) {
                 changePercent = ((price - prevClose) / prevClose) * 100;
             }
 
-            // Bóc tách mảng lịch sử giá (History) cho biểu đồ
             let history = [];
             let historyLabels = [];
             if (result.timestamp && result.indicators.quote[0].close) {
@@ -40,7 +39,6 @@ async function fetchFromYahoo(symbolsConfig) {
                 });
             }
 
-            // Fallback nếu API Yahoo trả về thiếu mảng lịch sử
             if (history.length === 0) {
                 history = [prevClose, price];
                 historyLabels = ['T-1', 'T0'];
@@ -48,14 +46,14 @@ async function fetchFromYahoo(symbolsConfig) {
 
             return {
                 ...config,
-                category: config.category || 'Thị trường chung', // Gom nhóm lĩnh vực
-                unit: config.unit || 'Điểm',                      // Đơn vị
-                price: parseFloat(price.toFixed(2)),
+                category: config.category || 'Thị trường chung',
+                unit: config.unit || 'Điểm',
+                price: parseFloat(price.toFixed(2)).toLocaleString('vi-VN'), // Chuyển đổi định dạng số dễ nhìn
                 change_percent: (changePercent > 0 ? '+' : '') + parseFloat(changePercent.toFixed(2)) + '%',
                 raw_change: changePercent,
                 trend: changePercent >= 0 ? '↑' : '↓',
-                history: history,                         // Truyền lịch sử giá vào JSON
-                history_labels: historyLabels,            // Truyền nhãn thời gian vào JSON
+                history: history,
+                history_labels: historyLabels,
                 updated_at: Date.now()
             };
         } catch (error) {
@@ -67,8 +65,10 @@ async function fetchFromYahoo(symbolsConfig) {
     return results.filter(Boolean);
 }
 
-// --- COINGECKO: Sinh mảng giả lập nội suy 24h để vẽ Chart mượt mà ---
+// --- COINGECKO: Lấy dữ liệu tiền điện tử ---
 async function fetchFromCoinGecko(symbolsConfig) {
+    if (symbolsConfig.length === 0) return [];
+    
     const ids = symbolsConfig.map(s => s.api_symbol).join(',');
     const url = `https://api.coingecko.com/api/v3/simple/price?ids=${ids}&vs_currencies=usd&include_24hr_change=true`;
     
@@ -88,12 +88,10 @@ async function fetchFromCoinGecko(symbolsConfig) {
             const price = apiData.usd;
             const changePercent = apiData.usd_24h_change || 0;
 
-            // Tính toán ra mốc giá của 24h trước
             const prevPrice = price / (1 + (changePercent / 100));
             const diff = price - prevPrice;
             
-            // Xây dựng mảng 6 điểm nối nội suy để vẽ biểu đồ (an toàn 100%, không lo limit rate)
-            const decimals = price < 1 ? 4 : 2; // Xử lý các coin có giá trị nhỏ
+            const decimals = price < 1 ? 4 : 2; 
             const history = [
                 prevPrice,
                 prevPrice + diff * 0.15,
@@ -103,18 +101,16 @@ async function fetchFromCoinGecko(symbolsConfig) {
                 price
             ].map(p => parseFloat(p.toFixed(decimals)));
 
-            const historyLabels = ['T-24h', 'T-18h', 'T-12h', 'T-6h', 'T-2h', 'Hiện tại'];
-
             return {
                 ...config,
                 category: config.category || 'Tiền điện tử',
                 unit: config.unit || 'USD',
-                price: parseFloat(price.toFixed(decimals)),
+                price: parseFloat(price.toFixed(decimals)).toLocaleString('vi-VN'),
                 change_percent: (changePercent > 0 ? '+' : '') + parseFloat(changePercent.toFixed(2)) + '%',
                 raw_change: changePercent,
                 trend: changePercent >= 0 ? '↑' : '↓',
                 history: history,
-                history_labels: historyLabels,
+                history_labels: ['T-24h', 'T-18h', 'T-12h', 'T-6h', 'T-2h', 'Hiện tại'],
                 updated_at: Date.now()
             };
         }).filter(Boolean);
@@ -124,34 +120,125 @@ async function fetchFromCoinGecko(symbolsConfig) {
     }
 }
 
-// --- LOCAL MOCKS: Dự phòng cho các mã chưa có API ---
-function getLocalMocks(symbolsConfig) {
-    return symbolsConfig.map(config => ({
-        ...config,
-        category: config.category || 'Hàng hóa / Local',
-        unit: config.unit || '',
-        price: 'Đang cập nhật',
-        change_percent: '0.0%',
-        raw_change: 0,
-        trend: '↑',
-        history: [100, 101, 99, 102, 103, 105],
-        history_labels: ['T1', 'T2', 'T3', 'T4', 'T5', 'T6'],
-        updated_at: Date.now()
-    }));
+// --- CÀO DỮ LIỆU PETROLIMEX (THỜI GIAN THỰC) ---
+async function fetchPetrolimexData() {
+    try {
+        const response = await fetch('https://www.petrolimex.com.vn/', {
+            headers: { 
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' 
+            },
+            timeout: 10000 // Chờ tối đa 10s
+        });
+        
+        if (!response.ok) return null;
+        
+        const html = await response.text();
+        const $ = cheerio.load(html);
+        let prices = { RON95: null, E5RON92: null, DIESEL: null };
+
+        // Quét các thẻ có khả năng chứa bảng giá
+        $('tr, div, li').each((i, el) => {
+            const rowText = $(el).text().replace(/\s+/g, ' ').trim().toUpperCase();
+            
+            // Tìm chuỗi định dạng tiền tệ (Ví dụ: 23.500 hoặc 23,500)
+            const priceMatch = rowText.match(/([1-3][0-9][.,][0-9]{3})/);
+            if (priceMatch) {
+                // Làm sạch dấu chấm/phẩy để lấy số nguyên (23500)
+                const priceValue = parseInt(priceMatch[1].replace(/[.,]/g, ''));
+                
+                if (rowText.includes('RON 95-III') && !prices.RON95) {
+                    prices.RON95 = priceValue;
+                } else if (rowText.includes('E5 RON 92') && !prices.E5RON92) {
+                    prices.E5RON92 = priceValue;
+                } else if ((rowText.includes('DIESEL') || rowText.includes('DO 0,05S') || rowText.includes('DO 0.05S')) && !prices.DIESEL) {
+                    prices.DIESEL = priceValue;
+                }
+            }
+        });
+
+        return prices;
+    } catch (error) {
+        logger.warn(`Lỗi cào dữ liệu Petrolimex: ${error.message}`);
+        return null; // Trả về null để kích hoạt cơ chế giả lập (Mocks)
+    }
 }
 
-// --- TỔNG HỢP API ---
+// --- XỬ LÝ THỊ TRƯỜNG NỘI ĐỊA (Cào thực tế + Giả lập dự phòng) ---
+async function fetchLocalMarkets(symbolsConfig) {
+    // Gọi hàm cào Petrolimex
+    const petrolimexPrices = await fetchPetrolimexData() || {};
+
+    return symbolsConfig.map(config => {
+        let base = config.base_price || 100;
+        let isRealTime = false;
+
+        // Nếu là mã xăng dầu và cào được giá trị thực từ web
+        if (config.api_symbol === 'RON95' && petrolimexPrices.RON95) {
+            base = petrolimexPrices.RON95;
+            isRealTime = true;
+        } else if (config.api_symbol === 'E5RON92' && petrolimexPrices.E5RON92) {
+            base = petrolimexPrices.E5RON92;
+            isRealTime = true;
+        } else if (config.api_symbol === 'DIESEL' && petrolimexPrices.DIESEL) {
+            base = petrolimexPrices.DIESEL;
+            isRealTime = true;
+        }
+
+        // Tạo mảng lịch sử dao động quanh mức giá
+        const history = [];
+        let currentPrice = base;
+        for (let i = 0; i < 6; i++) {
+            // Dao động giả lập rất nhỏ để vẽ biểu đồ
+            const fluctuation = (Math.random() * 0.01) - 0.005; 
+            
+            // Nếu là giá thực tế, ta neo cố định điểm cuối cùng (Hôm nay) bằng giá trị chuẩn
+            if (i === 5 && isRealTime) {
+                currentPrice = base;
+            } else {
+                currentPrice = currentPrice * (1 + fluctuation);
+            }
+            
+            if (base > 1000) history.push(Math.round(currentPrice)); 
+            else history.push(parseFloat(currentPrice.toFixed(2)));   
+        }
+
+        const finalPrice = history[5];
+        const prevPrice = history[4];
+        let changePercent = 0;
+        if (prevPrice > 0) {
+            changePercent = ((finalPrice - prevPrice) / prevPrice) * 100;
+        }
+
+        return {
+            ...config,
+            category: config.category || 'Hàng hóa nội địa',
+            unit: config.unit || '',
+            price: finalPrice.toLocaleString('vi-VN'), 
+            change_percent: (changePercent > 0 ? '+' : '') + parseFloat(changePercent.toFixed(2)) + '%',
+            raw_change: changePercent,
+            trend: changePercent >= 0 ? '↑' : '↓',
+            history: history,
+            history_labels: ['T-5', 'T-4', 'T-3', 'T-2', 'T-1', 'Hôm nay'],
+            updated_at: Date.now(),
+            context: isRealTime ? null : {
+                causes: ['Dữ liệu đang chạy mô phỏng dự phòng (Mocks).'],
+                market_impact: 'Chưa lấy được dữ liệu thời gian thực.'
+            }
+        };
+    });
+}
+
+// --- TỔNG HỢP TOÀN BỘ API ---
 async function fetchAllLiveMarketData() {
     const yahooSymbols = SYMBOLS.filter(s => s.api_source === 'yahoo');
     const coinGeckoSymbols = SYMBOLS.filter(s => s.api_source === 'coingecko');
     const localSymbols = SYMBOLS.filter(s => s.api_source === 'local');
 
-    const [yahooData, cryptoData] = await Promise.all([
+    const [yahooData, cryptoData, localData] = await Promise.all([
         fetchFromYahoo(yahooSymbols),
-        fetchFromCoinGecko(coinGeckoSymbols)
+        fetchFromCoinGecko(coinGeckoSymbols),
+        fetchLocalMarkets(localSymbols) // Chạy luồng nội địa đã tích hợp cào dữ liệu
     ]);
-
-    const localData = getLocalMocks(localSymbols);
 
     return [...yahooData, ...cryptoData, ...localData];
 }
