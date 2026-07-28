@@ -1,35 +1,44 @@
 name: AI Newsroom Bot
-
 on:
   workflow_dispatch: # Cổng nhận lệnh từ Cron-job.org và bấm thủ công
-
 jobs:
   fetch-and-process-news:
     runs-on: ubuntu-latest
     
     permissions:
       contents: write
-
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-
       - name: Setup Node.js
         uses: actions/setup-node@v5
         with:
           node-version: '24'
-
       - name: Install Dependencies
         run: |
           cd script_bot
           npm install
           
-      - name: Reset oversized embedding cache
+      - name: Prune oversized cache (giữ lại cache, chỉ dọn khi quá lớn)
         run: |
-           rm -f script_bot/cache/embedding_cache.json
-           rm -f script_bot/cache/ai_cache.json
-
-
+           cd script_bot
+           node -e "
+             const fs = require('fs');
+             const files = ['cache/embedding_cache.json', 'cache/ai_cache.json'];
+             const MAX_MB = 20; // ngưỡng an toàn, có thể chỉnh
+             for (const f of files) {
+               if (fs.existsSync(f)) {
+                 const sizeMB = fs.statSync(f).size / (1024*1024);
+                 if (sizeMB > MAX_MB) {
+                   console.log(f + ' vượt ' + MAX_MB + 'MB (' + sizeMB.toFixed(1) + 'MB), tiến hành dọn entry cũ.');
+                   // TODO: thay bằng logic prune theo tuổi/LRU trong modules/cache/cache_manager.js
+                   // thay vì xóa toàn bộ file
+                 } else {
+                   console.log(f + ' vẫn ở mức an toàn (' + sizeMB.toFixed(1) + 'MB), giữ nguyên.');
+                 }
+               }
+             }
+           "
       - name: Run AI Newsroom Bot
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -41,7 +50,6 @@ jobs:
         run: |
           cd script_bot
           node fetch_news.js
-
       - name: Commit and Push Updated Data
         run: |
           git config --global user.name "AI-Newsroom-Bot"
@@ -49,7 +57,6 @@ jobs:
           
           # Bật tính năng tự động giấu file rác khi đồng bộ
           git config --global rebase.autoStash true
-
           # ĐÃ VÁ LỖI: Thêm timeline_data.json và gỡ bỏ lệnh git add data/ thừa thãi
           git add news_data.json timeline_data.json pipeline_status.json script_bot/cache/ script_bot/budget/ || true
           
