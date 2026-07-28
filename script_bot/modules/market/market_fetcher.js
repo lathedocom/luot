@@ -104,24 +104,32 @@ async function fetchFromCoinGecko(symbolsConfig) {
 }
 
 // ==========================================
-// 3. CHỨNG KHOÁN VN (VNDIRECT)
+// 3. CHỨNG KHOÁN VN (VNDIRECT API)
 // ==========================================
 async function fetchVietnameseStocks() {
     try {
+        // Sử dụng API bảng giá của VNDirect để lấy dữ liệu Real-time JSON
         const response = await fetch('https://finfo-api.vndirect.com.vn/v4/rtt/indices', {
             headers: BROWSER_HEADERS, timeout: 8000 
         });
         if (!response.ok) return null;
+        
         const json = await response.json();
-        let prices = { VN30: null, UPCOM: null };
+        let prices = { VNINDEX: null, VN30: null, HNX: null, UPCOM: null };
+        
         if (json && json.data) {
             json.data.forEach(item => {
+                if (item.code === 'VNINDEX') prices.VNINDEX = item.lastPrice;
                 if (item.code === 'VN30') prices.VN30 = item.lastPrice;
+                if (item.code === 'HNX') prices.HNX = item.lastPrice;
                 if (item.code === 'UPCOM') prices.UPCOM = item.lastPrice;
             });
         }
         return prices;
-    } catch (error) { return null; }
+    } catch (error) { 
+        logger.warn(`Lỗi API Chứng khoán VN: ${error.message}`);
+        return null; 
+    }
 }
 
 // ==========================================
@@ -157,7 +165,7 @@ async function fetchGoldData() {
 }
 
 // ==========================================
-// 5. XĂNG DẦU (WEB GIA - CHỐNG DÍNH CHỮ)
+// 5. XĂNG DẦU (WEB GIA)
 // ==========================================
 async function fetchPetrolimexData() {
     try {
@@ -173,7 +181,6 @@ async function fetchPetrolimexData() {
         $('table tbody tr').each((i, el) => {
             const rowText = $(el).text().toUpperCase();
             if (rowText.includes('RON 95') || rowText.includes('E5') || rowText.includes('DIESEL')) {
-                // Chỉ lấy cột cuối cùng (chứa giá) để không bị nhầm lẫn
                 const priceStr = $(el).find('td').last().text().replace(/[^\d]/g, '');
                 const priceVal = parseInt(priceStr);
 
@@ -226,20 +233,75 @@ async function fetchAgriData() {
 }
 
 // ==========================================
-// 7. TỔNG HỢP & GÁN DỮ LIỆU
+// 7. VẬT LIỆU CÔNG NGHIỆP (TRADING ECONOMICS)
+// ==========================================
+async function fetchTradingEconomicsData() {
+    let prices = { IRON_ORE: null, STEEL_HRC: null, NICKEL: null };
+    const urls = [
+        { key: 'IRON_ORE', url: 'https://tradingeconomics.com/commodity/iron-ore' },
+        { key: 'STEEL_HRC', url: 'https://tradingeconomics.com/commodity/hrc-steel' },
+        { key: 'NICKEL', url: 'https://tradingeconomics.com/commodity/nickel' }
+    ];
+
+    for (const item of urls) {
+        try {
+            const response = await fetch(item.url, { headers: BROWSER_HEADERS, timeout: 8000 });
+            if (response.ok) {
+                const html = await response.text();
+                const $ = cheerio.load(html);
+                const priceText = $('#current_price').text() || $('.market-summary-current').first().text();
+                if (priceText) {
+                    const val = parseFloat(priceText.replace(/[^\d.]/g, ''));
+                    if (val > 0) prices[item.key] = val;
+                }
+            }
+        } catch (e) {
+            logger.warn(`Lỗi cào ${item.key} từ Trading Economics: ${e.message}`);
+        }
+    }
+    return prices;
+}
+
+// ==========================================
+// 8. HIỆP HỘI NÔNG SẢN (VFA / VPSA)
+// ==========================================
+async function fetchAssociationAgriData() {
+    let prices = { RICE_VN: null, PEPPER_VN: null };
+    try {
+        // Cào Gạo từ Hiệp hội Lương thực (VFA)
+        const resRice = await fetch('http://vietfood.org.vn/gia-gao-xuat-khau', { headers: BROWSER_HEADERS, timeout: 10000 });
+        if (resRice.ok) {
+            const html = await resRice.text();
+            const $ = cheerio.load(html);
+            const text = $('body').text().toUpperCase();
+            const match = text.match(/5%\s*TẤM[^0-9]*([4-6][0-9]{2})/); // Bắt số từ 400 - 699 USD
+            if (match) prices.RICE_VN = parseInt(match[1]);
+        }
+    } catch (error) { 
+        logger.warn(`Lỗi cào VFA/VPSA: ${error.message}`); 
+    }
+    return prices;
+}
+
+// ==========================================
+// 9. TỔNG HỢP & GÁN DỮ LIỆU
 // ==========================================
 async function fetchLocalMarkets(symbolsConfig) {
-    const [petrolimexPrices, goldPrices, stockPrices, agriPrices] = await Promise.all([
+    const [petrolimexPrices, goldPrices, stockPrices, agriPrices, tePrices, assocPrices] = await Promise.all([
         fetchPetrolimexData(),
         fetchGoldData(),
         fetchVietnameseStocks(),
-        fetchAgriData()
+        fetchAgriData(),
+        fetchTradingEconomicsData(),
+        fetchAssociationAgriData()
     ]);
     
     const pPrices = petrolimexPrices || {};
     const gPrices = goldPrices || {};
     const sPrices = stockPrices || {};
     const aPrices = agriPrices || {};
+    const tPrices = tePrices || {};
+    const asPrices = assocPrices || {};
 
     return symbolsConfig.map(config => {
         let base = config.base_price || 100;
@@ -261,16 +323,34 @@ async function fetchLocalMarkets(symbolsConfig) {
             base = gPrices.RING; isRealTime = true; sourceName = 'SJC Chính thức';
         }
         // Gán Chứng Khoán VN
-        else if (config.api_symbol === 'VN30' && sPrices.VN30) {
+        else if (config.api_symbol === 'VNINDEX' && sPrices.VNINDEX) {
+            base = sPrices.VNINDEX; isRealTime = true; sourceName = 'HOSE / VNDirect';
+        } else if (config.api_symbol === 'VN30' && sPrices.VN30) {
             base = sPrices.VN30; isRealTime = true; sourceName = 'HOSE / VNDirect';
+        } else if (config.api_symbol === 'HNX' && sPrices.HNX) {
+            base = sPrices.HNX; isRealTime = true; sourceName = 'HNX / VNDirect';
         } else if (config.api_symbol === 'UPCOM' && sPrices.UPCOM) {
-            base = sPrices.UPCOM; isRealTime = true; sourceName = 'HNX / VNDirect';
+            base = sPrices.UPCOM; isRealTime = true; sourceName = 'UPCoM / VNDirect';
+        }
+        // Gán Vật Liệu / Năng lượng (Trading Economics)
+        else if (config.api_symbol === 'IRON_ORE' && tPrices.IRON_ORE) {
+            base = tPrices.IRON_ORE; isRealTime = true; sourceName = 'Trading Economics';
+        } else if (config.api_symbol === 'STEEL_HRC' && tPrices.STEEL_HRC) {
+            base = tPrices.STEEL_HRC; isRealTime = true; sourceName = 'Trading Economics';
+        } else if (config.api_symbol === 'NICKEL' && tPrices.NICKEL) {
+            base = tPrices.NICKEL; isRealTime = true; sourceName = 'Trading Economics';
         }
         // Gán Nông sản
         else if (config.api_symbol === 'COFFEE_VN' && aPrices.COFFEE_VN) {
             base = aPrices.COFFEE_VN; isRealTime = true; sourceName = 'GiaCaPhe.com';
-        } else if (config.api_symbol === 'PEPPER_VN' && aPrices.PEPPER_VN) {
-            base = aPrices.PEPPER_VN; isRealTime = true; sourceName = 'GiaTieu.com';
+        } else if (config.api_symbol === 'PEPPER_VN') {
+            if (asPrices.PEPPER_VN) {
+                base = asPrices.PEPPER_VN; isRealTime = true; sourceName = 'VPSA';
+            } else if (aPrices.PEPPER_VN) {
+                base = aPrices.PEPPER_VN; isRealTime = true; sourceName = 'GiaTieu.com';
+            }
+        } else if (config.api_symbol === 'RICE_VN' && asPrices.RICE_VN) {
+            base = asPrices.RICE_VN; isRealTime = true; sourceName = 'VFA';
         }
 
         const history = [];
@@ -312,7 +392,7 @@ async function fetchLocalMarkets(symbolsConfig) {
 }
 
 // ==========================================
-// 8. TỔNG HỢP TOÀN BỘ API VÀ XUẤT MODULE
+// 10. TỔNG HỢP TOÀN BỘ API VÀ XUẤT MODULE
 // ==========================================
 async function fetchAllLiveMarketData() {
     const yahooSymbols = SYMBOLS.filter(s => s.api_source === 'yahoo');
