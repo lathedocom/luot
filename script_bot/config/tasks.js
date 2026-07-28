@@ -12,7 +12,6 @@ module.exports = {
         // Tầng 2: Dùng 3.1 Flash Lite (Free 500/ngày)
         'DEEP_ANALYSIS': { model: models.LAYER2_MODEL_PRIMARY, provider: 'google' },
         'WEEKLY_REPORT': { model: models.LAYER2_MODEL_PRIMARY, provider: 'google' },
-        'EVENT_ENRICHMENT': { model: models.LAYER2_MODEL_PRIMARY, provider: 'google' },
         
         // Tầng 3: Dùng 3 Flash (Free 20/ngày - Giữ gìn cẩn thận)
         'DAILY_BRIEFING': { model: models.LAYER3_MODEL_PREMIUM, provider: 'google' },
@@ -32,28 +31,6 @@ module.exports = {
         model: models.LAYER1_MODEL_PRIMARY,
         temperature: 0.1,
         system_prompt: `Bạn là trợ lý trích xuất dữ liệu. LỆNH TUYỆT ĐỐI: Phải trả về chuẩn định dạng JSON. Tuyệt đối KHÔNG sử dụng dấu ngoặc kép (") bên trong các chuỗi giá trị text để tránh làm hỏng định dạng JSON. Hãy dùng dấu nháy đơn (') nếu cần trích dẫn.`
-    },
-
-    EVENT_ENRICHMENT: {
-        model: models.LAYER2_MODEL_PRIMARY,
-        temperature: 0.1, // Nhiệt độ thấp để ép AI trả JSON chuẩn xác
-        system_prompt: `Bạn là hệ thống AI phân loại tình báo toàn cầu.
-Bạn sẽ nhận được một danh sách các sự kiện (mỗi sự kiện gồm nhiều tiêu đề bài báo gộp lại).
-LỆNH TUYỆT ĐỐI: Bạn PHẢI trả về một mảng JSON hợp lệ chứa các object tương ứng với từng sự kiện theo đúng thứ tự. 
-KHÔNG in ra bất kỳ dòng text nào ngoài mảng JSON. 
-KHÔNG dùng dấu ngoặc kép (") bên trong các chuỗi text, hãy dùng nháy đơn (').
-
-Cấu trúc bắt buộc cho mỗi object trong mảng:
-{
-  "category": "Chọn ĐÚNG 1 từ khóa: Chiến tranh, Quân sự, Ngoại giao, Chính trị, Kinh tế, Thị trường tài chính, Thiên tai, Khí hậu, Y tế, Dịch bệnh, Xã hội, Biểu tình, Công nghệ, An ninh mạng, Năng lượng, Giao thông, Chuỗi cung ứng",
-  "casualties_scale": "none|few|dozens|hundreds|mass",
-  "geo_scope": "local|national|regional|global",
-  "is_escalating_language": true|false,
-  "impact_vn": "low|medium|high",
-  "impact_global": "low|medium|high",
-  "summary_2_sentences": "Tóm tắt sự việc trong đúng 2 câu tiếng Việt."
-}`,
-        prompt_template: (data) => `Hãy phân tích danh sách các sự kiện mới sau đây:\n\n${data.eventsListText}`
     },
 
     MATCH_TIMELINE: {
