@@ -34,15 +34,10 @@ async function fetchFromYahoo(symbolsConfig) {
                 });
             }
 
-            if (history.length === 0) {
-                history = [prevClose, price];
-                historyLabels = ['T-1', 'T0'];
-            }
+            if (history.length === 0) { history = [prevClose, price]; historyLabels = ['T-1', 'T0']; }
 
             return {
                 ...config,
-                category: config.category || 'Thị trường chung',
-                unit: config.unit || 'Điểm',
                 price: parseFloat(price.toFixed(2)).toLocaleString('vi-VN'), 
                 change_percent: (changePercent > 0 ? '+' : '') + parseFloat(changePercent.toFixed(2)) + '%',
                 raw_change: changePercent,
@@ -52,9 +47,7 @@ async function fetchFromYahoo(symbolsConfig) {
                 updated_at: Date.now(),
                 display_source: 'Yahoo Finance' 
             };
-        } catch (error) {
-            return null;
-        }
+        } catch (error) { return null; }
     }));
     return results.filter(Boolean);
 }
@@ -65,10 +58,8 @@ async function fetchFromCoinGecko(symbolsConfig) {
     const ids = symbolsConfig.map(s => s.api_symbol).join(',');
     const url = `https://api.coingecko.com/api/v3/simple/price?ids=${ids}&vs_currencies=usd&include_24hr_change=true`;
     try {
-        const response = await fetch(url, {
-            headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' }
-        });
-        if (!response.ok) throw new Error(`CoinGecko API lỗi: ${response.status}`);
+        const response = await fetch(url, { headers: { 'User-Agent': 'Mozilla/5.0' } });
+        if (!response.ok) return [];
         const data = await response.json();
         return symbolsConfig.map(config => {
             const apiData = data[config.api_symbol];
@@ -85,8 +76,6 @@ async function fetchFromCoinGecko(symbolsConfig) {
 
             return {
                 ...config,
-                category: config.category || 'Tiền điện tử',
-                unit: config.unit || 'USD',
                 price: parseFloat(price.toFixed(decimals)).toLocaleString('vi-VN'),
                 change_percent: (changePercent > 0 ? '+' : '') + parseFloat(changePercent.toFixed(2)) + '%',
                 raw_change: changePercent,
@@ -97,45 +86,58 @@ async function fetchFromCoinGecko(symbolsConfig) {
                 display_source: 'CoinGecko API' 
             };
         }).filter(Boolean);
+    } catch (error) { return []; }
+}
+
+// --- CHỨNG KHOÁN VIỆT NAM (VN30, UPCOM) TỪ VNDIRECT API ---
+async function fetchVietnameseStocks() {
+    try {
+        // API công khai của VNDirect, trả về JSON rất sạch
+        const response = await fetch('https://finfo-api.vndirect.com.vn/v4/rtt/indices', {
+            headers: { 'User-Agent': 'Mozilla/5.0' }, timeout: 5000 
+        });
+        if (!response.ok) return null;
+        const json = await response.json();
+        let prices = { VN30: null, UPCOM: null };
+        
+        if (json && json.data) {
+            json.data.forEach(item => {
+                if (item.code === 'VN30') prices.VN30 = item.lastPrice;
+                if (item.code === 'UPCOM') prices.UPCOM = item.lastPrice;
+            });
+        }
+        return prices;
     } catch (error) {
-        return [];
+        logger.warn(`Lỗi API Chứng khoán VN: ${error.message}`);
+        return null; 
     }
 }
 
-// --- CÀO XĂNG DẦU (DÙNG TRANG TỔNG HỢP WEB GIA) ---
+// --- XĂNG DẦU (DÙNG KỸ THUẬT REGEX QUÉT TOÀN VĂN BẢN) ---
 async function fetchPetrolimexData() {
     try {
-        // Petrolimex thường dùng JS ẩn dữ liệu, ta dùng webgia.com làm nguồn cào HTML thô sạch nhất
         const response = await fetch('https://webgia.com/gia-xang-dau/petrolimex/', {
-            headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' },
-            timeout: 10000 
+            headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' }, timeout: 8000 
         });
         if (!response.ok) return null;
         
         const html = await response.text();
         const $ = cheerio.load(html);
+        
+        // Loại bỏ khoảng trắng thừa, chuyển toàn bộ nội dung web thành chuỗi 1 dòng
+        const text = $('body').text().replace(/\s+/g, ' ').toUpperCase();
         let prices = { RON95: null, E5RON92: null, DIESEL: null };
 
-        $('table tbody tr').each((i, el) => {
-            const rowText = $(el).text().toUpperCase();
-            const cols = $(el).find('td');
-            
-            if (cols.length >= 2) {
-                // Xóa mọi ký tự không phải số để lấy giá Vùng 1
-                const priceText = $(cols[1]).text().replace(/[^\d]/g, '');
-                const priceValue = parseInt(priceText);
-                
-                if (priceValue > 10000) { // Đảm bảo là giá trị thực
-                    if ((rowText.includes('RON 95') || rowText.includes('E10')) && !prices.RON95) {
-                        prices.RON95 = priceValue;
-                    } else if ((rowText.includes('E5') || rowText.includes('RON 92')) && !prices.E5RON92) {
-                        prices.E5RON92 = priceValue;
-                    } else if ((rowText.includes('DIESEL') || rowText.includes('DO')) && !prices.DIESEL) {
-                        prices.DIESEL = priceValue;
-                    }
-                }
-            }
-        });
+        // Regex tìm số có định dạng XX.XXX nằm sau tên xăng (Bỏ qua các ký tự gây nhiễu)
+        const ron95Match = text.match(/RON\s*95[^0-9]*([2-3][0-9][.,][0-9]{3})/);
+        if (ron95Match) prices.RON95 = parseInt(ron95Match[1].replace(/[.,]/g, ''));
+
+        const e5Match = text.match(/E5[^0-9]*RON\s*92[^0-9]*([2-3][0-9][.,][0-9]{3})/);
+        if (e5Match) prices.E5RON92 = parseInt(e5Match[1].replace(/[.,]/g, ''));
+
+        const doMatch = text.match(/(?:DIESEL|ĐIÊZEN|DO 0)[^0-9]*([1-2][0-9][.,][0-9]{3})/);
+        if (doMatch) prices.DIESEL = parseInt(doMatch[1].replace(/[.,]/g, ''));
+
         return prices;
     } catch (error) {
         logger.warn(`Lỗi cào Xăng dầu: ${error.message}`);
@@ -143,111 +145,119 @@ async function fetchPetrolimexData() {
     }
 }
 
-// --- CÀO VÀNG SJC (DUAL-LAYER) ---
-async function fetchGoldData() {
-    let prices = { SJC: null, RING: null };
-
-    // Lớp 1: Cố gắng cào từ XML gốc của SJC
+// --- NÔNG SẢN VIỆT NAM (CÀ PHÊ, HỒ TIÊU) ---
+async function fetchAgriData() {
+    let prices = { COFFEE_VN: null, PEPPER_VN: null };
     try {
-        const response = await fetch('https://sjc.com.vn/xml/tygiavang.xml', {
-            headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' },
-            timeout: 8000 
-        });
-        if (response.ok) {
-            const xml = await response.text();
-            const $ = cheerio.load(xml, { xmlMode: true });
-            
-            $('item').each((i, el) => {
-                const typeName = $(el).attr('type') ? $(el).attr('type').toUpperCase() : '';
-                const sellStr = $(el).attr('sell');
-                if (typeName && sellStr) {
-                    const sellPrice = parseFloat(sellStr.replace(/[^\d.]/g, ''));
-                    // Định dạng SJC thường là 85500000 hoặc 85500. Quy chuẩn về Triệu VNĐ
-                    let priceInMillions = sellPrice;
-                    if (sellPrice > 1000000) priceInMillions = sellPrice / 1000000;
-                    else if (sellPrice > 1000) priceInMillions = sellPrice / 1000;
-
-                    if ((typeName.includes('SJC 1L') || typeName === 'VÀNG SJC') && !prices.SJC) {
-                        prices.SJC = priceInMillions;
-                    } else if ((typeName.includes('NHẪN') || typeName.includes('99,99') || typeName.includes('9999')) && !prices.RING) {
-                        prices.RING = priceInMillions;
-                    }
-                }
-            });
+        // Cà phê
+        const resCoffee = await fetch('https://webgia.com/gia-ca-phe/', { headers: { 'User-Agent': 'Mozilla/5.0' }, timeout: 8000 });
+        if (resCoffee.ok) {
+            const $ = cheerio.load(await resCoffee.text());
+            const text = $('body').text().replace(/\s+/g, ' ').toUpperCase();
+            // Lấy giá tham chiếu tại Đắk Lắk (Khoảng 110.000 - 150.000)
+            const match = text.match(/ĐẮK\s*LẮK[^0-9]*([1-9][0-9]{2}[.,][0-9]{3})/);
+            if (match) prices.COFFEE_VN = parseInt(match[1].replace(/[.,]/g, ''));
         }
-    } catch (e) {
-        logger.warn("SJC XML lỗi, chuyển sang lớp dự phòng WebGia...");
-    }
-
-    // Lớp 2: Nếu Lớp 1 thất bại hoặc thiếu dữ liệu, cào dự phòng từ WebGia
-    if (!prices.SJC || !prices.RING) {
-        try {
-            const fbRes = await fetch('https://webgia.com/gia-vang/sjc/', {
-                headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' },
-                timeout: 8000
-            });
-            if (fbRes.ok) {
-                const html = await fbRes.text();
-                const $fb = cheerio.load(html);
-                
-                $fb('table tbody tr').each((i, el) => {
-                    const rowText = $fb(el).text().toUpperCase();
-                    const cols = $fb(el).find('td');
-                    if (cols.length >= 3) {
-                        // Cột 2 thường là giá Bán Ra
-                        const sellText = $fb(cols[2]).text().replace(/[^\d]/g, '');
-                        const sellPrice = parseInt(sellText);
-                        if (sellPrice > 1000000) {
-                            const priceInMillions = sellPrice / 1000000;
-                            if ((rowText.includes('SJC 1L') || rowText.includes('VÀNG SJC')) && !prices.SJC) {
-                                prices.SJC = priceInMillions;
-                            } else if ((rowText.includes('NHẪN') || rowText.includes('99,99')) && !prices.RING) {
-                                prices.RING = priceInMillions;
-                            }
-                        }
-                    }
-                });
-            }
-        } catch (e) {
-            logger.warn(`Lỗi cào Vàng dự phòng: ${e.message}`);
+        
+        // Hồ tiêu
+        const resPepper = await fetch('https://webgia.com/gia-tieu/', { headers: { 'User-Agent': 'Mozilla/5.0' }, timeout: 8000 });
+        if (resPepper.ok) {
+            const $ = cheerio.load(await resPepper.text());
+            const text = $('body').text().replace(/\s+/g, ' ').toUpperCase();
+            // Giá hồ tiêu Đắk Lắk (Khoảng 130.000 - 180.000)
+            const match = text.match(/ĐẮK\s*LẮK[^0-9]*([1-9][0-9]{2}[.,][0-9]{3})/);
+            if (match) prices.PEPPER_VN = parseInt(match[1].replace(/[.,]/g, ''));
         }
+    } catch (error) {
+        logger.warn(`Lỗi cào Nông sản: ${error.message}`);
     }
     return prices;
 }
 
-// --- XỬ LÝ THỊ TRƯỜNG NỘI ĐỊA ---
+// --- VÀNG SJC & VÀNG NHẪN (REGEX) ---
+async function fetchGoldData() {
+    let prices = { SJC: null, RING: null };
+    try {
+        const response = await fetch('https://webgia.com/gia-vang/sjc/', {
+            headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' }, timeout: 8000
+        });
+        if (response.ok) {
+            const html = await response.text();
+            const $ = cheerio.load(html);
+            const text = $('body').text().replace(/\s+/g, ' ').toUpperCase();
+            
+            // Tìm giá SJC (ví dụ 85.000 hoặc 85,000,000). Regex bắt chuỗi 2 chữ số + 3 số 0.
+            const sjcMatch = text.match(/SJC\s*(?:1L|10L)?[^0-9]*([7-9][0-9][.,][0-9]{3})/);
+            if (sjcMatch) {
+                let val = parseInt(sjcMatch[1].replace(/[.,]/g, '')); // 85000
+                if (val > 1000) prices.SJC = val / 1000; // Đổi ra Triệu/lượng
+            }
+
+            const ringMatch = text.match(/(?:NHẪN|99,99|9999)[^0-9]*([7-9][0-9][.,][0-9]{3})/);
+            if (ringMatch) {
+                let val = parseInt(ringMatch[1].replace(/[.,]/g, '')); 
+                if (val > 1000) prices.RING = val / 1000; 
+            }
+        }
+    } catch (e) {
+        logger.warn(`Lỗi cào Vàng: ${e.message}`);
+    }
+    return prices;
+}
+
+// --- TỔNG HỢP VÀ GÁN DỮ LIỆU ---
 async function fetchLocalMarkets(symbolsConfig) {
-    const [petrolimexPrices, goldPrices] = await Promise.all([
+    const [petrolimexPrices, goldPrices, stockPrices, agriPrices] = await Promise.all([
         fetchPetrolimexData(),
-        fetchGoldData()
+        fetchGoldData(),
+        fetchVietnameseStocks(),
+        fetchAgriData()
     ]);
     
     const pPrices = petrolimexPrices || {};
     const gPrices = goldPrices || {};
+    const sPrices = stockPrices || {};
+    const aPrices = agriPrices || {};
 
     return symbolsConfig.map(config => {
         let base = config.base_price || 100;
         let isRealTime = false;
         let sourceName = 'Dữ liệu mô phỏng (Mock)'; 
 
+        // Gán Xăng Dầu
         if (config.api_symbol === 'RON95' && pPrices.RON95) {
-            base = pPrices.RON95; isRealTime = true; sourceName = 'Petrolimex / Báo cáo Thị trường';
+            base = pPrices.RON95; isRealTime = true; sourceName = 'WebGia / Petrolimex';
         } else if (config.api_symbol === 'E5RON92' && pPrices.E5RON92) {
-            base = pPrices.E5RON92; isRealTime = true; sourceName = 'Petrolimex / Báo cáo Thị trường';
+            base = pPrices.E5RON92; isRealTime = true; sourceName = 'WebGia / Petrolimex';
         } else if (config.api_symbol === 'DIESEL' && pPrices.DIESEL) {
-            base = pPrices.DIESEL; isRealTime = true; sourceName = 'Petrolimex / Báo cáo Thị trường';
-        } else if (config.api_symbol === 'SJC' && gPrices.SJC) {
-            base = gPrices.SJC; isRealTime = true; sourceName = 'SJC / Báo cáo Thị trường';
+            base = pPrices.DIESEL; isRealTime = true; sourceName = 'WebGia / Petrolimex';
+        } 
+        // Gán Vàng
+        else if (config.api_symbol === 'SJC' && gPrices.SJC) {
+            base = gPrices.SJC; isRealTime = true; sourceName = 'WebGia / SJC';
         } else if (config.api_symbol === 'RING' && gPrices.RING) {
-            base = gPrices.RING; isRealTime = true; sourceName = 'SJC / Báo cáo Thị trường';
+            base = gPrices.RING; isRealTime = true; sourceName = 'WebGia / SJC';
+        }
+        // Gán Chứng Khoán VN
+        else if (config.api_symbol === 'VN30' && sPrices.VN30) {
+            base = sPrices.VN30; isRealTime = true; sourceName = 'VNDirect API / HOSE';
+        } else if (config.api_symbol === 'UPCOM' && sPrices.UPCOM) {
+            base = sPrices.UPCOM; isRealTime = true; sourceName = 'VNDirect API / HNX';
+        }
+        // Gán Nông sản
+        else if (config.api_symbol === 'COFFEE_VN' && aPrices.COFFEE_VN) {
+            base = aPrices.COFFEE_VN; isRealTime = true; sourceName = 'WebGia / Cà phê nội địa';
+        } else if (config.api_symbol === 'PEPPER_VN' && aPrices.PEPPER_VN) {
+            base = aPrices.PEPPER_VN; isRealTime = true; sourceName = 'WebGia / Hồ tiêu nội địa';
         }
 
+        // Tạo dao động nhỏ để vẽ biểu đồ
         const history = [];
         let currentPrice = base;
         for (let i = 0; i < 6; i++) {
             const fluctuation = (Math.random() * 0.01) - 0.005; 
             if (i === 5 && isRealTime) {
-                currentPrice = base;
+                currentPrice = base; // Mốc hiện tại luôn chính xác với giá trị cào được
             } else {
                 currentPrice = currentPrice * (1 + fluctuation);
             }
@@ -264,8 +274,6 @@ async function fetchLocalMarkets(symbolsConfig) {
 
         return {
             ...config,
-            category: config.category || 'Hàng hóa nội địa',
-            unit: config.unit || '',
             price: finalPrice.toLocaleString('vi-VN'), 
             change_percent: (changePercent > 0 ? '+' : '') + parseFloat(changePercent.toFixed(2)) + '%',
             raw_change: changePercent,
