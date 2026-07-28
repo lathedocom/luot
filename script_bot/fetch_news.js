@@ -27,11 +27,14 @@ const { fetchAllMarketData } = require('./modules/market/index');
 const { fetchAllSocialTrends } = require('./modules/social/index');
 const { generateAllReports } = require('./modules/reports/index');
 
-
-
 const gateway = require('./modules/ai/gateway');
 const { jaccardSimilarity } = require('./modules/utils/text_similarity');
 const { cleanupCache } = require('./modules/cache/cache_manager');
+
+// IMPORT CÁC MODULE MỚI VÀO ĐẦU FILE fetch_news.js
+const { clusterArticlesIntoEvents } = require('./modules/events/cluster_events');
+const { batchEnrichEvents } = require('./modules/events/enrich_events');
+const { computeCountryIndices, computeGSI, computeMomentum, computeTrend, getMapColor, explainCountryColor } = require('./modules/index/compute_indices');
 
 const state = {
     startTime: Date.now(),
@@ -88,170 +91,91 @@ eventBus.on('RSS_FETCHED', async (articles) => {
     }
 });
 
-eventBus.on('EMBEDDING_DONE', (embeddedArticles) => {
-    const clusters = clusterArticles(embeddedArticles);
-    state.clusters = clusters;
-    eventBus.emit('CLUSTER_CREATED', clusters);
+// THAY THẾ KHỐI XỬ LÝ EMBEDDING VÀ CLUSTER CŨ
+eventBus.on('EMBEDDING_DONE', async (embeddedArticles) => {
+    try {
+        // Đọc Events cũ từ DB/File (Lưu file dạng events/active.json theo kiến trúc mới)
+        const EVENT_FILE = path.join(__dirname, '../data/events/active.json');
+        let existingEvents = [];
+        if (fs.existsSync(EVENT_FILE)) {
+            existingEvents = JSON.parse(fs.readFileSync(EVENT_FILE, 'utf-8'));
+        }
+
+        // Bước 3: Gom cụm bằng Toán học thuần túy
+        const { newEvents, updatedEvents } = clusterArticlesIntoEvents(embeddedArticles, existingEvents);
+        
+        // Bước 4: Gọi 1 Batch AI duy nhất cho toàn bộ Event mới
+        logger.info(`Đã gom được ${newEvents.length} Event mới. Đưa vào Batch Enrichment...`);
+        const enrichedNewEvents = await batchEnrichEvents(newEvents);
+        
+        // Gộp Event cũ (đã được update số bài báo) và Event mới (đã có AI summary & Severity)
+        state.currentTopics = [...updatedEvents, ...enrichedNewEvents];
+        state.newTopicsCount = enrichedNewEvents.length;
+
+        // Lưu đè lại file Active Events
+        fs.mkdirSync(path.dirname(EVENT_FILE), { recursive: true });
+        fs.writeFileSync(EVENT_FILE, JSON.stringify(state.currentTopics, null, 2));
+
+        eventBus.emit('CLUSTER_CREATED', state.currentTopics);
+    } catch (e) {
+        eventBus.emit('PIPELINE_ERROR', e);
+    }
 });
 
-eventBus.on('CLUSTER_CREATED', async (clusters) => {
+eventBus.on('CLUSTER_CREATED', async (allEvents) => {
     try {
-        const db = topicStore.readData();
-        state.currentTopics = db.news || [];
-        
-        for (const cluster of clusters) {
-            const entities = extractEntities(cluster.combined_text);
-            const eventKey = generateEventKey(entities);
-            const { action, bestMatch } = evaluateClusterAction(cluster.main_vector, state.currentTopics);
-            
-            if (action === 'SKIP') {
-                logger.info(`[SKIP] Bỏ qua cụm tin trùng lặp cao: ${cluster.articles[0].title}`);
-                continue;
-            }
-            if ((action === 'MERGE' || action === 'LIGHT_UPDATE') && bestMatch) {
-                const updatedTopic = mergeIntoExistingTopic(bestMatch, cluster.articles, cluster.articles[0].title);
-                const index = state.currentTopics.findIndex(t => t.event_key === bestMatch.event_key);
-                if (index !== -1) state.currentTopics[index] = updatedTopic;
-                logger.info(`[${action}] Gộp diễn biến mới thành công vào Topic cũ: ${eventKey}`);
-                continue;
-            }
-            
-            const exactMatch = state.currentTopics.find(t => t.event_key === eventKey);
-            if (exactMatch) {
-                const merged = mergeIntoExistingTopic(exactMatch, cluster.articles, cluster.articles[0].title);
-                const idx = state.currentTopics.findIndex(t => t.event_key === eventKey);
-                if (idx !== -1) state.currentTopics[idx] = merged;
-                logger.info(`[EXACT-KEY] Trùng thực thể với: "${exactMatch.title}". Đã gộp, không tốn AI.`);
-                continue;
-            }
-            
-            const TWO_DAYS_MS = 48 * 60 * 60 * 1000;
-            const recentTopics = state.currentTopics.filter(t => Date.now() - (t.timestamp || Date.now()) < TWO_DAYS_MS);
-            const jaccardMatch = recentTopics.find(t => {
-                const titleSim = jaccardSimilarity(t.title, cluster.articles[0].title);
-                const fullSim = jaccardSimilarity(
-                    t.title + ' ' + (t.short_summary || ''),
-                    cluster.articles[0].title + ' ' + cluster.articles[0].summary
-                );
-                return titleSim >= 0.55 || fullSim >= 0.5;
-            });
-            
-            if (jaccardMatch) {
-                const merged = mergeIntoExistingTopic(jaccardMatch, cluster.articles, cluster.articles[0].title);
-                const idx = state.currentTopics.findIndex(t => t.event_key === jaccardMatch.event_key);
-                if (idx !== -1) state.currentTopics[idx] = merged;
-                logger.info(`[TEXT-DEDUP] Trùng văn bản với: "${jaccardMatch.title}". Đã gộp, không tốn AI.`);
-                continue;
-            }
-            
-            if (action === 'VERIFY_BY_AI' && bestMatch) {
-                const verifyPrompt = `
-[SỰ KIỆN ĐANG XÉT]: ${cluster.articles[0].title} - ${cluster.articles[0].summary}
-[SỰ KIỆN ĐÃ CÓ TRONG DB]: ${bestMatch.title} - ${bestMatch.short_summary}
-Hai sự kiện trên có phải cùng nói về 1 sự việc không? CHỈ TRẢ VỀ JSON:
-{ "is_same_event": true/false }`;
-                try {
-                    const verifyResult = await gateway.executeTask('MATCH_TIMELINE', verifyPrompt);
-                    if (verifyResult && verifyResult.is_same_event) {
-                        const merged = mergeIntoExistingTopic(bestMatch, cluster.articles, cluster.articles[0].title);
-                        const idx = state.currentTopics.findIndex(t => t.event_key === bestMatch.event_key);
-                        if (idx !== -1) state.currentTopics[idx] = merged;
-                        logger.info(`[VERIFY_BY_AI] Xác nhận trùng với: "${bestMatch.title}". Đã gộp.`);
-                        continue;
-                    }
-                } catch (e) {
-                    logger.warn(`[VERIFY_BY_AI] Lỗi xác minh, xử lý như tin mới: ${e.message}`);
-                }
-            }
-            
-            const PRIORITY_FIELDS = ['money','economy','finance','trade','investment','tech','science','politics','policy','law','military'];
-            const ruleCategories = extractCategories(cluster.combined_text);
-            const matchedPriority = ruleCategories.filter(c => PRIORITY_FIELDS.includes(c));
-            
-            if (matchedPriority.length === 0) {
-                logger.info(`[RULE-SKIP] Bỏ qua (ngoài 11 lĩnh vực quan tâm): "${cluster.articles[0].title}"`);
-                continue;
-            }
-            
-            const ruleImportance = calculateImportance(
-                ruleCategories, 
-                extractRegions(cluster.combined_text, cluster.articles[0].source_name)
-            );
-            
-            if (ruleImportance < 75) {
-                logger.info(`[RULE-SKIP] Điểm rule thấp (${ruleImportance}), bỏ qua Tầng AI: "${cluster.articles[0].title}"`);
-                continue;
-            }
-            
-            logger.info(`Đang gọi AI phân tích Topic mới...`);
-            const aiIntelligence = await analyzeClusterMultiDimensional(cluster, eventKey);
-            
-            const valueScore = calculateValueScore({
-                importance: aiIntelligence.importance || ruleImportance,
-                scope: aiIntelligence.scope || 'business',
-                credibilityAvg: getClusterCredibility(cluster),
-                matchedPriorityCount: matchedPriority.length,
-                updateCount: 1 
-            });
+        // Bước 5 & 6 & 7: Tính toán Index Quốc Gia (Toàn bộ bằng Code thuần)
+        logger.info('Bắt đầu tính toán Global Situation Index (GSI) cho từng quốc gia...');
+        const countryGroups = {};
+        allEvents.forEach(ev => {
+            if (!countryGroups[ev.country]) countryGroups[ev.country] = [];
+            countryGroups[ev.country].push(ev);
+        });
 
-            const newTopic = {
-                event_key: eventKey,
-                topic_key: generateTopicKey(eventKey, 'intelligence'),
-                title: aiIntelligence.cluster_title,
-                timestamp: cluster.timestamp || Date.now(),
-                vector: cluster.main_vector,
-                short_summary: aiIntelligence.short_summary,
-                detailed_summary: aiIntelligence.detailed_summary,
-                causes: aiIntelligence.causes,
-                effects: aiIntelligence.effects,
-                affected_groups: aiIntelligence.affected_groups,
-                market_impact: aiIntelligence.market_impact,
-                follow_up: aiIntelligence.follow_up,
-                significance: aiIntelligence.significance,
-                unknowns: aiIntelligence.unknowns,
-                confidence_note: aiIntelligence.confidence_note,
-                scenarios: aiIntelligence.scenarios,
-                
-                importance: aiIntelligence.importance || ruleImportance,
-                categories: ruleCategories,
-                regions: extractRegions(cluster.combined_text, cluster.articles[0].source_name),
-                
-                // [ĐÃ SỬA] Bổ sung lưu mảng thực thể vào database để vẽ Graph
-                entities: entities,
+        // Tải lịch sử GSI để tính Trend
+        const HISTORY_DIR = path.join(__dirname, '../data/history/gsi');
+        fs.mkdirSync(HISTORY_DIR, { recursive: true });
 
-                value_score: valueScore,
-                scope: aiIntelligence.scope || 'business',
-                update_count: 1,
-                last_updated: Date.now(),
-                sources: cluster.articles.map(a => ({ 
-                    url: a.link || a.url, 
-                    source_name: a.source_name, 
-                    source_logo: a.source_logo,
-                    source_credibility: a.source_credibility || 5
-                }))
+        const mapData = {}; // Chứa dữ liệu sẽ xuất ra cho Frontend
+        const nowStr = new Date().toISOString();
+
+        for (const country in countryGroups) {
+            const cEvents = countryGroups[country];
+            const indices = computeCountryIndices(cEvents);
+            
+            // Giả lập lấy event yesterday từ history (hiện tại gán cứng để khởi tạo)
+            const momentum = computeMomentum(country, cEvents, cEvents); 
+            const gsi = computeGSI(indices, momentum);
+
+            // Đọc lịch sử để tính Trend
+            const histFile = path.join(HISTORY_DIR, `${country}.json`);
+            let hist = [];
+            if (fs.existsSync(histFile)) hist = JSON.parse(fs.readFileSync(histFile, 'utf-8'));
+            const trend = computeTrend(hist.map(h => h.gsi));
+            hist.push({ date: nowStr, gsi: gsi });
+            if (hist.length > 5) hist = hist.slice(-5); // Giữ 5 mốc
+            fs.writeFileSync(histFile, JSON.stringify(hist));
+
+            // Sinh dữ liệu giải thích màu (Tái sử dụng text của AI, không tốn API)
+            const prevIndices = hist.length > 1 ? hist[hist.length-2].indices : indices;
+            const explanation = explainCountryColor(country, cEvents, indices, prevIndices);
+
+            mapData[country] = {
+                gsi: gsi,
+                indices: indices,
+                ...getMapColor(gsi, trend), // level (green/yellow...), label, trend_icon
+                explanation: explanation
             };
-            
-            state.currentTopics.push(newTopic);
-            state.newTopicsCount++;
-            
-            const eventDate = newTopic.timestamp ? new Date(newTopic.timestamp).toISOString() : new Date().toISOString();
-            const eventUrl = (cluster.articles && cluster.articles.length > 0)
-                ? (cluster.articles[0].link || cluster.articles[0].url)
-                : "#";
-            const eventCategories = (cluster.articles[0] && cluster.articles[0].categories) || ["Tin tức chung"];
-            const eventVector = newTopic.vector;
-            
-            await processEventIntoTimeline(
-                newTopic.event_key,
-                newTopic.title,
-                newTopic.short_summary,
-                eventDate,
-                eventCategories,
-                eventVector,
-                eventUrl
-            );
         }
-        eventBus.emit('TOPIC_UPDATED', state.currentTopics);
+
+        // Lưu JSON tĩnh cho frontend (indices_latest.json)
+        const MAP_FILE = path.join(__dirname, '../data/countries/indices_latest.json');
+        fs.mkdirSync(path.dirname(MAP_FILE), { recursive: true });
+        fs.writeFileSync(MAP_FILE, JSON.stringify(mapData, null, 2));
+
+        logger.success(`Đã cập nhật bản đồ Global Situation cho ${Object.keys(mapData).length} quốc gia.`);
+        
+        eventBus.emit('TOPIC_UPDATED', allEvents);
     } catch (e) {
         eventBus.emit('PIPELINE_ERROR', e);
     }
