@@ -1,61 +1,138 @@
 {
-  "evt_general_1785211418445": {
-    "created_at": 1785211421061,
-    "expires_at": 1787803421061,
+  "evt_34bdc327": {
+    "created_at": 1785212245043,
+    "expires_at": 1787804245043,
     "version": "4.5",
-    "checksum": "79f115cf5da416f46430cb4603ebd20c",
+    "checksum": "5d471728fd3a6aea0947074134aebcd5",
     "data": {
-      "cluster_title": "Giá Vàng Giảm",
-      "short_summary": "Giá vàng giảm do lo ngại về việc tăng lãi suất ở Mỹ và tình hình căng thẳng ở Trung Đông.",
-      "detailed_summary": "Giá vàng ghi nhận mức giảm do tâm lý thận trọng của các nhà giao dịch trước thềm cuộc họp quan trọng về lãi suất tại Mỹ. Đồng thời, việc căng thẳng tại Trung Đông tạm thời hạ nhiệt đã làm giảm bớt lo ngại về lạm phát, khiến nhu cầu trú ẩn an toàn vào vàng sụt giảm.",
+      "cluster_title": "Sự kiện bán chip sâu sắc hơn",
+      "short_summary": "Sự kiện bán chip toàn cầu sâu sắc hơn do lo ngại cạnh tranh từ Trung Quốc và tăng trưởng công nghệ trí tuệ nhân tạo.",
+      "detailed_summary": "Thị trường chứng khoán quốc tế, đặc biệt là tại Nhật Bản và Hàn Quốc, chứng kiến đợt bán tháo cổ phiếu bán dẫn. Nguyên nhân bắt nguồn từ các dấu hiệu cho thấy Trung Quốc đang đạt được tiến bộ trong sản xuất chip tiên tiến, cùng với những hoài nghi về tính bền vững của việc chi tiêu ồ ạt cho trí tuệ nhân tạo (AI), gây áp lực tiêu cực lên tâm lý nhà đầu tư và cổ phiếu của các tập đoàn lớn như SK Hynix và Samsung.",
       "causes": [
-        "Kỳ vọng về quyết định điều chỉnh lãi suất của Mỹ",
-        "Sự giảm bớt căng thẳng địa chính trị tại khu vực Trung Đông"
+        "Trung Quốc đạt tiến bộ trong sản xuất chip công nghệ cao",
+        "Nhà đầu tư lo ngại về hiệu quả chi tiêu trong lĩnh vực trí tuệ nhân tạo",
+        "Sự cạnh tranh gay gắt từ các nhà sản xuất chip Trung Quốc"
       ],
       "effects": [
-        "Giá vàng trên thị trường quốc tế sụt giảm",
-        "Áp lực tâm lý đối với các nhà đầu tư kim loại quý"
+        "Cổ phiếu ngành bán dẫn toàn cầu bị bán tháo",
+        "Chỉ số chứng khoán tại Nhật Bản và Hàn Quốc sụt giảm",
+        "Một số mã cổ phiếu tại Hàn Quốc bị tạm dừng giao dịch"
       ],
       "affected_groups": [
-        "Các nhà đầu tư vàng",
-        "Các tổ chức tài chính quốc tế",
-        "Các thị trường hàng hóa"
+        "Nhà đầu tư chứng khoán toàn cầu",
+        "Các tập đoàn sản xuất chip (SK Hynix, Samsung, Nvidia)",
+        "Các thị trường chứng khoán tại khu vực Đông Á"
       ],
-      "market_impact": "Thị trường vàng chịu áp lực giảm điểm do dòng tiền chuyển dịch khỏi tài sản trú ẩn an toàn.",
+      "market_impact": "Thị trường chip toàn cầu đang đối mặt với sự biến động lớn và làn sóng rút vốn, gây áp lực mạnh lên các chỉ số chứng khoán chủ chốt tại châu Á.",
       "follow_up": "",
-      "significance": "Sự kiện phản ánh sự nhạy cảm của thị trường kim loại quý trước các quyết định chính sách tiền tệ và biến động địa chính trị toàn cầu.",
+      "significance": "Sự kiện phản ánh nỗi lo ngại của nhà đầu tư về việc vị thế thống trị của các hãng chip truyền thống đang bị thách thức, đồng thời đặt câu hỏi về ngưỡng bão hòa của cơn sốt đầu tư vào trí tuệ nhân tạo.",
       "unknowns": [
-        "Mức độ thay đổi cụ thể của lãi suất Mỹ trong quyết định sắp tới",
-        "Tính bền vững của giai đoạn tạm dừng xung đột tại Trung Đông"
+        "Mức độ thực tế của tiến bộ kỹ thuật trong ngành chip tại Trung Quốc",
+        "Khả năng phục hồi của niềm tin nhà đầu tư đối với cổ phiếu AI trong ngắn hạn"
       ],
-      "confidence_note": "Thông tin dựa trên diễn biến thị trường hiện tại, độ tin cậy cao.",
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên dữ liệu biến động thực tế từ thị trường chứng khoán.",
       "scenarios": [
         {
-          "text": "Giá vàng tiếp tục giảm nếu Mỹ duy trì hoặc tăng lãi suất và tình hình Trung Đông ổn định.",
+          "text": "Thị trường tiếp tục biến động mạnh khi nhà đầu tư chờ đợi kết quả kinh doanh quý tiếp theo của các hãng chip lớn.",
           "likelihood": "cao"
         },
         {
-          "text": "Giá vàng tăng đột biến nếu xuất hiện bất ngờ trong chính sách lãi suất hoặc căng thẳng quân sự leo thang trở lại.",
+          "text": "Sự can thiệp của các chính phủ nhằm ổn định thị trường tài chính trước tình trạng bán tháo kéo dài.",
           "likelihood": "trung bình"
         }
       ],
       "entity_relations": [
         {
-          "source": "Quyết định lãi suất Mỹ",
+          "source": "Sự tiến bộ chip của Trung Quốc",
+          "target": "Cổ phiếu bán dẫn toàn cầu",
+          "relation_type": "cause_effect",
+          "label": "Gây áp lực bán tháo"
+        },
+        {
+          "source": "Ngành sản xuất chip Trung Quốc",
+          "target": "Các hãng chip Hàn Quốc",
+          "relation_type": "conflict",
+          "label": "Cạnh tranh thị phần gay gắt"
+        },
+        {
+          "source": "Lo ngại về đầu tư AI",
+          "target": "Nvidia",
+          "relation_type": "cause_effect",
+          "label": "Ảnh hưởng đến tâm lý nhà đầu tư"
+        }
+      ],
+      "entities": [
+        "Nvidia Corp.",
+        "SK Hynix",
+        "Samsung",
+        "Trung Quốc",
+        "Hàn Quốc"
+      ],
+      "keywords": [
+        "sự kiện bán chip",
+        "tập đoàn Nvidia",
+        "công nghệ trí tuệ nhân tạo"
+      ],
+      "importance": 90,
+      "scope": "global"
+    }
+  },
+  "evt_general_1785212250918": {
+    "created_at": 1785212260604,
+    "expires_at": 1787804260604,
+    "version": "4.5",
+    "checksum": "ba808a3dcd425ace0bf1547edd83d812",
+    "data": {
+      "cluster_title": "Giá Vàng Giảm",
+      "short_summary": "Giá vàng giảm do lo ngại về việc tăng lãi suất ở Mỹ và sự gián đoạn ở Trung Đông.",
+      "detailed_summary": "Giá vàng ghi nhận xu hướng giảm khi các nhà đầu tư thận trọng chờ đợi quyết định về lãi suất của Cục Dự trữ Liên bang Mỹ (Fed) trong tuần này. Bên cạnh đó, việc căng thẳng tại Trung Đông tạm thời hạ nhiệt đã làm giảm nhu cầu trú ẩn an toàn, khiến áp lực bán trên thị trường vàng gia tăng.",
+      "causes": [
+        "Kỳ vọng về việc Fed tăng lãi suất",
+        "Sự giảm bớt căng thẳng quân sự tại Trung Đông"
+      ],
+      "effects": [
+        "Giá vàng sụt giảm",
+        "Áp lực tâm lý đối với giới đầu tư kim loại quý"
+      ],
+      "affected_groups": [
+        "Các nhà đầu tư vàng",
+        "Thị trường tài chính toàn cầu"
+      ],
+      "market_impact": "Thị trường kim loại quý chịu áp lực điều chỉnh giảm do dòng vốn chuyển dịch khi lãi suất tiềm năng tăng cao.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh tác động kép từ chính sách tiền tệ của Mỹ và các biến động địa chính trị đối với hành vi của nhà đầu tư vàng.",
+      "unknowns": [
+        "Quyết định chính thức về mức lãi suất của Fed",
+        "Diễn biến lâu dài của tình hình an ninh tại Trung Đông"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao, dựa trên các biến động thị trường thực tế.",
+      "scenarios": [
+        {
+          "text": "Giá vàng tiếp tục giảm nếu Fed giữ lập trường tăng lãi suất mạnh mẽ.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Giá vàng phục hồi nếu tình hình Trung Đông tái leo thang căng thẳng đột ngột.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Quyết định lãi suất của Fed",
           "target": "Giá vàng",
           "relation_type": "cause_effect",
-          "label": "Ảnh hưởng trực tiếp đến biến động giá"
+          "label": "Tác động trực tiếp làm thay đổi giá trị vàng"
         },
         {
           "source": "Căng thẳng Trung Đông",
           "target": "Giá vàng",
           "relation_type": "cause_effect",
-          "label": "Tác động đến nhu cầu trú ẩn an toàn"
+          "label": "Yếu tố địa chính trị ảnh hưởng đến nhu cầu trú ẩn"
         }
       ],
       "entities": [
         "Lãi suất",
-        "Vàng"
+        "Trung Đông"
       ],
       "keywords": [
         "Vàng",
