@@ -1,61 +1,61 @@
 {
-  "evt_general_1785210927535": {
-    "created_at": 1785210930180,
-    "expires_at": 1787802930180,
+  "evt_general_1785211418445": {
+    "created_at": 1785211421061,
+    "expires_at": 1787803421061,
     "version": "4.5",
-    "checksum": "54a242a47205dd00ab76301bc1b4b4d0",
+    "checksum": "79f115cf5da416f46430cb4603ebd20c",
     "data": {
       "cluster_title": "Giá Vàng Giảm",
-      "short_summary": "Giá vàng giảm do lo ngại về việc tăng lãi suất ở Mỹ và sự gián đoạn ở Trung Đông.",
-      "detailed_summary": "Giá vàng đang ghi nhận xu hướng giảm trước thềm quyết định quan trọng về lãi suất của Cục Dự trữ Liên bang Mỹ (FED) trong tuần này. Đồng thời, việc căng thẳng tại Trung Đông tạm thời hạ nhiệt đã làm giảm nhu cầu trú ẩn an toàn, từ đó gây áp lực lên giá kim loại quý.",
+      "short_summary": "Giá vàng giảm do lo ngại về việc tăng lãi suất ở Mỹ và tình hình căng thẳng ở Trung Đông.",
+      "detailed_summary": "Giá vàng ghi nhận mức giảm do tâm lý thận trọng của các nhà giao dịch trước thềm cuộc họp quan trọng về lãi suất tại Mỹ. Đồng thời, việc căng thẳng tại Trung Đông tạm thời hạ nhiệt đã làm giảm bớt lo ngại về lạm phát, khiến nhu cầu trú ẩn an toàn vào vàng sụt giảm.",
       "causes": [
-        "Kỳ vọng về việc tăng lãi suất của Mỹ",
-        "Sự lắng dịu tạm thời của xung đột tại Trung Đông"
+        "Kỳ vọng về quyết định điều chỉnh lãi suất của Mỹ",
+        "Sự giảm bớt căng thẳng địa chính trị tại khu vực Trung Đông"
       ],
       "effects": [
-        "Giá vàng sụt giảm trên thị trường quốc tế",
-        "Áp lực lên tâm lý nhà đầu tư vàng"
+        "Giá vàng trên thị trường quốc tế sụt giảm",
+        "Áp lực tâm lý đối với các nhà đầu tư kim loại quý"
       ],
       "affected_groups": [
-        "Nhà đầu tư kim loại quý",
+        "Các nhà đầu tư vàng",
         "Các tổ chức tài chính quốc tế",
-        "Thị trường tài chính toàn cầu"
+        "Các thị trường hàng hóa"
       ],
-      "market_impact": "Thị trường vàng đang chịu áp lực điều chỉnh giảm do các yếu tố vĩ mô tác động trái chiều đến tâm lý nhà đầu tư.",
+      "market_impact": "Thị trường vàng chịu áp lực giảm điểm do dòng tiền chuyển dịch khỏi tài sản trú ẩn an toàn.",
       "follow_up": "",
-      "significance": "Sự kiện phản ánh phản ứng nhạy cảm của nhà đầu tư đối với chính sách tiền tệ của Mỹ và biến động địa chính trị, vốn là những nhân tố then chốt dẫn dắt giá vàng.",
+      "significance": "Sự kiện phản ánh sự nhạy cảm của thị trường kim loại quý trước các quyết định chính sách tiền tệ và biến động địa chính trị toàn cầu.",
       "unknowns": [
-        "Quyết định chính thức về mức lãi suất của Cục Dự trữ Liên bang Mỹ",
-        "Thời hạn duy trì sự ổn định tại khu vực Trung Đông"
+        "Mức độ thay đổi cụ thể của lãi suất Mỹ trong quyết định sắp tới",
+        "Tính bền vững của giai đoạn tạm dừng xung đột tại Trung Đông"
       ],
-      "confidence_note": "Thông tin dựa trên diễn biến thực tế của thị trường tài chính, độ tin cậy cao.",
+      "confidence_note": "Thông tin dựa trên diễn biến thị trường hiện tại, độ tin cậy cao.",
       "scenarios": [
         {
-          "text": "Giá vàng tiếp tục giảm nếu Cục Dự trữ Liên bang Mỹ quyết định tăng lãi suất như kỳ vọng.",
+          "text": "Giá vàng tiếp tục giảm nếu Mỹ duy trì hoặc tăng lãi suất và tình hình Trung Đông ổn định.",
           "likelihood": "cao"
         },
         {
-          "text": "Giá vàng đảo chiều tăng nếu căng thẳng tại Trung Đông leo thang trở lại bất chấp chính sách lãi suất.",
+          "text": "Giá vàng tăng đột biến nếu xuất hiện bất ngờ trong chính sách lãi suất hoặc căng thẳng quân sự leo thang trở lại.",
           "likelihood": "trung bình"
         }
       ],
       "entity_relations": [
         {
-          "source": "Chính sách lãi suất Mỹ",
+          "source": "Quyết định lãi suất Mỹ",
           "target": "Giá vàng",
           "relation_type": "cause_effect",
-          "label": "Tăng lãi suất gây áp lực giảm giá vàng"
+          "label": "Ảnh hưởng trực tiếp đến biến động giá"
         },
         {
-          "source": "Xung đột Trung Đông",
+          "source": "Căng thẳng Trung Đông",
           "target": "Giá vàng",
           "relation_type": "cause_effect",
-          "label": "Xung đột lắng dịu làm giảm nhu cầu trú ẩn vào vàng"
+          "label": "Tác động đến nhu cầu trú ẩn an toàn"
         }
       ],
       "entities": [
         "Lãi suất",
-        "Trung Đông"
+        "Vàng"
       ],
       "keywords": [
         "Vàng",
