@@ -12,7 +12,7 @@ function formatBriefingText(text) {
         if (!trimmed) return;
 
         const isHeading = /^[\uD83C-\uDBFF\uDC00-\uDFFF]/.test(trimmed) || 
-                          /^([A-ZĐÁÀẢÃẠÂẤẦẨẪẬĂẮẰẲẴẶÉÈẺẼẸÊẾỀỂỄỆÍÌỈĨỊÓÒỎÕỌÔỐỒỔỖỘƠỚỜỞỠỢÚÙỦŨỤƯỨỪỬỮỰÝỲỶỸỴ\s]+):/i.test(trimmed);
+                          /^([A-ZĐÁÀẢÃẠÂẤẦẨẪẬĂẮẰẲẴẶÉÈẺẼẸÊẾỀỂỄỆÍÌỈĨỊÓÒỎÕỌÔỐỒỔỖỘƠỚỜỞỠỢÚÙỦŨỤƯỨỪỬỮỰÝỲỶỸỴ\s]+):/.test(trimmed);
 
         if (isHeading) {
             html += `
