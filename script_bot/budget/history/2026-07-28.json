@@ -1798,5 +1798,15 @@
     "completionTokens": 671,
     "latency": 13741,
     "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-07-28T16:31:13.664Z",
+    "model": "gemini-embedding-2",
+    "provider": "google",
+    "task": "BATCH_EMBEDDING",
+    "promptTokens": 669,
+    "completionTokens": 0,
+    "latency": 840,
+    "status": "SUCCESS"
   }
 ]
