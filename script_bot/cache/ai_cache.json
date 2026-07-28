@@ -727,5 +727,463 @@
       "importance": 80,
       "scope": "national"
     }
+  },
+  "evt_b95c9332": {
+    "created_at": 1785244645659,
+    "expires_at": 1787836645659,
+    "version": "4.5",
+    "checksum": "4b9f7e66a70124b2ac9f0b2980a06f36",
+    "data": {
+      "cluster_title": "Sự kiện AI gây lo ngại",
+      "short_summary": "Sự kiện AI gây lo ngại khi giá trị bảo vệ nợ của Nvidia tăng vọt, chứng kiến sự sụt giảm của cổ phiếu công nghệ và dự báo tiếp tục giảm giá.",
+      "detailed_summary": "Thị trường chứng khoán công nghệ toàn cầu đang chịu áp lực bán tháo mạnh mẽ do lo ngại về triển vọng của lĩnh vực trí tuệ nhân tạo (AI). Đáng chú ý, chi phí bảo hiểm rủi ro vỡ nợ cho Nvidia đã tăng lên mức cao kỷ lục, phản ánh sự bất an của giới đầu tư. Đà sụt giảm này lan rộng từ các thị trường khu vực như Hàn Quốc sang Phố Wall, tạo ra xu hướng tiêu cực đối với các nhà sản xuất chip.",
+      "causes": [
+        "Tâm lý lo ngại bao trùm thị trường sau giai đoạn kỳ vọng quá mức vào AI",
+        "Áp lực bán tháo cổ phiếu công nghệ tại các thị trường châu Á, điển hình là Hàn Quốc",
+        "Sự gia tăng chi phí bảo hiểm rủi ro đối với Nvidia"
+      ],
+      "effects": [
+        "Cổ phiếu ngành bán dẫn bị bán tháo trên diện rộng",
+        "Sự suy yếu của chỉ số công nghệ tại các sàn giao dịch lớn",
+        "Gia tăng rủi ro tài chính đối với các doanh nghiệp đầu ngành chip"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư chứng khoán công nghệ",
+        "Các doanh nghiệp sản xuất chip bán dẫn",
+        "Các quỹ đầu tư tập trung vào lĩnh vực AI"
+      ],
+      "market_impact": "Thị trường đối mặt với làn sóng rút vốn và điều chỉnh giá mạnh mẽ đối với nhóm cổ phiếu công nghệ vốn hóa lớn.",
+      "follow_up": "",
+      "significance": "Sự kiện này đánh dấu bước ngoặt về tâm lý thị trường, từ trạng thái hưng phấn sang thận trọng cực độ đối với bong bóng cổ phiếu AI, báo hiệu đợt điều chỉnh sâu hơn trong tương lai gần.",
+      "unknowns": [
+        "Thời điểm dòng tiền ổn định trở lại và mức đáy của cổ phiếu công nghệ",
+        "Tác động lan tỏa lâu dài đối với kế hoạch chi tiêu vốn của các tập đoàn công nghệ lớn"
+      ],
+      "confidence_note": "Thông tin dựa trên biến động thực tế của thị trường tài chính, có độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Đà bán tháo tiếp tục kéo dài khi các nhà đầu tư tổ chức đồng loạt cắt lỗ",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Thị trường ổn định trở lại nhờ các báo cáo kết quả kinh doanh tích cực của các tập đoàn lớn",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Sự sụt giảm thị trường Hàn Quốc",
+          "target": "Thị trường chứng khoán Phố Wall",
+          "relation_type": "cause_effect",
+          "label": "Tạo áp lực tâm lý tiêu cực dây chuyền"
+        },
+        {
+          "source": "Nhà đầu tư",
+          "target": "Nvidia",
+          "relation_type": "conflict",
+          "label": "Bán tháo cổ phiếu và tăng cường mua bảo hiểm vỡ nợ"
+        },
+        {
+          "source": "Kỳ vọng về AI",
+          "target": "Cổ phiếu ngành bán dẫn",
+          "relation_type": "cause_effect",
+          "label": "Là nguyên nhân thúc đẩy làn sóng bán tháo khi niềm tin suy giảm"
+        }
+      ],
+      "entities": [
+        "Nvidia",
+        "Wall Street"
+      ],
+      "keywords": [
+        "AI",
+        "công nghệ",
+        "chứng khoán"
+      ],
+      "importance": 90,
+      "scope": "global"
+    }
+  },
+  "evt_796aa23f": {
+    "created_at": 1785244657370,
+    "expires_at": 1787836657370,
+    "version": "4.5",
+    "checksum": "a410b71351505ca9d7a2725405252d15",
+    "data": {
+      "cluster_title": "Invesco và Rathbones giảm đầu tư vào trái phiếu Anh",
+      "short_summary": "Các nhà quản lý quỹ bao gồm Invesco và Rathbones đã giảm đầu tư vào trái phiếu Anh do lo ngại lạm phát và bất ổn chính trị.",
+      "detailed_summary": "Các công ty quản lý quỹ bao gồm Invesco, Ninety One, Rathbones và W1M Group đã cắt giảm đầu tư vào nợ công của Vương quốc Anh trong năm nay. Động thái này xuất phát từ sự thiếu niềm tin vào thị trường khi đối mặt với rủi ro lạm phát gia tăng và tình trạng bất ổn chính trị trong nước, buộc các nhà đầu tư phải tìm kiếm kênh phân bổ vốn thay thế.",
+      "causes": [
+        "Lo ngại về tình trạng lạm phát tại Anh",
+        "Sự bất ổn trong môi trường chính trị nội địa"
+      ],
+      "effects": [
+        "Giảm mức độ nắm giữ trái phiếu chính phủ Anh của các quỹ đầu tư",
+        "Tạo áp lực lên niềm tin của thị trường tài chính đối với nợ công Anh"
+      ],
+      "affected_groups": [
+        "Chính phủ Anh",
+        "Thị trường trái phiếu Anh",
+        "Các nhà đầu tư tổ chức"
+      ],
+      "market_impact": "Gây sức ép tiêu cực lên khả năng huy động vốn của chính phủ và làm tăng lợi suất trái phiếu chính phủ Anh.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh tâm lý thận trọng của giới đầu tư quốc tế trước các rủi ro vĩ mô và chính trị kéo dài tại Anh, làm giảm sức hấp dẫn của tài sản nợ công.",
+      "unknowns": [
+        "Tổng giá trị tài sản bị thoái vốn khỏi trái phiếu chính phủ Anh",
+        "Các quốc gia hoặc loại tài sản cụ thể mà các quỹ này chuyển hướng đầu tư tới"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao, dựa trên dữ liệu báo cáo về hoạt động của các quỹ đầu tư lớn.",
+      "scenarios": [
+        {
+          "text": "Các quỹ đầu tư tiếp tục giảm tỷ trọng nắm giữ nếu lạm phát không hạ nhiệt.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Chính phủ Anh đưa ra các biện pháp ổn định kinh tế giúp khôi phục niềm tin của nhà đầu tư.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Lạm phát và bất ổn chính trị",
+          "target": "Invesco, Rathbones, Ninety One, W1M Group",
+          "relation_type": "cause_effect",
+          "label": "Nguyên nhân khiến các quỹ thoái vốn"
+        },
+        {
+          "source": "Invesco, Rathbones, Ninety One, W1M Group",
+          "target": "Trái phiếu chính phủ Anh",
+          "relation_type": "conflict",
+          "label": "Giảm tỷ trọng đầu tư"
+        }
+      ],
+      "entities": [
+        "Invesco Ltd.",
+        "Ninety One UK Ltd.",
+        "Rathbones Asset Management Ltd.",
+        "W1M Group Ltd."
+      ],
+      "keywords": [
+        "Invesco",
+        "Rathbones",
+        "trái phiếu Anh",
+        "inflation",
+        "instability"
+      ],
+      "importance": 80,
+      "scope": "national"
+    }
+  },
+  "evt_7ea5248e": {
+    "created_at": 1785244669398,
+    "expires_at": 1787836669398,
+    "version": "4.5",
+    "checksum": "04df063b45304860f8b894a6ed32cf1f",
+    "data": {
+      "cluster_title": "Trump gặp Zelenskyy và Netanyahu",
+      "short_summary": "Tổng thống Trump sắp gặp lãnh đạo Ukraine và Israel, đồng thời những người nắm giữ tình trạng bảo vệ tạm thời có thể phải đối mặt với việc trục xuất.",
+      "detailed_summary": "Tổng thống Trump dự kiến tổ chức các cuộc gặp riêng biệt với Tổng thống Ukraine Volodymyr Zelenskyy và Thủ tướng Israel Benjamin Netanyahu trong hôm nay. Cùng thời điểm, thông tin về nguy cơ trục xuất đối với những người đang cư trú dưới diện Tình trạng Bảo vệ Tạm thời (TPS) cũng được đưa ra.",
+      "causes": [
+        "Sự thay đổi trong chính sách ưu tiên đối ngoại của chính quyền Trump.",
+        "Việc điều chỉnh các quy định về quản lý nhập cư và tình trạng pháp lý tạm thời."
+      ],
+      "effects": [
+        "Khả năng thay đổi đáng kể trong chiến lược ngoại giao đối với xung đột tại Ukraine và Trung Đông.",
+        "Sự bất ổn về tâm lý và tình trạng cư trú của những người đang hưởng quy chế bảo vệ tạm thời tại Hoa Kỳ."
+      ],
+      "affected_groups": [
+        "Người sở hữu Tình trạng Bảo vệ Tạm thời (TPS) tại Hoa Kỳ.",
+        "Chính phủ Ukraine và Israel.",
+        "Cộng đồng người nhập cư."
+      ],
+      "market_impact": "Các cuộc hội đàm có thể ảnh hưởng đến tâm lý thị trường liên quan đến viện trợ quân sự và ổn định địa chính trị tại các vùng xung đột, từ đó tác động đến chỉ số rủi ro.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh cách tiếp cận ngoại giao trực tiếp của Tổng thống Trump đối với các điểm nóng quốc tế song hành với việc thắt chặt chính sách nhập cư nội địa.",
+      "unknowns": [
+        "Nội dung chi tiết và kết quả cụ thể sau cuộc gặp giữa Trump với Zelenskyy và Netanyahu.",
+        "Thời gian và phạm vi cụ thể của việc trục xuất đối với những người giữ quy chế TPS."
+      ],
+      "confidence_note": "Thông tin mang tính chất xác nhận kế hoạch gặp mặt và dự báo chính sách, độ tin cậy cao về lịch trình nhưng chưa rõ kết quả thực thi.",
+      "scenarios": [
+        {
+          "text": "Các cuộc đàm phán dẫn đến sự thay đổi lộ trình viện trợ cho Ukraine và Israel.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Chính quyền ban hành lệnh hành pháp cụ thể về việc hủy bỏ quy chế TPS cho một số nhóm người nhập cư.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Trump",
+          "target": "Volodymyr Zelenskyy",
+          "relation_type": "cooperation",
+          "label": "Hội đàm song phương về chính sách đối ngoại"
+        },
+        {
+          "source": "Trump",
+          "target": "Benjamin Netanyahu",
+          "relation_type": "cooperation",
+          "label": "Hội đàm song phương về chính sách đối ngoại"
+        },
+        {
+          "source": "Chính quyền Trump",
+          "target": "Người giữ quy chế TPS",
+          "relation_type": "conflict",
+          "label": "Xem xét chính sách trục xuất"
+        }
+      ],
+      "entities": [
+        "Donald Trump",
+        "Volodymyr Zelenskyy",
+        "Benjamin Netanyahu"
+      ],
+      "keywords": [
+        "Trump",
+        "Zelenskyy",
+        "Netanyahu",
+        "TPS",
+        "đảo quốc"
+      ],
+      "importance": 80,
+      "scope": "global"
+    }
+  },
+  "evt_4e082ecc": {
+    "created_at": 1785244681418,
+    "expires_at": 1787836681418,
+    "version": "4.5",
+    "checksum": "9f9e29c05b2229a7576802ba87947975",
+    "data": {
+      "cluster_title": "Vụ việc kiểm toán Colombia về trái phiếu",
+      "short_summary": "Vụ việc kiểm toán Colombia phát hiện ra rằng một vụ trao đổi trái phiếu năm tháng 10 có thể vi phạm nguyên tắc hiến pháp bằng cách chuyển chi phí tài chính sang các cơ quan hành chính tương lai để đổi lấy sự cứu trợ ngắn hạn về mặt tài chính.",
+      "detailed_summary": "Cơ quan kiểm toán nhà nước Colombia đã công bố kết quả điều tra về một đợt hoán đổi trái phiếu chính phủ diễn ra vào tháng 10 năm trước. Báo cáo chỉ ra rằng giao dịch này có khả năng đi ngược lại các quy tắc hiến pháp, do việc chuyển dịch chi phí tài chính sang cho các chính quyền kế nhiệm nhằm đổi lấy nguồn thanh khoản ngắn hạn.",
+      "causes": [
+        "Áp lực cần nguồn thanh khoản ngắn hạn của chính phủ",
+        "Sử dụng chiến lược hoán đổi trái phiếu để trì hoãn nghĩa vụ tài chính"
+      ],
+      "effects": [
+        "Gia tăng gánh nặng tài chính lên các chính quyền tương lai",
+        "Rủi ro pháp lý và tranh cãi về tính hợp hiến đối với các quyết định tài chính của chính phủ",
+        "Nguy cơ ảnh hưởng đến uy tín quản lý ngân sách nhà nước"
+      ],
+      "affected_groups": [
+        "Chính phủ Colombia",
+        "Các chính quyền kế nhiệm",
+        "Nhà đầu tư trái phiếu"
+      ],
+      "market_impact": "Gây bất ổn tâm lý nhà đầu tư do nghi vấn về tính minh bạch và kỷ luật ngân sách của chính phủ Colombia.",
+      "follow_up": "",
+      "significance": "Sự kiện này làm nổi bật xung đột giữa nhu cầu thanh khoản cấp bách và trách nhiệm tuân thủ hiến pháp trong quản lý tài chính quốc gia.",
+      "unknowns": [
+        "Các biện pháp khắc phục hoặc hình phạt cụ thể từ cơ quan chức năng",
+        "Phản ứng chính thức từ phía chính quyền hiện tại về báo cáo kiểm toán"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên báo cáo từ văn phòng kiểm toán quốc gia.",
+      "scenarios": [
+        {
+          "text": "Chính phủ phải điều chỉnh lại các cam kết tài chính hoặc chịu sự giám sát chặt chẽ hơn từ cơ quan lập pháp.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Sự việc dẫn đến làn sóng kiện tụng pháp lý kéo dài làm suy giảm niềm tin của thị trường tài chính.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Chính phủ Colombia",
+          "target": "Văn phòng kiểm toán Colombia",
+          "relation_type": "conflict",
+          "label": "Mâu thuẫn về tính hợp pháp trong nghiệp vụ hoán đổi trái phiếu"
+        },
+        {
+          "source": "Thương vụ hoán đổi trái phiếu",
+          "target": "Các chính quyền kế nhiệm",
+          "relation_type": "cause_effect",
+          "label": "Gia tăng gánh nặng tài chính cho tương lai"
+        }
+      ],
+      "entities": [
+        "Colombia",
+        "chính phủ Colombia",
+        "trái phiếu"
+      ],
+      "keywords": [
+        "Colombia",
+        "trái phiếu",
+        "kiểm toán"
+      ],
+      "importance": 80,
+      "scope": "national"
+    }
+  },
+  "evt_b4221422": {
+    "created_at": 1785244693493,
+    "expires_at": 1787836693493,
+    "version": "4.5",
+    "checksum": "11b83adb30a5c4f42d2b4a02911d5cbe",
+    "data": {
+      "cluster_title": "Cảnh báo rủi ro AT1",
+      "short_summary": "Cảnh báo rủi ro AT1 từ Man Group, cho rằng các nhà đầu tư quá tự tin và lạm dụng các loại trái phiếu có rủi ro cao.",
+      "detailed_summary": "Các nhà đầu tư tại tập đoàn tài chính Man Group nhận định thị trường hiện đang đánh giá thấp mức độ rủi ro của loại trái phiếu ngân hàng cấp vốn bổ sung (AT1), khiến cho biên độ lợi nhuận bị thu hẹp một cách bất hợp lý. Man Group cho rằng sự tự tin thái quá này của nhà đầu tư có thể gây ra những hệ lụy tài chính không đáng có.",
+      "causes": [
+        "Nhà đầu tư thiếu cảnh giác trước các rủi ro nội tại của loại trái phiếu AT1.",
+        "Biên độ lợi nhuận trái phiếu trên thị trường hiện tại đang ở mức quá hẹp so với rủi ro thực tế."
+      ],
+      "effects": [
+        "Tạo ra tâm lý chủ quan trong cộng đồng đầu tư vào các tài sản nợ ngân hàng.",
+        "Gia tăng nguy cơ mất vốn hoặc biến động tài chính khi thị trường điều chỉnh."
+      ],
+      "affected_groups": [
+        "Nhà đầu tư cá nhân và tổ chức sở hữu trái phiếu AT1.",
+        "Các ngân hàng phát hành loại trái phiếu này."
+      ],
+      "market_impact": "Gây sức ép lên định giá của trái phiếu AT1 và có thể dẫn đến sự điều chỉnh giá nếu nhà đầu tư thay đổi tâm lý theo cảnh báo của Man Group.",
+      "follow_up": "",
+      "significance": "Sự kiện này phản ánh sự mất cân đối giữa lợi nhuận mong đợi và rủi ro thực tế trong phân khúc nợ ngân hàng rủi ro cao, đòi hỏi sự thận trọng từ giới đầu tư chuyên nghiệp.",
+      "unknowns": [
+        "Phản ứng cụ thể của thị trường và các nhà đầu tư khác đối với cảnh báo từ Man Group.",
+        "Dữ liệu định lượng chi tiết mà Man Group dùng để xác định biên độ lợi nhuận hiện tại là quá hẹp."
+      ],
+      "confidence_note": "Thông tin dựa trên đánh giá chuyên môn từ một đơn vị đầu tư uy tín, có độ tin cậy cao về quan điểm thị trường.",
+      "scenarios": [
+        {
+          "text": "Nhà đầu tư bắt đầu thận trọng hơn và yêu cầu biên độ lợi nhuận cao hơn cho trái phiếu AT1.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Thị trường tiếp tục duy trì tâm lý lạc quan và bỏ qua các cảnh báo về rủi ro cho đến khi có sự cố tài chính xảy ra.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Man Group",
+          "target": "Nhà đầu tư trái phiếu AT1",
+          "relation_type": "cause_effect",
+          "label": "Đưa ra cảnh báo về nhận thức rủi ro"
+        },
+        {
+          "source": "Trái phiếu AT1",
+          "target": "Nhà đầu tư",
+          "relation_type": "cause_effect",
+          "label": "Gây ra tâm lý chủ quan cho nhà đầu tư"
+        }
+      ],
+      "entities": [
+        "AT1",
+        "Man Group"
+      ],
+      "keywords": [
+        "AT1",
+        "Man Group",
+        "rủi ro"
+      ],
+      "importance": 80,
+      "scope": "global"
+    }
+  },
+  "evt_d2b091f2": {
+    "created_at": 1785244699664,
+    "expires_at": 1787836699664,
+    "version": "4.5",
+    "checksum": "71197191bff24302150fe612fb25a112",
+    "data": {
+      "cluster_title": "Centene Cập Nhật Hướng Đạo Thu Nhập",
+      "short_summary": "Centene Corp. đã nâng cao dự báo thu nhập hàng năm sau khi công bố kết quả quý II tốt hơn dự kiến, trở thành một trong những công ty bảo hiểm sức khỏe Mỹ dự báo khả năng thích nghi với các thay đổi chính sách của chính phủ.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "follow_up": "",
+      "entities": [
+        "Centene Corp",
+        "US"
+      ],
+      "keywords": [
+        "Centene",
+        "hướng dẫn thu nhập",
+        "chi phí y tế"
+      ],
+      "importance": 80,
+      "scope": "business"
+    }
+  },
+  "evt_2b7cffff": {
+    "created_at": 1785244719627,
+    "expires_at": 1787836719627,
+    "version": "4.5",
+    "checksum": "7bced866367056b74cb646b77b5d2e40",
+    "data": {
+      "cluster_title": "HSBC dự đoán lợi nhuận và giá trị cổ phiếu sẽ hỗ trợ tài sản rủi ro",
+      "short_summary": "HSBC dự đoán lợi nhuận và giá trị cổ phiếu sẽ hỗ trợ tài sản rủi ro trong bối cảnh lạm phát gia tăng.",
+      "detailed_summary": "Dựa trên phân tích từ HSBC Holdings Plc, chuyên gia Kettner cho rằng bất chấp bối cảnh lạm phát đầy thách thức, các loại tài sản rủi ro vẫn duy trì được sự ổn định. Nguyên nhân chính là do mức tăng trưởng lợi nhuận doanh nghiệp mạnh mẽ cùng với định giá tài sản hiện tại đang ở mức không quá cao, tạo ra nền tảng vững chắc cho thị trường.",
+      "causes": [
+        "Tăng trưởng lợi nhuận doanh nghiệp mạnh mẽ",
+        "Định giá tài sản hiện tại ở mức hợp lý và không đắt đỏ"
+      ],
+      "effects": [
+        "Tài sản rủi ro giữ được tính chống chịu",
+        "Thị trường duy trì được sự ổn định trước áp lực lạm phát"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư tài sản rủi ro",
+        "Các tổ chức tài chính",
+        "Doanh nghiệp niêm yết"
+      ],
+      "market_impact": "Thông tin mang tín hiệu lạc quan có kiểm soát, trấn an tâm lý thị trường về khả năng hấp thụ áp lực lạm phát.",
+      "follow_up": "",
+      "significance": "Sự kiện này nhấn mạnh tầm quan trọng của các yếu tố nội tại doanh nghiệp như lợi nhuận và định giá trong việc làm giảm nhẹ tác động tiêu cực từ các biến số vĩ mô như lạm phát.",
+      "unknowns": [
+        "Thời hạn duy trì xu hướng này trong bao lâu",
+        "Mức độ ảnh hưởng cụ thể của từng loại tài sản rủi ro"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao, dựa trên phân tích chiến lược từ tổ chức tài chính uy tín HSBC.",
+      "scenarios": [
+        {
+          "text": "Tài sản rủi ro tiếp tục tăng trưởng ổn định nếu lợi nhuận doanh nghiệp duy trì được đà.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Sự biến động thị trường tăng lên nếu lạm phát kéo dài vượt quá dự báo của các doanh nghiệp.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Lợi nhuận doanh nghiệp",
+          "target": "Tài sản rủi ro",
+          "relation_type": "cause_effect",
+          "label": "Tăng trưởng lợi nhuận giúp tài sản rủi ro duy trì sức chống chịu"
+        },
+        {
+          "source": "HSBC",
+          "target": "Tài sản rủi ro",
+          "relation_type": "neutral",
+          "label": "Đưa ra đánh giá phân tích về tình trạng tài sản rủi ro"
+        },
+        {
+          "source": "Lạm phát",
+          "target": "Tài sản rủi ro",
+          "relation_type": "conflict",
+          "label": "Yếu tố thách thức sự ổn định của tài sản rủi ro"
+        }
+      ],
+      "entities": [
+        "HSBC Holdings Plc",
+        "Kettner"
+      ],
+      "keywords": [
+        "HSBC",
+        "lợi nhuận",
+        "giá trị cổ phiếu",
+        "tài sản rủi ro"
+      ],
+      "importance": 85,
+      "scope": "global"
+    }
   }
 }
