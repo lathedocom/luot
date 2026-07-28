@@ -1,12 +1,12 @@
 const configModels = require('../../config/models');
 const tasksConfig = require('../../config/tasks');
 const TASK_ROUTING = tasksConfig.TASK_ROUTING || tasksConfig;
-
 const GoogleProvider = require('./providers/google');
 const GroqProvider = require('./providers/groq');
 const { parseAIResponse } = require('./parser');
 const logger = require('../utils/logger');
 const budgetManager = require('../../budget/budget_manager'); 
+const quotaConfig = require('../../config/quota');
 
 class AIGateway {
     constructor() {
@@ -25,9 +25,18 @@ class AIGateway {
         if (!taskConfig) {
             throw new Error(`Task '${taskName}' chưa được khai báo trong config/tasks.js`);
         }
-
         let targetModel = taskConfig.model;
         let targetProvider = taskConfig.provider;
+
+        // --- PRE-CHECK QUOTA: chủ động fallback nếu model chính đã gần hết quota ngày ---
+        if (targetProvider.startsWith('google') && !budgetManager.canUseModel(targetModel)) {
+            logger.warn(`[Gateway] Model ${targetModel} đã gần chạm ngưỡng an toàn quota. Chủ động chuyển sang Groq trước khi gọi.`);
+            targetProvider = 'groq';
+            targetModel = (taskName === 'DEEP_ANALYSIS' || taskName === 'MATCH_TIMELINE' ||
+                           taskName === 'DAILY_BRIEFING' || taskName === 'MONTHLY_REPORT')
+                ? (configModels.LAYER2_MODEL_FALLBACK || 'llama-3.3-70b-versatile')
+                : (configModels.LAYER1_MODEL_FALLBACK || 'llama-3.1-8b-instant');
+        }
 
         // Tự động tìm và kéo system_prompt từ config/tasks.js nếu không được truyền vào
         let finalSystemInstruction = systemInstruction;
@@ -39,16 +48,15 @@ class AIGateway {
                 finalSystemInstruction = taskConfig.system_prompt;
             }
         }
-
+        
         let attempts = 0;
         const maxRetries = 3; 
-
+        
         while (attempts <= maxRetries) {
             const startTime = Date.now();
             try {
                 const providerInstance = this.providers[targetProvider];
                 if (!providerInstance) throw new Error(`Provider ${targetProvider} không tồn tại.`);
-
                 const resultText = await providerInstance.generateContent(prompt, finalSystemInstruction, targetModel);
                 
                 budgetManager.recordUsage({
@@ -71,7 +79,6 @@ class AIGateway {
                                               error.message.includes('429') || 
                                               error.message.includes('404') || 
                                               error.message.includes('503');
-
                 if (isQuotaOrNetworkError) {
                     if (targetProvider === 'google' && this.providers.googleBackup) {
                         logger.warn(`[Gateway] Phát hiện lỗi API Key chính. Đang chuyển sang Key Dự phòng 1 (googleBackup)...`);
@@ -82,20 +89,29 @@ class AIGateway {
                         targetProvider = 'googleBackup2';
                     } 
                     else if (targetProvider.startsWith('google')) {
-                        // ĐÃ SỬA: Đổi CÙNG LÚC cả Provider và Model để không bị râu ông nọ cắm cằm bà kia
-                        logger.warn(`[Gateway] Hết Key Google dự phòng. Chuyển Fallback sang mạng Groq...`);
-                        targetProvider = 'groq'; 
-                        
-                        if (taskName === 'DEEP_ANALYSIS' || taskName === 'MATCH_TIMELINE' || taskName === 'DAILY_BRIEFING' || taskName === 'MONTHLY_REPORT') {
-                            targetModel = configModels.LAYER2_MODEL_FALLBACK || 'llama-3.3-70b-versatile';
-                            logger.warn(`[Gateway] Đã đổi model sang: ${targetModel}`);
+                        // Với tầng 3 (DAILY_BRIEFING/MONTHLY_REPORT), thử model Google dự phòng
+                        // (gemini-2.5-flash) trước khi rớt hẳn xuống Groq, vì đây là các task
+                        // chất lượng cao cần giữ nguyên "họ" Gemini nếu còn quota.
+                        if ((taskName === 'DAILY_BRIEFING' || taskName === 'MONTHLY_REPORT') &&
+                            targetModel !== configModels.LAYER3_MODEL_FALLBACK_1) {
+                            logger.warn(`[Gateway] Hết quota model chính tầng 3. Thử model dự phòng Google: ${configModels.LAYER3_MODEL_FALLBACK_1}`);
+                            targetModel = configModels.LAYER3_MODEL_FALLBACK_1 || 'gemini-2.5-flash';
+                            targetProvider = 'google'; // quay lại key chính, đã đổi model
                         } else {
-                            targetModel = configModels.LAYER1_MODEL_FALLBACK || 'llama-3.1-8b-instant';
-                            logger.warn(`[Gateway] Đã đổi model sang: ${targetModel}`);
+                            // Đổi CÙNG LÚC cả Provider và Model để không bị râu ông nọ cắm cằm bà kia
+                            logger.warn(`[Gateway] Hết Key Google dự phòng. Chuyển Fallback sang mạng Groq...`);
+                            targetProvider = 'groq';
+
+                            if (taskName === 'DEEP_ANALYSIS' || taskName === 'MATCH_TIMELINE' || taskName === 'DAILY_BRIEFING' || taskName === 'MONTHLY_REPORT') {
+                                targetModel = configModels.LAYER2_MODEL_FALLBACK || 'llama-3.3-70b-versatile';
+                                logger.warn(`[Gateway] Đã đổi model sang: ${targetModel}`);
+                            } else {
+                                targetModel = configModels.LAYER1_MODEL_FALLBACK || 'llama-3.1-8b-instant';
+                                logger.warn(`[Gateway] Đã đổi model sang: ${targetModel}`);
+                            }
                         }
                     }
                 }
-
                 budgetManager.recordUsage({
                     model: targetModel, provider: targetProvider, task: taskName, latency, status: 'FAILED_RETRY'
                 });
@@ -120,13 +136,12 @@ class AIGateway {
                 model: modelName,
                 provider: 'google',
                 task: 'EMBEDDING',
-                //promptTokens: Math.round(text.length / 4),
+                promptTokens: Math.round(text.length / 4),
                 latency: Date.now() - startTime,
-                status: 'FAILED'
+                status: 'SUCCESS'
             });
             return vector;
         } catch (error) {
-            // Đã bổ sung dự phòng cho cả hàm Embedding đơn
             const isQuotaOrNetworkError = error.message === "RATE_LIMIT" || 
                                           error.message.includes('429') || 
                                           error.message.includes('503');
@@ -142,7 +157,6 @@ class AIGateway {
                     return backupVector;
                 } catch (backupError) {
                     logger.warn(`[Gateway] Key Dự phòng 1 cũng bị giới hạn khi chạy Vector đơn.`);
-
                     if (this.providers.googleBackup2) {
                         try {
                             const backup2Start = Date.now();
@@ -161,12 +175,10 @@ class AIGateway {
             } else {
                 logger.error(`[Gateway] Embedding thất bại: ${error.message}`);
             }
-
             budgetManager.recordUsage({
                 model: modelName, provider: 'google', task: 'EMBEDDING', latency: Date.now() - startTime, status: 'FAILED'
             });
-            // 🐛 XÓA DÒNG NÀY: return new Array(768).fill(0).map(() => Math.random() * 0.01);
-            throw new Error("Tất cả API Key Embedding đều thất bại."); // Bắn thẳng lỗi ra ngoài 
+            throw new Error("Tất cả API Key Embedding đều thất bại.");
         }
     }
 
@@ -179,17 +191,15 @@ class AIGateway {
                 model: modelName,
                 provider: 'google',
                 task: 'BATCH_EMBEDDING',
-                //promptTokens: Math.round(texts.join(' ').length / 4),
+                promptTokens: Math.round(texts.join(' ').length / 4),
                 latency: Date.now() - startTime,
-                status: 'FAILED'
+                status: 'SUCCESS'
             });
             return vectors;
         } catch (error) {
-            // --- BẢN VÁ THEO ĐÚNG LOGIC PHÂN TÍCH CỦA BẠN ---
             const isQuotaOrNetworkError = error.message === "RATE_LIMIT" || 
                                           error.message.includes('429') || 
                                           error.message.includes('503');
-
             if (isQuotaOrNetworkError && this.providers.googleBackup) {
                 logger.warn(`[Gateway] Batch Embedding Key 1 bị giới hạn. Gánh tải bằng Key Dự phòng...`);
                 try {
@@ -201,7 +211,6 @@ class AIGateway {
                     return backupVectors;
                 } catch (backupError) {
                     logger.warn(`[Gateway] Batch Embedding Key Dự phòng 1 cũng bị giới hạn.`);
-
                     if (this.providers.googleBackup2) {
                         try {
                             const backup2Start = Date.now();
@@ -220,14 +229,10 @@ class AIGateway {
             } else {
                 logger.error(`[Gateway] Batch Embedding thất bại: ${error.message}`);
             }
-            // ------------------------------------------------
-
             budgetManager.recordUsage({
                 model: modelName, provider: 'google', task: 'BATCH_EMBEDDING', latency: Date.now() - startTime, status: 'FAILED'
             });
-            
-           // 🐛 XÓA DÒNG NÀY: return texts.map(() => new Array(768).fill(0).map(() => Math.random() * 0.01));
-            throw new Error("Tất cả API Key Batch Embedding đều thất bại."); // Bắn thẳng lỗi ra ngoài để kịch bản xử lý retry sau
+            throw new Error("Tất cả API Key Batch Embedding đều thất bại.");
         }
     }
 } 
