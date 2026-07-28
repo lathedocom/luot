@@ -22,7 +22,6 @@ function initCacheFile(filePath) {
  */
 function getCache(cacheName, key) {
     const filePath = path.join(__dirname, `../../cache/${cacheName}.json`);
-
     initCacheFile(filePath);
     try {
         const cache = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
@@ -55,7 +54,6 @@ function getCache(cacheName, key) {
  */
 function setCache(cacheName, key, data, ttlMinutes = 60, version = '1.0') {
     const filePath = path.join(__dirname, `../../cache/${cacheName}.json`);
-
     initCacheFile(filePath);
     try {
         const cache = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
@@ -103,4 +101,29 @@ function cleanupCache(cacheName) {
     }
 }
 
-module.exports = { getCache, setCache, cleanupCache };
+/**
+ * Dọn các entry cache quá hạn hoặc lâu không dùng, thay vì xóa toàn bộ file.
+ * @param {Object} cacheObj - object cache đọc từ json
+ * @param {number} maxAgeDays - số ngày tối đa giữ 1 entry (mặc định 14 ngày)
+ * @param {number} maxEntries - số entry tối đa giữ lại (mặc định 5000)
+ */
+function pruneCache(cacheObj, maxAgeDays = 14, maxEntries = 5000) {
+    const now = Date.now();
+    const maxAgeMs = maxAgeDays * 24 * 60 * 60 * 1000;
+    const entries = Object.entries(cacheObj)
+        .filter(([key, val]) => {
+            // Sử dụng created_at khớp với schema thực tế của hệ thống
+            const ts = val.created_at ? val.created_at : now;
+            return (now - ts) <= maxAgeMs;
+        })
+        .sort((a, b) => {
+            const ta = a[1].created_at ? a[1].created_at : 0;
+            const tb = b[1].created_at ? b[1].created_at : 0;
+            return tb - ta; // Mới nhất lên trước
+        })
+        .slice(0, maxEntries);
+
+    return Object.fromEntries(entries);
+}
+
+module.exports = { getCache, setCache, cleanupCache, pruneCache };
