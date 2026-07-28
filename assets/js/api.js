@@ -1,16 +1,35 @@
 // ==========================================================================
 // FILE: assets/js/api.js
 // ==========================================================================
-import { renderDigestFeed, renderBriefing, renderMarket, renderSocial, renderTimelinePage, renderRiskMap, renderKnowledgeGraph } from './ui.js';
+import { renderDigestFeed, renderBriefing, renderMarket, renderSocial, renderTimelinePage, renderKnowledgeGraph } from './ui.js';
 
 let globalNewsData = [];
 let globalDigestData = { vietnam: [], asia: [], global: [] };
 let totalCrawledArticles = 0;
 
+export let globalMapData = null;
+
 // Các hàm Getter để cung cấp dữ liệu an toàn cho các module khác
 export const getGlobalNewsData = () => globalNewsData;
 export const getGlobalDigestData = () => globalDigestData;
 export const getTotalCrawledArticles = () => totalCrawledArticles;
+
+export async function fetchMapData() {
+    try {
+        // Đọc thẳng file tĩnh vừa được generate từ backend
+        const response = await fetch(`data/countries/indices_latest.json?v=${new Date().getTime()}`);
+        if (!response.ok) throw new Error('Network error');
+        globalMapData = await response.json();
+        
+        if (globalMapData) {
+            import('./ui-map.js').then(module => {
+                module.renderRiskMap(globalMapData);
+            });
+        }
+    } catch (error) {
+        console.error("Lỗi fetchMapData:", error);
+    }
+}
 
 export async function fetchNewsData() {
     try {
@@ -33,9 +52,7 @@ export async function fetchNewsData() {
         renderMarket(data.market_data || []);
         renderSocial(data.social_trends || data.social || []);
         
-        if (data.risk_map) {
-            renderRiskMap(data.risk_map);
-        }
+        // (Phần renderRiskMap cũ ở đây đã được gỡ bỏ để chuyển sang dùng fetchMapData riêng)
         
         // [ĐÃ SỬA] Đưa vào bên trong khối try để nhận diện được biến data
         if (data.knowledge_graph) {
