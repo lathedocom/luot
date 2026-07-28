@@ -1185,5 +1185,511 @@
       "importance": 85,
       "scope": "global"
     }
+  },
+  "evt_fc1b192e": {
+    "created_at": 1785256746946,
+    "expires_at": 1787848746946,
+    "version": "4.5",
+    "checksum": "6cf9943000e8f87847aef067f256ae5c",
+    "data": {
+      "cluster_title": "Nasdaq 100 Cận Bước Sự Sụt Giảm",
+      "short_summary": "Nasdaq 100 đang cận cảnh sự sụt giảm do selloff trong lĩnh vực chip và đầu tư vào trí tuệ nhân tạo của Big Tech.",
+      "detailed_summary": "Chỉ số Nasdaq 100 đang tiến gần mức điều chỉnh khi làn sóng bán tháo cổ phiếu ngành bán dẫn lan rộng. Các nhà đầu tư đang bày tỏ lo ngại về mức chi phí đầu tư khổng lồ mà các tập đoàn công nghệ lớn đổ vào lĩnh vực trí tuệ nhân tạo, dẫn đến áp lực giảm giá mạnh trên thị trường trước thềm công bố báo cáo thu nhập của các doanh nghiệp công nghệ.",
+      "causes": [
+        "Nhà đầu tư hoài nghi về hiệu quả đầu tư vào trí tuệ nhân tạo của các công ty công nghệ lớn.",
+        "Làn sóng bán tháo cổ phiếu ngành bán dẫn diễn ra trên diện rộng."
+      ],
+      "effects": [
+        "Chỉ số Nasdaq 100 suy giảm, tiến sát ngưỡng điều chỉnh.",
+        "Tâm lý bất ổn lan rộng trong giới đầu tư công nghệ trước kỳ báo cáo thu nhập."
+      ],
+      "affected_groups": [
+        "Các nhà đầu tư chứng khoán công nghệ.",
+        "Các tập đoàn sản xuất chip bán dẫn.",
+        "Các tập đoàn công nghệ lớn (Big Tech)."
+      ],
+      "market_impact": "Thị trường chứng khoán công nghệ đang chịu áp lực điều chỉnh mạnh do định giá ngành bán dẫn bị lung lay.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh giai đoạn kiểm chứng khắt khe của thị trường đối với lợi nhuận thực tế từ các khoản đầu tư vào trí tuệ nhân tạo.",
+      "unknowns": [
+        "Mức độ ảnh hưởng thực tế lên biên lợi nhuận của các công ty Big Tech sau kỳ công bố báo cáo.",
+        "Thời điểm đợt bán tháo ngành bán dẫn sẽ kết thúc."
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên diễn biến giao dịch thực tế trên sàn Nasdaq.",
+      "scenarios": [
+        {
+          "text": "Thị trường ổn định trở lại sau khi các báo cáo thu nhập của Big Tech được công bố với tín hiệu khả quan.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Đà bán tháo tiếp tục kéo dài nếu các báo cáo thu nhập không đáp ứng kỳ vọng của nhà đầu tư.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Đầu tư vào trí tuệ nhân tạo",
+          "target": "Cổ phiếu ngành bán dẫn",
+          "relation_type": "cause_effect",
+          "label": "Lo ngại về chi phí đầu tư gây áp lực giảm giá"
+        },
+        {
+          "source": "Cổ phiếu ngành bán dẫn",
+          "target": "Nasdaq 100",
+          "relation_type": "cause_effect",
+          "label": "Sụt giảm cổ phiếu chip dẫn đến chỉ số Nasdaq 100 điều chỉnh"
+        },
+        {
+          "source": "Nhà đầu tư",
+          "target": "Big Tech",
+          "relation_type": "conflict",
+          "label": "Hoài nghi về hiệu quả chi tiêu vốn"
+        }
+      ],
+      "entities": [
+        "Nasdaq 100",
+        "Big Tech"
+      ],
+      "keywords": [
+        "Nasdaq 100",
+        "Chip",
+        "Trí Tuệ Nhân Tạo"
+      ],
+      "importance": 90,
+      "scope": "global"
+    }
+  },
+  "evt_c76e1c8f": {
+    "created_at": 1785256757297,
+    "expires_at": 1787848757297,
+    "version": "4.5",
+    "checksum": "e8b0e98a6bc24dd4c459b53e2a863a53",
+    "data": {
+      "cluster_title": "Công ty đầu tư tư nhân bán chuỗi trung tâm sức khỏe tâm thần",
+      "short_summary": "Công ty đầu tư tư nhân ở Connecticut dự định bán chuỗi trung tâm sức khỏe tâm thần và nhà ở cho người nghiện thông qua một thỏa thuận được tài trợ bởi trái phiếu địa phương.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "follow_up": "",
+      "entities": [
+        "Connecticut",
+        "municipal bonds"
+      ],
+      "keywords": [
+        "sức khỏe tâm thần",
+        "công ty đầu tư tư nhân",
+        "municipal bonds"
+      ],
+      "importance": 60,
+      "scope": "business"
+    }
+  },
+  "evt_a5e23de4": {
+    "created_at": 1785256773398,
+    "expires_at": 1787848773398,
+    "version": "4.5",
+    "checksum": "e7aa77ff7885da3ae9038bda90e22a2b",
+    "data": {
+      "cluster_title": "CMA CGM SA Khẳng định Sự Phục Hồi của Chuyến Bay qua Thái Bình Dương",
+      "short_summary": "CMA CGM SA cho biết sự phục hồi của chuyến bay qua Thái Bình Dương đã giúp tăng lợi nhuận. Điều này là do các công ty Mỹ tăng dự trữ hàng hóa trong khi Tổng thống Donald Trump xây dựng lại chiến lược thuế bị Tòa án Tối cao Hoa Kỳ đánh bại vào tháng 2.",
+      "detailed_summary": "Tập đoàn vận tải container CMA CGM báo cáo kết quả kinh doanh khởi sắc nhờ sự gia tăng đáng kể khối lượng hàng hóa xuất khẩu từ Trung Quốc. Các doanh nghiệp Mỹ đang tích cực gia tăng tồn kho trong bối cảnh Tổng thống Donald Trump đang nỗ lực tái thiết lập chiến lược thuế quan sau khi vấp phải trở ngại từ Tòa án Tối cao vào tháng 2.",
+      "causes": [
+        "Sự gia tăng đột biến khối lượng hàng hóa xuất khẩu từ Trung Quốc",
+        "Nhu cầu tăng tích trữ tồn kho của các doanh nghiệp Mỹ"
+      ],
+      "effects": [
+        "Cải thiện lợi nhuận cho hãng vận tải CMA CGM",
+        "Thay đổi trong kế hoạch chuỗi cung ứng trước các diễn biến về thuế quan"
+      ],
+      "affected_groups": [
+        "Các doanh nghiệp vận tải hàng hải quốc tế",
+        "Các doanh nghiệp Mỹ phụ thuộc vào hàng hóa nhập khẩu",
+        "Cơ quan quản lý chính sách thuế quan Mỹ"
+      ],
+      "market_impact": "Ngành vận tải biển ghi nhận tín hiệu tích cực về nhu cầu, nhưng triển vọng phụ thuộc lớn vào diễn biến chính sách thuế quan trong tương lai.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh sự nhạy cảm của chuỗi cung ứng toàn cầu trước những thay đổi trong chính sách thương mại Mỹ và chiến lược tích trữ hàng hóa của doanh nghiệp.",
+      "unknowns": [
+        "Chi tiết cụ thể của kế hoạch thuế quan mới mà phía Mỹ đang xây dựng",
+        "Thời hạn và quy mô của đợt tăng tồn kho từ các doanh nghiệp Mỹ"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên báo cáo công bố từ chính tập đoàn CMA CGM.",
+      "scenarios": [
+        {
+          "text": "Lợi nhuận của các hãng vận tải biển tiếp tục ổn định nếu hoạt động thương mại xuyên Thái Bình Dương duy trì đà tăng trưởng hiện tại.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Biến động thị trường gia tăng nếu các rào cản thuế quan mới được áp dụng, làm gián đoạn dòng chảy hàng hóa.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Sự gia tăng hàng hóa Trung Quốc",
+          "target": "CMA CGM",
+          "relation_type": "cause_effect",
+          "label": "Tăng lợi nhuận cho doanh nghiệp"
+        },
+        {
+          "source": "Tổng thống Donald Trump",
+          "target": "Chiến lược thuế quan",
+          "relation_type": "cooperation",
+          "label": "Tái thiết lập chính sách"
+        },
+        {
+          "source": "Tòa án Tối cao Mỹ",
+          "target": "Chiến lược thuế quan",
+          "relation_type": "conflict",
+          "label": "Gây trở ngại cho kế hoạch thuế"
+        },
+        {
+          "source": "Doanh nghiệp Mỹ",
+          "target": "Hàng hóa Trung Quốc",
+          "relation_type": "cooperation",
+          "label": "Tăng cường nhập khẩu để dự trữ"
+        }
+      ],
+      "entities": [
+        "CMA CGM SA",
+        "Donald Trump",
+        "Tòa án Tối cao Hoa Kỳ"
+      ],
+      "keywords": [
+        "CMA CGM SA",
+        "chuyến bay qua Thái Bình Dương",
+        "thặng dư"
+      ],
+      "importance": 85,
+      "scope": "national"
+    }
+  },
+  "evt_general_1785256779172": {
+    "created_at": 1785256780084,
+    "expires_at": 1787848780084,
+    "version": "4.5",
+    "checksum": "61caba5582b6df5a961b44ee2c43eb97",
+    "data": {
+      "cluster_title": "US Insurers Khôi Phục",
+      "short_summary": "US Insurers đã khôi phục sau khi các nhà đầu tư chuyển sang các phần an toàn của thị trường do lo ngại về trí tuệ nhân tạo.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "follow_up": "",
+      "entities": [
+        "US",
+        "AI"
+      ],
+      "keywords": [
+        "US Insurers",
+        "Stocks",
+        "AI",
+        "Safe Haven"
+      ],
+      "importance": 85,
+      "scope": "business"
+    }
+  },
+  "evt_3f6084d8": {
+    "created_at": 1785256792148,
+    "expires_at": 1787848792148,
+    "version": "4.5",
+    "checksum": "2648c8de8c3bc2e6a9d63cf396341620",
+    "data": {
+      "cluster_title": "S&P Global Bị Ảnh Hưởng Do Chiến Tranh Mỹ - Iran",
+      "short_summary": "S&P Global Inc. bị ảnh hưởng do chiến tranh Mỹ - Iran, khiến doanh thu của công ty giảm do khó tăng giá hợp đồng cho đơn vị dữ liệu năng lượng.",
+      "detailed_summary": "S&P Global Inc. đã ghi nhận kết quả kinh doanh quý không đạt mức dự báo trung bình của các nhà phân tích. Nguyên nhân chính được chỉ ra là do ảnh hưởng từ cuộc xung đột giữa Mỹ và Iran, làm phát sinh khó khăn trong việc tăng giá các hợp đồng dịch vụ thuộc bộ phận phân tích và dữ liệu năng lượng của công ty.",
+      "causes": [
+        "Kết quả kinh doanh quý thấp hơn kỳ vọng của các chuyên gia phân tích",
+        "Xung đột giữa Mỹ và Iran gây cản trở hoạt động kinh doanh"
+      ],
+      "effects": [
+        "Giá cổ phiếu S&P Global bị sụt giảm",
+        "Khó khăn trong việc điều chỉnh tăng giá các hợp đồng dịch vụ năng lượng"
+      ],
+      "affected_groups": [
+        "Cổ đông của S&P Global",
+        "Nhà đầu tư tài chính",
+        "Khách hàng sử dụng dữ liệu năng lượng"
+      ],
+      "market_impact": "Áp lực bán tháo cổ phiếu S&P Global gia tăng do nhà đầu tư phản ứng tiêu cực với hiệu quả kinh doanh thấp hơn dự đoán.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh mức độ tác động trực tiếp của các xung đột địa chính trị toàn cầu đối với khả năng định giá dịch vụ và lợi nhuận của các tập đoàn cung cấp dữ liệu tài chính.",
+      "unknowns": [
+        "Thời gian dự kiến kéo dài của xung đột Mỹ - Iran",
+        "Mức độ ảnh hưởng cụ thể về con số tài chính đối với các bộ phận khác của S&P Global ngoài mảng năng lượng"
+      ],
+      "confidence_note": "Thông tin dựa trên báo cáo kết quả kinh doanh của công ty, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Giá cổ phiếu tiếp tục biến động tiêu cực nếu căng thẳng địa chính trị không được giải quyết.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "S&P Global thực hiện điều chỉnh mô hình kinh doanh để bù đắp thiệt hại tại các khu vực chịu ảnh hưởng của xung đột.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Xung đột Mỹ - Iran",
+          "target": "S&P Global",
+          "relation_type": "cause_effect",
+          "label": "Gây cản trở hoạt động tăng giá hợp đồng kinh doanh"
+        },
+        {
+          "source": "S&P Global",
+          "target": "Nhà đầu tư",
+          "relation_type": "cause_effect",
+          "label": "Kết quả kinh doanh thấp dẫn đến sụt giảm giá cổ phiếu"
+        }
+      ],
+      "entities": [
+        "S&P Global Inc.",
+        "US-Iran War"
+      ],
+      "keywords": [
+        "S&P Global",
+        "US-Iran War",
+        "Chiến Tranh Mỹ - Iran"
+      ],
+      "importance": 80,
+      "scope": "global"
+    }
+  },
+  "evt_5a3055ab": {
+    "created_at": 1785256798298,
+    "expires_at": 1787848798298,
+    "version": "4.5",
+    "checksum": "7929ee091869a4b29193e044389f3a52",
+    "data": {
+      "cluster_title": "Brady bán 800 triệu USD trái phiếu để mua lại doanh nghiệp của Honeywell",
+      "short_summary": "Brady Corp đã bán 800 triệu USD trái phiếu để tài trợ cho việc mua lại doanh nghiệp giải pháp và dịch vụ của Honeywell International Inc.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "follow_up": "",
+      "entities": [
+        "Brady Corp",
+        "Honeywell International Inc"
+      ],
+      "keywords": [
+        "Brady Corp",
+        "Honeywell International Inc",
+        "trái phiếu"
+      ],
+      "importance": 80,
+      "scope": "business"
+    }
+  },
+  "evt_fc4f9c94": {
+    "created_at": 1785256810453,
+    "expires_at": 1787848810453,
+    "version": "4.5",
+    "checksum": "3394fce420557aef9afddbe45e004c4a",
+    "data": {
+      "cluster_title": "Ghana Đầu tư 429 Triệu Đô la để Mua Vàng",
+      "short_summary": "Ghana đã phân bổ 5 tỷ cedi để tài trợ cho việc mua vàng, giúp tăng dự trữ ngoại hối sau khi chuyển chương trình từ ngân hàng trung ương sang chính phủ.",
+      "detailed_summary": "Ghana đã phân bổ 5 tỷ cedi (tương đương 429 triệu USD) để thực hiện chương trình thu mua vàng. Điểm thay đổi cốt lõi là việc chuyển giao chương trình này từ Ngân hàng Trung ương sang Chính phủ quản lý. Động thái này nhằm mục tiêu cải thiện dự trữ ngoại hối quốc gia nhưng đồng thời làm dấy lên quan ngại về việc gia tăng rủi ro tài khóa trực tiếp lên ngân sách Chính phủ.",
+      "causes": [
+        "Nhu cầu tăng cường dự trữ ngoại hối quốc gia",
+        "Sự thay đổi cơ cấu quản lý chương trình mua vàng từ Ngân hàng Trung ương sang Chính phủ"
+      ],
+      "effects": [
+        "Gia tăng rủi ro tài khóa đối với ngân sách quốc gia",
+        "Cải thiện khả năng cân đối dự trữ ngoại hối thông qua tài sản đảm bảo là vàng"
+      ],
+      "affected_groups": [
+        "Chính phủ Ghana",
+        "Ngân hàng Trung ương Ghana",
+        "Các nhà đầu tư và chủ nợ quốc gia"
+      ],
+      "market_impact": "Việc Chính phủ trực tiếp quản lý mua vàng có thể làm thay đổi cách thị trường đánh giá rủi ro nợ công của Ghana và ảnh hưởng đến tính thanh khoản của đồng cedi.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh nỗ lực của quốc gia trong việc quản lý dự trữ ngoại hối, đồng thời bộc lộ sự dịch chuyển áp lực tài chính từ các cơ quan quản lý tiền tệ sang ngân sách Chính phủ.",
+      "unknowns": [
+        "Cơ chế kiểm soát rủi ro cụ thể của Chính phủ đối với hoạt động này",
+        "Tác động dài hạn của việc chuyển dịch này đối với xếp hạng tín nhiệm quốc gia"
+      ],
+      "confidence_note": "Thông tin dựa trên báo cáo phân bổ ngân sách chính thức, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Dự trữ ngoại hối cải thiện giúp ổn định tỷ giá hối đoái trong trung hạn.",
+          "likelihood": "trung bình"
+        },
+        {
+          "text": "Áp lực tài khóa gia tăng gây thâm hụt ngân sách trầm trọng hơn do biến động giá vàng.",
+          "likelihood": "cao"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Chính phủ Ghana",
+          "target": "Chương trình mua vàng",
+          "relation_type": "cause_effect",
+          "label": "Trực tiếp điều hành và chịu trách nhiệm tài chính"
+        },
+        {
+          "source": "Ngân hàng Trung ương Ghana",
+          "target": "Chương trình mua vàng",
+          "relation_type": "neutral",
+          "label": "Cơ quan không còn trực tiếp thực hiện chương trình"
+        }
+      ],
+      "entities": [
+        "Ghana",
+        "chính phủ Ghana",
+        "tài chính"
+      ],
+      "keywords": [
+        "Ghana",
+        "vàng",
+        "đầu tư"
+      ],
+      "importance": 80,
+      "scope": "national"
+    }
+  },
+  "evt_ccce216a": {
+    "created_at": 1785256822566,
+    "expires_at": 1787848822566,
+    "version": "4.5",
+    "checksum": "b9fbe98fdcf6fd847bbfbf9192b06922",
+    "data": {
+      "cluster_title": "Bán trái phiếu UAE đạt tốc độ kỷ lục",
+      "short_summary": "Các nhà đầu tư từ UAE đang bán trái phiếu trên thị trường toàn cầu với tốc độ kỷ lục, trong bối cảnh xung đột ở Trung Đông tiếp diễn.",
+      "detailed_summary": "Dữ liệu cho thấy khối lượng phát hành trái phiếu từ UAE trong năm 2026 đã tăng 33% so với cùng kỳ năm trước. Hoạt động huy động vốn này diễn ra mạnh mẽ bất chấp sự bất ổn của khu vực do các cuộc xung đột đang diễn ra, cho thấy nhu cầu vốn lớn hoặc chiến lược tài chính chủ động của các thực thể tại UAE.",
+      "causes": [
+        "Nhu cầu huy động vốn lớn từ các tổ chức tại UAE",
+        "Chiến lược tận dụng thị trường trái phiếu quốc tế trong điều kiện thị trường biến động"
+      ],
+      "effects": [
+        "Khối lượng phát hành trái phiếu đạt mức cao kỷ lục",
+        "Gia tăng sự hiện diện của UAE trên bản đồ nợ quốc tế"
+      ],
+      "affected_groups": [
+        "Các nhà đầu tư quốc tế",
+        "Các tổ chức phát hành tại UAE",
+        "Các thị trường tài chính khu vực Trung Đông"
+      ],
+      "market_impact": "Việc tăng mạnh phát hành trái phiếu cho thấy thanh khoản vẫn duy trì tốt đối với các tổ chức UAE bất chấp rủi ro địa chính trị.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh khả năng duy trì sức hút tài chính của UAE đối với thị trường vốn quốc tế ngay cả khi khu vực đang trải qua giai đoạn bất ổn vì xung đột.",
+      "unknowns": [
+        "Danh tính cụ thể của các tổ chức phát hành trái phiếu",
+        "Mục đích sử dụng chính của nguồn vốn huy động được"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên số liệu tăng trưởng phát hành trái phiếu được ghi nhận.",
+      "scenarios": [
+        {
+          "text": "Các tổ chức UAE tiếp tục duy trì đà huy động vốn cao trong suốt năm 2026 nếu tình hình địa chính trị ổn định hoặc không leo thang tiêu cực hơn.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Lãi suất phát hành trái phiếu sẽ tăng nếu rủi ro xung đột làm giảm niềm tin của nhà đầu tư quốc tế.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "UAE",
+          "target": "Thị trường trái phiếu quốc tế",
+          "relation_type": "cooperation",
+          "label": "Hợp tác huy động vốn kỷ lục"
+        },
+        {
+          "source": "Xung đột Trung Đông",
+          "target": "Thị trường trái phiếu UAE",
+          "relation_type": "cause_effect",
+          "label": "Tạo ra bối cảnh rủi ro địa chính trị cho hoạt động tài chính"
+        }
+      ],
+      "entities": [
+        "Hoa Kỳ",
+        "Liên minh châu Âu"
+      ],
+      "keywords": [
+        "UAE",
+        "trái phiếu",
+        "thị trường tài chính"
+      ],
+      "importance": 85,
+      "scope": "global"
+    }
+  },
+  "evt_general_1785256828382": {
+    "created_at": 1785256834293,
+    "expires_at": 1787848834293,
+    "version": "4.5",
+    "checksum": "07ec4bdaa17fc4728044bb4762724986",
+    "data": {
+      "cluster_title": "Apple đạt giá trị 5 nghìn tỷ USD lần đầu tiên",
+      "short_summary": "Apple đạt giá trị thị trường 5 nghìn tỷ USD lần đầu tiên do tiết kiệm chi phí nghiên cứu AI và các nhà đầu tư tìm kiếm nơi an toàn khỏi bán rơi thị trường chất bán dẫn",
+      "detailed_summary": "Giá trị vốn hóa của Apple lần đầu tiên vượt ngưỡng 5 nghìn tỷ USD. Sự tăng trưởng này được thúc đẩy bởi quyết định hạn chế chi tiêu lớn cho trí tuệ nhân tạo, đồng thời thu hút dòng vốn từ các nhà đầu tư đang tìm kiếm nơi trú ẩn an toàn trước làn sóng bán tháo cổ phiếu trong lĩnh vực sản xuất chip.",
+      "causes": [
+        "Chiến lược kiểm soát chi phí đầu tư vào trí tuệ nhân tạo",
+        "Nhà đầu tư chuyển dịch dòng vốn từ nhóm cổ phiếu chip sang các tài sản an toàn hơn"
+      ],
+      "effects": [
+        "Vốn hóa thị trường của Apple đạt kỷ lục mới trên 5 nghìn tỷ USD",
+        "Sự dịch chuyển dòng tiền trong thị trường chứng khoán công nghệ"
+      ],
+      "affected_groups": [
+        "Cổ đông của Apple",
+        "Các nhà đầu tư trong lĩnh vực công nghệ",
+        "Các công ty sản xuất chip đang chịu áp lực bán tháo"
+      ],
+      "market_impact": "Cổ phiếu Apple trở thành điểm tựa vững chắc cho nhà đầu tư trong bối cảnh ngành công nghiệp chip đang gặp biến động tiêu cực.",
+      "follow_up": "",
+      "significance": "Sự kiện cho thấy sự phân hóa rõ rệt trong kỳ vọng của thị trường đối với các công ty công nghệ lớn, nơi sự ổn định tài chính được ưu tiên hơn so với cuộc đua đầu tư rầm rộ vào trí tuệ nhân tạo.",
+      "unknowns": [
+        "Thời gian duy trì đà tăng trưởng này trong dài hạn",
+        "Tác động thực tế của việc cắt giảm chi phí AI đối với khả năng cạnh tranh sản phẩm tương lai của Apple"
+      ],
+      "confidence_note": "Thông tin dựa trên báo cáo tài chính thị trường, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Apple tiếp tục thu hút dòng vốn ổn định khi các nhà đầu tư tiếp tục né tránh rủi ro từ nhóm ngành chip.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Áp lực từ sự phát triển vượt bậc của các đối thủ đầu tư mạnh vào AI buộc Apple phải điều chỉnh lại chiến lược chi tiêu.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Chiến lược cắt giảm chi phí AI",
+          "target": "Vốn hóa Apple",
+          "relation_type": "cause_effect",
+          "label": "Tạo đà tăng trưởng giá trị thị trường"
+        },
+        {
+          "source": "Làn sóng bán tháo nhóm ngành chip",
+          "target": "Vốn hóa Apple",
+          "relation_type": "cause_effect",
+          "label": "Dẫn dòng vốn nhà đầu tư đổ về Apple"
+        }
+      ],
+      "entities": [
+        "Apple",
+        "AI",
+        "chất bán dẫn"
+      ],
+      "keywords": [
+        "Apple",
+        "giá trị thị trường",
+        "AI",
+        "chất bán dẫn"
+      ],
+      "importance": 80,
+      "scope": "global"
+    }
   }
 }
