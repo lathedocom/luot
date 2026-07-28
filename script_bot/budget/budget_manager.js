@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const logger = require('../modules/utils/logger');
+const quotaConfig = require('../config/quota');
 
 const STATE_FILE = path.join(__dirname, 'budget_state.json');
 const HISTORY_DIR = path.join(__dirname, 'history');
@@ -23,7 +24,6 @@ function readAndResetState() {
             logger.error("Lỗi đọc budget_state.json, dùng trạng thái mặc định.");
         }
     }
-
     const today = getTodayString();
     if (state.last_reset !== today) {
         logger.info(`Ngày mới (${today})! Reset toàn bộ Budget State về 0.`);
@@ -31,6 +31,7 @@ function readAndResetState() {
         for (let model in state.usage) {
             state.usage[model].rpd = 0;
             state.usage[model].rpm = 0; 
+            state.usage[model].rpmMinuteKey = '';
             state.usage[model].promptTokens = 0;
             state.usage[model].completionTokens = 0;
             state.usage[model].cost = 0;
@@ -47,12 +48,19 @@ function recordUsage({ model, provider, task, promptTokens = 0, completionTokens
     const state = readAndResetState();
     
     if (!state.usage[model]) {
-        state.usage[model] = { rpd: 0, rpm: 0, promptTokens: 0, completionTokens: 0, cost: 0, successCount: 0, failCount: 0 };
+        state.usage[model] = { rpd: 0, rpm: 0, rpmMinuteKey: '', promptTokens: 0, completionTokens: 0, cost: 0, successCount: 0, failCount: 0 };
     }
-
+    
     // Cập nhật State tức thời
     state.usage[model].rpd += 1;
+
+    const currentMinuteKey = new Date().toISOString().slice(0, 16); // yyyy-MM-ddTHH:mm
+    if (state.usage[model].rpmMinuteKey !== currentMinuteKey) {
+        state.usage[model].rpmMinuteKey = currentMinuteKey;
+        state.usage[model].rpm = 0;
+    }
     state.usage[model].rpm += 1;
+    
     state.usage[model].promptTokens += promptTokens;
     state.usage[model].completionTokens += completionTokens;
     
@@ -61,16 +69,14 @@ function recordUsage({ model, provider, task, promptTokens = 0, completionTokens
     } else {
         state.usage[model].failCount += 1;
     }
-
     fs.writeFileSync(STATE_FILE, JSON.stringify(state, null, 2));
-
+    
     // Ghi Log vào History
     const historyFile = path.join(HISTORY_DIR, `${getTodayString()}.json`);
     let history = [];
     if (fs.existsSync(historyFile)) {
         try { history = JSON.parse(fs.readFileSync(historyFile, 'utf-8')); } catch (e) {}
     }
-
     history.push({
         timestamp: new Date().toISOString(),
         model,
@@ -81,8 +87,29 @@ function recordUsage({ model, provider, task, promptTokens = 0, completionTokens
         latency,
         status
     });
-
     fs.writeFileSync(historyFile, JSON.stringify(history, null, 2));
 }
 
-module.exports = { recordUsage, readState: readAndResetState };
+/**
+ * Kiểm tra xem model còn đủ quota an toàn để gọi tiếp hay không.
+ * Map model name -> nhóm quota tương ứng trong config/quota.js.
+ * @param {string} model
+ * @returns {boolean} true nếu còn dùng được, false nếu nên fallback
+ */
+function canUseModel(model) {
+    const state = readAndResetState();
+    const usage = state.usage[model];
+    if (!usage) return true; // chưa gọi lần nào trong ngày -> an toàn
+
+    // Map tên model sang nhóm quota. Bổ sung thêm nếu có model mới.
+    let limitGroup = null;
+    if (model.includes('flash-lite')) limitGroup = quotaConfig.FLASH_LITE;
+    else if (model.includes('embedding')) limitGroup = quotaConfig.EMBEDDING;
+
+    if (!limitGroup || !limitGroup.MAX_RPD) return true; // không có giới hạn khai báo -> cho qua
+
+    const safeLimit = limitGroup.MAX_RPD * quotaConfig.SAFE_LIMIT_PERCENT;
+    return usage.rpd < safeLimit;
+}
+
+module.exports = { recordUsage, readState: readAndResetState, canUseModel };
