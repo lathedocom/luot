@@ -11,8 +11,14 @@ function formatBriefingText(text) {
         let trimmed = p.trim();
         if (!trimmed) return;
 
-        const isHeading = /^[\uD83C-\uDBFF\uDC00-\uDFFF]/.test(trimmed) || 
-                          /^([A-ZĐÁÀẢÃẠÂẤẦẨẪẬĂẮẰẲẴẶÉÈẺẼẸÊẾỀỂỄỆÍÌỈĨỊÓÒỎÕỌÔỐỒỔỖỘƠỚỜỞỠỢÚÙỦŨỤƯỨỪỬỮỰÝỲỶỸỴ\s]+):/.test(trimmed);
+        // ĐÃ FIX TRIỆT ĐỂ: Thêm điều kiện giới hạn độ dài (trimmed.length < 80)
+        // Tiêu đề thực sự luôn ngắn. Nếu một dòng dài hơn 80 ký tự, đó CHẮC CHẮN là một đoạn văn, 
+        // không được phép bôi xanh và ép in hoa dù có bắt đầu bằng chữ in hoa + dấu hai chấm.
+        const isHeading = trimmed.length < 80 && (
+            /^[\uD83C-\uDBFF\uDC00-\uDFFF]/.test(trimmed) || 
+            /^([A-ZĐÁÀẢÃẠÂẤẦẨẪẬĂẮẰẲẴẶÉÈẺẼẸÊẾỀỂỄỆÍÌỈĨỊÓÒỎÕỌÔỐỒỔỖỘƠỚỜỞỠỢÚÙỦŨỤƯỨỪỬỮỰÝỲỶỸỴ0-9\s]+):/.test(trimmed) ||
+            (trimmed === trimmed.toUpperCase() && trimmed.length < 40)
+        );
 
         if (isHeading) {
             html += `
