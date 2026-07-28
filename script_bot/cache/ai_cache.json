@@ -1,138 +1,61 @@
 {
-  "evt_c6e3e305": {
-    "created_at": 1785210424165,
-    "expires_at": 1787802424165,
+  "evt_general_1785210927535": {
+    "created_at": 1785210930180,
+    "expires_at": 1787802930180,
     "version": "4.5",
-    "checksum": "efcabfe0427fc57e45ad21769dfaec5d",
-    "data": {
-      "cluster_title": "Sự kiện bán chip sâu sắc hơn",
-      "short_summary": "Sự kiện bán chip toàn cầu sâu sắc hơn do lo ngại về cạnh tranh từ Trung Quốc và chi phí tài trợ vòng tròn.",
-      "detailed_summary": "Cổ phiếu ngành bán dẫn trên toàn thế giới, đặc biệt là tại Mỹ, Nhật Bản và Hàn Quốc, đã chịu áp lực bán tháo mạnh mẽ. Nguyên nhân chính đến từ nghi ngại về khả năng sinh lời của các khoản đầu tư khổng lồ vào trí tuệ nhân tạo (AI), cùng với những tiến bộ kỹ thuật trong việc sản xuất chip nội địa của Trung Quốc. Các tập đoàn lớn như SK Hynix và Samsung đối mặt với biến động mạnh, dẫn đến việc tạm dừng giao dịch trên sàn chứng khoán Hàn Quốc.",
-      "causes": [
-        "Nghi ngại về tỷ suất lợi nhuận từ các khoản đầu tư hàng tỷ USD vào trí tuệ nhân tạo.",
-        "Tiến bộ đáng kể của Trung Quốc trong công nghệ sản xuất chip tiên tiến.",
-        "Áp lực cạnh tranh gia tăng đe dọa vị thế của các nhà sản xuất chip hiện hữu."
-      ],
-      "effects": [
-        "Sụt giảm mạnh giá trị cổ phiếu của các doanh nghiệp bán dẫn trên toàn cầu.",
-        "Thị trường chứng khoán Nhật Bản và Hàn Quốc ghi nhận đà giảm điểm mạnh.",
-        "Tâm lý nhà đầu tư bất ổn dẫn đến làn sóng bán tháo trên quy mô lớn."
-      ],
-      "affected_groups": [
-        "Nhà đầu tư chứng khoán ngành công nghệ",
-        "Các tập đoàn sản xuất chip (Nvidia, SK Hynix, Samsung)",
-        "Thị trường tài chính khu vực Đông Á và Wall Street"
-      ],
-      "market_impact": "Thị trường bán dẫn trải qua đợt điều chỉnh mạnh, làm lan tỏa sự tiêu cực sang các chỉ số chứng khoán chủ chốt trên toàn cầu.",
-      "follow_up": "",
-      "significance": "Sự kiện phản ánh sự thay đổi trong tâm lý nhà đầu tư trước sự hoài nghi về khả năng hiện thực hóa lợi nhuận của cơn sốt AI và sự thay đổi trong cấu trúc cung ứng chip toàn cầu.",
-      "unknowns": [
-        "Thời gian kéo dài của làn sóng bán tháo trên thị trường chip.",
-        "Mức độ thực tế của tiến bộ công nghệ sản xuất chip tại Trung Quốc."
-      ],
-      "confidence_note": "Thông tin có độ tin cậy cao dựa trên dữ liệu biến động thị trường và báo cáo từ các sàn giao dịch chứng khoán.",
-      "scenarios": [
-        {
-          "text": "Thị trường sẽ có sự phục hồi sau khi các doanh nghiệp công bố kết quả kinh doanh quý thực tế.",
-          "likelihood": "cao"
-        },
-        {
-          "text": "Các rào cản thương mại về chip sẽ tiếp tục thắt chặt, gây thêm bất ổn cho chuỗi cung ứng.",
-          "likelihood": "trung bình"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Trung Quốc",
-          "target": "Ngành bán dẫn toàn cầu",
-          "relation_type": "conflict",
-          "label": "Tăng cường cạnh tranh kỹ thuật làm giảm thị phần và giá trị cổ phiếu đối thủ"
-        },
-        {
-          "source": "Đầu tư AI",
-          "target": "Cổ phiếu bán dẫn",
-          "relation_type": "cause_effect",
-          "label": "Sự hoài nghi về lợi nhuận dẫn đến làn sóng bán tháo cổ phiếu"
-        },
-        {
-          "source": "Nvidia",
-          "target": "Nhà đầu tư",
-          "relation_type": "cause_effect",
-          "label": "Thỏa thuận cung ứng chip AI gây lo ngại về định giá và cạnh tranh"
-        }
-      ],
-      "entities": [
-        "Nvidia Corp.",
-        "SK Hynix",
-        "Samsung",
-        "Kospi"
-      ],
-      "keywords": [
-        "sự kiện bán chip",
-        "tập đoàn Nvidia",
-        "công nghệ trí tuệ nhân tạo"
-      ],
-      "importance": 90,
-      "scope": "global"
-    }
-  },
-  "evt_general_1785210433887": {
-    "created_at": 1785210443663,
-    "expires_at": 1787802443663,
-    "version": "4.5",
-    "checksum": "78f60c0e5f355515a794156bfade35b3",
+    "checksum": "54a242a47205dd00ab76301bc1b4b4d0",
     "data": {
       "cluster_title": "Giá Vàng Giảm",
-      "short_summary": "Giá vàng giảm do lo ngại về việc tăng lãi suất ở Mỹ và tình hình căng thẳng ở Trung Đông.",
-      "detailed_summary": "Giá vàng ghi nhận đà giảm do các nhà giao dịch đang đánh giá khả năng Cục Dự trữ Liên bang Mỹ (Fed) tăng lãi suất trong tuần này. Trong khi đó, sự tạm lắng của các cuộc xung đột tại Trung Đông đã làm dịu đi những lo ngại về lạm phát, làm giảm sức hấp dẫn của vàng như một tài sản trú ẩn an toàn.",
+      "short_summary": "Giá vàng giảm do lo ngại về việc tăng lãi suất ở Mỹ và sự gián đoạn ở Trung Đông.",
+      "detailed_summary": "Giá vàng đang ghi nhận xu hướng giảm trước thềm quyết định quan trọng về lãi suất của Cục Dự trữ Liên bang Mỹ (FED) trong tuần này. Đồng thời, việc căng thẳng tại Trung Đông tạm thời hạ nhiệt đã làm giảm nhu cầu trú ẩn an toàn, từ đó gây áp lực lên giá kim loại quý.",
       "causes": [
-        "Dự báo về khả năng tăng lãi suất của Mỹ",
-        "Sự tạm lắng của tình hình xung đột tại Trung Đông"
+        "Kỳ vọng về việc tăng lãi suất của Mỹ",
+        "Sự lắng dịu tạm thời của xung đột tại Trung Đông"
       ],
       "effects": [
-        "Giá vàng trên thị trường quốc tế sụt giảm",
-        "Áp lực lên tâm lý các nhà đầu tư kim loại quý"
+        "Giá vàng sụt giảm trên thị trường quốc tế",
+        "Áp lực lên tâm lý nhà đầu tư vàng"
       ],
       "affected_groups": [
-        "Nhà đầu tư vàng",
-        "Các tổ chức tài chính",
-        "Thị trường hàng hóa toàn cầu"
+        "Nhà đầu tư kim loại quý",
+        "Các tổ chức tài chính quốc tế",
+        "Thị trường tài chính toàn cầu"
       ],
-      "market_impact": "Thị trường kim loại quý chịu áp lực điều chỉnh giảm do các yếu tố vĩ mô và địa chính trị đan xen.",
+      "market_impact": "Thị trường vàng đang chịu áp lực điều chỉnh giảm do các yếu tố vĩ mô tác động trái chiều đến tâm lý nhà đầu tư.",
       "follow_up": "",
-      "significance": "Sự kiện cho thấy sự nhạy cảm của thị trường vàng đối với các chính sách tiền tệ của Mỹ và biến động địa chính trị toàn cầu.",
+      "significance": "Sự kiện phản ánh phản ứng nhạy cảm của nhà đầu tư đối với chính sách tiền tệ của Mỹ và biến động địa chính trị, vốn là những nhân tố then chốt dẫn dắt giá vàng.",
       "unknowns": [
-        "Quyết định chính thức về lãi suất của Cục Dự trữ Liên bang Mỹ",
-        "Diễn biến dài hạn của tình hình xung đột tại Trung Đông"
+        "Quyết định chính thức về mức lãi suất của Cục Dự trữ Liên bang Mỹ",
+        "Thời hạn duy trì sự ổn định tại khu vực Trung Đông"
       ],
-      "confidence_note": "Thông tin dựa trên diễn biến thị trường thực tế và dữ liệu kinh tế vĩ mô có độ tin cậy cao.",
+      "confidence_note": "Thông tin dựa trên diễn biến thực tế của thị trường tài chính, độ tin cậy cao.",
       "scenarios": [
         {
-          "text": "Giá vàng tiếp tục giảm nếu Mỹ xác nhận tăng lãi suất.",
+          "text": "Giá vàng tiếp tục giảm nếu Cục Dự trữ Liên bang Mỹ quyết định tăng lãi suất như kỳ vọng.",
           "likelihood": "cao"
         },
         {
-          "text": "Giá vàng phục hồi nếu tình hình Trung Đông trở nên căng thẳng trở lại.",
+          "text": "Giá vàng đảo chiều tăng nếu căng thẳng tại Trung Đông leo thang trở lại bất chấp chính sách lãi suất.",
           "likelihood": "trung bình"
         }
       ],
       "entity_relations": [
         {
-          "source": "Cục Dự trữ Liên bang Mỹ",
+          "source": "Chính sách lãi suất Mỹ",
           "target": "Giá vàng",
           "relation_type": "cause_effect",
-          "label": "Chính sách lãi suất tác động trực tiếp đến giá trị kim loại quý"
+          "label": "Tăng lãi suất gây áp lực giảm giá vàng"
         },
         {
-          "source": "Xung đột tại Trung Đông",
+          "source": "Xung đột Trung Đông",
           "target": "Giá vàng",
           "relation_type": "cause_effect",
-          "label": "Tình hình địa chính trị ảnh hưởng đến vai trò trú ẩn của vàng"
+          "label": "Xung đột lắng dịu làm giảm nhu cầu trú ẩn vào vàng"
         }
       ],
       "entities": [
         "Lãi suất",
-        "Vàng"
+        "Trung Đông"
       ],
       "keywords": [
         "Vàng",
