@@ -26,7 +26,7 @@ function initMap(mapContainer) {
 
     const regionValues = {};
     for (const [isoCode, data] of Object.entries(savedRiskData)) {
-        regionValues[isoCode] = data.status;
+        regionValues[isoCode] = data.status; // Tạm giữ nguyên cách map cũ lấy màu, có thể bạn sẽ cần sửa logic fill map này sau nếu object data đổi cấu trúc
     }
 
     mapInstance = new jsVectorMap({
@@ -64,87 +64,55 @@ function initMap(mapContainer) {
             }]
         },
 
-       onRegionTooltipShow(event, tooltip, code) {
+        onRegionTooltipShow(event, tooltip, code) {
             const countryData = savedRiskData[code];
-            
-            // [MỚI] API tự động dịch mã ISO sang tiếng Việt có sẵn của trình duyệt
             const translator = new Intl.DisplayNames(['vi'], { type: 'region' });
             let viName = tooltip.text();
-            try {
-                viName = translator.of(code) || tooltip.text();
-            } catch (e) {
-                // Bỏ qua lỗi nếu mã ISO không hợp lệ
-            }
-
+            try { viName = translator.of(code) || tooltip.text(); } catch (e) {}
+            
             if (countryData) {
+                // Sử dụng GSI và Trend mới
                 tooltip.text(
                     `<div style="padding: 4px;">
-                        <div style="font-weight: bold; margin-bottom: 4px; font-size: 14px;">${viName}</div>
-                        <div style="font-size: 12px;">Trạng thái: <span style="color:${countryData.color}">${countryData.status}</span></div>
-                        <div style="font-size: 12px;">Điểm rủi ro: ${countryData.score}</div>
+                        <div style="font-weight: bold; margin-bottom: 4px; font-size: 14px;">${viName} ${countryData.trend_icon}</div>
+                        <div style="font-size: 12px;">Tình trạng: <span style="font-weight:bold; color:${countryData.level === 'red' ? '#ef4444' : countryData.level === 'orange' ? '#f97316' : countryData.level === 'yellow' ? '#eab308' : '#22c55e'}">${countryData.label}</span></div>
+                        <div style="font-size: 12px;">GSI Score: ${countryData.gsi} / 10</div>
                     </div>`,
                     true
                 );
             } else {
-                tooltip.text(`${viName} (Chưa có sự kiện nổi bật)`);
+                tooltip.text(`${viName} (Ổn định)`);
             }
         },
-
-        // ====================================================================
-        // [CẬP NHẬT] XỬ LÝ CLICK: THÊM NÚT NHẢY SANG KNOWLEDGE GRAPH
-        // ====================================================================
+        
         onRegionClick(event, code) {
             const countryData = savedRiskData[code];
-            if (countryData && countryData.events.length > 0) {
+            if (countryData && countryData.explanation && countryData.explanation.top_events.length > 0) {
                 const modalTitle = document.getElementById('modal-title');
                 const modalBody = document.getElementById('modal-body');
                 
-                const reliabilityContainer = document.getElementById('modal-reliability');
-                const miniTimelineContainer = document.getElementById('modal-mini-timeline');
-                const toggleBtn = document.getElementById('toggle-sources-btn');
-                const sourcesContainer = document.getElementById('modal-sources');
+                modalTitle.innerHTML = `Biến động tại: <span style="text-transform: uppercase;">${code}</span> ${countryData.trend_icon}`;
                 
-                if(reliabilityContainer) reliabilityContainer.innerHTML = '';
-                if(miniTimelineContainer) miniTimelineContainer.style.display = 'none';
-                if(toggleBtn) toggleBtn.style.display = 'none';
-                if(sourcesContainer) sourcesContainer.style.display = 'none';
-
-                modalTitle.innerHTML = `Chi tiết rủi ro: <span style="color:${countryData.color}">${code}</span>`;
-                
-                let listHtml = '<ul style="padding-left: 20px; line-height: 1.6; font-size: 14px; margin-top: 12px; margin-bottom: 0;">';
-                countryData.events.forEach(evt => {
-                    listHtml += `<li style="margin-bottom: 8px;"><strong>${evt.title}</strong> <span style="opacity: 0.7;">(+${evt.score} điểm)</span></li>`;
+                let listHtml = '<div style="margin-top: 12px; display: flex; flex-direction: column; gap: 12px;">';
+                countryData.explanation.top_events.forEach(evt => {
+                    listHtml += `
+                    <div style="padding-bottom: 12px; border-bottom: 1px dashed var(--md-sys-color-outline);">
+                        <strong style="font-size:15px; color: var(--md-sys-color-on-surface)">${evt.title}</strong>
+                        <span style="font-size: 12px; padding: 2px 6px; background: rgba(239, 68, 68, 0.1); color: #ef4444; border-radius: 4px; margin-left: 6px;">Cấp độ: ${evt.severity}</span>
+                        <p style="font-size: 13px; opacity: 0.8; margin: 4px 0 0 0; line-height: 1.5;">${evt.summary}</p>
+                    </div>`;
                 });
-                listHtml += '</ul>';
+                listHtml += '</div>';
 
-                // Bổ sung nút liên kết bên dưới danh sách rủi ro
                 modalBody.innerHTML = `
-                    <div style="background: rgba(0,0,0,0.05); border-left: 4px solid ${countryData.color}; padding: 16px; border-radius: 4px; margin-bottom: 16px;">
-                        <h4 style="margin: 0; color: ${countryData.color}; font-size: 15px;">Mức độ: ${countryData.status}</h4>
-                        ${listHtml}
+                    <div style="background: rgba(0,0,0,0.05); padding: 16px; border-radius: 8px; margin-bottom: 16px;">
+                        <h4 style="margin: 0 0 8px 0; color: var(--md-sys-color-primary); font-size: 15px;">Tổng quan từ AI</h4>
+                        <p style="margin: 0; font-size: 14px; line-height: 1.5;">${countryData.explanation.narrative}</p>
                     </div>
-                    <button id="jump-to-graph-btn" style="width: 100%; padding: 12px; background-color: var(--md-sys-color-primary, #8b5cf6); color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 14px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
-                        <span class="material-icons-round" style="font-size: 18px;">hub</span>
-                        Phân tích Mạng lưới tri thức
-                    </button>
+                    <div style="font-weight: bold; font-size: 14px; text-transform: uppercase; color: var(--md-sys-color-on-surface); opacity: 0.7;">Các sự kiện châm ngòi</div>
+                    ${listHtml}
                 `;
-
                 document.getElementById('intelligence-modal').classList.add('active');
-
-                // Lắng nghe sự kiện click cho nút vừa tạo
-                const jumpBtn = document.getElementById('jump-to-graph-btn');
-                if (jumpBtn) {
-                    jumpBtn.addEventListener('click', () => {
-                        // 1. Đóng Modal hiện tại
-                        document.getElementById('intelligence-modal').classList.remove('active');
-                        
-                        // 2. Kích hoạt tự động bấm vào Tab Knowledge Graph
-                        const navKnowledge = document.getElementById('nav-knowledge');
-                        if (navKnowledge) {
-                            navKnowledge.click();
-                        }
-                    });
-                }
             }
         }
     });
