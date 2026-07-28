@@ -1,279 +1,146 @@
 {
-  "evt_general_1785213237871": {
-    "created_at": 1785213244934,
-    "expires_at": 1787805244934,
+  "evt_89ba4d52": {
+    "created_at": 1785214372755,
+    "expires_at": 1787806372755,
     "version": "4.5",
-    "checksum": "5fca696b1e3e3614a3eb6990f4b3d9e1",
+    "checksum": "36d0e4ed717b16e703e1b45e7f93cd4c",
     "data": {
-      "cluster_title": "Giá Vàng Giảm",
-      "short_summary": "Giá vàng giảm do lo ngại về việc tăng lãi suất ở Hoa Kỳ và tình hình căng thẳng ở Trung Đông.",
-      "detailed_summary": "Thị trường vàng ghi nhận xu hướng giảm giá khi nhà đầu tư chờ đợi quyết định lãi suất từ phía Mỹ vào cuối tuần này. Bên cạnh đó, tình trạng ngừng bắn tạm thời tại khu vực Trung Đông đã giúp giảm bớt lo ngại về lạm phát, làm giảm sức hấp dẫn của vàng với vai trò là tài sản trú ẩn an toàn.",
+      "cluster_title": "Sự kiện thị trường Hàn Quốc bị ảnh hưởng bởi cuộc khủng hoảng chip",
+      "short_summary": "Thị trường Hàn Quốc bị ảnh hưởng bởi cuộc khủng hoảng chip, khiến các cổ phiếu của SK Hynix và Samsung giảm mạnh và bị tạm dừng giao dịch.",
+      "detailed_summary": "Thị trường chứng khoán tại Hàn Quốc và Nhật Bản ghi nhận đà giảm mạnh, đặc biệt là nhóm cổ phiếu bán dẫn. Sự sụt giảm này dẫn đến tình trạng tạm dừng giao dịch tại một số mã trên sàn Kospi (Hàn Quốc). Các yếu tố tác động bao gồm biến động từ thương vụ cung ứng trí tuệ nhân tạo của Nvidia và áp lực cạnh tranh gay gắt từ các nhà sản xuất chip Trung Quốc.",
       "causes": [
-        "Dự báo về khả năng Mỹ tăng lãi suất gây áp lực lên giá vàng",
-        "Sự giảm bớt căng thẳng địa chính trị tại Trung Đông làm giảm nhu cầu trú ẩn"
+        "Sự sụt giảm giá cổ phiếu của các nhà sản xuất bán dẫn lớn như SK Hynix và Samsung",
+        "Lo ngại về hiệu quả thương vụ cung ứng trí tuệ nhân tạo của Nvidia",
+        "Áp lực cạnh tranh ngày càng lớn từ các nhà sản xuất chip Trung Quốc"
       ],
       "effects": [
-        "Giá vàng trên thị trường quốc tế sụt giảm",
-        "Tâm lý thận trọng bao trùm lên các nhà giao dịch kim loại quý"
+        "Thị trường chứng khoán Hàn Quốc và Nhật Bản giảm điểm",
+        "Tạm dừng giao dịch cổ phiếu trên sàn Kospi",
+        "Tâm lý nhà đầu tư trở nên tiêu cực đối với ngành công nghệ"
       ],
       "affected_groups": [
-        "Nhà đầu tư kim loại quý",
-        "Các tổ chức tài chính toàn cầu",
-        "Thị trường tài chính Mỹ"
+        "Nhà đầu tư chứng khoán tại Hàn Quốc và Nhật Bản",
+        "Các doanh nghiệp sản xuất bán dẫn như Samsung và SK Hynix",
+        "Các quỹ đầu tư tập trung vào ngành công nghệ và trí tuệ nhân tạo"
       ],
-      "market_impact": "Áp lực bán ra gia tăng trên thị trường vàng do dòng vốn dịch chuyển trước các tín hiệu chính sách tiền tệ và sự ổn định địa chính trị.",
+      "market_impact": "Thị trường khu vực chịu áp lực bán tháo mạnh, dẫn đến rủi ro thanh khoản ngắn hạn và bất ổn tâm lý nhà đầu tư trong ngành bán dẫn.",
       "follow_up": "",
-      "significance": "Sự kiện phản ánh mối liên hệ mật thiết giữa chính sách tiền tệ của Mỹ và các biến động địa chính trị đối với giá trị của các tài sản an toàn như vàng.",
+      "significance": "Sự kiện phản ánh mức độ nhạy cảm cao của thị trường công nghệ châu Á trước các thông tin về cạnh tranh toàn cầu và sự thay đổi kỳ vọng đối với các gã khổng lồ bán dẫn.",
       "unknowns": [
-        "Quyết định chính thức về mức lãi suất của Cục Dự trữ Liên bang Mỹ (Fed)",
-        "Độ bền vững của lệnh ngừng bắn tại khu vực Trung Đông"
+        "Thời gian kéo dài của đà bán tháo trên thị trường",
+        "Mức độ ảnh hưởng thực tế của cạnh tranh từ Trung Quốc đối với biên lợi nhuận của các hãng chip Hàn Quốc"
       ],
-      "confidence_note": "Thông tin dựa trên diễn biến thực tế của thị trường, độ tin cậy cao.",
+      "confidence_note": "Thông tin có độ tin cậy cao, dựa trên dữ liệu giao dịch thực tế tại các thị trường tài chính.",
       "scenarios": [
         {
-          "text": "Giá vàng tiếp tục biến động theo biên độ hẹp cho đến khi có thông báo chính thức về lãi suất của Mỹ.",
+          "text": "Thị trường ổn định trở lại sau khi nhà đầu tư đánh giá lại định giá cổ phiếu bán dẫn",
           "likelihood": "cao"
         },
         {
-          "text": "Giá vàng phục hồi mạnh nếu căng thẳng tại Trung Đông leo thang trở lại bất chấp các quyết định lãi suất.",
+          "text": "Đà bán tháo lan rộng sang các nhóm ngành công nghệ khác nếu tâm lý tiêu cực tiếp diễn",
           "likelihood": "trung bình"
         }
       ],
       "entity_relations": [
         {
-          "source": "Lãi suất Mỹ",
+          "source": "Cạnh tranh từ nhà sản xuất chip Trung Quốc",
+          "target": "Cổ phiếu Samsung và SK Hynix",
+          "relation_type": "cause_effect",
+          "label": "Gây áp lực giảm giá cổ phiếu"
+        },
+        {
+          "source": "Thương vụ cung ứng AI của Nvidia",
+          "target": "Tâm lý nhà đầu tư",
+          "relation_type": "cause_effect",
+          "label": "Tạo ra sự không chắc chắn và biến động"
+        },
+        {
+          "source": "Nhà đầu tư",
+          "target": "Cổ phiếu bán dẫn",
+          "relation_type": "conflict",
+          "label": "Bán tháo tài sản"
+        }
+      ],
+      "entities": [
+        "SK Hynix",
+        "Samsung",
+        "Nvidia Corp."
+      ],
+      "keywords": [
+        "thị trường Hàn Quốc",
+        "chip",
+        "cuộc khủng hoảng"
+      ],
+      "importance": 90,
+      "scope": "national"
+    }
+  },
+  "evt_general_1785214378592": {
+    "created_at": 1785214388240,
+    "expires_at": 1787806388240,
+    "version": "4.5",
+    "checksum": "a708a71ccd6d79e5b2fdf2427526ad48",
+    "data": {
+      "cluster_title": "Giá Vàng Giảm",
+      "short_summary": "Giá vàng giảm do lo ngại về việc tăng lãi suất ở Mỹ và sự gián đoạn ở Trung Đông.",
+      "detailed_summary": "Giá vàng ghi nhận đà giảm trong bối cảnh các nhà đầu tư đang thận trọng chờ đợi quyết định về lãi suất của Cục Dự trữ Liên bang Mỹ (Fed) trong tuần này. Bên cạnh đó, sự tạm lắng trong các xung đột tại Trung Đông đã làm giảm lo ngại về lạm phát, khiến nhu cầu trú ẩn an toàn vào vàng suy yếu.",
+      "causes": [
+        "Kỳ vọng về việc tăng lãi suất tại Mỹ",
+        "Sự tạm lắng trong căng thẳng tại Trung Đông"
+      ],
+      "effects": [
+        "Giá vàng sụt giảm",
+        "Áp lực bán tháo từ các nhà đầu tư"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư kim loại quý",
+        "Các ngân hàng trung ương",
+        "Thị trường tài chính toàn cầu"
+      ],
+      "market_impact": "Thị trường vàng đang trong xu hướng điều chỉnh giảm do các yếu tố vĩ mô và địa chính trị thay đổi.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh sự nhạy cảm của thị trường kim loại quý trước chính sách tiền tệ của Mỹ và các biến động địa chính trị khu vực.",
+      "unknowns": [
+        "Quyết định cuối cùng của Fed về mức lãi suất",
+        "Tính bền vững của thỏa thuận ngừng bắn tại Trung Đông"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên các biến động thị trường tài chính công khai.",
+      "scenarios": [
+        {
+          "text": "Giá vàng tiếp tục giảm nếu Fed giữ quan điểm cứng rắn về lãi suất.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Giá vàng tăng trở lại nếu các xung đột địa chính trị bùng phát bất ngờ.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Chính sách lãi suất của Mỹ",
           "target": "Giá vàng",
           "relation_type": "cause_effect",
-          "label": "Tăng lãi suất gây áp lực giảm giá vàng"
+          "label": "Tác động ngược chiều đến giá trị tài sản"
         },
         {
           "source": "Xung đột Trung Đông",
           "target": "Giá vàng",
           "relation_type": "cause_effect",
-          "label": "Căng thẳng địa chính trị hỗ trợ giá vàng"
+          "label": "Yếu tố kích thích nhu cầu trú ẩn"
         }
       ],
       "entities": [
-        "Hoa Kỳ",
+        "Lãi suất",
+        "Vàng",
         "Trung Đông"
       ],
       "keywords": [
         "Vàng",
-        "Lạm phát",
-        "Tỷ lệ lãi suất"
+        "Lãi suất",
+        "Trung Đông"
       ],
       "importance": 80,
       "scope": "global"
-    }
-  },
-  "evt_acb57072": {
-    "created_at": 1785213264554,
-    "expires_at": 1787805264554,
-    "version": "4.5",
-    "checksum": "30e29a83d6eb39706c3f985f040f9e56",
-    "data": {
-      "cluster_title": "Nhu cầu mới về mô hình tăng trưởng của Trung Quốc",
-      "short_summary": "Trung Quốc cần một mô hình tăng trưởng mới, điều này quan trọng cho lợi ích của Bắc Kinh và nền kinh tế thế giới",
-      "detailed_summary": "Bối cảnh kinh tế hiện tại của Trung Quốc cho thấy sự cần thiết cấp bách của việc thay đổi mô hình tăng trưởng. Sự thay đổi này không chỉ mang tính sống còn đối với chính quốc gia này mà còn là yếu tố then chốt ảnh hưởng đến sức khỏe của nền kinh tế toàn cầu.",
-      "causes": [
-        "Sự suy giảm của mô hình tăng trưởng truyền thống tại Trung Quốc",
-        "Sự kết nối chặt chẽ giữa nền kinh tế Trung Quốc và kinh tế toàn cầu"
-      ],
-      "effects": [
-        "Khả năng ổn định hoặc bất ổn cho kinh tế Trung Quốc",
-        "Thay đổi môi trường đầu tư và thương mại quốc tế"
-      ],
-      "affected_groups": [
-        "Chính phủ Trung Quốc",
-        "Các đối tác thương mại quốc tế",
-        "Nhà đầu tư toàn cầu"
-      ],
-      "market_impact": "Việc Trung Quốc thay đổi mô hình tăng trưởng sẽ gây ra những biến động đáng kể cho các thị trường tài chính và chuỗi cung ứng toàn cầu.",
-      "follow_up": "",
-      "significance": "Sự kiện phản ánh tầm quan trọng chiến lược của việc Trung Quốc tái cấu trúc kinh tế đối với sự cân bằng bền vững của nền kinh tế thế giới.",
-      "unknowns": [
-        "Chi tiết lộ trình và phương pháp thực hiện mô hình tăng trưởng mới của Trung Quốc",
-        "Mức độ sẵn sàng và khả năng thích ứng của các đối tác thương mại với mô hình mới"
-      ],
-      "confidence_note": "Thông tin mang tính chất phân tích vĩ mô, độ tin cậy cao dựa trên các nhận định kinh tế học cơ bản.",
-      "scenarios": [
-        {
-          "text": "Trung Quốc thực hiện cải cách mô hình kinh tế thành công, thúc đẩy tăng trưởng bền vững cho cả nội địa và thế giới.",
-          "likelihood": "trung bình"
-        },
-        {
-          "text": "Quá trình chuyển đổi gặp khó khăn gây ra gián đoạn ngắn hạn trong tăng trưởng kinh tế khu vực.",
-          "likelihood": "cao"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Trung Quốc",
-          "target": "Nền kinh tế thế giới",
-          "relation_type": "cause_effect",
-          "label": "Mô hình tăng trưởng của Trung Quốc là nhân tố ảnh hưởng đến kinh tế toàn cầu"
-        }
-      ],
-      "entities": [
-        "Trung Quốc",
-        "Beijing"
-      ],
-      "keywords": [
-        "Trung Quốc",
-        "mô hình tăng trưởng"
-      ],
-      "importance": 85,
-      "scope": "global"
-    }
-  },
-  "evt_952e0848": {
-    "created_at": 1785213277060,
-    "expires_at": 1787805277060,
-    "version": "4.5",
-    "checksum": "0f39fa4777fb1196e50cb54f63919ddd",
-    "data": {
-      "cluster_title": "EU Ngăn Chặn Xuất Khẩu Alumina Sang Nga",
-      "short_summary": "EU đang cân nhắc việc ngăn chặn xuất khẩu alumina sang Nga, lo ngại rằng các biện pháp này sẽ đe dọa chuỗi cung ứng nhôm của khối.",
-      "detailed_summary": "EU đang đối mặt với tình thế tiến thoái lưỡng nan khi một nhà máy tại Ireland bị cáo buộc cung cấp nguyên liệu cho ngành công nghiệp quốc phòng Nga. Dù muốn thắt chặt các biện pháp trừng phạt, các quan chức EU lo ngại rằng việc hạn chế xuất khẩu alumina (nguyên liệu sản xuất nhôm) từ cơ sở này sẽ gây ra những hậu quả tiêu cực đối với chuỗi cung ứng nhôm nội khối.",
-      "causes": [
-        "Nhà máy tại Ireland bị nghi ngờ cung cấp nguyên liệu hỗ trợ ngành công nghiệp chiến tranh của Nga.",
-        "Nhu cầu duy trì sự ổn định của chuỗi cung ứng nhôm cho các ngành công nghiệp trong khối EU."
-      ],
-      "effects": [
-        "Sự chậm trễ hoặc do dự trong việc đưa ra các quyết định trừng phạt cụ thể từ EU.",
-        "Rủi ro gián đoạn nguồn cung vật liệu công nghiệp nếu các biện pháp trừng phạt được áp dụng thiếu tính toán."
-      ],
-      "affected_groups": [
-        "Các nhà sản xuất nhôm tại EU",
-        "Ngành công nghiệp quốc phòng Nga",
-        "Cơ sở sản xuất alumina tại Ireland"
-      ],
-      "market_impact": "Có khả năng gây biến động giá nhôm trên thị trường toàn cầu do tính bất định của chuỗi cung ứng.",
-      "follow_up": "",
-      "significance": "Sự kiện cho thấy sự cân bằng mong manh giữa việc thực thi chính sách trừng phạt Nga và đảm bảo an ninh nguồn cung kinh tế nội khối của EU.",
-      "unknowns": [
-        "Danh tính cụ thể của nhà máy bị cáo buộc tại Ireland.",
-        "Tỷ trọng alumina thực tế mà nhà máy này cung cấp cho Nga so với tổng sản lượng."
-      ],
-      "confidence_note": "Thông tin có độ tin cậy cao dựa trên các báo cáo về sự do dự của chính quyền EU trong các vấn đề trừng phạt liên quan đến chuỗi cung ứng.",
-      "scenarios": [
-        {
-          "text": "EU thực hiện các lệnh trừng phạt chọn lọc nhằm giảm thiểu tác động đến chuỗi cung ứng nhôm.",
-          "likelihood": "cao"
-        },
-        {
-          "text": "EU tạm hoãn việc trừng phạt nhà máy để tìm kiếm nguồn cung thay thế nhằm đảm bảo an ninh công nghiệp.",
-          "likelihood": "trung bình"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "EU",
-          "target": "Nhà máy tại Ireland",
-          "relation_type": "conflict",
-          "label": "Cân nhắc áp đặt lệnh trừng phạt"
-        },
-        {
-          "source": "Nhà máy tại Ireland",
-          "target": "Nga",
-          "relation_type": "cooperation",
-          "label": "Cung cấp nguyên liệu cho ngành công nghiệp chiến tranh"
-        },
-        {
-          "source": "Chuỗi cung ứng nhôm",
-          "target": "EU",
-          "relation_type": "cause_effect",
-          "label": "Yếu tố hạn chế chính sách trừng phạt của EU"
-        }
-      ],
-      "entities": [
-        "EU",
-        "Irish",
-        "Russia"
-      ],
-      "keywords": [
-        "EU",
-        "Irish",
-        "Russia",
-        "Alumina",
-        "Aluminium"
-      ],
-      "importance": 85,
-      "scope": "global"
-    }
-  },
-  "evt_07612579": {
-    "created_at": 1785213301099,
-    "expires_at": 1787805301099,
-    "version": "4.5",
-    "checksum": "16e8c8cf770a39069eae88278e82abd6",
-    "data": {
-      "cluster_title": "Nvidia đầu tư vào trung tâm dữ liệu Texas",
-      "short_summary": "Nvidia đã đầu tư 50 tỷ USD vào một trung tâm dữ liệu tại Texas, sử dụng chip của mình để hỗ trợ thị trường tính toán AI.",
-      "detailed_summary": "Nvidia đã thực hiện khoản đầu tư trị giá 50 tỷ USD dưới hình thức thuê cơ sở hạ tầng trung tâm dữ liệu tại Texas. Dự án này được thiết kế để tích hợp trực tiếp các dòng chip AI của hãng, thể hiện chiến lược của CEO Jensen Huang trong việc sử dụng tiềm lực tài chính để hỗ trợ sự tăng trưởng của thị trường hạ tầng tính toán trí tuệ nhân tạo.",
-      "causes": [
-        "Nhu cầu gia tăng mạnh mẽ đối với hạ tầng tính toán AI.",
-        "Chiến lược chủ động của Nvidia trong việc đảm bảo hệ sinh thái vận hành chip AI của hãng."
-      ],
-      "effects": [
-        "Tăng cường năng lực cung ứng hạ tầng cho phát triển AI tại Mỹ.",
-        "Củng cố vị thế dẫn đầu của Nvidia trong toàn bộ chuỗi giá trị AI."
-      ],
-      "affected_groups": [
-        "Các nhà cung cấp dịch vụ điện toán đám mây",
-        "Các doanh nghiệp phát triển mô hình AI",
-        "Các nhà đầu tư vào cổ phiếu công nghệ"
-      ],
-      "market_impact": "Khẳng định cam kết mạnh mẽ của Nvidia vào hạ tầng vật lý, thúc đẩy niềm tin vào sự tăng trưởng dài hạn của ngành công nghiệp AI.",
-      "follow_up": "",
-      "significance": "Đây là bước đi chiến lược nhằm chuyển dịch từ nhà cung cấp chip đơn thuần sang nhà cung cấp hạ tầng hệ sinh thái AI toàn diện, đảm bảo sự phát triển bền vững cho thị trường máy tính AI.",
-      "unknowns": [
-        "Thông tin chi tiết về đối tác cho thuê cơ sở hạ tầng tại Texas.",
-        "Thời hạn cụ thể của hợp đồng thuê và các mốc tiến độ triển khai."
-      ],
-      "confidence_note": "Thông tin có độ tin cậy cao dựa trên các báo cáo tài chính và chiến lược kinh doanh của Nvidia.",
-      "scenarios": [
-        {
-          "text": "Nvidia tiếp tục mở rộng thêm các trung tâm dữ liệu tương tự ở các khu vực khác để đảm bảo tính sẵn sàng của hạ tầng.",
-          "likelihood": "cao"
-        },
-        {
-          "text": "Dự án gặp phải các rào cản về năng lượng hoặc quy định pháp lý tại địa phương làm chậm tiến độ.",
-          "likelihood": "trung bình"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Nvidia",
-          "target": "Trung tâm dữ liệu Texas",
-          "relation_type": "cooperation",
-          "label": "Đầu tư và thuê cơ sở hạ tầng"
-        },
-        {
-          "source": "Jensen Huang",
-          "target": "Nvidia",
-          "relation_type": "cause_effect",
-          "label": "Người chỉ đạo chiến lược phát triển"
-        },
-        {
-          "source": "Nvidia",
-          "target": "Thị trường tính toán AI",
-          "relation_type": "cause_effect",
-          "label": "Thúc đẩy tăng trưởng thông qua hạ tầng"
-        }
-      ],
-      "entities": [
-        "Nvidia",
-        "Jensen Huang"
-      ],
-      "keywords": [
-        "Nvidia",
-        "Texas",
-        "trung tâm dữ liệu",
-        "chips"
-      ],
-      "importance": 85,
-      "scope": "business"
     }
   }
 }
