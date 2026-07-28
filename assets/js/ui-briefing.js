@@ -11,9 +11,7 @@ function formatBriefingText(text) {
         let trimmed = p.trim();
         if (!trimmed) return;
 
-        // ĐÃ FIX TRIỆT ĐỂ: Thêm điều kiện giới hạn độ dài (trimmed.length < 80)
-        // Tiêu đề thực sự luôn ngắn. Nếu một dòng dài hơn 80 ký tự, đó CHẮC CHẮN là một đoạn văn, 
-        // không được phép bôi xanh và ép in hoa dù có bắt đầu bằng chữ in hoa + dấu hai chấm.
+        // Giới hạn độ dài để tránh nhận diện nhầm đoạn văn dài thành tiêu đề
         const isHeading = trimmed.length < 80 && (
             /^[\uD83C-\uDBFF\uDC00-\uDFFF]/.test(trimmed) || 
             /^([A-ZĐÁÀẢÃẠÂẤẦẨẪẬĂẮẰẲẴẶÉÈẺẼẸÊẾỀỂỄỆÍÌỈĨỊÓÒỎÕỌÔỐỒỔỖỘƠỚỜỞỠỢÚÙỦŨỤƯỨỪỬỮỰÝỲỶỸỴ0-9\s]+):/.test(trimmed) ||
@@ -21,14 +19,12 @@ function formatBriefingText(text) {
         );
 
         if (isHeading) {
+            // ĐÃ BỎ HẲN style highlight (background, padding, border-left)
+            // Chỉ giữ lại in đậm, màu primary và khoảng cách dòng cho rõ ràng
             html += `
                 <div style="
-                    background: var(--md-sys-color-surface-variant, rgba(255, 255, 255, 0.1));
-                    color: var(--md-sys-color-on-surface, #ffffff);
-                    padding: 12px 16px;
-                    margin: 28px 0 12px 0;
-                    border-left: 4px solid var(--md-sys-color-primary, #a8c7fa);
-                    border-radius: 0 6px 6px 0;
+                    color: var(--md-sys-color-primary, #3b82f6);
+                    margin: 24px 0 8px 0;
                     font-size: 15px;
                     font-weight: 700;
                     text-transform: uppercase;
