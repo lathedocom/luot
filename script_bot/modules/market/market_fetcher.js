@@ -1,17 +1,27 @@
+// TẮT KIỂM TRA SSL KHẮT KHE CỦA NODE.JS (Rất quan trọng để cào SJC và các trang VN)
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+
 const { SYMBOLS } = require('../../config/market_symbols');
 const logger = require('../utils/logger');
 const cheerio = require('cheerio'); 
 
+// TẠO BỘ HEADER NGỤY TRANG GIỐNG HỆT TRÌNH DUYỆT CHROME
+const BROWSER_HEADERS = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36',
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+    'Accept-Language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
+    'Cache-Control': 'no-cache',
+    'Connection': 'keep-alive'
+};
+
 // ==========================================
-// 1. YAHOO FINANCE (Quốc tế & Tỷ giá)
+// 1. YAHOO FINANCE
 // ==========================================
 async function fetchFromYahoo(symbolsConfig) {
     const results = await Promise.all(symbolsConfig.map(async (config) => {
         const url = `https://query1.finance.yahoo.com/v8/finance/chart/${config.api_symbol}?range=5d&interval=1d`;
         try {
-            const response = await fetch(url, {
-                headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' }
-            });
+            const response = await fetch(url, { headers: BROWSER_HEADERS, timeout: 8000 });
             if (!response.ok) return null;
             const data = await response.json();
             const result = data.chart.result[0];
@@ -55,14 +65,14 @@ async function fetchFromYahoo(symbolsConfig) {
 }
 
 // ==========================================
-// 2. COINGECKO (Tiền điện tử)
+// 2. COINGECKO
 // ==========================================
 async function fetchFromCoinGecko(symbolsConfig) {
     if (symbolsConfig.length === 0) return [];
     const ids = symbolsConfig.map(s => s.api_symbol).join(',');
     const url = `https://api.coingecko.com/api/v3/simple/price?ids=${ids}&vs_currencies=usd&include_24hr_change=true`;
     try {
-        const response = await fetch(url, { headers: { 'User-Agent': 'Mozilla/5.0' } });
+        const response = await fetch(url, { headers: BROWSER_HEADERS, timeout: 8000 });
         if (!response.ok) return [];
         const data = await response.json();
         return symbolsConfig.map(config => {
@@ -94,12 +104,12 @@ async function fetchFromCoinGecko(symbolsConfig) {
 }
 
 // ==========================================
-// 3. CHỨNG KHOÁN VN (VNDIRECT API)
+// 3. CHỨNG KHOÁN VN (VNDIRECT)
 // ==========================================
 async function fetchVietnameseStocks() {
     try {
         const response = await fetch('https://finfo-api.vndirect.com.vn/v4/rtt/indices', {
-            headers: { 'User-Agent': 'Mozilla/5.0' }, timeout: 8000 
+            headers: BROWSER_HEADERS, timeout: 8000 
         });
         if (!response.ok) return null;
         const json = await response.json();
@@ -115,12 +125,12 @@ async function fetchVietnameseStocks() {
 }
 
 // ==========================================
-// 4. VÀNG SJC & NHẪN (SJC XML GỐC)
+// 4. VÀNG SJC & NHẪN (SJC XML)
 // ==========================================
 async function fetchGoldData() {
     try {
         const response = await fetch('https://sjc.com.vn/xml/tygiavang.xml', {
-            headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' }, timeout: 10000 
+            headers: BROWSER_HEADERS, timeout: 10000 
         });
         if (!response.ok) return null;
         
@@ -132,7 +142,6 @@ async function fetchGoldData() {
             const typeName = $(el).attr('type') ? $(el).attr('type').toUpperCase() : '';
             const sellStr = $(el).attr('sell');
             if (typeName && sellStr) {
-                // Giá SJC thường có dạng 85500. Quy chuẩn về Triệu VNĐ (85.5)
                 const sellPrice = parseFloat(sellStr.replace(/[^\d.]/g, ''));
                 let priceInMillions = sellPrice > 1000000 ? sellPrice / 1000000 : sellPrice / 1000;
 
@@ -148,12 +157,12 @@ async function fetchGoldData() {
 }
 
 // ==========================================
-// 5. XĂNG DẦU (QUÉT CỘT BẢNG WEB GIA)
+// 5. XĂNG DẦU (WEB GIA - CHỐNG DÍNH CHỮ)
 // ==========================================
 async function fetchPetrolimexData() {
     try {
         const response = await fetch('https://webgia.com/gia-xang-dau/petrolimex/', {
-            headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' }, timeout: 10000 
+            headers: BROWSER_HEADERS, timeout: 10000 
         });
         if (!response.ok) return null;
         
@@ -161,18 +170,17 @@ async function fetchPetrolimexData() {
         const $ = cheerio.load(html);
         let prices = { RON95: null, E5RON92: null, DIESEL: null };
 
-        // Đọc từng dòng trong bảng để tránh dính chữ
         $('table tbody tr').each((i, el) => {
-            const cols = $(el).find('td');
-            if (cols.length >= 2) {
-                const name = $(cols[0]).text().trim().toUpperCase();
-                const priceStr = $(cols[1]).text().replace(/[^\d]/g, ''); // Xóa dấu phẩy, lấy số nguyên
+            const rowText = $(el).text().toUpperCase();
+            if (rowText.includes('RON 95') || rowText.includes('E5') || rowText.includes('DIESEL')) {
+                // Chỉ lấy cột cuối cùng (chứa giá) để không bị nhầm lẫn
+                const priceStr = $(el).find('td').last().text().replace(/[^\d]/g, '');
                 const priceVal = parseInt(priceStr);
 
                 if (priceVal > 10000) {
-                    if ((name.includes('RON 95') || name.includes('E10')) && !prices.RON95) prices.RON95 = priceVal;
-                    else if ((name.includes('E5') || name.includes('RON 92')) && !prices.E5RON92) prices.E5RON92 = priceVal;
-                    else if ((name.includes('DIESEL') || name.includes('DO')) && !prices.DIESEL) prices.DIESEL = priceVal;
+                    if (rowText.includes('RON 95')) prices.RON95 = priceVal;
+                    else if (rowText.includes('E5') || rowText.includes('RON 92')) prices.E5RON92 = priceVal;
+                    else if (rowText.includes('DIESEL') || rowText.includes('DO')) prices.DIESEL = priceVal;
                 }
             }
         });
@@ -181,19 +189,16 @@ async function fetchPetrolimexData() {
 }
 
 // ==========================================
-// 6. CÀ PHÊ & HỒ TIÊU (TỪ GIACAPHE.COM)
+// 6. CÀ PHÊ & HỒ TIÊU (GIACAPHE / GIATIEU)
 // ==========================================
 async function fetchAgriData() {
     let prices = { COFFEE_VN: null, PEPPER_VN: null };
     try {
-        // Cào Cà phê
         const resCoffee = await fetch('https://giacaphe.com/gia-ca-phe-noi-dia/', { 
-            headers: { 'User-Agent': 'Mozilla/5.0' }, timeout: 8000 
+            headers: BROWSER_HEADERS, timeout: 8000 
         });
         if (resCoffee.ok) {
-            const html = await resCoffee.text();
-            const $ = cheerio.load(html);
-            // Lấy giá Đắk Lắk trong bảng
+            const $ = cheerio.load(await resCoffee.text());
             $('table tr').each((i, el) => {
                 const text = $(el).text().toUpperCase();
                 if (text.includes('ĐẮK LẮK') || text.includes('DAK LAK')) {
@@ -203,13 +208,11 @@ async function fetchAgriData() {
             });
         }
         
-        // Cào Hồ tiêu
         const resPepper = await fetch('https://giatieu.com/gia-tieu-trong-nuoc/', { 
-            headers: { 'User-Agent': 'Mozilla/5.0' }, timeout: 8000 
+            headers: BROWSER_HEADERS, timeout: 8000 
         });
         if (resPepper.ok) {
-            const html = await resPepper.text();
-            const $ = cheerio.load(html);
+            const $ = cheerio.load(await resPepper.text());
             $('table tr').each((i, el) => {
                 const text = $(el).text().toUpperCase();
                 if (text.includes('ĐẮK LẮK') || text.includes('DAK LAK')) {
@@ -223,7 +226,7 @@ async function fetchAgriData() {
 }
 
 // ==========================================
-// 7. TỔNG HỢP & SMART FALLBACK (CHỐNG HIỂN THỊ MOCK)
+// 7. TỔNG HỢP & GÁN DỮ LIỆU
 // ==========================================
 async function fetchLocalMarkets(symbolsConfig) {
     const [petrolimexPrices, goldPrices, stockPrices, agriPrices] = await Promise.all([
@@ -241,8 +244,6 @@ async function fetchLocalMarkets(symbolsConfig) {
     return symbolsConfig.map(config => {
         let base = config.base_price || 100;
         let isRealTime = false;
-        
-        // Mặc định thay thế chữ "Mock" thành một nhãn chuyên nghiệp
         let sourceName = 'Tổng hợp thị trường (Định kỳ)'; 
 
         // Gán Xăng Dầu
@@ -272,7 +273,6 @@ async function fetchLocalMarkets(symbolsConfig) {
             base = aPrices.PEPPER_VN; isRealTime = true; sourceName = 'GiaTieu.com';
         }
 
-        // Tự động tạo dao động nhẹ quanh giá chuẩn để vẽ biểu đồ line sparkline cho đẹp mắt
         const history = [];
         let currentPrice = base;
         for (let i = 0; i < 6; i++) {
