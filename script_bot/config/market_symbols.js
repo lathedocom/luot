@@ -83,6 +83,11 @@ module.exports = {
         { id: 'BTC', name: 'Bitcoin', type: 'crypto', region: 'global', threshold: 0.0, api_source: 'coingecko', api_symbol: 'bitcoin', keywords: ['bitcoin', 'btc'], category: '🪙 Tiền điện tử', unit: 'USD' },
         { id: 'ETH', name: 'Ethereum', type: 'crypto', region: 'global', threshold: 0.0, api_source: 'coingecko', api_symbol: 'ethereum', keywords: ['ethereum', 'eth'], category: '🪙 Tiền điện tử', unit: 'USD' },
         { id: 'SOL', name: 'Solana', type: 'crypto', region: 'global', threshold: 0.0, api_source: 'coingecko', api_symbol: 'solana', keywords: ['solana', 'sol'], category: '🪙 Tiền điện tử', unit: 'USD' },
-        { id: 'XRP', name: 'XRP', type: 'crypto', region: 'global', threshold: 0.0, api_source: 'coingecko', api_symbol: 'ripple', keywords: ['xrp', 'ripple'], category: '🪙 Tiền điện tử', unit: 'USD' }
+        { id: 'XRP', name: 'XRP', type: 'crypto', region: 'global', threshold: 0.0, api_source: 'coingecko', api_symbol: 'ripple', keywords: ['xrp', 'ripple'], category: '🪙 Tiền điện tử', unit: 'USD' },
+    // ==========================================
+        // 8. LÃI SUẤT NGÂN HÀNG (Tham chiếu VCB)
+        // ==========================================
+        { id: 'LS_VCB_1M', name: 'Lãi suất VCB (1 Tháng)', type: 'interest', region: 'vn', threshold: 0.1, api_source: 'local', api_symbol: 'VCB_1M', base_price: 1.6, keywords: ['lãi suất', 'vcb'], category: '🏦 Lãi suất', unit: '%/năm' },
+        { id: 'LS_VCB_12M', name: 'Lãi suất VCB (12 Tháng)', type: 'interest', region: 'vn', threshold: 0.1, api_source: 'local', api_symbol: 'VCB_12M', base_price: 4.6, keywords: ['lãi suất', 'vcb'], category: '🏦 Lãi suất', unit: '%/năm' },
     ]
 };
