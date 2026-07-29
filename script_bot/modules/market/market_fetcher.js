@@ -232,18 +232,97 @@ async function fetchLocalMarkets(localSymbols) {
     return results;
 }
 
+// ==========================================
+// MODULE: VNDIRECT INDEX (Lấy VN-Index, HNX)
+// ==========================================
+async function fetchVNDirectIndex(symbolsConfig) {
+    if (symbolsConfig.length === 0) return [];
+    const codes = symbolsConfig.map(s => s.api_symbol).join(',');
+    const url = `https://finfo-api.vndirect.com.vn/v4/stock_indexes?q=code:${codes}`;
+    
+    try {
+        const response = await fetchWithRetry(url);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        
+        const json = await response.json();
+        const dataList = json.data || [];
+
+        return symbolsConfig.map(config => {
+            const apiData = dataList.find(d => d.code === config.api_symbol);
+            if (!apiData) return buildOfflineItem(config, "Không tìm thấy mã");
+
+            const price = apiData.indexValue;
+            const change = apiData.change;
+            const changePercent = apiData.changePct;
+            const prevPrice = price - change;
+
+            return {
+                ...config,
+                price: parseFloat(price.toFixed(2)).toLocaleString('vi-VN'),
+                change_percent: (changePercent > 0 ? '+' : '') + parseFloat(changePercent.toFixed(2)) + '%',
+                raw_change: changePercent,
+                trend: changePercent >= 0 ? '↑' : '↓',
+                history: [parseFloat(prevPrice.toFixed(2)), parseFloat(price.toFixed(2))],
+                history_labels: ['Phiên trước', 'Hiện tại'],
+                updated_at: Date.now(),
+                display_source: config.official_source,
+                status: "online"
+            };
+        });
+    } catch (error) {
+        logger.warn(`[Lỗi VNDirect Index]: ${error.message}`);
+        return symbolsConfig.map(config => buildOfflineItem(config, "Lỗi API Chứng khoán"));
+    }
+}
+
+// ==========================================
+// MODULE: STATIC DATA (Dữ liệu tham chiếu cố định)
+// ==========================================
+async function fetchStaticMarkets(symbolsConfig) {
+    return symbolsConfig.map(config => {
+        return {
+            ...config,
+            price: config.base_price.toLocaleString('vi-VN'),
+            change_percent: "0%", 
+            raw_change: 0,
+            trend: "→",
+            history: [config.base_price, config.base_price], 
+            history_labels: ["Kỳ trước", "Hiện tại"],
+            updated_at: Date.now(),
+            display_source: config.official_source,
+            status: "online"
+        };
+    });
+}
+
+// Placeholder cho fetchMacroData nếu bạn chưa định nghĩa
+async function fetchMacroData(symbolsConfig) {
+    if (symbolsConfig.length === 0) return [];
+    // Hàm này được thêm tạm thời để file không lỗi. 
+    // Vui lòng chèn logic thực tế của bạn hoặc thay bằng mảng cấu hình tương ứng.
+    return symbolsConfig.map(config => buildOfflineItem(config, "Đang cập nhật"));
+}
+
 async function fetchAllLiveMarketData() {
     const yahooSymbols = SYMBOLS.filter(s => s.api_source === 'yahoo');
     const coinGeckoSymbols = SYMBOLS.filter(s => s.api_source === 'coingecko');
     const localSymbols = SYMBOLS.filter(s => s.api_source === 'local');
+    const macroSymbols = SYMBOLS.filter(s => s.api_source === 'macro_vnd'); 
+    
+    // [MỚI] Lọc thêm 2 nhóm mới
+    const vndIndexSymbols = SYMBOLS.filter(s => s.api_source === 'vndirect_index');
+    const staticSymbols = SYMBOLS.filter(s => s.api_source === 'static');
 
-    const [yahooData, cryptoData, localData] = await Promise.all([
+    const [yahooData, cryptoData, localData, macroData, vndData, staticData] = await Promise.all([
         fetchFromYahoo(yahooSymbols),
         fetchFromCoinGecko(coinGeckoSymbols),
-        fetchLocalMarkets(localSymbols) 
+        fetchLocalMarkets(localSymbols),
+        fetchMacroData(macroSymbols),
+        fetchVNDirectIndex(vndIndexSymbols), // Chạy API Chứng khoán VN
+        fetchStaticMarkets(staticSymbols)    // Load dữ liệu tĩnh
     ]);
 
-    return [...yahooData, ...cryptoData, ...localData];
+    return [...yahooData, ...cryptoData, ...localData, ...macroData, ...vndData, ...staticData];
 }
 
 module.exports = { fetchAllLiveMarketData };
