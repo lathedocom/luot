@@ -210,24 +210,22 @@ body { font-family: 'Roboto', sans-serif; background-color: var(--md-sys-color-b
 #global-risk-map, 
 #global-risk-map .jvm-container, 
 #global-risk-map svg {
-    /* Khóa triệt để thao tác cuộn trang của trình duyệt khi chạm vào bản đồ */
     touch-action: none !important; 
-    /* Ngăn chặn bôi đen/chọn text vô tình khi vuốt */
     -webkit-user-select: none !important;
     user-select: none !important;
 }
 
-/* 2. Điều chỉnh vị trí nút Zoom (+/-) xuống góc dưới bên trái, đẩy cao lên khỏi mép */
+/* 2. Điều chỉnh vị trí nút Zoom (+/-) */
 #global-risk-map .jvm-zoom-btn {
     top: auto !important;
     right: auto !important;
-    left: 16px !important; /* Đẩy cách lề trái 16px cho cân đối */
+    left: 20px !important; /* Cách lề trái 20px */
 }
 
 #global-risk-map .jvm-zoom-btn.jvm-zoomin {
-    bottom: 66px !important; /* Nâng nút (+) lên cao hẳn bên trong map */
+    bottom: 80px !important; /* Đẩy nút (+) lên cao hẳn 80px */
 }
 
 #global-risk-map .jvm-zoom-btn.jvm-zoomout {
-    bottom: 32px !important; /* Nâng nút (-) lên cách đáy map 32px để không đè chú thích */
+    bottom: 45px !important; /* Đẩy nút (-) lên 45px (cách xa hoàn toàn phần chú thích) */
 }
