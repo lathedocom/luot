@@ -5129,5 +5129,137 @@
       "sentiment": -1,
       "scope": "national"
     }
+  },
+  "evt_general_1785316819028": {
+    "created_at": 1785316821862,
+    "expires_at": 1787908821862,
+    "version": "4.5",
+    "checksum": "5d8f998de0915566acd4e46306711b68",
+    "data": {
+      "cluster_title": "Sự Sụt Giảm Của Thị Trụ Chứng Khoán Thị Trường Mới Xây Dựng",
+      "short_summary": "Thị trường chứng khoán mới xây dựng tiếp tục sụt giảm, đạt mức thấp nhất trong ba tháng rưỡi.",
+      "detailed_summary": "Thị trường chứng khoán các quốc gia mới nổi ghi nhận phiên giảm điểm thứ hai liên tiếp, kéo chỉ số chuẩn xuống mức thấp nhất trong vòng ba tháng rưỡi. Nguyên nhân chủ đạo đến từ làn sóng bán tháo lan rộng trong nhóm cổ phiếu ngành chip và công nghệ tại khu vực châu Á.",
+      "causes": [
+        "Sự sụt giảm mạnh của nhóm cổ phiếu ngành chip và công nghệ tại châu Á",
+        "Áp lực bán tháo lan rộng trên các thị trường tài chính"
+      ],
+      "effects": [
+        "Chỉ số chứng khoán các thị trường mới nổi chạm mức thấp nhất trong 3,5 tháng",
+        "Tâm lý nhà đầu tư trở nên tiêu cực và thận trọng hơn"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư trên các thị trường mới nổi",
+        "Các doanh nghiệp công nghệ và sản xuất chip tại châu Á"
+      ],
+      "market_impact": "Thị trường đang đối mặt với làn sóng rút vốn và giảm điểm đáng kể do sự suy yếu của lĩnh vực công nghệ dẫn dắt.",
+      "follow_up": "",
+      "significance": "Sự kiện này phản ánh mức độ nhạy cảm của các thị trường mới nổi đối với biến động trong lĩnh vực công nghệ toàn cầu.",
+      "unknowns": [
+        "Tác động cụ thể đến từng quốc gia trong nhóm thị trường mới nổi",
+        "Thời điểm kết thúc đà bán tháo trong lĩnh vực công nghệ"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên dữ liệu báo cáo thị trường hiện tại.",
+      "scenarios": [
+        {
+          "text": "Đà bán tháo tiếp tục lan rộng nếu tâm lý nhà đầu tư không được cải thiện.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Thị trường ổn định trở lại sau khi các cổ phiếu công nghệ tìm được vùng giá hỗ trợ mới.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Cổ phiếu công nghệ châu Á",
+          "target": "Chỉ số thị trường mới nổi",
+          "relation_type": "cause_effect",
+          "label": "Gây sụt giảm giá trị chỉ số"
+        }
+      ],
+      "entities": [
+        "thị trường chứng khoán",
+        "chứng khoán mới xây dựng"
+      ],
+      "keywords": [
+        "thị trường chứng khoán",
+        "chứng khoán mới xây dựng",
+        "sự sụt giảm"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_general_1785316827677": {
+    "created_at": 1785316833347,
+    "expires_at": 1787908833347,
+    "version": "4.5",
+    "checksum": "fe930955eb0ceb90122bf65c87b7bc69",
+    "data": {
+      "cluster_title": "Sự kiện SK Hynix",
+      "short_summary": "SK Hynix, công ty chip lớn của Hàn Quốc, đã không đáp ứng được kỳ vọng của các nhà phân tích về lợi nhuận, nhưng công ty vẫn khẳng định rủi ro về sự dư thừa hàng hóa vẫn còn hạn chế.",
+      "detailed_summary": "Tập đoàn sản xuất chip SK Hynix của Hàn Quốc vừa công bố kết quả kinh doanh không đạt như kỳ vọng của các chuyên gia phân tích. Điều này đã kéo theo sự sụt giảm của cổ phiếu ngành công nghệ trên diện rộng. Tuy nhiên, SK Hynix khẳng định rằng nguy cơ dư thừa nguồn cung bộ nhớ trên thị trường vẫn ở mức hạn chế.",
+      "causes": [
+        "Lợi nhuận thực tế của SK Hynix thấp hơn dự báo của các nhà phân tích",
+        "Tâm lý lo ngại của nhà đầu tư trước tình trạng cổ phiếu công nghệ bị bán tháo"
+      ],
+      "effects": [
+        "Thị trường chứng khoán biến động mạnh",
+        "Áp lực giảm giá đối với các cổ phiếu trong ngành công nghệ"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư chứng khoán",
+        "Các doanh nghiệp sản xuất linh kiện bán dẫn",
+        "Thị trường tài chính toàn cầu"
+      ],
+      "market_impact": "Gây ra phản ứng tiêu cực ngắn hạn đối với cổ phiếu ngành chip và công nghệ trên toàn cầu.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh sự nhạy cảm của nhà đầu tư đối với triển vọng lợi nhuận của các doanh nghiệp công nghệ lớn, dù công ty khẳng định nguồn cung vẫn ổn định.",
+      "unknowns": [
+        "Tác động cụ thể lên kế hoạch đầu tư dài hạn của SK Hynix",
+        "Phản ứng tiếp theo của các đối thủ cạnh tranh trong ngành chip"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên báo cáo kinh doanh thực tế của doanh nghiệp.",
+      "scenarios": [
+        {
+          "text": "Thị trường ổn định lại sau khi nhà đầu tư đánh giá đúng giá trị cốt lõi của nhu cầu chip nhớ.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Làn sóng bán tháo tiếp diễn nếu các doanh nghiệp công nghệ khác cũng báo cáo kết quả kém khả quan.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "SK Hynix",
+          "target": "Thị trường chứng khoán",
+          "relation_type": "cause_effect",
+          "label": "Kết quả kinh doanh không đạt kỳ vọng gây bán tháo cổ phiếu"
+        },
+        {
+          "source": "SK Hynix",
+          "target": "Thị trường chip nhớ",
+          "relation_type": "neutral",
+          "label": "Đưa ra đánh giá về tình trạng nguồn cung"
+        }
+      ],
+      "entities": [
+        "SK Hynix",
+        "Hàn Quốc"
+      ],
+      "keywords": [
+        "SK Hynix",
+        "Tech rout",
+        "chíp",
+        "hàng hóa"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "business"
+    }
   }
 }
