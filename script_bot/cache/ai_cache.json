@@ -5698,5 +5698,284 @@
       "sentiment": -1,
       "scope": "global"
     }
+  },
+  "evt_general_1785324350783": {
+    "created_at": 1785324353882,
+    "expires_at": 1787916353882,
+    "version": "4.5",
+    "checksum": "e405d7481ce23a0687e86679ab8a7390",
+    "data": {
+      "cluster_title": "Sự kiện SK Hynix",
+      "short_summary": "SK Hynix không đạt được kỳ vọng về lợi nhuận, nhưng công ty vẫn khẳng định rủi ro về cung vượt cầu ở lĩnh vực bộ nhớ vẫn còn hạn chế.",
+      "detailed_summary": "Tập đoàn sản xuất chip SK Hynix của Hàn Quốc đã công bố báo cáo tài chính với kết quả lợi nhuận không đạt kỳ vọng của các chuyên gia phân tích. Sự kiện này ngay lập tức kích hoạt đà giảm điểm trên thị trường chứng khoán trong lĩnh vực công nghệ. Tuy nhiên, SK Hynix vẫn khẳng định rủi ro về tình trạng dư thừa nguồn cung chip nhớ trên thị trường là ở mức hạn chế.",
+      "causes": [
+        "Lợi nhuận thực tế của SK Hynix thấp hơn mức dự báo của các chuyên gia phân tích",
+        "Tâm lý lo ngại của nhà đầu tư trước tình hình tài chính của các tập đoàn công nghệ lớn"
+      ],
+      "effects": [
+        "Thị trường chứng khoán công nghệ toàn cầu chịu áp lực bán tháo",
+        "Gia tăng sự thận trọng của nhà đầu tư đối với lĩnh vực bán dẫn"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư thị trường chứng khoán quốc tế",
+        "Các doanh nghiệp trong ngành bán dẫn",
+        "Cổ đông của SK Hynix"
+      ],
+      "market_impact": "Gây biến động tiêu cực ngắn hạn đối với cổ phiếu ngành công nghệ trên toàn cầu.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh sự nhạy cảm của nhà đầu tư đối với kỳ vọng lợi nhuận trong ngành bán dẫn, ngay cả khi doanh nghiệp vẫn duy trì triển vọng lạc quan về cung cầu.",
+      "unknowns": [
+        "Tác động cụ thể đến doanh thu dài hạn của các đối tác trong chuỗi cung ứng chip nhớ",
+        "Phản ứng tiếp theo của thị trường khi các chỉ số vĩ mô khác được công bố"
+      ],
+      "confidence_note": "Thông tin dựa trên dữ liệu báo cáo tài chính và phản ứng trực tiếp của thị trường, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Thị trường ổn định trở lại sau khi nhà đầu tư đánh giá lại tiềm năng thực tế của SK Hynix",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Làn sóng bán tháo lan rộng nếu các doanh nghiệp chip nhớ khác cũng công bố kết quả yếu kém",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Lợi nhuận SK Hynix",
+          "target": "Cổ phiếu công nghệ",
+          "relation_type": "cause_effect",
+          "label": "Gây ra sự sụt giảm giá trị"
+        },
+        {
+          "source": "SK Hynix",
+          "target": "Thị trường chip nhớ",
+          "relation_type": "cause_effect",
+          "label": "Đánh giá tình trạng cung cầu"
+        }
+      ],
+      "entities": [
+        "SK Hynix",
+        "Hàn Quốc"
+      ],
+      "keywords": [
+        "SK Hynix",
+        "Tech rout",
+        "chíp",
+        "hàng hóa"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "business"
+    }
+  },
+  "evt_952738dc": {
+    "created_at": 1785324365375,
+    "expires_at": 1787916365375,
+    "version": "4.5",
+    "checksum": "66574a4690b3748c9cfd0d27a68edbb1",
+    "data": {
+      "cluster_title": "SK Hynix Rơi Giảm",
+      "short_summary": "SK Hynix đã rơi giảm do lo ngại về lợi nhuận khi US Tech Earnings đang cận kề.",
+      "detailed_summary": "Giá cổ phiếu của SK Hynix ghi nhận sự sụt giảm trong bối cảnh thị trường tài chính toàn cầu đang tập trung chú ý vào kết quả kinh doanh sắp tới của các tập đoàn công nghệ lớn tại Hoa Kỳ. Sự kiện này được phân tích trong chương trình The Pulse với Francine Lacqua, nơi thảo luận về các diễn biến kinh tế và tài chính quan trọng.",
+      "causes": [
+        "Sự thận trọng của nhà đầu tư trước kỳ báo cáo thu nhập công nghệ Mỹ",
+        "Áp lực điều chỉnh giá trên thị trường chứng khoán toàn cầu"
+      ],
+      "effects": [
+        "Giá cổ phiếu SK Hynix sụt giảm",
+        "Tâm lý lo ngại lan rộng trong nhóm nhà đầu tư ngành bán dẫn"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư chứng khoán",
+        "Cổ đông của SK Hynix",
+        "Các doanh nghiệp trong ngành bán dẫn toàn cầu"
+      ],
+      "market_impact": "Gây áp lực giảm điểm ngắn hạn đối với cổ phiếu công nghệ và tạo tâm lý phòng thủ trên thị trường.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh sự nhạy cảm của các cổ phiếu công nghệ châu Á đối với kết quả tài chính của các ông lớn công nghệ tại Mỹ.",
+      "unknowns": [
+        "Biên độ sụt giảm cụ thể của SK Hynix trong phiên giao dịch",
+        "Phản ứng của thị trường sau khi các báo cáo tài chính Mỹ chính thức được công bố"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên diễn biến thực tế từ chương trình tài chính uy tín.",
+      "scenarios": [
+        {
+          "text": "Cổ phiếu hồi phục nếu báo cáo thu nhập của các tập đoàn công nghệ Mỹ vượt kỳ vọng.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Sự sụt giảm kéo dài nếu các tập đoàn Mỹ đưa ra triển vọng kinh doanh tiêu cực.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Báo cáo thu nhập công nghệ Mỹ",
+          "target": "SK Hynix",
+          "relation_type": "cause_effect",
+          "label": "Tác động tâm lý lên giá cổ phiếu"
+        }
+      ],
+      "entities": [
+        "SK Hynix",
+        "Francine Lacqua"
+      ],
+      "keywords": [
+        "SK Hynix",
+        "US Tech Earnings",
+        "The Pulse"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_85970ab2": {
+    "created_at": 1785324377316,
+    "expires_at": 1787916377316,
+    "version": "4.5",
+    "checksum": "540addea75f234487926d0ee463bcd27",
+    "data": {
+      "cluster_title": "Sự kiện cổ phiếu Valterra Platinum tăng mạnh",
+      "short_summary": "Cổ phiếu Valterra Platinum tăng mạnh sau khi công ty tăng dividend gần 29 lần, vượt dự đoán của các chuyên gia.",
+      "detailed_summary": "Công ty khai thác kim loại nhóm bạch kim Valterra Platinum Ltd. đã ghi nhận đà tăng trưởng giá cổ phiếu đáng kể. Nguyên nhân trực tiếp xuất phát từ việc doanh nghiệp này thông báo tăng mức chi trả cổ tức tạm thời lên gấp gần 29 lần, vượt xa kỳ vọng từ giới phân tích tài chính.",
+      "causes": [
+        "Công ty tăng mức chi trả cổ tức tạm thời gấp gần 29 lần so với trước đó",
+        "Mức chi trả cổ tức thực tế cao hơn so với dự báo của các nhà phân tích thị trường"
+      ],
+      "effects": [
+        "Giá cổ phiếu của Valterra Platinum Ltd. trên thị trường chứng khoán tăng vọt",
+        "Cải thiện tâm lý nhà đầu tư đối với cổ phiếu của công ty"
+      ],
+      "affected_groups": [
+        "Cổ đông của Valterra Platinum Ltd.",
+        "Các nhà phân tích thị trường kim loại",
+        "Nhà đầu tư trên thị trường chứng khoán"
+      ],
+      "market_impact": "Tạo hiệu ứng tích cực ngắn hạn cho mã cổ phiếu của công ty và có thể thu hút thêm dòng vốn đầu tư nhờ chính sách cổ tức hấp dẫn.",
+      "follow_up": "",
+      "significance": "Sự kiện cho thấy sự cải thiện đáng kể về năng lực tài chính hoặc chiến lược phân phối lợi nhuận của Valterra Platinum, qua đó tác động trực tiếp đến giá trị vốn hóa của doanh nghiệp.",
+      "unknowns": [
+        "Lý do cụ thể dẫn đến khả năng tài chính cho phép tăng cổ tức đột biến",
+        "Tác động dài hạn của việc chi trả cổ tức cao đến quỹ dự phòng phát triển của doanh nghiệp"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên dữ liệu báo cáo tài chính và biến động thị trường thực tế.",
+      "scenarios": [
+        {
+          "text": "Giá cổ phiếu tiếp tục ổn định ở mức cao do nhà đầu tư kỳ vọng vào lợi nhuận bền vững.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Giá cổ phiếu điều chỉnh giảm nhẹ khi các nhà đầu tư chốt lời sau đợt tăng nóng.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Việc tăng cổ tức",
+          "target": "Giá cổ phiếu Valterra Platinum",
+          "relation_type": "cause_effect",
+          "label": "Yếu tố kích thích tăng giá chứng khoán"
+        },
+        {
+          "source": "Valterra Platinum Ltd.",
+          "target": "Nhà phân tích tài chính",
+          "relation_type": "neutral",
+          "label": "Đối tượng cung cấp dữ liệu dự báo"
+        }
+      ],
+      "entities": [
+        "Valterra Platinum Ltd.",
+        "platinum-group metals miner"
+      ],
+      "keywords": [
+        "Valterra Platinum",
+        "cổ phiếu",
+        "dividend"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "business"
+    }
+  },
+  "evt_d4328f17": {
+    "created_at": 1785324389654,
+    "expires_at": 1787916389654,
+    "version": "4.5",
+    "checksum": "9c0a5da2b61a70bfe50cff0d4496e179",
+    "data": {
+      "cluster_title": "FTSE 100 đạt mức cao nhất mọi thời đại",
+      "short_summary": "Chỉ số FTSE 100 của Anh Quốc đạt mức cao nhất mọi thời đại sau khi các công ty dầu khí và ngân hàng phục hồi sau sự kiện chiến tranh với Iran.",
+      "detailed_summary": "Chỉ số FTSE 100 của Anh đã ghi nhận mức cao kỷ lục trong bối cảnh các nhà đầu tư dịch chuyển dòng vốn từ nhóm công nghệ sang các lĩnh vực truyền thống. Sự phục hồi mạnh mẽ của cổ phiếu ngành ngân hàng và dầu khí đã giúp thị trường Anh lấy lại đà tăng trưởng sau đợt bán tháo do lo ngại xung đột liên quan đến Iran.",
+      "causes": [
+        "Sự dịch chuyển dòng vốn khỏi nhóm cổ phiếu công nghệ toàn cầu.",
+        "Sự phục hồi của nhóm cổ phiếu ngân hàng và dầu khí tại Anh sau đợt bán tháo do căng thẳng địa chính trị."
+      ],
+      "effects": [
+        "Chỉ số FTSE 100 đạt đỉnh cao lịch sử.",
+        "Giảm bớt áp lực tâm lý tiêu cực trên thị trường chứng khoán Anh sau các lo ngại về chiến tranh."
+      ],
+      "affected_groups": [
+        "Nhà đầu tư chứng khoán tại Anh",
+        "Các doanh nghiệp thuộc lĩnh vực ngân hàng và năng lượng",
+        "Các tập đoàn công nghệ toàn cầu"
+      ],
+      "market_impact": "Thị trường ghi nhận sự phân hóa rõ rệt, dòng tiền ưu tiên các tài sản truyền thống có tính ổn định hơn là cổ phiếu công nghệ trong giai đoạn biến động.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh tâm lý phòng thủ của thị trường trước các rủi ro địa chính trị và biến động trong ngành công nghệ, thúc đẩy các chỉ số dựa trên giá trị tăng trưởng bền vững.",
+      "unknowns": [
+        "Thời gian duy trì đà tăng của chỉ số FTSE 100.",
+        "Mức độ ảnh hưởng kéo dài của đợt bán tháo cổ phiếu công nghệ đối với các thị trường khác."
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên biến động thực tế của chỉ số tài chính.",
+      "scenarios": [
+        {
+          "text": "FTSE 100 tiếp tục duy trì đà tăng nếu nhóm ngân hàng và dầu khí giữ vững sự ổn định.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Thị trường sẽ điều chỉnh nếu căng thẳng địa chính trị leo thang ảnh hưởng trực tiếp đến giá dầu và chi phí vận hành doanh nghiệp.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Căng thẳng Iran",
+          "target": "FTSE 100",
+          "relation_type": "cause_effect",
+          "label": "Gây ra đợt bán tháo tạm thời"
+        },
+        {
+          "source": "Ngành ngân hàng và dầu khí",
+          "target": "FTSE 100",
+          "relation_type": "cause_effect",
+          "label": "Động lực chính thúc đẩy chỉ số tăng kỷ lục"
+        },
+        {
+          "source": "Chỉ số công nghệ toàn cầu",
+          "target": "FTSE 100",
+          "relation_type": "conflict",
+          "label": "Dòng vốn rút khỏi công nghệ chảy vào cổ phiếu truyền thống tại Anh"
+        }
+      ],
+      "entities": [
+        "FTSE 100",
+        "chính phủ Iran",
+        "chính trị"
+      ],
+      "keywords": [
+        "FTSE 100",
+        "chỉ số",
+        "công ty dầu khí",
+        "chính trị"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
   }
 }
