@@ -5261,5 +5261,171 @@
       "sentiment": -1,
       "scope": "business"
     }
+  },
+  "evt_general_1785318609746": {
+    "created_at": 1785318613069,
+    "expires_at": 1787910613069,
+    "version": "4.5",
+    "checksum": "481ec9fdd451b211f5a3b91d780af960",
+    "data": {
+      "cluster_title": "Sự sụt giảm của cổ phiếu thị trường mới nổi",
+      "short_summary": "Cổ phiếu thị trường mới nổi tiếp tục sụt giảm, đạt mức thấp nhất trong ba tháng rưỡi, do sự sụt giảm của cổ phiếu công nghệ ở Á Đông.",
+      "detailed_summary": "Chỉ số chứng khoán của các thị trường mới nổi ghi nhận phiên giảm điểm thứ hai liên tiếp, chạm mức thấp nhất trong vòng ba tháng rưỡi. Nguyên nhân chủ đạo xuất phát từ đà sụt giảm mạnh trong lĩnh vực sản xuất chip điện tử tại châu Á, lan rộng sang tâm lý nhà đầu tư toàn cầu.",
+      "causes": [
+        "Sự sụt giảm sâu trong nhóm cổ phiếu ngành chip tại châu Á",
+        "Tâm lý bán tháo lan rộng tại các thị trường mới nổi"
+      ],
+      "effects": [
+        "Chỉ số chứng khoán thị trường mới nổi giảm xuống mức thấp nhất trong 3,5 tháng",
+        "Gia tăng rủi ro và bất ổn đối với danh mục đầu tư tại các thị trường mới nổi"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư chứng khoán tại các thị trường mới nổi",
+        "Các doanh nghiệp công nghệ, đặc biệt là ngành bán dẫn tại châu Á"
+      ],
+      "market_impact": "Gây áp lực bán tháo lên các tài sản tài chính tại khu vực thị trường mới nổi và làm giảm niềm tin của nhà đầu tư vào cổ phiếu công nghệ.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh tính nhạy cảm của các thị trường mới nổi đối với sự biến động trong chuỗi cung ứng và cổ phiếu ngành công nghệ toàn cầu.",
+      "unknowns": [
+        "Thời điểm xu hướng bán tháo này sẽ dừng lại",
+        "Mức độ ảnh hưởng cụ thể đến các ngành nghề phụ trợ khác ngoài lĩnh vực chip"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên dữ liệu biến động thị trường thực tế.",
+      "scenarios": [
+        {
+          "text": "Làn sóng bán tháo tiếp tục lan rộng nếu cổ phiếu công nghệ lớn chưa tìm thấy ngưỡng hỗ trợ.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Thị trường ổn định trở lại nhờ các biện pháp điều tiết hoặc sự phục hồi của tâm lý nhà đầu tư.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Sụt giảm cổ phiếu chip châu Á",
+          "target": "Chứng khoán thị trường mới nổi",
+          "relation_type": "cause_effect",
+          "label": "Nguyên nhân trực tiếp gây giảm điểm"
+        },
+        {
+          "source": "Nhà đầu tư",
+          "target": "Chứng khoán thị trường mới nổi",
+          "relation_type": "conflict",
+          "label": "Hoạt động bán tháo gây áp lực giảm"
+        }
+      ],
+      "entities": [
+        "cổ phiếu",
+        "thị trường mới nổi",
+        "Á Đông"
+      ],
+      "keywords": [
+        "cổ phiếu",
+        "thị trường mới nổi",
+        "công nghệ",
+        "Á Đông"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_general_1785318619102": {
+    "created_at": 1785318624620,
+    "expires_at": 1787910624620,
+    "version": "4.5",
+    "checksum": "9eb7ff80ec7591b5fdf32b128b3d2839",
+    "data": {
+      "cluster_title": "Sự kiện SK Hynix",
+      "short_summary": "SK Hynix không đạt được kỳ vọng về lợi nhuận, nhưng công ty vẫn khẳng định rủi ro về sự dư thừa hàng hóa vẫn còn hạn chế.",
+      "detailed_summary": "Tập đoàn sản xuất chip SK Hynix (Hàn Quốc) vừa công bố kết quả kinh doanh quý không đạt mức dự báo của giới phân tích. Thông tin này đã tạo ra làn sóng bán tháo cổ phiếu trong lĩnh vực công nghệ. Tuy nhiên, phía SK Hynix khẳng định rằng rủi ro về việc dư thừa nguồn cung bộ nhớ trên thị trường vẫn ở mức hạn chế.",
+      "causes": [
+        "Kết quả lợi nhuận của SK Hynix không đạt kỳ vọng của các nhà phân tích",
+        "Tâm lý tiêu cực lan rộng trên thị trường chứng khoán đối với cổ phiếu công nghệ"
+      ],
+      "effects": [
+        "Cổ phiếu nhóm công nghệ bị bán tháo mạnh",
+        "Sự biến động tiêu cực trên thị trường tài chính quốc tế"
+      ],
+      "affected_groups": [
+        "Các nhà đầu tư chứng khoán lĩnh vực công nghệ",
+        "Tập đoàn SK Hynix",
+        "Các đối tác trong chuỗi cung ứng linh kiện bán dẫn"
+      ],
+      "market_impact": "Gây ra áp lực giảm điểm trên diện rộng đối với các chỉ số cổ phiếu công nghệ trên thị trường chứng khoán.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh sự nhạy cảm của thị trường tài chính đối với kỳ vọng tăng trưởng của các doanh nghiệp dẫn đầu ngành công nghiệp bán dẫn.",
+      "unknowns": [
+        "Tác động cụ thể đến doanh thu dài hạn của SK Hynix",
+        "Phản ứng của thị trường trong các phiên giao dịch tiếp theo"
+      ],
+      "confidence_note": "Thông tin dựa trên báo cáo tài chính và phản ứng thực tế của thị trường, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Giá cổ phiếu ngành công nghệ ổn định trở lại sau khi nhà đầu tư đánh giá lại báo cáo của SK Hynix.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Sự nghi ngờ về tình trạng dư thừa nguồn cung chip làm giảm thêm giá trị cổ phiếu công nghệ trong ngắn hạn.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Kết quả kinh doanh của SK Hynix",
+          "target": "Thị trường chứng khoán công nghệ",
+          "relation_type": "cause_effect",
+          "label": "Gây ra làn sóng bán tháo cổ phiếu"
+        },
+        {
+          "source": "SK Hynix",
+          "target": "Nguồn cung chip bộ nhớ",
+          "relation_type": "neutral",
+          "label": "Đánh giá tình trạng dư thừa là có hạn"
+        }
+      ],
+      "entities": [
+        "SK Hynix",
+        "Hàn Quốc"
+      ],
+      "keywords": [
+        "SK Hynix",
+        "Tech rout",
+        "chíp",
+        "hàng hóa"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "business"
+    }
+  },
+  "evt_5610265b": {
+    "created_at": 1785318630674,
+    "expires_at": 1787910630674,
+    "version": "4.5",
+    "checksum": "ef2f4fe288ec5f8f32c87bd2ad1ac749",
+    "data": {
+      "cluster_title": "Nhiều nước tăng sản lượng lúa mì",
+      "short_summary": "Chính phủ Thổ Nhĩ Kỳ cho phép xuất khẩu lúa mì sau một năm rưỡi tạm dừng.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "follow_up": "",
+      "entities": [
+        "Thổ Nhĩ Kỳ",
+        "chính phủ Thổ Nhĩ Kỳ"
+      ],
+      "keywords": [
+        "lúa mì",
+        "thị trường nông sản"
+      ],
+      "importance": 85,
+      "scope": "national"
+    }
   }
 }
