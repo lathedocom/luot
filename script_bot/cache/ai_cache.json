@@ -7471,5 +7471,349 @@
       "sentiment": -1,
       "scope": "global"
     }
+  },
+  "evt_general_1785340431232": {
+    "created_at": 1785340436379,
+    "expires_at": 1787932436379,
+    "version": "4.5",
+    "checksum": "71e0e241c282731370fb1bc59cf9f3a8",
+    "data": {
+      "cluster_title": "Humana và P&G bị ảnh hưởng bởi dự báo lợi nhuận",
+      "short_summary": "Humana và P&G bị ảnh hưởng bởi dự báo lợi nhuận không khả quan",
+      "detailed_summary": "Công ty bảo hiểm Humana ghi nhận sự sụt giảm giá cổ phiếu sau khi giữ nguyên mục tiêu lợi nhuận hàng năm dù báo cáo quý hai đạt kết quả khả quan. Cùng thời điểm, tập đoàn tiêu dùng Procter & Gamble cũng chứng kiến biến động giá cổ phiếu sau khi đưa ra dự báo kinh doanh thận trọng cho năm tài chính hiện tại.",
+      "causes": [
+        "Humana duy trì dự báo lợi nhuận cũ dù kết quả quý hai tốt",
+        "Procter & Gamble công bố triển vọng kinh doanh mang tính bảo thủ"
+      ],
+      "effects": [
+        "Giá cổ phiếu của Humana giảm trên thị trường",
+        "Giá cổ phiếu của Procter & Gamble biến động theo dự báo thận trọng"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư chứng khoán",
+        "Cổ đông của Humana",
+        "Cổ đông của Procter & Gamble"
+      ],
+      "market_impact": "Tạo ra áp lực bán tháo hoặc điều chỉnh giá ngắn hạn đối với cổ phiếu của hai tập đoàn lớn trên thị trường tài chính.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh tâm lý nhạy cảm của nhà đầu tư đối với kỳ vọng lợi nhuận và triển vọng tương lai của các tập đoàn lớn trong bối cảnh báo cáo tài chính hiện tại.",
+      "unknowns": [
+        "Lý do chi tiết khiến Humana giữ nguyên dự báo dù quý hai tăng trưởng tốt",
+        "Các yếu tố cụ thể đằng sau sự thận trọng trong dự báo của Procter & Gamble"
+      ],
+      "confidence_note": "Thông tin dựa trên diễn biến thị trường thực tế và báo cáo tài chính từ các doanh nghiệp, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Nhà đầu tư điều chỉnh danh mục dựa trên dự báo thận trọng dẫn đến giá cổ phiếu biến động kéo dài.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Thị trường ổn định lại khi các doanh nghiệp công bố thêm thông tin chi tiết trong các phiên giao dịch tiếp theo.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Humana",
+          "target": "Giá cổ phiếu Humana",
+          "relation_type": "cause_effect",
+          "label": "Dự báo lợi nhuận thận trọng gây giảm giá cổ phiếu"
+        },
+        {
+          "source": "Procter & Gamble",
+          "target": "Giá cổ phiếu Procter & Gamble",
+          "relation_type": "cause_effect",
+          "label": "Triển vọng kinh doanh ảnh hưởng đến giá cổ phiếu"
+        }
+      ],
+      "entities": [
+        "Humana",
+        "P&G"
+      ],
+      "keywords": [
+        "Humana",
+        "P&G",
+        "lợi nhuận"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "business"
+    }
+  },
+  "evt_general_1785340442283": {
+    "created_at": 1785340448615,
+    "expires_at": 1787932448615,
+    "version": "4.5",
+    "checksum": "11d420ac9ea1e1d2cf7db9b65c49e000",
+    "data": {
+      "cluster_title": "Sự kiện ảnh hưởng đến chi phí tài chính AI",
+      "short_summary": "Chi phí tài chính AI tăng cao do áp lực từ thị trường tín dụng",
+      "detailed_summary": "Các tập đoàn công nghệ lớn đang đẩy mạnh kế hoạch đầu tư hàng nghìn tỷ USD vào lĩnh vực trí tuệ nhân tạo. Động thái này đang làm gia tăng áp lực lên thị trường tín dụng, dẫn đến sự leo thang trong chi phí huy động vốn để tài trợ cho các dự án AI, đồng thời bắt đầu phân hóa các doanh nghiệp thắng cuộc và thua cuộc trong thị trường.",
+      "causes": [
+        "Kế hoạch đầu tư hàng nghìn tỷ USD vào AI của các tập đoàn công nghệ lớn",
+        "Sự gia tăng áp lực trong các thị trường tín dụng"
+      ],
+      "effects": [
+        "Chi phí tài trợ cho các dự án AI tăng cao",
+        "Sự phân hóa các công ty hưởng lợi và chịu thiệt hại trong lĩnh vực AI"
+      ],
+      "affected_groups": [
+        "Các tập đoàn công nghệ lớn",
+        "Các nhà đầu tư trên Phố Wall",
+        "Các định chế tài chính trong thị trường tín dụng"
+      ],
+      "market_impact": "Thị trường tín dụng đang cho thấy những dấu hiệu bất ổn, làm tăng chi phí vốn cho các doanh nghiệp công nghệ và tạo ra tâm lý thận trọng đối với các khoản đầu tư vào AI.",
+      "follow_up": "",
+      "significance": "Sự kiện cho thấy sự kết nối mật thiết giữa tham vọng công nghệ của các tập đoàn lớn và sự bền vững của thị trường tín dụng, báo hiệu một giai đoạn sàng lọc khắt khe hơn đối với các doanh nghiệp AI.",
+      "unknowns": [
+        "Danh sách cụ thể các doanh nghiệp được dự báo là 'người thắng' hoặc 'người thua'",
+        "Mức độ ảnh hưởng chính xác của chi phí tín dụng đối với quy mô đầu tư AI thực tế trong tương lai"
+      ],
+      "confidence_note": "Thông tin dựa trên các tín hiệu quan sát được từ thị trường tài chính, độ tin cậy cao về xu hướng diễn biến hiện tại.",
+      "scenarios": [
+        {
+          "text": "Chi phí vốn cao buộc các tập đoàn công nghệ phải tái cơ cấu lộ trình đầu tư AI một cách thận trọng hơn.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Áp lực tín dụng gia tăng dẫn đến một đợt điều chỉnh giá cổ phiếu của các công ty công nghệ lớn.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Các tập đoàn công nghệ lớn",
+          "target": "Thị trường tín dụng",
+          "relation_type": "cause_effect",
+          "label": "Gây áp lực lên thị trường"
+        },
+        {
+          "source": "Thị trường tín dụng",
+          "target": "Chi phí tài trợ AI",
+          "relation_type": "cause_effect",
+          "label": "Làm tăng chi phí huy động vốn"
+        }
+      ],
+      "entities": [
+        "Wall Street",
+        "Big Tech"
+      ],
+      "keywords": [
+        "Wall Street",
+        "AI",
+        "Credit Swaps",
+        "Big Tech"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_general_1785340454477": {
+    "created_at": 1785340460640,
+    "expires_at": 1787932460640,
+    "version": "4.5",
+    "checksum": "c95b6967199b355f5b8bd1a0889bdfe2",
+    "data": {
+      "cluster_title": "Sự kiện SK Hynix",
+      "short_summary": "SK Hynix, một trong những công ty bán dẫn lớn nhất Hàn Quốc, đã công bố lợi nhuận không đạt được kỳ vọng của các nhà phân tích, nhưng công ty vẫn khẳng định rủi ro về sự dư thừa hàng hóa vẫn còn 'hạn chế'.",
+      "detailed_summary": "Tập đoàn sản xuất chip SK Hynix (Hàn Quốc) vừa công bố kết quả kinh doanh không đạt được kỳ vọng của giới phân tích tài chính. Sự kiện này đã kích hoạt tâm lý tiêu cực đối với nhóm cổ phiếu công nghệ trên thị trường chứng khoán. Tuy nhiên, phía SK Hynix vẫn khẳng định rủi ro về việc dư thừa nguồn cung chip nhớ vẫn ở mức hạn chế.",
+      "causes": [
+        "Kết quả kinh doanh của SK Hynix thấp hơn dự báo của các nhà phân tích",
+        "Tâm lý lo ngại của nhà đầu tư trước triển vọng ngành công nghiệp bán dẫn"
+      ],
+      "effects": [
+        "Cổ phiếu ngành công nghệ trên các sàn giao dịch chịu áp lực bán tháo",
+        "Biến động tiêu cực trên thị trường tài chính quốc tế"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư cổ phiếu công nghệ",
+        "Tập đoàn SK Hynix",
+        "Các đối tác trong chuỗi cung ứng bán dẫn"
+      ],
+      "market_impact": "Gây ra sự sụt giảm tức thời đối với chỉ số ngành công nghệ và tạo áp lực lên tâm lý thị trường toàn cầu.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh sự nhạy cảm của nhà đầu tư trước kết quả kinh doanh của các tập đoàn đầu ngành bán dẫn, vốn đang đóng vai trò dẫn dắt thị trường.",
+      "unknowns": [
+        "Tác động cụ thể đến doanh thu dài hạn của SK Hynix trong các quý tới",
+        "Liệu tình trạng dư thừa nguồn cung có thực sự được kiểm soát như kỳ vọng của công ty hay không"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên báo cáo kết quả kinh doanh và diễn biến thị trường thực tế.",
+      "scenarios": [
+        {
+          "text": "Thị trường sẽ điều chỉnh ngắn hạn sau đó ổn định lại nếu các tập đoàn bán dẫn khác công bố kết quả tích cực.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Làn sóng bán tháo kéo dài do nhà đầu tư lo ngại sự suy yếu mang tính hệ thống của ngành chip nhớ.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Kết quả kinh doanh của SK Hynix",
+          "target": "Cổ phiếu công nghệ",
+          "relation_type": "cause_effect",
+          "label": "Gây ra áp lực bán tháo trên thị trường"
+        },
+        {
+          "source": "SK Hynix",
+          "target": "Thị trường chip nhớ",
+          "relation_type": "neutral",
+          "label": "Đưa ra đánh giá về rủi ro dư thừa nguồn cung"
+        }
+      ],
+      "entities": [
+        "SK Hynix",
+        "Hàn Quốc"
+      ],
+      "keywords": [
+        "SK Hynix",
+        "Tech rout",
+        "chíp",
+        "hàng hóa"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "business"
+    }
+  },
+  "evt_general_1785340466414": {
+    "created_at": 1785340472400,
+    "expires_at": 1787932472400,
+    "version": "4.5",
+    "checksum": "dbdedfd778298446dbb01a5a54e34a9b",
+    "data": {
+      "cluster_title": "Sự kiện lạm phát",
+      "short_summary": "Fed sẽ giảm chỉ số lạm phát do Bureau of Economic Analysis điều chỉnh để giảm áp lực lên ngân hàng trung ương tăng lãi suất",
+      "detailed_summary": "Cơ quan thống kê kinh tế Hoa Kỳ dự kiến thay đổi cách tính chỉ số lạm phát ưa thích của Fed. Việc điều chỉnh này được kỳ vọng sẽ làm giảm con số lạm phát công bố, từ đó tạo dư địa để Fed cân nhắc giảm bớt áp lực trong chính sách thắt chặt tiền tệ và tăng lãi suất.",
+      "causes": [
+        "Sự thay đổi phương pháp thống kê lạm phát từ Cục Phân tích Kinh tế (BEA)",
+        "Nhu cầu điều chỉnh số liệu để phản ánh thực tế kinh tế hiện tại"
+      ],
+      "effects": [
+        "Giảm áp lực buộc Fed phải tăng lãi suất",
+        "Số liệu lạm phát công bố thấp hơn so với phương pháp cũ",
+        "Thay đổi kỳ vọng của thị trường về chính sách tiền tệ"
+      ],
+      "affected_groups": [
+        "Fed (Cục Dự trữ Liên bang)",
+        "Nhà đầu tư thị trường tài chính",
+        "Doanh nghiệp và người tiêu dùng Hoa Kỳ"
+      ],
+      "market_impact": "Thị trường có thể phản ứng tích cực do kỳ vọng lãi suất không tiếp tục tăng cao, giúp giảm gánh nặng chi phí vay vốn.",
+      "follow_up": "",
+      "significance": "Sự kiện này thể hiện sự thay đổi trong cách thức đánh giá dữ liệu kinh tế vĩ mô, có khả năng làm dịu lập trường chính sách tiền tệ của Fed mà không cần thay đổi nền tảng kinh tế cơ bản.",
+      "unknowns": [
+        "Tỷ lệ % cụ thể mà lạm phát sẽ giảm sau khi áp dụng phương pháp mới",
+        "Phản ứng chính thức của Fed về việc sử dụng các số liệu đã điều chỉnh này"
+      ],
+      "confidence_note": "Thông tin dựa trên thông báo về thay đổi kỹ thuật của cơ quan thống kê, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Fed sử dụng số liệu mới để duy trì mức lãi suất hiện tại thay vì tăng thêm.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Thị trường biến động mạnh khi các nhà đầu tư đánh giá lại tác động thực chất của phương pháp tính mới.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Cục Phân tích Kinh tế (BEA)",
+          "target": "Fed",
+          "relation_type": "cause_effect",
+          "label": "Thay đổi số liệu làm giảm áp lực điều hành chính sách của Fed"
+        }
+      ],
+      "entities": [
+        "Fed",
+        "Bureau of Economic Analysis"
+      ],
+      "keywords": [
+        "inflation",
+        "Fed",
+        "Bureau of Economic Analysis"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_general_1785340478293": {
+    "created_at": 1785340483944,
+    "expires_at": 1787932483944,
+    "version": "4.5",
+    "checksum": "9dba96a388b215f28b93fc5f39d61aa5",
+    "data": {
+      "cluster_title": "Tình hình tiêu dùng Mỹ suy giảm",
+      "short_summary": "Tình hình tiêu dùng Mỹ suy giảm do giá xăng và thực phẩm tăng cao, ảnh hưởng đến thị trường lao động và kinh tế.",
+      "detailed_summary": "Niềm tin của người tiêu dùng Hoa Kỳ giảm sút trong tháng 7 khi quan điểm về điều kiện kinh doanh hiện tại và thị trường lao động trở nên tiêu cực hơn. Việc giá xăng dầu và thực phẩm ở mức cao tiếp tục gây áp lực lên các hộ gia đình, phản ánh những quan ngại sâu rộng về tình trạng lạm phát kéo dài tại nền kinh tế lớn nhất thế giới.",
+      "causes": [
+        "Giá nhiên liệu và thực phẩm ở mức cao",
+        "Áp lực từ tình trạng lạm phát dai dẳng"
+      ],
+      "effects": [
+        "Niềm tin người tiêu dùng giảm sút",
+        "Gia tăng tâm lý thận trọng trong chi tiêu của hộ gia đình",
+        "Đánh giá tiêu cực về điều kiện kinh doanh và thị trường lao động"
+      ],
+      "affected_groups": [
+        "Người tiêu dùng Hoa Kỳ",
+        "Các doanh nghiệp bán lẻ và dịch vụ",
+        "Các hộ gia đình"
+      ],
+      "market_impact": "Gây áp lực tiêu cực lên kỳ vọng tăng trưởng kinh tế, ảnh hưởng đến xu hướng chi tiêu tiêu dùng trong ngắn hạn.",
+      "follow_up": "",
+      "significance": "Sự suy giảm niềm tin người tiêu dùng là chỉ dấu quan trọng cho thấy những khó khăn kinh tế mà các hộ gia đình Mỹ đang đối mặt, có khả năng làm chậm đà tăng trưởng kinh tế chung.",
+      "unknowns": [
+        "Mức độ ảnh hưởng cụ thể đến doanh thu của các ngành hàng bán lẻ trong thời gian tới",
+        "Phản ứng chính sách của Cục Dự trữ Liên bang Mỹ đối với các dữ liệu niềm tin tiêu dùng này"
+      ],
+      "confidence_note": "Thông tin dựa trên báo cáo dữ liệu thị trường tiêu chuẩn, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Người tiêu dùng tiếp tục thắt chặt chi tiêu nếu lạm phát không có dấu hiệu hạ nhiệt, dẫn đến giảm tốc độ tăng trưởng kinh tế.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Thị trường lao động ổn định trở lại giúp cải thiện niềm tin tiêu dùng trong các tháng tiếp theo.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Lạm phát",
+          "target": "Niềm tin tiêu dùng",
+          "relation_type": "cause_effect",
+          "label": "Nguyên nhân làm sụt giảm niềm tin"
+        },
+        {
+          "source": "Giá nhiên liệu và thực phẩm",
+          "target": "Hộ gia đình Hoa Kỳ",
+          "relation_type": "cause_effect",
+          "label": "Gây áp lực tài chính"
+        }
+      ],
+      "entities": [
+        "Mỹ",
+        "thị trường lao động"
+      ],
+      "keywords": [
+        "tiêu dùng",
+        "tín hiệu kinh tế",
+        "giá xăng",
+        "giá thực phẩm"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
   }
 }
