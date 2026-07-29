@@ -6695,5 +6695,367 @@
       "sentiment": -1,
       "scope": "national"
     }
+  },
+  "evt_064da55d": {
+    "created_at": 1785334562224,
+    "expires_at": 1787926562224,
+    "version": "4.5",
+    "checksum": "3d44c72d1c514b074e00caff005952b8",
+    "data": {
+      "cluster_title": "Sự Sụt Giảm Trên Thị Trực Tuyến",
+      "short_summary": "Các cổ phiếu trên thị trường đã sụt giảm trong hai ngày liên tiếp do sự sụt giảm của các cổ phiếu chip ở châu Á, trong khi hầu hết các đồng tiền đã yếu đi trước quyết định về lãi suất của Federal Reserve.",
+      "detailed_summary": "Cổ phiếu tại các thị trường mới nổi ghi nhận đà giảm mạnh kéo dài sang ngày thứ hai, chịu tác động tiêu cực từ việc bán tháo nhóm cổ phiếu chip tại châu Á. Đồng thời, phần lớn các loại tiền tệ cũng mất giá do các nhà đầu tư thu hẹp vị thế rủi ro, chờ đợi thông báo về chính sách lãi suất từ Cục Dự trữ Liên bang Mỹ (Fed).",
+      "causes": [
+        "Sự sụt giảm sâu của nhóm cổ phiếu chip tại châu Á",
+        "Tâm lý thận trọng và phòng thủ của nhà đầu tư trước cuộc họp của Cục Dự trữ Liên bang Mỹ (Fed)"
+      ],
+      "effects": [
+        "Chứng khoán tại các thị trường mới nổi giảm hai phiên liên tiếp",
+        "Đồng tiền của các thị trường mới nổi suy yếu"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư chứng khoán tại các thị trường mới nổi",
+        "Các doanh nghiệp công nghệ, sản xuất chip",
+        "Các nền kinh tế đang phát triển có phụ thuộc vào nguồn vốn ngoại"
+      ],
+      "market_impact": "Thị trường trải qua làn sóng bán tháo trên diện rộng ở các tài sản rủi ro, cho thấy tâm lý lo ngại bất ổn định tài chính ngắn hạn.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh sự nhạy cảm của các thị trường mới nổi trước biến động của ngành công nghệ và chính sách tiền tệ từ các ngân hàng trung ương lớn toàn cầu.",
+      "unknowns": [
+        "Quyết định cụ thể về lãi suất của Cục Dự trữ Liên bang Mỹ (Fed)",
+        "Mức độ ảnh hưởng kéo dài của đợt bán tháo cổ phiếu chip đến lợi nhuận doanh nghiệp"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên biến động thực tế của thị trường tài chính quốc tế.",
+      "scenarios": [
+        {
+          "text": "Thị trường phục hồi nếu Fed đưa ra tín hiệu ôn hòa về lãi suất trong tương lai.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Đà bán tháo tiếp tục lan rộng nếu Fed duy trì lãi suất ở mức cao trong thời gian dài hơn dự kiến.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Sự sụt giảm cổ phiếu chip châu Á",
+          "target": "Thị trường chứng khoán mới nổi",
+          "relation_type": "cause_effect",
+          "label": "Gây ra áp lực bán tháo"
+        },
+        {
+          "source": "Cục Dự trữ Liên bang Mỹ (Fed)",
+          "target": "Thị trường tài chính mới nổi",
+          "relation_type": "cause_effect",
+          "label": "Tác động đến tâm lý nhà đầu tư thông qua chính sách lãi suất"
+        }
+      ],
+      "entities": [
+        "thị trường",
+        "các cổ phiếu",
+        "Federal Reserve"
+      ],
+      "keywords": [
+        "thị trường",
+        "các cổ phiếu",
+        "các đồng tiền"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_51fb64f1": {
+    "created_at": 1785334574384,
+    "expires_at": 1787926574384,
+    "version": "4.5",
+    "checksum": "cc96c90c91f52d2a4d083e2a1537613d",
+    "data": {
+      "cluster_title": "Nâng giá dầu sau các cuộc tấn công của Iran",
+      "short_summary": "Dầu tăng giá sau các cuộc tấn công của Iran, Microsoft, Meta và Qualcomm sẽ công bố kết quả kinh doanh, Fed sẽ quyết định về lãi suất.",
+      "detailed_summary": "Giá dầu thô thế giới phục hồi sau các vụ tấn công từ Iran và thông tin Mỹ đánh chặn mục tiêu. Trong khi đó, các hợp đồng tương lai chỉ số chứng khoán Mỹ đang dao động trong bối cảnh các tập đoàn công nghệ lớn như Microsoft, Meta và Qualcomm chuẩn bị công bố báo cáo tài chính, sau khi SK Hynix có kế hoạch tăng cường chi tiêu vốn.",
+      "causes": [
+        "Các cuộc tấn công quân sự do Iran thực hiện",
+        "Kế hoạch gia tăng chi tiêu vốn của SK Hynix",
+        "Sự chờ đợi quyết định lãi suất từ Cục Dự trữ Liên bang Mỹ (Fed)"
+      ],
+      "effects": [
+        "Giá dầu thô trên thị trường toàn cầu tăng",
+        "Thị trường chứng khoán Mỹ ghi nhận trạng thái biến động",
+        "Tâm lý thận trọng của nhà đầu tư trước dữ liệu tài chính công nghệ"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư tài chính toàn cầu",
+        "Các tập đoàn công nghệ lớn",
+        "Các doanh nghiệp trong ngành năng lượng"
+      ],
+      "market_impact": "Thị trường năng lượng đang phản ứng nhạy cảm với địa chính trị, trong khi thị trường chứng khoán chờ đợi tín hiệu từ lợi nhuận doanh nghiệp và chính sách tiền tệ.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh mối liên hệ chặt chẽ giữa rủi ro địa chính trị và kỳ vọng chính sách tiền tệ trong việc định hình xu hướng tài chính toàn cầu hiện nay.",
+      "unknowns": [
+        "Kết quả cụ thể về báo cáo lợi nhuận của các tập đoàn công nghệ Mỹ",
+        "Quyết định chính thức về lãi suất của Cục Dự trữ Liên bang Mỹ (Fed)"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên báo cáo từ các hãng tin tài chính uy tín.",
+      "scenarios": [
+        {
+          "text": "Giá dầu tiếp tục biến động nếu căng thẳng địa chính trị giữa Mỹ và Iran leo thang.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Thị trường chứng khoán ổn định trở lại sau khi Fed công bố quyết định lãi suất và các công ty công nghệ báo cáo lợi nhuận.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Iran",
+          "target": "Giá dầu",
+          "relation_type": "cause_effect",
+          "label": "Tấn công quân sự gây bất ổn nguồn cung"
+        },
+        {
+          "source": "Mỹ",
+          "target": "Iran",
+          "relation_type": "conflict",
+          "label": "Đánh chặn mục tiêu trong xung đột"
+        },
+        {
+          "source": "SK Hynix",
+          "target": "Microsoft, Meta và Qualcomm",
+          "relation_type": "cooperation",
+          "label": "Tín hiệu thị trường từ chuỗi cung ứng công nghệ"
+        },
+        {
+          "source": "Fed",
+          "target": "Chứng khoán Mỹ",
+          "relation_type": "cause_effect",
+          "label": "Quyết định lãi suất ảnh hưởng đến tâm lý thị trường"
+        }
+      ],
+      "entities": [
+        "Iran",
+        "Microsoft",
+        "Meta",
+        "Qualcomm",
+        "SK Hynix"
+      ],
+      "keywords": [
+        "dầu",
+        "Iran",
+        "tấn công",
+        "Microsoft",
+        "Meta",
+        "Qualcomm"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_general_1785334580184": {
+    "created_at": 1785334586219,
+    "expires_at": 1787926586219,
+    "version": "4.5",
+    "checksum": "a577bc560bcf4150c200514fbe3d9cbc",
+    "data": {
+      "cluster_title": "Sự kiện SK Hynix",
+      "short_summary": "SK Hynix không đạt được kỳ vọng về lợi nhuận, nhưng công ty vẫn khẳng định rủi ro về cung vượt cầu ở lĩnh vực bộ nhớ vẫn còn hạn chế.",
+      "detailed_summary": "Tập đoàn sản xuất chip SK Hynix của Hàn Quốc công bố kết quả lợi nhuận không đạt kỳ vọng của các nhà phân tích. Sự kiện này đã kích hoạt làn sóng bán tháo cổ phiếu trong lĩnh vực công nghệ, bất chấp việc ban lãnh đạo công ty khẳng định rủi ro về tình trạng dư thừa nguồn cung bộ nhớ vẫn ở mức hạn chế.",
+      "causes": [
+        "Kết quả lợi nhuận thực tế của SK Hynix thấp hơn dự báo của giới phân tích",
+        "Tâm lý lo ngại của nhà đầu tư trước tình trạng dư thừa nguồn cung bộ nhớ"
+      ],
+      "effects": [
+        "Cổ phiếu ngành công nghệ trên thị trường chứng khoán bị bán tháo",
+        "Gia tăng lo ngại về sức khỏe của thị trường linh kiện điện tử toàn cầu"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư thị trường chứng khoán",
+        "Các doanh nghiệp trong ngành bán dẫn",
+        "Các quỹ đầu tư công nghệ"
+      ],
+      "market_impact": "Gây biến động tiêu cực tức thời đối với các cổ phiếu ngành công nghệ trên thị trường tài chính quốc tế.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh sự nhạy cảm cực độ của nhà đầu tư đối với báo cáo lợi nhuận của các doanh nghiệp bán dẫn đầu ngành, đồng thời cho thấy tâm lý thận trọng về chu kỳ của thị trường bộ nhớ.",
+      "unknowns": [
+        "Mức độ ảnh hưởng thực tế đến nguồn cung chip trên toàn cầu trong dài hạn",
+        "Phản ứng của các đối thủ cạnh tranh trước thông tin từ SK Hynix"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên báo cáo kết quả kinh doanh và phản ứng thị trường đã diễn ra.",
+      "scenarios": [
+        {
+          "text": "Giá cổ phiếu công nghệ tiếp tục biến động mạnh trong ngắn hạn do lo ngại về dư cung.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Thị trường ổn định trở lại sau khi các phân tích chuyên sâu hơn về nhu cầu bộ nhớ được công bố.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Kết quả lợi nhuận của SK Hynix",
+          "target": "Cổ phiếu công nghệ",
+          "relation_type": "cause_effect",
+          "label": "Gây ra làn sóng bán tháo"
+        },
+        {
+          "source": "SK Hynix",
+          "target": "Thị trường bộ nhớ",
+          "relation_type": "cause_effect",
+          "label": "Đánh giá tình trạng cung cầu"
+        }
+      ],
+      "entities": [
+        "SK Hynix",
+        "Hàn Quốc"
+      ],
+      "keywords": [
+        "SK Hynix",
+        "Tech rout",
+        "chíp"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "business"
+    }
+  },
+  "evt_general_1785334592102": {
+    "created_at": 1785334598463,
+    "expires_at": 1787926598463,
+    "version": "4.5",
+    "checksum": "3b312be820ce60efbaf3221e3626f103",
+    "data": {
+      "cluster_title": "Sự kiện ảnh hưởng đến chi phí tài chính AI",
+      "short_summary": "Chi phí tài chính AI tăng lên do áp lực từ thị trường tín dụng và dự đoán chi tiêu lớn của Big Tech.",
+      "detailed_summary": "Các tập đoàn công nghệ lớn đang lên kế hoạch chi hàng nghìn tỷ đô la vào trí tuệ nhân tạo. Tuy nhiên, thị trường tín dụng đang xuất hiện áp lực thông qua sự gia tăng của các hợp đồng hoán đổi rủi ro tín dụng. Điều này trực tiếp làm tăng chi phí huy động vốn cho các dự án AI, đồng thời bắt đầu làm lộ rõ những bên được lợi và những bên chịu rủi ro trong cuộc đua công nghệ này.",
+      "causes": [
+        "Kế hoạch chi tiêu khổng lồ vào công nghệ AI từ các tập đoàn công nghệ lớn",
+        "Sự gia tăng áp lực tại thị trường tín dụng thể hiện qua các hợp đồng hoán đổi rủi ro"
+      ],
+      "effects": [
+        "Chi phí tài trợ cho các dự án AI trở nên đắt đỏ hơn",
+        "Thị trường tài chính bắt đầu phân hóa rõ rệt giữa những đơn vị hưởng lợi và đơn vị chịu rủi ro"
+      ],
+      "affected_groups": [
+        "Các tập đoàn công nghệ đầu tư vào AI",
+        "Nhà đầu tư trên thị trường tín dụng",
+        "Các định chế tài chính cung cấp vốn cho lĩnh vực công nghệ"
+      ],
+      "market_impact": "Chi phí vốn gia tăng có thể gây áp lực lên biên lợi nhuận của các doanh nghiệp đang phụ thuộc vào nguồn vốn vay để phát triển AI.",
+      "follow_up": "",
+      "significance": "Sự kiện cho thấy thị trường tài chính đang bắt đầu phản ánh rủi ro thực tế của các khoản đầu tư AI quy mô lớn, chuyển từ giai đoạn hưng phấn sang đánh giá năng lực tài chính khắt khe hơn.",
+      "unknowns": [
+        "Tên cụ thể của các doanh nghiệp bị đánh giá là 'kẻ thua cuộc' trong mắt thị trường tín dụng",
+        "Thời điểm cụ thể mà áp lực tín dụng sẽ tác động trực tiếp đến tiến độ dự án của các tập đoàn công nghệ"
+      ],
+      "confidence_note": "Thông tin dựa trên biến động thực tế từ thị trường tín dụng, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Các tập đoàn công nghệ lớn duy trì đầu tư bất chấp chi phí vốn tăng, gây áp lực lên bảng cân đối kế toán dài hạn.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Thị trường tín dụng thắt chặt buộc các doanh nghiệp AI phải điều chỉnh quy mô đầu tư để bảo toàn xếp hạng tín nhiệm.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Các tập đoàn công nghệ",
+          "target": "Thị trường tín dụng",
+          "relation_type": "cause_effect",
+          "label": "Kế hoạch chi tiêu lớn gây áp lực lên chi phí vay vốn"
+        },
+        {
+          "source": "Thị trường tín dụng",
+          "target": "Các doanh nghiệp AI",
+          "relation_type": "cause_effect",
+          "label": "Tăng chi phí huy động vốn làm phân hóa năng lực doanh nghiệp"
+        }
+      ],
+      "entities": [
+        "Wall Street",
+        "Big Tech"
+      ],
+      "keywords": [
+        "Wall Street",
+        "AI",
+        "Credit Swaps",
+        "Big Tech"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_01a4bac4": {
+    "created_at": 1785334610208,
+    "expires_at": 1787926610208,
+    "version": "4.5",
+    "checksum": "85e1639414ca2b89629ebbb6ed978a42",
+    "data": {
+      "cluster_title": "Bloomberg Mua Canoe Intelligence",
+      "short_summary": "Bloomberg LP đã đồng ý mua Canoe Intelligence, một nền tảng tự động thu thập dữ liệu thị trường tư nhân cho các nhà đầu tư, quản lý tài sản và văn phòng gia đình.",
+      "detailed_summary": "Tập đoàn Bloomberg LP đã chính thức thỏa thuận mua lại Canoe Intelligence, một nền tảng chuyên tự động hóa quy trình thu thập dữ liệu cho các thị trường tư nhân. Động thái này nhằm củng cố vị thế của Bloomberg trong việc cung cấp dịch vụ dữ liệu cho các nhà đầu tư tổ chức, nhà quản lý tài sản và các văn phòng quản lý tài sản gia đình.",
+      "causes": [
+        "Nhu cầu tăng cường khả năng xử lý dữ liệu thị trường tư nhân của Bloomberg.",
+        "Sự phát triển mạnh mẽ của Canoe Intelligence trong mảng tự động hóa dữ liệu tài chính."
+      ],
+      "effects": [
+        "Bloomberg sở hữu công nghệ tự động hóa thu thập dữ liệu tiên tiến.",
+        "Cải thiện chất lượng dịch vụ cung cấp cho các nhà đầu tư tổ chức và quản lý tài sản."
+      ],
+      "affected_groups": [
+        "Nhà đầu tư tổ chức",
+        "Nhà quản lý tài sản",
+        "Văn phòng quản lý tài sản gia đình",
+        "Khách hàng hiện hữu của Bloomberg"
+      ],
+      "market_impact": "Dự báo củng cố xu hướng số hóa và tự động hóa trong quản lý dữ liệu tại các thị trường tài chính tư nhân.",
+      "follow_up": "",
+      "significance": "Thương vụ này đánh dấu bước đi chiến lược của Bloomberg nhằm tích hợp công nghệ phân tích dữ liệu chuyên sâu vào hệ sinh thái tài chính rộng lớn của mình.",
+      "unknowns": [
+        "Giá trị tài chính chi tiết của thương vụ không được tiết lộ.",
+        "Thời hạn hoàn tất việc sáp nhập chính thức giữa hai đơn vị."
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên xác nhận từ phía Bloomberg về thỏa thuận mua lại.",
+      "scenarios": [
+        {
+          "text": "Bloomberg tích hợp thành công công nghệ của Canoe vào nền tảng hiện có, gia tăng đáng kể thị phần dữ liệu tài chính.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Quá trình sáp nhập gặp khó khăn trong việc đồng bộ hóa dữ liệu khách hàng cũ, làm chậm tiến độ triển khai sản phẩm mới.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Bloomberg LP",
+          "target": "Canoe Intelligence",
+          "relation_type": "cooperation",
+          "label": "Mua lại để mở rộng dịch vụ dữ liệu"
+        }
+      ],
+      "entities": [
+        "Bloomberg LP",
+        "Canoe Intelligence"
+      ],
+      "keywords": [
+        "Bloomberg",
+        "Canoe Intelligence",
+        "Private Markets"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
   }
 }
