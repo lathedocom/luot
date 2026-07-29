@@ -7,7 +7,7 @@ module.exports = {
         { id: 'CPI_VN', name: 'Lạm phát (CPI)', type: 'macro', region: 'vn', api_source: 'macro_vnd', api_symbol: 'CPI_YOY', category: '💰 Chi phí sinh hoạt', unit: '%', official_source: 'Tổng cục Thống kê' },
         { id: 'RON95', name: 'Xăng RON 95-III', type: 'energy', region: 'vn', api_source: 'local', api_symbol: 'RON95', category: '💰 Chi phí sinh hoạt', unit: 'VNĐ/L', official_source: 'Petrolimex' },
         { id: 'GOLD_SJC', name: 'Vàng miếng SJC', type: 'metal', region: 'vn', api_source: 'local', api_symbol: 'GOLD_SJC', category: '💰 Chi phí sinh hoạt', unit: 'Tr/lượng', official_source: 'SJC' },
-        { id: 'RICE_VN', name: 'Gạo xuất khẩu VN', type: 'agriculture', region: 'vn', api_source: 'local', api_symbol: 'RICE_VN', category: '💰 Chi phí sinh hoạt', unit: 'USD/tấn', official_source: 'VFA' },
+        { id: 'RICE_VN', name: 'Gạo xuất khẩu VN', type: 'agriculture', region: 'vn', api_source: 'static', api_symbol: 'RICE_VN', base_price: 512, category: '💰 Chi phí sinh hoạt', unit: 'USD/tấn', official_source: 'Giá tham chiếu (VFA)' },
         
         // ==========================================
         // 2. TIỀN TỆ
@@ -36,9 +36,9 @@ module.exports = {
         // ==========================================
         // 6. BẤT ĐỘNG SẢN & XÂY DỰNG
         // ==========================================
-        { id: 'STEEL_CB300', name: 'Thép CB300', type: 'metal', region: 'vn', api_source: 'local', api_symbol: 'STEEL_CB300', category: '🏗 Bất động sản & Xây dựng', unit: 'Tr/tấn', official_source: 'Hiệp hội VLXD' },
-        { id: 'CEMENT', name: 'Xi măng', type: 'metal', region: 'vn', api_source: 'local', api_symbol: 'CEMENT', category: '🏗 Bất động sản & Xây dựng', unit: 'Tr/tấn', official_source: 'Hiệp hội VLXD' },
-        { id: 'SAND', name: 'Cát xây dựng', type: 'metal', region: 'vn', api_source: 'local', api_symbol: 'SAND', category: '🏗 Bất động sản & Xây dựng', unit: 'Ngàn/m3', official_source: 'Hiệp hội VLXD' },
+        { id: 'STEEL_CB300', name: 'Thép CB300', type: 'metal', region: 'vn', api_source: 'static', api_symbol: 'STEEL_CB300', base_price: 14.2, category: '🏗 Bất động sản & Xây dựng', unit: 'Tr/tấn', official_source: 'Giá tham chiếu' },
+        { id: 'CEMENT', name: 'Xi măng', type: 'metal', region: 'vn', api_source: 'static', api_symbol: 'CEMENT', base_price: 1.5, category: '🏗 Bất động sản & Xây dựng', unit: 'Tr/tấn', official_source: 'Giá tham chiếu' },
+        { id: 'SAND', name: 'Cát xây dựng', type: 'metal', region: 'vn', api_source: 'static', api_symbol: 'SAND', base_price: 450, category: '🏗 Bất động sản & Xây dựng', unit: 'Ngàn/m3', official_source: 'Giá tham chiếu' },
 
         // ==========================================
         // 7. HÀNG HÓA
@@ -51,7 +51,8 @@ module.exports = {
         // ==========================================
         // 8. THỊ TRƯỜNG TÀI CHÍNH
         // ==========================================
-        { id: 'VNINDEX', name: 'VN-Index', type: 'stock', region: 'vn', api_source: 'local', api_symbol: 'VNINDEX', category: '📈 Thị trường tài chính', unit: 'Điểm', official_source: 'HOSE' },
+        { id: 'VNINDEX', name: 'VN-Index', type: 'stock', region: 'vn', api_source: 'vndirect_index', api_symbol: 'VNINDEX', category: '📈 Thị trường tài chính', unit: 'Điểm', official_source: 'HOSE' },
+        { id: 'HNX', name: 'HNX-Index', type: 'stock', region: 'vn', api_source: 'vndirect_index', api_symbol: 'HNX', category: '📈 Thị trường tài chính', unit: 'Điểm', official_source: 'HNX' },
         { id: 'SP500', name: 'S&P 500', type: 'stock', region: 'global', api_source: 'yahoo', api_symbol: '^GSPC', category: '📈 Thị trường tài chính', unit: 'Điểm', official_source: 'Yahoo Finance' },
         { id: 'BTC', name: 'Bitcoin', type: 'crypto', region: 'global', api_source: 'coingecko', api_symbol: 'bitcoin', category: '📈 Thị trường tài chính', unit: 'USD', official_source: 'CoinGecko' }
     ]
