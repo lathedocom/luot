@@ -1,6 +1,4 @@
-// ==========================================================================
 // FILE: assets/js/ui-market.js
-// ==========================================================================
 import { escapeHtml } from './utils.js';
 
 export function renderMarket(marketData, macroHealthData = []) {
@@ -10,29 +8,16 @@ export function renderMarket(marketData, macroHealthData = []) {
         return;
     }
 
-    // BỌC TOÀN BỘ BẰNG 1 THẺ BLOCK ĐỂ THOÁT KHỎI LỖI GRID CỦA HTML GỐC
     let finalHtml = '<div style="display: block; width: 100%; grid-column: 1 / -1;">';
 
     // ==========================================
-    // KHU VỰC 1: SỨC KHỎE NỀN KINH TẾ (THẺ 3 LỚP - CHUẨN 3 CỘT)
+    // KHU VỰC 1: SỨC KHỎE NỀN KINH TẾ (THẺ 3 LỚP)
     // ==========================================
     if (macroHealthData.length > 0) {
         let healthCardsHtml = '';
         macroHealthData.forEach(item => {
-            // Render 3 lý do
-            let reasonsHtml = '';
-            if (item.reasons && item.reasons.length > 0) {
-                item.reasons.forEach(r => {
-                    reasonsHtml += `<li style="margin-bottom: 4px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;">${escapeHtml(r)}</li>`;
-                });
-            } else {
-                reasonsHtml = '<li>Đang cập nhật diễn biến thị trường...</li>';
-            }
-
-           // Mã hóa dữ liệu để nhét vào HTML an toàn
             const reasonsJson = encodeURIComponent(JSON.stringify(item.reasons || []));
             
-            // Render 3 lý do hiển thị trực tiếp ra thẻ (Lớp 3)
             let reasonsHtml = '';
             if (item.reasons && item.reasons.length > 0) {
                 item.reasons.forEach(r => {
@@ -43,7 +28,6 @@ export function renderMarket(marketData, macroHealthData = []) {
             healthCardsHtml += `
                 <div class="health-card" data-title="${escapeHtml(item.name)}" data-status="${escapeHtml(item.status)}" data-color="${item.color}" data-reasons="${reasonsJson}" data-target="${escapeHtml(item.target_audience)}" data-impact="${escapeHtml(item.impact_level)}" data-duration="${escapeHtml(item.duration)}" data-meaning="${escapeHtml(item.meaning)}" style="background: var(--md-sys-color-surface); border: 1px solid var(--md-sys-color-outline); border-top: 4px solid ${item.color}; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; box-shadow: 0 4px 6px rgba(0,0,0,0.02); cursor: pointer; transition: transform 0.2s, background 0.2s; min-height: 180px;">
                     
-                    <!-- Lớp 1: Header & Trạng thái -->
                     <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
                         <div style="display: flex; align-items: center; gap: 8px;">
                             <span style="font-size: 20px;">${item.icon}</span>
@@ -54,12 +38,10 @@ export function renderMarket(marketData, macroHealthData = []) {
                         ${escapeHtml(item.status)}
                     </div>
                     
-                    <!-- Lớp 2: Xu hướng -->
                     <div style="font-size: 13px; font-weight: 600; color: var(--md-sys-color-on-surface); opacity: 0.7; margin-bottom: 12px; display: flex; align-items: center; gap: 4px;">
                         <span style="font-size: 16px; font-weight: 900;">${item.trend_icon}</span> ${escapeHtml(item.trend_text)}
                     </div>
 
-                    <!-- Lớp 3: Nguyên nhân chính -->
                     <div style="background: rgba(0,0,0,0.1); padding: 12px; border-radius: 8px; flex-grow: 1;">
                         <div style="font-size: 11px; text-transform: uppercase; font-weight: bold; opacity: 0.6; margin-bottom: 8px;">Nguyên nhân chính</div>
                         <ul style="margin: 0; padding-left: 16px; font-size: 13px; opacity: 0.85; line-height: 1.4;">
@@ -75,7 +57,7 @@ export function renderMarket(marketData, macroHealthData = []) {
                 <h3 style="font-size: 18px; font-weight: 700; color: var(--md-sys-color-primary); margin: 0 0 16px 0; display: flex; align-items: center; gap: 8px;">
                     <span class="material-icons-round">monitor_heart</span> SỨC KHỎE NỀN KINH TẾ
                 </h3>
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;" class="health-grid">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;" class="health-grid">
                     ${healthCardsHtml}
                 </div>
             </div>
@@ -83,7 +65,7 @@ export function renderMarket(marketData, macroHealthData = []) {
     }
 
     // ==========================================
-    // KHU VỰC 2: BẢNG GIÁ THỊ TRƯỜNG THEO NHÓM (CHUẨN 3 CỘT)
+    // KHU VỰC 2: BẢNG GIÁ THỊ TRƯỜNG THEO NHÓM
     // ==========================================
     const groupedData = {};
     marketData.forEach(item => {
@@ -98,18 +80,8 @@ export function renderMarket(marketData, macroHealthData = []) {
             .market-category-group { display: flex; flex-direction: column; width: 100%; box-sizing: border-box; }
             .chart-wrapper { position: relative; width: 100%; height: 60px; margin-bottom: 8px; overflow: hidden; }
             
-            /* Hiệu ứng rê chuột cho thẻ sức khỏe */
-            .health-card:hover { background: rgba(59, 130, 246, 0.08) !important; transform: translateY(-2px); }
-            
-            /* Reponsive cho Mobile và Tablet */
-            @media (max-width: 1024px) { 
-                .market-board { grid-template-columns: repeat(2, 1fr); } 
-                .health-grid { grid-template-columns: repeat(2, 1fr) !important; }
-            }
-            @media (max-width: 768px) { 
-                .market-board { grid-template-columns: 1fr; gap: 12px; } 
-                .health-grid { grid-template-columns: 1fr !important; gap: 12px; }
-            }
+            @media (max-width: 1024px) { .market-board { grid-template-columns: repeat(2, 1fr); } }
+            @media (max-width: 768px) { .market-board { grid-template-columns: 1fr; gap: 12px; } }
         </style>
     `;
 
@@ -131,7 +103,7 @@ export function renderMarket(marketData, macroHealthData = []) {
             const isUp = item.trend === '↑' || (item.change_percent && item.change_percent.includes('+'));
             const color = isOffline ? '#6b7280' : (isUp ? '#10b981' : '#ef4444'); 
             const bgBadge = isOffline ? 'transparent' : (isUp ? 'rgba(16, 185, 129, 0.1)' : 'rgba(239, 68, 68, 0.1)');
-
+            
             const updateTime = new Date(item.updated_at || Date.now());
             const timeStr = `${updateTime.getHours().toString().padStart(2, '0')}:${updateTime.getMinutes().toString().padStart(2, '0')}`;
             let sourceLabel = isOffline ? 'Dữ liệu tạm ngưng' : escapeHtml(item.display_source || 'Hệ thống');
@@ -148,11 +120,9 @@ export function renderMarket(marketData, macroHealthData = []) {
                             <h4 style="margin: 0; font-size: 14px; font-weight: 600; opacity: 0.8; line-height: 1.3;">${escapeHtml(item.name)}</h4>
                             <div style="font-size: 16px; font-weight: bold; margin-top: 2px;">${displayPrice} ${unitHtml}</div>
                         </div>
-                        ${!isOffline ? `<span style="background: ${bgBadge}; color: ${color}; padding: 2px 6px; border-radius: 4px; font-weight: bold; font-size: 13px; display: flex; align-items: center; gap: 2px;">${escapeHtml(item.change_percent)}</span>` : ''}
+                        ${!isOffline ? `<span style="background: ${bgBadge}; color: ${color}; padding: 2px 6px; border-radius: 4px; font-weight: bold; font-size: 13px;">${escapeHtml(item.change_percent)}</span>` : ''}
                     </div>
-                    
                     ${chartContainerHtml}
-
                     <div style="margin-top: auto; padding-top: 8px; font-size: 10px; opacity: 0.6; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(128,128,128,0.1);">
                         <span>Cập nhật: ${timeStr}</span>
                         <span>${sourceLabel}</span>
@@ -160,18 +130,16 @@ export function renderMarket(marketData, macroHealthData = []) {
                 </div>
             `;
         });
-
         finalHtml += `</div></div>`;
     }
 
-    finalHtml += `</div>`; // Đóng Wrapper to nhất
+    finalHtml += `</div>`; 
     marketContainer.innerHTML = finalHtml;
 
     // ==========================================
     // KHU VỰC 3: XỬ LÝ SỰ KIỆN CLICK (MODAL) VÀ VẼ BIỂU ĐỒ
     // ==========================================
 
-   // Kích hoạt sự kiện bấm vào Thẻ Sức Khỏe Nền Kinh Tế
     document.querySelectorAll('.health-card').forEach(card => {
         card.addEventListener('click', () => {
             const title = card.getAttribute('data-title');
@@ -191,7 +159,6 @@ export function renderMarket(marketData, macroHealthData = []) {
         });
     });
 
-    // Vẽ biểu đồ Chart.js
     if (typeof Chart !== 'undefined') {
         for (const [category, items] of Object.entries(groupedData)) {
             items.forEach((item, index) => {
@@ -203,7 +170,6 @@ export function renderMarket(marketData, macroHealthData = []) {
     }
 }
 
-// Hàm render Modal lý do đánh giá
 function openMacroHealthModal(title, status, color, reasons, target, impact_level, duration, meaning) {
     const modalTitle = document.getElementById('modal-title');
     const modalBody = document.getElementById('modal-body');
@@ -266,7 +232,6 @@ function openMacroHealthModal(title, status, color, reasons, target, impact_leve
 
     document.getElementById('intelligence-modal').classList.add('active');
 }
-
 
 function drawMarketSparkline(canvasId, item) {
     const ctx = document.getElementById(canvasId);
