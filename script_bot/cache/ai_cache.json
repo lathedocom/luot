@@ -4507,5 +4507,359 @@
       "sentiment": -1,
       "scope": "national"
     }
+  },
+  "evt_70d4e9df": {
+    "created_at": 1785316429392,
+    "expires_at": 1787908429392,
+    "version": "4.5",
+    "checksum": "5e78a9a77e3da01118923f964172ea6d",
+    "data": {
+      "cluster_title": "Giới thiệu chính sách kiểm soát giá thuê",
+      "short_summary": "Chính sách kiểm soát giá thuê đang được ủng hộ trở lại bởi những người tiến bộ, nhưng các chỉ trích cho rằng nó chỉ mang lại lợi ích cho những người thuê nhà hiện tại và làm giảm đầu tư.",
+      "detailed_summary": "Chính sách kiểm soát giá thuê nhà, vốn từng gây tranh cãi, đang được thảo luận và áp dụng trở lại tại các khu vực như New York, Berlin và Scotland. Các nhóm tiến bộ ủng hộ chính sách này như một giải pháp bảo vệ quyền lợi người thuê nhà, trong khi những người phản đối lập luận rằng nó chỉ mang lại lợi ích cho người thuê hiện tại nhưng lại kìm hãm dòng vốn đầu tư vào thị trường bất động sản.",
+      "causes": [
+        "Áp lực từ các chính trị gia theo xu hướng tiến bộ trong việc giải quyết vấn đề nhà ở",
+        "Nhu cầu bảo vệ người thuê nhà trước biến động chi phí sinh hoạt tại các đô thị lớn"
+      ],
+      "effects": [
+        "Cải thiện quyền lợi an cư cho người thuê nhà hiện tại",
+        "Sụt giảm động lực đầu tư vào lĩnh vực bất động sản cho thuê do lo ngại về lợi nhuận"
+      ],
+      "affected_groups": [
+        "Người thuê nhà tại các đô thị lớn",
+        "Các nhà đầu tư bất động sản",
+        "Chính quyền các đô thị đang áp dụng chính sách"
+      ],
+      "market_impact": "Có khả năng làm giảm nguồn cung nhà cho thuê mới do các nhà đầu tư trở nên thận trọng hơn khi triển khai dự án.",
+      "follow_up": "",
+      "significance": "Sự kiện này phản ánh sự giằng co giữa chính sách an sinh xã hội và cơ chế thị trường tự do trong quản lý hạ tầng đô thị.",
+      "unknowns": [
+        "Hiệu quả thực tế của chính sách trong việc giải quyết thiếu hụt nhà ở dài hạn",
+        "Mức độ ảnh hưởng cụ thể của chính sách đến giá nhà ở phân khúc sở hữu cá nhân"
+      ],
+      "confidence_note": "Thông tin dựa trên quan sát thực tế về xu hướng chính sách tại các khu vực nêu trên, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Các đô thị tiếp tục siết chặt kiểm soát, dẫn đến giảm nguồn cung nhà ở cho thuê mới.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các địa phương điều chỉnh chính sách theo hướng trung dung để cân bằng giữa bảo vệ người thuê và thu hút đầu tư.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Chính sách kiểm soát giá thuê nhà",
+          "target": "Nhà đầu tư bất động sản",
+          "relation_type": "conflict",
+          "label": "Gây hạn chế lợi nhuận và giảm động lực đầu tư"
+        },
+        {
+          "source": "Giới tiến bộ",
+          "target": "Chính sách kiểm soát giá thuê nhà",
+          "relation_type": "cooperation",
+          "label": "Đẩy mạnh thực thi và ủng hộ chính sách"
+        },
+        {
+          "source": "Chính sách kiểm soát giá thuê nhà",
+          "target": "Người thuê nhà hiện tại",
+          "relation_type": "cause_effect",
+          "label": "Mang lại lợi ích trực tiếp về ổn định chi phí"
+        }
+      ],
+      "entities": [
+        "New York",
+        "Berlin",
+        "Scotland"
+      ],
+      "keywords": [
+        "rent control",
+        "New York",
+        "Berlin",
+        "Scotland"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_general_1785316435337": {
+    "created_at": 1785316441212,
+    "expires_at": 1787908441212,
+    "version": "4.5",
+    "checksum": "ba8e674521f95e3a375fddbe84511a31",
+    "data": {
+      "cluster_title": "Sự kiện SK Hynix",
+      "short_summary": "SK Hynix không đạt được kỳ vọng về lợi nhuận, nhưng công ty vẫn khẳng định rủi ro về cung vượt cầu ở lĩnh vực bộ nhớ vẫn còn hạn chế.",
+      "detailed_summary": "Gã khổng lồ chip nhớ Hàn Quốc, SK Hynix, đã báo cáo kết quả kinh doanh không đạt kỳ vọng của các nhà phân tích. Sự kiện này đã kích hoạt làn sóng bán tháo trên thị trường chứng khoán trong lĩnh vực công nghệ. Tuy nhiên, công ty vẫn khẳng định rủi ro về tình trạng dư thừa nguồn cung bộ nhớ trong tương lai ở mức hạn chế.",
+      "causes": [
+        "Kết quả lợi nhuận của SK Hynix thấp hơn dự báo của các nhà phân tích",
+        "Tâm lý lo ngại của nhà đầu tư trước tình hình ngành chip nhớ"
+      ],
+      "effects": [
+        "Thị trường cổ phiếu công nghệ biến động mạnh",
+        "Gia tăng áp lực bán tháo cổ phiếu ngành bán dẫn"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư chứng khoán",
+        "Các doanh nghiệp trong chuỗi cung ứng công nghệ",
+        "SK Hynix"
+      ],
+      "market_impact": "Gây tâm lý tiêu cực tức thời lên nhóm cổ phiếu công nghệ, làm gián đoạn đà tăng trưởng trên các sàn giao dịch.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh sự nhạy cảm của thị trường tài chính đối với kỳ vọng lợi nhuận trong ngành bán dẫn, ngay cả khi doanh nghiệp khẳng định triển vọng cung cầu vẫn ổn định.",
+      "unknowns": [
+        "Tác động cụ thể đến doanh thu trong các quý tiếp theo",
+        "Phản ứng của các đối thủ cạnh tranh trong ngành chip nhớ"
+      ],
+      "confidence_note": "Thông tin dựa trên báo cáo tài chính và phản ứng của thị trường, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Thị trường ổn định lại sau khi nhà đầu tư đánh giá kỹ hơn về triển vọng dài hạn của SK Hynix.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Sự hoài nghi về cung cầu chip nhớ tiếp tục kéo dài khiến cổ phiếu công nghệ biến động mạnh hơn.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "SK Hynix",
+          "target": "Thị trường chứng khoán toàn cầu",
+          "relation_type": "cause_effect",
+          "label": "Báo cáo tài chính gây biến động thị trường"
+        },
+        {
+          "source": "Nhà phân tích",
+          "target": "SK Hynix",
+          "relation_type": "conflict",
+          "label": "Sự khác biệt giữa dự báo và thực tế lợi nhuận"
+        }
+      ],
+      "entities": [
+        "SK Hynix",
+        "Hàn Quốc"
+      ],
+      "keywords": [
+        "SK Hynix",
+        "Tech rout",
+        "chíp"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "business"
+    }
+  },
+  "evt_general_1785316447127": {
+    "created_at": 1785316452889,
+    "expires_at": 1787908452889,
+    "version": "4.5",
+    "checksum": "d73949e6fafcd9e1ed858a3ca998a684",
+    "data": {
+      "cluster_title": "Sự sụt giảm của cổ phiếu thị trường mới nổi",
+      "short_summary": "Cổ phiếu thị trường mới nổi tiếp tục sụt giảm, đạt mức thấp nhất trong ba tháng rưỡi do sự sụt giảm của cổ phiếu công nghệ Á Đông.",
+      "detailed_summary": "Chỉ số chứng khoán của các nền kinh tế mới nổi đã ghi nhận phiên giảm điểm thứ hai liên tiếp. Nguyên nhân chủ yếu xuất phát từ làn sóng bán tháo lan rộng trong nhóm cổ phiếu công nghệ tại khu vực châu Á, đặc biệt là lĩnh vực sản xuất chip, kéo theo sự sụt giảm của các chỉ số đo lường toàn thị trường.",
+      "causes": [
+        "Sự sụt giảm mạnh của nhóm cổ phiếu ngành công nghệ tại châu Á",
+        "Làn sóng bán tháo cổ phiếu lĩnh vực sản xuất chip"
+      ],
+      "effects": [
+        "Chỉ số chứng khoán các thị trường mới nổi giảm xuống mức thấp nhất trong hơn 3 tháng",
+        "Tâm lý nhà đầu tư trở nên thận trọng và tiêu cực hơn"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư trên thị trường chứng khoán các nền kinh tế mới nổi",
+        "Các doanh nghiệp công nghệ và sản xuất chip tại châu Á"
+      ],
+      "market_impact": "Gây áp lực giảm điểm diện rộng trên thị trường tài chính quốc tế, đặc biệt là các tài sản rủi ro tại những nền kinh tế mới nổi.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh tính nhạy cảm của dòng vốn tại các thị trường mới nổi đối với biến động của ngành công nghệ toàn cầu.",
+      "unknowns": [
+        "Thời điểm xu hướng bán tháo cổ phiếu công nghệ sẽ dừng lại",
+        "Tác động cụ thể đến các chỉ số vĩ mô của từng quốc gia trong nhóm mới nổi"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên dữ liệu biến động thị trường thực tế.",
+      "scenarios": [
+        {
+          "text": "Thị trường tiếp tục điều chỉnh giảm trong ngắn hạn nếu đà bán tháo cổ phiếu chip không được ngăn chặn.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Thị trường hồi phục nhờ các nhà đầu tư săn lùng cổ phiếu giá rẻ sau đợt bán tháo.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Cổ phiếu chip châu Á",
+          "target": "Thị trường chứng khoán các nền kinh tế mới nổi",
+          "relation_type": "cause_effect",
+          "label": "Gây sụt giảm giá trị chỉ số"
+        }
+      ],
+      "entities": [
+        "cổ phiếu",
+        "thị trường mới nổi",
+        "công nghệ Á Đông"
+      ],
+      "keywords": [
+        "cổ phiếu",
+        "thị trường mới nổi",
+        "công nghệ Á Đông"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_2da1d9d0": {
+    "created_at": 1785316464566,
+    "expires_at": 1787908464566,
+    "version": "4.5",
+    "checksum": "7ffba4cc10a53c9af5c6ef278c213b00",
+    "data": {
+      "cluster_title": "Tăng trưởng lợi nhuận của AI tại châu Âu",
+      "short_summary": "Morgan Stanley cho biết AI vẫn đang đóng góp vào sự tăng trưởng lợi nhuận tại châu Âu. Marina Zavolock, chiến lược gia chứng khoán châu Âu tại Morgan Stanley, nói rằng cô chưa từng thấy một mùa thu nhập mạnh mẽ như vậy tại châu Âu trong nhiều năm.",
+      "detailed_summary": "Marina Zavolock, chiến lược gia cổ phiếu châu Âu tại Morgan Stanley, nhận định châu Âu đang trải qua một mùa báo cáo thu nhập mạnh mẽ nhất trong nhiều năm. Sự tăng trưởng này được thúc đẩy chủ yếu bởi làn sóng phát triển và ứng dụng trí tuệ nhân tạo, dẫn đến sự gia tăng sự quan tâm của giới đầu tư đối với cổ phiếu châu Âu.",
+      "causes": [
+        "Sự tăng trưởng mạnh mẽ của lĩnh vực trí tuệ nhân tạo",
+        "Kết quả thu nhập tích cực của các doanh nghiệp tại châu Âu"
+      ],
+      "effects": [
+        "Tăng sự quan tâm của nhà đầu tư đối với thị trường cổ phiếu châu Âu",
+        "Cải thiện tâm lý lạc quan của thị trường tài chính khu vực"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư thị trường chứng khoán châu Âu",
+        "Các doanh nghiệp công nghệ và doanh nghiệp niêm yết tại châu Âu"
+      ],
+      "market_impact": "Tạo đà tăng trưởng tích cực cho thị trường cổ phiếu châu Âu nhờ niềm tin vào hiệu quả kinh doanh.",
+      "follow_up": "",
+      "significance": "Sự kiện cho thấy trí tuệ nhân tạo không chỉ là xu hướng ở Mỹ mà đã trở thành động lực tăng trưởng thực tế cho lợi nhuận doanh nghiệp tại châu Âu.",
+      "unknowns": [
+        "Các ngành cụ thể ngoài công nghệ đang hưởng lợi từ trí tuệ nhân tạo",
+        "Thời hạn kéo dài của đà tăng trưởng thu nhập này trong các quý tới"
+      ],
+      "confidence_note": "Thông tin dựa trên nhận định từ chuyên gia chiến lược cấp cao của một tổ chức tài chính uy tín.",
+      "scenarios": [
+        {
+          "text": "Dòng vốn đầu tư nước ngoài tiếp tục đổ mạnh vào thị trường châu Âu do kỳ vọng thu nhập cao.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Thị trường có thể điều chỉnh nếu kỳ vọng về lợi nhuận AI không đạt được trong các báo cáo tiếp theo.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Trí tuệ nhân tạo",
+          "target": "Kết quả kinh doanh doanh nghiệp châu Âu",
+          "relation_type": "cause_effect",
+          "label": "Động lực thúc đẩy lợi nhuận"
+        },
+        {
+          "source": "Kết quả kinh doanh doanh nghiệp châu Âu",
+          "target": "Sự quan tâm của nhà đầu tư",
+          "relation_type": "cause_effect",
+          "label": "Yếu tố thu hút vốn đầu tư"
+        },
+        {
+          "source": "Marina Zavolock",
+          "target": "Morgan Stanley",
+          "relation_type": "cooperation",
+          "label": "Nhân sự phân tích chiến lược"
+        }
+      ],
+      "entities": [
+        "Morgan Stanley",
+        "Marina Zavolock"
+      ],
+      "keywords": [
+        "AI",
+        "lợi nhuận",
+        "châu Âu"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "business"
+    }
+  },
+  "evt_91af7d84": {
+    "created_at": 1785316476462,
+    "expires_at": 1787908476462,
+    "version": "4.5",
+    "checksum": "0a72e247347fbc9bde036bec0d95133a",
+    "data": {
+      "cluster_title": "ING Đang Xây Dựng Các Chương Trình SRT",
+      "short_summary": "ING Groep NV đang xây dựng các chương trình SRT để giảm thiểu rủi ro tín dụng và tăng cường khả năng cho vay mới.",
+      "detailed_summary": "Tập đoàn ING đang tiến hành các giao dịch chuyển giao rủi ro đáng kể (SRTs) cho danh mục nợ trị giá khoảng 10 tỷ USD, bao gồm cả các khoản nợ liên quan đến lĩnh vực trí tuệ nhân tạo. Động thái này nhằm mục đích quản lý rủi ro tín dụng và giải phóng nguồn lực vốn để ngân hàng có thể tiếp tục mở rộng hoạt động cho vay mới, phù hợp với xu hướng chung của các tổ chức tài chính toàn cầu.",
+      "causes": [
+        "Nhu cầu quản lý rủi ro tín dụng hiệu quả hơn trong danh mục đầu tư",
+        "Áp lực tối ưu hóa bảng cân đối kế toán để gia tăng năng lực cho vay mới",
+        "Xu hướng phổ biến trong ngành ngân hàng quốc tế về việc sử dụng công cụ chuyển giao rủi ro"
+      ],
+      "effects": [
+        "Giảm áp lực rủi ro lên vốn chủ sở hữu của ngân hàng",
+        "Tăng khả năng cung cấp các khoản tín dụng mới cho thị trường",
+        "Củng cố vị thế của ING trong việc quản trị các danh mục nợ phức tạp như lĩnh vực trí tuệ nhân tạo"
+      ],
+      "affected_groups": [
+        "Các cổ đông của ING",
+        "Các đối tác nhận chuyển giao rủi ro",
+        "Khách hàng doanh nghiệp đang vay vốn"
+      ],
+      "market_impact": "Phản ánh chiến lược chủ động quản trị tài sản của ngân hàng, góp phần làm tăng tính thanh khoản và khả năng cho vay trên thị trường tín dụng doanh nghiệp.",
+      "follow_up": "",
+      "significance": "Sự kiện cho thấy các ngân hàng lớn đang ngày càng phụ thuộc vào các công cụ tài chính chuyên biệt để duy trì tốc độ cho vay trong môi trường kinh tế biến động.",
+      "unknowns": [
+        "Danh tính cụ thể của các đối tác tham gia nhận chuyển giao rủi ro",
+        "Cơ cấu chi tiết của các khoản vay liên quan đến trí tuệ nhân tạo"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên hoạt động tài chính tiêu chuẩn của các ngân hàng lớn.",
+      "scenarios": [
+        {
+          "text": "ING hoàn tất việc chuyển giao rủi ro thành công, giúp ngân hàng gia tăng đáng kể dư nợ cho vay mới.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Thị trường chuyển giao rủi ro tín dụng gặp khó khăn do chi phí cao, khiến ING phải điều chỉnh quy mô giao dịch.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "ING",
+          "target": "Danh mục cho vay 10 tỷ USD",
+          "relation_type": "cause_effect",
+          "label": "Thực hiện quản trị rủi ro"
+        },
+        {
+          "source": "Ngành ngân hàng quốc tế",
+          "target": "Công cụ chuyển giao rủi ro",
+          "relation_type": "cooperation",
+          "label": "Sử dụng phổ biến để tối ưu hóa vốn"
+        }
+      ],
+      "entities": [
+        "ING Groep NV",
+        "Banks"
+      ],
+      "keywords": [
+        "ING",
+        "SRT",
+        "Loại Mới"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
   }
 }
