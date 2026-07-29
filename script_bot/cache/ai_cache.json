@@ -4139,5 +4139,158 @@
       "sentiment": -1,
       "scope": "global"
     }
+  },
+  "evt_general_1785313341606": {
+    "created_at": 1785313345289,
+    "expires_at": 1787905345289,
+    "version": "4.5",
+    "checksum": "ab001c4b1c5c5376673f1e2ca14ebecc",
+    "data": {
+      "cluster_title": "Sự sụt giảm mạnh của thị trường chứng khoán Hàn Quốc",
+      "short_summary": "Thị trường chứng khoán Hàn Quốc đã sụt giảm mạnh do các nhà đầu tư cá nhân bán hàng loạt, khiến SK Hynix Inc. thất vọng với kết quả kinh doanh.",
+      "detailed_summary": "Thị trường tài chính Hàn Quốc ghi nhận đợt bán tháo ồ ạt từ các nhà đầu tư cá nhân, dẫn đến mức giảm giá cổ phiếu lên đến 13%. Tâm lý tiêu cực trên thị trường bị khuếch đại sau khi hãng chip SK Hynix công bố báo cáo lợi nhuận không đạt kỳ vọng của các chuyên gia phân tích, làm dấy lên những lo ngại về triển vọng của ngành công nghiệp trí tuệ nhân tạo.",
+      "causes": [
+        "Nhà đầu tư cá nhân đồng loạt rút vốn và cắt giảm vị thế đầu tư",
+        "Kết quả kinh doanh của SK Hynix không đạt kỳ vọng của giới phân tích",
+        "Tâm lý lo ngại bao trùm lên các cổ phiếu liên quan đến trí tuệ nhân tạo"
+      ],
+      "effects": [
+        "Giá cổ phiếu tại thị trường Hàn Quốc sụt giảm mạnh tới 13%",
+        "Gia tăng tâm lý bất an và thiếu ổn định trên thị trường chứng khoán",
+        "Đánh giá lại triển vọng của nhóm cổ phiếu công nghệ"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư cá nhân tại Hàn Quốc",
+        "Các cổ đông của SK Hynix",
+        "Các công ty công nghệ trong lĩnh vực trí tuệ nhân tạo"
+      ],
+      "market_impact": "Thị trường chứng khoán chịu cú sốc điều chỉnh mạnh, gây áp lực lên niềm tin của nhà đầu tư vào các công ty chip và công nghệ.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh sự nhạy cảm cực độ của thị trường đối với các báo cáo tài chính từ các doanh nghiệp đầu ngành trong bối cảnh kỳ vọng vào làn sóng trí tuệ nhân tạo đang rất cao.",
+      "unknowns": [
+        "Mức độ ảnh hưởng kéo dài của đợt bán tháo này đối với chỉ số chính trong những phiên tới",
+        "Phản ứng cụ thể của các nhà đầu tư tổ chức trước hành động bán tháo của nhà đầu tư cá nhân"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên dữ liệu báo cáo thị trường thực tế.",
+      "scenarios": [
+        {
+          "text": "Thị trường ổn định lại khi các dữ liệu vĩ mô tích cực hơn được công bố",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Đà bán tháo lan rộng sang các thị trường khu vực do tâm lý tiêu cực",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "SK Hynix",
+          "target": "Thị trường chứng khoán Hàn Quốc",
+          "relation_type": "cause_effect",
+          "label": "Báo cáo lợi nhuận kém làm giảm chỉ số thị trường"
+        },
+        {
+          "source": "Nhà đầu tư cá nhân",
+          "target": "Thị trường chứng khoán Hàn Quốc",
+          "relation_type": "cause_effect",
+          "label": "Làn sóng bán tháo gây sụt giảm giá trị cổ phiếu"
+        },
+        {
+          "source": "Trí tuệ nhân tạo",
+          "target": "Tâm lý nhà đầu tư",
+          "relation_type": "cause_effect",
+          "label": "Kỳ vọng và lo ngại về AI gây biến động thị trường"
+        }
+      ],
+      "entities": [
+        "SK Hynix Inc.",
+        "Hàn Quốc"
+      ],
+      "keywords": [
+        "thị trường chứng khoán",
+        "Hàn Quốc",
+        "SK Hynix"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_general_1785313351077": {
+    "created_at": 1785313357068,
+    "expires_at": 1787905357068,
+    "version": "4.5",
+    "checksum": "4f38162ec968afc218f8757c88d23831",
+    "data": {
+      "cluster_title": "Rents Controls",
+      "short_summary": "Chính sách kiểm soát giá thuê trở lại được ủng hộ bởi những người tiến bộ, nhưng những người chỉ trích cho rằng nó chỉ mang lại lợi ích cho những người thuê nhà hiện tại và làm suy giảm đầu tư.",
+      "detailed_summary": "Chính sách kiểm soát giá thuê nhà đang tái xuất hiện trong chương trình nghị sự của nhóm chính trị tiến bộ. Tuy nhiên, các chuyên gia chỉ trích cho rằng chính sách này chỉ mang lại lợi ích cục bộ cho những người thuê nhà hiện hữu và gây hệ lụy tiêu cực đến môi trường đầu tư vào bất động sản.",
+      "causes": [
+        "Sự ủng hộ từ các nhóm chính trị tiến bộ đối với quyền lợi người thuê nhà",
+        "Nhu cầu tìm kiếm giải pháp cho tình trạng chi phí nhà ở tăng cao"
+      ],
+      "effects": [
+        "Củng cố quyền lợi cho người đang thuê nhà hiện tại",
+        "Sụt giảm động lực đầu tư vào lĩnh vực bất động sản",
+        "Tạo ra các làn sóng tranh luận gay gắt về hiệu quả kinh tế"
+      ],
+      "affected_groups": [
+        "Người thuê nhà hiện tại",
+        "Nhà đầu tư bất động sản",
+        "Giới hoạch định chính sách"
+      ],
+      "market_impact": "Có khả năng làm giảm nguồn cung nhà ở mới và làm chững lại dòng vốn đầu tư vào thị trường bất động sản nếu chính sách được áp dụng rộng rãi.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh mâu thuẫn giữa nhu cầu an sinh xã hội cấp bách và các nguyên tắc vận hành thị trường tự do.",
+      "unknowns": [
+        "Mức độ hiệu quả thực tế của chính sách trong việc giảm chi phí nhà ở dài hạn",
+        "Các điều khoản cụ thể của chính sách kiểm soát giá tại từng địa phương"
+      ],
+      "confidence_note": "Thông tin mang tính khái quát dựa trên diễn biến chính sách, độ tin cậy cao về mặt ghi nhận xu hướng.",
+      "scenarios": [
+        {
+          "text": "Các địa phương áp dụng thử nghiệm các quy định kiểm soát giá thuê nhà giới hạn",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Dòng vốn đầu tư bất động sản dịch chuyển khỏi các khu vực áp đặt quy định kiểm soát",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Nhóm tiến bộ",
+          "target": "Chính sách kiểm soát giá thuê nhà",
+          "relation_type": "cooperation",
+          "label": "Ủng hộ và thúc đẩy chính sách"
+        },
+        {
+          "source": "Chính sách kiểm soát giá thuê nhà",
+          "target": "Đầu tư bất động sản",
+          "relation_type": "cause_effect",
+          "label": "Gây sụt giảm nguồn lực đầu tư"
+        },
+        {
+          "source": "Giới phê bình",
+          "target": "Chính sách kiểm soát giá thuê nhà",
+          "relation_type": "conflict",
+          "label": "Phản đối vì tác động tiêu cực đến thị trường"
+        }
+      ],
+      "entities": [
+        "tên chính sách",
+        "tên tiến trình"
+      ],
+      "keywords": [
+        "rent",
+        "controls",
+        "policy"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
   }
 }
