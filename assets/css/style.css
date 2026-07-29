@@ -217,17 +217,17 @@ body { font-family: 'Roboto', sans-serif; background-color: var(--md-sys-color-b
     user-select: none !important;
 }
 
-/* 2. Điều chỉnh vị trí nút Zoom (+/-) xuống góc dưới bên trái */
+/* 2. Điều chỉnh vị trí nút Zoom (+/-) xuống góc dưới bên trái, đẩy cao lên khỏi mép */
 #global-risk-map .jvm-zoom-btn {
     top: auto !important;
     right: auto !important;
-    left: 12px !important;
+    left: 16px !important; /* Đẩy cách lề trái 16px cho cân đối */
 }
 
 #global-risk-map .jvm-zoom-btn.jvm-zoomin {
-    bottom: 46px !important; /* Đẩy nút (+) lên trên nút (-) */
+    bottom: 66px !important; /* Nâng nút (+) lên cao hẳn bên trong map */
 }
 
 #global-risk-map .jvm-zoom-btn.jvm-zoomout {
-    bottom: 12px !important; /* Neo nút (-) sát đáy */
+    bottom: 32px !important; /* Nâng nút (-) lên cách đáy map 32px để không đè chú thích */
 }
