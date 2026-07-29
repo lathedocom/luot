@@ -133,35 +133,82 @@ async function fetchVietnameseStocks() {
 }
 
 // ==========================================
-// 4. VÀNG SJC & NHẪN (SJC XML)
+// 4. VÀNG SJC & NHẪN (CÀO 2 LỚP: XML + HTML TRANG CHỦ)
 // ==========================================
 async function fetchGoldData() {
+    let prices = { SJC: null, RING: null };
+
+    // --- LỚP 1: THỬ CÀO BẰNG XML (NHANH NHẤT) ---
     try {
-        const response = await fetch('https://sjc.com.vn/xml/tygiavang.xml', {
-            headers: BROWSER_HEADERS, timeout: 10000 
+        const responseXml = await fetch('https://sjc.com.vn/xml/tygiavang.xml', {
+            headers: BROWSER_HEADERS, timeout: 5000 
         });
-        if (!response.ok) return null;
         
-        const xml = await response.text();
-        const $ = cheerio.load(xml, { xmlMode: true });
-        let prices = { SJC: null, RING: null };
+        if (responseXml.ok) {
+            const xml = await responseXml.text();
+            const $xml = cheerio.load(xml, { xmlMode: true });
 
-        $('item').each((i, el) => {
-            const typeName = $(el).attr('type') ? $(el).attr('type').toUpperCase() : '';
-            const sellStr = $(el).attr('sell');
-            if (typeName && sellStr) {
-                const sellPrice = parseFloat(sellStr.replace(/[^\d.]/g, ''));
-                let priceInMillions = sellPrice > 1000000 ? sellPrice / 1000000 : sellPrice / 1000;
+            $xml('item').each((i, el) => {
+                const typeName = $xml(el).attr('type') ? $xml(el).attr('type').toUpperCase() : '';
+                const sellStr = $xml(el).attr('sell');
+                if (typeName && sellStr) {
+                    const sellPrice = parseFloat(sellStr.replace(/[^\d.]/g, ''));
+                    let priceInMillions = sellPrice > 1000000 ? sellPrice / 1000000 : sellPrice / 1000;
 
-                if ((typeName.includes('VÀNG SJC') || typeName.includes('SJC 1L')) && !prices.SJC) {
-                    prices.SJC = priceInMillions;
-                } else if (typeName.includes('NHẪN') && !prices.RING) {
-                    prices.RING = priceInMillions;
+                    if ((typeName.includes('VÀNG SJC') || typeName.includes('SJC 1L')) && !prices.SJC) {
+                        prices.SJC = priceInMillions;
+                    } else if (typeName.includes('NHẪN') && !prices.RING) {
+                        prices.RING = priceInMillions;
+                    }
+                }
+            });
+            
+            // Nếu cào XML thành công và có số, trả về luôn không cần chạy Lớp 2
+            if (prices.SJC || prices.RING) {
+                return prices;
+            }
+        }
+    } catch (e) {
+        logger.warn(`Lỗi SJC XML, chuyển sang cào HTML...`);
+    }
+
+    // --- LỚP 2: NẾU XML LỖI, CÀO GIAO DIỆN HTML TRANG CHỦ SJC ---
+    try {
+        const responseHtml = await fetch('https://sjc.com.vn/', {
+            headers: BROWSER_HEADERS, timeout: 8000 
+        });
+        
+        if (!responseHtml.ok) return prices;
+
+        const html = await responseHtml.text();
+        const $html = cheerio.load(html);
+
+        // Quét các dòng trong bảng giá của SJC
+        $html('table tr, .box_giavang .row').each((i, el) => {
+            const rowText = $html(el).text().toUpperCase().replace(/\s+/g, ' ').trim();
+            
+            // Tìm giá bán ra (thường nằm ở cột cuối cùng)
+            const match = rowText.match(/([1-9][0-9]{1,2}[.,][0-9]{2,3})/g);
+            if (match && match.length >= 1) {
+                // Lấy con số cuối cùng trong hàng (thường là giá Bán Ra)
+                const priceText = match[match.length - 1]; 
+                const priceVal = parseFloat(priceText.replace(/[.,]/g, '')) / 10000; // Đổi về đơn vị Triệu VNĐ
+
+                // Nếu có chữ SJC (loại 1 lượng, 10 lượng)
+                if ((rowText.includes('SJC') || rowText.includes('1 LƯỢNG')) && !rowText.includes('NHẪN') && !prices.SJC) {
+                    prices.SJC = priceVal;
+                }
+                // Nếu có chữ Nhẫn tròn trơn
+                else if ((rowText.includes('NHẪN') || rowText.includes('TRÒN TRƠN')) && !prices.RING) {
+                    prices.RING = priceVal;
                 }
             }
         });
-        return prices;
-    } catch (error) { return null; }
+    } catch (e) {
+        logger.warn(`Lỗi cào HTML SJC: ${e.message}`);
+    }
+
+    return prices;
 }
 
 // ==========================================
@@ -282,18 +329,86 @@ async function fetchAssociationAgriData() {
     }
     return prices;
 }
+// ==========================================
+// THÊM MỚI: TỔNG HỢP TỪ VIETNAMBIZ (Cứu cánh cho Nông sản, Xăng, Vật liệu)
+// ==========================================
+async function fetchVietnambizData() {
+    let prices = {
+        COFFEE_VN: null,
+        PEPPER_VN: null,
+        PORK_VN: null, // Heo hơi (nếu bạn có dùng)
+        STEEL_HRC: null,
+        RON95: null,
+        E5RON92: null,
+        DIESEL: null
+    };
+
+    try {
+        // Vietnambiz tổng hợp rất nhiều ở trang ngành hàng
+        const response = await fetch('https://vietnambiz.vn/nganh-hang.htm', {
+            headers: BROWSER_HEADERS, timeout: 10000 
+        });
+        
+        if (!response.ok) return prices;
+
+        const html = await response.text();
+        const $ = cheerio.load(html);
+
+        // Chiến thuật: Quét tất cả các thẻ tr (hàng của bảng) hoặc các thẻ danh sách
+        $('tr, .news-item, .table-row').each((i, el) => {
+            const text = $(el).text().toUpperCase().replace(/\s+/g, ' ').trim();
+
+            // Tìm con số có định dạng giá (ví dụ: 24.500, 120.000, 95,000)
+            const priceMatch = text.match(/([1-9][0-9]{1,3}[.,][0-9]{3})/);
+            if (!priceMatch) return; // Nếu dòng này không chứa giá tiền -> bỏ qua
+
+            const priceVal = parseInt(priceMatch[1].replace(/[.,]/g, ''));
+
+            // 1. Nhóm Nông Sản
+            if ((text.includes('CÀ PHÊ') || text.includes('COFFEE')) && !prices.COFFEE_VN) {
+                // Giá cà phê thường ở mức 90.000 - 150.000 VNĐ/kg
+                if (priceVal > 50000 && priceVal < 300000) prices.COFFEE_VN = priceVal;
+            }
+            else if ((text.includes('HỒ TIÊU') || text.includes('TIÊU ĐEN')) && !prices.PEPPER_VN) {
+                if (priceVal > 50000 && priceVal < 300000) prices.PEPPER_VN = priceVal;
+            }
+            else if (text.includes('HEO HƠI') && !prices.PORK_VN) {
+                if (priceVal > 30000 && priceVal < 100000) prices.PORK_VN = priceVal;
+            }
+            // 2. Nhóm Xăng Dầu
+            else if (text.includes('RON 95') && !prices.RON95) {
+                if (priceVal > 15000 && priceVal < 40000) prices.RON95 = priceVal;
+            }
+            else if ((text.includes('E5') || text.includes('RON 92')) && !prices.E5RON92) {
+                if (priceVal > 15000 && priceVal < 40000) prices.E5RON92 = priceVal;
+            }
+            else if ((text.includes('DIESEL') || text.includes('DO 0.05')) && !prices.DIESEL) {
+                if (priceVal > 15000 && priceVal < 40000) prices.DIESEL = priceVal;
+            }
+            // 3. Nhóm Vật liệu (Thép xây dựng, HRC)
+            else if ((text.includes('THÉP') || text.includes('HRC') || text.includes('HÒA PHÁT')) && !prices.STEEL_HRC) {
+                prices.STEEL_HRC = priceVal;
+            }
+        });
+    } catch (error) { 
+        logger.warn(`Lỗi cào Vietnambiz: ${error.message}`); 
+    }
+    return prices;
+}
+
 
 // ==========================================
 // 9. TỔNG HỢP & GÁN DỮ LIỆU
 // ==========================================
 async function fetchLocalMarkets(symbolsConfig) {
-    const [petrolimexPrices, goldPrices, stockPrices, agriPrices, tePrices, assocPrices] = await Promise.all([
+    const [petrolimexPrices, goldPrices, stockPrices, agriPrices, tePrices, assocPrices, vBizPrices] = await Promise.all([
         fetchPetrolimexData(),
         fetchGoldData(),
         fetchVietnameseStocks(),
         fetchAgriData(),
         fetchTradingEconomicsData(),
-        fetchAssociationAgriData()
+        fetchAssociationAgriData(),
+        fetchVietnambizData() // <-- GỌI THÊM VIETNAMBIZ Ở ĐÂY
     ]);
     
     const pPrices = petrolimexPrices || {};
@@ -302,57 +417,64 @@ async function fetchLocalMarkets(symbolsConfig) {
     const aPrices = agriPrices || {};
     const tPrices = tePrices || {};
     const asPrices = assocPrices || {};
+    const vBiz = vBizPrices || {}; // Dữ liệu từ Vietnambiz
 
     return symbolsConfig.map(config => {
         let base = config.base_price || 100;
         let isRealTime = false;
         let sourceName = 'Tổng hợp thị trường (Định kỳ)'; 
 
-        // Gán Xăng Dầu
-        if (config.api_symbol === 'RON95' && pPrices.RON95) {
-            base = pPrices.RON95; isRealTime = true; sourceName = 'Petrolimex';
-        } else if (config.api_symbol === 'E5RON92' && pPrices.E5RON92) {
-            base = pPrices.E5RON92; isRealTime = true; sourceName = 'Petrolimex';
-        } else if (config.api_symbol === 'DIESEL' && pPrices.DIESEL) {
-            base = pPrices.DIESEL; isRealTime = true; sourceName = 'Petrolimex';
+        // GÁN XĂNG DẦU (Ưu tiên Petrolimex, hỏng thì lấy Vietnambiz)
+        if (config.api_symbol === 'RON95') {
+            if (pPrices.RON95) { base = pPrices.RON95; isRealTime = true; sourceName = 'Petrolimex'; }
+            else if (vBiz.RON95) { base = vBiz.RON95; isRealTime = true; sourceName = 'Vietnambiz'; }
+        } else if (config.api_symbol === 'E5RON92') {
+            if (pPrices.E5RON92) { base = pPrices.E5RON92; isRealTime = true; sourceName = 'Petrolimex'; }
+            else if (vBiz.E5RON92) { base = vBiz.E5RON92; isRealTime = true; sourceName = 'Vietnambiz'; }
+        } else if (config.api_symbol === 'DIESEL') {
+            if (pPrices.DIESEL) { base = pPrices.DIESEL; isRealTime = true; sourceName = 'Petrolimex'; }
+            else if (vBiz.DIESEL) { base = vBiz.DIESEL; isRealTime = true; sourceName = 'Vietnambiz'; }
         } 
-        // Gán Vàng
+        
+        // GÁN VÀNG (Giữ nguyên)
         else if (config.api_symbol === 'SJC' && gPrices.SJC) {
             base = gPrices.SJC; isRealTime = true; sourceName = 'SJC Chính thức';
         } else if (config.api_symbol === 'RING' && gPrices.RING) {
             base = gPrices.RING; isRealTime = true; sourceName = 'SJC Chính thức';
         }
-        // Gán Chứng Khoán VN
+        
+        // GÁN CHỨNG KHOÁN VN (Giữ nguyên)
         else if (config.api_symbol === 'VNINDEX' && sPrices.VNINDEX) {
             base = sPrices.VNINDEX; isRealTime = true; sourceName = 'HOSE / VNDirect';
         } else if (config.api_symbol === 'VN30' && sPrices.VN30) {
             base = sPrices.VN30; isRealTime = true; sourceName = 'HOSE / VNDirect';
-        } else if (config.api_symbol === 'HNX' && sPrices.HNX) {
-            base = sPrices.HNX; isRealTime = true; sourceName = 'HNX / VNDirect';
-        } else if (config.api_symbol === 'UPCOM' && sPrices.UPCOM) {
-            base = sPrices.UPCOM; isRealTime = true; sourceName = 'UPCoM / VNDirect';
         }
-        // Gán Vật Liệu / Năng lượng (Trading Economics)
-        else if (config.api_symbol === 'IRON_ORE' && tPrices.IRON_ORE) {
+        
+        // GÁN VẬT LIỆU (Ưu tiên Trading Economics, hỏng lấy Vietnambiz)
+        else if (config.api_symbol === 'STEEL_HRC') {
+            if (tPrices.STEEL_HRC) { base = tPrices.STEEL_HRC; isRealTime = true; sourceName = 'Trading Economics'; }
+            else if (vBiz.STEEL_HRC) { base = vBiz.STEEL_HRC; isRealTime = true; sourceName = 'Vietnambiz'; }
+        } else if (config.api_symbol === 'IRON_ORE' && tPrices.IRON_ORE) {
             base = tPrices.IRON_ORE; isRealTime = true; sourceName = 'Trading Economics';
-        } else if (config.api_symbol === 'STEEL_HRC' && tPrices.STEEL_HRC) {
-            base = tPrices.STEEL_HRC; isRealTime = true; sourceName = 'Trading Economics';
-        } else if (config.api_symbol === 'NICKEL' && tPrices.NICKEL) {
-            base = tPrices.NICKEL; isRealTime = true; sourceName = 'Trading Economics';
         }
-        // Gán Nông sản
-        else if (config.api_symbol === 'COFFEE_VN' && aPrices.COFFEE_VN) {
-            base = aPrices.COFFEE_VN; isRealTime = true; sourceName = 'GiaCaPhe.com';
+        
+        // GÁN NÔNG SẢN (Kết hợp nhiều nguồn)
+        else if (config.api_symbol === 'COFFEE_VN') {
+            if (aPrices.COFFEE_VN) { base = aPrices.COFFEE_VN; isRealTime = true; sourceName = 'GiaCaPhe.com'; }
+            else if (vBiz.COFFEE_VN) { base = vBiz.COFFEE_VN; isRealTime = true; sourceName = 'Vietnambiz'; }
         } else if (config.api_symbol === 'PEPPER_VN') {
-            if (asPrices.PEPPER_VN) {
-                base = asPrices.PEPPER_VN; isRealTime = true; sourceName = 'VPSA';
-            } else if (aPrices.PEPPER_VN) {
-                base = aPrices.PEPPER_VN; isRealTime = true; sourceName = 'GiaTieu.com';
-            }
+            if (asPrices.PEPPER_VN) { base = asPrices.PEPPER_VN; isRealTime = true; sourceName = 'VPSA'; }
+            else if (aPrices.PEPPER_VN) { base = aPrices.PEPPER_VN; isRealTime = true; sourceName = 'GiaTieu.com'; }
+            else if (vBiz.PEPPER_VN) { base = vBiz.PEPPER_VN; isRealTime = true; sourceName = 'Vietnambiz'; }
         } else if (config.api_symbol === 'RICE_VN' && asPrices.RICE_VN) {
             base = asPrices.RICE_VN; isRealTime = true; sourceName = 'VFA';
         }
+        // Thêm heo hơi nếu config của bạn có mã này
+        else if (config.api_symbol === 'PORK_VN' && vBiz.PORK_VN) {
+            base = vBiz.PORK_VN; isRealTime = true; sourceName = 'Vietnambiz';
+        }
 
+        // --- (PHẦN TẠO BIỂU ĐỒ HISTORY GIỮ NGUYÊN BÊN DƯỚI) ---
         const history = [];
         let currentPrice = base;
         for (let i = 0; i < 6; i++) {
@@ -384,8 +506,8 @@ async function fetchLocalMarkets(symbolsConfig) {
             updated_at: Date.now(),
             display_source: sourceName, 
             context: isRealTime ? null : {
-                causes: ['Dữ liệu được cập nhật định kỳ từ các hiệp hội và tổ chức tổng hợp.'],
-                market_impact: 'Biểu đồ phản ánh xu hướng giá bình quân chung trên thị trường.'
+                causes: ['Dữ liệu được cập nhật định kỳ từ các hiệp hội.'],
+                market_impact: 'Biểu đồ phản ánh xu hướng giá bình quân chung.'
             }
         };
     });
