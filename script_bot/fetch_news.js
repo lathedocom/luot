@@ -307,7 +307,7 @@ eventBus.on('SYNC_DATABASE', () => {
         
         db.digest = buildDigest(db.news, { limitPerRegion: 7 });
         db.risk_map = buildSituationIndexData(db.news, previousSituationData);
-        db.macro_health = buildMacroHealth(db.news);
+        db.macro_health = buildMacroHealth(db.news, state.marketData || []);
         db.knowledge_graph = buildGlobalGraph(db.news);
         db.market_data = state.marketData || [];
         db.social_trends = state.socialTrends || [];
