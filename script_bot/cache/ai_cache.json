@@ -7057,5 +7057,419 @@
       "sentiment": -1,
       "scope": "global"
     }
+  },
+  "evt_7a32db68": {
+    "created_at": 1785339634118,
+    "expires_at": 1787931634118,
+    "version": "4.5",
+    "checksum": "7f70eb21fdef193166bb9d4d13422892",
+    "data": {
+      "cluster_title": "Fed không tăng lãi suất",
+      "short_summary": "Fed không tăng lãi suất, mặc dù có những lo ngại về tình hình kinh tế toàn cầu.",
+      "detailed_summary": "Hơn 100 chuyên gia phân tích được Bloomberg khảo sát đều đồng thuận rằng Fed sẽ không thay đổi lãi suất trong cuộc họp sắp tới. Goldman Sachs, thông qua ý kiến của chuyên gia kinh tế David Mericle, cũng nhận định rằng dù chịu áp lực từ căng thẳng địa chính trị và giá dầu biến động, Fed vẫn sẽ ưu tiên giữ nguyên chính sách hiện tại.",
+      "causes": [
+        "Căng thẳng địa chính trị toàn cầu",
+        "Áp lực từ giá dầu tăng cao"
+      ],
+      "effects": [
+        "Duy trì ổn định lãi suất",
+        "Tạo sự đồng thuận trong dự báo kinh tế"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư tài chính",
+        "Các tổ chức tín dụng",
+        "Doanh nghiệp chịu ảnh hưởng bởi lãi suất"
+      ],
+      "market_impact": "Thị trường dự báo không có bất ngờ lớn từ phía chính sách tiền tệ của Fed, giúp giảm bớt sự lo ngại về biến động lãi suất ngắn hạn.",
+      "follow_up": "",
+      "significance": "Sự đồng thuận về quyết định giữ nguyên lãi suất cho thấy phản ứng thận trọng của Fed trước các yếu tố khó lường từ giá năng lượng và tình hình thế giới.",
+      "unknowns": [
+        "Thời điểm chính xác Fed sẽ bắt đầu xem xét thay đổi lãi suất",
+        "Mức độ tác động cụ thể của giá dầu đến lộ trình lạm phát mà Fed đang theo dõi"
+      ],
+      "confidence_note": "Độ tin cậy cao dựa trên sự đồng thuận của hơn 100 chuyên gia phân tích và đánh giá từ ngân hàng lớn.",
+      "scenarios": [
+        {
+          "text": "Fed giữ nguyên lãi suất đúng như dự báo của đa số chuyên gia.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Fed đưa ra thông điệp bất ngờ về lộ trình lãi suất do lạm phát tăng đột biến.",
+          "likelihood": "thấp"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Căng thẳng địa chính trị",
+          "target": "Chính sách lãi suất Fed",
+          "relation_type": "cause_effect",
+          "label": "Yếu tố gây áp lực lên quyết định của Fed"
+        },
+        {
+          "source": "Goldman Sachs",
+          "target": "Fed",
+          "relation_type": "neutral",
+          "label": "Cung cấp dự báo về quyết định chính sách"
+        }
+      ],
+      "entities": [
+        "Federal Reserve",
+        "Goldman Sachs"
+      ],
+      "keywords": [
+        "Fed",
+        "lãi suất",
+        "Goldman Sachs"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_general_1785339640131": {
+    "created_at": 1785339646066,
+    "expires_at": 1787931646066,
+    "version": "4.5",
+    "checksum": "42cf08c1d01cbbb3e2b944e6cc9cdeae",
+    "data": {
+      "cluster_title": "Nhu cầu tài chính tăng cao đối với trí tuệ nhân tạo",
+      "short_summary": "Nhu cầu tài chính đối với trí tuệ nhân tạo đang tăng cao, gây áp lực lên chi phí tài chính và dự đoán tiềm năng của các công ty.",
+      "detailed_summary": "Các tập đoàn công nghệ lớn đang có kế hoạch chi hàng nghìn tỷ đô la cho trí tuệ nhân tạo, dẫn đến sự gia tăng áp lực trong các thị trường tín dụng. Việc sử dụng các công cụ hoán đổi tín dụng đang có xu hướng tăng, làm đẩy chi phí huy động vốn cho các dự án trí tuệ nhân tạo và tạo ra những dấu hiệu phân hóa rõ rệt về triển vọng thành công hay thất bại của các đơn vị tham gia.",
+      "causes": [
+        "Kế hoạch chi tiêu hàng nghìn tỷ đô la vào trí tuệ nhân tạo của các tập đoàn công nghệ lớn",
+        "Sự gia tăng nhu cầu sử dụng các công cụ hoán đổi tín dụng"
+      ],
+      "effects": [
+        "Chi phí huy động vốn cho các dự án trí tuệ nhân tạo gia tăng",
+        "Áp lực tài chính đối với thị trường tín dụng",
+        "Sự phân hóa giữa các đơn vị thắng cuộc và thua cuộc trong lĩnh vực công nghệ"
+      ],
+      "affected_groups": [
+        "Các tập đoàn công nghệ lớn",
+        "Nhà đầu tư thị trường tài chính",
+        "Các tổ chức tín dụng và tài chính"
+      ],
+      "market_impact": "Thị trường tài chính đang phản ứng thận trọng với chi phí vay nợ cao hơn trong ngành công nghệ, đồng thời bắt đầu sàng lọc các đơn vị có tiềm năng phát triển thực chất.",
+      "follow_up": "",
+      "significance": "Sự kiện cho thấy sự chuyển dịch từ giai đoạn hào hứng đầu tư sang giai đoạn kiểm chứng tính hiệu quả tài chính và bền vững của các doanh nghiệp trong làn sóng trí tuệ nhân tạo.",
+      "unknowns": [
+        "Danh tính cụ thể của các doanh nghiệp đang chịu áp lực tín dụng lớn nhất",
+        "Thời điểm chính xác mà các chi phí tín dụng này sẽ ảnh hưởng đến kết quả kinh doanh quý của các công ty công nghệ"
+      ],
+      "confidence_note": "Thông tin dựa trên biến động thực tế tại thị trường tín dụng Phố Wall, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Chi phí vay vốn tiếp tục leo thang, buộc các doanh nghiệp công nghệ phải tái cơ cấu danh mục đầu tư trí tuệ nhân tạo.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Thị trường tín dụng ổn định trở lại khi các khoản đầu tư vào trí tuệ nhân tạo bắt đầu tạo ra dòng tiền dương rõ rệt.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Các tập đoàn công nghệ lớn",
+          "target": "Thị trường tín dụng",
+          "relation_type": "cause_effect",
+          "label": "Gây áp lực thông qua nhu cầu chi tiêu vốn khổng lồ"
+        },
+        {
+          "source": "Công cụ hoán đổi tín dụng",
+          "target": "Chi phí huy động vốn AI",
+          "relation_type": "cause_effect",
+          "label": "Làm tăng trực tiếp chi phí vay vốn"
+        }
+      ],
+      "entities": [
+        "Big Tech",
+        "Wall Street"
+      ],
+      "keywords": [
+        "Wall Street",
+        "Trí tuệ nhân tạo",
+        "Credit Swaps"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_general_1785339651930": {
+    "created_at": 1785339657916,
+    "expires_at": 1787931657916,
+    "version": "4.5",
+    "checksum": "5d92f539362df9680e06922f8d5bd32f",
+    "data": {
+      "cluster_title": "Sự kiện SK Hynix",
+      "short_summary": "SK Hynix không đạt được kỳ vọng về lợi nhuận, nhưng công ty vẫn khẳng định rủi ro về sự dư thừa hàng hóa vẫn còn hạn chế.",
+      "detailed_summary": "Tập đoàn sản xuất chip SK Hynix của Hàn Quốc đã công bố báo cáo tài chính với kết quả thấp hơn dự báo của các nhà phân tích. Sự kiện này ngay lập tức kích hoạt đà bán tháo trên thị trường chứng khoán đối với các cổ phiếu ngành công nghệ. Tuy nhiên, phía SK Hynix vẫn khẳng định nguy cơ dư thừa nguồn cung bộ nhớ là ở mức hạn chế.",
+      "causes": [
+        "Kết quả kinh doanh của SK Hynix không đạt kỳ vọng của giới phân tích",
+        "Tâm lý lo ngại về sự ổn định của thị trường cổ phiếu công nghệ"
+      ],
+      "effects": [
+        "Giá cổ phiếu công nghệ giảm mạnh",
+        "Thị trường tài chính toàn cầu biến động tiêu cực"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư cổ phiếu công nghệ",
+        "Các doanh nghiệp ngành bán dẫn",
+        "Thị trường chứng khoán toàn cầu"
+      ],
+      "market_impact": "Gây áp lực giảm giá ngắn hạn lên nhóm cổ phiếu công nghệ toàn cầu do sự thiếu hụt niềm tin từ kết quả kinh doanh của doanh nghiệp dẫn dắt.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh độ nhạy cảm cao của nhà đầu tư trước các báo cáo tài chính trong ngành bán dẫn, nơi kỳ vọng tăng trưởng đang được đặt ở mức rất cao.",
+      "unknowns": [
+        "Tác động thực tế đến nguồn cung chip trong dài hạn chưa được chứng minh",
+        "Phản ứng của các đối thủ cạnh tranh trước nhận định của SK Hynix về tình trạng nguồn cung"
+      ],
+      "confidence_note": "Thông tin dựa trên báo cáo thực tế của doanh nghiệp và diễn biến thị trường chứng khoán, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Thị trường ổn định trở lại sau khi các số liệu cung cầu được làm rõ.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Đà bán tháo tiếp tục kéo dài nếu các công ty công nghệ khác cũng công bố kết quả kém khả quan.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Kết quả kinh doanh của SK Hynix",
+          "target": "Thị trường cổ phiếu công nghệ",
+          "relation_type": "cause_effect",
+          "label": "Gây ra sự sụt giảm"
+        },
+        {
+          "source": "SK Hynix",
+          "target": "Nguồn cung bộ nhớ",
+          "relation_type": "neutral",
+          "label": "Đưa ra đánh giá về tình trạng dư thừa"
+        }
+      ],
+      "entities": [
+        "SK Hynix",
+        "Hàn Quốc"
+      ],
+      "keywords": [
+        "SK Hynix",
+        "Tech rout",
+        "chíp",
+        "hàng hóa"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "business"
+    }
+  },
+  "evt_general_1785339663793": {
+    "created_at": 1785339669628,
+    "expires_at": 1787931669628,
+    "version": "4.5",
+    "checksum": "6096295437565a0d96618d30d2aced8b",
+    "data": {
+      "cluster_title": "Sự kiện lạm phát",
+      "short_summary": "Fed sẽ giảm chỉ số lạm phát để giảm áp lực lên ngân hàng trung ương tăng lãi suất",
+      "detailed_summary": "Cục Phân tích Kinh tế Mỹ (BEA) chuẩn bị thực hiện thay đổi trong cách thức tính toán thước đo lạm phát ưa thích của Cục Dự trữ Liên bang Mỹ (Fed). Những điều chỉnh kỹ thuật này được cho là sẽ làm giảm bớt sức ép đối với Fed trong việc phải tiếp tục tăng lãi suất để kiểm soát lạm phát.",
+      "causes": [
+        "Sự điều chỉnh phương pháp thống kê của Cục Phân tích Kinh tế (BEA)",
+        "Nhu cầu khách quan hóa số liệu lạm phát theo các tiêu chuẩn mới"
+      ],
+      "effects": [
+        "Giảm áp lực chính sách tiền tệ đối với Fed",
+        "Thay đổi dự báo về lộ trình lãi suất trong tương lai",
+        "Số liệu lạm phát công bố có thể thấp hơn kỳ vọng cũ"
+      ],
+      "affected_groups": [
+        "Cục Dự trữ Liên bang Mỹ (Fed)",
+        "Các nhà đầu tư tài chính",
+        "Thị trường chứng khoán và trái phiếu"
+      ],
+      "market_impact": "Có khả năng làm giảm tâm lý lo ngại về việc tăng lãi suất mạnh tay, hỗ trợ tâm lý tích cực cho thị trường tài chính.",
+      "follow_up": "",
+      "significance": "Sự kiện này cho thấy dữ liệu kinh tế vĩ mô có thể bị ảnh hưởng bởi thay đổi phương pháp luận, tác động trực tiếp đến các quyết định điều hành chính sách tiền tệ quan trọng.",
+      "unknowns": [
+        "Mức độ giảm cụ thể của chỉ số lạm phát sau khi thay đổi",
+        "Phản ứng thực tế của thị trường trước số liệu đã điều chỉnh"
+      ],
+      "confidence_note": "Thông tin mang tính kỹ thuật cao, dựa trên các báo cáo về điều chỉnh thống kê của cơ quan chức năng.",
+      "scenarios": [
+        {
+          "text": "Fed tạm dừng hoặc làm chậm lộ trình tăng lãi suất nhờ số liệu lạm phát thấp hơn dự kiến.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Thị trường tài chính biến động mạnh do sự khác biệt giữa dữ liệu cũ và mới.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Cục Phân tích Kinh tế (BEA)",
+          "target": "Cục Dự trữ Liên bang Mỹ (Fed)",
+          "relation_type": "cause_effect",
+          "label": "Điều chỉnh số liệu ảnh hưởng đến chính sách lãi suất"
+        }
+      ],
+      "entities": [
+        "Fed",
+        "Bureau of Economic Analysis"
+      ],
+      "keywords": [
+        "inflation",
+        "Fed",
+        "Bureau of Economic Analysis"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_general_1785339675575": {
+    "created_at": 1785339681354,
+    "expires_at": 1787931681354,
+    "version": "4.5",
+    "checksum": "8117d7462607ffc23c0c8048cd15307e",
+    "data": {
+      "cluster_title": "Humana và P&G bị ảnh hưởng bởi dự báo lợi nhuận",
+      "short_summary": "Humana và P&G bị ảnh hưởng bởi dự báo lợi nhuận không khả quan",
+      "detailed_summary": "Tập đoàn bảo hiểm Humana ghi nhận cổ phiếu sụt giảm sau khi giữ nguyên dự báo lợi nhuận cả năm bất chấp kết quả kinh doanh quý hai tăng trưởng tốt. Song song đó, cổ phiếu của tập đoàn tiêu dùng Procter & Gamble đang phản ứng với việc công ty đưa ra triển vọng kinh doanh thận trọng cho năm tài chính hiện tại.",
+      "causes": [
+        "Humana giữ nguyên dự báo lợi nhuận dù có quý hai tích cực",
+        "P&G công bố triển vọng kinh doanh thận trọng"
+      ],
+      "effects": [
+        "Giá cổ phiếu Humana giảm",
+        "Giá cổ phiếu P&G biến động do phản ứng thị trường"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư chứng khoán",
+        "Cổ đông của Humana",
+        "Cổ đông của P&G"
+      ],
+      "market_impact": "Thị trường phản ứng tiêu cực ngắn hạn đối với các doanh nghiệp có dự báo thận trọng hoặc không đáp ứng kỳ vọng lạc quan của nhà đầu tư.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh tâm lý nhạy cảm của nhà đầu tư trước các tín hiệu dự báo kinh doanh trong bối cảnh thị trường đang tìm kiếm sự tăng trưởng đột phá.",
+      "unknowns": [
+        "Nguyên nhân cụ thể khiến P&G đặt triển vọng thận trọng",
+        "Phản ứng chi tiết của thị trường trong phiên giao dịch tiếp theo"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên các báo cáo biến động thị trường chứng khoán.",
+      "scenarios": [
+        {
+          "text": "Giá cổ phiếu Humana ổn định trở lại sau khi thị trường tiêu hóa thông tin báo cáo quý hai.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Áp lực bán tháo cổ phiếu xảy ra nếu tâm lý thận trọng lan rộng sang các nhóm ngành tiêu dùng.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Dự báo lợi nhuận của Humana",
+          "target": "Cổ phiếu Humana",
+          "relation_type": "cause_effect",
+          "label": "Gây ra sự sụt giảm giá cổ phiếu"
+        },
+        {
+          "source": "Triển vọng kinh doanh của P&G",
+          "target": "Cổ phiếu P&G",
+          "relation_type": "cause_effect",
+          "label": "Gây ra biến động giá thị trường"
+        }
+      ],
+      "entities": [
+        "Humana",
+        "P&G"
+      ],
+      "keywords": [
+        "Humana",
+        "P&G",
+        "lợi nhuận"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "business"
+    }
+  },
+  "evt_322f35fc": {
+    "created_at": 1785339693142,
+    "expires_at": 1787931693142,
+    "version": "4.5",
+    "checksum": "a8e8e07832decfe3e5bce5f8ecdab6ba",
+    "data": {
+      "cluster_title": "Dự đoán của ING về tỷ giá USD",
+      "short_summary": "ING dự đoán tỷ giá USD sẽ bị áp lực và giảm theo giá dầu nếu Fed giữ lãi suất không thay đổi",
+      "detailed_summary": "Dựa trên phân tích từ ING, trong trường hợp Cục Dự trữ Liên bang Mỹ quyết định không thay đổi lãi suất vào thứ Tư tới, đồng USD được dự báo sẽ mất giá và có xu hướng biến động cùng chiều với giá dầu thô trên thị trường quốc tế.",
+      "causes": [
+        "Quyết định giữ nguyên lãi suất của Fed",
+        "Mối tương quan giữa chính sách tiền tệ và giá hàng hóa năng lượng"
+      ],
+      "effects": [
+        "Áp lực giảm giá lên đồng USD",
+        "Sự đồng pha giữa xu hướng của USD và giá dầu"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư ngoại hối",
+        "Các thị trường hàng hóa năng lượng",
+        "Doanh nghiệp giao thương quốc tế sử dụng đồng USD"
+      ],
+      "market_impact": "Thị trường tài chính toàn cầu có thể biến động dựa trên tâm lý nhà đầu tư đối với chính sách tiền tệ của Mỹ.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh tầm ảnh hưởng của các quyết định lãi suất từ Fed tới diễn biến của đồng USD và sự liên kết chặt chẽ với thị trường dầu mỏ toàn cầu.",
+      "unknowns": [
+        "Mức độ phản ứng cụ thể của thị trường dầu mỏ trước quyết định của Fed",
+        "Các yếu tố địa chính trị khác có thể gây nhiễu xu hướng giá dầu"
+      ],
+      "confidence_note": "Thông tin dựa trên dự báo phân tích từ tổ chức tài chính uy tín, độ tin cậy ở mức trung bình cao.",
+      "scenarios": [
+        {
+          "text": "Fed giữ nguyên lãi suất, USD suy yếu cùng giá dầu giảm.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Fed thay đổi lãi suất, làm gián đoạn mối tương quan dự kiến giữa USD và dầu.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Fed",
+          "target": "Đồng USD",
+          "relation_type": "cause_effect",
+          "label": "Quyết định lãi suất tác động trực tiếp đến giá trị tiền tệ"
+        },
+        {
+          "source": "Đồng USD",
+          "target": "Giá dầu",
+          "relation_type": "cause_effect",
+          "label": "Xu hướng giá dầu đi theo biến động của đồng USD"
+        }
+      ],
+      "entities": [
+        "ING",
+        "Dollar",
+        "Oil Prices",
+        "Federal Reserve"
+      ],
+      "keywords": [
+        "ING",
+        "Dollar",
+        "Oil Prices",
+        "Federal Reserve"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
   }
 }
