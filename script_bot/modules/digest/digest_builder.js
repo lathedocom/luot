@@ -120,7 +120,7 @@ function buildSituationIndexData(topics, previousData = {}) {
         if (topic.scope === 'global') severity += 1;
 
         const rawScore = severity * weight * sentiment * decay;
-        if (Math.abs(rawScore) < 0.5) return; // Bỏ qua rác
+        if (Math.abs(rawScore) < 0.1) return; // Bỏ qua rác
 
         if (topic.regions && topic.regions.length > 0) {
             topic.regions.forEach(regionId => {
