@@ -11,45 +11,57 @@ const HEALTH_CATEGORIES = {
 
 function buildMacroHealth(topics) {
     const now = Date.now();
-    const scores = { chi_phi: 0, san_xuat: 0, thuong_mai: 0, xay_dung: 0, dau_tu: 0, tieu_dung: 0 };
+    // Bổ sung mảng events để lưu lý do
+    const categoryData = {
+        chi_phi: { score: 0, events: [] }, san_xuat: { score: 0, events: [] },
+        thuong_mai: { score: 0, events: [] }, xay_dung: { score: 0, events: [] },
+        dau_tu: { score: 0, events: [] }, tieu_dung: { score: 0, events: [] }
+    };
 
-    // Lọc tin tức trong 7 ngày gần nhất thuộc mảng Kinh tế
     const recentEconTopics = topics.filter(t => 
         (now - (t.timestamp || now)) <= 7 * 24 * 60 * 60 * 1000 &&
         t.categories && (t.categories.includes('economy') || t.categories.includes('finance') || t.categories.includes('business'))
     );
 
     recentEconTopics.forEach(topic => {
-        const text = (topic.title + ' ' + topic.short_summary).toLowerCase();
+        const text = (topic.title + ' ' + (topic.short_summary || '')).toLowerCase();
         let sentiment = topic.sentiment !== undefined ? topic.sentiment : 0; 
         const severity = topic.severity || 2;
         const decay = Math.max(0.2, 1 - ((now - topic.timestamp) / (1000 * 60 * 60 * 24)) * 0.15);
         
         const impactScore = sentiment * severity * decay;
+        if (Math.abs(impactScore) < 0.1) return; // Bỏ qua rác
 
-        // Phân loại điểm vào các nhóm tương ứng
         for (const [key, category] of Object.entries(HEALTH_CATEGORIES)) {
             if (category.keywords.some(kw => text.includes(kw))) {
-                scores[key] += impactScore;
+                categoryData[key].score += impactScore;
+                // Lưu lại sự kiện làm lý do
+                categoryData[key].events.push({
+                    title: topic.title || topic.cluster_title,
+                    impact: impactScore,
+                    sentiment: sentiment
+                });
             }
         }
     });
 
     const results = [];
     
-    // Đánh giá trạng thái dựa trên điểm số
     for (const [key, category] of Object.entries(HEALTH_CATEGORIES)) {
-        const score = scores[key];
+        const score = categoryData[key].score;
+        // Sắp xếp và chỉ lấy Top 5 lý do mạnh nhất
+        const topEvents = categoryData[key].events
+            .sort((a, b) => Math.abs(b.impact) - Math.abs(a.impact))
+            .slice(0, 5);
+
         let status = 'Ổn định', color = '#22c55e', icon = '🟢';
 
-        // Xử lý riêng cho "Chi phí sinh hoạt" (Tăng là Tiêu cực, Giảm là Tích cực)
         if (key === 'chi_phi') {
             if (score <= -4) { status = 'Tăng mạnh'; color = '#ef4444'; icon = '🔴'; }
             else if (score <= -1.5) { status = 'Đang tăng'; color = '#f97316'; icon = '🟠'; }
             else if (score >= 3) { status = 'Đang giảm'; color = '#10b981'; icon = '🟢'; }
             else { status = 'Bình thường'; color = '#3b82f6'; icon = '🔵'; }
         } else {
-            // Các nhóm khác (Tăng là Tích cực, Giảm là Tiêu cực)
             if (score >= 4) { status = 'Tăng trưởng tốt'; color = '#10b981'; icon = '🟢'; }
             else if (score >= 1.5) { status = 'Dấu hiệu phục hồi'; color = '#facc15'; icon = '🟡'; }
             else if (score <= -4) { status = 'Suy yếu mạnh'; color = '#ef4444'; icon = '🔴'; }
@@ -57,7 +69,15 @@ function buildMacroHealth(topics) {
             else { status = 'Bình thường'; color = '#3b82f6'; icon = '🔵'; }
         }
 
-        results.push({ id: key, name: category.name, score: parseFloat(score.toFixed(2)), status, color, icon });
+        results.push({ 
+            id: key, 
+            name: category.name, 
+            score: parseFloat(score.toFixed(2)), 
+            status, 
+            color, 
+            icon,
+            events: topEvents // Trả mảng sự kiện này về UI
+        });
     }
 
     return results;
