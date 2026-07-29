@@ -3672,5 +3672,472 @@
       "sentiment": -1,
       "scope": "global"
     }
+  },
+  "evt_general_1785312064120": {
+    "created_at": 1785312067586,
+    "expires_at": 1787904067586,
+    "version": "4.5",
+    "checksum": "3456004654eba349e2ec03a6b91113ad",
+    "data": {
+      "cluster_title": "Sự kiện cổ phiếu Hàn Quốc sụt giảm mạnh",
+      "short_summary": "Cổ phiếu Hàn Quốc sụt giảm mạnh do các nhà đầu tư bán hàng loạt, khiến SK Hynix Inc. phải đối mặt với tình trạng thiếu hụt memory.",
+      "detailed_summary": "Thị trường chứng khoán Hàn Quốc trải qua đợt bán tháo mạnh với mức giảm lên tới 13% khi các nhà đầu tư cá nhân đồng loạt rút vốn. Nguyên nhân trực tiếp xuất phát từ kết quả kinh doanh không đạt kỳ vọng của SK Hynix, gây áp lực lên nhóm cổ phiếu công nghệ và làm gia tăng sự bất ổn về triển vọng ngành trí tuệ nhân tạo.",
+      "causes": [
+        "Kết quả kinh doanh của SK Hynix thấp hơn dự báo của các nhà phân tích",
+        "Tâm lý hoang mang của nhà đầu tư cá nhân dẫn đến việc bán tháo ồ ạt",
+        "Lo ngại kéo dài về xu hướng phát triển của ngành trí tuệ nhân tạo"
+      ],
+      "effects": [
+        "Chỉ số chứng khoán Hàn Quốc giảm sâu tới 13%",
+        "Tâm lý thị trường trở nên tiêu cực và dễ bị tổn thương",
+        "Sức ép bán tháo lan rộng trong nhóm cổ phiếu công nghệ"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư cá nhân tại Hàn Quốc",
+        "Các cổ đông của SK Hynix",
+        "Thị trường chứng khoán Hàn Quốc"
+      ],
+      "market_impact": "Sự sụt giảm mạnh gây rung lắc thị trường, đặc biệt là nhóm cổ phiếu công nghệ đang được kỳ vọng cao.",
+      "follow_up": "",
+      "significance": "Sự kiện cho thấy sự nhạy cảm của nhà đầu tư trước các báo cáo tài chính trong bối cảnh kỳ vọng vào làn sóng trí tuệ nhân tạo đang bị thử thách.",
+      "unknowns": [
+        "Thời gian dự kiến để thị trường ổn định trở lại",
+        "Phản ứng cụ thể của các nhà đầu tư tổ chức trước áp lực bán tháo này"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên các biến động thực tế từ thị trường và báo cáo từ doanh nghiệp.",
+      "scenarios": [
+        {
+          "text": "Thị trường dần ổn định sau khi tâm lý hoang mang lắng xuống và các nhà đầu tư nhìn nhận lại định giá của SK Hynix.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Áp lực bán tháo tiếp tục kéo dài nếu xuất hiện thêm các báo cáo tài chính tiêu cực từ những doanh nghiệp công nghệ khác.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "SK Hynix",
+          "target": "Thị trường chứng khoán Hàn Quốc",
+          "relation_type": "cause_effect",
+          "label": "Kết quả kinh doanh yếu kém gây sụt giảm thị trường"
+        },
+        {
+          "source": "Nhà đầu tư cá nhân",
+          "target": "Thị trường chứng khoán Hàn Quốc",
+          "relation_type": "cause_effect",
+          "label": "Hành động bán tháo gây áp lực giảm điểm"
+        },
+        {
+          "source": "SK Hynix",
+          "target": "Ngành trí tuệ nhân tạo",
+          "relation_type": "cause_effect",
+          "label": "Báo cáo của công ty gây bất ổn tâm lý về triển vọng ngành"
+        }
+      ],
+      "entities": [
+        "Hàn Quốc",
+        "SK Hynix"
+      ],
+      "keywords": [
+        "cổ phiếu Hàn Quốc",
+        "SK Hynix",
+        "công nghệ"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_general_1785312073337": {
+    "created_at": 1785312079779,
+    "expires_at": 1787904079779,
+    "version": "4.5",
+    "checksum": "c20255b303ba97edc03438c32bb5c5f4",
+    "data": {
+      "cluster_title": "Rents Controls",
+      "short_summary": "Chính sách kiểm soát giá thuê trở lại được ủng hộ bởi những người tiến bộ, nhưng các chỉ trích cho rằng nó chỉ mang lại lợi ích cho những người thuê nhà hiện tại và làm suy giảm đầu tư.",
+      "detailed_summary": "Chính sách kiểm soát giá thuê nhà đang thu hút sự chú ý trở lại từ các nhóm có tư tưởng tiến bộ. Tuy nhiên, các nhà phê bình cho rằng chính sách này chỉ mang lại lợi ích cục bộ cho những người thuê nhà hiện tại, đồng thời gây cản trở dòng vốn đầu tư vào thị trường bất động sản.",
+      "causes": [
+        "Sự quan tâm gia tăng từ các nhóm theo tư tưởng tiến bộ về việc ổn định chi phí nhà ở.",
+        "Nhu cầu tìm kiếm các giải pháp quản lý thị trường bất động sản hiện nay."
+      ],
+      "effects": [
+        "Tạo lợi ích ngắn hạn cho người thuê nhà đang cư trú.",
+        "Rủi ro suy giảm nguồn vốn đầu tư mới vào phân khúc nhà ở cho thuê."
+      ],
+      "affected_groups": [
+        "Người thuê nhà hiện tại",
+        "Nhà đầu tư bất động sản",
+        "Thị trường nhà ở"
+      ],
+      "market_impact": "Có thể gây ra tình trạng giảm nguồn cung nhà ở mới nếu các nhà đầu tư rút vốn do lo ngại về lợi nhuận bị hạn chế.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh cuộc đối đầu dai dẳng giữa mục tiêu an sinh xã hội và nguyên tắc tự do kinh doanh trong lĩnh vực nhà ở.",
+      "unknowns": [
+        "Mức độ hiệu quả thực tế của chính sách kiểm soát giá tại các khu vực khác nhau.",
+        "Khả năng các chính phủ thiết lập cơ chế cân bằng để không làm nản lòng nhà đầu tư."
+      ],
+      "confidence_note": "Thông tin mang tính khái quát, dựa trên các tranh luận lý thuyết kinh tế phổ biến.",
+      "scenarios": [
+        {
+          "text": "Các khu vực áp dụng kiểm soát giá sẽ đối mặt với tình trạng thiếu hụt nguồn cung nhà ở dài hạn.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Chính sách kiểm soát giá sẽ bị bác bỏ hoặc sửa đổi để kết hợp với các gói ưu đãi đầu tư.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Chính sách kiểm soát giá",
+          "target": "Nhà đầu tư",
+          "relation_type": "conflict",
+          "label": "Gây hạn chế lợi nhuận và giảm động lực đầu tư"
+        },
+        {
+          "source": "Nhóm tiến bộ",
+          "target": "Chính sách kiểm soát giá",
+          "relation_type": "cooperation",
+          "label": "Đề xuất và ủng hộ chính sách"
+        },
+        {
+          "source": "Chính sách kiểm soát giá",
+          "target": "Người thuê nhà hiện tại",
+          "relation_type": "cause_effect",
+          "label": "Mang lại lợi ích bảo vệ cho người thuê"
+        }
+      ],
+      "entities": [
+        "các chủ nhà",
+        "các nhà đầu tư"
+      ],
+      "keywords": [
+        "rent controls",
+        "policy",
+        "tenants",
+        "investment"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_fff57458": {
+    "created_at": 1785312085892,
+    "expires_at": 1787904085892,
+    "version": "4.5",
+    "checksum": "afc718ca4b626f0d8f7b06bf08f9d2fc",
+    "data": {
+      "cluster_title": "Tổng kết tháng cuối",
+      "short_summary": "Tổng kết tháng cuối với các chủ đề chính về chứng khoán và tài chính.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "follow_up": "",
+      "entities": [
+        "Lizzy Burden",
+        "Anna Edwards",
+        "Mark Cudmore",
+        "Bloomberg"
+      ],
+      "keywords": [
+        "Correlation",
+        "Return",
+        "Month-End"
+      ],
+      "importance": 85,
+      "scope": "global"
+    }
+  },
+  "evt_dee0c02f": {
+    "created_at": 1785312101314,
+    "expires_at": 1787904101314,
+    "version": "4.5",
+    "checksum": "4004b0af416e4af921bdbec39a338ba3",
+    "data": {
+      "cluster_title": "India dự định đưa ra dự luật thuế cho quỹ đầu tư toàn cầu",
+      "short_summary": "Chính phủ Ấn Độ dự định đưa ra dự luật thuế để giảm thuế cho các nhà đầu tư nước ngoài mua trái phiếu chính phủ Ấn Độ",
+      "detailed_summary": "Chính phủ Ấn Độ đang nỗ lực vận động Quốc hội thông qua dự luật chính thức hóa việc cắt giảm thuế đối với các nhà đầu tư nước ngoài mua trái phiếu chính phủ. Động thái này được kỳ vọng sẽ thành công nhờ tính chất đồng thuận giữa các đảng phái, bất chấp những tranh cãi khác đang diễn ra tại nghị trường.",
+      "causes": [
+        "Nhu cầu thu hút nguồn vốn nước ngoài vào thị trường nợ công trong nước.",
+        "Mong muốn hợp thức hóa các ưu đãi thuế để tăng tính cạnh tranh cho tài sản quốc gia."
+      ],
+      "effects": [
+        "Tạo hành lang pháp lý minh bạch cho các quỹ trái phiếu toàn cầu.",
+        "Gia tăng sức hấp dẫn của thị trường trái phiếu chính phủ Ấn Độ đối với giới đầu tư quốc tế."
+      ],
+      "affected_groups": [
+        "Các quỹ đầu tư toàn cầu.",
+        "Bộ Tài chính Ấn Độ.",
+        "Thị trường tài chính Ấn Độ."
+      ],
+      "market_impact": "Dự kiến gia tăng dòng vốn ngoại đổ vào thị trường trái phiếu nội địa Ấn Độ.",
+      "follow_up": "",
+      "significance": "Sự kiện cho thấy nỗ lực của Ấn Độ trong việc cải thiện môi trường đầu tư tài chính quốc tế thông qua các bước đi pháp lý ổn định.",
+      "unknowns": [
+        "Thời điểm chính xác dự luật được đưa ra bỏ phiếu.",
+        "Các điều khoản chi tiết về mức giảm thuế cụ thể."
+      ],
+      "confidence_note": "Thông tin dựa trên nguồn tin từ những người có hiểu biết về vấn đề này, độ tin cậy khá cao.",
+      "scenarios": [
+        {
+          "text": "Quốc hội thông qua dự luật thuận lợi nhờ sự đồng thuận của các bên.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Tiến trình thông qua bị trì hoãn do các tranh cãi chính trị khác tại nghị trường.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Chính phủ Ấn Độ",
+          "target": "Nhà đầu tư nước ngoài",
+          "relation_type": "cooperation",
+          "label": "Tạo điều kiện ưu đãi thuế"
+        },
+        {
+          "source": "Dự luật thuế",
+          "target": "Thị trường nợ công Ấn Độ",
+          "relation_type": "cause_effect",
+          "label": "Tăng cường sức hút đầu tư"
+        }
+      ],
+      "entities": [
+        "Chính phủ Ấn Độ",
+        "Parliament Ấn Độ"
+      ],
+      "keywords": [
+        "India",
+        "dự luật thuế",
+        "quỹ đầu tư toàn cầu"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_b137a3d7": {
+    "created_at": 1785312113059,
+    "expires_at": 1787904113059,
+    "version": "4.5",
+    "checksum": "12fc31fc28194e7705c43a74b792a9b9",
+    "data": {
+      "cluster_title": "Deutsche Bank tăng trưởng doanh thu giao dịch",
+      "short_summary": "Deutsche Bank cho biết doanh thu giao dịch tiền tệ trong quý II tăng 16% so với cùng kỳ năm trước lên mức kỷ lục 2,6 tỷ euro, vượt dự đoán của các nhà phân tích và vượt trội so với phần lớn đồng nghiệp của mình trên Wall Street.",
+      "detailed_summary": "Deutsche Bank báo cáo doanh thu từ mảng giao dịch thu nhập cố định trong quý 2 đạt mức kỷ lục 2,6 tỷ Euro, tăng 16% so với cùng kỳ năm trước. Kết quả này vượt qua kỳ vọng của giới phân tích và cho thấy hiệu suất kinh doanh ấn tượng hơn so với phần lớn các ngân hàng đối thủ tại phố Wall.",
+      "causes": [
+        "Sự duy trì đà tăng trưởng trong hoạt động giao dịch",
+        "Hiệu quả chiến lược kinh doanh của Deutsche Bank"
+      ],
+      "effects": [
+        "Vượt dự báo lợi nhuận của các chuyên gia tài chính",
+        "Củng cố vị thế cạnh tranh của Deutsche Bank so với các ngân hàng lớn toàn cầu"
+      ],
+      "affected_groups": [
+        "Cổ đông Deutsche Bank",
+        "Giới đầu tư tài chính",
+        "Các ngân hàng đối thủ tại phố Wall"
+      ],
+      "market_impact": "Tạo tâm lý tích cực cho cổ phiếu ngân hàng và xác nhận xu hướng tăng trưởng doanh thu trong lĩnh vực giao dịch tài chính.",
+      "follow_up": "",
+      "significance": "Sự kiện cho thấy sự phục hồi và sức mạnh nội tại của Deutsche Bank trong bối cảnh thị trường tài chính quốc tế đầy cạnh tranh.",
+      "unknowns": [
+        "Chi tiết cụ thể về các phân khúc giao dịch đóng góp nhiều nhất vào doanh thu",
+        "Kế hoạch duy trì đà tăng trưởng trong các quý tiếp theo của ngân hàng"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên báo cáo kết quả tài chính quý 2 được công bố.",
+      "scenarios": [
+        {
+          "text": "Giá cổ phiếu của Deutsche Bank tăng mạnh nhờ niềm tin của nhà đầu tư vào báo cáo tài chính.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các ngân hàng đối thủ điều chỉnh chiến lược kinh doanh để cạnh tranh lại thị phần giao dịch với Deutsche Bank.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Deutsche Bank",
+          "target": "Giới phân tích tài chính",
+          "relation_type": "cause_effect",
+          "label": "Doanh thu kỷ lục vượt kỳ vọng của giới phân tích"
+        },
+        {
+          "source": "Akram",
+          "target": "Deutsche Bank",
+          "relation_type": "cooperation",
+          "label": "Giám đốc tài chính phụ trách điều hành ngân hàng"
+        }
+      ],
+      "entities": [
+        "Deutsche Bank",
+        "Akram"
+      ],
+      "keywords": [
+        "Deutsche Bank",
+        "Akram",
+        "trading",
+        "revenue"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_f0998dc4": {
+    "created_at": 1785312124940,
+    "expires_at": 1787904124940,
+    "version": "4.5",
+    "checksum": "3a126808ba419fb50a1dd0ead52773f7",
+    "data": {
+      "cluster_title": "Tech Stocks Giảm Sút",
+      "short_summary": "Tech Stocks tiếp tục giảm sút sau khi SK Hynix không đạt được lợi nhuận như mong đợi.",
+      "detailed_summary": "Thị trường chứng khoán nhóm ngành công nghệ ghi nhận đà suy giảm kéo dài. Nguyên nhân trực tiếp được xác định do kết quả kinh doanh của SK Hynix thấp hơn so với dự báo của thị trường. Chương trình Bloomberg: The China Show đã đưa tin phân tích về sự kiện này trong bối cảnh theo dõi các xu hướng kinh tế toàn cầu.",
+      "causes": [
+        "Kết quả kinh doanh của SK Hynix không đạt kỳ vọng của nhà đầu tư",
+        "Tâm lý thận trọng lan rộng đối với nhóm cổ phiếu công nghệ"
+      ],
+      "effects": [
+        "Đà giảm giá trị của các cổ phiếu nhóm công nghệ được duy trì",
+        "Gia tăng áp lực bán tháo trên thị trường chứng khoán"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư chứng khoán toàn cầu",
+        "Các doanh nghiệp trong chuỗi cung ứng công nghệ",
+        "Cổ đông của SK Hynix"
+      ],
+      "market_impact": "Thị trường công nghệ đối mặt với áp lực điều chỉnh ngắn hạn do niềm tin nhà đầu tư bị lung lay bởi số liệu tài chính kém khả quan.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh sự nhạy cảm của thị trường công nghệ đối với các báo cáo tài chính từ các nhà cung cấp linh kiện chủ chốt, ảnh hưởng đến định giá toàn ngành.",
+      "unknowns": [
+        "Chi tiết cụ thể về mức độ thiếu hụt doanh thu của SK Hynix",
+        "Phản ứng của các đối thủ cạnh tranh và chuỗi cung ứng trong dài hạn"
+      ],
+      "confidence_note": "Thông tin dựa trên nguồn tin tức tài chính uy tín, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Các cổ phiếu công nghệ tiếp tục chịu áp lực điều chỉnh trong ngắn hạn do lo ngại về sức khỏe ngành bán dẫn.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Thị trường ổn định trở lại sau khi các doanh nghiệp công nghệ khác công bố báo cáo tài chính khả quan hơn.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "SK Hynix",
+          "target": "Cổ phiếu công nghệ",
+          "relation_type": "cause_effect",
+          "label": "Báo cáo tài chính yếu kém dẫn đến đà giảm giá của nhóm cổ phiếu"
+        },
+        {
+          "source": "Bloomberg: The China Show",
+          "target": "Nhà đầu tư toàn cầu",
+          "relation_type": "cooperation",
+          "label": "Cung cấp phân tích và cái nhìn sâu sắc về thị trường"
+        }
+      ],
+      "entities": [
+        "SK Hynix",
+        "Bloomberg"
+      ],
+      "keywords": [
+        "Tech Stocks",
+        "SK Hynix",
+        "Bloomberg"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_d56d0ff6": {
+    "created_at": 1785312136905,
+    "expires_at": 1787904136905,
+    "version": "4.5",
+    "checksum": "235f48b453a5eca70104ff2f5f864bfe",
+    "data": {
+      "cluster_title": "Bank of England điều tra rủi ro cổ phiếu châu Á tại các đại lý chính",
+      "short_summary": "Bank of England đang điều tra rủi ro cổ phiếu châu Á tại các đại lý chính để đánh giá mức độ ảnh hưởng đến các quỹ đầu tư và ngân hàng",
+      "detailed_summary": "Cơ quan quản lý tài chính tại Anh đang thực hiện đợt rà soát đối với các ngân hàng đầu tư hoạt động trên lãnh thổ Anh. Mục tiêu chính là đánh giá mức độ rủi ro liên quan đến danh mục cổ phiếu châu Á, đồng thời kiểm tra sự tiếp xúc của các quỹ đầu cơ và khách hàng khác đối với lĩnh vực trí tuệ nhân tạo (AI).",
+      "causes": [
+        "Sự gia tăng mối quan tâm của các quỹ đầu tư đối với cổ phiếu ngành trí tuệ nhân tạo",
+        "Nhu cầu giám sát rủi ro hệ thống tại các trung tâm tài chính lớn"
+      ],
+      "effects": [
+        "Các ngân hàng đầu tư phải thắt chặt quy trình quản trị rủi ro",
+        "Tăng cường sự kiểm soát của cơ quan quản lý đối với hoạt động cho vay ký quỹ"
+      ],
+      "affected_groups": [
+        "Các ngân hàng đầu tư hoạt động tại Anh",
+        "Các quỹ đầu cơ có danh mục đầu tư tại châu Á",
+        "Các doanh nghiệp thuộc lĩnh vực trí tuệ nhân tạo"
+      ],
+      "market_impact": "Gây tâm lý thận trọng đối với các khoản đầu tư vào lĩnh vực trí tuệ nhân tạo và có thể làm thay đổi chiến lược giao dịch của các quỹ tại thị trường châu Á.",
+      "follow_up": "",
+      "significance": "Sự kiện này phản ánh nỗ lực của cơ quan quản lý tài chính trong việc nhận diện sớm các bong bóng tài sản tiềm ẩn trong bối cảnh làn sóng đầu tư vào trí tuệ nhân tạo đang tăng cao.",
+      "unknowns": [
+        "Danh sách cụ thể các ngân hàng nằm trong diện rà soát",
+        "Thời điểm kết thúc đợt kiểm tra và các biện pháp chế tài có thể được áp dụng"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao, dựa trên các báo cáo về hoạt động giám sát tài chính định kỳ.",
+      "scenarios": [
+        {
+          "text": "Ngân hàng Trung ương Anh đưa ra các tiêu chuẩn khắt khe hơn về quản trị rủi ro cho các ngân hàng đầu tư.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các ngân hàng chủ động giảm tỷ lệ đòn bẩy đối với các khoản đầu tư liên quan đến trí tuệ nhân tạo để tránh bị cơ quan quản lý gây áp lực.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Bank of England",
+          "target": "Ngân hàng đầu tư",
+          "relation_type": "cause_effect",
+          "label": "Giám sát và rà soát rủi ro tài chính"
+        },
+        {
+          "source": "Ngân hàng đầu tư",
+          "target": "Quỹ đầu cơ",
+          "relation_type": "cooperation",
+          "label": "Cung cấp dịch vụ tài chính và quản lý rủi ro ký quỹ"
+        },
+        {
+          "source": "Lĩnh vực trí tuệ nhân tạo",
+          "target": "Quỹ đầu cơ",
+          "relation_type": "cause_effect",
+          "label": "Thu hút vốn đầu tư và tạo ra rủi ro danh mục"
+        }
+      ],
+      "entities": [
+        "Bank of England",
+        "châu Á",
+        "cổ phiếu"
+      ],
+      "keywords": [
+        "Bank of England",
+        "rủi ro cổ phiếu",
+        "châu Á",
+        "đại lý chính"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
   }
 }
