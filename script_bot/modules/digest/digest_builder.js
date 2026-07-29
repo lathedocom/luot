@@ -49,10 +49,9 @@ function buildDigest(allTopics, { limitPerRegion = 7, windowMs = 48 * 60 * 60 * 
 }
 
 // =====================================================================
-// [NEW] RISK ENGINE: XỬ LÝ DỮ LIỆU BẢN ĐỒ RỦI RO CHO JSVECTORMAP
+// [MỚI] SITUATION INDEX ENGINE: ĐÁNH GIÁ MỨC ĐỘ BIẾN ĐỘNG
 // =====================================================================
 
-// Bộ quy đổi từ Region ID nội bộ sang mã ISO 3166-1 alpha-2 của jsVectorMap
 const REGION_TO_ISO = {
     'vietnam': ['VN'],
     'usa': ['US'],
@@ -60,140 +59,129 @@ const REGION_TO_ISO = {
     'china': ['CN', 'TW', 'HK'], 
     'eu': ['GB', 'FR', 'DE', 'IT', 'ES', 'NL', 'CH', 'SE', 'PL'], 
     'russia_ukraine': ['RU', 'UA', 'BY'],
-    // Đã thêm KH (Campuchia), LA (Lào)
     'asean': ['SG', 'TH', 'MY', 'ID', 'PH', 'KH', 'LA', 'MM', 'BN'], 
     'asia': ['JP', 'KR', 'IN', 'PK', 'BD', 'LK'],
     'middle_east': ['IL', 'PS', 'IR', 'SY', 'LB', 'SA', 'AE', 'QA', 'IQ', 'YE'],
-    // [MỚI]
     'oceania': ['AU', 'NZ'], 
     'latin_america': ['BR', 'AR', 'MX', 'CO', 'CL', 'PE', 'VE'], 
     'africa': ['ZA', 'GH', 'NG', 'EG', 'KE', 'ET'] 
 };
 
-// [MỚI] Bảng điểm Cơ sở dựa trên nhãn ảnh hưởng (Impact Level) của AI
-const IMPACT_SCORES = {
-    'crisis': 100,       // Khủng hoảng, chiến tranh, dịch bệnh lớn
-    'risk': 50,          // Bất ổn, cảnh báo rủi ro
-    'monitor': 20,       // Đàm phán, chính sách, biến động bình thường
-    'development': 5     // Phát triển, hợp tác (Gần như không tạo rủi ro)
+// Cấu hình trọng số (Weights)
+const CATEGORY_WEIGHTS = {
+    'military': 2.5, 'health': 2.0, 'disaster': 2.2, 'economy': 1.0, 'politics': 1.4, 'default': 1.0
 };
 
-// [Fallback] Dùng chuyên mục nếu bài báo cũ chưa có nhãn AI
-const SEVERITY_SCORES = {
-    'military': 80, 
-    'law': 40,      
-    'economy': 30,  
-    'finance': 30,  
-    'politics': 20, 
-    'environment': 40,
-    'health': 40
+// Map fallback từ impact_level cũ
+const IMPACT_TO_SEVERITY = {
+    'crisis': 5,
+    'risk': 4,
+    'monitor': 2,
+    'development': 1
 };
 
-function buildRiskMapData(allTopics) {
+// Map danh mục ra các Layer (Lớp bản đồ)
+function getLayerName(categories) {
+    if (!categories || categories.length === 0) return 'general';
+    const catStr = categories.join(' ').toLowerCase();
+    if (catStr.includes('quân sự') || catStr.includes('xung đột') || catStr.includes('chiến tranh') || catStr.includes('military')) return 'security';
+    if (catStr.includes('kinh tế') || catStr.includes('tài chính') || catStr.includes('doanh nghiệp') || catStr.includes('economy')) return 'economy';
+    if (catStr.includes('môi trường') || catStr.includes('thiên tai') || catStr.includes('environment')) return 'disaster';
+    if (catStr.includes('y tế') || catStr.includes('sức khỏe') || catStr.includes('health')) return 'health';
+    return 'general';
+}
+
+function buildSituationIndexData(topics, previousData = {}) {
+    const regionData = {};
     const now = Date.now();
-    const mapData = {};
 
-    // Chỉ xét các tin tức trong vòng 7 ngày qua để tạo dư âm rủi ro
-    const SEVEN_DAYS = 7 * 24 * 60 * 60 * 1000;
-    const activeTopics = allTopics.filter(t => (now - (t.timestamp || 0)) <= SEVEN_DAYS);
+    // 1. Nhóm sự kiện theo Quốc gia/Khu vực
+    topics.forEach(topic => {
+        // Tính Time Decay (giảm dần 15% mỗi ngày)
+        const daysOld = (now - (topic.timestamp || now)) / (1000 * 60 * 60 * 24);
+        const decay = Math.max(0.15, 1 - (daysOld * 0.15));
 
-    activeTopics.forEach(topic => {
-        // 1. Tính TimeDecay (Hệ số suy giảm theo thời gian nhanh hơn)
-        const ageHours = (now - topic.timestamp) / (1000 * 60 * 60);
-        let timeDecay = 1.0;
-        if (ageHours > 72) timeDecay = 0.2;      // Tin > 3 ngày: Mờ nhạt (20% ảnh hưởng)
-        else if (ageHours > 24) timeDecay = 0.6; // Tin > 1 ngày: Giảm nhiệt (60% ảnh hưởng)
+        // Trọng số chuyên mục
+        const layer = getLayerName(topic.categories);
+        let weight = CATEGORY_WEIGHTS['default'];
+        if (layer === 'security') weight = CATEGORY_WEIGHTS['military'];
+        else if (layer === 'economy') weight = CATEGORY_WEIGHTS['economy'];
+        else if (layer === 'disaster') weight = CATEGORY_WEIGHTS['disaster'];
+        else if (layer === 'health') weight = CATEGORY_WEIGHTS['health'];
 
-        // 2. Tính Mức độ nghiêm trọng (Severity) - Ưu tiên cờ AI
-        let baseSeverity = 0;
-        if (topic.impact_level && IMPACT_SCORES[topic.impact_level]) {
-            baseSeverity = IMPACT_SCORES[topic.impact_level];
-        } else {
-            // Fallback: Nếu là tin cũ, lấy điểm cao nhất của chuyên mục (không cộng dồn)
-            if (topic.categories && topic.categories.length > 0) {
-                topic.categories.forEach(cat => {
-                    if (SEVERITY_SCORES[cat] && SEVERITY_SCORES[cat] > baseSeverity) {
-                        baseSeverity = SEVERITY_SCORES[cat];
-                    }
-                });
-            }
-        }
+        // Điểm cơ sở
+        let severity = topic.severity;
+        if (!severity && topic.impact_level) severity = IMPACT_TO_SEVERITY[topic.impact_level];
+        if (!severity) severity = 3; // Fallback
+        
+        let sentiment = topic.sentiment !== undefined ? topic.sentiment : -1;
 
         // Tăng sức nặng nếu AI xếp hạng sự kiện này lan rông toàn cầu
-        if (topic.scope === 'global') baseSeverity += 10; 
+        if (topic.scope === 'global') severity += 1;
 
-        // 3. Tính SourceWeight (Độ tin cậy nguồn)
-        let sourceWeight = 1.0;
-        if (topic.sources && topic.sources.length > 0) {
-            const avgCredibility = topic.sources.reduce((sum, s) => sum + (s.source_credibility || 5), 0) / topic.sources.length;
-            sourceWeight = avgCredibility / 10; 
-        }
+        const rawScore = severity * weight * sentiment * decay;
+        if (Math.abs(rawScore) < 0.5) return; // Bỏ qua rác
 
-        // Điểm sự kiện đơn lẻ
-        const eventRiskScore = baseSeverity * sourceWeight * timeDecay;
-
-        // Bỏ qua nếu điểm quá thấp (tin tức rác)
-        if (eventRiskScore < 5) return;
-
-        // 4. Phân bổ điểm cho các quốc gia tương ứng
         if (topic.regions && topic.regions.length > 0) {
             topic.regions.forEach(regionId => {
                 const isoCodes = REGION_TO_ISO[regionId] || [];
                 isoCodes.forEach(iso => {
-                    if (!mapData[iso]) {
-                        mapData[iso] = { events: [] };
+                    if (!regionData[iso]) {
+                        regionData[iso] = { events: [] };
                     }
-                    
-                    // Lưu tóm tắt sự kiện để hiển thị Modal (tối đa 5 tin)
-                    if (mapData[iso].events.length < 5) {
-                        mapData[iso].events.push({
-                            title: topic.title || topic.cluster_title,
-                            score: Math.round(eventRiskScore)
-                        });
-                    }
+                    regionData[iso].events.push({
+                        title: topic.title || topic.cluster_title,
+                        score: rawScore,
+                        layer: layer,
+                        sentiment: sentiment
+                    });
                 });
             });
         }
     });
 
-    // 5. Chuẩn hóa và áp dụng thuật toán CHỐNG DỒN ĐIỂM
-    const finalMap = {};
-    for (const [iso, data] of Object.entries(mapData)) {
+    const finalMapData = {};
+
+    // 2. Tính toán SI cho từng quốc gia
+    for (const [isoCode, data] of Object.entries(regionData)) {
+        // Lấy TOP 5 sự kiện có sức ảnh hưởng mạnh nhất (trị tuyệt đối)
+        data.events.sort((a, b) => Math.abs(b.score) - Math.abs(a.score));
+        const top5 = data.events.slice(0, 5);
+
+        const layerScores = { total: 0, security: 0, economy: 0, disaster: 0, health: 0, general: 0 };
+        top5.forEach(evt => {
+            layerScores.total += evt.score;
+            layerScores[evt.layer] += evt.score;
+        });
+
+        // 3. Áp dụng EMA (Kế thừa điểm cũ nếu có)
+        const previousSI = previousData[isoCode] || { layers: { total: 0, security: 0, economy: 0, disaster: 0, health: 0, general: 0 } };
+        const finalLayers = {};
         
-        // Sắp xếp sự kiện từ nghiêm trọng nhất xuống thấp nhất
-        data.events.sort((a, b) => b.score - a.score);
-        
-        let totalScore = 0;
-        if (data.events.length > 0) {
-            // Sự kiện nghiêm trọng nhất giữ 100% sức mạnh
-            totalScore = data.events[0].score;
-            
-            // Các sự kiện phụ trợ chỉ đóng góp 15% dư chấn (tránh việc nhiều tin nhỏ làm đỏ bản đồ)
-            for (let i = 1; i < data.events.length; i++) {
-                totalScore += data.events[i].score * 0.15;
-            }
+        for (let l in layerScores) {
+            // EMA formula: 0.3 * New + 0.7 * Old
+            finalLayers[l] = (0.3 * layerScores[l]) + (0.7 * (previousSI.layers && previousSI.layers[l] ? previousSI.layers[l] : 0));
         }
 
-        totalScore = Math.round(totalScore);
-        
-        let color = '#22c55e'; 
-        let status = 'Bình thường';
+        // Định dạng Status dựa trên điểm Total SI
+        const volatility = Math.abs(finalLayers.total);
+        let status = 'Ổn định', color = '#22c55e'; // Xanh
+        if (volatility > 8) { status = 'Diễn biến nghiêm trọng'; color = '#ef4444'; } // Đỏ
+        else if (volatility > 5) { status = 'Diễn biến phức tạp'; color = '#f97316'; } // Cam
+        else if (volatility > 2) { status = 'Cần theo dõi'; color = '#eab308'; } // Vàng
 
-        // Thang đo mới phản chiếu chính xác nhãn của AI
-        if (totalScore >= 85) { color = '#ef4444'; status = 'Khủng hoảng nghiêm trọng'; }
-        else if (totalScore >= 45) { color = '#f97316'; status = 'Rủi ro cao'; }
-        else if (totalScore >= 15) { color = '#eab308'; status = 'Đang theo dõi'; }
-
-        finalMap[iso] = {
-            score: totalScore,
-            color: color,
+        finalMapData[isoCode] = {
             status: status,
-            events: data.events
+            color: color,
+            si_score: parseFloat(finalLayers.total.toFixed(2)),
+            layers: finalLayers, 
+            events: top5.map(e => ({ title: e.title, score: parseFloat(e.score.toFixed(2)), sentiment: e.sentiment }))
         };
     }
 
-    return finalMap;
+    return finalMapData;
 }
 
+module.exports = { buildDigest, buildSituationIndexData };
 
-module.exports = { buildDigest, buildRiskMapData };
+
