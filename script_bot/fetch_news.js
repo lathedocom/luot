@@ -1,3 +1,4 @@
+// FILE: script_bot/fetch_news.js
 const eventBus = require('./core/event_bus');
 const logger = require('./modules/utils/logger');
 const fs = require('fs');
@@ -5,8 +6,8 @@ const path = require('path');
 
 const PIPELINE_STATUS_FILE = path.join(__dirname, '../pipeline_status.json');
 
-// IMPORT CÁC MODULE XỬ LÝ LÕI
-const { buildDigest, buildRiskMapData } = require('./modules/digest/digest_builder');
+// IMPORT CÁC MODULE XỬ LÝ LÕI (SỬA LẠI REQUIRE CHO BẢN ĐỒ)
+const { buildDigest, buildSituationIndexData } = require('./modules/digest/digest_builder');
 const { processEventIntoTimeline } = require('./modules/6_timeline_manager');
 const { processTopicIntoStory } = require('./modules/story/story_engine');
 const { fetchAndNormalizeNews } = require('./modules/1_crawler');
@@ -26,8 +27,6 @@ const { evaluateClusterAction } = require('./modules/topic/similarity_engine');
 const { fetchAllMarketData } = require('./modules/market/index');
 const { fetchAllSocialTrends } = require('./modules/social/index');
 const { generateAllReports } = require('./modules/reports/index');
-
-
 
 const gateway = require('./modules/ai/gateway');
 const { jaccardSimilarity } = require('./modules/utils/text_similarity');
@@ -60,7 +59,6 @@ eventBus.on('START_PIPELINE', async () => {
 
 eventBus.on('RSS_FETCHED', async (articles) => {
     try {
-        // 1. Gán Category, Region và Tính điểm Importance ngay từ khi mới cào về
         const enriched = articles.map(article => {
             const cats = extractCategories(article.title + " " + article.summary);
             const regs = extractRegions(article.title + " " + article.summary, article.source_name);
@@ -72,15 +70,12 @@ eventBus.on('RSS_FETCHED', async (articles) => {
             };
         });
 
-        // 2. LỚP CHẶN TIẾT KIỆM QUOTA (Cực kỳ quan trọng)
-        // Lọc bỏ ngay lập tức những tin tức rác, không thuộc 11 lĩnh vực quan tâm (< 50 điểm)
         const relevantArticles = enriched.filter(article => article.importance >= 50);
 
         logger.info(`[Tối ưu Quota] Đã lọc bỏ ${enriched.length - relevantArticles.length} tin rác. Chỉ mang ${relevantArticles.length} tin vĩ mô đi tạo Vector.`);
 
         state.articles = relevantArticles;
         
-        // 3. Bây giờ chỉ Embedding những bài báo thực sự có giá trị
         const embedded = await generateEmbeddings(relevantArticles);
         eventBus.emit('EMBEDDING_DONE', embedded);
     } catch (e) {
@@ -216,11 +211,14 @@ Hai sự kiện trên có phải cùng nói về 1 sự việc không? CHỈ TR�
                 categories: ruleCategories,
                 regions: extractRegions(cluster.combined_text, cluster.articles[0].source_name),
                 
-                // [ĐÃ SỬA] Bổ sung lưu mảng thực thể vào database để vẽ Graph
                 entities: entities,
-
                 value_score: valueScore,
                 scope: aiIntelligence.scope || 'business',
+                
+                // [MỚI] Lưu thêm chỉ số S.I từ AI
+                severity: aiIntelligence.severity || 3,
+                sentiment: aiIntelligence.sentiment !== undefined ? aiIntelligence.sentiment : -1,
+
                 update_count: 1,
                 last_updated: Date.now(),
                 sources: cluster.articles.map(a => ({ 
@@ -303,8 +301,12 @@ eventBus.on('SYNC_DATABASE', () => {
             timestamp: (t.timestamp && !isNaN(t.timestamp) && t.timestamp !== null) ? t.timestamp : Date.now()
         }));
         
+        // [SỬA] Đổi logic gọi hàm Map
+        const previousSituationData = db.risk_map || {}; 
+        
         db.digest = buildDigest(db.news, { limitPerRegion: 7 });
-        db.risk_map = buildRiskMapData(db.news);
+        db.risk_map = buildSituationIndexData(db.news, previousSituationData);
+        
         db.knowledge_graph = buildGlobalGraph(db.news);
         db.market_data = state.marketData || [];
         db.social_trends = state.socialTrends || [];
@@ -364,3 +366,4 @@ eventBus.on('PIPELINE_ERROR', (error) => {
 });
 
 eventBus.emit('START_PIPELINE');
+
