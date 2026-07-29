@@ -14,7 +14,7 @@ const BROWSER_HEADERS = {
 };
 
 // ==========================================
-// 1. YAHOO & COINGECKO (GIỮ NGUYÊN BỘ CŨ CỦA BẠN)
+// 1. YAHOO & COINGECKO (Sẽ gánh VN-INDEX và HNX)
 // ==========================================
 async function fetchFromYahoo(symbolsConfig) {
     const results = await Promise.all(symbolsConfig.map(async (config) => {
@@ -94,37 +94,11 @@ async function fetchFromCoinGecko(symbolsConfig) {
 }
 
 // ==========================================
-// 2. CHỨNG KHOÁN (VNDIRECT API)
-// ==========================================
-async function fetchVietnameseStocks() {
-    try {
-        const response = await fetch('https://finfo-api.vndirect.com.vn/v4/rtt/indices', {
-            headers: { ...BROWSER_HEADERS, 'Origin': 'https://banggia.vndirect.com.vn', 'Referer': 'https://banggia.vndirect.com.vn/' }, 
-            timeout: 10000 
-        });
-        if (!response.ok) return null;
-        
-        const json = await response.json();
-        let prices = {};
-        if (json && json.data) {
-            json.data.forEach(item => {
-                if (item.code === 'VNINDEX') prices.VNINDEX = item.lastPrice;
-                if (item.code === 'VN30') prices.VN30 = item.lastPrice;
-                if (item.code === 'HNX') prices.HNX = item.lastPrice;
-                if (item.code === 'UPCOM') prices.UPCOM = item.lastPrice;
-            });
-        }
-        return prices;
-    } catch (error) { logger.warn(`[Lỗi Chứng khoán]: ${error.message}`); return null; }
-}
-
-// ==========================================
-// 3. VÀNG & XĂNG DẦU (TỪ WEBGIA.COM - RẤT ỔN ĐỊNH)
+// 2. VÀNG & XĂNG DẦU (TỪ WEBGIA.COM)
 // ==========================================
 async function fetchGoldAndGas() {
     let prices = { SJC: null, RING: null, RON95: null, E5RON92: null, DIESEL: null };
     
-    // Cào Xăng Dầu
     try {
         const resGas = await fetch('https://webgia.com/gia-xang-dau/petrolimex/', { headers: BROWSER_HEADERS, timeout: 10000 });
         if (resGas.ok) {
@@ -144,7 +118,6 @@ async function fetchGoldAndGas() {
         }
     } catch (error) { logger.warn(`[Lỗi Xăng]: ${error.message}`); }
 
-    // Cào Vàng SJC
     try {
         const resGold = await fetch('https://webgia.com/gia-vang/sjc/', { headers: BROWSER_HEADERS, timeout: 10000 });
         if (resGold.ok) {
@@ -166,12 +139,11 @@ async function fetchGoldAndGas() {
 }
 
 // ==========================================
-// 4. NÔNG SẢN CHUYÊN BIỆT (GIACAPHE & GIATIEU)
+// 3. NÔNG SẢN CHUYÊN BIỆT (GIACAPHE & GIATIEU)
 // ==========================================
 async function fetchAgriData() {
     let prices = { COFFEE_VN: null, PEPPER_VN: null };
     try {
-        // Cào Cà phê
         const resCoffee = await fetch('https://giacaphe.com/gia-ca-phe-noi-dia/', { headers: BROWSER_HEADERS, timeout: 8000 });
         if (resCoffee.ok) {
             const $ = cheerio.load(await resCoffee.text());
@@ -184,7 +156,6 @@ async function fetchAgriData() {
             });
         }
         
-        // Cào Hồ tiêu
         const resPepper = await fetch('https://giatieu.com/gia-tieu-trong-nuoc/', { headers: BROWSER_HEADERS, timeout: 8000 });
         if (resPepper.ok) {
             const $ = cheerio.load(await resPepper.text());
@@ -201,7 +172,7 @@ async function fetchAgriData() {
 }
 
 // ==========================================
-// 5. VẬT LIỆU (TRADING ECONOMICS CHO HRC)
+// 4. VẬT LIỆU (TRADING ECONOMICS CHO HRC)
 // ==========================================
 async function fetchTradingEconomicsData() {
     let prices = { IRON_ORE: null, STEEL_HRC: null, NICKEL: null };
@@ -228,17 +199,15 @@ async function fetchTradingEconomicsData() {
 }
 
 // ==========================================
-// 6. GÁN DỮ LIỆU CỤ THỂ CHO TỪNG NHÓM
+// 5. GÁN DỮ LIỆU CỤ THỂ CHO TỪNG NHÓM (CẬP NHẬT CÁCH 3)
 // ==========================================
 async function fetchLocalMarkets(symbolsConfig) {
-    const [stocks, goldGas, agri, materials] = await Promise.all([
-        fetchVietnameseStocks(),
+    const [goldGas, agri, materials] = await Promise.all([
         fetchGoldAndGas(),
         fetchAgriData(),
         fetchTradingEconomicsData()
     ]);
     
-    const s = stocks || {};
     const gg = goldGas || {};
     const a = agri || {};
     const m = materials || {};
@@ -258,12 +227,6 @@ async function fetchLocalMarkets(symbolsConfig) {
         else if (sym === 'SJC' && gg.SJC) { base = gg.SJC; isRealTime = true; sourceName = 'Webgia/SJC'; }
         else if (sym === 'RING' && gg.RING) { base = gg.RING; isRealTime = true; sourceName = 'Webgia/SJC'; }
         
-        // --- Chứng Khoán ---
-        else if (sym === 'VNINDEX' && s.VNINDEX) { base = s.VNINDEX; isRealTime = true; sourceName = 'HOSE/VNDirect'; }
-        else if (sym === 'VN30' && s.VN30) { base = s.VN30; isRealTime = true; sourceName = 'HOSE/VNDirect'; }
-        else if (sym === 'HNX' && s.HNX) { base = s.HNX; isRealTime = true; sourceName = 'HNX/VNDirect'; }
-        else if (sym === 'UPCOM' && s.UPCOM) { base = s.UPCOM; isRealTime = true; sourceName = 'UPCOM/VNDirect'; }
-        
         // --- Nông Sản ---
         else if (sym === 'COFFEE_VN' && a.COFFEE_VN) { base = a.COFFEE_VN; isRealTime = true; sourceName = 'GiaCaPhe.com'; }
         else if (sym === 'PEPPER_VN' && a.PEPPER_VN) { base = a.PEPPER_VN; isRealTime = true; sourceName = 'GiaTieu.com'; }
@@ -272,9 +235,8 @@ async function fetchLocalMarkets(symbolsConfig) {
         else if (sym === 'STEEL_HRC' && m.STEEL_HRC) { base = m.STEEL_HRC; isRealTime = true; sourceName = 'Trading Economics'; }
         else if (sym === 'IRON_ORE' && m.IRON_ORE) { base = m.IRON_ORE; isRealTime = true; sourceName = 'Trading Economics'; }
 
-        // --- CÁC MÃ KHÓ (Vật liệu nội địa: Cát, Xi măng, Thép CB300, Điều, Cao su) ---
-        // Do không có trang API tĩnh nào cập nhật thường xuyên, bot bắt buộc dùng Fallback base_price
-        else if (['STEEL_CB300', 'CEMENT_VN', 'SAND_VN', 'RUBBER_VN', 'CASHEW_VN'].includes(sym)) {
+        // --- CÁC MÃ KHÓ & FALLBACK (Bao gồm VN30 và UPCOM) ---
+        else if (['STEEL_CB300', 'CEMENT_VN', 'SAND_VN', 'RUBBER_VN', 'CASHEW_VN', 'VN30', 'UPCOM'].includes(sym)) {
             // isRealTime = false (Sử dụng cấu hình fallback mặc định có sẵn)
         }
 
@@ -308,7 +270,7 @@ async function fetchLocalMarkets(symbolsConfig) {
             updated_at: Date.now(),
             display_source: sourceName, 
             context: isRealTime ? null : {
-                causes: ['Sử dụng dữ liệu tham khảo do hiện tại chưa có cổng API cập nhật.'],
+                causes: ['Dữ liệu sử dụng Fallback (Máy chủ API từ chối IP đám mây).'],
                 market_impact: 'Biểu đồ phản ánh xu hướng giá bình quân chung.'
             }
         };
