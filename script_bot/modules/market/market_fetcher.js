@@ -5,31 +5,22 @@ const { SYMBOLS } = require('../../config/market_symbols');
 const logger = require('../utils/logger');
 const cheerio = require('cheerio'); 
 
-// 1. TẠO "SIÊU HEADER" GIẢ LẬP CHROME ĐỂ XUYÊN QUA CLOUDFLARE/WAF
 const BROWSER_HEADERS = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
-    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
     'Accept-Language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
-    'Sec-Ch-Ua': '"Chromium";v="122", "Not(A:Brand";v="24", "Google Chrome";v="122"',
-    'Sec-Ch-Ua-Mobile': '?0',
-    'Sec-Ch-Ua-Platform': '"Windows"',
-    'Sec-Fetch-Dest': 'document',
-    'Sec-Fetch-Mode': 'navigate',
-    'Sec-Fetch-Site': 'none',
-    'Sec-Fetch-User': '?1',
-    'Upgrade-Insecure-Requests': '1',
-    'Cache-Control': 'max-age=0',
+    'Cache-Control': 'no-cache',
     'Connection': 'keep-alive'
 };
 
 // ==========================================
-// 1. YAHOO FINANCE
+// 1. YAHOO & COINGECKO (GIỮ NGUYÊN BỘ CŨ CỦA BẠN)
 // ==========================================
 async function fetchFromYahoo(symbolsConfig) {
     const results = await Promise.all(symbolsConfig.map(async (config) => {
         const url = `https://query1.finance.yahoo.com/v8/finance/chart/${config.api_symbol}?range=5d&interval=1d`;
         try {
-            const response = await fetch(url, { headers: BROWSER_HEADERS, timeout: 10000 });
+            const response = await fetch(url, { headers: BROWSER_HEADERS, timeout: 8000 });
             if (!response.ok) return null;
             const data = await response.json();
             const result = data.chart.result[0];
@@ -53,7 +44,6 @@ async function fetchFromYahoo(symbolsConfig) {
                     }
                 });
             }
-
             if (history.length === 0) { history = [prevClose, price]; historyLabels = ['T-1', 'T0']; }
 
             return {
@@ -62,25 +52,20 @@ async function fetchFromYahoo(symbolsConfig) {
                 change_percent: (changePercent > 0 ? '+' : '') + parseFloat(changePercent.toFixed(2)) + '%',
                 raw_change: changePercent,
                 trend: changePercent >= 0 ? '↑' : '↓',
-                history: history,
-                history_labels: historyLabels,
-                updated_at: Date.now(),
-                display_source: 'Yahoo Finance' 
+                history: history, history_labels: historyLabels,
+                updated_at: Date.now(), display_source: 'Yahoo Finance' 
             };
         } catch (error) { return null; }
     }));
     return results.filter(Boolean);
 }
 
-// ==========================================
-// 2. COINGECKO
-// ==========================================
 async function fetchFromCoinGecko(symbolsConfig) {
     if (symbolsConfig.length === 0) return [];
     const ids = symbolsConfig.map(s => s.api_symbol).join(',');
     const url = `https://api.coingecko.com/api/v3/simple/price?ids=${ids}&vs_currencies=usd&include_24hr_change=true`;
     try {
-        const response = await fetch(url, { headers: BROWSER_HEADERS, timeout: 10000 });
+        const response = await fetch(url, { headers: BROWSER_HEADERS, timeout: 8000 });
         if (!response.ok) return [];
         const data = await response.json();
         return symbolsConfig.map(config => {
@@ -100,37 +85,27 @@ async function fetchFromCoinGecko(symbolsConfig) {
                 ...config,
                 price: parseFloat(price.toFixed(decimals)).toLocaleString('vi-VN'),
                 change_percent: (changePercent > 0 ? '+' : '') + parseFloat(changePercent.toFixed(2)) + '%',
-                raw_change: changePercent,
-                trend: changePercent >= 0 ? '↑' : '↓',
-                history: history,
-                history_labels: ['T-24h', 'T-18h', 'T-12h', 'T-6h', 'T-2h', 'Hiện tại'],
-                updated_at: Date.now(),
-                display_source: 'CoinGecko' 
+                raw_change: changePercent, trend: changePercent >= 0 ? '↑' : '↓',
+                history: history, history_labels: ['T-24h', 'T-18h', 'T-12h', 'T-6h', 'T-2h', 'Hiện tại'],
+                updated_at: Date.now(), display_source: 'CoinGecko' 
             };
         }).filter(Boolean);
     } catch (error) { return []; }
 }
 
 // ==========================================
-// 3. CHỨNG KHOÁN VN (BỔ SUNG ORIGIN/REFERER ĐỂ VƯỢT RÀO)
+// 2. CHỨNG KHOÁN (VNDIRECT API)
 // ==========================================
 async function fetchVietnameseStocks() {
     try {
         const response = await fetch('https://finfo-api.vndirect.com.vn/v4/rtt/indices', {
-            headers: {
-                ...BROWSER_HEADERS,
-                'Accept': 'application/json, text/plain, */*',
-                'Origin': 'https://banggia.vndirect.com.vn',
-                'Referer': 'https://banggia.vndirect.com.vn/'
-            }, 
+            headers: { ...BROWSER_HEADERS, 'Origin': 'https://banggia.vndirect.com.vn', 'Referer': 'https://banggia.vndirect.com.vn/' }, 
             timeout: 10000 
         });
-        
         if (!response.ok) return null;
         
         const json = await response.json();
-        let prices = { VNINDEX: null, VN30: null, HNX: null, UPCOM: null };
-        
+        let prices = {};
         if (json && json.data) {
             json.data.forEach(item => {
                 if (item.code === 'VNINDEX') prices.VNINDEX = item.lastPrice;
@@ -140,142 +115,168 @@ async function fetchVietnameseStocks() {
             });
         }
         return prices;
-    } catch (error) { 
-        logger.warn(`Lỗi API Chứng khoán VN: ${error.message}`);
-        return null; 
-    }
+    } catch (error) { logger.warn(`[Lỗi Chứng khoán]: ${error.message}`); return null; }
 }
 
 // ==========================================
-// 4. VÀNG SJC & NHẪN (CÀO TỪ WEBGIA THAY VÌ SJC ĐỂ NÉ BLOCK)
+// 3. VÀNG & XĂNG DẦU (TỪ WEBGIA.COM - RẤT ỔN ĐỊNH)
 // ==========================================
-async function fetchGoldData() {
-    let prices = { SJC: null, RING: null };
+async function fetchGoldAndGas() {
+    let prices = { SJC: null, RING: null, RON95: null, E5RON92: null, DIESEL: null };
+    
+    // Cào Xăng Dầu
     try {
-        const response = await fetch('https://webgia.com/gia-vang/sjc/', {
-            headers: BROWSER_HEADERS, timeout: 10000 
-        });
-        if (!response.ok) return prices;
+        const resGas = await fetch('https://webgia.com/gia-xang-dau/petrolimex/', { headers: BROWSER_HEADERS, timeout: 10000 });
+        if (resGas.ok) {
+            const $ = cheerio.load(await resGas.text());
+            $('table tbody tr').each((i, el) => {
+                const text = $(el).text().toUpperCase();
+                const priceStr = $(el).find('td').last().text().replace(/[^\d]/g, ''); 
+                if (priceStr) {
+                    const priceVal = parseInt(priceStr);
+                    if (priceVal > 15000) {
+                        if (text.includes('RON 95')) prices.RON95 = priceVal;
+                        else if (text.includes('E5') || text.includes('RON 92')) prices.E5RON92 = priceVal;
+                        else if (text.includes('DIESEL') || text.includes('DO 0.05')) prices.DIESEL = priceVal;
+                    }
+                }
+            });
+        }
+    } catch (error) { logger.warn(`[Lỗi Xăng]: ${error.message}`); }
+
+    // Cào Vàng SJC
+    try {
+        const resGold = await fetch('https://webgia.com/gia-vang/sjc/', { headers: BROWSER_HEADERS, timeout: 10000 });
+        if (resGold.ok) {
+            const $ = cheerio.load(await resGold.text());
+            $('table tbody tr').each((i, el) => {
+                const text = $(el).text().toUpperCase();
+                const priceStr = $(el).find('td').last().text().replace(/[^\d]/g, ''); 
+                if (priceStr) {
+                    const priceVal = parseFloat(priceStr);
+                    let priceInMillions = priceVal > 1000000 ? priceVal / 1000000 : priceVal / 1000;
+                    if ((text.includes('1 LƯỢNG') || text.includes('VÀNG SJC')) && !prices.SJC) prices.SJC = priceInMillions;
+                    else if ((text.includes('NHẪN') || text.includes('1 CHỈ')) && !prices.RING) prices.RING = priceInMillions;
+                }
+            });
+        }
+    } catch (error) { logger.warn(`[Lỗi Vàng]: ${error.message}`); }
+
+    return prices;
+}
+
+// ==========================================
+// 4. NÔNG SẢN CHUYÊN BIỆT (GIACAPHE & GIATIEU)
+// ==========================================
+async function fetchAgriData() {
+    let prices = { COFFEE_VN: null, PEPPER_VN: null };
+    try {
+        // Cào Cà phê
+        const resCoffee = await fetch('https://giacaphe.com/gia-ca-phe-noi-dia/', { headers: BROWSER_HEADERS, timeout: 8000 });
+        if (resCoffee.ok) {
+            const $ = cheerio.load(await resCoffee.text());
+            $('table tr').each((i, el) => {
+                const text = $(el).text().toUpperCase();
+                if (text.includes('ĐẮK LẮK') || text.includes('DAK LAK')) {
+                    const match = text.match(/([1-9][0-9]{2,3}[.,][0-9]{3})/);
+                    if (match) prices.COFFEE_VN = parseInt(match[1].replace(/[.,]/g, ''));
+                }
+            });
+        }
         
-        const html = await response.text();
-        const $ = cheerio.load(html);
+        // Cào Hồ tiêu
+        const resPepper = await fetch('https://giatieu.com/gia-tieu-trong-nuoc/', { headers: BROWSER_HEADERS, timeout: 8000 });
+        if (resPepper.ok) {
+            const $ = cheerio.load(await resPepper.text());
+            $('table tr').each((i, el) => {
+                const text = $(el).text().toUpperCase();
+                if (text.includes('ĐẮK LẮK') || text.includes('DAK LAK')) {
+                    const match = text.match(/([1-9][0-9]{2,3}[.,][0-9]{3})/);
+                    if (match) prices.PEPPER_VN = parseInt(match[1].replace(/[.,]/g, ''));
+                }
+            });
+        }
+    } catch (error) { logger.warn(`[Lỗi Nông sản]: ${error.message}`); }
+    return prices;
+}
 
-        $('table tbody tr').each((i, el) => {
-            const text = $(el).text().toUpperCase();
-            // Lấy cột cuối cùng (thường là giá Bán Ra)
-            const priceStr = $(el).find('td').last().text().replace(/[^\d]/g, ''); 
-            if (!priceStr) return;
-            
-            const priceVal = parseFloat(priceStr);
-            let priceInMillions = priceVal > 1000000 ? priceVal / 1000000 : priceVal / 1000;
+// ==========================================
+// 5. VẬT LIỆU (TRADING ECONOMICS CHO HRC)
+// ==========================================
+async function fetchTradingEconomicsData() {
+    let prices = { IRON_ORE: null, STEEL_HRC: null, NICKEL: null };
+    const urls = [
+        { key: 'STEEL_HRC', url: 'https://tradingeconomics.com/commodity/hrc-steel' },
+        { key: 'IRON_ORE', url: 'https://tradingeconomics.com/commodity/iron-ore' }
+    ];
 
-            if ((text.includes('1 LƯỢNG') || text.includes('VÀNG SJC')) && !prices.SJC) {
-                prices.SJC = priceInMillions;
-            } else if ((text.includes('NHẪN') || text.includes('1 CHỈ')) && !prices.RING) {
-                prices.RING = priceInMillions;
+    for (const item of urls) {
+        try {
+            const response = await fetch(item.url, { headers: BROWSER_HEADERS, timeout: 10000 });
+            if (response.ok) {
+                const html = await response.text();
+                const $ = cheerio.load(html);
+                const priceText = $('#current_price').text() || $('.market-summary-current').first().text();
+                if (priceText) {
+                    const val = parseFloat(priceText.replace(/[^\d.]/g, ''));
+                    if (val > 0) prices[item.key] = val;
+                }
             }
-        });
-    } catch (error) { logger.warn(`Lỗi cào Vàng (Webgia): ${error.message}`); }
-    return prices;
-}
-
-// ==========================================
-// 5. TỔNG HỢP SIÊU RỘNG TỪ VIETNAMBIZ (Đã bổ sung Cao su, Điều, Xi măng, Cát, Thép)
-// ==========================================
-async function fetchVietnambizData() {
-    let prices = {
-        COFFEE_VN: null, PEPPER_VN: null, RUBBER_VN: null, CASHEW_VN: null, 
-        STEEL_HRC: null, STEEL_CB300: null, CEMENT_VN: null, SAND_VN: null,
-        RON95: null, E5RON92: null, DIESEL: null
-    };
-
-    try {
-        const response = await fetch('https://vietnambiz.vn/nganh-hang.htm', {
-            headers: BROWSER_HEADERS, timeout: 15000 
-        });
-        
-        if (!response.ok) return prices;
-
-        const html = await response.text();
-        const $ = cheerio.load(html);
-
-        $('tr, .news-item, .table-row, p').each((i, el) => {
-            const text = $(el).text().toUpperCase().replace(/\s+/g, ' ').trim();
-            const priceMatch = text.match(/([1-9][0-9]{1,3}[.,][0-9]{3})/);
-            if (!priceMatch) return; 
-
-            const priceVal = parseInt(priceMatch[1].replace(/[.,]/g, ''));
-
-            // Nhóm Nông Sản
-            if ((text.includes('CÀ PHÊ') || text.includes('COFFEE')) && !prices.COFFEE_VN) prices.COFFEE_VN = priceVal;
-            else if ((text.includes('HỒ TIÊU') || text.includes('TIÊU ĐEN')) && !prices.PEPPER_VN) prices.PEPPER_VN = priceVal;
-            else if (text.includes('CAO SU') && !prices.RUBBER_VN) prices.RUBBER_VN = priceVal;
-            else if ((text.includes('HẠT ĐIỀU') || text.includes('ĐIỀU NHÂN')) && !prices.CASHEW_VN) prices.CASHEW_VN = priceVal;
-            
-            // Nhóm Vật Liệu Xây Dựng
-            else if ((text.includes('CB300') || text.includes('THÉP XÂY DỰNG')) && !prices.STEEL_CB300) prices.STEEL_CB300 = priceVal;
-            else if ((text.includes('THÉP HRC') || text.includes('CUỘN CÁN NÓNG')) && !prices.STEEL_HRC) prices.STEEL_HRC = priceVal;
-            else if (text.includes('XI MĂNG') && !prices.CEMENT_VN) prices.CEMENT_VN = priceVal;
-            else if ((text.includes('CÁT VÀNG') || text.includes('CÁT XÂY DỰNG')) && !prices.SAND_VN) prices.SAND_VN = priceVal;
-
-            // Nhóm Xăng Dầu
-            else if (text.includes('RON 95') && !prices.RON95) prices.RON95 = priceVal;
-            else if ((text.includes('E5') || text.includes('RON 92')) && !prices.E5RON92) prices.E5RON92 = priceVal;
-            else if ((text.includes('DIESEL') || text.includes('DO 0.05')) && !prices.DIESEL) prices.DIESEL = priceVal;
-        });
-    } catch (error) { 
-        logger.warn(`Lỗi cào Vietnambiz: ${error.message}`); 
+        } catch (e) { logger.warn(`[Lỗi Vật liệu ${item.key}]: ${e.message}`); }
     }
     return prices;
 }
 
 // ==========================================
-// 6. TỔNG HỢP VÀ GÁN DỮ LIỆU LOCAL
+// 6. GÁN DỮ LIỆU CỤ THỂ CHO TỪNG NHÓM
 // ==========================================
 async function fetchLocalMarkets(symbolsConfig) {
-    const [goldPrices, stockPrices, vBiz] = await Promise.all([
-        fetchGoldData(),
+    const [stocks, goldGas, agri, materials] = await Promise.all([
         fetchVietnameseStocks(),
-        fetchVietnambizData() 
+        fetchGoldAndGas(),
+        fetchAgriData(),
+        fetchTradingEconomicsData()
     ]);
     
-    const gPrices = goldPrices || {};
-    const sPrices = stockPrices || {};
-    const v = vBiz || {};
+    const s = stocks || {};
+    const gg = goldGas || {};
+    const a = agri || {};
+    const m = materials || {};
 
     return symbolsConfig.map(config => {
         let base = config.base_price || 100;
         let isRealTime = false;
-        let sourceName = 'Tổng hợp thị trường (Định kỳ)'; 
-
+        let sourceName = 'Dữ liệu mô phỏng / Fallback'; 
         const sym = config.api_symbol;
 
-        // Gán Xăng Dầu
-        if (sym === 'RON95' && v.RON95) { base = v.RON95; isRealTime = true; sourceName = 'Vietnambiz'; }
-        else if (sym === 'E5RON92' && v.E5RON92) { base = v.E5RON92; isRealTime = true; sourceName = 'Vietnambiz'; }
-        else if (sym === 'DIESEL' && v.DIESEL) { base = v.DIESEL; isRealTime = true; sourceName = 'Vietnambiz'; }
+        // --- Xăng Dầu ---
+        if (sym === 'RON95' && gg.RON95) { base = gg.RON95; isRealTime = true; sourceName = 'Webgia/Petrolimex'; }
+        else if (sym === 'E5RON92' && gg.E5RON92) { base = gg.E5RON92; isRealTime = true; sourceName = 'Webgia/Petrolimex'; }
+        else if (sym === 'DIESEL' && gg.DIESEL) { base = gg.DIESEL; isRealTime = true; sourceName = 'Webgia/Petrolimex'; }
         
-        // Gán Chứng Khoán
-        else if (sym === 'VNINDEX' && sPrices.VNINDEX) { base = sPrices.VNINDEX; isRealTime = true; sourceName = 'HOSE/VNDirect'; }
-        else if (sym === 'VN30' && sPrices.VN30) { base = sPrices.VN30; isRealTime = true; sourceName = 'HOSE/VNDirect'; }
-        else if (sym === 'HNX' && sPrices.HNX) { base = sPrices.HNX; isRealTime = true; sourceName = 'HNX/VNDirect'; }
-        else if (sym === 'UPCOM' && sPrices.UPCOM) { base = sPrices.UPCOM; isRealTime = true; sourceName = 'UPCOM/VNDirect'; }
+        // --- Vàng ---
+        else if (sym === 'SJC' && gg.SJC) { base = gg.SJC; isRealTime = true; sourceName = 'Webgia/SJC'; }
+        else if (sym === 'RING' && gg.RING) { base = gg.RING; isRealTime = true; sourceName = 'Webgia/SJC'; }
         
-        // Gán Vàng
-        else if (sym === 'SJC' && gPrices.SJC) { base = gPrices.SJC; isRealTime = true; sourceName = 'Webgia/SJC'; }
-        else if (sym === 'RING' && gPrices.RING) { base = gPrices.RING; isRealTime = true; sourceName = 'Webgia/SJC'; }
+        // --- Chứng Khoán ---
+        else if (sym === 'VNINDEX' && s.VNINDEX) { base = s.VNINDEX; isRealTime = true; sourceName = 'HOSE/VNDirect'; }
+        else if (sym === 'VN30' && s.VN30) { base = s.VN30; isRealTime = true; sourceName = 'HOSE/VNDirect'; }
+        else if (sym === 'HNX' && s.HNX) { base = s.HNX; isRealTime = true; sourceName = 'HNX/VNDirect'; }
+        else if (sym === 'UPCOM' && s.UPCOM) { base = s.UPCOM; isRealTime = true; sourceName = 'UPCOM/VNDirect'; }
         
-        // Gán Nông Sản
-        else if (sym === 'COFFEE_VN' && v.COFFEE_VN) { base = v.COFFEE_VN; isRealTime = true; sourceName = 'Vietnambiz'; }
-        else if (sym === 'PEPPER_VN' && v.PEPPER_VN) { base = v.PEPPER_VN; isRealTime = true; sourceName = 'Vietnambiz'; }
-        else if (sym === 'RUBBER_VN' && v.RUBBER_VN) { base = v.RUBBER_VN; isRealTime = true; sourceName = 'Vietnambiz'; }
-        else if (sym === 'CASHEW_VN' && v.CASHEW_VN) { base = v.CASHEW_VN; isRealTime = true; sourceName = 'Vietnambiz'; }
+        // --- Nông Sản ---
+        else if (sym === 'COFFEE_VN' && a.COFFEE_VN) { base = a.COFFEE_VN; isRealTime = true; sourceName = 'GiaCaPhe.com'; }
+        else if (sym === 'PEPPER_VN' && a.PEPPER_VN) { base = a.PEPPER_VN; isRealTime = true; sourceName = 'GiaTieu.com'; }
         
-        // Gán Vật Liệu
-        else if (sym === 'STEEL_HRC' && v.STEEL_HRC) { base = v.STEEL_HRC; isRealTime = true; sourceName = 'Vietnambiz'; }
-        else if (sym === 'STEEL_CB300' && v.STEEL_CB300) { base = v.STEEL_CB300; isRealTime = true; sourceName = 'Vietnambiz'; }
-        else if (sym === 'CEMENT_VN' && v.CEMENT_VN) { base = v.CEMENT_VN; isRealTime = true; sourceName = 'Vietnambiz'; }
-        else if (sym === 'SAND_VN' && v.SAND_VN) { base = v.SAND_VN; isRealTime = true; sourceName = 'Vietnambiz'; }
+        // --- Vật Liệu (Quốc tế) ---
+        else if (sym === 'STEEL_HRC' && m.STEEL_HRC) { base = m.STEEL_HRC; isRealTime = true; sourceName = 'Trading Economics'; }
+        else if (sym === 'IRON_ORE' && m.IRON_ORE) { base = m.IRON_ORE; isRealTime = true; sourceName = 'Trading Economics'; }
+
+        // --- CÁC MÃ KHÓ (Vật liệu nội địa: Cát, Xi măng, Thép CB300, Điều, Cao su) ---
+        // Do không có trang API tĩnh nào cập nhật thường xuyên, bot bắt buộc dùng Fallback base_price
+        else if (['STEEL_CB300', 'CEMENT_VN', 'SAND_VN', 'RUBBER_VN', 'CASHEW_VN'].includes(sym)) {
+            // isRealTime = false (Sử dụng cấu hình fallback mặc định có sẵn)
+        }
 
         // Logic tạo biểu đồ
         const history = [];
@@ -294,9 +295,7 @@ async function fetchLocalMarkets(symbolsConfig) {
         const finalPrice = history[5];
         const prevPrice = history[4];
         let changePercent = 0;
-        if (prevPrice > 0) {
-            changePercent = ((finalPrice - prevPrice) / prevPrice) * 100;
-        }
+        if (prevPrice > 0) changePercent = ((finalPrice - prevPrice) / prevPrice) * 100;
 
         return {
             ...config,
@@ -309,16 +308,13 @@ async function fetchLocalMarkets(symbolsConfig) {
             updated_at: Date.now(),
             display_source: sourceName, 
             context: isRealTime ? null : {
-                causes: ['Dữ liệu được cập nhật định kỳ từ các hiệp hội.'],
+                causes: ['Sử dụng dữ liệu tham khảo do hiện tại chưa có cổng API cập nhật.'],
                 market_impact: 'Biểu đồ phản ánh xu hướng giá bình quân chung.'
             }
         };
     });
 }
 
-// ==========================================
-// 7. TỔNG HỢP TOÀN BỘ API VÀ XUẤT MODULE
-// ==========================================
 async function fetchAllLiveMarketData() {
     const yahooSymbols = SYMBOLS.filter(s => s.api_source === 'yahoo');
     const coinGeckoSymbols = SYMBOLS.filter(s => s.api_source === 'coingecko');
