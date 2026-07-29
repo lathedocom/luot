@@ -4438,5 +4438,74 @@
       "sentiment": -1,
       "scope": "national"
     }
+  },
+  "evt_general_1785314875780": {
+    "created_at": 1785314878981,
+    "expires_at": 1787906878981,
+    "version": "4.5",
+    "checksum": "4fced3550fad13064397e8fe6b70d2e3",
+    "data": {
+      "cluster_title": "Sự Sụp Đổ Của Thị Trụ Hàn Quốc",
+      "short_summary": "Thị trường chứng khoán Hàn Quốc đã sụp đổ 16% trong hai ngày liên tiếp do bán tháo của các nhà đầu tư cá nhân.",
+      "detailed_summary": "Thị trường tài chính Hàn Quốc đang trải qua giai đoạn khủng hoảng khi chỉ số chứng khoán chính ghi nhận mức sụt giảm kỷ lục 33% trong tháng này. Riêng trong hai ngày gần nhất, tình trạng bán tháo ồ ạt từ các nhà đầu tư cá nhân đã đẩy chỉ số giảm thêm 16%, gây ra tâm lý hoang mang và thất vọng bao trùm trong cộng đồng đầu tư.",
+      "causes": [
+        "Làn sóng bán tháo ồ ạt từ các nhà đầu tư cá nhân",
+        "Tâm lý hoang mang và thiếu niềm tin vào thị trường"
+      ],
+      "effects": [
+        "Chỉ số chứng khoán chính của Hàn Quốc giảm kỷ lục 33% trong tháng",
+        "Thị trường sụt giảm 16% giá trị chỉ trong vòng hai ngày",
+        "Tâm lý tiêu cực lan rộng trong cộng đồng nhà đầu tư"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư cá nhân tại Hàn Quốc",
+        "Các doanh nghiệp niêm yết trên thị trường chứng khoán Hàn Quốc"
+      ],
+      "market_impact": "Thị trường rơi vào trạng thái hoảng loạn với đà giảm sâu, gây thiệt hại lớn về tài sản và phá vỡ cấu trúc ổn định của chỉ số chứng khoán quốc gia.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh một đợt sụt giảm tài chính nghiêm trọng, đánh dấu sự mất niềm tin của nhà đầu tư nhỏ lẻ vào thị trường chứng khoán Hàn Quốc trong ngắn hạn.",
+      "unknowns": [
+        "Các yếu tố kinh tế vĩ mô cụ thể thúc đẩy hành vi bán tháo của nhà đầu tư",
+        "Khả năng can thiệp của chính phủ hoặc ngân hàng trung ương để ổn định thị trường"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên dữ liệu thống kê thị trường được báo cáo.",
+      "scenarios": [
+        {
+          "text": "Áp lực bán tháo tiếp tục duy trì khiến chỉ số giảm sâu hơn trước khi có sự can thiệp ổn định.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Thị trường xuất hiện nhịp hồi phục kỹ thuật nhờ hoạt động bắt đáy của các tổ chức tài chính lớn.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Nhà đầu tư cá nhân",
+          "target": "Thị trường chứng khoán Hàn Quốc",
+          "relation_type": "cause_effect",
+          "label": "Hành vi bán tháo gây ra sự sụt giảm chỉ số"
+        },
+        {
+          "source": "Sự sụt giảm thị trường",
+          "target": "Tâm lý nhà đầu tư",
+          "relation_type": "cause_effect",
+          "label": "Gây ra sự thất vọng và hoang mang"
+        }
+      ],
+      "entities": [
+        "Hàn Quốc",
+        "thị trường chứng khoán"
+      ],
+      "keywords": [
+        "Hàn Quốc",
+        "thị trường chứng khoán",
+        "sự sụp đổ"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
   }
 }

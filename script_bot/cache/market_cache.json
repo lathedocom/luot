@@ -1,0 +1,1401 @@
+{
+  "latest_market": {
+    "created_at": 1785314899490,
+    "expires_at": 1785315799490,
+    "version": "1.0",
+    "checksum": "2200f72b075f47011bdd0743029dbfb6",
+    "data": [
+      {
+        "id": "USD_VND",
+        "name": "USD / VND",
+        "type": "currency",
+        "region": "vn",
+        "category": "💱 Tỷ giá & Tiền tệ",
+        "unit": "VND",
+        "price": "26.330",
+        "change_percent": "0%",
+        "trend": "↑",
+        "history": [
+          26305,
+          26314,
+          26300,
+          26313,
+          26330
+        ],
+        "history_labels": [
+          "22/7",
+          "23/7",
+          "26/7",
+          "27/7",
+          "29/7"
+        ],
+        "updated_at": 1785314889156,
+        "display_source": "Yahoo Finance",
+        "is_alert": false,
+        "context": null
+      },
+      {
+        "id": "EUR_VND",
+        "name": "EUR / VND",
+        "type": "currency",
+        "region": "vn",
+        "category": "💱 Tỷ giá & Tiền tệ",
+        "unit": "VND",
+        "price": "30.010",
+        "change_percent": "0%",
+        "trend": "↑",
+        "history": [
+          29096,
+          29101,
+          29057,
+          29076,
+          30010
+        ],
+        "history_labels": [
+          "22/7",
+          "23/7",
+          "26/7",
+          "27/7",
+          "29/7"
+        ],
+        "updated_at": 1785314889168,
+        "display_source": "Yahoo Finance",
+        "is_alert": false,
+        "context": null
+      },
+      {
+        "id": "CNY_VND",
+        "name": "CNY / VND",
+        "type": "currency",
+        "region": "vn",
+        "category": "💱 Tỷ giá & Tiền tệ",
+        "unit": "VND",
+        "price": "3.886,7",
+        "change_percent": "0%",
+        "trend": "↑",
+        "history": [
+          3886.7
+        ],
+        "history_labels": [
+          "29/7"
+        ],
+        "updated_at": 1785314889172,
+        "display_source": "Yahoo Finance",
+        "is_alert": false,
+        "context": null
+      },
+      {
+        "id": "JPY_VND",
+        "name": "JPY / VND",
+        "type": "currency",
+        "region": "vn",
+        "category": "💱 Tỷ giá & Tiền tệ",
+        "unit": "VND",
+        "price": "160,48",
+        "change_percent": "0%",
+        "trend": "↑",
+        "history": [
+          160.48
+        ],
+        "history_labels": [
+          "29/7"
+        ],
+        "updated_at": 1785314889153,
+        "display_source": "Yahoo Finance",
+        "is_alert": false,
+        "context": null
+      },
+      {
+        "id": "DXY",
+        "name": "Chỉ số DXY",
+        "type": "currency",
+        "region": "global",
+        "category": "💱 Tỷ giá & Tiền tệ",
+        "unit": "Điểm",
+        "price": "101,35",
+        "change_percent": "0%",
+        "trend": "↑",
+        "history": [
+          101.51,
+          101.35
+        ],
+        "history_labels": [
+          "27/7",
+          "29/7"
+        ],
+        "updated_at": 1785314889169,
+        "display_source": "Yahoo Finance",
+        "is_alert": false,
+        "context": null
+      },
+      {
+        "id": "EUR_USD",
+        "name": "EUR / USD",
+        "type": "currency",
+        "region": "global",
+        "category": "💱 Tỷ giá & Tiền tệ",
+        "unit": "USD",
+        "price": "1,14",
+        "change_percent": "0%",
+        "trend": "↑",
+        "history": [
+          1.14,
+          1.14,
+          1.14,
+          1.14,
+          1.14
+        ],
+        "history_labels": [
+          "22/7",
+          "23/7",
+          "26/7",
+          "27/7",
+          "29/7"
+        ],
+        "updated_at": 1785314889166,
+        "display_source": "Yahoo Finance",
+        "is_alert": false,
+        "context": null
+      },
+      {
+        "id": "USD_CNY",
+        "name": "USD / CNY",
+        "type": "currency",
+        "region": "global",
+        "category": "💱 Tỷ giá & Tiền tệ",
+        "unit": "CNY",
+        "price": "6,76",
+        "change_percent": "0%",
+        "trend": "↑",
+        "history": [
+          6.77,
+          6.77,
+          6.77,
+          6.77,
+          6.76
+        ],
+        "history_labels": [
+          "22/7",
+          "23/7",
+          "26/7",
+          "27/7",
+          "29/7"
+        ],
+        "updated_at": 1785314889164,
+        "display_source": "Yahoo Finance",
+        "is_alert": false,
+        "context": null
+      },
+      {
+        "id": "USD_JPY",
+        "name": "USD / JPY",
+        "type": "currency",
+        "region": "global",
+        "category": "💱 Tỷ giá & Tiền tệ",
+        "unit": "JPY",
+        "price": "163,56",
+        "change_percent": "0%",
+        "trend": "↑",
+        "history": [
+          163.08,
+          163.83,
+          163.61,
+          163.77,
+          163.56
+        ],
+        "history_labels": [
+          "22/7",
+          "23/7",
+          "26/7",
+          "27/7",
+          "29/7"
+        ],
+        "updated_at": 1785314889167,
+        "display_source": "Yahoo Finance",
+        "is_alert": false,
+        "context": null
+      },
+      {
+        "id": "US10Y",
+        "name": "US 10Y Yield",
+        "type": "currency",
+        "region": "global",
+        "category": "💱 Tỷ giá & Tiền tệ",
+        "unit": "%",
+        "price": "4,6",
+        "change_percent": "0%",
+        "trend": "↑",
+        "history": [
+          4.66,
+          4.7,
+          4.64
+        ],
+        "history_labels": [
+          "22/7",
+          "23/7",
+          "27/7"
+        ],
+        "updated_at": 1785314889165,
+        "display_source": "Yahoo Finance",
+        "is_alert": false,
+        "context": null
+      },
+      {
+        "id": "SP500",
+        "name": "S&P 500",
+        "type": "stock",
+        "region": "global",
+        "category": "📈 Chứng khoán",
+        "unit": "Điểm",
+        "price": "7.428,78",
+        "change_percent": "0%",
+        "trend": "↑",
+        "history": [
+          7498.96,
+          7408.3,
+          7413.18
+        ],
+        "history_labels": [
+          "22/7",
+          "23/7",
+          "27/7"
+        ],
+        "updated_at": 1785314889160,
+        "display_source": "Yahoo Finance",
+        "is_alert": false,
+        "context": null
+      },
+      {
+        "id": "NASDAQ",
+        "name": "Nasdaq",
+        "type": "stock",
+        "region": "global",
+        "category": "📈 Chứng khoán",
+        "unit": "Điểm",
+        "price": "24.876,91",
+        "change_percent": "0%",
+        "trend": "↑",
+        "history": [
+          25690.9,
+          25137.69,
+          24932.08
+        ],
+        "history_labels": [
+          "22/7",
+          "23/7",
+          "27/7"
+        ],
+        "updated_at": 1785314889157,
+        "display_source": "Yahoo Finance",
+        "is_alert": false,
+        "context": null
+      },
+      {
+        "id": "NIKKEI",
+        "name": "Nikkei 225",
+        "type": "stock",
+        "region": "global",
+        "category": "📈 Chứng khoán",
+        "unit": "Điểm",
+        "price": "61.434,19",
+        "change_percent": "0%",
+        "trend": "↑",
+        "history": [
+          66422.6,
+          64931.19,
+          61434.19
+        ],
+        "history_labels": [
+          "23/7",
+          "27/7",
+          "29/7"
+        ],
+        "updated_at": 1785314889169,
+        "display_source": "Yahoo Finance",
+        "is_alert": false,
+        "context": null
+      },
+      {
+        "id": "HANGSENG",
+        "name": "Hang Seng",
+        "type": "stock",
+        "region": "global",
+        "category": "📈 Chứng khoán",
+        "unit": "Điểm",
+        "price": "25.807,92",
+        "change_percent": "0%",
+        "trend": "↑",
+        "history": [
+          25210.81,
+          25207.18,
+          25807.92
+        ],
+        "history_labels": [
+          "23/7",
+          "27/7",
+          "29/7"
+        ],
+        "updated_at": 1785314889171,
+        "display_source": "Yahoo Finance",
+        "is_alert": false,
+        "context": null
+      },
+      {
+        "id": "SHANGHAI",
+        "name": "Shanghai Comp",
+        "type": "stock",
+        "region": "global",
+        "category": "📈 Chứng khoán",
+        "unit": "Điểm",
+        "price": "3.828,47",
+        "change_percent": "0%",
+        "trend": "↑",
+        "history": [
+          3876.78,
+          3858.25,
+          3828.47
+        ],
+        "history_labels": [
+          "23/7",
+          "27/7",
+          "29/7"
+        ],
+        "updated_at": 1785314889159,
+        "display_source": "Yahoo Finance",
+        "is_alert": false,
+        "context": null
+      },
+      {
+        "id": "GOLD_W",
+        "name": "Vàng Thế giới",
+        "type": "metal",
+        "region": "global",
+        "category": "🥇 Kim loại & Vàng",
+        "unit": "USD/oz",
+        "price": "4.095,9",
+        "change_percent": "0%",
+        "trend": "↑",
+        "history": [
+          4067.6,
+          4074.5,
+          4036.3,
+          4095.9
+        ],
+        "history_labels": [
+          "24/7",
+          "27/7",
+          "28/7",
+          "29/7"
+        ],
+        "updated_at": 1785314889153,
+        "display_source": "Yahoo Finance",
+        "is_alert": false,
+        "context": null
+      },
+      {
+        "id": "SILVER",
+        "name": "Bạc",
+        "type": "metal",
+        "region": "global",
+        "category": "🥇 Kim loại & Vàng",
+        "unit": "USD/oz",
+        "price": "58,06",
+        "change_percent": "0%",
+        "trend": "↑",
+        "history": [
+          58.66,
+          58.47,
+          57.3,
+          58.06
+        ],
+        "history_labels": [
+          "24/7",
+          "27/7",
+          "28/7",
+          "29/7"
+        ],
+        "updated_at": 1785314889160,
+        "display_source": "Yahoo Finance",
+        "is_alert": false,
+        "context": null
+      },
+      {
+        "id": "COPPER",
+        "name": "Đồng",
+        "type": "metal",
+        "region": "global",
+        "category": "🥇 Kim loại & Vàng",
+        "unit": "USD/lb",
+        "price": "6,32",
+        "change_percent": "0%",
+        "trend": "↑",
+        "history": [
+          6.32,
+          6.34,
+          6.32,
+          6.32
+        ],
+        "history_labels": [
+          "24/7",
+          "27/7",
+          "28/7",
+          "29/7"
+        ],
+        "updated_at": 1785314889162,
+        "display_source": "Yahoo Finance",
+        "is_alert": false,
+        "context": null
+      },
+      {
+        "id": "PLATINUM",
+        "name": "Bạch kim",
+        "type": "metal",
+        "region": "global",
+        "category": "🥇 Kim loại & Vàng",
+        "unit": "USD/oz",
+        "price": "1.605",
+        "change_percent": "0%",
+        "trend": "↑",
+        "history": [
+          1593.4,
+          1620.6,
+          1612.2,
+          1605
+        ],
+        "history_labels": [
+          "24/7",
+          "27/7",
+          "28/7",
+          "29/7"
+        ],
+        "updated_at": 1785314889172,
+        "display_source": "Yahoo Finance",
+        "is_alert": false,
+        "context": null
+      },
+      {
+        "id": "BRENT",
+        "name": "Dầu Brent",
+        "type": "energy",
+        "region": "global",
+        "category": "⛽ Năng lượng",
+        "unit": "USD/thùng",
+        "price": "87,13",
+        "change_percent": "0%",
+        "trend": "↑",
+        "history": [
+          96.78,
+          88.36,
+          84.09,
+          87.13
+        ],
+        "history_labels": [
+          "24/7",
+          "27/7",
+          "28/7",
+          "29/7"
+        ],
+        "updated_at": 1785314889162,
+        "display_source": "Yahoo Finance",
+        "is_alert": false,
+        "context": null
+      },
+      {
+        "id": "WTI",
+        "name": "Dầu WTI",
+        "type": "energy",
+        "region": "global",
+        "category": "⛽ Năng lượng",
+        "unit": "USD/thùng",
+        "price": "82,11",
+        "change_percent": "0%",
+        "trend": "↑",
+        "history": [
+          89.31,
+          82.61,
+          79.26,
+          82.11
+        ],
+        "history_labels": [
+          "24/7",
+          "27/7",
+          "28/7",
+          "29/7"
+        ],
+        "updated_at": 1785314889224,
+        "display_source": "Yahoo Finance",
+        "is_alert": false,
+        "context": null
+      },
+      {
+        "id": "NAT_GAS",
+        "name": "Khí tự nhiên",
+        "type": "energy",
+        "region": "global",
+        "category": "⛽ Năng lượng",
+        "unit": "USD/MMBtu",
+        "price": "2,68",
+        "change_percent": "0%",
+        "trend": "↑",
+        "history": [
+          2.87,
+          2.77,
+          2.66,
+          2.68
+        ],
+        "history_labels": [
+          "24/7",
+          "27/7",
+          "28/7",
+          "29/7"
+        ],
+        "updated_at": 1785314889171,
+        "display_source": "Yahoo Finance",
+        "is_alert": false,
+        "context": null
+      },
+      {
+        "id": "WHEAT",
+        "name": "Lúa mì",
+        "type": "agriculture",
+        "region": "global",
+        "category": "🌾 Nông sản",
+        "unit": "USc/bu",
+        "price": "663,25",
+        "change_percent": "0%",
+        "trend": "↑",
+        "history": [
+          678,
+          660,
+          662.5,
+          663.25
+        ],
+        "history_labels": [
+          "24/7",
+          "27/7",
+          "28/7",
+          "29/7"
+        ],
+        "updated_at": 1785314889154,
+        "display_source": "Yahoo Finance",
+        "is_alert": false,
+        "context": null
+      },
+      {
+        "id": "CORN",
+        "name": "Ngô",
+        "type": "agriculture",
+        "region": "global",
+        "category": "🌾 Nông sản",
+        "unit": "USc/bu",
+        "price": "479,75",
+        "change_percent": "0%",
+        "trend": "↑",
+        "history": [
+          464.25,
+          451.75,
+          458.5,
+          479.75
+        ],
+        "history_labels": [
+          "24/7",
+          "27/7",
+          "28/7",
+          "29/7"
+        ],
+        "updated_at": 1785314889158,
+        "display_source": "Yahoo Finance",
+        "is_alert": false,
+        "context": null
+      },
+      {
+        "id": "SOYBEAN",
+        "name": "Đậu tương",
+        "type": "agriculture",
+        "region": "global",
+        "category": "🌾 Nông sản",
+        "unit": "USc/bu",
+        "price": "1.211",
+        "change_percent": "0%",
+        "trend": "↑",
+        "history": [
+          1248,
+          1208.5,
+          1212,
+          1211
+        ],
+        "history_labels": [
+          "24/7",
+          "27/7",
+          "28/7",
+          "29/7"
+        ],
+        "updated_at": 1785314889152,
+        "display_source": "Yahoo Finance",
+        "is_alert": false,
+        "context": null
+      },
+      {
+        "id": "SUGAR",
+        "name": "Đường",
+        "type": "agriculture",
+        "region": "global",
+        "category": "🌾 Nông sản",
+        "unit": "USc/lb",
+        "price": "14,64",
+        "change_percent": "0%",
+        "trend": "↑",
+        "history": [
+          14.77,
+          14.58,
+          14.55,
+          14.64
+        ],
+        "history_labels": [
+          "24/7",
+          "27/7",
+          "28/7",
+          "29/7"
+        ],
+        "updated_at": 1785314889169,
+        "display_source": "Yahoo Finance",
+        "is_alert": false,
+        "context": null
+      },
+      {
+        "id": "COCOA",
+        "name": "Ca cao",
+        "type": "agriculture",
+        "region": "global",
+        "category": "🌾 Nông sản",
+        "unit": "USD/tấn",
+        "price": "5.330",
+        "change_percent": "0%",
+        "trend": "↑",
+        "history": [
+          5376,
+          5100,
+          5201
+        ],
+        "history_labels": [
+          "24/7",
+          "27/7",
+          "28/7"
+        ],
+        "updated_at": 1785314889157,
+        "display_source": "Yahoo Finance",
+        "is_alert": false,
+        "context": null
+      },
+      {
+        "id": "ALUMINUM",
+        "name": "Nhôm",
+        "type": "metal",
+        "region": "global",
+        "category": "🏗️ Vật liệu",
+        "unit": "USD/tấn",
+        "price": "3.381,5",
+        "change_percent": "0%",
+        "trend": "↑",
+        "history": [
+          3528,
+          3542,
+          3491,
+          3381.5
+        ],
+        "history_labels": [
+          "24/7",
+          "27/7",
+          "28/7",
+          "29/7"
+        ],
+        "updated_at": 1785314889172,
+        "display_source": "Yahoo Finance",
+        "is_alert": false,
+        "context": null
+      },
+      {
+        "id": "BTC",
+        "name": "Bitcoin",
+        "type": "crypto",
+        "region": "global",
+        "category": "🪙 Tiền điện tử",
+        "unit": "USD",
+        "price": "64.418",
+        "change_percent": "+1.55%",
+        "trend": "↑",
+        "history": [
+          63435.18,
+          63582.61,
+          63828.31,
+          64074.01,
+          64270.58,
+          64418
+        ],
+        "history_labels": [
+          "T-24h",
+          "T-18h",
+          "T-12h",
+          "T-6h",
+          "T-2h",
+          "Hiện tại"
+        ],
+        "updated_at": 1785314889272,
+        "display_source": "CoinGecko",
+        "is_alert": true,
+        "context": null
+      },
+      {
+        "id": "ETH",
+        "name": "Ethereum",
+        "type": "crypto",
+        "region": "global",
+        "category": "🪙 Tiền điện tử",
+        "unit": "USD",
+        "price": "1.915,71",
+        "change_percent": "+1.74%",
+        "trend": "↑",
+        "history": [
+          1883.02,
+          1887.92,
+          1896.1,
+          1904.27,
+          1910.81,
+          1915.71
+        ],
+        "history_labels": [
+          "T-24h",
+          "T-18h",
+          "T-12h",
+          "T-6h",
+          "T-2h",
+          "Hiện tại"
+        ],
+        "updated_at": 1785314889272,
+        "display_source": "CoinGecko",
+        "is_alert": true,
+        "context": null
+      },
+      {
+        "id": "SOL",
+        "name": "Solana",
+        "type": "crypto",
+        "region": "global",
+        "category": "🪙 Tiền điện tử",
+        "unit": "USD",
+        "price": "74,12",
+        "change_percent": "+1.1%",
+        "trend": "↑",
+        "history": [
+          73.32,
+          73.44,
+          73.64,
+          73.84,
+          74,
+          74.12
+        ],
+        "history_labels": [
+          "T-24h",
+          "T-18h",
+          "T-12h",
+          "T-6h",
+          "T-2h",
+          "Hiện tại"
+        ],
+        "updated_at": 1785314889272,
+        "display_source": "CoinGecko",
+        "is_alert": true,
+        "context": null
+      },
+      {
+        "id": "XRP",
+        "name": "XRP",
+        "type": "crypto",
+        "region": "global",
+        "category": "🪙 Tiền điện tử",
+        "unit": "USD",
+        "price": "1,09",
+        "change_percent": "+3.05%",
+        "trend": "↑",
+        "history": [
+          1.06,
+          1.06,
+          1.07,
+          1.08,
+          1.08,
+          1.09
+        ],
+        "history_labels": [
+          "T-24h",
+          "T-18h",
+          "T-12h",
+          "T-6h",
+          "T-2h",
+          "Hiện tại"
+        ],
+        "updated_at": 1785314889272,
+        "display_source": "CoinGecko",
+        "is_alert": true,
+        "context": null
+      },
+      {
+        "id": "VN30",
+        "name": "VN30",
+        "type": "stock",
+        "region": "vn",
+        "category": "📈 Chứng khoán",
+        "unit": "Điểm",
+        "price": "1.293",
+        "change_percent": "-0.23%",
+        "trend": "↓",
+        "history": [
+          1296,
+          1296,
+          1298,
+          1297,
+          1296,
+          1293
+        ],
+        "history_labels": [
+          "T-5",
+          "T-4",
+          "T-3",
+          "T-2",
+          "T-1",
+          "Hôm nay"
+        ],
+        "updated_at": 1785314899487,
+        "display_source": "Dữ liệu mô phỏng / Fallback",
+        "context": null,
+        "is_alert": false
+      },
+      {
+        "id": "UPCOM",
+        "name": "UPCoM-Index",
+        "type": "stock",
+        "region": "vn",
+        "category": "📈 Chứng khoán",
+        "unit": "Điểm",
+        "price": "95,36",
+        "change_percent": "+0.22%",
+        "trend": "↑",
+        "history": [
+          95.34,
+          95.41,
+          95.23,
+          94.92,
+          95.15,
+          95.36
+        ],
+        "history_labels": [
+          "T-5",
+          "T-4",
+          "T-3",
+          "T-2",
+          "T-1",
+          "Hôm nay"
+        ],
+        "updated_at": 1785314899487,
+        "display_source": "Dữ liệu mô phỏng / Fallback",
+        "context": null,
+        "is_alert": false
+      },
+      {
+        "id": "GOLD_SJC",
+        "name": "Vàng miếng SJC",
+        "type": "metal",
+        "region": "vn",
+        "category": "🥇 Kim loại & Vàng",
+        "unit": "Tr/lượng",
+        "price": "14,15",
+        "change_percent": "+0.43%",
+        "trend": "↑",
+        "history": [
+          14.09,
+          14.11,
+          14.15,
+          14.16,
+          14.09,
+          14.15
+        ],
+        "history_labels": [
+          "T-5",
+          "T-4",
+          "T-3",
+          "T-2",
+          "T-1",
+          "Hôm nay"
+        ],
+        "updated_at": 1785314899487,
+        "display_source": "Webgia/SJC",
+        "context": null,
+        "is_alert": false
+      },
+      {
+        "id": "GOLD_RING",
+        "name": "Vàng nhẫn",
+        "type": "metal",
+        "region": "vn",
+        "category": "🥇 Kim loại & Vàng",
+        "unit": "Tr/lượng",
+        "price": "14,15",
+        "change_percent": "-0.14%",
+        "trend": "↓",
+        "history": [
+          14.21,
+          14.19,
+          14.17,
+          14.11,
+          14.17,
+          14.15
+        ],
+        "history_labels": [
+          "T-5",
+          "T-4",
+          "T-3",
+          "T-2",
+          "T-1",
+          "Hôm nay"
+        ],
+        "updated_at": 1785314899487,
+        "display_source": "Webgia/SJC",
+        "context": null,
+        "is_alert": false
+      },
+      {
+        "id": "RON95",
+        "name": "Xăng RON 95-III",
+        "type": "energy",
+        "region": "vn",
+        "category": "⛽ Năng lượng",
+        "unit": "VNĐ/L",
+        "price": "23.826",
+        "change_percent": "-0.21%",
+        "trend": "↓",
+        "history": [
+          23599,
+          23710,
+          23734,
+          23789,
+          23875,
+          23826
+        ],
+        "history_labels": [
+          "T-5",
+          "T-4",
+          "T-3",
+          "T-2",
+          "T-1",
+          "Hôm nay"
+        ],
+        "updated_at": 1785314899487,
+        "display_source": "Dữ liệu mô phỏng / Fallback",
+        "context": null,
+        "is_alert": false
+      },
+      {
+        "id": "E5RON92",
+        "name": "Xăng E5 RON 92",
+        "type": "energy",
+        "region": "vn",
+        "category": "⛽ Năng lượng",
+        "unit": "VNĐ/L",
+        "price": "21.290",
+        "change_percent": "+0.95%",
+        "trend": "↑",
+        "history": [
+          21208,
+          21157,
+          21207,
+          21194,
+          21090,
+          21290
+        ],
+        "history_labels": [
+          "T-5",
+          "T-4",
+          "T-3",
+          "T-2",
+          "T-1",
+          "Hôm nay"
+        ],
+        "updated_at": 1785314899487,
+        "display_source": "Webgia/Petrolimex",
+        "context": null,
+        "is_alert": false
+      },
+      {
+        "id": "DIESEL",
+        "name": "Dầu Diesel",
+        "type": "energy",
+        "region": "vn",
+        "category": "⛽ Năng lượng",
+        "unit": "VNĐ/L",
+        "price": "20.603",
+        "change_percent": "+0.3%",
+        "trend": "↑",
+        "history": [
+          20498,
+          20568,
+          20600,
+          20536,
+          20542,
+          20603
+        ],
+        "history_labels": [
+          "T-5",
+          "T-4",
+          "T-3",
+          "T-2",
+          "T-1",
+          "Hôm nay"
+        ],
+        "updated_at": 1785314899487,
+        "display_source": "Dữ liệu mô phỏng / Fallback",
+        "context": null,
+        "is_alert": false
+      },
+      {
+        "id": "RICE_VN",
+        "name": "Gạo xuất khẩu VN",
+        "type": "agriculture",
+        "region": "vn",
+        "category": "🌾 Nông sản",
+        "unit": "USD/tấn",
+        "price": "597,65",
+        "change_percent": "-0.29%",
+        "trend": "↓",
+        "history": [
+          599.49,
+          599.78,
+          599.44,
+          598.03,
+          599.37,
+          597.65
+        ],
+        "history_labels": [
+          "T-5",
+          "T-4",
+          "T-3",
+          "T-2",
+          "T-1",
+          "Hôm nay"
+        ],
+        "updated_at": 1785314899487,
+        "display_source": "Dữ liệu mô phỏng / Fallback",
+        "context": null,
+        "is_alert": false
+      },
+      {
+        "id": "COFFEE_VN",
+        "name": "Cà phê Robusta",
+        "type": "agriculture",
+        "region": "vn",
+        "category": "🌾 Nông sản",
+        "unit": "VNĐ/kg",
+        "price": "120.060",
+        "change_percent": "-0.08%",
+        "trend": "↓",
+        "history": [
+          120013,
+          120046,
+          119766,
+          119818,
+          120156,
+          120060
+        ],
+        "history_labels": [
+          "T-5",
+          "T-4",
+          "T-3",
+          "T-2",
+          "T-1",
+          "Hôm nay"
+        ],
+        "updated_at": 1785314899487,
+        "display_source": "Dữ liệu mô phỏng / Fallback",
+        "context": null,
+        "is_alert": false
+      },
+      {
+        "id": "PEPPER_VN",
+        "name": "Hồ tiêu",
+        "type": "agriculture",
+        "region": "vn",
+        "category": "🌾 Nông sản",
+        "unit": "VNĐ/kg",
+        "price": "148.220",
+        "change_percent": "+0.12%",
+        "trend": "↑",
+        "history": [
+          149313,
+          149132,
+          148853,
+          148580,
+          148049,
+          148220
+        ],
+        "history_labels": [
+          "T-5",
+          "T-4",
+          "T-3",
+          "T-2",
+          "T-1",
+          "Hôm nay"
+        ],
+        "updated_at": 1785314899487,
+        "display_source": "Dữ liệu mô phỏng / Fallback",
+        "context": null,
+        "is_alert": false
+      },
+      {
+        "id": "RUBBER_VN",
+        "name": "Cao su",
+        "type": "agriculture",
+        "region": "vn",
+        "category": "🌾 Nông sản",
+        "unit": "Tr/tấn",
+        "price": "35,62",
+        "change_percent": "+0.39%",
+        "trend": "↑",
+        "history": [
+          35.37,
+          35.2,
+          35.34,
+          35.42,
+          35.48,
+          35.62
+        ],
+        "history_labels": [
+          "T-5",
+          "T-4",
+          "T-3",
+          "T-2",
+          "T-1",
+          "Hôm nay"
+        ],
+        "updated_at": 1785314899487,
+        "display_source": "Dữ liệu mô phỏng / Fallback",
+        "context": null,
+        "is_alert": false
+      },
+      {
+        "id": "CASHEW_VN",
+        "name": "Điều",
+        "type": "agriculture",
+        "region": "vn",
+        "category": "🌾 Nông sản",
+        "unit": "VNĐ/kg",
+        "price": "29.766",
+        "change_percent": "-0.32%",
+        "trend": "↓",
+        "history": [
+          29877,
+          29831,
+          29714,
+          29855,
+          29861,
+          29766
+        ],
+        "history_labels": [
+          "T-5",
+          "T-4",
+          "T-3",
+          "T-2",
+          "T-1",
+          "Hôm nay"
+        ],
+        "updated_at": 1785314899487,
+        "display_source": "Dữ liệu mô phỏng / Fallback",
+        "context": null,
+        "is_alert": false
+      },
+      {
+        "id": "STEEL_CB300",
+        "name": "Thép CB300",
+        "type": "metal",
+        "region": "vn",
+        "category": "🏗️ Vật liệu",
+        "unit": "Tr/tấn",
+        "price": "14,23",
+        "change_percent": "+0.35%",
+        "trend": "↑",
+        "history": [
+          14.15,
+          14.14,
+          14.18,
+          14.24,
+          14.18,
+          14.23
+        ],
+        "history_labels": [
+          "T-5",
+          "T-4",
+          "T-3",
+          "T-2",
+          "T-1",
+          "Hôm nay"
+        ],
+        "updated_at": 1785314899487,
+        "display_source": "Dữ liệu mô phỏng / Fallback",
+        "context": null,
+        "is_alert": false
+      },
+      {
+        "id": "CEMENT",
+        "name": "Xi măng",
+        "type": "metal",
+        "region": "vn",
+        "category": "🏗️ Vật liệu",
+        "unit": "Tr/tấn",
+        "price": "1,49",
+        "change_percent": "0%",
+        "trend": "↑",
+        "history": [
+          1.49,
+          1.5,
+          1.49,
+          1.48,
+          1.49,
+          1.49
+        ],
+        "history_labels": [
+          "T-5",
+          "T-4",
+          "T-3",
+          "T-2",
+          "T-1",
+          "Hôm nay"
+        ],
+        "updated_at": 1785314899487,
+        "display_source": "Dữ liệu mô phỏng / Fallback",
+        "context": null,
+        "is_alert": false
+      },
+      {
+        "id": "SAND",
+        "name": "Cát xây dựng",
+        "type": "metal",
+        "region": "vn",
+        "category": "🏗️ Vật liệu",
+        "unit": "Ngàn/m3",
+        "price": "450,05",
+        "change_percent": "+0.09%",
+        "trend": "↑",
+        "history": [
+          448.29,
+          449.34,
+          449.46,
+          451.6,
+          449.65,
+          450.05
+        ],
+        "history_labels": [
+          "T-5",
+          "T-4",
+          "T-3",
+          "T-2",
+          "T-1",
+          "Hôm nay"
+        ],
+        "updated_at": 1785314899487,
+        "display_source": "Dữ liệu mô phỏng / Fallback",
+        "context": null,
+        "is_alert": false
+      },
+      {
+        "id": "IRON_ORE",
+        "name": "Quặng sắt",
+        "type": "metal",
+        "region": "global",
+        "category": "🏗️ Vật liệu",
+        "unit": "USD/tấn",
+        "price": "114,89",
+        "change_percent": "+0.09%",
+        "trend": "↑",
+        "history": [
+          115.32,
+          115.74,
+          115.17,
+          115.27,
+          114.79,
+          114.89
+        ],
+        "history_labels": [
+          "T-5",
+          "T-4",
+          "T-3",
+          "T-2",
+          "T-1",
+          "Hôm nay"
+        ],
+        "updated_at": 1785314899487,
+        "display_source": "Dữ liệu mô phỏng / Fallback",
+        "context": null,
+        "is_alert": false
+      },
+      {
+        "id": "STEEL_HRC",
+        "name": "Thép HRC",
+        "type": "metal",
+        "region": "global",
+        "category": "🏗️ Vật liệu",
+        "unit": "USD/tấn",
+        "price": "547,34",
+        "change_percent": "+0.05%",
+        "trend": "↑",
+        "history": [
+          548.28,
+          545.76,
+          543.73,
+          544.74,
+          547.08,
+          547.34
+        ],
+        "history_labels": [
+          "T-5",
+          "T-4",
+          "T-3",
+          "T-2",
+          "T-1",
+          "Hôm nay"
+        ],
+        "updated_at": 1785314899487,
+        "display_source": "Dữ liệu mô phỏng / Fallback",
+        "context": null,
+        "is_alert": false
+      },
+      {
+        "id": "NICKEL",
+        "name": "Nickel",
+        "type": "metal",
+        "region": "global",
+        "category": "🏗️ Vật liệu",
+        "unit": "USD/tấn",
+        "price": "18.076",
+        "change_percent": "+0.46%",
+        "trend": "↑",
+        "history": [
+          17967,
+          17972,
+          17996,
+          18079,
+          17994,
+          18076
+        ],
+        "history_labels": [
+          "T-5",
+          "T-4",
+          "T-3",
+          "T-2",
+          "T-1",
+          "Hôm nay"
+        ],
+        "updated_at": 1785314899487,
+        "display_source": "Dữ liệu mô phỏng / Fallback",
+        "context": null,
+        "is_alert": false
+      }
+    ]
+  }
+}
