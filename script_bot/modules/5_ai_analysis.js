@@ -29,17 +29,21 @@ Dựa vào nội dung, hãy phân loại tác động của sự kiện vào 1 t
 - business: Ảnh hưởng một ngành nghề, chuỗi cung ứng, doanh nghiệp cụ thể.
 - national: Tác động đến chính trị, kinh tế, xã hội của một quốc gia.
 - global: Ảnh hưởng toàn cầu, đa quốc gia, kinh tế vĩ mô.
-
+[ĐÁNH GIÁ TÍNH CHẤT SỰ KIỆN]
+- severity: Mức độ nghiêm trọng từ 1 đến 5 (1: Nhỏ/Bình thường, 3: Đáng chú ý, 5: Thảm họa/Xung đột lớn/Đảo chính).
+- sentiment: 1 (Tích cực: Hòa bình, tăng trưởng), 0 (Trung lập), -1 (Tiêu cực: Xung đột, đình công, suy thoái).
 LƯU Ý BẮT BUỘC: Trường "event" và "short_summary" PHẢI viết bằng Tiếng Việt chuẩn mực. Nếu văn bản gốc là tiếng nước ngoài, hãy dịch sang tiếng Việt, tuyệt đối không giữ nguyên văn tiếng Anh.
 LỆNH TUYỆT ĐỐI: CHỈ TRẢ VỀ JSON VỚI CÁC TRƯỜNG SAU:
 {
   "event": "Tên sự kiện ngắn gọn",
   "keywords": ["từ khóa 1", "từ khóa 2"],
   "entities": ["thực thể 1", "thực thể 2"],
-  "region": "Khu vực chính",
+  "region": "Khu vực chính (vd: Vietnam, USA, China, Global)",
   "category": ["Danh mục 1", "Danh mục 2"],
   "importance": 85,
   "scope": "personal | business | national | global",
+  "severity": 3,
+  "sentiment": -1,
   "need_deep_analysis": true/false (chỉ true nếu sự kiện có tính chất vĩ mô, phức tạp, tác động lớn),
   "short_summary": "Tóm tắt 30-50 từ"
 }`;
@@ -73,6 +77,8 @@ LỆNH TUYỆT ĐỐI: CHỈ TRẢ VỀ JSON VỚI CÁC TRƯỜNG SAU:
                 entities: gemmaResult.entities || [],
                 keywords: gemmaResult.keywords || [],
                 importance: gemmaResult.importance || cluster.articles[0].importance,
+                severity: gemmaResult.severity || 3,
+                sentiment: gemmaResult.sentiment !== undefined ? gemmaResult.sentiment : -1,
                 scope: gemmaResult.scope || geminiResult.scope || "business"
             };
         } else {
