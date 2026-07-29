@@ -163,18 +163,23 @@ export function renderMarket(marketData, macroHealthData = []) {
     // KHU VỰC 3: XỬ LÝ SỰ KIỆN CLICK (MODAL) VÀ VẼ BIỂU ĐỒ
     // ==========================================
 
-    // Kích hoạt sự kiện bấm vào Thẻ Sức Khỏe Nền Kinh Tế để mở Modal
+   // Kích hoạt sự kiện bấm vào Thẻ Sức Khỏe Nền Kinh Tế
     document.querySelectorAll('.health-card').forEach(card => {
         card.addEventListener('click', () => {
             const title = card.getAttribute('data-title');
             const status = card.getAttribute('data-status');
             const color = card.getAttribute('data-color');
-            const eventsStr = card.getAttribute('data-events');
             
-            let events = [];
-            try { events = JSON.parse(decodeURIComponent(eventsStr)); } catch(err){}
+            const reasonsStr = card.getAttribute('data-reasons');
+            let reasons = [];
+            try { reasons = JSON.parse(decodeURIComponent(reasonsStr)); } catch(err){}
 
-            openMacroHealthModal(title, status, color, events);
+            const target = card.getAttribute('data-target');
+            const impact_level = card.getAttribute('data-impact');
+            const duration = card.getAttribute('data-duration');
+            const meaning = card.getAttribute('data-meaning');
+
+            openMacroHealthModal(title, status, color, reasons, target, impact_level, duration, meaning);
         });
     });
 
