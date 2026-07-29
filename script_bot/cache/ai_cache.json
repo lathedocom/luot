@@ -7815,5 +7815,890 @@
       "sentiment": -1,
       "scope": "national"
     }
+  },
+  "evt_b807ddc5": {
+    "created_at": 1785367046050,
+    "expires_at": 1787959046050,
+    "version": "4.5",
+    "checksum": "7813115b510a4ad3fc466066f136961f",
+    "data": {
+      "cluster_title": "FIFA lên kế hoạch tăng vốn lên 4,2 tỷ USD",
+      "short_summary": "FIFA đang lên kế hoạch tăng vốn lên 4,2 tỷ USD, nhưng kế hoạch này đã nhận được phản ứng tiêu cực từ UEFA và các bên liên quan khác.",
+      "detailed_summary": "FIFA công bố kế hoạch huy động khoản vốn trị giá 4,2 tỷ USD thông qua việc bán cổ phần cho các nhà đầu tư tư nhân. Chủ tịch FIFA, Gianni Infantino, khẳng định đây là cơ hội phát triển thương mại chứ không phải nghĩa vụ bắt buộc. Tuy nhiên, đề xuất này vấp phải sự phản đối gay gắt từ UEFA, tổ chức điều hành bóng đá châu Âu, và tạo ra nhiều tranh cãi trong cộng đồng quản trị bóng đá quốc tế.",
+      "causes": [
+        "Nhu cầu huy động vốn đầu tư quy mô lớn của FIFA lên tới 4,2 tỷ USD",
+        "Sự khác biệt về quan điểm quản trị và thương mại hóa bóng đá giữa FIFA và các liên đoàn khu vực"
+      ],
+      "effects": [
+        "Sự phản đối công khai từ UEFA đối với kế hoạch của FIFA",
+        "Gia tăng tranh cãi về vai trò và sự độc lập của tổ chức quản trị bóng đá toàn cầu"
+      ],
+      "affected_groups": [
+        "FIFA",
+        "UEFA",
+        "Các nhà đầu tư tiềm năng",
+        "Cộng đồng bóng đá quốc tế"
+      ],
+      "market_impact": "Tạo ra tâm lý thận trọng đối với các dòng vốn đầu tư vào các tổ chức quản trị thể thao truyền thống vốn có tính chất phi lợi nhuận.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh cuộc đối đầu giữa xu hướng thương mại hóa bóng đá toàn cầu và quyền tự chủ của các cơ quan quản lý khu vực, đặt ra dấu hỏi về mô hình tài chính tương lai của FIFA.",
+      "unknowns": [
+        "Danh tính cụ thể của các nhà đầu tư đang quan tâm đến dự án",
+        "Điều khoản chi tiết trong hợp đồng bán cổ phần và tác động đến quyền biểu quyết"
+      ],
+      "confidence_note": "Thông tin dựa trên các báo cáo uy tín về hoạt động thương mại của FIFA, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "FIFA tiếp tục đẩy mạnh dự án sau khi điều chỉnh các điều khoản để giảm thiểu phản đối từ UEFA",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Dự án bị trì hoãn hoặc hủy bỏ do áp lực chính trị và sự phản kháng quyết liệt từ các tổ chức thành viên",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "FIFA",
+          "target": "UEFA",
+          "relation_type": "conflict",
+          "label": "Bất đồng quan điểm về kế hoạch thương mại hóa"
+        },
+        {
+          "source": "Gianni Infantino",
+          "target": "FIFA",
+          "relation_type": "cooperation",
+          "label": "Chủ tịch bảo vệ chiến lược kinh doanh của tổ chức"
+        },
+        {
+          "source": "Kế hoạch huy động vốn",
+          "target": "FIFA",
+          "relation_type": "cause_effect",
+          "label": "Tạo ra rủi ro về hình ảnh cho tổ chức"
+        }
+      ],
+      "entities": [
+        "FIFA",
+        "UEFA",
+        "Vanessa Perdomo",
+        "Dani Burger",
+        "Scarlet Fu",
+        "Gianni Infantino"
+      ],
+      "keywords": [
+        "FIFA",
+        "vanessa perdomo",
+        "bloomberg deals",
+        "đấu thầu",
+        "đầu tư"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_c3f7389f": {
+    "created_at": 1785367057879,
+    "expires_at": 1787959057879,
+    "version": "4.5",
+    "checksum": "4af2726b43d5731e25bbb42b11deb896",
+    "data": {
+      "cluster_title": "Nhiệt độ dầu mỏ ổn định",
+      "short_summary": "Dầu mỏ đã ổn định sau mức tăng lớn nhất trong hai tuần qua, sau khi Tổng thống Donald Trump cam kết tấn công mới ở Iran và dự trữ của Mỹ giảm.",
+      "detailed_summary": "Thị trường dầu mỏ ghi nhận sự ổn định sau khi trải qua phiên tăng giá mạnh nhất trong hơn hai tuần. Động lực thúc đẩy sự biến động này đến từ tuyên bố của Tổng thống Donald Trump về khả năng thực hiện các cuộc tấn công mới nhắm vào Iran, kết hợp với thông tin về lượng dự trữ dầu thô tại Mỹ đang giảm xuống.",
+      "causes": [
+        "Tổng thống Donald Trump đe dọa các cuộc tấn công quân sự mới vào Iran",
+        "Dự trữ dầu thô tại Mỹ sụt giảm"
+      ],
+      "effects": [
+        "Giá dầu trên thị trường thế giới biến động mạnh",
+        "Tâm lý thận trọng của nhà đầu tư trước rủi ro địa chính trị"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư thị trường năng lượng",
+        "Các quốc gia xuất khẩu dầu mỏ",
+        "Các doanh nghiệp vận tải và sản xuất phụ thuộc vào năng lượng"
+      ],
+      "market_impact": "Thị trường phản ứng nhạy bén với thông tin địa chính trị và dữ liệu tồn kho, gây ra sự giằng co về giá.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh mức độ nhạy cảm cao của giá dầu đối với các xung đột chính trị tại khu vực Trung Đông và dữ liệu nguồn cung từ Mỹ.",
+      "unknowns": [
+        "Quy mô và thời điểm cụ thể của các cuộc tấn công tiềm tàng vào Iran",
+        "Mức độ sụt giảm dự trữ dầu cụ thể tại Mỹ trong các báo cáo tiếp theo"
+      ],
+      "confidence_note": "Thông tin dựa trên diễn biến thị trường và tuyên bố trực tiếp từ người đứng đầu quốc gia, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Giá dầu tiếp tục duy trì đà tăng nếu căng thẳng Mỹ - Iran leo thang thành xung đột thực tế.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Giá dầu hạ nhiệt nếu các đe dọa quân sự chỉ mang tính chất răn đe chính trị và không có hành động thực thi.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Donald Trump",
+          "target": "Iran",
+          "relation_type": "conflict",
+          "label": "Đe dọa thực hiện tấn công quân sự"
+        },
+        {
+          "source": "Dự trữ dầu tại Mỹ",
+          "target": "Giá dầu",
+          "relation_type": "cause_effect",
+          "label": "Tác động ngược chiều đến giá dầu"
+        }
+      ],
+      "entities": [
+        "Donald Trump",
+        "Iran",
+        "Mỹ"
+      ],
+      "keywords": [
+        "dầu mỏ",
+        "Iran",
+        "Trung Quốc"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_f57ae035": {
+    "created_at": 1785367069673,
+    "expires_at": 1787959069673,
+    "version": "4.5",
+    "checksum": "fd9e8d2bf5697cf256c028d34bdcce6e",
+    "data": {
+      "cluster_title": "Halted Warner Bros. Deal",
+      "short_summary": "Một tòa án liên bang đã tạm dừng thỏa thuận mua lại Warner Bros. Discovery của Paramount Skydance vì lo ngại vi phạm luật cạnh tranh.",
+      "detailed_summary": "Thương vụ sáp nhập trị giá 110 tỷ USD giữa Paramount và Skydance với Warner Bros. Discovery đã bị một thẩm phán liên bang tạm đình chỉ. Phán quyết này dựa trên nhận định rằng thỏa thuận có khả năng vi phạm các quy định về luật chống độc quyền, mặc dù Paramount vẫn bày tỏ sự tự tin về khả năng hoàn tất giao dịch.",
+      "causes": [
+        "Sự can thiệp của tòa án liên bang về các quy định cạnh tranh",
+        "Lo ngại về vi phạm luật chống độc quyền trong giao dịch sáp nhập quy mô lớn"
+      ],
+      "effects": [
+        "Quy trình sáp nhập bị gián đoạn",
+        "Gia tăng áp lực pháp lý đối với các bên tham gia thương vụ"
+      ],
+      "affected_groups": [
+        "Cổ đông của Paramount",
+        "Cổ đông của Warner Bros. Discovery",
+        "Skydance"
+      ],
+      "market_impact": "Gây ra tâm lý lo ngại về tính khả thi của thương vụ, dẫn đến khả năng biến động cổ phiếu của các doanh nghiệp liên quan.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh sự giám sát khắt khe của cơ quan quản lý đối với các vụ sáp nhập quy mô lớn trong ngành truyền thông và giải trí.",
+      "unknowns": [
+        "Thời gian cụ thể vụ việc bị tạm dừng",
+        "Khả năng các bên điều chỉnh cấu trúc thương vụ để đáp ứng yêu cầu pháp lý"
+      ],
+      "confidence_note": "Thông tin dựa trên báo cáo từ Bloomberg, độ tin cậy cao về diễn biến pháp lý hiện tại.",
+      "scenarios": [
+        {
+          "text": "Các bên đàm phán lại các điều khoản để giảm bớt lo ngại về độc quyền",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Thương vụ bị hủy bỏ vĩnh viễn do phán quyết tòa án",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Thẩm phán liên bang",
+          "target": "Thương vụ Paramount-Skydance-Warner Bros.",
+          "relation_type": "conflict",
+          "label": "Tạm dừng thương vụ vì nghi vấn chống độc quyền"
+        },
+        {
+          "source": "Paramount",
+          "target": "Warner Bros. Discovery",
+          "relation_type": "cooperation",
+          "label": "Các bên đối tác trong thương vụ sáp nhập"
+        }
+      ],
+      "entities": [
+        "Warner Bros.",
+        "Paramount",
+        "Skydance",
+        "Bloomberg"
+      ],
+      "keywords": [
+        "Warner Bros.",
+        "Paramount",
+        "Skydance",
+        "Bloomberg"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_8064202e": {
+    "created_at": 1785367081335,
+    "expires_at": 1787959081335,
+    "version": "4.5",
+    "checksum": "fcdcc54f2405d75a20d5e44e85c5dbbf",
+    "data": {
+      "cluster_title": "Báo động từ thị trường trái phiếu",
+      "short_summary": "Thị trường trái phiếu cảnh báo rằng lời nói mạnh mẽ của Chủ tịch Federal Reserve không đủ để kiểm soát lạm phát.",
+      "detailed_summary": "Thị trường trái phiếu đang phản ứng tiêu cực trước những tuyên bố của Chủ tịch Kevin Warsh về việc kiểm soát lạm phát. Sự sụt giảm trên thị trường trái phiếu cho thấy giới đầu tư không tin tưởng vào tính cấp bách trong hành động thực tế của ông Warsh, cho rằng những lời lẽ cứng rắn hiện nay chưa đủ để thuyết phục thị trường về một chính sách thắt chặt tiền tệ mạnh mẽ.",
+      "causes": [
+        "Sự chênh lệch giữa lời nói cứng rắn về chính sách và hành động thực tế của Cục Dự trữ Liên bang",
+        "Phản ứng tiêu cực từ thị trường trái phiếu đối với các tuyên bố chính sách hiện tại"
+      ],
+      "effects": [
+        "Gia tăng áp lực hoài nghi từ phía nhà đầu tư lên uy tín của Chủ tịch Cục Dự trữ Liên bang",
+        "Gây bất ổn cho kỳ vọng về lãi suất trên thị trường tài chính"
+      ],
+      "affected_groups": [
+        "Các nhà đầu tư trái phiếu",
+        "Cục Dự trữ Liên bang",
+        "Giới phân tích tài chính"
+      ],
+      "market_impact": "Thị trường trái phiếu biến động tiêu cực do mất niềm tin vào lộ trình chính sách của ngân hàng trung ương.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh khoảng cách lớn giữa diễn ngôn chính sách và niềm tin của thị trường, gây rủi ro cho tính hiệu quả của các biện pháp điều hành tiền tệ sắp tới.",
+      "unknowns": [
+        "Kế hoạch hành động thực tế của ông Warsh trong tương lai",
+        "Phản ứng cụ thể của Cục Dự trữ Liên bang trước tín hiệu từ thị trường trái phiếu"
+      ],
+      "confidence_note": "Thông tin dựa trên phản ứng thị trường hiện tại, độ tin cậy cao về mặt ghi nhận diễn biến.",
+      "scenarios": [
+        {
+          "text": "Ông Warsh thực hiện các bước đi quyết liệt hơn để lấy lại niềm tin của thị trường.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Thị trường tiếp tục bán tháo trái phiếu do lo ngại về sự thiếu quyết đoán của Cục Dự trữ Liên bang.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Thị trường trái phiếu",
+          "target": "Kevin Warsh",
+          "relation_type": "conflict",
+          "label": "Gây áp lực thông qua việc thể hiện sự hoài nghi"
+        },
+        {
+          "source": "Kevin Warsh",
+          "target": "Cục Dự trữ Liên bang",
+          "relation_type": "cause_effect",
+          "label": "Lời nói của lãnh đạo ảnh hưởng đến uy tín tổ chức"
+        }
+      ],
+      "entities": [
+        "Federal Reserve",
+        "Kevin Warsh"
+      ],
+      "keywords": [
+        "thị trường trái phiếu",
+        "Federal Reserve",
+        "inflation"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_68c76672": {
+    "created_at": 1785367093324,
+    "expires_at": 1787959093324,
+    "version": "4.5",
+    "checksum": "893d0bd863bc41d60eed54969f747ce3",
+    "data": {
+      "cluster_title": "Sự kiện thị trường châu Á",
+      "short_summary": "Thị trường châu Á dự kiến giảm do lo ngại về chi tiêu trí tuệ nhân tạo và không chắc chắn về chính sách của Federal Reserve.",
+      "detailed_summary": "Các chỉ số chứng khoán tại châu Á đang đối mặt với áp lực giảm sau khi các thị trường tại Mỹ suy yếu. Nguyên nhân chính bao gồm tâm lý thận trọng của nhà đầu tư trước các lo ngại về chi phí đầu tư cho trí tuệ nhân tạo cùng với sự bất định trong lộ trình lãi suất của Cục Dự trữ Liên bang Mỹ, đã đẩy lợi suất trái phiếu chính phủ dài hạn lên mức cao nhất trong gần hai thập kỷ qua.",
+      "causes": [
+        "Sự không chắc chắn về lộ trình chính sách lãi suất của Cục Dự trữ Liên bang Mỹ (Fed)",
+        "Lo ngại của nhà đầu tư về hiệu quả chi tiêu trong lĩnh vực trí tuệ nhân tạo",
+        "Lợi suất trái phiếu chính phủ dài hạn tăng vọt lên mức cao nhất trong 20 năm"
+      ],
+      "effects": [
+        "Chứng khoán châu Á có xu hướng giảm điểm theo thị trường Mỹ",
+        "Áp lực bán tháo gia tăng trên các sàn giao dịch chứng khoán khu vực châu Á",
+        "Chi phí vay vốn trở nên đắt đỏ hơn do lợi suất trái phiếu tăng"
+      ],
+      "affected_groups": [
+        "Các nhà đầu tư chứng khoán tại thị trường châu Á",
+        "Các doanh nghiệp công nghệ có vốn đầu tư lớn vào trí tuệ nhân tạo",
+        "Các tổ chức tài chính nắm giữ trái phiếu chính phủ"
+      ],
+      "market_impact": "Thị trường dự báo sẽ trải qua đợt sụt giảm ngắn hạn và tâm lý nhà đầu tư chuyển sang trạng thái e ngại rủi ro.",
+      "follow_up": "",
+      "significance": "Sự kiện này phản ánh sự nhạy cảm của thị trường tài chính toàn cầu trước các thông điệp về lãi suất của Mỹ và sự điều chỉnh kỳ vọng đối với bong bóng công nghệ trí tuệ nhân tạo.",
+      "unknowns": [
+        "Thời điểm chính xác Fed sẽ bắt đầu chu kỳ thay đổi lãi suất",
+        "Mức độ ảnh hưởng thực tế của chi tiêu AI đối với lợi nhuận doanh nghiệp trong dài hạn"
+      ],
+      "confidence_note": "Thông tin dựa trên diễn biến thị trường thực tế và báo cáo tài chính uy tín, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Thị trường chứng khoán châu Á tiếp tục điều chỉnh giảm trong ngắn hạn khi nhà đầu tư chờ đợi tín hiệu rõ ràng hơn từ Fed.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Sự phục hồi nhẹ của cổ phiếu công nghệ nếu có báo cáo tích cực về doanh thu từ AI trong quý tới.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Cục Dự trữ Liên bang Mỹ (Fed)",
+          "target": "Lợi suất trái phiếu chính phủ",
+          "relation_type": "cause_effect",
+          "label": "Chính sách lãi suất gây áp lực lên lợi suất trái phiếu"
+        },
+        {
+          "source": "Chi tiêu trí tuệ nhân tạo",
+          "target": "Chứng khoán châu Á",
+          "relation_type": "cause_effect",
+          "label": "Lo ngại về hiệu quả chi phí ảnh hưởng tiêu cực đến giá cổ phiếu"
+        },
+        {
+          "source": "Thị trường chứng khoán Mỹ",
+          "target": "Chứng khoán châu Á",
+          "relation_type": "cause_effect",
+          "label": "Ảnh hưởng tâm lý dẫn đến xu hướng giảm đồng bộ"
+        }
+      ],
+      "entities": [
+        "thị trường châu Á",
+        "Federal Reserve"
+      ],
+      "keywords": [
+        "thị trường châu Á",
+        "federal reserve",
+        "tỷ lệ lãi suất"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_ce0337a3": {
+    "created_at": 1785367105148,
+    "expires_at": 1787959105148,
+    "version": "4.5",
+    "checksum": "65671a694ef735680c8dc455114e9e7a",
+    "data": {
+      "cluster_title": "Sự Sụt Giảm Trên Thị Trường",
+      "short_summary": "Thị trường chứng khoán đã sụt giảm mạnh sau khi lãi suất 30 năm tăng vọt sau cuộc họp của Fed.",
+      "detailed_summary": "Trong phiên giao dịch ngày 29/7/2026, thị trường chứng khoán ghi nhận đà giảm điểm. Nguyên nhân trực tiếp được chỉ ra là sự gia tăng đột biến của lợi suất trái phiếu chính phủ Mỹ kỳ hạn 30 năm ngay sau các quyết định hoặc phát biểu từ Fed. Chương trình phân tích của Bloomberg đã mời các chuyên gia từ DoubleLine Capital để đánh giá các biến động này trước và sau giờ đóng cửa giao dịch.",
+      "causes": [
+        "Lợi suất trái phiếu chính phủ Mỹ kỳ hạn 30 năm tăng vọt",
+        "Các động thái chính sách hoặc tuyên bố từ Cục Dự trữ Liên bang Mỹ (Fed)"
+      ],
+      "effects": [
+        "Thị trường chứng khoán giảm điểm",
+        "Gia tăng tâm lý lo ngại và cần sự phân tích chuyên sâu về xu hướng lãi suất"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư chứng khoán",
+        "Các quỹ quản lý danh mục đầu tư",
+        "Thị trường tài chính toàn cầu"
+      ],
+      "market_impact": "Tạo áp lực bán tháo trên thị trường chứng khoán do dòng tiền dịch chuyển sang các tài sản có lợi suất cao hơn.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh phản ứng nhạy cảm của nhà đầu tư đối với chính sách tiền tệ và tác động của nó đến chi phí vay vốn dài hạn.",
+      "unknowns": [
+        "Nội dung cụ thể trong các tuyên bố hoặc chính sách mới nhất của Fed chưa được làm rõ",
+        "Dư địa tăng thêm của lợi suất trái phiếu trong các phiên giao dịch tiếp theo"
+      ],
+      "confidence_note": "Thông tin dựa trên bản tin tài chính trực tiếp, có độ tin cậy cao về diễn biến thị trường.",
+      "scenarios": [
+        {
+          "text": "Thị trường chứng khoán tiếp tục biến động tiêu cực nếu lợi suất trái phiếu duy trì ở mức cao.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Thị trường ổn định trở lại sau khi nhà đầu tư hấp thụ thông tin từ chính sách của Fed.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Fed",
+          "target": "Lợi suất trái phiếu 30 năm",
+          "relation_type": "cause_effect",
+          "label": "Động thái chính sách làm thay đổi lợi suất"
+        },
+        {
+          "source": "Lợi suất trái phiếu 30 năm",
+          "target": "Thị trường chứng khoán",
+          "relation_type": "cause_effect",
+          "label": "Tăng lợi suất dẫn đến giảm giá cổ phiếu"
+        },
+        {
+          "source": "Ken Shinoda",
+          "target": "DoubleLine Capital",
+          "relation_type": "cooperation",
+          "label": "Nhân sự quản lý danh mục đầu tư"
+        },
+        {
+          "source": "Bloomberg Television",
+          "target": "Ken Shinoda",
+          "relation_type": "cooperation",
+          "label": "Khách mời phân tích thị trường"
+        }
+      ],
+      "entities": [
+        "Fed",
+        "Bloomberg Television",
+        "Ken Shinoda",
+        "DoubleLine Capital",
+        "Alexandra Wilson-Elizondo"
+      ],
+      "keywords": [
+        "thị trường chứng khoán",
+        "sự kiện kinh tế"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_72617ae8": {
+    "created_at": 1785367111341,
+    "expires_at": 1787959111341,
+    "version": "4.5",
+    "checksum": "815ee10f2536b28c4a0f6bdd91fd050d",
+    "data": {
+      "cluster_title": "Mark Clouse rời Campbell's để lãnh đạo Washington Commanders",
+      "short_summary": "Giám đốc điều hành Mark Clouse rời Campbell's để lãnh đạo Washington Commanders",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "follow_up": "",
+      "entities": [
+        "Mark Clouse",
+        "Washington Commanders",
+        "Campbell's"
+      ],
+      "keywords": [
+        "Mark Clouse",
+        "Washington Commanders",
+        "Campbell's"
+      ],
+      "importance": 85,
+      "scope": "business"
+    }
+  },
+  "evt_general_1785367117027": {
+    "created_at": 1785367123149,
+    "expires_at": 1787959123149,
+    "version": "4.5",
+    "checksum": "607de743cf0344006ef44f20e10de26e",
+    "data": {
+      "cluster_title": "Câu hỏi về sự tin tưởng của thị trường dự đoán bầu cử",
+      "short_summary": "Một cuộc điều tra của Bloomberg đã tìm thấy bằng chứng cho thấy thị trường dự đoán bầu cử có thể không đáng tin cậy.",
+      "detailed_summary": "Các thị trường dự báo bầu cử vốn được coi là 'cỗ máy sự thật' nhờ việc sử dụng tiền thật để đo lường dự đoán của đám đông. Tuy nhiên, một cuộc điều tra mới từ Bloomberg đã phát hiện bằng chứng cho thấy các thị trường này tồn tại lỗ hổng, gây nghi ngại về độ tin cậy của các dự báo bầu cử hiện nay.",
+      "causes": [
+        "Sự tồn tại của các lỗ hổng kỹ thuật hoặc hệ thống trong vận hành thị trường dự báo",
+        "Việc sử dụng các mô hình dự báo dựa trên hành vi đầu cơ của đám đông thay vì dữ liệu khoa học thuần túy"
+      ],
+      "effects": [
+        "Làm xói mòn niềm tin của công chúng vào tính khách quan của các thị trường dự báo",
+        "Gia tăng sự thận trọng đối với việc sử dụng dữ liệu thị trường dự báo làm chỉ số tham chiếu chính trị"
+      ],
+      "affected_groups": [
+        "Các nhà đầu tư trên thị trường dự báo",
+        "Các đơn vị truyền thông và tổ chức phân tích chính trị",
+        "Công chúng quan tâm đến dự báo bầu cử"
+      ],
+      "market_impact": "Có thể dẫn đến sự sụt giảm niềm tin và yêu cầu khắt khe hơn về cơ chế quản lý, giám sát đối với các nền tảng dự báo bầu cử.",
+      "follow_up": "",
+      "significance": "Sự kiện này đặt ra dấu hỏi lớn về tính minh bạch và độ tin cậy của các công cụ dự báo dựa trên thị trường trong kỷ nguyên thông tin.",
+      "unknowns": [
+        "Quy mô và mức độ ảnh hưởng thực tế của các lỗ hổng đã được phát hiện",
+        "Cách thức cụ thể mà các cá nhân hoặc tổ chức có thể lợi dụng những lỗ hổng này"
+      ],
+      "confidence_note": "Thông tin dựa trên một cuộc điều tra thực tế, độ tin cậy ở mức trung bình đến cao chờ công bố chi tiết.",
+      "scenarios": [
+        {
+          "text": "Các nền tảng dự báo tăng cường quy trình kiểm soát để củng cố niềm tin của người dùng.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các cơ quan quản lý vào cuộc điều tra quy mô lớn dẫn đến sự thay đổi khung pháp lý cho thị trường dự báo.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Bloomberg",
+          "target": "Thị trường dự báo bầu cử",
+          "relation_type": "cause_effect",
+          "label": "Điều tra và công bố lỗ hổng hệ thống"
+        }
+      ],
+      "entities": [
+        "Bloomberg",
+        "thị trường dự đoán bầu cử"
+      ],
+      "keywords": [
+        "thị trường dự đoán bầu cử",
+        "sự tin tưởng"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_ea97f5c8": {
+    "created_at": 1785367135027,
+    "expires_at": 1787959135027,
+    "version": "4.5",
+    "checksum": "89b94446a4c2505c8bb17a132833e6de",
+    "data": {
+      "cluster_title": "Nvidia đẩy mạnh đầu tư AI",
+      "short_summary": "Nvidia đang đẩy mạnh đầu tư vào lĩnh vực trí tuệ nhân tạo (AI) với số tiền hơn 750 tỷ USD, gây lo ngại về sự gia tăng không thực tế trong đầu tư.",
+      "detailed_summary": "Ông Mike Dorrell, Chủ tịch kiêm CEO của Stonepeak, đã phát biểu trên chương trình Bloomberg Deals để trấn an về tính minh bạch của 'Circle Financing'. Song song đó, tập đoàn Nvidia đang thực hiện các thương vụ mới trong lĩnh vực trí tuệ nhân tạo với tổng trị giá vượt mức 750 tỷ USD, một hành động đang gây tranh cãi về việc liệu nó có đang làm thổi phồng giá trị thị trường một cách phi thực tế hay không.",
+      "causes": [
+        "Nhu cầu mở rộng hệ sinh thái trí tuệ nhân tạo của Nvidia",
+        "Sự quan tâm của nhà đầu tư đối với cấu trúc tài chính và tính minh bạch của các thỏa thuận kinh doanh"
+      ],
+      "effects": [
+        "Gia tăng sự chú ý của dư luận vào chiến lược đầu tư của Nvidia",
+        "Áp lực từ giới hoài nghi về nguy cơ bong bóng tài chính trong ngành AI"
+      ],
+      "affected_groups": [
+        "Các nhà đầu tư trong ngành công nghệ",
+        "Cổ đông của Nvidia và Stonepeak",
+        "Các chuyên gia phân tích tài chính"
+      ],
+      "market_impact": "Các khoản đầu tư quy mô lớn của Nvidia có thể thúc đẩy đà tăng trưởng của lĩnh vực AI nhưng cũng làm dấy lên lo ngại về sự bền vững của định giá thị trường.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh cuộc đối đầu giữa chiến lược tăng trưởng thần tốc của các ông lớn công nghệ và nỗi lo ngại về rủi ro tài chính tiềm ẩn trong cơn sốt AI toàn cầu.",
+      "unknowns": [
+        "Chi tiết cụ thể và lộ trình của các thỏa thuận AI mới từ Nvidia",
+        "Phản ứng thực tế của thị trường tài chính trước những cảnh báo về sự thổi phồng giá trị"
+      ],
+      "confidence_note": "Thông tin dựa trên bản tin từ Bloomberg, có độ tin cậy cao về các phát biểu chính thức và xu hướng thị trường hiện tại.",
+      "scenarios": [
+        {
+          "text": "Nvidia tiếp tục giải ngân đầu tư, củng cố vị thế dẫn đầu nhưng vấp phải sự giám sát chặt chẽ hơn từ các cơ quan quản lý và nhà đầu tư.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Áp lực từ phía những người hoài nghi khiến Nvidia phải điều chỉnh chiến lược đầu tư để tránh các rủi ro về định giá.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Nvidia",
+          "target": "Trí tuệ nhân tạo",
+          "relation_type": "cause_effect",
+          "label": "Đầu tư vốn quy mô lớn để thúc đẩy công nghệ"
+        },
+        {
+          "source": "Mike Dorrell",
+          "target": "Stonepeak",
+          "relation_type": "cooperation",
+          "label": "Đại diện lãnh đạo điều hành"
+        },
+        {
+          "source": "Sự hoài nghi của thị trường",
+          "target": "Nvidia",
+          "relation_type": "conflict",
+          "label": "Cảnh báo về nguy cơ thổi phồng giá trị"
+        }
+      ],
+      "entities": [
+        "Nvidia",
+        "Mike Dorrell",
+        "Stonepeak"
+      ],
+      "keywords": [
+        "Nvidia",
+        "AI",
+        "đầu tư"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_019db250": {
+    "created_at": 1785367141218,
+    "expires_at": 1787959141218,
+    "version": "4.5",
+    "checksum": "c8b269dc294e0df21f54ce26864a2324",
+    "data": {
+      "cluster_title": "Ford Cải Tiến Dự Đoán Do Yêu Cầu SUV Cao",
+      "short_summary": "Ford đã cải tiến dự đoán lợi nhuận do nhu cầu SUV cao",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "follow_up": "",
+      "entities": [
+        "Ford",
+        "Bloomberg"
+      ],
+      "keywords": [
+        "Ford",
+        "SUV",
+        "Bloomberg"
+      ],
+      "importance": 85,
+      "scope": "global"
+    }
+  },
+  "evt_1f9f6dd8": {
+    "created_at": 1785367147890,
+    "expires_at": 1787959147890,
+    "version": "4.5",
+    "checksum": "12819e28ec2660f279c38c68a1e69e82",
+    "data": {
+      "cluster_title": "Báo cáo của Ủy ban Đầu tư: Thương hiệu và thói quen chi tiêu",
+      "short_summary": "Báo cáo của Ủy ban Đầu tư về thương hiệu và thói quen chi tiêu của người tiêu dùng.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "follow_up": "",
+      "entities": [
+        "Enna Weng",
+        "Eva Davis",
+        "Tricia Glynn",
+        "Dani Burger"
+      ],
+      "keywords": [
+        "Bloomberg Deals",
+        "China Renaissance Global Markets",
+        "Winston Taylor",
+        "Advent International"
+      ],
+      "importance": 85,
+      "scope": "global"
+    }
+  },
+  "evt_general_1785367153553": {
+    "created_at": 1785367159465,
+    "expires_at": 1787959159465,
+    "version": "4.5",
+    "checksum": "92e97a0bd97d706d8552fa3a9b4c7352",
+    "data": {
+      "cluster_title": "Sụt giảm cổ phiếu Meta",
+      "short_summary": "Cổ phiếu Meta sụt giảm 10% do Mark Zuckerberg cố gắng bán chiến lược AI của mình.",
+      "detailed_summary": "Giá cổ phiếu của Meta đã sụt giảm 10% trong bối cảnh nhà đầu tư phản ứng tiêu cực với kế hoạch chi tiêu lớn cho các đại lý trí tuệ nhân tạo. Mark Zuckerberg đã nỗ lực bảo vệ chiến lược phát triển các bot cá nhân hóa, tuy nhiên các dự báo về doanh thu gây thất vọng và chi phí vận hành tăng cao đã gây áp lực lớn lên thị trường.",
+      "causes": [
+        "Chi phí đầu tư cho trí tuệ nhân tạo tăng cao",
+        "Dự báo doanh thu không đạt kỳ vọng của nhà đầu tư"
+      ],
+      "effects": [
+        "Giá trị cổ phiếu Meta giảm 10%",
+        "Sự hoài nghi từ thị trường về hiệu quả kinh tế của mô hình AI"
+      ],
+      "affected_groups": [
+        "Cổ đông và nhà đầu tư của Meta",
+        "Ban lãnh đạo công ty Meta",
+        "Người dùng các dịch vụ của Meta"
+      ],
+      "market_impact": "Phản ứng bán tháo trên thị trường chứng khoán đối với cổ phiếu Meta, gây ra tâm lý lo ngại về hiệu quả lợi nhuận trong đầu tư công nghệ AI.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh sự xung đột giữa tầm nhìn dài hạn của ban lãnh đạo về tương lai AI và áp lực lợi nhuận ngắn hạn từ phía nhà đầu tư.",
+      "unknowns": [
+        "Khung thời gian cụ thể để các đại lý AI mang lại doanh thu thực tế",
+        "Mức độ chấp nhận của người dùng đối với các bot cá nhân hóa của Meta"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên biến động thực tế của thị trường chứng khoán.",
+      "scenarios": [
+        {
+          "text": "Meta tiếp tục đẩy mạnh đầu tư AI bất chấp sự phản đối ngắn hạn của cổ đông.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Meta điều chỉnh lại kế hoạch chi tiêu nếu giá cổ phiếu tiếp tục sụt giảm kéo dài.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Chi phí đầu tư AI",
+          "target": "Cổ phiếu Meta",
+          "relation_type": "cause_effect",
+          "label": "Nguyên nhân dẫn đến sự sụt giảm giá cổ phiếu"
+        },
+        {
+          "source": "Mark Zuckerberg",
+          "target": "Chiến lược AI",
+          "relation_type": "cooperation",
+          "label": "Người thúc đẩy và bảo vệ chiến lược"
+        }
+      ],
+      "entities": [
+        "Meta",
+        "Mark Zuckerberg"
+      ],
+      "keywords": [
+        "Meta",
+        "Zuckerberg",
+        "AI",
+        "bot"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_general_1785367165189": {
+    "created_at": 1785367170751,
+    "expires_at": 1787959170751,
+    "version": "4.5",
+    "checksum": "bc5c724d3fdf44e6e7e54b06ee3b0d09",
+    "data": {
+      "cluster_title": "Giảm doanh số và lợi nhuận của Qualcomm",
+      "short_summary": "Qualcomm báo cáo doanh số và lợi nhuận giảm do chi phí tăng cao trong thị trường điện thoại thông minh.",
+      "detailed_summary": "Tập đoàn công nghệ Qualcomm vừa công bố kết quả tài chính với lợi nhuận ròng giảm 25%. Nguyên nhân chính được chỉ ra là do giá linh kiện bộ nhớ tăng cao gây áp lực lên chi phí sản xuất thiết bị, cùng với sự sụt giảm doanh số trong thị trường điện thoại thông minh toàn cầu.",
+      "causes": [
+        "Giá linh kiện bộ nhớ tăng cao",
+        "Sự suy giảm của thị trường điện thoại thông minh"
+      ],
+      "effects": [
+        "Lợi nhuận ròng của Qualcomm giảm 25%",
+        "Doanh thu và lợi nhuận tổng thể của công ty bị thu hẹp"
+      ],
+      "affected_groups": [
+        "Cổ đông của Qualcomm",
+        "Các nhà sản xuất thiết bị di động",
+        "Người tiêu dùng trong ngành hàng điện tử"
+      ],
+      "market_impact": "Gây áp lực tiêu cực lên giá cổ phiếu công nghệ và phản ánh tình trạng trì trệ của chuỗi cung ứng linh kiện di động.",
+      "follow_up": "",
+      "significance": "Sự kiện này nhấn mạnh sự phụ thuộc của các tập đoàn công nghệ vào chi phí nguyên liệu đầu vào và tính nhạy cảm của lợi nhuận trước sự biến động của thị trường di động.",
+      "unknowns": [
+        "Thời điểm giá linh kiện bộ nhớ sẽ bình ổn trở lại",
+        "Chiến lược cụ thể của Qualcomm để bù đắp sự sụt giảm doanh thu"
+      ],
+      "confidence_note": "Thông tin dựa trên báo cáo tài chính của doanh nghiệp, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Qualcomm cắt giảm chi phí vận hành để cải thiện biên lợi nhuận trong quý tới.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Thị trường điện thoại thông minh phục hồi, giúp doanh thu của Qualcomm tăng trở lại.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Giá linh kiện bộ nhớ tăng cao",
+          "target": "Qualcomm",
+          "relation_type": "cause_effect",
+          "label": "Gây sụt giảm lợi nhuận cho doanh nghiệp"
+        },
+        {
+          "source": "Thị trường điện thoại thông minh",
+          "target": "Qualcomm",
+          "relation_type": "cause_effect",
+          "label": "Tình trạng thị trường gây giảm doanh số"
+        }
+      ],
+      "entities": [
+        "Qualcomm",
+        "chi phí"
+      ],
+      "keywords": [
+        "Qualcomm",
+        "doanh số",
+        "lợi nhuận",
+        "chi phí"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_general_1785367176426": {
+    "created_at": 1785367182267,
+    "expires_at": 1787959182267,
+    "version": "4.5",
+    "checksum": "bf92186f80fd9af9e0f7697e4716c147",
+    "data": {
+      "cluster_title": "Fauci từ chối trả lời câu hỏi tại phiên họp thượng viện về Covid-19",
+      "short_summary": "Fauci từ chối trả lời câu hỏi tại phiên họp thượng viện về Covid-19, gây tranh cãi giữa các nhà lập pháp",
+      "detailed_summary": "Trong một phiên điều trần căng thẳng tại Thượng viện về Covid-19, ông Anthony Fauci đã viện dẫn Tu chính án thứ năm để từ chối trả lời một số câu hỏi. Các nghị sĩ Đảng Cộng hòa phản ứng dữ dội và đe dọa sẽ buộc tội ông vì thái độ không hợp tác trong quá trình điều tra.",
+      "causes": [
+        "Sự khác biệt về quan điểm và trách nhiệm liên quan đến nguồn gốc cũng như cách xử lý đại dịch Covid-19",
+        "Sự đối đầu chính trị giữa các nhà lập pháp Đảng Cộng hòa và cựu quan chức y tế chính phủ"
+      ],
+      "effects": [
+        "Gia tăng căng thẳng chính trị trong các phiên điều trần của Quốc hội",
+        "Nguy cơ phát sinh các quy trình pháp lý liên quan đến cáo buộc coi thường cơ quan lập pháp"
+      ],
+      "affected_groups": [
+        "Chính phủ Hoa Kỳ",
+        "Cộng đồng khoa học và y tế công cộng",
+        "Dư luận xã hội về chính sách y tế"
+      ],
+      "market_impact": "Không có tác động trực tiếp đến thị trường tài chính, nhưng có thể ảnh hưởng đến uy tín của các cơ quan y tế công cộng.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh sự phân cực chính trị sâu sắc tại Mỹ xung quanh việc quản lý đại dịch và trách nhiệm giải trình của các quan chức khoa học.",
+      "unknowns": [
+        "Quyết định cuối cùng của các nghị sĩ về việc khởi kiện tội coi thường cơ quan lập pháp",
+        "Phạm vi các câu hỏi mà ông Fauci đã từ chối trả lời"
+      ],
+      "confidence_note": "Thông tin dựa trên bản tin gốc, cần kiểm chứng thêm các phản hồi chính thức từ cả hai phía.",
+      "scenarios": [
+        {
+          "text": "Đảng Cộng hòa thúc đẩy các thủ tục pháp lý để ép buộc ông Fauci trả lời đầy đủ.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Vụ việc hạ nhiệt do các rào cản pháp lý khi áp dụng Tu chính án thứ năm đối với một quan chức khoa học.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Nghị sĩ Đảng Cộng hòa",
+          "target": "Anthony Fauci",
+          "relation_type": "conflict",
+          "label": "Xung đột trong quá trình điều trần và trách nhiệm giải trình"
+        },
+        {
+          "source": "Sự việc tại Thượng viện",
+          "target": "Anthony Fauci",
+          "relation_type": "cause_effect",
+          "label": "Phiên điều trần dẫn đến việc viện dẫn Tu chính án thứ năm"
+        }
+      ],
+      "entities": [
+        "Anthony Fauci",
+        "Covid-19"
+      ],
+      "keywords": [
+        "Fauci",
+        "Covid-19",
+        "thượng viện"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
   }
 }
