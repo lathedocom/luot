@@ -30,7 +30,7 @@ export async function fetchNewsData() {
         }
 
         renderBriefing(data.daily_briefing);
-        renderMarket(data.market_data || []);
+        renderMarket(data.market_data || [], data.macro_health || []);
         renderSocial(data.social_trends || data.social || []);
         
         if (data.risk_map) {
