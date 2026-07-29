@@ -27,23 +27,31 @@ function initMap(mapContainer) {
 
     const regionValues = {};
     
-    // [MỚI] Hàm lấy màu sắc theo điểm số layer (Situation Index)
-    const getColorByScore = (score) => {
+    // [MỚI] Hàm lấy text trạng thái để map hiểu
+    const getStatusByScore = (score) => {
         const volatility = Math.abs(score);
-        if (volatility > 8) return '#ef4444'; // Đỏ (Nghiêm trọng)
-        if (volatility > 5) return '#f97316'; // Cam (Phức tạp)
-        if (volatility > 2) return '#eab308'; // Vàng (Theo dõi)
-        return '#22c55e'; // Xanh (Ổn định)
+        if (volatility > 8) return 'Diễn biến nghiêm trọng';
+        if (volatility > 5) return 'Diễn biến phức tạp';
+        if (volatility > 2) return 'Cần theo dõi';
+        return 'Ổn định';
     };
 
-    // [MỚI] Build values cho map theo layer hiện tại
+    // Hàm lấy màu sắc cho Tooltip
+    const getColorByScore = (score) => {
+        const volatility = Math.abs(score);
+        if (volatility > 8) return '#ef4444'; // Đỏ 
+        if (volatility > 5) return '#f97316'; // Cam 
+        if (volatility > 2) return '#eab308'; // Vàng 
+        return '#22c55e'; // Xanh 
+    };
+
+    // [ĐÃ SỬA] Trả về String trạng thái thay vì mã màu HEX
     for (const [isoCode, data] of Object.entries(savedRiskData)) {
         if (data.layers) {
             const layerScore = data.layers[currentMapLayer] || 0;
-            regionValues[isoCode.toUpperCase()] = getColorByScore(layerScore);
+            regionValues[isoCode.toUpperCase()] = getStatusByScore(layerScore);
         } else {
-            // Fallback bản cũ
-            regionValues[isoCode.toUpperCase()] = data.color || '#334155';
+            regionValues[isoCode.toUpperCase()] = data.status || 'Ổn định';
         }
     }
 
@@ -67,6 +75,25 @@ function initMap(mapContainer) {
                 fillOpacity: 0.8,
                 cursor: 'pointer'
             }
+        },
+        
+        // [ĐÃ SỬA] Bổ sung lại thuộc tính scale để Map có thể ánh xạ màu
+        series: {
+            regions: [{
+                attribute: 'fill',
+                scale: {
+                    'Ổn định': '#22c55e',
+                    'Cần theo dõi': '#eab308',
+                    'Diễn biến phức tạp': '#f97316',
+                    'Diễn biến nghiêm trọng': '#ef4444',
+                    // Fallback
+                    'Bình thường': '#22c55e',
+                    'Đang theo dõi': '#eab308',
+                    'Rủi ro cao': '#f97316',
+                    'Khủng hoảng nghiêm trọng': '#ef4444'
+                },
+                values: regionValues 
+            }]
         },
         
         series: {
