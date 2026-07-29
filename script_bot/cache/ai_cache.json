@@ -3456,5 +3456,221 @@
       "sentiment": -1,
       "scope": "global"
     }
+  },
+  "evt_2c8421c7": {
+    "created_at": 1785299372951,
+    "expires_at": 1787891372951,
+    "version": "4.5",
+    "checksum": "d91107d7fc3e455c8f7ea8627ee21f19",
+    "data": {
+      "cluster_title": "Sự kiện bán chip của SK Hynix",
+      "short_summary": "Sự kiện bán chip của SK Hynix đã làm sâu sắc thêm tình trạng bán tháo trên thị trường chứng khoán Hàn Quốc.",
+      "detailed_summary": "Thị trường chứng khoán Hàn Quốc ghi nhận kỷ lục về số lần tạm dừng giao dịch do làn sóng bán tháo lan rộng. Nguyên nhân chính xuất phát từ kết quả kinh doanh quý của SK Hynix không đáp ứng được dự báo từ các nhà phân tích, gây tâm lý hoang mang cho nhà đầu tư trong bối cảnh niềm tin vào sự tăng trưởng của ngành trí tuệ nhân tạo đang trở nên mong manh.",
+      "causes": [
+        "Lợi nhuận của SK Hynix thấp hơn kỳ vọng của các nhà phân tích",
+        "Tâm lý lo ngại của nhà đầu tư đối với sự ổn định của lĩnh vực trí tuệ nhân tạo"
+      ],
+      "effects": [
+        "Số lần tạm dừng giao dịch trên thị trường chứng khoán Hàn Quốc đạt mức kỷ lục",
+        "Làn sóng bán tháo cổ phiếu trên diện rộng",
+        "Gia tăng bất ổn cho tâm lý thị trường tài chính"
+      ],
+      "affected_groups": [
+        "Các nhà đầu tư chứng khoán tại Hàn Quốc",
+        "Cổ đông của SK Hynix",
+        "Các doanh nghiệp thuộc ngành công nghiệp bán dẫn"
+      ],
+      "market_impact": "Áp lực bán tháo gia tăng mạnh, gây ra sự biến động bất ổn và gián đoạn tạm thời trên thị trường chứng khoán Hàn Quốc.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh sự nhạy cảm của thị trường đối với triển vọng ngành công nghiệp chip bán dẫn và trí tuệ nhân tạo, đồng thời cho thấy áp lực lớn lên các doanh nghiệp đầu ngành trong việc duy trì kỳ vọng lợi nhuận.",
+      "unknowns": [
+        "Thời điểm tâm lý thị trường ổn định trở lại",
+        "Mức độ ảnh hưởng thực tế lên chuỗi cung ứng bộ nhớ toàn cầu trong tương lai"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên dữ liệu báo cáo tài chính và biến động thị trường thực tế.",
+      "scenarios": [
+        {
+          "text": "Thị trường tiếp tục biến động tiêu cực nếu các công ty bán dẫn khác cũng công bố kết quả không khả quan.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Thị trường bình ổn trở lại sau khi SK Hynix trấn an về khả năng dư thừa nguồn cung bộ nhớ ở mức hạn chế.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "SK Hynix",
+          "target": "Thị trường chứng khoán Hàn Quốc",
+          "relation_type": "cause_effect",
+          "label": "Báo cáo lợi nhuận không đạt kỳ vọng gây ra làn sóng bán tháo"
+        },
+        {
+          "source": "Ngành trí tuệ nhân tạo",
+          "target": "Tâm lý nhà đầu tư",
+          "relation_type": "cause_effect",
+          "label": "Triển vọng ngành tạo ra tâm lý hoài nghi và bất ổn"
+        }
+      ],
+      "entities": [
+        "SK Hynix",
+        "Hàn Quốc"
+      ],
+      "keywords": [
+        "SK Hynix",
+        "bán chip",
+        "sự kiện thị trường"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_general_1785299378877": {
+    "created_at": 1785299384752,
+    "expires_at": 1787891384752,
+    "version": "4.5",
+    "checksum": "b322456b3b1a5040f5628150dccc1c1e",
+    "data": {
+      "cluster_title": "Rents Controls",
+      "short_summary": "Chính sách kiểm soát giá thuê lại được ủng hộ bởi các chính trị gia tiến bộ, nhưng các chỉ trích cho rằng nó chỉ mang lại lợi ích cho các cư dân hiện tại và làm suy yếu đầu tư.",
+      "detailed_summary": "Chính sách kiểm soát giá thuê nhà, vốn từng gây tranh cãi, hiện đang được các nhóm tiến bộ ủng hộ trở lại. Tuy nhiên, các nhà phê bình cảnh báo rằng chính sách này chỉ mang lại lợi ích cục bộ cho những người thuê nhà hiện hữu, đồng thời gây ảnh hưởng tiêu cực đến nguồn vốn đầu tư vào bất động sản.",
+      "causes": [
+        "Sự trỗi dậy của các quan điểm chính sách từ nhóm tiến bộ.",
+        "Nhu cầu tìm kiếm giải pháp cho tình trạng chi phí nhà ở leo thang."
+      ],
+      "effects": [
+        "Hỗ trợ ngắn hạn cho những người đang thuê nhà hiện tại.",
+        "Nguy cơ sụt giảm vốn đầu tư vào thị trường bất động sản nhà ở.",
+        "Tạo ra rào cản hoặc sự méo mó trong phân bổ nguồn lực thị trường."
+      ],
+      "affected_groups": [
+        "Người thuê nhà hiện hữu",
+        "Nhà đầu tư bất động sản",
+        "Chủ sở hữu nhà cho thuê"
+      ],
+      "market_impact": "Gây bất ổn tâm lý đầu tư, có khả năng làm giảm nguồn cung nhà cho thuê mới do lo ngại về biên lợi nhuận.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh cuộc đối đầu giữa mục tiêu bảo trợ xã hội và nguyên tắc vận hành tự do của thị trường trong lĩnh vực bất động sản.",
+      "unknowns": [
+        "Mức độ hiệu quả thực tế của chính sách trong việc bình ổn giá nhà dài hạn.",
+        "Khả năng thích ứng của các nhà đầu tư trước các khung pháp lý kiểm soát giá thuê mới."
+      ],
+      "confidence_note": "Thông tin mang tính tổng quan, phản ánh thực trạng tranh luận kinh tế xã hội phổ biến.",
+      "scenarios": [
+        {
+          "text": "Chính sách được áp dụng hạn chế tại một số đô thị, dẫn đến tranh chấp pháp lý và giảm nguồn cung nhà ở mới.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Chính phủ bác bỏ kiểm soát giá thuê để ưu tiên khuyến khích đầu tư nguồn cung mới.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Nhóm tiến bộ",
+          "target": "Chính sách kiểm soát giá thuê",
+          "relation_type": "cause_effect",
+          "label": "Đề xuất và ủng hộ chính sách"
+        },
+        {
+          "source": "Nhà phê bình",
+          "target": "Chính sách kiểm soát giá thuê",
+          "relation_type": "conflict",
+          "label": "Phản đối vì tác động tiêu cực đến đầu tư"
+        },
+        {
+          "source": "Chính sách kiểm soát giá thuê",
+          "target": "Đầu tư bất động sản",
+          "relation_type": "cause_effect",
+          "label": "Tác động tiêu cực gây sụt giảm đầu tư"
+        }
+      ],
+      "entities": [
+        "các chính trị gia tiến bộ",
+        "các nhà đầu tư"
+      ],
+      "keywords": [
+        "rent controls",
+        "policy",
+        "tenants",
+        "investment"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_general_1785299398618": {
+    "created_at": 1785299405036,
+    "expires_at": 1787891405036,
+    "version": "4.5",
+    "checksum": "74ef81e5d2d7f8475403e84317b17433",
+    "data": {
+      "cluster_title": "PwC Phát Hành Báo Cáo Về Lãnh Đạo Tư Tưởng",
+      "short_summary": "PwC đã phát hành báo cáo về lãnh đạo tư tưởng bị ảnh hưởng bởi ảo giác của AI. Đây là một trong những công ty tư vấn lớn nhất thế giới bị phát hiện đã sản xuất công việc thiếu sót khi quảng cáo chuyên môn về công nghệ.",
+      "detailed_summary": "Công ty tư vấn PwC vừa bị phát hiện xuất bản một số báo cáo mang tính dẫn dắt tư tưởng chứa các lỗi sai do trí tuệ nhân tạo (hiện tượng AI ảo giác). Sự việc này tạo ra mâu thuẫn giữa việc công ty quảng bá năng lực chuyên môn về công nghệ nhưng lại đưa ra những sản phẩm chất lượng kém, thiếu chính xác.",
+      "causes": [
+        "Việc lạm dụng công nghệ trí tuệ nhân tạo mà thiếu sự kiểm chứng từ con người",
+        "Áp lực duy trì hình ảnh đi đầu trong xu hướng công nghệ dẫn đến quy trình kiểm soát chất lượng bị buông lỏng"
+      ],
+      "effects": [
+        "Giảm uy tín chuyên môn của PwC trong mắt khách hàng và đối tác",
+        "Gia tăng sự hoài nghi của thị trường đối với các sản phẩm tư vấn có sự hỗ trợ của trí tuệ nhân tạo"
+      ],
+      "affected_groups": [
+        "PwC",
+        "Khách hàng sử dụng dịch vụ tư vấn của PwC",
+        "Ngành tư vấn quản trị toàn cầu"
+      ],
+      "market_impact": "Gây tác động tiêu cực đến niềm tin của thị trường đối với việc áp dụng AI trong các dịch vụ chuyên nghiệp, buộc các công ty lớn phải siết chặt quy trình kiểm soát chất lượng.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh rủi ro hiện hữu trong việc áp dụng AI vào các lĩnh vực đòi hỏi sự chính xác cao, đồng thời cho thấy sự khác biệt giữa năng lực quảng bá và thực tế thực thi công nghệ của các doanh nghiệp lớn.",
+      "unknowns": [
+        "Phạm vi và quy mô thực tế của các báo cáo bị lỗi",
+        "Các biện pháp khắc phục cụ thể mà PwC sẽ áp dụng sau sự cố"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên các phản ánh về chất lượng công việc của PwC liên quan đến AI.",
+      "scenarios": [
+        {
+          "text": "PwC phải công khai xin lỗi và siết chặt quy trình rà soát nội dung do AI tạo ra để phục hồi uy tín.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các cơ quan quản lý hoặc đối tác bắt đầu đặt ra những tiêu chuẩn khắt khe hơn đối với các báo cáo tư vấn có ứng dụng AI.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Trí tuệ nhân tạo",
+          "target": "PwC",
+          "relation_type": "cause_effect",
+          "label": "Gây ra lỗi sai trong các báo cáo của công ty"
+        },
+        {
+          "source": "PwC",
+          "target": "Ngành tư vấn",
+          "relation_type": "neutral",
+          "label": "Ảnh hưởng đến danh tiếng chung của nhóm tư vấn lớn"
+        }
+      ],
+      "entities": [
+        "PwC",
+        "Big Four"
+      ],
+      "keywords": [
+        "PwC",
+        "thought leadership",
+        "AI hallucinations"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
   }
 }
