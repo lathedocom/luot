@@ -2134,5 +2134,958 @@
       "importance": 80,
       "scope": "global"
     }
+  },
+  "evt_1c5405db": {
+    "created_at": 1785296627792,
+    "expires_at": 1787888627792,
+    "version": "4.5",
+    "checksum": "056e145119d29f1dbd625f862ff5a6ed",
+    "data": {
+      "cluster_title": "Sự kiện dầu mỏ tại Trung Đông",
+      "short_summary": "Sự kiện dầu mỏ tại Trung Đông đã gây ra sự lo lắng về nguồn cung năng lượng và ảnh hưởng đến thị trường toàn cầu.",
+      "detailed_summary": "Thị trường tài chính châu Á đang chịu áp lực bán tháo khi nhà đầu tư chuyển vốn khỏi các cổ phiếu ngành chip do nghi ngờ về lợi nhuận thu được từ chi phí đầu tư khổng lồ vào trí tuệ nhân tạo. Đồng thời, xung đột quân sự tại khu vực Trung Đông bùng phát trở lại đã phá vỡ các nỗ lực ngoại giao, đẩy giá dầu tăng cao và khiến lợi suất trái phiếu chính phủ suy yếu.",
+      "causes": [
+        "Nhà đầu tư hoài nghi về khả năng sinh lời từ chi phí đầu tư vào trí tuệ nhân tạo.",
+        "Căng thẳng quân sự bùng phát tại khu vực Trung Đông đe dọa chuỗi cung ứng năng lượng."
+      ],
+      "effects": [
+        "Cổ phiếu ngành bán dẫn và trí tuệ nhân tạo tại châu Á giảm điểm.",
+        "Giá dầu thô trên thị trường thế giới tăng mạnh.",
+        "Lợi suất trái phiếu chính phủ giảm."
+      ],
+      "affected_groups": [
+        "Nhà đầu tư trên thị trường chứng khoán châu Á.",
+        "Các doanh nghiệp công nghệ và sản xuất chip.",
+        "Các nền kinh tế phụ thuộc vào năng lượng nhập khẩu."
+      ],
+      "market_impact": "Thị trường tài chính biến động theo xu hướng rủi ro: rút vốn khỏi cổ phiếu công nghệ và đổ xô vào các tài sản trú ẩn hoặc năng lượng.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh tâm lý thận trọng của thị trường đối với bong bóng công nghệ AI, kết hợp cùng bất ổn địa chính trị đang tạo ra áp lực kép lên nền kinh tế toàn cầu.",
+      "unknowns": [
+        "Thời gian và mức độ leo thang của xung đột quân sự tại Trung Đông.",
+        "Thời điểm dòng vốn từ các nhà đầu tư sẽ ổn định trở lại sau làn sóng thoái vốn khỏi ngành AI."
+      ],
+      "confidence_note": "Thông tin dựa trên diễn biến thị trường thực tế và tình hình thời sự, có độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Xung đột Trung Đông tiếp tục căng thẳng khiến giá dầu duy trì ở mức cao và gây lạm phát toàn cầu.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Sự nghi ngờ về AI tạm lắng xuống khi các báo cáo tài chính của các tập đoàn lớn chứng minh được hiệu quả đầu tư.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Đầu tư trí tuệ nhân tạo",
+          "target": "Cổ phiếu ngành chip",
+          "relation_type": "cause_effect",
+          "label": "Sự hoài nghi về lợi nhuận AI làm giảm giá cổ phiếu chip"
+        },
+        {
+          "source": "Xung đột tại Trung Đông",
+          "target": "Giá dầu",
+          "relation_type": "cause_effect",
+          "label": "Xung đột gây gián đoạn chuỗi cung ứng và đẩy giá dầu tăng"
+        },
+        {
+          "source": "Căng thẳng địa chính trị",
+          "target": "Nỗ lực ngoại giao",
+          "relation_type": "conflict",
+          "label": "Xung đột quân sự đe dọa làm thất bại các nỗ lực đàm phán hòa bình"
+        }
+      ],
+      "entities": [
+        "Trung Đông",
+        "dầu mỏ"
+      ],
+      "keywords": [
+        "dầu mỏ",
+        "Trung Đông",
+        "xung đột"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_f1acc84e": {
+    "created_at": 1785296639724,
+    "expires_at": 1787888639724,
+    "version": "4.5",
+    "checksum": "cf9be57ad75c70d5e0a67fc0c71a647d",
+    "data": {
+      "cluster_title": "Sự kiện cổ phiếu Hàn Quốc sụt giảm",
+      "short_summary": "Cổ phiếu Hàn Quốc sụt giảm do thất vọng về lợi nhuận của SK Hynix và cắt giảm holdings của nhà đầu tư cá nhân.",
+      "detailed_summary": "Thị trường chứng khoán Hàn Quốc trải qua phiên giảm điểm thứ hai liên tiếp, buộc phải tạm dừng giao dịch do làn sóng bán tháo. Cổ phiếu ngành bán dẫn bị ảnh hưởng mạnh, trong đó SK Hynix ghi nhận đà giảm giá dù lợi nhuận tăng gấp sáu lần nhờ làn sóng trí tuệ nhân tạo. Nhà đầu tư cá nhân đồng loạt rút vốn do lo ngại về kết quả kinh doanh không đạt kỳ vọng của các chuyên gia phân tích.",
+      "causes": [
+        "Kết quả kinh doanh của SK Hynix không đạt kỳ vọng của các nhà phân tích",
+        "Nhà đầu tư cá nhân đẩy mạnh bán tháo cổ phiếu",
+        "Đà giảm kéo dài của các doanh nghiệp sản xuất chip"
+      ],
+      "effects": [
+        "Chỉ số chứng khoán Hàn Quốc giảm sâu",
+        "Hoạt động giao dịch trên thị trường bị tạm dừng",
+        "Tâm lý hoang mang lan rộng trong cộng đồng nhà đầu tư"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư cá nhân trên thị trường Hàn Quốc",
+        "Các doanh nghiệp ngành bán dẫn",
+        "Thị trường chứng khoán Hàn Quốc"
+      ],
+      "market_impact": "Thị trường ghi nhận sự bất ổn tâm lý tiêu cực, gây áp lực giảm điểm diện rộng lên ngành công nghệ và các chỉ số chứng khoán chính.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh khoảng cách giữa kỳ vọng tăng trưởng của thị trường đối với ngành bán dẫn AI và kết quả thực tế của doanh nghiệp, gây ra đợt điều chỉnh tài sản mạnh.",
+      "unknowns": [
+        "Mức độ ảnh hưởng lâu dài của tâm lý nhà đầu tư cá nhân đến thanh khoản thị trường",
+        "Thời điểm ổn định trở lại của cổ phiếu ngành chip"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên dữ liệu báo cáo thị trường và kết quả kinh doanh được công bố.",
+      "scenarios": [
+        {
+          "text": "Thị trường phục hồi nhẹ khi nhà đầu tư đánh giá lại tiềm năng dài hạn của ngành AI.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Đà bán tháo tiếp tục kéo dài nếu các doanh nghiệp công nghệ khác công bố kết quả không khả quan.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Báo cáo tài chính SK Hynix",
+          "target": "Cổ phiếu SK Hynix",
+          "relation_type": "cause_effect",
+          "label": "Nguyên nhân dẫn đến biến động giá cổ phiếu"
+        },
+        {
+          "source": "Nhà đầu tư cá nhân",
+          "target": "Thị trường chứng khoán Hàn Quốc",
+          "relation_type": "cause_effect",
+          "label": "Tác động tiêu cực đến thanh khoản và giá"
+        },
+        {
+          "source": "Làn sóng AI",
+          "target": "SK Hynix",
+          "relation_type": "cooperation",
+          "label": "Động lực thúc đẩy tăng trưởng lợi nhuận"
+        }
+      ],
+      "entities": [
+        "Hàn Quốc",
+        "SK Hynix"
+      ],
+      "keywords": [
+        "cổ phiếu Hàn Quốc",
+        "SK Hynix",
+        "AI"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_18a0eb38": {
+    "created_at": 1785296651339,
+    "expires_at": 1787888651339,
+    "version": "4.5",
+    "checksum": "b8d5110ca5d84f38550dd855cf3cbf0f",
+    "data": {
+      "cluster_title": "GPIF Tăng Cường Kỹ Năng Quản Lý Nợ",
+      "short_summary": "GPIF Nhật Bản đã thuê các quỹ đầu tư nợ hoạt động để tăng cường kỹ năng quản lý nợ, nhằm đối phó với sự bất ổn trên thị trường.",
+      "detailed_summary": "GPIF, một trong những quỹ quản lý tiền hưu trí lớn nhất thế giới, đã quyết định thuê các nhà quản lý quỹ trái phiếu nội địa chủ động. Động thái này nhằm mục đích tăng cường năng lực chuyên môn và khả năng ứng phó với sự biến động trên thị trường trái phiếu Chính phủ Nhật Bản.",
+      "causes": [
+        "Thị trường trái phiếu Chính phủ Nhật Bản có nhiều biến động",
+        "Nhu cầu tăng cường năng lực quản lý chuyên sâu cho danh mục đầu tư"
+      ],
+      "effects": [
+        "Thay đổi chiến lược quản lý quỹ của GPIF",
+        "Tăng cường sự hiện diện của các quỹ chủ động trên thị trường trái phiếu nội địa"
+      ],
+      "affected_groups": [
+        "Các quỹ quản lý trái phiếu chủ động",
+        "Thị trường tài chính Nhật Bản",
+        "Người hưởng lương hưu tại Nhật Bản"
+      ],
+      "market_impact": "Dự báo sự chuyển dịch trong cách thức vận hành và phân bổ nguồn lực của các tổ chức tài chính lớn tại Nhật Bản.",
+      "follow_up": "",
+      "significance": "Sự kiện cho thấy các tổ chức tài chính quy mô lớn đang chủ động điều chỉnh chiến lược để thích ứng với môi trường thị trường biến động khó lường.",
+      "unknowns": [
+        "Quy mô vốn cụ thể được phân bổ cho các quỹ chủ động này",
+        "Tên cụ thể của các tổ chức quản lý quỹ đã được lựa chọn"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên báo cáo về các hoạt động quản lý danh mục của GPIF.",
+      "scenarios": [
+        {
+          "text": "GPIF tiếp tục mở rộng hợp tác với các nhà quản lý quỹ chủ động để tối ưu hóa danh mục đầu tư.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Kết quả từ việc quản lý chủ động không đạt kỳ vọng khiến GPIF quay lại chiến lược quản lý thụ động truyền thống.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "GPIF",
+          "target": "Quỹ trái phiếu nội địa chủ động",
+          "relation_type": "cooperation",
+          "label": "Hợp tác thuê dịch vụ quản lý đầu tư"
+        },
+        {
+          "source": "Biến động thị trường trái phiếu",
+          "target": "GPIF",
+          "relation_type": "cause_effect",
+          "label": "Nguyên nhân dẫn đến quyết định thay đổi chiến lược"
+        }
+      ],
+      "entities": [
+        "Quỹ Hưu Trí Nhật Bản",
+        "Chứng khoán Nhật Bản"
+      ],
+      "keywords": [
+        "GPIF",
+        "JGB",
+        "Quỹ Hưu Trí"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_21bd3229": {
+    "created_at": 1785296660664,
+    "expires_at": 1787888660664,
+    "version": "4.5",
+    "checksum": "8368e0a62f5e0c1fe72aba27e407b136",
+    "data": {
+      "cluster_title": "Sự kiện thị trường tài chính Hong Kong",
+      "short_summary": "Thị trường tài chính Hong Kong có thể đạt mức tăng trưởng tốt nhất trong hai năm qua do sự giảm nhiệt của thị trường công nghệ.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "follow_up": "",
+      "entities": [
+        "Hong Kong",
+        "công nghệ"
+      ],
+      "keywords": [
+        "thị trường tài chính",
+        "Hong Kong",
+        "công nghệ"
+      ],
+      "importance": 85,
+      "scope": "business"
+    }
+  },
+  "evt_5b406272": {
+    "created_at": 1785296672347,
+    "expires_at": 1787888672347,
+    "version": "4.5",
+    "checksum": "e11374c6e109ce79a64dd7aa3868cde8",
+    "data": {
+      "cluster_title": "Sự Trở Lại Của Thị Trụ Công Nghệ Ấn Độ",
+      "short_summary": "Thị trụ công nghệ Ấn Độ đã có sự trở lại sau khi thương mại AI toàn cầu gặp khó khăn. Chỉ số Nifty IT Index đã giảm liên kết với Chỉ số Philadelphia Semiconductor Index xuống mức thấp nhất kể từ năm 2018.",
+      "detailed_summary": "Chỉ số Nifty IT của Ấn Độ đã chứng kiến sự phục hồi ấn tượng trong bối cảnh dòng vốn đầu tư toàn cầu vào lĩnh vực trí tuệ nhân tạo đang giảm dần. Dữ liệu cho thấy mối tương quan giữa chỉ số Nifty IT và chỉ số bán dẫn Philadelphia đã rơi xuống mức thấp nhất kể từ năm 2018, cho thấy sự tách biệt trong hiệu suất thị trường giữa hai khu vực này.",
+      "causes": [
+        "Sự chững lại của trào lưu đầu tư vào trí tuệ nhân tạo trên thị trường toàn cầu",
+        "Sự thay đổi trong chiến lược phân bổ vốn của các nhà đầu tư vào cổ phiếu công nghệ Ấn Độ"
+      ],
+      "effects": [
+        "Sự hồi phục giá trị của các cổ phiếu công nghệ thông tin tại Ấn Độ",
+        "Sự suy giảm mối liên hệ giữa thị trường công nghệ Ấn Độ và thị trường bán dẫn quốc tế"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư chứng khoán công nghệ",
+        "Các doanh nghiệp công nghệ thông tin Ấn Độ",
+        "Các quỹ đầu tư toàn cầu"
+      ],
+      "market_impact": "Thị trường công nghệ Ấn Độ đang cho thấy tín hiệu độc lập hơn so với biến động của thị trường bán dẫn toàn cầu.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh sự thay đổi khẩu vị rủi ro của nhà đầu tư khi làn sóng đầu tư AI toàn cầu có dấu hiệu hạ nhiệt, tạo cơ hội cho cổ phiếu công nghệ Ấn Độ thu hút dòng vốn mới.",
+      "unknowns": [
+        "Thời gian kéo dài của xu hướng hồi phục này",
+        "Tác động cụ thể từ các chính sách vĩ mô của Ấn Độ đối với nhóm cổ phiếu này"
+      ],
+      "confidence_note": "Thông tin dựa trên dữ liệu chỉ số thị trường chứng khoán, có độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Cổ phiếu công nghệ Ấn Độ tiếp tục đà tăng trưởng độc lập so với thị trường quốc tế.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Thị trường công nghệ Ấn Độ bị kéo ngược trở lại do ảnh hưởng từ sự sụt giảm của thị trường công nghệ toàn cầu trong dài hạn.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Trào lưu đầu tư trí tuệ nhân tạo toàn cầu",
+          "target": "Chỉ số Nifty IT",
+          "relation_type": "cause_effect",
+          "label": "Sự suy yếu của làn sóng AI dẫn đến thay đổi dòng vốn vào thị trường IT Ấn Độ"
+        },
+        {
+          "source": "Chỉ số Nifty IT",
+          "target": "Chỉ số bán dẫn Philadelphia",
+          "relation_type": "neutral",
+          "label": "Sự tương quan giữa hai chỉ số giảm xuống mức thấp nhất từ năm 2018"
+        }
+      ],
+      "entities": [
+        "Ấn Độ",
+        "Châu Á"
+      ],
+      "keywords": [
+        "IT",
+        "Stocks",
+        "Global AI Trade",
+        "Nifty IT Index",
+        "Philadelphia Semiconductor Index"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_c15ee12c": {
+    "created_at": 1785296683875,
+    "expires_at": 1787888683875,
+    "version": "4.5",
+    "checksum": "7c38465351eae8ef00d34bb78d516154",
+    "data": {
+      "cluster_title": "Hynix dự kiến tăng lợi nhuận",
+      "short_summary": "Hynix dự kiến tăng lợi nhuận nhờ cải thiện sản phẩm trong quý tiếp theo, theo CLSA.",
+      "detailed_summary": "Ông Sanjeev Rana, trưởng bộ phận nghiên cứu tại CLSA Securities Korea, phân tích rằng việc kết quả lợi nhuận của Hynix không đạt kỳ vọng trong quý 2 là do cơ cấu sản phẩm chưa tối ưu. Tuy nhiên, chuyên gia này lạc quan về triển vọng tăng trưởng lợi nhuận của công ty trong các kỳ báo cáo tiếp theo.",
+      "causes": [
+        "Cơ cấu danh mục sản phẩm của Hynix trong quý 2 chưa thực sự hiệu quả",
+        "Kết quả lợi nhuận quý 2 không đạt dự báo của thị trường"
+      ],
+      "effects": [
+        "Dự báo về xu hướng cải thiện kết quả kinh doanh của Hynix",
+        "Tạo niềm tin cho nhà đầu tư về đà hồi phục của công ty"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư cổ phiếu Hynix",
+        "Cổ đông của Hynix",
+        "Các nhà phân tích thị trường tài chính"
+      ],
+      "market_impact": "Thông tin mang tính trung lập, kỳ vọng đà phục hồi trong tương lai thay vì phản ứng tiêu cực trước kết quả quý 2.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh quan điểm chuyên gia về sự điều chỉnh tạm thời trong danh mục sản phẩm của Hynix và tiềm năng tăng trưởng trở lại.",
+      "unknowns": [
+        "Chi tiết cụ thể về chiến lược thay đổi danh mục sản phẩm của Hynix",
+        "Dữ liệu dự báo chi tiết của các tổ chức tài chính khác ngoài CLSA"
+      ],
+      "confidence_note": "Độ tin cậy cao dựa trên phân tích từ chuyên gia của tổ chức tài chính uy tín.",
+      "scenarios": [
+        {
+          "text": "Hynix điều chỉnh danh mục sản phẩm thành công và ghi nhận lợi nhuận tăng trưởng theo dự báo.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Tình hình cạnh tranh gay gắt khiến việc phục hồi lợi nhuận chậm hơn so với dự kiến.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Sanjeev Rana",
+          "target": "Hynix",
+          "relation_type": "cause_effect",
+          "label": "Đánh giá hiệu quả kinh doanh và triển vọng tài chính"
+        },
+        {
+          "source": "CLSA Securities Korea",
+          "target": "Hynix",
+          "relation_type": "neutral",
+          "label": "Cung cấp phân tích và dự báo thị trường"
+        }
+      ],
+      "entities": [
+        "Hynix",
+        "CLSA",
+        "Rana"
+      ],
+      "keywords": [
+        "Hynix",
+        "CLSA",
+        "Rana",
+        "lợi nhuận"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "business"
+    }
+  },
+  "evt_59545dbb": {
+    "created_at": 1785296695189,
+    "expires_at": 1787888695189,
+    "version": "4.5",
+    "checksum": "c3d58a3ae1b1f1cb8ec6902d4be25700",
+    "data": {
+      "cluster_title": "Sự kiện động đất Kyushu",
+      "short_summary": "Động đất mạnh 7,1 độ xảy ra tại đảo Kyushu, Nhật Bản, gây ảnh hưởng đến ngành xây dựng và kinh tế quốc gia.",
+      "detailed_summary": "Một trận động đất mạnh 7,1 độ richter đã xảy ra tại đảo Kyushu, Nhật Bản, gây thiệt hại nghiêm trọng. Ngay sau sự kiện này, giá cổ phiếu của các công ty trong lĩnh vực xây dựng và hạ tầng tại Nhật Bản đã ghi nhận xu hướng tăng do nhà đầu tư kỳ vọng vào các dự án tái thiết cơ sở hạ tầng trong thời gian tới.",
+      "causes": [
+        "Trận động đất mạnh 7,1 độ richter xảy ra tại đảo Kyushu",
+        "Kỳ vọng của thị trường về việc chính phủ tăng cường chi tiêu cho tái thiết hạ tầng"
+      ],
+      "effects": [
+        "Giá cổ phiếu ngành xây dựng Nhật Bản tăng",
+        "Gia tăng sự chú ý của giới đầu tư vào các doanh nghiệp hạ tầng"
+      ],
+      "affected_groups": [
+        "Các doanh nghiệp xây dựng tại Nhật Bản",
+        "Nhà đầu tư chứng khoán",
+        "Cư dân tại khu vực đảo Kyushu"
+      ],
+      "market_impact": "Thị trường phản ứng tích cực với nhóm cổ phiếu xây dựng dựa trên dự báo về dòng tiền từ chính phủ cho hoạt động tái thiết.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh tâm lý đầu tư đặc thù trong các tình huống thiên tai, nơi hạ tầng bị hư hại trở thành động lực tăng trưởng ngắn hạn cho ngành xây dựng.",
+      "unknowns": [
+        "Tổng mức thiệt hại vật chất cụ thể về cơ sở hạ tầng",
+        "Quy mô ngân sách chính phủ dự kiến phân bổ cho tái thiết"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên biến động thị trường chứng khoán sau sự kiện địa chất.",
+      "scenarios": [
+        {
+          "text": "Giá cổ phiếu ngành xây dựng tiếp tục duy trì đà tăng khi các dự án tái thiết được triển khai chính thức.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Giá cổ phiếu chững lại nếu chính phủ công bố kế hoạch hỗ trợ tái thiết thấp hơn dự kiến của thị trường.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Trận động đất tại Kyushu",
+          "target": "Cổ phiếu ngành xây dựng",
+          "relation_type": "cause_effect",
+          "label": "Gây ra kỳ vọng tái thiết dẫn đến tăng giá"
+        }
+      ],
+      "entities": [
+        "Nhật Bản",
+        "Kyushu"
+      ],
+      "keywords": [
+        "động đất",
+        "Kyushu",
+        "Nhật Bản"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_b78e5875": {
+    "created_at": 1785296706642,
+    "expires_at": 1787888706642,
+    "version": "4.5",
+    "checksum": "d71418eae2dd736730230e196abdf39e",
+    "data": {
+      "cluster_title": "Sự kiện cổ phiếu SK Hynix",
+      "short_summary": "Cổ phiếu SK Hynix bị ảnh hưởng nghiêm trọng khi giá cổ phiếu giảm đột ngột, gây thiệt hại 60 triệu đô la trong các khoản đầu tư krypto.",
+      "detailed_summary": "Sự sụt giảm bất ngờ của giá cổ phiếu SK Hynix - một nhà sản xuất chip Hàn Quốc - đã gây ra phản ứng dây chuyền, làm bốc hơi 60 triệu USD trong các vị thế đặt cược của giới đầu tư tiền điện tử có liên quan đến cổ phiếu này.",
+      "causes": [
+        "Sự sụt giảm giá cổ phiếu đột ngột của SK Hynix",
+        "Sự liên kết rủi ro giữa các sản phẩm phái sinh/cược tài chính và biến động cổ phiếu của SK Hynix"
+      ],
+      "effects": [
+        "Thiệt hại tài chính 60 triệu USD cho các nhà đầu tư tiền điện tử",
+        "Cảnh báo về rủi ro khi sử dụng các công cụ đầu tư tiền điện tử dựa trên biến động của cổ phiếu doanh nghiệp truyền thống"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư cá nhân trên thị trường tiền điện tử",
+        "Các nền tảng giao dịch tiền điện tử liên quan"
+      ],
+      "market_impact": "Sự kiện gây cú sốc tạm thời cho cộng đồng đầu tư tiền điện tử, bộc lộ rủi ro thanh khoản khi kết nối các tài sản truyền thống với tiền điện tử.",
+      "follow_up": "",
+      "significance": "Sự kiện minh chứng cho rủi ro hệ thống khi các sản phẩm tài chính tiền điện tử bị phụ thuộc quá mức vào sự ổn định của cổ phiếu công nghệ truyền thống.",
+      "unknowns": [
+        "Danh tính cụ thể của những nhà đầu tư bị thiệt hại",
+        "Chi tiết cơ chế kỹ thuật khiến cổ phiếu SK Hynix ảnh hưởng trực tiếp đến các vị thế tiền điện tử này"
+      ],
+      "confidence_note": "Thông tin dựa trên báo cáo sự kiện thực tế, độ tin cậy cao về quy mô thiệt hại tài chính.",
+      "scenarios": [
+        {
+          "text": "Các nhà đầu tư sẽ thận trọng hơn khi tham gia các sản phẩm đầu tư tiền điện tử gắn liền với biến động cổ phiếu doanh nghiệp.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các nền tảng giao dịch sẽ siết chặt quy định quản trị rủi ro để tránh sự cố tương tự xảy ra.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Sự sụt giảm giá cổ phiếu SK Hynix",
+          "target": "Các vị thế đầu tư tiền điện tử",
+          "relation_type": "cause_effect",
+          "label": "Gây thiệt hại tài chính 60 triệu USD"
+        }
+      ],
+      "entities": [
+        "SK Hynix",
+        "krypto"
+      ],
+      "keywords": [
+        "SK Hynix",
+        "cổ phiếu",
+        "krypto"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "business"
+    }
+  },
+  "evt_2cffbb5a": {
+    "created_at": 1785296718212,
+    "expires_at": 1787888718212,
+    "version": "4.5",
+    "checksum": "9a64e7307fb1dfc9a8d90ab2b653c7c7",
+    "data": {
+      "cluster_title": "Sự kiện ngắn gọn về sự tương quan giữa Hàn Quốc và Hồng Kông",
+      "short_summary": "Các quỹ đầu tư toàn cầu đã bán ngắn cổ phiếu công nghệ Hồng Kông để đầu tư vào các công ty chip Hàn Quốc, nhưng số liệu mới nhất cho thấy những giao dịch này đang nhanh chóng bị hủy bỏ.",
+      "detailed_summary": "Trước đó, các quỹ đầu tư toàn cầu đã thực hiện chiến lược bán khống cổ phiếu công nghệ Hồng Kông nhằm huy động vốn để đầu tư vào các tập đoàn sản xuất chip lớn của Hàn Quốc. Tuy nhiên, các dữ liệu tương quan mới nhất cho thấy chiến lược này đang bị đảo chiều một cách nhanh chóng khi các nhà đầu tư đóng các vị thế bán khống.",
+      "causes": [
+        "Sự thay đổi trong chiến lược phân bổ tài sản của các quỹ đầu tư toàn cầu",
+        "Sự biến động về tương quan giữa thị trường chứng khoán Hồng Kông và thị trường chip Hàn Quốc"
+      ],
+      "effects": [
+        "Sự suy yếu của các vị thế bán khống tại thị trường Hồng Kông",
+        "Sự dịch chuyển dòng vốn đầu tư quốc tế giữa hai khu vực"
+      ],
+      "affected_groups": [
+        "Các quỹ đầu tư toàn cầu",
+        "Nhà đầu tư chứng khoán Hồng Kông",
+        "Các tập đoàn công nghệ Hàn Quốc"
+      ],
+      "market_impact": "Việc đóng các vị thế bán khống có thể làm giảm áp lực giảm giá lên cổ phiếu công nghệ Hồng Kông và cho thấy sự dịch chuyển dòng tiền mới trong khu vực.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh tính linh hoạt và nhạy bén của dòng vốn quốc tế khi phản ứng với những thay đổi trong tương quan hiệu suất giữa các thị trường trọng điểm tại châu Á.",
+      "unknowns": [
+        "Lý do cụ thể dẫn đến việc đảo chiều chiến lược nhanh chóng của các quỹ",
+        "Tác động dài hạn của dòng vốn rút ra từ cổ phiếu chip Hàn Quốc"
+      ],
+      "confidence_note": "Thông tin dựa trên số liệu tương quan thị trường, độ tin cậy cao về mặt xu hướng giao dịch.",
+      "scenarios": [
+        {
+          "text": "Thị trường Hồng Kông ổn định trở lại do áp lực bán khống được giải tỏa.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các quỹ đầu tư chuyển hướng sang một thị trường khác ngoài Hàn Quốc và Hồng Kông.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Quỹ đầu tư toàn cầu",
+          "target": "Cổ phiếu công nghệ Hồng Kông",
+          "relation_type": "cause_effect",
+          "label": "Đóng vị thế bán khống"
+        },
+        {
+          "source": "Quỹ đầu tư toàn cầu",
+          "target": "Tập đoàn chip Hàn Quốc",
+          "relation_type": "cause_effect",
+          "label": "Giảm quy mô đầu tư"
+        }
+      ],
+      "entities": [
+        "Hàn Quốc",
+        "Hồng Kông",
+        "chíp"
+      ],
+      "keywords": [
+        "Hàn Quốc",
+        "Hồng Kông",
+        "công nghệ",
+        "chíp"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_ea2c7095": {
+    "created_at": 1785296729931,
+    "expires_at": 1787888729931,
+    "version": "4.5",
+    "checksum": "54e0be98dc00e058b1b17926872f8156",
+    "data": {
+      "cluster_title": "CME Group ra mắt futures cổ phiếu đơn",
+      "short_summary": "CME Group đang ra mắt futures cổ phiếu đơn, cho phép nhà đầu tư",
+      "detailed_summary": "Giám đốc điều hành FIA đang đánh giá sự thay đổi của thị trường dự báo. Các tổ chức như Kalshi và Polymarket đã nhận được sự chấp thuận từ Ủy ban Giao dịch Hàng hóa Tương lai (CFTC) để cung cấp hợp đồng tương lai vĩnh viễn. Trong bối cảnh đó, CME Group cũng bắt đầu triển khai các sản phẩm hợp đồng tương lai cổ phiếu đơn lẻ để mở rộng dịch vụ cho nhà đầu tư.",
+      "causes": [
+        "Sự chấp thuận pháp lý từ CFTC cho các hợp đồng tương lai vĩnh viễn tại các sàn dự báo.",
+        "Nhu cầu mở rộng danh mục sản phẩm trên các nền tảng đầu tư nhằm tăng tính cạnh tranh."
+      ],
+      "effects": [
+        "Thúc đẩy sự đa dạng hóa các sản phẩm phái sinh trên thị trường tài chính.",
+        "Tạo ra làn sóng chuyển dịch chiến lược trong mô hình kinh doanh của các nền tảng đầu tư."
+      ],
+      "affected_groups": [
+        "Nhà đầu tư cá nhân và tổ chức",
+        "Các nền tảng giao dịch tài chính",
+        "Cơ quan quản lý tài chính"
+      ],
+      "market_impact": "Sự kiện này cho thấy xu hướng mở rộng mạnh mẽ của các công cụ tài chính mới, tạo ra sự cạnh tranh gay gắt hơn giữa thị trường truyền thống và các mô hình thị trường dự báo mới nổi.",
+      "follow_up": "",
+      "significance": "Sự kiện đánh dấu sự giao thoa ngày càng rõ nét giữa thị trường dự báo phi truyền thống và cơ sở hạ tầng tài chính chính thống dưới sự giám sát pháp lý.",
+      "unknowns": [
+        "Chi tiết cụ thể về khung quản lý rủi ro cho các hợp đồng tương lai tại thị trường dự báo.",
+        "Phản ứng từ các đối thủ cạnh tranh khác trong ngành đối với sự chuyển dịch sản phẩm của CME Group."
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên các tuyên bố về sản phẩm mới và sự phê duyệt từ cơ quan quản lý.",
+      "scenarios": [
+        {
+          "text": "Các nền tảng đầu tư sẽ tiếp tục ra mắt thêm nhiều sản phẩm phái sinh mới để giành thị phần.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Sự gia tăng cạnh tranh sẽ dẫn đến các yêu cầu quản lý khắt khe hơn từ cơ quan chức năng đối với các sản phẩm mới này.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "CFTC",
+          "target": "Kalshi",
+          "relation_type": "cooperation",
+          "label": "Cấp phép hoạt động giao dịch"
+        },
+        {
+          "source": "Sự kiện pháp lý",
+          "target": "CME Group",
+          "relation_type": "cause_effect",
+          "label": "Thúc đẩy phát triển sản phẩm mới"
+        }
+      ],
+      "entities": [
+        "CME Group",
+        "Kalshi",
+        "Polymarket"
+      ],
+      "keywords": [
+        "CME Group",
+        "futures cổ phiếu",
+        "trading"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_3957d14a": {
+    "created_at": 1785296741524,
+    "expires_at": 1787888741524,
+    "version": "4.5",
+    "checksum": "577529768d6f56cab55c624c9ed7e052",
+    "data": {
+      "cluster_title": "Zuckerberg cảnh báo chống lại việc kiểm soát quy định công nghệ",
+      "short_summary": "Mark Zuckerberg cảnh báo rằng Mỹ không nên cấm công nghệ trí tuệ nhân tạo của Trung Quốc và cảnh báo chống lại việc kiểm soát quy định công nghệ.",
+      "detailed_summary": "Mark Zuckerberg, CEO của Meta, lên tiếng kêu gọi Mỹ không nên áp đặt lệnh cấm đối với trí tuệ nhân tạo từ Trung Quốc. Ông bày tỏ lo ngại rằng các quy định quản lý công nghệ quá nghiêm ngặt tại Mỹ có thể dẫn đến tình trạng 'thao túng quy định', làm ảnh hưởng đến tính cạnh tranh và phát triển công nghệ trong dài hạn.",
+      "causes": [
+        "Lo ngại về việc thắt chặt các quy định pháp lý đối với công nghệ AI",
+        "Áp lực từ xu hướng cạnh tranh công nghệ giữa Mỹ và Trung Quốc"
+      ],
+      "effects": [
+        "Tạo ra cuộc thảo luận mới về chính sách quản lý AI tại Mỹ",
+        "Gây chú ý về tầm quan trọng của việc duy trì mở cửa trong phát triển công nghệ"
+      ],
+      "affected_groups": [
+        "Các doanh nghiệp công nghệ Mỹ",
+        "Các nhà hoạch định chính sách tại Mỹ",
+        "Cộng đồng nghiên cứu AI toàn cầu"
+      ],
+      "market_impact": "Các cổ phiếu công nghệ có thể chịu biến động tùy thuộc vào diễn biến của các chính sách hạn chế xuất khẩu và quy định công nghệ giữa Mỹ và Trung Quốc.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh quan điểm khác biệt giữa các tập đoàn công nghệ lớn và chính phủ về việc quản lý an ninh quốc gia trong lĩnh vực trí tuệ nhân tạo.",
+      "unknowns": [
+        "Phản ứng cụ thể của giới chức chính phủ Mỹ đối với quan điểm của Zuckerberg",
+        "Các bước đi tiếp theo của Mỹ trong việc xây dựng khung pháp lý về AI đối với Trung Quốc"
+      ],
+      "confidence_note": "Thông tin dựa trên phát biểu công khai từ người đứng đầu tập đoàn, độ tin cậy cao về quan điểm của cá nhân.",
+      "scenarios": [
+        {
+          "text": "Mỹ giữ nguyên lộ trình hạn chế công nghệ AI nhằm đảm bảo an ninh quốc gia.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Chính phủ Mỹ cân nhắc ý kiến của các doanh nghiệp để điều chỉnh quy định một cách linh hoạt hơn.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Mark Zuckerberg",
+          "target": "Chính phủ Mỹ",
+          "relation_type": "conflict",
+          "label": "Bất đồng quan điểm về chính sách kiểm soát AI"
+        },
+        {
+          "source": "Trung Quốc",
+          "target": "AI",
+          "relation_type": "neutral",
+          "label": "Nguồn phát triển công nghệ AI bị Mỹ xem xét hạn chế"
+        }
+      ],
+      "entities": [
+        "Mark Zuckerberg",
+        "Meta",
+        "Trung Quốc"
+      ],
+      "keywords": [
+        "Mark Zuckerberg",
+        "Meta",
+        "Trung Quốc",
+        "Công nghệ",
+        "Quy định"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_3423b099": {
+    "created_at": 1785296753464,
+    "expires_at": 1787888753464,
+    "version": "4.5",
+    "checksum": "71794712ed19713894c22d3498f2a6da",
+    "data": {
+      "cluster_title": "Hedge funds đối mặt với yêu cầu cung cấp tài sản đảm bảo",
+      "short_summary": "Hedge funds đối mặt với yêu cầu cung cấp tài sản đảm bảo do giá cổ phiếu AI suy giảm",
+      "detailed_summary": "Giá cổ phiếu lĩnh vực trí tuệ nhân tạo sụt giảm trong những tuần gần đây đã gây ra khoản lỗ đáng kể cho các quỹ đầu cơ. Hệ quả là các tổ chức này đối mặt với yêu cầu ký quỹ bổ sung từ phía đối tác để duy trì vị thế, dẫn đến tâm lý e ngại rủi ro bao trùm thị trường tài chính Phố Wall.",
+      "causes": [
+        "Giá cổ phiếu ngành trí tuệ nhân tạo giảm mạnh trong những tuần gần đây",
+        "Các quỹ đầu cơ ghi nhận thua lỗ lớn do biến động thị trường"
+      ],
+      "effects": [
+        "Các quỹ đầu cơ buộc phải nộp thêm tài sản thế chấp",
+        "Tâm lý e ngại rủi ro gia tăng mạnh mẽ trên Phố Wall"
+      ],
+      "affected_groups": [
+        "Các quỹ đầu cơ",
+        "Các nhà đầu tư cổ phiếu công nghệ",
+        "Các tổ chức tài chính nhận tài sản thế chấp"
+      ],
+      "market_impact": "Gây áp lực thanh khoản lên các quỹ đầu cơ và làm giảm khẩu vị rủi ro của nhà đầu tư trên toàn thị trường chứng khoán.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh sự dễ tổn thương của các danh mục đầu tư tập trung vào lĩnh vực trí tuệ nhân tạo khi thị trường điều chỉnh, gây ra hiệu ứng domino về yêu cầu ký quỹ.",
+      "unknowns": [
+        "Quy mô tài chính cụ thể của các khoản lỗ tại các quỹ đầu cơ không được tiết lộ",
+        "Danh tính của các quỹ đầu cơ đang chịu áp lực ký quỹ lớn nhất"
+      ],
+      "confidence_note": "Thông tin dựa trên diễn biến thực tế của thị trường, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Các quỹ đầu cơ buộc phải bán tháo các tài sản khác để đáp ứng yêu cầu ký quỹ, dẫn đến đà giảm lan rộng trên thị trường.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Thị trường ổn định trở lại nếu cổ phiếu trí tuệ nhân tạo phục hồi, giúp giảm bớt áp lực ký quỹ cho các quỹ đầu cơ.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Cổ phiếu trí tuệ nhân tạo",
+          "target": "Các quỹ đầu cơ",
+          "relation_type": "cause_effect",
+          "label": "Đà giảm giá gây thua lỗ cho các quỹ"
+        },
+        {
+          "source": "Thua lỗ của các quỹ đầu cơ",
+          "target": "Yêu cầu tài sản thế chấp",
+          "relation_type": "cause_effect",
+          "label": "Kích hoạt lệnh gọi ký quỹ"
+        },
+        {
+          "source": "Biến động Phố Wall",
+          "target": "Các quỹ đầu cơ",
+          "relation_type": "conflict",
+          "label": "Tâm lý e ngại rủi ro gây áp lực lên hoạt động quỹ"
+        }
+      ],
+      "entities": [
+        "hedge funds",
+        "Wall Street"
+      ],
+      "keywords": [
+        "hedge funds",
+        "tài sản đảm bảo",
+        "AI",
+        "Wall Street"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_general_1785296759302": {
+    "created_at": 1785296765115,
+    "expires_at": 1787888765115,
+    "version": "4.5",
+    "checksum": "445de3c267a60835308ec6a753930825",
+    "data": {
+      "cluster_title": "Thay đổi điều kiện vay của Proofpoint",
+      "short_summary": "Proofpoint phải đối mặt với chi phí vay cao hơn và điều kiện vay chặt chẽ hơn trong thỏa thuận vay mới",
+      "detailed_summary": "Công ty bảo mật Proofpoint, dưới sự hậu thuẫn của quỹ đầu tư Thoma Bravo, đang đối mặt với chi phí vay vốn cao hơn và các điều khoản nợ khắt khe hơn khi cố gắng tái cấp vốn cho khoản vay trị giá 5 tỷ USD. Các chủ nợ đang tỏ ra thận trọng do những rủi ro liên quan đến sự phát triển và tác động của AI đối với mô hình kinh doanh của doanh nghiệp.",
+      "causes": [
+        "Nhận thức của thị trường tài chính về rủi ro liên quan đến công nghệ AI",
+        "Sự thắt chặt các điều kiện tài chính trong các thỏa thuận nợ mới"
+      ],
+      "effects": [
+        "Tăng chi phí vay vốn đối với Proofpoint",
+        "Các cam kết nợ trở nên khắt khe hơn gây áp lực lên doanh nghiệp"
+      ],
+      "affected_groups": [
+        "Công ty Proofpoint",
+        "Quỹ đầu tư Thoma Bravo",
+        "Các nhà đầu tư và chủ nợ tham gia thỏa thuận"
+      ],
+      "market_impact": "Phản ánh sự thận trọng của thị trường tín dụng đối với các công ty công nghệ trong bối cảnh thay đổi công nghệ nhanh chóng và chưa chắc chắn.",
+      "follow_up": "",
+      "significance": "Sự kiện cho thấy các rủi ro tiềm tàng từ AI đang bắt đầu gây ảnh hưởng trực tiếp đến chi phí tài chính và điều kiện tiếp cận vốn của các doanh nghiệp phần mềm.",
+      "unknowns": [
+        "Các điều khoản cụ thể của các cam kết nợ mới chưa được công bố chi tiết",
+        "Phản ứng cụ thể của các nhà đầu tư khác đối với hồ sơ rủi ro AI của Proofpoint"
+      ],
+      "confidence_note": "Thông tin dựa trên diễn biến thực tế trong đàm phán tài chính của doanh nghiệp, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Proofpoint buộc phải chấp nhận lãi suất cao và điều khoản khắt khe để hoàn tất tái cấp vốn",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Công ty phải tìm kiếm các cấu trúc nợ thay thế hoặc giảm quy mô khoản vay",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Rủi ro AI",
+          "target": "Chi phí vay vốn của Proofpoint",
+          "relation_type": "cause_effect",
+          "label": "Gây tăng chi phí vay"
+        },
+        {
+          "source": "Thoma Bravo",
+          "target": "Proofpoint",
+          "relation_type": "cooperation",
+          "label": "Đơn vị bảo trợ tài chính"
+        },
+        {
+          "source": "Chủ nợ",
+          "target": "Proofpoint",
+          "relation_type": "conflict",
+          "label": "Đàm phán thắt chặt điều khoản nợ"
+        }
+      ],
+      "entities": [
+        "Proofpoint",
+        "Thoma Bravo"
+      ],
+      "keywords": [
+        "Proofpoint",
+        "Thoma Bravo",
+        "Cybersecurity",
+        "Refinancing"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "business"
+    }
+  },
+  "evt_8b0836da": {
+    "created_at": 1785296776809,
+    "expires_at": 1787888776809,
+    "version": "4.5",
+    "checksum": "4dc43c5db37a245f5e5cf00ad24d9f9b",
+    "data": {
+      "cluster_title": "Mỹ chuẩn bị áp đặt gói trừng phạt mới đối với Nga",
+      "short_summary": "Mỹ chuẩn bị áp đặt gói trừng phạt mới đối với Nga, thể hiện sự ấm lên trong quan hệ với Tổng thống Ukraine Volodymyr Zelenskyy.",
+      "detailed_summary": "Chính quyền Washington đang trong tiến trình soạn thảo và chuẩn bị ban hành các biện pháp trừng phạt mới nhắm vào Nga. Động thái này được đánh giá là một minh chứng cụ thể cho mối quan hệ ngày càng khăng khít và sự ủng hộ mạnh mẽ của Hoa Kỳ đối với Tổng thống Ukraine Volodymyr Zelenskyy trong bối cảnh xung đột hiện tại.",
+      "causes": [
+        "Sự thúc đẩy quan hệ hợp tác ngoại giao giữa Hoa Kỳ và Ukraine.",
+        "Nhu cầu gây áp lực chính trị và kinh tế lên Nga từ phía Washington."
+      ],
+      "effects": [
+        "Gia tăng sức ép kinh tế đối với các tổ chức và cá nhân liên quan đến Nga.",
+        "Củng cố vị thế chính trị của chính quyền Tổng thống Volodymyr Zelenskyy trên trường quốc tế."
+      ],
+      "affected_groups": [
+        "Chính phủ và các thực thể kinh tế Nga.",
+        "Chính phủ Ukraine.",
+        "Các đối tác thương mại có liên quan đến các ngành chịu ảnh hưởng bởi trừng phạt."
+      ],
+      "market_impact": "Gây tâm lý bất ổn ngắn hạn cho các thị trường tài chính có liên quan đến Nga và các mặt hàng xuất khẩu chịu tác động từ lệnh trừng phạt.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh cam kết nhất quán của Hoa Kỳ trong việc sử dụng công cụ kinh tế để hỗ trợ đồng minh và gây áp lực lên Nga trong bối cảnh địa chính trị căng thẳng.",
+      "unknowns": [
+        "Danh sách cụ thể các cá nhân, tổ chức hoặc lĩnh vực sẽ bị trừng phạt.",
+        "Quy mô và mức độ ảnh hưởng của các biện pháp trừng phạt mới này đối với nền kinh tế Nga."
+      ],
+      "confidence_note": "Thông tin dựa trên các nguồn tin tình báo/chính trị đáng tin cậy về kế hoạch chính sách của Hoa Kỳ, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Hoa Kỳ chính thức công bố và áp đặt gói trừng phạt mới với quy mô đáng kể.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Hoa Kỳ điều chỉnh mức độ trừng phạt tùy thuộc vào các phản ứng ngoại giao tiếp theo từ phía các bên liên quan.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Hoa Kỳ",
+          "target": "Nga",
+          "relation_type": "conflict",
+          "label": "Áp đặt trừng phạt kinh tế"
+        },
+        {
+          "source": "Hoa Kỳ",
+          "target": "Volodymyr Zelenskyy",
+          "relation_type": "cooperation",
+          "label": "Hỗ trợ chính trị và ngoại giao"
+        }
+      ],
+      "entities": [
+        "Mỹ",
+        "Nga",
+        "Ukraine",
+        "Volodymyr Zelenskyy"
+      ],
+      "keywords": [
+        "Mỹ",
+        "Nga",
+        "Zelenskyy",
+        "Ukraine"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
   }
 }
