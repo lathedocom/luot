@@ -2,6 +2,7 @@
 
 let mapInstance = null;
 let savedRiskData = null;
+let currentMapLayer = 'total'; // [MỚI] Biến lưu trữ layer hiện tại
 
 export function renderRiskMap(riskMapData) {
     savedRiskData = riskMapData;
@@ -25,8 +26,25 @@ function initMap(mapContainer) {
     mapContainer.innerHTML = ''; 
 
     const regionValues = {};
+    
+    // [MỚI] Hàm lấy màu sắc theo điểm số layer (Situation Index)
+    const getColorByScore = (score) => {
+        const volatility = Math.abs(score);
+        if (volatility > 8) return '#ef4444'; // Đỏ (Nghiêm trọng)
+        if (volatility > 5) return '#f97316'; // Cam (Phức tạp)
+        if (volatility > 2) return '#eab308'; // Vàng (Theo dõi)
+        return '#22c55e'; // Xanh (Ổn định)
+    };
+
+    // [MỚI] Build values cho map theo layer hiện tại
     for (const [isoCode, data] of Object.entries(savedRiskData)) {
-        regionValues[isoCode] = data.status;
+        if (data.layers) {
+            const layerScore = data.layers[currentMapLayer] || 0;
+            regionValues[isoCode.toUpperCase()] = getColorByScore(layerScore);
+        } else {
+            // Fallback bản cũ
+            regionValues[isoCode.toUpperCase()] = data.color || '#334155';
+        }
     }
 
     mapInstance = new jsVectorMap({
@@ -54,45 +72,48 @@ function initMap(mapContainer) {
         series: {
             regions: [{
                 attribute: 'fill',
-                scale: {
-                    'Bình thường': '#22c55e',
-                    'Đang theo dõi': '#eab308',
-                    'Rủi ro cao': '#f97316',
-                    'Khủng hoảng nghiêm trọng': '#ef4444'
-                },
-                values: regionValues
+                values: regionValues // [SỬA] Dùng giá trị HEX màu trực tiếp thay vì scale text
             }]
         },
 
        onRegionTooltipShow(event, tooltip, code) {
             const countryData = savedRiskData[code];
             
-            // [MỚI] API tự động dịch mã ISO sang tiếng Việt có sẵn của trình duyệt
             const translator = new Intl.DisplayNames(['vi'], { type: 'region' });
             let viName = tooltip.text();
             try {
                 viName = translator.of(code) || tooltip.text();
             } catch (e) {
-                // Bỏ qua lỗi nếu mã ISO không hợp lệ
+                // Bỏ qua lỗi
             }
 
             if (countryData) {
-                tooltip.text(
+                // [MỚI] Render tooltip theo chuẩn Situation Index
+                const displayScore = countryData.layers ? countryData.layers[currentMapLayer].toFixed(2) : (countryData.si_score || countryData.score);
+                const statusColor = getColorByScore(displayScore);
+                let statusText = countryData.status || 'Ổn định';
+                
+                if (countryData.layers) {
+                    const vol = Math.abs(displayScore);
+                    if (vol > 8) statusText = 'Diễn biến nghiêm trọng';
+                    else if (vol > 5) statusText = 'Diễn biến phức tạp';
+                    else if (vol > 2) statusText = 'Cần theo dõi';
+                    else statusText = 'Ổn định';
+                }
+
+                tooltip.html(
                     `<div style="padding: 4px;">
                         <div style="font-weight: bold; margin-bottom: 4px; font-size: 14px;">${viName}</div>
-                        <div style="font-size: 12px;">Trạng thái: <span style="color:${countryData.color}">${countryData.status}</span></div>
-                        <div style="font-size: 12px;">Điểm rủi ro: ${countryData.score}</div>
-                    </div>`,
-                    true
+                        <div style="font-size: 12px; margin-bottom: 4px;">Trạng thái: <span style="color:${statusColor}">${statusText}</span></div>
+                        <div style="font-size: 12px; margin-bottom: 2px;">Chỉ số biến động (SI): <span style="font-weight:bold; color:${statusColor}">${Math.abs(displayScore)}</span></div>
+                        <div style="font-size: 11px; color: #a1a1aa; margin-top: 6px; font-style: italic;">Nhấn để xem các sự kiện tác động</div>
+                    </div>`
                 );
             } else {
-                tooltip.text(`${viName} (Chưa có sự kiện nổi bật)`);
+                tooltip.html(`<div style="padding: 4px;">${viName} <br><span style="font-size: 11px; opacity: 0.7;">(Chưa có sự kiện nổi bật)</span></div>`);
             }
         },
 
-        // ====================================================================
-        // [CẬP NHẬT] XỬ LÝ CLICK: THÊM NÚT NHẢY SANG KNOWLEDGE GRAPH
-        // ====================================================================
         onRegionClick(event, code) {
             const countryData = savedRiskData[code];
             if (countryData && countryData.events.length > 0) {
@@ -109,21 +130,32 @@ function initMap(mapContainer) {
                 if(toggleBtn) toggleBtn.style.display = 'none';
                 if(sourcesContainer) sourcesContainer.style.display = 'none';
 
-                modalTitle.innerHTML = `Chi tiết rủi ro: <span style="color:${countryData.color}">${code}</span>`;
-                
-                let listHtml = '<ul style="padding-left: 20px; line-height: 1.6; font-size: 14px; margin-top: 12px; margin-bottom: 0;">';
-                countryData.events.forEach(evt => {
-                    listHtml += `<li style="margin-bottom: 8px;"><strong>${evt.title}</strong> <span style="opacity: 0.7;">(+${evt.score} điểm)</span></li>`;
-                });
-                listHtml += '</ul>';
+                const displayScore = countryData.layers ? countryData.layers[currentMapLayer].toFixed(2) : countryData.si_score;
+                const statusColor = getColorByScore(displayScore);
 
-                // Bổ sung nút liên kết bên dưới danh sách rủi ro
+                modalTitle.innerHTML = `Tình hình khu vực: <span style="color:${statusColor}">${code}</span>`;
+                
+                // [MỚI] Chia nhánh sự kiện Tích cực / Tiêu cực
+                let posHtml = '', negHtml = '';
+                countryData.events.forEach(evt => {
+                    const absScore = Math.abs(evt.score);
+                    const sentiment = evt.sentiment !== undefined ? evt.sentiment : -1; // Fallback
+                    
+                    if (sentiment > 0) {
+                        posHtml += `<li style="margin-bottom: 6px; color: #10b981;"><strong>${evt.title}</strong> <span style="opacity: 0.7; font-size: 12px;">(SI: ${absScore})</span></li>`;
+                    } else {
+                        negHtml += `<li style="margin-bottom: 6px; color: #ef4444;"><strong>${evt.title}</strong> <span style="opacity: 0.7; font-size: 12px;">(SI: ${absScore})</span></li>`;
+                    }
+                });
+
+                let contentHtml = '';
+                if (negHtml) contentHtml += `<div style="background: rgba(239, 68, 68, 0.05); padding: 12px; border-radius: 8px; margin-bottom: 12px; border-left: 3px solid #ef4444;"><h4 style="margin:0 0 8px; color:#ef4444; font-size: 14px;">🔴 Căng thẳng / Bất ổn</h4><ul style="margin:0; padding-left:16px; font-size:14px;">${negHtml}</ul></div>`;
+                if (posHtml) contentHtml += `<div style="background: rgba(16, 185, 129, 0.05); padding: 12px; border-radius: 8px; margin-bottom: 12px; border-left: 3px solid #10b981;"><h4 style="margin:0 0 8px; color:#10b981; font-size: 14px;">🟢 Cải thiện / Ổn định</h4><ul style="margin:0; padding-left:16px; font-size:14px;">${posHtml}</ul></div>`;
+
                 modalBody.innerHTML = `
-                    <div style="background: rgba(0,0,0,0.05); border-left: 4px solid ${countryData.color}; padding: 16px; border-radius: 4px; margin-bottom: 16px;">
-                        <h4 style="margin: 0; color: ${countryData.color}; font-size: 15px;">Mức độ: ${countryData.status}</h4>
-                        ${listHtml}
-                    </div>
-                    <button id="jump-to-graph-btn" style="width: 100%; padding: 12px; background-color: var(--md-sys-color-primary, #8b5cf6); color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 14px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
+                    <div style="margin-bottom: 16px; font-size: 15px; font-weight: 500;">Chỉ số hiện tại: <span style="color: ${statusColor};">${Math.abs(displayScore)}</span></div>
+                    ${contentHtml}
+                    <button id="jump-to-graph-btn" style="width: 100%; padding: 12px; background-color: var(--md-sys-color-primary, #8b5cf6); color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 14px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); margin-top: 20px;">
                         <span class="material-icons-round" style="font-size: 18px;">hub</span>
                         Phân tích Mạng lưới tri thức
                     </button>
@@ -131,14 +163,10 @@ function initMap(mapContainer) {
 
                 document.getElementById('intelligence-modal').classList.add('active');
 
-                // Lắng nghe sự kiện click cho nút vừa tạo
                 const jumpBtn = document.getElementById('jump-to-graph-btn');
                 if (jumpBtn) {
                     jumpBtn.addEventListener('click', () => {
-                        // 1. Đóng Modal hiện tại
                         document.getElementById('intelligence-modal').classList.remove('active');
-                        
-                        // 2. Kích hoạt tự động bấm vào Tab Knowledge Graph
                         const navKnowledge = document.getElementById('nav-knowledge');
                         if (navKnowledge) {
                             navKnowledge.click();
@@ -149,3 +177,18 @@ function initMap(mapContainer) {
         }
     });
 }
+
+// [MỚI] Lắng nghe sự kiện chuyển đổi Layer bản đồ
+document.addEventListener('DOMContentLoaded', () => {
+    const filterSelect = document.getElementById('map-layer-filter');
+    if (filterSelect) {
+        filterSelect.addEventListener('change', (e) => {
+            currentMapLayer = e.target.value;
+            const mapContainer = document.getElementById('global-risk-map');
+            if (mapContainer && savedRiskData) {
+                initMap(mapContainer);
+            }
+        });
+    }
+});
+
