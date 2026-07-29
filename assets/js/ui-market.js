@@ -57,7 +57,7 @@ export function renderMarket(marketData, macroHealthData = []) {
                 <h3 style="font-size: 18px; font-weight: 700; color: var(--md-sys-color-primary); margin: 0 0 16px 0; display: flex; align-items: center; gap: 8px;">
                     <span class="material-icons-round">monitor_heart</span> SỨC KHỎE NỀN KINH TẾ
                 </h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;" class="health-grid">
+                <div class="health-grid">
                     ${healthCardsHtml}
                 </div>
             </div>
@@ -76,12 +76,25 @@ export function renderMarket(marketData, macroHealthData = []) {
 
     finalHtml += `
         <style>
+            /* Ép chuẩn 3 cột cho 9 thẻ Sức khỏe (Grid 3x3) */
+            .health-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; width: 100%; }
+            
+            /* Lưới cho bảng giá thị trường bên dưới */
             .market-board { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; align-items: start; width: 100%; box-sizing: border-box; }
             .market-category-group { display: flex; flex-direction: column; width: 100%; box-sizing: border-box; }
             .chart-wrapper { position: relative; width: 100%; height: 60px; margin-bottom: 8px; overflow: hidden; }
             
-            @media (max-width: 1024px) { .market-board { grid-template-columns: repeat(2, 1fr); } }
-            @media (max-width: 768px) { .market-board { grid-template-columns: 1fr; gap: 12px; } }
+            /* Responsive: Thu về 2 cột khi trên màn hình nhỏ/Tablet */
+            @media (max-width: 1200px) { 
+                .health-grid { grid-template-columns: repeat(2, 1fr); }
+                .market-board { grid-template-columns: repeat(2, 1fr); } 
+            }
+            
+            /* Responsive: Thu về 1 cột trên Mobile */
+            @media (max-width: 768px) { 
+                .health-grid { grid-template-columns: 1fr; gap: 12px; }
+                .market-board { grid-template-columns: 1fr; gap: 12px; } 
+            }
         </style>
     `;
 
