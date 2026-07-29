@@ -151,22 +151,31 @@
                     </div>
                 </div>
 
-                <!-- [NEW] VIEW 5: KHU VỰC (BẢN ĐỒ RỦI RO) -->
+                <!-- VIEW 5: KHU VỰC (BẢN ĐỒ SỰ KIỆN) -->
                 <div id="view-region" class="view-section" style="display: none;">
                     <div class="widget">
-                        <div class="section-header">
-                            <h2 class="section-title" style="color: #ef4444; font-size: 18px;"><span class="material-icons-round">map</span> BẢN ĐỒ RỦI RO TOÀN CẦU</h2>
+                        <div class="section-header" style="justify-content: space-between;">
+                            <h2 class="section-title" style="color: #ef4444; font-size: 18px;"><span class="material-icons-round">map</span> BẢN ĐỒ TÌNH HÌNH TOÀN CẦU (SI)</h2>
+                            
+                            <!-- THANH FILTER LỚP BẢN ĐỒ -->
+                            <select id="map-layer-filter" style="padding: 6px 12px; border-radius: 8px; border: 1px solid var(--md-sys-color-outline); background: var(--md-sys-color-background); color: var(--md-sys-color-on-surface); font-size: 13px; font-weight: 500; cursor: pointer; outline: none;">
+                                <option value="total">🌍 Toàn cảnh</option>
+                                <option value="security">🛡️ An ninh & Chính trị</option>
+                                <option value="economy">💰 Kinh tế & Thương mại</option>
+                                <option value="disaster">🌪️ Thiên tai & Môi trường</option>
+                                <option value="health">⚕️ Y tế & Dịch bệnh</option>
+                            </select>
                         </div>
-                        <p style="font-size: 14px; opacity: 0.7; margin-bottom: 16px;">Mức độ rủi ro được hệ thống AI tổng hợp dựa trên tần suất, mức độ nghiêm trọng và diễn biến của các sự kiện trong 7 ngày qua.</p>
+                        <p style="font-size: 13px; opacity: 0.7; margin-bottom: 16px;">Chỉ số Tình hình (Situation Index - SI) được đo lường tự động dựa trên mức độ, xu hướng và thời gian của các sự kiện. Không phải là đánh giá chính thức về một quốc gia.</p>
                         
-                        <!-- Thẻ chứa Bản đồ jsVectorMap -->
                        <div id="global-risk-map" style="width: 100%; height: 60vh; min-height: 400px; background-color: var(--md-sys-color-background); border-radius: 12px; border: 1px solid var(--md-sys-color-outline); touch-action: none;"></div>
-                        <!-- Chú thích thang màu -->
+                       
+                        <!-- Chú thích thang màu chuẩn mới -->
                         <div style="display: flex; gap: 16px; margin-top: 16px; flex-wrap: wrap; font-size: 13px; font-weight: 500;">
-                            <div style="display: flex; align-items: center; gap: 6px;"><span style="width: 14px; height: 14px; border-radius: 4px; background: #22c55e;"></span> Bình thường</div>
-                            <div style="display: flex; align-items: center; gap: 6px;"><span style="width: 14px; height: 14px; border-radius: 4px; background: #eab308;"></span> Đang theo dõi</div>
-                            <div style="display: flex; align-items: center; gap: 6px;"><span style="width: 14px; height: 14px; border-radius: 4px; background: #f97316;"></span> Rủi ro cao</div>
-                            <div style="display: flex; align-items: center; gap: 6px;"><span style="width: 14px; height: 14px; border-radius: 4px; background: #ef4444;"></span> Khủng hoảng nghiêm trọng</div>
+                            <div style="display: flex; align-items: center; gap: 6px;"><span style="width: 14px; height: 14px; border-radius: 4px; background: #22c55e;"></span> Ổn định</div>
+                            <div style="display: flex; align-items: center; gap: 6px;"><span style="width: 14px; height: 14px; border-radius: 4px; background: #eab308;"></span> Cần theo dõi</div>
+                            <div style="display: flex; align-items: center; gap: 6px;"><span style="width: 14px; height: 14px; border-radius: 4px; background: #f97316;"></span> Diễn biến phức tạp</div>
+                            <div style="display: flex; align-items: center; gap: 6px;"><span style="width: 14px; height: 14px; border-radius: 4px; background: #ef4444;"></span> Diễn biến nghiêm trọng</div>
                         </div>
                     </div>
                 </div>
