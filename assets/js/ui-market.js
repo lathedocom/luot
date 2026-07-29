@@ -29,14 +29,22 @@ export function renderMarket(marketData, macroHealthData = []) {
                 reasonsHtml = '<li>Đang cập nhật diễn biến thị trường...</li>';
             }
 
-            // Mã hóa dữ liệu để truyền vào thuộc tính DOM an toàn
-            const eventsJson = encodeURIComponent(JSON.stringify(item.events || []));
-
+           // Mã hóa dữ liệu để nhét vào HTML an toàn
+            const reasonsJson = encodeURIComponent(JSON.stringify(item.reasons || []));
+            
+            // Render 3 lý do hiển thị trực tiếp ra thẻ (Lớp 3)
+            let reasonsHtml = '';
+            if (item.reasons && item.reasons.length > 0) {
+                item.reasons.forEach(r => {
+                    reasonsHtml += `<li style="margin-bottom: 4px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;">${escapeHtml(r)}</li>`;
+                });
+            }
+            
             healthCardsHtml += `
-                <div class="health-card" data-title="${escapeHtml(item.name)}" data-status="${escapeHtml(item.status)}" data-color="${item.color}" data-events="${eventsJson}" style="background: var(--md-sys-color-surface); border: 1px solid var(--md-sys-color-outline); border-top: 4px solid ${item.color}; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; box-shadow: 0 4px 6px rgba(0,0,0,0.02); cursor: pointer; transition: transform 0.2s, background 0.2s; min-height: 180px;">
+                <div class="health-card" data-title="${escapeHtml(item.name)}" data-status="${escapeHtml(item.status)}" data-color="${item.color}" data-reasons="${reasonsJson}" data-target="${escapeHtml(item.target_audience)}" data-impact="${escapeHtml(item.impact_level)}" data-duration="${escapeHtml(item.duration)}" data-meaning="${escapeHtml(item.meaning)}" style="background: var(--md-sys-color-surface); border: 1px solid var(--md-sys-color-outline); border-top: 4px solid ${item.color}; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; box-shadow: 0 4px 6px rgba(0,0,0,0.02); cursor: pointer; transition: transform 0.2s, background 0.2s; min-height: 180px;">
                     
                     <!-- Lớp 1: Header & Trạng thái -->
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
                         <div style="display: flex; align-items: center; gap: 8px;">
                             <span style="font-size: 20px;">${item.icon}</span>
                             <span style="font-size: 14px; font-weight: 700; text-transform: uppercase; color: var(--md-sys-color-on-surface); opacity: 0.9;">${escapeHtml(item.name)}</span>
@@ -52,9 +60,9 @@ export function renderMarket(marketData, macroHealthData = []) {
                     </div>
 
                     <!-- Lớp 3: Nguyên nhân chính -->
-                    <div style="background: rgba(0,0,0,0.1); padding: 10px; border-radius: 8px; flex-grow: 1;">
-                        <div style="font-size: 11px; text-transform: uppercase; font-weight: bold; opacity: 0.6; margin-bottom: 6px;">Nguyên nhân chính</div>
-                        <ul style="margin: 0; padding-left: 16px; font-size: 12px; opacity: 0.85; line-height: 1.4;">
+                    <div style="background: rgba(0,0,0,0.1); padding: 12px; border-radius: 8px; flex-grow: 1;">
+                        <div style="font-size: 11px; text-transform: uppercase; font-weight: bold; opacity: 0.6; margin-bottom: 8px;">Nguyên nhân chính</div>
+                        <ul style="margin: 0; padding-left: 16px; font-size: 13px; opacity: 0.85; line-height: 1.4;">
                             ${reasonsHtml}
                         </ul>
                     </div>
