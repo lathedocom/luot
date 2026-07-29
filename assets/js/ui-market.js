@@ -190,50 +190,70 @@ export function renderMarket(marketData, macroHealthData = []) {
     }
 }
 
-// Hàm render Modal lý do đánh giá sức khỏe nền kinh tế
-function openMacroHealthModal(title, status, color, events) {
+// Hàm render Modal lý do đánh giá
+function openMacroHealthModal(title, status, color, reasons, target, impact_level, duration, meaning) {
     const modalTitle = document.getElementById('modal-title');
     const modalBody = document.getElementById('modal-body');
     
-    // Ẩn các thuộc tính rác của tin tức thông thường
     document.getElementById('modal-reliability').innerHTML = '';
     document.getElementById('modal-mini-timeline').style.display = 'none';
     document.getElementById('toggle-sources-btn').style.display = 'none';
     document.getElementById('modal-sources').style.display = 'none';
 
-    modalTitle.innerHTML = `Chi tiết Vĩ mô: <span style="color:${color}">${title}</span>`;
+    modalTitle.innerHTML = `<span style="color:${color}">${title}</span>`;
 
-    let listHtml = '';
-    if (events && events.length > 0) {
-        events.forEach(evt => {
-            let icon = (evt.impact !== undefined ? evt.impact : (evt.sentiment || 0)) >= 0 ? '🟢' : '🔴';
-            
-            listHtml += `
-                <div style="border-bottom: 1px dashed var(--md-sys-color-outline); padding: 12px 0;">
-                    <div style="display: flex; align-items: flex-start; gap: 8px;">
-                        <span style="font-size: 14px; margin-top: 2px;">${icon}</span>
-                        <div style="font-size: 14px; font-weight: 500; color: var(--md-sys-color-on-surface); line-height: 1.4;">
-                            ${escapeHtml(evt.title)}
-                        </div>
-                    </div>
-                </div>
-            `;
+    let reasonsHtml = '';
+    if (reasons && reasons.length > 0) {
+        reasons.forEach(r => {
+            reasonsHtml += `<li style="margin-bottom: 8px;">${escapeHtml(r)}</li>`;
         });
-    } else {
-        listHtml = '<p style="opacity: 0.7; font-size: 14px; padding: 12px 0;">Không ghi nhận sự kiện biến động mạnh nào tác động trực tiếp tới chỉ số này trong 7 ngày qua.</p>';
     }
 
     modalBody.innerHTML = `
-        <div style="background: rgba(0,0,0,0.05); border-left: 4px solid ${color}; padding: 16px; border-radius: 8px; margin-bottom: 20px;">
-            <div style="font-size: 13px; text-transform: uppercase; font-weight: bold; opacity: 0.7; margin-bottom: 4px;">TRẠNG THÁI HIỆN TẠI:</div>
-            <div style="font-size: 18px; font-weight: bold; color: ${color};">${status}</div>
+        <div style="background: rgba(0,0,0,0.05); border-left: 4px solid ${color}; padding: 16px; border-radius: 8px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;">
+            <div>
+                <div style="font-size: 11px; text-transform: uppercase; font-weight: bold; opacity: 0.7; margin-bottom: 4px;">TRẠNG THÁI:</div>
+                <div style="font-size: 20px; font-weight: bold; color: ${color};">${status}</div>
+            </div>
+            <div style="text-align: right;">
+                <div style="font-size: 11px; text-transform: uppercase; font-weight: bold; opacity: 0.7; margin-bottom: 4px;">THỜI GIAN:</div>
+                <div style="font-size: 14px; font-weight: 600; color: var(--md-sys-color-on-surface);">${escapeHtml(duration)}</div>
+            </div>
         </div>
-        <div style="font-size: 14px; font-weight: bold; margin-bottom: 8px; text-transform: uppercase; color: var(--md-sys-color-primary);">Các sự kiện định hình xu hướng:</div>
-        ${listHtml}
+
+        <div style="margin-bottom: 20px;">
+            <div style="font-size: 13px; font-weight: bold; margin-bottom: 8px; text-transform: uppercase; color: var(--md-sys-color-primary);">
+                <span class="material-icons-round" style="font-size: 16px; vertical-align: text-bottom;">info</span> Điều gì vừa xảy ra?
+            </div>
+            <ul style="margin: 0; padding-left: 16px; font-size: 14px; opacity: 0.9; line-height: 1.6; color: var(--md-sys-color-on-surface);">
+                ${reasonsHtml}
+            </ul>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px;">
+            <div style="background: var(--md-sys-color-surface); border: 1px solid var(--md-sys-color-outline); padding: 16px; border-radius: 8px;">
+                <div style="font-size: 12px; font-weight: bold; margin-bottom: 6px; text-transform: uppercase; opacity: 0.7;">Ai bị ảnh hưởng?</div>
+                <div style="font-size: 14px; font-weight: 500; color: var(--md-sys-color-primary);">${escapeHtml(target)}</div>
+            </div>
+            <div style="background: var(--md-sys-color-surface); border: 1px solid var(--md-sys-color-outline); padding: 16px; border-radius: 8px;">
+                <div style="font-size: 12px; font-weight: bold; margin-bottom: 6px; text-transform: uppercase; opacity: 0.7;">Mức độ tác động</div>
+                <div style="font-size: 14px; font-weight: bold;">${escapeHtml(impact_level)}</div>
+            </div>
+        </div>
+
+        <div style="background: rgba(59, 130, 246, 0.05); border: 1px solid rgba(59, 130, 246, 0.2); padding: 16px; border-radius: 8px;">
+            <div style="font-size: 13px; font-weight: bold; margin-bottom: 8px; text-transform: uppercase; color: #3b82f6;">
+                <span class="material-icons-round" style="font-size: 16px; vertical-align: text-bottom;">lightbulb</span> Tác động thực tế
+            </div>
+            <p style="font-size: 14px; opacity: 0.9; line-height: 1.6; margin: 0; color: var(--md-sys-color-on-surface);">
+                ${escapeHtml(meaning)}
+            </p>
+        </div>
     `;
 
     document.getElementById('intelligence-modal').classList.add('active');
 }
+
 
 function drawMarketSparkline(canvasId, item) {
     const ctx = document.getElementById(canvasId);
