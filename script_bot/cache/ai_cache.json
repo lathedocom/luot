@@ -5977,5 +5977,723 @@
       "sentiment": -1,
       "scope": "national"
     }
+  },
+  "evt_1e1661b8": {
+    "created_at": 1785331053342,
+    "expires_at": 1787923053342,
+    "version": "4.5",
+    "checksum": "f7f872aa46d9c628b7bfbb3c56feb337",
+    "data": {
+      "cluster_title": "Căng thẳng giữa Mỹ và Iran",
+      "short_summary": "Mỹ và Iran đã có những vụ tấn công vào nhau, khiến tình hình căng thẳng leo thang.",
+      "detailed_summary": "Sau một thời gian tạm lắng, xung đột tại Trung Đông tái bùng phát khi Iran tấn công lực lượng Mỹ. Đáp lại, Mỹ và Ả Rập Xê Út đã thực hiện các cuộc tấn công vào lực lượng dân quân được Iran hậu thuẫn tại Iraq. Sự kiện địa chính trị này đã đẩy giá dầu thế giới tăng cao. Đồng thời, các nhà đầu tư trên thị trường chứng khoán đang thận trọng theo dõi các báo cáo tài chính từ những tập đoàn công nghệ hàng đầu như Microsoft, Meta và Qualcomm, cùng với quyết định về lãi suất sắp tới của Cục Dự trữ Liên bang Mỹ (Fed).",
+      "causes": [
+        "Việc Iran tấn công các căn cứ của Mỹ tại khu vực",
+        "Sự thất bại của các nỗ lực ngoại giao nhằm duy trì tình trạng tạm dừng giao tranh"
+      ],
+      "effects": [
+        "Giá dầu toàn cầu tăng lên do lo ngại bất ổn địa chính trị",
+        "Thị trường chứng khoán Mỹ rơi vào trạng thái thận trọng, dao động chờ đợi thông tin kinh tế",
+        "Gia tăng nguy cơ xung đột vũ trang quy mô lớn tại Trung Đông"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư thị trường tài chính toàn cầu",
+        "Ngành năng lượng và vận tải dầu khí",
+        "Các tập đoàn công nghệ lớn",
+        "Các quốc gia có liên quan trực tiếp đến cuộc xung đột quân sự"
+      ],
+      "market_impact": "Thị trường năng lượng biến động tăng mạnh, thị trường chứng khoán đối mặt với rủi ro tâm lý tiêu cực trước các báo cáo tài chính và chính sách tiền tệ.",
+      "follow_up": "",
+      "significance": "Sự kiện cho thấy sự cộng hưởng tiêu cực giữa căng thẳng quân sự tại Trung Đông và sự không chắc chắn của chính sách tiền tệ, gây áp lực kép lên ổn định kinh tế toàn cầu.",
+      "unknowns": [
+        "Quy mô và hậu quả cụ thể của các cuộc phản công từ cả hai phía trong những ngày tới",
+        "Phản ứng chính sách tiền tệ của Cục Dự trữ Liên bang Mỹ trước áp lực tăng giá dầu"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên các báo cáo cập nhật từ Bloomberg về sự kiện đang diễn ra.",
+      "scenarios": [
+        {
+          "text": "Xung đột quân sự lan rộng kéo theo sự biến động mạnh hơn nữa của giá năng lượng toàn cầu.",
+          "likelihood": "trung bình"
+        },
+        {
+          "text": "Các bên duy trì mức độ xung đột hạn chế để ưu tiên ổn định thị trường và đàm phán ngoại giao.",
+          "likelihood": "cao"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Iran",
+          "target": "Mỹ",
+          "relation_type": "conflict",
+          "label": "Xung đột vũ trang trực tiếp"
+        },
+        {
+          "source": "Mỹ",
+          "target": "Ả Rập Xê Út",
+          "relation_type": "cooperation",
+          "label": "Hợp tác quân sự trong các cuộc tấn công chống lại dân quân"
+        },
+        {
+          "source": "Iran",
+          "target": "Giá dầu",
+          "relation_type": "cause_effect",
+          "label": "Hành động quân sự của Iran gây tăng giá dầu"
+        },
+        {
+          "source": "Cục Dự trữ Liên bang Mỹ",
+          "target": "Thị trường chứng khoán",
+          "relation_type": "cause_effect",
+          "label": "Quyết định lãi suất ảnh hưởng đến tâm lý nhà đầu tư"
+        },
+        {
+          "source": "SK Hynix",
+          "target": "Các công ty công nghệ",
+          "relation_type": "cause_effect",
+          "label": "Gia tăng đầu tư vốn báo hiệu xu hướng chi tiêu trong ngành công nghệ"
+        }
+      ],
+      "entities": [
+        "Iran",
+        "Mỹ",
+        "Saudi Arabia"
+      ],
+      "keywords": [
+        "Iran",
+        "Mỹ",
+        "xung đột",
+        "chính trị"
+      ],
+      "importance": 95,
+      "severity": 5,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_general_1785331059257": {
+    "created_at": 1785331065150,
+    "expires_at": 1787923065150,
+    "version": "4.5",
+    "checksum": "8ea764cbd62a9f7ea07db91e13ffc0d5",
+    "data": {
+      "cluster_title": "Sự kiện SK Hynix",
+      "short_summary": "SK Hynix không đạt được kỳ vọng về lợi nhuận, nhưng công ty vẫn khẳng định rủi ro về cung vượt cầu ở lĩnh vực nhớ lượng vẫn còn hạn chế.",
+      "detailed_summary": "Tập đoàn sản xuất chip SK Hynix của Hàn Quốc vừa công bố kết quả kinh doanh không đạt kỳ vọng của các chuyên gia phân tích, dẫn đến đà giảm điểm mạnh của cổ phiếu nhóm ngành công nghệ. Mặc dù kết quả không như mong đợi, doanh nghiệp này khẳng định rằng nguy cơ cung vượt cầu trong lĩnh vực bộ nhớ vẫn ở mức hạn chế.",
+      "causes": [
+        "Lợi nhuận của SK Hynix không đạt mức kỳ vọng của giới phân tích",
+        "Tâm lý lo ngại của nhà đầu tư trước tình hình ngành chip bán dẫn"
+      ],
+      "effects": [
+        "Cổ phiếu ngành công nghệ bị bán tháo mạnh",
+        "Thị trường tài chính ghi nhận sự bất ổn trong ngắn hạn"
+      ],
+      "affected_groups": [
+        "Các nhà đầu tư trên thị trường chứng khoán",
+        "Các doanh nghiệp trong ngành sản xuất chip bán dẫn",
+        "Các công ty công nghệ có liên quan"
+      ],
+      "market_impact": "Gây áp lực bán tháo lên cổ phiếu nhóm công nghệ toàn cầu và tạo ra tâm lý thận trọng đối với ngành bán dẫn.",
+      "follow_up": "",
+      "significance": "Sự kiện này phản ánh sự nhạy cảm của thị trường tài chính đối với kỳ vọng tăng trưởng của ngành chip, đồng thời cho thấy sự khác biệt giữa quan điểm của doanh nghiệp và đánh giá của giới phân tích.",
+      "unknowns": [
+        "Mức độ ảnh hưởng thực tế đến dòng tiền dài hạn của các công ty công nghệ",
+        "Phản ứng chính xác của các đối thủ cạnh tranh trước tình trạng cung cầu hiện tại"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên báo cáo kết quả kinh doanh thực tế.",
+      "scenarios": [
+        {
+          "text": "Thị trường ổn định trở lại sau khi nhà đầu tư đánh giá lại tiềm năng dài hạn của chip nhớ.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Đà bán tháo tiếp tục lan rộng nếu các công ty chip khác cũng công bố kết quả kinh doanh kém khả quan.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Lợi nhuận SK Hynix",
+          "target": "Cổ phiếu công nghệ",
+          "relation_type": "cause_effect",
+          "label": "Kết quả kinh doanh thấp gây ra làn sóng bán tháo"
+        },
+        {
+          "source": "SK Hynix",
+          "target": "Thị trường chip nhớ",
+          "relation_type": "neutral",
+          "label": "Đánh giá về rủi ro cung vượt cầu"
+        }
+      ],
+      "entities": [
+        "SK Hynix",
+        "Hàn Quốc"
+      ],
+      "keywords": [
+        "SK Hynix",
+        "Tech rout",
+        "chíp",
+        "hàng hóa"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "business"
+    }
+  },
+  "evt_353065b8": {
+    "created_at": 1785331076940,
+    "expires_at": 1787923076940,
+    "version": "4.5",
+    "checksum": "d90256b40d9773f535d9d2e0a7636f2b",
+    "data": {
+      "cluster_title": "Vàng rung lắc trước quyết định lãi suất của Fed",
+      "short_summary": "Vàng có thể bị áp lực nếu Fed tăng lãi suất, theo Amy Gower, chiến lược gia kim loại và khai thác tại Morgan Stanley.",
+      "detailed_summary": "Amy Gower, chiến lược gia hàng đầu về kim loại và khai thác tại Morgan Stanley, nhận định giá vàng có khả năng chịu áp lực giảm nếu Cục Dự trữ Liên bang Mỹ (Fed) quyết định tăng lãi suất. Hiện tại, thị trường đang thận trọng theo dõi các thông báo chính sách tiền tệ để định hướng cho loại tài sản trú ẩn an toàn này.",
+      "causes": [
+        "Sự không chắc chắn về chính sách lãi suất của Cục Dự trữ Liên bang Mỹ (Fed)",
+        "Dự báo về khả năng tăng lãi suất ảnh hưởng đến chi phí cơ hội của việc nắm giữ vàng"
+      ],
+      "effects": [
+        "Giá vàng chịu áp lực giảm điểm",
+        "Tâm lý thận trọng của giới đầu tư trên thị trường kim loại quý"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư vàng",
+        "Các tổ chức tài chính",
+        "Thị trường kim loại quý"
+      ],
+      "market_impact": "Thị trường vàng đang phản ứng theo hướng thận trọng, chờ đợi tín hiệu cụ thể từ chính sách tiền tệ của Fed để xác định xu hướng giá tiếp theo.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh mối quan hệ tỷ lệ nghịch truyền thống giữa lãi suất của Fed và giá vàng, ảnh hưởng trực tiếp đến tâm lý nhà đầu tư trong bối cảnh lạm phát và chính sách tiền tệ chưa rõ ràng.",
+      "unknowns": [
+        "Quyết định cuối cùng của Cục Dự trữ Liên bang Mỹ về lãi suất",
+        "Mức độ phản ứng thực tế của thị trường vàng sau khi quyết định lãi suất được công bố"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên phân tích từ chuyên gia của tổ chức tài chính uy tín Morgan Stanley.",
+      "scenarios": [
+        {
+          "text": "Fed tăng lãi suất khiến giá vàng suy giảm do áp lực chi phí cơ hội.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Fed giữ nguyên lãi suất giúp giá vàng duy trì ổn định hoặc phục hồi nhẹ.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Cục Dự trữ Liên bang Mỹ (Fed)",
+          "target": "Giá vàng",
+          "relation_type": "cause_effect",
+          "label": "Chính sách lãi suất gây áp lực lên giá vàng"
+        },
+        {
+          "source": "Amy Gower",
+          "target": "Morgan Stanley",
+          "relation_type": "cooperation",
+          "label": "Đại diện chiến lược gia tại tổ chức"
+        }
+      ],
+      "entities": [
+        "Amy Gower",
+        "Morgan Stanley",
+        "Federal Reserve"
+      ],
+      "keywords": [
+        "Vàng",
+        "Lãi suất",
+        "Fed"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_d83d0388": {
+    "created_at": 1785331088488,
+    "expires_at": 1787923088488,
+    "version": "4.5",
+    "checksum": "94840f1dd73b86bea3f8f185facc7d22",
+    "data": {
+      "cluster_title": "Nhiều biện pháp mới để ổn định thị trường chứng khoán",
+      "short_summary": "Hàn Quốc đã cam kết thực hiện nhiều biện pháp mới để ổn định thị trường chứng khoán và hạn chế tiếp cận của người tiêu dùng với các quỹ giao dịch được niêm yết có lợi thế.",
+      "detailed_summary": "Sau đợt sụt giảm mạnh khiến nhà đầu tư mất hàng tỷ USD, chính phủ Hàn Quốc đã cam kết thực hiện các biện pháp bổ sung để ổn định thị trường chứng khoán. Trọng tâm của động thái này là hạn chế quyền tiếp cận của nhà đầu tư cá nhân đối với các quỹ ETF đòn bẩy, nhằm giảm thiểu rủi ro cho thị trường trước những biến động mạnh.",
+      "causes": [
+        "Thị trường chứng khoán bị bán tháo mạnh",
+        "Nhà đầu tư cá nhân chịu thiệt hại lớn về tài chính"
+      ],
+      "effects": [
+        "Hạn chế quyền tiếp cận của nhà đầu tư cá nhân đối với các quỹ ETF đòn bẩy",
+        "Tăng cường kiểm soát và ổn định thị trường tài chính"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư cá nhân tại Hàn Quốc",
+        "Các tổ chức phát hành quỹ ETF đòn bẩy"
+      ],
+      "market_impact": "Các biện pháp này dự kiến sẽ làm giảm tính thanh khoản trong các sản phẩm đòn bẩy và thay đổi tâm lý đầu tư của các cá nhân trong ngắn hạn.",
+      "follow_up": "",
+      "significance": "Sự kiện cho thấy nỗ lực của các cơ quan quản lý tài chính trong việc bảo vệ nhà đầu tư nhỏ lẻ và kiểm soát rủi ro hệ thống trước những đợt biến động bất ngờ trên thị trường.",
+      "unknowns": [
+        "Chi tiết cụ thể về các biện pháp hạn chế quyền tiếp cận",
+        "Thời điểm áp dụng chính thức các biện pháp mới"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên tuyên bố về chính sách của cơ quan quản lý Hàn Quốc.",
+      "scenarios": [
+        {
+          "text": "Thị trường ổn định trở lại sau khi các hạn chế được thực thi.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các nhà đầu tư cá nhân chuyển dịch sang các sản phẩm đầu tư rủi ro khác.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Thị trường chứng khoán Hàn Quốc",
+          "target": "Nhà đầu tư cá nhân",
+          "relation_type": "cause_effect",
+          "label": "Gây thiệt hại tài chính hàng tỷ USD"
+        },
+        {
+          "source": "Chính phủ Hàn Quốc",
+          "target": "Quỹ ETF đòn bẩy",
+          "relation_type": "cause_effect",
+          "label": "Ban hành các biện pháp hạn chế"
+        }
+      ],
+      "entities": [
+        "Hàn Quốc",
+        "chứng khoán"
+      ],
+      "keywords": [
+        "South Korea",
+        "Leveraged ETFs",
+        "thị trường chứng khoán"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_2915af17": {
+    "created_at": 1785331100535,
+    "expires_at": 1787923100535,
+    "version": "4.5",
+    "checksum": "9d0b4eb521a2b6e4f35c90bc800078f5",
+    "data": {
+      "cluster_title": "Lạm phát có thể khiến Fed trì hoãn tăng lãi suất",
+      "short_summary": "Esther George, cựu chủ tịch Federal Reserve Kansas City, cho rằng Fed có thể trì hoãn tăng lãi suất vì lo ngại về sự kéo dài của lạm phát trong nền kinh tế Mỹ.",
+      "detailed_summary": "Bà Esther George, cựu Chủ tịch Ngân hàng Dự trữ Liên bang Kansas City, cho rằng Cục Dự trữ Liên bang Mỹ (Fed) sẽ duy trì lãi suất ổn định tại cuộc họp hiện tại. Tuy nhiên, bà bày tỏ sự quan ngại về việc lạm phát vẫn ở mức cao và kéo dài trong nền kinh tế Mỹ, đặt ra thách thức đối với các quyết định chính sách tiền tệ trong tương lai.",
+      "causes": [
+        "Lạm phát duy trì ở mức cao kéo dài",
+        "Áp lực kinh tế đòi hỏi sự thận trọng trong điều hành lãi suất"
+      ],
+      "effects": [
+        "Dự báo Fed giữ nguyên lãi suất trong ngắn hạn",
+        "Gia tăng tâm lý cảnh giác về xu hướng lạm phát dài hạn"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư tài chính",
+        "Doanh nghiệp Mỹ",
+        "Người tiêu dùng Mỹ"
+      ],
+      "market_impact": "Thông tin này củng cố kỳ vọng thị trường về khả năng Fed tạm dừng tăng lãi suất, giúp ổn định tâm lý giao dịch trong ngắn hạn.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh quan điểm thận trọng của giới chức ngân hàng trung ương về rủi ro lạm phát dai dẳng, bất chấp việc tạm dừng tăng lãi suất.",
+      "unknowns": [
+        "Thời điểm chính xác Fed sẽ thay đổi lập trường về lãi suất trong tương lai",
+        "Các biện pháp cụ thể Fed sẽ thực hiện nếu lạm phát không hạ nhiệt như mong đợi"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên phát biểu của cựu quan chức cấp cao thuộc hệ thống Fed.",
+      "scenarios": [
+        {
+          "text": "Fed giữ nguyên lãi suất tại cuộc họp và tiếp tục theo dõi dữ liệu kinh tế.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Fed phát đi tín hiệu về khả năng tiếp tục tăng lãi suất trong tương lai nếu dữ liệu lạm phát không cải thiện.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Lạm phát cao",
+          "target": "Cục Dự trữ Liên bang Mỹ (Fed)",
+          "relation_type": "cause_effect",
+          "label": "Tác động đến quyết định giữ nguyên lãi suất"
+        },
+        {
+          "source": "Esther George",
+          "target": "Cục Dự trữ Liên bang Mỹ (Fed)",
+          "relation_type": "neutral",
+          "label": "Cựu lãnh đạo đưa ra nhận định về tổ chức"
+        }
+      ],
+      "entities": [
+        "Esther George",
+        "Kansas City Federal Reserve"
+      ],
+      "keywords": [
+        "Lạm phát",
+        "Tăng lãi suất",
+        "Fed"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_91a372d3": {
+    "created_at": 1785331111889,
+    "expires_at": 1787923111889,
+    "version": "4.5",
+    "checksum": "6169a228b5f10acc0f72a3d5e6b199b0",
+    "data": {
+      "cluster_title": "Giám đốc Ngân hàng Trung ương gây bất ổn thị trường",
+      "short_summary": "Giám đốc Ngân hàng Trung ương Warsh được cho là đã gây ra sự bất ổn trên thị trường do sự không rõ ràng về quyết định lãi suất của Fed.",
+      "detailed_summary": "Claudia Sahm, chuyên gia kinh tế trưởng tại New Century Advisors, cho rằng sự thiếu rõ ràng trong các thông tin về định hướng chính sách từ phía Chủ tịch Fed đang gây ra những nghi ngại và biến động trên thị trường tài chính về các quyết định lãi suất sắp tới.",
+      "causes": [
+        "Thiếu sự minh bạch về thông tin từ phía lãnh đạo Fed",
+        "Sự không chắc chắn của thị trường đối với các quyết định lãi suất"
+      ],
+      "effects": [
+        "Gia tăng tâm lý bất ổn trên thị trường tài chính",
+        "Áp lực đặt lên uy tín truyền thông của lãnh đạo Fed"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư tài chính",
+        "Các tổ chức tài chính toàn cầu",
+        "Cục Dự trữ Liên bang Mỹ (Fed)"
+      ],
+      "market_impact": "Thị trường có thể ghi nhận những biến động ngắn hạn do tâm lý hoang mang về định hướng chính sách tiền tệ.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh tầm quan trọng của việc truyền thông rõ ràng từ các ngân hàng trung ương trong việc kiểm soát kỳ vọng của thị trường.",
+      "unknowns": [
+        "Phản ứng cụ thể của Chủ tịch Fed trước các chỉ trích này",
+        "Mức độ ảnh hưởng thực tế đến biến động chỉ số chứng khoán"
+      ],
+      "confidence_note": "Thông tin dựa trên nhận định cá nhân của một chuyên gia kinh tế uy tín được trích dẫn bởi Bloomberg, độ tin cậy cao về quan điểm.",
+      "scenarios": [
+        {
+          "text": "Fed đưa ra các thông báo rõ ràng hơn trong các kỳ họp tới để trấn an thị trường.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Sự thiếu chắc chắn tiếp tục kéo dài khiến biến động thị trường trở nên khó kiểm soát hơn.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Chủ tịch Fed",
+          "target": "Sự bất ổn thị trường",
+          "relation_type": "cause_effect",
+          "label": "Gây ra biến động thông qua thông tin không rõ ràng"
+        },
+        {
+          "source": "Claudia Sahm",
+          "target": "Chủ tịch Fed",
+          "relation_type": "conflict",
+          "label": "Chỉ trích phương pháp điều hành và truyền thông"
+        }
+      ],
+      "entities": [
+        "Federal Reserve",
+        "New Century Advisors"
+      ],
+      "keywords": [
+        "Fed",
+        "Warsh",
+        "Claudia Sahm",
+        "Bloomberg"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_cb17e447": {
+    "created_at": 1785331123838,
+    "expires_at": 1787923123838,
+    "version": "4.5",
+    "checksum": "2db3376e3a791eeeca4d67775b35e6d1",
+    "data": {
+      "cluster_title": "Nhiều công ty trên Wall Street bán sản phẩm liên quan đến SpaceX",
+      "short_summary": "Nhiều công ty trên Wall Street đang bán sản phẩm liên quan đến SpaceX để bảo vệ khách hàng khỏi những tổn thất tiềm ẩn sau khi công ty này ra mắt trên thị trường.",
+      "detailed_summary": "Sau khi cổ phiếu SpaceX trải qua đợt bán tháo mạnh kể từ thời điểm niêm yết trên thị trường, các tổ chức tài chính tại Phố Wall đã nhanh chóng phát triển các công cụ đầu tư mới. Mục tiêu của các sản phẩm này là bảo vệ nhà đầu tư trước các khoản lỗ tiềm ẩn trong tương lai do sự biến động giá cổ phiếu gây ra.",
+      "causes": [
+        "Giá cổ phiếu SpaceX giảm mạnh sau khi niêm yết trên thị trường",
+        "Nhu cầu của nhà đầu tư về các giải pháp phòng ngừa rủi ro tài chính"
+      ],
+      "effects": [
+        "Sự gia tăng của các sản phẩm đầu tư tài chính phức tạp gắn liền với SpaceX",
+        "Áp lực lên các tổ chức tài chính trong việc quản lý rủi ro cho khách hàng"
+      ],
+      "affected_groups": [
+        "Các nhà đầu tư cá nhân và tổ chức sở hữu cổ phiếu SpaceX",
+        "Các định chế tài chính tại Phố Wall",
+        "SpaceX"
+      ],
+      "market_impact": "Sự xuất hiện của các công cụ phái sinh hoặc bảo hiểm rủi ro cho thấy lo ngại về biến động giá cổ phiếu SpaceX và xu hướng tìm kiếm biện pháp bảo toàn vốn trong thị trường đầu tư công nghệ.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh phản ứng nhanh nhạy của thị trường tài chính đối với sự mất giá của các tài sản công nghệ cao, đồng thời cho thấy sự phức tạp trong chiến lược phòng thủ của các nhà đầu tư.",
+      "unknowns": [
+        "Các điều khoản chi tiết và cấu trúc vận hành của các sản phẩm tài chính này",
+        "Mức độ chấp nhận và hiệu quả thực tế của các sản phẩm này đối với nhà đầu tư"
+      ],
+      "confidence_note": "Thông tin dựa trên diễn biến thị trường thực tế, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Sự quan tâm của nhà đầu tư đối với các sản phẩm bảo hiểm rủi ro tăng cao nếu cổ phiếu SpaceX tiếp tục đà sụt giảm.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Cơ quan quản lý thị trường tài chính sẽ can thiệp để giám sát chặt chẽ các sản phẩm đầu tư phức tạp này.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Giá cổ phiếu SpaceX",
+          "target": "Phố Wall",
+          "relation_type": "cause_effect",
+          "label": "Sự sụt giảm giá gây ra nhu cầu tạo ra các sản phẩm tài chính bảo vệ"
+        },
+        {
+          "source": "Phố Wall",
+          "target": "Nhà đầu tư",
+          "relation_type": "cooperation",
+          "label": "Cung cấp các sản phẩm tài chính nhằm giảm thiểu rủi ro thua lỗ"
+        }
+      ],
+      "entities": [
+        "Wall Street",
+        "SpaceX"
+      ],
+      "keywords": [
+        "Wall Street",
+        "SpaceX",
+        "sản phẩm đầu tư"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_1a0dce33": {
+    "created_at": 1785331135575,
+    "expires_at": 1787923135575,
+    "version": "4.5",
+    "checksum": "d9a5387f11efc65b64b9baa766f31b2d",
+    "data": {
+      "cluster_title": "Hermès và Kering ghi nhận mức chênh lệch cổ phiếu kỷ lục",
+      "short_summary": "Cổ phiếu của Hermès và Kering đã ghi nhận mức chênh lệch kỷ lục, phản ánh sự khác biệt trong đường đi của hai công ty sản xuất hàng xa xỉ.",
+      "detailed_summary": "Vào thứ Tư, giá cổ phiếu của hai tập đoàn hàng xa xỉ Hermès International SCA và Kering SA đã ghi nhận mức chênh lệch kỷ lục. Sự kiện này phản ánh sự đảo chiều trong hiệu quả kinh doanh của hai doanh nghiệp, dựa trên các báo cáo tài chính mới được công bố cho thấy lộ trình phát triển trái ngược nhau.",
+      "causes": [
+        "Báo cáo tài chính mới công bố với kết quả kinh doanh trái ngược nhau",
+        "Sự thay đổi trong kỳ vọng của thị trường đối với triển vọng tăng trưởng của hai tập đoàn"
+      ],
+      "effects": [
+        "Khoảng cách chênh lệch giá cổ phiếu giữa hai doanh nghiệp đạt mức cao nhất từ trước đến nay",
+        "Nhà đầu tư tái đánh giá vị thế của các thương hiệu xa xỉ trong danh mục đầu tư"
+      ],
+      "affected_groups": [
+        "Các nhà đầu tư trên thị trường chứng khoán",
+        "Cổ đông của Hermès International SCA",
+        "Cổ đông của Kering SA"
+      ],
+      "market_impact": "Phản ánh xu hướng phân hóa mạnh mẽ trong ngành hàng xa xỉ, gây áp lực lên tâm lý nhà đầu tư đối với các cổ phiếu trong cùng lĩnh vực.",
+      "follow_up": "",
+      "significance": "Sự kiện cho thấy sự sàng lọc của thị trường đối với các thương hiệu xa xỉ dựa trên khả năng duy trì tăng trưởng thực tế trong bối cảnh kinh tế biến động.",
+      "unknowns": [
+        "Thời gian cụ thể để Kering có thể phục hồi đà tăng trưởng",
+        "Tác động dài hạn của sự phân hóa này đối với định giá thị trường của các thương hiệu xa xỉ khác"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên dữ liệu giao dịch chứng khoán thực tế.",
+      "scenarios": [
+        {
+          "text": "Hermès tiếp tục duy trì đà tăng trưởng nhờ sự ổn định của phân khúc xa xỉ cao cấp.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Kering triển khai các chiến lược tái cấu trúc để thu hẹp khoảng cách với các đối thủ cạnh tranh.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Báo cáo tài chính",
+          "target": "Giá cổ phiếu Hermès và Kering",
+          "relation_type": "cause_effect",
+          "label": "Yếu tố dẫn đến sự phân hóa giá trị cổ phiếu"
+        },
+        {
+          "source": "Hermès",
+          "target": "Kering",
+          "relation_type": "neutral",
+          "label": "Đối thủ cạnh tranh trong ngành hàng xa xỉ"
+        }
+      ],
+      "entities": [
+        "Hermès International SCA",
+        "Kering SA"
+      ],
+      "keywords": [
+        "Hermès",
+        "Kering",
+        "cổ phiếu",
+        "luxury goods"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "business"
+    }
+  },
+  "evt_db1cdc65": {
+    "created_at": 1785331147556,
+    "expires_at": 1787923147556,
+    "version": "4.5",
+    "checksum": "b20885825800cba22160b350f826fc43",
+    "data": {
+      "cluster_title": "Trả đũa Iran",
+      "short_summary": "Tổng thống Trump cam kết sẽ đáp trả Iran vì vụ tấn công gần đây bằng cách đánh 'đòn đau' vào nước này.",
+      "detailed_summary": "Chính phủ Washington xác nhận Iran đã phóng tên lửa đạn đạo nhắm vào các vị trí quân sự của Mỹ tại Trung Đông. Đáp lại hành động này, Tổng thống Donald Trump công khai cam kết sẽ thực hiện các biện pháp trả đũa cứng rắn để đáp trả sự gây hấn từ phía Tehran.",
+      "causes": [
+        "Iran thực hiện phóng tên lửa đạn đạo vào các cơ sở quân sự của Mỹ tại khu vực Trung Đông.",
+        "Căng thẳng leo thang trong quan hệ ngoại giao và quân sự giữa Mỹ và Iran."
+      ],
+      "effects": [
+        "Khả năng xảy ra một cuộc xung đột quân sự trực tiếp giữa Mỹ và Iran.",
+        "Gia tăng bất ổn an ninh tại khu vực Trung Đông.",
+        "Áp lực lên chính quyền Washington trong việc triển khai các biện pháp trả đũa."
+      ],
+      "affected_groups": [
+        "Quân đội Mỹ đang đồn trú tại Trung Đông",
+        "Chính phủ Iran",
+        "Các quốc gia trong khu vực Trung Đông",
+        "Cộng đồng quốc tế"
+      ],
+      "market_impact": "Gây tâm lý bất ổn trên thị trường tài chính toàn cầu, có khả năng đẩy giá dầu tăng cao do lo ngại về gián đoạn nguồn cung tại Trung Đông.",
+      "follow_up": "",
+      "significance": "Sự kiện đánh dấu bước leo thang nguy hiểm trong đối đầu quân sự trực tiếp giữa hai quốc gia, đe dọa trực tiếp đến hòa bình và ổn định tại Trung Đông.",
+      "unknowns": [
+        "Thiệt hại thực tế về người và tài sản tại các cơ sở quân sự của Mỹ.",
+        "Hình thức và quy mô cụ thể của biện pháp trả đũa mà phía Mỹ dự kiến thực hiện."
+      ],
+      "confidence_note": "Thông tin dựa trên xác nhận từ phía chính quyền Washington về các cuộc tấn công và tuyên bố chính thức của Tổng thống.",
+      "scenarios": [
+        {
+          "text": "Mỹ tiến hành các cuộc không kích hạn chế vào các mục tiêu quân sự của Iran.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Xung đột lan rộng thành một cuộc chiến tranh tổng lực trong khu vực.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Iran",
+          "target": "Cơ sở quân sự Mỹ",
+          "relation_type": "conflict",
+          "label": "Tấn công bằng tên lửa đạn đạo"
+        },
+        {
+          "source": "Donald Trump",
+          "target": "Iran",
+          "relation_type": "conflict",
+          "label": "Đe dọa trả đũa quân sự"
+        },
+        {
+          "source": "Tấn công tên lửa",
+          "target": "Sự trả đũa của Mỹ",
+          "relation_type": "cause_effect",
+          "label": "Nguyên nhân trực tiếp dẫn đến phản ứng quân sự"
+        }
+      ],
+      "entities": [
+        "Donald Trump",
+        "Iran"
+      ],
+      "keywords": [
+        "Trump",
+        "Iran",
+        "Trả đũa"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_general_1785331153354": {
+    "created_at": 1785331159501,
+    "expires_at": 1787923159501,
+    "version": "4.5",
+    "checksum": "5d136dbfb393bf2371cf13cc81919db0",
+    "data": {
+      "cluster_title": "Sự kiện thay đổi chỉ số lạm phát của Mỹ",
+      "short_summary": "Bureau of Economic Analysis của Mỹ sẽ thay đổi cách tính chỉ số lạm phát để giảm áp lực lên ngân hàng trung ương về việc tăng lãi suất",
+      "detailed_summary": "Cục Phân tích Kinh tế (BEA) đang thực hiện thay đổi cách tính toán số liệu thống kê. Việc điều chỉnh này dẫn đến kết quả chỉ số lạm phát - vốn là thước đo quan trọng để Fed đưa ra các quyết định chính sách tiền tệ - có khả năng thấp hơn so với phương pháp cũ. Động thái này được kỳ vọng sẽ làm giảm áp lực buộc Fed phải tiếp tục tăng lãi suất trong tương lai.",
+      "causes": [
+        "Cục Phân tích Kinh tế (BEA) thực hiện điều chỉnh phương pháp thống kê",
+        "Áp lực từ nhu cầu ổn định chính sách tiền tệ"
+      ],
+      "effects": [
+        "Giảm chỉ số lạm phát mục tiêu được báo cáo",
+        "Giảm áp lực tăng lãi suất lên Cục Dự trữ Liên bang Mỹ (Fed)"
+      ],
+      "affected_groups": [
+        "Cục Dự trữ Liên bang Mỹ (Fed)",
+        "Các nhà đầu tư tài chính",
+        "Các tổ chức kinh tế vĩ mô"
+      ],
+      "market_impact": "Có thể làm dịu tâm lý lo ngại về việc tăng lãi suất, hỗ trợ triển vọng cho thị trường tài chính và cổ phiếu.",
+      "follow_up": "",
+      "significance": "Sự kiện này thay đổi cách diễn giải dữ liệu lạm phát, từ đó ảnh hưởng trực tiếp đến lộ trình chính sách tiền tệ của cơ quan quyền lực tài chính lớn nhất Hoa Kỳ.",
+      "unknowns": [
+        "Mức độ ảnh hưởng chính xác của việc điều chỉnh lên con số lạm phát cuối cùng",
+        "Phản ứng cụ thể của các thành viên trong Fed đối với dữ liệu đã được điều chỉnh"
+      ],
+      "confidence_note": "Thông tin dựa trên thay đổi về quy trình của cơ quan chính phủ, độ tin cậy cao về sự kiện nhưng cần theo dõi dữ liệu công bố thực tế.",
+      "scenarios": [
+        {
+          "text": "Fed quyết định giữ nguyên hoặc tạm dừng tăng lãi suất do dữ liệu lạm phát hạ nhiệt theo cách tính mới.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Thị trường phản ứng tích cực với kỳ vọng lãi suất thấp hơn, thúc đẩy tăng trưởng tài sản rủi ro.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Cục Phân tích Kinh tế Mỹ",
+          "target": "Cục Dự trữ Liên bang Mỹ",
+          "relation_type": "cause_effect",
+          "label": "Dữ liệu của cơ quan thống kê ảnh hưởng trực tiếp đến quyết định chính sách của ngân hàng trung ương"
+        }
+      ],
+      "entities": [
+        "Bureau of Economic Analysis",
+        "Fed"
+      ],
+      "keywords": [
+        "US",
+        "thay đổi",
+        "chỉ số lạm phát",
+        "Bureau of Economic Analysis"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
   }
 }
