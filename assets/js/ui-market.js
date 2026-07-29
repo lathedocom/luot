@@ -1,4 +1,6 @@
+// ==========================================================================
 // FILE: assets/js/ui-market.js
+// ==========================================================================
 import { escapeHtml } from './utils.js';
 
 export function renderMarket(marketData, macroHealthData = []) {
@@ -11,23 +13,30 @@ export function renderMarket(marketData, macroHealthData = []) {
     // BỌC TOÀN BỘ BẰNG 1 THẺ BLOCK ĐỂ THOÁT KHỎI LỖI GRID CỦA HTML GỐC
     let finalHtml = '<div style="display: block; width: 100%; grid-column: 1 / -1;">';
 
-   // ==========================================
-    // KHU VỰC 1: SỨC KHỎE NỀN KINH TẾ (THẺ 3 LỚP)
+    // ==========================================
+    // KHU VỰC 1: SỨC KHỎE NỀN KINH TẾ (THẺ 3 LỚP - CHUẨN 3 CỘT)
     // ==========================================
     if (macroHealthData.length > 0) {
         let healthCardsHtml = '';
         macroHealthData.forEach(item => {
             // Render 3 lý do
             let reasonsHtml = '';
-            item.reasons.forEach(r => {
-                reasonsHtml += `<li style="margin-bottom: 4px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;">${escapeHtml(r)}</li>`;
-            });
+            if (item.reasons && item.reasons.length > 0) {
+                item.reasons.forEach(r => {
+                    reasonsHtml += `<li style="margin-bottom: 4px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;">${escapeHtml(r)}</li>`;
+                });
+            } else {
+                reasonsHtml = '<li>Đang cập nhật diễn biến thị trường...</li>';
+            }
+
+            // Mã hóa dữ liệu để truyền vào thuộc tính DOM an toàn
+            const eventsJson = encodeURIComponent(JSON.stringify(item.events || []));
 
             healthCardsHtml += `
-                <div style="background: var(--md-sys-color-surface); border: 1px solid var(--md-sys-color-outline); border-top: 4px solid ${item.color}; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
+                <div class="health-card" data-title="${escapeHtml(item.name)}" data-status="${escapeHtml(item.status)}" data-color="${item.color}" data-events="${eventsJson}" style="background: var(--md-sys-color-surface); border: 1px solid var(--md-sys-color-outline); border-top: 4px solid ${item.color}; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; box-shadow: 0 4px 6px rgba(0,0,0,0.02); cursor: pointer; transition: transform 0.2s, background 0.2s; min-height: 180px;">
                     
                     <!-- Lớp 1: Header & Trạng thái -->
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
                         <div style="display: flex; align-items: center; gap: 8px;">
                             <span style="font-size: 20px;">${item.icon}</span>
                             <span style="font-size: 14px; font-weight: 700; text-transform: uppercase; color: var(--md-sys-color-on-surface); opacity: 0.9;">${escapeHtml(item.name)}</span>
@@ -43,9 +52,9 @@ export function renderMarket(marketData, macroHealthData = []) {
                     </div>
 
                     <!-- Lớp 3: Nguyên nhân chính -->
-                    <div style="background: rgba(0,0,0,0.1); padding: 12px; border-radius: 8px; flex-grow: 1;">
-                        <div style="font-size: 11px; text-transform: uppercase; font-weight: bold; opacity: 0.6; margin-bottom: 8px;">Nguyên nhân chính</div>
-                        <ul style="margin: 0; padding-left: 16px; font-size: 13px; opacity: 0.85; line-height: 1.4;">
+                    <div style="background: rgba(0,0,0,0.1); padding: 10px; border-radius: 8px; flex-grow: 1;">
+                        <div style="font-size: 11px; text-transform: uppercase; font-weight: bold; opacity: 0.6; margin-bottom: 6px;">Nguyên nhân chính</div>
+                        <ul style="margin: 0; padding-left: 16px; font-size: 12px; opacity: 0.85; line-height: 1.4;">
                             ${reasonsHtml}
                         </ul>
                     </div>
@@ -58,7 +67,7 @@ export function renderMarket(marketData, macroHealthData = []) {
                 <h3 style="font-size: 18px; font-weight: 700; color: var(--md-sys-color-primary); margin: 0 0 16px 0; display: flex; align-items: center; gap: 8px;">
                     <span class="material-icons-round">monitor_heart</span> SỨC KHỎE NỀN KINH TẾ
                 </h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;" class="health-grid">
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;" class="health-grid">
                     ${healthCardsHtml}
                 </div>
             </div>
@@ -66,7 +75,7 @@ export function renderMarket(marketData, macroHealthData = []) {
     }
 
     // ==========================================
-    // KHU VỰC 2: BẢNG GIÁ THỊ TRƯỜNG THEO NHÓM
+    // KHU VỰC 2: BẢNG GIÁ THỊ TRƯỜNG THEO NHÓM (CHUẨN 3 CỘT)
     // ==========================================
     const groupedData = {};
     marketData.forEach(item => {
@@ -77,13 +86,12 @@ export function renderMarket(marketData, macroHealthData = []) {
 
     finalHtml += `
         <style>
-            /* Lưới cho thị trường: ÉP CHUẨN 3 CỘT */
             .market-board { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; align-items: start; width: 100%; box-sizing: border-box; }
             .market-category-group { display: flex; flex-direction: column; width: 100%; box-sizing: border-box; }
             .chart-wrapper { position: relative; width: 100%; height: 60px; margin-bottom: 8px; overflow: hidden; }
             
             /* Hiệu ứng rê chuột cho thẻ sức khỏe */
-            .health-card:hover { background: rgba(59, 130, 246, 0.1) !important; transform: translateY(-2px); }
+            .health-card:hover { background: rgba(59, 130, 246, 0.08) !important; transform: translateY(-2px); }
             
             /* Reponsive cho Mobile và Tablet */
             @media (max-width: 1024px) { 
@@ -115,7 +123,6 @@ export function renderMarket(marketData, macroHealthData = []) {
             const isUp = item.trend === '↑' || (item.change_percent && item.change_percent.includes('+'));
             const color = isOffline ? '#6b7280' : (isUp ? '#10b981' : '#ef4444'); 
             const bgBadge = isOffline ? 'transparent' : (isUp ? 'rgba(16, 185, 129, 0.1)' : 'rgba(239, 68, 68, 0.1)');
-            const icon = isUp ? 'trending_up' : 'trending_down';
 
             const updateTime = new Date(item.updated_at || Date.now());
             const timeStr = `${updateTime.getHours().toString().padStart(2, '0')}:${updateTime.getMinutes().toString().padStart(2, '0')}`;
@@ -156,7 +163,7 @@ export function renderMarket(marketData, macroHealthData = []) {
     // KHU VỰC 3: XỬ LÝ SỰ KIỆN CLICK (MODAL) VÀ VẼ BIỂU ĐỒ
     // ==========================================
 
-    // Kích hoạt sự kiện bấm vào Thẻ Sức Khỏe Nền Kinh Tế
+    // Kích hoạt sự kiện bấm vào Thẻ Sức Khỏe Nền Kinh Tế để mở Modal
     document.querySelectorAll('.health-card').forEach(card => {
         card.addEventListener('click', () => {
             const title = card.getAttribute('data-title');
@@ -183,23 +190,23 @@ export function renderMarket(marketData, macroHealthData = []) {
     }
 }
 
-// Hàm render Modal lý do đánh giá
+// Hàm render Modal lý do đánh giá sức khỏe nền kinh tế
 function openMacroHealthModal(title, status, color, events) {
     const modalTitle = document.getElementById('modal-title');
     const modalBody = document.getElementById('modal-body');
     
-    // Ẩn các thuộc tính không cần thiết của tin tức thông thường
+    // Ẩn các thuộc tính rác của tin tức thông thường
     document.getElementById('modal-reliability').innerHTML = '';
     document.getElementById('modal-mini-timeline').style.display = 'none';
     document.getElementById('toggle-sources-btn').style.display = 'none';
     document.getElementById('modal-sources').style.display = 'none';
 
-    modalTitle.innerHTML = `Chỉ số Vĩ mô: <span style="color:${color}">${title}</span>`;
+    modalTitle.innerHTML = `Chi tiết Vĩ mô: <span style="color:${color}">${title}</span>`;
 
     let listHtml = '';
     if (events && events.length > 0) {
         events.forEach(evt => {
-            let icon = evt.impact >= 0 ? '🟢' : '🔴';
+            let icon = (evt.impact !== undefined ? evt.impact : (evt.sentiment || 0)) >= 0 ? '🟢' : '🔴';
             
             listHtml += `
                 <div style="border-bottom: 1px dashed var(--md-sys-color-outline); padding: 12px 0;">
@@ -213,7 +220,7 @@ function openMacroHealthModal(title, status, color, events) {
             `;
         });
     } else {
-        listHtml = '<p style="opacity: 0.7; font-size: 14px; padding: 12px 0;">Không có sự kiện vĩ mô nào tác động trực tiếp tới chỉ số này trong 7 ngày qua.</p>';
+        listHtml = '<p style="opacity: 0.7; font-size: 14px; padding: 12px 0;">Không ghi nhận sự kiện biến động mạnh nào tác động trực tiếp tới chỉ số này trong 7 ngày qua.</p>';
     }
 
     modalBody.innerHTML = `
@@ -221,7 +228,7 @@ function openMacroHealthModal(title, status, color, events) {
             <div style="font-size: 13px; text-transform: uppercase; font-weight: bold; opacity: 0.7; margin-bottom: 4px;">TRẠNG THÁI HIỆN TẠI:</div>
             <div style="font-size: 18px; font-weight: bold; color: ${color};">${status}</div>
         </div>
-        <div style="font-size: 14px; font-weight: bold; margin-bottom: 8px; text-transform: uppercase; color: var(--md-sys-color-primary);">Diễn biến thị trường (Lý do):</div>
+        <div style="font-size: 14px; font-weight: bold; margin-bottom: 8px; text-transform: uppercase; color: var(--md-sys-color-primary);">Các sự kiện định hình xu hướng:</div>
         ${listHtml}
     `;
 
