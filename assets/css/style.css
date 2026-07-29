@@ -215,17 +215,37 @@ body { font-family: 'Roboto', sans-serif; background-color: var(--md-sys-color-b
     user-select: none !important;
 }
 
-/* 2. Điều chỉnh vị trí nút Zoom (+/-) */
+/* 2. Khóa viền khung bản đồ, ép các thành phần bên trong không được tràn ra ngoài */
+#global-risk-map {
+    position: relative !important;
+    overflow: hidden !important; 
+}
+
+/* 3. Trả nút Zoom về góc trên bên phải (mặc định) và căn lọt thỏm vào trong */
 #global-risk-map .jvm-zoom-btn {
-    top: auto !important;
-    right: auto !important;
-    left: 20px !important; /* Cách lề trái 20px */
+    bottom: auto !important; /* Gỡ bỏ lệnh neo đáy cũ */
+    left: auto !important;   /* Gỡ bỏ lệnh neo trái cũ */
+    right: 16px !important;  /* Đẩy cách lề phải 16px */
+    
+    /* Trang trí nhẹ để nút đồng bộ với giao diện Dark Mode */
+    background-color: var(--md-sys-color-surface) !important;
+    border: 1px solid var(--md-sys-color-outline) !important;
+    color: var(--md-sys-color-on-surface) !important;
+    width: 32px !important;
+    height: 32px !important;
+    border-radius: 8px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    z-index: 100 !important;
 }
 
+/* Căn tọa độ cho nút (+) */
 #global-risk-map .jvm-zoom-btn.jvm-zoomin {
-    bottom: 80px !important; /* Đẩy nút (+) lên cao hẳn 80px */
+    top: 16px !important; /* Cách lề trên 16px */
 }
 
+/* Căn tọa độ cho nút (-) */
 #global-risk-map .jvm-zoom-btn.jvm-zoomout {
-    bottom: 45px !important; /* Đẩy nút (-) lên 45px (cách xa hoàn toàn phần chú thích) */
+    top: 56px !important; /* Nằm ngay bên dưới nút (+) */
 }
