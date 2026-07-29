@@ -11,21 +11,43 @@ export function renderMarket(marketData, macroHealthData = []) {
     // BỌC TOÀN BỘ BẰNG 1 THẺ BLOCK ĐỂ THOÁT KHỎI LỖI GRID CỦA HTML GỐC
     let finalHtml = '<div style="display: block; width: 100%; grid-column: 1 / -1;">';
 
-    // ==========================================
-    // KHU VỰC 1: SỨC KHỎE NỀN KINH TẾ (MACRO HEALTH)
+   // ==========================================
+    // KHU VỰC 1: SỨC KHỎE NỀN KINH TẾ (THẺ 3 LỚP)
     // ==========================================
     if (macroHealthData.length > 0) {
         let healthCardsHtml = '';
         macroHealthData.forEach(item => {
-            // Mã hóa dữ liệu JSON để nhét vào thẻ HTML một cách an toàn
-            const eventsJson = encodeURIComponent(JSON.stringify(item.events));
-            
+            // Render 3 lý do
+            let reasonsHtml = '';
+            item.reasons.forEach(r => {
+                reasonsHtml += `<li style="margin-bottom: 4px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;">${escapeHtml(r)}</li>`;
+            });
+
             healthCardsHtml += `
-                <div class="health-card" data-title="${escapeHtml(item.name)}" data-status="${escapeHtml(item.status)}" data-color="${item.color}" data-events="${eventsJson}" style="background: rgba(15, 23, 42, 0.4); border: 1px solid var(--md-sys-color-outline); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px; cursor: pointer; transition: transform 0.2s, background 0.2s;">
-                    <div style="font-size: 32px;">${item.icon}</div>
-                    <div style="display: flex; flex-direction: column;">
-                        <span style="font-size: 14px; opacity: 0.8; font-weight: 500; margin-bottom: 4px;">${escapeHtml(item.name)}</span>
-                        <span style="font-size: 16px; font-weight: bold; color: ${item.color};">${escapeHtml(item.status)}</span>
+                <div style="background: var(--md-sys-color-surface); border: 1px solid var(--md-sys-color-outline); border-top: 4px solid ${item.color}; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
+                    
+                    <!-- Lớp 1: Header & Trạng thái -->
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <span style="font-size: 20px;">${item.icon}</span>
+                            <span style="font-size: 14px; font-weight: 700; text-transform: uppercase; color: var(--md-sys-color-on-surface); opacity: 0.9;">${escapeHtml(item.name)}</span>
+                        </div>
+                    </div>
+                    <div style="font-size: 16px; font-weight: bold; color: ${item.color}; margin-bottom: 6px;">
+                        ${escapeHtml(item.status)}
+                    </div>
+                    
+                    <!-- Lớp 2: Xu hướng -->
+                    <div style="font-size: 13px; font-weight: 600; color: var(--md-sys-color-on-surface); opacity: 0.7; margin-bottom: 12px; display: flex; align-items: center; gap: 4px;">
+                        <span style="font-size: 16px; font-weight: 900;">${item.trend_icon}</span> ${escapeHtml(item.trend_text)}
+                    </div>
+
+                    <!-- Lớp 3: Nguyên nhân chính -->
+                    <div style="background: rgba(0,0,0,0.1); padding: 12px; border-radius: 8px; flex-grow: 1;">
+                        <div style="font-size: 11px; text-transform: uppercase; font-weight: bold; opacity: 0.6; margin-bottom: 8px;">Nguyên nhân chính</div>
+                        <ul style="margin: 0; padding-left: 16px; font-size: 13px; opacity: 0.85; line-height: 1.4;">
+                            ${reasonsHtml}
+                        </ul>
                     </div>
                 </div>
             `;
@@ -33,10 +55,10 @@ export function renderMarket(marketData, macroHealthData = []) {
 
         finalHtml += `
             <div class="market-category-group" style="margin-bottom: 32px;">
-                <h3 style="font-size: 16px; text-transform: uppercase; color: var(--md-sys-color-primary); margin: 0 0 16px 0; display: flex; align-items: center; gap: 8px;">
+                <h3 style="font-size: 18px; font-weight: 700; color: var(--md-sys-color-primary); margin: 0 0 16px 0; display: flex; align-items: center; gap: 8px;">
                     <span class="material-icons-round">monitor_heart</span> SỨC KHỎE NỀN KINH TẾ
                 </h3>
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;" class="health-grid">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;" class="health-grid">
                     ${healthCardsHtml}
                 </div>
             </div>
