@@ -3380,5 +3380,81 @@
       "sentiment": -1,
       "scope": "business"
     }
+  },
+  "evt_general_1785298643963": {
+    "created_at": 1785298647204,
+    "expires_at": 1787890647204,
+    "version": "4.5",
+    "checksum": "ab6ae0939d573a2f900ff0f8bb8aacdd",
+    "data": {
+      "cluster_title": "Thay đổi điều kiện vay của Proofpoint",
+      "short_summary": "Proofpoint phải đối mặt với chi phí vay cao hơn và điều kiện vay chặt chẽ hơn trong thỏa thuận vay mới",
+      "detailed_summary": "Proofpoint, một doanh nghiệp được hỗ trợ bởi quỹ đầu tư Thoma Bravo, đang đối mặt với chi phí vay nợ cao hơn và các điều khoản hợp đồng vay nghiêm ngặt hơn khi thực hiện đợt tái cấp vốn khoản nợ trị giá 5 tỷ USD. Các nhà đầu tư và chủ nợ hiện đang thận trọng hơn đối với các doanh nghiệp phần mềm do những bất ổn liên quan đến tác động và rủi ro từ trí tuệ nhân tạo.",
+      "causes": [
+        "Những lo ngại từ thị trường về rủi ro gắn liền với trí tuệ nhân tạo đối với mô hình kinh doanh phần mềm",
+        "Sự thắt chặt các điều khoản cho vay của chủ nợ trong bối cảnh kinh tế bất ổn"
+      ],
+      "effects": [
+        "Chi phí vay vốn của Proofpoint tăng cao",
+        "Các điều khoản hợp đồng vay vốn trở nên khắt khe hơn đối với doanh nghiệp"
+      ],
+      "affected_groups": [
+        "Proofpoint",
+        "Thoma Bravo",
+        "Các chủ nợ và tổ chức tài chính tham gia khoản vay"
+      ],
+      "market_impact": "Phản ánh xu hướng thận trọng của các tổ chức tài chính đối với nợ doanh nghiệp trong ngành phần mềm trước sự thay đổi nhanh chóng của công nghệ.",
+      "follow_up": "",
+      "significance": "Sự kiện cho thấy sự tác động trực tiếp của các yếu tố rủi ro công nghệ mới tới chi phí sử dụng vốn và khả năng huy động tài chính của các công ty công nghệ được tư nhân hóa.",
+      "unknowns": [
+        "Mức lãi suất cụ thể mà Proofpoint phải chịu sau khi đàm phán",
+        "Phản ứng chi tiết của Thoma Bravo về chiến lược quản trị rủi ro AI của công ty"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên các báo cáo tài chính về hoạt động tái cấp vốn nợ.",
+      "scenarios": [
+        {
+          "text": "Proofpoint buộc phải chấp nhận lãi suất cao hơn để hoàn tất đợt tái cấp vốn nhằm duy trì hoạt động",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Công ty trì hoãn việc tái cấp vốn để tìm kiếm các giải pháp tài chính thay thế với chi phí thấp hơn",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Trí tuệ nhân tạo",
+          "target": "Proofpoint",
+          "relation_type": "cause_effect",
+          "label": "Gây lo ngại làm tăng chi phí vay nợ"
+        },
+        {
+          "source": "Thoma Bravo",
+          "target": "Proofpoint",
+          "relation_type": "cooperation",
+          "label": "Tổ chức đầu tư hỗ trợ tài chính cho doanh nghiệp"
+        },
+        {
+          "source": "Chủ nợ",
+          "target": "Proofpoint",
+          "relation_type": "conflict",
+          "label": "Siết chặt điều khoản vay do rủi ro thị trường"
+        }
+      ],
+      "entities": [
+        "Proofpoint",
+        "Thoma Bravo"
+      ],
+      "keywords": [
+        "Proofpoint",
+        "Thoma Bravo",
+        "Cybersecurity",
+        "Refinancing"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
   }
 }

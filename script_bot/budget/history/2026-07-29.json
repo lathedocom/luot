@@ -568,5 +568,45 @@
     "completionTokens": 616,
     "latency": 11177,
     "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-07-29T04:17:24.305Z",
+    "model": "gemma-4-26b-a4b-it",
+    "provider": "groq",
+    "task": "EXTRACT_METADATA",
+    "promptTokens": 410,
+    "completionTokens": 121,
+    "latency": 336,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-07-29T04:17:27.202Z",
+    "model": "gemini-3.1-flash-lite",
+    "provider": "google",
+    "task": "DEEP_ANALYSIS",
+    "promptTokens": 729,
+    "completionTokens": 652,
+    "latency": 2896,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-07-29T04:17:32.956Z",
+    "model": "gemini-3.1-flash-lite",
+    "provider": "google",
+    "task": "MATCH_TIMELINE",
+    "promptTokens": 522,
+    "completionTokens": 48,
+    "latency": 738,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-07-29T04:17:43.354Z",
+    "model": "gemini-3-flash-preview",
+    "provider": "google",
+    "task": "DAILY_BRIEFING",
+    "promptTokens": 2028,
+    "completionTokens": 630,
+    "latency": 10328,
+    "status": "SUCCESS"
   }
 ]
