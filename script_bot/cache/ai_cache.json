@@ -3087,5 +3087,298 @@
       "sentiment": -1,
       "scope": "global"
     }
+  },
+  "evt_42648d03": {
+    "created_at": 1785298392545,
+    "expires_at": 1787890392545,
+    "version": "4.5",
+    "checksum": "e2a2f176e6d43dc187148af11e549f6e",
+    "data": {
+      "cluster_title": "Sự kiện chip và dầu mỏ",
+      "short_summary": "Sự kiện chip và dầu mỏ đang gây ra sự ảnh hưởng lớn đến thị trường toàn cầu.",
+      "detailed_summary": "Thị trường chứng khoán khu vực châu Á trải qua đợt sụt giảm do nhà đầu tư bán tháo cổ phiếu ngành chip vì hoài nghi về khả năng sinh lời từ các khoản đầu tư trí tuệ nhân tạo. Đồng thời, giá dầu tăng lên sau khi xảy ra các cuộc tấn công quân sự giữa Iran và các căn cứ do Mỹ bảo vệ tại Trung Đông, làm dấy lên lo ngại về một cuộc xung đột quy mô lớn hơn.",
+      "causes": [
+        "Sự hoài nghi của nhà đầu tư về lợi nhuận từ đầu tư trí tuệ nhân tạo",
+        "Sự tái bùng phát xung đột quân sự tại khu vực Trung Đông"
+      ],
+      "effects": [
+        "Cổ phiếu ngành bán dẫn bị bán tháo trên các sàn chứng khoán châu Á",
+        "Giá dầu trên thị trường thế giới tăng mạnh",
+        "Gia tăng rủi ro bất ổn chính trị tại Trung Đông"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư chứng khoán ngành công nghệ",
+        "Các doanh nghiệp vận tải và năng lượng",
+        "Các quốc gia có liên quan trực tiếp trong xung đột tại Trung Đông"
+      ],
+      "market_impact": "Thị trường tài chính biến động theo hướng tiêu cực đối với cổ phiếu công nghệ và tích cực đối với giá năng lượng do lo ngại địa chính trị.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh sự cộng hưởng giữa bất ổn địa chính trị và áp lực điều chỉnh định giá trong lĩnh vực công nghệ, tạo nên môi trường đầu tư đầy thách thức.",
+      "unknowns": [
+        "Mức độ thiệt hại cụ thể từ các cuộc tấn công quân sự",
+        "Dư địa phản ứng của thị trường trước các diễn biến tiếp theo của xung đột"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên các báo cáo cập nhật từ Bloomberg.",
+      "scenarios": [
+        {
+          "text": "Xung đột tại Trung Đông leo thang, đẩy giá dầu tiếp tục tăng cao gây áp lực lạm phát toàn cầu.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Thị trường ổn định lại khi các biện pháp ngoại giao can thiệp làm giảm nhiệt căng thẳng quân sự.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Đầu tư trí tuệ nhân tạo",
+          "target": "Cổ phiếu ngành chip",
+          "relation_type": "cause_effect",
+          "label": "Sự suy giảm niềm tin vào hiệu quả đầu tư gây bán tháo cổ phiếu"
+        },
+        {
+          "source": "Iran",
+          "target": "Mỹ",
+          "relation_type": "conflict",
+          "label": "Tấn công quân sự vào căn cứ quân sự"
+        },
+        {
+          "source": "Xung đột Trung Đông",
+          "target": "Giá dầu",
+          "relation_type": "cause_effect",
+          "label": "Gây bất ổn nguồn cung làm giá dầu tăng"
+        }
+      ],
+      "entities": [
+        "Iran",
+        "Bắc Mỹ"
+      ],
+      "keywords": [
+        "chip",
+        "dầu mỏ",
+        "Iran",
+        "Bắc Mỹ"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_general_1785298399478": {
+    "created_at": 1785298404327,
+    "expires_at": 1787890404327,
+    "version": "4.5",
+    "checksum": "f6529c821c8a27690e4179c219dce968",
+    "data": {
+      "cluster_title": "Thay đổi điều kiện vay của Proofpoint",
+      "short_summary": "Proofpoint phải đối mặt với chi phí vay cao hơn và điều kiện vay chặt chẽ hơn trong thỏa thuận vay mới",
+      "detailed_summary": "Công ty bảo mật Proofpoint, dưới sự hậu thuẫn của tập đoàn đầu tư Thoma Bravo, đang đối mặt với chi phí vay vốn cao hơn và các điều khoản tài chính khắt khe hơn trong đợt tái cấp vốn khoản nợ trị giá 5 tỷ USD. Những rủi ro liên quan đến sự phát triển và tác động của trí tuệ nhân tạo được cho là yếu tố chính gây trở ngại cho các điều kiện vay vốn của doanh nghiệp.",
+      "causes": [
+        "Những rủi ro tiềm ẩn liên quan đến công nghệ trí tuệ nhân tạo",
+        "Thị trường tài chính thắt chặt các điều kiện cho vay đối với doanh nghiệp công nghệ"
+      ],
+      "effects": [
+        "Chi phí lãi vay của Proofpoint gia tăng",
+        "Các cam kết tài chính trong hợp đồng vay trở nên ngặt nghèo hơn"
+      ],
+      "affected_groups": [
+        "Proofpoint",
+        "Thoma Bravo",
+        "Các nhà đầu tư và chủ nợ"
+      ],
+      "market_impact": "Sự kiện phản ánh tâm lý thận trọng của giới tài chính đối với các công ty công nghệ có mô hình kinh doanh đối mặt với rủi ro từ trí tuệ nhân tạo.",
+      "follow_up": "",
+      "significance": "Đây là dấu hiệu cho thấy các yếu tố công nghệ mới nổi đang trực tiếp làm thay đổi định giá rủi ro và điều khoản tài chính trong các thương vụ đòn bẩy vốn quy mô lớn.",
+      "unknowns": [
+        "Tỷ lệ lãi suất cụ thể mà Proofpoint phải chấp nhận trong đợt tái cấp vốn này",
+        "Chi tiết cụ thể về các điều khoản khắt khe mà các chủ nợ yêu cầu"
+      ],
+      "confidence_note": "Thông tin dựa trên diễn biến thực tế trong hoạt động tái cấp vốn của doanh nghiệp.",
+      "scenarios": [
+        {
+          "text": "Proofpoint buộc phải chấp nhận lãi suất cao hơn để hoàn tất gói tái cấp vốn.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Doanh nghiệp tìm kiếm các nguồn vốn thay thế bên ngoài hệ thống ngân hàng truyền thống để giảm bớt các điều khoản khắt khe.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Rủi ro từ AI",
+          "target": "Proofpoint",
+          "relation_type": "cause_effect",
+          "label": "Gây khó khăn cho hoạt động tái cấp vốn"
+        },
+        {
+          "source": "Thoma Bravo",
+          "target": "Proofpoint",
+          "relation_type": "cooperation",
+          "label": "Đơn vị bảo trợ tài chính và quản lý đầu tư"
+        }
+      ],
+      "entities": [
+        "Proofpoint",
+        "Thoma Bravo"
+      ],
+      "keywords": [
+        "Proofpoint",
+        "Thoma Bravo",
+        "Cybersecurity",
+        "Refinancing"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "business"
+    }
+  },
+  "evt_3920fb4f": {
+    "created_at": 1785298416065,
+    "expires_at": 1787890416065,
+    "version": "4.5",
+    "checksum": "e99af806fa870b49229cc669debaf415",
+    "data": {
+      "cluster_title": "SoftBank bán trái phiếu",
+      "short_summary": "SoftBank bán trái phiếu ¥90 tỷ cho các nhà đầu tư",
+      "detailed_summary": "Tập đoàn SoftBank vừa hoàn tất đợt phát hành trái phiếu trị giá 90 tỷ Yên (khoảng 550 triệu USD) cho các nhà đầu tư tổ chức vào thứ Tư. Đây là một phần trong chiến lược mở rộng nguồn vốn nội địa và quốc tế của doanh nghiệp, nhằm phục vụ mục tiêu đẩy mạnh đầu tư vào công nghệ trí tuệ nhân tạo.",
+      "causes": [
+        "Nhu cầu vốn lớn để đầu tư vào lĩnh vực trí tuệ nhân tạo.",
+        "Chiến lược đa dạng hóa nguồn tài trợ của SoftBank trên cả thị trường trong và ngoài nước."
+      ],
+      "effects": [
+        "SoftBank có thêm nguồn lực tài chính để thực thi các thương vụ đầu tư mới.",
+        "Lãi suất phát hành cao hơn phản ánh chi phí vay vốn tăng lên trong bối cảnh thị trường hiện tại."
+      ],
+      "affected_groups": [
+        "Các nhà đầu tư tổ chức tham gia mua trái phiếu.",
+        "Cổ đông của tập đoàn SoftBank Group Corp.",
+        "Các đối tác công nghệ đang nhận vốn đầu tư từ SoftBank."
+      ],
+      "market_impact": "Sự kiện phản ánh nhu cầu huy động vốn mạnh mẽ của các tập đoàn công nghệ lớn và xu hướng chấp nhận chi phí lãi vay cao hơn để theo đuổi các mục tiêu tăng trưởng trong lĩnh vực trí tuệ nhân tạo.",
+      "follow_up": "",
+      "significance": "Động thái này cho thấy SoftBank đang ưu tiên tối đa nguồn lực tài chính cho làn sóng đầu tư vào trí tuệ nhân tạo, bất chấp chi phí vay vốn ở mức cao.",
+      "unknowns": [
+        "Chi tiết cụ thể về danh mục các dự án trí tuệ nhân tạo sẽ được rót vốn.",
+        "Lịch trình các đợt phát hành trái phiếu tiếp theo của tập đoàn."
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên dữ liệu báo cáo tài chính và công bố phát hành trái phiếu.",
+      "scenarios": [
+        {
+          "text": "SoftBank tiếp tục huy động vốn quy mô lớn để củng cố vị thế dẫn đầu trong hệ sinh thái trí tuệ nhân tạo.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Chi phí vay cao kéo dài gây áp lực lên biên lợi nhuận của tập đoàn trong dài hạn.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "SoftBank Group Corp.",
+          "target": "Nhà đầu tư tổ chức",
+          "relation_type": "cooperation",
+          "label": "Hợp tác trong đợt phát hành trái phiếu"
+        },
+        {
+          "source": "Nhu cầu đầu tư trí tuệ nhân tạo",
+          "target": "SoftBank Group Corp.",
+          "relation_type": "cause_effect",
+          "label": "Nguyên nhân dẫn đến việc huy động vốn"
+        }
+      ],
+      "entities": [
+        "SoftBank Group Corp.",
+        "¥90 tỷ",
+        "$550 triệu"
+      ],
+      "keywords": [
+        "SoftBank",
+        "trái phiếu",
+        "coupón"
+      ],
+      "importance": 85,
+      "severity": 2,
+      "sentiment": -1,
+      "scope": "business"
+    }
+  },
+  "evt_3f692372": {
+    "created_at": 1785298427819,
+    "expires_at": 1787890427819,
+    "version": "4.5",
+    "checksum": "c70f04a979df57249cc3507924fbd115",
+    "data": {
+      "cluster_title": "Cập nhật xếp hạng của Unilever Ấn Độ",
+      "short_summary": "Năm ít nhất năm lần, các công ty đánh giá đã nâng xếp hạng cổ phiếu của Unilever sau khi công ty công bố kết quả kinh doanh.",
+      "detailed_summary": "Cổ phiếu của Hindustan Unilever đã trải qua phiên bán tháo tồi tệ nhất trong hơn 6 năm vào thứ Ba sau khi công bố báo cáo thu nhập. Tuy nhiên, tình hình đã thay đổi khi ít nhất năm công ty môi giới chứng khoán đã thực hiện nâng hạng tín nhiệm đối với cổ phiếu của doanh nghiệp hàng tiêu dùng này.",
+      "causes": [
+        "Báo cáo thu nhập của Hindustan Unilever không đạt kỳ vọng hoặc gây thất vọng cho nhà đầu tư",
+        "Áp lực bán tháo cổ phiếu diễn ra mạnh mẽ trên thị trường vào thứ Ba"
+      ],
+      "effects": [
+        "Cổ phiếu Hindustan Unilever ghi nhận mức sụt giảm giá trị trong phiên lớn nhất trong hơn 6 năm",
+        "Ít nhất năm công ty môi giới chứng khoán thực hiện nâng hạng cổ phiếu Hindustan Unilever"
+      ],
+      "affected_groups": [
+        "Cổ đông của Hindustan Unilever",
+        "Các nhà đầu tư trên thị trường chứng khoán Ấn Độ",
+        "Các công ty môi giới chứng khoán"
+      ],
+      "market_impact": "Sự phục hồi niềm tin từ các đơn vị môi giới giúp giảm bớt áp lực tâm lý tiêu cực đối với cổ phiếu Hindustan Unilever sau phiên bán tháo.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh phản ứng nhạy cảm của thị trường đối với các báo cáo tài chính của doanh nghiệp lớn và vai trò điều tiết kỳ vọng của các nhà môi giới.",
+      "unknowns": [
+        "Chi tiết cụ thể trong báo cáo thu nhập khiến nhà đầu tư thất vọng",
+        "Lý do chi tiết đằng sau quyết định nâng hạng của các đơn vị môi giới"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên dữ liệu báo cáo thị trường đã xác nhận.",
+      "scenarios": [
+        {
+          "text": "Giá cổ phiếu của Hindustan Unilever sẽ ổn định trở lại sau khi nhận được các đánh giá tích cực từ phía môi giới.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Áp lực bán vẫn tiếp tục nếu các yếu tố cơ bản trong báo cáo tài chính không sớm được cải thiện.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Báo cáo thu nhập",
+          "target": "Hindustan Unilever",
+          "relation_type": "cause_effect",
+          "label": "Gây ra biến động giá cổ phiếu"
+        },
+        {
+          "source": "Các công ty môi giới",
+          "target": "Hindustan Unilever",
+          "relation_type": "cooperation",
+          "label": "Đánh giá và nâng hạng cổ phiếu"
+        },
+        {
+          "source": "Phiên bán tháo",
+          "target": "Hindustan Unilever",
+          "relation_type": "cause_effect",
+          "label": "Dẫn đến sụt giảm giá trị thị trường"
+        }
+      ],
+      "entities": [
+        "Hindustan Unilever Ltd.",
+        "Unilever"
+      ],
+      "keywords": [
+        "Unilever",
+        "Ấn Độ",
+        "đánh giá",
+        "sự kiện"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "business"
+    }
   }
 }
