@@ -1,128 +1,103 @@
 // FILE: script_bot/modules/market/macro_health.js
 
-// Khai báo 8 trụ cột vĩ mô kèm thuộc tính Inverse (Nghịch đảo)
-// inverse = true: Giá tăng -> Điểm âm (Xấu). inverse = false: Giá tăng -> Điểm dương (Tốt)
 const HEALTH_CATEGORIES = {
-    'chi_phi': { name: 'Chi phí sinh hoạt', icon: '🛒', inverse: true, keywords: ['lạm phát', 'giá cả', 'xăng', 'điện', 'cpi', 'thực phẩm', 'heo hơi'], market_keys: ['RON95', 'E5RON92', 'GOLD_SJC'] },
-    'san_xuat': { name: 'Sản xuất & Công nghiệp', icon: '🏭', inverse: false, keywords: ['pmi', 'nhà máy', 'sản xuất', 'công nghiệp', 'fdi', 'đơn hàng'], market_keys: [] },
-    'thuong_mai': { name: 'Thương mại & XNK', icon: '🚢', inverse: false, keywords: ['xuất khẩu', 'nhập khẩu', 'container', 'cảng', 'thương mại', 'tỷ giá'], market_keys: ['USD_VND'] },
-    'xay_dung': { name: 'Xây dựng & Vật liệu', icon: '🏗️', inverse: false, keywords: ['bất động sản', 'xây dựng', 'xi măng', 'thép', 'cát', 'đầu tư công'], market_keys: ['STEEL_CB300', 'CEMENT', 'SAND', 'STEEL_HRC'] },
-    'tieu_dung': { name: 'Tiêu dùng & Bán lẻ', icon: '🛍️', inverse: false, keywords: ['bán lẻ', 'mua sắm', 'tiêu dùng', 'doanh thu', 'du lịch', 'dịch vụ'], market_keys: [] },
-    'dau_tu': { name: 'Đầu tư & Tài chính', icon: '📈', inverse: false, keywords: ['chứng khoán', 'cổ phiếu', 'lãi suất', 'ngân hàng', 'đầu tư', 'trái phiếu', 'tín dụng'], market_keys: ['VNINDEX', 'HNX', 'US10Y'] },
-    'nong_nghiep': { name: 'Nông nghiệp', icon: '🌾', inverse: false, keywords: ['gạo', 'cà phê', 'hồ tiêu', 'cao su', 'phân bón', 'nông sản'], market_keys: ['RICE_VN', 'COFFEE_VN', 'PEPPER_VN', 'RUBBER_VN', 'CASHEW_VN'] },
-    'nang_luong': { name: 'Năng lượng', icon: '⚡', inverse: true, keywords: ['dầu', 'khí đốt', 'năng lượng', 'điện', 'than', 'lng'], market_keys: ['BRENT', 'WTI', 'NAT_GAS'] }
+    'chi_phi': { 
+        name: 'Chi phí sinh hoạt', icon: '🛒', inverse: true, 
+        drivers: ['CPI', 'Giá xăng', 'Giá điện', 'Giá gạo', 'Giá heo hơi'],
+        market_keys: ['RON95', 'E5RON92', 'GOLD_SJC', 'RICE_VN', 'COFFEE_VN', 'PEPPER_VN']
+    },
+    'san_xuat': { 
+        name: 'Sản xuất & Công nghiệp', icon: '🏭', inverse: false, 
+        drivers: ['PMI', 'Sản lượng CN (IIP)', 'Điện công nghiệp', 'Giá thép', 'Giá đồng'],
+        market_keys: ['COPPER', 'STEEL_HRC', 'STEEL_CB300', 'ALUMINUM']
+    },
+    'thuong_mai': { 
+        name: 'Thương mại & Xuất nhập khẩu', icon: '🚢', inverse: false, 
+        drivers: ['Xuất khẩu', 'Nhập khẩu', 'Tỷ giá USD/VND', 'Cước container'],
+        market_keys: ['USD_VND', 'DXY', 'BRENT']
+    },
+    'xay_dung': { 
+        name: 'Xây dựng & Vật liệu', icon: '🏗️', inverse: false, 
+        drivers: ['Giá thép', 'Xi măng', 'Cát', 'Đầu tư công', 'Bất động sản'],
+        market_keys: ['STEEL_CB300', 'CEMENT', 'SAND', 'STEEL_HRC', 'IRON_ORE']
+    },
+    'dau_tu': { 
+        name: 'Đầu tư & Tài chính', icon: '📈', inverse: false, 
+        drivers: ['VN-Index', 'VN30', 'Lãi suất', 'Tín dụng', 'FDI'],
+        market_keys: ['VNINDEX', 'HNX', 'US10Y'] 
+    },
+    'tieu_dung': { 
+        name: 'Tiêu dùng & Bán lẻ', icon: '🛍️', inverse: false, 
+        drivers: ['Bán lẻ', 'CPI', 'Thương mại điện tử', 'Du lịch'],
+        market_keys: [] // Chờ tích hợp API Dữ liệu vĩ mô
+    }
 };
 
 function buildMacroHealth(topics, marketData = []) {
-    const now = Date.now();
     const results = [];
 
-    // Lọc tin tức trong 7 ngày
-    const recentEconTopics = topics.filter(t => 
-        (now - (t.timestamp || now)) <= 7 * 24 * 60 * 60 * 1000 &&
-        t.categories && (t.categories.includes('economy') || t.categories.includes('finance') || t.categories.includes('business'))
-    );
-
     for (const [key, category] of Object.entries(HEALTH_CATEGORIES)) {
-        let dataScore = 0; // 60%
-        let trendScore = 0; // 15%
-        let newsScore = 0; // 25%
-        let reasons = []; // Mảng chứa các gạch đầu dòng giải thích
+        let finalScore = 0;
+        let reasons = [];
+        let validIndicators = 0;
 
-        // --- 1. XỬ LÝ DỮ LIỆU ĐỊNH LƯỢNG & XU HƯỚNG (MARKET DATA) ---
+        // 1. Quét dữ liệu định lượng (Thị trường)
         const relatedMarkets = marketData.filter(m => category.market_keys.includes(m.id) && m.status !== 'offline');
         
         if (relatedMarkets.length > 0) {
-            let totalChange = 0;
-            let totalTrend = 0;
-
             relatedMarkets.forEach(m => {
                 const change = m.raw_change || 0;
-                totalChange += change;
+                // Chuẩn hóa điểm biến động (-100 đến 100), giả định biến động 5% là kịch trần
+                let normalizedScore = Math.max(-100, Math.min(100, (change / 5) * 100));
+                
+                // Nghịch đảo điểm nếu thuộc nhóm Chi phí sinh hoạt (Tăng là Xấu)
+                if (category.inverse) normalizedScore = -normalizedScore;
 
-                // Tạo lý do từ dữ liệu thị trường nếu biến động > 1%
-                if (Math.abs(change) > 1) {
+                finalScore += normalizedScore;
+                validIndicators++;
+
+                // 2. Tự động sinh câu giải thích từ dữ liệu thật
+                if (Math.abs(change) > 0.1) {
                     const directionText = change > 0 ? 'tăng' : 'giảm';
-                    reasons.push(`${m.name} ${directionText} ${Math.abs(change).toFixed(1)}%`);
-                }
-
-                // Tính xu hướng 30 ngày (Dựa vào mảng history)
-                if (m.history && m.history.length >= 2) {
-                    const oldest = m.history[0];
-                    const newest = m.history[m.history.length - 1];
-                    if (oldest > 0) {
-                        totalTrend += ((newest - oldest) / oldest) * 100;
-                    }
+                    reasons.push(`${m.name} ${directionText} ${Math.abs(change).toFixed(2)}%`);
                 }
             });
-
-            // Chuẩn hóa điểm Data (-100 đến 100) - Coi biến động 5% là kịch trần (100 điểm)
-            let avgChange = totalChange / relatedMarkets.length;
-            dataScore = Math.max(-100, Math.min(100, (avgChange / 5) * 100));
-
-            // Chuẩn hóa điểm Trend
-            let avgTrend = totalTrend / relatedMarkets.length;
-            trendScore = Math.max(-100, Math.min(100, (avgTrend / 10) * 100));
-
-            // Đảo ngược điểm nếu là nhóm Chi phí/Năng lượng (Tăng = Xấu = Âm)
-            if (category.inverse) {
-                dataScore = -dataScore;
-                trendScore = -trendScore;
-            }
-        }
-
-        // --- 2. XỬ LÝ DỮ LIỆU TIN TỨC (NEWS) ---
-        const relatedTopics = recentEconTopics.filter(t => 
-            category.keywords.some(kw => (t.title + ' ' + (t.short_summary || '')).toLowerCase().includes(kw))
-        );
-
-        if (relatedTopics.length > 0) {
-            let totalNewsImpact = 0;
-            relatedTopics.forEach(t => {
-                const sentiment = t.sentiment !== undefined ? t.sentiment : 0; 
-                const severity = t.severity || 2; // 1-5
-                // Quy đổi: Sentiment (-1, 0, 1) * Severity (1-5) * 20 = Khoảng -100 đến 100
-                totalNewsImpact += sentiment * severity * 20;
-            });
-
-            newsScore = Math.max(-100, Math.min(100, totalNewsImpact / relatedTopics.length));
-
-            // Lấy 1 tin tức nghiêm trọng nhất làm lý do bổ sung
-            relatedTopics.sort((a, b) => (b.severity || 0) - (a.severity || 0));
-            reasons.push(relatedTopics[0].title);
-        }
-
-        // --- 3. TỔNG HỢP ĐIỂM SỐ (60% - 25% - 15%) ---
-        // Nếu không có Data thị trường, dồn tỷ trọng cho News
-        let finalScore = 0;
-        if (relatedMarkets.length > 0) {
-            finalScore = (dataScore * 0.6) + (newsScore * 0.25) + (trendScore * 0.15);
+            finalScore = finalScore / validIndicators; // Lấy trung bình
         } else {
-            finalScore = newsScore; 
+            // Fallback nếu không có data (Giữ ở mức ổn định)
+            finalScore = 0;
         }
 
-        // --- 4. ÁNH XẠ TRẠNG THÁI VÀ GIAO DIỆN ---
-        let status = 'Bình thường / Tích cực', color = '#3b82f6', trendIcon = '→', trendText = 'Ổn định';
+        // 3. Quy đổi điểm (-100 đến 100) sang Trạng thái & Màu sắc
+        let status = 'Bình thường', color = '#3b82f6', trendIcon = '→', trendText = 'Ổn định';
 
         if (finalScore >= 60) {
             status = 'Tăng trưởng mạnh'; color = '#10b981'; trendIcon = '↑'; trendText = 'Cải thiện mạnh';
         } else if (finalScore >= 20) {
-            status = 'Khả quan'; color = '#10b981'; trendIcon = '↑'; trendText = 'Đang cải thiện';
+            status = 'Tích cực / Khả quan'; color = '#10b981'; trendIcon = '↑'; trendText = 'Đang cải thiện';
         } else if (finalScore >= -19) {
-            status = 'Đang theo dõi'; color = '#facc15'; trendIcon = '→'; trendText = 'Đi ngang';
+            status = 'Bình thường / Theo dõi'; color = '#facc15'; trendIcon = '→'; trendText = 'Đi ngang';
         } else if (finalScore >= -59) {
             status = 'Có dấu hiệu suy yếu'; color = '#f97316'; trendIcon = '↓'; trendText = 'Xu hướng xấu đi';
         } else {
             status = 'Suy yếu mạnh'; color = '#ef4444'; trendIcon = '↓'; trendText = 'Suy giảm nghiêm trọng';
         }
 
-        // Tinh chỉnh từ ngữ cho nhóm Nghịch đảo (Chi phí sinh hoạt)
-        if (category.inverse && finalScore < -20) status = 'Áp lực tăng cao';
-        if (category.inverse && finalScore > 20) status = 'Đang hạ nhiệt';
+        // Tinh chỉnh từ ngữ chuyên biệt cho nhóm Chi phí / Năng lượng
+        if (category.inverse) {
+            if (finalScore <= -60) { status = 'Áp lực tăng rất cao'; trendText = 'Tăng mạnh'; }
+            else if (finalScore <= -20) { status = 'Có dấu hiệu tăng'; trendText = 'Đang tăng'; }
+            else if (finalScore >= 20) { status = 'Đang hạ nhiệt'; trendText = 'Giảm nhẹ'; }
+            else if (finalScore >= 60) { status = 'Chi phí giảm'; trendText = 'Giảm mạnh'; }
+        }
 
-        // Lọc lại Reasons (Tối đa 3 gạch đầu dòng)
-        const uniqueReasons = [...new Set(reasons)].slice(0, 3);
-        if (uniqueReasons.length === 0) uniqueReasons.push("Dữ liệu duy trì ở mức ổn định theo chu kỳ.");
+        // 4. Định dạng câu giải thích
+        let explanation = '';
+        if (reasons.length > 0) {
+            explanation = reasons.join(', ') + '.';
+        } else {
+            explanation = 'Các chỉ số cốt lõi hiện tại đang dao động ở mức biên độ hẹp, chưa hình thành xu hướng rõ rệt.';
+        }
 
         results.push({
             id: key,
@@ -133,7 +108,8 @@ function buildMacroHealth(topics, marketData = []) {
             color: color,
             trend_icon: trendIcon,
             trend_text: trendText,
-            reasons: uniqueReasons
+            drivers: category.drivers, // Truyền Động lực chính xuống Frontend
+            explanation: explanation
         });
     }
 
