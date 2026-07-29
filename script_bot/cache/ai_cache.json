@@ -4861,5 +4861,273 @@
       "sentiment": -1,
       "scope": "global"
     }
+  },
+  "evt_general_1785316645877": {
+    "created_at": 1785316648938,
+    "expires_at": 1787908648938,
+    "version": "4.5",
+    "checksum": "68bd3c9bc40fd5953c219acd6ae0f5d3",
+    "data": {
+      "cluster_title": "Sự sụt giảm của cổ phiếu thị trường mới nổi",
+      "short_summary": "Cổ phiếu thị trường mới nổi tiếp tục sụt giảm, đạt mức thấp nhất trong ba tháng rưỡi, do sự sụt giảm của cổ phiếu công nghệ ở Á Đông.",
+      "detailed_summary": "Các chỉ số chứng khoán tại các thị trường mới nổi ghi nhận phiên giảm điểm thứ hai liên tiếp, chạm mức thấp nhất trong vòng ba tháng rưỡi. Nguyên nhân chính xuất phát từ đà sụt giảm mạnh trong lĩnh vực cổ phiếu sản xuất vi mạch tại châu Á, tạo ra làn sóng bán tháo lan rộng.",
+      "causes": [
+        "Đà bán tháo cổ phiếu ngành vi mạch tại châu Á",
+        "Tâm lý tiêu cực lan rộng trên thị trường tài chính quốc tế"
+      ],
+      "effects": [
+        "Chỉ số chứng khoán thị trường mới nổi chạm mức thấp nhất trong 3,5 tháng",
+        "Áp lực suy giảm tài sản đối với các nhà đầu tư tại thị trường mới nổi"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư trên thị trường chứng khoán mới nổi",
+        "Các doanh nghiệp sản xuất linh kiện bán dẫn châu Á",
+        "Các quỹ đầu tư tài chính quốc tế"
+      ],
+      "market_impact": "Thị trường chịu áp lực bán tháo diện rộng, tâm lý nhà đầu tư trở nên thận trọng và e ngại rủi ro.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh tính nhạy cảm và sự phụ thuộc cao của các thị trường mới nổi vào biến động của ngành công nghiệp công nghệ toàn cầu.",
+      "unknowns": [
+        "Thời điểm kết thúc làn sóng bán tháo trên thị trường chip châu Á",
+        "Phạm vi lan tỏa của đà sụt giảm sang các nhóm ngành khác ngoài công nghệ"
+      ],
+      "confidence_note": "Thông tin dựa trên dữ liệu giao dịch thực tế, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Thị trường chứng khoán công nghệ châu Á ổn định trở lại, giúp chỉ số chung phục hồi.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Đà sụt giảm kéo dài sang các thị trường phát triển do lo ngại về chuỗi cung ứng công nghệ.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Cổ phiếu công nghệ châu Á",
+          "target": "Chứng khoán thị trường mới nổi",
+          "relation_type": "cause_effect",
+          "label": "Là nguyên nhân chính gây ra đà sụt giảm"
+        }
+      ],
+      "entities": [
+        "cổ phiếu",
+        "thị trường mới nổi",
+        "Á Đông"
+      ],
+      "keywords": [
+        "cổ phiếu",
+        "thị trường mới nổi",
+        "công nghệ",
+        "Á Đông"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_general_1785316654801": {
+    "created_at": 1785316660848,
+    "expires_at": 1787908660848,
+    "version": "4.5",
+    "checksum": "e7fdcf8feba901a28281f8a664469355",
+    "data": {
+      "cluster_title": "Sự kiện SK Hynix",
+      "short_summary": "SK Hynix không đạt được kỳ vọng về lợi nhuận, nhưng công ty vẫn khẳng định rủi ro về cung vượt cầu ở lĩnh vực bộ nhớ còn hạn chế.",
+      "detailed_summary": "Tập đoàn sản xuất chip SK Hynix của Hàn Quốc đã công bố kết quả kinh doanh không đạt kỳ vọng của các nhà phân tích. Sự kiện này ngay lập tức kích hoạt phản ứng tiêu cực trên thị trường tài chính, dẫn đến làn sóng bán tháo cổ phiếu công nghệ. Tuy nhiên, phía SK Hynix vẫn giữ quan điểm lạc quan, khẳng định nguy cơ dư thừa nguồn cung bộ nhớ trong tương lai vẫn ở mức hạn chế.",
+      "causes": [
+        "Lợi nhuận của SK Hynix không đạt mức kỳ vọng của giới phân tích tài chính",
+        "Tâm lý lo ngại của nhà đầu tư trước tình hình kinh doanh của các tập đoàn công nghệ lớn"
+      ],
+      "effects": [
+        "Thị trường cổ phiếu công nghệ chịu áp lực bán tháo mạnh",
+        "Gia tăng tâm lý hoài nghi về triển vọng tăng trưởng ngắn hạn của ngành sản xuất bộ nhớ"
+      ],
+      "affected_groups": [
+        "Các nhà đầu tư trên thị trường chứng khoán toàn cầu",
+        "Các công ty trong chuỗi cung ứng linh kiện điện tử",
+        "Cổ đông của SK Hynix"
+      ],
+      "market_impact": "Gây ra sự sụt giảm tức thời của nhóm cổ phiếu công nghệ, làm xáo trộn tâm lý thị trường tài chính toàn cầu.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh độ nhạy cảm cao của nhà đầu tư đối với ngành bán dẫn và khả năng tác động lan tỏa của một doanh nghiệp đầu ngành lên thị trường chứng khoán thế giới.",
+      "unknowns": [
+        "Tác động thực tế của tình trạng cung cầu chip nhớ trong các quý tới",
+        "Thời điểm thị trường chứng khoán phục hồi sau cú sốc này"
+      ],
+      "confidence_note": "Thông tin dựa trên báo cáo kết quả kinh doanh và phản ứng thị trường đã xác thực.",
+      "scenarios": [
+        {
+          "text": "Thị trường ổn định trở lại sau khi nhà đầu tư đánh giá lại tiềm năng dài hạn của SK Hynix.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Làn sóng bán tháo lan rộng nếu các doanh nghiệp chip nhớ khác cũng công bố kết quả kinh doanh yếu kém.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Kết quả lợi nhuận SK Hynix",
+          "target": "Thị trường cổ phiếu công nghệ",
+          "relation_type": "cause_effect",
+          "label": "Nguyên nhân gây ra sự sụt giảm giá trị cổ phiếu"
+        },
+        {
+          "source": "SK Hynix",
+          "target": "Thị trường bộ nhớ toàn cầu",
+          "relation_type": "neutral",
+          "label": "Đưa ra đánh giá về rủi ro dư thừa nguồn cung"
+        }
+      ],
+      "entities": [
+        "SK Hynix",
+        "Hàn Quốc"
+      ],
+      "keywords": [
+        "SK Hynix",
+        "Tech rout",
+        "chíp"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "business"
+    }
+  },
+  "evt_08452166": {
+    "created_at": 1785316672178,
+    "expires_at": 1787908672178,
+    "version": "4.5",
+    "checksum": "94a3c29d032d456523db1918b93213e5",
+    "data": {
+      "cluster_title": "Bà Netanyahu gặp Tổng thống Trump tại Nhà Trắng",
+      "short_summary": "Tổng thống Trump và Thủ tướng Netanyahu đã gặp gỡ tại Nhà Trắng để thảo luận về các vấn đề quốc tế.",
+      "detailed_summary": "Thủ tướng Israel Benjamin Netanyahu đã có buổi làm việc với Tổng thống Donald Trump tại Nhà Trắng. Mục đích chính của cuộc gặp là tạo tiền đề cho các hoạt động ngoại giao nhằm giải quyết tình hình xung đột hiện tại. Sau cuộc gặp, ông Netanyahu đã đăng tải thông tin trên mạng xã hội Instagram, khẳng định đây là một trong những cuộc hội đàm tốt nhất.",
+      "causes": [
+        "Nhu cầu thúc đẩy các biện pháp ngoại giao trong xung đột",
+        "Sự tương tác chính trị giữa chính phủ Israel và chính quyền Hoa Kỳ"
+      ],
+      "effects": [
+        "Tạo cơ sở cho các bước tiến ngoại giao tiếp theo",
+        "Phát đi tín hiệu tích cực về mối quan hệ hợp tác giữa hai bên"
+      ],
+      "affected_groups": [
+        "Chính phủ Israel",
+        "Chính quyền Hoa Kỳ",
+        "Các bên liên quan trong khu vực xung đột"
+      ],
+      "market_impact": "Tác động ở mức trung bình, chủ yếu phản ánh tâm lý ổn định hơn trong khu vực thông qua các kênh ngoại giao cấp cao.",
+      "follow_up": "",
+      "significance": "Cuộc gặp cho thấy sự phối hợp chặt chẽ giữa Washington và Tel Aviv trong việc định hình chiến lược ngoại giao giải quyết xung đột.",
+      "unknowns": [
+        "Nội dung chi tiết cụ thể của các đề xuất ngoại giao",
+        "Tác động thực tế của cuộc gặp đối với các bên xung đột khác"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên xác nhận từ phía nhân vật chính.",
+      "scenarios": [
+        {
+          "text": "Các bên khởi động lộ trình ngoại giao mới để giảm căng thẳng xung đột.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Cuộc gặp chỉ mang tính chất tạo dựng hình ảnh mà chưa có bước tiến cụ thể về mặt chính sách.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Benjamin Netanyahu",
+          "target": "Donald Trump",
+          "relation_type": "cooperation",
+          "label": "Hợp tác trong các nỗ lực ngoại giao giải quyết xung đột"
+        }
+      ],
+      "entities": [
+        "Benjamin Netanyahu",
+        "Donald Trump"
+      ],
+      "keywords": [
+        "Netanyahu",
+        "Trump",
+        "White House",
+        "diplomacy"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_599fe112": {
+    "created_at": 1785316683943,
+    "expires_at": 1787908683943,
+    "version": "4.5",
+    "checksum": "e716d543ac34195727ced368517e74ee",
+    "data": {
+      "cluster_title": "Kwacha Zambia gần bằng với Rand Nam Phi",
+      "short_summary": "Kwacha Zambia gần bằng với Rand Nam Phi, tăng 18% so với USD trong năm nay.",
+      "detailed_summary": "Đồng Kwacha của Zambia ghi nhận sự tăng trưởng đáng chú ý trong năm nay khi tăng gần 18% so với đồng đô la Mỹ, trở thành đồng tiền có hiệu suất tốt thứ hai trong số các loại tiền tệ được Bloomberg theo dõi. Sự phục hồi này dẫn đến việc đồng Kwacha đang dần tiến sát đến mức ngang giá với đồng Rand của Nam Phi.",
+      "causes": [
+        "Sự tăng giá mạnh mẽ của đồng Kwacha so với đô la Mỹ từ đầu năm đến nay",
+        "Hiệu suất hoạt động vượt trội của nền kinh tế Zambia trên thị trường ngoại hối quốc tế"
+      ],
+      "effects": [
+        "Tỷ giá hối đoái giữa Kwacha và Rand thu hẹp khoảng cách",
+        "Vị thế của đồng Kwacha được cải thiện trong danh sách các đồng tiền có hiệu suất tốt nhất"
+      ],
+      "affected_groups": [
+        "Các nhà xuất nhập khẩu giao thương giữa Zambia và Nam Phi",
+        "Các nhà đầu tư nước ngoài tại thị trường Zambia",
+        "Ngân hàng Trung ương Zambia"
+      ],
+      "market_impact": "Gia tăng sự lạc quan về sức mạnh nội tại của đồng nội tệ Zambia, có thể thúc đẩy dòng vốn đầu tư ngắn hạn.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh sự thay đổi tích cực về sức mạnh tương đối của đồng nội tệ Zambia trong khu vực, đòi hỏi sự theo dõi sát sao về các tác động thương mại với Nam Phi.",
+      "unknowns": [
+        "Các chính sách kinh tế cụ thể đã thúc đẩy sự tăng giá của đồng Kwacha",
+        "Tác động cụ thể lên cán cân thương mại giữa Zambia và Nam Phi trong dài hạn"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên dữ liệu thống kê thị trường tiền tệ.",
+      "scenarios": [
+        {
+          "text": "Đồng Kwacha tiếp tục đà tăng và chính thức vượt qua mức ngang giá với đồng Rand.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Sự can thiệp của chính sách tiền tệ để ổn định tỷ giá nếu việc tăng giá quá nhanh gây bất lợi cho xuất khẩu.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Đồng Kwacha",
+          "target": "Đô la Mỹ",
+          "relation_type": "cause_effect",
+          "label": "Tăng giá so với đô la Mỹ dẫn đến sự thay đổi vị thế của Kwacha"
+        },
+        {
+          "source": "Zambia",
+          "target": "Nam Phi",
+          "relation_type": "neutral",
+          "label": "Hai quốc gia có quan hệ thương mại chịu ảnh hưởng bởi tỷ giá tiền tệ"
+        }
+      ],
+      "entities": [
+        "Zambia",
+        "Nam Phi",
+        "Bloomberg"
+      ],
+      "keywords": [
+        "Kwacha Zambia",
+        "Rand Nam Phi",
+        "Bloomberg"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
   }
 }
