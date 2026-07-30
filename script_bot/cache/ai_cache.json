@@ -14995,5 +14995,74 @@
       "importance": 85,
       "scope": "national"
     }
+  },
+  "evt_43a5b279": {
+    "created_at": 1785432315270,
+    "expires_at": 1788024315270,
+    "version": "4.5",
+    "checksum": "9a6fcdf865e76cfbb889eb71a4c85dae",
+    "data": {
+      "cluster_title": "Mất cân đối ngân sách Saudi giảm 75%",
+      "short_summary": "Mất cân đối ngân sách Saudi giảm 75% do giá dầu tăng cao, mặc dù chiến tranh với Iran đã làm giảm kinh tế.",
+      "detailed_summary": "Saudi Arabia ghi nhận sự cải thiện đáng kể trong tình hình tài chính quốc gia khi thâm hụt ngân sách quý giảm mạnh gần 75%. Kết quả này đạt được nhờ giá dầu thô toàn cầu tăng đột biến, giúp bù đắp cho những khó khăn kinh tế phát sinh từ cuộc xung đột với Iran.",
+      "causes": [
+        "Giá dầu thô trên thị trường toàn cầu tăng cao",
+        "Sự tăng trưởng doanh thu từ xuất khẩu dầu mỏ"
+      ],
+      "effects": [
+        "Thâm hụt ngân sách quốc gia giảm mạnh gần 75%",
+        "Áp lực lên nền kinh tế nội địa do xung đột với Iran"
+      ],
+      "affected_groups": [
+        "Chính phủ Saudi Arabia",
+        "Các nhà đầu tư năng lượng toàn cầu",
+        "Nền kinh tế Saudi Arabia"
+      ],
+      "market_impact": "Tác động tích cực đến tâm lý thị trường dầu mỏ, cho thấy khả năng chống chịu ngân sách của quốc gia xuất khẩu dầu hàng đầu trước các cú sốc địa chính trị.",
+      "follow_up": "",
+      "significance": "Sự kiện cho thấy vai trò sống còn của giá dầu đối với cán cân tài khóa của Saudi Arabia, giúp quốc gia này duy trì ổn định kinh tế ngay cả trong bối cảnh xung đột vũ trang.",
+      "unknowns": [
+        "Tác động dài hạn của cuộc xung đột với Iran lên quy mô nền kinh tế",
+        "Dự báo xu hướng giá dầu trong các quý tiếp theo"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên các báo cáo tài chính công khai của quốc gia.",
+      "scenarios": [
+        {
+          "text": "Ngân sách tiếp tục cải thiện nếu giá dầu duy trì ở mức cao bất chấp xung đột.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Thâm hụt tăng trở lại nếu giá dầu giảm đột ngột hoặc chi phí xung đột gia tăng.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Giá dầu toàn cầu",
+          "target": "Thâm hụt ngân sách Saudi Arabia",
+          "relation_type": "cause_effect",
+          "label": "Giá dầu tăng là nguyên nhân giúp giảm thâm hụt"
+        },
+        {
+          "source": "Iran",
+          "target": "Saudi Arabia",
+          "relation_type": "conflict",
+          "label": "Xung đột quân sự gây áp lực lên nền kinh tế"
+        }
+      ],
+      "entities": [
+        "Saudi Arabia",
+        "Iran"
+      ],
+      "keywords": [
+        "Saudi Arabia",
+        "mất cân đối ngân sách",
+        "giá dầu"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
   }
 }
