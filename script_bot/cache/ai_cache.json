@@ -9693,5 +9693,455 @@
       "sentiment": -1,
       "scope": "national"
     }
+  },
+  "evt_general_1785403049270": {
+    "created_at": 1785403053203,
+    "expires_at": 1787995053203,
+    "version": "4.5",
+    "checksum": "0733d224059ab802083c12590a02f331",
+    "data": {
+      "cluster_title": "Sụt giảm cổ phiếu chip Trung Quốc",
+      "short_summary": "Cổ phiếu chip Trung Quốc sụt giảm do lo ngại về giá trị quá cao và vị thế quá đông đúc.",
+      "detailed_summary": "Thị trường chứng khoán Trung Quốc chứng kiến đà giảm mạnh trong ngày thứ Năm, dẫn đầu là các mã cổ phiếu ngành bán dẫn. Nhà đầu tư đang chuyển dịch dòng vốn khỏi các lĩnh vực tăng trưởng mạnh trước đó trong năm do lo ngại về định giá quá cao và sự tập trung quá mức, khiến thị trường Trung Quốc đối mặt với tháng tồi tệ nhất trong một thập kỷ.",
+      "causes": [
+        "Định giá cổ phiếu công nghệ đã trở nên quá cao",
+        "Nhà đầu tư thực hiện chiến lược chốt lời và cơ cấu lại danh mục",
+        "Sự tập trung quá mức vào các nhóm ngành tăng trưởng nóng"
+      ],
+      "effects": [
+        "Giá cổ phiếu công nghệ và bán dẫn Trung Quốc sụt giảm mạnh",
+        "Dòng vốn rút khỏi các doanh nghiệp cung ứng thiết bị cho ngành trí tuệ nhân tạo",
+        "Thị trường chứng khoán Trung Quốc ghi nhận mức giảm kỷ lục trong tháng"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư chứng khoán",
+        "Các công ty sản xuất chất bán dẫn",
+        "Doanh nghiệp cung ứng hạ tầng cho trí tuệ nhân tạo"
+      ],
+      "market_impact": "Tâm lý thị trường trở nên thận trọng khi dòng vốn dịch chuyển khỏi nhóm ngành công nghệ vốn đã tăng trưởng mạnh mẽ trước đó.",
+      "follow_up": "",
+      "significance": "Sự kiện này phản ánh tâm lý lo ngại về định giá trong lĩnh vực công nghệ tại Trung Quốc, đánh dấu giai đoạn thoái trào của làn sóng đầu tư vào AI sau một thời gian dài tăng nóng.",
+      "unknowns": [
+        "Chưa rõ xu hướng này sẽ kéo dài trong bao lâu",
+        "Chưa rõ các chính sách hỗ trợ từ chính phủ có can thiệp để ổn định thị trường hay không"
+      ],
+      "confidence_note": "Thông tin dựa trên biến động thị trường đã được xác thực, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Nhà đầu tư tiếp tục rút vốn khỏi nhóm công nghệ để chuyển sang các lĩnh vực có định giá hợp lý hơn.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Thị trường ổn định trở lại sau khi đạt mức cân bằng định giá mới.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Nhà đầu tư",
+          "target": "Cổ phiếu bán dẫn Trung Quốc",
+          "relation_type": "cause_effect",
+          "label": "Hoạt động chốt lời dẫn đến giá cổ phiếu sụt giảm"
+        },
+        {
+          "source": "Định giá cao",
+          "target": "Sự dịch chuyển dòng vốn",
+          "relation_type": "cause_effect",
+          "label": "Nguyên nhân chính thúc đẩy hành vi rút vốn"
+        }
+      ],
+      "entities": [
+        "Trung Quốc",
+        "công nghệ"
+      ],
+      "keywords": [
+        "cổ phiếu chip",
+        "Trung Quốc",
+        "công nghệ"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_ebcfd29d": {
+    "created_at": 1785403065027,
+    "expires_at": 1787995065027,
+    "version": "4.5",
+    "checksum": "e908bb5ffd6d1e2e909d6c205e17d41f",
+    "data": {
+      "cluster_title": "Ngân hàng trung ương Ấn Độ bán USD để bảo vệ rupee",
+      "short_summary": "Ngân hàng trung ương Ấn Độ bán khoảng 7 tỷ USD để bảo vệ rupee vào cuối tuần trước.",
+      "detailed_summary": "Vào thứ Sáu vừa qua, Ngân hàng Trung ương Ấn Độ đã thực hiện một trong những đợt can thiệp trực tiếp lớn nhất trong nhiều tháng qua với số tiền khoảng 7 tỷ USD. Động thái này nhằm mục đích ổn định giá trị đồng Rupee trước áp lực thị trường, theo thông tin từ những nguồn tin am hiểu về vấn đề này.",
+      "causes": [
+        "Áp lực mất giá mạnh đối với đồng Rupee",
+        "Nhu cầu cần ổn định tỷ giá hối đoái của Ngân hàng Trung ương Ấn Độ"
+      ],
+      "effects": [
+        "Giảm dự trữ ngoại hối của Ấn Độ",
+        "Tạm thời kiểm soát biến động tỷ giá hối đoái trên thị trường",
+        "Phát đi tín hiệu can thiệp cứng rắn từ phía cơ quan quản lý"
+      ],
+      "affected_groups": [
+        "Các nhà đầu tư nước ngoài tại Ấn Độ",
+        "Các doanh nghiệp xuất nhập khẩu Ấn Độ",
+        "Hệ thống ngân hàng và thị trường tài chính Ấn Độ"
+      ],
+      "market_impact": "Gây tác động ngắn hạn lên thanh khoản đồng Rupee và thể hiện sự quyết liệt của chính sách tiền tệ trong việc ngăn chặn đà suy giảm của nội tệ.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh áp lực tài chính mà Ấn Độ đang đối mặt và quyết tâm của Ngân hàng Trung ương trong việc duy trì ổn định vĩ mô thông qua các biện pháp can thiệp trực tiếp.",
+      "unknowns": [
+        "Nguyên nhân cụ thể dẫn đến áp lực bán tháo đồng Rupee vào ngày thứ Sáu",
+        "Mức độ dự trữ ngoại hối còn lại sau đợt can thiệp này"
+      ],
+      "confidence_note": "Thông tin dựa trên các nguồn tin am hiểu vấn đề, mức độ tin cậy khá cao nhưng chưa có thông báo chính thức từ Ngân hàng Trung ương.",
+      "scenarios": [
+        {
+          "text": "Ngân hàng Trung ương tiếp tục can thiệp nếu áp lực lên đồng Rupee không giảm.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Tình hình ổn định trở lại và không cần thêm các đợt bán USD quy mô lớn trong thời gian ngắn tới.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Ngân hàng Trung ương Ấn Độ",
+          "target": "Đồng Rupee",
+          "relation_type": "cause_effect",
+          "label": "Can thiệp nhằm ổn định tỷ giá"
+        },
+        {
+          "source": "Thị trường ngoại hối",
+          "target": "Ngân hàng Trung ương Ấn Độ",
+          "relation_type": "conflict",
+          "label": "Áp lực mất giá buộc cơ quan quản lý can thiệp"
+        }
+      ],
+      "entities": [
+        "Ấn Độ",
+        "Ngân hàng trung ương Ấn Độ"
+      ],
+      "keywords": [
+        "Ngân hàng trung ương Ấn Độ",
+        "Rupee",
+        "USD"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_5c4a7487": {
+    "created_at": 1785403078746,
+    "expires_at": 1787995078746,
+    "version": "4.5",
+    "checksum": "0cf390b6d70c2bb84c8d24da1cb2ee75",
+    "data": {
+      "cluster_title": "Dollar mất giá",
+      "short_summary": "Dollar mất giá do ảnh hưởng đến uy tín của Fed.",
+      "detailed_summary": "Chương trình 'Bloomberg: The Opening Trade' với các chuyên gia Anna Edwards, Guy Johnson và Mark Cudmore đã phân tích về việc đồng USD chịu áp lực giảm giá. Nguyên nhân chủ đạo được xác định xuất phát từ sự sụt giảm uy tín của Fed trong mắt giới đầu tư và các nhà phân tích, ảnh hưởng trực tiếp đến tâm lý giao dịch trên thị trường tài chính.",
+      "causes": [
+        "Sự suy giảm uy tín của Cục Dự trữ Liên bang Mỹ (Fed)",
+        "Tâm lý quan ngại của các nhà phân tích và nhà đầu tư về chính sách tiền tệ"
+      ],
+      "effects": [
+        "Đồng USD mất giá",
+        "Gia tăng sự bất ổn trong tâm lý giao dịch thị trường"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư tài chính quốc tế",
+        "Các tổ chức giao dịch ngoại hối",
+        "Cục Dự trữ Liên bang Mỹ (Fed)"
+      ],
+      "market_impact": "Đồng USD đối mặt với áp lực giảm giá, đòi hỏi các nhà đầu tư phải theo dõi sát sao động thái truyền thông và chính sách từ Fed để điều chỉnh danh mục.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh tầm quan trọng của niềm tin thị trường đối với định hướng chính sách của ngân hàng trung ương, vốn là nền tảng cho sự ổn định của đồng tiền chủ chốt.",
+      "unknowns": [
+        "Các dữ liệu kinh tế cụ thể nào khiến thị trường mất niềm tin vào Fed",
+        "Phản ứng cụ thể của Fed đối với những hoài nghi về uy tín hiện tại"
+      ],
+      "confidence_note": "Thông tin dựa trên đánh giá chuyên môn từ chương trình tài chính uy tín, độ tin cậy cao về diễn biến tâm lý thị trường.",
+      "scenarios": [
+        {
+          "text": "Fed đưa ra các thông điệp chính sách rõ ràng giúp khôi phục niềm tin và ổn định giá trị đồng USD.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Sự thiếu hụt uy tín tiếp tục kéo dài khiến đồng USD duy trì đà giảm giá trong trung hạn.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Uy tín của Fed",
+          "target": "Đồng USD",
+          "relation_type": "cause_effect",
+          "label": "Sự suy giảm uy tín gây mất giá tiền tệ"
+        },
+        {
+          "source": "Nhà đầu tư",
+          "target": "Fed",
+          "relation_type": "conflict",
+          "label": "Hoài nghi về năng lực điều hành chính sách"
+        }
+      ],
+      "entities": [
+        "Anna Edwards",
+        "Guy Johnson",
+        "Mark Cudmore",
+        "Bloomberg"
+      ],
+      "keywords": [
+        "Dollar",
+        "Fed",
+        "Credibility"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_0dd23e7f": {
+    "created_at": 1785403090357,
+    "expires_at": 1787995090357,
+    "version": "4.5",
+    "checksum": "b65bc6a3b509bcb50a5136e9daac09b8",
+    "data": {
+      "cluster_title": "Lợi nhuận tăng vọt của Shell",
+      "short_summary": "Lợi nhuận của Shell tăng vọt lên 9,8 tỷ USD do lợi nhuận từ thương mại và tinh chế dầu mỏ tăng mạnh.",
+      "detailed_summary": "Tập đoàn năng lượng Shell Plc công bố kết quả kinh doanh quý hai đầy khởi sắc với lợi nhuận đạt 9,8 tỷ USD. Kết quả này được thúc đẩy bởi sự tăng trưởng mạnh mẽ trong hoạt động giao dịch và lọc dầu, trong bối cảnh các bất ổn địa chính trị tại Trung Đông gây áp lực lên thị trường năng lượng toàn cầu.",
+      "causes": [
+        "Sự gia tăng nhu cầu và biến động giá từ các xung đột tại Trung Đông",
+        "Kết quả kinh doanh vượt trội từ mảng giao dịch và lọc dầu"
+      ],
+      "effects": [
+        "Lợi nhuận quý hai của Shell đạt mức cao nhất kể từ đầu cuộc xung đột tại Ukraine",
+        "Tăng cường vị thế tài chính của các tập đoàn năng lượng lớn trên thế giới"
+      ],
+      "affected_groups": [
+        "Các cổ đông của Shell Plc",
+        "Thị trường năng lượng toàn cầu",
+        "Các doanh nghiệp trong ngành năng lượng"
+      ],
+      "market_impact": "Phản ánh xu hướng gia tăng lợi nhuận của các tập đoàn năng lượng lớn nhờ tận dụng các biến động nguồn cung và địa chính trị.",
+      "follow_up": "",
+      "significance": "Sự kiện này minh chứng cho khả năng tối ưu hóa lợi nhuận của các tập đoàn năng lượng lớn trong giai đoạn thị trường toàn cầu đầy biến động và bất ổn địa chính trị.",
+      "unknowns": [
+        "Tác động dài hạn của các lệnh trừng phạt hoặc hạn chế thương mại liên quan đến xung đột",
+        "Dự báo chính xác về biên lợi nhuận của các quý tiếp theo trong bối cảnh giá dầu biến động khó lường"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên báo cáo tài chính chính thức của doanh nghiệp.",
+      "scenarios": [
+        {
+          "text": "Lợi nhuận tiếp tục duy trì ở mức cao nếu các xung đột địa chính trị tại Trung Đông không hạ nhiệt.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Lợi nhuận điều chỉnh giảm do các biện pháp can thiệp chính sách vào thị trường năng lượng.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Xung đột tại Trung Đông",
+          "target": "Shell Plc",
+          "relation_type": "cause_effect",
+          "label": "Tạo điều kiện tăng doanh thu giao dịch và lọc dầu"
+        },
+        {
+          "source": "Xung đột tại Ukraine",
+          "target": "Shell Plc",
+          "relation_type": "cause_effect",
+          "label": "Mốc thời gian so sánh lợi nhuận đỉnh điểm"
+        }
+      ],
+      "entities": [
+        "Shell Plc",
+        "Ukraine",
+        "Châu Âu"
+      ],
+      "keywords": [
+        "Shell",
+        "lợi nhuận",
+        "châu Âu"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_general_1785403104303": {
+    "created_at": 1785403110422,
+    "expires_at": 1787995110422,
+    "version": "4.5",
+    "checksum": "9d8981eab5ae04c13ea6ad28367ba160",
+    "data": {
+      "cluster_title": "LSEG Cập Nhật Hướng Hướng Dẫn",
+      "short_summary": "LSEG đã tăng cường hướng dẫn và cho biết sự bùng nổ của trí tuệ nhân tạo đang mang lại hiệu quả cho khách hàng.",
+      "detailed_summary": "Tập đoàn London Stock Exchange (LSEG) đã chính thức nâng dự báo kết quả kinh doanh cho cả năm sau khi đạt được kết quả ấn tượng trong nửa đầu năm. Sự tăng trưởng này được thúc đẩy bởi việc triển khai tích hợp trí tuệ nhân tạo vào hệ thống, thu hút sự quan tâm và gia tăng nhu cầu từ phía khách hàng.",
+      "causes": [
+        "Việc triển khai thành công các giải pháp trí tuệ nhân tạo",
+        "Sự gia tăng nhu cầu và mức độ quan tâm từ khách hàng đối với dịch vụ mới"
+      ],
+      "effects": [
+        "Kết quả tài chính nửa đầu năm đạt mức kỷ lục",
+        "Tập đoàn điều chỉnh tăng dự báo tăng trưởng cho cả năm"
+      ],
+      "affected_groups": [
+        "Cổ đông của London Stock Exchange Group",
+        "Khách hàng sử dụng dịch vụ của tập đoàn",
+        "Các đối thủ cạnh tranh trong ngành tài chính"
+      ],
+      "market_impact": "Tác động tích cực tới tâm lý nhà đầu tư, củng cố vị thế của tập đoàn trong lĩnh vực công nghệ tài chính.",
+      "follow_up": "",
+      "significance": "Sự kiện này khẳng định xu hướng tích hợp trí tuệ nhân tạo đang trở thành đòn bẩy quan trọng giúp các định chế tài chính lớn tối ưu hóa doanh thu và gia tăng lợi thế cạnh tranh.",
+      "unknowns": [
+        "Tỷ lệ đóng góp cụ thể của doanh thu từ trí tuệ nhân tạo vào tổng lợi nhuận",
+        "Chi phí đầu tư chi tiết cho hạ tầng trí tuệ nhân tạo trong tương lai"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên báo cáo công bố chính thức của tập đoàn.",
+      "scenarios": [
+        {
+          "text": "Tập đoàn tiếp tục mở rộng các tính năng trí tuệ nhân tạo và củng cố vị thế dẫn đầu trong ngành tài chính.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các đối thủ cạnh tranh đẩy mạnh đầu tư tương tự, làm giảm biên lợi nhuận từ trí tuệ nhân tạo của LSEG.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "London Stock Exchange Group",
+          "target": "Trí tuệ nhân tạo",
+          "relation_type": "cooperation",
+          "label": "Đầu tư và tích hợp công nghệ để tăng trưởng kinh doanh"
+        },
+        {
+          "source": "Trí tuệ nhân tạo",
+          "target": "London Stock Exchange Group",
+          "relation_type": "cause_effect",
+          "label": "Động lực thúc đẩy tăng kết quả tài chính"
+        }
+      ],
+      "entities": [
+        "LSEG",
+        "London Stock Exchange Group"
+      ],
+      "keywords": [
+        "LSEG",
+        "London Stock Exchange Group",
+        "AI",
+        "Tăng trưởng"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": 1,
+      "scope": "global"
+    }
+  },
+  "evt_e7889cc8": {
+    "created_at": 1785403122526,
+    "expires_at": 1787995122526,
+    "version": "4.5",
+    "checksum": "7457336785beff4f364f86bb87497ca0",
+    "data": {
+      "cluster_title": "Bùng nổ coban ở Cộng hòa Dân chủ Congo mang theo một loại hàng hóa không mong muốn: urani.",
+      "short_summary": "Bùng nổ coban ở Cộng hòa Dân chủ Congo mang theo urani, gây ra rủi ro lan truyền.",
+      "detailed_summary": "Hoạt động khai thác khoáng sản tại CH Dân chủ Congo, vốn tập trung vào coban, đang phát hiện lẫn quặng urani. Điều này đặt ra mối lo ngại lớn về an ninh và kiểm soát phổ biến vũ khí hạt nhân tại quốc gia từng cung cấp nguyên liệu cho các dự án bom nguyên tử trong Thế chiến II.",
+      "causes": [
+        "Sự lẫn lộn tự nhiên của quặng urani trong các mỏ coban tại CH Dân chủ Congo",
+        "Hoạt động khai thác coban quy mô lớn để đáp ứng nhu cầu thị trường toàn cầu"
+      ],
+      "effects": [
+        "Gia tăng nguy cơ rò rỉ vật liệu phóng xạ ra ngoài tầm kiểm soát",
+        "Đe dọa an ninh hạt nhân quốc tế",
+        "Thách thức trong việc quản lý và tách chiết khoáng sản an toàn"
+      ],
+      "affected_groups": [
+        "Cộng đồng dân cư địa phương tại CH Dân chủ Congo",
+        "Các doanh nghiệp khai khoáng quốc tế",
+        "Các tổ chức giám sát an ninh hạt nhân toàn cầu"
+      ],
+      "market_impact": "Có thể làm tăng chi phí tuân thủ quy định và rào cản pháp lý đối với chuỗi cung ứng coban, ảnh hưởng đến các nhà sản xuất pin và công nghệ.",
+      "follow_up": "",
+      "significance": "Sự kiện cho thấy sự đan xen phức tạp giữa nhu cầu tài nguyên xanh và các rủi ro an ninh hạt nhân tiềm ẩn trong chuỗi cung ứng khoáng sản toàn cầu.",
+      "unknowns": [
+        "Mức độ phổ biến và nồng độ của quặng urani lẫn trong các mỏ coban hiện nay",
+        "Khả năng kiểm soát và ngăn chặn triệt để vật liệu phóng xạ từ phía chính quyền địa phương"
+      ],
+      "confidence_note": "Thông tin dựa trên cảnh báo về rủi ro phổ biến hạt nhân, cần thêm dữ liệu định lượng về khối lượng quặng.",
+      "scenarios": [
+        {
+          "text": "Siết chặt quy định kiểm tra phóng xạ đối với tất cả sản phẩm khoáng sản xuất khẩu từ CH Dân chủ Congo.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các lệnh trừng phạt hoặc hạn chế thương mại được áp đặt lên chuỗi cung ứng khoáng sản có nguy cơ nhiễm phóng xạ.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Khai thác coban",
+          "target": "Phổ biến hạt nhân",
+          "relation_type": "cause_effect",
+          "label": "Gây rủi ro an ninh"
+        },
+        {
+          "source": "CH Dân chủ Congo",
+          "target": "Nguyên liệu hạt nhân",
+          "relation_type": "cause_effect",
+          "label": "Khu vực chứa trữ lượng gây lo ngại"
+        }
+      ],
+      "entities": [
+        "Cộng hòa Dân chủ Congo",
+        "urani"
+      ],
+      "keywords": [
+        "coban",
+        "urani",
+        "Cộng hòa Dân chủ Congo"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_ff528634": {
+    "created_at": 1785403129007,
+    "expires_at": 1787995129007,
+    "version": "4.5",
+    "checksum": "c846404b3fb2488a94f6f8ec3505b1ab",
+    "data": {
+      "cluster_title": "Sự kiện AI Mỹ - Trung",
+      "short_summary": "Công ty Innolight của Trung Quốc đã có một khởi đầu không tốt khi cổ phiếu của họ giảm 2% trong lần ra mắt tại Hồng Kông.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "follow_up": "",
+      "entities": [
+        "Innolight",
+        "Shandong"
+      ],
+      "keywords": [
+        "AI",
+        "Mỹ",
+        "Trung Quốc",
+        "Hong Kong"
+      ],
+      "importance": 85,
+      "scope": "business"
+    }
   }
 }
