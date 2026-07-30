@@ -26,11 +26,13 @@ function initMap(mapContainer) {
     mapContainer.innerHTML = '';
     const regionValues = {};
     
-    // 1. ÁNH XẠ CHUYÊN MỤC AI -> LỚP BẢN ĐỒ
+    // 1. ÁNH XẠ CHUYÊN MỤC (Hỗ trợ cả khóa cũ và mới để tránh lỗi HTML)
     const LAYER_MAPPING = {
+        'security': ['politics', 'military', 'diplomacy'],
         'military': ['politics', 'military', 'diplomacy'],
         'economy': ['economy', 'finance', 'business', 'tech'],
-        'environment': ['environment'], // Ánh xạ Môi trường vào Thiên tai
+        'disaster': ['environment'], 
+        'environment': ['environment'], 
         'health': ['health']
     };
 
@@ -40,7 +42,7 @@ function initMap(mapContainer) {
         'usa': ['US'],
         'canada': ['CA'],
         'china': ['CN'],
-        'russia_ukraine': ['RU', 'UA'], // Gán 1 sự kiện cho cả 2 nước
+        'russia_ukraine': ['RU', 'UA'], 
         'eu': ['FR', 'DE', 'IT', 'ES', 'PL', 'SE', 'NL', 'BE', 'AT', 'FI'], 
         'asean': ['TH', 'ID', 'MY', 'SG', 'PH', 'KH', 'LA', 'MM', 'BN'],
         'asia': ['JP', 'KR', 'IN', 'PK', 'BD', 'TW'],
@@ -48,15 +50,15 @@ function initMap(mapContainer) {
         'oceania': ['AU', 'NZ'],
         'latin_america': ['BR', 'AR', 'MX', 'VE', 'CO', 'CL', 'PE'],
         'africa': ['ZA', 'EG', 'NG', 'KE', 'GH', 'ET'],
-        'global': [] // Sự kiện toàn cầu không bôi màu quốc gia cụ thể
+        'global': [] 
     };
 
     const getScaleKey = (score) => {
         const volatility = Math.abs(score);
-        if (volatility > 8) return 'L4'; // Nghiêm trọng
-        if (volatility > 5) return 'L3'; // Phức tạp
-        if (volatility > 2) return 'L2'; // Theo dõi
-        return 'L1'; // Ổn định
+        if (volatility > 8) return 'L4'; 
+        if (volatility > 5) return 'L3'; 
+        if (volatility > 2) return 'L2'; 
+        return 'L1'; 
     };
 
     const getColorByScore = (score) => {
@@ -69,7 +71,6 @@ function initMap(mapContainer) {
 
     // XỬ LÝ LẠI VÒNG LẶP DỮ LIỆU ĐỂ GÁN CHO NHIỀU QUỐC GIA
     for (const [regionId, data] of Object.entries(savedRiskData)) {
-        // Lấy danh sách mã ISO tương ứng với regionId của AI
         let isoCodes = REGION_TO_ISO[regionId.toLowerCase()] || [regionId.toUpperCase()];
 
         isoCodes.forEach(isoCode => {
@@ -78,18 +79,15 @@ function initMap(mapContainer) {
             if (currentMapLayer === 'total') {
                 displayScore = data.si_score || data.score || 0;
             } else if (data.layers) {
-                // Tính tổng điểm các chuyên mục con thuộc layer được chọn
                 const targetCategories = LAYER_MAPPING[currentMapLayer] || [];
                 targetCategories.forEach(cat => {
                     displayScore += (data.layers[cat] || 0);
                 });
             }
 
-            // Chỉ bôi màu nếu có điểm số
             if (displayScore !== 0) {
                 regionValues[isoCode] = getScaleKey(displayScore);
                 
-                // Lưu tạm điểm đã lọc vào data để hiển thị Tooltip đúng
                 if (!data.filtered_score) data.filtered_score = {};
                 data.filtered_score[isoCode] = displayScore;
             }
@@ -121,27 +119,28 @@ function initMap(mapContainer) {
                 values: regionValues 
             }]
         },
-
         
-      onRegionTooltipShow(event, tooltip, code) {
-            // Tìm ngược lại dữ liệu gốc từ mã ISO
+        onRegionTooltipShow(event, tooltip, code) {
             let targetRegionId = Object.keys(REGION_TO_ISO).find(key => REGION_TO_ISO[key].includes(code)) || code.toLowerCase();
-            const countryData = savedRiskData[targetRegionId] || savedRiskData[code.toLowerCase()];
+            
+            // [QUAN TRỌNG]: Quét tìm dữ liệu bằng mọi khóa có thể để chống trượt
+            const countryData = savedRiskData[targetRegionId] || 
+                                savedRiskData[code] || 
+                                savedRiskData[code.toLowerCase()] || 
+                                savedRiskData[code.toUpperCase()];
             
             const translator = new Intl.DisplayNames(['vi'], { type: 'region' });
             let viName = tooltip.text();
             try { viName = translator.of(code) || tooltip.text(); } catch (e) {}
 
             if (countryData) {
-                // Lấy điểm đã được lọc theo Layer
                 const displayScore = (countryData.filtered_score && countryData.filtered_score[code]) 
                                      ? countryData.filtered_score[code].toFixed(2) 
                                      : (countryData.si_score || countryData.score || 0);
                 
-                // Bỏ qua nếu điểm bằng 0 khi lọc
                 if (displayScore == 0 && currentMapLayer !== 'total') {
-                    // [ĐÃ SỬA LỖI] Dùng .text() kèm tham số true
-                    tooltip.text(`<div style="padding: 4px;">${viName} <br><span style="font-size: 11px; opacity: 0.7;">(Không có sự kiện ${currentMapLayer})</span></div>`, true);
+                    // Cấp quyền render HTML bằng tham số true
+                    tooltip.text(`<div style="padding: 4px;">${viName} <br><span style="font-size: 11px; opacity: 0.7;">(Không có sự kiện cho lớp này)</span></div>`, true);
                     return;
                 }
 
@@ -152,7 +151,6 @@ function initMap(mapContainer) {
                 else if (vol > 5) statusText = 'Diễn biến phức tạp';
                 else if (vol > 2) statusText = 'Cần theo dõi';
                 
-                // [ĐÃ SỬA LỖI] Dùng .text() kèm tham số true để xuất HTML
                 tooltip.text(
                     `<div style="padding: 4px;">
                         <div style="font-weight: bold; margin-bottom: 4px; font-size: 14px;">${viName}</div>
@@ -163,19 +161,23 @@ function initMap(mapContainer) {
                     true
                 );
             } else {
-                // [ĐÃ SỬA LỖI] Dùng .text() kèm tham số true
                 tooltip.text(`<div style="padding: 4px;">${viName} <br><span style="font-size: 11px; opacity: 0.7;">(Chưa có sự kiện nổi bật)</span></div>`, true);
             }
         },
+
         onRegionClick(event, code) {
             let targetRegionId = Object.keys(REGION_TO_ISO).find(key => REGION_TO_ISO[key].includes(code)) || code.toLowerCase();
-            const countryData = savedRiskData[targetRegionId] || savedRiskData[code.toLowerCase()];
+            
+            // [QUAN TRỌNG]: Backup tìm dữ liệu bằng mã ISO chuẩn nếu không khớp Region ID
+            const countryData = savedRiskData[targetRegionId] || 
+                                savedRiskData[code] || 
+                                savedRiskData[code.toLowerCase()] || 
+                                savedRiskData[code.toUpperCase()];
             
             if (countryData && countryData.events && countryData.events.length > 0) {
                 const modalTitle = document.getElementById('modal-title');
                 const modalBody = document.getElementById('modal-body');
                 
-                // Tính điểm theo Layer để tô màu Tiêu đề
                 const displayScore = (countryData.filtered_score && countryData.filtered_score[code]) 
                                      ? countryData.filtered_score[code].toFixed(2) 
                                      : (countryData.si_score || countryData.score || 0);
@@ -193,13 +195,11 @@ function initMap(mapContainer) {
                 modalTitle.innerHTML = `Tình hình khu vực: <span style="color:${statusColor}">${viName}</span>`;
                 
                 let posHtml = '', negHtml = '';
-                // Lọc sự kiện theo Layer nếu cần, hoặc hiện tất cả
                 countryData.events.forEach(evt => {
-                    // Nếu đang lọc, bỏ qua các sự kiện không thuộc Layer
                     if (currentMapLayer !== 'total' && evt.categories) {
                         const targetCategories = LAYER_MAPPING[currentMapLayer] || [];
                         const isMatch = evt.categories.some(c => targetCategories.includes(c));
-                        if (!isMatch) return; // Sự kiện này không thuộc Layer đang chọn
+                        if (!isMatch) return; 
                     }
 
                     const absScore = Math.abs(evt.score);
