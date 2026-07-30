@@ -75,7 +75,7 @@ const RSS_SOURCES = [
     // ==========================================
     // 3. ASEAN
     // ==========================================
-    {
+  /*  {
         id: "cna_asia", name: "CNA", country: "Singapore", region: "Southeast Asia", language: "en",
         category: ["general", "asia"], type: "news_agency", priority: 10, credibility: 9,
         max_items: 10,
@@ -503,7 +503,7 @@ const RSS_SOURCES = [
         category: ["health", "science"], type: "science_news", priority: 10, credibility: 10,
         max_items: 5,
         rss: "https://www.statnews.com/feed/", homepage: "https://www.statnews.com", logo: "https://www.statnews.com/favicon.ico", enabled: true
-    }    
+    }    */
 ];
 
 module.exports = { RSS_SOURCES };
