@@ -8700,5 +8700,998 @@
       "sentiment": -1,
       "scope": "national"
     }
+  },
+  "evt_general_1785385042874": {
+    "created_at": 1785385046598,
+    "expires_at": 1787977046598,
+    "version": "4.5",
+    "checksum": "7461bcf0aed6aa0f34f84a9b318e47d8",
+    "data": {
+      "cluster_title": "Sự kiện cổ phiếu Meta sụt giảm",
+      "short_summary": "Cổ phiếu Meta sụt giảm do Zuckerberg cố gắng bán chiến lược AI 'agents' của mình.",
+      "detailed_summary": "Mark Zuckerberg đang nỗ lực thúc đẩy tầm nhìn về các tác nhân trí tuệ nhân tạo được cá nhân hóa nhằm định hướng tương lai cho Meta. Tuy nhiên, thị trường đã phản ứng tiêu cực do chi phí vận hành tăng cao và các dự báo về doanh thu trong tương lai không đạt được kỳ vọng của nhà đầu tư, dẫn đến đà giảm của giá cổ phiếu.",
+      "causes": [
+        "Chi phí đầu tư cho trí tuệ nhân tạo tăng cao",
+        "Dự báo doanh thu không đạt kỳ vọng của thị trường"
+      ],
+      "effects": [
+        "Giá cổ phiếu Meta sụt giảm",
+        "Áp lực lên chiến lược phát triển trí tuệ nhân tạo của công ty"
+      ],
+      "affected_groups": [
+        "Cổ đông và nhà đầu tư của Meta",
+        "Ban lãnh đạo công ty Meta",
+        "Khách hàng sử dụng dịch vụ của Meta"
+      ],
+      "market_impact": "Nhà đầu tư thể hiện sự lo ngại về tính hiệu quả của chiến lược tập trung vào các tác nhân trí tuệ nhân tạo trong bối cảnh chi phí gia tăng.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh thách thức của các tập đoàn công nghệ lớn trong việc cân bằng giữa tham vọng đổi mới sáng tạo và lợi nhuận ngắn hạn mà thị trường tài chính yêu cầu.",
+      "unknowns": [
+        "Thời điểm cụ thể các tác nhân trí tuệ nhân tạo bắt đầu mang lại lợi nhuận thực tế",
+        "Mức độ chấp nhận của người dùng đối với các dịch vụ trí tuệ nhân tạo được cá nhân hóa"
+      ],
+      "confidence_note": "Thông tin dựa trên biến động thị trường và các phát biểu công khai, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Meta cắt giảm chi phí vận hành để làm hài lòng cổ đông trong ngắn hạn.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Sự phản đối của thị trường buộc Meta phải thay đổi lộ trình phát triển trí tuệ nhân tạo.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Chiến lược trí tuệ nhân tạo",
+          "target": "Cổ phiếu Meta",
+          "relation_type": "cause_effect",
+          "label": "Gây áp lực giảm giá"
+        },
+        {
+          "source": "Mark Zuckerberg",
+          "target": "Meta",
+          "relation_type": "cooperation",
+          "label": "Lãnh đạo chiến lược"
+        }
+      ],
+      "entities": [
+        "Meta",
+        "Mark Zuckerberg"
+      ],
+      "keywords": [
+        "Meta",
+        "Zuckerberg",
+        "AI",
+        "bot"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_general_1785385052342": {
+    "created_at": 1785385058240,
+    "expires_at": 1787977058240,
+    "version": "4.5",
+    "checksum": "3f26fc4ab70708952961a5fef6d413eb",
+    "data": {
+      "cluster_title": "Sự kiện giảm doanh số và lợi nhuận của Qualcomm",
+      "short_summary": "Qualcomm báo cáo doanh số và lợi nhuận giảm do chi phí chip tăng cao ảnh hưởng đến thị trường điện thoại",
+      "detailed_summary": "Tập đoàn công nghệ Qualcomm báo cáo kết quả kinh doanh với doanh thu và lợi nhuận đều giảm. Cụ thể, lợi nhuận ròng của công ty đã giảm 25% trong kỳ báo cáo. Nguyên nhân chính được chỉ ra là do giá linh kiện bộ nhớ tăng cao, gây áp lực trực tiếp lên chi phí sản xuất thiết bị và tác động tiêu cực đến hiệu quả kinh doanh của công ty trong lĩnh vực di động.",
+      "causes": [
+        "Giá linh kiện bộ nhớ tăng cao",
+        "Chi phí sản xuất thiết bị đắt đỏ"
+      ],
+      "effects": [
+        "Doanh thu và lợi nhuận của Qualcomm sụt giảm",
+        "Lợi nhuận ròng giảm 25%"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư vào Qualcomm",
+        "Các nhà sản xuất thiết bị di động",
+        "Người tiêu dùng thiết bị điện tử"
+      ],
+      "market_impact": "Sự sụt giảm của Qualcomm phản ánh áp lực chi phí trong chuỗi cung ứng công nghệ, có thể gây tâm lý thận trọng đối với các cổ phiếu ngành bán dẫn và thiết bị di động.",
+      "follow_up": "",
+      "significance": "Sự kiện này cho thấy gánh nặng từ chi phí nguyên liệu đầu vào đang bào mòn lợi nhuận của các doanh nghiệp chip hàng đầu, phản ánh tình trạng khó khăn chung của ngành công nghiệp điện thoại thông minh.",
+      "unknowns": [
+        "Thời điểm chi phí bộ nhớ sẽ ổn định trở lại",
+        "Kế hoạch điều chỉnh giá bán sản phẩm của Qualcomm để bù đắp lợi nhuận"
+      ],
+      "confidence_note": "Thông tin dựa trên báo cáo tài chính chính thức của doanh nghiệp, độ tin cậy rất cao.",
+      "scenarios": [
+        {
+          "text": "Qualcomm tiếp tục đối mặt với áp lực lợi nhuận nếu giá bộ nhớ không hạ nhiệt.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Qualcomm chuyển dịch sang các phân khúc cao cấp hơn để duy trì biên lợi nhuận.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Giá linh kiện bộ nhớ",
+          "target": "Lợi nhuận Qualcomm",
+          "relation_type": "cause_effect",
+          "label": "Giá linh kiện tăng làm giảm lợi nhuận của Qualcomm"
+        },
+        {
+          "source": "Qualcomm",
+          "target": "Thị trường điện thoại thông minh",
+          "relation_type": "cause_effect",
+          "label": "Chi phí từ Qualcomm ảnh hưởng đến thị trường thiết bị"
+        }
+      ],
+      "entities": [
+        "Qualcomm",
+        "Qualcomm"
+      ],
+      "keywords": [
+        "Qualcomm",
+        "doanh số",
+        "lợi nhuận",
+        "chip",
+        "thị trường điện thoại"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_ab637357": {
+    "created_at": 1785385070161,
+    "expires_at": 1787977070161,
+    "version": "4.5",
+    "checksum": "474b98ea65612a816c82f31d63c397de",
+    "data": {
+      "cluster_title": "Cơ hội đầu tư trong bối cảnh biến động AI",
+      "short_summary": "Cơ hội đầu tư trong bối cảnh biến động AI được Ken Wong, chuyên gia đầu tư tại Eastspring Investments, phân tích và chỉ ra các công ty sản xuất linh kiện điện tử là một trong những đối tượng có tiềm năng.",
+      "detailed_summary": "Ông Ken Wong, chuyên gia danh mục đầu tư cổ phiếu châu Á tại Eastspring Investments, phân tích về tình trạng bán tháo không ổn định của nhóm cổ phiếu liên quan đến AI. Ông chỉ ra rằng các công ty sản xuất linh kiện điện tử đang nổi lên như một lựa chọn đầu tư tiềm năng và mạnh mẽ cho các nhà đầu tư trong giai đoạn thị trường đầy biến động hiện nay.",
+      "causes": [
+        "Sự biến động khó lường của thị trường cổ phiếu liên quan đến AI",
+        "Áp lực bán tháo cổ phiếu trên diện rộng ảnh hưởng đến các mã công nghệ"
+      ],
+      "effects": [
+        "Nhà đầu tư chuyển dịch sự chú ý sang các lĩnh vực phụ trợ công nghệ như linh kiện điện tử",
+        "Thị trường tìm kiếm các phân khúc bền vững hơn trong hệ sinh thái AI"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư cổ phiếu công nghệ",
+        "Các công ty sản xuất linh kiện điện tử",
+        "Công ty quản lý tài sản và danh mục đầu tư"
+      ],
+      "market_impact": "Thị trường có khả năng điều chỉnh danh mục đầu tư, chuyển hướng dòng vốn từ các mã AI tăng trưởng quá nóng sang các công ty linh kiện có giá trị thực.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh nỗ lực của giới chuyên gia trong việc tìm kiếm sự ổn định và giá trị thực tế trong một lĩnh vực công nghệ đang chịu nhiều biến động đầu cơ.",
+      "unknowns": [
+        "Thời điểm chính xác đợt bán tháo AI sẽ hạ nhiệt",
+        "Mức độ ảnh hưởng cụ thể của biến động thị trường lên doanh thu dài hạn của các công ty linh kiện"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên quan điểm chuyên môn từ chuyên gia của tổ chức quản lý tài chính uy tín.",
+      "scenarios": [
+        {
+          "text": "Các nhà đầu tư gia tăng tỷ trọng vào các công ty sản xuất linh kiện điện tử để giảm thiểu rủi ro từ sự biến động của cổ phiếu AI.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Thị trường tiếp tục bán tháo trên diện rộng khiến cả nhóm linh kiện điện tử cũng bị ảnh hưởng tiêu cực.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Ken Wong",
+          "target": "Eastspring Investments",
+          "relation_type": "cooperation",
+          "label": "Đại diện chuyên gia cho tổ chức"
+        },
+        {
+          "source": "Biến động cổ phiếu AI",
+          "target": "Cổ phiếu linh kiện điện tử",
+          "relation_type": "cause_effect",
+          "label": "Tạo ra cơ hội đầu tư thay thế"
+        }
+      ],
+      "entities": [
+        "Ken Wong",
+        "Eastspring Investments"
+      ],
+      "keywords": [
+        "Eastspring",
+        "Wong",
+        "AI",
+        "đầu tư"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_857c9468": {
+    "created_at": 1785385081549,
+    "expires_at": 1787977081549,
+    "version": "4.5",
+    "checksum": "f54b24d6f12e6c422531d5b640661a81",
+    "data": {
+      "cluster_title": "Vàng giữ được lợi nhuận nhỏ sau khi Ngân hàng Trung ương Mỹ giữ lãi suất không đổi",
+      "short_summary": "Vàng giữ được lợi nhuận nhỏ sau khi Ngân hàng Trung ương Mỹ giữ lãi suất không đổi, bất chấp rủi ro lạm phát tăng cao từ cuộc chiến ở Trung Đông.",
+      "detailed_summary": "Cục Dự trữ Liên bang Mỹ (Fed) đã quyết định giữ nguyên lãi suất bất chấp những rủi ro lạm phát gia tăng từ tình hình xung đột tại Trung Đông. Trước bối cảnh kinh tế và chính trị đầy biến động, giá vàng vẫn duy trì được mức tăng trưởng khiêm tốn.",
+      "causes": [
+        "Fed giữ nguyên lãi suất điều hành",
+        "Rủi ro lạm phát gia tăng do xung đột tại Trung Đông"
+      ],
+      "effects": [
+        "Giá vàng duy trì xu hướng tăng nhẹ",
+        "Tâm lý thận trọng của nhà đầu tư trước rủi ro địa chính trị"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư tài chính quốc tế",
+        "Thị trường hàng hóa vàng",
+        "Cơ quan hoạch định chính sách tiền tệ"
+      ],
+      "market_impact": "Thị trường vàng phản ứng tích cực trong ngắn hạn nhờ vai trò tài sản trú ẩn an toàn.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh sự cân bằng mong manh của Fed trước áp lực lạm phát và mong muốn ổn định nền kinh tế trong bối cảnh địa chính trị phức tạp.",
+      "unknowns": [
+        "Thời điểm cụ thể Fed sẽ thay đổi định hướng chính sách lãi suất trong tương lai",
+        "Mức độ leo thang của xung đột tại Trung Đông ảnh hưởng đến lạm phát toàn cầu"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên báo cáo về các quyết định chính sách tài chính chính thức.",
+      "scenarios": [
+        {
+          "text": "Giá vàng tiếp tục tăng nếu xung đột tại Trung Đông leo thang gây hoang mang trên thị trường tài chính.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Giá vàng điều chỉnh giảm nếu Fed phát đi tín hiệu cứng rắn về việc tăng lãi suất trong tương lai để kiểm soát lạm phát.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Xung đột Trung Đông",
+          "target": "Lạm phát",
+          "relation_type": "cause_effect",
+          "label": "Tác động làm gia tăng rủi ro lạm phát"
+        },
+        {
+          "source": "Cục Dự trữ Liên bang Mỹ",
+          "target": "Lãi suất",
+          "relation_type": "cause_effect",
+          "label": "Quyết định duy trì chính sách tiền tệ ổn định"
+        },
+        {
+          "source": "Lạm phát",
+          "target": "Giá vàng",
+          "relation_type": "cause_effect",
+          "label": "Tác động đẩy giá vàng tăng do nhu cầu trú ẩn"
+        }
+      ],
+      "entities": [
+        "vàng",
+        "Ngân hàng Trung ương Mỹ",
+        "Trung Đông"
+      ],
+      "keywords": [
+        "vàng",
+        "Ngân hàng Trung ương Mỹ",
+        "lãi suất",
+        "inflation"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_9a765c25": {
+    "created_at": 1785385097128,
+    "expires_at": 1787977097128,
+    "version": "4.5",
+    "checksum": "1609fc71982ec839a11438b1723c7791",
+    "data": {
+      "cluster_title": "Samsung và thị trường Hàn Quốc",
+      "short_summary": "Sự kiện đã khiến thị trường Hàn Quốc bị ảnh hưởng mạnh mẽ sau khi Samsung công bố kết quả kinh doanh tốt hơn dự kiến và chính phủ thông báo các biện pháp hỗ trợ thị trường.",
+      "detailed_summary": "Sau chuỗi hai ngày giảm điểm liên tiếp, thị trường chứng khoán Hàn Quốc trải qua trạng thái biến động thất thường, đan xen giữa sắc xanh và sắc đỏ. Diễn biến này xuất phát từ việc nhà đầu tư phản ứng với báo cáo lợi nhuận vượt kỳ vọng của Samsung Electronics, kết hợp với các biện pháp can thiệp mới từ chính phủ nhằm mục tiêu ổn định thị trường tài chính.",
+      "causes": [
+        "Kết quả kinh doanh vượt dự báo của Samsung Electronics",
+        "Chính phủ Hàn Quốc ban hành các biện pháp hỗ trợ ổn định thị trường"
+      ],
+      "effects": [
+        "Thị trường chứng khoán chấm dứt đà sụt giảm liên tiếp",
+        "Tâm lý nhà đầu tư dao động giữa các phiên giao dịch"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư chứng khoán",
+        "Tập đoàn Samsung Electronics",
+        "Chính phủ Hàn Quốc"
+      ],
+      "market_impact": "Thị trường đang trong trạng thái giằng co, phản ánh sự thận trọng của nhà đầu tư trước các tín hiệu kinh tế trái chiều.",
+      "follow_up": "",
+      "significance": "Sự kiện cho thấy nỗ lực của cơ quan quản lý trong việc ngăn chặn đà bán tháo, đồng thời minh chứng vai trò dẫn dắt của Samsung Electronics đối với chỉ số thị trường chung.",
+      "unknowns": [
+        "Mức độ hiệu quả dài hạn của các biện pháp ổn định thị trường từ chính phủ",
+        "Phản ứng tiếp theo của thị trường quốc tế đối với cổ phiếu công nghệ Hàn Quốc"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên diễn biến thị trường thực tế và các công bố từ tổ chức liên quan.",
+      "scenarios": [
+        {
+          "text": "Thị trường dần phục hồi khi nhà đầu tư tin tưởng vào các biện pháp hỗ trợ và kết quả kinh doanh tốt.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Thị trường tiếp tục biến động mạnh do tâm lý lo ngại về tình hình kinh tế toàn cầu lấn át tác động tích cực từ doanh nghiệp.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Samsung Electronics",
+          "target": "Thị trường chứng khoán Hàn Quốc",
+          "relation_type": "cause_effect",
+          "label": "Tác động tích cực đến niềm tin nhà đầu tư"
+        },
+        {
+          "source": "Chính phủ Hàn Quốc",
+          "target": "Thị trường chứng khoán Hàn Quốc",
+          "relation_type": "cooperation",
+          "label": "Can thiệp ổn định thị trường"
+        }
+      ],
+      "entities": [
+        "Samsung Electronics Co.",
+        "Hàn Quốc"
+      ],
+      "keywords": [
+        "Samsung",
+        "thị trường Hàn Quốc"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_ef004acd": {
+    "created_at": 1785385131800,
+    "expires_at": 1787977131800,
+    "version": "4.5",
+    "checksum": "2444c3ce08e522303de8e80f9d694589",
+    "data": {
+      "cluster_title": "Sụt giảm cổ phiếu Innolight sau IPO lớn nhất tại Hồng Kông trong 7 năm",
+      "short_summary": "Cổ phiếu Innolight sụt giảm sau khi công ty này tổ chức IPO lớn nhất tại Hồng Kông trong 7 năm với giá trị 53,4 tỷ HKD.",
+      "detailed_summary": "Công ty Zhongji Innolight đã chính thức niêm yết cổ phiếu tại Hồng Kông sau khi huy động được 53,4 tỷ Đô la Hồng Kông (tương đương 6,8 tỷ USD). Đây là thương vụ chào bán cổ phiếu lần đầu ra công chúng (IPO) lớn nhất tại thị trường này trong bảy năm qua. Tuy nhiên, cổ phiếu của công ty đã sụt giảm ngay trong ngày đầu giao dịch.",
+      "causes": [
+        "Áp lực bán chốt lời hoặc phản ứng điều chỉnh của thị trường sau đợt IPO quy mô lớn",
+        "Tâm lý thận trọng của nhà đầu tư trước biến động thị trường chứng khoán khu vực"
+      ],
+      "effects": [
+        "Giá trị cổ phiếu của Zhongji Innolight giảm trong phiên giao dịch đầu tiên",
+        "Tạo áp lực tâm lý cho các doanh nghiệp đang có kế hoạch IPO lớn tại Hồng Kông"
+      ],
+      "affected_groups": [
+        "Cổ đông và nhà đầu tư của Zhongji Innolight",
+        "Thị trường tài chính Hồng Kông",
+        "Các doanh nghiệp dự định IPO tại Hồng Kông"
+      ],
+      "market_impact": "Sự kiện gây chú ý lớn do quy mô vốn huy động khổng lồ, tuy nhiên việc giá giảm phiên chào sàn cho thấy sự phân hóa và thận trọng của dòng tiền.",
+      "follow_up": "",
+      "significance": "Đây là đợt IPO lớn nhất tại Hồng Kông trong 7 năm, phản ánh sức hút của thị trường nhưng cũng bộc lộ những rủi ro về định giá và kỳ vọng của nhà đầu tư.",
+      "unknowns": [
+        "Nguyên nhân cụ thể dẫn đến áp lực bán tháo trong phiên giao dịch đầu tiên",
+        "Xu hướng biến động giá cổ phiếu trong ngắn hạn và trung hạn sau sự kiện này"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên dữ liệu báo cáo thị trường tài chính.",
+      "scenarios": [
+        {
+          "text": "Giá cổ phiếu ổn định lại sau khi áp lực bán ban đầu kết thúc",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Cổ phiếu tiếp tục chịu áp lực giảm điểm do tâm lý nhà đầu tư chưa vững",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Zhongji Innolight",
+          "target": "Thị trường chứng khoán Hồng Kông",
+          "relation_type": "cause_effect",
+          "label": "Tổ chức đợt IPO lớn nhất trong 7 năm qua"
+        },
+        {
+          "source": "Đợt huy động vốn IPO",
+          "target": "Zhongji Innolight",
+          "relation_type": "cause_effect",
+          "label": "Nguyên nhân tạo ra sự kiện niêm yết cổ phiếu"
+        }
+      ],
+      "entities": [
+        "Zhongji Innolight Co.",
+        "Hồng Kông"
+      ],
+      "keywords": [
+        "Innolight",
+        "IPO",
+        "Hồng Kông"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "business"
+    }
+  },
+  "evt_8708e9f2": {
+    "created_at": 1785385143405,
+    "expires_at": 1787977143405,
+    "version": "4.5",
+    "checksum": "bdb90560d80c921866b188e6eb387536",
+    "data": {
+      "cluster_title": "Airbus CFO Trả Lời Về Lợi Nhuận Và M&A",
+      "short_summary": "Airbus đang trên đường đạt mục tiêu giao hàng và đang xem xét các thỏa thuận M&A nhỏ trong nỗ lực của mình, CFO Thomas Toepfer cho biết.",
+      "detailed_summary": "Trong cuộc phỏng vấn với Bloomberg, Thomas Toepfer - Giám đốc tài chính của Airbus - khẳng định công ty vẫn đang đi đúng tiến độ với các chỉ tiêu giao hàng đã đề ra. Đồng thời, hãng đang chuyển hướng chiến lược sang việc tìm kiếm các cơ hội mua bán và sáp nhập (M&A) tập trung vào mảng quốc phòng có quy mô vừa và nhỏ.",
+      "causes": [
+        "Chiến lược duy trì ổn định sản lượng giao hàng để đạt mục tiêu năm",
+        "Nhu cầu mở rộng năng lực và vị thế trong lĩnh vực quốc phòng"
+      ],
+      "effects": [
+        "Khẳng định niềm tin của nhà đầu tư vào khả năng vận hành của Airbus",
+        "Tạo dư địa cho việc tái cơ cấu hoặc tăng cường thị phần trong ngành quốc phòng"
+      ],
+      "affected_groups": [
+        "Cổ đông của Airbus",
+        "Các đối tác trong chuỗi cung ứng hàng không vũ trụ và quốc phòng"
+      ],
+      "market_impact": "Thông tin mang tính trung lập tích cực, củng cố vị thế tài chính ổn định của tập đoàn trong bối cảnh thị trường nhiều biến động.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh hướng đi thận trọng của Airbus trong việc ưu tiên duy trì năng lực cốt lõi đồng thời tìm kiếm tăng trưởng thông qua các thương vụ mua lại có chọn lọc.",
+      "unknowns": [
+        "Chi tiết cụ thể về danh sách các công ty quốc phòng tiềm năng sẽ được mua lại",
+        "Tác động cụ thể của các hàng rào thuế quan đối với biên lợi nhuận trong tương lai"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao vì được phát ngôn trực tiếp bởi Giám đốc tài chính của Airbus.",
+      "scenarios": [
+        {
+          "text": "Airbus thực hiện thành công các thương vụ mua lại quy mô nhỏ trong lĩnh vực quốc phòng trong 12 tháng tới.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các chính sách thuế quan mới làm thay đổi kế hoạch phân bổ vốn cho các thương vụ M&A của Airbus.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Thomas Toepfer",
+          "target": "Airbus",
+          "relation_type": "cooperation",
+          "label": "Giám đốc tài chính quản trị chiến lược tài chính"
+        },
+        {
+          "source": "Airbus",
+          "target": "Lĩnh vực quốc phòng",
+          "relation_type": "cooperation",
+          "label": "Tập trung mở rộng thông qua các thương vụ mua bán sáp nhập"
+        }
+      ],
+      "entities": [
+        "Airbus",
+        "Thomas Toepfer",
+        "Bloomberg"
+      ],
+      "keywords": [
+        "Airbus",
+        "CFO",
+        "M&A",
+        "Tariff"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_ed1ccc7d": {
+    "created_at": 1785385155045,
+    "expires_at": 1787977155045,
+    "version": "4.5",
+    "checksum": "d79b6e6d3a199081645bdfb26e0dbebd",
+    "data": {
+      "cluster_title": "Khởi động tên lửa siêu thanh YJ-20 của Trung Quốc",
+      "short_summary": "Trung Quốc đã công bố lần đầu tiên việc phóng tên lửa siêu thanh YJ-20 từ một tàu chiến nhỏ, mở đường cho việc triển khai một trong những vũ khí siêu thanh tiên tiến nhất của họ trên hạm đội tàu.",
+      "detailed_summary": "Trung Quốc đã công khai việc triển khai thành công tên lửa siêu thanh YJ-20 từ một tàu khu trục cỡ nhỏ. Sự kiện này đánh dấu bước tiến quan trọng trong việc tích hợp công nghệ vũ khí siêu thanh vào đội tàu chiến của hải quân nước này, mở rộng khả năng tác chiến trên biển.",
+      "causes": [
+        "Nhu cầu hiện đại hóa năng lực tác chiến hải quân của Trung Quốc",
+        "Phát triển công nghệ tên lửa siêu thanh tiên tiến"
+      ],
+      "effects": [
+        "Tăng cường khả năng tấn công của các tàu chiến cỡ nhỏ",
+        "Thay đổi thế cân bằng sức mạnh trên biển trong khu vực"
+      ],
+      "affected_groups": [
+        "Các quốc gia có tranh chấp hoặc lợi ích tại khu vực Thái Bình Dương",
+        "Ngành công nghiệp quốc phòng toàn cầu"
+      ],
+      "market_impact": "Gia tăng nhu cầu đầu tư vào các công nghệ phòng thủ tên lửa và vũ khí siêu thanh trong khu vực.",
+      "follow_up": "",
+      "significance": "Việc đưa tên lửa siêu thanh lên tàu khu trục nhỏ cho thấy tham vọng của Trung Quốc trong việc nâng cao tính linh hoạt và tầm sát thương của hạm đội hải quân.",
+      "unknowns": [
+        "Thông số kỹ thuật chi tiết về tầm bắn và hiệu suất thực tế của tên lửa",
+        "Số lượng tàu chiến đã được nâng cấp để tích hợp loại vũ khí này"
+      ],
+      "confidence_note": "Thông tin dựa trên tuyên bố chính thức từ phía Trung Quốc, độ tin cậy cao về mặt sự kiện nhưng hạn chế về chi tiết kỹ thuật.",
+      "scenarios": [
+        {
+          "text": "Trung Quốc tiếp tục đẩy mạnh việc tích hợp YJ-20 vào toàn bộ đội tàu chiến chủ lực.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các cường quốc đối lập tăng cường ngân sách để phát triển hệ thống đánh chặn siêu thanh.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Trung Quốc",
+          "target": "Tên lửa YJ-20",
+          "relation_type": "cause_effect",
+          "label": "Phát triển và ứng dụng"
+        },
+        {
+          "source": "Tên lửa YJ-20",
+          "target": "Tàu khu trục nhỏ",
+          "relation_type": "cooperation",
+          "label": "Tích hợp vũ khí vào nền tảng tàu"
+        }
+      ],
+      "entities": [
+        "Trung Quốc",
+        "YJ-20"
+      ],
+      "keywords": [
+        "Trung Quốc",
+        "YJ-20",
+        "tên lửa siêu thanh"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_9fbf261b": {
+    "created_at": 1785385166423,
+    "expires_at": 1787977166423,
+    "version": "4.5",
+    "checksum": "b4a2bb4e5501b2cf5cf2a9cca35551e8",
+    "data": {
+      "cluster_title": "Microsoft ký hợp đồng thuê trung tâm dữ liệu trị giá 130 tỷ USD",
+      "short_summary": "Microsoft đã ký hợp đồng thuê trung tâm dữ liệu trị giá 130 tỷ USD để đáp ứng nhu cầu tăng trưởng của lĩnh vực trí tuệ nhân tạo.",
+      "detailed_summary": "Microsoft đã ký kết các hợp đồng thuê trung tâm dữ liệu trị giá lên tới 130 tỷ USD để mở rộng cơ sở hạ tầng. Động thái này diễn ra trong bối cảnh phân khúc đám mây thông minh của hãng đạt mức tăng trưởng doanh thu ấn tượng 32%, tương đương 39,3 tỷ USD, nhờ vào nhu cầu sử dụng các dịch vụ liên quan đến AI ngày càng tăng.",
+      "causes": [
+        "Nhu cầu thị trường về năng lực tính toán AI tăng vọt",
+        "Sự tăng trưởng mạnh mẽ của phân khúc đám mây thông minh"
+      ],
+      "effects": [
+        "Củng cố hạ tầng kỹ thuật để phục vụ AI",
+        "Doanh thu phân khúc đám mây đạt 39,3 tỷ USD"
+      ],
+      "affected_groups": [
+        "Cổ đông Microsoft",
+        "Các nhà cung cấp cơ sở hạ tầng trung tâm dữ liệu",
+        "Khách hàng sử dụng dịch vụ đám mây"
+      ],
+      "market_impact": "Phản ánh xu hướng mở rộng quy mô hạ tầng lớn chưa từng có trong ngành công nghệ để bắt kịp làn sóng AI.",
+      "follow_up": "",
+      "significance": "Sự kiện này đánh dấu một bước chuyển mình chiến lược, khẳng định ưu tiên hàng đầu của Microsoft trong việc xây dựng nền móng hạ tầng vững chắc cho kỷ nguyên AI.",
+      "unknowns": [
+        "Thời hạn cụ thể của các hợp đồng thuê 130 tỷ USD",
+        "Các đối tác cụ thể tham gia vào những hợp đồng cho thuê trung tâm dữ liệu này"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên báo cáo tài chính và dữ liệu kinh doanh công bố của tập đoàn.",
+      "scenarios": [
+        {
+          "text": "Microsoft tiếp tục duy trì đà tăng trưởng doanh thu nhờ việc sớm hoàn thiện hạ tầng AI.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Chi phí thuê mặt bằng tăng cao gây áp lực lên biên lợi nhuận trong ngắn hạn.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Nhu cầu AI",
+          "target": "Microsoft",
+          "relation_type": "cause_effect",
+          "label": "Thúc đẩy đầu tư trung tâm dữ liệu"
+        },
+        {
+          "source": "Microsoft",
+          "target": "Phân khúc đám mây thông minh",
+          "relation_type": "cause_effect",
+          "label": "Tạo ra doanh thu tăng trưởng 32%"
+        },
+        {
+          "source": "Microsoft",
+          "target": "Đối tác cung cấp trung tâm dữ liệu",
+          "relation_type": "cooperation",
+          "label": "Ký kết hợp đồng thuê cơ sở hạ tầng"
+        }
+      ],
+      "entities": [
+        "Microsoft"
+      ],
+      "keywords": [
+        "Microsoft",
+        "trung tâm dữ liệu",
+        "AI"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_69caecba": {
+    "created_at": 1785385177897,
+    "expires_at": 1787977177897,
+    "version": "4.5",
+    "checksum": "8375006063e74e09bcb39e640a05db86",
+    "data": {
+      "cluster_title": "ByteDance nhắm đến thống trị trí tuệ nhân tạo",
+      "short_summary": "ByteDance đang đầu tư mạnh mẽ vào công nghệ trí tuệ nhân tạo, khiến một số người lo ngại về sự cạnh tranh và ảnh hưởng đến thị trường.",
+      "detailed_summary": "ByteDance, tập đoàn công nghệ đứng sau ứng dụng TikTok, đang tập trung toàn lực triển khai các dự án trí tuệ nhân tạo. Động thái này được xem là một bước đi chiến lược quan trọng nhưng cũng gây ra nhiều luồng ý kiến trái chiều về mức độ rủi ro tiềm ẩn.",
+      "causes": [
+        "Khát vọng duy trì ưu thế trong thị trường công nghệ toàn cầu",
+        "Nhu cầu nâng cao năng lực kỹ thuật của hệ sinh thái ByteDance"
+      ],
+      "effects": [
+        "Gia tăng sức ép lên các đối thủ cạnh tranh trong ngành công nghệ",
+        "Tạo ra các biến động trong dự báo tăng trưởng dài hạn của doanh nghiệp"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư vào ByteDance",
+        "Các đối thủ cạnh tranh trong ngành trí tuệ nhân tạo",
+        "Người dùng các sản phẩm công nghệ của ByteDance"
+      ],
+      "market_impact": "Gây chú ý lớn đến các nhà phân tích thị trường, đặt ra câu hỏi về hiệu quả quản trị rủi ro và khả năng thu hồi vốn từ các khoản đầu tư công nghệ quy mô lớn.",
+      "follow_up": "",
+      "significance": "Sự kiện này đánh dấu tham vọng chuyển dịch cốt lõi của ByteDance từ một công ty mạng xã hội sang một tập đoàn tiên phong trong phát triển trí tuệ nhân tạo.",
+      "unknowns": [
+        "Chi tiết cụ thể về lộ trình phát triển và các sản phẩm AI đang được ưu tiên",
+        "Khả năng đảm bảo lợi nhuận và hiệu quả của các khoản đầu tư lớn này"
+      ],
+      "confidence_note": "Thông tin mang tính chất xác nhận xu hướng từ các nguồn quan sát thị trường, mức độ tin cậy cao về định hướng chiến lược.",
+      "scenarios": [
+        {
+          "text": "ByteDance gặt hái thành công và thiết lập tiêu chuẩn mới trong ngành AI toàn cầu.",
+          "likelihood": "trung bình"
+        },
+        {
+          "text": "Khoản đầu tư quá lớn gây áp lực tài chính và làm suy yếu lợi nhuận cốt lõi của tập đoàn.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "ByteDance",
+          "target": "Trí tuệ nhân tạo",
+          "relation_type": "cause_effect",
+          "label": "ByteDance đầu tư mạnh mẽ vào trí tuệ nhân tạo để thống trị thị trường"
+        }
+      ],
+      "entities": [
+        "ByteDance",
+        "TikTok"
+      ],
+      "keywords": [
+        "ByteDance",
+        "TikTok",
+        "trí tuệ nhân tạo"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_f395407e": {
+    "created_at": 1785385189454,
+    "expires_at": 1787977189454,
+    "version": "4.5",
+    "checksum": "5ae331f74178d39b88546616d539d2a9",
+    "data": {
+      "cluster_title": "Saudi Arabia vẫn còn phụ thuộc vào Mỹ",
+      "short_summary": "Saudi Arabia vẫn còn phụ thuộc vào Mỹ do ảnh hưởng của Benjamin Netanyahu và Mohammed bin Salman",
+      "detailed_summary": "Bài viết chỉ ra rằng Saudi Arabia vẫn chưa thoát khỏi sự phụ thuộc vào Hoa Kỳ. Những phát ngôn gần đây của Tổng thống Mỹ cho thấy rằng các ưu tiên của Thủ tướng Israel Benjamin Netanyahu vẫn chiếm ưu thế hơn so với các tham vọng chiến lược của Thái tử Mohammed bin Salman.",
+      "causes": [
+        "Sự phụ thuộc lâu dài của Saudi Arabia vào các cam kết an ninh và chính trị của Hoa Kỳ",
+        "Sự ưu tiên của Hoa Kỳ đối với các mục tiêu chính trị của Israel tại Trung Đông"
+      ],
+      "effects": [
+        "Sự hạn chế trong việc thực hiện tham vọng độc lập chiến lược của Saudi Arabia",
+        "Áp lực lên mối quan hệ giữa Hoa Kỳ và Saudi Arabia do sự khác biệt về ưu tiên"
+      ],
+      "affected_groups": [
+        "Chính phủ Saudi Arabia",
+        "Chính phủ Hoa Kỳ",
+        "Chính phủ Israel"
+      ],
+      "market_impact": "Tác động hạn chế tới thị trường tài chính, nhưng gây áp lực lên tâm lý đầu tư trong bối cảnh địa chính trị Trung Đông phức tạp.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh cấu trúc quyền lực Trung Đông, nơi Mỹ vẫn giữ vai trò trung tâm và các ưu tiên của Israel tiếp tục là nhân tố chi phối chính sách đối ngoại của Mỹ tại khu vực.",
+      "unknowns": [
+        "Chi tiết cụ thể về những tham vọng mà Mohammed bin Salman chưa thực hiện được",
+        "Phản ứng thực tế và các bước đi tiếp theo của phía Saudi Arabia trước sự ưu tiên của Mỹ dành cho Israel"
+      ],
+      "confidence_note": "Thông tin mang tính chất phân tích bình luận chính trị, độ tin cậy dựa trên diễn giải về hành vi ngoại giao.",
+      "scenarios": [
+        {
+          "text": "Saudi Arabia tiếp tục duy trì sự thận trọng để đảm bảo lợi ích chiến lược trong khi Mỹ vẫn ủng hộ Israel.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Saudi Arabia đẩy mạnh tìm kiếm các đối tác chiến lược khác để giảm sự phụ thuộc vào Mỹ.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Hoa Kỳ",
+          "target": "Saudi Arabia",
+          "relation_type": "cause_effect",
+          "label": "Duy trì sự phụ thuộc an ninh và chính trị"
+        },
+        {
+          "source": "Benjamin Netanyahu",
+          "target": "Mohammed bin Salman",
+          "relation_type": "conflict",
+          "label": "Xung đột lợi ích và ưu tiên chiến lược"
+        },
+        {
+          "source": "Hoa Kỳ",
+          "target": "Benjamin Netanyahu",
+          "relation_type": "cooperation",
+          "label": "Ưu tiên chính sách của Mỹ dành cho Israel"
+        }
+      ],
+      "entities": [
+        "Saudi Arabia",
+        "Mỹ",
+        "Benjamin Netanyahu",
+        "Mohammed bin Salman"
+      ],
+      "keywords": [
+        "Saudi Arabia",
+        "Mỹ",
+        "Benjamin Netanyahu",
+        "Mohammed bin Salman"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_892b3a35": {
+    "created_at": 1785385201551,
+    "expires_at": 1787977201551,
+    "version": "4.5",
+    "checksum": "568e82823faa31817b516b91d0c82dd7",
+    "data": {
+      "cluster_title": "Bong bóng AI nổ tung ảnh hưởng đến các nhà đầu tư Hàn Quốc",
+      "short_summary": "Bong bóng AI nổ tung khiến các nhà đầu tư Hàn Quốc phải chịu những tổn thất chưa từng có.",
+      "detailed_summary": "Thị trường chứng khoán Hàn Quốc chứng kiến đợt giảm giá mạnh đối với cổ phiếu của Samsung và SK Hynix. Hiện tượng này được mô tả là sự đổ vỡ của bong bóng đầu tư vào trí tuệ nhân tạo (AI), khiến hàng triệu nhà đầu tư cá nhân phải đối mặt với mức thua lỗ chưa từng có, gây ra tâm lý hoang mang và lo ngại sâu sắc về tình hình tài chính cá nhân.",
+      "causes": [
+        "Sự sụt giảm giá cổ phiếu của các tập đoàn công nghệ lớn là Samsung và SK Hynix",
+        "Sự bùng nổ quá mức và sau đó là suy giảm của kỳ vọng đầu tư vào lĩnh vực trí tuệ nhân tạo"
+      ],
+      "effects": [
+        "Hàng triệu nhà đầu tư cá nhân chịu tổn thất tài chính nặng nề",
+        "Tâm lý tiêu cực và bất ổn lan rộng trong cộng đồng nhà đầu tư tại Hàn Quốc"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư cá nhân tại Hàn Quốc",
+        "Cổ đông của Samsung",
+        "Cổ đông của SK Hynix"
+      ],
+      "market_impact": "Gây áp lực bán tháo và làm giảm niềm tin của nhà đầu tư vào nhóm cổ phiếu công nghệ tại thị trường Hàn Quốc.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh tính chất mong manh của các cơn sốt đầu tư theo trào lưu công nghệ và rủi ro tài chính trực tiếp đối với các nhà đầu tư nhỏ lẻ khi thị trường điều chỉnh mạnh.",
+      "unknowns": [
+        "Tổng giá trị thiệt hại tài chính chính xác của các nhà đầu tư cá nhân",
+        "Thời gian dự kiến để thị trường công nghệ Hàn Quốc phục hồi ổn định"
+      ],
+      "confidence_note": "Thông tin phản ánh diễn biến thực tế dựa trên biến động thị trường chứng khoán được ghi nhận.",
+      "scenarios": [
+        {
+          "text": "Các nhà đầu tư cá nhân tiếp tục hoảng loạn và bán tháo, làm trầm trọng thêm đà giảm của thị trường",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Chính phủ hoặc các định chế tài chính đưa ra biện pháp hỗ trợ để ổn định tâm lý thị trường",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Bong bóng đầu tư trí tuệ nhân tạo",
+          "target": "Cổ phiếu Samsung và SK Hynix",
+          "relation_type": "cause_effect",
+          "label": "Nguyên nhân dẫn đến sự biến động giá"
+        },
+        {
+          "source": "Cổ phiếu Samsung và SK Hynix",
+          "target": "Nhà đầu tư cá nhân Hàn Quốc",
+          "relation_type": "cause_effect",
+          "label": "Sụt giảm giá gây tổn thất tài chính"
+        }
+      ],
+      "entities": [
+        "Samsung",
+        "SK Hynix"
+      ],
+      "keywords": [
+        "AI",
+        "bong bóng",
+        "nhà đầu tư",
+        "Hàn Quốc"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "business"
+    }
+  },
+  "evt_0457a3e4": {
+    "created_at": 1785385213175,
+    "expires_at": 1787977213175,
+    "version": "4.5",
+    "checksum": "91c07e33afa2641fa76f63162f12bec2",
+    "data": {
+      "cluster_title": "Leopold Aschenbrenner tìm kiếm vốn sau sự sụp đổ của AI",
+      "short_summary": "Hedge fund Situational Awareness của Leopold Aschenbrenner đang tìm kiếm vốn sau sự sụp đổ của AI.",
+      "detailed_summary": "Sau giai đoạn thị trường trí tuệ nhân tạo (AI) gặp biến động mạnh, quỹ đầu tư Situational Awareness do Leopold Aschenbrenner sáng lập đã tiến hành các cuộc thảo luận với các nhà đầu tư và bên cho vay hiện hữu nhằm mục đích huy động thêm nguồn vốn.",
+      "causes": [
+        "Sự biến động tiêu cực trên thị trường AI ảnh hưởng đến hiệu quả hoạt động của quỹ",
+        "Nhu cầu củng cố năng lực tài chính để duy trì hoạt động và chiến lược đầu tư"
+      ],
+      "effects": [
+        "Việc tái cấu trúc nguồn vốn thông qua đàm phán với đối tác cũ",
+        "Gia tăng sự chú ý từ thị trường đối với chiến lược của quỹ trong bối cảnh ngành AI đang có nhiều biến số"
+      ],
+      "affected_groups": [
+        "Leopold Aschenbrenner",
+        "Các nhà đầu tư hiện tại của quỹ Situational Awareness",
+        "Các đối tác cho vay của quỹ"
+      ],
+      "market_impact": "Cho thấy sự thận trọng nhất định trong dòng vốn đầu tư vào các quỹ chuyên biệt về AI sau giai đoạn tăng trưởng nóng.",
+      "follow_up": "",
+      "significance": "Sự kiện này phản ánh nỗ lực ổn định tài chính của các thực thể đầu tư công nghệ trong môi trường thị trường đang có sự điều chỉnh.",
+      "unknowns": [
+        "Số vốn cụ thể mà quỹ đang muốn huy động",
+        "Kết quả thực tế của các cuộc đàm phán với bên cho vay và nhà đầu tư"
+      ],
+      "confidence_note": "Thông tin dựa trên các báo cáo về hoạt động gây quỹ, độ tin cậy cao về mặt sự kiện nhưng thiếu chi tiết về các điều khoản tài chính.",
+      "scenarios": [
+        {
+          "text": "Quỹ thành công trong việc huy động vốn từ các nhà đầu tư hiện hữu, giúp ổn định hoạt động kinh doanh.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Quỹ gặp khó khăn trong việc thuyết phục nhà đầu tư do tâm lý e ngại rủi ro trong lĩnh vực AI.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Leopold Aschenbrenner",
+          "target": "Situational Awareness",
+          "relation_type": "cooperation",
+          "label": "Người sáng lập và điều hành quỹ"
+        },
+        {
+          "source": "Biến động thị trường AI",
+          "target": "Situational Awareness",
+          "relation_type": "cause_effect",
+          "label": "Tác động đến nhu cầu huy động vốn"
+        },
+        {
+          "source": "Situational Awareness",
+          "target": "Nhà đầu tư hiện hữu",
+          "relation_type": "cooperation",
+          "label": "Đối tác đàm phán tài chính"
+        }
+      ],
+      "entities": [
+        "Leopold Aschenbrenner",
+        "Situational Awareness"
+      ],
+      "keywords": [
+        "Leopold Aschenbrenner",
+        "Situational Awareness",
+        "AI",
+        "tìm kiếm vốn"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_general_1785385218954": {
+    "created_at": 1785385224864,
+    "expires_at": 1787977224864,
+    "version": "4.5",
+    "checksum": "2bbf3da494706ef5dfa41d1294ee8cf2",
+    "data": {
+      "cluster_title": "BoJ đối mặt với thử thách về uy tín chống lạm phát",
+      "short_summary": "Các nhà đầu tư cảnh báo BoJ đang đối mặt với thử thách về uy tín chống lạm phát. Họ sẽ theo dõi chặt chẽ cuộc họp về lãi suất vào thứ Sáu để tìm kiếm dấu hiệu về quyết định chính sách trong tương lai.",
+      "detailed_summary": "Thị trường đang tập trung sự chú ý vào cuộc họp lãi suất sắp tới của Ngân hàng Trung ương Nhật Bản vào thứ Sáu. Các nhà đầu tư đặt dấu hỏi về khả năng điều hành chính sách của cơ quan này và chờ đợi những tín hiệu rõ ràng về định hướng chính sách tiền tệ trong tương lai để đánh giá cam kết chống lạm phát của BoJ.",
+      "causes": [
+        "Áp lực kiểm soát lạm phát kéo dài tại Nhật Bản",
+        "Sự kỳ vọng của thị trường về tính minh bạch trong chính sách của BoJ"
+      ],
+      "effects": [
+        "Gia tăng tâm lý thận trọng trên thị trường tài chính",
+        "Áp lực buộc BoJ phải đưa ra lộ trình chính sách rõ ràng hơn"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư tài chính quốc tế",
+        "Ngân hàng Trung ương Nhật Bản (BoJ)",
+        "Thị trường tài chính Nhật Bản"
+      ],
+      "market_impact": "Biến động tiềm ẩn đối với đồng Yên và thị trường trái phiếu tùy thuộc vào thông báo chính sách của BoJ.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh niềm tin của thị trường vào năng lực điều hành kinh tế của Nhật Bản, đóng vai trò quan trọng trong việc định hình xu hướng tài chính toàn cầu.",
+      "unknowns": [
+        "Quyết định cụ thể về lãi suất của BoJ trong cuộc họp thứ Sáu",
+        "Thông điệp chi tiết từ lãnh đạo BoJ sau cuộc họp"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên diễn biến thị trường và lịch họp công khai của BoJ.",
+      "scenarios": [
+        {
+          "text": "BoJ đưa ra thông điệp cứng rắn, trấn an thị trường về khả năng kiểm soát lạm phát.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "BoJ tiếp tục giữ thái độ mơ hồ, khiến uy tín và tâm lý nhà đầu tư suy giảm.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Nhà đầu tư",
+          "target": "BoJ",
+          "relation_type": "conflict",
+          "label": "Giám sát và hoài nghi về uy tín chính sách"
+        },
+        {
+          "source": "BoJ",
+          "target": "Chính sách lãi suất",
+          "relation_type": "cause_effect",
+          "label": "Cơ quan quyết định định hướng lãi suất"
+        }
+      ],
+      "entities": [
+        "BoJ",
+        "Nhật Bản"
+      ],
+      "keywords": [
+        "BoJ",
+        "inflation",
+        "các nhà đầu tư"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
   }
 }
