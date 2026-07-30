@@ -86,16 +86,18 @@ module.exports = {
             ] 
         },
         { 
-            id: 'environment', 
-            name: 'Môi trường & Thiên tai', 
-            keywords: [
-                // Tiếng Việt
-                'môi trường', 'thiên tai', 'động đất', 'bão', 'sóng thần', 'khí hậu', 'ô nhiễm', 
-                'lũ lụt', 'hạn hán', 'phát thải',
-                // Tiếng Anh
-                'environment', 'disaster', 'earthquake', 'storm', 'tsunami', 'climate', 'pollution', 
-                'flood', 'drought', 'emission'
-            ] 
+           id: 'environment', 
+    name: 'Môi trường & Thiên tai', 
+    keywords: [
+        // Tiếng Việt (Bổ sung sâu cho mùa bão ĐNÁ)
+        'môi trường', 'thiên tai', 'động đất', 'bão', 'áp thấp nhiệt đới', 'siêu bão', 
+        'sóng thần', 'khí hậu', 'ô nhiễm', 'lũ lụt', 'lũ quét', 'sạt lở', 'ngập lụt',
+        'hạn hán', 'phát thải', 'triều cường', 'mưa lớn', 'xả lũ', 'di tản', 'cứu hộ',
+        // Tiếng Anh
+        'environment', 'disaster', 'earthquake', 'storm', 'typhoon', 'super typhoon', 
+        'tropical depression', 'cyclone', 'tsunami', 'climate', 'pollution', 
+        'flood', 'flash flood', 'landslide', 'drought', 'emission', 'evacuation'
+    ]
         },
         { 
             id: 'energy', 
