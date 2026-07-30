@@ -15064,5 +15064,299 @@
       "sentiment": -1,
       "scope": "national"
     }
+  },
+  "evt_5cae49b1": {
+    "created_at": 1785453456701,
+    "expires_at": 1788045456701,
+    "version": "4.5",
+    "checksum": "bf2f3925958359f0bd7c9f4351bc47ca",
+    "data": {
+      "cluster_title": "NATO kích hoạt phòng không sau tên lửa Nga rơi xuống Ba Lan",
+      "short_summary": "NATO kích hoạt phòng không sau khi tên lửa nghi của Nga rơi xuống Ba Lan, tạo ra một hố rộng 10m.",
+      "detailed_summary": "Sau sự cố tên lửa nghi là Kh-101 của Nga rơi vào lãnh thổ Ba Lan tạo ra hố sâu 10m, khối quân sự NATO đã lập tức kích hoạt các hệ thống phòng thủ trên không và mặt trận mặt đất để đảm bảo an ninh khu vực.",
+      "causes": [
+        "Tên lửa nghi là Kh-101 của Nga rơi vào lãnh thổ Ba Lan",
+        "Yêu cầu đảm bảo an ninh biên giới của các quốc gia thành viên NATO"
+      ],
+      "effects": [
+        "NATO kích hoạt hệ thống phòng thủ trên không và mặt đất",
+        "Gia tăng căng thẳng an ninh tại khu vực biên giới Ba Lan và NATO"
+      ],
+      "affected_groups": [
+        "Chính phủ Ba Lan",
+        "Khối quân sự NATO",
+        "Người dân khu vực biên giới Ba Lan"
+      ],
+      "market_impact": "Gây tâm lý bất ổn ngắn hạn trên thị trường tài chính và làm tăng giá năng lượng do lo ngại leo thang xung đột địa chính trị.",
+      "follow_up": "",
+      "significance": "Sự kiện đánh dấu bước leo thang căng thẳng nghiêm trọng, buộc NATO phải tăng cường thế trận phòng thủ tại biên giới với vùng xung đột.",
+      "unknowns": [
+        "Chưa xác định chắc chắn tên lửa thuộc về quân đội Nga hay do nguyên nhân khác",
+        "Chưa làm rõ mục tiêu ban đầu của tên lửa trước khi rơi vào Ba Lan"
+      ],
+      "confidence_note": "Thông tin đang trong giai đoạn xác minh từ các bên liên quan, độ tin cậy phụ thuộc vào các cuộc điều tra hiện trường của Ba Lan và NATO.",
+      "scenarios": [
+        {
+          "text": "Nga phủ nhận trách nhiệm và hai bên tiến hành các kênh ngoại giao để giải quyết sự cố.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "NATO tăng cường hiện diện quân sự vĩnh viễn tại khu vực biên giới giáp với Nga.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Nga",
+          "target": "Ba Lan",
+          "relation_type": "conflict",
+          "label": "Tên lửa rơi vào lãnh thổ"
+        },
+        {
+          "source": "NATO",
+          "target": "Ba Lan",
+          "relation_type": "cooperation",
+          "label": "Bảo vệ an ninh thành viên"
+        },
+        {
+          "source": "Tên lửa Kh-101",
+          "target": "NATO",
+          "relation_type": "cause_effect",
+          "label": "Kích hoạt hệ thống phòng thủ"
+        }
+      ],
+      "entities": [
+        "NATO",
+        "Ba Lan",
+        "Nga"
+      ],
+      "keywords": [
+        "NATO",
+        "phòng không",
+        "Ba Lan",
+        "Nga"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_8a652801": {
+    "created_at": 1785453472261,
+    "expires_at": 1788045472261,
+    "version": "4.5",
+    "checksum": "821c24dbf29da012d76e86960759d765",
+    "data": {
+      "cluster_title": "Yên Nhật Tăng Trước Khi Ngân Hàng Nhật Bản Ra Quyết Định",
+      "short_summary": "Yên Nhật tăng mạnh nhất trong hai năm qua trước khi Ngân Hàng Nhật Bản ra quyết định về chính sách tiền tệ.",
+      "detailed_summary": "Chính quyền Nhật Bản đã thực hiện can thiệp vào thị trường ngoại hối để hỗ trợ đồng Yên, vốn đang mất giá nghiêm trọng. Động thái này giúp đồng Yên ghi nhận mức tăng giá mạnh nhất trong vòng hơn hai năm so với đồng Đô la Mỹ ngay trước thời điểm Ngân hàng Trung ương Nhật Bản (BOJ) đưa ra quyết định về chính sách tiền tệ.",
+      "causes": [
+        "Đồng Yên suy yếu đáng kể trên thị trường quốc tế",
+        "Sự chuẩn bị cho thông báo chính sách từ Ngân hàng Trung ương Nhật Bản (BOJ)"
+      ],
+      "effects": [
+        "Đồng Yên tăng giá mạnh nhất trong hơn hai năm so với đồng Đô la Mỹ",
+        "Tạo sự biến động đột ngột trên thị trường ngoại hối"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư ngoại hối",
+        "Các doanh nghiệp xuất nhập khẩu Nhật Bản",
+        "Các tổ chức tài chính quốc tế"
+      ],
+      "market_impact": "Gây ra sự thay đổi tức thời về tỷ giá hối đoái, làm chao đảo các vị thế giao dịch liên quan đến đồng Yên trước thềm quyết định của BOJ.",
+      "follow_up": "",
+      "significance": "Sự kiện phản ánh nỗ lực quyết liệt của chính phủ Nhật Bản trong việc kiểm soát sự mất giá của nội tệ nhằm bảo vệ ổn định kinh tế trước những thay đổi chính sách quan trọng.",
+      "unknowns": [
+        "Quy mô tài chính cụ thể của đợt can thiệp thị trường",
+        "Phản ứng lâu dài của thị trường sau khi BOJ công bố quyết định chính sách"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao, dựa trên dữ liệu diễn biến thị trường thực tế.",
+      "scenarios": [
+        {
+          "text": "Đồng Yên duy trì đà tăng nhẹ sau khi BOJ công bố chính sách cứng rắn hơn.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Thị trường biến động mạnh trở lại nếu quyết định của BOJ không đạt kỳ vọng của nhà đầu tư.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Chính quyền Nhật Bản",
+          "target": "Đồng Yên",
+          "relation_type": "cause_effect",
+          "label": "Can thiệp nhằm hỗ trợ giá trị đồng tiền"
+        },
+        {
+          "source": "Ngân hàng Trung ương Nhật Bản (BOJ)",
+          "target": "Đồng Yên",
+          "relation_type": "cause_effect",
+          "label": "Quyết định chính sách tác động đến giá trị tiền tệ"
+        }
+      ],
+      "entities": [
+        "Yên Nhật",
+        "Ngân Hàng Nhật Bản"
+      ],
+      "keywords": [
+        "Yên Nhật",
+        "Ngân Hàng Nhật Bản",
+        "Thị Trường Tiền Tệ"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_677c6ccb": {
+    "created_at": 1785453484125,
+    "expires_at": 1788045484125,
+    "version": "4.5",
+    "checksum": "3051f2f4c050db3f789325e87c9369fd",
+    "data": {
+      "cluster_title": "Yên Nhật Giảm Giá",
+      "short_summary": "Yên Nhật giảm giá mạnh, giúp Toyota giảm thiểu tác động từ thuế và giá dầu tăng cao.",
+      "detailed_summary": "Việc đồng Yên Nhật suy yếu xuống mức thấp nhất trong 4 thập kỷ đã tạo ra lợi thế cạnh tranh cho các nhà xuất khẩu Nhật Bản, đặc biệt là Toyota Motor Corp. Lợi nhuận thu được từ tỷ giá hối đoái giúp tập đoàn này giảm bớt áp lực tài chính từ các rào cản thuế quan tại Mỹ, giá dầu tăng cao và chuỗi cung ứng bị gián đoạn.",
+      "causes": [
+        "Đồng Yên Nhật giảm giá xuống mức thấp nhất trong 40 năm",
+        "Áp lực từ thuế quan thương mại của Mỹ",
+        "Chi phí dầu mỏ tăng cao",
+        "Sự gián đoạn của chuỗi cung ứng toàn cầu"
+      ],
+      "effects": [
+        "Cải thiện biên lợi nhuận cho các doanh nghiệp xuất khẩu Nhật Bản",
+        "Giảm bớt khó khăn tài chính cho Toyota",
+        "Tạo sự phân hóa giữa lợi ích doanh nghiệp xuất khẩu và chính sách tiền tệ của quốc gia"
+      ],
+      "affected_groups": [
+        "Tập đoàn Toyota Motor Corp",
+        "Các nhà xuất khẩu Nhật Bản",
+        "Các nhà hoạch định chính sách kinh tế Nhật Bản"
+      ],
+      "market_impact": "Tác động tích cực đến giá cổ phiếu và báo cáo tài chính của Toyota nhờ hưởng lợi từ tỷ giá, giảm áp lực lên biên lợi nhuận hoạt động.",
+      "follow_up": "",
+      "significance": "Sự kiện cho thấy sự tác động ngược chiều của biến động tiền tệ: điều gây áp lực cho các nhà hoạch định chính sách lại trở thành tấm đệm tài chính cho các tập đoàn xuất khẩu lớn.",
+      "unknowns": [
+        "Thời gian kéo dài của tình trạng đồng Yên yếu",
+        "Mức độ ảnh hưởng cụ thể của các mức thuế quan mới từ Mỹ"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên dữ liệu thị trường và phân tích tài chính doanh nghiệp.",
+      "scenarios": [
+        {
+          "text": "Toyota tiếp tục ghi nhận lợi nhuận tăng trưởng tốt nhờ tỷ giá dù đối mặt với thách thức chi phí đầu vào.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Chính phủ Nhật Bản can thiệp tiền tệ để nâng giá đồng Yên, làm giảm lợi thế của các doanh nghiệp xuất khẩu.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Đồng Yên Nhật",
+          "target": "Toyota Motor Corp",
+          "relation_type": "cause_effect",
+          "label": "Giảm giá trị tạo ra lợi nhuận xuất khẩu"
+        },
+        {
+          "source": "Thuế quan Mỹ",
+          "target": "Toyota Motor Corp",
+          "relation_type": "conflict",
+          "label": "Gây áp lực lên chi phí kinh doanh"
+        },
+        {
+          "source": "Đồng Yên Nhật",
+          "target": "Nhà hoạch định chính sách Nhật Bản",
+          "relation_type": "cause_effect",
+          "label": "Gây khó khăn trong quản lý kinh tế"
+        }
+      ],
+      "entities": [
+        "Toyota Motor Corp.",
+        "Nhật Bản",
+        "Mỹ"
+      ],
+      "keywords": [
+        "Toyota",
+        "tariffs",
+        "oil prices"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_05be1e35": {
+    "created_at": 1785453495893,
+    "expires_at": 1788045495893,
+    "version": "4.5",
+    "checksum": "d697fc9dcae1d3a80b2397c1107b0a37",
+    "data": {
+      "cluster_title": "Sụt giảm cổ phiếu Carvana",
+      "short_summary": "Cổ phiếu Carvana sụt giảm gây ra lợi nhuận 500 triệu USD cho các nhà đầu tư",
+      "detailed_summary": "Vào thứ Năm, cổ phiếu của công ty kinh doanh xe cũ trực tuyến Carvana Co. đã sụt giảm nghiêm trọng do kết quả kinh doanh không đạt dự báo lợi nhuận. Sự kiện này giúp các nhà đầu tư đặt cược vào việc cổ phiếu giảm giá (bán khống) thu về khoản lợi nhuận ước tính khoảng 500 triệu USD.",
+      "causes": [
+        "Công ty Carvana công bố kết quả lợi nhuận thấp hơn mức dự báo của thị trường",
+        "Sự sụt giảm giá trị cổ phiếu trên sàn giao dịch"
+      ],
+      "effects": [
+        "Nhà đầu tư bán khống thu lợi nhuận khoảng 500 triệu USD",
+        "Giá trị thị trường của Carvana sụt giảm"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư bán khống cổ phiếu Carvana",
+        "Cổ đông của Carvana Co.",
+        "Ban lãnh đạo công ty Carvana"
+      ],
+      "market_impact": "Sự kiện gây áp lực tiêu cực lên giá cổ phiếu Carvana và phản ánh tâm lý thận trọng của thị trường đối với mô hình kinh doanh xe cũ trực tuyến.",
+      "follow_up": "",
+      "significance": "Sự kiện này nhấn mạnh rủi ro biến động mạnh đối với các doanh nghiệp thương mại điện tử xe cũ khi hiệu quả hoạt động không đáp ứng được kỳ vọng của nhà đầu tư.",
+      "unknowns": [
+        "Kế hoạch khắc phục cụ thể của Carvana để lấy lại niềm tin nhà đầu tư",
+        "Tác động kéo dài của việc giảm giá cổ phiếu đối với dòng tiền hoạt động của công ty"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên dữ liệu báo cáo thị trường tài chính công khai.",
+      "scenarios": [
+        {
+          "text": "Carvana thực hiện tái cấu trúc để cải thiện biên lợi nhuận và ổn định giá cổ phiếu.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Áp lực bán tháo tiếp tục kéo dài nếu kết quả kinh doanh quý tới không có dấu hiệu khởi sắc.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Kết quả kinh doanh kém",
+          "target": "Cổ phiếu Carvana",
+          "relation_type": "cause_effect",
+          "label": "Gây ra sự sụt giảm giá cổ phiếu"
+        },
+        {
+          "source": "Sự sụt giảm cổ phiếu",
+          "target": "Nhà đầu tư bán khống",
+          "relation_type": "cause_effect",
+          "label": "Tạo ra lợi nhuận 500 triệu USD"
+        }
+      ],
+      "entities": [
+        "Carvana Co.",
+        "Carvana"
+      ],
+      "keywords": [
+        "Carvana",
+        "cổ phiếu",
+        "sụt giảm"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "business"
+    }
   }
 }
