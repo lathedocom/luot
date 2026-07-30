@@ -179,7 +179,27 @@ Hai sự kiện trên có phải cùng nói về 1 sự việc không? CHỈ TR�
                 logger.info(`[RULE-SKIP] Điểm rule thấp (${ruleImportance}), bỏ qua Tầng AI: "${cluster.articles[0].title}"`);
                 continue;
             }
-            
+            // =====================================================================
+// [BỘ LỌC CỨU CÁNH QUOTA - QUOTA SAVER]
+// =====================================================================
+const extractedRegions = extractRegions(cluster.combined_text, cluster.articles[0].source_name);
+
+// 1. Nhóm Cường quốc / Khu vực vĩ mô (Bắt buộc phân tích mọi tin tức)
+const MACRO_REGIONS = ['US', 'CN', 'RU', 'EU', 'GB', 'JP', 'global'];
+
+// 2. Nhóm Chuyên mục Khủng hoảng (Bất kể nước nhỏ hay lớn đều phải lên bản đồ)
+const CRISIS_CATEGORIES = ['environment', 'military', 'health'];
+
+const hasMacroRegion = extractedRegions.some(r => MACRO_REGIONS.includes(r.toUpperCase()));
+const hasCrisis = matchedPriority.some(c => CRISIS_CATEGORIES.includes(c));
+
+// NẾU: Không phải cường quốc + Không có khủng hoảng + Không phải Việt Nam
+// THÌ: Bỏ qua luôn, không gọi AI để tiết kiệm RPD!
+if (!hasMacroRegion && !hasCrisis && !extractedRegions.includes('VN')) {
+    logger.info(`[QUOTA-SAVE] Bỏ qua tin "${cluster.articles[0].title}". Lý do: Nước nhỏ & Không có khủng hoảng.`);
+    continue;
+}
+// =====================================================================
             logger.info(`Đang gọi AI phân tích Topic mới...`);
             const aiIntelligence = await analyzeClusterMultiDimensional(cluster, eventKey);
             
