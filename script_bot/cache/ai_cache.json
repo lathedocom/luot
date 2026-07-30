@@ -14898,5 +14898,102 @@
       "sentiment": -1,
       "scope": "global"
     }
+  },
+  "evt_62a153ae": {
+    "created_at": 1785426974394,
+    "expires_at": 1788018974394,
+    "version": "4.5",
+    "checksum": "972b664ab380d1d479aca0f461543b42",
+    "data": {
+      "cluster_title": "Equinix Mua Bán Trung Tâm Dữ Liệu",
+      "short_summary": "Equinix Inc. đang tìm kiếm ít nhất 3 tỷ USD từ việc bán trái phiếu đầu tư chất lượng cao",
+      "detailed_summary": "Công ty trung tâm dữ liệu Equinix Inc. đang thực hiện kế hoạch huy động vốn thông qua chào bán trái phiếu hạng đầu tư với giá trị tối thiểu 3 tỷ USD. Động thái này diễn ra trong bối cảnh thị trường nợ liên quan đến trí tuệ nhân tạo đang có dấu hiệu suy yếu.",
+      "causes": [
+        "Nhu cầu huy động vốn phục vụ hoạt động kinh doanh của Equinix",
+        "Sự thay đổi về tâm lý thị trường đối với các khoản nợ liên quan đến lĩnh vực trí tuệ nhân tạo"
+      ],
+      "effects": [
+        "Tăng cường khả năng thanh khoản cho Equinix",
+        "Phản ánh xu hướng biến động của dòng vốn trong phân khúc hạ tầng công nghệ"
+      ],
+      "affected_groups": [
+        "Các nhà đầu tư trái phiếu",
+        "Các doanh nghiệp vận hành trung tâm dữ liệu",
+        "Các đối tác công nghệ phụ thuộc vào hạ tầng trung tâm dữ liệu"
+      ],
+      "market_impact": "Việc phát hành trái phiếu quy mô lớn trong bối cảnh thị trường nợ trí tuệ nhân tạo đang suy yếu sẽ là một chỉ báo quan trọng về niềm tin của nhà đầu tư vào phân khúc hạ tầng kỹ thuật số.",
+      "follow_up": "",
+      "significance": "Sự kiện cho thấy nỗ lực của các doanh nghiệp hạ tầng lớn trong việc duy trì tăng trưởng thông qua nợ trong bối cảnh môi trường tài chính ngày càng thận trọng với các dự án công nghệ.",
+      "unknowns": [
+        "Thời điểm chính xác phát hành trái phiếu",
+        "Mục đích sử dụng cụ thể của nguồn vốn 3 tỷ USD"
+      ],
+      "confidence_note": "Thông tin dựa trên các nguồn tin thân cận, có độ tin cậy cao về kế hoạch tài chính của doanh nghiệp.",
+      "scenarios": [
+        {
+          "text": "Equinix huy động thành công 3 tỷ USD dù lãi suất phát hành có thể cao hơn dự kiến.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Công ty phải điều chỉnh quy mô đợt phát hành do nhu cầu thị trường đối với nợ liên quan đến trí tuệ nhân tạo tiếp tục sụt giảm.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Thị trường nợ trí tuệ nhân tạo",
+          "target": "Equinix Inc.",
+          "relation_type": "cause_effect",
+          "label": "Ảnh hưởng đến điều kiện phát hành trái phiếu"
+        },
+        {
+          "source": "Equinix Inc.",
+          "target": "Nhà đầu tư trái phiếu",
+          "relation_type": "cooperation",
+          "label": "Giao dịch huy động vốn"
+        }
+      ],
+      "entities": [
+        "Equinix Inc.",
+        "Trung Tâm Dữ Liệu"
+      ],
+      "keywords": [
+        "Equinix",
+        "Trung Tâm Dữ Liệu",
+        "Bonds"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_general_1785426980455": {
+    "created_at": 1785426981023,
+    "expires_at": 1788018981023,
+    "version": "4.5",
+    "checksum": "388ab90b5164623141a4e3f0f6e0eeb2",
+    "data": {
+      "cluster_title": "Giải cứu mèo kẹt trong trung tâm thương mại sau động đất",
+      "short_summary": "Động đất 7,1 độ ở tỉnh Kumamoto khiến nhiều trung tâm thương mại bị tàn phá, trong đó có Aeon Mall. 25 con mèo được giải cứu từ quán cà phê trong trung tâm thương mại này.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "follow_up": "",
+      "entities": [
+        "Nhật Bản",
+        "Kumamoto",
+        "Aeon Mall"
+      ],
+      "keywords": [
+        "mèo",
+        "động đất",
+        "trung tâm thương mại"
+      ],
+      "importance": 85,
+      "scope": "national"
+    }
   }
 }
