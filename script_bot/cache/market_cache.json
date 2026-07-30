@@ -1,9 +1,9 @@
 {
   "latest_market": {
-    "created_at": 1785403161841,
-    "expires_at": 1785404061841,
+    "created_at": 1785418429106,
+    "expires_at": 1785419329106,
     "version": "1.0",
-    "checksum": "9174d34cdeefa8310385bb0ca0f1435e",
+    "checksum": "6c0b97d1b48d2c022bad70a8aed16646",
     "data": [
       {
         "id": "USD_VND",
@@ -30,7 +30,7 @@
           "28/7",
           "30/7"
         ],
-        "updated_at": 1785403134990,
+        "updated_at": 1785418402579,
         "display_source": "Ngân hàng Nhà nước",
         "status": "online",
         "is_alert": false,
@@ -44,14 +44,14 @@
         "category": "🏦 Tiền tệ",
         "unit": "Điểm",
         "official_source": "Yahoo Finance",
-        "price": "100,9",
+        "price": "100,68",
         "change_percent": "0%",
         "trend": "↑",
         "history": [
           101.51,
           101.38,
           100.8,
-          100.9
+          100.68
         ],
         "history_labels": [
           "27/7",
@@ -59,7 +59,7 @@
           "29/7",
           "30/7"
         ],
-        "updated_at": 1785403134987,
+        "updated_at": 1785418402617,
         "display_source": "Yahoo Finance",
         "status": "online",
         "is_alert": false,
@@ -73,14 +73,14 @@
         "category": "🌾 Hàng hóa",
         "unit": "USD/thùng",
         "official_source": "Yahoo Finance",
-        "price": "91,4",
+        "price": "89,1",
         "change_percent": "0%",
         "trend": "↑",
         "history": [
           88.36,
           84.09,
           90.74,
-          91.4
+          89.1
         ],
         "history_labels": [
           "27/7",
@@ -88,7 +88,7 @@
           "29/7",
           "30/7"
         ],
-        "updated_at": 1785403134987,
+        "updated_at": 1785418402585,
         "display_source": "Yahoo Finance",
         "status": "online",
         "is_alert": false,
@@ -102,14 +102,14 @@
         "category": "🌾 Hàng hóa",
         "unit": "USD/oz",
         "official_source": "Yahoo Finance",
-        "price": "4.125,5",
+        "price": "4.139,4",
         "change_percent": "0%",
         "trend": "↑",
         "history": [
           4074.5,
           4036.3,
           4034.7,
-          4125.5
+          4139.4
         ],
         "history_labels": [
           "27/7",
@@ -117,7 +117,7 @@
           "29/7",
           "30/7"
         ],
-        "updated_at": 1785403134992,
+        "updated_at": 1785418402588,
         "display_source": "Yahoo Finance",
         "status": "online",
         "is_alert": false,
@@ -131,24 +131,24 @@
         "category": "📈 Thị trường tài chính",
         "unit": "Điểm",
         "official_source": "Yahoo Finance",
-        "price": "7.316,15",
+        "price": "7.380,09",
         "change_percent": "0%",
         "trend": "↑",
         "history": [
-          7408.3,
           7411.98,
           7413.18,
           7428.78,
-          7316.15
+          7316.15,
+          7380.09
         ],
         "history_labels": [
-          "23/7",
           "24/7",
           "27/7",
           "28/7",
-          "29/7"
+          "29/7",
+          "30/7"
         ],
-        "updated_at": 1785403135005,
+        "updated_at": 1785418402572,
         "display_source": "Yahoo Finance",
         "status": "online",
         "is_alert": false,
@@ -162,16 +162,16 @@
         "category": "📈 Thị trường tài chính",
         "unit": "USD",
         "official_source": "CoinGecko",
-        "price": "64.316",
-        "change_percent": "-0.1%",
-        "trend": "↓",
+        "price": "64.733",
+        "change_percent": "+0.7%",
+        "trend": "↑",
         "history": [
-          64379.34,
-          64369.84,
-          64354.01,
-          64338.17,
-          64325.5,
-          64316
+          64282.64,
+          64350.2,
+          64462.78,
+          64575.37,
+          64665.45,
+          64733
         ],
         "history_labels": [
           "T-24h",
@@ -181,7 +181,7 @@
           "T-2h",
           "Hiện tại"
         ],
-        "updated_at": 1785403135008,
+        "updated_at": 1785418402549,
         "display_source": "CoinGecko",
         "status": "online",
         "is_alert": false,
@@ -200,7 +200,7 @@
         "trend": "-",
         "history": null,
         "history_labels": null,
-        "updated_at": 1785403135967,
+        "updated_at": 1785418404460,
         "display_source": "Không lấy được dữ liệu",
         "status": "offline",
         "is_alert": false,
@@ -223,7 +223,7 @@
         "history_labels": [
           "Hôm nay"
         ],
-        "updated_at": 1785403136468,
+        "updated_at": 1785418406982,
         "display_source": "SJC",
         "status": "online",
         "is_alert": false,
@@ -242,7 +242,7 @@
         "trend": "-",
         "history": null,
         "history_labels": null,
-        "updated_at": 1785403137563,
+        "updated_at": 1785418407550,
         "display_source": "Không lấy được dữ liệu",
         "status": "offline",
         "is_alert": false,
@@ -261,7 +261,7 @@
         "trend": "-",
         "history": null,
         "history_labels": null,
-        "updated_at": 1785403138911,
+        "updated_at": 1785418409556,
         "display_source": "Không lấy được dữ liệu",
         "status": "offline",
         "is_alert": false,
@@ -280,7 +280,7 @@
         "trend": "-",
         "history": null,
         "history_labels": null,
-        "updated_at": 1785403134838,
+        "updated_at": 1785418402104,
         "display_source": "Đang cập nhật",
         "status": "offline",
         "is_alert": false,
@@ -299,7 +299,7 @@
         "trend": "-",
         "history": null,
         "history_labels": null,
-        "updated_at": 1785403134838,
+        "updated_at": 1785418402104,
         "display_source": "Đang cập nhật",
         "status": "offline",
         "is_alert": false,
@@ -318,7 +318,7 @@
         "trend": "-",
         "history": null,
         "history_labels": null,
-        "updated_at": 1785403134838,
+        "updated_at": 1785418402104,
         "display_source": "Đang cập nhật",
         "status": "offline",
         "is_alert": false,
@@ -337,7 +337,7 @@
         "trend": "-",
         "history": null,
         "history_labels": null,
-        "updated_at": 1785403134838,
+        "updated_at": 1785418402104,
         "display_source": "Đang cập nhật",
         "status": "offline",
         "is_alert": false,
@@ -356,7 +356,7 @@
         "trend": "-",
         "history": null,
         "history_labels": null,
-        "updated_at": 1785403134838,
+        "updated_at": 1785418402104,
         "display_source": "Đang cập nhật",
         "status": "offline",
         "is_alert": false,
@@ -375,7 +375,7 @@
         "trend": "-",
         "history": null,
         "history_labels": null,
-        "updated_at": 1785403134838,
+        "updated_at": 1785418402104,
         "display_source": "Đang cập nhật",
         "status": "offline",
         "is_alert": false,
@@ -394,7 +394,7 @@
         "trend": "-",
         "history": null,
         "history_labels": null,
-        "updated_at": 1785403134838,
+        "updated_at": 1785418402104,
         "display_source": "Đang cập nhật",
         "status": "offline",
         "is_alert": false,
@@ -413,7 +413,7 @@
         "trend": "-",
         "history": null,
         "history_labels": null,
-        "updated_at": 1785403161841,
+        "updated_at": 1785418429105,
         "display_source": "Lỗi API Chứng khoán",
         "status": "offline",
         "is_alert": false,
@@ -432,7 +432,7 @@
         "trend": "-",
         "history": null,
         "history_labels": null,
-        "updated_at": 1785403161841,
+        "updated_at": 1785418429105,
         "display_source": "Lỗi API Chứng khoán",
         "status": "offline",
         "is_alert": false,
@@ -457,7 +457,7 @@
           "Kỳ trước",
           "Hiện tại"
         ],
-        "updated_at": 1785403134868,
+        "updated_at": 1785418402474,
         "display_source": "Giá tham chiếu (VFA)",
         "status": "online",
         "is_alert": false,
@@ -482,7 +482,7 @@
           "Kỳ trước",
           "Hiện tại"
         ],
-        "updated_at": 1785403134868,
+        "updated_at": 1785418402474,
         "display_source": "Giá tham chiếu",
         "status": "online",
         "is_alert": false,
@@ -507,7 +507,7 @@
           "Kỳ trước",
           "Hiện tại"
         ],
-        "updated_at": 1785403134868,
+        "updated_at": 1785418402474,
         "display_source": "Giá tham chiếu",
         "status": "online",
         "is_alert": false,
@@ -532,7 +532,7 @@
           "Kỳ trước",
           "Hiện tại"
         ],
-        "updated_at": 1785403134868,
+        "updated_at": 1785418402474,
         "display_source": "Giá tham chiếu",
         "status": "online",
         "is_alert": false,

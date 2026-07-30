@@ -1,16 +1,27 @@
 {
   "status": {
     "success": true,
-    "duration_ms": 164615,
-    "last_run": "2026-07-30T09:20:09.775Z"
+    "duration_ms": 1030820,
+    "last_run": "2026-07-30T13:34:35.133Z"
   },
   "metrics": {
-    "articles_processed": 13,
-    "clusters_formed": 12,
-    "new_topics": 7
+    "articles_processed": 137,
+    "clusters_formed": 111,
+    "new_topics": 71
   },
   "quota": {
-    "embedding_calls": 13
+    "embedding_calls": 137
   },
-  "errors": []
+  "errors": [
+    {
+      "time": "[13:29:20]",
+      "message": "[Gateway] Hết lượt Retry cho Task MATCH_TIMELINE.",
+      "detail": ""
+    },
+    {
+      "time": "[13:29:20]",
+      "message": "[Story Engine] Lỗi khi gọi AI Gatekeeper: Task MATCH_TIMELINE thất bại sau 3 lần thử.. Tự động Fallback tạo Story mới.",
+      "detail": ""
+    }
+  ]
 }
