@@ -8,7 +8,8 @@ module.exports = {
         { id: 'eu', name: 'Châu Âu', keywords: ['châu âu', 'eu', 'anh', 'pháp', 'đức', 'ecb'] },
         { id: 'russia_ukraine', name: 'Nga & Ukraine', keywords: ['nga', 'ukraine', 'moscow', 'kyiv', 'putin', 'zelensky'] },
         { id: 'asean', name: 'Đông Nam Á', keywords: ['asean', 'đông nam á', 'thái lan', 'indonesia', 'malaysia', 'singapore', 'philippines', 'campuchia', 'lào', 'myanmar'] },
-        { id: 'asia', name: 'Châu Á', keywords: ['châu á', 'nhật bản', 'hàn quốc', 'ấn độ', 'tokyo', 'seoul', 'new delhi'] },
+        { id: 'japan', name: 'Nhật Bản', keywords: ['nhật bản', 'tokyo', 'kyushu', 'osaka'] },
+        { id: 'asia', name: 'Châu Á', keywords: ['châu á', 'hàn quốc', 'ấn độ', 'seoul', 'new delhi'] },
         { id: 'middle_east', name: 'Trung Đông', keywords: ['trung đông', 'israel', 'iran', 'palestine', 'gaza', 'syria', 'lebanon'] },
         
         // [MỚI] Các châu lục và khu vực được bổ sung
