@@ -160,7 +160,8 @@ Hai sự kiện trên có phải cùng nói về 1 sự việc không? CHỈ TR�
                 }
             }
             
-           const PRIORITY_FIELDS = ['money','economy','finance','trade','investment','tech','science','politics','policy','law','military', 'environment', 'health', 'energy', 'business', 'diplomacy'];
+            const PRIORITY_FIELDS = [ 'money', 'economy', 'finance', 'trade', 'investment', 'tech', 'science', 'politics', 'policy', 'law', 'military', 'environment', 'health', 'energy', 'business', 'diplomacy'];
+            
             const ruleCategories = extractCategories(cluster.combined_text);
             const matchedPriority = ruleCategories.filter(c => PRIORITY_FIELDS.includes(c));
             
