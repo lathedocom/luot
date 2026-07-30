@@ -28,9 +28,9 @@ function initMap(mapContainer) {
     
     // 1. ÁNH XẠ CHUYÊN MỤC AI -> LỚP BẢN ĐỒ
     const LAYER_MAPPING = {
-        'security': ['politics', 'military', 'diplomacy'],
+        'military': ['politics', 'military', 'diplomacy'],
         'economy': ['economy', 'finance', 'business', 'tech'],
-        'disaster': ['environment'], // Ánh xạ Môi trường vào Thiên tai
+        'environment': ['environment'], // Ánh xạ Môi trường vào Thiên tai
         'health': ['health']
     };
 
