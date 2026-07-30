@@ -122,7 +122,8 @@ function initMap(mapContainer) {
             }]
         },
 
-        onRegionTooltipShow(event, tooltip, code) {
+        
+      onRegionTooltipShow(event, tooltip, code) {
             // Tìm ngược lại dữ liệu gốc từ mã ISO
             let targetRegionId = Object.keys(REGION_TO_ISO).find(key => REGION_TO_ISO[key].includes(code)) || code.toLowerCase();
             const countryData = savedRiskData[targetRegionId] || savedRiskData[code.toLowerCase()];
@@ -139,7 +140,8 @@ function initMap(mapContainer) {
                 
                 // Bỏ qua nếu điểm bằng 0 khi lọc
                 if (displayScore == 0 && currentMapLayer !== 'total') {
-                    tooltip.html(`<div style="padding: 4px;">${viName} <br><span style="font-size: 11px; opacity: 0.7;">(Không có sự kiện ${currentMapLayer})</span></div>`);
+                    // [ĐÃ SỬA LỖI] Dùng .text() kèm tham số true
+                    tooltip.text(`<div style="padding: 4px;">${viName} <br><span style="font-size: 11px; opacity: 0.7;">(Không có sự kiện ${currentMapLayer})</span></div>`, true);
                     return;
                 }
 
@@ -150,19 +152,21 @@ function initMap(mapContainer) {
                 else if (vol > 5) statusText = 'Diễn biến phức tạp';
                 else if (vol > 2) statusText = 'Cần theo dõi';
                 
-                tooltip.html(
+                // [ĐÃ SỬA LỖI] Dùng .text() kèm tham số true để xuất HTML
+                tooltip.text(
                     `<div style="padding: 4px;">
                         <div style="font-weight: bold; margin-bottom: 4px; font-size: 14px;">${viName}</div>
                         <div style="font-size: 12px; margin-bottom: 4px;">Trạng thái: <span style="color:${statusColor}">${statusText}</span></div>
                         <div style="font-size: 12px; margin-bottom: 2px;">Chỉ số biến động (SI): <span style="font-weight:bold; color:${statusColor}">${Math.abs(displayScore)}</span></div>
                         <div style="font-size: 11px; color: #a1a1aa; margin-top: 6px; font-style: italic;">Nhấn để xem các sự kiện tác động</div>
-                    </div>`
+                    </div>`,
+                    true
                 );
             } else {
-                tooltip.html(`<div style="padding: 4px;">${viName} <br><span style="font-size: 11px; opacity: 0.7;">(Chưa có sự kiện nổi bật)</span></div>`);
+                // [ĐÃ SỬA LỖI] Dùng .text() kèm tham số true
+                tooltip.text(`<div style="padding: 4px;">${viName} <br><span style="font-size: 11px; opacity: 0.7;">(Chưa có sự kiện nổi bật)</span></div>`, true);
             }
         },
-
         onRegionClick(event, code) {
             let targetRegionId = Object.keys(REGION_TO_ISO).find(key => REGION_TO_ISO[key].includes(code)) || code.toLowerCase();
             const countryData = savedRiskData[targetRegionId] || savedRiskData[code.toLowerCase()];
