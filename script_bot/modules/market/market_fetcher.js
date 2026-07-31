@@ -1,6 +1,9 @@
 // FILE: script_bot/modules/market/market_fetcher.js
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
-
+const fs = require('fs');
+const path = require('path');
+const HISTORY_FILE = path.join(__dirname, '../../../data/market_history.json');
+const SNAPSHOT_FILE = path.join(__dirname, '../../../data/market_snapshot.json');
 const { SYMBOLS } = require('../../config/market_symbols');
 const logger = require('../utils/logger');
 const cheerio = require('cheerio'); 
@@ -325,4 +328,85 @@ async function fetchAllLiveMarketData() {
     return [...yahooData, ...cryptoData, ...localData, ...macroData, ...vndData, ...staticData];
 }
 
-module.exports = { fetchAllLiveMarketData };
+function initHistoryDB() {
+    const dir = path.dirname(HISTORY_FILE);
+    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+    if (!fs.existsSync(HISTORY_FILE)) fs.writeFileSync(HISTORY_FILE, JSON.stringify({ monthly: {}, daily: {} }, null, 2));
+    return JSON.parse(fs.readFileSync(HISTORY_FILE, 'utf8'));
+}
+
+// Hàm Tầng 2: Lưu trữ lịch sử dài hạn
+function updateMarketHistory(fetchedData) {
+    const historyDb = initHistoryDB();
+    const todayStr = new Date().toISOString().split('T')[0];
+    const monthStr = todayStr.substring(0, 7);
+
+    fetchedData.forEach(item => {
+        const id = item.id;
+        let price = item.price;
+        if (!price || price === null || item.status === 'offline') return;
+        
+        // Chuẩn hóa chuỗi giá trị về số thực để lưu lịch sử
+        if (typeof price === 'string') {
+            price = parseFloat(price.replace(/[^\d,-]/g, '').replace(',', '.'));
+        }
+
+        const freq = item.update_freq || 'daily';
+        const targetDb = freq === 'monthly' ? historyDb.monthly : historyDb.daily;
+        const timeKey = freq === 'monthly' ? monthStr : todayStr;
+
+        if (!targetDb[id]) targetDb[id] = {};
+        targetDb[id][timeKey] = price;
+
+        // Rolling Window: Xóa dữ liệu quá cũ để file không bị phình to
+        const limit = freq === 'monthly' ? 24 : 60; // Giữ 24 tháng hoặc 60 ngày
+        const keys = Object.keys(targetDb[id]).sort();
+        while (keys.length > limit) {
+            delete targetDb[id][keys.shift()];
+        }
+    });
+
+    fs.writeFileSync(HISTORY_FILE, JSON.stringify(historyDb, null, 2));
+    
+    // Xuất Snapshot Tầng 4 cho Frontend
+    const snapshot = {};
+    for (const freq in historyDb) {
+        for (const id in historyDb[freq]) {
+            const keys = Object.keys(historyDb[freq][id]).sort();
+            snapshot[id] = keys.slice(-15).map(k => ({ date: k, value: historyDb[freq][id][k] }));
+        }
+    }
+    fs.writeFileSync(SNAPSHOT_FILE, JSON.stringify(snapshot, null, 2));
+
+    return historyDb;
+}
+
+// Cấy dữ liệu lịch sử vào cục Data hiện tại để UI vẽ biểu đồ mượt mà
+function prepareMarketDataForUI(fetchedData, historyDb) {
+    return fetchedData.map(item => {
+        const id = item.id;
+        const freq = item.update_freq || 'daily';
+        const targetDb = freq === 'monthly' ? historyDb.monthly : historyDb.daily;
+        
+        let historyPrices = item.history || [];
+        let historyLabels = item.history_labels || [];
+
+        if (targetDb[id]) {
+            const keys = Object.keys(targetDb[id]).sort();
+            const sliceCount = freq === 'monthly' ? 5 : 7; // Chỉ lấy 5-7 mốc mới nhất cho biểu đồ nhỏ
+            const recentKeys = keys.slice(-sliceCount);
+            if (recentKeys.length > 0) {
+                historyLabels = recentKeys.map(k => k.substring(5).replace('-', '/')); 
+                historyPrices = recentKeys.map(k => targetDb[id][k]);
+            }
+        }
+
+        return {
+            ...item,
+            history: historyPrices,
+            history_labels: historyLabels
+        };
+    });
+}
+
+module.exports = { fetchAllLiveMarketData, updateMarketHistory, prepareMarketDataForUI };
