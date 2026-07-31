@@ -30,8 +30,13 @@ async function fetchAndNormalizeNews() {
     // TỐI ƯU 3: Khử trùng lặp tiêu đề trước khi embedding
     const seenTitles = new Set();
     
-    // TỐI ƯU 7: Bộ lọc tiêu đề không mang giá trị sự kiện
-    const skipKeywords = ["podcast", "video", "gallery", "photo", "live blog", "newsletter", "watch live", "opinion", "editorial"];
+   // TỐI ƯU 7: Bộ lọc tiêu đề không mang giá trị sự kiện
+const skipKeywords = [
+    "podcast", "video", "gallery", "photo", "live blog", "newsletter", "watch live", "opinion", "editorial",
+    // Thêm màng lọc showbiz, giải trí
+    "showbiz", "gossip", "scandal", "hẹn hò", "chia tay", "diễn viên", "ca sĩ", "hoa hậu", "người mẫu", 
+    "phim truyền hình", "trấn thành", "kpop", "idol", "rap việt", "chương trình thực tế"
+];
     
     // TỐI ƯU 4 & 2: Giới hạn tổng an toàn và Khung thời gian
     const DAILY_ARTICLE_LIMIT = 850;
