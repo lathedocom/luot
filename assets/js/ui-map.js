@@ -1,13 +1,14 @@
 // FILE: assets/js/ui-map.js
 
+import { getGlobalNewsData } from './api.js';
+
 let mapInstance = null;
-let savedRiskData = null;
 let currentMapLayer = 'total';
 
-export function renderRiskMap(riskMapData) {
-    savedRiskData = riskMapData;
+// Bỏ qua tham số riskMapData cũ từ Backend, chúng ta sẽ tự lấy dữ liệu
+export function renderRiskMap() {
     const mapContainer = document.getElementById('global-risk-map');
-    if (!mapContainer || !savedRiskData) return;
+    if (!mapContainer) return;
 
     const resizeObserver = new ResizeObserver(() => {
         if (mapContainer.offsetWidth > 0) {
@@ -36,7 +37,7 @@ function initMap(mapContainer) {
         'health': ['health']
     };
 
-    // 2. ÁNH XẠ KHU VỰC CŨ -> MÃ ISO 
+    // 2. ÁNH XẠ KHU VỰC CŨ -> MÃ ISO (Dự phòng cho các tin cũ chưa dùng ISO)
     const REGION_TO_ISO = {
         'vietnam': ['VN'], 'usa': ['US'], 'canada': ['CA'], 'china': ['CN'],
         'russia_ukraine': ['RU', 'UA'], 
@@ -67,37 +68,58 @@ function initMap(mapContainer) {
     };
 
     // =========================================================
-    // [BƯỚC ĐỘT PHÁ] CHUẨN HÓA VÀ TỰ ĐỘNG TÍNH ĐIỂM THEO MÃ ISO
+    // LẤY DỮ LIỆU TRỰC TIẾP TỪ TIN TỨC GỐC (BỎ QUA BACKEND)
     // =========================================================
+    const allNews = getGlobalNewsData();
     const processedIsoData = {};
 
-    for (const [regionId, data] of Object.entries(savedRiskData)) {
-        let isoCodes = REGION_TO_ISO[regionId.toLowerCase()] || [regionId.toUpperCase()];
+    allNews.forEach(evt => {
+        let regions = evt.regions || [];
+        
+        // Bỏ qua nếu là sự kiện Toàn cầu không rõ nước nào
+        if (regions.includes('GLOBAL') || regions.includes('global')) return;
 
-        isoCodes.forEach(iso => {
-            if (!processedIsoData[iso]) {
-                processedIsoData[iso] = { events: [], filtered_score: 0 };
+        regions.forEach(r => {
+            let iso = r.toUpperCase();
+            
+            // Xử lý nếu gặp tên khu vực kiểu cũ (vietnam, usa...)
+            if (REGION_TO_ISO[r.toLowerCase()]) {
+                let mappedIsos = REGION_TO_ISO[r.toLowerCase()];
+                mappedIsos.forEach(mappedIso => {
+                    if (!processedIsoData[mappedIso]) processedIsoData[mappedIso] = { events: [], filtered_score: 0 };
+                    // Chống lặp sự kiện
+                    if (!processedIsoData[mappedIso].events.some(e => e.event_key === evt.event_key)) {
+                        processedIsoData[mappedIso].events.push(evt);
+                    }
+                });
+                return; 
             }
 
-            // Gộp danh sách sự kiện
-            if (data.events && Array.isArray(data.events)) {
-                processedIsoData[iso].events.push(...data.events);
+            // Xử lý mã ISO 2 chữ cái chuẩn từ AI
+            if (iso.length === 2) {
+                if (!processedIsoData[iso]) processedIsoData[iso] = { events: [], filtered_score: 0 };
+                // Chống lặp sự kiện
+                if (!processedIsoData[iso].events.some(e => e.event_key === evt.event_key)) {
+                    processedIsoData[iso].events.push(evt);
+                }
             }
         });
-    }
+    });
 
-    // Tự động tính toán điểm số (Score) cho từng lớp chuyên mục dựa trên danh sách sự kiện
+    // =========================================================
+    // TỰ ĐỘNG TÍNH TOÁN ĐIỂM SỐ (SCORE) VÀ BÔI MÀU
+    // =========================================================
     for (const iso in processedIsoData) {
         let layerScore = 0;
         const targetCategories = LAYER_MAPPING[currentMapLayer] || [];
 
         processedIsoData[iso].events.forEach(evt => {
-            // Kiểm tra xem sự kiện có thuộc Lớp bản đồ đang chọn không
+            // Lọc sự kiện theo Lớp (Layer) đang chọn trên bản đồ
             const isMatch = (currentMapLayer === 'total') || (evt.categories && evt.categories.some(c => targetCategories.includes(c)));
             
             if (isMatch) {
-                // Tính điểm chuẩn: Ưu tiên dùng 'score', dự phòng bằng 'value_score' hoặc 'severity'
                 let eventScore = evt.score;
+                // Nếu Backend quên tính điểm, Frontend sẽ tự tính
                 if (eventScore === undefined || isNaN(eventScore)) {
                     let base = evt.value_score ? (evt.value_score / 10) : (evt.severity ? evt.severity * 2 : 5);
                     let sens = evt.sentiment !== undefined ? evt.sentiment : -1;
@@ -110,7 +132,7 @@ function initMap(mapContainer) {
 
         processedIsoData[iso].filtered_score = layerScore;
 
-        // Bôi màu bản đồ nếu điểm khác 0
+        // Bôi màu khu vực nếu điểm khác 0
         if (layerScore !== 0) {
             regionValues[iso] = getScaleKey(layerScore);
         }
@@ -176,14 +198,13 @@ function initMap(mapContainer) {
             const countryData = processedIsoData[code];
             
             if (countryData && countryData.events && countryData.events.length > 0) {
-                // Lọc sự kiện hiển thị theo lớp bản đồ hiện tại
                 let displayEvents = countryData.events;
                 if (currentMapLayer !== 'total') {
                     const targetCats = LAYER_MAPPING[currentMapLayer] || [];
                     displayEvents = displayEvents.filter(evt => evt.categories && evt.categories.some(c => targetCats.includes(c)));
                 }
 
-                if (displayEvents.length === 0) return; // Nếu không có sự kiện nào khớp bộ lọc thì không mở Modal
+                if (displayEvents.length === 0) return; 
 
                 const modalTitle = document.getElementById('modal-title');
                 const modalBody = document.getElementById('modal-body');
@@ -205,7 +226,6 @@ function initMap(mapContainer) {
                 let posHtml = '', negHtml = '';
                 displayEvents.forEach(evt => {
                     let absScore = Math.abs(evt.score);
-                    // Tự tính lại điểm nếu bị thiếu
                     if (isNaN(absScore) || absScore === 0) {
                         absScore = evt.value_score ? (evt.value_score / 10) : (evt.severity ? evt.severity * 2 : 5);
                     }
@@ -253,7 +273,8 @@ document.addEventListener('DOMContentLoaded', () => {
         filterSelect.addEventListener('change', (e) => {
             currentMapLayer = e.target.value;
             const mapContainer = document.getElementById('global-risk-map');
-            if (mapContainer && savedRiskData) initMap(mapContainer);
+            // Gọi hàm initMap mà không cần bận tâm đến savedRiskData cũ
+            if (mapContainer) initMap(mapContainer);
         });
     }
 });
