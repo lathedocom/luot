@@ -15358,5 +15358,478 @@
       "sentiment": -1,
       "scope": "business"
     }
+  },
+  "evt_01f73cad": {
+    "created_at": 1785470402388,
+    "expires_at": 1788062402388,
+    "version": "4.5",
+    "checksum": "52bc0035143fcd1b29c99438ba73df59",
+    "data": {
+      "cluster_title": "Trump không chắc chắn về việc cho phép Ukraine sản xuất tên lửa Patriot",
+      "short_summary": "Tổng thống Trump cho biết ông chưa quyết định liệu có cho phép Ukraine sản xuất tên lửa Patriot hay không.",
+      "detailed_summary": "Dù từng 'bật đèn xanh' cho kế hoạch hỗ trợ Ukraine tự chế tạo tên lửa đánh chặn Patriot để tăng cường khả năng phòng vệ, Tổng thống Donald Trump gần đây tuyên bố ông vẫn chưa chắc chắn về việc thực thi chủ trương này. Sự thay đổi trong phát biểu này cho thấy chính quyền Mỹ đang cân nhắc kỹ lưỡng các tác động về quân sự và chiến lược liên quan đến cuộc xung đột với Nga.",
+      "causes": [
+        "Sự thận trọng trong chính sách đối ngoại của chính quyền Mỹ",
+        "Yêu cầu nghiêm ngặt về quản lý công nghệ quân sự nhạy cảm"
+      ],
+      "effects": [
+        "Gây tâm lý chờ đợi trong kế hoạch tăng cường năng lực phòng không của Ukraine",
+        "Phản ánh sự thay đổi hoặc điều chỉnh chiến lược của Mỹ trong viện trợ quân sự"
+      ],
+      "affected_groups": [
+        "Chính phủ Ukraine",
+        "Ngành công nghiệp quốc phòng Mỹ",
+        "Liên minh NATO"
+      ],
+      "market_impact": "Tác động hạn chế lên thị trường tài chính, nhưng gây biến động nhẹ đối với cổ phiếu của các tập đoàn công nghiệp quốc phòng sản xuất vũ khí phòng không.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "military"
+      ],
+      "regions": [
+        "US",
+        "UA",
+        "RU"
+      ],
+      "significance": "Sự kiện phản ánh tính chất không ổn định trong các quyết định viện trợ quân sự của Mỹ, có thể ảnh hưởng trực tiếp đến khả năng phòng thủ dài hạn của Ukraine trước Nga.",
+      "unknowns": [
+        "Lý do chính khiến Tổng thống Trump thay đổi ý định",
+        "Thời điểm cụ thể chính quyền Mỹ sẽ đưa ra quyết định cuối cùng về việc chuyển giao công nghệ sản xuất"
+      ],
+      "confidence_note": "Thông tin dựa trên các phát biểu công khai của Tổng thống Mỹ, mức độ tin cậy cao về dữ kiện diễn ra.",
+      "scenarios": [
+        {
+          "text": "Mỹ từ chối chuyển giao công nghệ sản xuất Patriot để tránh leo thang căng thẳng với Nga.",
+          "likelihood": "trung bình"
+        },
+        {
+          "text": "Mỹ đặt ra các điều kiện ngặt nghèo về kiểm soát công nghệ trước khi cho phép Ukraine sản xuất.",
+          "likelihood": "cao"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Donald Trump",
+          "target": "Ukraine",
+          "relation_type": "cause_effect",
+          "label": "Quyết định của Mỹ ảnh hưởng trực tiếp đến năng lực quốc phòng của Ukraine"
+        },
+        {
+          "source": "Nga",
+          "target": "Ukraine",
+          "relation_type": "conflict",
+          "label": "Xung đột vũ trang thúc đẩy nhu cầu tự sản xuất Patriot của Ukraine"
+        },
+        {
+          "source": "Mỹ",
+          "target": "Patriot",
+          "relation_type": "cooperation",
+          "label": "Kiểm soát quyền sản xuất và chuyển giao công nghệ tên lửa"
+        }
+      ],
+      "entities": [
+        "Donald Trump",
+        "Ukraine",
+        "Mỹ",
+        "Patriot"
+      ],
+      "keywords": [
+        "Trump",
+        "Ukraine",
+        "Patriot",
+        "máy bay",
+        "đối không"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_48c61870": {
+    "created_at": 1785470414108,
+    "expires_at": 1788062414108,
+    "version": "4.5",
+    "checksum": "0d9697f591f7b58d6a5a38f97d9f0f7c",
+    "data": {
+      "cluster_title": "Thỏa thuận hòa bình giữa Israel và Hamas",
+      "short_summary": "Tổng thống Mỹ Donald Trump công bố thỏa thuận hòa bình giữa Israel và Hamas, với Hamas đồng ý giải giáp hoàn toàn và Israel sẽ rút quân khỏi Gaza khi quá trình này hoàn tất.",
+      "detailed_summary": "Tổng thống Mỹ Donald Trump công bố việc đạt được thỏa thuận quan trọng về hòa bình tại Gaza. Theo đó, lực lượng Hamas đã đồng ý thực hiện quá trình giải giáp vũ khí dần dần. Thỏa thuận này cũng bao gồm cam kết rút quân đội Israel khỏi Gaza sau khi quá trình giải giáp hoàn tất, nhằm thiết lập an ninh và hòa bình lâu dài trong khu vực.",
+      "causes": [
+        "Nỗ lực đàm phán trung gian của Mỹ",
+        "Sự thay đổi lập trường của Hamas trong đàm phán"
+      ],
+      "effects": [
+        "Lộ trình rút quân của Israel khỏi Gaza",
+        "Tiến tới chấm dứt xung đột vũ trang kéo dài"
+      ],
+      "affected_groups": [
+        "Người dân Gaza",
+        "Chính phủ Israel",
+        "Lực lượng Hamas"
+      ],
+      "market_impact": "Tác động tích cực tiềm tàng đến tâm lý thị trường khu vực Trung Đông do giảm bớt bất ổn địa chính trị.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "diplomacy"
+      ],
+      "regions": [
+        "US",
+        "PS",
+        "IL"
+      ],
+      "significance": "Sự kiện này đại diện cho một nỗ lực ngoại giao cấp cao nhằm giải quyết dứt điểm xung đột quân sự thông qua lộ trình giải giáp vũ khí và rút quân.",
+      "unknowns": [
+        "Lộ trình thời gian cụ thể cho việc giải giáp của Hamas",
+        "Phản ứng chi tiết từ các phe phái nội bộ trong chính phủ Israel và Hamas"
+      ],
+      "confidence_note": "Thông tin dựa trên tuyên bố chính thức từ phía Mỹ và xác nhận từ Hamas, cần tiếp tục theo dõi các bước triển khai thực tế.",
+      "scenarios": [
+        {
+          "text": "Các bên tuân thủ lộ trình giải giáp và rút quân, dẫn đến lệnh ngừng bắn bền vững.",
+          "likelihood": "trung bình"
+        },
+        {
+          "text": "Quá trình giải giáp gặp trở ngại do mâu thuẫn nội bộ hoặc sự thiếu tin tưởng giữa các bên.",
+          "likelihood": "cao"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Donald Trump",
+          "target": "Hamas",
+          "relation_type": "cooperation",
+          "label": "Đạt thỏa thuận giải giáp"
+        },
+        {
+          "source": "Israel",
+          "target": "Hamas",
+          "relation_type": "conflict",
+          "label": "Xung đột quân sự đang tìm giải pháp hòa bình"
+        },
+        {
+          "source": "Mỹ",
+          "target": "Israel",
+          "relation_type": "cooperation",
+          "label": "Vai trò trung gian hòa giải"
+        },
+        {
+          "source": "Hamas",
+          "target": "Israel",
+          "relation_type": "cooperation",
+          "label": "Đồng thuận rút quân và giải giáp"
+        }
+      ],
+      "entities": [
+        "Hamas",
+        "Israel",
+        "Tổng thống Mỹ Donald Trump"
+      ],
+      "keywords": [
+        "Hamas",
+        "Israel",
+        "Thỏa thuận hòa bình",
+        "Tổng thống Mỹ"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_0870dc2c": {
+    "created_at": 1785470425681,
+    "expires_at": 1788062425681,
+    "version": "4.5",
+    "checksum": "0d6c8c4e97f2c2ba01619ba9d2394795",
+    "data": {
+      "cluster_title": "Sự kiện thị trường châu Á",
+      "short_summary": "Thị trường chứng khoán châu Á đã tăng mạnh sau khi các cổ phiếu Hàn Quốc đạt mức tăng kỷ lục trong ngày. Sự tăng trưởng này được thúc đẩy bởi sự lạc quan về nhu cầu trí tuệ nhân tạo.",
+      "detailed_summary": "Thị trường chứng khoán châu Á ghi nhận đà tăng trưởng mạnh nhất trong bốn tháng qua. Đặc biệt, thị trường Hàn Quốc đạt mức tăng kỷ lục trong phiên. Nguyên nhân chính đến từ việc nhà đầu tư quay lại mua cổ phiếu các công ty bán dẫn và công nghệ sau đợt bán tháo đầu tuần, nhờ kết quả kinh doanh khả quan của các tập đoàn công nghệ lớn củng cố niềm tin vào nhu cầu trí tuệ nhân tạo. Tại Nhật Bản, đồng Yên suy yếu sau khi Ngân hàng Trung ương Nhật Bản (BOJ) giữ nguyên chính sách tiền tệ.",
+      "causes": [
+        "Kết quả kinh doanh khả quan từ các tập đoàn công nghệ lớn",
+        "Niềm tin của nhà đầu tư vào nhu cầu trí tuệ nhân tạo hồi phục",
+        "Ngân hàng Trung ương Nhật Bản giữ nguyên chính sách tiền tệ"
+      ],
+      "effects": [
+        "Thị trường chứng khoán châu Á tăng trưởng mạnh",
+        "Đồng Yên suy yếu",
+        "Nhà đầu tư tăng cường rót vốn vào các công ty sản xuất chip"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư cá nhân và tổ chức",
+        "Các doanh nghiệp sản xuất chip và công nghệ",
+        "Thị trường tài chính khu vực châu Á"
+      ],
+      "market_impact": "Thị trường có xu hướng phục hồi tích cực sau giai đoạn biến động, với dòng tiền dịch chuyển mạnh vào lĩnh vực công nghệ.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "finance"
+      ],
+      "regions": [
+        "JP",
+        "KR"
+      ],
+      "significance": "Sự phục hồi này cho thấy niềm tin của nhà đầu tư vẫn tập trung lớn vào làn sóng trí tuệ nhân tạo, bất chấp những biến động ngắn hạn trên thị trường tài chính.",
+      "unknowns": [
+        "Thời gian duy trì sự lạc quan của nhà đầu tư",
+        "Tác động dài hạn của chính sách tiền tệ từ Nhật Bản đến dòng vốn"
+      ],
+      "confidence_note": "Thông tin dựa trên báo cáo giao dịch thị trường thực tế, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Thị trường công nghệ tiếp tục dẫn dắt đà tăng điểm của chứng khoán châu Á trong ngắn hạn.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Sự biến động của đồng Yên gây áp lực lên các quyết định chính sách tiếp theo của Nhật Bản.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Kết quả kinh doanh công nghệ",
+          "target": "Thị trường chứng khoán châu Á",
+          "relation_type": "cause_effect",
+          "label": "Thúc đẩy đà tăng điểm thị trường"
+        },
+        {
+          "source": "BOJ",
+          "target": "Đồng Yên",
+          "relation_type": "cause_effect",
+          "label": "Việc giữ nguyên chính sách tiền tệ làm suy yếu đồng Yên"
+        },
+        {
+          "source": "Nhà đầu tư",
+          "target": "Công ty sản xuất chip",
+          "relation_type": "cooperation",
+          "label": "Rót vốn đầu tư"
+        }
+      ],
+      "entities": [
+        "Châu Á",
+        "Nhật Bản",
+        "công nghệ",
+        "trí tuệ nhân tạo"
+      ],
+      "keywords": [
+        "thị trường châu Á",
+        "yên Nhật",
+        "công nghệ",
+        "trí tuệ nhân tạo"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_general_1785470431683": {
+    "created_at": 1785470432189,
+    "expires_at": 1788062432189,
+    "version": "4.5",
+    "checksum": "5870eaa11c486066c6ed246d665eed71",
+    "data": {
+      "cluster_title": "Sự kiện cổ phiếu Hàn Quốc tăng vọt",
+      "short_summary": "Cổ phiếu Hàn Quốc tăng vọt 17% sau tin tức về sự phát triển của trí tuệ nhân tạo.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "follow_up": "",
+      "entities": [
+        "Hàn Quốc",
+        "cổ phiếu"
+      ],
+      "keywords": [
+        "cổ phiếu Hàn Quốc",
+        "AI",
+        "tín hiệu"
+      ],
+      "importance": 85,
+      "scope": "national"
+    }
+  },
+  "evt_5c86f5a8": {
+    "created_at": 1785470444117,
+    "expires_at": 1788062444117,
+    "version": "4.5",
+    "checksum": "f9543e23fd3f191f7cd9ea5f84fc730e",
+    "data": {
+      "cluster_title": "Quyền lực chiến tranh của Trump được giữ",
+      "short_summary": "Thượng viện Mỹ giữ quyền lực chiến tranh cho Trump với tỉ lệ sít sao",
+      "detailed_summary": "Sự kiện bao gồm ba diễn biến chính: Thứ nhất, Thượng viện Mỹ bỏ phiếu với tỉ lệ sít sao để duy trì quyền lực chiến tranh cho ông Trump. Thứ hai, Ukraine đưa ra cáo buộc Nga sử dụng tên lửa có nguồn gốc từ Triều Tiên trong xung đột. Cuối cùng, chính phủ Trung Quốc bày tỏ thái độ quan ngại sâu sắc trước những hạn chế thương mại mới mà Mỹ áp đặt.",
+      "causes": [
+        "Sự cạnh tranh quyền lực chính trị tại Mỹ",
+        "Căng thẳng địa chính trị leo thang tại khu vực Đông Âu",
+        "Sự thay đổi trong chính sách đối ngoại và thương mại của Mỹ"
+      ],
+      "effects": [
+        "Gia tăng căng thẳng trong quan hệ Mỹ - Trung",
+        "Làm phức tạp hóa tình hình chiến sự tại Ukraine",
+        "Tạo ra các thách thức mới trong quản lý thương mại quốc tế"
+      ],
+      "affected_groups": [
+        "Chính phủ Mỹ",
+        "Chính phủ Ukraine",
+        "Chính phủ Nga",
+        "Doanh nghiệp quốc tế"
+      ],
+      "market_impact": "Các hạn chế thương mại mới của Mỹ có thể gây bất ổn tạm thời cho chuỗi cung ứng và tâm lý nhà đầu tư đối với hàng hóa từ Trung Quốc.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "military"
+      ],
+      "regions": [
+        "US",
+        "UA",
+        "RU",
+        "KP",
+        "CN"
+      ],
+      "significance": "Sự kiện phản ánh sự phức tạp trong các mối quan hệ đa phương giữa các cường quốc và tác động của nó tới an ninh quốc tế cũng như thương mại toàn cầu.",
+      "unknowns": [
+        "Chi tiết cụ thể về loại và số lượng tên lửa Triều Tiên được cho là Nga đã sử dụng",
+        "Phản ứng cụ thể tiếp theo của Trung Quốc đối với các hạn chế thương mại của Mỹ"
+      ],
+      "confidence_note": "Thông tin dựa trên bản tin tổng hợp ngày 31-7, độ tin cậy trung bình vì cần thêm bằng chứng xác thực từ các bên liên quan.",
+      "scenarios": [
+        {
+          "text": "Mỹ tiếp tục gia tăng các biện pháp hạn chế thương mại với Trung Quốc khiến căng thẳng song phương leo thang.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Ukraine đưa ra thêm bằng chứng về vũ khí Triều Tiên làm gia tăng áp lực quốc tế lên Nga và Triều Tiên.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Nga",
+          "target": "Ukraine",
+          "relation_type": "conflict",
+          "label": "Xung đột quân sự"
+        },
+        {
+          "source": "Triều Tiên",
+          "target": "Nga",
+          "relation_type": "cooperation",
+          "label": "Cung cấp tên lửa hỗ trợ quân sự"
+        },
+        {
+          "source": "Mỹ",
+          "target": "Trung Quốc",
+          "relation_type": "conflict",
+          "label": "Tranh chấp thương mại"
+        }
+      ],
+      "entities": [
+        "Trump",
+        "Ukraine",
+        "Nga",
+        "Triều Tiên"
+      ],
+      "keywords": [
+        "Quyền lực chiến tranh",
+        "Trump",
+        "Ukraine",
+        "Nga",
+        "Triều Tiên"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_8c81fb00": {
+    "created_at": 1785470455577,
+    "expires_at": 1788062455577,
+    "version": "4.5",
+    "checksum": "473196bb789b46b39270b2debe19fbd2",
+    "data": {
+      "cluster_title": "Israel phá hủy đường hầm của Hezbollah",
+      "short_summary": "Israel đã phá hủy hệ thống đường hầm của Hezbollah ở Li Băng bằng 700 tấn thuốc nổ.",
+      "detailed_summary": "Thủ tướng Israel Benjamin Netanyahu và Bộ trưởng Quốc phòng Israel Katz xác nhận IDF đã thực hiện chiến dịch quân sự quy mô lớn, sử dụng 700 tấn thuốc nổ để vô hiệu hóa hệ thống đường hầm quân sự của Hezbollah nằm dưới dãy núi Beaufort, miền Nam Li Băng.",
+      "causes": [
+        "Chiến lược quân sự của Israel nhằm vô hiệu hóa cơ sở hạ tầng của Hezbollah",
+        "Tình trạng xung đột leo thang giữa Israel và lực lượng Hezbollah"
+      ],
+      "effects": [
+        "Hệ thống đường hầm của Hezbollah tại dãy núi Beaufort bị phá hủy hoàn toàn",
+        "Gia tăng áp lực quân sự và căng thẳng tại khu vực biên giới Israel - Li Băng"
+      ],
+      "affected_groups": [
+        "Hezbollah",
+        "Lực lượng Phòng vệ Israel (IDF)",
+        "Cư dân khu vực miền Nam Li Băng"
+      ],
+      "market_impact": "Sự kiện làm gia tăng tâm lý bất ổn trong khu vực, có khả năng ảnh hưởng đến giá năng lượng và rủi ro đầu tư tại Trung Đông.",
+      "follow_up": "",
+      "categories": [
+        "military",
+        "politics"
+      ],
+      "regions": [
+        "IL",
+        "LB"
+      ],
+      "significance": "Đây là đòn đánh mạnh vào hạ tầng chiến thuật của Hezbollah, phản ánh cường độ cao của cuộc xung đột hiện tại giữa Israel và các lực lượng đối địch trong khu vực.",
+      "unknowns": [
+        "Hiệu quả chiến thuật lâu dài của việc phá hủy đường hầm đối với khả năng tác chiến của Hezbollah",
+        "Phản ứng đáp trả cụ thể từ phía Hezbollah sau vụ việc"
+      ],
+      "confidence_note": "Thông tin dựa trên tuyên bố chính thức từ lãnh đạo Israel, có độ tin cậy cao về sự kiện đã diễn ra.",
+      "scenarios": [
+        {
+          "text": "Hezbollah đẩy mạnh các cuộc tấn công trả đũa nhằm vào các mục tiêu quân sự của Israel.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Xung đột tiếp tục leo thang, dẫn đến các chiến dịch quân sự quy mô lớn hơn tại miền Nam Li Băng.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Israel",
+          "target": "Hezbollah",
+          "relation_type": "conflict",
+          "label": "Xung đột vũ trang trực tiếp"
+        },
+        {
+          "source": "Israel",
+          "target": "Hệ thống đường hầm Hezbollah",
+          "relation_type": "cause_effect",
+          "label": "Tấn công phá hủy cơ sở hạ tầng"
+        },
+        {
+          "source": "Benjamin Netanyahu",
+          "target": "Israel",
+          "relation_type": "cooperation",
+          "label": "Lãnh đạo điều hành quốc gia"
+        }
+      ],
+      "entities": [
+        "Israel",
+        "Hezbollah",
+        "Li Băng"
+      ],
+      "keywords": [
+        "Israel",
+        "Hezbollah",
+        "Li Băng",
+        "thuốc nổ"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
   }
 }
