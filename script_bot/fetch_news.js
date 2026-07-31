@@ -7,6 +7,7 @@ const path = require('path');
 const PIPELINE_STATUS_FILE = path.join(__dirname, '../pipeline_status.json');
 
 // IMPORT CÁC MODULE XỬ LÝ LÕI (SỬA LẠI REQUIRE CHO BẢN ĐỒ)
+const { fetchAllLiveMarketData, updateMarketHistory, prepareMarketDataForUI } = require('./modules/market/market_fetcher');
 const { buildDigest, buildSituationIndexData } = require('./modules/digest/digest_builder');
 const { buildMacroHealth } = require('./modules/market/macro_health');
 const { processEventIntoTimeline } = require('./modules/6_timeline_manager');
@@ -301,7 +302,8 @@ eventBus.on('MARKET_UPDATED', synchronizeParallelTasks);
 eventBus.on('SOCIAL_UPDATED', synchronizeParallelTasks);
 eventBus.on('REPORT_CREATED', synchronizeParallelTasks);
 
-eventBus.on('SYNC_DATABASE', () => {
+
+eventBus.on('SYNC_DATABASE', async () => { 
     try {
         const db = topicStore.readData();
         const uniqueTopics = new Map();
@@ -323,14 +325,22 @@ eventBus.on('SYNC_DATABASE', () => {
             timestamp: (t.timestamp && !isNaN(t.timestamp) && t.timestamp !== null) ? t.timestamp : Date.now()
         }));
         
-        // [SỬA] Đổi logic gọi hàm Map
         const previousSituationData = db.risk_map || {}; 
+        
+        // --- CƠ SỞ DỮ LIỆU KÉP (HYBRID DB) VÀ ĐỒNG BỘ AI ---
+        // 1. Lưu số liệu vào Tầng 2 (Vĩnh viễn)
+        const historyDb = updateMarketHistory(state.marketData || []);
+        // 2. Format dữ liệu Market cho UI vẽ biểu đồ
+        const uiMarketData = prepareMarketDataForUI(state.marketData || [], historyDb);
         
         db.digest = buildDigest(db.news, { limitPerRegion: 7 });
         db.risk_map = buildSituationIndexData(db.news, previousSituationData);
-        db.macro_health = buildMacroHealth(db.news, state.marketData || []);
+        
+        // 3. Chạy Tầng 3 (Economic Intelligence) - CÓ AWAIT
+        db.macro_health = await buildMacroHealth(db.news, uiMarketData, historyDb);
+        
         db.knowledge_graph = buildGlobalGraph(db.news);
-        db.market_data = state.marketData || [];
+        db.market_data = uiMarketData; // Gán dữ liệu đã format biểu đồ
         db.social_trends = state.socialTrends || [];
         
         // --- XỬ LÝ LƯU TRỮ LỊCH SỬ BẢN TIN 24H (TỐI ĐA 7 NGÀY) ---
@@ -361,11 +371,16 @@ eventBus.on('SYNC_DATABASE', () => {
         };
         
         topicStore.writeData(db);
+        
+        // Tạo thêm bản sao lưu trữ cho Dashboard (Tầng 4)
+        fs.writeFileSync(path.join(__dirname, '../data/market_dashboard.json'), JSON.stringify({ macro_health: db.macro_health }, null, 2));
+
         eventBus.emit('PIPELINE_FINISHED');
     } catch (e) {
         eventBus.emit('PIPELINE_ERROR', e);
     }
 });
+
 
 eventBus.on('PIPELINE_FINISHED', () => {
     const durationMs = Date.now() - state.startTime;
