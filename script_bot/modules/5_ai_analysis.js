@@ -33,6 +33,7 @@ Dựa vào nội dung, hãy phân loại tác động của sự kiện vào 1 t
 - severity: Mức độ nghiêm trọng từ 1 đến 5 (1: Nhỏ/Bình thường, 3: Đáng chú ý, 5: Thảm họa/Xung đột lớn/Đảo chính).
 - sentiment: 1 (Tích cực: Hòa bình, tăng trưởng), 0 (Trung lập), -1 (Tiêu cực: Xung đột, đình công, suy thoái).
 LƯU Ý BẮT BUỘC: Trường "event" và "short_summary" PHẢI viết bằng Tiếng Việt chuẩn mực.
+LƯU Ý ĐẶC BIỆT: Nếu bản tin nhắc đến các doanh nghiệp, ngân hàng, hoặc tổ chức của Việt Nam (Ví dụ: Vietjet, Hòa Phát, Vingroup, HDBank, FPT, Vietcombank...), BẮT BUỘC trường "regions" phải chứa "VN" và "vn_impact" phải phản ánh tình hình kinh doanh, lợi nhuận hoặc sự phát triển của doanh nghiệp đó. Tuyệt đối không được ghi "Không tác động trực tiếp"
 LỆNH TUYỆT ĐỐI: CHỈ TRẢ VỀ JSON VỚI CÁC TRƯỜNG SAU:
 {
   "event": "Tên sự kiện ngắn gọn",
