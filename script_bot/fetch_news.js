@@ -175,32 +175,37 @@ Hai sự kiện trên có phải cùng nói về 1 sự việc không? CHỈ TR�
                 ruleCategories, 
                 extractRegions(cluster.combined_text, cluster.articles[0].source_name)
             );
+
             
-            if (ruleImportance < 75) {
+            // [ĐÃ SỬA] Hạ ngưỡng điểm chặn từ 75 xuống 50 để không lọt lưới tin quân sự/chính trị quan trọng
+            if (ruleImportance < 50) {
                 logger.info(`[RULE-SKIP] Điểm rule thấp (${ruleImportance}), bỏ qua Tầng AI: "${cluster.articles[0].title}"`);
                 continue;
             }  
             // =====================================================================
-// [BỘ LỌC CỨU CÁNH QUOTA - QUOTA SAVER]
-// =====================================================================
-const extractedRegions = extractRegions(cluster.combined_text, cluster.articles[0].source_name);
+            // [BỘ LỌC CỨU CÁNH QUOTA - QUOTA SAVER] (ĐÃ TỐI ƯU LẠI)
+            // =====================================================================
+            const extractedRegions = extractRegions(cluster.combined_text, cluster.articles[0].source_name);
+            
+            // Chuẩn hóa toàn bộ thành chữ IN HOA để so sánh chính xác, trị dứt điểm lỗi rớt tin Việt Nam
+            const regionsUpper = extractedRegions.map(r => r.toUpperCase());
 
-// 1. Nhóm Cường quốc / Khu vực vĩ mô (Bắt buộc phân tích mọi tin tức)
-const MACRO_REGIONS = ['US', 'CN', 'RU', 'EU', 'GB', 'JP', 'global'];
+            // 1. Nhóm Cường quốc / Điểm nóng (Thêm Ukraine 'UA' vào mảng)
+            const MACRO_REGIONS = ['US', 'CN', 'RU', 'UA', 'EU', 'GB', 'JP', 'GLOBAL'];
 
-// 2. Nhóm Chuyên mục Khủng hoảng (Bất kể nước nhỏ hay lớn đều phải lên bản đồ)
-const CRISIS_CATEGORIES = ['environment', 'military', 'health'];
+            // 2. Nhóm Chuyên mục Trọng yếu (Mở rộng thêm Kinh tế, Tài chính, Chính trị, Công nghệ)
+            const CORE_CATEGORIES = ['environment', 'military', 'health', 'economy', 'finance', 'politics', 'tech'];
 
-const hasMacroRegion = extractedRegions.some(r => MACRO_REGIONS.includes(r.toUpperCase()));
-const hasCrisis = matchedPriority.some(c => CRISIS_CATEGORIES.includes(c));
+            const hasMacroRegion = regionsUpper.some(r => MACRO_REGIONS.includes(r));
+            const isCoreCategory = matchedPriority.some(c => CORE_CATEGORIES.includes(c));
 
-// NẾU: Không phải cường quốc + Không có khủng hoảng + Không phải Việt Nam
-// THÌ: Bỏ qua luôn, không gọi AI để tiết kiệm RPD!
-if (!hasMacroRegion && !hasCrisis && !extractedRegions.includes('VN')) {
-    logger.info(`[QUOTA-SAVE] Bỏ qua tin "${cluster.articles[0].title}". Lý do: Nước nhỏ & Không có khủng hoảng.`);
-    continue;
-}
-// =====================================================================
+            // NẾU: Không phải cường quốc + Không thuộc chuyên mục cốt lõi + Không phải Việt Nam
+            // THÌ: Bỏ qua để tiết kiệm Quota.
+            if (!hasMacroRegion && !isCoreCategory && !regionsUpper.includes('VN')) {
+                logger.info(`[QUOTA-SAVE] Bỏ qua tin "${cluster.articles[0].title}". Lý do: Cục bộ & Không trọng yếu.`);
+                continue;
+            }
+            // =====================================================================
             logger.info(`Đang gọi AI phân tích Topic mới...`);
             const aiIntelligence = await analyzeClusterMultiDimensional(cluster, eventKey);
             
