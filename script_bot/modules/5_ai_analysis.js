@@ -32,18 +32,19 @@ Dựa vào nội dung, hãy phân loại tác động của sự kiện vào 1 t
 [ĐÁNH GIÁ TÍNH CHẤT SỰ KIỆN]
 - severity: Mức độ nghiêm trọng từ 1 đến 5 (1: Nhỏ/Bình thường, 3: Đáng chú ý, 5: Thảm họa/Xung đột lớn/Đảo chính).
 - sentiment: 1 (Tích cực: Hòa bình, tăng trưởng), 0 (Trung lập), -1 (Tiêu cực: Xung đột, đình công, suy thoái).
-LƯU Ý BẮT BUỘC: Trường "event" và "short_summary" PHẢI viết bằng Tiếng Việt chuẩn mực. Nếu văn bản gốc là tiếng nước ngoài, hãy dịch sang tiếng Việt, tuyệt đối không giữ nguyên văn tiếng Anh.
+LƯU Ý BẮT BUỘC: Trường "event" và "short_summary" PHẢI viết bằng Tiếng Việt chuẩn mực.
 LỆNH TUYỆT ĐỐI: CHỈ TRẢ VỀ JSON VỚI CÁC TRƯỜNG SAU:
 {
   "event": "Tên sự kiện ngắn gọn",
   "keywords": ["từ khóa 1", "từ khóa 2"],
   "entities": ["thực thể 1", "thực thể 2"],
-  "region": "Khu vực chính (vd: Vietnam, USA, China, Global)",
-  "category": ["Danh mục 1", "Danh mục 2"],
+  "regions": ["Mã ISO quốc gia (VD: VN, US, JP, GLOBAL)"],
+  "categories": ["Danh mục 1", "Danh mục 2"],
   "importance": 85,
   "scope": "personal | business | national | global",
   "severity": 3,
   "sentiment": -1,
+  "vn_impact": "Đánh giá nhanh tác động tới Việt Nam (Nếu không có, ghi: Không tác động trực tiếp đến Việt Nam.)",
   "need_deep_analysis": true/false (chỉ true nếu sự kiện có tính chất vĩ mô, phức tạp, tác động lớn),
   "short_summary": "Tóm tắt 30-50 từ"
 }`;
@@ -55,7 +56,6 @@ LỆNH TUYỆT ĐỐI: CHỈ TRẢ VỀ JSON VỚI CÁC TRƯỜNG SAU:
             logger.info(`[Phân tích] Gemma đánh giá CẦN phân tích sâu. Đang gọi Tầng 2 (Gemini)...`);
             
             const deepPrompt = PROMPT_DEEP_ANALYSIS.replace('{{COMBINED_TEXT}}', cluster.combined_text);
-            
             const geminiResult = await gateway.executeTask('DEEP_ANALYSIS', deepPrompt);
             
             // Gộp dữ liệu Tầng 1 và Tầng 2
@@ -67,11 +67,14 @@ LỆNH TUYỆT ĐỐI: CHỈ TRẢ VỀ JSON VỚI CÁC TRƯỜNG SAU:
                 effects: Array.isArray(geminiResult.effects) ? geminiResult.effects : [],
                 affected_groups: Array.isArray(geminiResult.affected_groups) ? geminiResult.affected_groups : [],
                 market_impact: geminiResult.market_impact || "",
-                vn_impact: geminiResult.vn_impact || "Chưa có đánh giá tác động tới Việt Nam.",
+                
+                // [ĐÃ SỬA] Nhận vn_impact từ Tầng 2
+                vn_impact: geminiResult.vn_impact || "Không tác động trực tiếp đến Việt Nam.",
+                
                 follow_up: geminiResult.follow_up || "",
 
-                categories: Array.isArray(geminiResult.categories) ? geminiResult.categories : [],
-                regions: Array.isArray(geminiResult.regions) ? geminiResult.regions : [],
+                categories: Array.isArray(geminiResult.categories) ? geminiResult.categories : (Array.isArray(gemmaResult.categories) ? gemmaResult.categories : []),
+                regions: Array.isArray(geminiResult.regions) ? geminiResult.regions : (Array.isArray(gemmaResult.regions) ? gemmaResult.regions : []),
                 
                 significance: geminiResult.significance || "",
                 unknowns: Array.isArray(geminiResult.unknowns) ? geminiResult.unknowns : [],
@@ -97,10 +100,18 @@ LỆNH TUYỆT ĐỐI: CHỈ TRẢ VỀ JSON VỚI CÁC TRƯỜNG SAU:
                 effects: [], 
                 affected_groups: [], 
                 market_impact: "", 
+                
+                // [ĐÃ SỬA] Bổ sung 3 trường thiếu vào khối else
+                vn_impact: gemmaResult.vn_impact || "Không tác động trực tiếp đến Việt Nam.",
+                categories: Array.isArray(gemmaResult.categories) ? gemmaResult.categories : [],
+                regions: Array.isArray(gemmaResult.regions) ? gemmaResult.regions : [],
+
                 follow_up: "",
                 entities: gemmaResult.entities || [],
                 keywords: gemmaResult.keywords || [],
                 importance: gemmaResult.importance || cluster.articles[0].importance,
+                severity: gemmaResult.severity || 3,
+                sentiment: gemmaResult.sentiment !== undefined ? gemmaResult.sentiment : -1,
                 scope: gemmaResult.scope || "business"
             };
         }
@@ -116,6 +127,8 @@ LỆNH TUYỆT ĐỐI: CHỈ TRẢ VỀ JSON VỚI CÁC TRƯỜNG SAU:
             affected_groups: ["Cộng đồng người dùng hệ thống"],
             market_impact: "Đang theo dõi biến động thị trường.",
             vn_impact: "Không thể đánh giá tác động do lỗi AI.",
+            categories: [],
+            regions: [],
             follow_up: "Chờ cập nhật tình tiết mới từ các báo.",
             scope: "business",
             importance: 50
@@ -123,8 +136,6 @@ LỆNH TUYỆT ĐỐI: CHỈ TRẢ VỀ JSON VỚI CÁC TRƯỜNG SAU:
     }
     
     saveAiResult(eventKey, finalTopicAnalysis);
-    
-    // Ngủ 5 giây chống Rate Limit
     await new Promise(resolve => setTimeout(resolve, 5000));
     
     return finalTopicAnalysis;
