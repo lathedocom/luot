@@ -68,6 +68,9 @@ LỆNH TUYỆT ĐỐI: CHỈ TRẢ VỀ JSON VỚI CÁC TRƯỜNG SAU:
                 affected_groups: Array.isArray(geminiResult.affected_groups) ? geminiResult.affected_groups : [],
                 market_impact: geminiResult.market_impact || "",
                 follow_up: geminiResult.follow_up || "",
+
+                categories: Array.isArray(geminiResult.categories) ? geminiResult.categories : [],
+                regions: Array.isArray(geminiResult.regions) ? geminiResult.regions : [],
                 
                 significance: geminiResult.significance || "",
                 unknowns: Array.isArray(geminiResult.unknowns) ? geminiResult.unknowns : [],
