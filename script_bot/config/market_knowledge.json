@@ -1,0 +1,23 @@
+{
+  "macro_rules": {
+    "PMI": {
+      "threshold": 50,
+      "meaning_above": "Sản xuất mở rộng, số lượng đơn hàng tăng, doanh nghiệp đang tuyển thêm lao động.",
+      "meaning_below": "Sản xuất thu hẹp, thiếu hụt đơn hàng, nguy cơ cắt giảm nhân sự."
+    },
+    "CPI_VN": {
+      "target": 4.0,
+      "meaning_up": "Áp lực lạm phát tăng, chi phí sinh hoạt đội lên, NHNN có thể giữ nguyên hoặc tăng lãi suất.",
+      "meaning_down": "Lạm phát hạ nhiệt, dư địa nới lỏng chính sách tiền tệ mở ra."
+    },
+    "USD_VND": {
+      "meaning_up": "Tiền đồng mất giá, có lợi cho xuất khẩu nhưng tăng chi phí nhập khẩu nguyên vật liệu và áp lực trả nợ ngoại tệ."
+    }
+  },
+  "health_categories": {
+    "cost_of_living": ["CPI_VN", "RON95", "PORK_VN", "RICE_VN"],
+    "production": ["PMI_VN", "IIP_VN", "STEEL_CB300"],
+    "currency_credit": ["USD_VND", "DXY", "INTERBANK_RATE"],
+    "market_sentiment": ["VNINDEX", "GOLD_SJC", "BTC"]
+  }
+}
