@@ -188,7 +188,21 @@ export function openModal(cluster) {
                 </ul>
             </div>`;
         }
-        
+        if (cluster.vn_impact) {
+            // Kiểm tra xem sự kiện có tác động không để đổi màu nhấn mạnh
+            const isNoImpact = cluster.vn_impact.toLowerCase().includes('không tác động trực tiếp') || cluster.vn_impact.toLowerCase().includes('không ảnh hưởng');
+            const impactColor = isNoImpact ? '#6b7280' : '#0d9488'; // Xám nếu không tác động, Xanh Teal nếu có tác động
+            const impactBg = isNoImpact ? 'rgba(107, 114, 128, 0.05)' : 'rgba(13, 148, 136, 0.05)';
+            const impactIcon = isNoImpact ? 'location_disabled' : 'location_on';
+
+            bodyHtml += `
+            <div class="intelligence-box" style="margin-top: 16px; background: ${impactBg}; border-left: 4px solid ${impactColor}; padding: 12px; border-radius: 4px;">
+                <div class="intelligence-title" style="color: ${impactColor}; font-weight: bold; display: flex; align-items: center; gap: 6px;">
+                    <span class="material-icons-round" style="font-size: 18px;">${impactIcon}</span> Tác động tới Việt Nam
+                </div>
+                <p style="font-weight: 500; font-size: 14px; margin-top: 8px; margin-bottom: 0; line-height: 1.6;">${escapeHtml(cluster.vn_impact)}</p>
+            </div>`;
+        }
         if (cluster.unknowns && (Array.isArray(cluster.unknowns) ? cluster.unknowns.length > 0 : true)) {
             bodyHtml += `
             <div class="intelligence-box" style="margin-top: 16px; background: rgba(107, 114, 128, 0.05); border-left: 4px solid #6b7280; padding: 12px; border-radius: 4px;">
