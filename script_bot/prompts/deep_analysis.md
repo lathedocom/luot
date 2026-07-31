@@ -24,6 +24,7 @@ CẤU TRÚC JSON YÊU CẦU:
   "effects": ["Tác động 1", "Tác động 2"],
   "affected_groups": ["Nhóm bị ảnh hưởng 1", "Nhóm bị ảnh hưởng 2"],
   "market_impact": "Đánh giá ngắn gọn tác động thị trường (Tiếng Việt)",
+  "vn_impact": "Đánh giá sự kiện này tác động như thế nào đến kinh tế, chính trị, hoặc xã hội Việt Nam (Tiếng Việt)",
   "significance": "Ý nghĩa cốt lõi của sự kiện này đối với bối cảnh chung (1-2 câu).",
   "unknowns": [
     "Điểm chưa được xác nhận hoặc chưa rõ ràng số 1",
@@ -54,3 +55,4 @@ CẤU TRÚC JSON YÊU CẦU:
 *Lưu ý 3: Trường 'relation_type' trong 'entity_relations' BẮT BUỘC chỉ được chọn 1 trong 4 giá trị: "cooperation" (hợp tác), "conflict" (xung đột), "cause_effect" (nguyên nhân dẫn đến kết quả), hoặc "neutral" (liên quan chung chung).*
 *Lưu ý 4: Trường 'categories' BẮT BUỘC trả về mảng chứa 1 hoặc tối đa 2 giá trị ID từ danh sách sau: "politics", "economy", "finance", "military", "diplomacy", "tech", "health", "environment", "energy", "business". Tuyệt đối không tự bịa ra ID khác.*
 *Lưu ý 5: Trường 'regions' BẮT BUỘC trả về mảng chứa Mã quốc gia chuẩn ISO 3166-1 alpha-2 (ví dụ: "JP" cho Nhật Bản, "VN" cho Việt Nam, "US" cho Mỹ). Nếu sự kiện xảy ra ở nhiều nước, hãy liệt kê tất cả mã ISO. Nếu sự kiện mang tính toàn cầu không gắn với nước nào, hãy trả về ["GLOBAL"]. Tuyệt đối không dùng tên quốc gia đầy đủ.*
+*Lưu ý 6: Đối với trường 'vn_impact', hãy suy luận khách quan tác động đến Việt Nam (chuỗi cung ứng, xuất nhập khẩu, tỷ giá, ngoại giao). Nếu sự kiện hoàn toàn mang tính cục bộ của quốc gia khác và không ảnh hưởng gì tới Việt Nam, BẮT BUỘC phải ghi chính xác cụm từ: "Không tác động trực tiếp đến Việt Nam."*
