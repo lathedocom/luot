@@ -230,8 +230,8 @@ if (!hasMacroRegion && !hasCrisis && !extractedRegions.includes('VN')) {
                 scenarios: aiIntelligence.scenarios,
                 
                 importance: aiIntelligence.importance || ruleImportance,
-                categories: ruleCategories,
-                regions: extractRegions(cluster.combined_text, cluster.articles[0].source_name),
+                categories: (aiIntelligence.categories && aiIntelligence.categories.length > 0) ? aiIntelligence.categories : extractCategories(cluster.combined_text),
+                regions: (aiIntelligence.regions && aiIntelligence.regions.length > 0) ? aiIntelligence.regions : extractRegions(cluster.combined_text, cluster.articles[0].source_name),
                 
                 entities: entities,
                 value_score: valueScore,
