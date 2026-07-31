@@ -60,7 +60,22 @@ async function buildMacroHealth(topics, marketData = [], historyDb = { monthly: 
             if (category.inverse) dataScore = -dataScore;
         }
 
-        const relatedTopics = recentTopics.filter(t => category.keywords.some(kw => (t.title + ' ' + (t.short_summary || '')).toLowerCase().includes(kw)));
+        
+       // 2. Quét Tin tức tổng hợp (LỌC THẬT KỸ TIN TỨC LIÊN QUAN ĐẾN VN)
+        const relatedTopics = recentTopics.filter(t => {
+            // Check xem tin có chứa từ khóa của chuyên mục đang xét (sản xuất, thương mại...) không
+            const hasKeyword = category.keywords.some(kw => (t.title + ' ' + (t.short_summary || '')).toLowerCase().includes(kw));
+            
+            // [QUAN TRỌNG] Chống nhiễu địa lý: 
+            // Nếu sự kiện ở nước ngoài VÀ AI đã phán "Không tác động", lập tức VỨT BỎ, không cho cộng điểm.
+            const isVN = t.regions && t.regions.includes('VN');
+            const impactText = (t.vn_impact || "").toLowerCase();
+            const hasNoImpactOnVN = impactText.includes('không tác động trực tiếp') || impactText.includes('không ảnh hưởng');
+            
+            // Chỉ lấy tin nếu: Nó xảy ra ở VN HOẶC nó thực sự có tác động đến VN
+            return hasKeyword && (isVN || !hasNoImpactOnVN);
+        });
+
         if (relatedTopics.length > 0) {
             let totalNewsImpact = 0;
             relatedTopics.forEach(t => {
@@ -71,8 +86,10 @@ async function buildMacroHealth(topics, marketData = [], historyDb = { monthly: 
             relatedTopics.sort((a, b) => (b.severity || 0) - (a.severity || 0));
         }
 
+        // Tỷ trọng: 60% Dữ liệu, 40% Tin tức
         finalScore = relatedMarkets.length > 0 ? (dataScore * 0.6) + (newsScore * 0.4) : newsScore;
 
+        // 3. Quy đổi Trạng thái
         let status = 'Bình thường', color = '#3b82f6', trendIcon = '→', impactLevel = '🟢 Thấp';
 
         if (finalScore >= 60) { status = 'Cải thiện mạnh'; color = '#10b981'; trendIcon = '↑'; impactLevel = '🔴 Cao (Tích cực)'; }
@@ -89,20 +106,22 @@ async function buildMacroHealth(topics, marketData = [], historyDb = { monthly: 
 
         const insight = getInsightDetails(key, finalScore);
 
-        // --- 2. GỌI AI ĐỂ GIẢI THÍCH (Chỉ gọi cho 3 thẻ có điểm dao động lớn nhất để tiết kiệm Quota) ---
+        // --- 4. GỌI AI ĐỂ GIẢI THÍCH (SỬ DỤNG VN_IMPACT LÀM BỐI CẢNH) ---
         if (Math.abs(finalScore) >= 20 && relatedTopics.length > 0) {
             try {
                 logger.info(`[Economic Intelligence] Đang dùng AI phân tích thẻ: ${category.name}`);
-                const contextNews = relatedTopics.slice(0, 3).map(t => `- ${t.title}: ${t.short_summary}`).join('\n');
-                const prompt = `Bạn là Chuyên gia Kinh tế Vĩ mô. Hệ thống thuật toán đánh giá lĩnh vực "${category.name}" đang ở trạng thái: ${status}.
-Căn cứ vào bối cảnh tin tức 7 ngày qua:
+                
+                // [ĐÃ SỬA] Ép AI chỉ được đọc phần vn_impact thay vì tóm tắt sự kiện chung chung
+                const contextNews = relatedTopics.slice(0, 3).map(t => `- SỰ KIỆN: ${t.title}. TÁC ĐỘNG TỚI VN: ${t.vn_impact || t.short_summary}`).join('\n');
+                
+                const prompt = `Bạn là Chuyên gia Kinh tế Vĩ mô của Việt Nam. Hệ thống thuật toán đánh giá lĩnh vực "${category.name}" của Việt Nam đang ở trạng thái: ${status}.
+Căn cứ vào tác động của các sự kiện 7 ngày qua đối với Việt Nam:
 ${contextNews}
-Nhiệm vụ: Giải thích ngắn gọn tại sao lại có trạng thái này và dự báo hệ quả. BẮT BUỘC TRẢ VỀ JSON:
+Nhiệm vụ: Giải thích ngắn gọn tại sao lại có trạng thái này và dự báo hệ quả cho nền kinh tế Việt Nam. BẮT BUỘC TRẢ VỀ JSON:
 {
-  "reason_from_news": "1 câu giải thích nguyên nhân chính rút ra từ tin tức",
-  "ai_meaning": "Hệ quả thực tiễn ngắn gọn (thay thế cho nhận định máy móc)"
+  "reason_from_news": "1 câu giải thích nguyên nhân tác động đến VN rút ra từ tin tức",
+  "ai_meaning": "Hệ quả thực tiễn ngắn gọn cho doanh nghiệp/người dân Việt Nam (thay thế cho nhận định máy móc)"
 }`;
-                // Gọi model nhẹ Tầng 1 (Gemma/Llama) cho tiết kiệm
                 const aiResp = await gateway.executeTask('SHORT_SUMMARY', prompt); 
                 if (aiResp && aiResp.reason_from_news) {
                     reasons.unshift(aiResp.reason_from_news);
@@ -113,6 +132,7 @@ Nhiệm vụ: Giải thích ngắn gọn tại sao lại có trạng thái này 
             }
         }
 
+        
         // --- 3. ĐÓNG GÓI KẾT QUẢ ---
         const uniqueReasons = [...new Set(reasons)].slice(0, 3);
         if (uniqueReasons.length === 0) uniqueReasons.push("Dữ liệu duy trì ổn định theo chu kỳ.");
