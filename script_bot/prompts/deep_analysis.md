@@ -14,6 +14,8 @@ Chỉ lấy những mối quan hệ có tính chất "Nhân - Quả", "Hợp tá
 
 CẤU TRÚC JSON YÊU CẦU:
 {
+  "categories": ["economy", "finance"],
+  "regions": ["JP"],
   "scope": "personal | business | national | global",
   "impact_level": "crisis | risk | monitor | development",
   "short_summary": "Tóm tắt nhanh gọn ý chính (Tiếng Việt)",
@@ -50,3 +52,5 @@ CẤU TRÚC JSON YÊU CẦU:
 *Lưu ý 1: Trường 'impact_level' BẮT BUỘC chọn 1 trong 4 giá trị: "crisis" (khủng hoảng, chiến tranh, thiên tai lớn), "risk" (rủi ro, bất ổn, cảnh báo), "monitor" (cần theo dõi, đàm phán, xu hướng), "development" (phát triển, thành tựu, hợp tác).*
 *Lưu ý 2: Trường 'likelihood' trong 'scenarios' chỉ được nhận 1 trong 3 giá trị: "cao", "trung bình", "thấp".*
 *Lưu ý 3: Trường 'relation_type' trong 'entity_relations' BẮT BUỘC chỉ được chọn 1 trong 4 giá trị: "cooperation" (hợp tác), "conflict" (xung đột), "cause_effect" (nguyên nhân dẫn đến kết quả), hoặc "neutral" (liên quan chung chung).*
+*Lưu ý 4: Trường 'categories' BẮT BUỘC trả về mảng chứa 1 hoặc tối đa 2 giá trị ID từ danh sách sau: "politics", "economy", "finance", "military", "diplomacy", "tech", "health", "environment", "energy", "business". Tuyệt đối không tự bịa ra ID khác.*
+*Lưu ý 5: Trường 'regions' BẮT BUỘC trả về mảng chứa Mã quốc gia chuẩn ISO 3166-1 alpha-2 (ví dụ: "JP" cho Nhật Bản, "VN" cho Việt Nam, "US" cho Mỹ). Nếu sự kiện xảy ra ở nhiều nước, hãy liệt kê tất cả mã ISO. Nếu sự kiện mang tính toàn cầu không gắn với nước nào, hãy trả về ["GLOBAL"]. Tuyệt đối không dùng tên quốc gia đầy đủ.*
