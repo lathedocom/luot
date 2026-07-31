@@ -101,17 +101,33 @@ function buildSituationIndexData(topics, previousData = {}) {
         const rawScore = severity * weight * sentimentMultiplier * decay;
         if (Math.abs(rawScore) < 0.1) return; // Bỏ qua rác siêu nhỏ
 
+        
         if (topic.regions && topic.regions.length > 0) {
-            topic.regions.forEach(regionId => {
-                const isoCodes = REGION_TO_ISO[regionId] || [];
+            // [ĐÃ SỬA] Loại bỏ mã GLOBAL để không tô màu toàn thế giới gây nhiễu
+            const validRegions = topic.regions.filter(r => r.toUpperCase() !== 'GLOBAL');
+            
+            validRegions.forEach(regionId => {
+                let isoCodes = [];
+                // Nếu AI trả về tên khu vực cũ (vietnam, usa), dùng bảng map
+                if (REGION_TO_ISO[regionId.toLowerCase()]) {
+                    isoCodes = REGION_TO_ISO[regionId.toLowerCase()];
+                } 
+                // Nếu AI đã trả về sẵn mã ISO chuẩn (VN, US, IR), lấy luôn mã đó
+                else {
+                    isoCodes = [regionId.toUpperCase()];
+                }
+
                 isoCodes.forEach(iso => {
                     if (!regionData[iso]) regionData[iso] = { events: [] };
-                    regionData[iso].events.push({
-                        title: topic.title || topic.cluster_title,
-                        score: rawScore,
-                        layer: layer,
-                        sentiment: sentiment
-                    });
+                    // Chống lặp sự kiện
+                    if (!regionData[iso].events.some(e => e.title === (topic.title || topic.cluster_title))) {
+                        regionData[iso].events.push({
+                            title: topic.title || topic.cluster_title,
+                            score: rawScore,
+                            layer: layer,
+                            sentiment: sentiment
+                        });
+                    }
                 });
             });
         }
