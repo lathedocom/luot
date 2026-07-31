@@ -188,5 +188,85 @@
     "completionTokens": 722,
     "latency": 25334,
     "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-07-31T04:17:36.100Z",
+    "model": "gemini-embedding-2",
+    "provider": "google",
+    "task": "BATCH_EMBEDDING",
+    "promptTokens": 419,
+    "completionTokens": 0,
+    "latency": 517,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-07-31T04:17:38.487Z",
+    "model": "gemma-4-26b-a4b-it",
+    "provider": "groq",
+    "task": "EXTRACT_METADATA",
+    "promptTokens": 428,
+    "completionTokens": 133,
+    "latency": 509,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-07-31T04:17:41.049Z",
+    "model": "gemini-3.1-flash-lite",
+    "provider": "google",
+    "task": "DEEP_ANALYSIS",
+    "promptTokens": 908,
+    "completionTokens": 569,
+    "latency": 2562,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-07-31T04:17:46.758Z",
+    "model": "gemini-3.1-flash-lite",
+    "provider": "google",
+    "task": "MATCH_TIMELINE",
+    "promptTokens": 420,
+    "completionTokens": 68,
+    "latency": 677,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-07-31T04:17:47.380Z",
+    "model": "gemma-4-26b-a4b-it",
+    "provider": "groq",
+    "task": "EXTRACT_METADATA",
+    "promptTokens": 433,
+    "completionTokens": 119,
+    "latency": 355,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-07-31T04:17:52.633Z",
+    "model": "gemini-3.1-flash-lite",
+    "provider": "google",
+    "task": "DEEP_ANALYSIS",
+    "promptTokens": 912,
+    "completionTokens": 569,
+    "latency": 5253,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-07-31T04:17:58.307Z",
+    "model": "gemini-3.1-flash-lite",
+    "provider": "google",
+    "task": "MATCH_TIMELINE",
+    "promptTokens": 710,
+    "completionTokens": 52,
+    "latency": 644,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-07-31T04:18:21.729Z",
+    "model": "gemini-3-flash-preview",
+    "provider": "google",
+    "task": "DAILY_BRIEFING",
+    "promptTokens": 4925,
+    "completionTokens": 661,
+    "latency": 23310,
+    "status": "SUCCESS"
   }
 ]
