@@ -41,10 +41,9 @@ export function openQuickBriefsModal(quickItems, regionLabel) {
     
     const sourcesContainer = document.getElementById('modal-sources');
     if (sourcesContainer) sourcesContainer.style.display = 'none';
-
     const toggleBtn = document.getElementById('toggle-sources-btn');
     if (toggleBtn) toggleBtn.style.display = 'none';
-
+    
     let listHtml = '';
     quickItems.forEach((item, index) => {
         const timeObj = new Date(item.timestamp);
@@ -56,6 +55,22 @@ export function openQuickBriefsModal(quickItems, regionLabel) {
             ? 'margin-bottom: 0; padding-bottom: 0;' 
             : 'margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px dashed var(--md-sys-color-outline);';
 
+        // [THÊM MỚI] - Xử lý Tác động Việt Nam cho từng tin vắn
+        let impactHtml = '';
+        if (item.vn_impact) {
+            const isNoImpact = item.vn_impact.toLowerCase().includes('không tác động trực tiếp') || item.vn_impact.toLowerCase().includes('không ảnh hưởng');
+            const impactColor = isNoImpact ? '#9ca3af' : '#0d9488'; // Xám nếu không tác động, Xanh Teal nếu có
+            const impactIcon = isNoImpact ? 'location_disabled' : 'location_on';
+            const pulseAnimation = isNoImpact ? '' : 'animation: pulseTealMini 2s infinite ease-in-out;';
+            
+            impactHtml = `
+                <div style="font-size: 13px; color: ${impactColor}; margin-top: 8px; font-weight: 500; display: flex; align-items: start; gap: 4px; background: ${isNoImpact ? 'transparent' : 'rgba(13, 148, 136, 0.05)'}; padding: ${isNoImpact ? '0' : '6px 8px'}; border-radius: 4px; border-left: ${isNoImpact ? 'none' : '2px solid #0d9488'};">
+                    <span class="material-icons-round" style="font-size: 16px; ${pulseAnimation}">${impactIcon}</span>
+                    <span style="line-height: 1.4;">${escapeHtml(item.vn_impact)}</span>
+                </div>
+            `;
+        }
+
         listHtml += `
             <div style="${borderStyle}">
                 <div style="font-size: 12px; opacity: 0.7; margin-bottom: 6px;">${timeString} • ${escapeHtml(regionLabelStr)}</div>
@@ -63,6 +78,7 @@ export function openQuickBriefsModal(quickItems, regionLabel) {
                     ${escapeHtml(item.title || item.cluster_title)} <span class="material-icons-round" style="font-size: 14px; vertical-align: middle; color: var(--md-sys-color-primary);">open_in_new</span>
                 </a>
                 <p style="font-size: 14px; opacity: 0.8; margin: 0; line-height: 1.5;">${escapeHtml(item.short_summary)}</p>
+                ${impactHtml}
             </div>
         `;
     });
@@ -70,12 +86,19 @@ export function openQuickBriefsModal(quickItems, regionLabel) {
     const modalBody = document.getElementById('modal-body');
     if (modalBody) {
         modalBody.innerHTML = `
+            <style>
+                @keyframes pulseTealMini {
+                    0% { transform: scale(1); opacity: 1; }
+                    50% { transform: scale(1.15); opacity: 0.8; }
+                    100% { transform: scale(1); opacity: 1; }
+                }
+            </style>
             <div class="intelligence-box" style="background: rgba(15, 118, 110, 0.05); border-left: 4px solid var(--md-sys-color-surface-variant); padding: 16px; border-radius: 8px;">
                 ${listHtml}
             </div>
         `;
     }
-
+    
     const modal = document.getElementById('intelligence-modal');
     if (modal) modal.classList.add('active');
 }
