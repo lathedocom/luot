@@ -17110,5 +17110,413 @@
       "sentiment": -1,
       "scope": "national"
     }
+  },
+  "evt_b50e5795": {
+    "created_at": 1785508510253,
+    "expires_at": 1788100510253,
+    "version": "4.5",
+    "checksum": "ef63a905d4a57bc2f195e5b1e8f71e91",
+    "data": {
+      "cluster_title": "Cơn bão di cư từ Morocco vào Tây Ban Nha",
+      "short_summary": "Hàng chục nghìn người di cư từ Morocco vào Tây Ban Nha, bạo lực bùng phát.",
+      "detailed_summary": "Khoảng 49.000 đến 60.000 người di cư đã vượt biên ồ ạt cả bằng đường bộ và đường biển vào Ceuta, một lãnh thổ hải ngoại của Tây Ban Nha. Sự kiện này gây bạo lực và áp lực lớn, buộc chính phủ Tây Ban Nha phải điều động quân đội để kiểm soát tình hình, vượt qua quy mô của cuộc khủng hoảng di cư tại châu Âu năm 2015.",
+      "causes": [
+        "Sự bất ổn hoặc thiếu kiểm soát tại biên giới Morocco",
+        "Nỗ lực tìm kiếm cơ hội sống tốt hơn tại châu Âu của người di cư"
+      ],
+      "effects": [
+        "Gây mất ổn định an ninh tại Ceuta",
+        "Buộc Tây Ban Nha phải triển khai lực lượng quân sự",
+        "Gia tăng căng thẳng chính trị về vấn đề di cư"
+      ],
+      "affected_groups": [
+        "Người di cư",
+        "Cư dân Ceuta",
+        "Chính phủ Tây Ban Nha"
+      ],
+      "market_impact": "Sự kiện gây bất ổn cục bộ, có khả năng làm gián đoạn các hoạt động thương mại nhỏ lẻ tại khu vực biên giới.",
+      "vn_impact": "Chưa có đánh giá tác động tới Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "diplomacy"
+      ],
+      "regions": [
+        "ES",
+        "MA"
+      ],
+      "significance": "Đây là cuộc khủng hoảng di cư có quy mô kỷ lục đối với Tây Ban Nha, đặt ra thách thức lớn về an ninh biên giới và quan hệ ngoại giao giữa Tây Ban Nha và Morocco.",
+      "unknowns": [
+        "Số liệu chính xác về số lượng người di cư (49.000 hay 60.000)",
+        "Nguyên nhân cụ thể khiến Morocco để xảy ra tình trạng vượt biên ồ ạt cùng lúc"
+      ],
+      "confidence_note": "Thông tin dựa trên báo cáo thực tế từ khu vực, độ tin cậy cao về quy mô sự kiện.",
+      "scenarios": [
+        {
+          "text": "Tây Ban Nha tăng cường an ninh quân sự và trục xuất người di cư để ổn định tình hình.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Xảy ra khủng hoảng ngoại giao kéo dài giữa Tây Ban Nha và Morocco về kiểm soát biên giới.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Người di cư",
+          "target": "Ceuta",
+          "relation_type": "conflict",
+          "label": "Xâm nhập trái phép gây mất ổn định"
+        },
+        {
+          "source": "Tây Ban Nha",
+          "target": "Ceuta",
+          "relation_type": "cooperation",
+          "label": "Triển khai quân đội để bảo vệ chủ quyền"
+        },
+        {
+          "source": "Sự kiện di cư",
+          "target": "Khủng hoảng chính trị",
+          "relation_type": "cause_effect",
+          "label": "Sự kiện gây áp lực lên chính phủ"
+        }
+      ],
+      "entities": [
+        "Morocco",
+        "Tây Ban Nha"
+      ],
+      "keywords": [
+        "di cư",
+        "Morocco",
+        "Tây Ban Nha"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_1e692135": {
+    "created_at": 1785508522603,
+    "expires_at": 1788100522603,
+    "version": "4.5",
+    "checksum": "d0ed44b280e5719a3856df5c21a03bd0",
+    "data": {
+      "cluster_title": "Nga bị tập kích",
+      "short_summary": "Nhiều kho hàng và nhà máy lọc dầu Nga bị tập kích, bốc cháy trong đêm.",
+      "detailed_summary": "Các cuộc tấn công bằng thiết bị bay không người lái (UAV) do Ukraine thực hiện đã nhắm vào trung tâm logistics của Tập đoàn Wildberries và một nhà máy lọc dầu lớn tại thành phố Volgograd, Nga, gây ra các vụ cháy nổ tại hiện trường.",
+      "causes": [
+        "Căng thẳng quân sự giữa Nga và Ukraine",
+        "Chiến lược tập kích hạ tầng hậu cần và năng lượng của Ukraine"
+      ],
+      "effects": [
+        "Gây gián đoạn hoạt động của trung tâm logistics Wildberries",
+        "Ảnh hưởng đến năng lực sản xuất của nhà máy lọc dầu tại Volgograd",
+        "Gia tăng rủi ro an ninh đối với các cơ sở hạ tầng kinh tế trong nội địa Nga"
+      ],
+      "affected_groups": [
+        "Tập đoàn bán lẻ Wildberries",
+        "Ngành năng lượng Nga",
+        "Người tiêu dùng tại khu vực bị ảnh hưởng"
+      ],
+      "market_impact": "Có khả năng gây gián đoạn chuỗi cung ứng bán lẻ và tạo áp lực lên giá cả các sản phẩm năng lượng tại khu vực bị ảnh hưởng.",
+      "vn_impact": "Chưa có đánh giá tác động tới Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "military",
+        "energy"
+      ],
+      "regions": [
+        "RU",
+        "UA"
+      ],
+      "significance": "Sự kiện cho thấy phạm vi tác chiến của Ukraine đang nhắm trực tiếp vào hạ tầng kinh tế và năng lượng sâu trong lãnh thổ Nga nhằm làm suy yếu tiềm lực quốc gia.",
+      "unknowns": [
+        "Quy mô thiệt hại chính xác về vật chất tại các cơ sở",
+        "Số lượng UAV bị bắn hạ hoặc vượt qua hệ thống phòng không"
+      ],
+      "confidence_note": "Thông tin dựa trên các báo cáo sự kiện thực tế, độ tin cậy cao về việc diễn ra các vụ tập kích.",
+      "scenarios": [
+        {
+          "text": "Nga tăng cường hệ thống phòng không quanh các mục tiêu kinh tế trọng điểm.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Ukraine tiếp tục các đợt tập kích tương tự vào các trung tâm hạ tầng khác của Nga.",
+          "likelihood": "cao"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Ukraine",
+          "target": "Nga",
+          "relation_type": "conflict",
+          "label": "Xung đột quân sự trực tiếp"
+        },
+        {
+          "source": "Ukraine",
+          "target": "Nhà máy lọc dầu",
+          "relation_type": "cause_effect",
+          "label": "Mục tiêu bị tấn công"
+        },
+        {
+          "source": "Ukraine",
+          "target": "Wildberries",
+          "relation_type": "cause_effect",
+          "label": "Mục tiêu bị tấn công"
+        }
+      ],
+      "entities": [
+        "Nga",
+        "Ukraine",
+        "Wildberries",
+        "Volgograd"
+      ],
+      "keywords": [
+        "Nga",
+        "Ukraine",
+        "Wildberries",
+        "Volgograd"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_general_1785508532197": {
+    "created_at": 1785508540931,
+    "expires_at": 1788100540931,
+    "version": "4.5",
+    "checksum": "cea7978e0992b4980a09d9635c65c1df",
+    "data": {
+      "cluster_title": "Sự sụt giảm của cổ phiếu Mỹ",
+      "short_summary": "Cổ phiếu Mỹ đã sụt giảm vào thứ Sáu, xóa bỏ lợi nhuận trước đó do Amazon.com Inc. đạt được kết quả kinh doanh ấn tượng.",
+      "detailed_summary": "Sau khi mở đầu phiên giao dịch với đà tăng tích cực nhờ kết quả kinh doanh vượt mong đợi của Amazon (cổ phiếu tăng 14%) và hiệu ứng lan tỏa từ làn sóng đầu tư vào trí tuệ nhân tạo, thị trường chứng khoán Mỹ đã bất ngờ quay đầu giảm điểm vào cuối phiên, xóa sạch những thành quả đạt được trước đó.",
+      "causes": [
+        "Kết quả kinh doanh đột phá của Amazon tạo cú hích tạm thời",
+        "Sự hưng phấn của nhà đầu tư đối với lĩnh vực trí tuệ nhân tạo đẩy giá cổ phiếu tăng sớm",
+        "Đà tăng không duy trì được đến hết phiên giao dịch"
+      ],
+      "effects": [
+        "Thị trường chứng khoán Mỹ đóng cửa trong sắc đỏ",
+        "Triệt tiêu đà tăng đầu phiên của nhiều mã cổ phiếu công nghệ"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư chứng khoán",
+        "Các công ty công nghệ có liên quan đến trí tuệ nhân tạo",
+        "Cổ đông của Amazon"
+      ],
+      "market_impact": "Tâm lý thị trường trở nên mong manh khi các đợt tăng điểm dựa trên kỳ vọng công nghệ chưa đủ sức bền để duy trì đà tăng trong cả phiên.",
+      "vn_impact": "Chưa có đánh giá tác động tới Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "finance",
+        "business"
+      ],
+      "regions": [
+        "US"
+      ],
+      "significance": "Sự kiện phản ánh tính biến động cao của thị trường khi sự hưng phấn từ các ông lớn công nghệ gặp phải áp lực chốt lời hoặc tâm lý thận trọng chung của nhà đầu tư.",
+      "unknowns": [
+        "Nguyên nhân cụ thể khiến thị trường đảo chiều vào cuối phiên",
+        "Tác động kéo dài của xu hướng trí tuệ nhân tạo đối với định giá thị trường trong tuần tới"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên dữ liệu báo cáo thị trường thực tế.",
+      "scenarios": [
+        {
+          "text": "Thị trường tiếp tục biến động giằng co khi nhà đầu tư đánh giá lại kỳ vọng vào các cổ phiếu công nghệ.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Làn sóng đầu tư vào trí tuệ nhân tạo tiếp tục dẫn dắt đà tăng của thị trường trong trung hạn.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Amazon",
+          "target": "Thị trường chứng khoán Mỹ",
+          "relation_type": "cause_effect",
+          "label": "Kết quả kinh doanh của Amazon thúc đẩy giá cổ phiếu tăng đầu phiên"
+        },
+        {
+          "source": "Trí tuệ nhân tạo",
+          "target": "Amazon",
+          "relation_type": "cause_effect",
+          "label": "Kỳ vọng vào trí tuệ nhân tạo tạo động lực tăng trưởng cho công ty"
+        }
+      ],
+      "entities": [
+        "Amazon.com Inc.",
+        "Mỹ"
+      ],
+      "keywords": [
+        "cổ phiếu Mỹ",
+        "Amazon",
+        "trí tuệ nhân tạo"
+      ],
+      "importance": 85,
+      "severity": 2,
+      "sentiment": -1,
+      "scope": "business"
+    }
+  },
+  "evt_b8eff8ae": {
+    "created_at": 1785508555083,
+    "expires_at": 1788100555083,
+    "version": "4.5",
+    "checksum": "c730e498bb758ac457733ea89386043b",
+    "data": {
+      "cluster_title": "Exxon và Chevron giảm nợ",
+      "short_summary": "Exxon và Chevron đã sử dụng thu nhập lớn để giảm nợ thay vì tăng mua lại cổ phiếu.",
+      "detailed_summary": "Hai tập đoàn năng lượng lớn là ExxonMobil và Chevron đã quyết định sử dụng nguồn lợi nhuận cao thu được từ đà tăng giá năng lượng do chiến tranh gây ra để giảm nợ thay vì đẩy mạnh mua lại cổ phiếu. Động thái này cho thấy sự thận trọng của các tập đoàn dầu khí lớn đối với tính bền vững của đà tăng giá hiện tại trên thị trường.",
+      "causes": [
+        "Lợi nhuận tăng đột biến từ biến động giá năng lượng",
+        "Sự thận trọng về thời gian kéo dài của đà tăng giá do chiến tranh"
+      ],
+      "effects": [
+        "Giảm gánh nặng nợ vay của doanh nghiệp",
+        "Duy trì sự ổn định tài chính trước các biến động thị trường trong tương lai"
+      ],
+      "affected_groups": [
+        "Cổ đông của ExxonMobil và Chevron",
+        "Nhà đầu tư thị trường năng lượng"
+      ],
+      "market_impact": "Phản ánh chiến lược phòng thủ và quản trị rủi ro tài chính của ngành dầu khí trong bối cảnh giá cả hàng hóa biến động mạnh.",
+      "vn_impact": "Chưa có đánh giá tác động tới Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "energy"
+      ],
+      "regions": [
+        "US"
+      ],
+      "significance": "Sự kiện cho thấy các ông lớn ngành dầu mỏ đang ưu tiên củng cố bảng cân đối kế toán hơn là các chính sách chi trả cổ tức hay mua lại cổ phiếu rầm rộ, phản ánh dự báo thận trọng về tương lai giá dầu.",
+      "unknowns": [
+        "Thời hạn cụ thể mà các công ty dự báo về việc giá dầu tăng cao",
+        "Mức độ ưu tiên của chiến lược trả nợ so với các khoản đầu tư vào năng lượng mới"
+      ],
+      "confidence_note": "Thông tin dựa trên báo cáo hành động tài chính của các tập đoàn, mức độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Các tập đoàn tiếp tục chính sách trả nợ nếu giá dầu duy trì mức cao nhưng ổn định.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Doanh nghiệp chuyển sang mua lại cổ phiếu nếu áp lực từ cổ đông tăng lên và giá dầu đạt đỉnh bền vững.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Chiến tranh",
+          "target": "ExxonMobil và Chevron",
+          "relation_type": "cause_effect",
+          "label": "Gây ra biến động giá năng lượng đột biến"
+        },
+        {
+          "source": "Lợi nhuận đột biến",
+          "target": "Trả nợ",
+          "relation_type": "cause_effect",
+          "label": "Nguồn lực tài chính cho việc giảm nợ"
+        }
+      ],
+      "entities": [
+        "ExxonMobil Holdings Corp.",
+        "Chevron Corp."
+      ],
+      "keywords": [
+        "Exxon",
+        "Chevron",
+        "giảm nợ",
+        "thu nhập"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_e6f516f4": {
+    "created_at": 1785508567001,
+    "expires_at": 1788100567001,
+    "version": "4.5",
+    "checksum": "8b2215a23941c563a515bac931358cff",
+    "data": {
+      "cluster_title": "Sự kiện than trở lại phổ biến",
+      "short_summary": "Than trở lại phổ biến do cuộc chiến đấu thầu máy móc ở Mỹ cho thấy nhu cầu tăng lên để cung cấp năng lượng cho AI.",
+      "detailed_summary": "Một công ty tiện ích hàng đầu tại Mỹ đã thực hiện các biện pháp quyết liệt để giành quyền kiểm soát một nhà máy điện tại West Virginia thông qua đấu thầu. Đối thủ cạnh tranh trực tiếp trong cuộc chiến này là một nhà phát triển trung tâm dữ liệu, phản ánh xu hướng các đơn vị vận hành hạ tầng công nghệ đang tìm kiếm nguồn cung năng lượng ổn định để phục vụ các hệ thống trí tuệ nhân tạo quy mô lớn.",
+      "causes": [
+        "Sự gia tăng nhu cầu điện năng từ các trung tâm dữ liệu trí tuệ nhân tạo",
+        "Sự khan hiếm nguồn cung năng lượng ổn định cho hạ tầng công nghệ"
+      ],
+      "effects": [
+        "Cuộc cạnh tranh quyền sở hữu tài sản hạ tầng năng lượng trở nên gay gắt",
+        "Sự quan tâm trở lại đối với các nguồn năng lượng hóa thạch truyền thống như than đá"
+      ],
+      "affected_groups": [
+        "Các công ty tiện ích năng lượng",
+        "Các nhà phát triển trung tâm dữ liệu",
+        "Các đơn vị vận hành hạ tầng trí tuệ nhân tạo"
+      ],
+      "market_impact": "Tạo áp lực tăng giá đối với các tài sản hạ tầng năng lượng và thúc đẩy xu hướng tái đầu tư vào các cơ sở phát điện truyền thống.",
+      "vn_impact": "Chưa có đánh giá tác động tới Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "energy",
+        "business"
+      ],
+      "regions": [
+        "US"
+      ],
+      "significance": "Sự kiện cho thấy sự xung đột lợi ích giữa ngành công nghệ cao và ngành năng lượng truyền thống trong bối cảnh cuộc đua trí tuệ nhân tạo đang đẩy nhu cầu điện năng lên mức cao kỷ lục.",
+      "unknowns": [
+        "Giá trị cụ thể của thương vụ đấu thầu nhà máy điện tại West Virginia",
+        "Tác động dài hạn đối với mục tiêu chuyển đổi năng lượng xanh của các doanh nghiệp liên quan"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao, dựa trên diễn biến thực tế của thị trường năng lượng tại Mỹ.",
+      "scenarios": [
+        {
+          "text": "Các trung tâm dữ liệu sẽ tiếp tục tích cực tìm kiếm và thâu tóm các cơ sở phát điện để đảm bảo an ninh năng lượng.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các đơn vị tiện ích sẽ điều chỉnh chiến lược vận hành để ưu tiên nguồn cung điện cho lĩnh vực công nghệ nhằm tối đa hóa lợi nhuận.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Trí tuệ nhân tạo",
+          "target": "Nhu cầu năng lượng",
+          "relation_type": "cause_effect",
+          "label": "Thúc đẩy nhu cầu sử dụng điện năng quy mô lớn"
+        },
+        {
+          "source": "Công ty tiện ích",
+          "target": "Nhà phát triển trung tâm dữ liệu",
+          "relation_type": "conflict",
+          "label": "Cạnh tranh quyền sở hữu nhà máy điện"
+        }
+      ],
+      "entities": [
+        "West Virginia",
+        "Mỹ",
+        "công ty điện lực",
+        "trung tâm dữ liệu"
+      ],
+      "keywords": [
+        "than",
+        "máy móc",
+        "AI",
+        "bidding war"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "business"
+    }
   }
 }
