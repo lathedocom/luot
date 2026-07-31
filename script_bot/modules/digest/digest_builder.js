@@ -145,11 +145,19 @@ function buildSituationIndexData(topics, previousData = {}) {
             layerScores[evt.layer] += evt.score;
         });
 
-        const previousSI = previousData[isoCode] || { layers: { total: 0, security: 0, economy: 0, disaster: 0, health: 0, general: 0 } };
+        // Lấy dữ liệu cũ (nếu có)
+        const previousSI = previousData[isoCode]; 
         const finalLayers = {};
         
         for (let l in layerScores) {
-            finalLayers[l] = (0.3 * layerScores[l]) + (0.7 * (previousSI.layers && previousSI.layers[l] ? previousSI.layers[l] : 0));
+            // NẾU CÓ lịch sử: Áp dụng công thức mượt mà (30% nay + 70% cũ)
+            if (previousSI && previousSI.layers && previousSI.layers[l] !== undefined) {
+                finalLayers[l] = (0.3 * layerScores[l]) + (0.7 * previousSI.layers[l]);
+            } 
+            // NẾU KHÔNG CÓ lịch sử (Chạy ngày đầu tiên): Lấy 100% sức nặng của tin tức hôm nay!
+            else {
+                finalLayers[l] = layerScores[l];
+            }
         }
 
         const volatility = Math.abs(finalLayers.total);
