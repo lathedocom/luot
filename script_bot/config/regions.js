@@ -2,7 +2,8 @@
 module.exports = {
     REGIONS: [
         // --- VIỆT NAM VÀ ĐÔNG NAM Á ---
-        { id: 'VN', name: 'Việt Nam', keywords: ['việt nam', 'hà nội', 'tphcm', 'chính phủ', 'miền trung', 'đồng bằng sông cửu long', 'vietnam'] },
+        { id: 'VN', name: 'Việt Nam', keywords: ['việt nam', 'hà nội', 'tphcm', 'chính phủ', 'miền trung', 'đồng bằng sông cửu long', 'vietnam', 'vietjet', 'vingroup', 'vinfast', 'hòa phát', 'fpt', 'vinamilk', 
+                'vietcombank', 'bidv', 'hdbank', 'vietinbank', 'masan', 'thế giới di động', 'mwg', 'nhnn'] },
         { id: 'PH', name: 'Philippines', keywords: ['philippines', 'manila', 'luzon', 'visayas', 'mindanao', 'phi-líp-pin'] },
         { id: 'TH', name: 'Thái Lan', keywords: ['thái lan', 'bangkok', 'thailand'] },
         { id: 'ID', name: 'Indonesia', keywords: ['indonesia', 'jakarta', 'bali', 'sumatra', 'java'] },
