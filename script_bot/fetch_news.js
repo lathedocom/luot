@@ -159,7 +159,7 @@ Hai sự kiện trên có phải cùng nói về 1 sự việc không? CHỈ TR�
                     logger.warn(`[VERIFY_BY_AI] Lỗi xác minh, xử lý như tin mới: ${e.message}`);
                 }
             }
-            
+            /*
             const PRIORITY_FIELDS = [ 'money', 'economy', 'finance', 'trade', 'investment', 'tech', 'science', 'politics', 'policy', 'law', 'military', 'environment', 'health', 'energy', 'business', 'diplomacy'];
             
             const ruleCategories = extractCategories(cluster.combined_text);
@@ -178,7 +178,7 @@ Hai sự kiện trên có phải cùng nói về 1 sự việc không? CHỈ TR�
             if (ruleImportance < 75) {
                 logger.info(`[RULE-SKIP] Điểm rule thấp (${ruleImportance}), bỏ qua Tầng AI: "${cluster.articles[0].title}"`);
                 continue;
-            }
+            }  */
             // =====================================================================
 // [BỘ LỌC CỨU CÁNH QUOTA - QUOTA SAVER]
 // =====================================================================
