@@ -229,6 +229,7 @@ Hai sự kiện trên có phải cùng nói về 1 sự việc không? CHỈ TR�
                 effects: aiIntelligence.effects,
                 affected_groups: aiIntelligence.affected_groups,
                 market_impact: aiIntelligence.market_impact,
+                vn_impact: aiIntelligence.vn_impact,
                 follow_up: aiIntelligence.follow_up,
                 significance: aiIntelligence.significance,
                 unknowns: aiIntelligence.unknowns,
