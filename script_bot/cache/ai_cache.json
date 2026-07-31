@@ -16493,5 +16493,622 @@
       "sentiment": -1,
       "scope": "national"
     }
+  },
+  "evt_fca05d3b": {
+    "created_at": 1785503787523,
+    "expires_at": 1788095787523,
+    "version": "4.5",
+    "checksum": "ba98840d15dac9c7cce141d8fff9ff35",
+    "data": {
+      "cluster_title": "Nga bị tập kích",
+      "short_summary": "Nhiều kho hàng và nhà máy lọc dầu Nga bị tập kích, bốc cháy trong đêm.",
+      "detailed_summary": "Các cuộc tấn công bằng máy bay không người lái của Ukraine trong đêm đã đánh trúng trung tâm logistics của Tập đoàn Wildberries và một nhà máy lọc dầu lớn tại thành phố Volgograd, Nga. Sự kiện này gây ra hỏa hoạn tại các cơ sở, phản ánh sự leo thang trong xung đột quân sự giữa hai quốc gia.",
+      "causes": [
+        "Xung đột quân sự đang leo thang giữa Ukraine và Nga",
+        "Chiến lược sử dụng thiết bị bay không người lái nhằm vào hậu cần và năng lượng của đối phương"
+      ],
+      "effects": [
+        "Gây thiệt hại vật chất và hỏa hoạn tại các kho hàng, nhà máy lọc dầu",
+        "Làm gián đoạn hoạt động logistics và sản xuất năng lượng tại khu vực bị tấn công"
+      ],
+      "affected_groups": [
+        "Tập đoàn Wildberries",
+        "Ngành năng lượng Nga",
+        "Cư dân địa phương tại vùng bị tập kích"
+      ],
+      "market_impact": "Có khả năng gây bất ổn nguồn cung năng lượng và ảnh hưởng đến chuỗi cung ứng bán lẻ trực tuyến tại Nga.",
+      "follow_up": "",
+      "categories": [
+        "military",
+        "energy"
+      ],
+      "regions": [
+        "RU",
+        "UA"
+      ],
+      "significance": "Đây là minh chứng cho việc mở rộng phạm vi tấn công vào cơ sở hạ tầng kinh tế trọng yếu nhằm gia tăng áp lực lên đối phương trong xung đột.",
+      "unknowns": [
+        "Mức độ thiệt hại chi tiết về tài sản và năng lực sản xuất của các cơ sở bị tấn công",
+        "Số lượng thiết bị bay không người lái tham gia trong vụ tập kích"
+      ],
+      "confidence_note": "Thông tin dựa trên báo cáo từ nguồn tin tức chính thống, mức độ tin cậy cao về diễn biến sự kiện.",
+      "scenarios": [
+        {
+          "text": "Ukraine tiếp tục đẩy mạnh các cuộc tấn công tầm xa vào hạ tầng kinh tế Nga để làm suy yếu tiềm lực hậu phương.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Nga tăng cường hệ thống phòng không bảo vệ các cơ sở năng lượng và logistics quan trọng trước các đợt tập kích tiếp theo.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Ukraine",
+          "target": "Nga",
+          "relation_type": "conflict",
+          "label": "Tấn công bằng thiết bị bay không người lái vào hạ tầng"
+        },
+        {
+          "source": "Xung đột Ukraine-Nga",
+          "target": "Nhà máy lọc dầu Volgograd",
+          "relation_type": "cause_effect",
+          "label": "Dẫn đến hỏa hoạn tại cơ sở năng lượng"
+        },
+        {
+          "source": "Xung đột Ukraine-Nga",
+          "target": "Wildberries",
+          "relation_type": "cause_effect",
+          "label": "Dẫn đến thiệt hại kho hàng logistics"
+        }
+      ],
+      "entities": [
+        "Nga",
+        "Ukraine",
+        "Tập đoàn bán lẻ trực tuyến Wildberries"
+      ],
+      "keywords": [
+        "Nga",
+        "Ukraine",
+        "tập kích",
+        "kho hàng",
+        "nhà máy lọc dầu"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_4d7a5906": {
+    "created_at": 1785503799413,
+    "expires_at": 1788095799413,
+    "version": "4.5",
+    "checksum": "3924381fe03cc78d8cd81a6ff5dfff08",
+    "data": {
+      "cluster_title": "Hamas và Israel đạt được thỏa thuận",
+      "short_summary": "Hamas và Israel đạt được thỏa thuận để Hamas hoàn toàn giải giới và lực lượng Israel rút khỏi Gaza.",
+      "detailed_summary": "Tổng thống Trump thông báo rằng một thỏa thuận đã đạt được, yêu cầu tổ chức Hamas thực hiện giải giáp vũ khí hoàn toàn và lực lượng quân đội Israel rút khỏi Dải Gaza. Trong một diễn biến khác, dữ liệu kinh tế cho thấy nền kinh tế Hoa Kỳ có dấu hiệu tăng trưởng chậm lại nhưng mức chi tiêu tiêu dùng của người dân vẫn được duy trì.",
+      "causes": [
+        "Đàm phán chính trị về xung đột tại Gaza",
+        "Biến động trong chỉ số tăng trưởng kinh tế Hoa Kỳ"
+      ],
+      "effects": [
+        "Tiềm năng chấm dứt xung đột vũ trang tại Gaza",
+        "Duy trì sức mua của người tiêu dùng Mỹ bất chấp tăng trưởng chậm"
+      ],
+      "affected_groups": [
+        "Cư dân Dải Gaza",
+        "Lực lượng Hamas",
+        "Quân đội Israel",
+        "Người tiêu dùng Hoa Kỳ"
+      ],
+      "market_impact": "Thông tin về thỏa thuận hòa bình có thể tạo tâm lý tích cực tạm thời, trong khi dữ liệu kinh tế Mỹ chậm lại yêu cầu các nhà đầu tư cần theo dõi sát sao sức bền của người tiêu dùng.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "economy"
+      ],
+      "regions": [
+        "US",
+        "PS"
+      ],
+      "significance": "Sự kiện phản ánh nỗ lực ngoại giao cấp cao nhằm giải quyết xung đột địa chính trị quan trọng, song song với đó là thách thức ổn định tăng trưởng kinh tế trong nước.",
+      "unknowns": [
+        "Chi tiết cụ thể và lộ trình thực hiện của thỏa thuận giải giáp",
+        "Phản ứng thực tế từ các bên liên quan trực tiếp trong cuộc xung đột"
+      ],
+      "confidence_note": "Thông tin dựa trên tuyên bố trực tiếp từ Tổng thống, cần kiểm chứng thêm qua các bên trung gian và dữ liệu thực tế.",
+      "scenarios": [
+        {
+          "text": "Thỏa thuận được các bên thực thi, dẫn đến việc giảm căng thẳng quân sự tại Trung Đông.",
+          "likelihood": "trung bình"
+        },
+        {
+          "text": "Nền kinh tế Mỹ tiếp tục đà chậm lại gây áp lực lên chi tiêu tiêu dùng trong các tháng tiếp theo.",
+          "likelihood": "cao"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Trump",
+          "target": "Hamas",
+          "relation_type": "cooperation",
+          "label": "Môi giới thỏa thuận giải giáp"
+        },
+        {
+          "source": "Israel",
+          "target": "Hamas",
+          "relation_type": "conflict",
+          "label": "Xung đột quân sự tại Gaza"
+        },
+        {
+          "source": "Kinh tế Mỹ",
+          "target": "Người tiêu dùng Mỹ",
+          "relation_type": "cause_effect",
+          "label": "Tăng trưởng chậm ảnh hưởng hành vi chi tiêu"
+        }
+      ],
+      "entities": [
+        "Hamas",
+        "Israel",
+        "Gaza"
+      ],
+      "keywords": [
+        "Hamas",
+        "Israel",
+        "Thỏa thuận",
+        "Gaza"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_7c293bfb": {
+    "created_at": 1785503811072,
+    "expires_at": 1788095811072,
+    "version": "4.5",
+    "checksum": "5e598bc0c4bf8a99964e401c41cfda8d",
+    "data": {
+      "cluster_title": "Crisis ở Ceuta",
+      "short_summary": "Crisis ở Ceuta đã gây ra cuộc tranh luận về vấn đề di cư, đồng thời làm tăng giá trị của cổ phiếu công nghệ và Kospi.",
+      "detailed_summary": "Chương trình 'The Pulse' thảo luận về hai sự kiện nổi bật: tình trạng bất ổn liên quan đến người di cư tại thành phố Ceuta (Tây Ban Nha) đang gây ra nhiều tranh luận chính trị và xã hội, đồng thời thị trường tài chính ghi nhận diễn biến tích cực với sự tăng giá của cổ phiếu nhóm ngành công nghệ và mức tăng trưởng 18% của chỉ số chứng khoán Kospi (Hàn Quốc).",
+      "causes": [
+        "Dòng người di cư đổ về Ceuta",
+        "Sự lạc quan của nhà đầu tư đối với cổ phiếu công nghệ"
+      ],
+      "effects": [
+        "Gây tranh luận chính trị tại Tây Ban Nha",
+        "Thúc đẩy tâm lý tích cực trên thị trường chứng khoán Hàn Quốc"
+      ],
+      "affected_groups": [
+        "Cư dân Ceuta",
+        "Nhà đầu tư tài chính",
+        "Cơ quan chính phủ Tây Ban Nha"
+      ],
+      "market_impact": "Thị trường chứng khoán thể hiện sự tăng trưởng mạnh mẽ, đặc biệt là nhóm cổ phiếu công nghệ và chỉ số Kospi.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "finance"
+      ],
+      "regions": [
+        "ES",
+        "KR"
+      ],
+      "significance": "Sự kiện phản ánh sự phân cực giữa các vấn đề xã hội phức tạp tại châu Âu và đà phục hồi hoặc tăng trưởng nóng của thị trường tài chính châu Á.",
+      "unknowns": [
+        "Nguyên nhân cụ thể dẫn đến mức tăng 18% của Kospi",
+        "Diễn biến tiếp theo của chính sách kiểm soát người di cư tại Ceuta"
+      ],
+      "confidence_note": "Thông tin dựa trên bản tin tổng hợp, độ tin cậy cao về các sự kiện đang diễn ra.",
+      "scenarios": [
+        {
+          "text": "Tây Ban Nha tăng cường biện pháp an ninh biên giới tại Ceuta để giải quyết khủng hoảng.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Thị trường chứng khoán Hàn Quốc điều chỉnh sau đợt tăng mạnh đột biến.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Người di cư",
+          "target": "Ceuta",
+          "relation_type": "cause_effect",
+          "label": "Gây áp lực an ninh và tranh luận chính trị"
+        },
+        {
+          "source": "Cổ phiếu công nghệ",
+          "target": "Kospi",
+          "relation_type": "cause_effect",
+          "label": "Thúc đẩy tăng trưởng chỉ số thị trường"
+        }
+      ],
+      "entities": [
+        "Ceuta",
+        "Kospi"
+      ],
+      "keywords": [
+        "Ceuta",
+        "Migrant",
+        "Crisis",
+        "Tech Stocks",
+        "Kospi"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_4a01a20f": {
+    "created_at": 1785503823664,
+    "expires_at": 1788095823664,
+    "version": "4.5",
+    "checksum": "155538304d45cbbb514a2d43d5a89e85",
+    "data": {
+      "cluster_title": "Sự kiện hồi phục chip và kết quả Amazon",
+      "short_summary": "Sự kiện hồi phục chip và kết quả Amazon đã giúp cổ phiếu tăng lên. Ngân hàng Nhật Bản giữ nguyên lãi suất sau khi can thiệp vào thị trường tiền tệ.",
+      "detailed_summary": "Thị trường chứng khoán Mỹ dự kiến mở cửa tích cực nhờ sự phục hồi cổ phiếu của các công ty sản xuất chip như Samsung và SK Hynix, kết hợp với báo cáo tài chính khả quan của Amazon. Tại Nhật Bản, Ngân hàng Trung ương giữ nguyên lãi suất chính sách sau khi thực hiện can thiệp tiền tệ, giúp đồng Yen tăng giá so với đồng USD.",
+      "causes": [
+        "Sự phục hồi giá cổ phiếu của các nhà sản xuất chip",
+        "Kết quả kinh doanh khả quan của Amazon",
+        "Chính sách giữ nguyên lãi suất của Ngân hàng Trung ương Nhật Bản"
+      ],
+      "effects": [
+        "Tương lai thị trường chứng khoán Mỹ tăng điểm",
+        "Đồng Yen tăng giá so với đồng USD"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư chứng khoán",
+        "Các doanh nghiệp công nghệ",
+        "Thị trường ngoại hối"
+      ],
+      "market_impact": "Tác động tích cực đến tâm lý nhà đầu tư chứng khoán toàn cầu và tạo sự biến động trong tỷ giá hối đoái USD/JPY.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "finance"
+      ],
+      "regions": [
+        "US",
+        "JP"
+      ],
+      "significance": "Sự phục hồi của nhóm ngành bán dẫn và kết quả kinh doanh của các tập đoàn lớn đang đóng vai trò trụ cột trong việc duy trì đà tăng của chỉ số thị trường.",
+      "unknowns": [
+        "Tác động dài hạn của việc can thiệp tiền tệ tại Nhật Bản đối với xuất khẩu",
+        "Mức độ duy trì đà tăng của cổ phiếu ngành chip trong các phiên tới"
+      ],
+      "confidence_note": "Thông tin dựa trên dữ liệu báo cáo tài chính và dữ liệu thị trường thực tế, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Thị trường chứng khoán tiếp tục đà tăng nhờ tâm lý lạc quan từ các báo cáo thu nhập doanh nghiệp.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Đồng Yen biến động mạnh gây áp lực lên chiến lược đầu tư xuyên biên giới nếu Ngân hàng Trung ương Nhật Bản thay đổi thông điệp.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Samsung và SK Hynix",
+          "target": "Thị trường chứng khoán Mỹ",
+          "relation_type": "cause_effect",
+          "label": "Đà phục hồi cổ phiếu thúc đẩy tăng trưởng thị trường"
+        },
+        {
+          "source": "Amazon",
+          "target": "Thị trường chứng khoán Mỹ",
+          "relation_type": "cause_effect",
+          "label": "Kết quả kinh doanh tốt củng cố đà tăng điểm"
+        },
+        {
+          "source": "Ngân hàng Trung ương Nhật Bản",
+          "target": "Đồng Yen",
+          "relation_type": "cause_effect",
+          "label": "Can thiệp tiền tệ làm tăng giá trị đồng tiền"
+        }
+      ],
+      "entities": [
+        "Samsung",
+        "SK Hynix",
+        "Amazon",
+        "Bank of Japan"
+      ],
+      "keywords": [
+        "Chip",
+        "Amazon",
+        "Sự kiện kinh tế"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_c14d3a5d": {
+    "created_at": 1785503835889,
+    "expires_at": 1788095835889,
+    "version": "4.5",
+    "checksum": "717ca7965c7d77f139523a25ef98a3a7",
+    "data": {
+      "cluster_title": "ExxonMobil và Chevron giảm nợ",
+      "short_summary": "ExxonMobil và Chevron đã sử dụng thu nhập lớn để giảm nợ thay vì tăng mua lại cổ phiếu.",
+      "detailed_summary": "Hai tập đoàn năng lượng lớn là ExxonMobil và Chevron đã sử dụng nguồn lợi nhuận cao nhờ giá nhiên liệu tăng do chiến tranh để tập trung vào việc giảm nợ. Động thái này phản ánh chiến lược quản lý thận trọng của các doanh nghiệp dầu mỏ trước những biến động khó lường của thị trường năng lượng toàn cầu.",
+      "causes": [
+        "Lợi nhuận kinh doanh tăng đột biến từ giá dầu",
+        "Sự thận trọng về tính bền vững của đợt tăng giá dầu do chiến tranh"
+      ],
+      "effects": [
+        "Áp lực nợ vay của các tập đoàn giảm xuống",
+        "Giảm thiểu việc chi tiêu mạnh tay cho các chương trình mua lại cổ phiếu"
+      ],
+      "affected_groups": [
+        "Cổ đông của ExxonMobil và Chevron",
+        "Các nhà đầu tư trong ngành năng lượng"
+      ],
+      "market_impact": "Thể hiện tâm lý thận trọng của các tập đoàn năng lượng lớn, có khả năng làm giảm kỳ vọng của nhà đầu tư về cổ tức hoặc mua lại cổ phiếu trong ngắn hạn.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "energy"
+      ],
+      "regions": [
+        "US"
+      ],
+      "significance": "Các doanh nghiệp dầu khí lớn đang đặt sự an toàn tài chính dài hạn lên trên lợi ích ngắn hạn cho cổ đông do lo ngại về biến động giá năng lượng do chiến tranh.",
+      "unknowns": [
+        "Thời hạn cụ thể của chiến lược giảm nợ",
+        "Phản ứng chi tiết của các cổ đông trước quyết định hạn chế mua lại cổ phiếu"
+      ],
+      "confidence_note": "Thông tin dựa trên báo cáo hành động tài chính thực tế của doanh nghiệp, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Các tập đoàn tiếp tục duy trì chính sách giảm nợ nếu giá dầu vẫn biến động mạnh.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các tập đoàn thay đổi chính sách mua lại cổ phiếu nếu giá dầu ổn định ở mức cao trong thời gian dài.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Chiến tranh",
+          "target": "ExxonMobil",
+          "relation_type": "cause_effect",
+          "label": "Gây tăng giá dầu dẫn đến tăng lợi nhuận cho doanh nghiệp"
+        },
+        {
+          "source": "Chiến tranh",
+          "target": "Chevron",
+          "relation_type": "cause_effect",
+          "label": "Gây tăng giá dầu dẫn đến tăng lợi nhuận cho doanh nghiệp"
+        },
+        {
+          "source": "ExxonMobil",
+          "target": "Khoản nợ",
+          "relation_type": "cause_effect",
+          "label": "Ưu tiên dùng lợi nhuận để giảm nợ"
+        },
+        {
+          "source": "Chevron",
+          "target": "Khoản nợ",
+          "relation_type": "cause_effect",
+          "label": "Ưu tiên dùng lợi nhuận để giảm nợ"
+        }
+      ],
+      "entities": [
+        "ExxonMobil Holdings Corp.",
+        "Chevron Corp."
+      ],
+      "keywords": [
+        "ExxonMobil",
+        "Chevron",
+        "giảm nợ",
+        "thu nhập"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_adf85056": {
+    "created_at": 1785503842046,
+    "expires_at": 1788095842046,
+    "version": "4.5",
+    "checksum": "53ff8440598d6a64af1ef4ffb33115c9",
+    "data": {
+      "cluster_title": "Cựu tỷ phú vũ khí Séc tăng cường sở hữu",
+      "short_summary": "Tỷ phú vũ khí Séc Michal Strnad tăng cường sở hữu Pirelli bằng cách mua cổ phần.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "follow_up": "",
+      "entities": [
+        "Czech Arms Tycoon",
+        "Pirelli",
+        "Michal Strnad"
+      ],
+      "keywords": [
+        "Czech Arms Tycoon",
+        "Pirelli",
+        "Michal Strnad"
+      ],
+      "importance": 85,
+      "scope": "business"
+    }
+  },
+  "evt_4334dca9": {
+    "created_at": 1785503853893,
+    "expires_at": 1788095853893,
+    "version": "4.5",
+    "checksum": "97ad48952a4583ffa2bec8ce39ebc52d",
+    "data": {
+      "cluster_title": "Không sử dụng Hầm khí chiến lược để giảm giá xăng dầu trong giai đoạn mới của cuộc chiến",
+      "short_summary": "Giá xăng dầu đang tăng nhưng Hầm khí chiến lược không thể giúp giảm giá trong giai đoạn mới của cuộc khủng hoảng Hormuz.",
+      "detailed_summary": "Trong bối cảnh giá nhiên liệu đang có xu hướng tăng do những bất ổn mới tại khu vực eo biển Hormuz, chính phủ Hoa Kỳ đã khẳng định sẽ không can thiệp bằng cách giải phóng Kho Dự trữ Dầu mỏ Chiến lược (SPR) nhằm mục đích kiểm soát giá.",
+      "causes": [
+        "Giá nhiên liệu toàn cầu tăng cao",
+        "Sự leo thang trong khủng hoảng tại eo biển Hormuz"
+      ],
+      "effects": [
+        "Áp lực lên giá năng lượng tiếp tục duy trì",
+        "Thị trường thiếu sự can thiệp trực tiếp từ kho dự trữ chính phủ"
+      ],
+      "affected_groups": [
+        "Người tiêu dùng năng lượng",
+        "Các doanh nghiệp vận tải",
+        "Thị trường dầu mỏ quốc tế"
+      ],
+      "market_impact": "Giá dầu có khả năng duy trì ở mức cao hoặc tiếp tục biến động do thị trường không nhận được nguồn cung bổ sung từ dự trữ chiến lược của Mỹ.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "energy"
+      ],
+      "regions": [
+        "US"
+      ],
+      "significance": "Sự kiện phản ánh chiến lược thận trọng của Mỹ trong việc duy trì dự trữ dầu mỏ dự phòng thay vì sử dụng như một công cụ bình ổn giá ngắn hạn trước những biến động địa chính trị phức tạp.",
+      "unknowns": [
+        "Mức độ leo thang thực sự của khủng hoảng tại eo biển Hormuz",
+        "Phản ứng của các quốc gia sản xuất dầu mỏ khác trước quyết định của Mỹ"
+      ],
+      "confidence_note": "Thông tin dựa trên tuyên bố chính sách của Mỹ, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Giá dầu tiếp tục tăng nếu tình hình an ninh tại eo biển Hormuz trở nên tồi tệ hơn.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Chính phủ Mỹ thay đổi quan điểm và giải phóng dầu dự trữ nếu giá nhiên liệu gây ra suy thoái kinh tế trầm trọng.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Khủng hoảng eo biển Hormuz",
+          "target": "Giá nhiên liệu",
+          "relation_type": "cause_effect",
+          "label": "Tác động tiêu cực gây tăng giá"
+        },
+        {
+          "source": "Chính phủ Hoa Kỳ",
+          "target": "Kho dự trữ dầu mỏ chiến lược",
+          "relation_type": "neutral",
+          "label": "Quản lý và sử dụng dự trữ quốc gia"
+        }
+      ],
+      "entities": [
+        "Mỹ",
+        "Hầm khí chiến lược",
+        "Hormuz"
+      ],
+      "keywords": [
+        "xăng dầu",
+        "Hầm khí chiến lược",
+        "Hormuz"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_2981e7fb": {
+    "created_at": 1785503865751,
+    "expires_at": 1788095865751,
+    "version": "4.5",
+    "checksum": "62be9460a5b2ec32a29181a15f520cd4",
+    "data": {
+      "cluster_title": "Thủ tướng Ba Lan dự đoán xung đột Ukraine có thể kết thúc trong 100 ngày",
+      "short_summary": "Thủ tướng Ba Lan dự đoán xung đột Ukraine có thể kết thúc trong 100 ngày, khuyến khích các đồng minh tăng cường hỗ trợ cho Kiev.",
+      "detailed_summary": "Thủ tướng Ba Lan Donald Tusk đưa ra cảnh báo về tầm quan trọng của giai đoạn 100 ngày sắp tới trong cuộc xung đột tại Ukraine. Ông nhấn mạnh đây là thời điểm then chốt có khả năng định hình kết cục của chiến sự, đồng thời kêu gọi cộng đồng quốc tế duy trì và tăng cường hỗ trợ cho Kiev để ứng phó với tình hình hiện tại.",
+      "causes": [
+        "Tình hình chiến trường diễn biến phức tạp",
+        "Nhu cầu viện trợ quân sự và tài chính cấp bách của Ukraine"
+      ],
+      "effects": [
+        "Gia tăng áp lực lên các đồng minh phương Tây trong việc hỗ trợ Ukraine",
+        "Tăng cường nhận thức về tính cấp bách của xung đột"
+      ],
+      "affected_groups": [
+        "Chính phủ Ukraine",
+        "Các quốc gia phương Tây đồng minh",
+        "Người dân tại vùng chiến sự"
+      ],
+      "market_impact": "Có thể gây biến động tâm lý trên thị trường tài chính quốc tế do lo ngại về sự bất ổn địa chính trị kéo dài.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "military"
+      ],
+      "regions": [
+        "PL",
+        "UA",
+        "RU"
+      ],
+      "significance": "Sự kiện phản ánh quan điểm chính trị cấp cao về tính chất bước ngoặt của giai đoạn hiện tại trong cuộc xung đột, ảnh hưởng trực tiếp đến chính sách viện trợ của các quốc gia phương Tây.",
+      "unknowns": [
+        "Căn cứ cụ thể đằng sau nhận định về mốc thời gian 100 ngày",
+        "Phản ứng cụ thể từ các đồng minh phương Tây sau lời kêu gọi"
+      ],
+      "confidence_note": "Thông tin dựa trên tuyên bố trực tiếp từ nguyên thủ quốc gia, độ tin cậy cao về nguồn tin nhưng mang tính chất dự báo chính trị.",
+      "scenarios": [
+        {
+          "text": "Các đồng minh phương Tây đẩy mạnh gói viện trợ mới cho Ukraine trong ngắn hạn.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Xung đột tiếp tục duy trì trạng thái tiêu hao mà chưa có đột phá quyết định sau 100 ngày.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Donald Tusk",
+          "target": "Ukraine",
+          "relation_type": "cooperation",
+          "label": "Ủng hộ và kêu gọi viện trợ"
+        },
+        {
+          "source": "Nga",
+          "target": "Ukraine",
+          "relation_type": "conflict",
+          "label": "Đang trong tình trạng xung đột vũ trang"
+        },
+        {
+          "source": "Giai đoạn 100 ngày tới",
+          "target": "Kết cục xung đột",
+          "relation_type": "cause_effect",
+          "label": "Nhân tố mang tính quyết định"
+        }
+      ],
+      "entities": [
+        "Thủ tướng Donald Tusk",
+        "Ukraine",
+        "Nga",
+        "Ba Lan"
+      ],
+      "keywords": [
+        "Ukraine",
+        "Nga",
+        "Ba Lan",
+        "Kiev"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
   }
 }
