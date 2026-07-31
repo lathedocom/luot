@@ -67,6 +67,7 @@ LỆNH TUYỆT ĐỐI: CHỈ TRẢ VỀ JSON VỚI CÁC TRƯỜNG SAU:
                 effects: Array.isArray(geminiResult.effects) ? geminiResult.effects : [],
                 affected_groups: Array.isArray(geminiResult.affected_groups) ? geminiResult.affected_groups : [],
                 market_impact: geminiResult.market_impact || "",
+                vn_impact: geminiResult.vn_impact || "Chưa có đánh giá tác động tới Việt Nam.",
                 follow_up: geminiResult.follow_up || "",
 
                 categories: Array.isArray(geminiResult.categories) ? geminiResult.categories : [],
@@ -114,6 +115,7 @@ LỆNH TUYỆT ĐỐI: CHỈ TRẢ VỀ JSON VỚI CÁC TRƯỜNG SAU:
             effects: ["Đang phân tích chuỗi hệ quả"],
             affected_groups: ["Cộng đồng người dùng hệ thống"],
             market_impact: "Đang theo dõi biến động thị trường.",
+            vn_impact: "Không thể đánh giá tác động do lỗi AI.",
             follow_up: "Chờ cập nhật tình tiết mới từ các báo.",
             scope: "business",
             importance: 50
