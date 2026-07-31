@@ -43,15 +43,20 @@ function initMap(mapContainer) {
         return '#22c55e'; 
     };
 
-    // =========================================================
+   // =========================================================
     // ĐỌC DỮ LIỆU ĐÃ TÍNH SẴN TỪ BACKEND
     // =========================================================
     for (const [isoCode, data] of Object.entries(savedRiskData)) {
         let layerScore = 0;
         
-        // Trích xuất điểm theo lớp chuyên mục (Layers) mà Backend cung cấp
-        if (data.layers && data.layers[currentMapLayer] !== undefined) {
-            layerScore = data.layers[currentMapLayer];
+        // Sửa lỗi lệch pha tên chuyên mục giữa HTML và Backend
+        let backendLayer = currentMapLayer;
+        if (currentMapLayer === 'military') backendLayer = 'security';
+        if (currentMapLayer === 'environment') backendLayer = 'disaster';
+
+        // Trích xuất điểm theo lớp
+        if (data.layers && data.layers[backendLayer] !== undefined) {
+            layerScore = data.layers[backendLayer];
         } else if (currentMapLayer === 'total') {
             layerScore = data.si_score || 0;
         }
