@@ -1,14 +1,14 @@
 // FILE: assets/js/ui-map.js
 
-import { getGlobalNewsData } from './api.js';
-
 let mapInstance = null;
+let savedRiskData = null;
 let currentMapLayer = 'total';
 
-// Bỏ qua tham số riskMapData cũ từ Backend, chúng ta sẽ tự lấy dữ liệu
-export function renderRiskMap() {
+// Hàm này được gọi từ file chính (ví dụ ui-news.js) truyền dữ liệu db.risk_map vào
+export function renderRiskMap(riskMapData) {
+    savedRiskData = riskMapData;
     const mapContainer = document.getElementById('global-risk-map');
-    if (!mapContainer) return;
+    if (!mapContainer || !savedRiskData) return;
 
     const resizeObserver = new ResizeObserver(() => {
         if (mapContainer.offsetWidth > 0) {
@@ -26,30 +26,6 @@ export function renderRiskMap() {
 function initMap(mapContainer) {
     mapContainer.innerHTML = '';
     const regionValues = {};
-    
-    // 1. ÁNH XẠ CHUYÊN MỤC 
-    const LAYER_MAPPING = {
-        'security': ['politics', 'military', 'diplomacy'],
-        'military': ['politics', 'military', 'diplomacy'],
-        'economy': ['economy', 'finance', 'business', 'tech'],
-        'disaster': ['environment'], 
-        'environment': ['environment'], 
-        'health': ['health']
-    };
-
-    // 2. ÁNH XẠ KHU VỰC CŨ -> MÃ ISO (Dự phòng cho các tin cũ chưa dùng ISO)
-    const REGION_TO_ISO = {
-        'vietnam': ['VN'], 'usa': ['US'], 'canada': ['CA'], 'china': ['CN'],
-        'russia_ukraine': ['RU', 'UA'], 
-        'eu': ['FR', 'DE', 'IT', 'ES', 'PL', 'SE', 'NL', 'BE', 'AT', 'FI'], 
-        'asean': ['TH', 'ID', 'MY', 'SG', 'PH', 'KH', 'LA', 'MM', 'BN'],
-        'asia': ['JP', 'KR', 'IN', 'PK', 'BD', 'TW'],
-        'middle_east': ['IL', 'IR', 'PS', 'SY', 'LB', 'SA', 'AE', 'QA', 'IQ', 'YE'],
-        'oceania': ['AU', 'NZ'],
-        'latin_america': ['BR', 'AR', 'MX', 'VE', 'CO', 'CL', 'PE'],
-        'africa': ['ZA', 'EG', 'NG', 'KE', 'GH', 'ET'],
-        'global': [] 
-    };
 
     const getScaleKey = (score) => {
         const volatility = Math.abs(score);
@@ -68,77 +44,27 @@ function initMap(mapContainer) {
     };
 
     // =========================================================
-    // LẤY DỮ LIỆU TRỰC TIẾP TỪ TIN TỨC GỐC (BỎ QUA BACKEND)
+    // ĐỌC DỮ LIỆU ĐÃ TÍNH SẴN TỪ BACKEND
     // =========================================================
-    const allNews = getGlobalNewsData();
-    const processedIsoData = {};
-
-    allNews.forEach(evt => {
-        let regions = evt.regions || [];
-        
-        // Bỏ qua nếu là sự kiện Toàn cầu không rõ nước nào
-        if (regions.includes('GLOBAL') || regions.includes('global')) return;
-
-        regions.forEach(r => {
-            let iso = r.toUpperCase();
-            
-            // Xử lý nếu gặp tên khu vực kiểu cũ (vietnam, usa...)
-            if (REGION_TO_ISO[r.toLowerCase()]) {
-                let mappedIsos = REGION_TO_ISO[r.toLowerCase()];
-                mappedIsos.forEach(mappedIso => {
-                    if (!processedIsoData[mappedIso]) processedIsoData[mappedIso] = { events: [], filtered_score: 0 };
-                    // Chống lặp sự kiện
-                    if (!processedIsoData[mappedIso].events.some(e => e.event_key === evt.event_key)) {
-                        processedIsoData[mappedIso].events.push(evt);
-                    }
-                });
-                return; 
-            }
-
-            // Xử lý mã ISO 2 chữ cái chuẩn từ AI
-            if (iso.length === 2) {
-                if (!processedIsoData[iso]) processedIsoData[iso] = { events: [], filtered_score: 0 };
-                // Chống lặp sự kiện
-                if (!processedIsoData[iso].events.some(e => e.event_key === evt.event_key)) {
-                    processedIsoData[iso].events.push(evt);
-                }
-            }
-        });
-    });
-
-    // =========================================================
-    // TỰ ĐỘNG TÍNH TOÁN ĐIỂM SỐ (SCORE) VÀ BÔI MÀU
-    // =========================================================
-    for (const iso in processedIsoData) {
+    for (const [isoCode, data] of Object.entries(savedRiskData)) {
         let layerScore = 0;
-        const targetCategories = LAYER_MAPPING[currentMapLayer] || [];
+        
+        // Trích xuất điểm theo lớp chuyên mục (Layers) mà Backend cung cấp
+        if (data.layers && data.layers[currentMapLayer] !== undefined) {
+            layerScore = data.layers[currentMapLayer];
+        } else if (currentMapLayer === 'total') {
+            layerScore = data.si_score || 0;
+        }
 
-        processedIsoData[iso].events.forEach(evt => {
-            // Lọc sự kiện theo Lớp (Layer) đang chọn trên bản đồ
-            const isMatch = (currentMapLayer === 'total') || (evt.categories && evt.categories.some(c => targetCategories.includes(c)));
-            
-            if (isMatch) {
-                let eventScore = evt.score;
-                // Nếu Backend quên tính điểm, Frontend sẽ tự tính
-                if (eventScore === undefined || isNaN(eventScore)) {
-                    let base = evt.value_score ? (evt.value_score / 10) : (evt.severity ? evt.severity * 2 : 5);
-                    let sens = evt.sentiment !== undefined ? evt.sentiment : -1;
-                    if (sens === 0) sens = 1;
-                    eventScore = base * sens;
-                }
-                layerScore += eventScore;
-            }
-        });
-
-        processedIsoData[iso].filtered_score = layerScore;
-
-        // Bôi màu khu vực nếu điểm khác 0
-        if (layerScore !== 0) {
-            regionValues[iso] = getScaleKey(layerScore);
+        // Chỉ tô màu những khu vực có biến động
+        if (Math.abs(layerScore) > 0.1) {
+            regionValues[isoCode] = getScaleKey(layerScore);
         }
     }
 
-    // KHỞI TẠO BẢN ĐỒ
+    // =========================================================
+    // KHỞI TẠO BẢN ĐỒ BẰNG JSVECTORMAP
+    // =========================================================
     mapInstance = new jsVectorMap({
         selector: '#global-risk-map',
         map: 'world',
@@ -166,15 +92,22 @@ function initMap(mapContainer) {
         },
         
         onRegionTooltipShow(event, tooltip, code) {
-            const countryData = processedIsoData[code];
+            const countryData = savedRiskData[code];
             const translator = new Intl.DisplayNames(['vi'], { type: 'region' });
             let viName = tooltip.text();
             try { viName = translator.of(code) || tooltip.text(); } catch (e) {}
 
-            if (countryData && countryData.filtered_score !== 0) {
-                const displayScore = countryData.filtered_score;
+            let layerScore = 0;
+            if (countryData && countryData.layers) {
+                layerScore = countryData.layers[currentMapLayer] || 0;
+                if (currentMapLayer === 'total') layerScore = countryData.si_score || 0;
+            }
+
+            if (countryData && Math.abs(layerScore) > 0.1) {
+                const displayScore = layerScore;
                 const statusColor = getColorByScore(displayScore);
                 const vol = Math.abs(displayScore);
+                
                 let statusText = 'Ổn định';
                 if (vol > 8) statusText = 'Diễn biến nghiêm trọng';
                 else if (vol > 5) statusText = 'Diễn biến phức tạp';
@@ -184,97 +117,95 @@ function initMap(mapContainer) {
                     `<div style="padding: 4px;">
                         <div style="font-weight: bold; margin-bottom: 4px; font-size: 14px;">${viName}</div>
                         <div style="font-size: 12px; margin-bottom: 4px;">Trạng thái: <span style="color:${statusColor}">${statusText}</span></div>
-                        <div style="font-size: 12px; margin-bottom: 2px;">Chỉ số biến động (SI): <span style="font-weight:bold; color:${statusColor}">${Math.abs(displayScore).toFixed(1)}</span></div>
-                        <div style="font-size: 11px; color: #a1a1aa; margin-top: 6px; font-style: italic;">Nhấn để xem các sự kiện tác động</div>
+                        <div style="font-size: 12px; margin-bottom: 2px;">Chỉ số rủi ro (SI): <span style="font-weight:bold; color:${statusColor}">${Math.abs(displayScore).toFixed(1)}</span></div>
+                        <div style="font-size: 11px; color: #a1a1aa; margin-top: 6px; font-style: italic;">Nhấn để xem chi tiết sự kiện</div>
                     </div>`,
                     true
                 );
             } else {
-                tooltip.text(`<div style="padding: 4px;">${viName} <br><span style="font-size: 11px; opacity: 0.7;">(Không có sự kiện nổi bật cho lớp này)</span></div>`, true);
+                tooltip.text(`<div style="padding: 4px;">${viName} <br><span style="font-size: 11px; opacity: 0.7;">(Không có sự kiện nổi bật)</span></div>`, true);
             }
         },
 
         onRegionClick(event, code) {
-            const countryData = processedIsoData[code];
+            const countryData = savedRiskData[code];
+            if (!countryData || !countryData.events || countryData.events.length === 0) return;
+
+            const modalTitle = document.getElementById('modal-title');
+            const modalBody = document.getElementById('modal-body');
             
-            if (countryData && countryData.events && countryData.events.length > 0) {
-                let displayEvents = countryData.events;
-                if (currentMapLayer !== 'total') {
-                    const targetCats = LAYER_MAPPING[currentMapLayer] || [];
-                    displayEvents = displayEvents.filter(evt => evt.categories && evt.categories.some(c => targetCats.includes(c)));
+            let layerScore = countryData.layers ? (countryData.layers[currentMapLayer] || 0) : (countryData.si_score || 0);
+            if (currentMapLayer === 'total') layerScore = countryData.si_score || 0;
+
+            const displayScore = layerScore;
+            const statusColor = getColorByScore(displayScore);
+            
+            // Xóa rác dữ liệu từ các lần mở Modal khác
+            const elRel = document.getElementById('modal-reliability');
+            const elMiniTl = document.getElementById('modal-mini-timeline');
+            const elToggleSrc = document.getElementById('toggle-sources-btn');
+            const elSources = document.getElementById('modal-sources');
+            if (elRel) elRel.innerHTML = '';
+            if (elMiniTl) elMiniTl.style.display = 'none';
+            if (elToggleSrc) elToggleSrc.style.display = 'none';
+            if (elSources) elSources.style.display = 'none';
+            
+            const translator = new Intl.DisplayNames(['vi'], { type: 'region' });
+            let viName = code;
+            try { viName = translator.of(code) || code; } catch (e) {}
+
+            if(modalTitle) modalTitle.innerHTML = `Tình hình khu vực: <span style="color:${statusColor}">${viName}</span>`;
+            
+            let posHtml = '', negHtml = '';
+            
+            // Lặp qua các sự kiện đã được Backend lọc sẵn
+            countryData.events.forEach(evt => {
+                let absScore = Math.abs(evt.score);
+                if (evt.sentiment > 0) {
+                    posHtml += `<li style="margin-bottom: 6px; color: #10b981;"><strong>${evt.title}</strong> <span style="opacity: 0.7; font-size: 12px;">(SI: ${absScore.toFixed(1)})</span></li>`;
+                } else {
+                    negHtml += `<li style="margin-bottom: 6px; color: #ef4444;"><strong>${evt.title}</strong> <span style="opacity: 0.7; font-size: 12px;">(SI: ${absScore.toFixed(1)})</span></li>`;
                 }
+            });
+            
+            let contentHtml = '';
+            if (negHtml) contentHtml += `<div style="background: rgba(239, 68, 68, 0.05); padding: 12px; border-radius: 8px; margin-bottom: 12px; border-left: 3px solid #ef4444;"><h4 style="margin:0 0 8px; color:#ef4444; font-size: 14px;">🔴 Căng thẳng / Bất ổn</h4><ul style="margin:0; padding-left:16px; font-size:14px;">${negHtml}</ul></div>`;
+            if (posHtml) contentHtml += `<div style="background: rgba(16, 185, 129, 0.05); padding: 12px; border-radius: 8px; margin-bottom: 12px; border-left: 3px solid #10b981;"><h4 style="margin:0 0 8px; color:#10b981; font-size: 14px;">🟢 Cải thiện / Ổn định</h4><ul style="margin:0; padding-left:16px; font-size:14px;">${posHtml}</ul></div>`;
 
-                if (displayEvents.length === 0) return; 
-
-                const modalTitle = document.getElementById('modal-title');
-                const modalBody = document.getElementById('modal-body');
-                
-                const displayScore = countryData.filtered_score;
-                const statusColor = getColorByScore(displayScore);
-                
-                document.getElementById('modal-reliability').innerHTML = '';
-                document.getElementById('modal-mini-timeline').style.display = 'none';
-                document.getElementById('toggle-sources-btn').style.display = 'none';
-                document.getElementById('modal-sources').style.display = 'none';
-                
-                const translator = new Intl.DisplayNames(['vi'], { type: 'region' });
-                let viName = code;
-                try { viName = translator.of(code) || code; } catch (e) {}
-
-                modalTitle.innerHTML = `Tình hình khu vực: <span style="color:${statusColor}">${viName}</span>`;
-                
-                let posHtml = '', negHtml = '';
-                displayEvents.forEach(evt => {
-                    let absScore = Math.abs(evt.score);
-                    if (isNaN(absScore) || absScore === 0) {
-                        absScore = evt.value_score ? (evt.value_score / 10) : (evt.severity ? evt.severity * 2 : 5);
-                    }
-
-                    const sentiment = evt.sentiment !== undefined ? evt.sentiment : -1; 
-                    
-                    if (sentiment > 0) {
-                        posHtml += `<li style="margin-bottom: 6px; color: #10b981;"><strong>${evt.title}</strong> <span style="opacity: 0.7; font-size: 12px;">(SI: ${absScore.toFixed(1)})</span></li>`;
-                    } else {
-                        negHtml += `<li style="margin-bottom: 6px; color: #ef4444;"><strong>${evt.title}</strong> <span style="opacity: 0.7; font-size: 12px;">(SI: ${absScore.toFixed(1)})</span></li>`;
-                    }
-                });
-                
-                let contentHtml = '';
-                if (negHtml) contentHtml += `<div style="background: rgba(239, 68, 68, 0.05); padding: 12px; border-radius: 8px; margin-bottom: 12px; border-left: 3px solid #ef4444;"><h4 style="margin:0 0 8px; color:#ef4444; font-size: 14px;">🔴 Căng thẳng / Bất ổn</h4><ul style="margin:0; padding-left:16px; font-size:14px;">${negHtml}</ul></div>`;
-                if (posHtml) contentHtml += `<div style="background: rgba(16, 185, 129, 0.05); padding: 12px; border-radius: 8px; margin-bottom: 12px; border-left: 3px solid #10b981;"><h4 style="margin:0 0 8px; color:#10b981; font-size: 14px;">🟢 Cải thiện / Ổn định</h4><ul style="margin:0; padding-left:16px; font-size:14px;">${posHtml}</ul></div>`;
-
+            if(modalBody) {
                 modalBody.innerHTML = `
-                    <div style="margin-bottom: 16px; font-size: 15px; font-weight: 500;">Chỉ số hiện tại: <span style="color: ${statusColor};">${Math.abs(displayScore).toFixed(1)}</span></div>
+                    <div style="margin-bottom: 16px; font-size: 15px; font-weight: 500;">Chỉ số rủi ro: <span style="color: ${statusColor};">${Math.abs(displayScore).toFixed(1)}</span></div>
                     ${contentHtml}
                     <button id="jump-to-graph-btn" style="width: 100%; padding: 12px; background-color: var(--md-sys-color-primary, #8b5cf6); color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 14px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); margin-top: 20px;">
                         <span class="material-icons-round" style="font-size: 18px;">hub</span>
                         Phân tích Mạng lưới tri thức
                     </button>
                 `;
-                
-                document.getElementById('intelligence-modal').classList.add('active');
+            }
+            
+            const activeModal = document.getElementById('intelligence-modal');
+            if(activeModal) activeModal.classList.add('active');
 
-                const jumpBtn = document.getElementById('jump-to-graph-btn');
-                if (jumpBtn) {
-                    jumpBtn.addEventListener('click', () => {
-                        document.getElementById('intelligence-modal').classList.remove('active');
-                        const navKnowledge = document.getElementById('nav-knowledge');
-                        if (navKnowledge) navKnowledge.click();
-                    });
-                }
+            const jumpBtn = document.getElementById('jump-to-graph-btn');
+            if (jumpBtn) {
+                jumpBtn.addEventListener('click', () => {
+                    if(activeModal) activeModal.classList.remove('active');
+                    const navKnowledge = document.getElementById('nav-knowledge');
+                    if (navKnowledge) navKnowledge.click();
+                });
             }
         }
     });
 }
 
+// Bắt sự kiện thay đổi Lớp bản đồ (Filter)
 document.addEventListener('DOMContentLoaded', () => {
     const filterSelect = document.getElementById('map-layer-filter');
     if (filterSelect) {
         filterSelect.addEventListener('change', (e) => {
             currentMapLayer = e.target.value;
             const mapContainer = document.getElementById('global-risk-map');
-            // Gọi hàm initMap mà không cần bận tâm đến savedRiskData cũ
-            if (mapContainer) initMap(mapContainer);
+            if (mapContainer && savedRiskData) initMap(mapContainer);
         });
     }
 });
