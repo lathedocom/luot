@@ -15981,5 +15981,517 @@
       "sentiment": -1,
       "scope": "national"
     }
+  },
+  "evt_2e646464": {
+    "created_at": 1785489472926,
+    "expires_at": 1788081472926,
+    "version": "4.5",
+    "checksum": "c9e0fe9c5c660e63b6cd6a89e19f9320",
+    "data": {
+      "cluster_title": "Hamas đồng ý giải trừ vũ khí",
+      "short_summary": "Hamas đồng ý giải trừ vũ khí và Israel rút quân khỏi Gaza, nhưng nhiều rào cản và thời gian dài còn lại để chấm dứt chiến tranh ở khu vực này.",
+      "detailed_summary": "Tổng thống Trump thông báo một thỏa thuận đã đạt được, trong đó Hamas đồng ý giải giáp vũ khí theo thời gian và Israel rút lực lượng khỏi Dải Gaza. Thỏa thuận cũng bao gồm việc thiết lập một chính phủ mới tại Palestine dưới sự điều phối của Ủy ban Hòa bình do Mỹ thành lập. Tuy nhiên, các chuyên gia cảnh báo rằng quá trình thực hiện vẫn còn nhiều rào cản pháp lý, điều kiện chính trị phức tạp và thời hạn thực hiện kéo dài.",
+      "causes": [
+        "Tổng thống Trump mong muốn tạo ra các thành tựu ngoại giao trong nhiệm kỳ",
+        "Nỗ lực đàm phán thông qua Ủy ban Hòa bình do Mỹ thành lập"
+      ],
+      "effects": [
+        "Tạo ra kỳ vọng về việc chấm dứt xung đột tại Dải Gaza",
+        "Gia tăng áp lực lên các bên liên quan để thực thi các cam kết đã tuyên bố"
+      ],
+      "affected_groups": [
+        "Người dân tại Dải Gaza",
+        "Chính phủ Israel",
+        "Các nhóm vũ trang tại Palestine",
+        "Cộng đồng quốc tế"
+      ],
+      "market_impact": "Thông tin có thể làm giảm tâm lý lo ngại về địa chính trị tại Trung Đông, tuy nhiên tác động thực tế còn phụ thuộc vào khả năng thực thi thỏa thuận.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "diplomacy"
+      ],
+      "regions": [
+        "US",
+        "PS",
+        "IL"
+      ],
+      "significance": "Sự kiện đánh dấu một nỗ lực ngoại giao cấp cao nhằm giải quyết xung đột kéo dài tại Dải Gaza, dù tính khả thi vẫn đang được đặt dấu hỏi lớn.",
+      "unknowns": [
+        "Lộ trình và mốc thời gian cụ thể cho việc giải giáp vũ khí",
+        "Sự phản ứng và mức độ tuân thủ từ các phe phái nội bộ trong chính quyền Palestine"
+      ],
+      "confidence_note": "Thông tin dựa trên tuyên bố từ Tổng thống Trump nhưng cần sự xác nhận độc lập từ các bên liên quan về tính thực tế của các điều khoản.",
+      "scenarios": [
+        {
+          "text": "Thỏa thuận đi vào giai đoạn thực thi với lộ trình dần dần giúp ổn định khu vực.",
+          "likelihood": "trung bình"
+        },
+        {
+          "text": "Thỏa thuận bị đình trệ do thiếu sự đồng thuận giữa các nhóm nội bộ và Israel.",
+          "likelihood": "cao"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Tổng thống Trump",
+          "target": "Hamas",
+          "relation_type": "cooperation",
+          "label": "Đạt được thỏa thuận giải giáp vũ khí"
+        },
+        {
+          "source": "Hamas",
+          "target": "Israel",
+          "relation_type": "conflict",
+          "label": "Xung đột vũ trang tại Dải Gaza"
+        },
+        {
+          "source": "Ủy ban Hòa bình",
+          "target": "Chính phủ Palestine",
+          "relation_type": "cooperation",
+          "label": "Thiết lập cấu trúc chính quyền mới"
+        },
+        {
+          "source": "Israel",
+          "target": "Dải Gaza",
+          "relation_type": "cause_effect",
+          "label": "Rút quân đội theo lộ trình thỏa thuận"
+        },
+        {
+          "source": "Tổng thống Trump",
+          "target": "Ủy ban Hòa bình",
+          "relation_type": "cooperation",
+          "label": "Thành lập và dẫn dắt cơ chế đàm phán"
+        }
+      ],
+      "entities": [
+        "Hamas",
+        "Donald Trump",
+        "Israel",
+        "Gaza"
+      ],
+      "keywords": [
+        "Hamas",
+        "Trump",
+        "Gaza",
+        "Israel"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_57a4825e": {
+    "created_at": 1785489484787,
+    "expires_at": 1788081484787,
+    "version": "4.5",
+    "checksum": "55c4bfd5e83960f309dcf0cc920bb553",
+    "data": {
+      "cluster_title": "Nga có thể đã phá hủy nhà máy UAV Mỹ ở Kiev",
+      "short_summary": "Nga có thể đã phá hủy nhà máy sản xuất UAV tự sát của công ty Mỹ tại Kiev trong trận tập kích tuần trước.",
+      "detailed_summary": "Theo báo cáo, một nhà máy sản xuất thiết bị bay không người lái tự sát của một công ty Mỹ tại Kiev đã bị phá hủy sau một cuộc tập kích bằng tên lửa đạn đạo của Nga vào tuần trước. Đây được ghi nhận là lần đầu tiên Matxcơva trực tiếp nhắm mục tiêu vào một cơ sở thuộc sở hữu của doanh nghiệp Mỹ kể từ khi xung đột tại Ukraine bắt đầu.",
+      "causes": [
+        "Nga duy trì chiến dịch tập kích bằng tên lửa vào các mục tiêu quân sự và hạ tầng tại Ukraine.",
+        "Doanh nghiệp Mỹ đặt cơ sở sản xuất thiết bị quốc phòng trong vùng chiến sự."
+      ],
+      "effects": [
+        "Gia tăng căng thẳng trong quan hệ Nga - Mỹ.",
+        "Nguy cơ đe dọa trực tiếp tới tài sản và nhân sự của các doanh nghiệp phương Tây tại Ukraine.",
+        "Khả năng suy giảm chuỗi cung ứng thiết bị bay không người lái tại địa phương."
+      ],
+      "affected_groups": [
+        "Doanh nghiệp quốc phòng Mỹ",
+        "Chính phủ Ukraine",
+        "Chính phủ Nga"
+      ],
+      "market_impact": "Gây tâm lý bất an cho các doanh nghiệp nước ngoài đang hoạt động tại khu vực xung đột và có thể làm ảnh hưởng đến giá cổ phiếu của các tập đoàn quốc phòng liên quan.",
+      "follow_up": "",
+      "categories": [
+        "military",
+        "business"
+      ],
+      "regions": [
+        "RU",
+        "UA",
+        "US"
+      ],
+      "significance": "Sự kiện đánh dấu một bước chuyển trong chiến lược của Nga khi mở rộng phạm vi mục tiêu tấn công sang cả các cơ sở doanh nghiệp Mỹ, làm tăng nguy cơ đối đầu trực tiếp.",
+      "unknowns": [
+        "Danh tính chính xác của công ty Mỹ sở hữu nhà máy.",
+        "Thiệt hại cụ thể về người và các dây chuyền sản xuất bên trong cơ sở."
+      ],
+      "confidence_note": "Thông tin dựa trên báo cáo từ Guardian, độ tin cậy tương đối cao nhưng cần sự xác nhận thêm từ các phía liên quan.",
+      "scenarios": [
+        {
+          "text": "Mỹ gia tăng biện pháp bảo vệ hoặc rút các cơ sở sản xuất khỏi Ukraine.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Nga tiếp tục mở rộng mục tiêu tấn công vào các cơ sở doanh nghiệp phương Tây khác.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Nga",
+          "target": "Doanh nghiệp Mỹ",
+          "relation_type": "conflict",
+          "label": "Tấn công bằng tên lửa vào cơ sở sản xuất"
+        },
+        {
+          "source": "Nga",
+          "target": "Ukraine",
+          "relation_type": "conflict",
+          "label": "Tập kích mục tiêu quân sự trong lãnh thổ"
+        },
+        {
+          "source": "Doanh nghiệp Mỹ",
+          "target": "Ukraine",
+          "relation_type": "cooperation",
+          "label": "Đặt nhà máy sản xuất thiết bị bay tại địa phương"
+        }
+      ],
+      "entities": [
+        "Nga",
+        "Mỹ",
+        "Kiev"
+      ],
+      "keywords": [
+        "Nga",
+        "Mỹ",
+        "Kiev",
+        "UAV"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_9c258b14": {
+    "created_at": 1785489496779,
+    "expires_at": 1788081496779,
+    "version": "4.5",
+    "checksum": "cec4c78783234080693ee6c6dd6a9dfc",
+    "data": {
+      "cluster_title": "Vụ xô biên giới Morocco - Ceuta",
+      "short_summary": "Vụ xô biên giới giữa Morocco và Ceuta khiến ít nhất 18 người thiệt mạng khi người di cư cố gắng vượt biên",
+      "detailed_summary": "Sự cố xảy ra khi hàng nghìn người di cư tìm cách vượt biên giới giữa Morocco và Ceuta, một khu vực thuộc chủ quyền Tây Ban Nha. Việc xâm nhập ồ ạt này đã dẫn đến hậu quả nghiêm trọng với ít nhất 18 trường hợp tử vong. Để kiểm soát tình hình và đảm bảo an ninh biên giới, Chính phủ Tây Ban Nha đã quyết định điều động lực lượng quân đội đến khu vực này.",
+      "causes": [
+        "Sự gia tăng đột biến về số lượng người di cư tìm cách vượt biên trái phép",
+        "Sự đứt gãy trong công tác kiểm soát an ninh tại khu vực biên giới"
+      ],
+      "effects": [
+        "Thiệt hại về nhân mạng (ít nhất 18 người tử vong)",
+        "Quân sự hóa khu vực biên giới giữa Tây Ban Nha và Morocco",
+        "Gia tăng căng thẳng trong chính sách quản lý biên giới"
+      ],
+      "affected_groups": [
+        "Người di cư",
+        "Chính quyền Tây Ban Nha",
+        "Chính quyền Morocco"
+      ],
+      "market_impact": "Sự kiện hiện chưa tác động trực tiếp đến thị trường tài chính quốc tế, nhưng có thể ảnh hưởng đến tâm lý chính trị khu vực.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "diplomacy"
+      ],
+      "regions": [
+        "MA",
+        "ES"
+      ],
+      "significance": "Sự kiện phản ánh áp lực di cư dai dẳng tại các cửa ngõ biên giới châu Âu và đặt ra thách thức về an ninh, nhân đạo đối với các quốc gia sở tại.",
+      "unknowns": [
+        "Danh tính và quốc tịch cụ thể của những người tử vong",
+        "Diễn biến chi tiết trong quá trình xảy ra va chạm tại biên giới"
+      ],
+      "confidence_note": "Thông tin dựa trên báo cáo thực tế về sự kiện biên giới, độ tin cậy cao về các dữ kiện con số đã nêu.",
+      "scenarios": [
+        {
+          "text": "Tây Ban Nha tăng cường an ninh biên giới dài hạn với sự hỗ trợ từ Morocco.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Phát sinh các cuộc tranh cãi ngoại giao giữa Tây Ban Nha và Morocco về kiểm soát biên giới.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Người di cư",
+          "target": "Biên giới Morocco-Ceuta",
+          "relation_type": "conflict",
+          "label": "Vượt biên trái phép"
+        },
+        {
+          "source": "Chính phủ Tây Ban Nha",
+          "target": "Quân đội",
+          "relation_type": "cooperation",
+          "label": "Điều động lực lượng bảo vệ biên giới"
+        },
+        {
+          "source": "Sự cố vượt biên",
+          "target": "Thiệt mạng (18 người)",
+          "relation_type": "cause_effect",
+          "label": "Hệ quả trực tiếp của va chạm"
+        }
+      ],
+      "entities": [
+        "Ceuta",
+        "Morocco",
+        "Spain"
+      ],
+      "keywords": [
+        "xô biên giới",
+        "Ceuta",
+        "Morocco",
+        "migrants"
+      ],
+      "importance": 85,
+      "severity": 5,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_general_1785489502471": {
+    "created_at": 1785489508610,
+    "expires_at": 1788081508610,
+    "version": "4.5",
+    "checksum": "aefd2274dbde6b6197e1540db3b65e32",
+    "data": {
+      "cluster_title": "Engie Cải thiện dự báo lợi nhuận",
+      "short_summary": "Engie SA đã cải thiện dự báo lợi nhuận nhờ các biện pháp cắt giảm chi phí, tác động của tỷ giá hối đoái và sự bất ổn của thị trường năng lượng liên quan đến chiến tranh ở Trung Đông.",
+      "detailed_summary": "Tập đoàn tiện ích Pháp Engie SA đã quyết định nâng dự báo lợi nhuận cả năm. Các yếu tố thúc đẩy bao gồm việc cắt giảm chi phí nội bộ, những biến động có lợi từ tỷ giá hối đoái, thương vụ mua lại quy mô lớn tại Vương quốc Anh và sự biến động trên thị trường năng lượng do ảnh hưởng từ xung đột tại Trung Đông. Những yếu tố tích cực này đã giúp tập đoàn bù đắp được sự sụt giảm lợi nhuận trong một số mảng hoạt động khác.",
+      "causes": [
+        "Thực hiện chính sách cắt giảm chi phí",
+        "Biến động tỷ giá hối đoái tích cực",
+        "Thương vụ mua lại doanh nghiệp lớn tại Vương quốc Anh",
+        "Sự biến động trên thị trường năng lượng quốc tế"
+      ],
+      "effects": [
+        "Dự báo lợi nhuận cả năm của Engie tăng",
+        "Cải thiện khả năng chống chịu trước các sụt giảm lợi nhuận cục bộ"
+      ],
+      "affected_groups": [
+        "Cổ đông của Engie SA",
+        "Nhà đầu tư thị trường năng lượng",
+        "Khách hàng tại các thị trường Engie vận hành"
+      ],
+      "market_impact": "Thông tin tích cực thúc đẩy niềm tin của nhà đầu tư đối với cổ phiếu của Engie trong bối cảnh thị trường năng lượng toàn cầu bất ổn.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "business"
+      ],
+      "regions": [
+        "FR",
+        "GB"
+      ],
+      "significance": "Sự kiện cho thấy chiến lược tái cơ cấu và quản trị rủi ro thông qua mua bán sáp nhập và tối ưu hóa chi phí đang phát huy hiệu quả trong môi trường địa chính trị khó khăn.",
+      "unknowns": [
+        "Mức tăng cụ thể của dự báo lợi nhuận không được nêu rõ",
+        "Các mảng kinh doanh cụ thể đang gặp sụt giảm lợi nhuận chưa được liệt kê"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên báo cáo công bố của doanh nghiệp.",
+      "scenarios": [
+        {
+          "text": "Engie tiếp tục hưởng lợi từ biến động thị trường và duy trì biên lợi nhuận ổn định.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Chi phí vận hành tăng cao đột biến làm lu mờ các hiệu quả đạt được từ cắt giảm chi phí.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Xung đột Trung Đông",
+          "target": "Thị trường năng lượng",
+          "relation_type": "cause_effect",
+          "label": "Gây ra biến động thị trường năng lượng"
+        },
+        {
+          "source": "Engie SA",
+          "target": "Vương quốc Anh",
+          "relation_type": "cooperation",
+          "label": "Thực hiện thương vụ mua lại quy mô lớn"
+        },
+        {
+          "source": "Cắt giảm chi phí",
+          "target": "Engie SA",
+          "relation_type": "cause_effect",
+          "label": "Cải thiện dự báo lợi nhuận"
+        }
+      ],
+      "entities": [
+        "Engie SA",
+        "UK"
+      ],
+      "keywords": [
+        "Engie",
+        "lợi nhuận",
+        "chi phí",
+        "tỷ giá hối đoái"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_f6aa0f40": {
+    "created_at": 1785489520042,
+    "expires_at": 1788081520042,
+    "version": "4.5",
+    "checksum": "12610042ba7ba07f5405e9ca6b1eccd8",
+    "data": {
+      "cluster_title": "Nhà máy hạt nhân Hungary đối mặt nguy cơ đóng cửa",
+      "short_summary": "Nhà máy hạt nhân Paks của Hungary có thể phải đóng cửa vì sông Danube cạn kỷ lục.",
+      "detailed_summary": "Nhà máy điện hạt nhân Paks, nguồn cung cấp gần 50% sản lượng điện cho Hungary, đang đứng trước rủi ro phải đóng cửa do mực nước sông Danube giảm xuống mức thấp kỷ lục, gây khó khăn cho hệ thống làm mát của nhà máy.",
+      "causes": [
+        "Mực nước sông Danube giảm xuống mức thấp kỷ lục"
+      ],
+      "effects": [
+        "Nguy cơ gián đoạn nguồn cung cấp điện quốc gia",
+        "Khả năng phải ngừng hoạt động nhà máy hạt nhân Paks"
+      ],
+      "affected_groups": [
+        "Hệ thống lưới điện quốc gia Hungary",
+        "Người tiêu dùng điện tại Hungary",
+        "Ngành công nghiệp sử dụng điện"
+      ],
+      "market_impact": "Có thể gây bất ổn cho thị trường năng lượng nội địa và làm tăng chi phí nhập khẩu điện nếu sản lượng trong nước bị cắt giảm.",
+      "follow_up": "",
+      "categories": [
+        "energy",
+        "environment"
+      ],
+      "regions": [
+        "HU"
+      ],
+      "significance": "Sự kiện phản ánh sự dễ tổn thương của cơ sở hạ tầng năng lượng hạt nhân trước các biến đổi cực đoan của môi trường.",
+      "unknowns": [
+        "Thời điểm chính xác nếu nhà máy phải đóng cửa",
+        "Phương án dự phòng của Chính phủ Hungary để đảm bảo an ninh năng lượng"
+      ],
+      "confidence_note": "Thông tin dựa trên cảnh báo về nguy cơ kỹ thuật, cần theo dõi diễn biến thực tế của mực nước sông.",
+      "scenarios": [
+        {
+          "text": "Nhà máy giảm công suất hoạt động để đảm bảo an toàn kỹ thuật trong điều kiện thiếu nước làm mát.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Nhà máy phải đóng cửa hoàn toàn dẫn đến thiếu hụt điện nghiêm trọng trên quy mô quốc gia.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Sông Danube",
+          "target": "Nhà máy điện hạt nhân Paks",
+          "relation_type": "cause_effect",
+          "label": "Mực nước cạn làm suy giảm khả năng làm mát"
+        },
+        {
+          "source": "Nhà máy điện hạt nhân Paks",
+          "target": "Hungary",
+          "relation_type": "cause_effect",
+          "label": "Cung cấp gần một nửa sản lượng điện quốc gia"
+        }
+      ],
+      "entities": [
+        "Hungary",
+        "Nhà máy hạt nhân Paks",
+        "Sông Danube"
+      ],
+      "keywords": [
+        "Hungary",
+        "Nhà máy hạt nhân Paks",
+        "Sông Danube"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_cb7c66d8": {
+    "created_at": 1785489531707,
+    "expires_at": 1788081531707,
+    "version": "4.5",
+    "checksum": "2fb5a19de881188bc9053c2d1d598308",
+    "data": {
+      "cluster_title": "Tên lửa nghi của Nga bay vào Ba Lan",
+      "short_summary": "Tên lửa nghi của Nga bay 100km vào lãnh thổ Ba Lan, đặt ra câu hỏi về phản ứng của quốc gia NATO này.",
+      "detailed_summary": "Giới quan sát đang đặt ra câu hỏi về năng lực và chiến lược phản ứng của Ba Lan sau sự cố một vật thể lạ, được cho là tên lửa của Nga, bay sâu vào lãnh thổ quốc gia này một quãng đường khoảng 100km. Sự kiện này gây chú ý do Ba Lan là thành viên của khối quân sự NATO.",
+      "causes": [
+        "Việc vật thể lạ xâm nhập không phận Ba Lan",
+        "Sự tồn tại của các tranh chấp và xung đột địa chính trị khu vực"
+      ],
+      "effects": [
+        "Gia tăng sự chú ý đối với năng lực phòng không của Ba Lan",
+        "Tạo ra sức ép chính trị lên chính phủ Ba Lan trong việc đưa ra phản ứng"
+      ],
+      "affected_groups": [
+        "Chính phủ Ba Lan",
+        "Khối NATO",
+        "Cư dân khu vực bị ảnh hưởng"
+      ],
+      "market_impact": "Thông tin gây tâm lý bất ổn trong khu vực, có thể ảnh hưởng ngắn hạn đến thị trường chứng khoán nội địa Ba Lan.",
+      "follow_up": "",
+      "categories": [
+        "military",
+        "diplomacy"
+      ],
+      "regions": [
+        "PL",
+        "RU"
+      ],
+      "significance": "Sự việc đặt ra thách thức về an ninh biên giới của NATO và khả năng đối phó với các hành động khiêu khích hoặc sự cố quân sự ngoài ý muốn trong bối cảnh căng thẳng kéo dài.",
+      "unknowns": [
+        "Nguồn gốc chính xác và loại hình của vật thể bay",
+        "Phản ứng cụ thể và lộ trình ngoại giao mà Ba Lan sẽ thực hiện"
+      ],
+      "confidence_note": "Thông tin dựa trên báo cáo từ truyền thông, độ tin cậy phụ thuộc vào xác nhận chính thức từ cơ quan chức năng Ba Lan.",
+      "scenarios": [
+        {
+          "text": "Ba Lan tiến hành điều tra kỹ thuật và gửi thông điệp ngoại giao tới Nga thông qua các kênh chính thức.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "NATO tổ chức họp khẩn cấp để đánh giá rủi ro an ninh tập thể sau vụ việc.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Nga",
+          "target": "Ba Lan",
+          "relation_type": "conflict",
+          "label": "Xâm phạm không phận"
+        },
+        {
+          "source": "Ba Lan",
+          "target": "NATO",
+          "relation_type": "cooperation",
+          "label": "Thành viên liên minh an ninh"
+        }
+      ],
+      "entities": [
+        "Nga",
+        "Ba Lan"
+      ],
+      "keywords": [
+        "Nga",
+        "Ba Lan",
+        "tên lửa"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
   }
 }
