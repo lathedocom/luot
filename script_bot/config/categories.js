@@ -17,24 +17,20 @@ module.exports = {
             id: 'economy', 
             name: 'Kinh tế & Thương mại', 
             keywords: [
-                // Tiếng Việt
+                // Thêm các từ khóa vĩ mô mới
                 'kinh tế', 'gdp', 'lạm phát', 'lãi suất', 'ngân hàng nhà nước', 'vĩ mô', 
                 'suy thoái', 'thương mại', 'xuất khẩu', 'nhập khẩu', 'chuỗi cung ứng', 'thuế quan',
-                // Tiếng Anh
-                'economy', 'inflation', 'interest rate', 'recession', 'macroeconomic', 'central bank', 
-                'gdp', 'trade', 'export', 'import', 'supply chain', 'tariff'
+                'tiêu dùng', 'bán lẻ', 'thất nghiệp', 'doanh thu', 'sản xuất'
             ] 
         },
         { 
             id: 'finance', 
             name: 'Tài chính & Đầu tư', 
             keywords: [
-                // Tiếng Việt
+                // Thêm các từ khóa ngoại tệ mạnh vào đây
                 'tài chính', 'chứng khoán', 'cổ phiếu', 'trái phiếu', 'vnindex', 'fed', 'tỷ giá', 
                 'tiền điện tử', 'bitcoin', 'đầu tư', 'fdi', 'quỹ etf', 'thanh khoản',
-                // Tiếng Anh
-                'finance', 'stock', 'shares', 'bonds', 'wall street', 'currency', 'exchange rate', 
-                'fed', 'crypto', 'bitcoin', 'investment', 'fdi', 'liquidity'
+                'đồng yên', 'jpy', 'usd', 'đô la', 'euro', 'ngoại tệ', 'hối đoái', 'vàng', 'sjc'
             ] 
         },
         { 
