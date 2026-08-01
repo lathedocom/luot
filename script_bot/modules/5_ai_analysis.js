@@ -46,7 +46,7 @@ LỆNH TUYỆT ĐỐI: CHỈ TRẢ VỀ JSON VỚI CÁC TRƯỜNG SAU:
   "severity": 3,
   "sentiment": -1,
   "vn_impact": "Đánh giá nhanh tác động tới Việt Nam (Nếu không có, ghi: Không tác động trực tiếp đến Việt Nam.)",
-  "need_deep_analysis": true/false (chỉ true nếu sự kiện có tính chất vĩ mô, phức tạp, tác động lớn),
+ "need_deep_analysis": true/false (BẮT BUỘC trả về true nếu sự kiện liên quan đến: chiến tranh, địa chính trị, tài chính, giao thương, kinh tế vĩ mô quốc tế, ngân hàng trung ương, các tập đoàn lớn, biến động thị trường hoặc chính sách quốc gia. CHỈ trả về false đối với tin showbiz, cá nhân, thể thao, hoặc tin nội bộ doanh nghiệp nhỏ),
   "short_summary": "Tóm tắt 30-50 từ"
 }`;
         
