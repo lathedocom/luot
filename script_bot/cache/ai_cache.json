@@ -2679,5 +2679,493 @@
       "sentiment": -1,
       "scope": "national"
     }
+  },
+  "evt_40d3e8c9": {
+    "created_at": 1785626261316,
+    "expires_at": 1788218261316,
+    "version": "4.5",
+    "checksum": "da6f30677fa85ccbfbe5b62bb55b14a3",
+    "data": {
+      "cluster_title": "Bắn phá Kyiv",
+      "short_summary": "Bắn phá Kyiv khiến 9 người thiệt mạng, Nga và Mỹ tiếp tục tranh chấp về phòng thủ không gian.",
+      "detailed_summary": "Vào rạng sáng thứ Bảy, Nga đã thực hiện một cuộc tấn công bằng tên lửa đạn đạo vào năm quận tại thủ đô Kyiv của Ukraine, gây thương vong cho 9 người. Đồng thời, chính quyền Tổng thống Trump được cho là đang thay đổi quan điểm, rút lại cam kết tăng cường hệ thống phòng thủ tên lửa đã hứa trước đó cho Ukraine.",
+      "causes": [
+        "Cuộc tấn công quân sự của Nga nhắm vào cơ sở hạ tầng và dân cư tại Kyiv",
+        "Sự thay đổi chính sách từ phía chính quyền Mỹ về viện trợ quân sự"
+      ],
+      "effects": [
+        "Gia tăng số người thiệt mạng và tổn thất tại Ukraine",
+        "Sự suy giảm năng lực phòng thủ của Ukraine trước các cuộc tấn công đường không",
+        "Gia tăng áp lực đối với chính quyền Ukraine"
+      ],
+      "affected_groups": [
+        "Người dân tại Kyiv",
+        "Chính phủ Ukraine",
+        "Quân đội Ukraine"
+      ],
+      "market_impact": "Gây tâm lý bất ổn trên thị trường tài chính quốc tế, đặc biệt là giá năng lượng và các mặt hàng nông nghiệp liên quan đến hai quốc gia này.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "military",
+        "diplomacy"
+      ],
+      "regions": [
+        "UA",
+        "RU",
+        "US"
+      ],
+      "significance": "Sự kiện phản ánh tình hình an ninh ngày càng nguy cấp tại Ukraine khi Nga gia tăng cường độ tấn công trong bối cảnh các cam kết hỗ trợ quốc tế từ phía Mỹ trở nên bất định.",
+      "unknowns": [
+        "Chi tiết cụ thể về lý do chính quyền Mỹ thay đổi quyết định hỗ trợ hệ thống phòng thủ",
+        "Khả năng thích nghi của hệ thống phòng không Ukraine trước các đợt tấn công mới"
+      ],
+      "confidence_note": "Thông tin dựa trên báo cáo thời sự trực tiếp, độ tin cậy cao về sự kiện tấn công, cần theo dõi thêm các tuyên bố chính thức từ Mỹ.",
+      "scenarios": [
+        {
+          "text": "Ukraine tiếp tục chịu áp lực lớn từ các cuộc không kích khi nguồn lực phòng thủ bị cắt giảm.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các đồng minh khác của Mỹ trong khối NATO tăng cường hỗ trợ thay thế cho Ukraine.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Nga",
+          "target": "Kyiv",
+          "relation_type": "conflict",
+          "label": "Tấn công quân sự gây thương vong"
+        },
+        {
+          "source": "Mỹ",
+          "target": "Ukraine",
+          "relation_type": "conflict",
+          "label": "Rút lại cam kết hỗ trợ phòng thủ"
+        },
+        {
+          "source": "Nga",
+          "target": "Ukraine",
+          "relation_type": "conflict",
+          "label": "Xung đột vũ trang"
+        }
+      ],
+      "entities": [
+        "Nga",
+        "Mỹ",
+        "Ukraine",
+        "Trung Quốc"
+      ],
+      "keywords": [
+        "Kyiv",
+        "Ukraine",
+        "Trung Quốc",
+        "Phòng thủ không gian"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_672ecbe7": {
+    "created_at": 1785626272771,
+    "expires_at": 1788218272771,
+    "version": "4.5",
+    "checksum": "1b787932fe77fc560935ba023e6fe4fa",
+    "data": {
+      "cluster_title": "Tăng chi phí vay cho các công ty AI",
+      "short_summary": "Loan investors đang yêu cầu các công ty AI phải trả chi phí vay cao hơn, ảnh hưởng đến các công ty tư nhân và công ty AI.",
+      "detailed_summary": "Lần đầu tiên sau nhiều năm, các nhà đầu tư vào thị trường cho vay AI đã chuyển sang thế chủ động, gây sức ép buộc bên đi vay phải cung cấp các điều khoản có lợi hơn cho nhà đầu tư. Sự thay đổi này được dự báo sẽ làm tăng chi phí đi vay đối với các doanh nghiệp, từ các quỹ đầu tư tư nhân cho đến các công ty AI đang gánh khoản nợ lớn.",
+      "causes": [
+        "Sự thay đổi tâm lý và vị thế đàm phán của nhà đầu tư",
+        "Nhu cầu kiểm soát rủi ro đối với các doanh nghiệp AI thâm dụng vốn"
+      ],
+      "effects": [
+        "Tăng chi phí vay vốn cho các doanh nghiệp",
+        "Thay đổi các điều khoản cho vay theo hướng có lợi hơn cho bên cấp vốn"
+      ],
+      "affected_groups": [
+        "Các công ty AI",
+        "Các quỹ đầu tư tư nhân",
+        "Các đơn vị cung cấp vốn vay"
+      ],
+      "market_impact": "Thị trường tín dụng đối với ngành công nghệ AI sẽ trở nên đắt đỏ hơn và các tiêu chuẩn phê duyệt vay vốn sẽ thắt chặt hơn.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "finance"
+      ],
+      "regions": [
+        "GLOBAL"
+      ],
+      "significance": "Sự kiện đánh dấu bước ngoặt trong tư duy quản trị rủi ro của giới tài chính đối với cơn sốt đầu tư vào trí tuệ nhân tạo.",
+      "unknowns": [
+        "Mức tăng chi phí lãi vay cụ thể đối với các doanh nghiệp",
+        "Phạm vi áp dụng của các điều khoản mới đối với các công ty AI quy mô nhỏ"
+      ],
+      "confidence_note": "Thông tin dựa trên diễn biến thị trường thực tế, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Chi phí vốn tăng cao khiến các công ty AI nhỏ lẻ gặp khó khăn trong việc duy trì hoạt động.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các doanh nghiệp AI phải tái cơ cấu nợ để thích nghi với môi trường tài chính khắc nghiệt hơn.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Nhà đầu tư",
+          "target": "Công ty AI",
+          "relation_type": "cause_effect",
+          "label": "Tăng áp lực điều khoản vay"
+        },
+        {
+          "source": "Nhà đầu tư",
+          "target": "Quỹ đầu tư tư nhân",
+          "relation_type": "cause_effect",
+          "label": "Thay đổi chính sách chi phí vay"
+        }
+      ],
+      "entities": [
+        "Loan investors",
+        "Private equity firms",
+        "AI companies"
+      ],
+      "keywords": [
+        "AI Loan Market",
+        "Investor Demands",
+        "Borrowers Offer"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_general_1785626278466": {
+    "created_at": 1785626284204,
+    "expires_at": 1788218284204,
+    "version": "4.5",
+    "checksum": "8572af3a62f71549be0e7a10769f5a52",
+    "data": {
+      "cluster_title": "Mỹ khẳng định tôn trọng vai trò trung tâm của ASEAN",
+      "short_summary": "Mỹ khẳng định tôn trọng vai trò trung tâm của ASEAN trong vấn đề Biển Đông.",
+      "detailed_summary": "Đại sứ Mỹ tái khẳng định cam kết tôn trọng vai trò trung tâm của ASEAN trong việc giải quyết vấn đề Biển Đông. Đồng thời, phía Mỹ nhấn mạnh Biển Đông là tuyến đường hàng hải chiến lược, đóng vai trò sống còn đối với các luồng thương mại và kinh tế toàn cầu.",
+      "causes": [
+        "Tầm quan trọng chiến lược của tuyến hàng hải Biển Đông",
+        "Nhu cầu duy trì trật tự dựa trên luật lệ quốc tế tại khu vực"
+      ],
+      "effects": [
+        "Củng cố sự ủng hộ của Mỹ đối với các quốc gia ASEAN",
+        "Gia tăng sự chú ý đối với an ninh hàng hải tại khu vực"
+      ],
+      "affected_groups": [
+        "Các quốc gia thành viên ASEAN",
+        "Các doanh nghiệp có chuỗi cung ứng hàng hải quốc tế"
+      ],
+      "market_impact": "Việc nhấn mạnh sự ổn định tại Biển Đông giúp trấn an tâm lý các đơn vị vận tải biển và nhà đầu tư trong khu vực về an ninh hàng hóa.",
+      "vn_impact": "Sự kiện củng cố vị thế của Việt Nam trong việc duy trì ổn định tại Biển Đông thông qua các cơ chế hợp tác ASEAN, tạo tiền đề thuận lợi cho các hoạt động ngoại giao và thương mại biển.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "diplomacy"
+      ],
+      "regions": [
+        "US",
+        "VN"
+      ],
+      "significance": "Tuyên bố này tái khẳng định cam kết của Mỹ trong việc duy trì vai trò của ASEAN như một thực thể dẫn dắt trong các vấn đề an ninh khu vực.",
+      "unknowns": [
+        "Cụ thể các biện pháp triển khai của Mỹ để hỗ trợ vai trò trung tâm của ASEAN",
+        "Phản ứng chi tiết của các quốc gia khác trong khu vực đối với tuyên bố này"
+      ],
+      "confidence_note": "Thông tin mang tính khẳng định chính sách từ đại diện ngoại giao, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Mỹ tăng cường các hoạt động hợp tác an ninh biển với các nước ASEAN",
+          "likelihood": "cao"
+        },
+        {
+          "text": "ASEAN đẩy mạnh các cuộc đàm phán về Bộ quy tắc ứng xử trên Biển Đông với sự ủng hộ từ Mỹ",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Mỹ",
+          "target": "ASEAN",
+          "relation_type": "cooperation",
+          "label": "Ủng hộ vai trò trung tâm"
+        },
+        {
+          "source": "Biển Đông",
+          "target": "Kinh tế toàn cầu",
+          "relation_type": "cause_effect",
+          "label": "Tuyến hàng hải huyết mạch"
+        }
+      ],
+      "entities": [
+        "Mỹ",
+        "ASEAN"
+      ],
+      "keywords": [
+        "ASEAN",
+        "Biển Đông",
+        "Mỹ"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_general_1785626293981": {
+    "created_at": 1785626299978,
+    "expires_at": 1788218299978,
+    "version": "4.5",
+    "checksum": "b53f008253a6dd53752f7209e2c7f4dd",
+    "data": {
+      "cluster_title": "Sự kiện di cư tại Ceuta",
+      "short_summary": "Ceuta - điểm nóng di cư hàng chục năm qua. Làn sóng 60.000 người di cư ồ ạt vào vùng lãnh thổ Ceuta được cho là hệ quả của nhiều yếu tố pháp lý, địa chính trị.",
+      "detailed_summary": "Vùng lãnh thổ Ceuta đang đối mặt với cuộc khủng hoảng di cư nghiêm trọng khi khoảng 60.000 người di cư ồ ạt tiến vào. Sự kiện này được đánh giá là kết quả của sự giao thoa giữa các yếu tố pháp lý phức tạp và những căng thẳng địa chính trị tồn tại kéo dài nhiều thập kỷ tại khu vực biên giới này.",
+      "causes": [
+        "Yếu tố pháp lý quy định về di trú",
+        "Căng thẳng địa chính trị kéo dài"
+      ],
+      "effects": [
+        "Gây quá tải hệ thống an ninh và xã hội tại Ceuta",
+        "Tạo ra điểm nóng bất ổn biên giới"
+      ],
+      "affected_groups": [
+        "Cư dân vùng Ceuta",
+        "Người di cư",
+        "Chính quyền sở tại"
+      ],
+      "market_impact": "Chưa có dữ liệu về tác động trực tiếp đến thị trường tài chính toàn cầu.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "diplomacy"
+      ],
+      "regions": [
+        "ES",
+        "MA"
+      ],
+      "significance": "Sự kiện phản ánh tính chất mong manh của các điểm nóng địa chính trị nơi biên giới quốc gia, đòi hỏi các giải pháp ngoại giao và pháp lý dài hạn.",
+      "unknowns": [
+        "Danh tính và quốc tịch cụ thể của nhóm người di cư",
+        "Phản ứng chính sách cụ thể của các bên liên quan để giải quyết làn sóng"
+      ],
+      "confidence_note": "Thông tin dựa trên báo cáo thực trạng, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Chính quyền tăng cường kiểm soát và thực hiện các biện pháp trục xuất hành chính.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các bên liên quan tiến hành đàm phán ngoại giao cấp cao để giải quyết tận gốc nguyên nhân địa chính trị.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Các yếu tố địa chính trị",
+          "target": "Làn sóng di cư",
+          "relation_type": "cause_effect",
+          "label": "Nguyên nhân dẫn đến sự gia tăng đột biến số lượng người di cư"
+        },
+        {
+          "source": "Người di cư",
+          "target": "Ceuta",
+          "relation_type": "conflict",
+          "label": "Áp lực xâm nhập trái phép vào lãnh thổ"
+        }
+      ],
+      "entities": [
+        "Ceuta",
+        "Hàn Quốc"
+      ],
+      "keywords": [
+        "di cư",
+        "Ceuta",
+        "địa chính trị"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_da5976ff": {
+    "created_at": 1785626311643,
+    "expires_at": 1788218311643,
+    "version": "4.5",
+    "checksum": "c52abfb12895406bf19553144aa36ac9",
+    "data": {
+      "cluster_title": "Drone Ukraine đánh chìm tàu container của Nga",
+      "short_summary": "Chiếc tàu container bị chìm ở Biển Đen sau cuộc tấn công của Drone Ukraine",
+      "detailed_summary": "Lực lượng Ukraine sử dụng thiết bị bay không người lái (drone) thực hiện cuộc tấn công trực tiếp vào một tàu chở hàng của Nga tại khu vực Biển Đen. Vụ tấn công đã gây hư hại nghiêm trọng khiến con tàu bị chìm, buộc các thành viên thủy thủ đoàn phải rời bỏ phương tiện để đảm bảo an toàn.",
+      "causes": [
+        "Xung đột quân sự đang diễn ra giữa Ukraine và Nga",
+        "Chiến lược sử dụng drone của Ukraine trong tác chiến trên biển"
+      ],
+      "effects": [
+        "Tàu container bị chìm hoàn toàn",
+        "Thủy thủ đoàn phải sơ tán khẩn cấp",
+        "Gia tăng căng thẳng an ninh hàng hải tại Biển Đen"
+      ],
+      "affected_groups": [
+        "Chủ sở hữu tàu",
+        "Thủy thủ đoàn",
+        "Các đơn vị vận tải hàng hải tại khu vực"
+      ],
+      "market_impact": "Gia tăng rủi ro cho hoạt động vận tải biển tại Biển Đen, có khả năng đẩy giá cước bảo hiểm hàng hải và gây gián đoạn chuỗi cung ứng hàng hóa trong khu vực.",
+      "vn_impact": "Có thể gây ảnh hưởng gián tiếp đến chi phí vận chuyển hàng hóa xuất nhập khẩu của Việt Nam thông qua khu vực Biển Đen và đẩy giá cước vận tải biển toàn cầu tăng nhẹ.",
+      "follow_up": "",
+      "categories": [
+        "military",
+        "business"
+      ],
+      "regions": [
+        "UA",
+        "RU"
+      ],
+      "significance": "Sự kiện cho thấy sự chuyển dịch trong chiến thuật tác chiến trên biển của Ukraine, sử dụng drone giá rẻ để vô hiệu hóa tài sản vận tải lớn của đối phương.",
+      "unknowns": [
+        "Danh tính và tải trọng cụ thể của con tàu bị chìm",
+        "Số lượng thương vong chính xác của thủy thủ đoàn",
+        "Loại drone được Ukraine sử dụng trong cuộc tấn công"
+      ],
+      "confidence_note": "Thông tin dựa trên báo cáo về vụ việc, mức độ tin cậy trung bình do thiếu xác nhận từ phía chính quyền Nga.",
+      "scenarios": [
+        {
+          "text": "Nga tăng cường các biện pháp phòng vệ và kiểm soát an ninh tại Biển Đen để bảo vệ tàu thương mại.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các hãng vận tải quốc tế hạn chế lộ trình qua Biển Đen do lo ngại rủi ro an ninh, làm ảnh hưởng đến dòng chảy hàng hóa.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Ukraine",
+          "target": "Tàu container Nga",
+          "relation_type": "conflict",
+          "label": "Tấn công quân sự"
+        },
+        {
+          "source": "Drone Ukraine",
+          "target": "Tàu container Nga",
+          "relation_type": "cause_effect",
+          "label": "Tấn công dẫn đến chìm tàu"
+        }
+      ],
+      "entities": [
+        "Drone Ukraine",
+        "Nga",
+        "Biển Đen"
+      ],
+      "keywords": [
+        "Drone Ukraine",
+        "tàu container",
+        "Nga",
+        "Biển Đen"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_general_1785626317449": {
+    "created_at": 1785626323459,
+    "expires_at": 1788218323459,
+    "version": "4.5",
+    "checksum": "b284d9d8b31290130774102bf61cf331",
+    "data": {
+      "cluster_title": "Việt Nam trở thành mỏ neo kinh tế của châu Âu",
+      "short_summary": "Việt Nam trở thành mỏ neo kinh tế của châu Âu nhờ EVFTA",
+      "detailed_summary": "Chủ tịch EuroCham khẳng định vị thế chiến lược của Việt Nam trong quan hệ kinh tế với châu Âu. Sự phát triển này được thúc đẩy mạnh mẽ bởi Hiệp định Thương mại tự do Việt Nam - EU (EVFTA), biến Việt Nam thành đối tác kinh tế then chốt tại khu vực châu Á.",
+      "causes": [
+        "Hiệp định Thương mại tự do Việt Nam - EU (EVFTA)",
+        "Chiến lược đa dạng hóa và mở rộng kinh tế của châu Âu tại châu Á"
+      ],
+      "effects": [
+        "Củng cố vị thế của Việt Nam trong chuỗi cung ứng toàn cầu",
+        "Thúc đẩy dòng vốn đầu tư từ châu Âu vào Việt Nam"
+      ],
+      "affected_groups": [
+        "Các doanh nghiệp xuất nhập khẩu Việt Nam",
+        "Nhà đầu tư châu Âu",
+        "Cộng đồng doanh nghiệp tại Việt Nam"
+      ],
+      "market_impact": "Dự báo gia tăng niềm tin của nhà đầu tư, thúc đẩy các dự án hợp tác thương mại và dòng vốn FDI từ châu Âu vào Việt Nam.",
+      "vn_impact": "Việt Nam gia tăng vị thế ngoại giao kinh tế, mở rộng cơ hội xuất khẩu và tiếp nhận công nghệ cao từ thị trường EU, đồng thời nâng cao tiêu chuẩn sản xuất nội địa để đáp ứng quy định khắt khe của đối tác.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "diplomacy"
+      ],
+      "regions": [
+        "VN",
+        "EU"
+      ],
+      "significance": "Sự kiện khẳng định mối quan hệ đối tác chiến lược giữa Việt Nam và châu Âu, tạo nền tảng vững chắc cho sự tăng trưởng kinh tế dài hạn thông qua các cam kết thương mại quốc tế.",
+      "unknowns": [
+        "Số liệu chi tiết về dự kiến tăng trưởng đầu tư sau tuyên bố",
+        "Các thách thức cụ thể về rào cản kỹ thuật thương mại có thể phát sinh trong tương lai"
+      ],
+      "confidence_note": "Thông tin dựa trên nhận định chính thức từ lãnh đạo hiệp hội doanh nghiệp uy tín, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Dòng vốn đầu tư trực tiếp từ châu Âu vào Việt Nam tăng mạnh trong các năm tới.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Hai bên mở rộng thêm các lĩnh vực hợp tác mới như kinh tế xanh và chuyển đổi số.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "EVFTA",
+          "target": "Việt Nam",
+          "relation_type": "cause_effect",
+          "label": "Là động lực then chốt thúc đẩy phát triển kinh tế"
+        },
+        {
+          "source": "EuroCham",
+          "target": "Việt Nam",
+          "relation_type": "cooperation",
+          "label": "Đánh giá và thúc đẩy quan hệ đối tác chiến lược"
+        },
+        {
+          "source": "Châu Âu",
+          "target": "Việt Nam",
+          "relation_type": "cooperation",
+          "label": "Thiết lập mối quan hệ kinh tế bền vững"
+        }
+      ],
+      "entities": [
+        "EuroCham",
+        "Chủ tịch EuroCham"
+      ],
+      "keywords": [
+        "Việt Nam",
+        "châu Âu",
+        "EVFTA"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
   }
 }
