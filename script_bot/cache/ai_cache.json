@@ -3167,5 +3167,609 @@
       "sentiment": -1,
       "scope": "national"
     }
+  },
+  "evt_788e1899": {
+    "created_at": 1785644258940,
+    "expires_at": 1788236258940,
+    "version": "4.5",
+    "checksum": "618ff3377de781f95358be3ba5343323",
+    "data": {
+      "cluster_title": "Trump hủy bỏ tấn công Iran",
+      "short_summary": "Trump hủy bỏ tấn công Iran sau khi các nước Trung Đông đồng ý tìm kiếm một thỏa thuận.",
+      "detailed_summary": "Tổng thống Mỹ Donald Trump thông báo hoãn các cuộc tấn công mới vào Iran. Quyết định này được đưa ra sau khi Iran và một số quốc gia Trung Đông khác liên lạc với ông Trump, khẳng định họ đang nỗ lực hướng tới một thỏa thuận. Ông Trump cũng tuyên bố các thông số của một thỏa thuận đã được chấp thuận.",
+      "causes": [
+        "Sự can thiệp, đề nghị từ các đồng minh Trung Đông",
+        "Tiến triển trong các cuộc đàm phán về thỏa thuận giữa các bên liên quan"
+      ],
+      "effects": [
+        "Tạm dừng leo thang xung đột quân sự",
+        "Mở ra cơ hội cho các giải pháp ngoại giao"
+      ],
+      "affected_groups": [
+        "Chính phủ Mỹ",
+        "Chính phủ Iran",
+        "Các quốc gia khu vực Trung Đông",
+        "Thị trường năng lượng toàn cầu"
+      ],
+      "market_impact": "Giảm bớt lo ngại về rủi ro gián đoạn nguồn cung dầu mỏ, giúp ổn định tâm lý thị trường tài chính và giá năng lượng trong ngắn hạn.",
+      "vn_impact": "Sự ổn định tại Trung Đông giúp duy trì giá dầu thế giới ổn định, có lợi cho việc kiểm soát lạm phát và chi phí nhập khẩu năng lượng của Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "diplomacy"
+      ],
+      "regions": [
+        "US",
+        "IR"
+      ],
+      "significance": "Sự kiện cho thấy sự ưu tiên của Mỹ đối với các biện pháp ngoại giao thay vì hành động quân sự trực tiếp dựa trên các cam kết đàm phán từ khu vực.",
+      "unknowns": [
+        "Nội dung chi tiết và các điều khoản cụ thể của thỏa thuận đã được nhắc đến",
+        "Mức độ sẵn sàng thực thi thỏa thuận của phía Iran trong thực tế"
+      ],
+      "confidence_note": "Dựa trên phát ngôn trực tiếp của Tổng thống Mỹ, cần theo dõi thêm xác nhận từ các phía liên quan.",
+      "scenarios": [
+        {
+          "text": "Các bên duy trì đối thoại và tiến tới thỏa thuận chính thức để giảm căng thẳng.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Đàm phán đổ vỡ dẫn đến nguy cơ xung đột quân sự tái diễn.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Donald Trump",
+          "target": "Iran",
+          "relation_type": "conflict",
+          "label": "Căng thẳng quân sự và đe dọa tấn công"
+        },
+        {
+          "source": "Các quốc gia Trung Đông",
+          "target": "Donald Trump",
+          "relation_type": "cooperation",
+          "label": "Đề nghị đàm phán và trung gian hòa giải"
+        },
+        {
+          "source": "Các quốc gia Trung Đông",
+          "target": "Iran",
+          "relation_type": "cooperation",
+          "label": "Thúc đẩy đàm phán thỏa thuận"
+        },
+        {
+          "source": "Đàm phán",
+          "target": "Tấn công quân sự",
+          "relation_type": "cause_effect",
+          "label": "Ngăn chặn hành động tấn công quân sự"
+        }
+      ],
+      "entities": [
+        "Donald Trump",
+        "Iran"
+      ],
+      "keywords": [
+        "Trump",
+        "Iran",
+        "tấn công"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_ff275429": {
+    "created_at": 1785644270794,
+    "expires_at": 1788236270794,
+    "version": "4.5",
+    "checksum": "987c79d149c1e7c1d133548ce89a641b",
+    "data": {
+      "cluster_title": "Saudi Prince Concerned Over Trump’s Iran Strike Plan",
+      "short_summary": "Saudi Crown Prince Mohammed bin Salman bày tỏ lo ngại về kế hoạch tấn công Iran của Tổng thống Trump.",
+      "detailed_summary": "Theo báo cáo từ Axios, Thái tử Mohammed bin Salman đã có cuộc điện đàm với Tổng thống Donald Trump để thảo luận về kế hoạch của Mỹ trong việc thực hiện các cuộc tấn công mới nhắm vào Iran. Thái tử bày tỏ sự lo ngại về kế hoạch này, phản ánh sự thận trọng của Riyadh trước nguy cơ leo thang xung đột trong khu vực.",
+      "causes": [
+        "Kế hoạch tấn công quân sự của Mỹ nhắm vào Iran",
+        "Mối quan hệ phức tạp và sự phụ thuộc về an ninh trong khu vực Trung Đông"
+      ],
+      "effects": [
+        "Gia tăng sự chú ý đến sự bất ổn trong quan hệ Mỹ - Iran",
+        "Thể hiện lập trường của Saudi Arabia trong việc ưu tiên ổn định khu vực thay vì xung đột trực tiếp"
+      ],
+      "affected_groups": [
+        "Chính phủ Mỹ",
+        "Chính phủ Saudi Arabia",
+        "Chính phủ Iran",
+        "Thị trường năng lượng toàn cầu"
+      ],
+      "market_impact": "Sự lo ngại về xung đột tại Trung Đông thường gây biến động giá dầu thô trên thị trường toàn cầu do rủi ro gián đoạn nguồn cung.",
+      "vn_impact": "Tác động đến Việt Nam chủ yếu thông qua biến động giá xăng dầu và chi phí vận tải quốc tế nếu xung đột gây gián đoạn chuỗi cung ứng năng lượng.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "diplomacy"
+      ],
+      "regions": [
+        "SA",
+        "US",
+        "IR"
+      ],
+      "significance": "Sự kiện phản ánh áp lực từ các đồng minh khu vực đối với chính sách đối ngoại của Mỹ nhằm tránh một cuộc chiến tranh quy mô lớn tại Trung Đông.",
+      "unknowns": [
+        "Phản hồi cụ thể của Tổng thống Donald Trump đối với quan ngại của Thái tử",
+        "Quy mô và tính chất chi tiết của kế hoạch tấn công mà Mỹ dự định thực hiện"
+      ],
+      "confidence_note": "Thông tin dựa trên báo cáo từ truyền thông (Axios), cần sự xác nhận từ các nguồn chính thống từ cả hai chính phủ.",
+      "scenarios": [
+        {
+          "text": "Mỹ tạm hoãn hoặc điều chỉnh kế hoạch tấn công sau khi tham vấn các đồng minh khu vực.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Mỹ vẫn duy trì lộ trình quân sự bất chấp sự quan ngại từ phía Saudi Arabia.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Mohammed bin Salman",
+          "target": "Donald Trump",
+          "relation_type": "cooperation",
+          "label": "Đối thoại ngoại giao về vấn đề an ninh khu vực"
+        },
+        {
+          "source": "Donald Trump",
+          "target": "Iran",
+          "relation_type": "conflict",
+          "label": "Mối quan hệ đối đầu và kế hoạch tấn công quân sự"
+        },
+        {
+          "source": "Mohammed bin Salman",
+          "target": "Iran",
+          "relation_type": "neutral",
+          "label": "Quan hệ căng thẳng trong khu vực"
+        }
+      ],
+      "entities": [
+        "Saudi Crown Prince Mohammed bin Salman",
+        "President Donald Trump",
+        "Iran",
+        "Axios"
+      ],
+      "keywords": [
+        "Saudi Prince",
+        "Trump",
+        "Iran Strike Plan",
+        "Axios"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_7c81ea10": {
+    "created_at": 1785644282261,
+    "expires_at": 1788236282261,
+    "version": "4.5",
+    "checksum": "6791deb216ed9d88fe9df776cf7f7b54",
+    "data": {
+      "cluster_title": "Kospi Rút Đứt, Người Hàn Quốc Căng Giọng",
+      "short_summary": "Kospi rút đứt, người Hàn Quốc căng giọng vì rủi ro.",
+      "detailed_summary": "Chỉ số chứng khoán Kospi của Hàn Quốc trải qua đợt sụt giảm mạnh trong tháng 7, gây tổn thất lớn cho cộng đồng nhà đầu tư cá nhân vốn được biết đến với khẩu vị rủi ro cao. Sự việc này đã tạo ra làn sóng phẫn nộ trong giới đầu tư, dẫn đến sự suy giảm niềm tin nghiêm trọng và cam kết không tiếp tục đầu tư vào thị trường trong tương lai.",
+      "causes": [
+        "Sự đảo chiều tiêu cực của chỉ số Kospi trong tháng 7",
+        "Mức độ chịu đựng rủi ro của nhà đầu tư cá nhân bị vượt ngưỡng"
+      ],
+      "effects": [
+        "Làn sóng phẫn nộ của nhà đầu tư cá nhân",
+        "Cam kết tẩy chay đầu tư chứng khoán",
+        "Sự suy giảm niềm tin vào thị trường tài chính nội địa"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư cá nhân tại Hàn Quốc",
+        "Các tổ chức tài chính và môi giới chứng khoán tại Hàn Quốc"
+      ],
+      "market_impact": "Gây áp lực bán tháo ngắn hạn và làm giảm tính thanh khoản từ nhóm nhà đầu tư cá nhân trên thị trường chứng khoán Hàn Quốc.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "finance"
+      ],
+      "regions": [
+        "KR"
+      ],
+      "significance": "Sự kiện phản ánh tâm lý cực đoan của nhà đầu tư nhỏ lẻ khi thị trường tài chính biến động mạnh, có thể làm thay đổi cấu trúc dòng tiền tại Hàn Quốc.",
+      "unknowns": [
+        "Số liệu chính xác về khối lượng rút vốn của nhà đầu tư cá nhân",
+        "Thời hạn kéo dài của hành động tẩy chay đầu tư"
+      ],
+      "confidence_note": "Thông tin dựa trên phản ứng thị trường và tâm lý nhà đầu tư được ghi nhận qua các kênh truyền thông tài chính uy tín.",
+      "scenarios": [
+        {
+          "text": "Lượng vốn tham gia từ nhà đầu tư cá nhân giảm mạnh trong quý tiếp theo.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Chính phủ và các cơ quan quản lý đưa ra chính sách hỗ trợ để xoa dịu tâm lý thị trường.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Chỉ số Kospi",
+          "target": "Nhà đầu tư cá nhân",
+          "relation_type": "cause_effect",
+          "label": "Sự sụt giảm của Kospi gây tổn thất và tạo ra tâm lý tiêu cực cho nhà đầu tư cá nhân"
+        },
+        {
+          "source": "Nhà đầu tư cá nhân",
+          "target": "Thị trường chứng khoán Hàn Quốc",
+          "relation_type": "conflict",
+          "label": "Phản ứng tẩy chay đầu tư sau khi thua lỗ"
+        }
+      ],
+      "entities": [
+        "Kospi",
+        "Hàn Quốc"
+      ],
+      "keywords": [
+        "Kospi",
+        "Hàn Quốc",
+        "Rủi Ro"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_general_1785644287831": {
+    "created_at": 1785644294670,
+    "expires_at": 1788236294670,
+    "version": "4.5",
+    "checksum": "eb2162f3595468650c03199f55d98b14",
+    "data": {
+      "cluster_title": "Chiến sự Nga ảnh hưởng mùa du lịch",
+      "short_summary": "Chiến sự Nga ảnh hưởng mùa du lịch của người Nga",
+      "detailed_summary": "Người dân Nga đang đối mặt với những khó khăn trong kế hoạch nghỉ hè khi thị trường du lịch bị ảnh hưởng bởi tình trạng thiếu nhiên liệu cục bộ. Đồng thời, nguy cơ bị tập kích bởi máy bay không người lái khiến tâm lý khách du lịch trở nên thận trọng, dẫn đến xu hướng hủy bỏ các dịch vụ đặt phòng đã lên kế hoạch từ trước.",
+      "causes": [
+        "Tình trạng thiếu hụt nhiên liệu",
+        "Nguy cơ bị tấn công bởi máy bay không người lái"
+      ],
+      "effects": [
+        "Làn sóng hủy phòng du lịch",
+        "Tâm lý lo ngại của người tiêu dùng đối với các chuyến đi"
+      ],
+      "affected_groups": [
+        "Ngành du lịch Nga",
+        "Người dân Nga có nhu cầu đi nghỉ hè"
+      ],
+      "market_impact": "Ngành dịch vụ và du lịch tại Nga đối mặt với sự sụt giảm doanh thu nghiêm trọng và bất ổn về chuỗi cung ứng nhiên liệu cho vận tải.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "business"
+      ],
+      "regions": [
+        "RU"
+      ],
+      "significance": "Sự kiện phản ánh tác động lan tỏa của chiến sự vào đời sống dân sự, làm suy yếu các hoạt động kinh tế nội địa như du lịch.",
+      "unknowns": [
+        "Phạm vi địa lý cụ thể bị ảnh hưởng nặng nề nhất bởi tình trạng thiếu nhiên liệu",
+        "Tỷ lệ phần trăm các dịch vụ lưu trú đã bị hủy bỏ tính đến hiện tại"
+      ],
+      "confidence_note": "Thông tin dựa trên diễn biến thực tế của tình hình an ninh và kinh tế Nga, có độ tin cậy cao về mặt xu hướng xã hội.",
+      "scenarios": [
+        {
+          "text": "Các doanh nghiệp du lịch nội địa Nga phải thay đổi mô hình kinh doanh để thích nghi với nhu cầu du lịch tại chỗ thay vì di chuyển xa.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Chính phủ Nga thực hiện các biện pháp kiểm soát nhiên liệu và tăng cường phòng không để trấn an thị trường du lịch.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Chiến sự",
+          "target": "Ngành du lịch Nga",
+          "relation_type": "cause_effect",
+          "label": "Gây gián đoạn hoạt động kinh doanh"
+        },
+        {
+          "source": "Thiếu nhiên liệu",
+          "target": "Người đi du lịch",
+          "relation_type": "cause_effect",
+          "label": "Cản trở việc di chuyển"
+        },
+        {
+          "source": "UAV",
+          "target": "Tâm lý khách du lịch",
+          "relation_type": "cause_effect",
+          "label": "Gây tâm lý thận trọng và sợ hãi"
+        }
+      ],
+      "entities": [
+        "Nga"
+      ],
+      "keywords": [
+        "chiến sự",
+        "Nga",
+        "mùa du lịch"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_8fe0479c": {
+    "created_at": 1785644300815,
+    "expires_at": 1788236300815,
+    "version": "4.5",
+    "checksum": "ce8e94187aae7ff2eb1517c8f58e366d",
+    "data": {
+      "cluster_title": "Bà Netanyahu bị chỉ trích vì số lượng giày",
+      "short_summary": "Bà Netanyahu bị chỉ trích vì số lượng giày gần 400 đôi mà chồng phải lau.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "categories": [
+        "Chính trị",
+        "Kinh tế"
+      ],
+      "regions": [
+        "IL"
+      ],
+      "follow_up": "",
+      "entities": [
+        "Bà Netanyahu",
+        "Israel"
+      ],
+      "keywords": [
+        "Bà Netanyahu",
+        "giày",
+        "Israel"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_general_1785644306561": {
+    "created_at": 1785644312388,
+    "expires_at": 1788236312388,
+    "version": "4.5",
+    "checksum": "68dd4136cfbe4e2722a1439bc200e3cb",
+    "data": {
+      "cluster_title": "Truth Social bán quyền đọc trước bài đăng của ông Trump",
+      "short_summary": "Truth Social bán quyền đọc trước bài đăng của ông Trump với mức giá lên đến 100.000 USD/tháng.",
+      "detailed_summary": "Mạng xã hội Truth Social đã chính thức phát hành dịch vụ thuê bao mới hướng tới đối tượng doanh nghiệp. Với mức phí 100.000 USD mỗi tháng, khách hàng mua gói này sẽ có quyền truy cập sớm vào các nội dung bài đăng được chia sẻ bởi ông Donald Trump, nhằm phục vụ các nhu cầu kinh doanh hoặc phân tích thông tin.",
+      "causes": [
+        "Nhu cầu tạo nguồn thu mới cho nền tảng Truth Social",
+        "Giá trị thương mại hóa cao từ tầm ảnh hưởng của ông Donald Trump"
+      ],
+      "effects": [
+        "Tăng doanh thu từ dịch vụ cao cấp cho nền tảng",
+        "Thay đổi cách thức tiếp cận thông tin đối với các đơn vị doanh nghiệp"
+      ],
+      "affected_groups": [
+        "Các doanh nghiệp lớn",
+        "Nhà đầu tư",
+        "Người dùng mạng xã hội Truth Social"
+      ],
+      "market_impact": "Đây là động thái thử nghiệm mô hình kinh doanh dựa trên giá trị thương hiệu cá nhân, có khả năng tạo ra xu hướng mới cho các nền tảng mạng xã hội có tính chính trị.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "business",
+        "finance"
+      ],
+      "regions": [
+        "US"
+      ],
+      "significance": "Sự kiện phản ánh nỗ lực tối ưu hóa lợi nhuận của Truth Social bằng cách khai thác sức ảnh hưởng truyền thông của ông Donald Trump thông qua các công cụ tài chính.",
+      "unknowns": [
+        "Số lượng doanh nghiệp thực tế sẵn sàng chi trả mức giá này",
+        "Tác động của dịch vụ này tới sự công bằng trong luồng thông tin trên mạng xã hội"
+      ],
+      "confidence_note": "Thông tin dựa trên thông báo về gói dịch vụ, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Mô hình kinh doanh thành công và tạo ra nguồn thu bền vững cho Truth Social.",
+          "likelihood": "trung bình"
+        },
+        {
+          "text": "Phản ứng trái chiều từ cộng đồng người dùng và các bên liên quan dẫn đến việc điều chỉnh chính sách.",
+          "likelihood": "cao"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Truth Social",
+          "target": "Donald Trump",
+          "relation_type": "cause_effect",
+          "label": "Tận dụng tầm ảnh hưởng của cá nhân để thương mại hóa nội dung"
+        },
+        {
+          "source": "Doanh nghiệp",
+          "target": "Truth Social",
+          "relation_type": "cooperation",
+          "label": "Hợp tác thông qua giao dịch thuê bao quyền truy cập sớm"
+        }
+      ],
+      "entities": [
+        "Truth Social",
+        "Donald Trump"
+      ],
+      "keywords": [
+        "Truth Social",
+        "Donald Trump"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_general_1785644318184": {
+    "created_at": 1785644324190,
+    "expires_at": 1788236324190,
+    "version": "4.5",
+    "checksum": "3e7f0df5565ce16178e011a20077fa10",
+    "data": {
+      "cluster_title": "Hai người Nga bị giết ở Thái Lan",
+      "short_summary": "Hai người Nga bị giết ở Thái Lan, hung thủ khai thêm hố chôn 3 thi thể khác chung gia đình.",
+      "detailed_summary": "Hai công dân Nga đã bị sát hại tại Thái Lan. Quá trình điều tra hiện trường và lời khai của hung thủ đã dẫn đến việc phát hiện thêm ba thi thể của một gia đình người Thái Lan tại các hố chôn. Thủ tướng Thái Lan đã trực tiếp kiểm tra hiện trường và thừa nhận vụ việc gây ảnh hưởng tiêu cực đến hình ảnh an toàn của quốc gia này.",
+      "causes": [
+        "Hành vi tội phạm nghiêm trọng của hung thủ",
+        "Sự tồn tại của các xung đột cá nhân dẫn đến án mạng hàng loạt"
+      ],
+      "effects": [
+        "Ảnh hưởng tiêu cực đến uy tín và hình ảnh an toàn du lịch của Thái Lan",
+        "Gia tăng áp lực lên lực lượng thực thi pháp luật và chính phủ Thái Lan"
+      ],
+      "affected_groups": [
+        "Cộng đồng người Nga tại Thái Lan",
+        "Gia đình các nạn nhân Thái Lan",
+        "Ngành du lịch Thái Lan"
+      ],
+      "market_impact": "Có khả năng ảnh hưởng ngắn hạn đến tâm lý khách du lịch quốc tế, gây áp lực lên ngành dịch vụ và lữ hành tại địa phương.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "diplomacy",
+        "politics"
+      ],
+      "regions": [
+        "TH"
+      ],
+      "significance": "Vụ việc đặt ra thách thức về quản lý an ninh trật tự đối với người nước ngoài và sự an toàn công cộng, vốn là trụ cột quan trọng của kinh tế du lịch Thái Lan.",
+      "unknowns": [
+        "Động cơ cụ thể của hung thủ đối với từng nạn nhân",
+        "Mối liên hệ chính xác giữa nhóm nạn nhân người Nga và gia đình nạn nhân người Thái Lan"
+      ],
+      "confidence_note": "Thông tin dựa trên xác nhận từ phía chính quyền Thái Lan và truyền thông chính thống, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Chính phủ Thái Lan tăng cường an ninh và kiểm soát người nước ngoài để khôi phục hình ảnh.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Vụ án gây ra làn sóng lo ngại tạm thời đối với khách du lịch quốc tế tại Thái Lan.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Hung thủ",
+          "target": "Nạn nhân (Người Nga và người Thái)",
+          "relation_type": "conflict",
+          "label": "Gây ra cái chết cho các nạn nhân"
+        },
+        {
+          "source": "Vụ án mạng",
+          "target": "Hình ảnh quốc gia Thái Lan",
+          "relation_type": "cause_effect",
+          "label": "Làm tổn hại uy tín an ninh đất nước"
+        }
+      ],
+      "entities": [
+        "Thái Lan",
+        "Nga"
+      ],
+      "keywords": [
+        "Thái Lan",
+        "Nga",
+        "Hung thủ"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_d0a2b5d4": {
+    "created_at": 1785644339971,
+    "expires_at": 1788236339971,
+    "version": "4.5",
+    "checksum": "5128a5b50cc4f03c109d92f3909d0d2e",
+    "data": {
+      "cluster_title": "Cần đào tạo tư duy làm chủ công nghệ",
+      "short_summary": "GS Nguyễn Đức Khương cho rằng cần đào tạo tư duy làm chủ công nghệ để phát huy tác dụng của công nghệ",
+      "detailed_summary": "Giáo sư Nguyễn Đức Khương nhận định rằng trí tuệ nhân tạo và công nghệ là chìa khóa để thay đổi mô hình tăng trưởng kinh tế của Việt Nam. Tuy nhiên, công nghệ chỉ thực sự hiệu quả khi đi kèm với nguồn nhân lực có khả năng tiếp nhận và kiểm soát. Ông kêu gọi thay đổi tư duy đào tạo từ việc để công nghệ dẫn dắt sang làm chủ công nghệ.",
+      "causes": [
+        "Sự phát triển mạnh mẽ của công nghệ và trí tuệ nhân tạo",
+        "Nhu cầu chuyển đổi mô hình tăng trưởng kinh tế tại Việt Nam"
+      ],
+      "effects": [
+        "Thúc đẩy quá trình đào tạo nguồn nhân lực chất lượng cao",
+        "Cải thiện khả năng hấp thụ và ứng dụng công nghệ trong sản xuất kinh doanh"
+      ],
+      "affected_groups": [
+        "Cơ sở giáo dục và đào tạo",
+        "Lao động tri thức",
+        "Các doanh nghiệp trong quá trình chuyển đổi số"
+      ],
+      "market_impact": "Đẩy mạnh nhu cầu đào tạo và tuyển dụng lao động có kỹ năng công nghệ cao, tạo động lực cho các ngành kinh tế số.",
+      "vn_impact": "Góp phần định hướng chiến lược quốc gia về phát triển nguồn nhân lực trong kỷ nguyên số, trực tiếp phục vụ mục tiêu hiện đại hóa và nâng cao năng suất lao động Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "tech"
+      ],
+      "regions": [
+        "VN"
+      ],
+      "significance": "Con người đóng vai trò là chủ thể quyết định sự thành bại của quá trình chuyển đổi số, thay vì bị phụ thuộc vào các công cụ công nghệ mới.",
+      "unknowns": [
+        "Lộ trình cụ thể để thay đổi tư duy giáo dục ở cấp quốc gia",
+        "Khả năng thích nghi của hệ thống đào tạo hiện tại trước nhu cầu mới"
+      ],
+      "confidence_note": "Thông tin dựa trên ý kiến chuyên gia, mang tính định hướng chiến lược.",
+      "scenarios": [
+        {
+          "text": "Việt Nam tích cực cải cách chương trình giáo dục để tăng cường kỹ năng làm chủ công nghệ.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Sự chênh lệch giữa kỹ năng lao động hiện tại và yêu cầu công nghệ vẫn tiếp diễn trong trung hạn.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Nguyễn Đức Khương",
+          "target": "Nguồn nhân lực Việt Nam",
+          "relation_type": "cause_effect",
+          "label": "Đề xuất yêu cầu đào tạo để làm chủ công nghệ"
+        },
+        {
+          "source": "Công nghệ",
+          "target": "Tăng trưởng kinh tế",
+          "relation_type": "cause_effect",
+          "label": "Là chìa khóa chuyển đổi mô hình tăng trưởng"
+        }
+      ],
+      "entities": [
+        "GS Nguyễn Đức Khương"
+      ],
+      "keywords": [
+        "tư duy làm chủ công nghệ",
+        "AI",
+        "đào tạo"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
   }
 }
