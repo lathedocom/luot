@@ -4504,5 +4504,822 @@
       "sentiment": -1,
       "scope": "national"
     }
+  },
+  "evt_63eb8cd4": {
+    "created_at": 1785676659080,
+    "expires_at": 1788268659080,
+    "version": "4.5",
+    "checksum": "6c2a815a077d1a887e1ce091b5750f43",
+    "data": {
+      "cluster_title": "Tổng thống Trump hủy kế hoạch tấn công Iran",
+      "short_summary": "Tổng thống Trump hủy kế hoạch tấn công Iran sau khi nhận được đề nghị từ các nước trong khu vực.",
+      "detailed_summary": "Sau khi đe dọa tấn công quân sự Iran, Tổng thống Mỹ Donald Trump đã quyết định hủy bỏ kế hoạch vào phút chót. Quyết định này được đưa ra sau khi có yêu cầu từ các đồng minh tại Trung Đông và trong bối cảnh Tehran tăng cường các hoạt động ngoại giao. Động thái này nhằm mở ra không gian cho việc đàm phán về chương trình hạt nhân của Iran và đảm bảo an ninh tại eo biển Hormuz.",
+      "causes": [
+        "Yêu cầu từ các đồng minh tại khu vực Trung Đông",
+        "Nỗ lực ngoại giao từ phía Iran",
+        "Mong muốn duy trì khả năng đàm phán về chương trình hạt nhân"
+      ],
+      "effects": [
+        "Tạm dừng hành động quân sự trực tiếp giữa Mỹ và Iran",
+        "Mở ra lộ trình đối thoại thay vì xung đột vũ trang",
+        "Giảm thiểu nguy cơ bùng nổ chiến tranh tức thời tại Trung Đông"
+      ],
+      "affected_groups": [
+        "Chính phủ Mỹ",
+        "Chính phủ Iran",
+        "Các quốc gia đồng minh tại Trung Đông",
+        "Thị trường năng lượng toàn cầu"
+      ],
+      "market_impact": "Việc giảm căng thẳng quân sự giúp ổn định tâm lý thị trường năng lượng, hạn chế rủi ro biến động giá dầu thô trong ngắn hạn.",
+      "vn_impact": "Sự kiện ảnh hưởng đến giá dầu thế giới, từ đó có tác động gián tiếp đến chi phí nhiên liệu và lạm phát tại Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "diplomacy"
+      ],
+      "regions": [
+        "US",
+        "IR"
+      ],
+      "significance": "Sự kiện cho thấy sự ưu tiên của các kênh ngoại giao trong việc giải quyết tranh chấp chính trị - quân sự căng thẳng tại Trung Đông nhằm tránh một cuộc xung đột quy mô lớn.",
+      "unknowns": [
+        "Các điều kiện cụ thể để tiếp tục đàm phán",
+        "Thời hạn tạm dừng các hành động quân sự",
+        "Phản ứng chi tiết của các phe phái cứng rắn tại Iran"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên tuyên bố trực tiếp từ Tổng thống Mỹ và các nguồn tin từ các hãng thông tấn uy tín.",
+      "scenarios": [
+        {
+          "text": "Các bên khởi động đối thoại ngoại giao chính thức về chương trình hạt nhân và an ninh khu vực.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Đàm phán thất bại dẫn đến nguy cơ xung đột quân sự quay trở lại.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Donald Trump",
+          "target": "Iran",
+          "relation_type": "conflict",
+          "label": "Căng thẳng quân sự và ngoại giao"
+        },
+        {
+          "source": "Đồng minh Trung Đông",
+          "target": "Donald Trump",
+          "relation_type": "cooperation",
+          "label": "Đề nghị tạm dừng tấn công"
+        },
+        {
+          "source": "Iran",
+          "target": "Chương trình hạt nhân",
+          "relation_type": "cause_effect",
+          "label": "Đối tượng chính trong đàm phán"
+        },
+        {
+          "source": "Donald Trump",
+          "target": "Đàm phán",
+          "relation_type": "cause_effect",
+          "label": "Hủy tấn công để ưu tiên đối thoại"
+        }
+      ],
+      "entities": [
+        "Tổng thống Trump",
+        "Iran"
+      ],
+      "keywords": [
+        "Tổng thống Trump",
+        "Iran",
+        "tấn công",
+        "hủy kế hoạch"
+      ],
+      "importance": 95,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_43c8b464": {
+    "created_at": 1785676670952,
+    "expires_at": 1788268670952,
+    "version": "4.5",
+    "checksum": "c825a3179f87ba9842885361b4d7c9f8",
+    "data": {
+      "cluster_title": "Wall Street's Favorite Bet Comes Undone",
+      "short_summary": "Sự kiện Wall Street's Favorite Bet Comes Undone liên quan đến thị trường chứng khoán và công nghệ bán dẫn.",
+      "detailed_summary": "Thị trường chứng khoán Phố Wall đang đối mặt với sự bất ổn gia tăng khi các nhà đầu tư nghi ngờ về tính bền vững của dòng vốn đổ vào lĩnh vực trí tuệ nhân tạo. Các cổ phiếu ngành bán dẫn, vốn là động lực tăng trưởng chính trong năm nay, đang trải qua giai đoạn biến động giá mạnh khi niềm tin của thị trường bắt đầu lung lay trước lo ngại về việc liệu chi tiêu cho trí tuệ nhân tạo có thể duy trì đà tăng trưởng như dự kiến hay không.",
+      "causes": [
+        "Sự lo ngại của nhà đầu tư về tính bền vững của chi tiêu cho trí tuệ nhân tạo",
+        "Áp lực chốt lời sau giai đoạn tăng trưởng nóng của nhóm cổ phiếu bán dẫn"
+      ],
+      "effects": [
+        "Gia tăng biến động trên thị trường chứng khoán",
+        "Sự đảo chiều trong tâm lý nhà đầu tư đối với cổ phiếu công nghệ"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư cá nhân và tổ chức tại Phố Wall",
+        "Các doanh nghiệp trong ngành sản xuất và thiết kế bán dẫn"
+      ],
+      "market_impact": "Gây ra tâm lý hoang mang và áp lực bán tháo cổ phiếu trong nhóm công nghệ, làm tăng chỉ số biến động thị trường.",
+      "vn_impact": "Tác động gián tiếp thông qua tâm lý nhà đầu tư trên thị trường chứng khoán Việt Nam, đặc biệt là nhóm cổ phiếu công nghệ và khả năng dòng vốn ngoại rút khỏi các thị trường mới nổi để trú ẩn.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "finance"
+      ],
+      "regions": [
+        "US"
+      ],
+      "significance": "Sự kiện cho thấy sự hoài nghi của thị trường đối với bong bóng kỳ vọng vào trí tuệ nhân tạo, có thể thay đổi cục diện đầu tư toàn cầu.",
+      "unknowns": [
+        "Mức độ sụt giảm cụ thể của dòng vốn đầu tư vào trí tuệ nhân tạo",
+        "Thời điểm thị trường thiết lập lại trạng thái cân bằng mới"
+      ],
+      "confidence_note": "Thông tin dựa trên biến động thực tế của thị trường tài chính, có độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Thị trường tiếp tục điều chỉnh mạnh khi các nhà đầu tư giảm tỷ trọng cổ phiếu bán dẫn",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Sự phục hồi diễn ra nếu các tập đoàn công nghệ lớn đưa ra báo cáo tài chính khả quan hơn mong đợi",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Chi tiêu cho trí tuệ nhân tạo",
+          "target": "Cổ phiếu bán dẫn",
+          "relation_type": "cause_effect",
+          "label": "Nguyên nhân thúc đẩy giá cổ phiếu tăng trưởng"
+        },
+        {
+          "source": "Lo ngại của nhà đầu tư",
+          "target": "Biến động thị trường",
+          "relation_type": "cause_effect",
+          "label": "Tác nhân gây bất ổn tài chính"
+        }
+      ],
+      "entities": [
+        "Wall Street",
+        "semiconductor",
+        "artificial intelligence"
+      ],
+      "keywords": [
+        "Wall Street",
+        "chips",
+        "semiconductor",
+        "artificial intelligence"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_b889dd34": {
+    "created_at": 1785676682519,
+    "expires_at": 1788268682519,
+    "version": "4.5",
+    "checksum": "bb77c7d9094bda50829b855f3dfde7c4",
+    "data": {
+      "cluster_title": "SpaceX IPO Faces First Reality Check",
+      "short_summary": "SpaceX sẽ công bố báo cáo tài chính công khai đầu tiên, giúp nhà đầu tư đánh giá tiến độ của Starship, Starlink và chiến lược phát triển dài hạn của công ty sau IPO thành công.",
+      "detailed_summary": "Nhà báo Loren Grush của Bloomberg nhận định rằng các báo cáo thu nhập công khai đầu tiên của SpaceX sẽ là thước đo quan trọng để nhà đầu tư đánh giá tiến độ của các dự án trọng điểm như Starship, hệ thống internet vệ tinh Starlink, cơ sở hạ tầng trí tuệ nhân tạo và định hướng tăng trưởng dài hạn của công ty.",
+      "causes": [
+        "Việc thực hiện IPO của SpaceX",
+        "Nhu cầu minh bạch hóa tài chính đối với các dự án công nghệ lớn"
+      ],
+      "effects": [
+        "Áp lực lớn đối với ban lãnh đạo SpaceX trong việc công khai số liệu tài chính",
+        "Nhà đầu tư sẽ khắt khe hơn trong việc đánh giá hiệu quả của các dự án trọng điểm"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư trên thị trường chứng khoán",
+        "Cổ đông SpaceX",
+        "Ban lãnh đạo SpaceX"
+      ],
+      "market_impact": "Gây tác động đáng kể đến tâm lý nhà đầu tư đối với lĩnh vực hàng không vũ trụ và các công ty công nghệ cao có vốn hóa lớn.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "finance",
+        "business"
+      ],
+      "regions": [
+        "US"
+      ],
+      "significance": "Sự kiện này đánh dấu bước chuyển mình của SpaceX từ một công ty tư nhân sang doanh nghiệp đại chúng, buộc họ phải chịu sự giám sát khắt khe của thị trường tài chính quốc tế.",
+      "unknowns": [
+        "Thời điểm cụ thể và nội dung chi tiết của báo cáo tài chính đầu tiên",
+        "Mức độ ảnh hưởng thực tế của các dự án Starship và AI đến lợi nhuận của công ty trong ngắn hạn"
+      ],
+      "confidence_note": "Thông tin dựa trên nhận định của chuyên gia trong ngành, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Báo cáo tài chính tích cực giúp củng cố niềm tin nhà đầu tư và thúc đẩy giá cổ phiếu tăng.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Kết quả kinh doanh không đạt kỳ vọng gây ra áp lực bán tháo cổ phiếu do chi phí vận hành các dự án lớn.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "SpaceX",
+          "target": "Nhà đầu tư",
+          "relation_type": "cause_effect",
+          "label": "Hoạt động kinh doanh của SpaceX ảnh hưởng trực tiếp đến quyết định của nhà đầu tư."
+        },
+        {
+          "source": "Loren Grush",
+          "target": "SpaceX",
+          "relation_type": "neutral",
+          "label": "Đánh giá và phân tích định hướng phát triển của công ty."
+        }
+      ],
+      "entities": [
+        "SpaceX",
+        "Bloomberg",
+        "Loren Grush"
+      ],
+      "keywords": [
+        "SpaceX",
+        "IPO",
+        "Starship",
+        "Starlink",
+        "AI infrastructure"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_5d7d6a8b": {
+    "created_at": 1785676694194,
+    "expires_at": 1788268694194,
+    "version": "4.5",
+    "checksum": "e74e9a588277b4ad1b70a107a85021ee",
+    "data": {
+      "cluster_title": "Yên Traders Brace for More Intervention",
+      "short_summary": "Nhu cầu mua bán đồng yên tăng cao khi Nhật Bản và Mỹ có thể can thiệp vào thị trường tiền tệ.",
+      "detailed_summary": "Sau các đợt can thiệp phối hợp tại thị trường Tokyo và New York vào tuần trước, đồng Yên đã có sự phục hồi đáng kể. Các nhà giao dịch hiện đang ở trạng thái cảnh giác cao độ trước khả năng hai quốc gia này tiếp tục thực hiện thêm các hành động can thiệp chung khi phiên giao dịch tại châu Á mở cửa vào thứ Hai.",
+      "causes": [
+        "Sự biến động mạnh của đồng Yên trong thời gian gần đây",
+        "Quyết định phối hợp can thiệp giữa chính phủ Nhật Bản và Mỹ nhằm bình ổn thị trường"
+      ],
+      "effects": [
+        "Sự phục hồi giá trị của đồng Yên so với các ngoại tệ khác",
+        "Tâm lý thận trọng và cảnh giác cao độ của giới đầu tư tiền tệ quốc tế"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư tiền tệ",
+        "Các doanh nghiệp xuất nhập khẩu",
+        "Ngân hàng trung ương Nhật Bản",
+        "Bộ Tài chính Mỹ"
+      ],
+      "market_impact": "Thị trường tiền tệ đang trong tình trạng bất ổn định do tâm lý chờ đợi các động thái can thiệp chính sách từ cơ quan quản lý, tạo ra sự giằng co về tỷ giá.",
+      "vn_impact": "Sự biến động của đồng Yên có thể ảnh hưởng gián tiếp đến tỷ giá VND/JPY, tác động đến chi phí nhập khẩu nguyên liệu từ Nhật Bản và các khoản vay nợ bằng đồng Yên của Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "finance"
+      ],
+      "regions": [
+        "JP",
+        "US"
+      ],
+      "significance": "Sự kiện cho thấy sự phối hợp chính sách tiền tệ cấp cao giữa Mỹ và Nhật Bản nhằm ngăn chặn đà sụt giảm của đồng Yên, phản ánh mối quan tâm chung về ổn định tài chính toàn cầu.",
+      "unknowns": [
+        "Thời điểm cụ thể và quy mô của các đợt can thiệp tiếp theo (nếu có)",
+        "Ngưỡng tỷ giá mục tiêu mà cơ quan chức năng Nhật Bản và Mỹ đang hướng tới"
+      ],
+      "confidence_note": "Thông tin dựa trên diễn biến thị trường thực tế và sự chuẩn bị của giới đầu tư, độ tin cậy cao về tâm lý thị trường.",
+      "scenarios": [
+        {
+          "text": "Nhật Bản và Mỹ thực hiện thêm các đợt can thiệp nếu tỷ giá đồng Yên tiếp tục suy yếu đột ngột.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Thị trường tự ổn định mà không cần thêm sự can thiệp trực tiếp từ chính phủ hai nước.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Nhật Bản",
+          "target": "Mỹ",
+          "relation_type": "cooperation",
+          "label": "Phối hợp can thiệp tiền tệ ổn định đồng Yên"
+        },
+        {
+          "source": "Can thiệp thị trường",
+          "target": "Đồng Yên",
+          "relation_type": "cause_effect",
+          "label": "Tạo ra sự phục hồi giá trị"
+        }
+      ],
+      "entities": [
+        "Yen",
+        "Japan",
+        "US"
+      ],
+      "keywords": [
+        "yen",
+        "trader",
+        "Japan",
+        "US"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_3ef99359": {
+    "created_at": 1785676710102,
+    "expires_at": 1788268710102,
+    "version": "4.5",
+    "checksum": "d11c2f472c6faa8522624c32acb15023",
+    "data": {
+      "cluster_title": "Banks Offload Risk từ Leveraged ETFs",
+      "short_summary": "Banks Offload Risk từ Leveraged ETFs bằng cách sử dụng Crash Puts để giảm thiểu rủi ro.",
+      "detailed_summary": "Các quỹ ETF đòn bẩy, vốn được thiết kế để khuếch đại lợi nhuận hàng ngày gấp đôi hoặc gấp ba cho các nhà đầu tư, đang tiềm ẩn mức độ rủi ro rất cao. Để quản lý sự bất ổn này, các ngân hàng đã bắt đầu đẩy rủi ro sang các sản phẩm tài chính phức tạp gọi là quyền chọn bán phòng vệ (crash puts) để giảm thiểu thiệt hại nếu tài sản cơ sở xảy ra biến động mạnh.",
+      "causes": [
+        "Đặc tính khuếch đại lợi nhuận gây rủi ro cao của quỹ ETF đòn bẩy",
+        "Nhu cầu quản trị rủi ro danh mục đầu tư của các ngân hàng"
+      ],
+      "effects": [
+        "Tăng cường sử dụng các công cụ phái sinh phức tạp",
+        "Chuyển dịch gánh nặng rủi ro từ ngân hàng sang các bên cung ứng quyền chọn bán"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư quỹ ETF đòn bẩy",
+        "Các tổ chức tài chính ngân hàng",
+        "Thị trường quyền chọn"
+      ],
+      "market_impact": "Gia tăng độ phức tạp trong cấu trúc phòng vệ rủi ro và có khả năng ảnh hưởng đến thanh khoản thị trường nếu xảy ra biến động đột ngột.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "finance",
+        "business"
+      ],
+      "regions": [
+        "US"
+      ],
+      "significance": "Sự kiện phản ánh nỗ lực của các ngân hàng trong việc né tránh các rủi ro từ các sản phẩm đầu tư có độ biến động cao, điều này có thể gây ra những hệ quả khó lường về thanh khoản hệ thống.",
+      "unknowns": [
+        "Quy mô tài chính thực tế của các hợp đồng quyền chọn bán này",
+        "Danh tính cụ thể của các bên đối tác nhận chuyển giao rủi ro"
+      ],
+      "confidence_note": "Thông tin dựa trên diễn biến tài chính thực tế được báo cáo, có độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Thị trường ổn định khiến các hợp đồng quyền chọn bán hết hạn mà không cần kích hoạt, phí quyền chọn trở thành lợi nhuận cho bên bán.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Thị trường biến động mạnh gây áp lực lên bên cung ứng quyền chọn, dẫn đến gián đoạn thanh khoản cục bộ.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Ngân hàng",
+          "target": "ETF đòn bẩy",
+          "relation_type": "cause_effect",
+          "label": "Ngân hàng thực hiện phòng vệ rủi ro từ các ETF đòn bẩy"
+        },
+        {
+          "source": "Quyền chọn bán đặc biệt",
+          "target": "Ngân hàng",
+          "relation_type": "cooperation",
+          "label": "Công cụ giúp ngân hàng chuyển giao rủi ro"
+        }
+      ],
+      "entities": [
+        "Banks",
+        "Leveraged ETFs"
+      ],
+      "keywords": [
+        "Banks",
+        "Leveraged ETFs",
+        "Crash Puts"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_d4328f17": {
+    "created_at": 1785676722462,
+    "expires_at": 1788268722462,
+    "version": "4.5",
+    "checksum": "00e8b0a0cc0a32ee5b42edccb5834144",
+    "data": {
+      "cluster_title": "Thông điệp trái ngược từ hai đồng minh với ông Trump trong chiến sự Iran",
+      "short_summary": "Arab Saudi và Israel mang đến Nhà Trắng hai thông điệp trái ngược về chiến sự Iran, buộc Tổng thống Trump phải lựa chọn giữa hạ nhiệt hay leo thang.",
+      "detailed_summary": "Tổng thống Trump đang đối mặt với sự phân hóa trong chiến lược tiếp cận Iran từ hai đồng minh chủ chốt. Trong khi các bên đưa ra các quan điểm trái ngược, Nhà Trắng buộc phải cân nhắc giữa việc tiếp tục gây sức ép tối đa hay theo đuổi con đường hạ nhiệt căng thẳng để tránh các kịch bản xung đột không mong muốn tại khu vực Trung Đông.",
+      "causes": [
+        "Sự bất đồng quan điểm địa chính trị giữa Arab Saudi và Israel trong vấn đề Iran",
+        "Mong muốn bảo vệ an ninh quốc gia của các đồng minh thông qua việc tác động vào chính sách của Mỹ"
+      ],
+      "effects": [
+        "Tạo áp lực ra quyết định chiến lược lên Tổng thống Trump",
+        "Gia tăng tính phức tạp cho nỗ lực ngoại giao của Mỹ tại Trung Đông"
+      ],
+      "affected_groups": [
+        "Chính quyền Mỹ",
+        "Chính phủ Iran",
+        "Các quốc gia Trung Đông",
+        "Thị trường năng lượng toàn cầu"
+      ],
+      "market_impact": "Sự bất ổn trong chính sách đối ngoại của Mỹ có thể gây biến động tâm lý trên thị trường dầu mỏ toàn cầu do lo ngại về gián đoạn nguồn cung.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam, tuy nhiên cần theo dõi sát sao vì biến động giá năng lượng có thể ảnh hưởng đến chi phí nhập khẩu và sản xuất trong nước.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "diplomacy"
+      ],
+      "regions": [
+        "US",
+        "SA",
+        "IL",
+        "IR"
+      ],
+      "significance": "Sự kiện cho thấy sự chia rẽ về phương thức hành động giữa các đồng minh của Mỹ, làm phức tạp hóa khả năng duy trì ảnh hưởng và điều phối chiến lược của Washington tại Trung Đông.",
+      "unknowns": [
+        "Nội dung chi tiết của các thông điệp trái ngược mà Arab Saudi và Israel truyền đạt",
+        "Phản ứng cuối cùng của Tổng thống Trump đối với từng đề xuất của các đồng minh"
+      ],
+      "confidence_note": "Thông tin dựa trên diễn biến ngoại giao, độ tin cậy cao về mặt ghi nhận sự việc.",
+      "scenarios": [
+        {
+          "text": "Mỹ duy trì chính sách gây áp lực hiện tại để làm hài lòng đồng minh cứng rắn, dẫn đến nguy cơ leo thang quân sự.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Mỹ tìm kiếm một lộ trình trung gian hoặc đàm phán để cân bằng lợi ích giữa các bên, giảm thiểu rủi ro xung đột trực tiếp.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Arab Saudi",
+          "target": "Tổng thống Trump",
+          "relation_type": "cooperation",
+          "label": "Tư vấn chính sách đối ngoại"
+        },
+        {
+          "source": "Israel",
+          "target": "Tổng thống Trump",
+          "relation_type": "cooperation",
+          "label": "Tư vấn chính sách đối ngoại"
+        },
+        {
+          "source": "Arab Saudi",
+          "target": "Iran",
+          "relation_type": "conflict",
+          "label": "Đối đầu khu vực"
+        },
+        {
+          "source": "Israel",
+          "target": "Iran",
+          "relation_type": "conflict",
+          "label": "Đối đầu quân sự và chiến lược"
+        },
+        {
+          "source": "Iran",
+          "target": "Tổng thống Trump",
+          "relation_type": "cause_effect",
+          "label": "Là tác nhân gây căng thẳng trong chính sách của Mỹ"
+        }
+      ],
+      "entities": [
+        "Iran",
+        "Arab Saudi",
+        "Israel",
+        "Tổng thống Trump"
+      ],
+      "keywords": [
+        "Iran",
+        "Arab Saudi",
+        "Israel",
+        "Tổng thống Trump"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_general_1785676728269": {
+    "created_at": 1785676733818,
+    "expires_at": 1788268733818,
+    "version": "4.5",
+    "checksum": "713b08c953df9fa8e8944e5f376e5710",
+    "data": {
+      "cluster_title": "Làn sóng di cư vào Ceuta",
+      "short_summary": "Làn sóng hơn 50.000 người di cư tràn vào Ceuta đã khiến vùng lãnh thổ nhỏ của Tây Ban Nha quá tải và đặt chính sách di cư của EU trước phép thử.",
+      "detailed_summary": "Vùng lãnh thổ Ceuta của Tây Ban Nha đang đối mặt với cuộc khủng hoảng nhân đạo và an ninh khi ghi nhận hơn 50.000 người di cư vượt biên trái phép. Sự kiện này gây áp lực trực tiếp lên hạ tầng địa phương, đồng thời đặt ra thách thức lớn cho các quốc gia thành viên Liên minh châu Âu trong việc thống nhất các chính sách quản lý biên giới và xử lý người di cư.",
+      "causes": [
+        "Dòng người di cư ồ ạt",
+        "Hạn chế về hạ tầng tiếp nhận tại Ceuta"
+      ],
+      "effects": [
+        "Gây quá tải hệ thống quản lý địa phương",
+        "Tạo áp lực chính trị đối với chính sách di cư của EU"
+      ],
+      "affected_groups": [
+        "Chính quyền Ceuta",
+        "Tây Ban Nha",
+        "Liên minh châu Âu",
+        "Người di cư"
+      ],
+      "market_impact": "Chưa có tác động trực tiếp đến thị trường tài chính toàn cầu, nhưng có thể làm tăng chi phí quản lý biên giới và an ninh tại khu vực chịu ảnh hưởng.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "diplomacy"
+      ],
+      "regions": [
+        "ES"
+      ],
+      "significance": "Sự kiện cho thấy sự mong manh của các rào cản biên giới và tính cấp bách trong việc hoạch định chính sách ứng phó với làn sóng di cư tại châu Âu.",
+      "unknowns": [
+        "Thời gian kéo dài của làn sóng di cư",
+        "Phản ứng cụ thể tiếp theo từ phía các tổ chức của EU"
+      ],
+      "confidence_note": "Thông tin dựa trên báo cáo thực tế từ nguồn tin chính thống, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "EU siết chặt kiểm soát biên giới và hỗ trợ tài chính khẩn cấp cho Tây Ban Nha.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Tình trạng bất ổn tại khu vực biên giới tiếp tục kéo dài, gây căng thẳng ngoại giao khu vực.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Người di cư",
+          "target": "Ceuta",
+          "relation_type": "cause_effect",
+          "label": "Gây quá tải hạ tầng"
+        },
+        {
+          "source": "Ceuta",
+          "target": "Liên minh châu Âu",
+          "relation_type": "cause_effect",
+          "label": "Tạo áp lực lên chính sách di cư"
+        }
+      ],
+      "entities": [
+        "Ceuta",
+        "Tây Ban Nha",
+        "EU"
+      ],
+      "keywords": [
+        "di cư",
+        "Ceuta",
+        "Tây Ban Nha",
+        "EU"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_general_1785676739475": {
+    "created_at": 1785676745836,
+    "expires_at": 1788268745836,
+    "version": "4.5",
+    "checksum": "bfe1af0b3de9fb84fb7de1d8c521dc8a",
+    "data": {
+      "cluster_title": "Lắp pin mặt trời, dùng xe điện để 'xanh hóa' nhà kho",
+      "short_summary": "Nhiều chủ đầu tư nhà kho vận đang lắp điện mặt trời, dùng xe nâng điện để đáp ứng tiêu chí môi trường, giảm phát thải từ các tập đoàn toàn cầu.",
+      "detailed_summary": "Nhiều chủ đầu tư lĩnh vực kho vận đang thực hiện các giải pháp thân thiện với môi trường, bao gồm lắp đặt hệ thống điện mặt trời mái nhà và chuyển đổi sang sử dụng xe nâng chạy bằng điện. Động thái này nhằm mục đích đáp ứng các tiêu chuẩn khắt khe về môi trường và giảm lượng khí thải carbon theo yêu cầu từ các đối tác là tập đoàn đa quốc gia.",
+      "causes": [
+        "Yêu cầu về tiêu chí môi trường từ các tập đoàn toàn cầu",
+        "Áp lực cắt giảm phát thải khí nhà kính trong chuỗi cung ứng"
+      ],
+      "effects": [
+        "Tăng tỷ lệ sử dụng năng lượng tái tạo trong vận hành kho bãi",
+        "Giảm dấu chân carbon của chuỗi cung ứng logistics",
+        "Cải thiện năng lực cạnh tranh cho doanh nghiệp kho vận trong chuỗi cung ứng quốc tế"
+      ],
+      "affected_groups": [
+        "Các đơn vị vận hành kho vận",
+        "Các tập đoàn sản xuất toàn cầu có chuỗi cung ứng tại Việt Nam",
+        "Nhà cung cấp giải pháp năng lượng tái tạo và thiết bị xe nâng điện"
+      ],
+      "market_impact": "Thúc đẩy nhu cầu đầu tư vào hạ tầng năng lượng sạch và thiết bị công nghiệp hiện đại trong ngành logistics.",
+      "vn_impact": "Giúp doanh nghiệp kho vận Việt Nam nâng cao uy tín và khả năng tham gia sâu hơn vào chuỗi cung ứng toàn cầu, đồng thời hỗ trợ mục tiêu giảm phát thải của quốc gia.",
+      "follow_up": "",
+      "categories": [
+        "business",
+        "environment"
+      ],
+      "regions": [
+        "VN"
+      ],
+      "significance": "Đây là xu hướng tất yếu của ngành logistics nhằm thích ứng với các tiêu chuẩn xanh hóa của đối tác quốc tế.",
+      "unknowns": [
+        "Tổng quy mô vốn đầu tư cho quá trình chuyển đổi này",
+        "Tỷ lệ các doanh nghiệp logistics đã thực hiện chuyển đổi trên tổng thị trường"
+      ],
+      "confidence_note": "Thông tin mang tính xu hướng kinh doanh rõ ràng, đáng tin cậy dựa trên thực tiễn thị trường hiện tại.",
+      "scenarios": [
+        {
+          "text": "Các tiêu chuẩn xanh trở thành điều kiện bắt buộc để ký kết hợp đồng trong chuỗi cung ứng toàn cầu.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các đơn vị kho vận nhỏ lẻ gặp khó khăn trong việc huy động vốn đầu tư cho hạ tầng xanh.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Chủ đầu tư kho vận",
+          "target": "Tập đoàn toàn cầu",
+          "relation_type": "cooperation",
+          "label": "Đáp ứng tiêu chuẩn môi trường trong chuỗi cung ứng"
+        },
+        {
+          "source": "Chủ đầu tư kho vận",
+          "target": "Điện mặt trời",
+          "relation_type": "cause_effect",
+          "label": "Đầu tư hạ tầng để giảm phát thải"
+        }
+      ],
+      "entities": [
+        "tập đoàn toàn cầu"
+      ],
+      "keywords": [
+        "pin mặt trời",
+        "xe điện",
+        "nhà kho"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_67b51232": {
+    "created_at": 1785676753582,
+    "expires_at": 1788268753582,
+    "version": "4.5",
+    "checksum": "945f52f673036f9e555d30e285c66fb0",
+    "data": {
+      "cluster_title": "Capital One đóng tài khoản Tập đoàn Trump",
+      "short_summary": "Capital One bác đơn kiện của Tập đoàn Trump, khẳng định đóng 300 tài khoản doanh nghiệp do lo ngại rửa tiền chứ không mang mục đích chính trị.",
+      "detailed_summary": "Tập đoàn Trump đã khởi kiện Capital One sau khi ngân hàng này đóng khoảng 300 tài khoản doanh nghiệp. Phía ngân hàng khẳng định quyết định này xuất phát từ các quy định kiểm soát rủi ro rửa tiền và tuân thủ pháp luật, đồng thời bác bỏ các cáo buộc cho rằng đây là hành động nhằm vào mục đích chính trị.",
+      "causes": [
+        "Quy định kiểm soát rủi ro tài chính của ngân hàng",
+        "Nghi ngờ về hoạt động giao dịch đáng ngờ trong các tài khoản"
+      ],
+      "effects": [
+        "Tranh chấp pháp lý giữa Tập đoàn Trump và Capital One",
+        "Gia tăng áp lực giám sát đối với các tài khoản doanh nghiệp chính trị nhạy cảm"
+      ],
+      "affected_groups": [
+        "Tập đoàn Trump",
+        "Capital One"
+      ],
+      "market_impact": "Sự kiện gây ảnh hưởng đến danh tiếng và quy trình quản trị rủi ro trong lĩnh vực ngân hàng khi làm việc với các khách hàng có tầm ảnh hưởng chính trị.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "business",
+        "finance"
+      ],
+      "regions": [
+        "US"
+      ],
+      "significance": "Sự kiện phản ánh sự xung đột giữa chính sách tuân thủ khắt khe của ngành ngân hàng với lợi ích kinh doanh của các tập đoàn có liên quan đến chính trị.",
+      "unknowns": [
+        "Chi tiết cụ thể về các giao dịch bị coi là đáng ngờ",
+        "Kết quả cuối cùng của vụ kiện tại tòa án"
+      ],
+      "confidence_note": "Thông tin dựa trên tuyên bố chính thức của ngân hàng và diễn biến vụ kiện đã công khai.",
+      "scenarios": [
+        {
+          "text": "Tòa án bác đơn kiện của Tập đoàn Trump sau khi Capital One chứng minh được tính tuân thủ pháp luật.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Hai bên đạt được thỏa thuận hòa giải ngoài tòa án để tránh ảnh hưởng truyền thông kéo dài.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Capital One",
+          "target": "Tập đoàn Trump",
+          "relation_type": "conflict",
+          "label": "Tranh chấp pháp lý về việc đóng tài khoản"
+        },
+        {
+          "source": "Quy định rửa tiền",
+          "target": "Capital One",
+          "relation_type": "cause_effect",
+          "label": "Cơ sở pháp lý cho quyết định đóng tài khoản"
+        }
+      ],
+      "entities": [
+        "Capital One",
+        "Tập đoàn Trump"
+      ],
+      "keywords": [
+        "Capital One",
+        "Tập đoàn Trump",
+        "rửa tiền"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_general_1785676759245": {
+    "created_at": 1785676765023,
+    "expires_at": 1788268765023,
+    "version": "4.5",
+    "checksum": "e4cc809b4c36b86ca0052d98f70a29f5",
+    "data": {
+      "cluster_title": "Xổ số kiến thiết TP HCM lãi nghìn tỷ",
+      "short_summary": "Xổ số kiến thiết TP HCM lãi trước thuế 1.184 tỷ đồng, mức cao nhất từ trước đến nay",
+      "detailed_summary": "Trong 6 tháng đầu năm 2024, Công ty TNHH MTV Xổ số kiến thiết TP HCM ghi nhận kết quả kinh doanh ấn tượng với lợi nhuận trước thuế đạt 1.184 tỷ đồng, xác lập mức cao nhất từ trước đến nay trong cùng kỳ các năm.",
+      "causes": [
+        "Sự gia tăng nhu cầu tiêu dùng sản phẩm xổ số",
+        "Chiến lược kinh doanh và quản trị hiệu quả của doanh nghiệp"
+      ],
+      "effects": [
+        "Tăng nguồn thu ngân sách cho địa phương",
+        "Khẳng định vị thế doanh nghiệp đầu ngành trong lĩnh vực xổ số"
+      ],
+      "affected_groups": [
+        "Ngân sách nhà nước TP HCM",
+        "Cổ đông/Chủ sở hữu doanh nghiệp",
+        "Người tiêu dùng sản phẩm xổ số"
+      ],
+      "market_impact": "Phản ánh sức mua của thị trường nội địa đối với các dịch vụ giải trí có thưởng vẫn duy trì ở mức cao.",
+      "vn_impact": "Góp phần quan trọng vào tăng trưởng nguồn thu ngân sách địa phương, hỗ trợ các mục tiêu đầu tư phát triển kinh tế - xã hội tại TP HCM.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "finance"
+      ],
+      "regions": [
+        "VN"
+      ],
+      "significance": "Sự kiện cho thấy kết quả kinh doanh tích cực của các doanh nghiệp nhà nước trong lĩnh vực xổ số, đóng góp trực tiếp vào nguồn thu ngân sách địa phương.",
+      "unknowns": [
+        "Cơ cấu chi phí cụ thể dẫn đến lợi nhuận tăng cao",
+        "Tỷ lệ tăng trưởng doanh thu chi tiết so với cùng kỳ năm trước"
+      ],
+      "confidence_note": "Thông tin dựa trên báo cáo kết quả kinh doanh chính thức của doanh nghiệp, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Doanh nghiệp tiếp tục duy trì đà tăng trưởng trong nửa cuối năm nhờ các đợt phát hành vé số tăng cường.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Sự cạnh tranh từ các loại hình giải trí khác có thể làm chậm tốc độ tăng trưởng lợi nhuận.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Xổ số kiến thiết TP HCM",
+          "target": "Ngân sách TP HCM",
+          "relation_type": "cause_effect",
+          "label": "Lợi nhuận doanh nghiệp đóng góp vào ngân sách địa phương"
+        }
+      ],
+      "entities": [
+        "Xổ số kiến thiết TP HCM"
+      ],
+      "keywords": [
+        "xổ số",
+        "kiến thiết",
+        "TP HCM",
+        "lãi"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "business"
+    }
   }
 }
