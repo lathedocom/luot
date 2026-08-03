@@ -11,40 +11,39 @@ async function fetchVNIndex() {
     };
 
     try {
-        // TẦNG 1: Sử dụng Yahoo Finance (TRỰC TIẾP, KHÔNG PROXY)
-        const url = `https://query1.finance.yahoo.com/v8/finance/chart/^VNINDEX?range=1d&interval=1d`;
+        // TẦNG 1: TCBS API - Không chặn IP quốc tế, SSL cực kỳ ổn định
+        const url = `https://apipubaws.tcbs.com.vn/stock-insight/v1/stock/bars-long/VNINDEX?type=index&resolution=D&size=1`;
         const res = await fetch(url, { headers: { 'User-Agent': 'Mozilla/5.0' }, timeout: 10000 });
         
-        if (!res.ok) throw new Error(`Yahoo API Error: ${res.status}`);
+        if (!res.ok) throw new Error(`TCBS API Error: ${res.status}`);
+        const json = await res.json();
         
-        const data = await res.json();
-        const price = data.chart.result[0].meta.regularMarketPrice;
-
         return {
             ...rawResult,
-            value: price,
-            source: { name: "Yahoo Finance", url: url, type: "official" },
+            value: json.data[0].close,
+            source: { name: "TCBS", url: url, type: "official" },
             quality: { status: "verified", method: "api_direct" }
         };
 
     } catch (errorTier1) {
-        console.warn(`[Stock Adapter] Yahoo thất bại. Chuyển sang VNDirect/SSI...`);
+        console.warn(`[Stock Adapter] TCBS thất bại. Chuyển sang SSI FastConnect...`);
         
-        // TẦNG 2: Lấy dữ liệu VN-Index trực tiếp từ API VNDirect
         try {
-            const url2 = `https://finfo-api.vndirect.com.vn/v4/stock_indexes?q=code:VNINDEX`;
+            // TẦNG 2: SSI iBoard API (Websocket REST backend)
+            const toDate = Math.floor(Date.now() / 1000);
+            const fromDate = toDate - 86400; // Lấy 1 ngày
+            const url2 = `https://iboard.ssi.com.vn/dchart/api/history?resolution=D&symbol=VNINDEX&from=${fromDate}&to=${toDate}`;
+            
             const res2 = await fetch(url2, { headers: { 'User-Agent': 'Mozilla/5.0' }, timeout: 10000 });
+            if (!res2.ok) throw new Error(`SSI API Error: ${res2.status}`);
             
-            if (!res2.ok) throw new Error(`VNDirect API Error: ${res2.status}`);
-            
-            const json = await res2.json();
-            const indexData = (json.data || []).find(d => d.code === 'VNINDEX');
-            if (!indexData) throw new Error("Không tìm thấy VNINDEX");
+            const json2 = await res2.json();
+            const price = json2.c[json2.c.length - 1]; // Mảng 'c' là Close price
 
             return {
                 ...rawResult,
-                value: indexData.indexValue,
-                source: { name: "VNDirect", url: url2, type: "secondary" },
+                value: price,
+                source: { name: "SSI", url: url2, type: "secondary" },
                 quality: { status: "secondary", method: "api_direct" }
             };
         } catch (errorTier2) {
