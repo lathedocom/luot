@@ -1,5 +1,5 @@
 // FILE: script_bot/modules/market/sources/agriculture.js
-const { fetchHtmlSafe, fetchHtmlWithProxy, extractPriceFlexible } = require('../collector/parser_engine');
+const { fetchHtmlWithProxy, extractPriceFlexible } = require('../collector/parser_engine');
 
 async function fetchCoffeeVN() {
     let rawResult = {
@@ -10,29 +10,29 @@ async function fetchCoffeeVN() {
         retrieved_at: new Date().toISOString()
     };
 
-    const url = 'https://giacaphe.com/gia-ca-phe-noi-dia/';
-    const regexPattern = /([1-9][0-9]{2,3}[.,\s]?[0-9]{3})/;
-    const selectors = ['table tr', '.table-coffee tr'];
-
     try {
-        // TẦNG 1: Lấy trực tiếp (Sẽ bị chặn nếu chạy trên GitHub)
-        const html = await fetchHtmlSafe(url, 5000);
-        const valStr = extractPriceFlexible(html, selectors, regexPattern);
+        // TẦNG 1: Lấy qua Proxy (Bỏ qua fetch trực tiếp vì GitHub 100% bị chặn)
+        const url = 'https://giacaphe.com/gia-ca-phe-noi-dia/';
+        const htmlProxy = await fetchHtmlWithProxy(url);
+        
+        const valStr = extractPriceFlexible(htmlProxy, ['table tr', '.table-coffee tr'], /([1-9][0-9]{2,3}[.,\s]?[0-9]{3})/);
         const priceVal = parseInt(valStr.replace(/[^\d]/g, ''));
 
-        return { ...rawResult, value: priceVal, source: { name: "GiaCaPhe", url: url, type: "primary" }, quality: { status: "verified", method: "html_text" } };
+        return { ...rawResult, value: priceVal, source: { name: "GiaCaPhe (Proxy)", url: url, type: "primary" }, quality: { status: "verified", method: "html_proxy" } };
     } catch (err1) {
-        console.warn(`[Agriculture] Cà phê: Chặn trực tiếp. Đang thử vượt Cloudflare qua Proxy...`);
+        console.warn(`[Agriculture] GiaCaPhe thất bại. Chuyển sang TinTayNguyen...`);
         
-        // TẦNG 2: Vượt rào bằng Proxy
+        // TẦNG 2: Fallback nguồn TinTayNguyen
         try {
-            const htmlProxy = await fetchHtmlWithProxy(url);
-            const valStr = extractPriceFlexible(htmlProxy, selectors, regexPattern);
-            const priceVal = parseInt(valStr.replace(/[^\d]/g, ''));
+            const url2 = 'https://tintaynguyen.com/gia-ca-phe/';
+            const htmlProxy2 = await fetchHtmlWithProxy(url2);
+            
+            const valStr2 = extractPriceFlexible(htmlProxy2, ['.table-striped tbody tr'], /([1-9][0-9]{1,2}[.,\s]?[0-9]{3})/);
+            const priceVal2 = parseInt(valStr2.replace(/[^\d]/g, ''));
 
-            return { ...rawResult, value: priceVal, source: { name: "GiaCaPhe (Proxy)", url: url, type: "secondary" }, quality: { status: "secondary", method: "html_proxy" } };
+            return { ...rawResult, value: priceVal2, source: { name: "TinTayNguyen (Proxy)", url: url2, type: "secondary" }, quality: { status: "secondary", method: "html_proxy" } };
         } catch (err2) {
-            return { ...rawResult, value: null, source: { name: "Unknown", type: "none" }, quality: { status: "failed", method: "none", error_log: err2.message } };
+            return { ...rawResult, value: null, source: { name: "Unknown", type: "none" }, quality: { status: "failed", method: "none", error_log: err1.message } };
         }
     }
 }
@@ -46,29 +46,27 @@ async function fetchPepperVN() {
         retrieved_at: new Date().toISOString()
     };
 
-    const url = 'https://giatieu.com/gia-tieu-trong-nuoc/';
-    const regexPattern = /([1-9][0-9]{2,3}[.,\s]?[0-9]{3})/;
-    const selectors = ['table tr', '.table-pepper tr'];
-
     try {
-        // TẦNG 1: Lấy trực tiếp
-        const html = await fetchHtmlSafe(url, 5000);
-        const valStr = extractPriceFlexible(html, selectors, regexPattern);
+        const url = 'https://giatieu.com/gia-tieu-trong-nuoc/';
+        const htmlProxy = await fetchHtmlWithProxy(url);
+        
+        const valStr = extractPriceFlexible(htmlProxy, ['table tr', '.table-pepper tr'], /([1-9][0-9]{2,3}[.,\s]?[0-9]{3})/);
         const priceVal = parseInt(valStr.replace(/[^\d]/g, ''));
 
-        return { ...rawResult, value: priceVal, source: { name: "GiaTieu", url: url, type: "primary" }, quality: { status: "verified", method: "html_text" } };
+        return { ...rawResult, value: priceVal, source: { name: "GiaTieu (Proxy)", url: url, type: "primary" }, quality: { status: "verified", method: "html_proxy" } };
     } catch (err1) {
-        console.warn(`[Agriculture] Hồ tiêu: Chặn trực tiếp. Đang thử vượt Cloudflare qua Proxy...`);
+        console.warn(`[Agriculture] GiaTieu thất bại. Chuyển sang TinTayNguyen...`);
         
-        // TẦNG 2: Vượt rào bằng Proxy
         try {
-            const htmlProxy = await fetchHtmlWithProxy(url);
-            const valStr = extractPriceFlexible(htmlProxy, selectors, regexPattern);
-            const priceVal = parseInt(valStr.replace(/[^\d]/g, ''));
+            const url2 = 'https://tintaynguyen.com/gia-tieu/';
+            const htmlProxy2 = await fetchHtmlWithProxy(url2);
+            
+            const valStr2 = extractPriceFlexible(htmlProxy2, ['.table-striped tbody tr'], /([1-9][0-9]{2,3}[.,\s]?[0-9]{3})/);
+            const priceVal2 = parseInt(valStr2.replace(/[^\d]/g, ''));
 
-            return { ...rawResult, value: priceVal, source: { name: "GiaTieu (Proxy)", url: url, type: "secondary" }, quality: { status: "secondary", method: "html_proxy" } };
+            return { ...rawResult, value: priceVal2, source: { name: "TinTayNguyen (Proxy)", url: url2, type: "secondary" }, quality: { status: "secondary", method: "html_proxy" } };
         } catch (err2) {
-            return { ...rawResult, value: null, source: { name: "Unknown", type: "none" }, quality: { status: "failed", method: "none", error_log: err2.message } };
+            return { ...rawResult, value: null, source: { name: "Unknown", type: "none" }, quality: { status: "failed", method: "none", error_log: err1.message } };
         }
     }
 }
