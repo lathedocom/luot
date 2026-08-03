@@ -77,11 +77,19 @@ function linkMarketWithNews(currentDb, recentTopics) {
 
         const displayChange = (changePercentVal > 0 ? '+' : '') + parseFloat(changePercentVal.toFixed(2)) + '%';
 
-        // Phân loại nhóm (Category) dựa trên cấu hình cũ để UI nhận diện lưới
-        let categoryGroup = "Thị trường chung";
-        if (id.includes("cpi") || id.includes("ron95") || id.includes("sjc")) categoryGroup = "💰 Chi phí sinh hoạt";
-        else if (id.includes("usd") || id.includes("interbank")) categoryGroup = "🏦 Tiền tệ";
-        else if (id.includes("index") || id.includes("btc")) categoryGroup = "📈 Thị trường tài chính";
+        // === [ĐÃ CẬP NHẬT] PHÂN LOẠI NHÓM CHO GIAO DIỆN UI ===
+        let categoryGroup = "📌 Các chỉ số khác";
+        if (id.includes("cpi") || id.includes("ron95") || id.includes("sjc")) {
+            categoryGroup = "💰 Chi phí sinh hoạt";
+        } else if (id.includes("usd") || id.includes("interbank")) {
+            categoryGroup = "🏦 Tiền tệ";
+        } else if (id.includes("index") || id.includes("btc")) {
+            categoryGroup = "📈 Thị trường tài chính";
+        } else if (id.includes("coffee") || id.includes("pepper") || id.includes("brent") || id.includes("rice")) {
+            categoryGroup = "🌾 Hàng hóa & Nông sản";
+        } else if (id.includes("steel") || id.includes("cement") || id.includes("pmi")) {
+            categoryGroup = "🏭 Sản xuất & Xây dựng";
+        }
 
         analyzedResults.push({
             id: currentData.indicator_id,
