@@ -12,7 +12,9 @@ const MARKET_SOURCES = {
     // NHÓM DAILY (Chứng khoán, Vàng, Nông sản cơ bản)
     // ==========================================
     vn_index: { id: "vn_index", name: "VN-Index", type: "api", frequency: "daily", priority: 1, parser: "stocks", validation: { min: 500, max: 2000, unit: "Điểm", max_change_percent: 15 } },
-    vn_gold_sjc: { id: "vn_gold_sjc", name: "Vàng miếng SJC", type: "local", frequency: "daily", priority: 1, parser: "gold", validation: { min: 50, max: 150, unit: "Tr/lượng", max_change_percent: 10 } },
+    //vn_gold_sjc: { id: "vn_gold_sjc", name: "Vàng miếng SJC", type: "local", frequency: "daily", priority: 1, parser: "gold", validation: { min: 50, max: 150, unit: "Tr/lượng", max_change_percent: 10 } },
+    vn_gold_sjc: { id: "vn_gold_sjc", name: "Vàng miếng SJC", type: "local", frequency: "daily", priority: 1, parser: "gold", validation: { min: 10, max: 150, unit: "Tr/lượng", max_change_percent: 10 } },
+    
     vn_coffee: { id: "vn_coffee", name: "Cà phê Robusta", type: "local", frequency: "daily", priority: 2, parser: "agriculture_coffee", validation: { min: 30000, max: 200000, unit: "VNĐ/kg", max_change_percent: 10 } },
     vn_pepper: { id: "vn_pepper", name: "Hồ tiêu", type: "local", frequency: "daily", priority: 2, parser: "agriculture_pepper", validation: { min: 50000, max: 300000, unit: "VNĐ/kg", max_change_percent: 10 } },
 
