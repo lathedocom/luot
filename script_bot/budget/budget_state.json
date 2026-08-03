@@ -82,14 +82,14 @@
       "rpmMinuteKey": ""
     },
     "gemma-4-26b-a4b-it": {
-      "rpd": 58,
+      "rpd": 66,
       "rpm": 8,
-      "promptTokens": 29118,
-      "completionTokens": 8095,
+      "promptTokens": 31222,
+      "completionTokens": 9155,
       "cost": 0,
-      "successCount": 2784,
+      "successCount": 2792,
       "failCount": 3,
-      "rpmMinuteKey": "2026-08-03T11:18"
+      "rpmMinuteKey": "2026-08-03T11:57"
     },
     "gemini-embedding-2": {
       "rpd": 5,
@@ -112,14 +112,14 @@
       "rpmMinuteKey": ""
     },
     "gemini-3-flash-preview": {
-      "rpd": 5,
+      "rpd": 6,
       "rpm": 1,
-      "promptTokens": 17041,
-      "completionTokens": 3699,
+      "promptTokens": 20717,
+      "completionTokens": 4482,
       "cost": 0,
-      "successCount": 86,
+      "successCount": 87,
       "failCount": 5,
-      "rpmMinuteKey": "2026-08-03T11:19"
+      "rpmMinuteKey": "2026-08-03T11:59"
     }
   }
 }
