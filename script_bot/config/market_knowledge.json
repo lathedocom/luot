@@ -1,23 +1,79 @@
 {
   "macro_rules": {
-    "PMI": {
-      "threshold": 50,
-      "meaning_above": "Sản xuất mở rộng, số lượng đơn hàng tăng, doanh nghiệp đang tuyển thêm lao động.",
-      "meaning_below": "Sản xuất thu hẹp, thiếu hụt đơn hàng, nguy cơ cắt giảm nhân sự."
+    "vn_ron95": {
+      "anomaly_threshold_percent": 5,
+      "impact_chain": "Giá xăng tăng -> Chi phí vận tải & logistics tăng -> Đẩy giá cước và giá bán lẻ hàng hóa (CPI) lên cao.",
+      "meaning_up": "Gây áp lực trực tiếp lên ví tiền người tiêu dùng khi đổ xăng và mua sắm hàng ngày.",
+      "meaning_down": "Giảm bớt gánh nặng chi tiêu, giúp kiểm soát lạm phát rổ hàng hóa."
     },
-    "CPI_VN": {
+    "vn_cpi": {
       "target": 4.0,
-      "meaning_up": "Áp lực lạm phát tăng, chi phí sinh hoạt đội lên, NHNN có thể giữ nguyên hoặc tăng lãi suất.",
-      "meaning_down": "Lạm phát hạ nhiệt, dư địa nới lỏng chính sách tiền tệ mở ra."
+      "anomaly_threshold_percent": 0.5,
+      "impact_chain": "Lạm phát tăng -> Sức mua của dòng tiền giảm -> NHNN có thể phải giữ nền lãi suất cao để kiềm chế.",
+      "meaning_up": "Hàng hóa thiết yếu đắt đỏ hơn, tỷ lệ tiết kiệm của hộ gia đình giảm.",
+      "meaning_down": "Giá cả bình ổn, dư địa nới lỏng chính sách tiền tệ mở ra."
     },
-    "USD_VND": {
-      "meaning_up": "Tiền đồng mất giá, có lợi cho xuất khẩu nhưng tăng chi phí nhập khẩu nguyên vật liệu và áp lực trả nợ ngoại tệ."
+    "vn_pmi": {
+      "anomaly_threshold_percent": 5,
+      "impact_chain": "PMI biến động -> Phản ánh tình trạng đơn hàng của nhà máy -> Ảnh hưởng trực tiếp đến nhu cầu tuyển dụng và giờ làm của công nhân.",
+      "meaning_up": "Sản xuất mở rộng, số lượng đơn hàng tăng, doanh nghiệp đang tuyển thêm lao động.",
+      "meaning_down": "Sản xuất thu hẹp, thiếu hụt đơn hàng, nguy cơ cắt giảm nhân sự."
+    },
+    "usd_vnd": {
+      "anomaly_threshold_percent": 2,
+      "impact_chain": "Tỷ giá tăng -> Tiền Đồng mất giá -> Chi phí nhập khẩu nguyên vật liệu tăng cao.",
+      "meaning_up": "Có lợi cho xuất khẩu nhưng tăng chi phí đầu vào và áp lực trả nợ ngoại tệ cho doanh nghiệp nhập khẩu.",
+      "meaning_down": "Tỷ giá hạ nhiệt, giảm bớt rủi ro tỷ giá cho doanh nghiệp và ổn định dòng vốn ngoại."
+    },
+    "vn_index": {
+      "anomaly_threshold_percent": 3,
+      "impact_chain": "Thị trường chứng khoán biến động -> Phản ánh trực tiếp tâm lý nhà đầu tư và sự luân chuyển của dòng vốn vĩ mô.",
+      "meaning_up": "Tâm lý thị trường hưng phấn, dòng tiền đầu tư tích cực giải ngân.",
+      "meaning_down": "Tâm lý phòng thủ bao trùm, dòng tiền có xu hướng rút khỏi các tài sản rủi ro."
+    },
+    "global_brent": {
+      "anomaly_threshold_percent": 5,
+      "impact_chain": "Giá dầu thô thế giới biến động -> Tác động độ trễ đến giá xăng dầu bán lẻ trong nước ở kỳ điều hành tiếp theo.",
+      "meaning_up": "Cảnh báo nguy cơ tăng giá năng lượng và lạm phát chi phí đẩy trong thời gian tới.",
+      "meaning_down": "Tín hiệu tích cực giúp giảm áp lực lạm phát năng lượng toàn cầu."
     }
   },
   "health_categories": {
-    "cost_of_living": ["CPI_VN", "RON95", "PORK_VN", "RICE_VN"],
-    "production": ["PMI_VN", "IIP_VN", "STEEL_CB300"],
-    "currency_credit": ["USD_VND", "DXY", "INTERBANK_RATE"],
-    "market_sentiment": ["VNINDEX", "GOLD_SJC", "BTC"]
+    "cost_of_living": {
+      "keys": [
+        "vn_cpi",
+        "vn_ron95",
+        "vn_gold_sjc",
+        "vn_coffee",
+        "vn_pepper"
+      ],
+      "name": "Chi phí sinh hoạt",
+      "inverse": true
+    },
+    "production": {
+      "keys": [
+        "vn_pmi",
+        "vn_steel_cb300",
+        "vn_cement"
+      ],
+      "name": "Sản xuất & Xây dựng",
+      "inverse": false
+    },
+    "currency_credit": {
+      "keys": [
+        "usd_vnd"
+      ],
+      "name": "Tiền tệ & Tín dụng",
+      "inverse": true
+    },
+    "market_sentiment": {
+      "keys": [
+        "vn_index",
+        "global_btc",
+        "global_brent"
+      ],
+      "name": "Thị trường tài chính",
+      "inverse": false
+    }
   }
 }
