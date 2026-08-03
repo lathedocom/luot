@@ -1,5 +1,5 @@
 // FILE: script_bot/modules/market/sources/pmi.js
-const { fetchHtmlWithProxy } = require('../collector/parser_engine');
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
 async function fetchPMI() {
     let rawResult = {
@@ -12,23 +12,23 @@ async function fetchPMI() {
     };
 
     try {
-        // Sử dụng Trading Economics (Dữ liệu vĩ mô đáng tin cậy nhất)
-        const url = 'https://vi.tradingeconomics.com/vietnam/manufacturing-pmi';
-        const html = await fetchHtmlWithProxy(url);
+        // TẦNG 1: Sử dụng API Vĩ mô của VNDirect
+        const url = `https://finfo-api.vndirect.com.vn/v4/macro_observations?q=itemCode:PMI&sort=-date&size=1`;
+        const res = await fetch(url, { headers: { 'User-Agent': 'Mozilla/5.0' }, timeout: 10000 });
         
-        // Regex bắt số điểm PMI (thường nằm quanh khoảng 40.0 đến 60.0)
-        // Tìm trong thẻ chứa giá trị gần nhất
-        const match = html.match(/Lần Cuối[\s\S]*?([4-6][0-9][.,][0-9])/i) || html.match(/PMI.*?([4-6][0-9][.,][0-9])/i);
+        if (!res.ok) throw new Error(`VNDirect API Error: ${res.status}`);
         
-        if (!match) throw new Error("Không bắt được điểm số PMI qua Regex");
-        const pmiValue = parseFloat(match[1].replace(',', '.'));
+        const json = await res.json();
+        if (!json.data || json.data.length === 0) throw new Error("Dữ liệu PMI trả về rỗng");
+
+        const latestData = json.data[0];
 
         return {
             ...rawResult,
-            value: pmiValue,
-            period: new Date().toISOString().substring(0, 7), // YYYY-MM
-            source: { name: "Trading Economics (Proxy)", url: url, type: "aggregate" },
-            quality: { status: "verified", method: "html_proxy" }
+            value: latestData.value,
+            period: latestData.date, 
+            source: { name: "S&P Global / VNDirect", url: url, type: "official" },
+            quality: { status: "verified", method: "api_direct" }
         };
 
     } catch (error) {
