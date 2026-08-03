@@ -58,5 +58,65 @@
       "method": "html_text",
       "error_log": null
     }
+  },
+  "usd_vnd": {
+    "indicator_id": "usd_vnd",
+    "name": "Tỷ giá USD/VND",
+    "value": 26286,
+    "unit": "VND",
+    "period": "2026-08-03",
+    "frequency": "realtime",
+    "country": "VN",
+    "source": {
+      "name": "Yahoo Finance",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/VND=X?range=1d&interval=1d",
+      "type": "official"
+    },
+    "retrieved_at": "2026-08-03T16:29:23.997Z",
+    "quality": {
+      "status": "verified",
+      "method": "api",
+      "error_log": null
+    }
+  },
+  "global_btc": {
+    "indicator_id": "global_btc",
+    "name": "Bitcoin",
+    "value": 63834,
+    "unit": "USD",
+    "period": "2026-08-03",
+    "frequency": "realtime",
+    "country": "Global",
+    "source": {
+      "name": "CoinGecko",
+      "url": "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd",
+      "type": "official"
+    },
+    "retrieved_at": "2026-08-03T16:29:24.085Z",
+    "quality": {
+      "status": "verified",
+      "method": "api",
+      "error_log": null
+    }
+  },
+  "global_brent": {
+    "indicator_id": "global_brent",
+    "name": "Dầu Brent",
+    "value": 83.76,
+    "unit": "USD/thùng",
+    "period": "2026-08-03",
+    "frequency": "realtime",
+    "country": "Global",
+    "source": {
+      "name": "Yahoo Finance",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BZ=F?range=1d&interval=1d",
+      "type": "official"
+    },
+    "retrieved_at": "2026-08-03T16:29:24.136Z",
+    "quality": {
+      "status": "verified",
+      "method": "api",
+      "error_log": null
+    }
   }
 }
