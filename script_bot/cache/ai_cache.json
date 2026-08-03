@@ -10493,5 +10493,83 @@
       "sentiment": -1,
       "scope": "national"
     }
+  },
+  "evt_7073c608": {
+    "created_at": 1785766161369,
+    "expires_at": 1788358161369,
+    "version": "4.5",
+    "checksum": "7f3fa0eb648bc43e5cfbe0e751fc748a",
+    "data": {
+      "cluster_title": "Triển vọng nối lại đàm phán Mỹ - Iran",
+      "short_summary": "Tổng thống Mỹ Donald Trump cho biết các cuộc đàm phán với Iran sẽ bắt đầu từ chiều 3/8.",
+      "detailed_summary": "Tổng thống Donald Trump xác nhận các cuộc đối thoại với Iran sẽ được khởi động vào chiều ngày 3/8 (giờ Mỹ). Thông tin này được đưa ra sau chuỗi trao đổi ngoại giao của Mỹ với một số quốc gia trong khu vực Vịnh Ba Tư, cho thấy nỗ lực hạ nhiệt căng thẳng thông qua kênh trung gian hoặc tham vấn khu vực.",
+      "causes": [
+        "Căng thẳng kéo dài giữa Mỹ và Iran",
+        "Nỗ lực ngoại giao từ các nước vùng Vịnh"
+      ],
+      "effects": [
+        "Hy vọng giảm bớt căng thẳng địa chính trị",
+        "Tín hiệu tích cực cho các cuộc đàm phán song phương"
+      ],
+      "affected_groups": [
+        "Các quốc gia vùng Vịnh",
+        "Các đối tác thương mại của Iran",
+        "Thị trường năng lượng toàn cầu"
+      ],
+      "market_impact": "Thông tin có thể gây biến động nhẹ đến giá dầu thô do kỳ vọng về việc nới lỏng các lệnh trừng phạt hoặc ổn định nguồn cung.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam, tuy nhiên những diễn biến ổn định tại khu vực Trung Đông luôn có ý nghĩa gián tiếp đến giá nhiên liệu và ổn định kinh tế vĩ mô toàn cầu.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "diplomacy"
+      ],
+      "regions": [
+        "US",
+        "IR"
+      ],
+      "significance": "Đây là bước chuyển dịch quan trọng từ trạng thái đối đầu sang đối thoại, phản ánh tầm quan trọng của ngoại giao khu vực trong việc kiểm soát xung đột Mỹ - Iran.",
+      "unknowns": [
+        "Nội dung chi tiết và chương trình nghị sự của cuộc đàm phán",
+        "Phản ứng chính thức và sự sẵn sàng hợp tác từ phía chính quyền Iran"
+      ],
+      "confidence_note": "Thông tin dựa trên tuyên bố trực tiếp từ Tổng thống Mỹ, độ tin cậy cao về mặt sự kiện, nhưng kết quả đàm phán vẫn là ẩn số.",
+      "scenarios": [
+        {
+          "text": "Các bên đạt được thỏa thuận tạm thời để giảm leo thang căng thẳng.",
+          "likelihood": "trung bình"
+        },
+        {
+          "text": "Đàm phán gặp bế tắc do các yêu cầu tiên quyết từ cả hai phía không được đáp ứng.",
+          "likelihood": "cao"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Donald Trump",
+          "target": "Iran",
+          "relation_type": "cause_effect",
+          "label": "Khởi động quy trình đàm phán"
+        },
+        {
+          "source": "Các nước vùng Vịnh",
+          "target": "Donald Trump",
+          "relation_type": "cooperation",
+          "label": "Tư vấn ngoại giao hỗ trợ đàm phán"
+        }
+      ],
+      "entities": [
+        "Tổng thống Mỹ Donald Trump",
+        "Iran"
+      ],
+      "keywords": [
+        "đàm phán",
+        "Mỹ",
+        "Iran"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
   }
 }
