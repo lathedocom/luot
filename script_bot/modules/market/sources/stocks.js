@@ -1,5 +1,6 @@
 // FILE: script_bot/modules/market/sources/stocks.js
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+const { fetchHtmlWithProxy, extractPriceFlexible } = require('../collector/parser_engine');
 
 async function fetchVNIndex() {
     let rawResult = {
@@ -11,40 +12,39 @@ async function fetchVNIndex() {
     };
 
     try {
-        // TẦNG 1: TCBS API - Không chặn IP quốc tế, SSL cực kỳ ổn định
-        const url = `https://apipubaws.tcbs.com.vn/stock-insight/v1/stock/bars-long/VNINDEX?type=index&resolution=D&size=1`;
+        // TẦNG 1: Sử dụng API của VPS (Cực kỳ mở, hiếm khi chặn bot)
+        const url = `https://bgapidatafeed.vps.com.vn/getlistindexdetail/VNINDEX`;
         const res = await fetch(url, { headers: { 'User-Agent': 'Mozilla/5.0' }, timeout: 10000 });
         
-        if (!res.ok) throw new Error(`TCBS API Error: ${res.status}`);
-        const json = await res.json();
+        if (!res.ok) throw new Error(`VPS API Error: ${res.status}`);
         
+        const json = await res.json();
+        if (!json || json.length === 0 || !json[0].matchPrice) throw new Error("Dữ liệu VPS rỗng");
+
         return {
             ...rawResult,
-            value: json.data[0].close,
-            source: { name: "TCBS", url: url, type: "official" },
+            value: json[0].matchPrice,
+            source: { name: "VPS", url: url, type: "official" },
             quality: { status: "verified", method: "api_direct" }
         };
 
     } catch (errorTier1) {
-        console.warn(`[Stock Adapter] TCBS thất bại. Chuyển sang SSI FastConnect...`);
+        console.warn(`[Stock Adapter] VPS thất bại. Chuyển sang CafeF qua Proxy...`);
         
         try {
-            // TẦNG 2: SSI iBoard API (Websocket REST backend)
-            const toDate = Math.floor(Date.now() / 1000);
-            const fromDate = toDate - 86400; // Lấy 1 ngày
-            const url2 = `https://iboard.ssi.com.vn/dchart/api/history?resolution=D&symbol=VNINDEX&from=${fromDate}&to=${toDate}`;
+            // TẦNG 2: Fallback cào HTML trang chủ CafeF qua Proxy tàng hình
+            const url2 = 'https://s.cafef.vn/Trang-chu.chn';
+            const htmlProxy = await fetchHtmlWithProxy(url2);
             
-            const res2 = await fetch(url2, { headers: { 'User-Agent': 'Mozilla/5.0' }, timeout: 10000 });
-            if (!res2.ok) throw new Error(`SSI API Error: ${res2.status}`);
-            
-            const json2 = await res2.json();
-            const price = json2.c[json2.c.length - 1]; // Mảng 'c' là Close price
+            // Tìm số điểm VN-Index trên giao diện CafeF
+            const valStr = extractPriceFlexible(htmlProxy, ['.vnindex .point', '#vnindex .index'], /([1-2][0-9]{3}[.,][0-9]{1,2})/);
+            const price = parseFloat(valStr.replace(',', '.'));
 
             return {
                 ...rawResult,
                 value: price,
-                source: { name: "SSI", url: url2, type: "secondary" },
-                quality: { status: "secondary", method: "api_direct" }
+                source: { name: "CafeF (Proxy)", url: url2, type: "secondary" },
+                quality: { status: "secondary", method: "html_proxy" }
             };
         } catch (errorTier2) {
             return {
