@@ -6,7 +6,7 @@ const path = require('path');
 
 const PIPELINE_STATUS_FILE = path.join(__dirname, '../pipeline_status.json');
 
-// IMPORT CÁC MODULE XỬ LÝ LÕI (SỬA LẠI REQUIRE CHO BẢN ĐỒ)
+// IMPORT CÁC MODULE XỬ LÝ LÕI
 const { fetchAllLiveMarketData, updateMarketHistory, prepareMarketDataForUI } = require('./modules/market/market_fetcher');
 const { buildDigest, buildSituationIndexData } = require('./modules/digest/digest_builder');
 const { buildMacroHealth } = require('./modules/market/macro_health');
@@ -26,7 +26,9 @@ const { generateEventKey, generateTopicKey } = require('./modules/topic/topic_ke
 const topicStore = require('./modules/topic/topic_store');
 const { mergeIntoExistingTopic } = require('./modules/topic/topic_merger');
 const { evaluateClusterAction } = require('./modules/topic/similarity_engine');
-const { fetchAllMarketData } = require('./modules/market/index');
+
+// Thay thế module cũ bằng module mới
+const { processMarketRoutine } = require('./modules/market/index');
 const { fetchAllSocialTrends } = require('./modules/social/index');
 const { generateAllReports } = require('./modules/reports/index');
 
@@ -40,7 +42,8 @@ const state = {
     clusters: [],
     currentTopics: [],
     newTopicsCount: 0,
-    marketData: [],
+    marketData: null,
+    macroHealth: null,
     socialTrends: [],
     reports: {},
     pendingParallelTasks: 3
@@ -176,7 +179,6 @@ Hai sự kiện trên có phải cùng nói về 1 sự việc không? CHỈ TR�
                 extractRegions(cluster.combined_text, cluster.articles[0].source_name)
             );
 
-            
             // [ĐÃ SỬA] Hạ ngưỡng điểm chặn từ 75 xuống 50 để không lọt lưới tin quân sự/chính trị quan trọng
             if (ruleImportance < 50) {
                 logger.info(`[RULE-SKIP] Điểm rule thấp (${ruleImportance}), bỏ qua Tầng AI: "${cluster.articles[0].title}"`);
@@ -284,17 +286,44 @@ Hai sự kiện trên có phải cùng nói về 1 sự việc không? CHỈ TR�
     }
 });
 
-eventBus.on('TOPIC_UPDATED', (currentTopics) => {
-    logger.info("Khởi chạy song song (Asynchronous) các luồng dữ liệu vệ tinh...");
-    fetchAllMarketData(currentTopics)
-        .then(data => { state.marketData = data; eventBus.emit('MARKET_UPDATED'); })
-        .catch(e => eventBus.emit('PIPELINE_ERROR', e));
-    fetchAllSocialTrends()
-        .then(data => { state.socialTrends = data; eventBus.emit('SOCIAL_UPDATED'); })
-        .catch(e => eventBus.emit('PIPELINE_ERROR', e));
-    generateAllReports(currentTopics)
-        .then(data => { state.reports = data; eventBus.emit('REPORT_CREATED'); })
-        .catch(e => eventBus.emit('PIPELINE_ERROR', e));
+// THAY ĐỔI LỚN NHẤT TẠI ĐÂY: Xử lý theo Arguments
+eventBus.on('TOPIC_UPDATED', async (currentTopics) => {
+    logger.info("Khởi chạy luồng dữ liệu vệ tinh...");
+
+    // LẤY THAM SỐ TỪ GITHUB ACTIONS (Ví dụ: node fetch_news.js --market=daily)
+    const args = process.argv.slice(2);
+    let marketFreq = "none"; 
+    
+    args.forEach(arg => {
+        if (arg.startsWith('--market=')) {
+            marketFreq = arg.split('=')[1];
+        }
+    });
+
+    try {
+        // 1. CHẠY MARKET CÙNG LÚC (NẾU CÓ YÊU CẦU TỪ SCHEDULER)
+        if (marketFreq !== "none") {
+            const marketResults = await processMarketRoutine(marketFreq, currentTopics);
+            if (marketResults) {
+                state.marketData = marketResults.market_board;
+                state.macroHealth = marketResults.macro_health;
+            }
+        }
+        eventBus.emit('MARKET_UPDATED');
+
+        // 2. SOCIAL TRENDS
+        const socialData = await fetchAllSocialTrends();
+        state.socialTrends = socialData;
+        eventBus.emit('SOCIAL_UPDATED');
+
+        // 3. REPORTS
+        const reportsData = await generateAllReports(currentTopics);
+        state.reports = reportsData;
+        eventBus.emit('REPORT_CREATED');
+
+    } catch (e) {
+        eventBus.emit('PIPELINE_ERROR', e);
+    }
 });
 
 const synchronizeParallelTasks = () => {
@@ -307,7 +336,6 @@ const synchronizeParallelTasks = () => {
 eventBus.on('MARKET_UPDATED', synchronizeParallelTasks);
 eventBus.on('SOCIAL_UPDATED', synchronizeParallelTasks);
 eventBus.on('REPORT_CREATED', synchronizeParallelTasks);
-
 
 eventBus.on('SYNC_DATABASE', async () => { 
     try {
@@ -333,21 +361,24 @@ eventBus.on('SYNC_DATABASE', async () => {
         
         const previousSituationData = db.risk_map || {}; 
         
-        // --- CƠ SỞ DỮ LIỆU KÉP (HYBRID DB) VÀ ĐỒNG BỘ AI ---
-        // 1. Lưu số liệu vào Tầng 2 (Vĩnh viễn)
-        const historyDb = updateMarketHistory(state.marketData || []);
-        // 2. Format dữ liệu Market cho UI vẽ biểu đồ
-        const uiMarketData = prepareMarketDataForUI(state.marketData || [], historyDb);
-        
         db.digest = buildDigest(db.news, { limitPerRegion: 7 });
         db.risk_map = buildSituationIndexData(db.news, previousSituationData);
-        
-        // 3. Chạy Tầng 3 (Economic Intelligence) - CÓ AWAIT
-        db.macro_health = await buildMacroHealth(db.news, uiMarketData, historyDb);
-        
         db.knowledge_graph = buildGlobalGraph(db.news);
-        db.market_data = uiMarketData; // Gán dữ liệu đã format biểu đồ
         db.social_trends = state.socialTrends || [];
+
+        // Cập nhật Market Data nếu có chạy trong chu kỳ này
+        if (state.marketData) {
+            db.market_data = state.marketData;
+            db.macro_health = state.macroHealth;
+            
+            // Cập nhật file riêng cho Dashboard
+            fs.writeFileSync(path.join(__dirname, '../data/market_dashboard.json'), 
+                JSON.stringify({ 
+                    market_board: state.marketData, 
+                    macro_health: state.macroHealth 
+                }, null, 2)
+            );
+        }
         
         // --- XỬ LÝ LƯU TRỮ LỊCH SỬ BẢN TIN 24H (TỐI ĐA 7 NGÀY) ---
         let briefingHistory = Array.isArray(db.daily_briefing) ? db.daily_briefing : [];
@@ -378,15 +409,11 @@ eventBus.on('SYNC_DATABASE', async () => {
         
         topicStore.writeData(db);
         
-        // Tạo thêm bản sao lưu trữ cho Dashboard (Tầng 4)
-        fs.writeFileSync(path.join(__dirname, '../data/market_dashboard.json'), JSON.stringify({ macro_health: db.macro_health }, null, 2));
-
         eventBus.emit('PIPELINE_FINISHED');
     } catch (e) {
         eventBus.emit('PIPELINE_ERROR', e);
     }
 });
-
 
 eventBus.on('PIPELINE_FINISHED', () => {
     const durationMs = Date.now() - state.startTime;
@@ -409,4 +436,3 @@ eventBus.on('PIPELINE_ERROR', (error) => {
 });
 
 eventBus.emit('START_PIPELINE');
-
