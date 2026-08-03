@@ -26,7 +26,7 @@ async function fetchHtmlSafe(url, timeoutMs = 8000) {
     const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
     
     const headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
         'Accept': 'text/html,application/xhtml+xml,application/xml'
     };
 
@@ -52,10 +52,11 @@ async function fetchHtmlSafe(url, timeoutMs = 8000) {
  * [NÂNG CẤP] Cỗ máy Proxy đa tầng chống Timeout và chặn IP
  */
 async function fetchHtmlWithProxy(targetUrl, timeoutMs = 25000) {
-    // Danh sách các trạm trung chuyển miễn phí
+    // Thêm các trạm trung chuyển mạnh hơn
     const proxies = [
-        `https://api.allorigins.win/raw?url=${encodeURIComponent(targetUrl)}`,
-        `https://corsproxy.io/?${encodeURIComponent(targetUrl)}`
+        `https://corsproxy.io/?url=${encodeURIComponent(targetUrl)}`,
+        `https://api.allorigins.win/get?url=${encodeURIComponent(targetUrl)}`,
+        `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(targetUrl)}`
     ];
 
     let lastError;
@@ -66,26 +67,32 @@ async function fetchHtmlWithProxy(targetUrl, timeoutMs = 25000) {
         
         try {
             const res = await fetch(proxyUrl, {
-                headers: { 'User-Agent': 'Mozilla/5.0' },
+                headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' },
                 signal: controller.signal
             });
             clearTimeout(timeoutId);
             
             if (!res.ok) throw new Error(`Proxy HTTP ${res.status}`);
-            return await res.text();
+            let data = await res.text();
+            
+            // Xử lý riêng cho AllOrigins (nó gói HTML vào trong chuỗi JSON)
+            if (proxyUrl.includes('allorigins.win/get')) {
+                const json = JSON.parse(data);
+                if (!json.contents) throw new Error("AllOrigins rỗng");
+                data = json.contents;
+            }
+            
+            return data;
         } catch (err) {
             clearTimeout(timeoutId);
             lastError = err;
-            console.warn(`[Proxy Engine] Trạm trung chuyển lỗi, tự động đổi trạm...`);
+            console.warn(`[Proxy Engine] Trạm trung chuyển ${proxyUrl.split('/')[2]} lỗi, đổi trạm...`);
         }
     }
     
-    throw lastError; // Chỉ báo lỗi nếu TẤT CẢ các Proxy đều sập
+    throw lastError;
 }
 
-/**
- * [MỚI] Hàm vượt rào dành riêng cho API (Trả về JSON)
- */
 async function fetchJsonWithProxy(targetUrl, timeoutMs = 20000) {
     const textData = await fetchHtmlWithProxy(targetUrl, timeoutMs);
     return JSON.parse(textData);
