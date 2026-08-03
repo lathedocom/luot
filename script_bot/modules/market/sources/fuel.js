@@ -1,51 +1,43 @@
 // FILE: script_bot/modules/market/sources/fuel.js
+const { fetchHtmlSafe, extractPriceFlexible } = require('../collector/parser_engine');
 
 async function fetchFuelData() {
-    let resultData = {
+    let rawResult = {
         indicator_id: "vn_ron95",
         name: "Xăng RON95-III",
-        unit: "VND/liter",
+        unit: "VNĐ/Lít",
         country: "VN",
         retrieved_at: new Date().toISOString()
     };
 
     try {
-        // TẦNG 1: Ưu tiên Cổng Thông tin Bộ Công Thương (Bóc tách Text)
-        // Viết logic fetch HTML và regex ở đây...
-        // Giả lập thành công:
-        let priceFromText = 24500; 
+        // TẦNG 1: Sử dụng webgia.com (Nguồn đã được chứng thực là an toàn với GitHub Actions)
+        const url = 'https://webgia.com/gia-xang-dau/petrolimex/';
+        const html = await fetchHtmlSafe(url, 10000);
+        
+        // Trích xuất giá RON 95-III từ bảng
+        const valStr = extractPriceFlexible(
+            html, 
+            ['table tbody tr', '.price-table tr', 'table tr'], 
+            /(?:RON 95-III).*?([1-9][0-9]{0,3}[.,\s]?[0-9]{3})/i
+        );
+        const priceVal = parseInt(valStr.replace(/[^\d]/g, ''));
 
-        return {
-            ...resultData,
-            value: priceFromText,
-            source: { name: "Bộ Công Thương", type: "official" },
-            quality: { status: "verified", method: "html_text" }
+        return { 
+            ...rawResult, 
+            value: priceVal, 
+            source: { name: "WebGia (Dữ liệu Petrolimex)", url: url, type: "secondary" }, 
+            quality: { status: "verified", method: "html_text" } 
         };
 
-    } catch (errorTier1) {
-        console.warn("[Fuel Adapter] Bộ CT thất bại hoặc chặn Cloudflare. Kích hoạt dự phòng...");
-
-        try {
-            // TẦNG 2: Nguồn phụ (Ví dụ: Petrolimex API hoặc báo tài chính uy tín)
-            // Viết logic fetch nguồn phụ ở đây...
-            let priceFromSecondary = 24550;
-
-            return {
-                ...resultData,
-                value: priceFromSecondary,
-                source: { name: "Petrolimex", type: "secondary" },
-                quality: { status: "secondary", method: "api" }
-            };
-
-        } catch (errorTier2) {
-            // TẦNG 3: Thất bại toàn tập, trả về cờ lỗi
-            return {
-                ...resultData,
-                value: null,
-                source: { name: "Unknown", type: "none" },
-                quality: { status: "failed", method: "none" }
-            };
-        }
+    } catch (err) {
+        console.warn(`[Fuel Adapter] Lỗi cào giá xăng: ${err.message}`);
+        return { 
+            ...rawResult, 
+            value: null, 
+            source: { name: "Unknown", type: "none" }, 
+            quality: { status: "failed", method: "none", error_log: err.message } 
+        };
     }
 }
 
