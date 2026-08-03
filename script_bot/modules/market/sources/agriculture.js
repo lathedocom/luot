@@ -1,5 +1,5 @@
 // FILE: script_bot/modules/market/sources/agriculture.js
-const { fetchHtmlSafe, extractPriceFlexible } = require('../collector/parser_engine');
+const { fetchHtmlSafe, fetchHtmlWithProxy, extractPriceFlexible } = require('../collector/parser_engine');
 
 async function fetchCoffeeVN() {
     let rawResult = {
@@ -10,28 +10,28 @@ async function fetchCoffeeVN() {
         retrieved_at: new Date().toISOString()
     };
 
+    const url = 'https://giacaphe.com/gia-ca-phe-noi-dia/';
+    const regexPattern = /([1-9][0-9]{2,3}[.,\s]?[0-9]{3})/;
+    const selectors = ['table tr', '.table-coffee tr'];
+
     try {
-        // TẦNG 1: Thử lấy trang giacaphe.com
-        const url = 'https://giacaphe.com/gia-ca-phe-noi-dia/';
-        const html = await fetchHtmlSafe(url);
-        const valStr = extractPriceFlexible(html, ['table tr', '.table-coffee tr'], /([1-9][0-9]{2,3}[.,\s]?[0-9]{3})/);
+        // TẦNG 1: Lấy trực tiếp (Sẽ bị chặn nếu chạy trên GitHub)
+        const html = await fetchHtmlSafe(url, 5000);
+        const valStr = extractPriceFlexible(html, selectors, regexPattern);
         const priceVal = parseInt(valStr.replace(/[^\d]/g, ''));
 
         return { ...rawResult, value: priceVal, source: { name: "GiaCaPhe", url: url, type: "primary" }, quality: { status: "verified", method: "html_text" } };
-
     } catch (err1) {
-        console.warn(`[Agriculture] GiaCaPhe thất bại/bị chặn. Chuyển sang Tầng 2...`);
+        console.warn(`[Agriculture] Cà phê: Chặn trực tiếp. Đang thử vượt Cloudflare qua Proxy...`);
         
-        // TẦNG 2: Fallback sang chogia.vn
+        // TẦNG 2: Vượt rào bằng Proxy
         try {
-            const url2 = 'https://chogia.vn/gia-ca-phe/';
-            const html2 = await fetchHtmlSafe(url2);
-            const valStr2 = extractPriceFlexible(html2, ['table tbody tr'], /([1-9][0-9]{2,3}[.,\s]?[0-9]{3})/);
-            const priceVal2 = parseInt(valStr2.replace(/[^\d]/g, ''));
+            const htmlProxy = await fetchHtmlWithProxy(url);
+            const valStr = extractPriceFlexible(htmlProxy, selectors, regexPattern);
+            const priceVal = parseInt(valStr.replace(/[^\d]/g, ''));
 
-            return { ...rawResult, value: priceVal2, source: { name: "ChoGia", url: url2, type: "secondary" }, quality: { status: "secondary", method: "html_text" } };
+            return { ...rawResult, value: priceVal, source: { name: "GiaCaPhe (Proxy)", url: url, type: "secondary" }, quality: { status: "secondary", method: "html_proxy" } };
         } catch (err2) {
-            console.error(`[Agriculture] Tầng 2 Cà phê cũng thất bại: ${err2.message}`);
             return { ...rawResult, value: null, source: { name: "Unknown", type: "none" }, quality: { status: "failed", method: "none", error_log: err2.message } };
         }
     }
@@ -46,28 +46,28 @@ async function fetchPepperVN() {
         retrieved_at: new Date().toISOString()
     };
 
+    const url = 'https://giatieu.com/gia-tieu-trong-nuoc/';
+    const regexPattern = /([1-9][0-9]{2,3}[.,\s]?[0-9]{3})/;
+    const selectors = ['table tr', '.table-pepper tr'];
+
     try {
-        // TẦNG 1: Thử lấy trang giatieu.com
-        const url = 'https://giatieu.com/gia-tieu-trong-nuoc/';
-        const html = await fetchHtmlSafe(url);
-        const valStr = extractPriceFlexible(html, ['table tr', '.table-pepper tr'], /([1-9][0-9]{2,3}[.,\s]?[0-9]{3})/);
+        // TẦNG 1: Lấy trực tiếp
+        const html = await fetchHtmlSafe(url, 5000);
+        const valStr = extractPriceFlexible(html, selectors, regexPattern);
         const priceVal = parseInt(valStr.replace(/[^\d]/g, ''));
 
         return { ...rawResult, value: priceVal, source: { name: "GiaTieu", url: url, type: "primary" }, quality: { status: "verified", method: "html_text" } };
-
     } catch (err1) {
-        console.warn(`[Agriculture] GiaTieu thất bại/bị chặn. Chuyển sang Tầng 2...`);
+        console.warn(`[Agriculture] Hồ tiêu: Chặn trực tiếp. Đang thử vượt Cloudflare qua Proxy...`);
         
-        // TẦNG 2: Fallback sang chogia.vn
+        // TẦNG 2: Vượt rào bằng Proxy
         try {
-            const url2 = 'https://chogia.vn/gia-tieu/';
-            const html2 = await fetchHtmlSafe(url2);
-            const valStr2 = extractPriceFlexible(html2, ['table tbody tr'], /([1-9][0-9]{2,3}[.,\s]?[0-9]{3})/);
-            const priceVal2 = parseInt(valStr2.replace(/[^\d]/g, ''));
+            const htmlProxy = await fetchHtmlWithProxy(url);
+            const valStr = extractPriceFlexible(htmlProxy, selectors, regexPattern);
+            const priceVal = parseInt(valStr.replace(/[^\d]/g, ''));
 
-            return { ...rawResult, value: priceVal2, source: { name: "ChoGia", url: url2, type: "secondary" }, quality: { status: "secondary", method: "html_text" } };
+            return { ...rawResult, value: priceVal, source: { name: "GiaTieu (Proxy)", url: url, type: "secondary" }, quality: { status: "secondary", method: "html_proxy" } };
         } catch (err2) {
-            console.error(`[Agriculture] Tầng 2 Hồ tiêu cũng thất bại: ${err2.message}`);
             return { ...rawResult, value: null, source: { name: "Unknown", type: "none" }, quality: { status: "failed", method: "none", error_log: err2.message } };
         }
     }
