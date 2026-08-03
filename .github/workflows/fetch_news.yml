@@ -1,4 +1,5 @@
 # FILE: .github/workflows/fetch_news.yml
+
 name: AI Newsroom Bot
 
 on:
@@ -139,7 +140,12 @@ jobs:
         run: |
           cd script_bot
           npm install
+
           
+          - name: Test kết nối mạng tới VNDirect
+        run: node script_bot/test_vndirect.js
+
+        
       - name: Run AI Newsroom Bot (Monthly)
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
