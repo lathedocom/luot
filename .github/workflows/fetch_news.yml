@@ -1,10 +1,27 @@
+# FILE: .github/workflows/fetch_news.yml
 name: AI Newsroom Bot
+
 on:
-  workflow_dispatch: # Cổng nhận lệnh từ Cron-job.org và bấm thủ công
+  workflow_dispatch: # Cổng nhận lệnh từ Cron-job.org qua GitHub API
+    inputs:
+      market_freq:
+        description: 'Tần suất cập nhật (realtime, daily, monthly)'
+        required: true
+        default: 'realtime'
+        type: choice
+        options:
+          - realtime
+          - daily
+          - monthly
+
 jobs:
-  fetch-and-process-news:
+  # ==========================================
+  # JOB 1: TIN TỨC & THỊ TRƯỜNG REALTIME (Chạy 4 lần/ngày)
+  # ==========================================
+  news_and_realtime_market:
+    # Chỉ chạy khi payload từ cron-job.org truyền vào là realtime (hoặc để trống mặc định)
+    if: github.event.inputs.market_freq == 'realtime' || github.event.inputs.market_freq == ''
     runs-on: ubuntu-latest
-    
     permissions:
       contents: write
     steps:
@@ -19,27 +36,25 @@ jobs:
           cd script_bot
           npm install
           
-      - name: Prune oversized cache (giữ lại cache, chỉ dọn khi quá lớn)
+      - name: Prune oversized cache
         run: |
            cd script_bot
            node -e "
              const fs = require('fs');
              const files = ['cache/embedding_cache.json', 'cache/ai_cache.json'];
-             const MAX_MB = 20; // ngưỡng an toàn, có thể chỉnh
+             const MAX_MB = 20;
              for (const f of files) {
                if (fs.existsSync(f)) {
                  const sizeMB = fs.statSync(f).size / (1024*1024);
                  if (sizeMB > MAX_MB) {
                    console.log(f + ' vượt ' + MAX_MB + 'MB (' + sizeMB.toFixed(1) + 'MB), tiến hành dọn entry cũ.');
-                   // TODO: thay bằng logic prune theo tuổi/LRU trong modules/cache/cache_manager.js
-                   // thay vì xóa toàn bộ file
                  } else {
                    console.log(f + ' vẫn ở mức an toàn (' + sizeMB.toFixed(1) + 'MB), giữ nguyên.');
                  }
                }
              }
            "
-      - name: Run AI Newsroom Bot
+      - name: Run AI Newsroom Bot (Realtime)
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_API_KEY_1: ${{ secrets.GEMINI_API_KEY_1 }} 
@@ -49,17 +64,100 @@ jobs:
           APIFY_API_TOKEN: ${{ secrets.APIFY_API_TOKEN }}
         run: |
           cd script_bot
-          node fetch_news.js
+          node fetch_news.js --market=realtime
+          
       - name: Commit and Push Updated Data
         run: |
           git config --global user.name "AI-Newsroom-Bot"
           git config --global user.email "bot@ainewsroom.local"
-          
-          # Bật tính năng tự động giấu file rác khi đồng bộ
           git config --global rebase.autoStash true
-          # ĐÃ VÁ LỖI: Thêm timeline_data.json và gỡ bỏ lệnh git add data/ thừa thãi
           git add news_data.json timeline_data.json pipeline_status.json script_bot/cache/ script_bot/budget/ || true
+          git diff --staged --quiet || git commit -m "🤖 Cập nhật Tin tức & Market (Realtime)"
+          git pull --rebase origin main
+          git push origin main
+
+  # ==========================================
+  # JOB 2: CẬP NHẬT CHỈ SỐ CUỐI NGÀY (DAILY)
+  # ==========================================
+  daily_market_update:
+    # Chỉ chạy khi payload từ cron-job.org truyền vào là daily
+    if: github.event.inputs.market_freq == 'daily'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+      - name: Install Dependencies
+        run: |
+          cd script_bot
+          npm install
           
-          git diff --staged --quiet || git commit -m "🤖 Cập nhật tin tức, Cache & trạng thái V4"
+      - name: Run AI Newsroom Bot (Daily)
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_1: ${{ secrets.GEMINI_API_KEY_1 }} 
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          RAPID_API_KEY: ${{ secrets.RAPID_API_KEY }}
+          APIFY_API_TOKEN: ${{ secrets.APIFY_API_TOKEN }}
+        run: |
+          cd script_bot
+          node fetch_news.js --market=daily
+          
+      - name: Commit and Push Updated Data
+        run: |
+          git config --global user.name "AI-Newsroom-Bot"
+          git config --global user.email "bot@ainewsroom.local"
+          git config --global rebase.autoStash true
+          git add news_data.json timeline_data.json pipeline_status.json script_bot/cache/ script_bot/budget/ || true
+          git diff --staged --quiet || git commit -m "📊 Cập nhật VN-Index & Lãi suất (Daily)"
+          git pull --rebase origin main
+          git push origin main
+
+  # ==========================================
+  # JOB 3: CẬP NHẬT VĨ MÔ ĐẦU THÁNG (MONTHLY)
+  # ==========================================
+  monthly_market_update:
+    # Chỉ chạy khi payload từ cron-job.org truyền vào là monthly
+    if: github.event.inputs.market_freq == 'monthly'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+      - name: Install Dependencies
+        run: |
+          cd script_bot
+          npm install
+          
+      - name: Run AI Newsroom Bot (Monthly)
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_1: ${{ secrets.GEMINI_API_KEY_1 }} 
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          RAPID_API_KEY: ${{ secrets.RAPID_API_KEY }}
+          APIFY_API_TOKEN: ${{ secrets.APIFY_API_TOKEN }}
+        run: |
+          cd script_bot
+          node fetch_news.js --market=monthly
+          
+      - name: Commit and Push Updated Data
+        run: |
+          git config --global user.name "AI-Newsroom-Bot"
+          git config --global user.email "bot@ainewsroom.local"
+          git config --global rebase.autoStash true
+          git add news_data.json timeline_data.json pipeline_status.json script_bot/cache/ script_bot/budget/ || true
+          git diff --staged --quiet || git commit -m "📈 Cập nhật dữ liệu Vĩ mô (Monthly)"
           git pull --rebase origin main
           git push origin main
