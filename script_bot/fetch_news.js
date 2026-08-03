@@ -7,9 +7,11 @@ const path = require('path');
 const PIPELINE_STATUS_FILE = path.join(__dirname, '../pipeline_status.json');
 
 // IMPORT CÁC MODULE XỬ LÝ LÕI
-const { fetchAllLiveMarketData, updateMarketHistory, prepareMarketDataForUI } = require('./modules/market/market_fetcher');
+const { processMarketRoutine } = require('./modules/market/index');
+
+// IMPORT CÁC MODULE XỬ LÝ LÕI
 const { buildDigest, buildSituationIndexData } = require('./modules/digest/digest_builder');
-const { buildMacroHealth } = require('./modules/market/macro_health');
+// ĐÃ XÓA: market_fetcher.js và macro_health.js
 const { processEventIntoTimeline } = require('./modules/6_timeline_manager');
 const { processTopicIntoStory } = require('./modules/story/story_engine');
 const { fetchAndNormalizeNews } = require('./modules/1_crawler');
@@ -27,8 +29,6 @@ const topicStore = require('./modules/topic/topic_store');
 const { mergeIntoExistingTopic } = require('./modules/topic/topic_merger');
 const { evaluateClusterAction } = require('./modules/topic/similarity_engine');
 
-// Thay thế module cũ bằng module mới
-const { processMarketRoutine } = require('./modules/market/index');
 const { fetchAllSocialTrends } = require('./modules/social/index');
 const { generateAllReports } = require('./modules/reports/index');
 
