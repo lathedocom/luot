@@ -1,34 +1,43 @@
-const logger = require('../utils/logger');
-const { getCache, setCache } = require('../cache/cache_manager');
-const { fetchAllLiveMarketData } = require('./market_fetcher');
+// FILE: script_bot/modules/market/index.js
+const { runCollector } = require('./collector');
+const { saveToHistory } = require('./history/history_manager');
 const { linkMarketWithNews } = require('./market_analyzer');
+const { buildMacroHealth } = require('./macro_health');
+const logger = require('../utils/logger');
 
-async function fetchAllMarketData(currentTopics = []) {
-    logger.info('Đang tổng hợp và phân tích dữ liệu Thị trường (Live API)...');
+/**
+ * Trạm điều phối chính cho tính năng Thị trường
+ * @param {string} frequency - Chu kỳ cào (vd: 'daily', 'monthly', 'event')
+ * @param {Array} currentTopics - Dữ liệu tin tức 7 ngày gần nhất
+ */
+async function processMarketRoutine(frequency = "daily", currentTopics = []) {
+    logger.info(`[Market Routine] Khởi chạy chu kỳ: ${frequency}`);
+
+    // PHASE 1 & 2: THU THẬP VÀ KIỂM ĐỊNH
+    // Tự động phân luồng cào dựa theo tần suất. (Ví dụ: 0 đồng/GitHub Actions)
+    const collectedData = await runCollector(frequency);
     
-    // 1. Kiểm tra Cache (TTL 15 phút cho Market)
-    const cachedData = getCache('market_cache', 'latest_market');
-    if (cachedData) {
-        logger.info('⚡ [Cache Hit] Trả về dữ liệu Thị trường từ Bộ đệm Cache');
-        return cachedData;
-    }
-    
-    // 2. Fetch API trực tiếp từ Yahoo & Binance
-    const rawMarketData = await fetchAllLiveMarketData();
-    
-    if (!rawMarketData || rawMarketData.length === 0) {
-        logger.warn('Không lấy được dữ liệu thị trường từ các API Public.');
-        return [];
+    if (collectedData.length === 0) {
+        logger.info(`Không có chỉ số nào cần thu thập trong chu kỳ ${frequency}.`);
+        return null;
     }
 
-    // 3. Chạy Knowledge Graph: Gắn kết biến động giá với News Context
-    const enrichedMarketData = linkMarketWithNews(rawMarketData, currentTopics);
-    
-    // 4. Lưu Cache
-    setCache('market_cache', 'latest_market', enrichedMarketData, 15);
-    logger.success(`Đã cập nhật thành công ${enrichedMarketData.length} mã thị trường (Kèm Context).`);
-    
-    return enrichedMarketData;
+    // PHASE 3: LƯU TRỮ LỊCH SỬ (HISTORY)
+    const { currentDb } = saveToHistory(collectedData);
+
+    // PHASE 4 & 5: PHÂN TÍCH VÀ GẮN BỐI CẢNH TIN TỨC
+    const analyzedMarketData = linkMarketWithNews(currentDb, currentTopics);
+
+    // PHASE 6 & 7 & 8: ĐÁNH GIÁ SỨC KHỎE VĨ MÔ & AI GIẢI THÍCH
+    // Ép AI giải thích theo công thức điểm số (File bạn đã sửa ở bước trước)
+    const macroHealthData = await buildMacroHealth(currentTopics, analyzedMarketData);
+
+    logger.success(`[Market Routine] Hoàn tất chu kỳ ${frequency}.`);
+
+    return {
+        market_board: analyzedMarketData,
+        macro_health: macroHealthData
+    };
 }
 
-module.exports = { fetchAllMarketData };
+module.exports = { processMarketRoutine };
