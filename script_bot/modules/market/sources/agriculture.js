@@ -1,5 +1,15 @@
 // FILE: script_bot/modules/market/sources/agriculture.js
-const { fetchHtmlWithProxy, extractPriceFlexible } = require('../collector/parser_engine');
+const cheerio = require('cheerio');
+
+// Lấy RSS thô thay vì HTML
+async function fetchRssSafe(url) {
+    const res = await fetch(url, {
+        headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' },
+        timeout: 10000
+    });
+    if (!res.ok) throw new Error(`RSS Error: ${res.status}`);
+    return await res.text();
+}
 
 async function fetchCoffeeVN() {
     let rawResult = {
@@ -11,29 +21,36 @@ async function fetchCoffeeVN() {
     };
 
     try {
-        // TẦNG 1: Báo Dân Việt (BẮT BUỘC QUA PROXY ĐỂ TRÁNH LỖI 403)
-        const url = 'https://danviet.vn/gia-ca-phe-hom-nay.html';
-        const html = await fetchHtmlWithProxy(url);
+        // TẦNG 1: Dùng RSS của Tin Tây Nguyên (Né Cloudflare HTML)
+        const url = 'https://tintaynguyen.com/feed/';
+        const xml = await fetchRssSafe(url);
         
-        const valStr = extractPriceFlexible(html, ['.box-content', '.detail-content'], /([1-9][0-9]{1,2}[.,\s]?[0-9]{3})/);
-        const priceVal = parseInt(valStr.replace(/[^\d]/g, ''));
+        const $ = cheerio.load(xml, { xmlMode: true });
+        let priceVal = null;
 
-        return { ...rawResult, value: priceVal, source: { name: "Báo Dân Việt (Proxy)", url: url, type: "secondary" }, quality: { status: "verified", method: "html_proxy" } };
+        // Quét từng bài báo trong RSS
+        $('item').each((i, el) => {
+            const title = $(el).find('title').text().toLowerCase();
+            const desc = $(el).find('description').text();
+            
+            // Nếu bài báo nói về giá cà phê
+            if (title.includes('giá cà phê')) {
+                // Bắt con số có 5 hoặc 6 chữ số (VD: 120,500 hoặc 120500)
+                const match = desc.match(/([1-9][0-9]{1,2}[.,\s]?[0-9]{3})/);
+                if (match) {
+                    priceVal = parseInt(match[1].replace(/[^\d]/g, ''));
+                    return false; // Dừng vòng lặp
+                }
+            }
+        });
+
+        if (!priceVal) throw new Error("Không bắt được giá cà phê từ RSS");
+
+        return { ...rawResult, value: priceVal, source: { name: "TinTayNguyen (RSS)", url: url, type: "secondary" }, quality: { status: "verified", method: "rss_regex" } };
 
     } catch (err1) {
-        console.warn(`[Agriculture] Dân Việt Cà phê thất bại. Chuyển sang Tin Tây Nguyên...`);
-        
-        // TẦNG 2: Tin Tây Nguyên qua Proxy
-        try {
-            const url2 = 'https://tintaynguyen.com/gia-ca-phe/';
-            const html2 = await fetchHtmlWithProxy(url2);
-            const valStr2 = extractPriceFlexible(html2, ['.table-striped tbody tr'], /([1-9][0-9]{1,2}[.,\s]?[0-9]{3})/);
-            const priceVal2 = parseInt(valStr2.replace(/[^\d]/g, ''));
-
-            return { ...rawResult, value: priceVal2, source: { name: "TinTayNguyen (Proxy)", url: url2, type: "secondary" }, quality: { status: "secondary", method: "html_proxy" } };
-        } catch (err2) {
-            return { ...rawResult, value: null, source: { name: "Unknown", type: "none" }, quality: { status: "failed", method: "none", error_log: err1.message } };
-        }
+        console.warn(`[Agriculture] Lỗi cào RSS Cà phê: ${err1.message}`);
+        return { ...rawResult, value: null, source: { name: "Unknown", type: "none" }, quality: { status: "failed", method: "none", error_log: err1.message } };
     }
 }
 
@@ -47,27 +64,34 @@ async function fetchPepperVN() {
     };
 
     try {
-        const url = 'https://danviet.vn/gia-tieu-hom-nay.html';
-        const html = await fetchHtmlWithProxy(url);
+        // TẦNG 1: Dùng RSS của Tin Tây Nguyên
+        const url = 'https://tintaynguyen.com/feed/';
+        const xml = await fetchRssSafe(url);
         
-        const valStr = extractPriceFlexible(html, ['.box-content', '.detail-content'], /([1-9][0-9]{2,3}[.,\s]?[0-9]{3})/);
-        const priceVal = parseInt(valStr.replace(/[^\d]/g, ''));
+        const $ = cheerio.load(xml, { xmlMode: true });
+        let priceVal = null;
 
-        return { ...rawResult, value: priceVal, source: { name: "Báo Dân Việt (Proxy)", url: url, type: "secondary" }, quality: { status: "verified", method: "html_proxy" } };
+        $('item').each((i, el) => {
+            const title = $(el).find('title').text().toLowerCase();
+            const desc = $(el).find('description').text();
+            
+            // Nếu bài báo nói về giá tiêu
+            if (title.includes('giá tiêu')) {
+                const match = desc.match(/([1-9][0-9]{2,3}[.,\s]?[0-9]{3})/);
+                if (match) {
+                    priceVal = parseInt(match[1].replace(/[^\d]/g, ''));
+                    return false;
+                }
+            }
+        });
+
+        if (!priceVal) throw new Error("Không bắt được giá hồ tiêu từ RSS");
+
+        return { ...rawResult, value: priceVal, source: { name: "TinTayNguyen (RSS)", url: url, type: "secondary" }, quality: { status: "verified", method: "rss_regex" } };
 
     } catch (err1) {
-        console.warn(`[Agriculture] Dân Việt Hồ tiêu thất bại. Chuyển sang Tin Tây Nguyên...`);
-        
-        try {
-            const url2 = 'https://tintaynguyen.com/gia-tieu/';
-            const html2 = await fetchHtmlWithProxy(url2);
-            const valStr2 = extractPriceFlexible(html2, ['.table-striped tbody tr'], /([1-9][0-9]{2,3}[.,\s]?[0-9]{3})/);
-            const priceVal2 = parseInt(valStr2.replace(/[^\d]/g, ''));
-
-            return { ...rawResult, value: priceVal2, source: { name: "TinTayNguyen (Proxy)", url: url2, type: "secondary" }, quality: { status: "secondary", method: "html_proxy" } };
-        } catch (err2) {
-            return { ...rawResult, value: null, source: { name: "Unknown", type: "none" }, quality: { status: "failed", method: "none", error_log: err1.message } };
-        }
+        console.warn(`[Agriculture] Lỗi cào RSS Hồ tiêu: ${err1.message}`);
+        return { ...rawResult, value: null, source: { name: "Unknown", type: "none" }, quality: { status: "failed", method: "none", error_log: err1.message } };
     }
 }
 
