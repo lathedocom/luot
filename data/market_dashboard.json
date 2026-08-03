@@ -41,6 +41,27 @@
       "status": "online",
       "is_alert": false,
       "context": null
+    },
+    {
+      "id": "vn_gold_sjc",
+      "name": "Vàng miếng SJC",
+      "category": "💰 Chi phí sinh hoạt",
+      "type": "daily",
+      "unit": "Tr/lượng",
+      "price": "13,75",
+      "change_percent": "0%",
+      "trend": "→",
+      "history": [
+        13.75
+      ],
+      "history_labels": [
+        "Hiện tại"
+      ],
+      "updated_at": 1785774397183,
+      "display_source": "WebGia SJC",
+      "status": "online",
+      "is_alert": false,
+      "context": null
     }
   ],
   "macro_health": [
@@ -56,7 +77,7 @@
         "Lãi suất USD neo cao do nỗ lực hạ lãi suất bất thành của Trump đã làm gia tăng áp lực lên tỷ giá VND/USD và chi phí trả nợ nước ngoài của Việt Nam, đồng thời ảnh hưởng đến dòng vốn đầu tư gián tiếp."
       ],
       "target_audience": "Người tiêu dùng, Hộ gia đình",
-      "meaning": "Doanh nghiệp và người dân Việt Nam cần chuẩn bị cho khả năng tăng chi phí sản xuất và sinh hoạt do lãi suất cao, đồng thời tìm kiếm cơ hội đầu tư vào các lĩnh vực không phụ thuộc vào dòng vốn gián tiếp.",
+      "meaning": "Doanh nghiệp và người dân Việt Nam cần chuẩn bị cho khả năng tỷ giá VND/USD tăng cao hơn và chi phí trả nợ nước ngoài gia tăng, từ đó có thể điều chỉnh chiến lược kinh doanh và chi tiêu hợp lý để giảm thiểu tác động tiêu cực.",
       "impact_level": "🟡 Trung bình",
       "duration": "Ngắn & Trung hạn"
     },
@@ -85,10 +106,10 @@
       "color": "#ef4444",
       "trend_icon": "↓",
       "reasons": [
-        "Sự suy yếu của lĩnh vực sản xuất & công nghiệp tại Việt Nam được gây ra bởi sự suy giảm hoạt động sản xuất tại Trung Quốc và việc Hòa Phát vay nợ kỷ lục, dẫn đến tác động tiêu cực đến nhu cầu nhập khẩu nguyên liệu từ Việt Nam và ảnh hưởng đến chỉ số tài chính của một doanh nghiệp đầu ngành thép."
+        "Trạng thái suy yếu mạnh của lĩnh vực sản xuất & công nghiệp tại Việt Nam là do tác động tiêu cực từ sự sụt giảm hoạt động sản xuất tại Trung Quốc và ảnh hưởng đến chỉ số tài chính của Hòa Phát, doanh nghiệp đầu ngành thép."
       ],
       "target_audience": "Doanh nghiệp sản xuất, Công nhân",
-      "meaning": "Sự suy yếu của lĩnh vực sản xuất & công nghiệp có thể dẫn đến giảm sản lượng hàng hóa, tăng giá nguyên liệu và ảnh hưởng đến chuỗi cung ứng vật liệu xây dựng, từ đó gây ra khó khăn cho doanh nghiệp và người dân Việt Nam trong việc sản xuất và kinh doanh.",
+      "meaning": "Sự suy yếu này có thể dẫn đến giảm doanh số bán hàng, mất việc làm và ảnh hưởng đến cuộc sống của người dân Việt Nam, đặc biệt là những người làm việc trong lĩnh vực sản xuất và công nghiệp.",
       "impact_level": "🔴 Cao",
       "duration": "Trung hạn"
     },
@@ -101,10 +122,10 @@
       "color": "#ef4444",
       "trend_icon": "↓",
       "reasons": [
-        "Trạng thái 'Suy yếu mạnh' của lĩnh vực Thương mại & XNK Việt Nam là do sự gia tăng mạnh mẽ nhập khẩu điều thô và tác động gián tiếp từ sự kiện drone Ukraine đánh chìm tàu container của Nga, gây ảnh hưởng đến chi phí vận chuyển hàng hóa xuất nhập khẩu và đẩy giá cước vận tải biển toàn cầu tăng nhẹ."
+        "Trạng thái 'Suy yếu mạnh' trong lĩnh vực Thương mại & XNK của Việt Nam là do việc nhập khẩu điều thô vượt 3 tỷ USD và sự kiện Drone Ukraine đánh chìm tàu container của Nga gây ra tác động gián tiếp đến chi phí vận chuyển hàng hóa xuất nhập khẩu của Việt Nam."
       ],
       "target_audience": "Doanh nghiệp xuất nhập khẩu, Logistics",
-      "meaning": "Doanh nghiệp và người dân Việt Nam cần chuẩn bị cho khả năng tăng chi phí vận chuyển hàng hóa xuất nhập khẩu và biến động giá nguyên liệu thô, đồng thời tăng cường quản lý rủi ro nguồn cung và biến động giá quốc tế để duy trì vị thế dẫn đầu trong xuất khẩu điều thành phẩm.",
+      "meaning": "Doanh nghiệp và người dân Việt Nam cần chuẩn bị cho khả năng tăng chi phí vận chuyển hàng hóa xuất nhập khẩu và biến động giá quốc tế, đồng thời cần quản lý rủi ro nguồn cung để duy trì vị thế dẫn đầu trong xuất khẩu điều thành phẩm.",
       "impact_level": "🔴 Cao",
       "duration": "Trung hạn"
     },
@@ -117,10 +138,10 @@
       "color": "#ef4444",
       "trend_icon": "↓",
       "reasons": [
-        "Hòa Phát vay nợ kỷ lục đã ảnh hưởng đến chỉ số tài chính của một doanh nghiệp đầu ngành thép, gây ra sự bất ổn trong chuỗi cung ứng vật liệu xây dựng và làm giảm niềm tin nhà đầu tư, dẫn đến trạng thái suy yếu mạnh của lĩnh vực Xây dựng & Bất động sản."
+        "Hòa Phát vay nợ kỷ lục đã ảnh hưởng đến chỉ số tài chính của một doanh nghiệp đầu ngành thép, gây ra sự mất niềm tin nhà đầu tư và gián tiếp tác động đến chuỗi cung ứng vật liệu xây dựng trong nước, dẫn đến trạng thái suy yếu mạnh của lĩnh vực Xây dựng & Bất động sản."
       ],
       "target_audience": "Người mua nhà, Nhà thầu xây dựng",
-      "meaning": "Trạng thái suy yếu mạnh của lĩnh vực Xây dựng & Bất động sản sẽ ảnh hưởng trực tiếp đến các doanh nghiệp trong ngành, khiến họ khó khăn trong việc tiếp cận vốn và tăng trưởng kinh doanh. Điều này sẽ dẫn đến sự gián đoạn trong hoạt động xây dựng và phát triển bất động sản, gây ra sự bất ổn cho thị trường và ảnh hưởng đến cuộc sống của người dân.",
+      "meaning": "Trạng thái suy yếu mạnh của lĩnh vực Xây dựng & Bất động sản sẽ ảnh hưởng trực tiếp đến các doanh nghiệp trong ngành, khiến họ khó khăn trong việc tiếp cận vốn vay và tăng chi phí sản xuất. Điều này sẽ dẫn đến sự tăng giá của các sản phẩm xây dựng và bất động sản, gây khó khăn cho người dân Việt Nam khi mua bán và xây dựng nhà cửa.",
       "impact_level": "🔴 Cao",
       "duration": "Dài hạn"
     },
@@ -133,10 +154,10 @@
       "color": "#ef4444",
       "trend_icon": "↓",
       "reasons": [
-        "Trạng thái suy yếu mạnh của lĩnh vực 'Nông nghiệp & Hàng hóa' tại Việt Nam do sự gián đoạn tại Trung Đông và căng thẳng Hormuz có thể làm tăng giá nhiên liệu nhập khẩu, ảnh hưởng đến chi phí vận chuyển và giá thành sản xuất hàng hóa tại Việt Nam."
+        "Giá xăng dầu trong nước có thể chịu áp lực tăng theo giá dầu thế giới do sự kiện Iran tấn công tàu chở dầu được Mỹ hộ tống ở eo biển Hormuz, ảnh hưởng đến chi phí vận tải và logistics tại Việt Nam."
       ],
       "target_audience": "Nông dân, Doanh nghiệp chế biến thực phẩm",
-      "meaning": "Doanh nghiệp và người dân Việt Nam cần chuẩn bị cho khả năng tăng giá xăng dầu trong nước, từ đó ảnh hưởng đến chi phí vận tải và giá cả hàng hóa. Điều này có thể dẫn đến tăng giá sản phẩm, ảnh hưởng đến khả năng cạnh tranh của doanh nghiệp và chất lượng cuộc sống của người dân.",
+      "meaning": "Doanh nghiệp vận tải và logistics tại Việt Nam cần chuẩn bị cho khả năng tăng chi phí vận tải và logistics do giá xăng dầu tăng, từ đó có thể điều chỉnh giá thành sản phẩm và chiến lược kinh doanh phù hợp.",
       "impact_level": "🔴 Cao",
       "duration": "Trung hạn"
     },
@@ -149,10 +170,10 @@
       "color": "#ef4444",
       "trend_icon": "↓",
       "reasons": [
-        "Trạng thái 'Suy yếu mạnh' của hệ thống thuật toán đánh giá lĩnh vực 'Tiền tệ & Tín dụng' của Việt Nam là do sự kết hợp của các yếu tố tiêu cực từ các sự kiện gần đây, bao gồm lãi suất USD neo cao, sự bất ổn của thị trường trái phiếu Mỹ và tác động tiêu cực của lãi suất tăng cao lên dòng vốn đầu tư gián tiếp."
+        "Trạng thái 'Suy yếu mạnh' của hệ thống thuật toán đánh giá lĩnh vực 'Tiền tệ & Tín dụng' của Việt Nam là do sự kết hợp của các yếu tố tác động tiêu cực từ các sự kiện quốc tế và trong nước, bao gồm lãi suất USD neo cao, sự bất ổn của thị trường trái phiếu Mỹ và sự ảnh hưởng tiêu cực đến dòng vốn đầu tư gián tiếp."
       ],
       "target_audience": "Doanh nghiệp vay vốn, Người mua nhà, Du học sinh",
-      "meaning": "Doanh nghiệp và người dân Việt Nam cần chuẩn bị cho khả năng tỷ giá VND/USD tăng cao và chi phí trả nợ nước ngoài gia tăng, đồng thời cần tìm kiếm các cơ hội đầu tư an toàn và hiệu quả để giảm thiểu tác động tiêu cực từ sự bất ổn của thị trường tài chính quốc tế.",
+      "meaning": "Doanh nghiệp và người dân Việt Nam cần chuẩn bị cho khả năng tỷ giá VND/USD tăng cao và chi phí trả nợ nước ngoài gia tăng, đồng thời cần tận dụng cơ hội từ việc ngân hàng quốc doanh được 'nới thanh khoản' để tiếp cận vốn và hỗ trợ tăng trưởng kinh tế.",
       "impact_level": "🔴 Cao",
       "duration": "Trung hạn"
     },
@@ -165,10 +186,10 @@
       "color": "#ef4444",
       "trend_icon": "↓",
       "reasons": [
-        "Nỗ lực hạ lãi suất bất thành của Trump và sự sụt giảm niềm tin vào thị trường chứng khoán Mỹ đã dẫn đến việc lãi suất USD neo cao, làm gia tăng áp lực lên tỷ giá VND/USD và chi phí trả nợ nước ngoài của Việt Nam, đồng thời ảnh hưởng đến dòng vốn đầu tư gián tiếp."
+        "Nỗ lực hạ lãi suất bất thành của Trump và sự sụt giảm niềm tin vào thị trường chứng khoán Mỹ đã tạo ra áp lực lên tỷ giá VND/USD và chi phí trả nợ nước ngoài của Việt Nam, đồng thời ảnh hưởng đến dòng vốn đầu tư gián tiếp và tâm lý nhà đầu tư trên thị trường chứng khoán Việt Nam."
       ],
       "target_audience": "Nhà đầu tư cá nhân, Quỹ đầu tư",
-      "meaning": "Doanh nghiệp và người dân Việt Nam cần chuẩn bị cho khả năng tỷ giá VND/USD tăng cao và chi phí trả nợ nước ngoài gia tăng, đồng thời cần cân nhắc kỹ lưỡng trước khi đầu tư vào thị trường chứng khoán để tránh rủi ro mất mát.",
+      "meaning": "Doanh nghiệp và người dân Việt Nam cần chuẩn bị cho khả năng tỷ giá VND/USD tăng cao hơn và dòng vốn ngoại rút khỏi thị trường, từ đó ảnh hưởng đến giá cả hàng hóa và dịch vụ, cũng như khả năng vay vốn và chi phí lãi suất. Vì vậy, cần cân nhắc và điều chỉnh chiến lược đầu tư và tài chính để thích nghi với tình hình mới.",
       "impact_level": "🔴 Cao",
       "duration": "Ngắn hạn"
     },
@@ -181,10 +202,10 @@
       "color": "#ef4444",
       "trend_icon": "↓",
       "reasons": [
-        "Căng thẳng Hormuz và chiến tranh giữa Iran và Trump đã gây ra biến động giá dầu thế giới, từ đó ảnh hưởng đến chi phí vận tải, giá cả hàng hóa trong nước và cán cân thanh toán của Việt Nam."
+        "Căng thẳng Hormuz và chiến tranh Iran - Mỹ đã gây ra biến động giá dầu thế giới, từ đó ảnh hưởng đến chi phí vận tải, giá cả hàng hóa trong nước và cán cân thanh toán của Việt Nam."
       ],
       "target_audience": "Hầu hết mọi người (Tác động gián tiếp)",
-      "meaning": "Doanh nghiệp và người dân Việt Nam cần chuẩn bị cho khả năng tăng giá xăng dầu, chi phí vận tải biển và giá nhiên liệu nhập khẩu, từ đó có thể ảnh hưởng đến giá cả hàng hóa và chi phí sản xuất. Chúng ta cần theo dõi sát sao tình hình và có kế hoạch dự phòng để giảm thiểu tác động tiêu cực.",
+      "meaning": "Doanh nghiệp và người dân Việt Nam cần chuẩn bị cho khả năng tăng giá xăng dầu, chi phí vận tải biển và giá nhiên liệu nhập khẩu, từ đó có kế hoạch điều chỉnh giá hàng hóa và chi phí sản xuất để tránh ảnh hưởng tiêu cực đến kinh doanh và cuộc sống.",
       "impact_level": "🔴 Cao",
       "duration": "Trung hạn"
     }
