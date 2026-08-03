@@ -10165,5 +10165,111 @@
       "sentiment": -1,
       "scope": "national"
     }
+  },
+  "evt_general_1785755862161": {
+    "created_at": 1785755862658,
+    "expires_at": 1788347862658,
+    "version": "4.5",
+    "checksum": "19e6cfeac3066e5e5cf56d1b5339f36b",
+    "data": {
+      "cluster_title": "Whey protein trở thành 'gà đẻ trứng vàng' mới ở Mỹ",
+      "short_summary": "Whey protein trở thành 'gà đẻ trứng vàng' mới ở Mỹ, thúc đẩy làn sóng đầu tư hàng tỷ USD và tái định hình ngành sữa Mỹ.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "categories": [
+        "kinh tế",
+        "sữa"
+      ],
+      "regions": [
+        "US"
+      ],
+      "follow_up": "",
+      "entities": [
+        "Mỹ",
+        "whey protein"
+      ],
+      "keywords": [
+        "whey protein",
+        "sữa",
+        "đầu tư"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_general_1785755868365": {
+    "created_at": 1785755873896,
+    "expires_at": 1788347873896,
+    "version": "4.5",
+    "checksum": "18f2f72396821f9d88c04dbcc6687872",
+    "data": {
+      "cluster_title": "Tên lửa SpaceX trôi dạt có nguy cơ va chạm với Mặt Trăng",
+      "short_summary": "Tên lửa SpaceX trôi dạt có nguy cơ va chạm với Mặt Trăng.",
+      "detailed_summary": "Một tầng tên lửa thuộc sở hữu của SpaceX hiện đang trôi dạt không kiểm soát trong không gian. Các tính toán dự báo cho thấy vật thể này có khả năng sẽ va chạm với bề mặt Mặt Trăng trong thời gian tới.",
+      "causes": [
+        "Tên lửa không còn nhiên liệu để thực hiện hành trình trở về hoặc tự hủy",
+        "Quỹ đạo bay sau khi tách tầng dẫn đến việc trôi dạt tự do"
+      ],
+      "effects": [
+        "Nguy cơ tạo ra va chạm vật lý trên bề mặt Mặt Trăng",
+        "Gia tăng sự chú ý về vấn đề rác thải không gian"
+      ],
+      "affected_groups": [
+        "Ngành công nghiệp hàng không vũ trụ",
+        "Các cơ quan nghiên cứu thiên văn học"
+      ],
+      "market_impact": "Sự kiện gây ra những thảo luận về trách nhiệm quản lý rác thải không gian, có thể dẫn đến các quy định nghiêm ngặt hơn cho các công ty tư nhân trong tương lai.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "tech",
+        "environment"
+      ],
+      "regions": [
+        "GLOBAL"
+      ],
+      "significance": "Sự kiện phản ánh những thách thức thực tế trong việc quản lý rác thải vũ trụ khi các hoạt động thám hiểm không gian tư nhân ngày càng phát triển.",
+      "unknowns": [
+        "Thời điểm va chạm chính xác",
+        "Tác động cụ thể lên bề mặt Mặt Trăng sau va chạm"
+      ],
+      "confidence_note": "Thông tin dựa trên dự báo kỹ thuật về quỹ đạo, độ tin cậy ở mức cao.",
+      "scenarios": [
+        {
+          "text": "Tầng tên lửa va chạm trực tiếp với bề mặt Mặt Trăng theo dự báo.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Tầng tên lửa thay đổi quỹ đạo do lực hấp dẫn và không xảy ra va chạm.",
+          "likelihood": "thấp"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "SpaceX",
+          "target": "Mặt Trăng",
+          "relation_type": "cause_effect",
+          "label": "Tầng tên lửa trôi dạt gây nguy cơ va chạm"
+        }
+      ],
+      "entities": [
+        "SpaceX",
+        "Mặt Trăng"
+      ],
+      "keywords": [
+        "Tên lửa SpaceX",
+        "Mặt Trăng"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
   }
 }
