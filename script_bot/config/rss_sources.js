@@ -3,7 +3,7 @@ const RSS_SOURCES = [
     // ==========================================
     // 1. GLOBAL (Ưu tiên cao nhất)
     // ==========================================
-    {
+   /* {
         id: "npr_world", name: "NPR World", country: "USA", region: "Global", language: "en",
         category: ["world", "politics", "society"], type: "news_agency", priority: 10, credibility: 10,
         max_items: 20,
@@ -26,7 +26,7 @@ const RSS_SOURCES = [
         category: ["economy", "finance", "business"], type: "economic_news", priority: 10, credibility: 10,
         max_items: 15,
         rss: "https://www.ft.com/rss/home", homepage: "https://www.ft.com", logo: "https://www.ft.com/favicon.ico", enabled: true
-    },
+    },*/
     // ==========================================
     // 2. VIỆT NAM
     // ==========================================
