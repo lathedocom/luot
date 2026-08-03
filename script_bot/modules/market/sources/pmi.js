@@ -1,5 +1,5 @@
 // FILE: script_bot/modules/market/sources/pmi.js
-const { fetchHtmlSafe, extractPriceFlexible } = require('../collector/parser_engine');
+const { fetchHtmlWithProxy } = require('../collector/parser_engine');
 
 async function fetchPMI() {
     let rawResult = {
@@ -12,21 +12,23 @@ async function fetchPMI() {
     };
 
     try {
-        // TẦNG 1: Cào từ trang tin uy tín hoặc S&P Global Report
-        // Vì PMI thường nằm trong bài báo dạng text, ta dùng regex linh hoạt
-        const url = 'https://cafef.vn/pmi-viet-nam.html'; // Giả lập URL tag
-        const html = await fetchHtmlSafe(url);
+        // Sử dụng Trading Economics (Dữ liệu vĩ mô đáng tin cậy nhất)
+        const url = 'https://vi.tradingeconomics.com/vietnam/manufacturing-pmi';
+        const html = await fetchHtmlWithProxy(url);
         
-        // Cố gắng bắt đoạn text: "Chỉ số PMI đạt 51.5 điểm" hoặc "PMI ... 51,5"
-        const valStr = extractPriceFlexible(html, ['.timeline-content', '.news-desc'], /(?:PMI).*?([4-6][0-9][.,][0-9])/i);
-        const pmiValue = parseFloat(valStr.replace(',', '.'));
+        // Regex bắt số điểm PMI (thường nằm quanh khoảng 40.0 đến 60.0)
+        // Tìm trong thẻ chứa giá trị gần nhất
+        const match = html.match(/Lần Cuối[\s\S]*?([4-6][0-9][.,][0-9])/i) || html.match(/PMI.*?([4-6][0-9][.,][0-9])/i);
+        
+        if (!match) throw new Error("Không bắt được điểm số PMI qua Regex");
+        const pmiValue = parseFloat(match[1].replace(',', '.'));
 
         return {
             ...rawResult,
             value: pmiValue,
             period: new Date().toISOString().substring(0, 7), // YYYY-MM
-            source: { name: "S&P Global / Báo chí", url: url, type: "aggregate" },
-            quality: { status: "verified", method: "html_text" }
+            source: { name: "Trading Economics (Proxy)", url: url, type: "aggregate" },
+            quality: { status: "verified", method: "html_proxy" }
         };
 
     } catch (error) {
