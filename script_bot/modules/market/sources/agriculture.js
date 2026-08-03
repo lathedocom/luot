@@ -1,5 +1,5 @@
 // FILE: script_bot/modules/market/sources/agriculture.js
-const { fetchHtmlWithProxy, extractPriceFlexible } = require('../collector/parser_engine');
+const { fetchHtmlSafe, fetchHtmlWithProxy, extractPriceFlexible } = require('../collector/parser_engine');
 
 async function fetchCoffeeVN() {
     let rawResult = {
@@ -11,26 +11,28 @@ async function fetchCoffeeVN() {
     };
 
     try {
-        // TẦNG 1: Lấy qua Proxy (Bỏ qua fetch trực tiếp vì GitHub 100% bị chặn)
-        const url = 'https://giacaphe.com/gia-ca-phe-noi-dia/';
-        const htmlProxy = await fetchHtmlWithProxy(url);
+        // TẦNG 1: Sử dụng Vietnambiz (Ít chặn bot hơn)
+        const url = 'https://vietnambiz.vn/gia-ca-phe.htm';
+        const html = await fetchHtmlSafe(url, 10000); // Thử cào trực tiếp
         
-        const valStr = extractPriceFlexible(htmlProxy, ['table tr', '.table-coffee tr'], /([1-9][0-9]{2,3}[.,\s]?[0-9]{3})/);
+        // Regex linh hoạt bắt giá (VD: 120.500 hoặc 120,500)
+        const valStr = extractPriceFlexible(html, ['.table tbody tr', '.content table tr'], /([1-9][0-9]{1,2}[.,\s]?[0-9]{3})/);
         const priceVal = parseInt(valStr.replace(/[^\d]/g, ''));
 
-        return { ...rawResult, value: priceVal, source: { name: "GiaCaPhe (Proxy)", url: url, type: "primary" }, quality: { status: "verified", method: "html_proxy" } };
+        return { ...rawResult, value: priceVal, source: { name: "Vietnambiz", url: url, type: "official" }, quality: { status: "verified", method: "html_text" } };
+
     } catch (err1) {
-        console.warn(`[Agriculture] GiaCaPhe thất bại. Chuyển sang TinTayNguyen...`);
+        console.warn(`[Agriculture] Vietnambiz Cà phê thất bại. Chuyển sang GiaCaPhe qua Proxy...`);
         
-        // TẦNG 2: Fallback nguồn TinTayNguyen
+        // TẦNG 2: Fallback về GiaCaPhe qua Proxy
         try {
-            const url2 = 'https://tintaynguyen.com/gia-ca-phe/';
-            const htmlProxy2 = await fetchHtmlWithProxy(url2);
+            const url2 = 'https://giacaphe.com/gia-ca-phe-noi-dia/';
+            const htmlProxy = await fetchHtmlWithProxy(url2);
             
-            const valStr2 = extractPriceFlexible(htmlProxy2, ['.table-striped tbody tr'], /([1-9][0-9]{1,2}[.,\s]?[0-9]{3})/);
+            const valStr2 = extractPriceFlexible(htmlProxy, ['table tr', '.table-coffee tr'], /([1-9][0-9]{2,3}[.,\s]?[0-9]{3})/);
             const priceVal2 = parseInt(valStr2.replace(/[^\d]/g, ''));
 
-            return { ...rawResult, value: priceVal2, source: { name: "TinTayNguyen (Proxy)", url: url2, type: "secondary" }, quality: { status: "secondary", method: "html_proxy" } };
+            return { ...rawResult, value: priceVal2, source: { name: "GiaCaPhe (Proxy)", url: url2, type: "secondary" }, quality: { status: "secondary", method: "html_proxy" } };
         } catch (err2) {
             return { ...rawResult, value: null, source: { name: "Unknown", type: "none" }, quality: { status: "failed", method: "none", error_log: err1.message } };
         }
@@ -47,24 +49,27 @@ async function fetchPepperVN() {
     };
 
     try {
-        const url = 'https://giatieu.com/gia-tieu-trong-nuoc/';
-        const htmlProxy = await fetchHtmlWithProxy(url);
+        // TẦNG 1: Sử dụng Vietnambiz
+        const url = 'https://vietnambiz.vn/gia-tieu.htm';
+        const html = await fetchHtmlSafe(url, 10000);
         
-        const valStr = extractPriceFlexible(htmlProxy, ['table tr', '.table-pepper tr'], /([1-9][0-9]{2,3}[.,\s]?[0-9]{3})/);
+        const valStr = extractPriceFlexible(html, ['.table tbody tr', '.content table tr'], /([1-9][0-9]{2,3}[.,\s]?[0-9]{3})/);
         const priceVal = parseInt(valStr.replace(/[^\d]/g, ''));
 
-        return { ...rawResult, value: priceVal, source: { name: "GiaTieu (Proxy)", url: url, type: "primary" }, quality: { status: "verified", method: "html_proxy" } };
+        return { ...rawResult, value: priceVal, source: { name: "Vietnambiz", url: url, type: "official" }, quality: { status: "verified", method: "html_text" } };
+
     } catch (err1) {
-        console.warn(`[Agriculture] GiaTieu thất bại. Chuyển sang TinTayNguyen...`);
+        console.warn(`[Agriculture] Vietnambiz Hồ tiêu thất bại. Chuyển sang GiaTieu qua Proxy...`);
         
+        // TẦNG 2: Fallback về GiaTieu qua Proxy
         try {
-            const url2 = 'https://tintaynguyen.com/gia-tieu/';
-            const htmlProxy2 = await fetchHtmlWithProxy(url2);
+            const url2 = 'https://giatieu.com/gia-tieu-trong-nuoc/';
+            const htmlProxy = await fetchHtmlWithProxy(url2);
             
-            const valStr2 = extractPriceFlexible(htmlProxy2, ['.table-striped tbody tr'], /([1-9][0-9]{2,3}[.,\s]?[0-9]{3})/);
+            const valStr2 = extractPriceFlexible(htmlProxy, ['table tr', '.table-pepper tr'], /([1-9][0-9]{2,3}[.,\s]?[0-9]{3})/);
             const priceVal2 = parseInt(valStr2.replace(/[^\d]/g, ''));
 
-            return { ...rawResult, value: priceVal2, source: { name: "TinTayNguyen (Proxy)", url: url2, type: "secondary" }, quality: { status: "secondary", method: "html_proxy" } };
+            return { ...rawResult, value: priceVal2, source: { name: "GiaTieu (Proxy)", url: url2, type: "secondary" }, quality: { status: "secondary", method: "html_proxy" } };
         } catch (err2) {
             return { ...rawResult, value: null, source: { name: "Unknown", type: "none" }, quality: { status: "failed", method: "none", error_log: err1.message } };
         }
