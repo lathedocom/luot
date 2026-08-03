@@ -70,6 +70,13 @@ async function runCollector(runFrequency = "daily") {
                 }
             }
 
+            // === [MỚI] LOG KẾT QUẢ ĐỂ HIỂN THỊ TRÊN GITHUB ACTIONS ===
+            if (normalizedData.quality.status === "failed") {
+                console.log(`❌ THẤT BẠI [${sourceConfig.name}]: ${normalizedData.quality.error_log || "Lỗi bóc tách dữ liệu"}`);
+            } else {
+                console.log(`✅ THÀNH CÔNG [${sourceConfig.name}]: ${normalizedData.value} ${normalizedData.unit}`);
+            }
+
             results.push(normalizedData);
         } catch (err) {
             console.error(`[LỖI] Kịch bản cào ${sourceConfig.name} bị crash:`, err);
