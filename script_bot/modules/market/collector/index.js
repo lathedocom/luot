@@ -4,20 +4,32 @@ const { MARKET_SOURCES } = require('./source_registry');
 const { validateMarketData } = require('./validator');
 const { normalizeMarketData } = require('./normalizer'); 
 
-// === IMPORT CÁC ADAPTER NGUỒN ===
+// === IMPORT TẤT CẢ CÁC ADAPTER NGUỒN ===
 const { fetchFuelData } = require('../sources/fuel');
 const { fetchCPI } = require('../sources/nso_cpi');
 const { fetchUSDVND } = require('../sources/currency'); 
 const { fetchGoldSJC } = require('../sources/gold'); 
 const { fetchVNIndex } = require('../sources/stocks'); 
+const { fetchBitcoin } = require('../sources/crypto');
+const { fetchBrentOil } = require('../sources/energy');
+const { fetchPMI } = require('../sources/pmi');
+const { fetchCoffeeVN, fetchPepperVN } = require('../sources/agriculture');
+const { fetchSteelPrice, fetchCementPrice } = require('../sources/construction');
 
-// === MAPPING PARSER TỪ REGISTRY ===
+// === MAPPING PARSER TỪ REGISTRY VÀO HÀM THỰC TẾ ===
 const parserMap = {
+    "currency": fetchUSDVND,
+    "crypto": fetchBitcoin,
+    "energy": fetchBrentOil,
+    "stocks": fetchVNIndex,
+    "gold": fetchGoldSJC,
+    "agriculture_coffee": fetchCoffeeVN,
+    "agriculture_pepper": fetchPepperVN,
     "fuel": fetchFuelData,
-    "nso_cpi": fetchCPI,
-    "usd_vnd": fetchUSDVND,
-    "gold_sjc": fetchGoldSJC,
-    "vn_index": fetchVNIndex
+    "cpi": fetchCPI,
+    "pmi": fetchPMI,
+    "construction_steel": fetchSteelPrice,
+    "construction_cement": fetchCementPrice
 };
 
 /**
@@ -35,7 +47,7 @@ async function runCollector(runFrequency = "daily") {
 
         const parserFunction = parserMap[sourceConfig.parser];
         if (!parserFunction) {
-            console.error(`[CẢNH BÁO] Chưa cài đặt hàm Adapter cho parser: ${sourceConfig.parser}`);
+            console.warn(`[CẢNH BÁO] Chưa cài đặt hàm Adapter cho parser: ${sourceConfig.parser}`);
             continue;
         }
 
@@ -53,7 +65,6 @@ async function runCollector(runFrequency = "daily") {
                 const validation = validateMarketData(normalizedData, sourceConfig.validation);
                 if (!validation.is_valid) {
                     console.warn(`[TỪ CHỐI] Số liệu ${sourceConfig.name} bất thường! Lỗi: ${validation.errors.join(', ')}`);
-                    // Ghi đè trạng thái thành failed để hệ thống History bỏ qua
                     normalizedData.quality.status = "failed";
                     normalizedData.quality.error_log = validation.errors.join(' | ');
                 }
