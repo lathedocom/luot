@@ -72,9 +72,9 @@ jobs:
           git config --global user.name "AI-Newsroom-Bot"
           git config --global user.email "bot@ainewsroom.local"
           git config --global rebase.autoStash true
-          git add news_data.json timeline_data.json pipeline_status.json script_bot/cache/ script_bot/budget/ || true
+          git add data/ news_data.json timeline_data.json pipeline_status.json script_bot/cache/ script_bot/budget/ || true
           git diff --staged --quiet || git commit -m "🤖 Cập nhật Tin tức & Market (Realtime)"
-          git pull --rebase origin main
+          git pull --rebase -X theirs origin main
           git push origin main
 
   # ==========================================
@@ -115,9 +115,9 @@ jobs:
           git config --global user.name "AI-Newsroom-Bot"
           git config --global user.email "bot@ainewsroom.local"
           git config --global rebase.autoStash true
-          git add news_data.json timeline_data.json pipeline_status.json script_bot/cache/ script_bot/budget/ || true
+          git add data/ news_data.json timeline_data.json pipeline_status.json script_bot/cache/ script_bot/budget/ || true
           git diff --staged --quiet || git commit -m "📊 Cập nhật VN-Index & Lãi suất (Daily)"
-          git pull --rebase origin main
+          git pull --rebase -X theirs origin main
           git push origin main
 
   # ==========================================
@@ -157,7 +157,7 @@ jobs:
           git config --global user.name "AI-Newsroom-Bot"
           git config --global user.email "bot@ainewsroom.local"
           git config --global rebase.autoStash true
-          git add news_data.json timeline_data.json pipeline_status.json script_bot/cache/ script_bot/budget/ || true
+          git add data/ news_data.json timeline_data.json pipeline_status.json script_bot/cache/ script_bot/budget/ || true
           git diff --staged --quiet || git commit -m "📈 Cập nhật dữ liệu Vĩ mô (Monthly)"
-          git pull --rebase origin main
+          git pull --rebase -X theirs origin main
           git push origin main
