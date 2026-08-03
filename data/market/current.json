@@ -1,0 +1,42 @@
+{
+  "vn_steel_cb300": {
+    "indicator_id": "vn_steel_cb300",
+    "name": "Thép CB300",
+    "value": 14.2,
+    "unit": "Tr/tấn",
+    "period": "2026-08-03",
+    "frequency": "monthly",
+    "country": "VN",
+    "source": {
+      "name": "Giá tham chiếu nội bộ",
+      "url": "",
+      "type": "static"
+    },
+    "retrieved_at": "2026-08-03T16:21:04.001Z",
+    "quality": {
+      "status": "verified",
+      "method": "static",
+      "error_log": null
+    }
+  },
+  "vn_cement": {
+    "indicator_id": "vn_cement",
+    "name": "Xi măng",
+    "value": 1.5,
+    "unit": "Tr/tấn",
+    "period": "2026-08-03",
+    "frequency": "monthly",
+    "country": "VN",
+    "source": {
+      "name": "Giá tham chiếu nội bộ",
+      "url": "",
+      "type": "static"
+    },
+    "retrieved_at": "2026-08-03T16:21:04.001Z",
+    "quality": {
+      "status": "verified",
+      "method": "static",
+      "error_log": null
+    }
+  }
+}
