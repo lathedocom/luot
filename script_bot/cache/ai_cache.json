@@ -10877,5 +10877,469 @@
       "sentiment": -1,
       "scope": "national"
     }
+  },
+  "evt_6ca9bbcf": {
+    "created_at": 1785799053259,
+    "expires_at": 1788391053259,
+    "version": "4.5",
+    "checksum": "735f09144daf037848cf1db8f92bafe9",
+    "data": {
+      "cluster_title": "Nỗi ám ảnh ở Ceuta sau dòng thác di cư",
+      "short_summary": "Hơn 60.000 người di cư đã rời Ceuta sau 5 ngày tràn vào thành phố, gây nỗi ám ảnh và chia rẽ địa chính trị.",
+      "detailed_summary": "Hơn 60.000 người di cư đã rời khỏi thành phố Ceuta trong vòng 5 ngày sau cuộc đổ bộ quy mô lớn. Mặc dù làn sóng người di cư đã giảm bớt, sự kiện này để lại những hệ lụy sâu sắc về sự chia rẽ xã hội tại địa phương và làm trầm trọng thêm các căng thẳng địa chính trị liên quan đến quản lý biên giới.",
+      "causes": [
+        "Sự mất kiểm soát biên giới đột ngột",
+        "Áp lực di cư từ khu vực lân cận"
+      ],
+      "effects": [
+        "Tâm lý lo âu kéo dài trong cộng đồng",
+        "Chia rẽ xã hội tại Ceuta",
+        "Gia tăng căng thẳng ngoại giao và địa chính trị"
+      ],
+      "affected_groups": [
+        "Cư dân Ceuta",
+        "Người di cư",
+        "Chính quyền địa phương"
+      ],
+      "market_impact": "Không ghi nhận tác động trực tiếp đến thị trường tài chính toàn cầu.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "diplomacy"
+      ],
+      "regions": [
+        "ES",
+        "MA"
+      ],
+      "significance": "Sự kiện phản ánh tính chất mong manh của quản lý biên giới và tác động lâu dài của khủng hoảng di cư đối với ổn định xã hội.",
+      "unknowns": [
+        "Cơ chế cụ thể dẫn đến sự sụt giảm số lượng người di cư trong 5 ngày",
+        "Các thỏa thuận chính trị ngầm phía sau việc kiểm soát làn sóng di cư"
+      ],
+      "confidence_note": "Thông tin dựa trên báo cáo thực tế về tình hình di cư tại Ceuta, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Chính quyền tăng cường an ninh biên giới để ngăn chặn làn sóng mới.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Căng thẳng ngoại giao giữa các quốc gia liên quan kéo dài gây ảnh hưởng đến hợp tác khu vực.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Người di cư",
+          "target": "Ceuta",
+          "relation_type": "cause_effect",
+          "label": "Gây áp lực lên hạ tầng và an ninh xã hội"
+        },
+        {
+          "source": "Làn sóng di cư",
+          "target": "Hệ lụy địa chính trị",
+          "relation_type": "cause_effect",
+          "label": "Tạo ra mâu thuẫn trong quan hệ ngoại giao"
+        }
+      ],
+      "entities": [
+        "Ceuta",
+        "dòng thác di cư"
+      ],
+      "keywords": [
+        "Ceuta",
+        "di cư",
+        "khủng hoảng"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national | global"
+    }
+  },
+  "evt_c1563b32": {
+    "created_at": 1785799065426,
+    "expires_at": 1788391065426,
+    "version": "4.5",
+    "checksum": "52aaca4874042374061fa2751e9b838d",
+    "data": {
+      "cluster_title": "Tình trạng thất nghiệp dài hạn ở Mỹ",
+      "short_summary": "Gần hai triệu người Mỹ thất nghiệp dài hạn, thị trường lao động Mỹ có dấu hiệu cải thiện nhưng vẫn trì trệ.",
+      "detailed_summary": "Mặc dù thị trường lao động tại Mỹ đã xuất hiện những tín hiệu cải thiện tích cực, tốc độ tuyển dụng vẫn diễn ra chậm chạp. Hậu quả là gần hai triệu người lao động vẫn không thể tìm kiếm được việc làm trong ít nhất sáu tháng qua, đối mặt với tình trạng thất nghiệp kéo dài.",
+      "causes": [
+        "Tốc độ tuyển dụng của doanh nghiệp còn trì trệ",
+        "Sự phục hồi không đồng đều của thị trường lao động"
+      ],
+      "effects": [
+        "Gần hai triệu người rơi vào tình trạng thất nghiệp dài hạn",
+        "Gia tăng áp lực an sinh xã hội đối với người lao động"
+      ],
+      "affected_groups": [
+        "Người lao động thất nghiệp dài hạn",
+        "Doanh nghiệp tuyển dụng tại Mỹ"
+      ],
+      "market_impact": "Tình trạng thất nghiệp dài hạn làm giảm sức mua của người tiêu dùng, có thể gây áp lực lên tăng trưởng kinh tế trong ngắn hạn.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "business"
+      ],
+      "regions": [
+        "US"
+      ],
+      "significance": "Sự tồn tại của nhóm thất nghiệp dài hạn bất chấp thị trường lao động đang phục hồi cho thấy sự mất kết nối giữa nhu cầu tuyển dụng và năng lực của người lao động hiện tại.",
+      "unknowns": [
+        "Ngành nghề nào có tỷ lệ thất nghiệp dài hạn cao nhất",
+        "Các chính sách hỗ trợ cụ thể của chính phủ để giải quyết nhóm thất nghiệp này"
+      ],
+      "confidence_note": "Thông tin dựa trên số liệu thực tế về thị trường lao động, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Tốc độ tuyển dụng tăng tốc nhờ sự phục hồi kinh tế, giúp giảm số lượng thất nghiệp dài hạn.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Tình trạng thất nghiệp dài hạn tiếp tục duy trì do khoảng cách kỹ năng giữa người lao động và yêu cầu doanh nghiệp.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Tốc độ tuyển dụng trì trệ",
+          "target": "Thất nghiệp dài hạn",
+          "relation_type": "cause_effect",
+          "label": "Là nguyên nhân trực tiếp làm gia tăng số người thất nghiệp kéo dài."
+        },
+        {
+          "source": "Thị trường lao động Mỹ",
+          "target": "Người lao động",
+          "relation_type": "neutral",
+          "label": "Môi trường cung - cầu lao động đang trong quá trình chuyển đổi."
+        }
+      ],
+      "entities": [
+        "Mỹ"
+      ],
+      "keywords": [
+        "thất nghiệp",
+        "Mỹ",
+        "thị trường lao động"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_60dd38e9": {
+    "created_at": 1785799071923,
+    "expires_at": 1788391071923,
+    "version": "4.5",
+    "checksum": "0f697167c43ff2d77633401d6db049cf",
+    "data": {
+      "cluster_title": "Traverse City trở thành 'nơi trú ẩn' cho đầu tư bất động sản",
+      "short_summary": "Traverse City trở thành 'nơi trú ẩn' cho đầu tư bất động sản và du khách nhờ khí hậu ôn hòa và sản xuất rượu vang cao cấp.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam",
+      "categories": [
+        "bất động sản",
+        "du lịch"
+      ],
+      "regions": [
+        "US"
+      ],
+      "follow_up": "",
+      "entities": [
+        "Traverse City",
+        "bang Michigan",
+        "Mỹ"
+      ],
+      "keywords": [
+        "Traverse City",
+        "bất động sản",
+        "rượu vang"
+      ],
+      "importance": 85,
+      "severity": 2,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_94882e63": {
+    "created_at": 1785799083730,
+    "expires_at": 1788391083730,
+    "version": "4.5",
+    "checksum": "ad35ef3b83b91d60f1d0c52f83420813",
+    "data": {
+      "cluster_title": "Tổng thống Mỹ chỉ trích Iran",
+      "short_summary": "Tổng thống Mỹ Donald Trump chỉ trích Iran là 'kẻ hai mặt' khi vừa đề nghị đàm phán, vừa phủ nhận mọi cuộc đối thoại với Washington.",
+      "detailed_summary": "Tổng thống Mỹ Donald Trump đã công khai gọi các nhà lãnh đạo Iran là những người hai mặt. Cáo buộc này xuất phát từ việc Tehran đưa ra những thông điệp mâu thuẫn: vừa bày tỏ đề nghị đàm phán, vừa công khai phủ nhận mọi cuộc đối thoại với phía Mỹ.",
+      "causes": [
+        "Sự mâu thuẫn trong các phát biểu của lãnh đạo Iran",
+        "Sự bế tắc trong kênh đối thoại trực tiếp giữa Washington và Tehran"
+      ],
+      "effects": [
+        "Gia tăng căng thẳng ngoại giao giữa Mỹ và Iran",
+        "Làm suy yếu lòng tin trong quá trình đàm phán song phương"
+      ],
+      "affected_groups": [
+        "Chính phủ Mỹ",
+        "Chính phủ Iran",
+        "Cộng đồng quốc tế khu vực Trung Đông"
+      ],
+      "market_impact": "Thông tin có thể gây biến động nhẹ tâm lý nhà đầu tư trên thị trường năng lượng do lo ngại về sự bất ổn tại Trung Đông.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "diplomacy"
+      ],
+      "regions": [
+        "US",
+        "IR"
+      ],
+      "significance": "Sự kiện phản ánh khoảng cách lớn trong niềm tin chiến lược giữa Mỹ và Iran, khiến triển vọng về một giải pháp ngoại giao trở nên khó đoán định.",
+      "unknowns": [
+        "Các kênh liên lạc bí mật giữa Mỹ và Iran hiện có hoạt động hay không",
+        "Mục đích thực sự phía sau thông điệp mâu thuẫn của Iran"
+      ],
+      "confidence_note": "Thông tin dựa trên phát ngôn trực tiếp từ Tổng thống Mỹ, độ tin cậy cao về mặt nội dung phát biểu.",
+      "scenarios": [
+        {
+          "text": "Hai bên tiếp tục duy trì trạng thái đối đầu bằng lời nói và duy trì lệnh trừng phạt.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các bên tìm kiếm một trung gian hòa giải để hạ nhiệt căng thẳng và bắt đầu đối thoại gián tiếp.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Donald Trump",
+          "target": "Lãnh đạo Iran",
+          "relation_type": "conflict",
+          "label": "Chỉ trích gay gắt về sự thiếu nhất quán trong chính sách ngoại giao"
+        },
+        {
+          "source": "Mỹ",
+          "target": "Iran",
+          "relation_type": "conflict",
+          "label": "Bế tắc trong đàm phán chính trị"
+        }
+      ],
+      "entities": [
+        "Donald Trump",
+        "Iran"
+      ],
+      "keywords": [
+        "Donald Trump",
+        "Iran",
+        "đàm phán"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_ab298c2f": {
+    "created_at": 1785799089752,
+    "expires_at": 1788391089752,
+    "version": "4.5",
+    "checksum": "2efbe74a315c3ac9fadab169154f92e6",
+    "data": {
+      "cluster_title": "Romania nắn dòng chảy để duy trì sản xuất điện hạt nhân",
+      "short_summary": "Romania đang nắn dòng chảy sông Danube để duy trì sản xuất điện hạt nhân tại nhà máy Cernavoda.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam",
+      "categories": [
+        "Kinh tế",
+        "Môi trường"
+      ],
+      "regions": [
+        "RO",
+        "EU"
+      ],
+      "follow_up": "",
+      "entities": [
+        "Romania",
+        "sông Danube",
+        "nhà máy điện hạt nhân Cernavoda"
+      ],
+      "keywords": [
+        "Romania",
+        "sông Danube",
+        "điện hạt nhân"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_general_1785799095590": {
+    "created_at": 1785799101501,
+    "expires_at": 1788391101501,
+    "version": "4.5",
+    "checksum": "b9b871864eabbaf23743911b09b04f26",
+    "data": {
+      "cluster_title": "Lãi suất vay neo cao",
+      "short_summary": "Lãi suất vay neo cao, ảnh hưởng đến kinh tế Việt Nam",
+      "detailed_summary": "Lãi suất cho vay tiêu dùng đang phổ biến ở mức 9-11% mỗi năm. Đồng thời, lãi suất dành cho sản xuất kinh doanh cũng ghi nhận mức tăng đáng kể. Theo dự báo, mặt bằng lãi suất này sẽ duy trì và khó có khả năng giảm xuống ít nhất cho đến hết quý IV.",
+      "causes": [
+        "Chi phí vốn đầu vào của hệ thống ngân hàng đang ở mức cao",
+        "Áp lực điều hành chính sách tiền tệ nhằm kiểm soát lạm phát và ổn định vĩ mô"
+      ],
+      "effects": [
+        "Gia tăng chi phí tài chính cho doanh nghiệp và hộ gia đình",
+        "Kìm hãm nhu cầu vay vốn phục vụ sản xuất và tiêu dùng trong ngắn hạn"
+      ],
+      "affected_groups": [
+        "Doanh nghiệp sản xuất kinh doanh",
+        "Người tiêu dùng cá nhân"
+      ],
+      "market_impact": "Thị trường tín dụng đối mặt với sự sụt giảm nhu cầu vay vốn do chi phí lãi vay đắt đỏ, ảnh hưởng trực tiếp đến tốc độ mở rộng sản xuất.",
+      "vn_impact": "Tác động trực tiếp đến khả năng tiếp cận vốn của doanh nghiệp nội địa, làm chậm đà tăng trưởng kinh tế và gây áp lực lên chi phí vận hành doanh nghiệp trong nước.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "finance"
+      ],
+      "regions": [
+        "VN"
+      ],
+      "significance": "Môi trường lãi suất cao kéo dài cho thấy thách thức trong việc cân bằng giữa kiểm soát lạm phát và hỗ trợ tăng trưởng kinh tế.",
+      "unknowns": [
+        "Các biến số vĩ mô cụ thể sẽ quyết định thời điểm đảo chiều chính sách tiền tệ vào cuối năm",
+        "Mức độ sẵn sàng hấp thụ vốn của nền kinh tế tại các phân khúc lãi suất khác nhau"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao, dựa trên diễn biến thực tế của thị trường tài chính hiện tại.",
+      "scenarios": [
+        {
+          "text": "Lãi suất giữ nguyên mức cao cho đến hết quý IV để ổn định tỷ giá và lạm phát.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Lãi suất giảm nhẹ vào cuối quý IV nếu các chỉ số vĩ mô ổn định hơn dự kiến.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Lãi suất vay",
+          "target": "Doanh nghiệp sản xuất",
+          "relation_type": "cause_effect",
+          "label": "Gây áp lực chi phí tài chính"
+        },
+        {
+          "source": "Lãi suất vay",
+          "target": "Người tiêu dùng",
+          "relation_type": "cause_effect",
+          "label": "Hạn chế khả năng tiếp cận tín dụng"
+        }
+      ],
+      "entities": [
+        "lãi suất",
+        "khoản vay"
+      ],
+      "keywords": [
+        "lãi suất",
+        "vay",
+        "neo",
+        "tiêu dùng",
+        "sản xuất kinh doanh"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_general_1785799107152": {
+    "created_at": 1785799113546,
+    "expires_at": 1788391113546,
+    "version": "4.5",
+    "checksum": "8def8eab75109a5b1079efd81019855e",
+    "data": {
+      "cluster_title": "Vụ 'hack' Bitcoin gần 89 triệu USD làm lung lay niềm tin vào ví lạnh",
+      "short_summary": "Hàng nghìn ví lạnh Coldcard bị 'hack' gần 89 triệu USD Bitcoin, dấy lên tranh luận về mức độ an toàn của mô hình tự lưu ký tài sản số.",
+      "detailed_summary": "Sự kiện xảy ra khi hệ thống ví lạnh Coldcard, một giải pháp lưu trữ Bitcoin phổ biến, gặp sự cố an ninh nghiêm trọng. Ước tính có hàng nghìn ví đã bị xâm nhập, dẫn đến việc mất mát tài sản trị giá 89 triệu USD, gây ra làn sóng hoài nghi về độ tin cậy của mô hình tự bảo quản tài sản kỹ thuật số đối với người dùng cá nhân.",
+      "causes": [
+        "Lỗ hổng bảo mật trong cấu trúc hoặc vận hành của ví lạnh Coldcard",
+        "Sự tinh vi của các nhóm tội phạm mạng trong việc khai thác các điểm yếu lưu trữ tiền mã hóa"
+      ],
+      "effects": [
+        "Niềm tin của người dùng vào các giải pháp tự lưu ký bị suy giảm",
+        "Gia tăng áp lực đòi hỏi các tiêu chuẩn bảo mật khắt khe hơn trong ngành ví lạnh"
+      ],
+      "affected_groups": [
+        "Người dùng sở hữu ví Coldcard",
+        "Nhà đầu tư Bitcoin cá nhân",
+        "Các công ty cung cấp giải pháp lưu trữ tài sản số"
+      ],
+      "market_impact": "Gây tâm lý bất an tạm thời trong cộng đồng tiền mã hóa, có thể làm thay đổi xu hướng lựa chọn công nghệ lưu trữ của nhà đầu tư.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "finance",
+        "tech"
+      ],
+      "regions": [
+        "GLOBAL"
+      ],
+      "significance": "Sự kiện này là lời cảnh báo về rủi ro tiềm ẩn trong các thiết bị vốn được coi là an toàn nhất trong hệ sinh thái tiền mã hóa, thúc đẩy việc đánh giá lại hạ tầng bảo mật.",
+      "unknowns": [
+        "Phương thức tấn công cụ thể mà các đối tượng đã sử dụng",
+        "Phạm vi và khả năng thu hồi tài sản đã bị đánh cắp"
+      ],
+      "confidence_note": "Thông tin dựa trên báo cáo về vụ hack, tuy nhiên cần chờ các điều tra kỹ thuật chính thức từ đơn vị sản xuất.",
+      "scenarios": [
+        {
+          "text": "Nhà sản xuất ví Coldcard đưa ra bản vá bảo mật và biện pháp đền bù để khôi phục niềm tin khách hàng.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Sự việc dẫn đến làn sóng chuyển dịch tài sản sang các phương thức lưu trữ truyền thống hoặc các nền tảng có độ bảo mật khác biệt hơn.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Tội phạm mạng",
+          "target": "Ví lạnh Coldcard",
+          "relation_type": "conflict",
+          "label": "Tấn công mạng"
+        },
+        {
+          "source": "Lỗ hổng kỹ thuật",
+          "target": "Tài sản Bitcoin",
+          "relation_type": "cause_effect",
+          "label": "Nguyên nhân dẫn đến mất mát tài sản"
+        }
+      ],
+      "entities": [
+        "Coldcard",
+        "Bitcoin"
+      ],
+      "keywords": [
+        "Bitcoin",
+        "ví lạnh",
+        "hack"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
   }
 }
