@@ -1,5 +1,5 @@
 // FILE: script_bot/modules/market/sources/pmi.js
-const { fetchJsonWithProxy, fetchHtmlWithProxy } = require('../collector/parser_engine');
+const { fetchJsonDirect, fetchHtmlWithProxy } = require('../collector/parser_engine');
 
 async function fetchPMI() {
     let rawResult = {
@@ -12,34 +12,30 @@ async function fetchPMI() {
     };
 
     try {
-        // TẦNG 1: VNDirect API bọc qua Proxy
+        // TẦNG 1: Gọi trực tiếp API VNDirect
         const url = `https://finfo-api.vndirect.com.vn/v4/macro_observations?q=itemCode:PMI&sort=-date&size=1`;
-        const json = await fetchJsonWithProxy(url, 15000);
+        const json = await fetchJsonDirect(url);
         
         if (!json.data || json.data.length === 0) throw new Error("Dữ liệu PMI VNDirect rỗng");
 
-        const latestData = json.data[0];
-
         return {
             ...rawResult,
-            value: latestData.value,
-            period: latestData.date, 
-            source: { name: "S&P Global (VNDirect API)", url: url, type: "official" },
-            quality: { status: "verified", method: "api_proxy" }
+            value: json.data[0].value,
+            period: json.data[0].date, 
+            source: { name: "VNDirect", url: url, type: "api" },
+            quality: { status: "verified", method: "api_direct" }
         };
 
     } catch (errorTier1) {
-        console.warn(`[PMI Adapter] VNDirect API thất bại. Chuyển sang Trading Economics...`);
+        console.warn(`[PMI Adapter] VNDirect API thất bại (${errorTier1.message}). Chuyển sang Trading Economics...`);
         
         try {
-            // TẦNG 2: Trading Economics (Nguồn Vĩ mô Quốc tế) bọc qua Proxy
+            // TẦNG 2: Trading Economics (Trang HTML, buộc phải qua Proxy)
             const url2 = 'https://vi.tradingeconomics.com/vietnam/manufacturing-pmi';
             const htmlProxy = await fetchHtmlWithProxy(url2, 15000);
             
-            // Regex bắt điểm PMI (thường nằm quanh khoảng 40.0 đến 60.0)
             const match = htmlProxy.match(/Lần Cuối[\s\S]*?([4-6][0-9][.,][0-9]{1,2})/i) || htmlProxy.match(/PMI.*?([4-6][0-9][.,][0-9]{1,2})/i);
-            
-            if (!match) throw new Error("Không bắt được điểm số PMI từ HTML Trading Economics");
+            if (!match) throw new Error("Không bắt được điểm số PMI từ HTML");
             
             const pmiValue = parseFloat(match[1].replace(',', '.'));
 
@@ -47,7 +43,7 @@ async function fetchPMI() {
                 ...rawResult,
                 value: pmiValue,
                 period: new Date().toISOString().substring(0, 7), 
-                source: { name: "Trading Economics (Proxy)", url: url2, type: "secondary" },
+                source: { name: "Trading Economics", url: url2, type: "secondary" },
                 quality: { status: "secondary", method: "html_proxy" }
             };
         } catch (errorTier2) {
