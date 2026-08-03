@@ -1,4 +1,6 @@
 // FILE: script_bot/modules/market/sources/stocks.js
+// Bỏ qua lỗi chứng chỉ SSL (Rất phổ biến với các API nội địa VN)
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
 async function fetchVNIndex() {
     let rawResult = {
