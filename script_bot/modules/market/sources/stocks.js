@@ -1,4 +1,5 @@
 // FILE: script_bot/modules/market/sources/stocks.js
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 const { fetchJsonWithProxy } = require('../collector/parser_engine');
 
 async function fetchVNIndex() {
@@ -11,39 +12,37 @@ async function fetchVNIndex() {
     };
 
     try {
-        // TẦNG 1: Sử dụng Yahoo Finance
-        const url = `https://query1.finance.yahoo.com/v8/finance/chart/^VNINDEX?range=1d&interval=1d`;
+        // TẦNG 1: Sử dụng TCBS API (Rất ổn định, không chặn IP quốc tế)
+        const url = `https://apipubaws.tcbs.com.vn/stock-insight/v1/stock/bars-long/VNINDEX?type=index&resolution=D&size=1`;
         const res = await fetch(url, { headers: { 'User-Agent': 'Mozilla/5.0' } });
         
-        if (!res.ok) throw new Error(`Yahoo API Error: ${res.status}`);
+        if (!res.ok) throw new Error(`TCBS API Error: ${res.status}`);
         
-        const data = await res.json();
-        const price = data.chart.result[0].meta.regularMarketPrice;
+        const json = await res.json();
+        if (!json.data || json.data.length === 0) throw new Error("TCBS trả về rỗng");
+        
+        const price = json.data[0].close;
 
         return {
             ...rawResult,
             value: price,
-            source: { name: "Yahoo Finance", url: url, type: "official" },
+            source: { name: "TCBS", url: url, type: "official" },
             quality: { status: "verified", method: "api" }
         };
 
     } catch (errorTier1) {
-        console.warn(`[Stock Adapter] Yahoo thất bại. Chuyển sang VNDirect qua Proxy...`);
+        console.warn(`[Stock Adapter] TCBS thất bại. Chuyển sang Yahoo qua Proxy...`);
         
-        // TẦNG 2: Sử dụng API của VNDirect nhưng bọc qua Proxy để trị lỗi SSL
         try {
-            const url2 = `https://finfo-api.vndirect.com.vn/v4/stock_indexes?q=code:VNINDEX`;
-            
-            // Gọi Proxy thay vì gọi trực tiếp
+            // TẦNG 2: Sử dụng Yahoo Finance qua Proxy dự phòng
+            const url2 = `https://query1.finance.yahoo.com/v8/finance/chart/^VNINDEX?range=1d&interval=1d`;
             const json = await fetchJsonWithProxy(url2);
-            
-            const indexData = (json.data || []).find(d => d.code === 'VNINDEX');
-            if (!indexData) throw new Error("Không tìm thấy VNINDEX");
+            const price = json.chart.result[0].meta.regularMarketPrice;
 
             return {
                 ...rawResult,
-                value: indexData.indexValue,
-                source: { name: "VNDirect (Proxy)", url: url2, type: "secondary" },
+                value: price,
+                source: { name: "Yahoo Finance", url: url2, type: "secondary" },
                 quality: { status: "secondary", method: "api_proxy" }
             };
         } catch (errorTier2) {
