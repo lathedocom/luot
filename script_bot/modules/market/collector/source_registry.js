@@ -21,7 +21,7 @@ const MARKET_SOURCES = {
     // ==========================================
     // NHÓM SỰ KIỆN (Xăng dầu)
     // ==========================================
-    vn_ron95: { id: "vn_ron95", name: "Xăng RON95-III", type: "official", frequency: "event", priority: 1, parser: "fuel", validation: { min: 15000, max: 35000, unit: "VNĐ/Lít", max_change_percent: 15 } },
+   vn_ron95: { id: "vn_ron95", name: "Xăng RON95-III", type: "official", frequency: "daily", priority: 1, parser: "fuel", validation: { min: 15000, max: 35000, unit: "VNĐ/Lít", max_change_percent: 15 } },
 
     // ==========================================
     // NHÓM HÀNG THÁNG (Vĩ mô, Xây dựng)
