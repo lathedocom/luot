@@ -11975,5 +11975,85 @@
       "sentiment": -1,
       "scope": "global"
     }
+  },
+  "evt_3dfc27f4": {
+    "created_at": 1785816354487,
+    "expires_at": 1788408354487,
+    "version": "4.5",
+    "checksum": "5ac6d493ee4e9aef856bf5eb2b3b7b86",
+    "data": {
+      "cluster_title": "Ukraine khó gia nhập NATO",
+      "short_summary": "Cựu tổng tư lệnh Ukraine cho rằng nước này sẽ không bao giờ được kết nạp vào NATO.",
+      "detailed_summary": "Ông Valerii Zaluzhnyi, hiện là Đại sứ Ukraine tại Anh và là cựu tổng tư lệnh quân đội, đã lên tiếng cho rằng mục tiêu gia nhập NATO của Ukraine khó có thể trở thành hiện thực. Ông nhấn mạnh rằng việc kết nạp Ukraine vào liên minh quân sự này đối mặt với nhiều rào cản và thực tế tình hình không như những lời hứa hẹn trước đó.",
+      "causes": [
+        "Sự bế tắc trong tiến trình đàm phán gia nhập NATO",
+        "Nhận thức về các tiêu chuẩn quân sự và địa chính trị khác biệt"
+      ],
+      "effects": [
+        "Tạo ra làn sóng hoài nghi trong dư luận về cam kết của phương Tây",
+        "Buộc Ukraine phải xem xét lại chiến lược an ninh quốc gia trong tương lai"
+      ],
+      "affected_groups": [
+        "Chính phủ Ukraine",
+        "Công chúng Ukraine",
+        "Khối liên minh NATO"
+      ],
+      "market_impact": "Sự kiện mang tính chính trị thuần túy, tác động không đáng kể đến thị trường tài chính toàn cầu ngay lập tức, nhưng tạo ra tâm lý bất ổn trong đầu tư dài hạn tại khu vực.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "diplomacy"
+      ],
+      "regions": [
+        "UA",
+        "GB",
+        "BE"
+      ],
+      "significance": "Phát biểu của một nhân vật cấp cao như ông Zaluzhnyi cho thấy sự thực tế hóa kỳ vọng của Ukraine đối với các cơ chế an ninh tập thể phương Tây.",
+      "unknowns": [
+        "Phản ứng chính thức của các lãnh đạo NATO trước nhận định này",
+        "Tác động của phát biểu đối với tinh thần quân đội và chính sách đối ngoại của Kiev"
+      ],
+      "confidence_note": "Thông tin dựa trên phát biểu được truyền thông ghi nhận lại từ quan chức cấp cao.",
+      "scenarios": [
+        {
+          "text": "Ukraine chuyển hướng sang tìm kiếm các cam kết an ninh song phương thay vì tập trung hoàn toàn vào NATO.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "NATO duy trì lập trường mơ hồ hoặc trì hoãn việc kết nạp vô thời hạn do áp lực địa chính trị.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Valerii Zaluzhnyi",
+          "target": "NATO",
+          "relation_type": "conflict",
+          "label": "Hoài nghi về khả năng gia nhập"
+        },
+        {
+          "source": "Ukraine",
+          "target": "NATO",
+          "relation_type": "cause_effect",
+          "label": "Mục tiêu gia nhập ghi trong Hiến pháp nhưng khó hiện thực hóa"
+        }
+      ],
+      "entities": [
+        "Ukraine",
+        "NATO",
+        "Valery Zaluzhny"
+      ],
+      "keywords": [
+        "Ukraine",
+        "NATO",
+        "Valery Zaluzhny"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
   }
 }
