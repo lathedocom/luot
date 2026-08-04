@@ -11573,5 +11573,407 @@
       "sentiment": -1,
       "scope": "global"
     }
+  },
+  "evt_6e3a7f36": {
+    "created_at": 1785815582252,
+    "expires_at": 1788407582252,
+    "version": "4.5",
+    "checksum": "56621509d686a33e3831f46c548f68e0",
+    "data": {
+      "cluster_title": "25 bang kiện chính quyền Mỹ vì thuế quan mới",
+      "short_summary": "25 bang tại Mỹ kiện chính quyền Tổng thống Trump vì áp thuế mới với 60 đối tác thương mại.",
+      "detailed_summary": "Vào ngày 3/8, một liên minh gồm 25 bang của Mỹ đã chính thức đệ đơn kiện chính quyền Tổng thống Donald Trump. Các bang này cáo buộc Tổng thống đã lạm quyền khi đơn phương áp đặt mức thuế quan mới từ 10% đến 12,5% lên hàng hóa nhập khẩu từ 60 đối tác thương mại, gây ảnh hưởng đến thẩm quyền quản lý thương mại.",
+      "causes": [
+        "Quyết định áp thuế mới từ 10% đến 12,5% của chính quyền Tổng thống Trump",
+        "Sự bất đồng về thẩm quyền điều hành chính sách thương mại giữa chính quyền liên bang và các bang"
+      ],
+      "effects": [
+        "Gia tăng căng thẳng pháp lý trong nội bộ nước Mỹ",
+        "Rủi ro bất ổn đối với quan hệ thương mại quốc tế với 60 quốc gia bị áp thuế",
+        "Nguy cơ thay đổi hoặc trì hoãn các chính sách thuế quan của Mỹ"
+      ],
+      "affected_groups": [
+        "Các doanh nghiệp xuất nhập khẩu của Mỹ",
+        "Các đối tác thương mại quốc tế bị áp thuế",
+        "Chính quyền liên bang Mỹ",
+        "Chính quyền các bang tham gia kiện"
+      ],
+      "market_impact": "Gây tâm lý bất ổn cho thị trường tài chính và chuỗi cung ứng toàn cầu do chính sách thuế quan thiếu ổn định.",
+      "vn_impact": "Việt Nam có thể chịu tác động gián tiếp thông qua sự thay đổi trong cấu trúc chuỗi cung ứng toàn cầu và biến động thương mại quốc tế do các chính sách thuế của Mỹ gây ra.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "economy"
+      ],
+      "regions": [
+        "US"
+      ],
+      "significance": "Sự kiện cho thấy sự chia rẽ sâu sắc trong nội bộ chính trị Mỹ về quyền lực hoạch định chính sách thương mại và phản ứng của các bang trước chủ nghĩa bảo hộ.",
+      "unknowns": [
+        "Kết quả cuối cùng của vụ kiện tại tòa án",
+        "Phản ứng cụ thể của 60 quốc gia đối tác đối với các mức thuế này"
+      ],
+      "confidence_note": "Thông tin dựa trên bản tin báo chí có độ tin cậy cao về sự kiện pháp lý.",
+      "scenarios": [
+        {
+          "text": "Tòa án ra phán quyết hạn chế quyền áp thuế của Tổng thống, buộc chính quyền phải điều chỉnh hoặc hủy bỏ mức thuế mới.",
+          "likelihood": "trung bình"
+        },
+        {
+          "text": "Vụ kiện kéo dài và tạo ra sự bất định lớn trong chính sách thương mại Mỹ trong thời gian dài.",
+          "likelihood": "cao"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Chính quyền Tổng thống Trump",
+          "target": "25 bang của Mỹ",
+          "relation_type": "conflict",
+          "label": "Tranh chấp pháp lý về thẩm quyền áp thuế"
+        },
+        {
+          "source": "Chính quyền Tổng thống Trump",
+          "target": "60 đối tác thương mại",
+          "relation_type": "cause_effect",
+          "label": "Áp đặt thuế quan lên hàng hóa nhập khẩu"
+        }
+      ],
+      "entities": [
+        "Tổng thống Trump",
+        "chính quyền Mỹ",
+        "25 bang"
+      ],
+      "keywords": [
+        "25 bang",
+        "chính quyền Mỹ",
+        "tổng thống Trump",
+        "thuế quan mới"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_general_1785815587963": {
+    "created_at": 1785815593764,
+    "expires_at": 1788407593764,
+    "version": "4.5",
+    "checksum": "9b3d3a51464e438f425a21b1c26180ec",
+    "data": {
+      "cluster_title": "Người Mỹ trắng tay vì sập bẫy 'hợp đồng cứu nhà'",
+      "short_summary": "Nhiều người Mỹ trắng tay vì sập bẫy 'hợp đồng cứu nhà' sau khi bị ngân hàng dọa tịch biên.",
+      "detailed_summary": "Khi đối mặt với nguy cơ bị ngân hàng tịch biên tài sản, các chủ nhà đang trong tình trạng khó khăn tài chính đã trở thành mục tiêu của những kẻ lừa đảo. Những đối tượng này cam kết giúp chủ nhà thoát khỏi nợ nần, nhưng thực chất đã lợi dụng sự tuyệt vọng để chiếm đoạt tài sản hoặc tiền bạc của nạn nhân, khiến họ mất trắng quyền sở hữu nhà.",
+      "causes": [
+        "Tâm lý tuyệt vọng của chủ nhà khi bị ngân hàng tịch biên",
+        "Sự thiếu hiểu biết về các dịch vụ tài chính hợp pháp",
+        "Sự xuất hiện của các đối tượng lừa đảo lợi dụng kẽ hở pháp lý"
+      ],
+      "effects": [
+        "Mất quyền sở hữu nhà",
+        "Tổn thất tài chính nghiêm trọng",
+        "Suy giảm niềm tin vào các dịch vụ hỗ trợ tài chính"
+      ],
+      "affected_groups": [
+        "Các chủ nhà đang mắc nợ ngân hàng",
+        "Những người có thu nhập thấp hoặc tài chính bấp bênh"
+      ],
+      "market_impact": "Gây bất ổn niềm tin trong thị trường tín dụng bất động sản và làm gia tăng các vụ tranh chấp pháp lý liên quan đến quyền sở hữu tài sản.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "finance"
+      ],
+      "regions": [
+        "US"
+      ],
+      "significance": "Sự kiện cảnh báo về các chiêu trò lừa đảo tinh vi nhắm vào người dân trong bối cảnh khó khăn tài chính cá nhân, đòi hỏi sự minh bạch trong hệ thống dịch vụ tư vấn nợ.",
+      "unknowns": [
+        "Quy mô tổng thể của các vụ lừa đảo trên toàn nước Mỹ",
+        "Mức độ liên đới của các tổ chức tài chính hoặc cá nhân môi giới"
+      ],
+      "confidence_note": "Thông tin dựa trên hiện trạng lừa đảo tài chính được báo cáo, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Các cơ quan quản lý tài chính Mỹ tăng cường cảnh báo và siết chặt quy định đối với các dịch vụ tư vấn nợ.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Số lượng nạn nhân tăng lên do tình hình nợ xấu bất động sản vẫn diễn biến phức tạp.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Kẻ lừa đảo",
+          "target": "Chủ nhà",
+          "relation_type": "conflict",
+          "label": "Chiếm đoạt tài sản thông qua thủ đoạn lừa dối"
+        },
+        {
+          "source": "Ngân hàng",
+          "target": "Chủ nhà",
+          "relation_type": "cause_effect",
+          "label": "Tịch biên tài sản do nợ quá hạn"
+        }
+      ],
+      "entities": [
+        "người Mỹ",
+        "ngân hàng"
+      ],
+      "keywords": [
+        "hợp đồng cứu nhà",
+        "ngân hàng",
+        "tịch biên"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_49e4ab3b": {
+    "created_at": 1785815605627,
+    "expires_at": 1788407605627,
+    "version": "4.5",
+    "checksum": "c8069ad13601709d4de3c72d98aba50c",
+    "data": {
+      "cluster_title": "Tổng thống Mỹ chỉ trích các tập đoàn dầu mỏ",
+      "short_summary": "Tổng thống Mỹ chỉ trích các tập đoàn dầu mỏ 'kiếm đậm' nhờ chiến sự Iran.",
+      "detailed_summary": "Tổng thống Trump công khai bày tỏ sự không hài lòng đối với các doanh nghiệp dầu mỏ của Mỹ. Ông cáo buộc các đơn vị này đang tận dụng tình hình bất ổn tại Iran để đẩy giá dầu lên cao, từ đó thu về lợi nhuận vượt mức bình thường, gây ảnh hưởng đến nền kinh tế.",
+      "causes": [
+        "Căng thẳng địa chính trị giữa Mỹ và Iran",
+        "Giá dầu quốc tế tăng vọt"
+      ],
+      "effects": [
+        "Áp lực dư luận đối với các tập đoàn dầu mỏ",
+        "Khả năng gia tăng các biện pháp kiểm soát ngành năng lượng"
+      ],
+      "affected_groups": [
+        "Các tập đoàn dầu mỏ Mỹ",
+        "Người tiêu dùng Mỹ",
+        "Thị trường năng lượng thế giới"
+      ],
+      "market_impact": "Thông điệp từ lãnh đạo cao nhất nước Mỹ có thể gây tâm lý thận trọng đối với cổ phiếu ngành năng lượng và biến động ngắn hạn trên thị trường dầu thô.",
+      "vn_impact": "Giá dầu thế giới biến động trực tiếp ảnh hưởng đến giá xăng dầu trong nước tại Việt Nam, tác động đến chi phí vận tải và chỉ số giá tiêu dùng (CPI).",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "energy"
+      ],
+      "regions": [
+        "US",
+        "IR"
+      ],
+      "significance": "Sự kiện phản ánh nỗ lực của chính quyền Mỹ trong việc kiểm soát lạm phát thông qua việc điều tiết lợi nhuận của các tập đoàn năng lượng trong bối cảnh xung đột quốc tế.",
+      "unknowns": [
+        "Biện pháp cụ thể mà chính quyền Mỹ sẽ áp dụng đối với các tập đoàn dầu mỏ",
+        "Phản ứng chính thức từ phía các tập đoàn dầu mỏ bị chỉ trích"
+      ],
+      "confidence_note": "Thông tin dựa trên phát ngôn trực tiếp từ Tổng thống, độ tin cậy cao về mặt sự kiện phát ngôn.",
+      "scenarios": [
+        {
+          "text": "Chính quyền Mỹ tăng cường giám sát hoặc xem xét áp thuế lợi nhuận bất thường đối với ngành dầu mỏ.",
+          "likelihood": "trung bình"
+        },
+        {
+          "text": "Các tập đoàn dầu mỏ duy trì chính sách hiện tại do không có quy định pháp lý mới về kiểm soát giá.",
+          "likelihood": "cao"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Tổng thống Trump",
+          "target": "Các tập đoàn dầu mỏ Mỹ",
+          "relation_type": "conflict",
+          "label": "Chỉ trích về chính sách giá và lợi nhuận"
+        },
+        {
+          "source": "Chiến sự Iran",
+          "target": "Giá dầu",
+          "relation_type": "cause_effect",
+          "label": "Yếu tố đẩy giá dầu tăng cao"
+        },
+        {
+          "source": "Giá dầu",
+          "target": "Lợi nhuận tập đoàn dầu mỏ",
+          "relation_type": "cause_effect",
+          "label": "Tăng trưởng lợi nhuận từ biến động giá"
+        }
+      ],
+      "entities": [
+        "Tổng thống Trump",
+        "Mỹ",
+        "Iran"
+      ],
+      "keywords": [
+        "Tổng thống Trump",
+        "dầu mỏ",
+        "chiến sự Iran"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_2c71b30e": {
+    "created_at": 1785815617156,
+    "expires_at": 1788407617156,
+    "version": "4.5",
+    "checksum": "3caa918e4a82d87511c2d5793e32017c",
+    "data": {
+      "cluster_title": "Đặc vụ FBI bị buộc tội đánh cắp tiền ảo",
+      "short_summary": "Đặc vụ FBI bị buộc tội đánh cắp hơn 900.000 USD tiền mã hóa từ các tài khoản mà cơ quan này đang giám sát.",
+      "detailed_summary": "Một đặc vụ thuộc Cục Điều tra Liên bang Mỹ (FBI) đã bị buộc tội thực hiện hành vi chiếm đoạt trái phép hơn 900.000 USD dưới dạng tiền mã hóa. Số tiền này nằm trong các tài khoản đang thuộc diện giám sát và quản lý nghiệp vụ của FBI trong quá trình điều tra.",
+      "causes": [
+        "Sự thiếu hụt trong kiểm soát nội bộ tại cơ quan thực thi pháp luật",
+        "Lợi dụng vị trí công tác để tiếp cận các tài sản kỹ thuật số bị tịch thu hoặc giám sát"
+      ],
+      "effects": [
+        "Làm suy giảm niềm tin của công chúng vào tính liêm chính của cơ quan điều tra",
+        "Đối mặt với các cáo buộc hình sự nghiêm trọng và quá trình truy tố pháp lý"
+      ],
+      "affected_groups": [
+        "Cục Điều tra Liên bang Mỹ (FBI)",
+        "Hệ thống tư pháp Mỹ",
+        "Công chúng và nhà đầu tư tiền mã hóa"
+      ],
+      "market_impact": "Sự kiện gây lo ngại về tính minh bạch và an toàn khi tài sản kỹ thuật số được lưu trữ bởi các cơ quan quản lý nhà nước.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "finance",
+        "politics"
+      ],
+      "regions": [
+        "US"
+      ],
+      "significance": "Vụ việc phơi bày rủi ro về đạo đức và quản trị tài sản kỹ thuật số trong các cơ quan thực thi pháp luật cấp cao.",
+      "unknowns": [
+        "Chi tiết phương thức kỹ thuật để đặc vụ chiếm đoạt tiền",
+        "Số lượng tài khoản cụ thể bị ảnh hưởng",
+        "Thời gian kéo dài của hành vi phạm tội"
+      ],
+      "confidence_note": "Thông tin dựa trên bản tin báo chí chính thống, độ tin cậy cao về sự kiện pháp lý.",
+      "scenarios": [
+        {
+          "text": "Đặc vụ sẽ bị kết án hình sự và FBI phải rà soát lại toàn bộ quy trình quản lý tài sản kỹ thuật số.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Phát hiện thêm các vụ việc tương tự trong nội bộ cơ quan sau quá trình điều tra mở rộng.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Đặc vụ FBI",
+          "target": "FBI",
+          "relation_type": "conflict",
+          "label": "Hành vi vi phạm pháp luật chống lại cơ quan quản lý"
+        },
+        {
+          "source": "Đặc vụ FBI",
+          "target": "Tài sản tiền mã hóa",
+          "relation_type": "cause_effect",
+          "label": "Đặc vụ trực tiếp chiếm đoạt tài sản"
+        }
+      ],
+      "entities": [
+        "FBI",
+        "Cục Điều tra Liên bang Mỹ"
+      ],
+      "keywords": [
+        "FBI",
+        "tiền ảo",
+        "đánh cắp"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_bfa021e5": {
+    "created_at": 1785815628725,
+    "expires_at": 1788407628725,
+    "version": "4.5",
+    "checksum": "c4d46c0fcfb38a6caae528bca1d7f15c",
+    "data": {
+      "cluster_title": "Mỹ trao cơ hội cuối cùng cho Iran",
+      "short_summary": "Mỹ tuyên bố eo biển Hormuz có thể mở lại và cảnh báo Iran về tác động nghiêm trọng.",
+      "detailed_summary": "Tổng thống Mỹ Donald Trump đã đưa ra thông điệp cứng rắn đối với Iran liên quan đến eo biển Hormuz - một tuyến đường huyết mạch vận chuyển dầu mỏ toàn cầu. Ông khẳng định eo biển này phải được mở cửa cho hoạt động hàng hải quốc tế và bác bỏ quyền thu phí của Iran đối với các tàu thuyền đi qua khu vực này.",
+      "causes": [
+        "Căng thẳng kéo dài giữa Mỹ và Iran",
+        "Sự kiểm soát chiến lược của Iran đối với eo biển Hormuz"
+      ],
+      "effects": [
+        "Gia tăng căng thẳng chính trị khu vực",
+        "Nguy cơ đe dọa an ninh hàng hải tại vùng Vịnh"
+      ],
+      "affected_groups": [
+        "Các quốc gia xuất khẩu dầu mỏ",
+        "Ngành vận tải biển quốc tế",
+        "Chính phủ Mỹ",
+        "Chính phủ Iran"
+      ],
+      "market_impact": "Có khả năng gây biến động giá dầu thô trên thị trường toàn cầu do tâm lý lo ngại về đứt gãy chuỗi cung ứng tại Trung Đông.",
+      "vn_impact": "Tác động gián tiếp đến giá nhiên liệu nhập khẩu và chi phí vận tải biển của Việt Nam nếu giá dầu thế giới biến động mạnh.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "diplomacy"
+      ],
+      "regions": [
+        "US",
+        "IR"
+      ],
+      "significance": "Sự kiện phản ánh nỗ lực của Mỹ trong việc duy trì trật tự hàng hải quốc tế và kiềm chế tầm ảnh hưởng của Iran tại các điểm nóng chiến lược.",
+      "unknowns": [
+        "Phản ứng cụ thể và hành động đáp trả của Iran",
+        "Phương thức Mỹ thực thi việc ngăn chặn thu phí tại eo biển"
+      ],
+      "confidence_note": "Thông tin dựa trên tuyên bố công khai của Tổng thống Mỹ, cần theo dõi các bước triển khai thực tế.",
+      "scenarios": [
+        {
+          "text": "Iran tiếp tục duy trì hoạt động hiện tại và Mỹ gia tăng các biện pháp răn đe ngoại giao.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Xảy ra va chạm quân sự hoặc các biện pháp hạn chế hàng hải nghiêm trọng tại eo biển Hormuz.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Mỹ",
+          "target": "Iran",
+          "relation_type": "conflict",
+          "label": "Cạnh tranh kiểm soát tuyến đường chiến lược"
+        },
+        {
+          "source": "Tổng thống Donald Trump",
+          "target": "eo biển Hormuz",
+          "relation_type": "cause_effect",
+          "label": "Chỉ đạo chính sách đảm bảo tự do hàng hải"
+        }
+      ],
+      "entities": [
+        "Iran",
+        "eo biển Hormuz",
+        "Tổng thống Donald Trump"
+      ],
+      "keywords": [
+        "Iran",
+        "eo biển Hormuz",
+        "Tổng thống Donald Trump"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
   }
 }
