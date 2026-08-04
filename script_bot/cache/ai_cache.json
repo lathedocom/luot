@@ -12055,5 +12055,738 @@
       "sentiment": -1,
       "scope": "national"
     }
+  },
+  "evt_13b8e10b": {
+    "created_at": 1785845857305,
+    "expires_at": 1788437857305,
+    "version": "4.5",
+    "checksum": "a9993d5c76a1106f4a653c884df478be",
+    "data": {
+      "cluster_title": "Hội bạn trúng độc đắc",
+      "short_summary": "Hội bạn 10 người trúng độc đắc sau 15 năm cùng mua vé số tại Abu Dhabi.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "categories": [
+        "tin tức",
+        "thể thao"
+      ],
+      "regions": [
+        "AE",
+        "GLOBAL"
+      ],
+      "follow_up": "",
+      "entities": [
+        "Reynaldo Herboso",
+        "Abu Dhabi"
+      ],
+      "keywords": [
+        "độc đắc",
+        "vé số",
+        "Abu Dhabi"
+      ],
+      "importance": 85,
+      "severity": 1,
+      "sentiment": 0,
+      "scope": "global"
+    }
+  },
+  "evt_general_1785845863096": {
+    "created_at": 1785845869036,
+    "expires_at": 1788437869036,
+    "version": "4.5",
+    "checksum": "b53672ba16f903e764cf038ad0f56c94",
+    "data": {
+      "cluster_title": "UAV Geran lắp máy đo xa laser",
+      "short_summary": "Nga lắp máy đo xa laser lên UAV tự sát Geran để tăng sát thương.",
+      "detailed_summary": "Quân đội Nga đã tích hợp thiết bị đo khoảng cách bằng laser lên các máy bay không người lái dòng Geran. Công nghệ này cho phép thiết bị xác định chính xác khoảng cách đến mục tiêu, từ đó kích nổ đầu đạn tại vị trí tối ưu để tạo ra sức công phá lớn nhất.",
+      "causes": [
+        "Nhu cầu nâng cao hiệu quả chiến đấu của vũ khí tự sát",
+        "Mong muốn tối ưu hóa sát thương dựa trên khoảng cách mục tiêu"
+      ],
+      "effects": [
+        "Tăng cường khả năng hủy diệt của UAV Geran trên chiến trường",
+        "Thay đổi chiến thuật sử dụng vũ khí tự sát trong xung đột"
+      ],
+      "affected_groups": [
+        "Lực lượng quốc phòng Ukraine",
+        "Các đơn vị vận hành UAV Nga"
+      ],
+      "market_impact": "Có thể thúc đẩy sự cạnh tranh trong việc nâng cấp công nghệ cảm biến và thiết bị dẫn đường cho các loại vũ khí không người lái giá rẻ.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "military",
+        "tech"
+      ],
+      "regions": [
+        "RU",
+        "UA"
+      ],
+      "significance": "Việc tích hợp công nghệ cảm biến giá rẻ nhưng hiệu quả cao cho thấy xu hướng hiện đại hóa vũ khí tự sát nhằm tối đa hóa thiệt hại đối với đối phương.",
+      "unknowns": [
+        "Số lượng UAV đã được trang bị công nghệ này",
+        "Khả năng chống chịu của cảm biến laser trước các biện pháp tác chiến điện tử"
+      ],
+      "confidence_note": "Thông tin dựa trên báo cáo về việc nâng cấp kỹ thuật, độ tin cậy ở mức cao trong bối cảnh xung đột hiện tại.",
+      "scenarios": [
+        {
+          "text": "Nga triển khai hàng loạt UAV Geran nâng cấp nhằm phá hủy các mục tiêu quân sự kiên cố của Ukraine.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Ukraine phát triển các biện pháp đối phó hoặc gây nhiễu nhằm vô hiệu hóa cảm biến laser trên UAV.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Nga",
+          "target": "UAV Geran",
+          "relation_type": "cooperation",
+          "label": "Quốc gia phát triển và vận hành vũ khí"
+        },
+        {
+          "source": "Công nghệ đo xa laser",
+          "target": "UAV Geran",
+          "relation_type": "cause_effect",
+          "label": "Tăng cường hiệu quả sát thương cho vũ khí"
+        },
+        {
+          "source": "UAV Geran",
+          "target": "Ukraine",
+          "relation_type": "conflict",
+          "label": "Phương tiện tấn công trong xung đột"
+        }
+      ],
+      "entities": [
+        "UAV Geran",
+        "Nga"
+      ],
+      "keywords": [
+        "UAV Geran",
+        "máy đo xa laser"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_4c892d46": {
+    "created_at": 1785845880884,
+    "expires_at": 1788437880884,
+    "version": "4.5",
+    "checksum": "20cbfb3492b76edc7a5859346f4fe145",
+    "data": {
+      "cluster_title": "Xuồng không người lái Ukraine và bom lượn Nga",
+      "short_summary": "Xuồng không người lái Ukraine và bom lượn Nga đang 'đọ sức' trên chiến trường.",
+      "detailed_summary": "Xung đột Nga - Ukraine đang chứng kiến xu hướng chuyển dịch mạnh mẽ sang sử dụng các loại vũ khí tự hành và dẫn đường giá rẻ nhưng có khả năng sát thương cao. Ukraine tập trung vào xuồng không người lái, trong khi Nga ưu tiên sử dụng bom lượn để tác động vào cục diện chiến trường, buộc các bên phải thay đổi chiến lược phòng thủ và tấn công.",
+      "causes": [
+        "Chi phí sản xuất vũ khí rẻ hơn so với vũ khí truyền thống",
+        "Nhu cầu chiếm ưu thế trên chiến trường với ngân sách tối ưu"
+      ],
+      "effects": [
+        "Thay đổi cục diện chiến thuật tại mặt trận",
+        "Thúc đẩy chạy đua công nghệ vũ khí giá rẻ",
+        "Gia tăng áp lực lên hệ thống phòng thủ đối phương"
+      ],
+      "affected_groups": [
+        "Quân đội Nga",
+        "Quân đội Ukraine",
+        "Các nhà sản xuất công nghiệp quốc phòng"
+      ],
+      "market_impact": "Thúc đẩy các công ty công nghiệp quốc phòng chuyển hướng sang nghiên cứu và sản xuất hàng loạt các loại khí tài không người lái giá rẻ.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "military",
+        "tech"
+      ],
+      "regions": [
+        "UA",
+        "RU"
+      ],
+      "significance": "Việc áp dụng các loại vũ khí giá rẻ đang định hình lại chiến tranh hiện đại, cho thấy sự ưu tiên của hiệu quả chi phí trong xung đột vũ trang.",
+      "unknowns": [
+        "Hiệu quả lâu dài của các biện pháp phòng thủ đối phó với vũ khí giá rẻ",
+        "Khả năng mở rộng quy mô sản xuất của các bên trong dài hạn"
+      ],
+      "confidence_note": "Thông tin dựa trên diễn biến thực tế tại mặt trận, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Các bên tiếp tục tăng cường sản xuất và nâng cấp công nghệ cho vũ khí không người lái và bom lượn.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Phát triển các công nghệ chống nhiễu và phòng thủ chủ động để vô hiệu hóa hoàn toàn các loại vũ khí này.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Ukraine",
+          "target": "Nga",
+          "relation_type": "conflict",
+          "label": "Xung đột vũ trang trực tiếp"
+        },
+        {
+          "source": "Xuồng không người lái",
+          "target": "Ukraine",
+          "relation_type": "cause_effect",
+          "label": "Ukraine sử dụng làm phương tiện tấn công"
+        },
+        {
+          "source": "Bom lượn",
+          "target": "Nga",
+          "relation_type": "cause_effect",
+          "label": "Nga sử dụng làm phương tiện tấn công"
+        }
+      ],
+      "entities": [
+        "Ukraine",
+        "Nga"
+      ],
+      "keywords": [
+        "Ukraine",
+        "Nga",
+        "xuồng không người lái",
+        "bom lượn"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_general_1785845886498": {
+    "created_at": 1785845893363,
+    "expires_at": 1788437893363,
+    "version": "4.5",
+    "checksum": "d64d33ff504572e9e01ed37eb0346d28",
+    "data": {
+      "cluster_title": "Tổng Bí thư, Chủ tịch nước ký nghị quyết về công tác người Việt Nam ở nước ngoài",
+      "short_summary": "Tổng Bí thư, Chủ tịch nước Tô Lâm đã ký ban hành nghị quyết 23 của Bộ Chính trị về công tác người Việt Nam ở nước ngoài.",
+      "detailed_summary": "Tổng Bí thư, Chủ tịch nước Tô Lâm đã chính thức ký ban hành Nghị quyết số 23 của Bộ Chính trị. Văn bản này định hướng chiến lược về công tác người Việt Nam ở nước ngoài, phản ánh sự quan tâm và chủ trương mới của Đảng Cộng sản Việt Nam trong việc quản lý và phát huy nguồn lực từ cộng đồng người Việt toàn cầu.",
+      "causes": [
+        "Nhu cầu củng cố khối đại đoàn kết dân tộc",
+        "Yêu cầu phát huy nguồn lực, trí tuệ của kiều bào cho sự phát triển đất nước"
+      ],
+      "effects": [
+        "Hoàn thiện hành lang pháp lý và chính sách hỗ trợ kiều bào",
+        "Tăng cường sự gắn kết giữa cộng đồng người Việt ở nước ngoài với quê hương"
+      ],
+      "affected_groups": [
+        "Cộng đồng người Việt Nam ở nước ngoài",
+        "Các cơ quan quản lý nhà nước về người Việt Nam ở nước ngoài"
+      ],
+      "market_impact": "Tạo tiền đề thuận lợi để thu hút nguồn vốn đầu tư, tri thức và kiều hối từ cộng đồng người Việt ở nước ngoài về nước.",
+      "vn_impact": "Khẳng định chủ trương nhất quán của Việt Nam trong việc coi người Việt ở nước ngoài là bộ phận không thể tách rời của dân tộc, tạo động lực phát triển kinh tế thông qua huy động nguồn lực kiều bào.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "diplomacy"
+      ],
+      "regions": [
+        "VN"
+      ],
+      "significance": "Đây là bước tiến quan trọng trong việc thể chế hóa đường lối của Đảng nhằm tối ưu hóa đóng góp của cộng đồng người Việt ở nước ngoài vào sự nghiệp xây dựng và bảo vệ Tổ quốc.",
+      "unknowns": [
+        "Các chi tiết cụ thể về nhiệm vụ và giải pháp thực hiện trong nội dung Nghị quyết 23 chưa được công bố chi tiết",
+        "Lộ trình triển khai thực tế của các cơ quan chức năng sau khi nghị quyết ban hành"
+      ],
+      "confidence_note": "Thông tin chính xác, dựa trên nguồn dữ liệu từ cơ quan nhà nước.",
+      "scenarios": [
+        {
+          "text": "Chính phủ triển khai các chính sách ưu đãi cụ thể dựa trên Nghị quyết 23 giúp tăng cường thu hút kiều hối và đầu tư.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các bộ, ngành ban hành các văn bản hướng dẫn chi tiết nhằm đơn giản hóa thủ tục hành chính cho người Việt ở nước ngoài.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Bộ Chính trị",
+          "target": "Người Việt Nam ở nước ngoài",
+          "relation_type": "cooperation",
+          "label": "Ban hành nghị quyết định hướng chính sách hỗ trợ và hợp tác"
+        },
+        {
+          "source": "Tổng Bí thư, Chủ tịch nước Tô Lâm",
+          "target": "Nghị quyết 23",
+          "relation_type": "cause_effect",
+          "label": "Ký ban hành văn bản chính thức"
+        }
+      ],
+      "entities": [
+        "Tô Lâm",
+        "Bộ Chính trị"
+      ],
+      "keywords": [
+        "Tô Lâm",
+        "Bộ Chính trị",
+        "người Việt Nam ở nước ngoài"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_general_1785845899032": {
+    "created_at": 1785845904857,
+    "expires_at": 1788437904857,
+    "version": "4.5",
+    "checksum": "626fb2b135452a42c53ab26d328a5ed6",
+    "data": {
+      "cluster_title": "Trung Quốc đề xuất phương án vô hiệu hóa tiểu hành tinh đe dọa Trái Đất",
+      "short_summary": "Trung Quốc đề xuất phương án vô hiệu hóa tiểu hành tinh đe dọa Trái Đất",
+      "detailed_summary": "Nhóm nghiên cứu tại Trung Quốc đã công bố đề xuất kỹ thuật mới hướng tới việc phá hủy hoặc làm chệch hướng các tiểu hành tinh lớn có quỹ đạo đe dọa va chạm với Trái Đất, nhằm nâng cao năng lực phòng thủ hành tinh.",
+      "causes": [
+        "Nhu cầu tăng cường an ninh không gian trước các mối đe dọa thiên văn",
+        "Sự tiến bộ trong nghiên cứu khoa học và kỹ thuật hàng không vũ trụ tại Trung Quốc"
+      ],
+      "effects": [
+        "Gia tăng năng lực chủ động phòng vệ hành tinh",
+        "Mở ra các hướng nghiên cứu mới trong lĩnh vực bảo vệ Trái Đất"
+      ],
+      "affected_groups": [
+        "Cộng đồng khoa học vũ trụ quốc tế",
+        "Các cơ quan quản lý an ninh không gian toàn cầu"
+      ],
+      "market_impact": "Thông tin mang tính nghiên cứu học thuật, chưa có tác động thương mại trực tiếp đến thị trường tài chính.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "tech",
+        "environment"
+      ],
+      "regions": [
+        "CN",
+        "GLOBAL"
+      ],
+      "significance": "Đề xuất này đóng góp vào nỗ lực chung của nhân loại trong việc chủ động đối phó với các mối nguy hiểm từ ngoài không gian.",
+      "unknowns": [
+        "Chi tiết cụ thể về công nghệ và cơ chế vận hành của phương án đề xuất",
+        "Mức độ khả thi về mặt thực nghiệm và ngân sách cần thiết để triển khai"
+      ],
+      "confidence_note": "Thông tin dựa trên báo cáo khoa học từ nguồn chính thống, độ tin cậy cao về mặt sự kiện.",
+      "scenarios": [
+        {
+          "text": "Đề xuất được đưa vào thử nghiệm mô phỏng và phát triển thành công nghệ thực tế.",
+          "likelihood": "trung bình"
+        },
+        {
+          "text": "Đề xuất chỉ dừng lại ở mức độ lý thuyết và cần thêm nhiều nghiên cứu bổ sung.",
+          "likelihood": "cao"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Các nhà khoa học Trung Quốc",
+          "target": "Tiểu hành tinh",
+          "relation_type": "cause_effect",
+          "label": "Nghiên cứu phương án vô hiệu hóa các mối đe dọa từ không gian"
+        }
+      ],
+      "entities": [
+        "Trung Quốc",
+        "Trái Đất"
+      ],
+      "keywords": [
+        "Trung Quốc",
+        "tiểu hành tinh",
+        "Trái Đất"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_general_1785845910795": {
+    "created_at": 1785845911367,
+    "expires_at": 1788437911367,
+    "version": "4.5",
+    "checksum": "6c70252fe19fc19c2d12f575c8512ed1",
+    "data": {
+      "cluster_title": "Pháp triển khai gói hỗ trợ thuê xe điện",
+      "short_summary": "Chính phủ Pháp triển khai gói hỗ trợ thuê xe ô tô điện với mức giá từ 94 đến 199 Euro.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "categories": [
+        "Kinh tế",
+        "Môi trường"
+      ],
+      "regions": [
+        "FR",
+        "EU"
+      ],
+      "follow_up": "",
+      "entities": [
+        "Chính phủ Pháp",
+        "xe ô tô điện"
+      ],
+      "keywords": [
+        "xe điện",
+        "Pháp",
+        "chính phủ"
+      ],
+      "importance": 80,
+      "severity": 2,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_general_1785845917058": {
+    "created_at": 1785845917530,
+    "expires_at": 1788437917530,
+    "version": "4.5",
+    "checksum": "572e89412fcbb106d20de2b6d924994b",
+    "data": {
+      "cluster_title": "Tàu du lịch kích cầu tiêu dùng mùa hè tại Trung Quốc",
+      "short_summary": "Tàu du lịch tại Trung Quốc đang góp phần thúc đẩy tiêu dùng và tạo thêm động lực cho du lịch nội địa trong mùa cao điểm hè.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "categories": [
+        "du lịch",
+        "tiêu dùng"
+      ],
+      "regions": [
+        "CN"
+      ],
+      "follow_up": "",
+      "entities": [
+        "Trung Quốc"
+      ],
+      "keywords": [
+        "tàu du lịch",
+        "tiêu dùng",
+        "Trung Quốc"
+      ],
+      "importance": 85,
+      "severity": 2,
+      "sentiment": 1,
+      "scope": "national"
+    }
+  },
+  "evt_1148ec62": {
+    "created_at": 1785845929316,
+    "expires_at": 1788437929316,
+    "version": "4.5",
+    "checksum": "8a7bb359bfe1c730876b95d655ca39ff",
+    "data": {
+      "cluster_title": "Doanh nghiệp nhà nước nhận cổ tức lớn từ Toyota, Ford, Honda",
+      "short_summary": "Doanh nghiệp nhà nước VEAM nhận hơn 2 tỷ USD cổ tức từ Toyota, Ford, Honda trong 8 năm qua",
+      "detailed_summary": "Trong giai đoạn 8 năm gần nhất, VEAM - doanh nghiệp với 88% vốn nhà nước - đã ghi nhận khoản thu nhập gần 54.000 tỷ đồng (tương đương hơn 2 tỷ USD) từ cổ tức của các liên doanh sản xuất xe hơi tại Việt Nam bao gồm Toyota, Ford và Honda.",
+      "causes": [
+        "Sự thành công của mô hình liên doanh sản xuất ô tô tại Việt Nam",
+        "Vị thế sở hữu vốn lớn của VEAM tại các liên doanh xe hơi nước ngoài"
+      ],
+      "effects": [
+        "Gia tăng đáng kể nguồn thu tài chính cho ngân sách nhà nước thông qua VEAM",
+        "Củng cố vai trò của các liên doanh ô tô nước ngoài trong thị trường nội địa"
+      ],
+      "affected_groups": [
+        "VEAM",
+        "Nhà nước Việt Nam",
+        "Các liên doanh ô tô Toyota, Ford, Honda"
+      ],
+      "market_impact": "Phản ánh dòng tiền mạnh mẽ từ lĩnh vực sản xuất lắp ráp ô tô, góp phần tích cực vào bảng cân đối kế toán của VEAM.",
+      "vn_impact": "Tác động tích cực đến ngân sách nhà nước và khẳng định hiệu quả từ mô hình hợp tác kinh tế giữa doanh nghiệp Việt Nam và các tập đoàn sản xuất ô tô đa quốc gia.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "finance"
+      ],
+      "regions": [
+        "VN",
+        "JP",
+        "US"
+      ],
+      "significance": "Sự kiện cho thấy tầm quan trọng của các liên doanh sản xuất ô tô trong việc đóng góp lợi nhuận cho doanh nghiệp nhà nước.",
+      "unknowns": [
+        "Chi tiết về phân bổ lợi nhuận cụ thể từng năm",
+        "Chiến lược sử dụng nguồn vốn cổ tức khổng lồ này của VEAM trong tương lai"
+      ],
+      "confidence_note": "Thông tin dựa trên số liệu tài chính công khai của doanh nghiệp, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "VEAM tiếp tục duy trì dòng tiền ổn định từ các liên doanh ô tô nhờ nhu cầu thị trường tăng trưởng.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "VEAM tái đầu tư lợi nhuận vào các dự án sản xuất công nghiệp hỗ trợ khác để phát triển nội lực.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "VEAM",
+          "target": "Toyota, Ford, Honda",
+          "relation_type": "cooperation",
+          "label": "Liên doanh sản xuất ô tô tại Việt Nam"
+        },
+        {
+          "source": "Liên doanh ô tô",
+          "target": "VEAM",
+          "relation_type": "cause_effect",
+          "label": "Chi trả cổ tức tạo ra nguồn thu lớn cho doanh nghiệp nhà nước"
+        }
+      ],
+      "entities": [
+        "Toyota",
+        "Ford",
+        "Honda",
+        "VEAM"
+      ],
+      "keywords": [
+        "Toyota",
+        "Ford",
+        "Honda",
+        "VEAM"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_general_1785845934909": {
+    "created_at": 1785845941062,
+    "expires_at": 1788437941062,
+    "version": "4.5",
+    "checksum": "656900da17f0d58aa9b4be2802877e92",
+    "data": {
+      "cluster_title": "Xây dựng Hòa Bình phát hành cổ phiếu để trả nợ",
+      "short_summary": "Xây dựng Hòa Bình sẽ phát hành hàng chục triệu cổ phiếu để xóa hơn 514 tỷ đồng nợ với giá hoán đổi cao gấp đôi thị trường.",
+      "detailed_summary": "Công ty cổ phần Tập đoàn Xây dựng Hòa Bình thực hiện phương án xử lý nợ bằng cách phát hành hàng chục triệu cổ phiếu cho các chủ nợ. Điểm đáng chú ý là giá hoán đổi nợ được ấn định cao gấp đôi so với giá trị thị trường hiện tại của cổ phiếu công ty.",
+      "causes": [
+        "Áp lực thanh khoản và nhu cầu giảm gánh nặng nợ vay",
+        "Chiến lược tái cơ cấu tài chính của doanh nghiệp"
+      ],
+      "effects": [
+        "Giảm nợ vay trên bảng cân đối kế toán",
+        "Gia tăng số lượng cổ phiếu đang lưu hành",
+        "Pha loãng quyền sở hữu của cổ đông hiện hữu"
+      ],
+      "affected_groups": [
+        "Cổ đông của Tập đoàn Xây dựng Hòa Bình",
+        "Các chủ nợ của doanh nghiệp",
+        "Nhà đầu tư trên thị trường chứng khoán"
+      ],
+      "market_impact": "Việc hoán đổi nợ bằng cổ phiếu với giá cao gấp đôi thị trường tạo ra sự chú ý lớn, có thể gây tâm lý trái chiều đối với nhà đầu tư về giá trị thực của cổ phiếu.",
+      "vn_impact": "Sự kiện phản ánh thực trạng khó khăn về dòng tiền và nỗ lực tái cấu trúc nợ của các doanh nghiệp xây dựng lớn tại Việt Nam trong giai đoạn thị trường bất động sản gặp nhiều thách thức.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "finance"
+      ],
+      "regions": [
+        "VN"
+      ],
+      "significance": "Đây là động thái tái cấu trúc tài chính đặc thù của doanh nghiệp nhằm giảm áp lực nợ ngắn hạn, đồng thời thể hiện sự thỏa thuận riêng biệt giữa doanh nghiệp và các chủ nợ về giá trị cổ phiếu.",
+      "unknowns": [
+        "Danh tính cụ thể của các chủ nợ tham gia hoán đổi",
+        "Tác động dài hạn đến quyền lợi của cổ đông nhỏ lẻ sau khi pha loãng cổ phiếu"
+      ],
+      "confidence_note": "Thông tin dựa trên công bố chính thức về phương án phát hành cổ phiếu, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Doanh nghiệp giảm được áp lực tài chính và ổn định hoạt động kinh doanh.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Giá cổ phiếu biến động mạnh do tâm lý nhà đầu tư phản ứng với giá hoán đổi cao.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Tập đoàn Xây dựng Hòa Bình",
+          "target": "Các chủ nợ",
+          "relation_type": "cooperation",
+          "label": "Thỏa thuận hoán đổi nợ lấy cổ phiếu"
+        },
+        {
+          "source": "Áp lực nợ vay",
+          "target": "Tập đoàn Xây dựng Hòa Bình",
+          "relation_type": "cause_effect",
+          "label": "Nguyên nhân buộc doanh nghiệp phải phát hành cổ phiếu"
+        }
+      ],
+      "entities": [
+        "Xây dựng Hòa Bình",
+        "ông Lê Viết Hải"
+      ],
+      "keywords": [
+        "Xây dựng Hòa Bình",
+        "cổ phiếu",
+        "trả nợ"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "business"
+    }
+  },
+  "evt_general_1785845946758": {
+    "created_at": 1785845954688,
+    "expires_at": 1788437954688,
+    "version": "4.5",
+    "checksum": "eacda805cd1e353ff3db5bf9d66ea60b",
+    "data": {
+      "cluster_title": "Cổ phiếu PNJ tăng trần",
+      "short_summary": "Cổ phiếu PNJ tăng trần hai phiên liên tiếp",
+      "detailed_summary": "Sau giai đoạn chịu áp lực điều chỉnh mạnh khiến thị giá rơi xuống vùng đáy 6 năm, cổ phiếu PNJ đã thu hút dòng tiền lớn từ cả nhà đầu tư trong và ngoài nước, dẫn đến trạng thái tăng trần trong hai phiên giao dịch liên tiếp.",
+      "causes": [
+        "Lực cầu mạnh từ nhà đầu tư trong nước",
+        "Lực cầu mạnh từ nhà đầu tư nước ngoài",
+        "Giá cổ phiếu đã về vùng hấp dẫn sau đợt điều chỉnh sâu"
+      ],
+      "effects": [
+        "Cổ phiếu PNJ tăng trần hai phiên liên tiếp",
+        "Cải thiện tâm lý nhà đầu tư đối với mã cổ phiếu PNJ"
+      ],
+      "affected_groups": [
+        "Cổ đông của PNJ",
+        "Nhà đầu tư cá nhân trên thị trường chứng khoán",
+        "Công ty Vàng bạc Đá quý Phú Nhuận"
+      ],
+      "market_impact": "Góp phần cải thiện tâm lý thị trường và tạo động lực tích cực cho nhóm cổ phiếu bán lẻ.",
+      "vn_impact": "Phản ánh niềm tin của nhà đầu tư vào các doanh nghiệp bán lẻ đầu ngành tại Việt Nam, đóng góp tích cực vào thanh khoản và tâm lý tích cực của thị trường chứng khoán nội địa.",
+      "follow_up": "",
+      "categories": [
+        "finance",
+        "business"
+      ],
+      "regions": [
+        "VN"
+      ],
+      "significance": "Sự phục hồi kỹ thuật mạnh mẽ của PNJ cho thấy dòng tiền đang chủ động tìm kiếm các cơ hội tại các cổ phiếu đã giảm sâu có nền tảng kinh doanh tốt.",
+      "unknowns": [
+        "Chưa rõ yếu tố nội tại cụ thể nào từ doanh nghiệp kích hoạt lực mua mạnh đột biến",
+        "Thời gian duy trì đà tăng trưởng của cổ phiếu trong ngắn hạn"
+      ],
+      "confidence_note": "Thông tin dựa trên biến động giao dịch thực tế trên thị trường, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Dòng tiền tiếp tục duy trì khiến PNJ giữ vững đà tăng trong các phiên tới.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Áp lực chốt lời xuất hiện khiến cổ phiếu hạ nhiệt sau chuỗi tăng trần.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Nhà đầu tư trong và ngoài nước",
+          "target": "PNJ",
+          "relation_type": "cause_effect",
+          "label": "Lực mua dẫn đến tăng giá cổ phiếu"
+        },
+        {
+          "source": "Đợt điều chỉnh sâu",
+          "target": "PNJ",
+          "relation_type": "cause_effect",
+          "label": "Nguyên nhân khiến giá về đáy và kích hoạt lực mua mới"
+        }
+      ],
+      "entities": [
+        "PNJ"
+      ],
+      "keywords": [
+        "cổ phiếu",
+        "PNJ",
+        "tăng trần"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "business"
+    }
+  },
+  "evt_54e72fd3": {
+    "created_at": 1785845966310,
+    "expires_at": 1788437966310,
+    "version": "4.5",
+    "checksum": "758ab6efa458bb18e16baea3f7d29c2c",
+    "data": {
+      "cluster_title": "Bách Hóa Xanh dự kiến lãi gần 1.000 tỷ đồng",
+      "short_summary": "Bách Hóa Xanh dự kiến lãi gần 1.000 tỷ đồng và sắp đạt mục tiêu mở hơn 1.000 cửa hàng.",
+      "detailed_summary": "Trong nửa đầu năm 2024, chuỗi Bách Hóa Xanh ghi nhận kết quả kinh doanh tích cực với mức lãi sau thuế đạt 910 tỷ đồng. Doanh nghiệp hiện đang duy trì lộ trình mở rộng mạng lưới phân phối để đạt cột mốc hơn 1.000 cửa hàng trên toàn quốc trong năm nay.",
+      "causes": [
+        "Cải thiện hiệu quả vận hành chuỗi cung ứng",
+        "Chiến lược mở rộng mạng lưới cửa hàng đồng bộ"
+      ],
+      "effects": [
+        "Cải thiện chỉ số tài chính của công ty mẹ",
+        "Tăng cường độ phủ sóng thị trường bán lẻ nội địa"
+      ],
+      "affected_groups": [
+        "Cổ đông của Bách Hóa Xanh",
+        "Người tiêu dùng tại Việt Nam"
+      ],
+      "market_impact": "Kết quả kinh doanh khả quan củng cố niềm tin của nhà đầu tư vào ngành bán lẻ Việt Nam và sự phục hồi của sức mua nội địa.",
+      "vn_impact": "Sự kiện phản ánh đà tăng trưởng bền vững của ngành bán lẻ Việt Nam, góp phần đóng góp vào tăng trưởng kinh tế và tạo thêm việc làm trong hệ thống phân phối nội địa.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "business"
+      ],
+      "regions": [
+        "VN"
+      ],
+      "significance": "Đánh dấu bước ngoặt tài chính quan trọng, chuyển mình từ giai đoạn đầu tư mở rộng sang giai đoạn mang lại lợi nhuận thực tế cho doanh nghiệp bán lẻ lớn.",
+      "unknowns": [
+        "Tỷ trọng đóng góp lợi nhuận cụ thể từ các khu vực địa lý khác nhau",
+        "Áp lực cạnh tranh từ các đối thủ bán lẻ khác trong nửa cuối năm"
+      ],
+      "confidence_note": "Thông tin dựa trên báo cáo kinh doanh thực tế, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Doanh nghiệp đạt và vượt mục tiêu lợi nhuận 1.000 tỷ đồng nhờ doanh thu ổn định từ các cửa hàng mới.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Lợi nhuận chững lại do chi phí vận hành tăng cao khi mở rộng mạng lưới trong giai đoạn cuối năm.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Bách Hóa Xanh",
+          "target": "Thị trường bán lẻ Việt Nam",
+          "relation_type": "cause_effect",
+          "label": "Động lực thúc đẩy tăng trưởng ngành bán lẻ"
+        }
+      ],
+      "entities": [
+        "Bách Hóa Xanh"
+      ],
+      "keywords": [
+        "Bách Hóa Xanh",
+        "lãi",
+        "cửa hàng"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "business"
+    }
   }
 }
