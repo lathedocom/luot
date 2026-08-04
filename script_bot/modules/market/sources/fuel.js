@@ -64,12 +64,17 @@ async function fetchFuelData() {
             const url2 = 'https://webgia.com/gia-xang-dau/petrolimex/';
             const html2 = await fetchHtmlSafe(url2, 10000);
             
-            const valStr = extractPriceFlexible(
-                html2, 
-                ['table tbody tr', '.price-table tr', 'table tr'], 
-                /(?:RON 95-III).*?([1-9][0-9]{0,3}[.,\s]?[0-9]{3})/i
-            );
-            const priceVal = parseInt(valStr.replace(/[^\d]/g, ''));
+           // Thay vì dùng Regex cũ, hãy đổi thành Regex này:
+const valStr = extractPriceFlexible(
+    html, 
+    ['body', 'table tbody tr', '.price-table tr'], 
+    // Regex mới: Tìm chữ RON 95-III, bỏ qua khoảng trắng/ký tự thừa nếu có (.*?), 
+    // và bắt đầu lấy con số có định dạng 2x,xxx hoặc 3x,xxx
+    /RON 95-III.*?([2-3][0-9][.,][0-9]{3})/i
+);
+
+// Xử lý chuỗi (ví dụ: "22,850" -> 22850)
+const priceVal = parseInt(valStr.replace(/[^\d]/g, ''));
             
             return { 
                 ...rawResult, 
