@@ -30,7 +30,7 @@ async function fetchFuelData() {
             const parentText = targetElement.parent().parent().text();
             
             // Dùng Regex bắt chuỗi số có định dạng giá (VD: 23.210 hoặc 23,210)
-            const match = parentText.match(/([1-9][0-9]{0,3}[.,\s]?[0-9]{3})/);
+            const match = parentText.match(/([1-3][0-9][.,\s]?[0-9]{3})/);
             if (match) {
                 priceVal = parseInt(match[1].replace(/[^\d]/g, ''));
             }
