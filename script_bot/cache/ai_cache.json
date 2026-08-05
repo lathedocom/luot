@@ -15976,5 +15976,310 @@
       "sentiment": -1,
       "scope": "business"
     }
+  },
+  "evt_general_1785971855020": {
+    "created_at": 1785971858397,
+    "expires_at": 1788563858397,
+    "version": "4.5",
+    "checksum": "1fbd171ec9a9664afa9eab30ec84483e",
+    "data": {
+      "cluster_title": "Cạn kiệt nguồn cung tên lửa Patriot",
+      "short_summary": "Nguồn cung tên lửa Patriot đang cạn kiệt do xung đột Trung Đông và Ukraine.",
+      "detailed_summary": "Hệ thống phòng thủ Patriot đang đối mặt với tình trạng thiếu hụt nguồn cung tên lửa nghiêm trọng. Sự tiêu hao nhanh chóng tại Ukraine và các khu vực xung đột ở Trung Đông vượt quá tốc độ sản xuất công nghiệp quốc phòng hiện tại, tạo ra áp lực lớn lên khả năng duy trì năng lực phòng thủ trên phạm vi toàn cầu.",
+      "causes": [
+        "Xung đột vũ trang gia tăng tại Trung Đông và Ukraine",
+        "Tốc độ sản xuất công nghiệp quốc phòng không bắt kịp nhu cầu tiêu thụ"
+      ],
+      "effects": [
+        "Nguy cơ suy giảm năng lực phòng thủ của các quốc gia phụ thuộc vào Patriot",
+        "Gia tăng áp lực lên chuỗi cung ứng linh kiện quốc phòng",
+        "Đẩy nhanh yêu cầu tăng ngân sách quốc phòng để mở rộng sản xuất"
+      ],
+      "affected_groups": [
+        "Các quốc gia vận hành hệ thống Patriot",
+        "Các nhà thầu quốc phòng",
+        "Bộ chỉ huy quân sự các nước liên quan"
+      ],
+      "market_impact": "Các doanh nghiệp quốc phòng có thể nhận được đơn đặt hàng tăng vọt, trong khi chuỗi cung ứng vật liệu quân sự đối mặt với thách thức về tính sẵn sàng.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "military",
+        "politics"
+      ],
+      "regions": [
+        "UA",
+        "GLOBAL"
+      ],
+      "significance": "Sự mất cân bằng giữa cung và cầu tên lửa phòng thủ cho thấy lỗ hổng trong năng lực sản xuất quốc phòng dài hạn của phương Tây trước các xung đột kéo dài.",
+      "unknowns": [
+        "Thời gian cụ thể để các cơ sở sản xuất đạt công suất tối đa",
+        "Thứ tự ưu tiên phân phối tên lửa cho các vùng chiến sự"
+      ],
+      "confidence_note": "Thông tin dựa trên đánh giá về tình trạng tiêu hao nguồn lực quân sự thực tế tại các điểm nóng xung đột.",
+      "scenarios": [
+        {
+          "text": "Các nhà sản xuất đẩy mạnh mở rộng dây chuyền, giảm dần tình trạng khan hiếm trong dài hạn.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Tình trạng thiếu hụt trầm trọng hơn do các điểm nóng xung đột mới phát sinh.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Xung đột Trung Đông và Ukraine",
+          "target": "Nguồn cung tên lửa Patriot",
+          "relation_type": "cause_effect",
+          "label": "Gây tiêu hao dự trữ tên lửa"
+        },
+        {
+          "source": "Tốc độ sản xuất",
+          "target": "Nguồn cung tên lửa Patriot",
+          "relation_type": "cause_effect",
+          "label": "Không đủ đáp ứng nhu cầu"
+        }
+      ],
+      "entities": [
+        "Patriot"
+      ],
+      "keywords": [
+        "Patriot",
+        "thiên khí",
+        "cạn kiệt",
+        "nguồn cung"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_general_1785971864329": {
+    "created_at": 1785971870043,
+    "expires_at": 1788563870043,
+    "version": "4.5",
+    "checksum": "c86566f64f89c7152d8323d9fdee20af",
+    "data": {
+      "cluster_title": "Mỹ cam kết hỗ trợ Việt Nam",
+      "short_summary": "Mỹ cam kết hỗ trợ Việt Nam trong Chiến dịch 500 ngày đêm và cảm ơn sự hỗ trợ của Việt Nam trong tìm kiếm quân nhân Mỹ mất tích.",
+      "detailed_summary": "Đô đốc Mỹ bày tỏ lòng biết ơn đối với Việt Nam trong công tác phối hợp tìm kiếm quân nhân Mỹ mất tích trong chiến tranh. Đồng thời, phía Mỹ khẳng định cam kết tiếp tục đồng hành và hỗ trợ Việt Nam thực hiện Chiến dịch 500 ngày đêm nhằm khắc phục hậu quả chiến tranh, tăng cường hợp tác song phương.",
+      "causes": [
+        "Nỗ lực tìm kiếm quân nhân Mỹ mất tích của Việt Nam",
+        "Nhu cầu khắc phục hậu quả chiến tranh tại Việt Nam"
+      ],
+      "effects": [
+        "Thắt chặt quan hệ ngoại giao giữa Mỹ và Việt Nam",
+        "Đẩy nhanh tiến độ tìm kiếm và khắc phục hậu quả chiến tranh"
+      ],
+      "affected_groups": [
+        "Cơ quan chính phủ Việt Nam",
+        "Các gia đình quân nhân Mỹ mất tích",
+        "Cộng đồng chịu ảnh hưởng bởi hậu quả chiến tranh"
+      ],
+      "market_impact": "Không có tác động trực tiếp đến thị trường tài chính.",
+      "vn_impact": "Củng cố lòng tin chiến lược giữa hai quốc gia, tạo tiền đề thuận lợi cho việc hợp tác trong các lĩnh vực khác, đồng thời hỗ trợ trực tiếp cho mục tiêu giải quyết các vấn đề tồn đọng từ lịch sử.",
+      "follow_up": "",
+      "categories": [
+        "diplomacy",
+        "military"
+      ],
+      "regions": [
+        "US",
+        "VN"
+      ],
+      "significance": "Sự kiện khẳng định sự thiện chí và cam kết của Mỹ trong việc cùng Việt Nam đối diện với các di sản chiến tranh, củng cố quan hệ đối tác tin cậy giữa hai nước.",
+      "unknowns": [
+        "Chi tiết cụ thể về ngân sách hỗ trợ cho Chiến dịch 500 ngày đêm",
+        "Danh sách các dự án cụ thể sẽ được triển khai trong thời gian tới"
+      ],
+      "confidence_note": "Thông tin dựa trên tuyên bố chính thức từ phía đại diện Mỹ, mức độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Mối quan hệ ngoại giao giữa hai nước tiếp tục phát triển theo chiều sâu thông qua các hoạt động hợp tác nhân đạo.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các chương trình hợp tác khắc phục hậu quả chiến tranh đạt được những kết quả cụ thể trong thời gian 500 ngày đêm.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Mỹ",
+          "target": "Việt Nam",
+          "relation_type": "cooperation",
+          "label": "Hợp tác tìm kiếm quân nhân và khắc phục hậu quả chiến tranh"
+        },
+        {
+          "source": "Việt Nam",
+          "target": "Chiến dịch 500 ngày đêm",
+          "relation_type": "cooperation",
+          "label": "Thực hiện cam kết khắc phục hậu quả chiến tranh"
+        }
+      ],
+      "entities": [
+        "Đô đốc Mỹ",
+        "Việt Nam"
+      ],
+      "keywords": [
+        "Việt Nam",
+        "Mỹ",
+        "Chiến dịch 500 ngày đêm"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_general_1785971875945": {
+    "created_at": 1785971881855,
+    "expires_at": 1788563881855,
+    "version": "4.5",
+    "checksum": "bcf4c67697562ec003660e4087b3ac9b",
+    "data": {
+      "cluster_title": "Trung Quốc siết chặt xuất khẩu thiết bị bay không người lái sang Mỹ",
+      "short_summary": "Trung Quốc sẽ siết chặt kiểm soát xuất khẩu các sản phẩm liên quan đến thiết bị bay không người lái sang Mỹ.",
+      "detailed_summary": "Chính phủ Trung Quốc đã chính thức thông báo về việc tăng cường các biện pháp kiểm soát xuất khẩu đối với các mặt hàng, linh kiện và công nghệ liên quan đến thiết bị bay không người lái (drone) hướng tới Mỹ, nhằm siết chặt quản lý chuỗi cung ứng trong lĩnh vực này.",
+      "causes": [
+        "Sự cạnh tranh chiến lược về công nghệ giữa hai siêu cường",
+        "Nỗ lực kiểm soát an ninh quốc gia và bảo vệ công nghệ lõi"
+      ],
+      "effects": [
+        "Gia tăng rào cản thương mại trong ngành công nghệ không người lái",
+        "Tác động đến khả năng tiếp cận linh kiện drone của các doanh nghiệp Mỹ"
+      ],
+      "affected_groups": [
+        "Nhà sản xuất drone tại Mỹ",
+        "Các đơn vị nhập khẩu thiết bị công nghệ Trung Quốc",
+        "Chuỗi cung ứng công nghệ toàn cầu"
+      ],
+      "market_impact": "Dự báo làm gián đoạn chuỗi cung ứng tạm thời và gây biến động giá đối với các thiết bị hoặc phụ tùng drone phụ thuộc vào nguồn cung từ Trung Quốc.",
+      "vn_impact": "Việt Nam có thể chịu tác động gián tiếp từ việc điều chỉnh chuỗi cung ứng toàn cầu, tạo ra cơ hội hoặc thách thức cho các đơn vị gia công và lắp ráp công nghệ tại Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "tech"
+      ],
+      "regions": [
+        "CN",
+        "US"
+      ],
+      "significance": "Động thái này phản ánh xu hướng bảo hộ công nghệ và sử dụng các biện pháp kiểm soát xuất khẩu làm công cụ trong quan hệ ngoại giao kinh tế giữa hai nền kinh tế lớn nhất thế giới.",
+      "unknowns": [
+        "Danh mục cụ thể các mặt hàng bị hạn chế xuất khẩu",
+        "Thời điểm hiệu lực chi tiết và lộ trình triển khai các giấy phép xuất khẩu"
+      ],
+      "confidence_note": "Thông tin dựa trên thông báo chính thức từ nguồn tin báo chí, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Mỹ đáp trả bằng các biện pháp hạn chế thương mại đối ứng hoặc tìm nguồn cung thay thế.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Hai bên tiến hành đàm phán để nới lỏng các quy định nhằm duy trì ổn định chuỗi cung ứng.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Trung Quốc",
+          "target": "Mỹ",
+          "relation_type": "conflict",
+          "label": "Hạn chế xuất khẩu công nghệ chiến lược"
+        },
+        {
+          "source": "Trung Quốc",
+          "target": "Ngành công nghệ không người lái",
+          "relation_type": "cause_effect",
+          "label": "Thay đổi quy định kiểm soát xuất khẩu"
+        }
+      ],
+      "entities": [
+        "Trung Quốc",
+        "Mỹ"
+      ],
+      "keywords": [
+        "Trung Quốc",
+        "Mỹ",
+        "thiết bị bay không người lái"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_general_1785971887783": {
+    "created_at": 1785971893738,
+    "expires_at": 1788563893738,
+    "version": "4.5",
+    "checksum": "89f2248d356ae15ae924ef4bd35589e7",
+    "data": {
+      "cluster_title": "Sacombank phát hành trái phiếu",
+      "short_summary": "Sacombank phát hành trái phiếu với lãi suất 10% và hút 3.650 tỷ đồng qua kênh này.",
+      "detailed_summary": "Ngân hàng Sacombank vừa thực hiện đợt phát hành trái phiếu thành công với tổng giá trị 3.650 tỷ đồng. Mức lãi suất ấn định là 10% mỗi năm, ghi nhận là mức lãi suất cao nhất trong số các đợt phát hành trái phiếu của khối ngân hàng tính từ đầu năm đến nay.",
+      "causes": [
+        "Nhu cầu bổ sung nguồn vốn trung và dài hạn của ngân hàng",
+        "Áp lực tăng lãi suất huy động trên thị trường để cạnh tranh nguồn vốn"
+      ],
+      "effects": [
+        "Tăng chi phí vốn cho ngân hàng phát hành",
+        "Tạo ra một tham chiếu mới về lãi suất trái phiếu ngân hàng trên thị trường"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư trái phiếu",
+        "Các ngân hàng thương mại khác",
+        "Sacombank"
+      ],
+      "market_impact": "Việc Sacombank phát hành trái phiếu lãi suất 10% có thể gây áp lực lên mặt bằng lãi suất huy động chung của toàn hệ thống ngân hàng.",
+      "vn_impact": "Sự kiện phản ánh xu hướng cạnh tranh gay gắt về nguồn vốn trong hệ thống ngân hàng Việt Nam, có thể khiến chi phí vay vốn của doanh nghiệp tăng theo.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "finance"
+      ],
+      "regions": [
+        "VN"
+      ],
+      "significance": "Đây là tín hiệu cho thấy các ngân hàng đang sẵn sàng chi trả mức phí cao hơn để thu hút dòng tiền trong bối cảnh thanh khoản cần ổn định.",
+      "unknowns": [
+        "Kỳ hạn cụ thể của lô trái phiếu này",
+        "Mục đích sử dụng vốn chi tiết của đợt phát hành"
+      ],
+      "confidence_note": "Thông tin dựa trên số liệu thực tế được công bố về đợt phát hành, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Các ngân hàng khác sẽ tăng lãi suất trái phiếu để thu hút nhà đầu tư tương tự Sacombank.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Áp lực lãi suất khiến các ngân hàng thận trọng hơn trong việc phát hành trái phiếu mới.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Sacombank",
+          "target": "Thị trường trái phiếu",
+          "relation_type": "cause_effect",
+          "label": "Tạo mặt bằng lãi suất trái phiếu mới cao hơn"
+        }
+      ],
+      "entities": [
+        "Sacombank"
+      ],
+      "keywords": [
+        "Sacombank",
+        "trái phiếu",
+        "lãi suất"
+      ],
+      "importance": 85,
+      "severity": 2,
+      "sentiment": -1,
+      "scope": "business"
+    }
   }
 }
