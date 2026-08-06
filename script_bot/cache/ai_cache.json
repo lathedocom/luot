@@ -16281,5 +16281,748 @@
       "sentiment": -1,
       "scope": "business"
     }
+  },
+  "evt_e9e410ce": {
+    "created_at": 1785989858443,
+    "expires_at": 1788581858443,
+    "version": "4.5",
+    "checksum": "53d2b8d8221962edc4b043089b14bc35",
+    "data": {
+      "cluster_title": "Trực thăng chở Trump bay gần máy bay thương mại",
+      "short_summary": "Trực thăng chở Tổng thống Trump bay gần máy bay thương mại, gây nghi vấn về quy trình kiểm soát không lưu.",
+      "detailed_summary": "Một máy bay thương mại đã cất cánh cùng thời điểm và bay với khoảng cách không an toàn với trực thăng chở Tổng thống Trump. Sự kiện này làm dấy lên nghi vấn về lỗ hổng trong quy trình điều phối của kiểm soát không lưu. Hiện tại, các cơ quan chức năng Mỹ đang tiến hành điều tra, còn Nhà Trắng bác bỏ khả năng Tổng thống gặp nguy hiểm.",
+      "causes": [
+        "Sự trùng lặp về thời gian cất cánh giữa hai phi cơ",
+        "Có khả năng tồn tại sai sót trong quy trình kiểm soát không lưu"
+      ],
+      "effects": [
+        "Khởi động quá trình điều tra chính thức từ cơ quan chức năng",
+        "Dấy lên nghi vấn về an ninh hàng không đối với các chuyến bay của Tổng thống"
+      ],
+      "affected_groups": [
+        "Cơ quan kiểm soát không lưu Mỹ",
+        "Tổng thống Trump",
+        "Hãng hàng không thương mại liên quan"
+      ],
+      "market_impact": "Không có tác động đáng kể đến thị trường tài chính.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "military"
+      ],
+      "regions": [
+        "US"
+      ],
+      "significance": "Sự việc đặt ra yêu cầu khắt khe hơn về quy trình an ninh hàng không và phối hợp kiểm soát không lưu trong các chuyến công du của các nhà lãnh đạo cấp cao.",
+      "unknowns": [
+        "Nguyên nhân cụ thể dẫn đến sự cố kiểm soát không lưu",
+        "Danh tính và lịch trình của máy bay thương mại liên quan"
+      ],
+      "confidence_note": "Thông tin dựa trên báo cáo thực tế từ các nguồn tin tức chính thống, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Kết quả điều tra cho thấy lỗi do con người tại trạm kiểm soát không lưu và quy trình được thắt chặt hơn.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Sự việc được xác định là sự cố kỹ thuật ngẫu nhiên và không gây ra thay đổi lớn về chính sách an ninh.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Kiểm soát không lưu",
+          "target": "Tổng thống Trump",
+          "relation_type": "cause_effect",
+          "label": "Trách nhiệm đảm bảo an toàn bay cho Tổng thống"
+        },
+        {
+          "source": "Nhà Trắng",
+          "target": "Tổng thống Trump",
+          "relation_type": "cooperation",
+          "label": "Xác nhận tình trạng an toàn của Tổng thống"
+        }
+      ],
+      "entities": [
+        "Donald Trump",
+        "Trực thăng"
+      ],
+      "keywords": [
+        "Trực thăng",
+        "Trump",
+        "Máy bay thương mại"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_b2296c99": {
+    "created_at": 1785989870304,
+    "expires_at": 1788581870304,
+    "version": "4.5",
+    "checksum": "dd20eeed7533700044a0c350733e7676",
+    "data": {
+      "cluster_title": "Tổng thống Iran thừa nhận khó liên lạc với lãnh tụ tối cao",
+      "short_summary": "Tổng thống Iran thừa nhận khó liên lạc với lãnh tụ tối cao Mojtaba Khamenei.",
+      "detailed_summary": "Tổng thống Iran Masoud Pezeshkian công khai xác nhận việc duy trì liên lạc với Lãnh tụ Tối cao Mojtaba Khamenei hiện đang đối mặt với nhiều trở ngại. Tình trạng Lãnh tụ Tối cao ít xuất hiện trước công chúng trong thời gian qua đã tạo ra làn sóng đồn đoán trong dư luận về trạng thái của các mối quan hệ quyền lực cấp cao tại Iran.",
+      "causes": [
+        "Sự vắng mặt kéo dài của Lãnh tụ Tối cao trước công chúng",
+        "Những rào cản trong kênh liên lạc trực tiếp giữa các cấp lãnh đạo cao nhất"
+      ],
+      "effects": [
+        "Gia tăng đồn đoán về sự ổn định trong hệ thống điều hành quốc gia",
+        "Tạo ra bầu không khí hoài nghi trong giới chức cấp cao Iran"
+      ],
+      "affected_groups": [
+        "Chính phủ Iran",
+        "Cơ quan chính trị cấp cao Iran",
+        "Dư luận quốc tế"
+      ],
+      "market_impact": "Khả năng gây bất ổn tâm lý thị trường khu vực, tiềm ẩn rủi ro tăng giá năng lượng nếu tình hình chính trị tại Iran trở nên khó lường.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "diplomacy"
+      ],
+      "regions": [
+        "IR"
+      ],
+      "significance": "Sự kiện phản ánh những bất ổn tiềm tàng trong cơ cấu quyền lực thượng tầng của một quốc gia then chốt tại Trung Đông, ảnh hưởng đến khả năng quản trị quốc gia.",
+      "unknowns": [
+        "Lý do thực sự đằng sau việc hạn chế xuất hiện trước công chúng của Lãnh tụ Tối cao",
+        "Mức độ ảnh hưởng của việc gián đoạn thông tin đến các quyết sách quốc gia của Iran"
+      ],
+      "confidence_note": "Thông tin dựa trên xác nhận từ Tổng thống Iran, có độ tin cậy cao về mặt hiện tượng, nhưng cần thận trọng về các giả định chính trị sâu xa.",
+      "scenarios": [
+        {
+          "text": "Lãnh tụ Tối cao xuất hiện trở lại để xóa bỏ các đồn đoán chính trị.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Sự gián đoạn liên lạc tiếp diễn dẫn đến khủng hoảng niềm tin trong nội bộ chính quyền Iran.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Tổng thống Iran",
+          "target": "Lãnh tụ Tối cao Iran",
+          "relation_type": "neutral",
+          "label": "Mối quan hệ công việc bị gián đoạn"
+        },
+        {
+          "source": "Lãnh tụ Tối cao Iran",
+          "target": "Sự ổn định chính trị Iran",
+          "relation_type": "cause_effect",
+          "label": "Tình trạng cá nhân ảnh hưởng đến sự ổn định quốc gia"
+        }
+      ],
+      "entities": [
+        "Tổng thống Iran Masoud Pezeshkian",
+        "Lãnh tụ tối cao Mojtaba Khamenei"
+      ],
+      "keywords": [
+        "Tổng thống Iran",
+        "Lãnh tụ tối cao Mojtaba Khamenei",
+        "Iran"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_a563c39f": {
+    "created_at": 1785989881855,
+    "expires_at": 1788581881855,
+    "version": "4.5",
+    "checksum": "07bda03e7eea1e835ee170152f580066",
+    "data": {
+      "cluster_title": "Chiếc ô an ninh khiến Jordan lọt tầm ngắm tên lửa Iran",
+      "short_summary": "Chiếc ô an ninh khiến Jordan lọt tầm ngắm tên lửa Iran, khiến nước này hứng chịu sức ép lớn.",
+      "detailed_summary": "Do thiết lập mối quan hệ đồng minh thân cận và nhận được sự bảo trợ an ninh từ Mỹ, Jordan trở thành mục tiêu trong các vụ tập kích tên lửa của Iran, tạo ra thách thức lớn về an ninh quốc gia cho chính phủ Jordan.",
+      "causes": [
+        "Jordan duy trì quan hệ đồng minh thân cận với Mỹ",
+        "Sự bảo trợ an ninh của Mỹ dành cho Jordan"
+      ],
+      "effects": [
+        "Jordan trở thành mục tiêu tấn công của tên lửa Iran",
+        "Gia tăng áp lực chính trị và an ninh lên Chính phủ Jordan"
+      ],
+      "affected_groups": [
+        "Chính phủ Jordan",
+        "Người dân Jordan"
+      ],
+      "market_impact": "Gây tâm lý bất ổn trong khu vực, tiềm ẩn rủi ro cho chuỗi cung ứng năng lượng và an ninh hàng hải tại Trung Đông.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "military"
+      ],
+      "regions": [
+        "JO",
+        "IR",
+        "US"
+      ],
+      "significance": "Sự kiện phản ánh rõ nét rủi ro an ninh đối với các quốc gia trung gian khi nằm trong quỹ đạo ảnh hưởng của các cường quốc đối đầu tại Trung Đông.",
+      "unknowns": [
+        "Quy mô và mức độ thiệt hại thực tế từ các vụ tập kích",
+        "Phản ứng phòng thủ cụ thể từ phía Mỹ nhằm bảo vệ Jordan"
+      ],
+      "confidence_note": "Thông tin dựa trên diễn biến căng thẳng địa chính trị khu vực, độ tin cậy ở mức trung bình.",
+      "scenarios": [
+        {
+          "text": "Iran tiếp tục gây áp lực thông qua các hành động quân sự hạn chế nhằm răn đe đồng minh của Mỹ.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Jordan buộc phải tăng cường năng lực phòng thủ phối hợp sâu hơn với Mỹ để đáp trả.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Mỹ",
+          "target": "Jordan",
+          "relation_type": "cooperation",
+          "label": "Bảo trợ an ninh"
+        },
+        {
+          "source": "Iran",
+          "target": "Jordan",
+          "relation_type": "conflict",
+          "label": "Tập kích tên lửa"
+        },
+        {
+          "source": "Mỹ",
+          "target": "Iran",
+          "relation_type": "conflict",
+          "label": "Đối đầu địa chính trị"
+        },
+        {
+          "source": "Jordan",
+          "target": "Iran",
+          "relation_type": "cause_effect",
+          "label": "Mối quan hệ Mỹ - Jordan dẫn đến việc trở thành mục tiêu của Iran"
+        }
+      ],
+      "entities": [
+        "Jordan",
+        "Iran"
+      ],
+      "keywords": [
+        "Jordan",
+        "Iran",
+        "ô an ninh",
+        "tên lửa"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_general_1785989887558": {
+    "created_at": 1785989893428,
+    "expires_at": 1788581893428,
+    "version": "4.5",
+    "checksum": "35d0accffa622e76b29a236fe34d242b",
+    "data": {
+      "cluster_title": "Meta xin lỗi Ấn Độ",
+      "short_summary": "Meta xin lỗi Ấn Độ vì chặn bài đăng của Thủ tướng Modi.",
+      "detailed_summary": "Tập đoàn công nghệ Meta đã phải chính thức gửi lời xin lỗi đến phía Ấn Độ sau khi hệ thống của họ chặn nhầm hoặc gây ra sự cố với bài đăng từ tài khoản của Thủ tướng Narendra Modi. Sự việc này diễn ra trong bối cảnh Meta đang chịu áp lực quản lý và giám sát ngày càng chặt chẽ từ phía chính quyền Ấn Độ đối với các nền tảng mạng xã hội.",
+      "causes": [
+        "Sự cố kỹ thuật trong việc kiểm duyệt nội dung của Meta",
+        "Áp lực pháp lý và chính trị từ Chính phủ Ấn Độ"
+      ],
+      "effects": [
+        "Gia tăng sức ép kiểm soát từ Chính phủ Ấn Độ đối với các nền tảng công nghệ",
+        "Ảnh hưởng đến uy tín vận hành của Meta tại thị trường Ấn Độ"
+      ],
+      "affected_groups": [
+        "Meta",
+        "Chính phủ Ấn Độ",
+        "Người dùng mạng xã hội tại Ấn Độ"
+      ],
+      "market_impact": "Việc liên tục phải xin lỗi và chịu sức ép chính trị có thể ảnh hưởng đến chiến lược vận hành và tuân thủ quy định của Meta tại thị trường đông dân nhất thế giới.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "tech"
+      ],
+      "regions": [
+        "IN"
+      ],
+      "significance": "Sự kiện phản ánh căng thẳng giữa các tập đoàn công nghệ toàn cầu và chính phủ sở tại trong việc quản lý nội dung chính trị nhạy cảm.",
+      "unknowns": [
+        "Nguyên nhân kỹ thuật cụ thể dẫn đến việc chặn bài đăng",
+        "Các yêu cầu pháp lý cụ thể mà Chính phủ Ấn Độ đang áp đặt lên Meta"
+      ],
+      "confidence_note": "Thông tin dựa trên diễn biến thực tế được ghi nhận về mối quan hệ giữa Meta và Chính phủ Ấn Độ.",
+      "scenarios": [
+        {
+          "text": "Meta tăng cường tuân thủ các quy định nội địa của Ấn Độ để tránh các biện pháp trừng phạt pháp lý.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Ấn Độ siết chặt hơn nữa các đạo luật quản lý không gian mạng đối với các nền tảng xuyên biên giới.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Meta",
+          "target": "Chính phủ Ấn Độ",
+          "relation_type": "conflict",
+          "label": "Mâu thuẫn về quản lý nội dung và tuân thủ pháp luật"
+        },
+        {
+          "source": "Meta",
+          "target": "Narendra Modi",
+          "relation_type": "cause_effect",
+          "label": "Meta gây ra sự cố kỹ thuật đối với bài đăng của Thủ tướng"
+        }
+      ],
+      "entities": [
+        "Meta",
+        "Ấn Độ",
+        "Thủ tướng Modi"
+      ],
+      "keywords": [
+        "Meta",
+        "Ấn Độ",
+        "Thủ tướng Modi"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_091dab4c": {
+    "created_at": 1785989899480,
+    "expires_at": 1788581899480,
+    "version": "4.5",
+    "checksum": "86d0fcd867ecd73b1a53408e6f319b75",
+    "data": {
+      "cluster_title": "Máy nhắc chữ hỏng tại cuộc họp báo của Thủ tướng Canada",
+      "short_summary": "Thủ tướng Canada Mark Carney khiến khán phòng bật cười khi máy nhắc chữ gặp sự cố tại cuộc họp báo.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam",
+      "categories": [
+        "Chính trị",
+        "Kinh tế"
+      ],
+      "regions": [
+        "CA"
+      ],
+      "follow_up": "",
+      "entities": [
+        "Thủ tướng Canada",
+        "Mark Carney"
+      ],
+      "keywords": [
+        "Thủ tướng Canada",
+        "Mark Carney",
+        "máy nhắc chữ"
+      ],
+      "importance": 85,
+      "severity": 1,
+      "sentiment": 0,
+      "scope": "national"
+    }
+  },
+  "evt_856b2971": {
+    "created_at": 1785989910899,
+    "expires_at": 1788581910899,
+    "version": "4.5",
+    "checksum": "35db2b48d4bda582b82621f9253815e2",
+    "data": {
+      "cluster_title": "Mỹ hoàn trả 100 tỉ USD thuế quan",
+      "short_summary": "Mỹ hoàn trả 100 tỉ USD thuế quan và tiết lộ chi phí đóng tàu chiến lớp Trump.",
+      "detailed_summary": "Chính phủ Mỹ đã xử lý xong hồ sơ để thực hiện việc hoàn trả 100 tỉ USD trong tổng số 130 tỉ USD tiền thuế quan đã thu. Đồng thời, thông tin về chi phí đóng mới tàu chiến lớp Trump cũng đã được công khai.",
+      "causes": [
+        "Quyết định chính sách hoàn thuế của chính quyền Mỹ",
+        "Yêu cầu minh bạch chi phí quốc phòng trong dự án tàu chiến"
+      ],
+      "effects": [
+        "Tăng ngân sách lưu thông cho các đơn vị chịu ảnh hưởng của thuế quan",
+        "Cung cấp cái nhìn rõ ràng hơn về chi phí đầu tư quân sự"
+      ],
+      "affected_groups": [
+        "Các doanh nghiệp xuất nhập khẩu tại Mỹ",
+        "Bộ Quốc phòng Mỹ",
+        "Các đơn vị sản xuất quốc phòng"
+      ],
+      "market_impact": "Việc hoàn trả số tiền thuế lớn giúp giảm áp lực tài chính cho các doanh nghiệp bị đánh thuế trước đó, có thể tác động tích cực đến tâm lý thị trường nội địa.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "military"
+      ],
+      "regions": [
+        "US"
+      ],
+      "significance": "Sự kiện phản ánh sự điều chỉnh trong chính sách kinh tế và minh bạch hóa ngân sách quốc phòng của Mỹ.",
+      "unknowns": [
+        "Thời gian cụ thể thực hiện giải ngân 100 tỉ USD",
+        "Chi tiết cụ thể về các hạng mục chi phí của tàu chiến lớp Trump"
+      ],
+      "confidence_note": "Thông tin dựa trên bản tin tổng hợp, độ tin cậy trung bình cần theo dõi thêm các công bố chính thức.",
+      "scenarios": [
+        {
+          "text": "Dòng vốn hoàn thuế thúc đẩy hoạt động sản xuất và thương mại nội địa Mỹ.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Chi phí tàu chiến cao gây ra các tranh luận mới về ngân sách quân sự tại Quốc hội Mỹ.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Chính quyền Mỹ",
+          "target": "Doanh nghiệp",
+          "relation_type": "cooperation",
+          "label": "Hoàn trả thuế quan"
+        },
+        {
+          "source": "Chính quyền Mỹ",
+          "target": "Tàu chiến lớp Trump",
+          "relation_type": "cause_effect",
+          "label": "Đầu tư và quản lý ngân sách quân sự"
+        }
+      ],
+      "entities": [
+        "Chính quyền Mỹ",
+        "Tàu chiến lớp Trump"
+      ],
+      "keywords": [
+        "Mỹ",
+        "thuế quan",
+        "tàu chiến lớp Trump"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_e6ac75df": {
+    "created_at": 1785989922197,
+    "expires_at": 1788581922197,
+    "version": "4.5",
+    "checksum": "d30ed208434dc8246dcdc5219722fef0",
+    "data": {
+      "cluster_title": "Giá vàng miếng lên cao nhất hai tuần",
+      "short_summary": "Giá vàng miếng tăng cao nhất hai tuần, ảnh hưởng đến thị trường vàng và kinh tế Việt Nam",
+      "detailed_summary": "Thị trường vàng ghi nhận đà tăng trưởng khi giá bán ra của các thương hiệu đạt mức 143,3 triệu đồng mỗi lượng, tăng 1,5 triệu đồng so với phiên trước đó, thiết lập mức giá cao nhất kể từ ngày 22/7.",
+      "causes": [
+        "Biến động của thị trường vàng nội địa",
+        "Thay đổi cung cầu trong ngắn hạn"
+      ],
+      "effects": [
+        "Tăng chi phí mua vào đối với người tiêu dùng",
+        "Gây áp lực lên tâm lý thị trường vàng"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư cá nhân",
+        "Các doanh nghiệp kinh doanh vàng",
+        "Người dân có nhu cầu tích trữ"
+      ],
+      "market_impact": "Thị trường vàng trong nước đang trong xu hướng tăng giá ngắn hạn, phản ánh sự biến động mạnh của giá trị tài sản trú ẩn.",
+      "vn_impact": "Ảnh hưởng trực tiếp đến người tiêu dùng và nhà đầu tư tại Việt Nam, đồng thời phản ánh xu hướng giá cả tài sản tại thị trường nội địa.",
+      "follow_up": "",
+      "categories": [
+        "finance",
+        "economy"
+      ],
+      "regions": [
+        "VN"
+      ],
+      "significance": "Việc giá vàng miếng chạm đỉnh hai tuần cho thấy xu hướng biến động liên tục của kim loại quý, tác động trực tiếp đến quyết định tài chính của người dân.",
+      "unknowns": [
+        "Nguyên nhân cụ thể thúc đẩy đà tăng giá trong phiên này",
+        "Diễn biến tiếp theo của giá vàng trong các phiên giao dịch tới"
+      ],
+      "confidence_note": "Thông tin dựa trên số liệu giao dịch thực tế được công bố bởi các đơn vị kinh doanh vàng.",
+      "scenarios": [
+        {
+          "text": "Giá vàng tiếp tục duy trì đà tăng do lực cầu lớn từ thị trường.",
+          "likelihood": "trung bình"
+        },
+        {
+          "text": "Giá vàng có sự điều chỉnh giảm sau khi chạm mức cao nhất trong hai tuần.",
+          "likelihood": "cao"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Thị trường vàng nội địa",
+          "target": "Người tiêu dùng",
+          "relation_type": "cause_effect",
+          "label": "Tác động trực tiếp đến chi phí tài chính của người tiêu dùng"
+        }
+      ],
+      "entities": [
+        "thương hiệu bán vàng miếng"
+      ],
+      "keywords": [
+        "giá vàng",
+        "miếng vàng",
+        "tăng giá"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_deb1418a": {
+    "created_at": 1785989934406,
+    "expires_at": 1788581934406,
+    "version": "4.5",
+    "checksum": "4f3cbe465e12ea86b241ce98d8df3331",
+    "data": {
+      "cluster_title": "Giá vàng thế giới tăng mạnh",
+      "short_summary": "Giá vàng thế giới tăng mạnh, Wall Street lập kỷ lục.",
+      "detailed_summary": "Thị trường tài chính toàn cầu chứng kiến biến động mạnh mẽ trong 24 giờ qua. Giá vàng ghi nhận mức tăng kỷ lục hơn 200 USD mỗi ounce, áp sát mốc 4.300 USD. Đồng thời, chỉ số công nghiệp Dow Jones (DJIA) tại thị trường Mỹ tiếp tục duy trì đà tăng trưởng, xác lập phiên tăng thứ năm liên tiếp.",
+      "causes": [
+        "Tâm lý nhà đầu tư dịch chuyển trên thị trường tài chính",
+        "Biến động mạnh về cung cầu vàng trên thị trường quốc tế"
+      ],
+      "effects": [
+        "Áp lực lên các danh mục đầu tư tài chính",
+        "Tăng sức hấp dẫn của vàng như một tài sản trú ẩn",
+        "Củng cố niềm tin của nhà đầu tư vào thị trường chứng khoán Mỹ"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư vàng",
+        "Nhà đầu tư chứng khoán",
+        "Các quỹ tài chính toàn cầu"
+      ],
+      "market_impact": "Thị trường ghi nhận sự biến động mạnh của cả hai kênh tài sản chính là vàng và cổ phiếu, cho thấy dòng tiền đang có sự luân chuyển nhanh chóng.",
+      "vn_impact": "Giá vàng thế giới biến động mạnh có thể gây áp lực lên giá vàng trong nước và tỷ giá ngoại tệ tại Việt Nam, đòi hỏi các cơ quan quản lý cần theo dõi sát sao để ổn định thị trường tài chính.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "finance"
+      ],
+      "regions": [
+        "US",
+        "GLOBAL"
+      ],
+      "significance": "Sự đồng thuận tăng trưởng của cả vàng và chứng khoán phản ánh tâm lý thị trường đang ở giai đoạn nhạy cảm trước các biến động kinh tế lớn.",
+      "unknowns": [
+        "Nguyên nhân cụ thể dẫn đến cú tăng đột biến của giá vàng trong thời gian ngắn",
+        "Thời gian duy trì đà tăng của chỉ số chứng khoán Mỹ"
+      ],
+      "confidence_note": "Thông tin dựa trên số liệu giao dịch thị trường tài chính được công bố, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Giá vàng có thể điều chỉnh giảm sau cú tăng sốc để cân bằng cung cầu",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Chứng khoán Mỹ tiếp tục đà tăng nếu báo cáo kinh tế vĩ mô tích cực",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Giá vàng thế giới",
+          "target": "Nhà đầu tư vàng",
+          "relation_type": "cause_effect",
+          "label": "Tác động đến danh mục tài sản"
+        },
+        {
+          "source": "Chỉ số DJIA",
+          "target": "Thị trường chứng khoán Mỹ",
+          "relation_type": "cause_effect",
+          "label": "Đại diện cho xu hướng tăng trưởng"
+        }
+      ],
+      "entities": [
+        "vàng",
+        "Wall Street",
+        "DJIA"
+      ],
+      "keywords": [
+        "giá vàng",
+        "Wall Street",
+        "DJIA"
+      ],
+      "importance": 90,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_697118b9": {
+    "created_at": 1785989945878,
+    "expires_at": 1788581945878,
+    "version": "4.5",
+    "checksum": "d76e0d9f77d6655ba124c58872b4f7ad",
+    "data": {
+      "cluster_title": "Ukraine mở chiến dịch gây sức ép với Nga",
+      "short_summary": "Ukraine mở chiến dịch 40 ngày gây sức ép với Nga, nhưng Nga cho rằng chiến dịch này đã thất bại.",
+      "detailed_summary": "Giới chức Nga đưa ra đánh giá về một chiến dịch kéo dài 40 ngày do phía Ukraine thực hiện nhằm gây áp lực lên Moscow. Theo quan điểm từ phía Nga, chiến dịch này đã không hoàn thành được các mục tiêu quân sự hoặc chính trị mà Kiev dự định ban đầu, từ đó dẫn đến tuyên bố cho rằng nỗ lực này đã thất bại.",
+      "causes": [
+        "Ukraine triển khai chiến dịch gây sức ép kéo dài 40 ngày",
+        "Mục tiêu ban đầu của Ukraine không được hiện thực hóa"
+      ],
+      "effects": [
+        "Nga khẳng định vị thế và tuyên bố chiến dịch của đối phương thất bại",
+        "Tiếp tục duy trì tình trạng căng thẳng quân sự kéo dài"
+      ],
+      "affected_groups": [
+        "Chính phủ Nga",
+        "Chính phủ Ukraine",
+        "Quân đội hai nước"
+      ],
+      "market_impact": "Thông tin về các diễn biến quân sự tại khu vực này có thể gây biến động nhẹ đến tâm lý thị trường hàng hóa và năng lượng toàn cầu.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "military"
+      ],
+      "regions": [
+        "UA",
+        "RU"
+      ],
+      "significance": "Sự kiện phản ánh cuộc chiến tranh thông tin và đánh giá trái chiều về hiệu quả chiến lược giữa hai bên trong cuộc xung đột đang diễn ra.",
+      "unknowns": [
+        "Các mục tiêu cụ thể mà Ukraine đặt ra trong chiến dịch 40 ngày này là gì",
+        "Tiêu chí chính xác mà Nga dùng để xác định sự thất bại của chiến dịch"
+      ],
+      "confidence_note": "Thông tin mang tính chất từ một phía (Nga), độ tin cậy cần kiểm chứng từ các nguồn độc lập.",
+      "scenarios": [
+        {
+          "text": "Xung đột tiếp tục duy trì trạng thái giằng co, các bên gia tăng các hoạt động tuyên truyền về kết quả chiến trường.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Ukraine điều chỉnh chiến lược quân sự sau khi đánh giá lại kết quả chiến dịch 40 ngày.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Ukraine",
+          "target": "Nga",
+          "relation_type": "conflict",
+          "label": "Xung đột quân sự và gây sức ép chính trị"
+        },
+        {
+          "source": "Chiến dịch 40 ngày",
+          "target": "Nga",
+          "relation_type": "cause_effect",
+          "label": "Chiến dịch gây sức ép dẫn đến tuyên bố thất bại từ Nga"
+        }
+      ],
+      "entities": [
+        "Ukraine",
+        "Nga"
+      ],
+      "keywords": [
+        "Ukraine",
+        "Nga",
+        "chiến dịch"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_646c8874": {
+    "created_at": 1785989957445,
+    "expires_at": 1788581957445,
+    "version": "4.5",
+    "checksum": "0e9dc23267f1ce50a4dc895185271ffc",
+    "data": {
+      "cluster_title": "Iran hoàn tất cơ chế mới cho eo biển Hormuz",
+      "short_summary": "Iran và Oman đang tiến gần đến việc hoàn tất một khuôn khổ đề xuất cho vận tải thương mại qua eo biển Hormuz.",
+      "detailed_summary": "Iran và Oman đang trong quá trình hoàn thiện một khuôn khổ đề xuất nhằm quản lý vận tải thương mại đi qua eo biển Hormuz. Tuy nhiên, thông tin nhấn mạnh rằng thỏa thuận này không đồng nghĩa với việc mở cửa hoàn toàn hoặc tự động cho các tuyến đường lưu thông tại khu vực chiến lược này.",
+      "causes": [
+        "Nhu cầu thiết lập quy tắc vận hành ổn định tại eo biển Hormuz",
+        "Sự phối hợp ngoại giao giữa Iran và Oman"
+      ],
+      "effects": [
+        "Tạo ra cơ chế quản lý mới cho vận tải thương mại",
+        "Hạn chế tính chắc chắn về việc tự do hóa hoàn toàn lưu thông hàng hải"
+      ],
+      "affected_groups": [
+        "Các quốc gia xuất khẩu dầu mỏ",
+        "Các công ty vận tải biển quốc tế",
+        "Các bên tham gia chuỗi cung ứng năng lượng toàn cầu"
+      ],
+      "market_impact": "Thông tin có thể gây biến động tâm lý ngắn hạn đối với giá năng lượng do tầm quan trọng chiến lược của eo biển Hormuz.",
+      "vn_impact": "Tác động gián tiếp đến Việt Nam thông qua chi phí vận tải biển và giá nhiên liệu nhập khẩu nếu các thay đổi về thủ tục tại eo biển Hormuz ảnh hưởng đến dòng chảy hàng hóa quốc tế.",
+      "follow_up": "",
+      "categories": [
+        "diplomacy",
+        "economy"
+      ],
+      "regions": [
+        "IR",
+        "OM"
+      ],
+      "significance": "Sự kiện phản ánh nỗ lực ngoại giao trong việc kiểm soát các tuyến hàng hải quan trọng, nhưng vẫn tiềm ẩn sự thận trọng về mặt an ninh.",
+      "unknowns": [
+        "Chi tiết cụ thể của khuôn khổ vận tải thương mại này",
+        "Phản ứng của các quốc gia khác trong khu vực và quốc tế đối với cơ chế này"
+      ],
+      "confidence_note": "Thông tin dựa trên bản tin từ Dân trí, phản ánh diễn biến ngoại giao đang trong quá trình thương thảo.",
+      "scenarios": [
+        {
+          "text": "Thỏa thuận được thông qua, giúp ổn định một phần quy trình vận chuyển hàng hải.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các bên không đạt được đồng thuận cuối cùng do những bất đồng về quyền kiểm soát an ninh.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Iran",
+          "target": "Oman",
+          "relation_type": "cooperation",
+          "label": "Đàm phán xây dựng khuôn khổ vận tải thương mại"
+        },
+        {
+          "source": "Iran",
+          "target": "Eo biển Hormuz",
+          "relation_type": "cause_effect",
+          "label": "Quản lý và kiểm soát hoạt động vận tải"
+        }
+      ],
+      "entities": [
+        "Iran",
+        "Oman"
+      ],
+      "keywords": [
+        "Iran",
+        "Oman",
+        "eo biển Hormuz"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
   }
 }
