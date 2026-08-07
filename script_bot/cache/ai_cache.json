@@ -18401,5 +18401,565 @@
       "sentiment": 1,
       "scope": "national"
     }
+  },
+  "evt_general_1786076252145": {
+    "created_at": 1786076255297,
+    "expires_at": 1788668255297,
+    "version": "4.5",
+    "checksum": "4847a3c9e137e2f43b024ee7fbf917ff",
+    "data": {
+      "cluster_title": "Zelensky chuẩn bị 'chiến dịch trừng phạt đặc biệt' nhằm vào Nga",
+      "short_summary": "Zelensky chuẩn bị 'chiến dịch trừng phạt đặc biệt' nhằm vào Nga, sau khi chiến dịch gây sức ép 40 ngày kết thúc.",
+      "detailed_summary": "Tổng thống Ukraine Volodymyr Zelensky đã chính thức chỉ đạo chuẩn bị cho một chiến dịch trừng phạt đặc biệt tập trung vào lĩnh vực quốc phòng của Nga. Quyết định này được đưa ra ngay sau khi chiến dịch gây sức ép kéo dài 40 ngày đối với Nga kết thúc, đánh dấu bước chuyển tiếp trong chiến lược đối ngoại và quân sự của Ukraine nhằm làm suy yếu năng lực sản xuất vũ khí của đối phương.",
+      "causes": [
+        "Kết thúc chiến dịch gây sức ép 40 ngày trước đó",
+        "Nỗ lực làm suy yếu tiềm lực quân sự của Nga"
+      ],
+      "effects": [
+        "Gia tăng căng thẳng trong lĩnh vực công nghiệp quốc phòng",
+        "Đẩy mạnh các biện pháp trừng phạt kinh tế và chính trị mới"
+      ],
+      "affected_groups": [
+        "Ngành công nghiệp quốc phòng Nga",
+        "Chính phủ và các cơ quan an ninh của Nga",
+        "Cộng đồng quốc tế liên quan đến chuỗi cung ứng quân sự"
+      ],
+      "market_impact": "Có thể gây ra sự biến động trong thị trường nguyên liệu quốc phòng và làm gia tăng rủi ro cho các doanh nghiệp có hoạt động liên quan đến ngành công nghiệp quân sự Nga.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "military"
+      ],
+      "regions": [
+        "UA",
+        "RU"
+      ],
+      "significance": "Sự kiện phản ánh chiến lược tiếp tục gia tăng sức ép toàn diện của Ukraine nhằm làm suy yếu khả năng duy trì chiến tranh của Nga thông qua các công cụ trừng phạt đặc biệt.",
+      "unknowns": [
+        "Chi tiết cụ thể về phương thức thực hiện chiến dịch trừng phạt đặc biệt",
+        "Phạm vi và quy mô ảnh hưởng của chiến dịch đối với các thực thể thứ ba"
+      ],
+      "confidence_note": "Thông tin dựa trên thông báo từ phía Ukraine, cần theo dõi thêm các phản ứng thực tế và báo cáo từ phía Nga để xác nhận mức độ hiệu quả.",
+      "scenarios": [
+        {
+          "text": "Ukraine đẩy mạnh các lệnh trừng phạt tài chính và kỹ thuật nhắm vào chuỗi cung ứng quốc phòng Nga.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Nga triển khai các biện pháp đáp trả về mặt chính sách để bảo vệ ngành công nghiệp quốc phòng trước các lệnh trừng phạt mới.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Volodymyr Zelensky",
+          "target": "Nga",
+          "relation_type": "conflict",
+          "label": "Chỉ đạo chiến dịch trừng phạt"
+        },
+        {
+          "source": "Chiến dịch 40 ngày",
+          "target": "Chiến dịch trừng phạt đặc biệt",
+          "relation_type": "cause_effect",
+          "label": "Tiền đề triển khai chiến dịch mới"
+        },
+        {
+          "source": "Ukraine",
+          "target": "Ngành công nghiệp quốc phòng Nga",
+          "relation_type": "conflict",
+          "label": "Mục tiêu bị tấn công bởi trừng phạt"
+        }
+      ],
+      "entities": [
+        "Zelensky",
+        "Nga"
+      ],
+      "keywords": [
+        "Zelensky",
+        "Nga",
+        "chiến dịch trừng phạt"
+      ],
+      "importance": 85,
+      "severity": 5,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_cc3d6b21": {
+    "created_at": 1786076267241,
+    "expires_at": 1788668267241,
+    "version": "4.5",
+    "checksum": "25d9ca9e2b29ba4ab9043f5ff2cc0ca9",
+    "data": {
+      "cluster_title": "Houthi tập kích quân đội Yemen",
+      "short_summary": "Houthi tập kích quân đội Yemen với đợt tập kích tên lửa và UAV lớn chưa từng thấy.",
+      "detailed_summary": "Lực lượng Houthi đã triển khai đợt tập kích bằng tên lửa và thiết bị bay không người lái (UAV) với quy mô chưa từng có trong nhiều năm gần đây nhằm vào các vị trí của quân đội chính phủ Yemen, lực lượng vốn nhận được sự hỗ trợ từ liên minh do Arab Saudi dẫn đầu.",
+      "causes": [
+        "Căng thẳng kéo dài giữa Houthi và chính phủ Yemen được Arab Saudi hậu thuẫn",
+        "Ý đồ quân sự nhằm thay đổi cán cân quyền lực trong cuộc nội chiến"
+      ],
+      "effects": [
+        "Gia tăng thương vong và thiệt hại hạ tầng quân sự tại Yemen",
+        "Tình hình an ninh khu vực trở nên bất ổn, đe dọa các nỗ lực hòa đàm"
+      ],
+      "affected_groups": [
+        "Quân đội chính phủ Yemen",
+        "Lực lượng Houthi",
+        "Liên minh do Arab Saudi dẫn đầu"
+      ],
+      "market_impact": "Có khả năng gây lo ngại về an ninh hàng hải và chuỗi cung ứng năng lượng nếu xung đột lan rộng ra khu vực Biển Đỏ.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "military"
+      ],
+      "regions": [
+        "YE",
+        "SA"
+      ],
+      "significance": "Sự kiện đánh dấu bước leo thang quân sự nghiêm trọng, thách thức triển vọng hòa bình tại Yemen và ổn định an ninh tại Trung Đông.",
+      "unknowns": [
+        "Số liệu chính xác về thương vong và thiệt hại cụ thể của quân đội chính phủ Yemen",
+        "Phản ứng đáp trả cụ thể từ phía liên minh do Arab Saudi dẫn đầu"
+      ],
+      "confidence_note": "Thông tin dựa trên diễn biến chiến sự được ghi nhận, độ tin cậy cao về mặt sự kiện nhưng cần cập nhật thêm về kết quả thực địa.",
+      "scenarios": [
+        {
+          "text": "Liên minh do Arab Saudi dẫn đầu tiến hành các đợt không kích trả đũa mạnh mẽ vào căn cứ của Houthi.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các bên khởi động lại đàm phán do sức ép quốc tế để ngăn chặn khủng hoảng lan rộng.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Houthi",
+          "target": "Quân đội chính phủ Yemen",
+          "relation_type": "conflict",
+          "label": "Tấn công vũ trang"
+        },
+        {
+          "source": "Arab Saudi",
+          "target": "Quân đội chính phủ Yemen",
+          "relation_type": "cooperation",
+          "label": "Hậu thuẫn quân sự"
+        },
+        {
+          "source": "Houthi",
+          "target": "Arab Saudi",
+          "relation_type": "conflict",
+          "label": "Đối đầu gián tiếp thông qua xung đột Yemen"
+        }
+      ],
+      "entities": [
+        "Houthi",
+        "Arab Saudi",
+        "Yemen"
+      ],
+      "keywords": [
+        "Houthi",
+        "Arab Saudi",
+        "Yemen"
+      ],
+      "importance": 85,
+      "severity": 5,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_general_1786076273009": {
+    "created_at": 1786076278891,
+    "expires_at": 1788668278891,
+    "version": "4.5",
+    "checksum": "bb874ab2c96c355d4cc47fdcb9843a81",
+    "data": {
+      "cluster_title": "Trump ký sắc lệnh chặn ý định 'du lịch sinh con lấy quốc tịch Mỹ'",
+      "short_summary": "Trump ký sắc lệnh chặn ý định 'du lịch sinh con lấy quốc tịch Mỹ' để siết chặt chính sách quyền công dân.",
+      "detailed_summary": "Tổng thống Trump đã ký hai sắc lệnh hành pháp với mục tiêu thay đổi cách áp dụng chính sách quyền công dân theo nơi sinh tại Mỹ. Động thái này nhằm mục đích chặn đứng hoạt động du lịch sinh con, vốn là tình trạng người nước ngoài đến Mỹ sinh con để đứa trẻ tự động được hưởng quyền công dân Mỹ.",
+      "causes": [
+        "Mong muốn hạn chế số lượng người nhập cư không chính thống thông qua con đường sinh con",
+        "Cam kết thực hiện chính sách nhập cư cứng rắn của ông Trump"
+      ],
+      "effects": [
+        "Quy trình xét duyệt quốc tịch cho trẻ sơ sinh có yếu tố nước ngoài trở nên nghiêm ngặt hơn",
+        "Các gia đình nước ngoài có ý định sang Mỹ sinh con sẽ đối mặt với rào cản pháp lý lớn"
+      ],
+      "affected_groups": [
+        "Phụ nữ mang thai nước ngoài có ý định sang Mỹ sinh con",
+        "Cộng đồng người nhập cư vào Mỹ",
+        "Cơ quan di trú Mỹ"
+      ],
+      "market_impact": "Không có tác động trực tiếp đến các thị trường tài chính quốc tế.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam, nhưng người Việt có ý định sinh con tại Mỹ cần cập nhật quy định mới để tránh rủi ro pháp lý.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "diplomacy"
+      ],
+      "regions": [
+        "US"
+      ],
+      "significance": "Sự kiện này đánh dấu bước đi quyết liệt trong việc kiểm soát biên giới và định nghĩa lại quyền công dân tại Mỹ.",
+      "unknowns": [
+        "Phạm vi thực thi chi tiết của các sắc lệnh hành pháp",
+        "Phản ứng từ các cơ quan tư pháp và khả năng sắc lệnh bị kiện ra tòa"
+      ],
+      "confidence_note": "Thông tin dựa trên thông báo về việc ký kết sắc lệnh hành pháp, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Sắc lệnh được thực thi và làm giảm đáng kể số lượng người du lịch sang Mỹ sinh con.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Sắc lệnh vấp phải các thách thức pháp lý tại tòa án và bị đình chỉ thực thi.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Ông Trump",
+          "target": "Quyền công dân theo nơi sinh",
+          "relation_type": "cause_effect",
+          "label": "Ký sắc lệnh nhằm siết chặt chính sách"
+        },
+        {
+          "source": "Du lịch sinh con",
+          "target": "Chính sách nhập cư Mỹ",
+          "relation_type": "conflict",
+          "label": "Mục tiêu bị hạn chế bởi chính sách mới"
+        }
+      ],
+      "entities": [
+        "Donald Trump"
+      ],
+      "keywords": [
+        "Trump",
+        "sắc lệnh",
+        "du lịch sinh con",
+        "quốc tịch Mỹ"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_general_1786076284670": {
+    "created_at": 1786076290505,
+    "expires_at": 1788668290505,
+    "version": "4.5",
+    "checksum": "f41754484d14c934cdf87821d7134bdd",
+    "data": {
+      "cluster_title": "Nam A Bank nhận thêm 20 triệu USD tín dụng xanh",
+      "short_summary": "Nam A Bank huy động thêm 20 triệu USD từ SIFEM AG và quỹ do responsAbility Investments AG quản lý",
+      "detailed_summary": "Ngân hàng Nam A Bank vừa tiếp nhận gói tín dụng xanh trị giá 20 triệu USD từ SIFEM AG và quỹ do responsAbility Investments AG quản lý. Đây là một phần trong chiến lược mở rộng nguồn vốn quốc tế của ngân hàng này, nâng tổng số vốn huy động từ thị trường nước ngoài trong năm nay lên con số gần 350 triệu USD.",
+      "causes": [
+        "Nhu cầu bổ sung nguồn vốn trung và dài hạn cho các dự án xanh",
+        "Sự tin tưởng của các tổ chức tài chính quốc tế vào năng lực của Nam A Bank"
+      ],
+      "effects": [
+        "Gia tăng năng lực tài chính cho Nam A Bank",
+        "Củng cố uy tín của ngân hàng trên thị trường quốc tế"
+      ],
+      "affected_groups": [
+        "Nam A Bank",
+        "Khách hàng doanh nghiệp lĩnh vực xanh",
+        "Nhà đầu tư"
+      ],
+      "market_impact": "Góp phần tăng cường khả năng cung ứng vốn cho các dự án phát triển bền vững tại thị trường nội địa.",
+      "vn_impact": "Thể hiện sự kết nối tích cực giữa các tổ chức tài chính Việt Nam và quốc tế, thúc đẩy dòng vốn đổ vào các dự án kinh tế xanh, hỗ trợ mục tiêu phát triển bền vững của quốc gia.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "finance"
+      ],
+      "regions": [
+        "VN",
+        "CH"
+      ],
+      "significance": "Việc huy động thành công vốn tín dụng xanh khẳng định năng lực tiếp cận các nguồn tài chính quốc tế của ngân hàng Việt trong bối cảnh ưu tiên phát triển bền vững.",
+      "unknowns": [
+        "Chi tiết cụ thể về thời hạn và lãi suất của khoản tín dụng",
+        "Danh mục các dự án xanh cụ thể sẽ được hưởng lợi từ nguồn vốn này"
+      ],
+      "confidence_note": "Thông tin dựa trên thông báo trực tiếp từ phía ngân hàng, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Nam A Bank đẩy mạnh giải ngân tín dụng cho các dự án năng lượng tái tạo và sản xuất sạch tại Việt Nam.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các tổ chức tài chính quốc tế tiếp tục mở rộng hạn mức đầu tư vào ngân hàng này trong các kỳ tiếp theo.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "SIFEM AG",
+          "target": "Nam A Bank",
+          "relation_type": "cooperation",
+          "label": "Cung cấp nguồn vốn tín dụng xanh"
+        },
+        {
+          "source": "responsAbility Investments AG",
+          "target": "Nam A Bank",
+          "relation_type": "cooperation",
+          "label": "Quản lý quỹ cung cấp vốn cho ngân hàng"
+        }
+      ],
+      "entities": [
+        "Nam A Bank",
+        "SIFEM AG",
+        "responsAbility Investments AG"
+      ],
+      "keywords": [
+        "Nam A Bank",
+        "tín dụng xanh",
+        "Thụy Sĩ"
+      ],
+      "importance": 85,
+      "severity": 2,
+      "sentiment": 1,
+      "scope": "business"
+    }
+  },
+  "evt_dbb13084": {
+    "created_at": 1786076302240,
+    "expires_at": 1788668302240,
+    "version": "4.5",
+    "checksum": "f8a3dd998a5abf2d58e7d5794a9b8a9f",
+    "data": {
+      "cluster_title": "Ukraine hé lộ chiến dịch 40 ngày khai hỏa",
+      "short_summary": "Ukraine tuyên bố gây tổn thất lớn cho Nga trong chiến dịch 40 ngày.",
+      "detailed_summary": "Ukraine vừa đưa ra thông báo về chiến dịch quân sự kéo dài 40 ngày nhằm đưa xung đột trực tiếp vào sâu trong lãnh thổ Nga, khẳng định gây ra nhiều thiệt hại cho đối phương. Ngược lại, phía Nga bác bỏ những tuyên bố này và cho rằng toàn bộ kế hoạch tấn công của Ukraine đã không đạt được mục tiêu và bị chặn đứng.",
+      "causes": [
+        "Căng thẳng leo thang trong cuộc xung đột Nga-Ukraine",
+        "Chiến lược thay đổi của Ukraine nhằm đưa chiến tranh vào lãnh thổ Nga"
+      ],
+      "effects": [
+        "Gia tăng căng thẳng quân sự giữa Nga và Ukraine",
+        "Gây tranh cãi về kết quả thực tế trên chiến trường"
+      ],
+      "affected_groups": [
+        "Quân đội Ukraine",
+        "Quân đội Nga",
+        "Dân cư khu vực xung đột"
+      ],
+      "market_impact": "Thông tin có thể gây biến động nhẹ lên thị trường năng lượng và nông sản toàn cầu do lo ngại về sự bất ổn kéo dài.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "military"
+      ],
+      "regions": [
+        "UA",
+        "RU"
+      ],
+      "significance": "Sự kiện phản ánh nỗ lực thay đổi cục diện chiến trường của Ukraine và sự đáp trả cứng rắn từ phía Nga, cho thấy xung đột vẫn đang trong giai đoạn khốc liệt và khó dự đoán.",
+      "unknowns": [
+        "Số liệu thực tế về thiệt hại của cả hai bên trong 40 ngày qua",
+        "Mục tiêu dài hạn cụ thể của Ukraine sau chiến dịch này"
+      ],
+      "confidence_note": "Thông tin dựa trên tuyên bố trái chiều từ hai bên tham chiến, độ tin cậy cần được kiểm chứng bởi các nguồn độc lập.",
+      "scenarios": [
+        {
+          "text": "Xung đột tiếp tục duy trì cường độ cao với các đợt tấn công chéo vào lãnh thổ của nhau.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Hai bên tìm cách dàn xếp hạ nhiệt căng thẳng để tránh tổn thất thêm.",
+          "likelihood": "thấp"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Ukraine",
+          "target": "Nga",
+          "relation_type": "conflict",
+          "label": "Xung đột quân sự trực tiếp"
+        },
+        {
+          "source": "Chiến dịch 40 ngày",
+          "target": "Nga",
+          "relation_type": "cause_effect",
+          "label": "Gây thiệt hại theo tuyên bố của Ukraine"
+        }
+      ],
+      "entities": [
+        "Ukraine",
+        "Nga"
+      ],
+      "keywords": [
+        "Ukraine",
+        "Nga",
+        "chiến dịch"
+      ],
+      "importance": 85,
+      "severity": 5,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_166514a2": {
+    "created_at": 1786076313647,
+    "expires_at": 1788668313647,
+    "version": "4.5",
+    "checksum": "fcb91f462397ec00f7333e791467bec6",
+    "data": {
+      "cluster_title": "Trump Bác Tin Bất Hòa Với Bộ Trưởng Quốc Phòng",
+      "short_summary": "Tổng thống Mỹ Donald Trump đã lên tiếng sau khi có thông tin cho rằng ông không hài lòng với Bộ trưởng Quốc phòng Pete Hegseth.",
+      "detailed_summary": "Trước những thông tin lan truyền về việc thiếu hài lòng đối với Bộ trưởng Quốc phòng Pete Hegseth, Tổng thống Donald Trump đã trực tiếp lên tiếng bác bỏ, khẳng định mối quan hệ giữa hai bên vẫn bình thường.",
+      "causes": [
+        "Sự xuất hiện của các tin đồn trên truyền thông về sự bất hòa trong nội bộ chính quyền Mỹ"
+      ],
+      "effects": [
+        "Trấn an dư luận về sự ổn định trong bộ máy lãnh đạo quân sự Mỹ",
+        "Giảm bớt sự chú ý của báo giới vào những đồn đoán nhân sự"
+      ],
+      "affected_groups": [
+        "Bộ Quốc phòng Mỹ",
+        "Chính quyền Tổng thống Donald Trump",
+        "Cử tri Mỹ"
+      ],
+      "market_impact": "Không có tác động trực tiếp đến thị trường tài chính.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "military"
+      ],
+      "regions": [
+        "US"
+      ],
+      "significance": "Sự việc thể hiện nỗ lực của Tổng thống Mỹ trong việc duy trì hình ảnh đoàn kết nội các và kiểm soát thông tin truyền thông.",
+      "unknowns": [
+        "Nguyên nhân cụ thể dẫn đến thông tin bất hòa ban đầu",
+        "Mức độ ổn định thực tế trong quan hệ công việc giữa hai nhân vật này"
+      ],
+      "confidence_note": "Thông tin dựa trên tuyên bố trực tiếp từ Tổng thống, độ tin cậy cao về mặt quan điểm cá nhân.",
+      "scenarios": [
+        {
+          "text": "Chính quyền duy trì ổn định nhân sự sau tuyên bố của Tổng thống",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các tin đồn tiếp tục xuất hiện nếu có những xáo trộn trong chính sách quốc phòng",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Donald Trump",
+          "target": "Pete Hegseth",
+          "relation_type": "cooperation",
+          "label": "Mối quan hệ cấp trên - cấp dưới trong chính quyền"
+        },
+        {
+          "source": "Truyền thông",
+          "target": "Donald Trump",
+          "relation_type": "conflict",
+          "label": "Tạo luồng thông tin gây phản ứng phủ nhận"
+        }
+      ],
+      "entities": [
+        "Donald Trump",
+        "Pete Hegseth"
+      ],
+      "keywords": [
+        "Trump",
+        "Pete Hegseth",
+        "Bộ trưởng Quốc phòng"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_0f5ed103": {
+    "created_at": 1786076324991,
+    "expires_at": 1788668324991,
+    "version": "4.5",
+    "checksum": "80439db2443a802ab6fb29adc4194d9a",
+    "data": {
+      "cluster_title": "Tổng thống Trump nêu thương vong của Nga - Ukraine",
+      "short_summary": "Tổng thống Trump tuyên bố không muốn chứng kiến hàng nghìn thanh niên thiệt mạng mỗi tháng trong cuộc xung đột Nga - Ukraine.",
+      "detailed_summary": "Trong một tuyên bố gần đây, Tổng thống Donald Trump đã lên tiếng về mức độ thương vong cao của thanh niên trong cuộc xung đột Nga - Ukraine, đồng thời khẳng định quan điểm không mong muốn nhìn thấy tình trạng hàng nghìn người thiệt mạng mỗi tháng tại khu vực này.",
+      "causes": [
+        "Xung đột vũ trang kéo dài giữa Nga và Ukraine",
+        "Mức độ thương vong nghiêm trọng của cả hai bên"
+      ],
+      "effects": [
+        "Gia tăng sự chú ý của dư luận vào thiệt hại nhân mạng",
+        "Tạo ra các cuộc thảo luận mới về chính sách đối ngoại của Mỹ trong tương lai"
+      ],
+      "affected_groups": [
+        "Binh sĩ Nga",
+        "Binh sĩ Ukraine",
+        "Người dân tại vùng chiến sự"
+      ],
+      "market_impact": "Thông tin có thể gây biến động tâm lý ngắn hạn trên các thị trường hàng hóa do lo ngại về sự bất ổn địa chính trị kéo dài.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "military"
+      ],
+      "regions": [
+        "RU",
+        "UA",
+        "US"
+      ],
+      "significance": "Tuyên bố phản ánh ưu tiên của ông Trump trong việc đặt vấn đề chấm dứt thương vong lên hàng đầu trong các ưu tiên giải quyết xung đột.",
+      "unknowns": [
+        "Kế hoạch cụ thể của ông Trump để giảm thiểu xung đột",
+        "Phản ứng chính thức từ phía chính quyền Nga và Ukraine đối với tuyên bố này"
+      ],
+      "confidence_note": "Thông tin dựa trên phát biểu cá nhân của Tổng thống Donald Trump được truyền thông ghi nhận.",
+      "scenarios": [
+        {
+          "text": "Ông Trump đẩy mạnh các nỗ lực đàm phán ngoại giao nhằm chấm dứt sớm xung đột.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các bên tham chiến tiếp tục duy trì lập trường quân sự hiện tại bất chấp áp lực dư luận.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Donald Trump",
+          "target": "Xung đột Nga - Ukraine",
+          "relation_type": "cause_effect",
+          "label": "Đánh giá tác động nhân mạng của xung đột"
+        },
+        {
+          "source": "Nga",
+          "target": "Ukraine",
+          "relation_type": "conflict",
+          "label": "Xung đột quân sự trực tiếp"
+        }
+      ],
+      "entities": [
+        "Tổng thống Trump",
+        "Nga",
+        "Ukraine"
+      ],
+      "keywords": [
+        "Tổng thống Trump",
+        "Nga",
+        "Ukraine",
+        "xung đột"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
   }
 }
