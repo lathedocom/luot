@@ -19883,5 +19883,121 @@
       "sentiment": -1,
       "scope": "national"
     }
+  },
+  "evt_general_1786144653793": {
+    "created_at": 1786144654383,
+    "expires_at": 1788736654383,
+    "version": "4.5",
+    "checksum": "d2f91f0e4f61fd5920656451f9c1364e",
+    "data": {
+      "cluster_title": "Đứt gãy bề mặt sau động đất Kumamoto",
+      "short_summary": "Nhật Bản xác nhận vết đứt gãy bề mặt dài 33km sau động đất Kumamoto.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "categories": [
+        "Động đất",
+        "Đứt gãy bề mặt"
+      ],
+      "regions": [
+        "JP"
+      ],
+      "follow_up": "",
+      "entities": [
+        "Nhật Bản",
+        "Hinagu"
+      ],
+      "keywords": [
+        "đứt gãy bề mặt",
+        "động đất Kumamoto"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_457af33e": {
+    "created_at": 1786144665938,
+    "expires_at": 1788736665938,
+    "version": "4.5",
+    "checksum": "dc8546d7a73b22a2ca851a8a98bc3c4c",
+    "data": {
+      "cluster_title": "Ukraine tập kích kho hàng Nga",
+      "short_summary": "Ukraine tập kích kho hàng Nga cách tiền tuyến 2.000 km.",
+      "detailed_summary": "Giới chức Nga xác nhận Ukraine đã tiến hành một cuộc tấn công bằng máy bay không người lái (UAV) nhắm vào cơ sở hạ tầng của công ty Wildberries tại thành phố Yekaterinburg. Vị trí này nằm cách tiền tuyến khoảng 2.000 km, cho thấy khả năng tấn công tầm xa của lực lượng Ukraine.",
+      "causes": [
+        "Căng thẳng quân sự leo thang giữa Ukraine và Nga",
+        "Chiến lược mở rộng phạm vi tấn công vào sâu trong lãnh thổ đối phương của Ukraine"
+      ],
+      "effects": [
+        "Gây thiệt hại hạ tầng kinh doanh tại Nga",
+        "Gia tăng áp lực an ninh lên các khu vực xa tiền tuyến của Nga"
+      ],
+      "affected_groups": [
+        "Công ty Wildberries",
+        "Cư dân thành phố Yekaterinburg",
+        "Bộ Quốc phòng Nga"
+      ],
+      "market_impact": "Gây tâm lý lo ngại về an ninh cho các doanh nghiệp Nga có cơ sở hạ tầng tại các khu vực vốn được coi là an toàn.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "military",
+        "business"
+      ],
+      "regions": [
+        "UA",
+        "RU"
+      ],
+      "significance": "Sự kiện này đánh dấu bước tiến mới trong khả năng tác chiến tầm xa của Ukraine, làm thay đổi nhận thức về độ an toàn trong lãnh thổ Nga.",
+      "unknowns": [
+        "Mức độ thiệt hại cụ thể của kho hàng",
+        "Loại thiết bị bay không người lái được sử dụng",
+        "Số lượng thương vong nếu có"
+      ],
+      "confidence_note": "Thông tin dựa trên xác nhận từ giới chức Nga, độ tin cậy cao về việc xảy ra vụ tấn công.",
+      "scenarios": [
+        {
+          "text": "Nga tăng cường hệ thống phòng không tại các thành phố sâu trong nội địa.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Ukraine tiếp tục mở rộng mục tiêu tấn công vào các cơ sở kinh tế trọng điểm khác của Nga.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Ukraine",
+          "target": "Nga",
+          "relation_type": "conflict",
+          "label": "Xung đột vũ trang"
+        },
+        {
+          "source": "Ukraine",
+          "target": "Wildberries",
+          "relation_type": "conflict",
+          "label": "Tập kích mục tiêu kinh tế"
+        }
+      ],
+      "entities": [
+        "Ukraine",
+        "Nga",
+        "Wildberries"
+      ],
+      "keywords": [
+        "Ukraine",
+        "Nga",
+        "Wildberries"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
   }
 }
