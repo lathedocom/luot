@@ -21475,5 +21475,410 @@
       "sentiment": -1,
       "scope": "national"
     }
+  },
+  "evt_9d378900": {
+    "created_at": 1786204848102,
+    "expires_at": 1788796848102,
+    "version": "4.5",
+    "checksum": "27d474c9d26bb4318e9bdd968405d687",
+    "data": {
+      "cluster_title": "Nga tấn công tàu chở vũ khí cho Ukraine",
+      "short_summary": "Nga tuyên bố tấn công tàu chở vũ khí cho Ukraine trên Biển Đen, đẩy giá lương thực tăng cao",
+      "detailed_summary": "Nga tuyên bố tấn công tàu chở vũ khí cho Ukraine tại Biển Đen, trong bối cảnh hai quốc gia liên tiếp nhắm vào hạ tầng và tàu thuyền của nhau. Thổ Nhĩ Kỳ được cho là đã có động thái hạn chế tàu thương mại lưu thông qua khu vực này nhằm đảm bảo an toàn sau các đợt tập kích.",
+      "causes": [
+        "Căng thẳng quân sự leo thang giữa Nga và Ukraine trên Biển Đen",
+        "Các cuộc tập kích vào tàu thuyền và hạ tầng chiến lược của cả hai bên"
+      ],
+      "effects": [
+        "Gián đoạn hoạt động hàng hải tại Biển Đen",
+        "Giá lương thực thế giới có xu hướng tăng cao",
+        "Hạn chế trong lưu thông tàu thuyền thương mại"
+      ],
+      "affected_groups": [
+        "Các hãng vận tải biển quốc tế",
+        "Các quốc gia nhập khẩu lương thực",
+        "Nông dân và các nhà cung cấp nông sản"
+      ],
+      "market_impact": "Áp lực tăng giá lên thị trường nông sản và chi phí bảo hiểm hàng hải toàn cầu do rủi ro vận chuyển tăng cao.",
+      "vn_impact": "Ảnh hưởng đến chi phí logistics và giá nguyên liệu thức ăn chăn nuôi nhập khẩu do biến động giá lương thực và cước phí vận tải biển toàn cầu.",
+      "follow_up": "",
+      "categories": [
+        "military",
+        "economy"
+      ],
+      "regions": [
+        "RU",
+        "UA",
+        "TR"
+      ],
+      "significance": "Sự kiện phản ánh mức độ bất ổn leo thang tại Biển Đen, gây rủi ro trực tiếp đến an ninh lương thực và chuỗi cung ứng toàn cầu.",
+      "unknowns": [
+        "Quy mô và thời hạn thực tế của việc hạn chế tàu thuyền từ phía Thổ Nhĩ Kỳ",
+        "Tác động cụ thể của các cuộc tấn công đến khối lượng ngũ cốc được vận chuyển qua hành lang Biển Đen"
+      ],
+      "confidence_note": "Thông tin dựa trên các báo cáo về hoạt động quân sự và động thái của Thổ Nhĩ Kỳ, độ tin cậy ở mức trung bình cao.",
+      "scenarios": [
+        {
+          "text": "Xung đột tiếp tục leo thang khiến các tuyến vận tải qua Biển Đen gần như bị tê liệt.",
+          "likelihood": "trung bình"
+        },
+        {
+          "text": "Thổ Nhĩ Kỳ tăng cường vai trò trung gian để thiết lập các hành lang vận chuyển an toàn cho tàu thương mại.",
+          "likelihood": "cao"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Nga",
+          "target": "Ukraine",
+          "relation_type": "conflict",
+          "label": "Tấn công hạ tầng và tàu thuyền lẫn nhau"
+        },
+        {
+          "source": "Căng thẳng Nga-Ukraine",
+          "target": "Giá lương thực",
+          "relation_type": "cause_effect",
+          "label": "Gây tăng giá lương thực toàn cầu"
+        },
+        {
+          "source": "Thổ Nhĩ Kỳ",
+          "target": "Tàu thương mại",
+          "relation_type": "conflict",
+          "label": "Hạn chế lưu thông để bảo đảm an toàn"
+        }
+      ],
+      "entities": [
+        "Nga",
+        "Ukraine",
+        "Thổ Nhĩ Kỳ"
+      ],
+      "keywords": [
+        "Nga",
+        "Ukraine",
+        "Biển Đen",
+        "tàu chở vũ khí"
+      ],
+      "importance": 85,
+      "severity": 5,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_5cae49b1": {
+    "created_at": 1786204859882,
+    "expires_at": 1788796859882,
+    "version": "4.5",
+    "checksum": "d5f5b1c8eb4125601d403b8a053e3849",
+    "data": {
+      "cluster_title": "Đức phát hiện drone xâm nhập căn cứ bảo trì hệ thống Patriot",
+      "short_summary": "Đức phát hiện drone xâm nhập căn cứ bảo trì hệ thống Patriot, gây lo ngại về nguy cơ mới đối với an ninh không phận NATO.",
+      "detailed_summary": "Giới chức Đức đã ghi nhận các vụ xâm nhập bằng drone tại những địa điểm nhạy cảm, bao gồm căn cứ bảo trì hệ thống phòng thủ Patriot. Sự kiện này đặt ra thách thức đối với việc bảo vệ các cơ sở hạ tầng quân sự then chốt và an ninh không phận trong khu vực NATO.",
+      "causes": [
+        "Sự gia tăng sử dụng công nghệ drone trong hoạt động do thám hoặc quấy rối",
+        "Lỗ hổng trong hệ thống giám sát và phòng thủ không phận tại các khu vực nhạy cảm"
+      ],
+      "effects": [
+        "Gia tăng lo ngại về an ninh tại các căn cứ quân sự của NATO",
+        "Buộc Đức phải rà soát và thắt chặt các quy định bảo vệ không phận"
+      ],
+      "affected_groups": [
+        "Quân đội Đức",
+        "Khối NATO",
+        "Cơ quan an ninh quốc gia Đức"
+      ],
+      "market_impact": "Các cổ phiếu liên quan đến công nghệ quốc phòng và an ninh drone có khả năng tăng giá do nhu cầu củng cố hệ thống phòng thủ tăng cao.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "military",
+        "politics"
+      ],
+      "regions": [
+        "DE"
+      ],
+      "significance": "Sự việc cho thấy lỗ hổng an ninh mới từ drone tại các mục tiêu quân sự, buộc các quốc gia phải xem xét lại năng lực phòng thủ tầm thấp.",
+      "unknowns": [
+        "Danh tính và mục đích thực sự của đơn vị vận hành drone",
+        "Số lượng và chủng loại drone cụ thể được sử dụng trong các vụ xâm nhập"
+      ],
+      "confidence_note": "Thông tin dựa trên báo cáo sự kiện thực tế, độ tin cậy cao về mặt hiện tượng.",
+      "scenarios": [
+        {
+          "text": "Đức tăng cường trang bị công nghệ phát hiện và ngăn chặn drone hiện đại hơn cho các căn cứ quân sự.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các vụ xâm nhập tương tự tiếp tục diễn ra, buộc NATO phải đưa ra các quy chuẩn an ninh chung mới cho khu vực.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Drone không xác định",
+          "target": "Căn cứ Patriot",
+          "relation_type": "conflict",
+          "label": "Xâm nhập trái phép và gây đe dọa an ninh"
+        },
+        {
+          "source": "Sự kiện xâm nhập",
+          "target": "An ninh NATO",
+          "relation_type": "cause_effect",
+          "label": "Gây lo ngại về lỗ hổng an ninh không phận"
+        }
+      ],
+      "entities": [
+        "Đức",
+        "NATO"
+      ],
+      "keywords": [
+        "drone",
+        "căn cứ bảo trì",
+        "hệ thống Patriot"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_3e5ffda3": {
+    "created_at": 1786204871426,
+    "expires_at": 1788796871426,
+    "version": "4.5",
+    "checksum": "6cb7433c9998ee4008354e49f117dc98",
+    "data": {
+      "cluster_title": "Thượng viện Mỹ phê chuẩn cựu luật sư của Trump làm Bộ trưởng Tư pháp",
+      "short_summary": "Thượng viện Mỹ phê chuẩn cựu luật sư của Trump làm Bộ trưởng Tư pháp với 50 phiếu thuận, 49 phiếu chống.",
+      "detailed_summary": "Thượng viện Mỹ chính thức thông qua việc bổ nhiệm ông Todd Blanche, cựu luật sư của ông Donald Trump, vào vị trí Bộ trưởng Tư pháp. Quyết định được đưa ra với 50 phiếu thuận và 49 phiếu chống, trong bối cảnh quá trình phê chuẩn vấp phải sự phản đối gay gắt liên quan đến các vấn đề về quỹ bồi thường trị giá 1,8 tỉ USD.",
+      "causes": [
+        "Sự đề cử của ông Trump đối với cựu luật sư của mình",
+        "Tranh cãi chính trị tại Thượng viện liên quan đến quỹ bồi thường 1,8 tỉ USD"
+      ],
+      "effects": [
+        "Todd Blanche chính thức đảm nhận cương vị Bộ trưởng Tư pháp Mỹ",
+        "Sự phân hóa sâu sắc trong nội bộ Thượng viện Mỹ"
+      ],
+      "affected_groups": [
+        "Bộ Tư pháp Mỹ",
+        "Các đảng phái chính trị tại Mỹ"
+      ],
+      "market_impact": "Không có tác động trực tiếp đáng kể đến thị trường tài chính quốc tế.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics"
+      ],
+      "regions": [
+        "US"
+      ],
+      "significance": "Sự kiện phản ánh quyền lực hành pháp trong việc bổ nhiệm nhân sự chủ chốt và sự chia rẽ trong tiến trình kiểm soát quyền lực tại Thượng viện Mỹ.",
+      "unknowns": [
+        "Tác động cụ thể của vụ tranh chấp quỹ 1,8 tỉ USD đến hoạt động của Bộ Tư pháp dưới thời ông Blanche",
+        "Phản ứng của các cơ quan tư pháp cấp dưới đối với tân Bộ trưởng"
+      ],
+      "confidence_note": "Thông tin chính xác, dựa trên dữ liệu về cuộc bỏ phiếu tại Thượng viện.",
+      "scenarios": [
+        {
+          "text": "Ông Todd Blanche tập trung cải tổ bộ máy Bộ Tư pháp theo định hướng của chính quyền hiện tại.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các tranh cãi về quỹ 1,8 tỉ USD tiếp tục gây ra rào cản pháp lý và chính trị trong giai đoạn đầu ông Blanche nhậm chức.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Donald Trump",
+          "target": "Todd Blanche",
+          "relation_type": "cooperation",
+          "label": "Đề cử vị trí nhân sự cấp cao"
+        },
+        {
+          "source": "Thượng viện Mỹ",
+          "target": "Todd Blanche",
+          "relation_type": "cooperation",
+          "label": "Phê chuẩn bổ nhiệm"
+        },
+        {
+          "source": "Tranh cãi quỹ 1,8 tỉ USD",
+          "target": "Thượng viện Mỹ",
+          "relation_type": "conflict",
+          "label": "Tác động đến quyết định bỏ phiếu"
+        }
+      ],
+      "entities": [
+        "Thượng viện Mỹ",
+        "Trump"
+      ],
+      "keywords": [
+        "Thượng viện Mỹ",
+        "Trump",
+        "Bộ trưởng Tư pháp"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_d60d51a9": {
+    "created_at": 1786204883038,
+    "expires_at": 1788796883038,
+    "version": "4.5",
+    "checksum": "c281d04ed006403501465eabebe4aec3",
+    "data": {
+      "cluster_title": "Phó thủ tướng yêu cầu xử lý vướng mắc về thuế, hải quan",
+      "short_summary": "Phó thủ tướng yêu cầu xử lý vướng mắc về thuế, hải quan để không đẩy doanh nghiệp đi vòng.",
+      "detailed_summary": "Phó Thủ tướng Nguyễn Văn Thắng yêu cầu các cơ quan chức năng phải xử lý dứt điểm các vướng mắc của doanh nghiệp liên quan đến thủ tục thuế và hải quan. Chỉ đạo nhấn mạnh việc chấm dứt tình trạng né tránh, đùn đẩy trách nhiệm khiến doanh nghiệp phải đi vòng, gây lãng phí thời gian và nguồn lực.",
+      "causes": [
+        "Tình trạng né tránh, đùn đẩy trách nhiệm của một bộ phận cán bộ",
+        "Các thủ tục hành chính về thuế và hải quan còn nhiều vướng mắc"
+      ],
+      "effects": [
+        "Giảm thiểu chi phí tuân thủ cho doanh nghiệp",
+        "Tăng cường hiệu quả quản lý nhà nước",
+        "Cải thiện môi trường kinh doanh"
+      ],
+      "affected_groups": [
+        "Cộng đồng doanh nghiệp xuất nhập khẩu",
+        "Cơ quan thuế",
+        "Cơ quan hải quan"
+      ],
+      "market_impact": "Dự kiến giúp giảm bớt các rào cản hành chính, hỗ trợ doanh nghiệp tối ưu hóa chi phí vận hành và rút ngắn thời gian thông quan.",
+      "vn_impact": "Thúc đẩy cải cách hành chính mạnh mẽ, góp phần cải thiện năng lực cạnh tranh quốc gia và tạo môi trường kinh doanh thuận lợi hơn cho doanh nghiệp trong nước và có vốn đầu tư nước ngoài.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "business"
+      ],
+      "regions": [
+        "VN"
+      ],
+      "significance": "Chỉ đạo thể hiện cam kết của Chính phủ trong việc đồng hành, tháo gỡ khó khăn cho khu vực kinh tế tư nhân nhằm thúc đẩy phát triển kinh tế.",
+      "unknowns": [
+        "Danh sách cụ thể các quy định hành chính cần cắt giảm hoặc sửa đổi",
+        "Lộ trình thực hiện chi tiết cho các cơ quan chuyên môn"
+      ],
+      "confidence_note": "Thông tin dựa trên thông báo chỉ đạo chính thức từ cơ quan nhà nước, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Các cơ quan bộ ngành sớm ban hành các hướng dẫn tháo gỡ cụ thể, tạo chuyển biến rõ rệt cho doanh nghiệp.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Việc thực hiện gặp khó khăn do các vướng mắc nằm trong quy định luật pháp cần thời gian sửa đổi.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Phó Thủ tướng Nguyễn Văn Thắng",
+          "target": "Cơ quan thuế và hải quan",
+          "relation_type": "cause_effect",
+          "label": "Chỉ đạo quyết liệt nhằm tháo gỡ vướng mắc"
+        },
+        {
+          "source": "Cơ quan thuế và hải quan",
+          "target": "Doanh nghiệp",
+          "relation_type": "cooperation",
+          "label": "Tương tác trong giải quyết thủ tục hành chính"
+        }
+      ],
+      "entities": [
+        "Phó thủ tướng Nguyễn Văn Thắng"
+      ],
+      "keywords": [
+        "phó thủ tướng",
+        "Nguyễn Văn Thắng",
+        "vướng mắc",
+        "thuế",
+        "hải quan"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_4ccc571e": {
+    "created_at": 1786204894326,
+    "expires_at": 1788796894326,
+    "version": "4.5",
+    "checksum": "dc90facaaad3e3d51d1f77eee69a190a",
+    "data": {
+      "cluster_title": "Ukraine tiết lộ thỏa thuận mới với Mỹ về tên lửa Patriot",
+      "short_summary": "Tổng thống Ukraine Volodymyr Zelensky cho biết Kiev đã đạt thỏa thuận với Mỹ về việc nhận tên lửa đánh chặn phòng không Patriot mỗi tháng.",
+      "detailed_summary": "Tổng thống Ukraine Volodymyr Zelensky thông báo Kiev và Washington đã ký kết thỏa thuận cung cấp tên lửa đánh chặn cho hệ thống phòng không Patriot theo định kỳ mỗi tháng. Dù khẳng định đây là bước tiến trong hợp tác an ninh, ông Zelensky cũng thừa nhận số lượng tên lửa hiện tại vẫn chưa đáp ứng đủ nhu cầu quốc phòng của Ukraine trong giai đoạn hiện nay.",
+      "causes": [
+        "Nhu cầu cấp bách của Ukraine về khả năng phòng không",
+        "Cam kết hỗ trợ quốc phòng của Mỹ đối với Ukraine"
+      ],
+      "effects": [
+        "Tăng cường khả năng đánh chặn mục tiêu trên không của Ukraine",
+        "Duy trì sự ổn định cho các hệ thống phòng không đã được triển khai"
+      ],
+      "affected_groups": [
+        "Quân đội Ukraine",
+        "Chính phủ Ukraine",
+        "Cơ quan quốc phòng Mỹ"
+      ],
+      "market_impact": "Thông tin này ít tác động trực tiếp đến thị trường tài chính quốc tế nhưng góp phần ổn định tâm lý trong lĩnh vực công nghiệp quốc phòng.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "military",
+        "diplomacy"
+      ],
+      "regions": [
+        "UA",
+        "US"
+      ],
+      "significance": "Thỏa thuận này củng cố cam kết hỗ trợ lâu dài của Mỹ trong việc củng cố năng lực quân sự cho Ukraine trước các cuộc tấn công đường không.",
+      "unknowns": [
+        "Số lượng tên lửa cụ thể được cung cấp hàng tháng",
+        "Thời hạn kết thúc của thỏa thuận cung cấp"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên tuyên bố trực tiếp từ lãnh đạo quốc gia.",
+      "scenarios": [
+        {
+          "text": "Năng lực phòng không của Ukraine được cải thiện dần nhờ nguồn cung ổn định.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Ukraine sẽ tiếp tục kêu gọi bổ sung thêm số lượng tên lửa do nhu cầu thực tế vượt xa nguồn cung hiện tại.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Mỹ",
+          "target": "Ukraine",
+          "relation_type": "cooperation",
+          "label": "Cung cấp tên lửa phòng không"
+        },
+        {
+          "source": "Ukraine",
+          "target": "Hệ thống Patriot",
+          "relation_type": "cooperation",
+          "label": "Vận hành hệ thống phòng thủ"
+        }
+      ],
+      "entities": [
+        "Ukraine",
+        "Mỹ",
+        "Volodymyr Zelensky"
+      ],
+      "keywords": [
+        "Ukraine",
+        "Mỹ",
+        "Patriot",
+        "tên lửa"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
   }
 }
