@@ -23394,5 +23394,83 @@
       "sentiment": -1,
       "scope": "national"
     }
+  },
+  "evt_general_1786317451045": {
+    "created_at": 1786317454647,
+    "expires_at": 1788909454647,
+    "version": "4.5",
+    "checksum": "f8efaaec7c6ed5ded4668f36391512f7",
+    "data": {
+      "cluster_title": "Trung Quốc giảm phụ thuộc hàng hóa Đức",
+      "short_summary": "Trung Quốc giảm phụ thuộc hàng hóa Đức do nhu cầu giảm và tự chủ khỏi chuỗi cung ứng công nghiệp châu Âu.",
+      "detailed_summary": "Trung Quốc, vốn từng là thị trường tiêu thụ hàng hóa lớn thứ hai của Đức, đang thực hiện quá trình giảm dần sự phụ thuộc vào chuỗi cung ứng từ châu Âu. Xu hướng này bắt nguồn từ chiến lược nội địa hóa và tự chủ công nghiệp của Trung Quốc, dẫn đến nhu cầu đối với các sản phẩm công nghiệp Đức bị suy giảm.",
+      "causes": [
+        "Trung Quốc đẩy mạnh chiến lược tự chủ trong chuỗi cung ứng công nghiệp",
+        "Sự chuyển dịch cơ cấu sản xuất trong nước của Trung Quốc giảm sự phụ thuộc vào nguồn cung nước ngoài"
+      ],
+      "effects": [
+        "Kim ngạch xuất khẩu hàng hóa từ Đức sang Trung Quốc suy giảm",
+        "Thay đổi trong quan hệ thương mại song phương giữa hai cường quốc công nghiệp"
+      ],
+      "affected_groups": [
+        "Các doanh nghiệp sản xuất và xuất khẩu hàng công nghiệp của Đức",
+        "Các ngành công nghiệp phụ trợ trong chuỗi cung ứng của Trung Quốc"
+      ],
+      "market_impact": "Các doanh nghiệp Đức trong lĩnh vực công nghiệp có thể đối mặt với áp lực giảm doanh thu và buộc phải tìm kiếm thị trường xuất khẩu mới để bù đắp sự sụt giảm từ Trung Quốc.",
+      "vn_impact": "Việt Nam có thể chịu tác động gián tiếp từ sự dịch chuyển chuỗi cung ứng toàn cầu, vừa có cơ hội đón nhận dòng vốn FDI từ các doanh nghiệp Đức muốn đa dạng hóa thị trường, vừa phải cạnh tranh trong phân khúc cung ứng công nghiệp.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "business"
+      ],
+      "regions": [
+        "CN",
+        "DE"
+      ],
+      "significance": "Sự kiện này đánh dấu bước ngoặt trong cấu trúc thương mại toàn cầu, khi Trung Quốc giảm dần vai trò là thị trường tiêu thụ lớn cho các cường quốc công nghiệp phương Tây.",
+      "unknowns": [
+        "Tốc độ và lộ trình cụ thể của quá trình tự chủ hóa công nghiệp Trung Quốc",
+        "Phản ứng chiến lược dài hạn của Chính phủ và các tập đoàn lớn tại Đức trước sự sụt giảm nhu cầu"
+      ],
+      "confidence_note": "Thông tin mang tính xu hướng kinh tế vĩ mô, độ tin cậy cao dựa trên thực tế thay đổi cán cân thương mại.",
+      "scenarios": [
+        {
+          "text": "Trung Quốc tiếp tục đẩy nhanh tốc độ tự chủ, khiến thị phần hàng hóa Đức tại Trung Quốc giảm mạnh hơn.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Đức điều chỉnh chiến lược ngoại thương, tập trung sâu hơn vào các thị trường thay thế để giảm phụ thuộc vào Trung Quốc.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Trung Quốc",
+          "target": "Đức",
+          "relation_type": "cause_effect",
+          "label": "Giảm nhu cầu nhập khẩu hàng hóa công nghiệp"
+        },
+        {
+          "source": "Chiến lược tự chủ",
+          "target": "Trung Quốc",
+          "relation_type": "cause_effect",
+          "label": "Tạo điều kiện giảm phụ thuộc vào chuỗi cung ứng châu Âu"
+        }
+      ],
+      "entities": [
+        "Trung Quốc",
+        "Đức"
+      ],
+      "keywords": [
+        "Trung Quốc",
+        "Đức",
+        "hàng hóa",
+        "cung ứng"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
   }
 }
