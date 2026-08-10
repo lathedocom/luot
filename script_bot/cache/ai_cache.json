@@ -24600,5 +24600,162 @@
       "sentiment": -1,
       "scope": "national"
     }
+  },
+  "evt_819ec3ed": {
+    "created_at": 1786377653289,
+    "expires_at": 1788969653289,
+    "version": "4.5",
+    "checksum": "83a7d70e03719f4b9db17d2a773b2f98",
+    "data": {
+      "cluster_title": "Ukraine tập kích cơ sở lọc dầu Nga",
+      "short_summary": "Ukraine tập kích cơ sở lọc dầu Nga, khiến 13 người chết.",
+      "detailed_summary": "Ukraine đã thực hiện cuộc tập kích bằng máy bay không người lái (UAV) nhắm vào một cơ sở lọc dầu nằm tại vùng Tatarstan, Nga. Vụ tấn công đã gây ra thương vong nghiêm trọng với 13 người thiệt mạng, đánh dấu sự gia tăng về quy mô và tính chất nghiêm trọng của các cuộc tập kích đường không trong cuộc xung đột.",
+      "causes": [
+        "Chiến sự đang diễn ra giữa Ukraine và Nga",
+        "Chiến lược quân sự của Ukraine nhắm vào cơ sở hạ tầng năng lượng Nga"
+      ],
+      "effects": [
+        "Thương vong về người với 13 người thiệt mạng",
+        "Thiệt hại cơ sở hạ tầng năng lượng tại vùng Tatarstan"
+      ],
+      "affected_groups": [
+        "Cư dân vùng Tatarstan",
+        "Công nhân nhà máy lọc dầu",
+        "Chính phủ Nga"
+      ],
+      "market_impact": "Gây lo ngại về sự ổn định nguồn cung năng lượng từ Nga, có thể tạo áp lực tăng giá dầu thô trên thị trường quốc tế.",
+      "vn_impact": "Có thể gây biến động gián tiếp đến giá nhiên liệu nhập khẩu tại Việt Nam do tác động tới giá dầu toàn cầu.",
+      "follow_up": "",
+      "categories": [
+        "military",
+        "energy"
+      ],
+      "regions": [
+        "RU",
+        "UA"
+      ],
+      "significance": "Sự kiện cho thấy khả năng tấn công tầm xa của Ukraine đã mở rộng phạm vi vào sâu lãnh thổ Nga, làm gia tăng căng thẳng quân sự.",
+      "unknowns": [
+        "Mức độ thiệt hại cụ thể của cơ sở vật chất nhà máy",
+        "Công nghệ chính xác của các máy bay không người lái được sử dụng"
+      ],
+      "confidence_note": "Thông tin được xác nhận từ nguồn báo cáo về thương vong và địa điểm tấn công.",
+      "scenarios": [
+        {
+          "text": "Nga gia tăng các biện pháp phòng không và đáp trả quân sự mạnh mẽ hơn đối với Ukraine.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Xung đột năng lượng leo thang ảnh hưởng tiêu cực đến an ninh năng lượng toàn cầu.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Ukraine",
+          "target": "Nga",
+          "relation_type": "conflict",
+          "label": "Tấn công quân sự vào hạ tầng năng lượng"
+        },
+        {
+          "source": "Cuộc tấn công bằng UAV",
+          "target": "Cơ sở lọc dầu",
+          "relation_type": "cause_effect",
+          "label": "Gây ra thiệt hại và thương vong"
+        }
+      ],
+      "entities": [
+        "Ukraine",
+        "Nga"
+      ],
+      "keywords": [
+        "Ukraine",
+        "Nga",
+        "cơ sở lọc dầu",
+        "tập kích"
+      ],
+      "importance": 85,
+      "severity": 5,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_f3a76aad": {
+    "created_at": 1786377676223,
+    "expires_at": 1788969676223,
+    "version": "4.5",
+    "checksum": "ee91992895161362c5b9842836a0f244",
+    "data": {
+      "cluster_title": "Việt Nam có thể là điểm đến của các startup công nghệ",
+      "short_summary": "Đặc phái viên Úc cho biết Việt Nam có thể là điểm đến của các startup công nghệ",
+      "detailed_summary": "Nicholas Moore, Đặc phái viên của Chính phủ Úc về Đông Nam Á, đã hoàn tất báo cáo và đưa ra các đề xuất cụ thể lên Chính phủ Úc nhằm tăng cường thương mại và đầu tư giữa hai quốc gia. Trong đó, ông nhấn mạnh Việt Nam có nhiều tiềm năng để trở thành trung tâm thu hút các doanh nghiệp khởi nghiệp trong lĩnh vực công nghệ.",
+      "causes": [
+        "Nhu cầu kết nối và mở rộng hệ sinh thái công nghệ giữa Việt Nam và Úc",
+        "Chiến lược tăng cường quan hệ kinh tế của Chính phủ Úc tại khu vực Đông Nam Á"
+      ],
+      "effects": [
+        "Gia tăng cơ hội hợp tác cho các startup công nghệ tại Việt Nam",
+        "Thúc đẩy các chính sách hỗ trợ thương mại và đầu tư hai chiều"
+      ],
+      "affected_groups": [
+        "Các doanh nghiệp khởi nghiệp công nghệ",
+        "Nhà đầu tư Úc và Việt Nam",
+        "Chính phủ hai nước"
+      ],
+      "market_impact": "Khả năng thu hút dòng vốn đầu tư mạo hiểm từ Úc vào thị trường công nghệ Việt Nam tăng lên, tạo động lực cho các startup trong nước.",
+      "vn_impact": "Củng cố vị thế của Việt Nam như một trung tâm công nghệ mới nổi, thúc đẩy làn sóng đầu tư nước ngoài và chuyển giao tri thức từ Úc vào hệ sinh thái khởi nghiệp Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "tech"
+      ],
+      "regions": [
+        "VN",
+        "AU"
+      ],
+      "significance": "Sự kiện cho thấy sự tin tưởng của phía Úc vào môi trường kinh doanh tại Việt Nam, mở ra chương mới trong hợp tác kinh tế dựa trên nền tảng đổi mới sáng tạo.",
+      "unknowns": [
+        "Chi tiết cụ thể về các giải pháp thương mại, đầu tư đã được đề xuất",
+        "Thời gian triển khai thực tế các sáng kiến từ báo cáo của Đặc phái viên"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên phát biểu của quan chức chính phủ.",
+      "scenarios": [
+        {
+          "text": "Chính phủ Úc phê duyệt các đề xuất, dẫn đến việc thiết lập các gói hỗ trợ vốn cho startup Việt - Úc.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Hai nước ký kết thêm các thỏa thuận hợp tác chuyên sâu về công nghệ và chuyển đổi số.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Nicholas Moore",
+          "target": "Chính phủ Úc",
+          "relation_type": "cooperation",
+          "label": "Tư vấn và đề xuất chính sách kinh tế"
+        },
+        {
+          "source": "Úc",
+          "target": "Việt Nam",
+          "relation_type": "cooperation",
+          "label": "Thúc đẩy thương mại và đầu tư hai chiều"
+        }
+      ],
+      "entities": [
+        "Việt Nam",
+        "Úc"
+      ],
+      "keywords": [
+        "Việt Nam",
+        "startup công nghệ",
+        "Úc"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
   }
 }
