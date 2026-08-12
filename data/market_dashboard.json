@@ -69,16 +69,16 @@
       "category": "🏦 Tiền tệ",
       "type": "realtime",
       "unit": "VND",
-      "price": "26.133",
+      "price": "26.045",
       "change_percent": "0%",
       "trend": "→",
       "history": [
-        26133
+        26045
       ],
       "history_labels": [
         "Hiện tại"
       ],
-      "updated_at": 1786537224660,
+      "updated_at": 1786576672159,
       "display_source": "Yahoo Finance",
       "status": "online",
       "is_alert": false,
@@ -90,16 +90,16 @@
       "category": "📈 Thị trường tài chính",
       "type": "realtime",
       "unit": "USD",
-      "price": "64.269",
+      "price": "63.364",
       "change_percent": "0%",
       "trend": "→",
       "history": [
-        64269
+        63364
       ],
       "history_labels": [
         "Hiện tại"
       ],
-      "updated_at": 1786537224702,
+      "updated_at": 1786576672212,
       "display_source": "CoinGecko",
       "status": "online",
       "is_alert": false,
@@ -111,16 +111,16 @@
       "category": "🌾 Hàng hóa & Nông sản",
       "type": "realtime",
       "unit": "USD/thùng",
-      "price": "89,3",
+      "price": "88,5",
       "change_percent": "0%",
       "trend": "→",
       "history": [
-        89.3
+        88.5
       ],
       "history_labels": [
         "Hiện tại"
       ],
-      "updated_at": 1786537224733,
+      "updated_at": 1786576672245,
       "display_source": "Yahoo Finance",
       "status": "online",
       "is_alert": false,
@@ -132,16 +132,16 @@
       "id": "chi_phi",
       "name": "Chi phí sinh hoạt",
       "icon": "🛒",
-      "score": 0,
-      "status": "Bình thường / Ổn định",
-      "color": "#facc15",
-      "trend_icon": "→",
+      "score": -60,
+      "status": "Áp lực tăng rất cao",
+      "color": "#ef4444",
+      "trend_icon": "↓",
       "reasons": [
-        "Dữ liệu duy trì ổn định theo chu kỳ."
+        "Người tiêu dùng tại Việt Nam đang thắt chặt chi tiêu, dẫn đến xu hướng giảm mua sắm trực tuyến, điều này có thể ảnh hưởng đến các sàn thương mại điện tử trong nước và buộc họ phải tối ưu hóa giá cả và trải nghiệm khách hàng."
       ],
       "target_audience": "Người tiêu dùng, Hộ gia đình",
-      "meaning": "Áp lực giá cả ổn định, dễ thở hơn cho người dân.",
-      "impact_level": "🟢 Thấp",
+      "meaning": "Doanh nghiệp Việt Nam cần phải nhanh chóng thích nghi với xu hướng giảm mua sắm trực tuyến bằng cách giảm giá, cải thiện chất lượng sản phẩm và dịch vụ, đồng thời tăng cường trải nghiệm khách hàng để giữ chân người tiêu dùng.",
+      "impact_level": "🔴 Cao",
       "duration": "Ngắn & Trung hạn"
     },
     {
@@ -153,10 +153,10 @@
       "color": "#ef4444",
       "trend_icon": "↓",
       "reasons": [
-        "Sự kiện Nga tấn công tàu chở vũ khí cho Ukraine dẫn đến biến động giá lương thực và cước phí vận tải biển toàn cầu, từ đó ảnh hưởng đến chi phí logistics và giá nguyên liệu thức ăn chăn nuôi nhập khẩu, gây suy yếu mạnh cho lĩnh vực thị trường việc làm của Việt Nam."
+        "Sự kiện Nga tấn công tàu chở vũ khí cho Ukraine đã dẫn đến biến động giá lương thực và cước phí vận tải biển toàn cầu, ảnh hưởng đến chi phí logistics và giá nguyên liệu thức ăn chăn nuôi nhập khẩu, từ đó tác động tiêu cực đến thị trường việc làm của Việt Nam."
       ],
       "target_audience": "Người lao động, Sinh viên mới ra trường",
-      "meaning": "Dự báo hệ quả cho nền kinh tế Việt Nam: Giá nguyên liệu thức ăn chăn nuôi tăng cao sẽ ảnh hưởng đến chi phí sản xuất của các doanh nghiệp trong lĩnh vực chăn nuôi, từ đó có thể dẫn đến việc cắt giảm lao động hoặc trì hoãn các dự án mới. Điều này sẽ gây khó khăn cho người dân Việt Nam, đặc biệt là những người làm việc trong lĩnh vực này, và có thể dẫn đến sự suy yếu của thị trường việc làm.",
+      "meaning": "Doanh nghiệp và người dân Việt Nam cần chuẩn bị cho khả năng tăng giá nguyên liệu và chi phí logistics, từ đó có thể ảnh hưởng đến giá sản phẩm và lợi nhuận. Điều này có thể dẫn đến việc giảm nhu cầu lao động và tăng tỷ lệ thất nghiệp, đặc biệt là trong các ngành liên quan đến thức ăn chăn nuôi và logistics.",
       "impact_level": "🔴 Cao",
       "duration": "Trung & Dài hạn"
     },
@@ -169,10 +169,10 @@
       "color": "#ef4444",
       "trend_icon": "↓",
       "reasons": [
-        "Trung Quốc giảm phụ thuộc hàng hóa Đức và sự cố nhà máy lọc dầu Saudi Arabia có thể gây tác động gián tiếp đến nền kinh tế Việt Nam thông qua sự dịch chuyển chuỗi cung ứng toàn cầu, biến động giá xăng dầu thế giới và tác động đến chi phí vận chuyển và sản xuất trong nước."
+        "Trung Quốc giảm phụ thuộc hàng hóa Đức và nhà máy lọc dầu Saudi Arabia bị tấn công đã tạo ra những biến động lớn trong chuỗi cung ứng toàn cầu và giá xăng dầu thế giới, từ đó tác động gián tiếp đến nền kinh tế Việt Nam, khiến hệ thống thuật toán đánh giá lĩnh vực 'Sản xuất & Công nghiệp' của Việt Nam đang ở trạng thái suy yếu."
       ],
       "target_audience": "Doanh nghiệp sản xuất, Công nhân",
-      "meaning": "Doanh nghiệp Việt Nam cần linh hoạt trong việc đa dạng hóa nguồn cung ứng và quản lý chi phí sản xuất để đối phó với những biến động trên. Người dân Việt Nam cũng cần chuẩn bị cho khả năng tăng giá xăng dầu và chi phí vận chuyển trong thời gian tới.",
+      "meaning": "Doanh nghiệp Việt Nam cần linh hoạt và đa dạng hóa chuỗi cung ứng để giảm thiểu tác động từ biến động toàn cầu, đồng thời theo dõi sát sao biến động giá xăng dầu để có kế hoạch sản xuất và kinh doanh phù hợp. Người dân Việt Nam cũng cần chuẩn bị cho những biến động có thể xảy ra trong giá xăng dầu và chi phí sản xuất.",
       "impact_level": "🔴 Cao",
       "duration": "Trung hạn"
     },
@@ -180,15 +180,15 @@
       "id": "thuong_mai",
       "name": "Thương mại & XNK",
       "icon": "🚢",
-      "score": -56.666666666666664,
+      "score": -56,
       "status": "Có dấu hiệu suy yếu",
       "color": "#f97316",
       "trend_icon": "↓",
       "reasons": [
-        "Trung Quốc đáp trả thuế quan Mỹ và siết chặt xuất khẩu thiết bị bay không người lái sang Mỹ đã tạo ra những tác động gián tiếp đến nền kinh tế Việt Nam, bao gồm việc điều chỉnh chuỗi cung ứng toàn cầu và gây áp lực điều chỉnh chính sách để tránh vướng vào các biện pháp trừng phạt song phương."
+        "Trung Quốc đáp trả thuế quan Mỹ và sự kiện đánh chìm tàu container của Nga đã gây ra những tác động gián tiếp đến nền kinh tế Việt Nam, bao gồm khả năng chịu tác động từ sự dịch chuyển chuỗi cung ứng công nghệ, áp lực điều chỉnh chính sách để tránh vướng vào các biện pháp trừng phạt song phương và tăng chi phí vận chuyển hàng hóa xuất nhập khẩu."
       ],
       "target_audience": "Doanh nghiệp xuất nhập khẩu, Logistics",
-      "meaning": "Doanh nghiệp Việt Nam cần linh hoạt điều chỉnh chuỗi cung ứng và đầu tư vào công nghệ để tận dụng cơ hội từ việc điều chỉnh chuỗi cung ứng toàn cầu, đồng thời phải chuẩn bị sẵn sàng cho các biện pháp trừng phạt song phương có thể xảy ra.",
+      "meaning": "Doanh nghiệp và người dân Việt Nam cần chuẩn bị cho khả năng tăng chi phí vận chuyển hàng hóa xuất nhập khẩu và có thể phải điều chỉnh chiến lược kinh doanh để tránh tác động tiêu cực từ các sự kiện quốc tế.",
       "impact_level": "🟡 Trung bình",
       "duration": "Trung hạn"
     },
@@ -212,15 +212,15 @@
       "id": "nong_nghiep",
       "name": "Nông nghiệp & Hàng hóa",
       "icon": "🌾",
-      "score": -65,
+      "score": -66.66666666666667,
       "status": "Suy yếu mạnh",
       "color": "#ef4444",
       "trend_icon": "↓",
       "reasons": [
-        "Các sự kiện gần đây như Ukraine tập kích cơ sở lọc dầu Nga, Biển Đỏ căng thẳng và nhà máy lọc dầu Saudi Arabia bị tấn công đã gây ra biến động giá nhiên liệu toàn cầu, từ đó ảnh hưởng gián tiếp đến giá nhiên liệu nhập khẩu tại Việt Nam, gây áp lực lên chi phí logistics và chi phí vận chuyển."
+        "Trạng thái suy yếu mạnh của lĩnh vực 'Nông nghiệp & Hàng hóa' tại Việt Nam có thể do sự bất ổn trên thị trường dầu mỏ toàn cầu, bao gồm sự tập kích cơ sở lọc dầu Nga và nhà máy lọc dầu Saudi Arabia, dẫn đến biến động giá nhiên liệu nhập khẩu và ảnh hưởng đến chi phí vận chuyển và sản xuất trong nước."
       ],
       "target_audience": "Nông dân, Doanh nghiệp chế biến thực phẩm",
-      "meaning": "Doanh nghiệp và người dân Việt Nam cần chuẩn bị cho khả năng tăng giá xăng dầu và chi phí logistics, từ đó có thể ảnh hưởng đến chi phí sản xuất và giá bán sản phẩm. Đồng thời, cần theo dõi chặt chẽ tình hình biến động giá nhiên liệu toàn cầu để có thể thích nghi và điều chỉnh chiến lược kinh doanh phù hợp.",
+      "meaning": "Doanh nghiệp và người dân Việt Nam có thể phải đối mặt với chi phí sản xuất và vận chuyển tăng cao, ảnh hưởng đến lợi nhuận và cuộc sống hàng ngày. Điều này có thể dẫn đến sự bất ổn trong nền kinh tế và ảnh hưởng đến sự phát triển của lĩnh vực nông nghiệp và hàng hóa.",
       "impact_level": "🔴 Cao",
       "duration": "Trung hạn"
     },
@@ -228,15 +228,15 @@
       "id": "tien_te",
       "name": "Tiền tệ & Tín dụng",
       "icon": "💰",
-      "score": -30,
+      "score": -26.666666666666668,
       "status": "Có dấu hiệu suy yếu",
       "color": "#f97316",
       "trend_icon": "↓",
       "reasons": [
-        "Trạng thái suy yếu của hệ thống thuật toán đánh giá lĩnh vực 'Tiền tệ & Tín dụng' của Việt Nam là do sự không chắc chắn về tình hình sức khỏe tài chính trong nước, ảnh hưởng đến lãi suất cho vay và tăng trưởng kinh tế chung."
+        "Các ngân hàng tung gói vay giảm lãi suất và sự kết nối tích cực giữa các tổ chức tài chính Việt Nam và quốc tế đã góp phần cải thiện thanh khoản cho doanh nghiệp, thúc đẩy hoạt động sản xuất, kinh doanh và xuất khẩu, nhưng tình hình sức khỏe tài chính trong nước vẫn còn ảnh hưởng đến lãi suất cho vay."
       ],
       "target_audience": "Doanh nghiệp vay vốn, Người mua nhà, Du học sinh",
-      "meaning": "Doanh nghiệp và người dân Việt Nam có thể phải đối mặt với lãi suất vay vốn tăng cao, ảnh hưởng đến hoạt động sản xuất, kinh doanh và cuộc sống hàng ngày.",
+      "meaning": "Doanh nghiệp và người dân Việt Nam có thể tận dụng các gói vay giảm lãi suất để thúc đẩy hoạt động kinh doanh và sản xuất, đồng thời đầu tư vào các dự án kinh tế xanh để hỗ trợ mục tiêu phát triển bền vững của quốc gia.",
       "impact_level": "🟡 Trung bình",
       "duration": "Trung hạn"
     },
@@ -244,31 +244,31 @@
       "id": "tai_chinh",
       "name": "Thị trường tài chính",
       "icon": "📈",
-      "score": -56.666666666666664,
-      "status": "Có dấu hiệu suy yếu",
-      "color": "#f97316",
+      "score": -60,
+      "status": "Suy yếu mạnh",
+      "color": "#ef4444",
       "trend_icon": "↓",
       "reasons": [
-        "Hệ thống thuật toán đánh giá lĩnh vực 'Thị trường tài chính' của Việt Nam đang ở trạng thái suy yếu do các sự kiện gần đây như Dragon Capital bàn về những cú hích đầu tư nửa cuối năm, cổ phiếu doanh nghiệp nhà nước nổi sóng và VN-Index tăng gần 20 điểm, tạo ra niềm tin và ảnh hưởng tích cực đến thị trường vốn Việt Nam."
+        "Trạng thái suy yếu mạnh của thị trường tài chính Việt Nam được gây ra bởi sự khởi sắc của cổ phiếu doanh nghiệp nhà nước và sự tăng trưởng của chỉ số chứng khoán quốc gia VN-Index, phản ánh niềm tin của thị trường vào nhóm doanh nghiệp chủ chốt và sức ảnh hưởng lớn của các doanh nghiệp lớn đối với thị trường tài chính Việt Nam."
       ],
       "target_audience": "Nhà đầu tư cá nhân, Quỹ đầu tư",
-      "meaning": "Doanh nghiệp và người dân Việt Nam nên chuẩn bị tâm lý cho sự biến động của thị trường tài chính, cân nhắc phân bổ nguồn lực và đầu tư một cách cẩn thận để tránh rủi ro và tối ưu hóa lợi nhuận.",
-      "impact_level": "🟡 Trung bình",
+      "meaning": "Doanh nghiệp và người dân Việt Nam có thể tận dụng cơ hội đầu tư vào cổ phiếu doanh nghiệp nhà nước và các doanh nghiệp lớn để tăng cường lợi nhuận và ổn định tài chính. Tuy nhiên, cũng cần phải cẩn thận và đa dạng hóa danh mục đầu tư để tránh rủi ro.",
+      "impact_level": "🔴 Cao",
       "duration": "Ngắn hạn"
     },
     {
       "id": "rui_ro",
       "name": "Rủi ro toàn cầu",
       "icon": "🌍",
-      "score": -86.66666666666667,
+      "score": -100,
       "status": "Áp lực tăng rất cao",
       "color": "#ef4444",
       "trend_icon": "↓",
       "reasons": [
-        "Áp lực tăng rất cao trong lĩnh vực rủi ro toàn cầu đối với Việt Nam là do các sự kiện căng thẳng tại khu vực Trung Đông, bao gồm Mỹ phóng tên lửa vào tàu hàng Iran, Iran đe dọa kéo dài chiến tranh với Mỹ và Biển Đỏ căng thẳng, có thể tác động gián tiếp đến giá cước vận tải biển và giá nhiên liệu nhập khẩu của Việt Nam."
+        "Áp lực tăng rất cao trong lĩnh vực rủi ro toàn cầu đối với Việt Nam là do căng thẳng tại khu vực Trung Đông, bao gồm đe dọa kéo dài chiến tranh của Iran và việc Mỹ phóng tên lửa vào tàu hàng Iran, có thể tác động gián tiếp đến giá nhiên liệu nhập khẩu và chi phí vận tải biển toàn cầu."
       ],
       "target_audience": "Hầu hết mọi người (Tác động gián tiếp)",
-      "meaning": "Doanh nghiệp và người dân Việt Nam cần chuẩn bị cho khả năng tăng giá nhiên liệu nhập khẩu và chi phí vận tải biển toàn cầu, từ đó có thể ảnh hưởng đến chi phí sản xuất và giá bán sản phẩm. Điều này có thể dẫn đến tăng giá hàng hóa và ảnh hưởng đến khả năng cạnh tranh của doanh nghiệp Việt Nam trên thị trường quốc tế.",
+      "meaning": "Doanh nghiệp và người dân Việt Nam cần chuẩn bị cho khả năng tăng giá nhiên liệu nhập khẩu và chi phí vận tải biển, từ đó có thể ảnh hưởng đến chi phí sản xuất và giá cả hàng hóa. Điều này có thể dẫn đến sự bất ổn trong thị trường và ảnh hưởng đến kinh tế Việt Nam.",
       "impact_level": "🔴 Cao",
       "duration": "Trung hạn"
     }
