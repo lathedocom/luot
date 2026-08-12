@@ -27586,5 +27586,569 @@
       "sentiment": -1,
       "scope": "business"
     }
+  },
+  "evt_09705d85": {
+    "created_at": 1786508273159,
+    "expires_at": 1789100273159,
+    "version": "4.5",
+    "checksum": "30bcc90c248cd25634e75ac7bd7841c5",
+    "data": {
+      "cluster_title": "Tàu hàng trúng tên lửa ở biển Đỏ",
+      "short_summary": "Tàu hàng trúng tên lửa ở biển Đỏ, 6 người chết.",
+      "detailed_summary": "Lực lượng Houthi bị cáo buộc phóng tên lửa vào một tàu hàng trên Biển Đỏ, dẫn đến cái chết của 6 người bao gồm cả nhân viên cứu hộ. Trong một diễn biến khác, Mỹ đã sử dụng tên lửa để vô hiệu hóa khoang máy của một tàu hàng khác đang di chuyển tới Iran, với lý do tàu này vi phạm các lệnh phong tỏa của Washington.",
+      "causes": [
+        "Sự leo thang căng thẳng quân sự tại khu vực Biển Đỏ",
+        "Việc thực thi các lệnh phong tỏa hàng hải của Mỹ đối với các tàu hướng đến Iran"
+      ],
+      "effects": [
+        "Gia tăng thương vong dân sự trên các tuyến hàng hải quốc tế",
+        "Gián đoạn hoạt động lưu thông hàng hóa trên Biển Đỏ",
+        "Gia tăng căng thẳng quân sự trực tiếp giữa Mỹ và các lực lượng liên quan đến Iran"
+      ],
+      "affected_groups": [
+        "Thủy thủ đoàn tàu hàng",
+        "Công ty vận tải biển",
+        "Lực lượng cứu hộ cứu nạn quốc tế"
+      ],
+      "market_impact": "Nguy cơ làm tăng chi phí bảo hiểm vận tải biển, giá cước vận tải và giá năng lượng toàn cầu do gián đoạn chuỗi cung ứng.",
+      "vn_impact": "Ảnh hưởng đến chi phí logistics và thời gian vận chuyển hàng hóa xuất nhập khẩu của Việt Nam đi thị trường châu Âu và Trung Đông thông qua tuyến Biển Đỏ.",
+      "follow_up": "",
+      "categories": [
+        "military",
+        "diplomacy"
+      ],
+      "regions": [
+        "YE",
+        "US",
+        "IR"
+      ],
+      "significance": "Sự kiện phản ánh sự bất ổn an ninh nghiêm trọng tại Biển Đỏ, đe dọa trực tiếp đến chuỗi cung ứng toàn cầu và đẩy mạnh đối đầu quân sự trực tiếp.",
+      "unknowns": [
+        "Danh tính cụ thể của tàu hàng bị Houthi tấn công",
+        "Tác động lâu dài của hành động Mỹ đối với lộ trình của các tàu hàng hướng đến Iran"
+      ],
+      "confidence_note": "Thông tin dựa trên báo cáo từ chính phủ các bên liên quan, độ tin cậy trung bình do đang trong tình trạng xung đột.",
+      "scenarios": [
+        {
+          "text": "Các bên tiếp tục leo thang tấn công quân sự làm gián đoạn nghiêm trọng tuyến hàng hải huyết mạch.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các nỗ lực ngoại giao quốc tế được triển khai để thiết lập hành lang an toàn hàng hải.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Houthi",
+          "target": "Tàu hàng",
+          "relation_type": "conflict",
+          "label": "Tấn công vũ trang"
+        },
+        {
+          "source": "Mỹ",
+          "target": "Tàu hàng",
+          "relation_type": "conflict",
+          "label": "Tấn công ngăn chặn tàu vi phạm lệnh phong tỏa"
+        },
+        {
+          "source": "Mỹ",
+          "target": "Iran",
+          "relation_type": "conflict",
+          "label": "Giám sát và trừng phạt thông qua lệnh phong tỏa"
+        },
+        {
+          "source": "Houthi",
+          "target": "Yemen",
+          "relation_type": "cause_effect",
+          "label": "Yemen cáo buộc Houthi gây bất ổn"
+        }
+      ],
+      "entities": [
+        "Houthi",
+        "Mỹ",
+        "Yemen",
+        "Iran"
+      ],
+      "keywords": [
+        "tàu hàng",
+        "tên lửa",
+        "biển Đỏ"
+      ],
+      "importance": 90,
+      "severity": 5,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_7a026c6d": {
+    "created_at": 1786508304268,
+    "expires_at": 1789100304268,
+    "version": "4.5",
+    "checksum": "c7e4879bf95d3cec4fd77c9b1187b94b",
+    "data": {
+      "cluster_title": "Mỹ phóng tên lửa vào tàu hàng Iran",
+      "short_summary": "Mỹ phóng tên lửa vào tàu hàng Iran, gây căng thẳng địa chính trị",
+      "detailed_summary": "Vào ngày 11/8, quân đội Mỹ đã thực hiện hành động quân sự bằng cách bắn hai tên lửa Hellfire vào phòng máy của một tàu chở hàng treo cờ Panama. Con tàu này được cho là đang di chuyển về phía cảng Iran trong bối cảnh Mỹ áp đặt các vòng phong tỏa đối với quốc gia này.",
+      "causes": [
+        "Tàu chở hàng đi vào khu vực hoặc lộ trình bị Mỹ kiểm soát",
+        "Chính sách phong tỏa Iran của Mỹ"
+      ],
+      "effects": [
+        "Tàu hàng bị vô hiệu hóa",
+        "Gia tăng căng thẳng quân sự giữa Mỹ và Iran",
+        "Phát tín hiệu răn đe từ phía Mỹ"
+      ],
+      "affected_groups": [
+        "Chủ tàu treo cờ Panama",
+        "Chính phủ Iran",
+        "Các công ty vận tải hàng hải trong khu vực"
+      ],
+      "market_impact": "Gây lo ngại về an ninh hàng hải tại Trung Đông, có khả năng đẩy phí bảo hiểm vận tải và giá dầu biến động trong ngắn hạn.",
+      "vn_impact": "Có thể tác động gián tiếp đến giá cước vận tải biển và giá nhiên liệu nhập khẩu nếu căng thẳng tại khu vực Trung Đông leo thang.",
+      "follow_up": "",
+      "categories": [
+        "military",
+        "politics"
+      ],
+      "regions": [
+        "US",
+        "IR",
+        "PA"
+      ],
+      "significance": "Sự kiện phản ánh mức độ quyết liệt của Mỹ trong việc thực thi các biện pháp phong tỏa Iran bằng biện pháp quân sự trực tiếp.",
+      "unknowns": [
+        "Danh tính thực sự của hàng hóa trên tàu",
+        "Phản ứng trả đũa cụ thể từ phía Iran",
+        "Tên chủ sở hữu thực sự của con tàu treo cờ Panama"
+      ],
+      "confidence_note": "Thông tin dựa trên báo cáo quân sự Mỹ được các phương tiện truyền thông dẫn lại, độ tin cậy cao về mặt sự kiện, nhưng thiếu bối cảnh chi tiết về hàng hóa.",
+      "scenarios": [
+        {
+          "text": "Iran tăng cường các hoạt động gây hấn hoặc kiểm soát tàu bè tại eo biển Hormuz để trả đũa.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Căng thẳng ngoại giao gia tăng dẫn đến các lệnh trừng phạt bổ sung từ Mỹ lên các đơn vị vận tải liên quan.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Mỹ",
+          "target": "Iran",
+          "relation_type": "conflict",
+          "label": "Phong tỏa và đối đầu quân sự"
+        },
+        {
+          "source": "Mỹ",
+          "target": "Tàu hàng treo cờ Panama",
+          "relation_type": "cause_effect",
+          "label": "Tấn công tên lửa để vô hiệu hóa tàu"
+        }
+      ],
+      "entities": [
+        "Quân đội Mỹ",
+        "Tàu hàng Iran"
+      ],
+      "keywords": [
+        "Mỹ",
+        "Iran",
+        "tên lửa Hellfire"
+      ],
+      "importance": 95,
+      "severity": 5,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_9c18df0d": {
+    "created_at": 1786508322394,
+    "expires_at": 1789100322394,
+    "version": "4.5",
+    "checksum": "0a689fc466f2d761ded1e82cf6f8dae7",
+    "data": {
+      "cluster_title": "Trump giải thích lý do bí mật đổi chuyên cơ khi rời Thổ Nhĩ Kỳ",
+      "short_summary": "Trump giải thích lý do bí mật đổi chuyên cơ khi rời Thổ Nhĩ Kỳ, khẳng định đã làm theo khuyến cáo của Sở Mật vụ",
+      "detailed_summary": "Ông Donald Trump đã chính thức lên tiếng giải thích về việc ông sử dụng máy bay quân sự thay vì chuyên cơ riêng để rời khỏi Thổ Nhĩ Kỳ vào tháng trước. Ông khẳng định hành động này được thực hiện nhằm tuân thủ các hướng dẫn và khuyến cáo an ninh từ Sở Mật vụ Mỹ.",
+      "causes": [
+        "Khuyến cáo an ninh từ Sở Mật vụ",
+        "Yêu cầu bảo đảm an toàn cá nhân trong chuyến công tác nước ngoài"
+      ],
+      "effects": [
+        "Làm rõ dư luận về việc thay đổi phương tiện di chuyển",
+        "Tăng cường sự chú trọng vào quy trình bảo vệ yếu nhân"
+      ],
+      "affected_groups": [
+        "Cựu Tổng thống Donald Trump",
+        "Sở Mật vụ Mỹ"
+      ],
+      "market_impact": "Sự kiện này không gây ra tác động đáng kể đến thị trường tài chính.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "military"
+      ],
+      "regions": [
+        "US",
+        "TR"
+      ],
+      "significance": "Sự kiện cho thấy sự phối hợp chặt chẽ giữa các cựu quan chức cấp cao và cơ quan an ninh trong việc ưu tiên các quy tắc bảo vệ an toàn.",
+      "unknowns": [
+        "Lý do cụ thể đằng sau khuyến cáo của Sở Mật vụ",
+        "Các chi tiết kỹ thuật hoặc mối đe dọa tiềm tàng dẫn đến quyết định thay đổi máy bay"
+      ],
+      "confidence_note": "Thông tin dựa trên tuyên bố trực tiếp của cá nhân liên quan, có độ tin cậy cao về mặt sự kiện.",
+      "scenarios": [
+        {
+          "text": "Các vấn đề về an ninh đối với cựu tổng thống tiếp tục được dư luận quan tâm.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Sự việc bị chính trị hóa và trở thành chủ đề tranh luận trong chiến dịch vận động cử tri.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Sở Mật vụ",
+          "target": "Donald Trump",
+          "relation_type": "cooperation",
+          "label": "Cung cấp khuyến cáo và đảm bảo an ninh"
+        },
+        {
+          "source": "Khuyến cáo an ninh",
+          "target": "Thay đổi chuyên cơ",
+          "relation_type": "cause_effect",
+          "label": "Nguyên nhân dẫn đến thay đổi phương tiện vận chuyển"
+        }
+      ],
+      "entities": [
+        "Donald Trump",
+        "Thổ Nhĩ Kỳ"
+      ],
+      "keywords": [
+        "Trump",
+        "Thổ Nhĩ Kỳ",
+        "chuyên cơ",
+        "Sở Mật vụ"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_7baa68f2": {
+    "created_at": 1786508343517,
+    "expires_at": 1789100343517,
+    "version": "4.5",
+    "checksum": "fbe097ab38d1fc4f59ad32426b5fe2e2",
+    "data": {
+      "cluster_title": "Trách cha mẹ triệu phú không giúp mua nhà",
+      "short_summary": "Con cái giàu có ở Mỹ bất bình khi cha mẹ từ chối hỗ trợ mua nhà.",
+      "detailed_summary": "Nhiều người trẻ tuổi trưởng thành ở các gia đình giàu có tại Mỹ đang công khai bày tỏ sự không hài lòng đối với cha mẹ triệu phú của họ. Nguyên nhân là do các bậc phụ huynh này từ chối cung cấp hỗ trợ tài chính cho mục đích mua bất động sản hoặc đầu tư vào sự nghiệp cá nhân của con cái, làm nảy sinh mâu thuẫn trong quan điểm về quyền thừa kế và trách nhiệm hỗ trợ gia đình.",
+      "causes": [
+        "Sự khác biệt về tư duy tài chính giữa thế hệ cha mẹ và con cái",
+        "Kỳ vọng về sự kế thừa tài sản từ phía con cái"
+      ],
+      "effects": [
+        "Gia tăng căng thẳng trong quan hệ gia đình",
+        "Thay đổi nhận thức về việc tự chủ tài chính của giới trẻ thượng lưu"
+      ],
+      "affected_groups": [
+        "Thế hệ trẻ gia đình giàu có",
+        "Các triệu phú thế hệ trước"
+      ],
+      "market_impact": "Chưa có tác động rõ rệt lên thị trường tài chính, chủ yếu phản ánh tâm lý thay đổi trong việc chuyển giao tài sản và tư duy tiêu dùng của giới thượng lưu.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "business"
+      ],
+      "regions": [
+        "US"
+      ],
+      "significance": "Sự kiện phản ánh làn sóng thay đổi trong văn hóa truyền tài sản, nơi các bậc cha mẹ giàu có chuyển dịch xu hướng sang việc khuyến khích con cái tự lập thay vì phụ thuộc.",
+      "unknowns": [
+        "Tỷ lệ thực tế các gia đình giàu có từ chối hỗ trợ con cái",
+        "Tác động dài hạn của việc cắt giảm hỗ trợ đến tình trạng kinh tế của thế hệ con cái"
+      ],
+      "confidence_note": "Thông tin dựa trên quan sát hiện tượng xã hội, mức độ tin cậy trung bình.",
+      "scenarios": [
+        {
+          "text": "Các gia đình giàu có tiếp tục chính sách siết chặt hỗ trợ tài chính để rèn luyện sự độc lập cho con cái.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Xuất hiện làn sóng tranh chấp về quyền thừa kế và tài chính giữa các thế hệ trong gia đình thượng lưu.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Thế hệ trẻ thượng lưu",
+          "target": "Cha mẹ triệu phú",
+          "relation_type": "conflict",
+          "label": "Mâu thuẫn về kỳ vọng tài chính"
+        },
+        {
+          "source": "Cha mẹ triệu phú",
+          "target": "Thế hệ trẻ thượng lưu",
+          "relation_type": "cause_effect",
+          "label": "Quyết định từ chối hỗ trợ dẫn đến bất bình"
+        }
+      ],
+      "entities": [
+        "gia đình giàu có",
+        "Mỹ"
+      ],
+      "keywords": [
+        "trách cha mẹ",
+        "mua nhà",
+        "gia đình giàu có"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_652bdb23": {
+    "created_at": 1786508360889,
+    "expires_at": 1789100360889,
+    "version": "4.5",
+    "checksum": "1fa5e438f3d11cd96e98a234dcde264c",
+    "data": {
+      "cluster_title": "Thái Lan tinh giản bộ máy và Venezuela nối lại quan hệ lãnh sự",
+      "short_summary": "Thái Lan tinh giản bộ máy và Venezuela nối lại quan hệ lãnh sự sau 17 năm gián đoạn.",
+      "detailed_summary": "Chính phủ Thái Lan công bố kế hoạch tinh giản 15% biên chế công chức nhằm tối ưu hóa bộ máy nhà nước. Song song đó, 40 quốc gia đã cùng ký kết một tuyên bố chung phản đối việc phóng tên lửa. Tại khu vực Mỹ Latinh, Venezuela và Israel quyết định khôi phục quan hệ lãnh sự sau 17 năm đình trệ.",
+      "causes": [
+        "Nhu cầu cải cách hành chính tại Thái Lan",
+        "Yêu cầu đảm bảo an ninh khu vực và quốc tế",
+        "Sự thay đổi trong định hướng chính sách đối ngoại của Venezuela"
+      ],
+      "effects": [
+        "Bộ máy nhà nước Thái Lan tinh gọn hơn",
+        "Gia tăng áp lực chính trị quốc tế đối với các hoạt động phóng tên lửa",
+        "Sự thay đổi cán cân ngoại giao tại khu vực Trung Đông và Nam Mỹ"
+      ],
+      "affected_groups": [
+        "Công chức Thái Lan",
+        "Các quốc gia tham gia tuyên bố chung",
+        "Cơ quan ngoại giao Venezuela và Israel"
+      ],
+      "market_impact": "Các sự kiện có tác động hạn chế đến thị trường tài chính toàn cầu, chủ yếu ảnh hưởng đến ổn định chính sách nội bộ và quan hệ ngoại giao giữa các quốc gia liên quan.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "diplomacy"
+      ],
+      "regions": [
+        "TH",
+        "VE",
+        "IL",
+        "GLOBAL"
+      ],
+      "significance": "Các sự kiện phản ánh xu hướng cải cách hành chính tại Đông Nam Á và sự thay đổi trong các trục đối ngoại phức tạp của thế giới.",
+      "unknowns": [
+        "Chi tiết lộ trình tinh giản biên chế tại Thái Lan",
+        "Nội dung cụ thể và tính pháp lý của tuyên bố chung 40 nước"
+      ],
+      "confidence_note": "Thông tin dựa trên bản tin tổng hợp ngày 12-8, mức độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Thái Lan thực hiện thành công kế hoạch cắt giảm biên chế, tăng hiệu suất công vụ.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Venezuela và Israel bình thường hóa hoàn toàn quan hệ ngoại giao sau thời gian dài gián đoạn.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "40 quốc gia",
+          "target": "hoạt động phóng tên lửa",
+          "relation_type": "conflict",
+          "label": "Phản đối các vụ phóng tên lửa"
+        },
+        {
+          "source": "Venezuela",
+          "target": "Israel",
+          "relation_type": "cooperation",
+          "label": "Khôi phục quan hệ lãnh sự"
+        }
+      ],
+      "entities": [
+        "Thái Lan",
+        "Venezuela",
+        "Israel"
+      ],
+      "keywords": [
+        "Thái Lan",
+        "Venezuela",
+        "phóng tên lửa"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_039abaf2": {
+    "created_at": 1786508388161,
+    "expires_at": 1789100388161,
+    "version": "4.5",
+    "checksum": "debed38c06ce46520a2a0cc0aad90809",
+    "data": {
+      "cluster_title": "Mỹ thu hồi thị thực",
+      "short_summary": "Mỹ thu hồi hơn 175.000 thị thực của công dân nước ngoài kể từ tháng 1/2025.",
+      "detailed_summary": "Kể từ thời điểm bắt đầu nhiệm kỳ vào tháng 1/2025, chính quyền Mỹ dưới sự lãnh đạo của Tổng thống Donald Trump đã thực hiện quyết định hành chính thu hồi hơn 175.000 thị thực đối với công dân các nước. Động thái này nằm trong chuỗi các hoạt động thắt chặt quản lý nhập cư và chính sách biên giới của Mỹ.",
+      "causes": [
+        "Sự thay đổi trong chính sách quản lý nhập cư của chính quyền Mỹ",
+        "Yêu cầu rà soát an ninh và quy định thị thực của cơ quan chức năng Mỹ"
+      ],
+      "effects": [
+        "Giảm số lượng công dân nước ngoài nhập cảnh vào Mỹ",
+        "Gây gián đoạn kế hoạch di chuyển, học tập và làm việc của người bị ảnh hưởng",
+        "Gia tăng căng thẳng trong quan hệ ngoại giao với các quốc gia liên quan"
+      ],
+      "affected_groups": [
+        "Công dân nước ngoài có thị thực Mỹ",
+        "Sinh viên quốc tế",
+        "Người lao động nước ngoài tại Mỹ"
+      ],
+      "market_impact": "Có thể gây xáo trộn tạm thời trong thị trường lao động tay nghề cao và ngành giáo dục quốc tế do sự không chắc chắn về tình trạng lưu trú.",
+      "vn_impact": "Cần theo dõi sát sao để đánh giá khả năng ảnh hưởng đến công dân Việt Nam đang nắm giữ thị thực Mỹ, đặc biệt là diện du học sinh và người lao động.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "diplomacy"
+      ],
+      "regions": [
+        "US"
+      ],
+      "significance": "Sự kiện phản ánh quan điểm cứng rắn trong chính sách nhập cư của Mỹ, dự báo xu hướng kiểm soát biên giới chặt chẽ hơn trong tương lai.",
+      "unknowns": [
+        "Quốc tịch cụ thể của những người bị thu hồi thị thực",
+        "Tiêu chí và lý do cụ thể dẫn đến việc thu hồi thị thực trên diện rộng"
+      ],
+      "confidence_note": "Thông tin dựa trên số liệu báo cáo từ các nguồn tin chính thống, mức độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Mỹ tiếp tục mở rộng việc rà soát và thu hồi thêm nhiều thị thực trong thời gian tới.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các quốc gia bị ảnh hưởng thực hiện các biện pháp đáp trả ngoại giao tương ứng.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Chính quyền Donald Trump",
+          "target": "Công dân nước ngoài",
+          "relation_type": "conflict",
+          "label": "Thu hồi thị thực nhập cảnh"
+        }
+      ],
+      "entities": [
+        "Mỹ",
+        "Donald Trump"
+      ],
+      "keywords": [
+        "thị thực",
+        "Mỹ",
+        "Donald Trump"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_880764b9": {
+    "created_at": 1786508404530,
+    "expires_at": 1789100404530,
+    "version": "4.5",
+    "checksum": "73fd9d520a284fd90690752a6074da87",
+    "data": {
+      "cluster_title": "Điệp viên Israel vào pháo đài hạt nhân Iran",
+      "short_summary": "Cựu Giám đốc Cơ quan Tình báo Mossad của Israel cho biết các điệp viên của cơ quan này từng nhiều lần tới cơ sở hạt nhân Fordow của Iran.",
+      "detailed_summary": "Cựu Giám đốc cơ quan tình báo Israel Mossad tiết lộ thông tin về việc các đặc vụ nước này đã thực hiện thành công nhiều đợt xâm nhập vào cơ sở hạt nhân Fordow nằm sâu trong lòng đất của Iran nhằm thu thập thông tin tình báo phục vụ các mục tiêu an ninh quốc gia.",
+      "causes": [
+        "Nhu cầu thu thập thông tin tình báo chiến lược về chương trình hạt nhân của đối phương",
+        "Sự cạnh tranh và đối đầu địa chính trị gay gắt giữa Israel và Iran"
+      ],
+      "effects": [
+        "Gia tăng căng thẳng trong quan hệ ngoại giao và quân sự giữa Israel và Iran",
+        "Làm bộc lộ những lỗ hổng tiềm tàng trong hệ thống an ninh bảo mật hạt nhân của Iran"
+      ],
+      "affected_groups": [
+        "Chính phủ Israel",
+        "Chính phủ Iran",
+        "Cộng đồng quốc tế quan tâm đến vấn đề an ninh hạt nhân"
+      ],
+      "market_impact": "Sự kiện gây lo ngại về bất ổn địa chính trị tại khu vực Trung Đông, có khả năng ảnh hưởng ngắn hạn đến giá dầu và tâm lý thị trường tài chính khu vực.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "military"
+      ],
+      "regions": [
+        "IL",
+        "IR"
+      ],
+      "significance": "Sự kiện cho thấy năng lực tình báo và khả năng vượt qua các lớp phòng thủ kiên cố nhất của đối phương, phản ánh tính chất căng thẳng trong cuộc xung đột ngầm giữa hai quốc gia.",
+      "unknowns": [
+        "Thời điểm chính xác các vụ xâm nhập diễn ra",
+        "Kết quả cụ thể của các dữ liệu tình báo mà điệp viên đã thu thập được"
+      ],
+      "confidence_note": "Thông tin dựa trên tuyên bố từ cựu quan chức cấp cao của cơ quan tình báo, có độ tin cậy về mặt nguồn tin nhưng cần kiểm chứng thực tế.",
+      "scenarios": [
+        {
+          "text": "Iran siết chặt an ninh và rà soát lại các hệ thống phòng thủ tại các cơ sở hạt nhân nhạy cảm.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Xảy ra các đòn trả đũa bằng chiến tranh mạng hoặc các hành động phá hoại từ phía Iran.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Mossad",
+          "target": "Cơ sở hạt nhân Fordow",
+          "relation_type": "conflict",
+          "label": "Tình báo thực hiện xâm nhập trái phép"
+        },
+        {
+          "source": "Israel",
+          "target": "Iran",
+          "relation_type": "conflict",
+          "label": "Đối đầu chiến lược về chương trình hạt nhân"
+        }
+      ],
+      "entities": [
+        "Israel",
+        "Iran",
+        "Cơ quan Tình báo Mossad"
+      ],
+      "keywords": [
+        "Điệp viên",
+        "Israel",
+        "Iran",
+        "pháo đài hạt nhân"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
   }
 }

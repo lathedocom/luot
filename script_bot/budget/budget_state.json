@@ -1,5 +1,5 @@
 {
-  "last_reset": "2026-08-11",
+  "last_reset": "2026-08-12",
   "usage": {
     "text-embedding-004": {
       "rpd": 0,
@@ -12,14 +12,14 @@
       "rpmMinuteKey": ""
     },
     "gemini-3.1-flash-lite": {
-      "rpd": 73,
-      "rpm": 6,
-      "promptTokens": 49634,
-      "completionTokens": 20751,
+      "rpd": 14,
+      "rpm": 2,
+      "promptTokens": 10586,
+      "completionTokens": 4647,
       "cost": 0,
-      "successCount": 4906,
+      "successCount": 4920,
       "failCount": 658,
-      "rpmMinuteKey": "2026-08-11T23:18"
+      "rpmMinuteKey": "2026-08-12T04:20"
     },
     "undefined": {
       "rpd": 0,
@@ -82,24 +82,24 @@
       "rpmMinuteKey": ""
     },
     "gemma-4-26b-a4b-it": {
-      "rpd": 68,
+      "rpd": 15,
       "rpm": 8,
-      "promptTokens": 28910,
-      "completionTokens": 9512,
+      "promptTokens": 6288,
+      "completionTokens": 2134,
       "cost": 0,
-      "successCount": 3447,
+      "successCount": 3462,
       "failCount": 3,
-      "rpmMinuteKey": "2026-08-11T23:19"
+      "rpmMinuteKey": "2026-08-12T04:20"
     },
     "gemini-embedding-2": {
-      "rpd": 4,
+      "rpd": 1,
       "rpm": 1,
-      "promptTokens": 3275,
+      "promptTokens": 903,
       "completionTokens": 0,
       "cost": 0,
-      "successCount": 122,
+      "successCount": 123,
       "failCount": 81,
-      "rpmMinuteKey": "2026-08-11T23:17"
+      "rpmMinuteKey": "2026-08-12T04:17"
     },
     "llama-3.3-70b-versatile": {
       "rpd": 0,
@@ -112,14 +112,14 @@
       "rpmMinuteKey": ""
     },
     "gemini-3-flash-preview": {
-      "rpd": 4,
+      "rpd": 1,
       "rpm": 1,
-      "promptTokens": 8524,
-      "completionTokens": 2998,
+      "promptTokens": 2212,
+      "completionTokens": 826,
       "cost": 0,
-      "successCount": 139,
+      "successCount": 140,
       "failCount": 12,
-      "rpmMinuteKey": "2026-08-11T23:21"
+      "rpmMinuteKey": "2026-08-12T04:21"
     }
   }
 }
