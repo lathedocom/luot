@@ -31675,5 +31675,278 @@
       "sentiment": -1,
       "scope": "national"
     }
+  },
+  "evt_ebf340b3": {
+    "created_at": 1786663078650,
+    "expires_at": 1789255078650,
+    "version": "4.5",
+    "checksum": "40d25d62b4998dd37bffa002d2e4e79c",
+    "data": {
+      "cluster_title": "Hạn hán ở châu Âu",
+      "short_summary": "Hạn hán ở châu Âu khiến mực nước sông Danube xuống thấp kỷ lục, ảnh hưởng đến hoạt động của các nhà máy điện hạt nhân.",
+      "detailed_summary": "Tình trạng hạn hán kéo dài tại khu vực châu Âu đã làm suy giảm đáng kể mực nước trên sông Danube. Điều này ảnh hưởng trực tiếp đến nguồn nước phục vụ làm mát cho các nhà máy điện hạt nhân ven sông, buộc các đơn vị vận hành phải cắt giảm công suất điện để đảm bảo an toàn.",
+      "causes": [
+        "Hạn hán kéo dài",
+        "Mực nước sông Danube xuống thấp kỷ lục"
+      ],
+      "effects": [
+        "Giảm công suất sản xuất điện",
+        "Nguy cơ mất an ninh năng lượng tại khu vực"
+      ],
+      "affected_groups": [
+        "Các nhà vận hành nhà máy điện hạt nhân",
+        "Người tiêu dùng điện tại châu Âu",
+        "Các ngành công nghiệp sử dụng năng lượng lớn"
+      ],
+      "market_impact": "Gây áp lực tăng giá điện tại châu Âu và gián đoạn chuỗi cung ứng sản xuất do thiếu hụt năng lượng.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "energy",
+        "environment"
+      ],
+      "regions": [
+        "AT",
+        "DE",
+        "HU",
+        "RO",
+        "SK",
+        "RS",
+        "BG",
+        "HR"
+      ],
+      "significance": "Sự kiện cho thấy tác động trực tiếp của biến đổi khí hậu đối với cơ sở hạ tầng năng lượng quan trọng, đe dọa ổn định kinh tế khu vực.",
+      "unknowns": [
+        "Thời gian dự kiến mực nước sông trở lại mức an toàn",
+        "Mức độ cắt giảm công suất cụ thể tại từng nhà máy"
+      ],
+      "confidence_note": "Thông tin dựa trên báo cáo sự kiện thực tế, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Tình trạng hạn hán kéo dài khiến các nhà máy phải ngừng hoạt động hoàn toàn, gây thiếu hụt điện diện rộng.",
+          "likelihood": "trung bình"
+        },
+        {
+          "text": "Điều kiện thời tiết cải thiện giúp mực nước ổn định, công suất điện phục hồi bình thường.",
+          "likelihood": "cao"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Hạn hán",
+          "target": "Sông Danube",
+          "relation_type": "cause_effect",
+          "label": "Làm mực nước xuống thấp"
+        },
+        {
+          "source": "Sông Danube",
+          "target": "Nhà máy điện hạt nhân",
+          "relation_type": "cause_effect",
+          "label": "Cung cấp nước làm mát"
+        },
+        {
+          "source": "Mực nước xuống thấp",
+          "target": "Nhà máy điện hạt nhân",
+          "relation_type": "cause_effect",
+          "label": "Buộc cắt giảm công suất"
+        }
+      ],
+      "entities": [
+        "sông Danube",
+        "châu Âu"
+      ],
+      "keywords": [
+        "hạn hán",
+        "châu Âu",
+        "sông Danube"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_general_1786663084326": {
+    "created_at": 1786663090528,
+    "expires_at": 1789255090528,
+    "version": "4.5",
+    "checksum": "6c5a88d5e28e71034b055315200b4f0d",
+    "data": {
+      "cluster_title": "Chưa ai bán điện mặt trời dư lên lưới",
+      "short_summary": "Chưa có ai bán điện mặt trời dư lên lưới quốc gia",
+      "detailed_summary": "Chính sách hiện tại đã mở đường cho các hộ gia đình và doanh nghiệp sở hữu điện mặt trời mái nhà được bán lại một nửa sản lượng dư thừa cho hệ thống lưới điện quốc gia. Tuy nhiên, tính đến thời điểm hiện tại, cơ chế này chưa thu hút được người tham gia, cho thấy sự chênh lệch giữa chính sách và thực tiễn triển khai.",
+      "causes": [
+        "Thiếu thông tin hướng dẫn chi tiết về thủ tục thực hiện",
+        "Các rào cản kỹ thuật hoặc kinh tế trong việc đấu nối điện lưới",
+        "Sự ngần ngại của người dùng do chưa rõ về hiệu quả kinh tế"
+      ],
+      "effects": [
+        "Lãng phí tiềm năng năng lượng tái tạo tại địa phương",
+        "Chính sách hỗ trợ năng lượng chưa đạt được mục tiêu đề ra"
+      ],
+      "affected_groups": [
+        "Hộ gia đình lắp điện mặt trời mái nhà",
+        "Các doanh nghiệp đầu tư năng lượng mặt trời",
+        "Cơ quan quản lý năng lượng"
+      ],
+      "market_impact": "Thị trường điện mặt trời áp mái tạm thời bị đóng băng về mặt thương mại hóa, cần các đợt tháo gỡ khó khăn về thủ tục để khơi thông.",
+      "vn_impact": "Sự kiện ảnh hưởng trực tiếp đến lộ trình chuyển dịch năng lượng và mục tiêu phát triển điện sạch của Việt Nam theo quy hoạch điện VIII.",
+      "follow_up": "",
+      "categories": [
+        "energy",
+        "economy"
+      ],
+      "regions": [
+        "VN"
+      ],
+      "significance": "Việc thiếu người tham gia cho thấy cơ chế chính sách dù đã ban hành nhưng chưa thực sự phù hợp hoặc đủ hấp dẫn để triển khai trong thực tế.",
+      "unknowns": [
+        "Các vướng mắc pháp lý cụ thể khiến người dân chưa thể bán điện",
+        "Thống kê chi tiết về tổng lượng điện mặt trời mái nhà hiện có dư thừa"
+      ],
+      "confidence_note": "Thông tin dựa trên phản ánh thực trạng hiện tại, có độ tin cậy cao về mặt hiện tượng.",
+      "scenarios": [
+        {
+          "text": "Cơ quan chức năng ban hành hướng dẫn thực hiện cụ thể, tạo đà cho người dân bán điện.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Cơ chế mua bán điện vẫn duy trì trạng thái đóng băng do các rào cản kỹ thuật khó khắc phục.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Chính sách bán điện",
+          "target": "Người dùng điện mặt trời",
+          "relation_type": "cause_effect",
+          "label": "Tạo điều kiện nhưng chưa có người thực thi"
+        }
+      ],
+      "entities": [
+        "Việt Nam"
+      ],
+      "keywords": [
+        "điện mặt trời",
+        "mái nhà",
+        "lưới quốc gia"
+      ],
+      "importance": 85,
+      "severity": 1,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_general_1786663105859": {
+    "created_at": 1786663109749,
+    "expires_at": 1789255109749,
+    "version": "4.5",
+    "checksum": "6b70a2317f62e633d8f0479c26c76522",
+    "data": {
+      "cluster_title": "Lãi suất gửi tiết kiệm",
+      "short_summary": "Lãi suất gửi tiết kiệm thỏa thuận hấp dẫn hơn biểu niêm yết, nhưng người gửi cần hiểu rõ các điều kiện trước khi quyết định gửi tiền.",
+      "detailed_summary": "Các ngân hàng thường đưa ra mức lãi suất thỏa thuận cao hơn lãi suất niêm yết để thu hút khách hàng. Tuy nhiên, người gửi tiền cần tìm hiểu kỹ các điều khoản đi kèm, vì mức lãi suất này có thể gắn với các điều kiện ngặt nghèo về kỳ hạn, số dư hoặc các yêu cầu bổ sung từ tổ chức tín dụng.",
+      "causes": [
+        "Nhu cầu huy động vốn linh hoạt của ngân hàng",
+        "Sự chênh lệch giữa lãi suất niêm yết và lãi suất thỏa thuận"
+      ],
+      "effects": [
+        "Gia tăng tính minh bạch trong giao dịch tài chính",
+        "Người gửi tiền phải cân nhắc rủi ro và quyền lợi trước khi cam kết"
+      ],
+      "affected_groups": [
+        "Người gửi tiết kiệm cá nhân",
+        "Tổ chức tín dụng"
+      ],
+      "market_impact": "Thúc đẩy tính cạnh tranh minh bạch trong dịch vụ huy động vốn của các ngân hàng.",
+      "vn_impact": "Giúp người dân Việt Nam nâng cao kỹ năng quản lý tài chính cá nhân và hiểu rõ quyền lợi khi giao dịch với các ngân hàng trong nước.",
+      "follow_up": "",
+      "categories": [
+        "finance",
+        "economy"
+      ],
+      "regions": [
+        "VN"
+      ],
+      "significance": "Sự kiện nhấn mạnh tầm quan trọng của việc đọc hiểu hợp đồng tài chính thay vì chỉ nhìn vào con số lãi suất bề nổi.",
+      "unknowns": [
+        "Danh sách các điều kiện cụ thể thường gặp đi kèm với lãi suất thỏa thuận",
+        "Mức chênh lệch tối đa cho phép giữa lãi suất thỏa thuận và lãi suất niêm yết"
+      ],
+      "confidence_note": "Thông tin mang tính cảnh báo tài chính phổ thông, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Người gửi tiền đọc kỹ hợp đồng và tránh được các rủi ro không đáng có về thanh khoản.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Ngân hàng siết chặt thêm các quy định về lãi suất thỏa thuận gây khó khăn cho khách hàng.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Tổ chức tín dụng",
+          "target": "Người gửi tiết kiệm",
+          "relation_type": "cause_effect",
+          "label": "Đưa ra các điều kiện ràng buộc về lãi suất"
+        },
+        {
+          "source": "Lãi suất thỏa thuận",
+          "target": "Người gửi tiết kiệm",
+          "relation_type": "cooperation",
+          "label": "Yếu tố kích cầu trong giao dịch tài chính"
+        }
+      ],
+      "entities": [
+        "người gửi",
+        "ngân hàng"
+      ],
+      "keywords": [
+        "lãi suất",
+        "tiết kiệm",
+        "thỏa thuận"
+      ],
+      "importance": 85,
+      "severity": 2,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_6b610fea": {
+    "created_at": 1786663238775,
+    "expires_at": 1789255238775,
+    "version": "4.5",
+    "checksum": "8bbd3486f0b804bcf7f32c1d68aff05e",
+    "data": {
+      "cluster_title": "Cơ hội startup không yêu cầu công nghệ đột phá",
+      "short_summary": "Nhiều cơ hội startup không yêu cầu 'công nghệ đột phá'.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "categories": [
+        "kinh tế",
+        "công nghệ"
+      ],
+      "regions": [
+        "GLOBAL"
+      ],
+      "follow_up": "",
+      "entities": [
+        "chuyên gia"
+      ],
+      "keywords": [
+        "startup",
+        "công nghệ đột phá",
+        "chuỗi cung ứng"
+      ],
+      "importance": 85,
+      "severity": 1,
+      "sentiment": 0,
+      "scope": "global"
+    }
   }
 }
