@@ -34192,5 +34192,341 @@
       "sentiment": -1,
       "scope": "national"
     }
+  },
+  "evt_e6333729": {
+    "created_at": 1786749457062,
+    "expires_at": 1789341457062,
+    "version": "4.5",
+    "checksum": "d066c798079d3ea026ac3593e5262a42",
+    "data": {
+      "cluster_title": "Chiến tranh siêu thị Nga - Ukraine",
+      "short_summary": "Nhiều cửa hàng và siêu thị ở Ukraine đang cạn kiệt nguồn cung sau khi Nga tấn công trả đũa việc Kiev liên tục đánh vào kho bãi của Wildberries.",
+      "detailed_summary": "Ukraine đang đối mặt với sự gián đoạn nguồn cung nghiêm trọng tại các kệ hàng siêu thị. Nguyên nhân trực tiếp được cho là các cuộc tấn công trả đũa từ phía Nga sau khi Ukraine thực hiện các đợt tập kích nhắm vào cơ sở hạ tầng kho bãi của Wildberries.",
+      "causes": [
+        "Ukraine tấn công kho bãi của Wildberries",
+        "Nga tiến hành các cuộc tấn công trả đũa vào hạ tầng hậu cần của Ukraine"
+      ],
+      "effects": [
+        "Các kệ hàng tại siêu thị ở Kiev trống rỗng",
+        "Chuỗi cung ứng bán lẻ bị gián đoạn",
+        "Người dân gặp khó khăn trong việc tiếp cận nhu yếu phẩm"
+      ],
+      "affected_groups": [
+        "Người tiêu dùng tại Kiev",
+        "Các doanh nghiệp bán lẻ tại Ukraine"
+      ],
+      "market_impact": "Sự đứt gãy chuỗi cung ứng cục bộ gây áp lực tăng giá hàng hóa thiết yếu và làm suy yếu khả năng cung ứng thị trường bán lẻ tại các khu vực chịu ảnh hưởng.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "military"
+      ],
+      "regions": [
+        "RU",
+        "UA"
+      ],
+      "significance": "Sự kiện cho thấy sự lan rộng của xung đột vũ trang vào lĩnh vực hậu cần dân sự, trực tiếp đe dọa an ninh lương thực và đời sống sinh hoạt của người dân trong vùng chiến sự.",
+      "unknowns": [
+        "Mức độ thiệt hại thực tế của các kho bãi Wildberries",
+        "Thời gian dự kiến để khôi phục chuỗi cung ứng bị gián đoạn"
+      ],
+      "confidence_note": "Thông tin dựa trên diễn biến xung đột hiện tại, cần thêm xác nhận về quy mô ảnh hưởng cụ thể.",
+      "scenarios": [
+        {
+          "text": "Tình trạng thiếu hụt kéo dài do xung đột quân sự tiếp diễn gây khó khăn cho việc tái thiết chuỗi cung ứng.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các đơn vị bán lẻ chuyển đổi mô hình cung ứng để giảm phụ thuộc vào các kho bãi mục tiêu, giúp ổn định nguồn hàng.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Ukraine",
+          "target": "Wildberries",
+          "relation_type": "conflict",
+          "label": "Tấn công kho bãi"
+        },
+        {
+          "source": "Nga",
+          "target": "Ukraine",
+          "relation_type": "conflict",
+          "label": "Tấn công trả đũa"
+        },
+        {
+          "source": "Tấn công trả đũa của Nga",
+          "target": "Chuỗi cung ứng bán lẻ",
+          "relation_type": "cause_effect",
+          "label": "Nguyên nhân gây cạn kiệt nguồn cung"
+        }
+      ],
+      "entities": [
+        "Nga",
+        "Ukraine",
+        "Kiev",
+        "Wildberries"
+      ],
+      "keywords": [
+        "Chiến tranh siêu thị",
+        "Nga",
+        "Ukraine",
+        "Kiev",
+        "Wildberries"
+      ],
+      "importance": 85,
+      "severity": 5,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_general_1786749463154": {
+    "created_at": 1786749469286,
+    "expires_at": 1789341469286,
+    "version": "4.5",
+    "checksum": "eb42f916e8e35edbeb5a1b8099161a85",
+    "data": {
+      "cluster_title": "Trump đấu tranh để xây phòng khiêu vũ tại Nhà Trắng",
+      "short_summary": "Chính quyền Tổng thống Trump đề nghị Tòa án tối cao cho phép tiếp tục thi công phòng khiêu vũ tại Nhà Trắng.",
+      "detailed_summary": "Tổng thống Trump và chính quyền của ông đang theo đuổi quyết liệt kế hoạch xây dựng một phòng khiêu vũ mới tại Nhà Trắng với chi phí ước tính khoảng 400 triệu USD. Để hiện thực hóa dự án này bất chấp các rào cản pháp lý hoặc sự phản đối trước đó, chính quyền đã chính thức yêu cầu Tòa án tối cao cho phép tiếp tục triển khai thi công.",
+      "causes": [
+        "Nhu cầu cải tạo và nâng cấp cơ sở vật chất Nhà Trắng theo ý muốn của Tổng thống",
+        "Sự quyết tâm của chính quyền trong việc vượt qua các rào cản pháp lý hiện tại"
+      ],
+      "effects": [
+        "Gây ra tranh cãi về việc sử dụng ngân sách công cho các dự án xây dựng hạ tầng xa xỉ",
+        "Buộc Tòa án tối cao phải xem xét lại các tranh chấp pháp lý liên quan đến dự án"
+      ],
+      "affected_groups": [
+        "Chính phủ Mỹ",
+        "Người đóng thuế Mỹ",
+        "Tòa án tối cao"
+      ],
+      "market_impact": "Dự án quy mô lớn có thể tạo ra các hợp đồng xây dựng cụ thể cho khu vực tư nhân, nhưng không gây tác động đáng kể đến thị trường tài chính vĩ mô.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "finance"
+      ],
+      "regions": [
+        "US"
+      ],
+      "significance": "Sự kiện này phản ánh sự ưu tiên trong ưu tiên chi tiêu ngân sách của chính quyền và việc sử dụng các thiết chế tư pháp để giải quyết mâu thuẫn trong quản trị quốc gia.",
+      "unknowns": [
+        "Lý do cụ thể dẫn đến sự phản đối dự án trong các cấp tòa án dưới",
+        "Nguồn vốn cụ thể được huy động để thực hiện dự án 400 triệu USD"
+      ],
+      "confidence_note": "Thông tin dựa trên bản tin gốc, độ tin cậy cao về mặt sự kiện, cần thêm thông tin về tình trạng pháp lý chi tiết.",
+      "scenarios": [
+        {
+          "text": "Tòa án tối cao chấp thuận, dự án được triển khai.",
+          "likelihood": "trung bình"
+        },
+        {
+          "text": "Tòa án tối cao từ chối thụ lý hoặc bác bỏ yêu cầu, dự án bị đình trệ.",
+          "likelihood": "cao"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Chính quyền Tổng thống Trump",
+          "target": "Tòa án tối cao",
+          "relation_type": "cooperation",
+          "label": "Đệ đơn kiến nghị pháp lý"
+        },
+        {
+          "source": "Dự án phòng khiêu vũ",
+          "target": "Ngân sách Nhà nước",
+          "relation_type": "cause_effect",
+          "label": "Đòi hỏi chi phí đầu tư lớn"
+        }
+      ],
+      "entities": [
+        "Donald Trump",
+        "Nhà Trắng"
+      ],
+      "keywords": [
+        "Trump",
+        "Nhà Trắng",
+        "phòng khiêu vũ"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_general_1786749477808": {
+    "created_at": 1786749514986,
+    "expires_at": 1789341514986,
+    "version": "4.5",
+    "checksum": "b0457dec29fd32e6b84406cb6aa46eca",
+    "data": {
+      "cluster_title": "Philippines thông báo khả năng hợp tác dầu khí với Trung Quốc",
+      "short_summary": "Philippines thông báo khả năng hợp tác dầu khí với Trung Quốc, bất chấp tranh chấp chủ quyền.",
+      "detailed_summary": "Tổng thống Philippines đã công khai tuyên bố về sự tồn tại của những cơ hội hợp tác cụ thể với Trung Quốc trong lĩnh vực thăm dò và khai thác dầu khí chung, dù hai quốc gia hiện đang duy trì các bất đồng và tranh chấp chủ quyền kéo dài trên biển.",
+      "causes": [
+        "Nhu cầu đảm bảo an ninh năng lượng quốc gia",
+        "Nỗ lực tìm kiếm giải pháp thực dụng để giải quyết tranh chấp biển"
+      ],
+      "effects": [
+        "Tạo tiền đề cho các cuộc đối thoại ngoại giao mới",
+        "Có khả năng thay đổi cục diện căng thẳng trên biển"
+      ],
+      "affected_groups": [
+        "Chính phủ Philippines",
+        "Chính phủ Trung Quốc",
+        "Các công ty dầu khí liên quan"
+      ],
+      "market_impact": "Thông tin tạo ra tín hiệu khả quan cho các doanh nghiệp năng lượng, kỳ vọng giảm bớt căng thẳng địa chính trị ảnh hưởng đến hoạt động khai thác.",
+      "vn_impact": "Sự kiện này cần được Việt Nam theo dõi sát sao vì các thỏa thuận hợp tác trong khu vực tranh chấp có thể thiết lập tiền lệ pháp lý hoặc chính trị đối với chủ quyền biển đảo mà Việt Nam đang quan tâm.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "energy"
+      ],
+      "regions": [
+        "PH",
+        "CN"
+      ],
+      "significance": "Sự kiện đánh dấu nỗ lực tách biệt lợi ích kinh tế khỏi các xung đột chủ quyền phức tạp nhằm thúc đẩy khai thác nguồn lực tài nguyên.",
+      "unknowns": [
+        "Chi tiết cụ thể về phạm vi địa lý của khu vực hợp tác",
+        "Cơ chế chia sẻ lợi nhuận và quyền kiểm soát đối với các dự án thăm dò"
+      ],
+      "confidence_note": "Thông tin dựa trên tuyên bố trực tiếp từ nguyên thủ quốc gia, độ tin cậy cao về mặt nội dung sự kiện.",
+      "scenarios": [
+        {
+          "text": "Hai quốc gia đạt được thỏa thuận hợp tác thăm dò trong các khu vực ít tranh chấp",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Đàm phán bị đình trệ do phản đối nội bộ và các vướng mắc về chủ quyền kéo dài",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Philippines",
+          "target": "Trung Quốc",
+          "relation_type": "cooperation",
+          "label": "Đàm phán hợp tác thăm dò dầu khí chung"
+        },
+        {
+          "source": "Tranh chấp chủ quyền",
+          "target": "Hợp tác dầu khí",
+          "relation_type": "conflict",
+          "label": "Trở ngại chính đối với các thỏa thuận chung"
+        }
+      ],
+      "entities": [
+        "Philippines",
+        "Trung Quốc"
+      ],
+      "keywords": [
+        "Philippines",
+        "Trung Quốc",
+        "dầu khí"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_general_1786749526335": {
+    "created_at": 1786749537605,
+    "expires_at": 1789341537605,
+    "version": "4.5",
+    "checksum": "15ab40e9a5762b718cf2bd051cbe442c",
+    "data": {
+      "cluster_title": "Chuyến thăm cấp Nhà nước của Tổng Bí thư, Chủ tịch nước Tô Lâm tới Úc và New Zealand",
+      "short_summary": "Tổng Bí thư, Chủ tịch nước Tô Lâm thăm cấp Nhà nước tới Úc và New Zealand, hợp tác về khoa học - công nghệ",
+      "detailed_summary": "Trong khuôn khổ chuyến thăm cấp Nhà nước tới Úc và New Zealand, Tổng Bí thư, Chủ tịch nước Tô Lâm đã nhấn mạnh vai trò của khoa học - công nghệ như một ngôn ngữ chung trong hoạt động đối ngoại, tạo nền tảng cho việc tăng cường quan hệ hợp tác song phương giữa Việt Nam với hai quốc gia này.",
+      "causes": [
+        "Nhu cầu nâng tầm quan hệ đối tác chiến lược giữa Việt Nam với Úc và New Zealand",
+        "Chủ trương lấy khoa học công nghệ làm động lực cho phát triển quốc gia"
+      ],
+      "effects": [
+        "Tăng cường kết nối về hạ tầng kỹ thuật và trao đổi chuyên gia",
+        "Thúc đẩy các dự án hợp tác nghiên cứu và chuyển giao công nghệ mới"
+      ],
+      "affected_groups": [
+        "Cộng đồng khoa học và công nghệ Việt Nam",
+        "Các doanh nghiệp có vốn đầu tư từ Úc và New Zealand",
+        "Cơ quan quản lý nhà nước về khoa học và đối ngoại"
+      ],
+      "market_impact": "Mở ra cơ hội thu hút đầu tư chất lượng cao và chuyển giao công nghệ từ Úc, New Zealand vào Việt Nam, thúc đẩy thị trường đổi mới sáng tạo.",
+      "vn_impact": "Củng cố vị thế ngoại giao của Việt Nam, mở rộng cơ hội tiếp cận công nghệ tiên tiến, hỗ trợ quá trình chuyển đổi số và phát triển kinh tế bền vững.",
+      "follow_up": "",
+      "categories": [
+        "diplomacy",
+        "tech"
+      ],
+      "regions": [
+        "VN",
+        "AU",
+        "NZ"
+      ],
+      "significance": "Khoa học và công nghệ trở thành trụ cột mới trong ngoại giao cấp cao, khẳng định cam kết của Việt Nam trong việc hợp tác quốc tế để phát triển nguồn lực.",
+      "unknowns": [
+        "Danh mục các dự án cụ thể sẽ được triển khai",
+        "Lộ trình chi tiết cho việc thực thi các cam kết hợp tác"
+      ],
+      "confidence_note": "Thông tin dựa trên thông báo chính thức về hoạt động đối ngoại của lãnh đạo Nhà nước, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Các bên ký kết thêm nhiều thỏa thuận hợp tác nghiên cứu chuyên sâu trong các lĩnh vực công nghệ cao.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Thiết lập các trung tâm nghiên cứu chung hoặc mạng lưới trao đổi chuyên gia thường xuyên giữa Việt Nam và hai quốc gia.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Tổng Bí thư, Chủ tịch nước Tô Lâm",
+          "target": "Úc",
+          "relation_type": "cooperation",
+          "label": "Thúc đẩy hợp tác khoa học - công nghệ"
+        },
+        {
+          "source": "Tổng Bí thư, Chủ tịch nước Tô Lâm",
+          "target": "New Zealand",
+          "relation_type": "cooperation",
+          "label": "Thúc đẩy hợp tác khoa học - công nghệ"
+        },
+        {
+          "source": "Việt Nam",
+          "target": "Úc",
+          "relation_type": "cooperation",
+          "label": "Hợp tác đối ngoại và phát triển công nghệ"
+        },
+        {
+          "source": "Việt Nam",
+          "target": "New Zealand",
+          "relation_type": "cooperation",
+          "label": "Hợp tác đối ngoại và phát triển công nghệ"
+        }
+      ],
+      "entities": [
+        "Tô Lâm",
+        "Úc",
+        "New Zealand"
+      ],
+      "keywords": [
+        "chuyến thăm",
+        "Tô Lâm",
+        "Úc",
+        "New Zealand"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
   }
 }
