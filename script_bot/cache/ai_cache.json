@@ -36055,5 +36055,82 @@
       "sentiment": 1,
       "scope": "business"
     }
+  },
+  "evt_8f30191c": {
+    "created_at": 1786835856626,
+    "expires_at": 1789427856626,
+    "version": "4.5",
+    "checksum": "977a84dfceac9b64238fd0db7651f3c6",
+    "data": {
+      "cluster_title": "Tàu khu trục Mỹ gặp sự cố kỹ thuật trên Biển Đông",
+      "short_summary": "Tàu khu trục USS Benfold của Hải quân Mỹ gặp sự cố kỹ thuật trên Biển Đông, mất điện 4 ngày liền.",
+      "detailed_summary": "Sau sự cố kỹ thuật của tàu sân bay USS Abraham Lincoln, tàu khu trục mang tên lửa dẫn đường USS Benfold của Hải quân Mỹ tiếp tục ghi nhận sự cố kỹ thuật khiến hệ thống mất điện hoàn toàn trong 4 ngày liên tiếp khi đang hoạt động trên vùng biển Biển Đông.",
+      "causes": [
+        "Sự cố kỹ thuật không xác định trên tàu",
+        "Hao mòn thiết bị trong quá trình vận hành liên tục"
+      ],
+      "effects": [
+        "Gián đoạn khả năng tác chiến tạm thời của tàu",
+        "Gia tăng sự chú ý vào tình trạng bảo trì khí tài quân sự Mỹ"
+      ],
+      "affected_groups": [
+        "Hải quân Mỹ",
+        "Bộ Chỉ huy Ấn Độ Dương - Thái Bình Dương"
+      ],
+      "market_impact": "Không có tác động trực tiếp đến thị trường tài chính.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "military",
+        "diplomacy"
+      ],
+      "regions": [
+        "US",
+        "VN"
+      ],
+      "significance": "Việc các tàu chiến hiện đại liên tiếp gặp sự cố kỹ thuật đặt ra câu hỏi về năng lực duy trì cường độ hoạt động cao của Hải quân Mỹ tại khu vực.",
+      "unknowns": [
+        "Nguyên nhân chính xác gây ra sự cố mất điện",
+        "Mức độ ảnh hưởng đến khả năng sẵn sàng chiến đấu thực tế của con tàu"
+      ],
+      "confidence_note": "Thông tin dựa trên báo cáo sự kiện thực tế, cần thêm dữ liệu xác nhận từ phía Hải quân Mỹ để đảm bảo tính khách quan.",
+      "scenarios": [
+        {
+          "text": "Hải quân Mỹ đẩy mạnh kiểm tra kỹ thuật định kỳ cho toàn bộ hạm đội đang hoạt động tại khu vực.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các sự cố kỹ thuật tiếp tục xảy ra gây ảnh hưởng đến lịch trình tuần tra và hiện diện quân sự của Mỹ.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Sự cố kỹ thuật",
+          "target": "USS Benfold",
+          "relation_type": "cause_effect",
+          "label": "Gây mất điện trong 4 ngày"
+        },
+        {
+          "source": "USS Benfold",
+          "target": "Hải quân Mỹ",
+          "relation_type": "neutral",
+          "label": "Tài sản thuộc quản lý"
+        }
+      ],
+      "entities": [
+        "USS Benfold",
+        "Hải quân Mỹ"
+      ],
+      "keywords": [
+        "tàu khu trục",
+        "Mỹ",
+        "Biển Đông"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
   }
 }
