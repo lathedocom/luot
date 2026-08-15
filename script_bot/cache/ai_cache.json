@@ -34528,5 +34528,439 @@
       "sentiment": -1,
       "scope": "national"
     }
+  },
+  "evt_229596c1": {
+    "created_at": 1786767454807,
+    "expires_at": 1789359454807,
+    "version": "4.5",
+    "checksum": "265581602c4d14d004af0a28ebf8a2ca",
+    "data": {
+      "cluster_title": "Tổng thống Trump bảo vệ quyết định đánh Iran",
+      "short_summary": "Tổng thống Trump lên tiếng bảo vệ quyết định đánh Iran, kêu gọi người dân chấp nhận giá xăng tăng nhẹ để ngăn Iran sở hữu vũ khí hạt nhân.",
+      "detailed_summary": "Tổng thống Donald Trump đã chính thức lên tiếng bảo vệ quyết định tiến hành chiến dịch quân sự nhằm vào Iran. Ông nhấn mạnh rằng hành động này là cần thiết để ngăn chặn Iran sở hữu vũ khí hạt nhân. Đồng thời, ông Trump cũng kêu gọi người dân Mỹ chấp nhận sự gia tăng nhẹ của giá xăng dầu như một cái giá phải trả để duy trì an ninh và đạt được mục tiêu chiến lược nêu trên.",
+      "causes": [
+        "Iran phát triển chương trình hạt nhân",
+        "Quyết định thực hiện chiến dịch quân sự của Mỹ"
+      ],
+      "effects": [
+        "Gia tăng căng thẳng địa chính trị Mỹ - Iran",
+        "Giá xăng dầu có khả năng biến động"
+      ],
+      "affected_groups": [
+        "Người tiêu dùng Mỹ",
+        "Ngành công nghiệp dầu khí",
+        "Cộng đồng quốc tế"
+      ],
+      "market_impact": "Thị trường dầu mỏ có khả năng biến động ngắn hạn do lo ngại về nguồn cung và căng thẳng tại khu vực Trung Đông.",
+      "vn_impact": "Giá xăng dầu trong nước có thể chịu ảnh hưởng gián tiếp do biến động giá dầu thế giới, tác động đến chi phí vận tải và sản xuất tại Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "military"
+      ],
+      "regions": [
+        "US",
+        "IR"
+      ],
+      "significance": "Sự kiện cho thấy ưu tiên của chính quyền Mỹ trong việc kiểm soát phổ biến vũ khí hạt nhân cao hơn các áp lực về kinh tế nội địa.",
+      "unknowns": [
+        "Quy mô chính xác của chiến dịch quân sự",
+        "Phản ứng đáp trả cụ thể từ phía Iran"
+      ],
+      "confidence_note": "Thông tin dựa trên tuyên bố trực tiếp từ Tổng thống Mỹ, có độ tin cậy cao về quan điểm chính thức.",
+      "scenarios": [
+        {
+          "text": "Căng thẳng leo thang dẫn đến xung đột quân sự quy mô lớn hơn tại khu vực Trung Đông.",
+          "likelihood": "trung bình"
+        },
+        {
+          "text": "Các bên duy trì áp lực bằng các lệnh trừng phạt và đụng độ quân sự hạn chế.",
+          "likelihood": "cao"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Donald Trump",
+          "target": "Iran",
+          "relation_type": "conflict",
+          "label": "Mâu thuẫn về vấn đề hạt nhân"
+        },
+        {
+          "source": "Chương trình hạt nhân Iran",
+          "target": "Chiến dịch quân sự của Mỹ",
+          "relation_type": "cause_effect",
+          "label": "Nguyên nhân dẫn đến can thiệp quân sự"
+        },
+        {
+          "source": "Donald Trump",
+          "target": "Người dân Mỹ",
+          "relation_type": "cooperation",
+          "label": "Kêu gọi ủng hộ chính sách kinh tế và an ninh"
+        }
+      ],
+      "entities": [
+        "Tổng thống Trump",
+        "Iran"
+      ],
+      "keywords": [
+        "Tổng thống Trump",
+        "Iran",
+        "đánh Iran"
+      ],
+      "importance": 85,
+      "severity": 5,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_general_1786767460701": {
+    "created_at": 1786767466951,
+    "expires_at": 1789359466951,
+    "version": "4.5",
+    "checksum": "cb0b53991e1e6a6a5e40454b08caa8e1",
+    "data": {
+      "cluster_title": "Mỹ thừa nhận chiến dịch tập kích Houthi đã làm chết hơn 150 dân thường",
+      "short_summary": "Mỹ thừa nhận chiến dịch tập kích Houthi đã làm chết hơn 150 dân thường.",
+      "detailed_summary": "Bộ Quốc phòng Mỹ thừa nhận rằng các chiến dịch quân sự do nước này thực hiện nhắm vào lực lượng Houthi trong năm 2025 đã gây ra thiệt hại ngoài ý muốn, làm tổng cộng 153 dân thường thiệt mạng.",
+      "causes": [
+        "Chiến dịch không kích của Mỹ nhằm vào các vị trí của Houthi",
+        "Sự hiện diện của dân thường tại các khu vực mục tiêu quân sự"
+      ],
+      "effects": [
+        "Thương vong dân thường cao",
+        "Gia tăng áp lực dư luận quốc tế đối với các hoạt động quân sự của Mỹ",
+        "Nguy cơ bị lợi dụng cho mục đích tuyên truyền chống Mỹ"
+      ],
+      "affected_groups": [
+        "Dân thường tại khu vực bị ảnh hưởng",
+        "Chính phủ Mỹ",
+        "Lực lượng Houthi"
+      ],
+      "market_impact": "Có thể gây áp lực nhẹ lên giá dầu và phí vận tải biển do lo ngại bất ổn kéo dài tại khu vực Trung Đông.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "military"
+      ],
+      "regions": [
+        "US",
+        "YE"
+      ],
+      "significance": "Việc Mỹ công khai số liệu thương vong dân thường là một động thái hiếm hoi, làm tăng sức ép về mặt đạo đức và pháp lý quốc tế đối với các chiến dịch quân sự của Mỹ.",
+      "unknowns": [
+        "Thời điểm cụ thể và địa điểm chính xác của từng vụ không kích",
+        "Phản ứng chính thức và các bước xử lý tiếp theo của Mỹ đối với gia đình nạn nhân"
+      ],
+      "confidence_note": "Thông tin dựa trên tuyên bố thừa nhận trực tiếp từ Bộ Quốc phòng Mỹ, có độ tin cậy cao về mặt dữ liệu số liệu.",
+      "scenarios": [
+        {
+          "text": "Các tổ chức nhân quyền quốc tế sẽ đẩy mạnh yêu cầu Mỹ thay đổi quy trình tác chiến để hạn chế thương vong dân thường.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Lực lượng Houthi lợi dụng số liệu này để leo thang các hoạt động truyền thông và phản công quân sự chống lại Mỹ.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Mỹ",
+          "target": "Houthi",
+          "relation_type": "conflict",
+          "label": "Xung đột quân sự trực tiếp"
+        },
+        {
+          "source": "Chiến dịch không kích của Mỹ",
+          "target": "Dân thường",
+          "relation_type": "cause_effect",
+          "label": "Gây thiệt hại về nhân mạng"
+        }
+      ],
+      "entities": [
+        "Mỹ",
+        "Houthi"
+      ],
+      "keywords": [
+        "Mỹ",
+        "Houthi",
+        "chiến dịch tập kích",
+        "dân thường"
+      ],
+      "importance": 85,
+      "severity": 5,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_7942e84e": {
+    "created_at": 1786767478962,
+    "expires_at": 1789359478962,
+    "version": "4.5",
+    "checksum": "0c865c3a2fd9d3a135a0b9a315c25e46",
+    "data": {
+      "cluster_title": "Venezuela muốn thu hồi vàng tại Anh",
+      "short_summary": "Venezuela muốn thu hồi 31 tấn vàng trị giá 4 tỷ USD đang được lưu giữ tại Anh",
+      "detailed_summary": "Chính phủ Venezuela đã công bố kế hoạch thu hồi khối tài sản quốc gia gồm 31 tấn vàng, hiện đang được lưu giữ tại Anh. Số vàng này được định giá khoảng 4 tỷ USD và được chính quyền Caracas coi là nguồn lực thiết yếu để thực hiện các chương trình tái thiết kinh tế nội địa.",
+      "causes": [
+        "Nhu cầu huy động nguồn lực tài chính để tái thiết quốc gia",
+        "Mong muốn chủ động quản lý dự trữ ngoại hối quốc gia"
+      ],
+      "effects": [
+        "Gia tăng căng thẳng hoặc yêu cầu đàm phán ngoại giao giữa Venezuela và Anh",
+        "Ảnh hưởng đến việc quản lý dự trữ vàng của các quốc gia tại ngân hàng nước ngoài"
+      ],
+      "affected_groups": [
+        "Chính phủ Venezuela",
+        "Ngân hàng Trung ương Venezuela",
+        "Các định chế tài chính lưu ký tại Anh"
+      ],
+      "market_impact": "Việc thu hồi khối lượng vàng lớn có thể tạo ra các biến động tâm lý nhất định trong việc lưu giữ tài sản dự trữ quốc gia tại các trung tâm tài chính quốc tế.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "finance"
+      ],
+      "regions": [
+        "VE",
+        "GB"
+      ],
+      "significance": "Sự kiện phản ánh nỗ lực của Venezuela trong việc kiểm soát tài sản quốc gia ở nước ngoài nhằm phục hồi nền kinh tế trong bối cảnh khó khăn.",
+      "unknowns": [
+        "Quy trình pháp lý và phản hồi cụ thể từ phía Anh",
+        "Thời gian biểu dự kiến để hoàn tất việc chuyển giao vàng"
+      ],
+      "confidence_note": "Thông tin dựa trên tuyên bố kế hoạch từ phía chính quyền Venezuela, độ tin cậy cao về mục tiêu nhưng cần theo dõi diễn biến thực thi.",
+      "scenarios": [
+        {
+          "text": "Anh đồng ý chuyển giao vàng sau khi các thủ tục pháp lý và kiểm soát được thực hiện.",
+          "likelihood": "trung bình"
+        },
+        {
+          "text": "Quá trình thu hồi vấp phải rào cản pháp lý hoặc các yêu cầu tranh tụng kéo dài từ phía quốc tế.",
+          "likelihood": "cao"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Venezuela",
+          "target": "Anh",
+          "relation_type": "conflict",
+          "label": "Tranh chấp về quyền quản lý và lưu giữ tài sản quốc gia"
+        },
+        {
+          "source": "Venezuela",
+          "target": "31 tấn vàng",
+          "relation_type": "cause_effect",
+          "label": "Tài sản dự trữ cần thu hồi để tái thiết quốc gia"
+        }
+      ],
+      "entities": [
+        "Venezuela",
+        "Anh"
+      ],
+      "keywords": [
+        "Venezuela",
+        "Vàng",
+        "Anh"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_general_1786767484754": {
+    "created_at": 1786767490617,
+    "expires_at": 1789359490617,
+    "version": "4.5",
+    "checksum": "7fc0ed230a364ea9ed7943ed4773cc5a",
+    "data": {
+      "cluster_title": "Triều Tiên cảnh báo tăng năng lực răn đe hạt nhân",
+      "short_summary": "Triều Tiên tuyên bố sẽ tăng cường năng lực răn đe hạt nhân để đáp trả các mối đe dọa quân sự từ Mỹ và các đồng minh.",
+      "detailed_summary": "Thông qua các kênh truyền thông chính thống, Triều Tiên tái khẳng định chiến lược tăng cường sức mạnh hạt nhân. Động thái này được giải thích là bước đi nhằm đối phó trực tiếp với những gì Bình Nhưỡng gọi là mối đe dọa quân sự từ Mỹ và các quốc gia đồng minh trong khu vực.",
+      "causes": [
+        "Căng thẳng quân sự leo thang giữa Triều Tiên và Mỹ",
+        "Các cuộc tập trận chung giữa Mỹ và đồng minh tại khu vực"
+      ],
+      "effects": [
+        "Gia tăng căng thẳng trên bán đảo Triều Tiên",
+        "Thúc đẩy cuộc đua vũ trang tiềm tàng tại Đông Bắc Á"
+      ],
+      "affected_groups": [
+        "Chính phủ Mỹ",
+        "Chính phủ Triều Tiên",
+        "Các quốc gia láng giềng khu vực Đông Bắc Á"
+      ],
+      "market_impact": "Có thể gây ra sự biến động tâm lý ngắn hạn trên thị trường tài chính khu vực do lo ngại rủi ro địa chính trị.",
+      "vn_impact": "Việt Nam ủng hộ việc duy trì hòa bình, ổn định trên bán đảo Triều Tiên thông qua đối thoại, nên sự kiện này làm tăng áp lực lên nỗ lực ngoại giao đa phương mà Việt Nam tham gia.",
+      "follow_up": "",
+      "categories": [
+        "military",
+        "diplomacy"
+      ],
+      "regions": [
+        "KP",
+        "US"
+      ],
+      "significance": "Sự kiện phản ánh bế tắc kéo dài trong tiến trình giải trừ hạt nhân và xu hướng củng cố năng lực quốc phòng của Triều Tiên trước áp lực quốc tế.",
+      "unknowns": [
+        "Quy mô và lộ trình cụ thể của việc tăng cường năng lực hạt nhân",
+        "Phản ứng chi tiết và các bước đi tiếp theo của Mỹ và đồng minh"
+      ],
+      "confidence_note": "Thông tin dựa trên tuyên bố chính thức của phía Triều Tiên, có độ tin cậy cao về mặt nội dung sự kiện.",
+      "scenarios": [
+        {
+          "text": "Triều Tiên gia tăng tần suất thử nghiệm vũ khí chiến lược để phô diễn năng lực.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các bên quay trở lại bàn đàm phán thông qua các kênh ngoại giao trung gian để hạ nhiệt căng thẳng.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Triều Tiên",
+          "target": "Mỹ",
+          "relation_type": "conflict",
+          "label": "Căng thẳng quân sự và đối đầu địa chính trị"
+        },
+        {
+          "source": "Mối đe dọa quân sự",
+          "target": "Năng lực răn đe hạt nhân",
+          "relation_type": "cause_effect",
+          "label": "Mối đe dọa là nguyên nhân dẫn đến việc tăng cường hạt nhân"
+        }
+      ],
+      "entities": [
+        "Triều Tiên",
+        "Mỹ"
+      ],
+      "keywords": [
+        "Triều Tiên",
+        "hạt nhân",
+        "răn đe"
+      ],
+      "importance": 85,
+      "severity": 5,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_6609a7ce": {
+    "created_at": 1786767502066,
+    "expires_at": 1789359502066,
+    "version": "4.5",
+    "checksum": "b9b927b08ce30d7d9a9bc3147e524494",
+    "data": {
+      "cluster_title": "Google lãi gấp 100 lần từ khoản đầu tư vào SpaceX",
+      "short_summary": "Khoản đầu tư 900 triệu USD của Alphabet vào SpaceX đã tăng giá lên 90 tỷ USD.",
+      "detailed_summary": "Cách đây hơn 10 năm, Alphabet (công ty mẹ của Google) đã rót 900 triệu USD đầu tư vào công ty hàng không vũ trụ SpaceX. Theo các dữ liệu mới nhất, giá trị khoản đầu tư này hiện đã tăng lên hơn 90 tỷ USD, đánh dấu một trong những thương vụ đầu tư thành công nhất của Alphabet.",
+      "causes": [
+        "Sự tăng trưởng vượt bậc về giá trị định giá của SpaceX",
+        "Chiến lược đầu tư dài hạn vào các công ty công nghệ tiềm năng"
+      ],
+      "effects": [
+        "Gia tăng đáng kể giá trị tài sản ròng của Alphabet",
+        "Khẳng định vị thế của Alphabet trong danh mục đầu tư mạo hiểm"
+      ],
+      "affected_groups": [
+        "Cổ đông Alphabet",
+        "Nhà đầu tư thị trường tài chính"
+      ],
+      "market_impact": "Củng cố niềm tin vào các thương vụ đầu tư vào lĩnh vực công nghệ tư nhân, tạo hiệu ứng tích cực cho các quỹ đầu tư mạo hiểm.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "finance",
+        "business"
+      ],
+      "regions": [
+        "US"
+      ],
+      "significance": "Sự kiện cho thấy sức mạnh của việc đầu tư dài hạn vào những doanh nghiệp đột phá trong lĩnh vực công nghệ cao.",
+      "unknowns": [
+        "Tỷ lệ sở hữu cụ thể hiện tại của Alphabet trong SpaceX",
+        "Kế hoạch của Alphabet đối với việc thoái vốn hoặc giữ lại cổ phần trong tương lai"
+      ],
+      "confidence_note": "Thông tin dựa trên báo cáo về biến động giá trị tài sản đầu tư, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Alphabet tiếp tục nắm giữ cổ phần để chờ đợi định giá SpaceX tăng cao hơn nữa.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Alphabet thực hiện bán một phần cổ phiếu để hiện thực hóa lợi nhuận nhằm tái đầu tư vào các lĩnh vực khác.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Alphabet",
+          "target": "SpaceX",
+          "relation_type": "cooperation",
+          "label": "Đầu tư vốn"
+        },
+        {
+          "source": "Alphabet",
+          "target": "SpaceX",
+          "relation_type": "cause_effect",
+          "label": "Khoản đầu tư tạo ra lợi nhuận gấp 100 lần"
+        }
+      ],
+      "entities": [
+        "Google",
+        "SpaceX",
+        "Alphabet"
+      ],
+      "keywords": [
+        "Google",
+        "SpaceX",
+        "Alphabet"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_d24d78b0": {
+    "created_at": 1786767512586,
+    "expires_at": 1789359512586,
+    "version": "4.5",
+    "checksum": "6c5f2a83227087798c2ca79566626d8b",
+    "data": {
+      "cluster_title": "Tìm thấy kho báu vàng ở Bỉ",
+      "short_summary": "Các công nhân phát hiện kho báu vàng 10 triệu USD ở thị trấn Dendermonde, Bỉ.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam",
+      "categories": [
+        "Kinh tế",
+        "Tin tức"
+      ],
+      "regions": [
+        "BE"
+      ],
+      "follow_up": "",
+      "entities": [
+        "Dendermonde",
+        "Bỉ"
+      ],
+      "keywords": [
+        "kho báu",
+        "vàng",
+        "Bỉ"
+      ],
+      "importance": 85,
+      "severity": 1,
+      "sentiment": 0,
+      "scope": "national"
+    }
   }
 }
