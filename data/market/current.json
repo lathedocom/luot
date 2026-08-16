@@ -72,7 +72,7 @@
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/VND=X?range=1d&interval=1d",
       "type": "official"
     },
-    "retrieved_at": "2026-08-16T04:22:23.240Z",
+    "retrieved_at": "2026-08-16T12:19:44.838Z",
     "quality": {
       "status": "verified",
       "method": "api",
@@ -82,7 +82,7 @@
   "global_btc": {
     "indicator_id": "global_btc",
     "name": "Bitcoin",
-    "value": 63103,
+    "value": 62970,
     "unit": "USD",
     "period": "2026-08-16",
     "frequency": "realtime",
@@ -92,7 +92,7 @@
       "url": "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd",
       "type": "official"
     },
-    "retrieved_at": "2026-08-16T04:22:23.357Z",
+    "retrieved_at": "2026-08-16T12:19:45.067Z",
     "quality": {
       "status": "verified",
       "method": "api",
@@ -112,7 +112,7 @@
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/BZ=F?range=1d&interval=1d",
       "type": "official"
     },
-    "retrieved_at": "2026-08-16T04:22:23.439Z",
+    "retrieved_at": "2026-08-16T12:19:45.204Z",
     "quality": {
       "status": "verified",
       "method": "api",
