@@ -1,5 +1,5 @@
 {
-  "last_reset": "2026-08-15",
+  "last_reset": "2026-08-16",
   "usage": {
     "text-embedding-004": {
       "rpd": 0,
@@ -12,14 +12,14 @@
       "rpmMinuteKey": ""
     },
     "gemini-3.1-flash-lite": {
-      "rpd": 47,
-      "rpm": 2,
-      "promptTokens": 30364,
-      "completionTokens": 11695,
+      "rpd": 14,
+      "rpm": 4,
+      "promptTokens": 7494,
+      "completionTokens": 2863,
       "cost": 0,
-      "successCount": 5127,
-      "failCount": 664,
-      "rpmMinuteKey": "2026-08-15T23:17"
+      "successCount": 5138,
+      "failCount": 667,
+      "rpmMinuteKey": "2026-08-16T04:22"
     },
     "undefined": {
       "rpd": 0,
@@ -82,24 +82,24 @@
       "rpmMinuteKey": ""
     },
     "gemma-4-26b-a4b-it": {
-      "rpd": 53,
+      "rpd": 12,
       "rpm": 8,
-      "promptTokens": 22039,
-      "completionTokens": 7305,
+      "promptTokens": 4955,
+      "completionTokens": 1862,
       "cost": 0,
-      "successCount": 3689,
+      "successCount": 3701,
       "failCount": 3,
-      "rpmMinuteKey": "2026-08-15T23:17"
+      "rpmMinuteKey": "2026-08-16T04:22"
     },
     "gemini-embedding-2": {
-      "rpd": 4,
+      "rpd": 1,
       "rpm": 1,
-      "promptTokens": 2139,
+      "promptTokens": 472,
       "completionTokens": 0,
       "cost": 0,
-      "successCount": 138,
+      "successCount": 139,
       "failCount": 81,
-      "rpmMinuteKey": "2026-08-15T23:17"
+      "rpmMinuteKey": "2026-08-16T04:17"
     },
     "llama-3.3-70b-versatile": {
       "rpd": 0,
@@ -112,19 +112,19 @@
       "rpmMinuteKey": ""
     },
     "gemini-3-flash-preview": {
-      "rpd": 5,
+      "rpd": 1,
       "rpm": 1,
-      "promptTokens": 6033,
-      "completionTokens": 2404,
+      "promptTokens": 1652,
+      "completionTokens": 736,
       "cost": 0,
-      "successCount": 154,
+      "successCount": 155,
       "failCount": 14,
-      "rpmMinuteKey": "2026-08-15T23:19"
+      "rpmMinuteKey": "2026-08-16T04:23"
     },
     "gemini-2.5-flash": {
-      "rpd": 2,
-      "rpm": 2,
-      "rpmMinuteKey": "2026-08-15T04:21",
+      "rpd": 0,
+      "rpm": 0,
+      "rpmMinuteKey": "",
       "promptTokens": 0,
       "completionTokens": 0,
       "cost": 0,
