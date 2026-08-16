@@ -37386,5 +37386,241 @@
       "sentiment": -1,
       "scope": "global"
     }
+  },
+  "evt_88f4e148": {
+    "created_at": 1786922253942,
+    "expires_at": 1789514253942,
+    "version": "4.5",
+    "checksum": "774de5952fd08ee2bff7d44d8930575f",
+    "data": {
+      "cluster_title": "Rủi ro khi Mỹ bỏ 'công nghệ nhảy vọt' trên siêu tàu sân bay",
+      "short_summary": "Rủi ro lớn khi Mỹ bỏ 'công nghệ nhảy vọt' trên siêu tàu sân bay, có thể làm chậm tiến độ đóng tàu sân bay mới.",
+      "detailed_summary": "Việc xem xét từ bỏ công nghệ EMALS trên các tàu sân bay thế hệ mới tạo ra thách thức lớn cho Hải quân Mỹ. Quyết định thay đổi hoặc loại bỏ công nghệ này trong quá trình thiết kế và chế tạo có nguy cơ gây đình trệ tiến độ, làm suy yếu năng lực vận hành và gia tăng áp lực đối với các dự án quốc phòng trọng điểm hiện nay.",
+      "causes": [
+        "Cân nhắc kỹ thuật về hiệu quả của hệ thống phóng máy bay điện từ",
+        "Áp lực phải tối ưu hóa ngân sách và tiến độ đóng tàu"
+      ],
+      "effects": [
+        "Tiến độ đóng tàu sân bay mới bị trì hoãn",
+        "Gia tăng áp lực vận hành lên lực lượng hải quân",
+        "Rủi ro về khả năng tác chiến trong tương lai"
+      ],
+      "affected_groups": [
+        "Hải quân Mỹ",
+        "Các nhà thầu quốc phòng",
+        "Bộ Quốc phòng Mỹ"
+      ],
+      "market_impact": "Các doanh nghiệp quốc phòng có hợp đồng liên quan đến công nghệ phóng tàu sân bay có thể chịu ảnh hưởng về doanh thu và kế hoạch sản xuất.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "military",
+        "tech"
+      ],
+      "regions": [
+        "US"
+      ],
+      "significance": "Đây là bài toán đánh đổi giữa đổi mới công nghệ và tiến độ thực thi chiến lược trong bối cảnh năng lực hải quân là ưu tiên hàng đầu của Mỹ.",
+      "unknowns": [
+        "Quyết định cuối cùng của Hải quân Mỹ về việc giữ hay bỏ EMALS",
+        "Giải pháp thay thế cụ thể nếu công nghệ hiện tại bị loại bỏ"
+      ],
+      "confidence_note": "Thông tin dựa trên đánh giá về các thách thức trong chương trình đóng tàu sân bay, mức độ tin cậy trung bình.",
+      "scenarios": [
+        {
+          "text": "Mỹ giữ lại EMALS nhưng phải tái thiết kế để khắc phục lỗi, gây chậm tiến độ nghiêm trọng.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Mỹ từ bỏ EMALS và chuyển sang công nghệ khác làm thay đổi hoàn toàn kiến trúc tàu sân bay mới.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Hải quân Mỹ",
+          "target": "EMALS",
+          "relation_type": "cause_effect",
+          "label": "Quyết định loại bỏ công nghệ gây ảnh hưởng đến tiến độ dự án"
+        },
+        {
+          "source": "EMALS",
+          "target": "Tàu sân bay mới",
+          "relation_type": "cause_effect",
+          "label": "Tích hợp công nghệ là yếu tố then chốt quyết định thời gian hoàn thiện"
+        }
+      ],
+      "entities": [
+        "Mỹ",
+        "hải quân"
+      ],
+      "keywords": [
+        "tàu sân bay",
+        "công nghệ",
+        "Mỹ"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_6ebfa09b": {
+    "created_at": 1786922265819,
+    "expires_at": 1789514265819,
+    "version": "4.5",
+    "checksum": "2b91790c5091cc420dd5d349cd0474c5",
+    "data": {
+      "cluster_title": "Ukraine khoe đánh trúng trận địa Zircon",
+      "short_summary": "Ukraine khoe đánh trúng trận địa Zircon nhưng để sổng toàn bộ tên lửa đạn đạo Nga.",
+      "detailed_summary": "Cơ quan hải quan Ukraine tuyên bố đã thực hiện đợt tập kích chính xác vào tổ hợp phòng thủ bờ biển của Nga đặt tại bán đảo Crimea. Ngược lại, lực lượng không quân Ukraine xác nhận họ không thể đánh chặn bất kỳ tên lửa đạn đạo nào do Nga phóng trong các đợt giao tranh gần đây, cho thấy sự chênh lệch trong hiệu quả tác chiến đối với các loại vũ khí khác nhau.",
+      "causes": [
+        "Năng lực phòng thủ tên lửa của Ukraine còn hạn chế trước vũ khí đạn đạo",
+        "Chiến lược tập trung hỏa lực vào các mục tiêu cố định của Nga tại Crimea"
+      ],
+      "effects": [
+        "Gia tăng áp lực lên hệ thống phòng không Ukraine",
+        "Nga duy trì được lợi thế về tên lửa đạn đạo trong các cuộc không kích"
+      ],
+      "affected_groups": [
+        "Quân đội Ukraine",
+        "Quân đội Nga",
+        "Người dân tại các khu vực bị tập kích"
+      ],
+      "market_impact": "Không có tác động trực tiếp đến thị trường tài chính toàn cầu, ngoại trừ khả năng ảnh hưởng nhẹ đến giá cả hàng hóa năng lượng do rủi ro khu vực.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "military",
+        "politics"
+      ],
+      "regions": [
+        "UA",
+        "RU"
+      ],
+      "significance": "Sự kiện phản ánh tính phức tạp của chiến tranh hiện đại, nơi các bên ghi nhận thành tựu trên một số mục tiêu cụ thể nhưng vẫn đối mặt với khó khăn lớn trong việc đối phó với công nghệ tên lửa đối phương.",
+      "unknowns": [
+        "Số lượng và loại tên lửa đạn đạo cụ thể mà Nga đã sử dụng trong các đợt tấn công",
+        "Mức độ thiệt hại thực tế của tổ hợp phòng thủ bờ biển Nga tại Crimea"
+      ],
+      "confidence_note": "Thông tin dựa trên báo cáo từ các cơ quan chức năng của Ukraine, độ tin cậy ở mức trung bình do thông tin chiến sự thường có tính chọn lọc.",
+      "scenarios": [
+        {
+          "text": "Ukraine tiếp tục đẩy mạnh các đòn tấn công vào cơ sở hạ tầng quân sự tại Crimea để gây sức ép.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Nga gia tăng cường độ sử dụng tên lửa đạn đạo để khai thác lỗ hổng phòng không của Ukraine.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Ukraine",
+          "target": "Nga",
+          "relation_type": "conflict",
+          "label": "Giao tranh quân sự và tấn công mục tiêu hạ tầng"
+        },
+        {
+          "source": "Ukraine",
+          "target": "Tên lửa đạn đạo Nga",
+          "relation_type": "conflict",
+          "label": "Năng lực đánh chặn hạn chế"
+        }
+      ],
+      "entities": [
+        "Ukraine",
+        "Nga",
+        "Crimea"
+      ],
+      "keywords": [
+        "Ukraine",
+        "Zircon",
+        "Crimea"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_general_1786922271733": {
+    "created_at": 1786922277483,
+    "expires_at": 1789514277483,
+    "version": "4.5",
+    "checksum": "fe64e3e7338768d8ba5e893df8dee856",
+    "data": {
+      "cluster_title": "Cháy rừng lớn tại Bỉ",
+      "short_summary": "Vụ cháy rừng lớn nhất lịch sử tại Bỉ đang hoành hành, buộc nước này huy động quân đội và lực lượng cứu hỏa quốc tế ứng phó.",
+      "detailed_summary": "Một vụ cháy rừng quy mô lớn chưa từng có tiền lệ đang diễn ra tại Bỉ. Tình trạng khẩn cấp đã được ban bố, khiến chính quyền sở tại phải huy động lực lượng quân đội phối hợp cùng các đơn vị cứu hỏa quốc tế để tham gia nỗ lực dập tắt đám cháy nhằm ngăn chặn thiệt hại lan rộng.",
+      "causes": [
+        "Hiện tượng thời tiết cực đoan chưa được xác định cụ thể",
+        "Tình trạng cháy rừng diện rộng"
+      ],
+      "effects": [
+        "Thiệt hại về tài nguyên rừng",
+        "Gia tăng áp lực lên ngân sách và nguồn lực quốc gia",
+        "Phải huy động hỗ trợ từ nước ngoài"
+      ],
+      "affected_groups": [
+        "Cư dân địa phương",
+        "Các đơn vị cứu hỏa",
+        "Lực lượng quân đội Bỉ"
+      ],
+      "market_impact": "Chưa có dữ liệu cụ thể về tác động thị trường tài chính, chủ yếu ảnh hưởng đến hoạt động kinh tế địa phương tại khu vực xảy ra cháy.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "environment",
+        "military"
+      ],
+      "regions": [
+        "BE"
+      ],
+      "significance": "Sự kiện cho thấy thách thức nghiêm trọng từ biến đổi môi trường đối với các quốc gia châu Âu, đòi hỏi sự phối hợp khẩn cấp giữa quân đội và quốc tế.",
+      "unknowns": [
+        "Diện tích rừng cụ thể bị thiêu rụi",
+        "Nguyên nhân trực tiếp gây ra vụ cháy",
+        "Thời gian dự kiến khống chế hoàn toàn đám cháy"
+      ],
+      "confidence_note": "Thông tin dựa trên bản tin báo chí, độ tin cậy cao về sự kiện chính.",
+      "scenarios": [
+        {
+          "text": "Lực lượng quốc tế phối hợp thành công dập tắt đám cháy trong ngắn hạn.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Đám cháy kéo dài và lan rộng thêm do điều kiện thời tiết không thuận lợi.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Bỉ",
+          "target": "Quân đội Bỉ",
+          "relation_type": "cooperation",
+          "label": "Chính phủ huy động quân đội tham gia ứng cứu"
+        },
+        {
+          "source": "Bỉ",
+          "target": "Lực lượng cứu hỏa quốc tế",
+          "relation_type": "cooperation",
+          "label": "Yêu cầu hỗ trợ quốc tế ứng phó thiên tai"
+        }
+      ],
+      "entities": [
+        "Bỉ",
+        "quân đội",
+        "lực lượng cứu hỏa quốc tế"
+      ],
+      "keywords": [
+        "cháy rừng",
+        "Bỉ"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
   }
 }
