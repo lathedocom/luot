@@ -1,100 +1,60 @@
 {
   "status": {
     "success": true,
-    "duration_ms": 279631,
-    "last_run": "2026-08-17T16:05:12.157Z"
+    "duration_ms": 158754,
+    "last_run": "2026-08-17T23:19:57.207Z"
   },
   "metrics": {
-    "articles_processed": 11,
-    "clusters_formed": 11,
-    "new_topics": 5
+    "articles_processed": 9,
+    "clusters_formed": 9,
+    "new_topics": 1
   },
   "quota": {
-    "embedding_calls": 11
+    "embedding_calls": 9
   },
   "errors": [
     {
-      "time": "[16:00:54]",
+      "time": "[23:17:36]",
       "message": "[Gateway] Hết lượt Retry cho Task EXTRACT_METADATA.",
       "detail": ""
     },
     {
-      "time": "[16:00:54]",
+      "time": "[23:17:36]",
       "message": "Phân tích AI thất bại hoàn toàn: Task EXTRACT_METADATA thất bại sau 3 lần thử.",
       "detail": ""
     },
     {
-      "time": "[16:01:09]",
-      "message": "[Gateway] Hết lượt Retry cho Task EXTRACT_METADATA.",
-      "detail": ""
-    },
-    {
-      "time": "[16:01:09]",
-      "message": "Phân tích AI thất bại hoàn toàn: Task EXTRACT_METADATA thất bại sau 3 lần thử.",
-      "detail": ""
-    },
-    {
-      "time": "[16:01:28]",
-      "message": "[Gateway] Hết lượt Retry cho Task EXTRACT_METADATA.",
-      "detail": ""
-    },
-    {
-      "time": "[16:01:28]",
-      "message": "Phân tích AI thất bại hoàn toàn: Task EXTRACT_METADATA thất bại sau 3 lần thử.",
-      "detail": ""
-    },
-    {
-      "time": "[16:01:40]",
-      "message": "[Gateway] Hết lượt Retry cho Task EXTRACT_METADATA.",
-      "detail": ""
-    },
-    {
-      "time": "[16:01:40]",
-      "message": "Phân tích AI thất bại hoàn toàn: Task EXTRACT_METADATA thất bại sau 3 lần thử.",
-      "detail": ""
-    },
-    {
-      "time": "[16:01:52]",
-      "message": "[Gateway] Hết lượt Retry cho Task EXTRACT_METADATA.",
-      "detail": ""
-    },
-    {
-      "time": "[16:01:52]",
-      "message": "Phân tích AI thất bại hoàn toàn: Task EXTRACT_METADATA thất bại sau 3 lần thử.",
-      "detail": ""
-    },
-    {
-      "time": "[16:03:07]",
+      "time": "[23:17:50]",
       "message": "[Gateway] Hết lượt Retry cho Task SHORT_SUMMARY.",
       "detail": ""
     },
     {
-      "time": "[16:03:14]",
+      "time": "[23:17:57]",
       "message": "[Gateway] Hết lượt Retry cho Task SHORT_SUMMARY.",
       "detail": ""
     },
     {
-      "time": "[16:03:20]",
+      "time": "[23:18:03]",
       "message": "[Gateway] Hết lượt Retry cho Task SHORT_SUMMARY.",
       "detail": ""
     },
     {
-      "time": "[16:03:27]",
+      "time": "[23:18:10]",
       "message": "[Gateway] Hết lượt Retry cho Task SHORT_SUMMARY.",
       "detail": ""
     },
     {
-      "time": "[16:03:33]",
+      "time": "[23:18:16]",
       "message": "[Gateway] Hết lượt Retry cho Task SHORT_SUMMARY.",
       "detail": ""
     },
     {
-      "time": "[16:03:40]",
+      "time": "[23:18:23]",
       "message": "[Gateway] Hết lượt Retry cho Task SHORT_SUMMARY.",
       "detail": ""
     },
     {
-      "time": "[16:03:46]",
+      "time": "[23:18:29]",
       "message": "[Gateway] Hết lượt Retry cho Task SHORT_SUMMARY.",
       "detail": ""
     }
