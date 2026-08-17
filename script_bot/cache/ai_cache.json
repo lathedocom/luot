@@ -37622,5 +37622,342 @@
       "sentiment": -1,
       "scope": "national"
     }
+  },
+  "evt_d44d931f": {
+    "created_at": 1786940264818,
+    "expires_at": 1789532264818,
+    "version": "4.5",
+    "checksum": "1c2489681ba93ee792723776833c1be2",
+    "data": {
+      "cluster_title": "Bút máy của cố thủ tướng Singapore Lý Quang Diệu được đấu giá",
+      "short_summary": "Cố thủ tướng Singapore Lý Quang Diệu có bút máy được đấu giá 360.000 USD.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "categories": [
+        "Kinh tế",
+        "Thời sự"
+      ],
+      "regions": [
+        "SG",
+        "GLOBAL"
+      ],
+      "follow_up": "",
+      "entities": [
+        "Lý Quang Diệu",
+        "Singapore"
+      ],
+      "keywords": [
+        "bút máy",
+        "đấu giá",
+        "thủ tướng Singapore"
+      ],
+      "importance": 85,
+      "severity": 2,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_c6d99628": {
+    "created_at": 1786940281023,
+    "expires_at": 1789532281023,
+    "version": "4.5",
+    "checksum": "a4c8b7b0a70c56cee5bbe9ff19089b76",
+    "data": {
+      "cluster_title": "Tin tức thế giới 17-8",
+      "short_summary": "Ông Trump nói về tập trận với Hàn Quốc; Con rể ông Trump gặp lãnh đạo Hamas. Nga - Ukraine gia tăng tấn công nhau, 19 người chết; Ông Trump hoan nghênh thỏa thuận phòng thủ giữa Saudi Arabia, Thổ Nhĩ Kỳ và Pakistan.",
+      "detailed_summary": "Ngày 17-8 chứng kiến sự leo thang xung đột giữa Nga và Ukraine khiến 19 người thiệt mạng. Đồng thời, cựu Tổng thống Mỹ Donald Trump đưa ra quan điểm về việc tập trận Mỹ-Hàn, con rể ông có cuộc gặp với lãnh đạo Hamas, và ông Trump cũng bày tỏ sự hoan nghênh đối với thỏa thuận phòng thủ mới giữa Saudi Arabia, Thổ Nhĩ Kỳ và Pakistan.",
+      "causes": [
+        "Căng thẳng địa chính trị leo thang tại Đông Âu",
+        "Sự thay đổi trong chiến lược đối ngoại và ưu tiên của các bên liên quan"
+      ],
+      "effects": [
+        "Gia tăng thương vong trong xung đột Nga-Ukraine",
+        "Sự thay đổi trong cấu trúc liên minh phòng thủ tại khu vực Trung Đông và Nam Á"
+      ],
+      "affected_groups": [
+        "Dân thường tại vùng chiến sự",
+        "Chính phủ các nước có liên quan đến thỏa thuận phòng thủ"
+      ],
+      "market_impact": "Tâm lý lo ngại về địa chính trị có thể gây biến động ngắn hạn đối với giá năng lượng và kim loại quý.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "military"
+      ],
+      "regions": [
+        "US",
+        "KR",
+        "RU",
+        "UA",
+        "SA",
+        "TR",
+        "PK"
+      ],
+      "significance": "Các diễn biến này phản ánh sự dịch chuyển quyền lực phức tạp và nguy cơ xung đột kéo dài trên phạm vi toàn cầu.",
+      "unknowns": [
+        "Chi tiết cụ thể trong nội dung thỏa thuận phòng thủ giữa Saudi Arabia, Thổ Nhĩ Kỳ và Pakistan",
+        "Kết quả cụ thể từ cuộc gặp giữa con rể ông Trump và lãnh đạo Hamas"
+      ],
+      "confidence_note": "Thông tin tổng hợp từ các nguồn tin tức trong ngày, mức độ tin cậy trung bình do cần kiểm chứng thêm chi tiết các thỏa thuận.",
+      "scenarios": [
+        {
+          "text": "Xung đột Nga-Ukraine tiếp tục duy trì cường độ cao, gây ảnh hưởng xấu đến ổn định an ninh khu vực.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các liên minh mới tại Trung Đông tạo ra thế đối trọng trong chính sách an ninh toàn cầu.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Nga",
+          "target": "Ukraine",
+          "relation_type": "conflict",
+          "label": "Xung đột vũ trang gia tăng"
+        },
+        {
+          "source": "Saudi Arabia",
+          "target": "Thổ Nhĩ Kỳ",
+          "relation_type": "cooperation",
+          "label": "Ký kết thỏa thuận phòng thủ"
+        },
+        {
+          "source": "Donald Trump",
+          "target": "Hàn Quốc",
+          "relation_type": "neutral",
+          "label": "Phát biểu quan điểm về tập trận"
+        }
+      ],
+      "entities": [
+        "Donald Trump",
+        "Hàn Quốc",
+        "Nga",
+        "Ukraine",
+        "Saudi Arabia",
+        "Thổ Nhĩ Kỳ",
+        "Pakistan",
+        "Hamas"
+      ],
+      "keywords": [
+        "Trump",
+        "Hàn Quốc",
+        "Nga",
+        "Ukraine",
+        "Saudi Arabia",
+        "Thổ Nhĩ Kỳ",
+        "Pakistan",
+        "Hamas"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_b026ab1d": {
+    "created_at": 1786940287423,
+    "expires_at": 1789532287423,
+    "version": "4.5",
+    "checksum": "99af221c61a449ce81fa138cc6129236",
+    "data": {
+      "cluster_title": "Chung kết The NextX",
+      "short_summary": "Chung kết The NextX diễn ra vào ngày 29/8 với sự tham gia của các chuyên gia từ McKinsey, NTU Singapore, Techcombank, Đại học Ngoại thương và WeAngels Innovation Capital.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "categories": [
+        "Kinh doanh",
+        "Công nghệ"
+      ],
+      "regions": [
+        "GLOBAL"
+      ],
+      "follow_up": "",
+      "entities": [
+        "McKinsey",
+        "NTU Singapore",
+        "Techcombank",
+        "Đại học Ngoại thương",
+        "WeAngels Innovation Capital"
+      ],
+      "keywords": [
+        "The NextX",
+        "Đấu trường AI Kinh doanh",
+        "McKinsey",
+        "NTU Singapore",
+        "Techcombank",
+        "Đại học Ngoại thương",
+        "WeAngels Innovation Capital"
+      ],
+      "importance": 85,
+      "severity": 2,
+      "sentiment": 0,
+      "scope": "global"
+    }
+  },
+  "evt_f1abbb1a": {
+    "created_at": 1786940299393,
+    "expires_at": 1789532299393,
+    "version": "4.5",
+    "checksum": "845ce1e149faf07d81e99c06e2151346",
+    "data": {
+      "cluster_title": "20 năm Batdongsan",
+      "short_summary": "20 năm Batdongsan: Từ tin rao đến công nghệ tìm nhà.",
+      "detailed_summary": "Sau hai thập kỷ hoạt động, Batdongsan đã đánh dấu cột mốc chuyển dịch quan trọng trong phương thức tiếp cận thị trường bất động sản tại Việt Nam, từ các kênh báo giấy, biển quảng cáo thủ công sang hệ sinh thái công nghệ tìm kiếm hiện đại.",
+      "causes": [
+        "Sự phát triển mạnh mẽ của công nghệ thông tin",
+        "Thay đổi trong hành vi tìm kiếm thông tin của người tiêu dùng"
+      ],
+      "effects": [
+        "Tăng tính minh bạch trong giao dịch bất động sản",
+        "Thúc đẩy tốc độ lưu thông thông tin trên thị trường"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư bất động sản",
+        "Người có nhu cầu mua bán nhà ở",
+        "Các doanh nghiệp môi giới"
+      ],
+      "market_impact": "Thúc đẩy tính chuyên nghiệp và hiện đại hóa quy trình giao dịch, giúp thị trường bất động sản tiếp cận người dùng nhanh chóng hơn.",
+      "vn_impact": "Tác động tích cực đến thị trường bất động sản Việt Nam bằng cách cung cấp dữ liệu số, giúp người dân dễ dàng tiếp cận thông tin chính thống và giảm thiểu rủi ro trong giao dịch.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "tech"
+      ],
+      "regions": [
+        "VN"
+      ],
+      "significance": "Sự kiện phản ánh sự chuyển đổi số toàn diện trong lĩnh vực bất động sản, chuyển từ hình thức truyền thống sang mô hình kinh tế số.",
+      "unknowns": [
+        "Tỷ lệ chuyển đổi giao dịch thành công cụ thể thông qua nền tảng công nghệ",
+        "Chi tiết về kế hoạch phát triển công nghệ trong giai đoạn tiếp theo"
+      ],
+      "confidence_note": "Thông tin mang tính chất sự kiện kỷ niệm doanh nghiệp, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Nền tảng tiếp tục ứng dụng AI và dữ liệu lớn để cá nhân hóa trải nghiệm người dùng.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Mở rộng hệ sinh thái dịch vụ đi kèm như định giá tài sản và hỗ trợ tài chính trực tuyến.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Batdongsan",
+          "target": "Thị trường bất động sản Việt Nam",
+          "relation_type": "cause_effect",
+          "label": "Thúc đẩy hiện đại hóa phương thức tìm kiếm và giao dịch"
+        },
+        {
+          "source": "Công nghệ số",
+          "target": "Batdongsan",
+          "relation_type": "cause_effect",
+          "label": "Nền tảng cho sự chuyển đổi mô hình kinh doanh"
+        }
+      ],
+      "entities": [
+        "Batdongsan"
+      ],
+      "keywords": [
+        "Batdongsan",
+        "bất động sản",
+        "công nghệ tìm nhà"
+      ],
+      "importance": 85,
+      "severity": 1,
+      "sentiment": 1,
+      "scope": "national"
+    }
+  },
+  "evt_474b4ad3": {
+    "created_at": 1786940311337,
+    "expires_at": 1789532311337,
+    "version": "4.5",
+    "checksum": "58583b9ea26daadc6d693ea892d1c78a",
+    "data": {
+      "cluster_title": "Nga - Ukraine dội 'mưa hỏa lực' không kích lẫn nhau",
+      "short_summary": "Nga và Ukraine liên tiếp tiến hành các cuộc không kích lẫn nhau trong bối cảnh đàm phán bế tắc.",
+      "detailed_summary": "Sự bế tắc trong tiến trình ngoại giao giữa Nga và Ukraine đã dẫn đến sự leo thang quân sự, nơi cả hai bên liên tục triển khai các cuộc không kích vào lãnh thổ của nhau, làm gia tăng căng thẳng và mức độ tàn phá.",
+      "causes": [
+        "Sự bế tắc trong quá trình đàm phán hòa bình",
+        "Căng thẳng chính trị và quân sự kéo dài giữa hai quốc gia"
+      ],
+      "effects": [
+        "Gia tăng thiệt hại về cơ sở hạ tầng",
+        "Mất mát về nhân mạng",
+        "Gia tăng sự bất ổn trong khu vực"
+      ],
+      "affected_groups": [
+        "Người dân tại khu vực xung đột",
+        "Quân đội Nga",
+        "Quân đội Ukraine"
+      ],
+      "market_impact": "Gây áp lực lên tâm lý thị trường toàn cầu, tiềm ẩn rủi ro gián đoạn chuỗi cung ứng hàng hóa và năng lượng.",
+      "vn_impact": "Có thể gây ảnh hưởng gián tiếp đến Việt Nam thông qua biến động giá cả hàng hóa, năng lượng trên thị trường quốc tế và gây khó khăn cho các hoạt động vận tải, logistics liên quan đến khu vực châu Âu.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "military"
+      ],
+      "regions": [
+        "RU",
+        "UA"
+      ],
+      "significance": "Sự leo thang quân sự phản ánh sự thất bại của các kênh ngoại giao, đẩy triển vọng hòa bình ra xa hơn.",
+      "unknowns": [
+        "Quy mô thiệt hại cụ thể của từng cuộc không kích",
+        "Tác động chiến lược dài hạn của việc không kích đối với cục diện chiến trường"
+      ],
+      "confidence_note": "Thông tin dựa trên báo cáo từ nguồn tin uy tín, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Xung đột tiếp tục leo thang với tần suất không kích cao hơn từ cả hai phía.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các bên tìm kiếm một kênh trung gian để tái khởi động đàm phán trong ngắn hạn.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Nga",
+          "target": "Ukraine",
+          "relation_type": "conflict",
+          "label": "Xung đột quân sự và không kích lẫn nhau"
+        },
+        {
+          "source": "Bế tắc đàm phán",
+          "target": "Không kích",
+          "relation_type": "cause_effect",
+          "label": "Nguyên nhân dẫn đến leo thang quân sự"
+        }
+      ],
+      "entities": [
+        "Nga",
+        "Ukraine"
+      ],
+      "keywords": [
+        "Nga",
+        "Ukraine",
+        "đàm phán",
+        "không kích"
+      ],
+      "importance": 85,
+      "severity": 5,
+      "sentiment": -1,
+      "scope": "global"
+    }
   }
 }

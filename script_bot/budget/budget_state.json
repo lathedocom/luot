@@ -1,5 +1,5 @@
 {
-  "last_reset": "2026-08-16",
+  "last_reset": "2026-08-17",
   "usage": {
     "text-embedding-004": {
       "rpd": 0,
@@ -12,14 +12,14 @@
       "rpmMinuteKey": ""
     },
     "gemini-3.1-flash-lite": {
-      "rpd": 52,
-      "rpm": 1,
-      "promptTokens": 28832,
-      "completionTokens": 11461,
+      "rpd": 10,
+      "rpm": 7,
+      "promptTokens": 5735,
+      "completionTokens": 2058,
       "cost": 0,
-      "successCount": 5171,
-      "failCount": 672,
-      "rpmMinuteKey": "2026-08-16T23:18"
+      "successCount": 5180,
+      "failCount": 673,
+      "rpmMinuteKey": "2026-08-17T04:18"
     },
     "undefined": {
       "rpd": 0,
@@ -82,24 +82,24 @@
       "rpmMinuteKey": ""
     },
     "gemma-4-26b-a4b-it": {
-      "rpd": 49,
-      "rpm": 7,
-      "promptTokens": 20324,
-      "completionTokens": 7077,
+      "rpd": 12,
+      "rpm": 10,
+      "promptTokens": 4946,
+      "completionTokens": 1797,
       "cost": 0,
-      "successCount": 3738,
+      "successCount": 3750,
       "failCount": 3,
-      "rpmMinuteKey": "2026-08-16T23:18"
+      "rpmMinuteKey": "2026-08-17T04:18"
     },
     "gemini-embedding-2": {
-      "rpd": 4,
+      "rpd": 1,
       "rpm": 1,
-      "promptTokens": 1871,
+      "promptTokens": 706,
       "completionTokens": 0,
       "cost": 0,
-      "successCount": 142,
+      "successCount": 143,
       "failCount": 81,
-      "rpmMinuteKey": "2026-08-16T23:17"
+      "rpmMinuteKey": "2026-08-17T04:17"
     },
     "llama-3.3-70b-versatile": {
       "rpd": 0,
@@ -112,14 +112,14 @@
       "rpmMinuteKey": ""
     },
     "gemini-3-flash-preview": {
-      "rpd": 4,
+      "rpd": 1,
       "rpm": 1,
-      "promptTokens": 6377,
-      "completionTokens": 2720,
+      "promptTokens": 1836,
+      "completionTokens": 676,
       "cost": 0,
-      "successCount": 158,
+      "successCount": 159,
       "failCount": 14,
-      "rpmMinuteKey": "2026-08-16T23:19"
+      "rpmMinuteKey": "2026-08-17T04:20"
     },
     "gemini-2.5-flash": {
       "rpd": 0,
