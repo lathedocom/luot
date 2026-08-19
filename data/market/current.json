@@ -72,7 +72,7 @@
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/VND=X?range=1d&interval=1d",
       "type": "official"
     },
-    "retrieved_at": "2026-08-19T04:19:59.660Z",
+    "retrieved_at": "2026-08-19T12:20:46.292Z",
     "quality": {
       "status": "verified",
       "method": "api",
@@ -82,7 +82,7 @@
   "global_btc": {
     "indicator_id": "global_btc",
     "name": "Bitcoin",
-    "value": 64295,
+    "value": 64443,
     "unit": "USD",
     "period": "2026-08-19",
     "frequency": "realtime",
@@ -92,7 +92,7 @@
       "url": "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd",
       "type": "official"
     },
-    "retrieved_at": "2026-08-19T04:19:59.715Z",
+    "retrieved_at": "2026-08-19T12:20:46.384Z",
     "quality": {
       "status": "verified",
       "method": "api",
@@ -102,7 +102,7 @@
   "global_brent": {
     "indicator_id": "global_brent",
     "name": "Dầu Brent",
-    "value": 91.72,
+    "value": 91.62,
     "unit": "USD/thùng",
     "period": "2026-08-19",
     "frequency": "realtime",
@@ -112,7 +112,7 @@
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/BZ=F?range=1d&interval=1d",
       "type": "official"
     },
-    "retrieved_at": "2026-08-19T04:19:59.760Z",
+    "retrieved_at": "2026-08-19T12:20:46.434Z",
     "quality": {
       "status": "verified",
       "method": "api",

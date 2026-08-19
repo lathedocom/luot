@@ -78,7 +78,7 @@
       "history_labels": [
         "Hiện tại"
       ],
-      "updated_at": 1787113199660,
+      "updated_at": 1787142046292,
       "display_source": "Yahoo Finance",
       "status": "online",
       "is_alert": false,
@@ -90,16 +90,16 @@
       "category": "📈 Thị trường tài chính",
       "type": "realtime",
       "unit": "USD",
-      "price": "64.295",
+      "price": "64.443",
       "change_percent": "0%",
       "trend": "→",
       "history": [
-        64295
+        64443
       ],
       "history_labels": [
         "Hiện tại"
       ],
-      "updated_at": 1787113199715,
+      "updated_at": 1787142046384,
       "display_source": "CoinGecko",
       "status": "online",
       "is_alert": false,
@@ -111,16 +111,16 @@
       "category": "🌾 Hàng hóa & Nông sản",
       "type": "realtime",
       "unit": "USD/thùng",
-      "price": "91,72",
+      "price": "91,62",
       "change_percent": "0%",
       "trend": "→",
       "history": [
-        91.72
+        91.62
       ],
       "history_labels": [
         "Hiện tại"
       ],
-      "updated_at": 1787113199760,
+      "updated_at": 1787142046434,
       "display_source": "Yahoo Finance",
       "status": "online",
       "is_alert": false,
@@ -148,23 +148,23 @@
       "id": "viec_lam",
       "name": "Thị trường việc làm",
       "icon": "💼",
-      "score": 0,
-      "status": "Bình thường / Ổn định",
-      "color": "#facc15",
-      "trend_icon": "→",
+      "score": -60,
+      "status": "Suy yếu mạnh",
+      "color": "#ef4444",
+      "trend_icon": "↓",
       "reasons": [
         "Dữ liệu duy trì ổn định theo chu kỳ."
       ],
       "target_audience": "Người lao động, Sinh viên mới ra trường",
-      "meaning": "Nhiều cơ hội việc làm mở ra, dễ thỏa thuận lương.",
-      "impact_level": "🟢 Thấp",
+      "meaning": "Tìm việc khó khăn hơn, cạnh tranh gay gắt, thu nhập chững lại.",
+      "impact_level": "🔴 Cao",
       "duration": "Trung & Dài hạn"
     },
     {
       "id": "san_xuat",
       "name": "Sản xuất & Công nghiệp",
       "icon": "🏭",
-      "score": -36,
+      "score": -40,
       "status": "Có dấu hiệu suy yếu",
       "color": "#f97316",
       "trend_icon": "↓",
@@ -228,7 +228,7 @@
       "id": "tien_te",
       "name": "Tiền tệ & Tín dụng",
       "icon": "💰",
-      "score": -58.57142857142857,
+      "score": -58.75,
       "status": "Có dấu hiệu suy yếu",
       "color": "#f97316",
       "trend_icon": "↓",
