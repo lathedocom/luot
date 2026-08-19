@@ -1,112 +1,22 @@
 {
   "status": {
     "success": true,
-    "duration_ms": 276736,
-    "last_run": "2026-08-19T16:05:14.178Z"
+    "duration_ms": 209991,
+    "last_run": "2026-08-19T17:36:00.200Z"
   },
   "metrics": {
-    "articles_processed": 17,
-    "clusters_formed": 16,
-    "new_topics": 5
+    "articles_processed": 13,
+    "clusters_formed": 12,
+    "new_topics": 0
   },
   "quota": {
-    "embedding_calls": 17
+    "embedding_calls": 13
   },
   "errors": [
     {
-      "time": "[16:00:58]",
-      "message": "[Gateway] Hết lượt Retry cho Task EXTRACT_METADATA.",
-      "detail": ""
-    },
-    {
-      "time": "[16:00:58]",
-      "message": "Phân tích AI thất bại hoàn toàn: Task EXTRACT_METADATA thất bại sau 3 lần thử.",
-      "detail": ""
-    },
-    {
-      "time": "[16:01:10]",
-      "message": "[Gateway] Hết lượt Retry cho Task EXTRACT_METADATA.",
-      "detail": ""
-    },
-    {
-      "time": "[16:01:10]",
-      "message": "Phân tích AI thất bại hoàn toàn: Task EXTRACT_METADATA thất bại sau 3 lần thử.",
-      "detail": ""
-    },
-    {
-      "time": "[16:01:22]",
-      "message": "[Gateway] Hết lượt Retry cho Task EXTRACT_METADATA.",
-      "detail": ""
-    },
-    {
-      "time": "[16:01:22]",
-      "message": "Phân tích AI thất bại hoàn toàn: Task EXTRACT_METADATA thất bại sau 3 lần thử.",
-      "detail": ""
-    },
-    {
-      "time": "[16:01:37]",
-      "message": "[Gateway] Hết lượt Retry cho Task EXTRACT_METADATA.",
-      "detail": ""
-    },
-    {
-      "time": "[16:01:37]",
-      "message": "Phân tích AI thất bại hoàn toàn: Task EXTRACT_METADATA thất bại sau 3 lần thử.",
-      "detail": ""
-    },
-    {
-      "time": "[16:01:50]",
-      "message": "[Gateway] Hết lượt Retry cho Task EXTRACT_METADATA.",
-      "detail": ""
-    },
-    {
-      "time": "[16:01:50]",
-      "message": "Phân tích AI thất bại hoàn toàn: Task EXTRACT_METADATA thất bại sau 3 lần thử.",
-      "detail": ""
-    },
-    {
-      "time": "[16:02:52]",
-      "message": "[Gateway] Hết lượt Retry cho Task SHORT_SUMMARY.",
-      "detail": ""
-    },
-    {
-      "time": "[16:02:59]",
-      "message": "[Gateway] Hết lượt Retry cho Task SHORT_SUMMARY.",
-      "detail": ""
-    },
-    {
-      "time": "[16:03:05]",
-      "message": "[Gateway] Hết lượt Retry cho Task SHORT_SUMMARY.",
-      "detail": ""
-    },
-    {
-      "time": "[16:03:11]",
-      "message": "[Gateway] Hết lượt Retry cho Task SHORT_SUMMARY.",
-      "detail": ""
-    },
-    {
-      "time": "[16:03:17]",
-      "message": "[Gateway] Hết lượt Retry cho Task SHORT_SUMMARY.",
-      "detail": ""
-    },
-    {
-      "time": "[16:03:23]",
-      "message": "[Gateway] Hết lượt Retry cho Task SHORT_SUMMARY.",
-      "detail": ""
-    },
-    {
-      "time": "[16:03:30]",
-      "message": "[Gateway] Hết lượt Retry cho Task SHORT_SUMMARY.",
-      "detail": ""
-    },
-    {
-      "time": "[16:03:36]",
-      "message": "[Gateway] Hết lượt Retry cho Task SHORT_SUMMARY.",
-      "detail": ""
-    },
-    {
-      "time": "[16:03:42]",
-      "message": "[Gateway] Hết lượt Retry cho Task SHORT_SUMMARY.",
-      "detail": ""
+      "time": "[17:35:59]",
+      "message": "[Daily Briefing] Lỗi khi tạo bản tin 24h:",
+      "detail": "Task DAILY_BRIEFING thất bại hoàn toàn sau 3 lần thử."
     }
   ]
 }
