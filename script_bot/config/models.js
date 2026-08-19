@@ -1,26 +1,23 @@
 require('dotenv').config();
 
 module.exports = {
-    // --- TẦNG 1: Gemma / Llama Fast (Tác vụ nhẹ, cào tin hàng loạt) ---
-    LAYER1_MODEL_PRIMARY: 'gemma-4-26b-a4b-it',
-    LAYER1_MODEL_FALLBACK: 'openai/gpt-oss-20b', // Thay model 8B cũ
+    // --- TẦNG 1: Tác vụ nhẹ, trích xuất dữ liệu ---
+    LAYER1_MODEL_PRIMARY: 'gemma-4-26b',             // Ưu tiên 1 (Google)
+    LAYER1_MODEL_FALLBACK_1: 'gemma-4-31b',          // Ưu tiên 2 (Google)
+    LAYER1_MODEL_FALLBACK_EXTERNAL: 'openai/gpt-oss-20b', // Cứu cánh cuối cùng (Groq)
     
-    // --- TẦNG 2: Gemini Workhorse (Xử lý hàng loạt & Ghép Timeline) ---
-    LAYER2_MODEL_PRIMARY: 'gemini-3.1-flash-lite',
-    LAYER2_MODEL_FALLBACK: 'openai/gpt-oss-120b', // Thay model 70B cũ
+    // --- TẦNG 2: Xử lý hàng loạt & Ghép Timeline ---
+    LAYER2_MODEL_PRIMARY: 'gemini-3.5-flash-lite',   // Ưu tiên 1 (Google)
+    LAYER2_MODEL_FALLBACK_1: 'gemini-3.1-flash-lite',// Ưu tiên 2 (Google)
+    LAYER2_MODEL_FALLBACK_EXTERNAL: 'openai/gpt-oss-120b',// Cứu cánh cuối cùng (Groq)
     
-    // --- TẦNG 3: Gemini Limited (Báo cáo & Phân tích cao cấp) ---
-    LAYER3_MODEL_PREMIUM: 'gemini-3-flash-preview',
-    LAYER3_MODEL_FALLBACK_1: 'gemini-2.5-flash',
-    LAYER3_MODEL_FALLBACK_2: 'openai/gpt-oss-120b', // Thay model 70B cũ
-    LAYER3_MODEL_LITE_FALLBACK: 'qwen/qwen3.6-27b', 
+    // --- TẦNG 3: Báo cáo & Phân tích cao cấp ---
+    LAYER3_MODEL_PREMIUM: 'gemini-3.7-flash',        // Ưu tiên 1 (Google)
+    LAYER3_MODEL_FALLBACK_1: 'gemini-3.6-flash',     // Ưu tiên 2 (Google)
+    LAYER3_MODEL_FALLBACK_2: 'gemini-3.5-flash',     // Ưu tiên 3 (Google)
+    LAYER3_MODEL_FALLBACK_EXTERNAL: 'openai/gpt-oss-120b',// Cứu cánh cuối cùng (Groq)
     
-    // --- CẤU HÌNH TRỰC TIẾP MODEL GROQ DỰ PHÒNG ---
-    GROQ_MODEL_FAST: 'openai/gpt-oss-20b',        // Thay model 8B cũ
-    GROQ_MODEL_SMART: 'openai/gpt-oss-120b',      // Thay model 70B cũ
-    GROQ_MODEL_TRANSLATE: 'qwen/qwen3.6-27b',     
-    
-    // --- TẦNG 0: Embedding (Chuyển đổi Vector) ---
+    // --- TẦNG 0: Embedding ---
     EMBEDDING_MODEL_PRIMARY: 'gemini-embedding-2', 
     EMBEDDING_MODEL_FALLBACK: 'gemini-embedding-2',
     
@@ -29,7 +26,7 @@ module.exports = {
         GEMINI: process.env.GEMINI_API_KEY || "",
         GEMINI_BACKUP: process.env.GEMINI_API_KEY_1 || "",
         GEMINI_BACKUP2: process.env.GEMINI_API_KEY_2 || "", 
-        GROQ: process.env.GROQ_API_KEY || "" ,
+        GROQ: process.env.GROQ_API_KEY || "",
         APIFY_API_TOKEN: process.env.APIFY_API_TOKEN || ""
     }
 };
