@@ -10,14 +10,15 @@ function parseAIResponse(rawText) {
         // Xóa sạch các thẻ markdown
         let cleanText = rawText.replace(/```json/gi, '').replace(/```/g, '').trim();
         
-        // Dùng Regex trích xuất phần lõi từ dấu { hoặc [ đầu tiên đến dấu } hoặc ] cuối cùng
-        // Điều này giúp loại bỏ mọi câu chữ "nhiệt tình" do AI tự giải thích thêm
-        const jsonMatch = cleanText.match(/\{[\s\S]*\}|\[[\s\S]*\]/);
+        // Dùng Regex trích xuất phần lõi từ dấu { đầu tiên đến dấu } cuối cùng
+        // Loại bỏ mọi câu chữ "nhiệt tình" do AI tự giải thích thêm ở đầu/cuối
+        // Chú ý: Chỉ dùng ngoặc nhọn {} để tránh bắt nhầm text mảng [...] của Gemma
+        const jsonMatch = cleanText.match(/\{[\s\S]*\}/);
         
         if (jsonMatch) {
             cleanText = jsonMatch[0];
         }
-
+        
         // Parse JSON sau khi đã làm sạch
         return JSON.parse(cleanText);
     } catch (error) {
