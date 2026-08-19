@@ -4228,5 +4228,235 @@
     "completionTokens": 880,
     "latency": 7837,
     "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-08-19T23:17:31.434Z",
+    "model": "gemini-embedding-2",
+    "provider": "google",
+    "task": "BATCH_EMBEDDING",
+    "promptTokens": 104,
+    "completionTokens": 0,
+    "latency": 354,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-08-19T23:18:09.556Z",
+    "model": "gemma-4-26b-a4b-it",
+    "provider": "google",
+    "task": "EXTRACT_METADATA",
+    "promptTokens": 570,
+    "completionTokens": 1398,
+    "latency": 37679,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-08-19T23:18:15.285Z",
+    "model": "gemini-3.5-flash-lite",
+    "provider": "google",
+    "task": "MATCH_TIMELINE",
+    "promptTokens": 403,
+    "completionTokens": 66,
+    "latency": 688,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-08-19T23:18:58.732Z",
+    "model": "gemma-4-26b-a4b-it",
+    "provider": "google",
+    "task": "EXTRACT_METADATA",
+    "promptTokens": 561,
+    "completionTokens": 1527,
+    "latency": 43407,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-08-19T23:19:00.902Z",
+    "model": "gemini-3.5-flash-lite",
+    "provider": "google",
+    "task": "DEEP_ANALYSIS",
+    "promptTokens": 998,
+    "completionTokens": 533,
+    "latency": 2169,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-08-19T23:19:11.569Z",
+    "model": "gemini-3.5-flash-lite",
+    "provider": "google",
+    "task": "MATCH_TIMELINE",
+    "promptTokens": 447,
+    "completionTokens": 55,
+    "latency": 5628,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-08-19T23:19:37.886Z",
+    "model": "gemma-4-26b-a4b-it",
+    "provider": "google",
+    "task": "SHORT_SUMMARY",
+    "promptTokens": 286,
+    "completionTokens": 1108,
+    "latency": 25805,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-08-19T23:19:37.887Z",
+    "model": "gemma-4-26b-a4b-it",
+    "provider": "google",
+    "task": "SHORT_SUMMARY",
+    "promptTokens": 0,
+    "completionTokens": 0,
+    "latency": 25806,
+    "status": "FAILED_RETRY"
+  },
+  {
+    "timestamp": "2026-08-19T23:19:55.322Z",
+    "model": "gemma-4-26b-a4b-it",
+    "provider": "google",
+    "task": "SHORT_SUMMARY",
+    "promptTokens": 286,
+    "completionTokens": 593,
+    "latency": 15432,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-08-19T23:20:09.227Z",
+    "model": "gemma-4-26b-a4b-it",
+    "provider": "google",
+    "task": "SHORT_SUMMARY",
+    "promptTokens": 164,
+    "completionTokens": 525,
+    "latency": 13902,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-08-19T23:20:34.752Z",
+    "model": "gemma-4-26b-a4b-it",
+    "provider": "google",
+    "task": "SHORT_SUMMARY",
+    "promptTokens": 314,
+    "completionTokens": 1149,
+    "latency": 25523,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-08-19T23:20:55.019Z",
+    "model": "gemma-4-26b-a4b-it",
+    "provider": "google",
+    "task": "SHORT_SUMMARY",
+    "promptTokens": 321,
+    "completionTokens": 860,
+    "latency": 20264,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-08-19T23:21:15.833Z",
+    "model": "gemma-4-26b-a4b-it",
+    "provider": "google",
+    "task": "SHORT_SUMMARY",
+    "promptTokens": 232,
+    "completionTokens": 904,
+    "latency": 20811,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-08-19T23:21:30.467Z",
+    "model": "gemma-4-26b-a4b-it",
+    "provider": "google",
+    "task": "SHORT_SUMMARY",
+    "promptTokens": 300,
+    "completionTokens": 580,
+    "latency": 14631,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-08-19T23:21:49.778Z",
+    "model": "gemma-4-26b-a4b-it",
+    "provider": "google",
+    "task": "SHORT_SUMMARY",
+    "promptTokens": 316,
+    "completionTokens": 747,
+    "latency": 19308,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-08-19T23:22:07.633Z",
+    "model": "gemma-4-26b-a4b-it",
+    "provider": "google",
+    "task": "SHORT_SUMMARY",
+    "promptTokens": 293,
+    "completionTokens": 662,
+    "latency": 17852,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-08-19T23:22:07.634Z",
+    "model": "gemma-4-26b-a4b-it",
+    "provider": "google",
+    "task": "SHORT_SUMMARY",
+    "promptTokens": 0,
+    "completionTokens": 0,
+    "latency": 17854,
+    "status": "FAILED_RETRY"
+  },
+  {
+    "timestamp": "2026-08-19T23:22:24.426Z",
+    "model": "gemma-4-26b-a4b-it",
+    "provider": "google",
+    "task": "SHORT_SUMMARY",
+    "promptTokens": 293,
+    "completionTokens": 556,
+    "latency": 14790,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-08-19T23:22:41.383Z",
+    "model": "gemma-4-26b-a4b-it",
+    "provider": "google",
+    "task": "SHORT_SUMMARY",
+    "promptTokens": 164,
+    "completionTokens": 654,
+    "latency": 16954,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-08-19T23:24:00.994Z",
+    "model": "gemini-3.7-flash",
+    "provider": "google",
+    "task": "DAILY_BRIEFING",
+    "promptTokens": 0,
+    "completionTokens": 0,
+    "latency": 4428,
+    "status": "FAILED_RETRY"
+  },
+  {
+    "timestamp": "2026-08-19T23:24:12.241Z",
+    "model": "gemini-3.7-flash",
+    "provider": "googleBackup",
+    "task": "DAILY_BRIEFING",
+    "promptTokens": 0,
+    "completionTokens": 0,
+    "latency": 9245,
+    "status": "FAILED_RETRY"
+  },
+  {
+    "timestamp": "2026-08-19T23:24:26.156Z",
+    "model": "gemini-3.7-flash",
+    "provider": "googleBackup2",
+    "task": "DAILY_BRIEFING",
+    "promptTokens": 0,
+    "completionTokens": 0,
+    "latency": 11914,
+    "status": "FAILED_RETRY"
+  },
+  {
+    "timestamp": "2026-08-19T23:24:43.479Z",
+    "model": "gemini-3.6-flash",
+    "provider": "google",
+    "task": "DAILY_BRIEFING",
+    "promptTokens": 2855,
+    "completionTokens": 699,
+    "latency": 15319,
+    "status": "SUCCESS"
   }
 ]

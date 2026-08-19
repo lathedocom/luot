@@ -40092,5 +40092,121 @@
       "scope": "business",
       "importance": 50
     }
+  },
+  "evt_a8ca0e9d": {
+    "created_at": 1787181489571,
+    "expires_at": 1789773489571,
+    "version": "4.5",
+    "checksum": "bc9e443bfa27dfdff1dd0abe1510f8b4",
+    "data": {
+      "cluster_title": "Natalie Harp được Nhà Trắng bảo vệ",
+      "short_summary": "Natalie Harp, trợ lý thân cận của ông Trump với biệt danh 'máy in sống', đang nhận được sự bảo vệ từ phía Nhà Trắng trước những lời công kích nhằm duy trì vị thế của bà.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "categories": [
+        "Chính trị"
+      ],
+      "regions": [
+        "US"
+      ],
+      "follow_up": "",
+      "entities": [
+        "Natalie Harp",
+        "Donald Trump",
+        "Nhà Trắng"
+      ],
+      "keywords": [
+        "Natalie Harp",
+        "Donald Trump",
+        "Nhà Trắng"
+      ],
+      "importance": 40,
+      "severity": 1,
+      "sentiment": 0,
+      "scope": "personal"
+    }
+  },
+  "evt_general_1787181495305": {
+    "created_at": 1787181540918,
+    "expires_at": 1789773540918,
+    "version": "4.5",
+    "checksum": "dc4d74aa984db0acabdae5cb6960ddf3",
+    "data": {
+      "cluster_title": "Mỹ và Hàn Quốc rút ngắn thời gian tập trận chung",
+      "short_summary": "Mỹ và Hàn Quốc đã thống nhất rút ngắn hơn một nửa thời gian tiến hành cuộc tập trận quân sự chung Lá chắn Tự do Ulchi trên bán đảo Triều Tiên, một sự kiện quan trọng liên quan đến an ninh và địa chính trị tại khu vực Đông Bắc Á.",
+      "detailed_summary": "Theo thông tin từ VTV.vn, Mỹ và Hàn Quốc đã đạt được thỏa thuận về việc rút ngắn thời gian tổ chức cuộc tập trận chung mang tên Lá chắn Tự do Ulchi trên bán đảo Triều Tiên xuống còn hơn một nửa so với kế hoạch ban đầu.",
+      "causes": [
+        "Sự nhất trí giữa Mỹ và Hàn Quốc trong việc điều chỉnh thời gian tập trận"
+      ],
+      "effects": [
+        "Thời gian tập trận Lá chắn Tự do Ulchi trên bán đảo Triều Tiên bị rút ngắn hơn một nửa"
+      ],
+      "affected_groups": [
+        "Quân đội Mỹ",
+        "Quân đội Hàn Quốc"
+      ],
+      "market_impact": "Không có thông tin rõ ràng về tác động thị trường trong bài báo gốc.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "military",
+        "diplomacy"
+      ],
+      "regions": [
+        "US",
+        "KR",
+        "KP"
+      ],
+      "significance": "Sự kiện phản ánh sự điều chỉnh trong hoạt động quân sự chung giữa Mỹ và Hàn Quốc trên bán đảo Triều Tiên.",
+      "unknowns": [
+        "Lý do cụ thể dẫn đến quyết định rút ngắn thời gian tập trận",
+        "Thời lượng chính xác sau khi rút ngắn là bao nhiêu ngày"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cơ bản dựa trên bản tin ngắn được cung cấp từ nguồn chính thống, nhưng thiếu các chi tiết bổ sung.",
+      "scenarios": [
+        {
+          "text": "Mỹ và Hàn Quốc tiếp tục duy trì các hoạt động quân sự chung với thời gian đã được điều chỉnh.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Hai nước có thể đưa ra thêm các điều chỉnh mới về quy mô hoặc thời gian tập trận trong tương lai tùy thuộc vào tình hình thực tế.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Mỹ",
+          "target": "Hàn Quốc",
+          "relation_type": "cooperation",
+          "label": "Nhất trí rút ngắn thời gian tập trận chung"
+        },
+        {
+          "source": "Mỹ và Hàn Quốc",
+          "target": "Lá chắn Tự do Ulchi",
+          "relation_type": "cause_effect",
+          "label": "Thực hiện điều chỉnh thời gian tập trận"
+        }
+      ],
+      "entities": [
+        "Mỹ",
+        "Hàn Quốc",
+        "VTV.vn"
+      ],
+      "keywords": [
+        "Mỹ",
+        "Hàn Quốc",
+        "tập trận chung",
+        "Lá chắn Tự do Ulchi",
+        "bán đảo Triều Tiên"
+      ],
+      "importance": 70,
+      "severity": 2,
+      "sentiment": 0,
+      "scope": "global"
+    }
   }
 }
