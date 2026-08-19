@@ -1,38 +1,32 @@
-// FILE: script_bot/config/tasks.js
 const models = require('./models');
 
 module.exports = {
     TASK_ROUTING: {
-        // Tầng 1: Dùng Gemma (Free 14.4K/ngày) qua mạng Groq
-        'EXTRACT_METADATA': { model: models.LAYER1_MODEL_PRIMARY, provider: 'groq' },
-        'DETECT_ENTITY': { model: models.LAYER1_MODEL_PRIMARY, provider: 'groq' },
-        'SHORT_SUMMARY': { model: models.LAYER1_MODEL_PRIMARY, provider: 'groq' },
-        'CHECK_NEED_AI': { model: models.LAYER1_MODEL_PRIMARY, provider: 'groq' },
+        // Tầng 1
+        'EXTRACT_METADATA': { model: models.LAYER1_MODEL_PRIMARY, provider: 'google' },
+        'DETECT_ENTITY': { model: models.LAYER1_MODEL_PRIMARY, provider: 'google' },
+        'SHORT_SUMMARY': { model: models.LAYER1_MODEL_PRIMARY, provider: 'google' },
+        'CHECK_NEED_AI': { model: models.LAYER1_MODEL_PRIMARY, provider: 'google' },
         
-        // Tầng 2: Dùng 3.1 Flash Lite (Free 500/ngày)
+        // Tầng 2
         'DEEP_ANALYSIS': { model: models.LAYER2_MODEL_PRIMARY, provider: 'google' },
         'WEEKLY_REPORT': { model: models.LAYER2_MODEL_PRIMARY, provider: 'google' },
-        
-        // Tầng 3: Dùng 3 Flash (Free 20/ngày - Giữ gìn cẩn thận)
-        'DAILY_BRIEFING': { model: models.LAYER3_MODEL_PREMIUM, provider: 'google' },
-        'MONTHLY_REPORT': { model: models.LAYER3_MODEL_PREMIUM, provider: 'google' },
-        
-        // Luồng gộp sự kiện
         'STORY_MATCHING': { model: models.LAYER2_MODEL_PRIMARY, provider: 'google' },
-        'MATCH_TIMELINE': { model: models.LAYER2_MODEL_PRIMARY, provider: 'google' } 
+        'MATCH_TIMELINE': { model: models.LAYER2_MODEL_PRIMARY, provider: 'google' },
+        
+        // Tầng 3
+        'DAILY_BRIEFING': { model: models.LAYER3_MODEL_PREMIUM, provider: 'google' },
+        'MONTHLY_REPORT': { model: models.LAYER3_MODEL_PREMIUM, provider: 'google' }
     },
-
+    
     // ==========================================
     // KHỐI CẤU HÌNH PROMPT CHO TỪNG TÁC VỤ
     // ==========================================
-
-    // Bổ sung kỷ luật thép cho JSON của Tầng 1
     EXTRACT_METADATA: {
         model: models.LAYER1_MODEL_PRIMARY,
         temperature: 0.1,
         system_prompt: `Bạn là trợ lý trích xuất dữ liệu. LỆNH TUYỆT ĐỐI: Phải trả về chuẩn định dạng JSON. Tuyệt đối KHÔNG sử dụng dấu ngoặc kép (") bên trong các chuỗi giá trị text để tránh làm hỏng định dạng JSON. Hãy dùng dấu nháy đơn (') nếu cần trích dẫn.`
     },
-
     MATCH_TIMELINE: {
         model: models.LAYER2_MODEL_PRIMARY, 
         temperature: 0.1, 
@@ -40,15 +34,12 @@ module.exports = {
         system_prompt: `Bạn là một trợ lý báo chí khắt khe. Nhiệm vụ của bạn là đánh giá xem một [Sự kiện mới] có phải là diễn biến tiếp theo của [Câu chuyện đang theo dõi] hay không. Chỉ trả về định dạng JSON hợp lệ. Tuyệt đối KHÔNG sử dụng dấu ngoặc kép (") bên trong các chuỗi text, hãy dùng nháy đơn (').`,
         prompt_template: (data) => `
 ĐÁNH GIÁ MỐI LIÊN QUAN CỦA DÒNG CHẢY SỰ KIỆN
-
 [CÂU CHUYỆN ĐANG THEO DÕI]
 - Chủ đề: ${data.storyTitle}
 - Tóm tắt: ${data.storySummary}
-
 [SỰ KIỆN MỚI]
 - Tiêu đề: ${data.eventTitle}
 - Nội dung: ${data.eventSummary}
-
 Câu hỏi: Sự kiện mới có trực tiếp thuộc về mạch truyện của câu chuyện đang theo dõi không?
 Hãy trả về ĐÚNG cấu trúc JSON sau (không kèm text khác):
 {
@@ -58,8 +49,6 @@ Hãy trả về ĐÚNG cấu trúc JSON sau (không kèm text khác):
 }
         `
     },
-
-    // Bổ sung luồng tóm tắt ngắn, ép buộc Tiếng Việt
     SHORT_SUMMARY: {
         model: models.LAYER1_MODEL_PRIMARY,
         temperature: 0.3,
@@ -68,8 +57,6 @@ Hãy trả về ĐÚNG cấu trúc JSON sau (không kèm text khác):
 Tiêu đề: ${data.title}
 Nội dung: ${data.content}`
     },
-
-    // Bổ sung luồng phân tích sâu, ép buộc Tiếng Việt
     DEEP_ANALYSIS: {
         model: models.LAYER2_MODEL_PRIMARY,
         temperature: 0.3,
