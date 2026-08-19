@@ -1,5 +1,5 @@
 {
-  "last_reset": "2026-08-18",
+  "last_reset": "2026-08-19",
   "usage": {
     "text-embedding-004": {
       "rpd": 0,
@@ -12,14 +12,14 @@
       "rpmMinuteKey": ""
     },
     "gemini-3.1-flash-lite": {
-      "rpd": 31,
-      "rpm": 1,
-      "promptTokens": 10572,
-      "completionTokens": 1450,
+      "rpd": 14,
+      "rpm": 7,
+      "promptTokens": 5516,
+      "completionTokens": 775,
       "cost": 0,
-      "successCount": 5225,
-      "failCount": 678,
-      "rpmMinuteKey": "2026-08-18T23:17"
+      "successCount": 5238,
+      "failCount": 679,
+      "rpmMinuteKey": "2026-08-19T04:19"
     },
     "undefined": {
       "rpd": 0,
@@ -82,44 +82,44 @@
       "rpmMinuteKey": ""
     },
     "gemma-4-26b-a4b-it": {
-      "rpd": 236,
-      "rpm": 25,
+      "rpd": 80,
+      "rpm": 31,
       "promptTokens": 0,
       "completionTokens": 0,
       "cost": 0,
       "successCount": 3750,
-      "failCount": 391,
-      "rpmMinuteKey": "2026-08-18T23:18"
+      "failCount": 471,
+      "rpmMinuteKey": "2026-08-19T04:20"
     },
     "gemini-embedding-2": {
-      "rpd": 4,
+      "rpd": 1,
       "rpm": 1,
-      "promptTokens": 2392,
+      "promptTokens": 1234,
       "completionTokens": 0,
       "cost": 0,
-      "successCount": 150,
+      "successCount": 151,
       "failCount": 81,
-      "rpmMinuteKey": "2026-08-18T23:17"
+      "rpmMinuteKey": "2026-08-19T04:17"
     },
     "llama-3.3-70b-versatile": {
-      "rpd": 2,
-      "rpm": 2,
+      "rpd": 0,
+      "rpm": 0,
       "promptTokens": 0,
       "completionTokens": 0,
       "cost": 0,
       "successCount": 0,
       "failCount": 12,
-      "rpmMinuteKey": "2026-08-18T16:03"
+      "rpmMinuteKey": ""
     },
     "gemini-3-flash-preview": {
-      "rpd": 4,
+      "rpd": 1,
       "rpm": 1,
-      "promptTokens": 8872,
-      "completionTokens": 3265,
+      "promptTokens": 2516,
+      "completionTokens": 784,
       "cost": 0,
-      "successCount": 166,
+      "successCount": 167,
       "failCount": 14,
-      "rpmMinuteKey": "2026-08-18T23:20"
+      "rpmMinuteKey": "2026-08-19T04:22"
     },
     "gemini-2.5-flash": {
       "rpd": 0,
