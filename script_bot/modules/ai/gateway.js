@@ -7,7 +7,6 @@ const { parseAIResponse } = require('./parser');
 const logger = require('../utils/logger');
 const budgetManager = require('../../budget/budget_manager');
 
-// --- HÀM HELPER: Lấy model Google tiếp theo theo thứ tự ---
 function getNextGoogleModel(taskName, currentModel) {
     if (['EXTRACT_METADATA', 'DETECT_ENTITY', 'SHORT_SUMMARY', 'CHECK_NEED_AI'].includes(taskName)) {
         if (currentModel === configModels.LAYER1_MODEL_PRIMARY) return configModels.LAYER1_MODEL_FALLBACK_1;
@@ -25,7 +24,6 @@ function getNextGoogleModel(taskName, currentModel) {
     return null;
 }
 
-// --- HÀM HELPER: Lấy model mạng ngoài (Groq) ---
 function getExternalFallback(taskName) {
     if (['DEEP_ANALYSIS', 'STORY_MATCHING', 'MATCH_TIMELINE', 'WEEKLY_REPORT', 'DAILY_BRIEFING', 'MONTHLY_REPORT'].includes(taskName)) {
         return configModels.LAYER3_MODEL_FALLBACK_EXTERNAL || configModels.LAYER2_MODEL_FALLBACK_EXTERNAL || 'openai/gpt-oss-120b';
@@ -52,7 +50,7 @@ class AIGateway {
         let targetModel = taskConfig.model;
         let targetProvider = taskConfig.provider;
 
-        // --- PRE-CHECK: Trượt mô hình Google xuống cấp thấp hơn nếu hết Quota tính toán ---
+        // --- PRE-CHECK QUOTA ---
         while (targetProvider.startsWith('google') && !budgetManager.canUseModel(targetModel)) {
              let nextModel = getNextGoogleModel(taskName, targetModel);
              if (nextModel) {
@@ -92,33 +90,42 @@ class AIGateway {
                 
                 const isQuotaOrNetworkError = error.message === "RATE_LIMIT" || error.message.includes('429') || error.message.includes('404') || error.message.includes('503');
                 
+                budgetManager.recordUsage({ model: targetModel, provider: targetProvider, task: taskName, latency, status: 'FAILED_RETRY' });
+                
                 if (isQuotaOrNetworkError) {
-                    // Xoay vòng tài nguyên khi gặp lỗi mạng/quota
+                    let configChanged = false;
+                    
                     if (targetProvider === 'google' && this.providers.googleBackup) {
                         logger.warn(`[Gateway] Google Key 1 lỗi. Đổi sang Key 2...`);
                         targetProvider = 'googleBackup';
+                        configChanged = true;
                     } 
                     else if (targetProvider === 'googleBackup' && this.providers.googleBackup2) {
                         logger.warn(`[Gateway] Google Key 2 lỗi. Đổi sang Key 3...`);
                         targetProvider = 'googleBackup2';
+                        configChanged = true;
                     } 
                     else if (targetProvider.startsWith('google')) {
-                        // Vắt kiệt cả 3 Key của Model hiện tại -> Đổi sang Model Google cấp thấp hơn
                         let nextModel = getNextGoogleModel(taskName, targetModel);
                         if (nextModel) {
                             logger.warn(`[Gateway] Hết Key cho ${targetModel}. Hạ cấp dùng model Google: ${nextModel}`);
                             targetModel = nextModel;
-                            targetProvider = 'google'; // Quay lại vòng lặp với Key chính, model mới
+                            targetProvider = 'google'; 
+                            configChanged = true;
                         } else {
-                            // Cạn kiệt toàn bộ Model & Key của Google -> Cầu dao kích hoạt sang Groq
                             logger.warn(`[Gateway] Cạn kiệt TOÀN BỘ tài nguyên Google. Bật cứu cánh mạng Groq...`);
                             targetProvider = 'groq';
                             targetModel = getExternalFallback(taskName);
+                            configChanged = true;
                         }
                     }
+
+                    if (configChanged) {
+                        attempts = 0; // RESET LẠI SỐ LẦN THỬ ĐỂ LUỒNG MỚI ĐƯỢC CHẠY ĐỦ 3 LẦN
+                        await new Promise(res => setTimeout(res, 2000));
+                        continue; 
+                    }
                 }
-                
-                budgetManager.recordUsage({ model: targetModel, provider: targetProvider, task: taskName, latency, status: 'FAILED_RETRY' });
                 
                 attempts++;
                 if (attempts > maxRetries) throw new Error(`Task ${taskName} thất bại hoàn toàn sau ${maxRetries} lần thử.`);
@@ -127,15 +134,12 @@ class AIGateway {
         }
     }
     
-    // Hàm thực thi Embedding đơn
     async executeEmbedding(text) {
         const startTime = Date.now();
         const modelName = configModels.EMBEDDING_MODEL_PRIMARY || 'gemini-embedding-2';
         try {
             const vector = await this.providers.google.embedContent(text, modelName);
-            budgetManager.recordUsage({
-                model: modelName, provider: 'google', task: 'EMBEDDING', promptTokens: Math.round(text.length / 4), latency: Date.now() - startTime, status: 'SUCCESS'
-            });
+            budgetManager.recordUsage({ model: modelName, provider: 'google', task: 'EMBEDDING', promptTokens: Math.round(text.length / 4), latency: Date.now() - startTime, status: 'SUCCESS' });
             return vector;
         } catch (error) {
             const isQuotaOrNetworkError = error.message === "RATE_LIMIT" || error.message.includes('429') || error.message.includes('503');
@@ -166,15 +170,12 @@ class AIGateway {
         }
     }
 
-    // Hàm thực thi Embedding theo Lô (Batch)
     async executeBatchEmbedding(texts) {
         const startTime = Date.now();
         const modelName = configModels.EMBEDDING_MODEL_PRIMARY || 'gemini-embedding-2';
         try {
             const vectors = await this.providers.google.batchEmbedContents(texts, modelName);
-            budgetManager.recordUsage({
-                model: modelName, provider: 'google', task: 'BATCH_EMBEDDING', promptTokens: Math.round(texts.join(' ').length / 4), latency: Date.now() - startTime, status: 'SUCCESS'
-            });
+            budgetManager.recordUsage({ model: modelName, provider: 'google', task: 'BATCH_EMBEDDING', promptTokens: Math.round(texts.join(' ').length / 4), latency: Date.now() - startTime, status: 'SUCCESS' });
             return vectors;
         } catch (error) {
             const isQuotaOrNetworkError = error.message === "RATE_LIMIT" || error.message.includes('429') || error.message.includes('503');
