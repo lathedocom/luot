@@ -2,7 +2,6 @@ const BaseProvider = require('./base_provider');
 const { Groq } = require('groq-sdk');
 
 class GroqProvider extends BaseProvider {
-    // Đổi mặc định sang model mới nhất của Groq
     constructor(apiKey, modelName = 'openai/gpt-oss-20b') {
         super(apiKey);
         this.modelName = modelName;
@@ -17,7 +16,6 @@ class GroqProvider extends BaseProvider {
         
         const response = await this.client.chat.completions.create({
             messages: messages,
-            // Ưu tiên tham số truyền vào, nếu không có mới dùng mặc định
             model: modelName || this.modelName, 
             temperature: 0.1,
             response_format: { type: "json_object" }
