@@ -1,22 +1,16 @@
 {
   "status": {
     "success": true,
-    "duration_ms": 2250817,
-    "last_run": "2026-08-20T12:54:49.353Z"
+    "duration_ms": 685608,
+    "last_run": "2026-08-20T16:12:02.159Z"
   },
   "metrics": {
-    "articles_processed": 27,
-    "clusters_formed": 22,
-    "new_topics": 17
+    "articles_processed": 13,
+    "clusters_formed": 11,
+    "new_topics": 1
   },
   "quota": {
-    "embedding_calls": 27
+    "embedding_calls": 13
   },
-  "errors": [
-    {
-      "time": "[12:20:52]",
-      "message": "Phân tích AI thất bại hoàn toàn: Task EXTRACT_METADATA thất bại hoàn toàn sau 3 lần thử.",
-      "detail": ""
-    }
-  ]
+  "errors": []
 }

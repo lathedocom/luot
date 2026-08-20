@@ -42032,5 +42032,91 @@
       "sentiment": -1,
       "scope": "national"
     }
+  },
+  "evt_f3f24901": {
+    "created_at": 1787241695308,
+    "expires_at": 1789833695308,
+    "version": "4.5",
+    "checksum": "abc2232f620f5281d1d3c0b9f311ed45",
+    "data": {
+      "cluster_title": "Ukraine tập kích UAV vào Moscow",
+      "short_summary": "Ukraine thực hiện các cuộc tập kích bằng UAV vào Moscow, buộc Nga phải khẩn trương hiện đại hóa hệ thống phòng không tại thủ đô và các khu vực lân cận để ứng phó với mối đe dọa.",
+      "detailed_summary": "Trước mối đe dọa ngày càng gia tăng từ các cuộc tấn công bằng thiết bị bay không người lái tầm xa của Ukraine nhắm vào thủ đô Moscow, Nga đang tiến hành các bước đi khẩn cấp nhằm hiện đại hóa hệ thống phòng không tại khu vực này để đối phó với tình hình.",
+      "causes": [
+        "Ukraine thực hiện các cuộc tập kích bằng thiết bị bay không người lái tầm xa nhắm vào Moscow.",
+        "Mối đe dọa ngày càng tăng từ các cuộc tấn công trên không của Ukraine đối với thủ đô Nga."
+      ],
+      "effects": [
+        "Nga khẩn trương hiện đại hóa hệ thống phòng không tại Moscow và khu vực lân cận."
+      ],
+      "affected_groups": [
+        "Chính phủ Nga",
+        "Quân đội Nga",
+        "Dân cư tại Moscow và khu vực lân cận"
+      ],
+      "market_impact": "Không có thông tin rõ ràng về tác động thị trường trong bài viết gốc.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "military",
+        "politics"
+      ],
+      "regions": [
+        "UA",
+        "RU"
+      ],
+      "significance": "Sự kiện cho thấy phạm vi xung đột đã vươn tới các trung tâm đầu não, thúc đẩy Nga phải nâng cấp năng lực phòng thủ đô thị.",
+      "unknowns": [
+        "Quy mô và mức độ thiệt hại cụ thể của các cuộc tập kích bằng thiết bị bay không người lái.",
+        "Chi tiết kỹ thuật về các gói hiện đại hóa hệ thống phòng không mà Nga đang triển khai."
+      ],
+      "confidence_note": "Thông tin dựa trên bản tin báo chí, mức độ tin cậy trung bình theo nguồn tin tường thuật.",
+      "scenarios": [
+        {
+          "text": "Ukraine tiếp tục gia tăng tần suất và quy mô các cuộc tấn công bằng thiết bị bay không người lái vào thủ đô Nga.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Nga thành công trong việc nâng cấp hệ thống phòng không và vô hiệu hóa hầu hết các cuộc tấn công nhắm vào Moscow.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Ukraine",
+          "target": "Moscow",
+          "relation_type": "conflict",
+          "label": "Tập kích bằng thiết bị bay không người lái"
+        },
+        {
+          "source": "Ukraine",
+          "target": "Nga",
+          "relation_type": "cause_effect",
+          "label": "Nguyên nhân khiến Nga phải hiện đại hóa phòng không"
+        },
+        {
+          "source": "Nga",
+          "target": "Moscow",
+          "relation_type": "cooperation",
+          "label": "Hiện đại hóa hệ thống phòng không bảo vệ thủ đô"
+        }
+      ],
+      "entities": [
+        "Ukraine",
+        "Nga",
+        "Moscow"
+      ],
+      "keywords": [
+        "UAV",
+        "Moscow",
+        "Ukraine",
+        "Nga",
+        "phòng không"
+      ],
+      "importance": 85,
+      "severity": 4,
+      "sentiment": -1,
+      "scope": "global"
+    }
   }
 }
