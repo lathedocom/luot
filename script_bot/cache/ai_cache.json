@@ -40208,5 +40208,586 @@
       "sentiment": 0,
       "scope": "global"
     }
+  },
+  "evt_c3f1c02f": {
+    "created_at": 1787199493813,
+    "expires_at": 1789791493813,
+    "version": "4.5",
+    "checksum": "53794946680bfb6dfef99929aed127f9",
+    "data": {
+      "cluster_title": "Ukraine phê chuẩn Bộ trưởng Quốc phòng mới",
+      "short_summary": "Quốc hội Ukraine đã chính thức phê chuẩn ông Yevhen Khmara làm Bộ trưởng Quốc phòng mới. Sự kiện diễn ra trong bối cảnh Tổng thống Zelensky đang chịu áp lực về chính trị và bài toán tổ chức bầu cử giữa thời chiến, cùng với kế hoạch thăm Mỹ của cựu Bộ trưởng Fedorov.",
+      "detailed_summary": "Quốc hội Ukraine đã chính thức phê chuẩn ông Yevhen Khmara đảm nhận vị trí Bộ trưởng Quốc phòng. Sự thay đổi nhân sự này diễn ra khi Tổng thống Volodymyr Zelensky đang phải đối mặt với nhiều sóng gió chính trị và áp lực liên quan đến việc tổ chức bầu cử trong thời kỳ chiến tranh. Trước đó, cựu Bộ trưởng Quốc phòng Mykhailo Fedorov là người đưa ra lời kêu gọi tổ chức bầu cử giữa thời chiến, đặt đất nước trước bài toán khó khăn, đồng thời ông cũng đang lên kế hoạch thực hiện chuyến thăm tới Mỹ.",
+      "causes": [
+        "Áp lực chính trị và nhu cầu tổ chức bầu cử trong thời gian chiến tranh tại Ukraine",
+        "Sự thay đổi nhân sự cấp cao trong bộ máy quốc phòng của Ukraine"
+      ],
+      "effects": [
+        "Ông Yevhen Khmara nhậm chức Bộ trưởng Quốc phòng Ukraine",
+        "Cựu Bộ trưởng Quốc phòng Mykhailo Fedorov lên kế hoạch thăm Mỹ"
+      ],
+      "affected_groups": [
+        "Chính phủ Ukraine",
+        "Quân đội Ukraine",
+        "Người dân Ukraine"
+      ],
+      "market_impact": "Không ghi nhận tác động trực tiếp đáng kể nào đến thị trường tài chính toàn cầu từ các thông tin nhân sự này.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "military"
+      ],
+      "regions": [
+        "UA",
+        "US"
+      ],
+      "significance": "Sự kiện thay đổi lãnh đạo quốc phòng phản ánh những biến động và áp lực chính trị nội bộ gay gắt của Ukraine khi vừa phải duy trì chiến sự vừa giải quyết bài toán bầu cử thời chiến.",
+      "unknowns": [
+        "Thời điểm chính xác diễn ra chuyến thăm Mỹ của cựu Bộ trưởng Mykhailo Fedorov",
+        "Chi tiết về các quyết định tiếp theo của chính quyền Ukraine đối với bài toán bầu cử thời chiến"
+      ],
+      "confidence_note": "Thông tin dựa trên các bản tin thời sự được tổng hợp trực tiếp từ dữ liệu thô.",
+      "scenarios": [
+        {
+          "text": "Tân Bộ trưởng Quốc phòng Yevhen Khmara ổn định bộ máy và tiếp tục duy trì các chiến lược quân sự trong bối cảnh áp lực chính trị gia tăng.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Vấn đề tổ chức bầu cử thời chiến tạo ra thêm các tranh cãi chính trị sâu sắc trong nội bộ Ukraine.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Yevhen Khmara",
+          "target": "Bộ Quốc phòng Ukraine",
+          "relation_type": "cooperation",
+          "label": "Đảm nhận vị trí Bộ trưởng Quốc phòng"
+        },
+        {
+          "source": "Mykhailo Fedorov",
+          "target": "Mỹ",
+          "relation_type": "neutral",
+          "label": "Dự định thăm"
+        },
+        {
+          "source": "Volodymyr Zelensky",
+          "target": "Ukraine",
+          "relation_type": "cause_effect",
+          "label": "Đối mặt áp lực chính trị và bầu cử thời chiến"
+        }
+      ],
+      "entities": [
+        "Yevhen Khmara",
+        "Zelensky",
+        "Mykhailo Fedorov",
+        "Quốc hội Ukraine",
+        "Mỹ"
+      ],
+      "keywords": [
+        "Ukraine",
+        "Bộ trưởng Quốc phòng",
+        "Yevhen Khmara",
+        "chính trị",
+        "bầu cử thời chiến"
+      ],
+      "importance": 80,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "national"
+    }
+  },
+  "evt_c6d5d5ca": {
+    "created_at": 1787199550378,
+    "expires_at": 1789791550378,
+    "version": "4.5",
+    "checksum": "3aa01ac097736f7f692aa065ac7d9322",
+    "data": {
+      "cluster_title": "Nga tấn công tên lửa quy mô lớn vào Kiev, Ukraine",
+      "short_summary": "Nga đã thực hiện cuộc tấn công bằng tên lửa quy mô lớn vào thủ đô Kiev của Ukraine vào đêm 19/8. Cuộc tập kích sử dụng khoảng 25 tên lửa đạn đạo Iskander-M và siêu vượt âm Zircon, khiến ít nhất 4 người bị thương và gây thiệt hại tại hiện trường.",
+      "detailed_summary": "Vào đêm 19/8 và rạng sáng 20/8, Nga đã tiến hành một cuộc tấn công tên lửa quy mô lớn nhằm vào thủ đô Kiev của Ukraine. Khoảng 20 đến 25 tên lửa, bao gồm tên lửa đạn đạo Iskander-M và tên lửa siêu vượt âm Zircon, liên tiếp lao xuống thành phố, gây ra nhiều tiếng nổ lớn và làm ít nhất 4 người bị thương.",
+      "causes": [
+        "Chiến dịch quân sự của Nga tại Ukraine tiếp tục leo thang",
+        "Chiến thuật sử dụng tên lửa tầm xa, tốc độ cao nhằm vào các trung tâm đầu não và đô thị lớn của Ukraine"
+      ],
+      "effects": [
+        "Thủ đô Kiev hứng chịu tàn phá và tiếng nổ lớn liên tiếp",
+        "Ít nhất 4 người bị thương",
+        "Hệ thống phòng không tại Ukraine bị quá tải hoặc thử thách trước các loại vũ khí siêu vượt âm"
+      ],
+      "affected_groups": [
+        "Dân thường sinh sống tại thủ đô Kiev",
+        "Cơ sở hạ tầng đô thị tại Ukraine"
+      ],
+      "market_impact": "Không có dữ liệu cụ thể về tác động thị trường tài chính trong bản tin, nhưng xung đột leo thang tiếp tục gây bất ổn tâm lý chung.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "military",
+        "politics"
+      ],
+      "regions": [
+        "RU",
+        "UA"
+      ],
+      "significance": "Sự kiện cho thấy cường độ và quy mô các cuộc tập kích đường không của Nga vào các mục tiêu cốt lõi tại Ukraine vẫn duy trì ở mức cao với vũ khí công nghệ cao.",
+      "unknowns": [
+        "Mức độ thiệt hại chính xác đối với cơ sở hạ tầng quân sự hoặc dân sự",
+        "Tỷ lệ đánh chặn thành công cụ thể của hệ thống phòng không Ukraine đối với đợt tập kích này"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên các bản tin thời sự ghi nhận trực tiếp từ hiện trường và thông báo của truyền thông.",
+      "scenarios": [
+        {
+          "text": "Nga tiếp tục duy trì các đợt tập kích tên lửa quy mô lớn nhằm bào mòn năng lực phòng không và hạ tầng của Ukraine.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Ukraine tăng cường đề xuất các đồng minh phương Tây cung cấp thêm hệ thống phòng không tiên tiến để bảo vệ các đô thị lớn.",
+          "likelihood": "cao"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Nga",
+          "target": "Kiev",
+          "relation_type": "conflict",
+          "label": "Tập kích tên lửa đạn đạo và siêu vượt âm"
+        },
+        {
+          "source": "Nga",
+          "target": "Ukraine",
+          "relation_type": "conflict",
+          "label": "Chiến sự và không kích quy mô lớn"
+        }
+      ],
+      "entities": [
+        "Nga",
+        "Ukraine",
+        "Kiev"
+      ],
+      "keywords": [
+        "Nga",
+        "Ukraine",
+        "Kiev",
+        "tên lửa đạn đạo",
+        "tên lửa siêu vượt âm",
+        "Iskander-M",
+        "Zircon"
+      ],
+      "importance": 85,
+      "severity": 4,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_general_1787199560217": {
+    "created_at": 1787199796761,
+    "expires_at": 1789791796761,
+    "version": "4.5",
+    "checksum": "a3a1a67b1fd6bd5b25a973551cc1c30a",
+    "data": {
+      "cluster_title": "Thủ tướng Anh cam kết trích lương hỗ trợ người vô gia cư",
+      "short_summary": "Thủ tướng Anh ông Burnham đã công bố kế hoạch hỗ trợ người vô gia cư có chỗ ở trước dịp Giáng sinh bằng cách cam kết trích 15% lương cá nhân để đóng góp vào các hoạt động giải quyết tình trạng này.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "categories": [
+        "Chính trị",
+        "Xã hội"
+      ],
+      "regions": [
+        "GB"
+      ],
+      "follow_up": "",
+      "entities": [
+        "Thủ tướng Anh",
+        "Ông Burnham"
+      ],
+      "keywords": [
+        "Thủ tướng Anh",
+        "người vô gia cư",
+        "từ thiện",
+        "Giáng sinh"
+      ],
+      "importance": 45,
+      "severity": 2,
+      "sentiment": 1,
+      "scope": "national"
+    }
+  },
+  "evt_general_1787199802449": {
+    "created_at": 1787199949134,
+    "expires_at": 1789791949134,
+    "version": "4.5",
+    "checksum": "5dbcbc8cd20f3bcaae34ea63556599a8",
+    "data": {
+      "cluster_title": "Sự gia tăng tỷ lệ quan chức siêu giàu trong chính quyền ông Trump",
+      "short_summary": "Chính quyền của ông Trump ghi nhận sự gia tăng mạnh mẽ các quan chức thuộc giới siêu giàu, với số lượng người có tài sản trên 100 triệu USD cao gấp 4 lần so với tổng cộng của ba đời tiền nhiệm.",
+      "detailed_summary": "Dữ liệu ghi nhận sự tập trung cao độ của giới siêu giàu trong bộ máy quản lý nhà nước dưới thời chính quyền ông Trump. Cụ thể, số lượng quan chức sở hữu khối tài sản từ 100 triệu USD trở lên cao gấp 4 lần so với tổng số lượng quan chức thuộc nhóm tài sản này dưới thời của ba đời tổng thống tiền nhiệm trước đó.",
+      "causes": [
+        "Việc bổ nhiệm các cá nhân có nền tảng tài chính lớn và kinh doanh thành công vào các vị trí trọng trách trong bộ máy chính quyền",
+        "Sự giao thoa giữa giới thượng lưu tài chính và cấu trúc quyền lực chính trị tại Mỹ"
+      ],
+      "effects": [
+        "Tạo ra một bộ máy quan chức chính phủ có tiềm lực tài chính cá nhân rất lớn",
+        "Thúc đẩy các cuộc tranh luận về ảnh hưởng của giới siêu giàu đối với các quyết định chính sách quốc gia"
+      ],
+      "affected_groups": [
+        "Quan chức chính quyền",
+        "Giới hoạch định chính sách",
+        "Công chúng Mỹ"
+      ],
+      "market_impact": "Thông tin mang tính tổng kết về nhân sự chính trị, chưa tác động trực tiếp và ngay lập tức đến các thị trường tài chính.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "economy"
+      ],
+      "regions": [
+        "US"
+      ],
+      "significance": "Sự kiện phản ánh đặc điểm cấu trúc nhân sự cấp cao dưới thời chính quyền ông Trump, nơi tập trung lượng lớn các quan chức có khối tài sản khổng lồ vượt trội so với các đời tổng thống trước.",
+      "unknowns": [
+        "Danh sách chi tiết toàn bộ các quan chức đạt mốc tài sản trên 100 triệu USD",
+        "Mức độ ảnh hưởng thực tế của tài sản cá nhân đến các quyết định công vụ của từng quan chức"
+      ],
+      "confidence_note": "Thông tin dựa trên dữ liệu thống kê về tài sản quan chức, có độ tin cậy cao về mặt ghi nhận lịch sử nhân sự.",
+      "scenarios": [
+        {
+          "text": "Các chính sách kinh tế và tài chính tiếp tục mang dấu ấn và tư duy quản trị của giới doanh nhân, tài phiệt.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Gia tăng các cuộc tranh cãi công khai về vấn đề xung đột lợi ích giữa tài sản cá nhân và trách nhiệm công vụ của quan chức.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Chính quyền ông Trump",
+          "target": "Giới siêu giàu",
+          "relation_type": "cooperation",
+          "label": "Quy tụ nhiều cá nhân siêu giàu vào bộ máy"
+        }
+      ],
+      "entities": [
+        "ông Trump",
+        "Chính quyền Mỹ"
+      ],
+      "keywords": [
+        "ông Trump",
+        "chính quyền",
+        "siêu giàu",
+        "tài sản",
+        "quan chức"
+      ],
+      "importance": 80,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "national"
+    }
+  },
+  "evt_fffcf99c": {
+    "created_at": 1787200142962,
+    "expires_at": 1789792142962,
+    "version": "4.5",
+    "checksum": "cfe43dbda7462cb0d06be7dca6f6bed0",
+    "data": {
+      "cluster_title": "Tổng thống Nga Vladimir Putin lên tiếng về việc kho hàng Wildberries bị tấn công",
+      "short_summary": "Tổng thống Nga Vladimir Putin chỉ đạo nhanh chóng tái thiết các kho hàng thương mại bị hư hại.",
+      "detailed_summary": "Tổng thống Nga Vladimir Putin lên tiếng về việc kho hàng Wildberries bị tấn công. Tổng thống Nga Vladimir Putin chỉ đạo nhanh chóng tái thiết các kho hàng thương mại bị hư hại....",
+      "causes": [
+        "Đang cập nhật dữ liệu bối cảnh"
+      ],
+      "effects": [
+        "Đang phân tích chuỗi hệ quả"
+      ],
+      "affected_groups": [
+        "Cộng đồng người dùng hệ thống"
+      ],
+      "market_impact": "Đang theo dõi biến động thị trường.",
+      "vn_impact": "Không thể đánh giá tác động do lỗi AI.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "Chờ cập nhật tình tiết mới từ các báo.",
+      "scope": "business",
+      "importance": 50
+    }
+  },
+  "evt_e3ced6f5": {
+    "created_at": 1787200326727,
+    "expires_at": 1789792326727,
+    "version": "4.5",
+    "checksum": "1f48c74c456cd2148cfdbb5197a3bbed",
+    "data": {
+      "cluster_title": "Biến động kinh tế Mỹ và tình hình địa chính trị thế giới",
+      "short_summary": "Nợ công Mỹ vượt ngưỡng 40.000 tỉ USD trong khi tình hình địa chính trị thế giới diễn biến phức tạp với sự thay đổi nhân sự tại Bộ Quốc phòng Ukraine và các tín hiệu ngoại giao từ ông Trump đối với Triều Tiên và Iran.",
+      "detailed_summary": "Bản tin thế giới ngày 20 tháng 8 ghi nhận nhiều sự kiện đáng chú ý bao gồm việc nợ công của Mỹ lần đầu tiên vượt ngưỡng 40.000 tỉ USD. Tại Ukraine, quốc gia này chính thức có Bộ trưởng Quốc phòng mới. Đồng thời, ông Donald Trump đưa ra tuyên bố sẽ gặp nhà lãnh đạo Triều Tiên Kim Jong Un vào cuối năm nay và có động thái úp mở về khả năng đàm phán với Iran.",
+      "causes": [
+        "Sự gia tăng tích lũy các khoản vay và chi tiêu công của chính phủ Mỹ dẫn đến việc nợ công vượt ngưỡng 40.000 tỉ USD.",
+        "Quyết định thay đổi nhân sự cấp cao tại bộ máy quốc phòng của Ukraine."
+      ],
+      "effects": [
+        "Tạo áp lực lên tình hình tài chính công và chính sách kinh tế của Mỹ.",
+        "Thay đổi nhân sự lãnh đạo quốc phòng tại Ukraine và tiềm năng thay đổi cục diện ngoại giao giữa Mỹ với Triều Tiên và Iran."
+      ],
+      "affected_groups": [
+        "Chính phủ Mỹ",
+        "Chính phủ Ukraine",
+        "Giới chức ngoại giao các nước liên quan"
+      ],
+      "market_impact": "Việc nợ công Mỹ vượt mốc lịch sử có thể thu hút sự chú ý của thị trường tài chính toàn cầu đối với chính sách tiền tệ và ổn định kinh tế của Mỹ.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "diplomacy"
+      ],
+      "regions": [
+        "US",
+        "UA",
+        "KP",
+        "IR"
+      ],
+      "significance": "Phản ánh những biến động quan trọng về tình hình tài chính công của siêu cường thế giới, sự thay đổi nhân sự quốc phòng và những bước đi ngoại giao tiềm năng của Mỹ trên trường quốc tế.",
+      "unknowns": [
+        "Chi tiết cụ thể về thời gian và địa điểm dự kiến cuộc gặp giữa ông Trump và ông Kim Jong Un.",
+        "Lộ trình hoặc điều kiện cụ thể cho các cuộc đàm phán tiềm năng giữa Mỹ và Iran."
+      ],
+      "confidence_note": "Thông tin dựa trên bản tin tổng hợp ngày 20 tháng 8, mức độ tin cậy theo các nguồn tin tức công khai.",
+      "scenarios": [
+        {
+          "text": "Mỹ tiếp tục đối mặt với áp lực kiểm soát nợ công trong khi các diễn biến ngoại giao mới với Triều Tiên và Iran dần được triển khai vào cuối năm.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các kế hoạch gặp gỡ hoặc đàm phán ngoại giao gặp trở ngại do thay đổi tình hình chính trị quốc tế.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Mỹ",
+          "target": "Nợ công Mỹ",
+          "relation_type": "cause_effect",
+          "label": "Chính sách tài chính dẫn đến nợ công vượt 40.000 tỉ USD"
+        },
+        {
+          "source": "Ukraine",
+          "target": "Bộ trưởng Quốc phòng mới",
+          "relation_type": "cooperation",
+          "label": "Bổ nhiệm nhân sự lãnh đạo quốc phòng"
+        },
+        {
+          "source": "Donald Trump",
+          "target": "Kim Jong Un",
+          "relation_type": "neutral",
+          "label": "Tuyên bố dự định gặp mặt"
+        },
+        {
+          "source": "Donald Trump",
+          "target": "Iran",
+          "relation_type": "neutral",
+          "label": "Úp mở khả năng đàm phán"
+        }
+      ],
+      "entities": [
+        "Mỹ",
+        "Ukraine",
+        "Donald Trump",
+        "Kim Jong Un",
+        "Iran"
+      ],
+      "keywords": [
+        "nợ công Mỹ",
+        "Ukraine",
+        "Donald Trump",
+        "Kim Jong Un",
+        "Iran"
+      ],
+      "importance": 90,
+      "severity": 4,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_general_1787200336449": {
+    "created_at": 1787200470202,
+    "expires_at": 1789792470202,
+    "version": "4.5",
+    "checksum": "b18927c5346e2223645b9719cd0bb78e",
+    "data": {
+      "cluster_title": "Nợ công Mỹ lần đầu vượt 40.000 tỷ USD",
+      "short_summary": "Nợ chính phủ Mỹ tăng mạnh sau nhiều năm thâm hụt ngân sách, hiện cao gấp đôi so với 10 năm trước.",
+      "detailed_summary": "Nợ công Mỹ lần đầu vượt 40.000 tỷ USD. Nợ chính phủ Mỹ tăng mạnh sau nhiều năm thâm hụt ngân sách, hiện cao gấp đôi so với 10 năm trước....",
+      "causes": [
+        "Đang cập nhật dữ liệu bối cảnh"
+      ],
+      "effects": [
+        "Đang phân tích chuỗi hệ quả"
+      ],
+      "affected_groups": [
+        "Cộng đồng người dùng hệ thống"
+      ],
+      "market_impact": "Đang theo dõi biến động thị trường.",
+      "vn_impact": "Không thể đánh giá tác động do lỗi AI.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "Chờ cập nhật tình tiết mới từ các báo.",
+      "scope": "business",
+      "importance": 50
+    }
+  },
+  "evt_general_1787200475894": {
+    "created_at": 1787200614765,
+    "expires_at": 1789792614765,
+    "version": "4.5",
+    "checksum": "871b3e98ac97fd351dafc38bb86745a8",
+    "data": {
+      "cluster_title": "Thu nhập cao của các CEO công ty chứng khoán trong nửa đầu năm",
+      "short_summary": "Trong nửa đầu năm, nhiều CEO thuộc các công ty chứng khoán đã nhận được mức thu nhập và thưởng lên tới hàng tỷ đồng. Trong đó, mức thu nhập cao nhất được ghi nhận đạt ngưỡng 800 triệu đồng mỗi tháng, cho thấy sự bùng nổ của ngành.",
+      "detailed_summary": "Báo cáo cho biết loạt giám đốc điều hành các công ty chứng khoán tại Việt Nam đã đạt được mức thu nhập lên tới hàng tỷ đồng tính riêng trong nửa đầu năm. Trong đó, mức lương và thưởng cao nhất ghi nhận được lên tới 800 triệu đồng mỗi tháng.",
+      "causes": [
+        "Kết quả kinh doanh khả quan của các công ty chứng khoán trong nửa đầu năm",
+        "Chính sách đãi ngộ và chi trả lương thưởng cao cho vị trí quản lý cấp cao"
+      ],
+      "effects": [
+        "Thu nhập của các giám đốc điều hành công ty chứng khoán đạt mức tiền tỷ",
+        "Thu hút nguồn nhân lực chất lượng cao vào ngành tài chính chứng khoán"
+      ],
+      "affected_groups": [
+        "Giám đốc điều hành công ty chứng khoán",
+        "Cổ đông và nhà đầu tư công ty chứng khoán",
+        "Người lao động trong ngành tài chính"
+      ],
+      "market_impact": "Phản ánh tình hình hoạt động kinh doanh có nhiều điểm sáng của các công ty chứng khoán, góp phần làm sôi động thị trường lao động ngành tài chính.",
+      "vn_impact": "Sự kiện phản ánh trực tiếp sự phát triển và nguồn thu nhập của ngành chứng khoán tại thị trường Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "finance",
+        "business"
+      ],
+      "regions": [
+        "VN"
+      ],
+      "significance": "Cho thấy mức độ hấp dẫn và tiềm lực tài chính của ngành chứng khoán trong việc chi trả thu nhập cho các vị trí lãnh đạo cấp cao.",
+      "unknowns": [
+        "Danh tính cụ thể của các giám đốc điều hành nhận mức thu nhập cao nhất",
+        "Tỷ trọng cụ thể giữa lương cơ bản và tiền thưởng trong tổng thu nhập"
+      ],
+      "confidence_note": "Thông tin dựa trên báo cáo thu nhập nửa đầu năm của các công ty chứng khoán, có độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Thu nhập của cấp quản lý công ty chứng khoán tiếp tục duy trì mức cao nếu thị trường duy trì đà tăng trưởng.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Mức thu nhập có thể biến động tùy thuộc vào kết quả kinh doanh nửa cuối năm của từng doanh nghiệp.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Công ty chứng khoán",
+          "target": "Giám đốc điều hành",
+          "relation_type": "cooperation",
+          "label": "Chi trả lương thưởng tiền tỷ"
+        }
+      ],
+      "entities": [
+        "CEO các công ty chứng khoán"
+      ],
+      "keywords": [
+        "CEO",
+        "công ty chứng khoán",
+        "lương thưởng",
+        "thu nhập"
+      ],
+      "importance": 65,
+      "severity": 2,
+      "sentiment": 1,
+      "scope": "business"
+    }
+  },
+  "evt_cf0fe024": {
+    "created_at": 1787200670446,
+    "expires_at": 1789792670446,
+    "version": "4.5",
+    "checksum": "34790b878b4fc43777904619cf8ce9a2",
+    "data": {
+      "cluster_title": "Triều Tiên phản hồi về việc thúc đẩy cuộc gặp giữa ông Trump và ông Kim Jong-un",
+      "short_summary": "Quan chức Triều Tiên nhấn mạnh mối quan hệ cá nhân tốt đẹp giữa Chủ tịch Kim Jong-un và Tổng thống Donald Trump, phản ứng tích cực trước nỗ lực thúc đẩy cuộc gặp thượng đỉnh nhằm cải thiện tình hình ngoại giao giữa hai nước.",
+      "detailed_summary": "Quan chức Triều Tiên đưa ra phản ứng chính thức, trong đó nhấn mạnh mối quan hệ cá nhân tốt đẹp giữa Chủ tịch Kim Jong-un và Tổng thống Mỹ Donald Trump, trong bối cảnh ông Trump đang xúc tiến tiến hành một cuộc gặp mới giữa hai bên.",
+      "causes": [
+        "Tổng thống Mỹ Donald Trump xúc tiến cuộc gặp với Chủ tịch Triều Tiên Kim Jong-un",
+        "Sự nhìn nhận của Triều Tiên về mối quan hệ cá nhân giữa hai nhà lãnh đạo"
+      ],
+      "effects": [
+        "Tạo cơ sở ngoại giao cho các bước tiếp theo trong quan hệ song phương",
+        "Thu hút sự quan tâm của cộng đồng quốc tế về khả năng nối lại đàm phán"
+      ],
+      "affected_groups": [
+        "Chính phủ Mỹ",
+        "Chính phủ Triều Tiên",
+        "Các quốc gia theo dõi tình hình bán đảo Triều Tiên"
+      ],
+      "market_impact": "Không có tác động trực tiếp và đáng kể nào đến thị trường tài chính toàn cầu được ghi nhận từ sự kiện này.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "diplomacy",
+        "politics"
+      ],
+      "regions": [
+        "US",
+        "KP"
+      ],
+      "significance": "Sự kiện này phản ánh tín hiệu ngoại giao tích cực ban đầu từ phía Triều Tiên đối với nỗ lực nối lại tiếp xúc cấp cao của Mỹ.",
+      "unknowns": [
+        "Thời gian và địa điểm cụ thể của cuộc gặp dự kiến",
+        "Chương trình nghị sự chi tiết cho cuộc gặp giữa hai nhà lãnh đạo"
+      ],
+      "confidence_note": "Thông tin dựa trên tuyên bố của quan chức Triều Tiên được truyền thông đăng tải, ở mức độ tin cậy cơ bản.",
+      "scenarios": [
+        {
+          "text": "Hai bên tiến hành các bước chuẩn bị sơ bộ cho một cuộc gặp thượng đỉnh mới.",
+          "likelihood": "trung bình"
+        },
+        {
+          "text": "Quá trình xúc tiến gặp gỡ không đạt được tiếng nói chung và chững lại.",
+          "likelihood": "thấp"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Donald Trump",
+          "target": "Kim Jong-un",
+          "relation_type": "cooperation",
+          "label": "Xúc tiến cuộc gặp và duy trì quan hệ cá nhân tốt đẹp"
+        }
+      ],
+      "entities": [
+        "Kim Jong-un",
+        "Donald Trump",
+        "Triều Tiên",
+        "Mỹ"
+      ],
+      "keywords": [
+        "Triều Tiên",
+        "Donald Trump",
+        "Kim Jong-un",
+        "quan hệ ngoại giao",
+        "hòa bình"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": 1,
+      "scope": "global"
+    }
   }
 }
