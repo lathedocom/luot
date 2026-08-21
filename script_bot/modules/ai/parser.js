@@ -4,38 +4,25 @@ function parseAIResponse(rawText) {
     try {
         let cleanText = rawText.replace(/```json/gi, '').replace(/```/g, '').trim();
         
-        // Phương án 1: Trích xuất bằng Regex quét ngoặc (Mạnh tay hơn)
-        // Tìm toàn bộ cấu trúc bắt đầu bằng { và kết thúc bằng } 
-        // hoặc bắt đầu bằng [ và kết thúc bằng ]
-        const jsonRegex = /(\{.*\}|\[.*\])/s; 
-        const match = cleanText.match(jsonRegex);
+        // ƯU TIÊN 1: Cắt chính xác khối Object (tránh bắt nhầm ngoặc vuông của markdown)
+        const startObj = cleanText.indexOf('{');
+        const endObj = cleanText.lastIndexOf('}');
         
-        if (match && match[0]) {
-            cleanText = match[0];
+        if (startObj !== -1 && endObj !== -1 && endObj > startObj) {
+            cleanText = cleanText.substring(startObj, endObj + 1);
         } else {
-             // Phương án 2 (Dự phòng): Quét thủ công như cũ nếu Regex thất bại
-             const startObj = cleanText.indexOf('{');
-             const endObj = cleanText.lastIndexOf('}');
-             const startArr = cleanText.indexOf('[');
-             const endArr = cleanText.lastIndexOf(']');
-             
-             let start = -1;
-             let end = -1;
-
-             if (startObj !== -1 && endObj !== -1) { start = startObj; end = endObj; }
-             
-             if (startArr !== -1 && endArr !== -1) {
-                 if (start === -1 || (startArr < start && endArr > end)) { start = startArr; end = endArr; }
-             }
-             
-             if (start !== -1 && end !== -1) {
-                 cleanText = cleanText.substring(start, end + 1);
-             }
+            // DỰ PHÒNG: Chỉ tìm khối Array nếu không tìm thấy Object
+            const startArr = cleanText.indexOf('[');
+            const endArr = cleanText.lastIndexOf(']');
+            if (startArr !== -1 && endArr !== -1 && endArr > startArr) {
+                cleanText = cleanText.substring(startArr, endArr + 1);
+            }
         }
 
-        // Tự động sửa lỗi nháy đơn bọc chuỗi mảng (Ví dụ: ['VN'])
-        cleanText = cleanText.replace(/\[\s*'([^']+)'\s*\]/g, '["$1"]');
-        cleanText = cleanText.replace(/'([^']+)'\s*(,)/g, '"$1"$2');
+        // Tự động vá lỗi mô hình quên ngoặc kép (VD: [personal, business] -> ["personal", "business"])
+        cleanText = cleanText.replace(/\[\s*([a-zA-Z0-9_]+)\s*(,\s*[a-zA-Z0-9_]+\s*)*\]/g, function(match) {
+            return match.replace(/([a-zA-Z0-9_]+)/g, '"$1"');
+        });
 
         return JSON.parse(cleanText);
     } catch (error) {
