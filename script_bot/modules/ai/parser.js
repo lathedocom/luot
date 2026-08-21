@@ -1,29 +1,38 @@
 // FILE: script_bot/modules/ai/parser.js
-
-/**
- * Chịu trách nhiệm làm sạch chuỗi AI trả về (xóa markdown, ```json, các text thừa)
- * Đảm bảo JSON có thể parse được thành Object.
- */
 function parseAIResponse(rawText) {
     if (!rawText) return null;
     try {
-        // Xóa sạch các thẻ markdown
         let cleanText = rawText.replace(/```json/gi, '').replace(/```/g, '').trim();
         
-        // Dùng Regex trích xuất phần lõi từ dấu { đầu tiên đến dấu } cuối cùng
-        // Loại bỏ mọi câu chữ "nhiệt tình" do AI tự giải thích thêm ở đầu/cuối
-        // Chú ý: Chỉ dùng ngoặc nhọn {} để tránh bắt nhầm text mảng [...] của Gemma
-        const jsonMatch = cleanText.match(/\{[\s\S]*\}/);
+        // Tìm vị trí mở/đóng ngoặc chuẩn xác của Object hoặc Array
+        const startObj = cleanText.indexOf('{');
+        const endObj = cleanText.lastIndexOf('}');
+        const startArr = cleanText.indexOf('[');
+        const endArr = cleanText.lastIndexOf(']');
         
-        if (jsonMatch) {
-            cleanText = jsonMatch[0];
+        let start = -1;
+        let end = -1;
+
+        if (startObj !== -1 && endObj !== -1) {
+            start = startObj;
+            end = endObj;
         }
         
-        // Parse JSON sau khi đã làm sạch
+        // Ưu tiên Array nếu nó bao bọc bên ngoài Object
+        if (startArr !== -1 && endArr !== -1) {
+            if (start === -1 || (startArr < start && endArr > end)) {
+                start = startArr;
+                end = endArr;
+            }
+        }
+
+        if (start !== -1 && end !== -1) {
+            cleanText = cleanText.substring(start, end + 1);
+        }
+
         return JSON.parse(cleanText);
     } catch (error) {
-        throw new Error(`${error.message}`);
+        throw new Error(`Parse JSON lỗi: ${error.message} | Đoạn văn bản gây lỗi: ${rawText.substring(0, 150)}...`);
     }
 }
-
 module.exports = { parseAIResponse };
