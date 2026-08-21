@@ -26,6 +26,22 @@ const RSS_SOURCES = [
         category: ["economy", "finance", "business"], type: "economic_news", priority: 10, credibility: 10,
         max_items: 15,
         rss: "https://www.ft.com/rss/home", homepage: "https://www.ft.com", logo: "https://www.ft.com/favicon.ico", enabled: true
+    },
+    {
+        id: "kagi_smallweb", 
+        name: "Kagi Small Web", 
+        country: "Global", 
+        region: "Global", 
+        language: "en",
+        category: ["technology", "culture", "general"], 
+        type: "news_agency", 
+        priority: 8, 
+        credibility: 9,
+        max_items: 10,
+        rss: "https://kagi.com/api/v1/smallweb/feed/", 
+        homepage: "https://kagi.com", 
+        logo: "https://kagi.com/favicon.ico", 
+        enabled: true
     },*/
     // ==========================================
     // 2. VIỆT NAM
