@@ -43760,5 +43760,374 @@
       "sentiment": 0,
       "scope": "business"
     }
+  },
+  "evt_a686b397": {
+    "created_at": 1787328155392,
+    "expires_at": 1789920155392,
+    "version": "4.5",
+    "checksum": "7dc4822d1c0f550b58ef00120f761b38",
+    "data": {
+      "cluster_title": "...",
+      "short_summary": "...",
+      "detailed_summary": "Sau khi bị cách chức, cựu Bộ trưởng Quốc phòng Ukraine Mykhailo Fedorov có chuyến thăm tới Mỹ với mục tiêu có thể là huy động vốn. Bên cạnh đó, ông cũng phá vỡ chủ đề cấm kỵ thời chiến tại Ukraine khi công khai kêu gọi tổ chức bầu cử, tạo ra một nước cờ gây nhiều tranh cãi trong giới chính trị.",
+      "causes": [
+        "Cựu Bộ trưởng Quốc phòng Mykhailo Fedorov bị cách chức",
+        "Nhu cầu huy động vốn trong bối cảnh xung đột"
+      ],
+      "effects": [
+        "Chuyến thăm Mỹ của cựu Bộ trưởng Quốc phòng",
+        "Tạo ra tranh cãi công khai về việc tổ chức bầu cử trong thời chiến tại Ukraine"
+      ],
+      "affected_groups": [
+        "Giới chính trị Ukraine",
+        "Công chúng Ukraine"
+      ],
+      "market_impact": "Không ghi nhận tác động đáng kể đến thị trường tài chính.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "diplomacy"
+      ],
+      "regions": [
+        "UA",
+        "US"
+      ],
+      "significance": "Sự kiện phản ánh những biến động chính trị nội bộ tại Ukraine sau khi thay đổi nhân sự cấp cao và những tranh luận xung quanh vấn đề dân chủ trong thời chiến.",
+      "unknowns": [
+        "Kết quả cụ thể của chuyến thăm Mỹ và các đối tác tiếp xúc",
+        "Phản ứng chính thức từ chính quyền Ukraine về lời kêu gọi bầu cử"
+      ],
+      "confidence_note": "Thông tin dựa trên các bài viết báo chí đã được công bố, độ tin cậy ở mức trung bình.",
+      "scenarios": [
+        {
+          "text": "Chuyến thăm Mỹ đạt được các thỏa thuận về huy động vốn và tạo thêm áp lực cải cách chính trị tại Ukraine.",
+          "likelihood": "trung bình"
+        },
+        {
+          "text": "Lời kêu gọi bầu cử vấp phải sự phản đối mạnh mẽ từ giới chức hiện tại và không tạo ra thay đổi thực tế nào.",
+          "likelihood": "cao"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Mykhailo Fedorov",
+          "target": "Mỹ",
+          "relation_type": "cooperation",
+          "label": "Thực hiện chuyến thăm để huy động vốn"
+        },
+        {
+          "source": "Mykhailo Fedorov",
+          "target": "Ukraine",
+          "relation_type": "cause_effect",
+          "label": "Kêu gọi bầu cử gây tranh cãi thời chiến"
+        }
+      ],
+      "entities": [],
+      "keywords": [],
+      "importance": 80,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_general_1787328161235": {
+    "created_at": 1787328202407,
+    "expires_at": 1789920202407,
+    "version": "4.5",
+    "checksum": "1b98bbc42b1a063b2936df41768f1731",
+    "data": {
+      "cluster_title": "Nguy cơ đại dịch lừa đảo bằng AI tại Châu Á",
+      "short_summary": "Chuyên gia cảnh báo Châu Á có thể đối mặt với 'đại dịch lừa đảo' khi các băng nhóm tội phạm tận dụng AI tự chủ để thực hiện nhiều công đoạn gian lận cùng lúc, gây ra thách thức nghiêm trọng về an ninh mạng và tội phạm công nghệ cao.",
+      "detailed_summary": "Châu Á đang phải đối mặt với nguy cơ gia tăng tình trạng lừa đảo khi các băng nhóm tội phạm tận dụng trí tuệ nhân tạo (AI) tự chủ để thực hiện đồng thời nhiều công đoạn gian lận. Điều này làm gia tăng áp lực và tạo thêm thách thức lớn cho khu vực trong việc phòng chống loại tội phạm này.",
+      "causes": [
+        "Các băng nhóm tội phạm lợi dụng trí tuệ nhân tạo tự chủ",
+        "Công nghệ AI cho phép thực hiện đồng thời nhiều công đoạn gian lận"
+      ],
+      "effects": [
+        "Châu Á đối mặt với nguy cơ đại dịch lừa đảo",
+        "Làm phức tạp thêm công tác phòng chống tội phạm gian lận"
+      ],
+      "affected_groups": [
+        "Người dân tại khu vực Châu Á",
+        "Các cơ quan thực thi pháp luật"
+      ],
+      "market_impact": "Gia tăng rủi ro về an ninh mạng và gian lận tài chính, đe dọa niềm tin vào các giao dịch kỹ thuật số.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "tech",
+        "economy"
+      ],
+      "regions": [
+        "GLOBAL"
+      ],
+      "significance": "Sự trỗi dậy của tội phạm sử dụng trí tuệ nhân tạo đặt ra thách thức chưa từng có đối với an ninh kinh tế và xã hội tại khu vực.",
+      "unknowns": [
+        "Quy mô tài chính thiệt hại cụ thể do lừa đảo AI gây ra",
+        "Danh tính cụ thể của các băng nhóm tội phạm tham gia"
+      ],
+      "confidence_note": "Thông tin dựa trên cảnh báo từ các chuyên gia, mức độ tin cậy ở mức trung bình và cần theo dõi thêm số liệu thực tế.",
+      "scenarios": [
+        {
+          "text": "Tội phạm sử dụng AI mở rộng quy mô và tần suất các vụ lừa đảo trên toàn châu Á.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các cơ quan chức năng phối hợp công nghệ mới để vô hiệu hóa các phương thức lừa đảo tự động.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Băng nhóm lừa đảo",
+          "target": "Trí tuệ nhân tạo",
+          "relation_type": "cooperation",
+          "label": "Lợi dụng công nghệ AI để thực hiện gian lận"
+        },
+        {
+          "source": "Trí tuệ nhân tạo",
+          "target": "Châu Á",
+          "relation_type": "cause_effect",
+          "label": "Gây ra nguy cơ đại dịch lừa đảo"
+        }
+      ],
+      "entities": [
+        "Châu Á"
+      ],
+      "keywords": [
+        "AI",
+        "lừa đảo",
+        "tội phạm công nghệ cao",
+        "Châu Á"
+      ],
+      "importance": 80,
+      "severity": 4,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_general_1787328213308": {
+    "created_at": 1787328246355,
+    "expires_at": 1789920246355,
+    "version": "4.5",
+    "checksum": "a3445dfda9ea87b5db73498ff7e94cab",
+    "data": {
+      "cluster_title": "Khánh thành Cung điện Đoàn kết tại Campuchia",
+      "short_summary": "Sáng ngày 21-8, Cung điện Đoàn kết chính thức được khánh thành tại Campuchia. Công trình này là nơi làm việc và tiếp khách của lãnh đạo Thượng viện, được Quốc vương Campuchia đánh giá là một thành tựu đáng ghi nhận.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "categories": [
+        "Chính trị",
+        "Cơ sở hạ tầng"
+      ],
+      "regions": [
+        "KH"
+      ],
+      "follow_up": "",
+      "entities": [
+        "Quốc vương Campuchia",
+        "Thượng viện Campuchia",
+        "Cung điện Đoàn kết"
+      ],
+      "keywords": [
+        "Campuchia",
+        "Cung điện Đoàn kết",
+        "Thượng viện",
+        "Quốc vương",
+        "khánh thành"
+      ],
+      "importance": 50,
+      "severity": 1,
+      "sentiment": 1,
+      "scope": "national"
+    }
+  },
+  "evt_6013a141": {
+    "created_at": 1787328294094,
+    "expires_at": 1789920294094,
+    "version": "4.5",
+    "checksum": "f0091fbd7b147ad94ab379154f935452",
+    "data": {
+      "cluster_title": "Đề xuất giảm thuế cho doanh nghiệp có doanh thu trên 10 tỷ đồng",
+      "short_summary": "PGS. TS Trần Hoàng Ngân đề xuất giảm thuế cho các doanh nghiệp đạt ngưỡng doanh thu trên 10 tỷ đồng. Giải pháp này nhằm tiếp sức tài chính cho doanh nghiệp, hỗ trợ quá trình phục hồi và thúc đẩy tăng trưởng kinh tế đất nước.",
+      "detailed_summary": "Trong bối cảnh kinh tế cần được thúc đẩy, PGS. TS Trần Hoàng Ngân đã đưa ra đề xuất giảm thuế áp dụng cho các doanh nghiệp có mức doanh thu trên 10 tỷ đồng. Mục đích của giải pháp này là nhằm tiếp sức, hỗ trợ các công ty vượt qua khó khăn và tạo động lực thúc đẩy tăng trưởng kinh tế chung.",
+      "causes": [
+        "Doanh nghiệp cần được tiếp sức để phát triển",
+        "Nhu cầu thúc đẩy tăng trưởng kinh tế"
+      ],
+      "effects": [
+        "Giảm nghĩa vụ thuế cho doanh nghiệp có doanh thu trên 10 tỷ đồng",
+        "Thúc đẩy tăng trưởng kinh tế"
+      ],
+      "affected_groups": [
+        "Doanh nghiệp có doanh thu trên 10 tỷ đồng",
+        "Cơ quan quản lý thuế nhà nước"
+      ],
+      "market_impact": "Đề xuất giảm thuế có thể tạo động lực tích cực giúp doanh nghiệp tăng cường tái đầu tư và mở rộng sản xuất kinh doanh.",
+      "vn_impact": "Chính sách giảm thuế, nếu được cơ quan có thẩm quyền tiếp thu và áp dụng, sẽ trực tiếp hỗ trợ cộng đồng doanh nghiệp trong nước, tháo gỡ khó khăn tài chính và góp phần thúc đẩy tăng trưởng GDP của Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "business"
+      ],
+      "regions": [
+        "VN"
+      ],
+      "significance": "Đề xuất này phản ánh góc nhìn chính sách nhằm hỗ trợ lực lượng doanh nghiệp quy mô vừa và lớn để làm động lực tăng trưởng kinh tế.",
+      "unknowns": [
+        "Mức giảm thuế cụ thể là bao nhiêu phần trăm",
+        "Thời gian áp dụng cụ thể của đề xuất"
+      ],
+      "confidence_note": "Thông tin dựa trên phát biểu đề nghị của chuyên gia kinh tế.",
+      "scenarios": [
+        {
+          "text": "Đề xuất được cơ quan quản lý nhà nước xem xét nghiên cứu đưa vào các gói chính sách hỗ trợ kinh tế.",
+          "likelihood": "trung bình"
+        },
+        {
+          "text": "Đề xuất chỉ mang tính tham khảo học thuật và chưa được hiện thực hóa thành văn bản pháp luật ngay lập tức.",
+          "likelihood": "cao"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "PGS. TS Trần Hoàng Ngân",
+          "target": "Doanh nghiệp có doanh thu trên 10 tỷ đồng",
+          "relation_type": "cooperation",
+          "label": "Đề xuất giảm thuế để hỗ trợ"
+        },
+        {
+          "source": "Giảm thuế",
+          "target": "Tăng trưởng kinh tế",
+          "relation_type": "cause_effect",
+          "label": "Thúc đẩy tăng trưởng kinh tế"
+        }
+      ],
+      "entities": [
+        "PGS. TS Trần Hoàng Ngân"
+      ],
+      "keywords": [
+        "giảm thuế",
+        "doanh nghiệp",
+        "doanh thu 10 tỷ đồng",
+        "tăng trưởng kinh tế"
+      ],
+      "importance": 75,
+      "severity": 2,
+      "sentiment": 1,
+      "scope": "national"
+    }
+  },
+  "evt_fee38973": {
+    "created_at": 1787328345930,
+    "expires_at": 1789920345930,
+    "version": "4.5",
+    "checksum": "d377068c2a8cb5f73a86146de911f17b",
+    "data": {
+      "cluster_title": "FTSE Russell thêm 27 cổ phiếu Việt Nam vào rổ chỉ số FTSE All-Cap",
+      "short_summary": "FTSE Russell đã chính thức thêm 27 cổ phiếu Việt Nam vào rổ chỉ số FTSE All-Cap, bao gồm 6 mã vốn hóa lớn và vừa như VCB, VIC, VHM, BID, HPG và VPB. Sự kiện này giúp gia tăng sức hút đối với các nhà đầu tư quốc tế và thúc đẩy dòng vốn ngoại vào Việt Nam.",
+      "detailed_summary": "Tổ chức FTSE Russell đã chính thức đưa 27 mã cổ phiếu của Việt Nam vào rổ chỉ số mới nổi FTSE All-Cap. Trong số này có 6 mã thuộc nhóm vốn hóa lớn và vừa, cụ thể gồm các mã VCB, VIC, VHM, BID, HPG và VPB.",
+      "causes": [
+        "Thị trường chứng khoán Việt Nam đáp ứng các tiêu chuẩn để được thêm vào rổ chỉ số mới nổi của FTSE."
+      ],
+      "effects": [
+        "27 cổ phiếu Việt Nam chính thức có mặt trong rổ chỉ số mới nổi FTSE All-Cap.",
+        "Thu hút sự chú ý của các quỹ đầu tư quốc tế sử dụng chỉ số này làm cơ sở."
+      ],
+      "affected_groups": [
+        "Các doanh nghiệp có cổ phiếu được đưa vào rổ chỉ số",
+        "Thị trường chứng khoán Việt Nam",
+        "Các nhà đầu tư trong và ngoài nước"
+      ],
+      "market_impact": "Gia tăng tính minh bạch và sức hút của thị trường chứng khoán Việt Nam đối với dòng vốn đầu tư nước ngoài.",
+      "vn_impact": "Nâng cao vị thế của thị trường tài chính Việt Nam trên bản đồ quốc tế, tạo tiền đề thu hút dòng vốn ngoại gián tiếp vào nền kinh tế.",
+      "follow_up": "",
+      "categories": [
+        "finance",
+        "economy"
+      ],
+      "regions": [
+        "VN"
+      ],
+      "significance": "Sự kiện đánh dấu một bước tiến quan trọng trong quá trình hội nhập và nâng hạng của thị trường chứng khoán Việt Nam.",
+      "unknowns": [
+        "Thời điểm cụ thể dòng vốn từ các quỹ ngoại bắt đầu giải ngân theo rổ chỉ số mới.",
+        "Tên cụ thể của 21 mã cổ phiếu còn lại ngoài 6 mã vốn hóa lớn và vừa đã được nêu."
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên dữ liệu công bố chính thức về rổ chỉ số.",
+      "scenarios": [
+        {
+          "text": "Các quỹ đầu tư quốc tế bám sát chỉ số FTSE All-Cap sẽ tăng tỷ trọng phân bổ vốn vào cổ phiếu Việt Nam.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Thị trường chứng khoán thu hút thêm nhiều nhà đầu tư tổ chức nước ngoài lớn tham gia giao dịch.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "FTSE Russell",
+          "target": "Thị trường chứng khoán Việt Nam",
+          "relation_type": "cooperation",
+          "label": "Thêm cổ phiếu vào rổ chỉ số"
+        },
+        {
+          "source": "FTSE Russell",
+          "target": "VCB, VIC, VHM, BID, HPG, VPB",
+          "relation_type": "cause_effect",
+          "label": "Đưa vào nhóm vốn hóa lớn và vừa của FTSE All-Cap"
+        }
+      ],
+      "entities": [
+        "FTSE Russell",
+        "VCB",
+        "VIC",
+        "VHM",
+        "BID",
+        "HPG",
+        "VPB"
+      ],
+      "keywords": [
+        "FTSE All-Cap",
+        "cổ phiếu Việt Nam",
+        "chỉ số mới nổi",
+        "vốn hóa lớn và vừa"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": 1,
+      "scope": "national"
+    }
+  },
+  "evt_general_1787328356399": {
+    "created_at": 1787328394675,
+    "expires_at": 1789920394675,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
   }
 }
