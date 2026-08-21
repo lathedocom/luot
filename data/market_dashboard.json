@@ -78,7 +78,7 @@
       "history_labels": [
         "Hiện tại"
       ],
-      "updated_at": 1787294382025,
+      "updated_at": 1787304224800,
       "display_source": "Yahoo Finance",
       "status": "online",
       "is_alert": false,
@@ -90,16 +90,16 @@
       "category": "📈 Thị trường tài chính",
       "type": "realtime",
       "unit": "USD",
-      "price": "75.523",
+      "price": "77.679",
       "change_percent": "0%",
       "trend": "→",
       "history": [
-        75523
+        77679
       ],
       "history_labels": [
         "Hiện tại"
       ],
-      "updated_at": 1787294382095,
+      "updated_at": 1787304224863,
       "display_source": "CoinGecko",
       "status": "online",
       "is_alert": false,
@@ -111,16 +111,16 @@
       "category": "🌾 Hàng hóa & Nông sản",
       "type": "realtime",
       "unit": "USD/thùng",
-      "price": "93,45",
+      "price": "93,07",
       "change_percent": "0%",
       "trend": "→",
       "history": [
-        93.45
+        93.07
       ],
       "history_labels": [
         "Hiện tại"
       ],
-      "updated_at": 1787294382160,
+      "updated_at": 1787304224915,
       "display_source": "Yahoo Finance",
       "status": "online",
       "is_alert": false,
@@ -132,16 +132,16 @@
       "id": "chi_phi",
       "name": "Chi phí sinh hoạt",
       "icon": "🛒",
-      "score": -70,
-      "status": "Áp lực tăng rất cao",
-      "color": "#ef4444",
+      "score": -56,
+      "status": "Có dấu hiệu tăng",
+      "color": "#f97316",
       "trend_icon": "↓",
       "reasons": [
-        "Căng thẳng địa chính trị liên quan đến quyết định của Tổng thống Trump đối với Iran có thể khiến giá dầu thế giới biến động, trực tiếp gây áp lực lên giá xăng dầu và chi phí vận tải tại Việt Nam."
+        "Dữ liệu duy trì ổn định theo chu kỳ."
       ],
       "target_audience": "Người tiêu dùng, Hộ gia đình",
-      "meaning": "Chi phí sinh hoạt của người dân sẽ tăng do giá hàng hóa và dịch vụ bị đẩy lên theo giá nhiên liệu, đồng thời các doanh nghiệp sản xuất sẽ gặp khó khăn về lợi nhuận do chi phí logistics leo thang.",
-      "impact_level": "🔴 Cao",
+      "meaning": "Thực phẩm, đi lại đắt đỏ hơn. Nguy cơ phải thắt chặt chi tiêu.",
+      "impact_level": "🟡 Trung bình",
       "duration": "Ngắn & Trung hạn"
     },
     {
@@ -153,10 +153,10 @@
       "color": "#ef4444",
       "trend_icon": "↓",
       "reasons": [
-        "Sự bất ổn từ các quyết định sa thải do lỗi quản lý của AI đang tạo ra tâm lý lo ngại về tính chính xác và công bằng trong quản trị nhân sự."
+        "Dữ liệu duy trì ổn định theo chu kỳ."
       ],
       "target_audience": "Người lao động, Sinh viên mới ra trường",
-      "meaning": "Người lao động Việt Nam đối mặt với rủi ro mất việc làm thiếu kiểm soát, đòi hỏi doanh nghiệp phải nhanh chóng thiết lập khung pháp lý và đạo đức khi áp dụng công nghệ.",
+      "meaning": "Tìm việc khó khăn hơn, cạnh tranh gay gắt, thu nhập chững lại.",
       "impact_level": "🔴 Cao",
       "duration": "Trung & Dài hạn"
     },
@@ -164,15 +164,15 @@
       "id": "san_xuat",
       "name": "Sản xuất & Công nghiệp",
       "icon": "🏭",
-      "score": -25.714285714285715,
+      "score": -22.5,
       "status": "Có dấu hiệu suy yếu",
       "color": "#f97316",
       "trend_icon": "↓",
       "reasons": [
-        "Các tín hiệu tích cực từ việc dịch chuyển sản xuất drone và mở rộng ngành thủy sản mới chỉ là những tác động cục bộ, chưa đủ để đảo ngược xu hướng suy giảm chung của toàn ngành sản xuất và công nghiệp."
+        "Dữ liệu duy trì ổn định theo chu kỳ."
       ],
       "target_audience": "Doanh nghiệp sản xuất, Công nhân",
-      "meaning": "Doanh nghiệp cần nhanh chóng thích nghi với các ngách thị trường mới và biến động giá nguyên liệu để tận dụng cơ hội dịch chuyển chuỗi cung ứng, đồng thời chuẩn bị các phương án quản trị rủi ro trước sự bất ổn của thị trường toàn cầu.",
+      "meaning": "Nhà máy thiếu đơn hàng, có nguy cơ phải giảm giờ làm hoặc cắt giảm nhân sự.",
       "impact_level": "🟡 Trung bình",
       "duration": "Trung hạn"
     },
@@ -185,10 +185,10 @@
       "color": "#ef4444",
       "trend_icon": "↓",
       "reasons": [
-        "Ngành thương mại đang chịu áp lực kép từ căng thẳng thương mại Mỹ-Trung gây rủi ro dịch chuyển chuỗi cung ứng và các biện pháp siết chặt quản lý nhà nước nhằm kiểm soát gian lận xuất xứ cũng như rà soát hiệu quả hoạt động của các doanh nghiệp lớn."
+        "Lĩnh vực thương mại suy yếu do áp lực kép từ sự dịch chuyển chuỗi cung ứng trong căng thẳng Mỹ-Trung và các biện pháp siết chặt quản lý nhà nước nhằm ngăn chặn gian lận xuất xứ cùng việc rà soát hiệu quả đóng góp của các doanh nghiệp nhập khẩu."
       ],
       "target_audience": "Doanh nghiệp xuất nhập khẩu, Logistics",
-      "meaning": "Doanh nghiệp sẽ phải đối mặt với quy trình kiểm soát nghiêm ngặt hơn và rủi ro pháp lý cao về chứng nhận xuất xứ, đòi hỏi sự minh bạch hóa để tránh các lệnh trừng phạt thương mại từ các thị trường xuất khẩu chủ lực.",
+      "meaning": "Doanh nghiệp sẽ phải đối mặt với áp lực tuân thủ pháp lý và chứng minh nguồn gốc hàng hóa khắt khe hơn, đồng thời cần chủ động minh bạch hóa chuỗi cung ứng để tránh rủi ro bị áp đặt các biện pháp phòng vệ thương mại từ quốc tế.",
       "impact_level": "🔴 Cao",
       "duration": "Trung hạn"
     },
@@ -201,10 +201,10 @@
       "color": "#f97316",
       "trend_icon": "↓",
       "reasons": [
-        "Các đề xuất đánh thuế bất động sản 'ngủ im' và thay đổi cơ chế định giá đất của Nhà nước đang tạo ra áp lực về chi phí và sự bất định về chính sách, gây ảnh hưởng trực tiếp đến tính thanh khoản và kế hoạch đầu tư."
+        "Dữ liệu duy trì ổn định theo chu kỳ."
       ],
       "target_audience": "Người mua nhà, Nhà thầu xây dựng",
-      "meaning": "Nhà đầu tư cần thận trọng với các quỹ đất chưa khai thác để tránh rủi ro thuế, trong khi doanh nghiệp bất động sản cần chuẩn bị cho sự thay đổi về chi phí đầu vào và áp lực điều chỉnh giá bán.",
+      "meaning": "Chi phí vật liệu tăng cao đẩy giá nhà lên, giao dịch trầm lắng.",
       "impact_level": "🟡 Trung bình",
       "duration": "Dài hạn"
     },
@@ -217,10 +217,10 @@
       "color": "#ef4444",
       "trend_icon": "↓",
       "reasons": [
-        "..."
+        "Dữ liệu duy trì ổn định theo chu kỳ."
       ],
       "target_audience": "Nông dân, Doanh nghiệp chế biến thực phẩm",
-      "meaning": "...",
+      "meaning": "Chi phí phân bón tăng, giá bán nông sản rớt gây khó khăn cho nông dân.",
       "impact_level": "🔴 Cao",
       "duration": "Trung hạn"
     },
@@ -233,10 +233,10 @@
       "color": "#f97316",
       "trend_icon": "↓",
       "reasons": [
-        "Dữ liệu duy trì ổn định theo chu kỳ."
+        "Áp lực từ giá vàng thế giới tăng, dòng vốn rút khỏi thị trường chứng khoán và các biện pháp điều chỉnh tỷ giá của Ngân hàng Nhà nước đang gây sức ép lên tính ổn định của hệ thống tiền tệ."
       ],
       "target_audience": "Doanh nghiệp vay vốn, Người mua nhà, Du học sinh",
-      "meaning": "Chi phí vay vốn tăng, hàng nhập khẩu đắt đỏ hơn.",
+      "meaning": "Doanh nghiệp sẽ đối mặt với rủi ro chi phí vốn và biến động tỷ giá, trong khi người dân cần thận trọng trước các quyết định đầu tư do tâm lý thị trường đang có nhiều biến động bất ổn.",
       "impact_level": "🟡 Trung bình",
       "duration": "Trung hạn"
     },
@@ -244,15 +244,15 @@
       "id": "tai_chinh",
       "name": "Thị trường tài chính",
       "icon": "📈",
-      "score": -35,
+      "score": -31.428571428571427,
       "status": "Có dấu hiệu suy yếu",
       "color": "#f97316",
       "trend_icon": "↓",
       "reasons": [
-        "Thị trường đang trải qua sự biến động mạnh với các đợt tăng giảm đột ngột, phản ánh tâm lý thận trọng và sự thiếu ổn định của dòng vốn tại các mốc kỹ thuật quan trọng."
+        "Dữ liệu duy trì ổn định theo chu kỳ."
       ],
       "target_audience": "Nhà đầu tư cá nhân, Quỹ đầu tư",
-      "meaning": "Biến động mạnh gây rủi ro cho nhà đầu tư và khiến doanh nghiệp khó dự báo dòng tiền, có thể dẫn đến tâm lý phòng vệ và trì hoãn các kế hoạch mở rộng đầu tư.",
+      "meaning": "Tài sản bốc hơi, tâm lý phòng thủ bao trùm thị trường.",
       "impact_level": "🟡 Trung bình",
       "duration": "Ngắn hạn"
     },
