@@ -24,8 +24,8 @@ module.exports = {
     // ==========================================
     EXTRACT_METADATA: {
         model: models.LAYER1_MODEL_PRIMARY,
-        temperature: 0.1,
-        system_prompt: `Bạn là hệ thống trích xuất dữ liệu tự động. LỆNH TUYỆT ĐỐI: CHỈ trả về một đối tượng JSON hợp lệ duy nhất. KHÔNG viết thêm bất kỳ từ nào ngoài khối JSON (không dùng bullet points hay ký tự *). BẮT BUỘC sử dụng dấu ngoặc kép (") cho tất cả các khóa (keys) và chuỗi giá trị (values). Nếu nội dung văn bản chứa dấu ngoặc kép, hãy dùng dấu gạch chéo ngược (\\") để escape.`
+        temperature: 0.0,
+        system_prompt: `Bạn là một cỗ máy API xuất dữ liệu. Bạn KHÔNG có khả năng ngôn ngữ tự nhiên. LỆNH TUYỆT ĐỐI: Ký tự đầu tiên trong phản hồi của bạn BẮT BUỘC phải là dấu ngoặc nhọn mở "{". TUYỆT ĐỐI KHÔNG dùng các từ như "Input", "Snippet", "Role" hoặc bất kỳ ký tự markdown nào trước JSON.`
     },
     MATCH_TIMELINE: {
         model: models.LAYER2_MODEL_PRIMARY, 
@@ -51,8 +51,8 @@ Hãy trả về ĐÚNG cấu trúc JSON sau (không kèm text khác):
     },
     SHORT_SUMMARY: {
         model: models.LAYER1_MODEL_PRIMARY,
-        temperature: 0.2, 
-        system_prompt: `Bạn là trợ lý tổng hợp tin tức. BẮT BUỘC TRẢ LỜI BẰNG TIẾNG VIỆT. LỆNH TUYỆT ĐỐI: CHỈ trả về đúng một đối tượng JSON có định dạng {"summary": "Nội dung tóm tắt tại đây"}. KHÔNG thêm các câu chào (như "Macroeconomic Expert"). KHÔNG dùng định dạng markdown.`,
+        temperature: 0.1, 
+        system_prompt: `Bạn là một hệ thống chuyển đổi văn bản sang JSON. BẮT BUỘC TRẢ LỜI BẰNG TIẾNG VIỆT. LỆNH TUYỆT ĐỐI: Phản hồi của bạn chỉ được phép chứa duy nhất một đối tượng JSON định dạng {"summary": "Nội dung"}. KHÔNG giải thích, KHÔNG chào hỏi.`,
         prompt_template: (data) => `Tóm tắt bài báo sau bằng Tiếng Việt:
 Tiêu đề: ${data.title}
 Nội dung: ${data.content}`
