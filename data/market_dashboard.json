@@ -78,7 +78,7 @@
       "history_labels": [
         "Hiện tại"
       ],
-      "updated_at": 1787304224800,
+      "updated_at": 1787315466801,
       "display_source": "Yahoo Finance",
       "status": "online",
       "is_alert": false,
@@ -90,16 +90,16 @@
       "category": "📈 Thị trường tài chính",
       "type": "realtime",
       "unit": "USD",
-      "price": "77.679",
+      "price": "76.731",
       "change_percent": "0%",
       "trend": "→",
       "history": [
-        77679
+        76731
       ],
       "history_labels": [
         "Hiện tại"
       ],
-      "updated_at": 1787304224863,
+      "updated_at": 1787315466985,
       "display_source": "CoinGecko",
       "status": "online",
       "is_alert": false,
@@ -111,16 +111,16 @@
       "category": "🌾 Hàng hóa & Nông sản",
       "type": "realtime",
       "unit": "USD/thùng",
-      "price": "93,07",
+      "price": "94,23",
       "change_percent": "0%",
       "trend": "→",
       "history": [
-        93.07
+        94.23
       ],
       "history_labels": [
         "Hiện tại"
       ],
-      "updated_at": 1787304224915,
+      "updated_at": 1787315467113,
       "display_source": "Yahoo Finance",
       "status": "online",
       "is_alert": false,
@@ -164,7 +164,7 @@
       "id": "san_xuat",
       "name": "Sản xuất & Công nghiệp",
       "icon": "🏭",
-      "score": -22.5,
+      "score": -30,
       "status": "Có dấu hiệu suy yếu",
       "color": "#f97316",
       "trend_icon": "↓",
@@ -185,10 +185,10 @@
       "color": "#ef4444",
       "trend_icon": "↓",
       "reasons": [
-        "Lĩnh vực thương mại suy yếu do áp lực kép từ sự dịch chuyển chuỗi cung ứng trong căng thẳng Mỹ-Trung và các biện pháp siết chặt quản lý nhà nước nhằm ngăn chặn gian lận xuất xứ cùng việc rà soát hiệu quả đóng góp của các doanh nghiệp nhập khẩu."
+        "Dữ liệu duy trì ổn định theo chu kỳ."
       ],
       "target_audience": "Doanh nghiệp xuất nhập khẩu, Logistics",
-      "meaning": "Doanh nghiệp sẽ phải đối mặt với áp lực tuân thủ pháp lý và chứng minh nguồn gốc hàng hóa khắt khe hơn, đồng thời cần chủ động minh bạch hóa chuỗi cung ứng để tránh rủi ro bị áp đặt các biện pháp phòng vệ thương mại từ quốc tế.",
+      "meaning": "Hàng hóa khó xuất ngoại, chi phí vận tải có thể biến động.",
       "impact_level": "🔴 Cao",
       "duration": "Trung hạn"
     },
@@ -228,15 +228,15 @@
       "id": "tien_te",
       "name": "Tiền tệ & Tín dụng",
       "icon": "💰",
-      "score": -48.888888888888886,
+      "score": -48.23529411764706,
       "status": "Có dấu hiệu suy yếu",
       "color": "#f97316",
       "trend_icon": "↓",
       "reasons": [
-        "Áp lực từ giá vàng thế giới tăng, dòng vốn rút khỏi thị trường chứng khoán và các biện pháp điều chỉnh tỷ giá của Ngân hàng Nhà nước đang gây sức ép lên tính ổn định của hệ thống tiền tệ."
+        "Dữ liệu duy trì ổn định theo chu kỳ."
       ],
       "target_audience": "Doanh nghiệp vay vốn, Người mua nhà, Du học sinh",
-      "meaning": "Doanh nghiệp sẽ đối mặt với rủi ro chi phí vốn và biến động tỷ giá, trong khi người dân cần thận trọng trước các quyết định đầu tư do tâm lý thị trường đang có nhiều biến động bất ổn.",
+      "meaning": "Chi phí vay vốn tăng, hàng nhập khẩu đắt đỏ hơn.",
       "impact_level": "🟡 Trung bình",
       "duration": "Trung hạn"
     },
@@ -244,7 +244,7 @@
       "id": "tai_chinh",
       "name": "Thị trường tài chính",
       "icon": "📈",
-      "score": -31.428571428571427,
+      "score": -22.5,
       "status": "Có dấu hiệu suy yếu",
       "color": "#f97316",
       "trend_icon": "↓",
