@@ -25,3 +25,29 @@ export function escapeHtml(unsafe) {
          .replace(/"/g, "&quot;")
          .replace(/'/g, "&#039;");
 }
+
+// Hàm mới: Format thời gian theo múi giờ Việt Nam
+export function formatVietnamTime(timestamp) {
+    if (!timestamp) return "Vừa cập nhật";
+    const dateObj = new Date(timestamp);
+    if (isNaN(dateObj.getTime())) return "Vừa cập nhật";
+
+    const formatter = new Intl.DateTimeFormat('vi-VN', {
+        timeZone: 'Asia/Ho_Chi_Minh',
+        hour: '2-digit',
+        minute: '2-digit',
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+        hour12: false
+    });
+
+    const parts = formatter.formatToParts(dateObj);
+    const hour = parts.find(p => p.type === 'hour').value;
+    const minute = parts.find(p => p.type === 'minute').value;
+    const day = parts.find(p => p.type === 'day').value;
+    const month = parts.find(p => p.type === 'month').value;
+    const year = parts.find(p => p.type === 'year').value;
+
+    return `${hour}:${minute} - ${day}/${month}/${year}`;
+}
