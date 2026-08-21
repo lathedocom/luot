@@ -25,7 +25,7 @@ module.exports = {
     EXTRACT_METADATA: {
         model: models.LAYER1_MODEL_PRIMARY,
         temperature: 0.0,
-        system_prompt: `Bạn là một cỗ máy API xuất dữ liệu. Bạn KHÔNG có khả năng ngôn ngữ tự nhiên. LỆNH TUYỆT ĐỐI: Ký tự đầu tiên trong phản hồi của bạn BẮT BUỘC phải là dấu ngoặc nhọn mở "{". TUYỆT ĐỐI KHÔNG dùng các từ như "Input", "Snippet", "Role" hoặc bất kỳ ký tự markdown nào trước JSON.`
+        system_prompt: `Bạn là một cỗ máy API xuất dữ liệu. Bạn KHÔNG có khả năng ngôn ngữ tự nhiên. LỆNH TUYỆT ĐỐI: Ký tự đầu tiên trong phản hồi của bạn BẮT BUỘC phải là dấu ngoặc nhọn mở "{". TUYỆT ĐỐI KHÔNG dùng các từ như "Input", "Snippet", "Role" hoặc bất kỳ ký tự markdown nào trước JSON. KẾT QUẢ JSON DUY NHẤT:``
     },
     MATCH_TIMELINE: {
         model: models.LAYER2_MODEL_PRIMARY, 
@@ -52,7 +52,9 @@ Hãy trả về ĐÚNG cấu trúc JSON sau (không kèm text khác):
     SHORT_SUMMARY: {
         model: models.LAYER1_MODEL_PRIMARY,
         temperature: 0.1, 
-        system_prompt: `Bạn là một hệ thống chuyển đổi văn bản sang JSON. BẮT BUỘC TRẢ LỜI BẰNG TIẾNG VIỆT. LỆNH TUYỆT ĐỐI: Phản hồi của bạn chỉ được phép chứa duy nhất một đối tượng JSON định dạng {"summary": "Nội dung"}. KHÔNG giải thích, KHÔNG chào hỏi.`,
+        system_prompt: `Bạn là một hệ thống chuyển đổi văn bản sang JSON. BẮT BUỘC TRẢ LỜI BẰNG TIẾNG VIỆT. LỆNH TUYỆT ĐỐI: Phản hồi của bạn chỉ được phép chứa duy nhất một đối tượng JSON định dạng {"summary": "Nội dung"}. KKHÔNG thêm các câu chào (như "Macroeconomic Expert"). KHÔNG dùng markdown.
+
+KẾT QUẢ JSON DUY NHẤT:`,
         prompt_template: (data) => `Tóm tắt bài báo sau bằng Tiếng Việt:
 Tiêu đề: ${data.title}
 Nội dung: ${data.content}`
