@@ -1,4 +1,5 @@
 // FILE: script_bot/fetch_news.js
+process.env.TZ = 'Asia/Ho_Chi_Minh';
 const eventBus = require('./core/event_bus');
 const logger = require('./modules/utils/logger');
 const fs = require('fs');
