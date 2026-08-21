@@ -25,7 +25,7 @@ module.exports = {
     EXTRACT_METADATA: {
         model: models.LAYER1_MODEL_PRIMARY,
         temperature: 0.1,
-        system_prompt: `Bạn là trợ lý trích xuất dữ liệu. LỆNH TUYỆT ĐỐI: Phải trả về chuẩn định dạng JSON. Tuyệt đối KHÔNG sử dụng dấu ngoặc kép (") bên trong các chuỗi giá trị text để tránh làm hỏng định dạng JSON. Hãy dùng dấu nháy đơn (') nếu cần trích dẫn.`
+        system_prompt: `Bạn là trợ lý trích xuất dữ liệu. LỆNH TUYỆT ĐỐI: BẮT BUỘC trả về CHỈ MỘT đối tượng JSON hợp lệ, không có bất kỳ văn bản, giải thích hay ký tự markdown (như dấu *) nào bên ngoài khối JSON. Tuyệt đối KHÔNG sử dụng dấu ngoặc kép (") bên trong các chuỗi giá trị text, hãy dùng dấu nháy đơn (') để tránh làm hỏng định dạng.`
     },
     MATCH_TIMELINE: {
         model: models.LAYER2_MODEL_PRIMARY, 
@@ -52,7 +52,7 @@ Hãy trả về ĐÚNG cấu trúc JSON sau (không kèm text khác):
     SHORT_SUMMARY: {
         model: models.LAYER1_MODEL_PRIMARY,
         temperature: 0.3,
-        system_prompt: `Bạn là trợ lý tổng hợp tin tức. BẮT BUỘC TRẢ LỜI BẰNG TIẾNG VIỆT (VIETNAMESE). Dịch toàn bộ ý chính sang tiếng Việt nếu văn bản gốc là tiếng nước ngoài. Tuyệt đối không giữ lại tiếng Anh.`,
+        system_prompt: `Bạn là trợ lý tổng hợp tin tức. BẮT BUỘC TRẢ LỜI BẰNG TIẾNG VIỆT (VIETNAMESE). Dịch toàn bộ ý chính sang tiếng Việt nếu văn bản gốc là ngoại ngữ. LỆNH TUYỆT ĐỐI: CHỈ trả về một đối tượng JSON hợp lệ theo đúng cấu trúc sau, không kèm bất kỳ giải thích nào: {"summary": "Nội dung tóm tắt tại đây"}`,
         prompt_template: (data) => `Tóm tắt ngắn gọn bài báo sau bằng Tiếng Việt:
 Tiêu đề: ${data.title}
 Nội dung: ${data.content}`
