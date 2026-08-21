@@ -42361,5 +42361,690 @@
       "sentiment": 1,
       "scope": "business"
     }
+  },
+  "evt_db1cdc65": {
+    "created_at": 1787285995271,
+    "expires_at": 1789877995271,
+    "version": "4.5",
+    "checksum": "d56809a700ab958df2c1bd7a8afc56c8",
+    "data": {
+      "cluster_title": "Mỹ tuyên bố chiến tranh kinh tế nhằm vào Iran",
+      "short_summary": "Mỹ tuyên bố thực hiện chiến dịch chiến tranh kinh tế nhằm mục tiêu làm sụp đổ chính quyền Iran. Washington cũng kêu gọi các đồng minh và Trung Quốc cùng tham gia vào nỗ lực cô lập kinh tế đối với Tehran.",
+      "detailed_summary": "Mỹ đã đưa ra tuyên bố về việc triển khai chiến tranh kinh tế với mục tiêu làm cho chính quyền Iran sụp đổ. Đồng thời, Washington kêu gọi các quốc gia đồng minh và Bắc Kinh cùng phối hợp tham gia vào chiến dịch cô lập kinh tế nhằm vào Tehran.",
+      "causes": [
+        "Mỹ muốn gây áp lực tối đa lên chính quyền Iran",
+        "Mỹ tìm kiếm sự đồng thuận quốc tế để cô lập kinh tế Tehran"
+      ],
+      "effects": [
+        "Gia tăng áp lực kinh tế nặng nề lên Iran",
+        "Thúc đẩy căng thẳng ngoại giao giữa Mỹ, Iran và các nước liên quan"
+      ],
+      "affected_groups": [
+        "Chính phủ Iran",
+        "Người dân Iran",
+        "Các đối tác thương mại của Iran"
+      ],
+      "market_impact": "Gây bất ổn cho thị trường năng lượng và thương mại quốc tế liên quan đến khu vực Trung Đông.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "economy"
+      ],
+      "regions": [
+        "US",
+        "IR",
+        "CN"
+      ],
+      "significance": "Sự kiện đánh dấu bước leo thang mới trong chiến lược sử dụng áp lực kinh tế của Mỹ đối với Iran trên trường quốc tế.",
+      "unknowns": [
+        "Phản hồi chính thức và hành động cụ thể của Bắc Kinh trước lời kêu gọi của Mỹ",
+        "Mức độ hưởng ứng thực tế từ phía các đồng minh của Washington"
+      ],
+      "confidence_note": "Thông tin dựa trên tuyên bố trực tiếp từ phía Mỹ nhưng cần thêm thời gian để kiểm chứng phản ứng từ các bên liên quan.",
+      "scenarios": [
+        {
+          "text": "Bắc Kinh từ chối tham gia chiến dịch cô lập, khiến chiến lược của Mỹ gặp nhiều trở ngại.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Iran siết chặt các biện pháp đối phó kinh tế và gia tăng căng thẳng quân sự tại khu vực.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Mỹ",
+          "target": "Iran",
+          "relation_type": "conflict",
+          "label": "Chiến tranh kinh tế và cô lập"
+        },
+        {
+          "source": "Mỹ",
+          "target": "Bắc Kinh",
+          "relation_type": "cooperation",
+          "label": "Kêu gọi tham gia cô lập kinh tế"
+        }
+      ],
+      "entities": [
+        "Mỹ",
+        "Iran",
+        "Trung Quốc",
+        "Washington",
+        "Tehran"
+      ],
+      "keywords": [
+        "chiến tranh kinh tế",
+        "cô lập kinh tế",
+        "Iran",
+        "Mỹ",
+        "Trung Quốc"
+      ],
+      "importance": 90,
+      "severity": 4,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_general_1787286005599": {
+    "created_at": 1787286161082,
+    "expires_at": 1789878161082,
+    "version": "4.5",
+    "checksum": "49862bc0884d00e6f59f0839071f4310",
+    "data": {
+      "cluster_title": "Trung Quốc bác bỏ cáo buộc né thuế của Mỹ",
+      "short_summary": "Trung Quốc đã chính thức bác bỏ các cáo buộc từ phía Mỹ liên quan đến việc chuyển hàng hóa qua nước thứ ba để trốn tránh các biện pháp áp thuế. Sự kiện này phản ánh căng thẳng thương mại đang diễn ra giữa hai cường quốc.",
+      "detailed_summary": "Vào ngày 20 tháng 8, Bắc Kinh đã đưa ra tuyên bố quyết liệt bác bỏ các cáo buộc từ phía Mỹ cho rằng nước này đang sử dụng hình thức trung chuyển hàng hóa qua các quốc gia thứ ba nhằm trốn tránh các biện pháp thuế quan do Mỹ áp đặt.",
+      "causes": [
+        "Mỹ đưa ra cáo buộc Trung Quốc chuyển hàng qua nước thứ ba để né thuế",
+        "Áp lực từ các biện pháp thuế quan giữa hai nền kinh tế lớn"
+      ],
+      "effects": [
+        "Trung Quốc lên tiếng bác bỏ mạnh mẽ cáo buộc",
+        "Căng thẳng thương mại song phương tiếp tục duy trì"
+      ],
+      "affected_groups": [
+        "Chính phủ Mỹ",
+        "Chính phủ Trung Quốc",
+        "Doanh nghiệp xuất nhập khẩu liên quan"
+      ],
+      "market_impact": "Gây thêm sự chú ý về rủi ro tuân thủ quy tắc xuất xứ đối với các doanh nghiệp hoạt động chuỗi cung ứng quốc tế.",
+      "vn_impact": "Việt Nam có thể cần chú ý kiểm soát chặt chẽ các vấn đề về gian lận xuất xứ hàng hóa để tránh bị vướng vào các biện pháp phòng vệ thương mại từ các thị trường lớn.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "diplomacy"
+      ],
+      "regions": [
+        "US",
+        "CN"
+      ],
+      "significance": "Sự việc phản ánh những bất đồng thương mại kéo dài và sự giám sát chặt chẽ của Mỹ đối với các biện pháp trừng phạt thuế quan.",
+      "unknowns": [
+        "Bằng chứng cụ thể mà Mỹ đang nắm giữ",
+        "Phản ứng tiếp theo của phía Mỹ sau lời bác bỏ"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên tuyên bố chính thức từ phía Bắc Kinh.",
+      "scenarios": [
+        {
+          "text": "Mỹ tiếp tục đưa ra các bằng chứng chi tiết hơn hoặc áp dụng thêm các biện pháp kiểm tra ngặt nghèo về xuất xứ.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Hai bên đẩy mạnh đàm phán thương mại để làm rõ các vấn đề liên quan đến chuỗi cung ứng.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Trung Quốc",
+          "target": "Mỹ",
+          "relation_type": "conflict",
+          "label": "Bác bỏ cáo buộc né thuế"
+        }
+      ],
+      "entities": [
+        "Trung Quốc",
+        "Mỹ",
+        "Bắc Kinh"
+      ],
+      "keywords": [
+        "Trung Quốc",
+        "Mỹ",
+        "né thuế",
+        "thương mại",
+        "nước thứ ba"
+      ],
+      "importance": 80,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_e4afb382": {
+    "created_at": 1787286385889,
+    "expires_at": 1789878385889,
+    "version": "4.5",
+    "checksum": "6a0361867b0ac3c73d80c7f487f1dce3",
+    "data": {
+      "cluster_title": "Em gái ông Kim Jong Un chế nhạo Hàn Quốc",
+      "short_summary": "Bà Kim Yo Jong chế giễu Hàn Quốc sau khi Tổng thống Trump yêu cầu thu hẹp cuộc tập trận chung Mỹ - Hàn.",
+      "detailed_summary": "Em gái ông Kim Jong Un chế nhạo Hàn Quốc. Bà Kim Yo Jong chế giễu Hàn Quốc sau khi Tổng thống Trump yêu cầu thu hẹp cuộc tập trận chung Mỹ - Hàn....",
+      "causes": [
+        "Đang cập nhật dữ liệu bối cảnh"
+      ],
+      "effects": [
+        "Đang phân tích chuỗi hệ quả"
+      ],
+      "affected_groups": [
+        "Cộng đồng người dùng hệ thống"
+      ],
+      "market_impact": "Đang theo dõi biến động thị trường.",
+      "vn_impact": "Không thể đánh giá tác động do lỗi AI.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "Chờ cập nhật tình tiết mới từ các báo.",
+      "scope": "business",
+      "importance": 50
+    }
+  },
+  "evt_3831b364": {
+    "created_at": 1787286438138,
+    "expires_at": 1789878438138,
+    "version": "4.5",
+    "checksum": "c9283d6d2b95b8c3ee0ed2d0fe64e351",
+    "data": {
+      "cluster_title": "Mỹ gây sức ép kinh tế lên Iran và trục xuất công dân Mexico",
+      "short_summary": "Mỹ kêu gọi các đồng minh cùng tham gia chiến dịch gây sức ép kinh tế đối với Iran. Song song đó, Washington thực hiện việc trục xuất hơn 2.000 công dân Mexico sang Guatemala.",
+      "detailed_summary": "Mỹ đang tìm kiếm sự hậu thuẫn từ các đồng minh và quốc tế nhằm triển khai các biện pháp gây sức ép và chiến dịch kinh tế nhắm vào Iran. Song song với đó, chính quyền Mỹ đã tiến hành trục xuất hơn 2.000 công dân Mexico đưa đến Guatemala.",
+      "causes": [
+        "Chính sách đối ngoại của Mỹ nhằm gia tăng sức ép kinh tế lên Iran",
+        "Chính sách thực thi pháp luật và kiểm soát di cư của Mỹ dẫn đến việc trục xuất công dân nước ngoài"
+      ],
+      "effects": [
+        "Quan hệ giữa Mỹ và Iran tiếp tục căng thẳng",
+        "Hơn 2.000 công dân Mexico bị trục xuất sang Guatemala",
+        "Gia tăng áp lực ngoại giao đối với các đồng minh của Mỹ"
+      ],
+      "affected_groups": [
+        "Chính phủ Iran",
+        "Công dân Mexico bị trục xuất",
+        "Chính phủ Guatemala"
+      ],
+      "market_impact": "Có thể gây ra biến động nhỏ trên thị trường năng lượng quốc tế nếu sức ép lên Iran gia tăng.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "diplomacy"
+      ],
+      "regions": [
+        "US",
+        "IR",
+        "MX",
+        "GT"
+      ],
+      "significance": "Sự kiện phản ánh đồng thời hai mặt trận trong chính sách đối ngoại và nội chính của Mỹ: gia tăng cô lập Iran trên trường quốc tế và siết mạnh công tác quản lý di cư.",
+      "unknowns": [
+        "Phản ứng cụ thể của các đồng minh trước lời kêu gọi của Mỹ đối với Iran",
+        "Thỏa thuận giữa Mỹ và Guatemala trong việc tiếp nhận những người bị trục xuất từ Mexico"
+      ],
+      "confidence_note": "Thông tin dựa trên bản tin ngắn, cần thêm dữ liệu chi tiết để đánh giá toàn diện.",
+      "scenarios": [
+        {
+          "text": "Các đồng minh của Mỹ hưởng ứng một phần chiến dịch kinh tế nhằm vào Iran, trong khi hoạt động trục xuất người di cư tiếp tục vấp phải tranh cãi pháp lý.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Iran có các biện pháp đáp trả ngoại giao hoặc kinh tế khiến căng thẳng leo thang tại Trung Đông.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Mỹ",
+          "target": "Iran",
+          "relation_type": "conflict",
+          "label": "Gây sức ép kinh tế"
+        },
+        {
+          "source": "Mỹ",
+          "target": "Mexico",
+          "relation_type": "cause_effect",
+          "label": "Trục xuất công dân"
+        }
+      ],
+      "entities": [
+        "Mỹ",
+        "Iran",
+        "Mexico",
+        "Guatemala"
+      ],
+      "keywords": [
+        "Mỹ",
+        "Iran",
+        "Mexico",
+        "Guatemala",
+        "sức ép kinh tế",
+        "trục xuất"
+      ],
+      "importance": 75,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_general_1787286448479": {
+    "created_at": 1787286643681,
+    "expires_at": 1789878643681,
+    "version": "4.5",
+    "checksum": "c59c23f64c55d649e2dfe7cfc80cb311",
+    "data": {
+      "cluster_title": "Cổ phiếu PNJ tăng trần sau kết luận không liên quan vụ buôn lậu kim cương",
+      "short_summary": "Sau kết luận của cơ quan điều tra \"không liên quan vụ buôn lậu kim cương\", cổ phiếu PNJ tăng hết biên độ lên 39.900 đồng từ lúc mở cửa với thanh khoản cao.",
+      "detailed_summary": "Cổ phiếu PNJ tăng trần sau kết luận không liên quan vụ buôn lậu kim cương. Sau kết luận của cơ quan điều tra \"không liên quan vụ buôn lậu kim cương\", cổ phiếu PNJ tăng hết biên độ lên 39.900 đồng từ l...",
+      "causes": [
+        "Đang cập nhật dữ liệu bối cảnh"
+      ],
+      "effects": [
+        "Đang phân tích chuỗi hệ quả"
+      ],
+      "affected_groups": [
+        "Cộng đồng người dùng hệ thống"
+      ],
+      "market_impact": "Đang theo dõi biến động thị trường.",
+      "vn_impact": "Không thể đánh giá tác động do lỗi AI.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "Chờ cập nhật tình tiết mới từ các báo.",
+      "scope": "business",
+      "importance": 50
+    }
+  },
+  "evt_general_1787286649327": {
+    "created_at": 1787286699750,
+    "expires_at": 1789878699750,
+    "version": "4.5",
+    "checksum": "d8d34a96a95e5982edfe352733a3b9e0",
+    "data": {
+      "cluster_title": "Xây dựng Hòa Bình kế hoạch tập trung trả nợ trong năm nay",
+      "short_summary": "Xây dựng Hòa Bình dự kiến sẽ dồn lực hoàn thành các nghĩa vụ nợ về thuế, bảo hiểm xã hội và các khoản nợ khác trong năm nay. Để thực hiện mục tiêu này, doanh nghiệp sẽ đẩy nhanh tiến độ thu hồi công nợ và tập trung tìm kiếm các nguồn công việc mới nhằm phục hồi kinh doanh.",
+      "detailed_summary": "Công ty Xây dựng Hòa Bình đã công bố kế hoạch dồn lực để giải quyết các khoản nợ trong năm nay. Theo đó, doanh nghiệp sẽ đẩy nhanh tiến độ thu hồi công nợ và tận dụng sự phục hồi của nguồn công việc để có nguồn tài chính trả các khoản nợ thuế, bảo hiểm xã hội cùng các nghĩa vụ tài chính khác.",
+      "causes": [
+        "Nguồn công việc có dấu hiệu phục hồi",
+        "Nhu cầu giải quyết các khoản nợ tồn đọng như thuế và bảo hiểm xã hội"
+      ],
+      "effects": [
+        "Thanh toán các khoản nợ thuế và bảo hiểm xã hội",
+        "Cải thiện tình hình tài chính của doanh nghiệp"
+      ],
+      "affected_groups": [
+        "Xây dựng Hòa Bình",
+        "Cơ quan thuế",
+        "Cơ quan bảo hiểm xã hội",
+        "Các chủ nợ"
+      ],
+      "market_impact": "Động thái này cho thấy nỗ lực tái cơ cấu tài chính và giải quyết các nghĩa vụ nợ đọng của doanh nghiệp xây dựng, góp phần củng cố uy tín trên thị trường.",
+      "vn_impact": "Sự kiện phản ánh một phần bức tranh tài chính của doanh nghiệp trong ngành xây dựng tại Việt Nam trong nỗ lực vượt qua khó khăn về dòng tiền và nghĩa vụ pháp lý.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "finance",
+        "business"
+      ],
+      "regions": [
+        "VN"
+      ],
+      "significance": "Thể hiện chiến lược ưu tiên tài chính của doanh nghiệp nhằm giải quyết dứt điểm các nghĩa vụ nợ quan trọng trong năm.",
+      "unknowns": [
+        "Tổng số tiền nợ cụ thể cần phải trả trong năm nay",
+        "Tiến độ và tỷ lệ thu hồi công nợ thực tế"
+      ],
+      "confidence_note": "Thông tin dựa trên tuyên bố kế hoạch của doanh nghiệp, độ tin cậy cao về mặt định hướng nhưng cần kiểm chứng qua kết quả thực tế.",
+      "scenarios": [
+        {
+          "text": "Xây dựng Hòa Bình hoàn thành kế hoạch thu hồi công nợ và thanh toán đầy đủ các khoản nợ thuế, bảo hiểm xã hội đúng hạn.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Tiến độ thu hồi công nợ chậm hơn dự kiến khiến việc trả nợ bị kéo dài sang giai đoạn tiếp theo.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Xây dựng Hòa Bình",
+          "target": "Thuế và Bảo hiểm xã hội",
+          "relation_type": "cause_effect",
+          "label": "Dồn lực trả nợ"
+        },
+        {
+          "source": "Thu hồi công nợ",
+          "target": "Xây dựng Hòa Bình",
+          "relation_type": "cause_effect",
+          "label": "Tạo nguồn lực tài chính"
+        }
+      ],
+      "entities": [
+        "Xây dựng Hòa Bình"
+      ],
+      "keywords": [
+        "Xây dựng Hòa Bình",
+        "trả nợ",
+        "thu hồi công nợ",
+        "phục hồi"
+      ],
+      "importance": 75,
+      "severity": 2,
+      "sentiment": 1,
+      "scope": "business"
+    }
+  },
+  "evt_general_1787286709769": {
+    "created_at": 1787286791787,
+    "expires_at": 1789878791787,
+    "version": "4.5",
+    "checksum": "d5127e96047edf4951b9061924c843e0",
+    "data": {
+      "cluster_title": "Ngân hàng chào lãi suất tiết kiệm cao hơn mức niêm yết",
+      "short_summary": "Nhiều ngân hàng đang áp dụng mức lãi suất tiết kiệm thực tế từ 9% đến 9,5% một năm cho các khoản tiền từ vài chục đến vài trăm triệu đồng. Mức lãi suất này cao hơn biểu lãi suất niêm yết khoảng 3 điểm phần trăm, nhằm thu hút khách hàng.",
+      "detailed_summary": "Nhiều ngân hàng thực hiện việc chào mời lãi suất tiết kiệm ở mức cao, từ 9 đến 9,5% mỗi năm. Mức lãi suất hấp dẫn này áp dụng cho các khoản tiền gửi quy mô từ vài chục triệu đến vài trăm triệu đồng. Đáng chú ý, mức lãi suất thực tế được nhân viên ngân hàng chào bán này cao hơn hẳn 3 điểm phần trăm so với biểu lãi suất đã được niêm yết chính thức.",
+      "causes": [
+        "Nhu cầu huy động vốn của các ngân hàng",
+        "Chính sách ưu đãi lãi suất linh hoạt từ nhân viên ngân hàng để thu hút dòng tiền gửi"
+      ],
+      "effects": [
+        "Người gửi tiền nhận được mức sinh lời cao hơn so với biểu niêm yết",
+        "Tạo ra sự chênh lệch lãi suất giữa mức niêm yết công khai và mức thỏa thuận thực tế"
+      ],
+      "affected_groups": [
+        "Người gửi tiền tiết kiệm",
+        "Các ngân hàng thương mại"
+      ],
+      "market_impact": "Thị trường ghi nhận sự cạnh tranh lãi suất huy động khi một số ngân hàng áp dụng mức lãi suất thực tế cao hơn đáng kể so với biểu niêm yết để thu hút dòng tiền nhỏ lẻ.",
+      "vn_impact": "Phản ánh động thái cạnh tranh huy động vốn trên thị trường tài chính trong nước, mang lại lợi ích sinh lời cao hơn cho người gửi tiền nhưng cũng đặt ra vấn đề về minh bạch biểu lãi suất.",
+      "follow_up": "",
+      "categories": [
+        "finance",
+        "economy"
+      ],
+      "regions": [
+        "VN"
+      ],
+      "significance": "Sự chênh lệch giữa lãi suất niêm yết và lãi suất thỏa thuận thực tế cho thấy tính linh hoạt và cạnh tranh cao trong việc thu hút nguồn vốn nhàn rỗi từ dân cư của các tổ chức tín dụng.",
+      "unknowns": [
+        "Danh tính cụ thể của các ngân hàng đang áp dụng mức lãi suất vượt biểu niêm yết",
+        "Thời hạn áp dụng mức lãi suất ưu đãi từ 9% đến 9,5% một năm"
+      ],
+      "confidence_note": "Thông tin dựa trên thực tế ghi nhận thị trường về mức lãi suất chào bán của nhân viên ngân hàng so với biểu niêm yết.",
+      "scenarios": [
+        {
+          "text": "Các ngân hàng tiếp tục duy trì mức lãi suất thỏa thuận cao hơn biểu niêm yết để tranh giành nguồn vốn nhàn rỗi trong dân cư.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Cơ quan quản lý tiền tệ siết chặt kỷ luật thị trường, yêu cầu các ngân hàng tuân thủ nghiêm ngặt biểu lãi suất đã niêm yết.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Ngân hàng",
+          "target": "Người gửi tiền",
+          "relation_type": "cooperation",
+          "label": "Chào mời và áp dụng mức lãi suất tiết kiệm cao hơn biểu niêm yết"
+        }
+      ],
+      "entities": [
+        "các ngân hàng"
+      ],
+      "keywords": [
+        "lãi suất tiết kiệm",
+        "ngân hàng",
+        "gửi tiền"
+      ],
+      "importance": 65,
+      "severity": 2,
+      "sentiment": 1,
+      "scope": "national"
+    }
+  },
+  "evt_general_1787286801591": {
+    "created_at": 1787286938934,
+    "expires_at": 1789878938934,
+    "version": "4.5",
+    "checksum": "0e78e031013ac2a37253f88c9560148d",
+    "data": {
+      "cluster_title": "...",
+      "short_summary": "...",
+      "detailed_summary": "Vào tối 20/8, Vinamilk đã vinh dự đón nhận Huân chương Độc lập hạng Nhất. Giải thưởng này ghi nhận những đóng góp lớn lao của doanh nghiệp trong lĩnh vực sản xuất và kinh doanh, với tổng số tiền nộp ngân sách nhà nước đạt hơn 71.000 tỷ đồng xuyên suốt chặng đường 50 năm qua.",
+      "causes": [
+        "Hoạt động sản xuất kinh doanh đạt hiệu quả cao trong suốt 50 năm",
+        "Đóng góp hơn 71.000 tỷ đồng vào ngân sách nhà nước"
+      ],
+      "effects": [
+        "Vinamilk được trao tặng Huân chương Độc lập hạng Nhất",
+        "Nâng cao uy tín và vị thế của doanh nghiệp trong nền kinh tế quốc gia"
+      ],
+      "affected_groups": [
+        "Vinamilk",
+        "Cơ quan quản lý nhà nước",
+        "Người lao động và cổ đông của Vinamilk"
+      ],
+      "market_impact": "Khẳng định vị thế vững chắc của doanh nghiệp hàng đầu, củng cố niềm tin của nhà đầu tư và người tiêu dùng đối với thương hiệu.",
+      "vn_impact": "Góp phần củng cố niềm tin vào khu vực kinh tế tư nhân và doanh nghiệp lớn tại Việt Nam, đồng thời thể hiện sự ghi nhận của Nhà nước đối với các đơn vị hoàn thành tốt nghĩa vụ nộp ngân sách.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "business"
+      ],
+      "regions": [
+        "VN"
+      ],
+      "significance": "Sự kiện đánh dấu mốc son 50 năm phát triển và ghi nhận xứng đáng những đóng góp tài chính thiết thực của Vinamilk đối với sự phát triển kinh tế của đất nước.",
+      "unknowns": [
+        "Các kế hoạch phát triển chiến lược cụ thể tiếp theo của doanh nghiệp sau khi nhận huân chương"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên sự kiện trao tặng huân chương thực tế diễn ra vào tối 20/8.",
+      "scenarios": [
+        {
+          "text": "Vinamilk tiếp tục duy trì đà tăng trưởng ổn định và đóng góp lớn cho ngân sách nhà nước trong các năm tiếp theo.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Doanh nghiệp mở rộng quy mô đầu tư sản xuất kinh doanh dựa trên uy tín thương hiệu đã được khẳng định.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Vinamilk",
+          "target": "Ngân sách nhà nước",
+          "relation_type": "cause_effect",
+          "label": "Nộp hơn 71.000 tỷ đồng trong 50 năm"
+        },
+        {
+          "source": "Nhà nước",
+          "target": "Vinamilk",
+          "relation_type": "cooperation",
+          "label": "Trao tặng Huân chương Độc lập hạng Nhất"
+        }
+      ],
+      "entities": [
+        "..."
+      ],
+      "keywords": [
+        "...",
+        "..."
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": 1,
+      "scope": "..."
+    }
+  },
+  "evt_general_1787286949042": {
+    "created_at": 1787287031021,
+    "expires_at": 1789879031021,
+    "version": "4.5",
+    "checksum": "2532ead34745aaa3c7e6fb27fa7810d7",
+    "data": {
+      "cluster_title": "Ahamove ứng dụng công nghệ AI vào điều phối vận tải",
+      "short_summary": "Ahamove đã ứng dụng công nghệ AI vào quy trình điều phối vận tải để tự động hóa việc tạo đơn và tối ưu hóa nguồn lực. Sự thay đổi này giúp nâng cao hiệu quả vận hành và tăng cường năng lực phục vụ khách hàng doanh nghiệp.",
+      "detailed_summary": "Trải qua 11 năm hình thành và phát triển, công ty Ahamove đã tích hợp công nghệ trí tuệ nhân tạo (AI) vào các hoạt động cốt lõi như tự động điều phối vận tải và hỗ trợ tạo đơn hàng. Việc ứng dụng công nghệ này giúp doanh nghiệp tối ưu hóa nguồn lực, nâng cao hiệu quả vận hành và mở rộng năng lực phục vụ cho các khách hàng doanh nghiệp.",
+      "causes": [
+        "Nhu cầu tối ưu hóa nguồn lực và nâng cao hiệu quả vận hành trong lĩnh vực vận tải",
+        "Sự phát triển của công nghệ trí tuệ nhân tạo (AI) sau 11 năm hình thành và phát triển của công ty"
+      ],
+      "effects": [
+        "Tự động hóa quá trình điều phối vận tải và hỗ trợ tạo đơn hàng",
+        "Nâng cao hiệu quả vận hành và mở rộng năng lực phục vụ khách hàng doanh nghiệp của Ahamove"
+      ],
+      "affected_groups": [
+        "Ahamove",
+        "Khách hàng doanh nghiệp",
+        "Đối tác tài xế"
+      ],
+      "market_impact": "Góp phần thúc đẩy xu hướng ứng dụng công nghệ trí tuệ nhân tạo trong ngành logistics và giao nhận hàng hóa tại thị trường nội địa.",
+      "vn_impact": "Đánh dấu bước tiến của một doanh nghiệp công nghệ trong nước về việc ứng dụng trí tuệ nhân tạo để tối ưu hóa ngành vận tải và logistics tại Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "tech",
+        "business"
+      ],
+      "regions": [
+        "VN"
+      ],
+      "significance": "Việc ứng dụng trí tuệ nhân tạo sau 11 năm hoạt động cho thấy chiến lược chuyển đổi số giúp doanh nghiệp logistics nâng cao năng lực cạnh tranh và phục vụ khách hàng tốt hơn.",
+      "unknowns": [
+        "Hiệu quả tài chính cụ thể mang lại từ việc ứng dụng trí tuệ nhân tạo",
+        "Tỷ lệ tăng trưởng lượng khách hàng doanh nghiệp sau khi áp dụng công nghệ mới"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao, dựa trên công bố chính thức về chặng đường 11 năm hoạt động của doanh nghiệp.",
+      "scenarios": [
+        {
+          "text": "Ahamove tiếp tục mở rộng các tính năng trí tuệ nhân tạo để chiếm lĩnh thị phần logistics dành cho khách hàng doanh nghiệp.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Công ty đối mặt với áp lực nâng cấp hạ tầng công nghệ liên tục khi quy mô đơn hàng tăng trưởng mạnh.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Ahamove",
+          "target": "Trí tuệ nhân tạo",
+          "relation_type": "cooperation",
+          "label": "Ứng dụng công nghệ vào vận hành"
+        },
+        {
+          "source": "Trí tuệ nhân tạo",
+          "target": "Điều phối vận tải",
+          "relation_type": "cause_effect",
+          "label": "Tối ưu hóa nguồn lực và hiệu quả"
+        }
+      ],
+      "entities": [
+        "Ahamove"
+      ],
+      "keywords": [
+        "Ahamove",
+        "công nghệ AI",
+        "điều phối vận tải",
+        "tối ưu hóa"
+      ],
+      "importance": 70,
+      "severity": 1,
+      "sentiment": 1,
+      "scope": "business"
+    }
+  },
+  "evt_afaccc95": {
+    "created_at": 1787287170237,
+    "expires_at": 1789879170237,
+    "version": "4.5",
+    "checksum": "74cb59e536d6f653c127b30fdf3da9d6",
+    "data": {
+      "cluster_title": "Mỹ áp đặt lệnh trừng phạt nghiêm khắc nhất lịch sử đối với Iran",
+      "short_summary": "Bộ trưởng Tài chính Mỹ Scott Bessent tuyên bố sẽ áp đặt các biện pháp trừng phạt nghiêm khắc nhất lịch sử đối với Iran nhằm ngăn chặn nhu cầu triển khai một chiến dịch quân sự lớn hơn.",
+      "detailed_summary": "Bộ trưởng Tài chính Mỹ Scott Bessent thông báo Washington sẽ áp dụng các biện pháp trừng phạt mạnh mẽ chưa từng có đối với Iran. Mục đích cốt lõi của động thái này là làm giảm nhu cầu phải tiến hành một chiến dịch quân sự quy mô lớn hơn đối với quốc gia Trung Đông này.",
+      "causes": [
+        "Mỹ muốn hạn chế nhu cầu triển khai một chiến dịch quân sự lớn hơn nhằm vào Iran.",
+        "Chính quyền Mỹ quyết định gia tăng áp lực ngoại giao và kinh tế tối đa đối với Iran."
+      ],
+      "effects": [
+        "Iran đối mặt với các lệnh trừng phạt kinh tế và tài chính nghiêm khắc nhất trong lịch sử từ Mỹ.",
+        "Tình hình căng thẳng địa chính trị tại khu vực Trung Đông có khả năng gia tăng."
+      ],
+      "affected_groups": [
+        "Chính phủ Iran",
+        "Nền kinh tế Iran",
+        "Các thị trường năng lượng và tài chính toàn cầu"
+      ],
+      "market_impact": "Gia tăng rủi ro địa chính trị tại Trung Đông, có thể gây biến động giá năng lượng và thị trường tài chính quốc tế.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "finance"
+      ],
+      "regions": [
+        "US",
+        "IR"
+      ],
+      "significance": "Động thái này phản ánh chiến lược ưu tiên sử dụng sức mạnh kinh tế và trừng phạt tối đa để thay đổi hành vi đối thủ thay vì can thiệp quân sự trực tiếp.",
+      "unknowns": [
+        "Thời điểm cụ thể các lệnh trừng phạt chính thức có hiệu lực.",
+        "Phạm vi chi tiết của các biện pháp trừng phạt nghiêm khắc này."
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên tuyên bố trực tiếp từ Bộ trưởng Tài chính Mỹ.",
+      "scenarios": [
+        {
+          "text": "Mỹ triển khai các lệnh trừng phạt kinh tế mạnh mẽ, khiến Iran chịu áp lực lớn về tài chính mà không cần dùng đến hành động quân sự.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Iran đáp trả bằng các biện pháp leo thang căng thẳng trong khu vực, làm suy giảm hiệu quả của lệnh trừng phạt.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Mỹ",
+          "target": "Iran",
+          "relation_type": "conflict",
+          "label": "Áp đặt trừng phạt kinh tế nghiêm khắc"
+        },
+        {
+          "source": "Scott Bessent",
+          "target": "Mỹ",
+          "relation_type": "cooperation",
+          "label": "Đại diện công bố chính sách tài chính"
+        },
+        {
+          "source": "Lệnh trừng phạt",
+          "target": "Chiến dịch quân sự",
+          "relation_type": "cause_effect",
+          "label": "Nhằm giảm nhu cầu triển khai"
+        }
+      ],
+      "entities": [
+        "Mỹ",
+        "Iran",
+        "Scott Bessent"
+      ],
+      "keywords": [
+        "Mỹ",
+        "Iran",
+        "trừng phạt",
+        "Scott Bessent",
+        "chiến dịch quân sự"
+      ],
+      "importance": 85,
+      "severity": 4,
+      "sentiment": -1,
+      "scope": "global"
+    }
   }
 }
