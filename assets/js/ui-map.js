@@ -162,15 +162,12 @@ function initMap(mapContainer) {
 
             const backendLayer = toBackendLayer(currentMapLayer);
 
-            // [SỬA] Lọc sự kiện theo đúng lớp (layer) đang được chọn trên bộ lọc.
-            // Trước đây luôn hiển thị TẤT CẢ sự kiện (top5 tổng, trộn mọi layer) bất kể người dùng
-            // đang xem "Toàn cảnh", "Kinh tế" hay "Quân sự" — vì dữ liệu event thiếu field "layer"
-            // (đã bổ sung lại ở backend). Giờ nếu KHÔNG phải 'total' thì chỉ lấy event đúng layer đó.
+            // Lọc sự kiện theo đúng lớp (layer) đang được chọn trên bộ lọc
             const filteredEvents = (currentMapLayer === 'total')
                 ? countryData.events
                 : countryData.events.filter(e => e.layer === backendLayer);
 
-            if (filteredEvents.length === 0) return; // Không có sự kiện nào thuộc lớp đang chọn -> không mở modal
+            if (filteredEvents.length === 0) return; // Không có sự kiện nào thuộc lớp đang chọn
 
             let layerScore = (currentMapLayer === 'total')
                 ? (countryData.si_score || 0)
@@ -193,7 +190,6 @@ function initMap(mapContainer) {
             let viName = code;
             try { viName = translator.of(code) || code; } catch (e) {}
 
-            // [MỚI] Hiện rõ đang xem theo lăng kính (lớp) nào trong tiêu đề modal, tránh gây hiểu lầm
             const layerLabelMap = {
                 total: 'Toàn cảnh', security: 'Quân sự', economy: 'Kinh tế',
                 disaster: 'Môi trường', health: 'Y tế', general: 'Khác'
@@ -204,18 +200,31 @@ function initMap(mapContainer) {
 
             let posHtml = '', negHtml = '', neutralHtml = '';
 
-            // Lặp qua các sự kiện đã được Backend lọc sẵn (và giờ đã lọc thêm theo layer ở trên)
+            // Lặp qua các sự kiện đã được Backend lọc sẵn
             filteredEvents.forEach(evt => {
                 let absScore = Math.abs(evt.score);
-                // [SỬA] Thêm nhánh trung lập rõ ràng thay vì gộp chung vào "tiêu cực".
-                // Trước đây bất kỳ event nào có sentiment không dương (kể cả 0/không rõ) đều bị coi là tiêu cực,
-                // khiến tin trung lập/chưa phân loại bị hiện nhầm trong mục "🔴 Căng thẳng/Bất ổn".
+                
+                // --- THÊM LOGIC FORMAT NGÀY THÁNG TẠI ĐÂY ---
+                let dateStr = "";
+                if (evt.timestamp) {
+                    let safeTimestamp = evt.timestamp;
+                    if (typeof safeTimestamp === 'string' && !isNaN(safeTimestamp)) {
+                        safeTimestamp = parseInt(safeTimestamp, 10);
+                    }
+                    const d = new Date(safeTimestamp);
+                    if (!isNaN(d.getTime())) {
+                        dateStr = ` - ${d.getDate().toString().padStart(2,'0')}/${(d.getMonth() + 1).toString().padStart(2,'0')}`;
+                    }
+                }
+                // ---------------------------------------------
+
+                // Phân loại sự kiện kèm hiển thị Ngày Tháng
                 if (evt.sentiment > 0) {
-                    posHtml += `<li style="margin-bottom: 6px; color: #10b981;"><strong>${evt.title}</strong> <span style="opacity: 0.7; font-size: 12px;">(SI: ${absScore.toFixed(1)})</span></li>`;
+                    posHtml += `<li style="margin-bottom: 6px; color: #10b981;"><strong>${evt.title}</strong> <span style="opacity: 0.7; font-size: 12px;">(SI: ${absScore.toFixed(1)}${dateStr})</span></li>`;
                 } else if (evt.sentiment < 0) {
-                    negHtml += `<li style="margin-bottom: 6px; color: #ef4444;"><strong>${evt.title}</strong> <span style="opacity: 0.7; font-size: 12px;">(SI: ${absScore.toFixed(1)})</span></li>`;
+                    negHtml += `<li style="margin-bottom: 6px; color: #ef4444;"><strong>${evt.title}</strong> <span style="opacity: 0.7; font-size: 12px;">(SI: ${absScore.toFixed(1)}${dateStr})</span></li>`;
                 } else {
-                    neutralHtml += `<li style="margin-bottom: 6px; color: #94a3b8;"><strong>${evt.title}</strong> <span style="opacity: 0.7; font-size: 12px;">(SI: ${absScore.toFixed(1)})</span></li>`;
+                    neutralHtml += `<li style="margin-bottom: 6px; color: #94a3b8;"><strong>${evt.title}</strong> <span style="opacity: 0.7; font-size: 12px;">(SI: ${absScore.toFixed(1)}${dateStr})</span></li>`;
                 }
             });
 
