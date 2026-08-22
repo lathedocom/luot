@@ -18,20 +18,26 @@ async function fetchFuelData() {
         const $1 = cheerio.load(html1);
         let priceVal1 = null;
 
-        const targetElement = $1('a[href*="ron-95"]');
-        if (targetElement.length > 0) {
-            const parentText = targetElement.parent().parent().text();
-            // CHỈ BẮT SỐ CÓ 5 CHỮ SỐ (VD: 23.450)
-            const match = parentText.match(/([2-3][0-9][.,\s]?[0-9]{3})/);
-            if (match) priceVal1 = parseInt(match[1].replace(/[^\d]/g, ''));
-        }
+        // Cách 1: Đọc từng dòng <tr> trong bảng để đảm bảo không nhảy nhầm dòng
+        $1('tr').each((i, el) => {
+            const text = $1(el).text().replace(/\s+/g, ' ').trim();
+            // Chỉ bắt dòng có chứa chữ RON 95
+            if (text.match(/RON\s*95/i)) {
+                // Bắt giá tiền 5 chữ số đầu tiên trên DÒNG NÀY (VD: 22.660)
+                const match = text.match(/([2-3][0-9][.,\s]?[0-9]{3})/);
+                if (match && !priceVal1) {
+                    priceVal1 = parseInt(match[1].replace(/[^\d]/g, ''));
+                }
+            }
+        });
 
+        // Cách 2: Dự phòng bằng Regex (ép buộc giữa RON 95 và số tiền không được có số nào khác)
         if (!priceVal1) {
-             const valStr = extractPriceFlexible(html1, ['body'], /(?:RON\s*95(?:-III)?).*?([2-3][0-9][.,\s]?[0-9]{3})/i);
+             const valStr = extractPriceFlexible(html1, ['body'], /RON\s*95[^\d]*?([2-3][0-9][.,\s]?[0-9]{3})/i);
              if (valStr) priceVal1 = parseInt(valStr.replace(/[^\d]/g, ''));
         }
 
-        if (!priceVal1 || isNaN(priceVal1)) throw new Error("Không bắt được giá 5 chữ số từ Báo Mới");
+        if (!priceVal1 || isNaN(priceVal1)) throw new Error("Không bắt được giá xăng từ Báo Mới");
 
         return { ...rawResult, value: priceVal1, source: { name: "Báo Mới", url: url1, type: "official" }, quality: { status: "verified", method: "html_text" } };
 
@@ -47,7 +53,7 @@ async function fetchFuelData() {
             const valStr2 = extractPriceFlexible(
                 html2, 
                 ['body'], 
-                /(?:RON\s*95(?:-III)?).*?([2-3][0-9][.,\s]?[0-9]{3})/i
+                /RON\s*95[^\d]*?([2-3][0-9][.,\s]?[0-9]{3})/i
             );
             if (valStr2) priceVal2 = parseInt(valStr2.replace(/[^\d]/g, ''));
 
@@ -67,7 +73,7 @@ async function fetchFuelData() {
 
                 $3('table tbody tr').each((i, el) => {
                     const text = $3(el).text().trim();
-                    if (text.includes('RON 95-III') && !text.includes('--')) {
+                    if (text.match(/RON\s*95/i) && !text.includes('--')) {
                         const match = text.match(/([2-3][0-9][.,\s]?[0-9]{3})/);
                         if (match) priceVal3 = parseInt(match[1].replace(/[^\d]/g, ''));
                     }
