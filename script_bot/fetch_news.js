@@ -243,7 +243,7 @@ Hai sự kiện trên có phải cùng nói về 1 sự việc không? CHỈ TR�
                 categories: (aiIntelligence.categories && aiIntelligence.categories.length > 0) ? aiIntelligence.categories : extractCategories(cluster.combined_text),
                 regions: (aiIntelligence.regions && aiIntelligence.regions.length > 0) ? aiIntelligence.regions : extractRegions(cluster.combined_text, cluster.articles[0].source_name),
                 
-                entities: entities,
+                entities: (aiIntelligence.entities && aiIntelligence.entities.length > 0) ? aiIntelligence.entities : entities,
                 value_score: valueScore,
                 scope: aiIntelligence.scope || 'business',
                 
