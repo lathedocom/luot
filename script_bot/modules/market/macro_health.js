@@ -3,14 +3,27 @@ const gateway = require('../ai/gateway');
 const logger = require('../utils/logger');
 
 const HEALTH_CATEGORIES = {
-    'chi_phi': { name: 'Chi phí sinh hoạt', icon: '🛒', inverse: true, keywords: ['lạm phát', 'giá cả', 'xăng', 'điện', 'cpi', 'thực phẩm', 'heo hơi'], market_keys: ['CPI_VN', 'RON95', 'GOLD_SJC', 'RICE_VN'] },
+    'chi_phi': { 
+        name: 'Chi phí sinh hoạt', 
+        icon: '🛒', 
+        inverse: true, 
+        keywords: ['lạm phát', 'giá cả', 'xăng', 'điện', 'cpi', 'thực phẩm', 'heo hơi', 'gạo', 'trứng'], 
+        market_keys: ['vn_cpi', 'vn_ron95', 'vn_diesel', 'vn_gold_sjc', 'vn_rice', 'vn_pork', 'vn_egg', 'vn_gas_lpg', 'vn_electricity', 'vn_water'] 
+    },
+    'thu_nhap': { 
+        name: 'Thu nhập & Sức mua', 
+        icon: '💵', 
+        inverse: false, 
+        keywords: ['lương tối thiểu', 'lãi suất', 'thu nhập', 'sức mua', 'tín dụng'], 
+        market_keys: ['vn_min_wage', 'vn_mortgage_rate'] 
+    },
     'viec_lam': { name: 'Thị trường việc làm', icon: '💼', inverse: false, keywords: ['thất nghiệp', 'tuyển dụng', 'việc làm', 'lương', 'sa thải'], market_keys: ['UNEMP_VN'] },
-    'san_xuat': { name: 'Sản xuất & Công nghiệp', icon: '🏭', inverse: false, keywords: ['pmi', 'nhà máy', 'sản xuất', 'công nghiệp', 'đơn hàng'], market_keys: ['PMI_VN', 'IIP_VN'] },
+    'san_xuat': { name: 'Sản xuất & Công nghiệp', icon: '🏭', inverse: false, keywords: ['pmi', 'nhà máy', 'sản xuất', 'công nghiệp', 'đơn hàng'], market_keys: ['vn_pmi', 'IIP_VN'] },
     'thuong_mai': { name: 'Thương mại & XNK', icon: '🚢', inverse: false, keywords: ['xuất khẩu', 'nhập khẩu', 'container', 'cảng', 'logistics'], market_keys: ['EXPORT_VN', 'IMPORT_VN'] },
     'xay_dung': { name: 'Xây dựng & Bất động sản', icon: '🏗️', inverse: false, keywords: ['bất động sản', 'xây dựng', 'xi măng', 'thép', 'cát', 'giá nhà'], market_keys: ['vn_steel_cb300', 'vn_cement', 'SAND']},
-    'nong_nghiep': { name: 'Nông nghiệp & Hàng hóa', icon: '🌾', inverse: false, keywords: ['gạo', 'cà phê', 'hồ tiêu', 'cao su', 'dầu', 'khí đốt'], market_keys: ['BRENT', 'GOLD_W', 'COFFEE_VN', 'PEPPER_VN'] },
-    'tien_te': { name: 'Tiền tệ & Tín dụng', icon: '💰', inverse: false, keywords: ['lãi suất', 'tỷ giá', 'tín dụng', 'ngân hàng', 'usd'], market_keys: ['USD_VND', 'DXY', 'INTERBANK_RATE'] },
-    'tai_chinh': { name: 'Thị trường tài chính', icon: '📈', inverse: false, keywords: ['chứng khoán', 'cổ phiếu', 'trái phiếu', 'vnindex'], market_keys: ['VNINDEX', 'SP500', 'BTC'] },
+    'nong_nghiep': { name: 'Nông nghiệp & Hàng hóa', icon: '🌾', inverse: false, keywords: ['gạo', 'cà phê', 'hồ tiêu', 'cao su', 'dầu', 'khí đốt'], market_keys: ['global_brent', 'GOLD_W', 'vn_coffee', 'vn_pepper'] },
+    'tien_te': { name: 'Tiền tệ & Tín dụng', icon: '💰', inverse: false, keywords: ['lãi suất', 'tỷ giá', 'tín dụng', 'ngân hàng', 'usd'], market_keys: ['usd_vnd', 'DXY', 'INTERBANK_RATE'] },
+    'tai_chinh': { name: 'Thị trường tài chính', icon: '📈', inverse: false, keywords: ['chứng khoán', 'cổ phiếu', 'trái phiếu', 'vnindex'], market_keys: ['vn_index', 'SP500', 'global_btc'] },
     'rui_ro': { name: 'Rủi ro toàn cầu', icon: '🌍', inverse: true, keywords: ['khủng hoảng', 'chiến tranh', 'đảo chính', 'căng thẳng', 'dịch bệnh'], market_keys: [] }
 };
 
@@ -21,6 +34,7 @@ function getInsightDetails(key, finalScore) {
 
     switch(key) {
         case 'chi_phi': target = 'Người tiêu dùng, Hộ gia đình'; meaning = isBad ? 'Thực phẩm, đi lại đắt đỏ hơn. Nguy cơ phải thắt chặt chi tiêu.' : 'Áp lực giá cả ổn định, dễ thở hơn cho người dân.'; duration = 'Ngắn & Trung hạn'; break;
+        case 'thu_nhap': target = 'Người đi làm, Hộ gia đình vay vốn'; meaning = isBad ? 'Thu nhập chững lại, gánh nặng trả nợ tăng, sức mua thắt chặt.' : 'Thu nhập cải thiện, lãi suất dễ chịu kích thích mua sắm và đầu tư.'; duration = 'Dài hạn'; break;
         case 'viec_lam': target = 'Người lao động, Sinh viên mới ra trường'; meaning = isBad ? 'Tìm việc khó khăn hơn, cạnh tranh gay gắt, thu nhập chững lại.' : 'Nhiều cơ hội việc làm mở ra, dễ thỏa thuận lương.'; duration = 'Trung & Dài hạn'; break;
         case 'tien_te': target = 'Doanh nghiệp vay vốn, Người mua nhà, Du học sinh'; meaning = isBad ? 'Chi phí vay vốn tăng, hàng nhập khẩu đắt đỏ hơn.' : 'Lãi suất dễ chịu, thuận lợi cho việc vay mượn mở rộng kinh doanh.'; duration = 'Trung hạn'; break;
         case 'san_xuat': target = 'Doanh nghiệp sản xuất, Công nhân'; meaning = isBad ? 'Nhà máy thiếu đơn hàng, có nguy cơ phải giảm giờ làm hoặc cắt giảm nhân sự.' : 'Nhà máy hoạt động hết công suất, nhu cầu tuyển dụng tăng cao.'; break;
@@ -60,8 +74,7 @@ async function buildMacroHealth(topics, marketData = [], historyDb = { monthly: 
             if (category.inverse) dataScore = -dataScore;
         }
 
-        
-       // 2. Quét Tin tức tổng hợp (LỌC THẬT KỸ TIN TỨC LIÊN QUAN ĐẾN VN)
+        // 2. Quét Tin tức tổng hợp (LỌC THẬT KỸ TIN TỨC LIÊN QUAN ĐẾN VN)
         const relatedTopics = recentTopics.filter(t => {
             // Check xem tin có chứa từ khóa của chuyên mục đang xét (sản xuất, thương mại...) không
             const hasKeyword = category.keywords.some(kw => (t.title + ' ' + (t.short_summary || '')).toLowerCase().includes(kw));
@@ -111,7 +124,7 @@ async function buildMacroHealth(topics, marketData = [], historyDb = { monthly: 
             try {
                 logger.info(`[Economic Intelligence] Đang dùng AI phân tích thẻ: ${category.name}`);
                 
-                // [ĐÃ SỬA] Ép AI chỉ được đọc phần vn_impact thay vì tóm tắt sự kiện chung chung
+                // Ép AI chỉ được đọc phần vn_impact thay vì tóm tắt sự kiện chung chung
                 const contextNews = relatedTopics.slice(0, 3).map(t => `- SỰ KIỆN: ${t.title}. TÁC ĐỘNG TỚI VN: ${t.vn_impact || t.short_summary}`).join('\n');
                 
                 const prompt = `Bạn là Chuyên gia Kinh tế Vĩ mô của Việt Nam. Hệ thống thuật toán đánh giá lĩnh vực "${category.name}" của Việt Nam đang ở trạng thái: ${status}.
@@ -132,7 +145,6 @@ Nhiệm vụ: Giải thích ngắn gọn tại sao lại có trạng thái này 
             }
         }
 
-        
         // --- 3. ĐÓNG GÓI KẾT QUẢ ---
         const uniqueReasons = [...new Set(reasons)].slice(0, 3);
         if (uniqueReasons.length === 0) uniqueReasons.push("Dữ liệu duy trì ổn định theo chu kỳ.");
