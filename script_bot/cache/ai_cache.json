@@ -45419,5 +45419,356 @@
       "sentiment": 0,
       "scope": "business"
     }
+  },
+  "evt_cdad0b62": {
+    "created_at": 1787401136944,
+    "expires_at": 1789993136944,
+    "version": "4.5",
+    "checksum": "e0414bd9a0aa6e494fdfaa27c597d668",
+    "data": {
+      "cluster_title": "...",
+      "short_summary": "...",
+      "detailed_summary": "Tòa án liên bang Mỹ đã chính thức ngăn chặn chính sách đình chỉ cấp thị thực (visa) nhập cư của chính quyền ông Trump áp dụng đối với công dân của 75 quốc gia, vốn được công bố vào tháng 1. Phán quyết này bác bỏ nỗ lực hạn chế cấp visa định cư của chính quyền.",
+      "causes": [
+        "Chính quyền Trump công bố chính sách đình chỉ visa định cư với 75 nước vào tháng 1",
+        "Tòa án liên bang Mỹ can thiệp và xem xét tính hợp pháp của chính sách"
+      ],
+      "effects": [
+        "Chính sách đình chỉ visa định cư bị tòa án ngăn chặn",
+        "Quá trình cấp thị thực cho công dân 75 nước tiếp tục được duy trì theo phán quyết của tòa"
+      ],
+      "affected_groups": [
+        "Công dân của 75 quốc gia nằm trong danh sách đình chỉ visa",
+        "Chính quyền Trump"
+      ],
+      "market_impact": "Không có tác động trực tiếp đến thị trường tài chính hoặc kinh tế.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "diplomacy"
+      ],
+      "regions": [
+        "US"
+      ],
+      "significance": "Sự kiện phản ánh sự can thiệp của tư pháp Mỹ đối với các quyết định hành pháp liên quan đến chính sách nhập cư.",
+      "unknowns": [
+        "Phฏn ứng tiếp theo của chính quyền Trump đối với phán quyết của tòa",
+        "Danh sách cụ thể 75 quốc gia bị ảnh hưởng bởi chính sách ban đầu"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên các nguồn tin tức pháp lý và chính trị đã được xác thực.",
+      "scenarios": [
+        {
+          "text": "Chính quyền kháng cáo phán quyết của tòa án liên bang lên cấp cao hơn.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Chính quyền sửa đổi hoặc ban hành biện pháp pháp lý thay thế liên quan đến visa.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Tòa án liên bang Mỹ",
+          "target": "Chính quyền Trump",
+          "relation_type": "conflict",
+          "label": "Ngăn chặn chính sách đình chỉ visa"
+        },
+        {
+          "source": "Chính quyền Trump",
+          "target": "75 quốc gia",
+          "relation_type": "cause_effect",
+          "label": "Đình chỉ visa nhập cư"
+        }
+      ],
+      "entities": [],
+      "keywords": [],
+      "importance": 60,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "..."
+    }
+  },
+  "evt_ca35e1ab": {
+    "created_at": 1787401183497,
+    "expires_at": 1789993183497,
+    "version": "4.5",
+    "checksum": "56224ca8541afb334123c350a232cd03",
+    "data": {
+      "cluster_title": "...",
+      "short_summary": "...",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "...",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 60,
+      "severity": 2,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_be3f000a": {
+    "created_at": 1787401232304,
+    "expires_at": 1789993232304,
+    "version": "4.5",
+    "checksum": "e3ffab1c28508b0d2c6a328e51fa4794",
+    "data": {
+      "cluster_title": "Nga phóng tên lửa đạn đạo vào thủ đô Kiev",
+      "short_summary": "Thủ đô Kiev của Ukraine vừa trải qua các đợt tấn công bằng tên lửa đạn đạo từ phía Nga. Những vụ nổ mạnh đã làm rung chuyển thành phố, gây ra thiệt hại và ảnh hưởng lớn đến an ninh tại khu vực thủ đô theo truyền thông địa phương.",
+      "detailed_summary": "Theo thông tin từ truyền thông Ukraine, thủ đô Kiev đã rung chuyển sau một loạt các vụ nổ do Nga phóng nhiều tên lửa đạn đạo nhắm vào khu vực này.",
+      "causes": [
+        "Cuộc xung đột vũ trang kéo dài giữa Nga và Ukraine",
+        "Chiến dịch tấn công bằng tên lửa đạn đạo của quân đội Nga nhắm vào các mục tiêu tại thủ đô Kiev"
+      ],
+      "effects": [
+        "Thủ đô Kiev rung chuyển sau các vụ nổ",
+        "Gây ra tình trạng mất an ninh và đe dọa tính mạng người dân tại thủ đô Ukraine"
+      ],
+      "affected_groups": [
+        "Cư dân sinh sống tại thủ đô Kiev",
+        "Cơ sở hạ tầng tại thủ đô Ukraine"
+      ],
+      "market_impact": "Sự kiện xung đột leo thang có thể gây biến động nhẹ đến giá năng lượng và chuỗi cung ứng toàn cầu nhưng chưa có tác động tức thời lớn đến thị trường tài chính.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "military",
+        "politics"
+      ],
+      "regions": [
+        "UA",
+        "RU"
+      ],
+      "significance": "Sự kiện cho thấy cường độ các cuộc tấn công tên lửa của Nga nhằm vào trung tâm đầu não của Ukraine vẫn tiếp tục duy trì, làm gia tăng căng thẳng quân sự.",
+      "unknowns": [
+        "Mục tiêu chính xác bị nhắm đến tại Kiev",
+        "Quy mô thiệt hại về người và vật chất sau các vụ nổ"
+      ],
+      "confidence_note": "Thông tin dựa trên báo cáo từ truyền thông Ukraine về các vụ nổ và tên lửa đạn đạo, cần thêm dữ liệu chính thức từ cơ quan chức năng.",
+      "scenarios": [
+        {
+          "text": "Nga tiếp tục duy trì các đợt tập kích tên lửa tầm xa vào các trung tâm đô thị lớn của Ukraine.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Ukraine tăng cường hệ thống phòng không để đánh chặn các đợt tấn công tên lửa đạn đạo tiếp theo.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Nga",
+          "target": "Kiev",
+          "relation_type": "conflict",
+          "label": "Tấn công bằng tên lửa đạn đạo"
+        },
+        {
+          "source": "Tên lửa đạn đạo",
+          "target": "Kiev",
+          "relation_type": "cause_effect",
+          "label": "Gây ra các vụ nổ làm rung chuyển thành phố"
+        }
+      ],
+      "entities": [
+        "Nga",
+        "Kiev",
+        "Ukraine"
+      ],
+      "keywords": [
+        "tên lửa đạn đạo",
+        "Kiev",
+        "Nga",
+        "Ukraine",
+        "vụ nổ"
+      ],
+      "importance": 85,
+      "severity": 4,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_53d7686b": {
+    "created_at": 1787401276067,
+    "expires_at": 1789993276067,
+    "version": "4.5",
+    "checksum": "8c7a440f485561999d8a5c5ba48e7bf7",
+    "data": {
+      "cluster_title": "Hơn 4.600 dự án đang tồn đọng và gặp vướng mắc",
+      "short_summary": "Số liệu từ Chính phủ cho thấy có hơn 4.600 dự án đang gặp vướng mắc và tồn đọng, trong đó nhiều dự án liên quan đến lĩnh vực đất đai. Điều này đặt ra yêu cầu cấp bách về việc tháo gỡ các nút thắt pháp lý và cơ chế để khơi thông nguồn lực.",
+      "detailed_summary": "Theo số liệu được Chính phủ công bố, hiện có hơn 4.600 dự án đang rơi vào tình trạng tồn đọng và cần được tháo gỡ. Đáng chú ý, nhiều dự án trong số này thuộc lĩnh vực đất đai và đang gặp phải các vướng mắc pháp lý hoặc thực tế chưa được giải quyết.",
+      "causes": [
+        "Vướng mắc về thủ tục pháp lý và đất đai",
+        "Tồn đọng trong quá trình triển khai và thực hiện dự án"
+      ],
+      "effects": [
+        "Lãng phí nguồn lực đất đai và tài sản",
+        "Làm chậm trễ tiến độ phát triển kinh tế và hạ tầng"
+      ],
+      "affected_groups": [
+        "Chính phủ",
+        "Các doanh nghiệp có dự án tồn đọng",
+        "Người dân liên quan đến các khu vực dự án"
+      ],
+      "market_impact": "Gây tâm lý thận trọng cho thị trường bất động sản và đầu tư công, đồng thời làm giảm hiệu quả sử dụng nguồn vốn và tài nguyên.",
+      "vn_impact": "Sự kiện này phản ánh trực tiếp tình hình kinh tế trong nước của Việt Nam, ảnh hưởng đến môi trường đầu tư, hiệu quả sử dụng đất đai và tiến độ các công trình, dự án trên phạm vi toàn quốc.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "business"
+      ],
+      "regions": [
+        "VN"
+      ],
+      "significance": "Việc nhận diện số lượng lớn dự án tồn đọng là bước đầu tiên để các cơ quan chức năng tập trung tháo gỡ điểm nghẽn, khơi thông nguồn lực phát triển kinh tế.",
+      "unknowns": [
+        "Chi tiết cụ thể về nguyên nhân của từng nhóm dự án tồn đọng",
+        "Lộ trình và giải pháp cụ thể để tháo gỡ cho toàn bộ hơn 4.600 dự án"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên số liệu chính thức từ Chính phủ.",
+      "scenarios": [
+        {
+          "text": "Chính phủ ban hành các cơ chế, chính sách đặc thù để tháo gỡ vướng mắc pháp lý, giúp tái khởi động một phần lớn các dự án tồn đọng.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Quá trình xử lý vướng mắc kéo dài do tính chất phức tạp của các thủ tục đất đai và pháp luật liên quan.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Chính phủ",
+          "target": "Dự án tồn đọng",
+          "relation_type": "cause_effect",
+          "label": "Thống kê và tìm giải pháp tháo gỡ"
+        }
+      ],
+      "entities": [
+        "Chính phủ"
+      ],
+      "keywords": [
+        "dự án tồn đọng",
+        "vướng mắc đất đai",
+        "Chính phủ",
+        "tháo gỡ khó khăn"
+      ],
+      "importance": 80,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_91c0456a": {
+    "created_at": 1787401323845,
+    "expires_at": 1789993323845,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_40351623": {
+    "created_at": 1787401375358,
+    "expires_at": 1789993375358,
+    "version": "4.5",
+    "checksum": "3af51269fdc0dc2d30ebcec665f9f49b",
+    "data": {
+      "cluster_title": "Tiêm kích MiG-29 Ukraine đánh chặn UAV của Nga",
+      "short_summary": "Một chiếc tiêm kích MiG-29 của Ukraine đã thực hiện động tác cơ động táo bạo để đánh chặn thành công UAV của Nga. Sự việc khiến thiết bị bay không người lái lao xuống đất và phát nổ thành một quả cầu lửa lớn, khẳng định kỹ năng chiến đấu của phi công.",
+      "detailed_summary": "Trong bối cảnh xung đột, một tiêm kích MiG-29 thuộc lực lượng không quân Ukraine đã rơi vào tình trạng hết đạn. Thay vì rút lui, phi công đã thực hiện một động tác cơ động táo bạo nhằm vào máy bay không người lái của Nga. Hành động này đã ép mục tiêu mất kiểm soát, lao xuống đất và phát nổ thành một quả cầu lửa khổng lồ.",
+      "causes": [
+        "Tiêm kích MiG-29 của Ukraine cạn kiệt đạn dược khi đang làm nhiệm vụ",
+        "Sự xuất hiện của máy bay không người lái Nga trên không phận"
+      ],
+      "effects": [
+        "Máy bay không người lái của Nga bị rơi và phát nổ",
+        "Minh chứng khả năng xoay sở và chiến đấu sáng tạo của phi công Ukraine trong hoàn cảnh thiếu thốn vũ khí"
+      ],
+      "affected_groups": [
+        "Quân đội Ukraine",
+        "Quân đội Nga"
+      ],
+      "market_impact": "Không có tác động đáng kể đến thị trường tài chính hoặc kinh tế.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "military",
+        "politics"
+      ],
+      "regions": [
+        "UA",
+        "RU"
+      ],
+      "significance": "Sự việc phản ánh sự khốc liệt và những tình huống chiến đấu cận chiến phức tạp, đòi hỏi khả năng xử lý tình huống linh hoạt của phi công trong xung đột hiện đại.",
+      "unknowns": [
+        "Loại máy bay không người lái cụ thể của Nga bị đánh chặn",
+        "Tình trạng hư hỏng của chiếc tiêm kích MiG-29 sau động tác cơ động"
+      ],
+      "confidence_note": "Thông tin dựa trên bản tin chiến sự được truyền thông đăng tải nhưng cần thêm góc nhìn độc lập để kiểm chứng chi tiết.",
+      "scenarios": [
+        {
+          "text": "Các lực lượng Ukraine tiếp tục áp dụng các biện pháp ứng phó linh hoạt khi thiếu hụt đạn dược.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Nga điều chỉnh chiến thuật sử dụng máy bay không người lái để tránh các tình huống tương tự.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Ukraine",
+          "target": "Nga",
+          "relation_type": "conflict",
+          "label": "Giao tranh quân sự trên không"
+        },
+        {
+          "source": "Tiêm kích MiG-29 Ukraine",
+          "target": "Máy bay không người lái Nga",
+          "relation_type": "cause_effect",
+          "label": "Động tác cơ động dẫn đến việc UAV rơi"
+        }
+      ],
+      "entities": [
+        "Ukraine",
+        "Nga",
+        "MiG-29"
+      ],
+      "keywords": [
+        "MiG-29",
+        "Ukraine",
+        "UAV",
+        "Nga",
+        "đánh chặn",
+        "không chiến"
+      ],
+      "importance": 80,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
   }
 }
