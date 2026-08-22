@@ -30,8 +30,8 @@ Dựa vào nội dung, hãy phân loại tác động của sự kiện vào 1 t
 - national: Tác động đến chính trị, kinh tế, xã hội của một quốc gia.
 - global: Ảnh hưởng toàn cầu, đa quốc gia, kinh tế vĩ mô.
 [ĐÁNH GIÁ TÍNH CHẤT SỰ KIỆN]
-- severity: Mức độ nghiêm trọng từ 1 đến 5 (1: Nhỏ/Bình thường, 3: Đáng chú ý, 5: Thảm họa/Xung đột lớn/Đảo chính).
-- sentiment: 1 (Tích cực: Hòa bình, tăng trưởng), 0 (Trung lập), -1 (Tiêu cực: Xung đột, đình công, suy thoái).
+- severity: Mức độ nghiêm trọng/quan trọng từ 1 đến 5 (1: Nhỏ/Bình thường, 3: Đáng chú ý/Hợp tác quốc gia, 5: Thảm họa/Xung đột lớn/Đột phá lịch sử).
+- sentiment: 1 (Tích cực: Ngoại giao, hợp tác, đầu tư, cứu trợ, tăng trưởng), 0 (Trung lập: Thông báo, chính sách chung), -1 (Tiêu cực: Xung đột, trừng phạt, phá sản, bắt giữ, thiên tai).
 LƯU Ý BẮT BUỘC: Trường "event" và "short_summary" PHẢI viết bằng Tiếng Việt chuẩn mực.
 LƯU Ý ĐẶC BIỆT: Nếu bản tin nhắc đến các doanh nghiệp, ngân hàng, hoặc tổ chức của Việt Nam (Ví dụ: Vietjet, Hòa Phát, Vingroup, HDBank, FPT, Vietcombank...), BẮT BUỘC trường "regions" phải chứa "VN" và "vn_impact" phải phản ánh tình hình kinh doanh, lợi nhuận hoặc sự phát triển của doanh nghiệp đó. Tuyệt đối không được ghi "Không tác động trực tiếp"
 LỆNH TUYỆT ĐỐI: CHỈ TRẢ VỀ JSON VỚI CÁC TRƯỜNG SAU:
@@ -86,7 +86,7 @@ LỆNH TUYỆT ĐỐI: CHỈ TRẢ VỀ JSON VỚI CÁC TRƯỜNG SAU:
                 keywords: gemmaResult.keywords || [],
                 importance: gemmaResult.importance || cluster.articles[0].importance,
                 severity: gemmaResult.severity || 3,
-                sentiment: gemmaResult.sentiment !== undefined ? gemmaResult.sentiment : -1,
+                sentiment: gemmaResult.sentiment !== undefined ? gemmaResult.sentiment : 0,
                 scope: gemmaResult.scope || geminiResult.scope || "business"
             };
         } else {
@@ -112,7 +112,7 @@ LỆNH TUYỆT ĐỐI: CHỈ TRẢ VỀ JSON VỚI CÁC TRƯỜNG SAU:
                 keywords: gemmaResult.keywords || [],
                 importance: gemmaResult.importance || cluster.articles[0].importance,
                 severity: gemmaResult.severity || 3,
-                sentiment: gemmaResult.sentiment !== undefined ? gemmaResult.sentiment : -1,
+                sentiment: gemmaResult.sentiment !== undefined ? gemmaResult.sentiment : 0,
                 scope: gemmaResult.scope || "business"
             };
         }
