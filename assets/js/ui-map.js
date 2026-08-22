@@ -72,15 +72,45 @@ function initMap(mapContainer) {
     // =========================================================
     for (const [isoCode, data] of Object.entries(savedRiskData)) {
         let layerScore = 0;
-
         const backendLayer = toBackendLayer(currentMapLayer);
 
-        // Trích xuất điểm theo lớp
+        // Trích xuất điểm tổng theo lớp
         if (data.layers && data.layers[backendLayer] !== undefined) {
             layerScore = data.layers[backendLayer];
         } else if (currentMapLayer === 'total') {
             layerScore = data.si_score || 0;
         }
+
+        // --- BỘ LỌC THÔNG MINH: CHỐNG "TRIỆT TIÊU RỦI RO" TOÁN HỌC ---
+        const events = (currentMapLayer === 'total') 
+            ? data.events 
+            : (data.events || []).filter(e => e.layer === backendLayer);
+
+        if (events && events.length > 0) {
+            let maxNeg = 0; // Rủi ro xấu nhất
+            let maxPos = 0; // Tin tốt nhất
+
+            events.forEach(e => {
+                let s = e.score || 0;
+                if (e.sentiment < 0 && s < maxNeg) maxNeg = s;
+                if (e.sentiment > 0 && s > maxPos) maxPos = s;
+            });
+
+            // Trường hợp 1: Biến động giằng co (Triệt tiêu nhau)
+            // Có cả tin rất xấu (<= -3) và rất tốt (>= 3), khiến điểm tổng quanh mức 0.
+            if (Math.abs(layerScore) <= 2 && maxNeg <= -3 && maxPos >= 3) {
+                // Ép điểm về mức âm nhẹ để hiển thị màu VÀNG (Cần theo dõi)
+                layerScore = -2.5; 
+            }
+            
+            // Trường hợp 2: Thiên vị rủi ro (Negativity Bias)
+            // Nếu có sự cố cực kỳ nghiêm trọng (<= -5), không cho phép tin tốt kéo điểm lên Xanh Lá. 
+            // Bắt buộc phải giữ ở mức tối thiểu là VÀNG.
+            else if (maxNeg <= -5 && layerScore > -2) {
+                layerScore = -2.5; 
+            }
+        }
+        // -------------------------------------------------------------
 
         // Chỉ tô màu những khu vực có biến động
         if (Math.abs(layerScore) > 0.1) {
