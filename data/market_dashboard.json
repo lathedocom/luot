@@ -209,6 +209,132 @@
       "status": "online",
       "is_alert": false,
       "context": null
+    },
+    {
+      "id": "vn_lpg_12kg",
+      "name": "Gas LPG (Bình 12kg)",
+      "category": "📌 Các chỉ số khác",
+      "type": "monthly",
+      "unit": "VNĐ/bình",
+      "price": "598.104",
+      "change_percent": "0%",
+      "trend": "→",
+      "history": [
+        598104
+      ],
+      "history_labels": [
+        "Hiện tại"
+      ],
+      "updated_at": 1787404459870,
+      "display_source": "Báo chí (Google News)",
+      "status": "online",
+      "is_alert": false,
+      "context": null
+    },
+    {
+      "id": "vn_electricity",
+      "name": "Giá điện sinh hoạt (Bình quân)",
+      "category": "📌 Các chỉ số khác",
+      "type": "monthly",
+      "unit": "VNĐ/kWh",
+      "price": "2.204",
+      "change_percent": "0%",
+      "trend": "→",
+      "history": [
+        2204
+      ],
+      "history_labels": [
+        "Hiện tại"
+      ],
+      "updated_at": 1787404459872,
+      "display_source": "Thông cáo Báo chí",
+      "status": "online",
+      "is_alert": false,
+      "context": null
+    },
+    {
+      "id": "vn_water",
+      "name": "Giá nước sinh hoạt (Bậc 1)",
+      "category": "📌 Các chỉ số khác",
+      "type": "monthly",
+      "unit": "VNĐ/m³",
+      "price": "8.000",
+      "change_percent": "0%",
+      "trend": "→",
+      "history": [
+        8000
+      ],
+      "history_labels": [
+        "Hiện tại"
+      ],
+      "updated_at": 1787404459873,
+      "display_source": "Thông cáo Báo chí",
+      "status": "online",
+      "is_alert": false,
+      "context": null
+    },
+    {
+      "id": "vn_cpi",
+      "name": "Lạm phát (CPI)",
+      "category": "💰 Chi phí sinh hoạt",
+      "type": "monthly",
+      "unit": "%",
+      "price": "4,45",
+      "change_percent": "0%",
+      "trend": "→",
+      "history": [
+        4.45
+      ],
+      "history_labels": [
+        "Hiện tại"
+      ],
+      "updated_at": 1787404459874,
+      "display_source": "TradingView",
+      "status": "online",
+      "is_alert": false,
+      "context": null
+    },
+    {
+      "id": "vn_mortgage_rate",
+      "name": "Lãi suất vay BĐS (Vietcombank)",
+      "category": "📌 Các chỉ số khác",
+      "type": "monthly",
+      "unit": "%/năm",
+      "price": "6,5",
+      "change_percent": "0%",
+      "trend": "→",
+      "history": [
+        6.5
+      ],
+      "history_labels": [
+        "Hiện tại"
+      ],
+      "updated_at": 1787404459875,
+      "display_source": "Báo chí (Google News)",
+      "status": "online",
+      "is_alert": false,
+      "context": null
+    },
+    {
+      "id": "vn_pmi",
+      "name": "Chỉ số PMI",
+      "category": "🏭 Sản xuất & Xây dựng",
+      "type": "monthly",
+      "unit": "Điểm",
+      "price": "52,9",
+      "change_percent": "0%",
+      "trend": "→",
+      "history": [
+        52.9
+      ],
+      "history_labels": [
+        "Hiện tại"
+      ],
+      "updated_at": 1787404459876,
+      "display_source": "Báo chí (via Google News)",
+      "status": "online",
+      "is_alert": false,
+      "context": null
     }
   ],
   "macro_health": [
@@ -248,7 +374,7 @@
       "id": "san_xuat",
       "name": "Sản xuất & Công nghiệp",
       "icon": "🏭",
-      "score": -30,
+      "score": -24,
       "status": "Có dấu hiệu suy yếu",
       "color": "#f97316",
       "trend_icon": "↓",
