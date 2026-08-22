@@ -1,9 +1,6 @@
 // FILE: script_bot/modules/market/collector/index.js
 
-const { validateMarketData } = require('./validator');
-const { normalizeMarketData } = require('./normalizer'); 
-
-// === BƯỚC 1: QUY TỤ TOÀN BỘ 15+ ADAPTER NGUỒN TỪ CÁC MODULE ===
+// === BƯỚC 1: QUY TỤ TOÀN BỘ 15+ ADAPTER NGUỒN TỪ CÁC MODULE ===[cite: 1]
 // Tầng A: Chi phí sinh hoạt
 const { fetchRicePrice, fetchPorkPrice, fetchEggPrice } = require('../sources/food');
 const { fetchRon95Price, fetchDieselPrice, fetchLpgPrice } = require('../sources/fuel');
@@ -22,11 +19,8 @@ const { fetchPMI } = require('../sources/pmi');
 const { fetchBitcoin } = require('../sources/crypto');
 
 // === BƯỚC 2: MAPPING VÀ CHIA TẦNG KIẾN TRÚC MỚI (CHUẨN 2026) ===
-// Khai báo trực tiếp tại đây để ép buộc Frontend hiển thị đúng 3 Nhóm Đời sống
 const CORE_INDICATORS = [
-    // -------------------------------------------------------------
-    // TẦNG A: CHI PHÍ SINH HOẠT (Biến động mâm cơm & hóa đơn)
-    // -------------------------------------------------------------
+    // TẦNG A: CHI PHÍ SINH HOẠT
     { id: 'vn_rice', parser: fetchRicePrice, category: 'Chi phí sinh hoạt', frequency: 'daily' },
     { id: 'vn_pork', parser: fetchPorkPrice, category: 'Chi phí sinh hoạt', frequency: 'daily' },
     { id: 'vn_egg', parser: fetchEggPrice, category: 'Chi phí sinh hoạt', frequency: 'daily' },
@@ -37,15 +31,11 @@ const CORE_INDICATORS = [
     { id: 'vn_water', parser: fetchWaterPrice, category: 'Chi phí sinh hoạt', frequency: 'monthly' },
     { id: 'vn_cpi', parser: fetchCPI, category: 'Chi phí sinh hoạt', frequency: 'monthly' },
 
-    // -------------------------------------------------------------
-    // TẦNG B: THU NHẬP & SỨC MUA (Khả năng chi trả & Áp lực nợ nần)
-    // -------------------------------------------------------------
+    // TẦNG B: THU NHẬP & SỨC MUA
     { id: 'vn_wage_tier1', parser: fetchMinimumWage, category: 'Thu nhập & Sức mua', frequency: 'yearly' },
     { id: 'vn_mortgage_rate', parser: fetchLoanInterest, category: 'Thu nhập & Sức mua', frequency: 'monthly' },
 
-    // -------------------------------------------------------------
-    // TẦNG C: KINH TẾ & TÀI SẢN (Nơi trú ẩn & Chỉ báo vĩ mô)
-    // -------------------------------------------------------------
+    // TẦNG C: KINH TẾ & TÀI SẢN
     { id: 'usd_vnd', parser: fetchUSDVND, category: 'Kinh tế & Tài sản', frequency: 'realtime' },
     { id: 'vn_gold_sjc', parser: fetchGoldSJC, category: 'Kinh tế & Tài sản', frequency: 'daily' },
     { id: 'vn_index', parser: fetchVNIndex, category: 'Kinh tế & Tài sản', frequency: 'realtime' },
@@ -64,63 +54,47 @@ async function runCollector(runFrequency = "daily") {
     console.log(`📡 KHỞI ĐỘNG BỘ CÀO DỮ LIỆU ĐỜI SỐNG (TẦN SUẤT: ${runFrequency.toUpperCase()})`);
     console.log(`======================================================\n`);
 
-    // Chạy song song tất cả các luồng để tăng tốc độ cào (Pro-Tip)
+    // Chạy ĐA LUỒNG siêu tốc
     const scrapePromises = CORE_INDICATORS.map(async (config) => {
-        // Scheduler: Lọc những chỉ số đúng chu kỳ
+        // Lọc theo chu kỳ (Bỏ qua nếu không đúng frequency, trừ khi gọi 'all')
         if (runFrequency !== "all" && config.frequency !== runFrequency && runFrequency !== "realtime") {
-            // Lưu ý: Nếu chạy daily, có thể bỏ qua monthly trừ khi được trigger đặc biệt.
-            // Để hệ thống luôn update nhanh khi test, chúng ta tạm thời cho phép cào hết nếu tần suất là 'all'
             if(runFrequency !== 'all') return null; 
         }
 
         const parserFunction = config.parser;
-        if (!parserFunction) {
-            console.warn(`[CẢNH BÁO] Hàm cào dữ liệu cho ${config.id} chưa tồn tại.`);
-            return null;
-        }
+        if (!parserFunction) return null;
 
         try {
-            // 1. Chạy Adapter để cào dữ liệu thô
-            let rawData = await parserFunction();
+            // Dữ liệu đã được chuẩn hóa 100% từ trong ruột các Adapter
+            let data = await parserFunction();
+            
+            if (!data) return null;
 
-            // Gắn cứng Nhóm chuyên mục (Category) vào dữ liệu thô để hiển thị trên UI
-            rawData.category = config.category;
-            rawData.id = config.id;
+            // Gắn Meta-data Vĩ mô cho Dashboard UI
+            data.category = config.category;
 
-            // 2. Ép khuôn và làm sạch dữ liệu (Normalizer)
-            // (Truyền chính config hiện tại vào thay cho sourceConfig cũ của registry)
-            let normalizedData = normalizeMarketData(rawData, config);
-
-            // 3. Đưa qua màng lọc kiểm định (Validator)
-            if (normalizedData.quality.status !== "failed" && normalizedData.value !== null) {
-                const validation = validateMarketData(normalizedData, {}); // Pass rule nếu cần
-                if (!validation.is_valid) {
-                    normalizedData.quality.status = "failed";
-                    normalizedData.quality.error_log = validation.errors.join(' | ');
-                }
-            }
-
-            // 4. Log Kết Quả
-            if (normalizedData.quality.status === "failed") {
-                console.log(`❌ THẤT BẠI [${normalizedData.name}]: ${normalizedData.quality.error_log || "Lỗi cào"}`);
+            // Log Kết Quả
+            if (data.quality && data.quality.status === "failed") {
+                console.log(`❌ THẤT BẠI [${data.name}]: ${data.quality.error_log || "Lỗi cào"}`);
             } else {
-                let fallbackTag = normalizedData.status === "offline_fallback" ? " (Số tĩnh)" : "";
-                console.log(`✅ [${config.category.toUpperCase()}] ${normalizedData.name}: ${normalizedData.price} ${normalizedData.unit || ''}${fallbackTag}`);
+                let fallbackTag = data.status === "offline_fallback" ? " (Số tĩnh dự phòng)" : "";
+                // Sửa biến price thành value chuẩn xác
+                console.log(`✅ [${config.category.toUpperCase()}] ${data.name}: ${data.value} ${data.unit || ''}${fallbackTag}`);
             }
 
-            return normalizedData;
+            return data;
         } catch (err) {
             console.error(`[LỖI CRASH] Kịch bản cào ${config.id} thất bại:`, err.message);
             return null;
         }
     });
 
-    // Gom kết quả của các luồng chạy song song
     const resolvedData = await Promise.all(scrapePromises);
     
-    // Loại bỏ các kết quả null (Do bị skip frequency hoặc crash)
     for (const data of resolvedData) {
-        if (data) results.push(data);
+        if (data && (!data.quality || data.quality.status !== "failed")) {
+            results.push(data);
+        }
     }
 
     console.log(`\n🎯 Đã thu thập thành công ${results.length}/${CORE_INDICATORS.length} chỉ số.`);
