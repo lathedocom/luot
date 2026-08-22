@@ -57,7 +57,7 @@
       "history_labels": [
         "Hiện tại"
       ],
-      "updated_at": 1787417925321,
+      "updated_at": 1787440657736,
       "display_source": "Báo chí (Google News)",
       "status": "online",
       "is_alert": false,
@@ -65,10 +65,10 @@
     },
     {
       "id": "usd_vnd",
-      "name": "Tỷ giá USD/VND",
+      "name": "Tỷ giá USD/VNĐ",
       "category": "🏦 Tiền tệ",
       "type": "realtime",
-      "unit": "VND",
+      "unit": "VNĐ",
       "price": "26.113",
       "change_percent": "0%",
       "trend": "→",
@@ -78,7 +78,7 @@
       "history_labels": [
         "Hiện tại"
       ],
-      "updated_at": 1787373054793,
+      "updated_at": 1787440657735,
       "display_source": "Yahoo Finance",
       "status": "online",
       "is_alert": false,
@@ -88,18 +88,17 @@
       "id": "global_btc",
       "name": "Bitcoin",
       "category": "📈 Tài chính & Tài sản",
-      "type": "realtime",
       "unit": "USD",
-      "price": "78.535",
+      "price": "76.975",
       "change_percent": "0%",
       "trend": "→",
       "history": [
-        78535
+        76975
       ],
       "history_labels": [
         "Hiện tại"
       ],
-      "updated_at": 1787373054845,
+      "updated_at": 1787440657739,
       "display_source": "CoinGecko",
       "status": "online",
       "is_alert": false,
@@ -109,7 +108,6 @@
       "id": "global_brent",
       "name": "Dầu Brent",
       "category": "🌾 Hàng hóa Toàn cầu",
-      "type": "realtime",
       "unit": "USD/thùng",
       "price": "94,39",
       "change_percent": "0%",
@@ -120,7 +118,7 @@
       "history_labels": [
         "Hiện tại"
       ],
-      "updated_at": 1787373054893,
+      "updated_at": 1787440657737,
       "display_source": "Yahoo Finance",
       "status": "online",
       "is_alert": false,
@@ -130,7 +128,6 @@
       "id": "vn_index",
       "name": "VN-Index",
       "category": "📈 Tài chính & Tài sản",
-      "type": "daily",
       "unit": "Điểm",
       "price": "1.768,12",
       "change_percent": "0%",
@@ -141,7 +138,7 @@
       "history_labels": [
         "Hiện tại"
       ],
-      "updated_at": 1787392491892,
+      "updated_at": 1787440657737,
       "display_source": "TradingView",
       "status": "online",
       "is_alert": false,
@@ -191,10 +188,10 @@
     },
     {
       "id": "vn_ron95",
-      "name": "Xăng RON95-III",
+      "name": "Xăng E10 RON 95-III",
       "category": "🛒 Chi phí sinh hoạt & Thiết yếu",
-      "type": "daily",
-      "unit": "VNĐ/Lít",
+      "type": "weekly",
+      "unit": "VNĐ/lít",
       "price": "22.660",
       "change_percent": "0%",
       "trend": "→",
@@ -204,8 +201,8 @@
       "history_labels": [
         "Hiện tại"
       ],
-      "updated_at": 1787392541705,
-      "display_source": "Báo Mới",
+      "updated_at": 1787440657717,
+      "display_source": "Báo chí (Google News)",
       "status": "online",
       "is_alert": false,
       "context": null
@@ -225,7 +222,7 @@
       "history_labels": [
         "Hiện tại"
       ],
-      "updated_at": 1787404459870,
+      "updated_at": 1787440657720,
       "display_source": "Báo chí (Google News)",
       "status": "online",
       "is_alert": false,
@@ -246,7 +243,7 @@
       "history_labels": [
         "Hiện tại"
       ],
-      "updated_at": 1787404459872,
+      "updated_at": 1787440657721,
       "display_source": "Thông cáo Báo chí",
       "status": "online",
       "is_alert": false,
@@ -267,7 +264,7 @@
       "history_labels": [
         "Hiện tại"
       ],
-      "updated_at": 1787404459873,
+      "updated_at": 1787440657722,
       "display_source": "Thông cáo Báo chí",
       "status": "online",
       "is_alert": false,
@@ -288,7 +285,7 @@
       "history_labels": [
         "Hiện tại"
       ],
-      "updated_at": 1787404459874,
+      "updated_at": 1787440657724,
       "display_source": "TradingView",
       "status": "online",
       "is_alert": false,
@@ -309,7 +306,7 @@
       "history_labels": [
         "Hiện tại"
       ],
-      "updated_at": 1787404459875,
+      "updated_at": 1787440657734,
       "display_source": "Báo chí (Google News)",
       "status": "online",
       "is_alert": false,
@@ -330,7 +327,7 @@
       "history_labels": [
         "Hiện tại"
       ],
-      "updated_at": 1787404459876,
+      "updated_at": 1787440657738,
       "display_source": "Báo chí (via Google News)",
       "status": "online",
       "is_alert": false,
@@ -351,7 +348,7 @@
       "history_labels": [
         "Hiện tại"
       ],
-      "updated_at": 1787417925319,
+      "updated_at": 1787440657706,
       "display_source": "Giá tham chiếu",
       "status": "online",
       "is_alert": false,
@@ -372,7 +369,7 @@
       "history_labels": [
         "Hiện tại"
       ],
-      "updated_at": 1787417925320,
+      "updated_at": 1787440657714,
       "display_source": "Báo chí (Google News)",
       "status": "online",
       "is_alert": false,
@@ -384,16 +381,58 @@
       "category": "🛒 Chi phí sinh hoạt & Thiết yếu",
       "type": "daily",
       "unit": "VNĐ/quả",
-      "price": "3.300",
+      "price": "3.700",
       "change_percent": "0%",
       "trend": "→",
       "history": [
-        3300
+        3700
       ],
       "history_labels": [
         "Hiện tại"
       ],
-      "updated_at": 1787417925321,
+      "updated_at": 1787440657716,
+      "display_source": "Báo chí (Google News)",
+      "status": "online",
+      "is_alert": false,
+      "context": null
+    },
+    {
+      "id": "vn_diesel",
+      "name": "Dầu DO 0,05S-II",
+      "category": "🛒 Chi phí sinh hoạt & Thiết yếu",
+      "type": "weekly",
+      "unit": "VNĐ/lít",
+      "price": "28.543",
+      "change_percent": "0%",
+      "trend": "→",
+      "history": [
+        28543
+      ],
+      "history_labels": [
+        "Hiện tại"
+      ],
+      "updated_at": 1787440657719,
+      "display_source": "Báo chí (Google News)",
+      "status": "online",
+      "is_alert": false,
+      "context": null
+    },
+    {
+      "id": "vn_wage_tier1",
+      "name": "Lương tối thiểu (Vùng 1)",
+      "category": "💵 Thu nhập & Sức mua",
+      "type": "yearly",
+      "unit": "VNĐ/tháng",
+      "price": "5.310.000",
+      "change_percent": "0%",
+      "trend": "→",
+      "history": [
+        5310000
+      ],
+      "history_labels": [
+        "Hiện tại"
+      ],
+      "updated_at": 1787440657732,
       "display_source": "Báo chí (Google News)",
       "status": "online",
       "is_alert": false,
