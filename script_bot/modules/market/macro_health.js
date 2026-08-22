@@ -7,7 +7,7 @@ const HEALTH_CATEGORIES = {
     'viec_lam': { name: 'Thị trường việc làm', icon: '💼', inverse: false, keywords: ['thất nghiệp', 'tuyển dụng', 'việc làm', 'lương', 'sa thải'], market_keys: ['UNEMP_VN'] },
     'san_xuat': { name: 'Sản xuất & Công nghiệp', icon: '🏭', inverse: false, keywords: ['pmi', 'nhà máy', 'sản xuất', 'công nghiệp', 'đơn hàng'], market_keys: ['PMI_VN', 'IIP_VN'] },
     'thuong_mai': { name: 'Thương mại & XNK', icon: '🚢', inverse: false, keywords: ['xuất khẩu', 'nhập khẩu', 'container', 'cảng', 'logistics'], market_keys: ['EXPORT_VN', 'IMPORT_VN'] },
-    'xay_dung': { name: 'Xây dựng & Bất động sản', icon: '🏗️', inverse: false, keywords: ['bất động sản', 'xây dựng', 'xi măng', 'thép', 'cát', 'giá nhà'], market_keys: ['STEEL_CB300', 'CEMENT', 'SAND'] },
+    'xay_dung': { name: 'Xây dựng & Bất động sản', icon: '🏗️', inverse: false, keywords: ['bất động sản', 'xây dựng', 'xi măng', 'thép', 'cát', 'giá nhà'], market_keys: ['vn_steel_cb300', 'vn_cement', 'SAND']},
     'nong_nghiep': { name: 'Nông nghiệp & Hàng hóa', icon: '🌾', inverse: false, keywords: ['gạo', 'cà phê', 'hồ tiêu', 'cao su', 'dầu', 'khí đốt'], market_keys: ['BRENT', 'GOLD_W', 'COFFEE_VN', 'PEPPER_VN'] },
     'tien_te': { name: 'Tiền tệ & Tín dụng', icon: '💰', inverse: false, keywords: ['lãi suất', 'tỷ giá', 'tín dụng', 'ngân hàng', 'usd'], market_keys: ['USD_VND', 'DXY', 'INTERBANK_RATE'] },
     'tai_chinh': { name: 'Thị trường tài chính', icon: '📈', inverse: false, keywords: ['chứng khoán', 'cổ phiếu', 'trái phiếu', 'vnindex'], market_keys: ['VNINDEX', 'SP500', 'BTC'] },
