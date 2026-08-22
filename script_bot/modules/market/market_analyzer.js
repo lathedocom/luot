@@ -77,17 +77,21 @@ function linkMarketWithNews(currentDb, recentTopics) {
 
         const displayChange = (changePercentVal > 0 ? '+' : '') + parseFloat(changePercentVal.toFixed(2)) + '%';
 
-        // === [ĐÃ CẬP NHẬT] PHÂN LOẠI NHÓM CHO GIAO DIỆN UI ===
+       // === [ĐÃ CẬP NHẬT] PHÂN LOẠI NHÓM CHO GIAO DIỆN UI ===
         let categoryGroup = "📌 Các chỉ số khác";
-        if (id.includes("cpi") || id.includes("ron95") || id.includes("sjc")) {
-            categoryGroup = "💰 Chi phí sinh hoạt";
-        } else if (id.includes("usd") || id.includes("interbank")) {
+        const idLower = id.toLowerCase(); // Chuyển chữ thường để dễ soi
+
+        if (idLower.includes("cpi") || idLower.includes("ron95") || idLower.includes("diesel") || idLower.includes("gas") || idLower.includes("electricity") || idLower.includes("water") || idLower.includes("rice") || idLower.includes("pork") || idLower.includes("egg")) {
+            categoryGroup = "🛒 Chi phí sinh hoạt & Thiết yếu";
+        } else if (idLower.includes("wage") || idLower.includes("mortgage")) {
+            categoryGroup = "💵 Thu nhập & Sức mua";
+        } else if (idLower.includes("usd") || idLower.includes("interbank")) {
             categoryGroup = "🏦 Tiền tệ";
-        } else if (id.includes("index") || id.includes("btc")) {
-            categoryGroup = "📈 Thị trường tài chính";
-        } else if (id.includes("coffee") || id.includes("pepper") || id.includes("brent") || id.includes("rice")) {
-            categoryGroup = "🌾 Hàng hóa & Nông sản";
-        } else if (id.includes("steel") || id.includes("cement") || id.includes("pmi")) {
+        } else if (idLower.includes("index") || idLower.includes("btc") || idLower.includes("sjc")) { // Đưa vàng SJC vào tài sản/tài chính
+            categoryGroup = "📈 Tài chính & Tài sản";
+        } else if (idLower.includes("coffee") || idLower.includes("pepper") || idLower.includes("brent")) {
+            categoryGroup = "🌾 Hàng hóa Toàn cầu";
+        } else if (idLower.includes("steel") || idLower.includes("cement") || idLower.includes("pmi")) {
             categoryGroup = "🏭 Sản xuất & Xây dựng";
         }
 
