@@ -1,5 +1,5 @@
 {
-  "last_reset": "2026-08-21",
+  "last_reset": "2026-08-22",
   "usage": {
     "text-embedding-004": {
       "rpd": 0,
@@ -82,24 +82,24 @@
       "rpmMinuteKey": ""
     },
     "gemma-4-26b-a4b-it": {
-      "rpd": 283,
-      "rpm": 3,
-      "promptTokens": 66462,
-      "completionTokens": 315063,
+      "rpd": 23,
+      "rpm": 4,
+      "promptTokens": 11209,
+      "completionTokens": 24477,
       "cost": 0,
-      "successCount": 4085,
+      "successCount": 4108,
       "failCount": 805,
-      "rpmMinuteKey": "2026-08-21T23:20"
+      "rpmMinuteKey": "2026-08-22T04:33"
     },
     "gemini-embedding-2": {
-      "rpd": 6,
+      "rpd": 1,
       "rpm": 1,
-      "promptTokens": 2644,
+      "promptTokens": 1028,
       "completionTokens": 0,
       "cost": 0,
-      "successCount": 167,
+      "successCount": 168,
       "failCount": 81,
-      "rpmMinuteKey": "2026-08-21T16:00"
+      "rpmMinuteKey": "2026-08-22T04:17"
     },
     "llama-3.3-70b-versatile": {
       "rpd": 0,
@@ -132,23 +132,23 @@
       "failCount": 2
     },
     "gemini-3.7-flash": {
-      "rpd": 20,
+      "rpd": 3,
       "rpm": 3,
-      "rpmMinuteKey": "2026-08-21T23:22",
-      "promptTokens": 5496,
-      "completionTokens": 1707,
+      "rpmMinuteKey": "2026-08-22T04:35",
+      "promptTokens": 0,
+      "completionTokens": 0,
       "cost": 0,
       "successCount": 4,
-      "failCount": 37
+      "failCount": 40
     },
     "gemini-3.6-flash": {
-      "rpd": 8,
+      "rpd": 1,
       "rpm": 1,
-      "rpmMinuteKey": "2026-08-21T12:40",
-      "promptTokens": 16197,
-      "completionTokens": 3992,
+      "rpmMinuteKey": "2026-08-22T04:35",
+      "promptTokens": 2178,
+      "completionTokens": 648,
       "cost": 0,
-      "successCount": 9,
+      "successCount": 10,
       "failCount": 8
     },
     "gemma-4-26b-it": {
@@ -172,13 +172,13 @@
       "failCount": 20
     },
     "gemini-3.5-flash-lite": {
-      "rpd": 48,
-      "rpm": 1,
-      "rpmMinuteKey": "2026-08-21T16:06",
-      "promptTokens": 31242,
-      "completionTokens": 12784,
+      "rpd": 23,
+      "rpm": 4,
+      "rpmMinuteKey": "2026-08-22T04:30",
+      "promptTokens": 15170,
+      "completionTokens": 5159,
       "cost": 0,
-      "successCount": 110,
+      "successCount": 133,
       "failCount": 2
     },
     "gemini-3.5-flash": {
