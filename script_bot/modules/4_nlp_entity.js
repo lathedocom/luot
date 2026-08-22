@@ -1,62 +1,79 @@
+// FILE: script_bot/modules/4_nlp_entity.js
 const nlp = require('compromise');
 const logger = require('./utils/logger');
 
-// [MỚI] 1. Danh sách các Danh từ chung / Chức danh cấm đưa lên bản đồ
+// 1. Danh sách Đen (Từ phổ thông, chức danh, sai nghĩa)
 const BLACKLIST = [
     'president', 'minister', 'ceo', 'director', 'secretary', 'spokesperson', 'leader', 'official',
     'tổng thống', 'bộ trưởng', 'thủ tướng', 'chủ tịch', 'giám đốc', 'đại sứ', 'lãnh đạo', 'người phát ngôn',
-    'chính phủ', 'government', 'state', 'nhà nước', 'quốc gia', 'bộ ngoại giao', 'quốc hội', 'parliament'
+    'chính phủ', 'government', 'state', 'nhà nước', 'quốc gia', 'bộ ngoại giao', 'quốc hội', 'parliament',
+    'đại biểu', 'cơ sở', 'dữ liệu', 'giá đất', 'giao dịch', 'thực tế', 'thủ tục', 'chi phí', 'đầu vào',
+    'người dân', 'dân', 'mỹ dân', 'nhân dân', 'công dân', 'quốc dân', 'thị trường', 'kinh tế', 'đầu tư',
+    'theo', 'việc', 'có', 'thể', 'ngày', 'tháng', 'năm', 'hôm nay', 'chiều nay', 'sáng nay', 'qua', 'nay'
 ];
 
-/**
- * [MỚI] 2. Hàm kiểm tra: Có phải là Danh từ riêng (Viết hoa chữ cái đầu) không?
- */
+// 2. Các từ ngữ hay dính vào đầu thực thể (Tiếng Việt)
+const PREFIXES_REGEX = /^(Theo|Tại|Ở|Về|Việc|Các|Những|Một|Hai|Ba|Ông|Bà|Anh|Chị|Thủ tướng|Tổng thống|Bộ trưởng|Đại biểu|Chủ tịch|Giám đốc|Đại sứ|Người phát ngôn|Phó|Trưởng|Mr|Mrs|Ms)\s+/i;
+
 function isProperNoun(str) {
     if (!str) return false;
-    // Kiểm tra ký tự đầu tiên có viết hoa không (hỗ trợ cả tiếng Việt có dấu)
+    // Bắt buộc chữ cái đầu tiên phải viết hoa
     return /^[A-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪỬỮỰỲỴÝỶỸ]/.test(str);
 }
 
 function extractEntities(combinedText) {
     if (!combinedText) return [];
-    
-    // Cho thư viện NLP đọc văn bản
-    const doc = nlp(combinedText);
-    
+
+    // 1. Tách các cụm bị dính bởi dấu gạch ngang (Ví dụ: Mỹ - Hàn -> Mỹ, Hàn)
+    let textToProcess = combinedText.replace(/\s*-\s*/g, ', ');
+
+    // 2. Dùng Compromise quét sơ bộ (giữ lại để bắt tên tiếng Anh chuẩn)
+    const doc = nlp(textToProcess);
     const people = doc.people().out('array').map(name => ({ name, type: 'Person' }));
     const places = doc.places().out('array').map(name => ({ name, type: 'Location' }));
-    const organizations = doc.organizations().out('array').map(name => ({ name, type: 'Organization' }));
-    
-    const rawEntities = [...people, ...places, ...organizations];
+    const orgs = doc.organizations().out('array').map(name => ({ name, type: 'Organization' }));
+
+    // 3. Dùng Regex chuyên dụng bắt Danh từ riêng Tiếng Việt (chữ cái đầu viết hoa liên tiếp)
+    const vnRegex = /([A-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪỬỮỰỲỴÝỶỸ][a-zàáâãèéêìíòóôõùúăđĩũơưăạảấầẩẫậắằẳẵặẹẻẽềềểễệỉịọỏốồổỗộớờởỡợụủứừửữựỳỵỷỹ]*(\s+[A-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪỬỮỰỲỴÝỶỸ][a-zàáâãèéêìíòóôõùúăđĩũơưăạảấầẩẫậắằẳẵặẹẻẽềềểễệỉịọỏốồổỗộớờởỡợụủứừửữựỳỵỷỹ]*)*)/g;
+    const vnMatches = textToProcess.match(vnRegex) || [];
+    const vnEntities = vnMatches.map(name => ({ name: name, type: 'Unknown' }));
+
+    const rawEntities = [...people, ...places, ...orgs, ...vnEntities];
     const uniqueEntitiesMap = new Map();
-    
+
     rawEntities.forEach(entity => {
-        // Làm sạch ký tự đặc biệt
-        let cleanName = entity.name.trim().replace(/[^\w\s\u00C0-\u1EF9]/g, ''); 
+        // a) Cắt bỏ dấu câu thừa ở hai đầu
+        let cleanName = entity.name.replace(/^[^a-zA-ZÀ-ỹ0-9]+|[^a-zA-ZÀ-ỹ0-9]+$/g, '').trim();
         
-        // [MỚI] 3. Cắt bỏ các chức danh ở đầu tên để gom Node chuẩn hơn
-        // Ví dụ: "President Zelensky" sẽ bị cắt chữ President, chỉ còn "Zelensky"
-        const titleRegex = /^(president|tổng thống|bộ trưởng|thủ tướng|chủ tịch|minister|ceo|mr|mrs|ms)\s+/i;
-        cleanName = cleanName.replace(titleRegex, '').trim();
+        // b) Khử tiền tố chức danh (lặp lại 2 lần để bắt các cụm như "Theo Thủ tướng")
+        cleanName = cleanName.replace(PREFIXES_REGEX, '').trim();
+        cleanName = cleanName.replace(PREFIXES_REGEX, '').trim(); 
+
+        // c) Cắt đuôi rác do NLP kéo nhầm (có, thể, đã, đang, nhằm, giúp...)
+        cleanName = cleanName.replace(/\s+(có|thể|đã|đang|sẽ|là|thì|mà|của|và|với|nhằm|giúp)$/i, '').trim();
 
         const nameLower = cleanName.toLowerCase();
 
-        // 4. BỘ LỌC ĐA TẦNG
+        // d) Kiểm tra tính hợp lệ
         if (
-            cleanName.length > 2 && 
-            cleanName.length < 30 && 
-            isProperNoun(cleanName) && // Phải viết hoa chữ đầu
-            !BLACKLIST.includes(nameLower) // Không được nằm trong danh sách đen
+            cleanName.length >= 2 && 
+            cleanName.length <= 30 && 
+            isProperNoun(cleanName) && 
+            !BLACKLIST.includes(nameLower) &&
+            !nameLower.includes('dân') && // Lọc cụm từ chứa 'dân' (Mỹ dân)
+            !nameLower.includes('thủ') && // Lọc "Theo thủ"
+            !nameLower.includes('đại biểu')
         ) {
-            if (!uniqueEntitiesMap.has(cleanName)) {
+            // Ưu tiên type cụ thể
+            if (!uniqueEntitiesMap.has(cleanName) || uniqueEntitiesMap.get(cleanName).type === 'Unknown') {
                 uniqueEntitiesMap.set(cleanName, {
                     name: cleanName,
-                    type: entity.type
+                    type: entity.type !== 'Unknown' ? entity.type : (uniqueEntitiesMap.get(cleanName)?.type || 'Unknown')
                 });
             }
         }
     });
-    
+
     return Array.from(uniqueEntitiesMap.values()).slice(0, 10);
 }
 
