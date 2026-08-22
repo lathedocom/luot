@@ -125,6 +125,90 @@
       "status": "online",
       "is_alert": false,
       "context": null
+    },
+    {
+      "id": "vn_index",
+      "name": "VN-Index",
+      "category": "📈 Thị trường tài chính",
+      "type": "daily",
+      "unit": "Điểm",
+      "price": "1.768,12",
+      "change_percent": "0%",
+      "trend": "→",
+      "history": [
+        1768.12
+      ],
+      "history_labels": [
+        "Hiện tại"
+      ],
+      "updated_at": 1787392491892,
+      "display_source": "TradingView",
+      "status": "online",
+      "is_alert": false,
+      "context": null
+    },
+    {
+      "id": "vn_coffee",
+      "name": "Cà phê Robusta",
+      "category": "🌾 Hàng hóa & Nông sản",
+      "type": "daily",
+      "unit": "VNĐ/kg",
+      "price": "98.000",
+      "change_percent": "0%",
+      "trend": "→",
+      "history": [
+        98000
+      ],
+      "history_labels": [
+        "Hiện tại"
+      ],
+      "updated_at": 1787392499986,
+      "display_source": "Báo chí (Google News)",
+      "status": "online",
+      "is_alert": false,
+      "context": null
+    },
+    {
+      "id": "vn_pepper",
+      "name": "Hồ tiêu",
+      "category": "🌾 Hàng hóa & Nông sản",
+      "type": "daily",
+      "unit": "VNĐ/kg",
+      "price": "139.000",
+      "change_percent": "0%",
+      "trend": "→",
+      "history": [
+        139000
+      ],
+      "history_labels": [
+        "Hiện tại"
+      ],
+      "updated_at": 1787392520753,
+      "display_source": "Báo chí (Google News)",
+      "status": "online",
+      "is_alert": false,
+      "context": null
+    },
+    {
+      "id": "vn_ron95",
+      "name": "Xăng RON95-III",
+      "category": "💰 Chi phí sinh hoạt",
+      "type": "daily",
+      "unit": "VNĐ/Lít",
+      "price": "22.660",
+      "change_percent": "0%",
+      "trend": "→",
+      "history": [
+        22660
+      ],
+      "history_labels": [
+        "Hiện tại"
+      ],
+      "updated_at": 1787392541705,
+      "display_source": "Báo Mới",
+      "status": "online",
+      "is_alert": false,
+      "context": null
     }
   ],
   "macro_health": [
@@ -132,7 +216,7 @@
       "id": "chi_phi",
       "name": "Chi phí sinh hoạt",
       "icon": "🛒",
-      "score": -45,
+      "score": -40,
       "status": "Có dấu hiệu tăng",
       "color": "#f97316",
       "trend_icon": "↓",
@@ -196,7 +280,7 @@
       "id": "xay_dung",
       "name": "Xây dựng & Bất động sản",
       "icon": "🏗️",
-      "score": -40,
+      "score": -23.333333333333332,
       "status": "Có dấu hiệu suy yếu",
       "color": "#f97316",
       "trend_icon": "↓",

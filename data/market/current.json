@@ -118,5 +118,85 @@
       "method": "api",
       "error_log": null
     }
+  },
+  "vn_index": {
+    "indicator_id": "vn_index",
+    "name": "VN-Index",
+    "value": 1768.12,
+    "unit": "Điểm",
+    "period": "2026-08-22",
+    "frequency": "daily",
+    "country": "VN",
+    "source": {
+      "name": "TradingView",
+      "url": "https://www.tradingview.com",
+      "type": "api"
+    },
+    "retrieved_at": "2026-08-22T09:54:51.892Z",
+    "quality": {
+      "status": "verified",
+      "method": "api_direct",
+      "error_log": null
+    }
+  },
+  "vn_coffee": {
+    "indicator_id": "vn_coffee",
+    "name": "Cà phê Robusta",
+    "value": 98000,
+    "unit": "VNĐ/kg",
+    "period": "2026-08-22",
+    "frequency": "daily",
+    "country": "VN",
+    "source": {
+      "name": "Báo chí (Google News)",
+      "url": "https://news.google.com/rss/search?q=%22gi%C3%A1%20c%C3%A0%20ph%C3%AA%22%20%22h%C3%B4m%20nay%22&hl=vi&gl=VN&ceid=VN:vi",
+      "type": "news_scraping"
+    },
+    "retrieved_at": "2026-08-22T09:54:59.986Z",
+    "quality": {
+      "status": "tertiary",
+      "method": "google_news",
+      "error_log": null
+    }
+  },
+  "vn_pepper": {
+    "indicator_id": "vn_pepper",
+    "name": "Hồ tiêu",
+    "value": 139000,
+    "unit": "VNĐ/kg",
+    "period": "2026-08-22",
+    "frequency": "daily",
+    "country": "VN",
+    "source": {
+      "name": "Báo chí (Google News)",
+      "url": "https://news.google.com/rss/search?q=%22gi%C3%A1%20ti%C3%AAu%22%20%22h%C3%B4m%20nay%22&hl=vi&gl=VN&ceid=VN:vi",
+      "type": "news_scraping"
+    },
+    "retrieved_at": "2026-08-22T09:55:20.753Z",
+    "quality": {
+      "status": "tertiary",
+      "method": "google_news",
+      "error_log": null
+    }
+  },
+  "vn_ron95": {
+    "indicator_id": "vn_ron95",
+    "name": "Xăng RON95-III",
+    "value": 22660,
+    "unit": "VNĐ/Lít",
+    "period": "2026-08-22",
+    "frequency": "daily",
+    "country": "VN",
+    "source": {
+      "name": "Báo Mới",
+      "url": "https://baomoi.com/tien-ich-gia-xang-dau.epi",
+      "type": "official"
+    },
+    "retrieved_at": "2026-08-22T09:55:41.705Z",
+    "quality": {
+      "status": "verified",
+      "method": "html_text",
+      "error_log": null
+    }
   }
 }
