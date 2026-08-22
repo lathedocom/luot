@@ -1,115 +1,161 @@
 // FILE: script_bot/modules/market/sources/fuel.js
 const cheerio = require('cheerio');
-const { fetchHtmlSafe, extractPriceFlexible } = require('../collector/parser_engine');
+const { fetchHtmlSafe } = require('../collector/parser_engine');
 
-async function fetchFuelData() {
+// Hàm trích xuất thông minh từ Google News với quy luật Chống Bẫy Số Chẵn Toàn Diện
+async function extractFromGoogleNews(keyword, type) {
+    const encodedQuery = encodeURIComponent(keyword);
+    const gnUrl = `https://news.google.com/rss/search?q=${encodedQuery}&hl=vi&gl=VN&ceid=VN:vi`;
+    
+    const xml = await fetchHtmlSafe(gnUrl, 10000);
+    if (!xml || !xml.includes('<rss')) return null;
+
+    const $ = cheerio.load(xml, { xmlMode: true });
+    let newsItems = [];
+    
+    $('item').each((i, el) => {
+        const title = $(el).find('title').text();
+        const desc = $(el).find('description').text();
+        const pubDate = new Date($(el).find('pubDate').text()).getTime();
+        if ((title || desc) && !isNaN(pubDate)) {
+            newsItems.push({ title, desc, pubDate });
+        }
+    });
+    
+    // Ưu tiên tin mới nhất
+    newsItems.sort((a, b) => b.pubDate - a.pubDate);
+    
+    for (const item of newsItems) {
+        const fullText = (item.title + " " + item.desc).toLowerCase();
+        
+        if (type === 'ron95') {
+            const regex = /(?:95-iii|ron\s*95|xăng\s*95)[\s\S]{0,40}?(2[0-9][.,]?[0-9]{3})/gi;
+            const matches = [...fullText.matchAll(regex)];
+            
+            for (let m of matches) {
+                let numInt = parseInt(m[1].replace(/[^\d]/g, ''));
+                if (numInt % 1000 === 0) continue; // Chống làm tròn
+                if (numInt >= 20000 && numInt <= 30000) return { val: numInt, url: gnUrl };
+            }
+        }
+        
+        if (type === 'diesel') {
+            const regex = /(?:0[.,]05s-ii|diesel|điêzen|dầu\s*do)[\s\S]{0,40}?(2[0-9][.,]?[0-9]{3})/gi;
+            const matches = [...fullText.matchAll(regex)];
+            
+            for (let m of matches) {
+                let numInt = parseInt(m[1].replace(/[^\d]/g, ''));
+                if (numInt % 1000 === 0) continue; // Chống làm tròn
+                if (numInt >= 20000 && numInt <= 35000) return { val: numInt, url: gnUrl };
+            }
+        }
+
+        if (type === 'lpg') {
+            // [ĐÃ SỬA] Không bắt buộc đuôi 000 nữa, cho phép đọc thẳng số lẻ VD: 518.400
+            // Nâng dải giá lên 400.000 - 700.000 để phản ánh đúng lạm phát 2026
+            const regex = /(?:12\s*kg|bình\s*12|gas\s*petrolimex)[\s\S]{0,60}?([4-6][0-9]{2}[.,\s]?[0-9]{3})/gi;
+            const matches = [...fullText.matchAll(regex)];
+            
+            for (let m of matches) {
+                let numStr = m[1].replace(/[^\d]/g, '');
+                let numInt = parseInt(numStr);
+                
+                // [ĐÃ THÊM] BỘ LỌC CHỐNG LÀM TRÒN: Loại bỏ mọi số ảo như 400.000, 500.000 hay 600.000
+                if (numInt % 1000 === 0) continue;
+                
+                // Dải giá an toàn của bình gas 12kg năm 2026
+                if (numInt >= 400000 && numInt <= 700000) return { val: numInt, url: gnUrl };
+            }
+        }
+    }
+    return null;
+}
+
+// Mạng nhện từ khóa tung diện rộng
+async function extractFuelPriceSpider(type) {
+    const queries = type === 'ron95' 
+        ? ['"giá xăng dầu" "hôm nay"', '"giá xăng" "E10 RON 95"']
+        : type === 'diesel' 
+        ? ['"giá xăng dầu" "hôm nay"', '"giá dầu DO 0,05S"']
+        : ['"giá gas Petrolimex" "bình 12kg"', '"giá bán lẻ gas" "12kg"'];
+        
+    for (let q of queries) {
+        const result = await extractFromGoogleNews(q, type);
+        if (result) return result; 
+    }
+    throw new Error("Không bắt được mức giá hợp lệ từ thông cáo báo chí");
+}
+
+// ==========================================
+// 1. MODULE XĂNG E10 RON 95-III
+// ==========================================
+async function fetchRon95Price() {
     let rawResult = {
         indicator_id: "vn_ron95",
-        name: "Xăng RON95-III",
-        unit: "VNĐ/Lít",
+        name: "Xăng E10 RON 95-III",
+        unit: "VNĐ/lít",
         country: "VN",
+        frequency: "weekly",
         retrieved_at: new Date().toISOString()
     };
-    
     try {
-        // TẦNG 1: BÁO MỚI
-        const url1 = 'https://baomoi.com/tien-ich-gia-xang-dau.epi';
-        const html1 = await fetchHtmlSafe(url1, 10000); 
-        const $1 = cheerio.load(html1);
-        let priceVal1 = null;
-
-        // Cách 1: Đọc từng dòng <tr> trong bảng để đảm bảo không nhảy nhầm dòng
-        $1('tr').each((i, el) => {
-            const text = $1(el).text().replace(/\s+/g, ' ').trim();
-            // Chỉ bắt dòng có chứa chữ RON 95
-            if (text.match(/RON\s*95/i)) {
-                // Bắt giá tiền 5 chữ số đầu tiên trên DÒNG NÀY (VD: 22.660)
-                const match = text.match(/([2-3][0-9][.,\s]?[0-9]{3})/);
-                if (match && !priceVal1) {
-                    priceVal1 = parseInt(match[1].replace(/[^\d]/g, ''));
-                }
-            }
-        });
-
-        // Cách 2: Dự phòng bằng Regex (ép buộc giữa RON 95 và số tiền không được có số nào khác)
-        if (!priceVal1) {
-             const valStr = extractPriceFlexible(html1, ['body'], /RON\s*95[^\d]*?([2-3][0-9][.,\s]?[0-9]{3})/i);
-             if (valStr) priceVal1 = parseInt(valStr.replace(/[^\d]/g, ''));
-        }
-
-        if (!priceVal1 || isNaN(priceVal1)) throw new Error("Không bắt được giá xăng từ Báo Mới");
-
-        return { ...rawResult, value: priceVal1, source: { name: "Báo Mới", url: url1, type: "official" }, quality: { status: "verified", method: "html_text" } };
-
-    } catch (errTier1) {
-        console.warn(`[Fuel] Lỗi Tầng 1 (Báo Mới): ${errTier1.message}. Chuyển sang Tầng 2...`);
-        
-        try {
-            // TẦNG 2: CHỢ GIÁ
-            const url2 = 'https://chogia.vn/gia-xang-dau/';
-            const html2 = await fetchHtmlSafe(url2, 10000);
-            let priceVal2 = null;
-            
-            const valStr2 = extractPriceFlexible(
-                html2, 
-                ['body'], 
-                /RON\s*95[^\d]*?([2-3][0-9][.,\s]?[0-9]{3})/i
-            );
-            if (valStr2) priceVal2 = parseInt(valStr2.replace(/[^\d]/g, ''));
-
-            if (!priceVal2 || isNaN(priceVal2)) throw new Error("Không tìm thấy giá 5 chữ số trên Chợ Giá");
-
-            return { ...rawResult, value: priceVal2, source: { name: "Chợ Giá", url: url2, type: "secondary" }, quality: { status: "secondary", method: "html_text" } };
-
-        } catch (errTier2) {
-            console.warn(`[Fuel] Lỗi Tầng 2 (Chợ Giá): ${errTier2.message}. Chuyển sang Tầng 3...`);
-            
-            try {
-                // TẦNG 3: WEBGIA
-                const url3 = 'https://webgia.com/gia-xang-dau/petrolimex/';
-                const html3 = await fetchHtmlSafe(url3, 10000);
-                let priceVal3 = null;
-                const $3 = cheerio.load(html3);
-
-                $3('table tbody tr').each((i, el) => {
-                    const text = $3(el).text().trim();
-                    if (text.match(/RON\s*95/i) && !text.includes('--')) {
-                        const match = text.match(/([2-3][0-9][.,\s]?[0-9]{3})/);
-                        if (match) priceVal3 = parseInt(match[1].replace(/[^\d]/g, ''));
-                    }
-                });
-
-                if (!priceVal3) throw new Error("WebGia đang hiển thị '--' hoặc không có giá 5 chữ số");
-
-                return { ...rawResult, value: priceVal3, source: { name: "WebGia", url: url3, type: "tertiary" }, quality: { status: "tertiary", method: "html_text" } };
-
-            } catch (errTier3) {
-                console.warn(`[Fuel] Lỗi Tầng 3 (WebGia): ${errTier3.message}. Đánh dấu Offline.`);
-                return { 
-                    ...rawResult, 
-                    value: null,
-                    status: "offline", 
-                    source: { name: "Nhiều nguồn", type: "none" }, 
-                    quality: { status: "failed", method: "none", error_log: errTier3.message } 
-                };
-            }
-        }
+        const result = await extractFuelPriceSpider('ron95');
+        return { ...rawResult, value: result.val, source: { name: "Báo chí (Google News)", url: result.url, type: "news_scraping" }, quality: { status: "verified", method: "google_spider" } };
+    } catch (err) {
+        return { ...rawResult, value: 22660, status: "offline_fallback", source: { name: "Giá tham chiếu", type: "fallback" }, quality: { status: "failed_but_cached", method: "hardcode", error_log: err.message } };
     }
 }
 
 // ==========================================
-// TEST MÔI TRƯỜNG LOCAL
+// 2. MODULE DẦU DO 0,05S-II
 // ==========================================
-if (require.main === module) {
-    console.log("🚀 Đang khởi động kiểm tra cào giá xăng độc lập...");
-    fetchFuelData()
-        .then(result => {
-            console.log("\n✅ KẾT QUẢ CÀO DỮ LIỆU THÀNH CÔNG:");
-            console.log(JSON.stringify(result, null, 2));
-        })
-        .catch(err => {
-            console.error("\n❌ LỖI NGHIÊM TRỌNG:", err);
-        });
+async function fetchDieselPrice() {
+    let rawResult = {
+        indicator_id: "vn_diesel",
+        name: "Dầu DO 0,05S-II",
+        unit: "VNĐ/lít",
+        country: "VN",
+        frequency: "weekly",
+        retrieved_at: new Date().toISOString()
+    };
+    try {
+        const result = await extractFuelPriceSpider('diesel');
+        return { ...rawResult, value: result.val, source: { name: "Báo chí (Google News)", url: result.url, type: "news_scraping" }, quality: { status: "verified", method: "google_spider" } };
+    } catch (err) {
+        return { ...rawResult, value: 28540, status: "offline_fallback", source: { name: "Giá tham chiếu", type: "fallback" }, quality: { status: "failed_but_cached", method: "hardcode", error_log: err.message } };
+    }
 }
 
-module.exports = { fetchFuelData };
+// ==========================================
+// 3. MODULE GAS LPG 12KG
+// ==========================================
+async function fetchLpgPrice() {
+    let rawResult = {
+        indicator_id: "vn_lpg_12kg",
+        name: "Gas LPG (Bình 12kg)",
+        unit: "VNĐ/bình",
+        country: "VN",
+        frequency: "monthly",
+        retrieved_at: new Date().toISOString()
+    };
+    try {
+        const result = await extractFuelPriceSpider('lpg');
+        return { ...rawResult, value: result.val, source: { name: "Báo chí (Google News)", url: result.url, type: "news_scraping" }, quality: { status: "verified", method: "google_spider" } };
+    } catch (err) {
+        return { ...rawResult, value: 518400, status: "offline_fallback", source: { name: "Giá tham chiếu", type: "fallback" }, quality: { status: "failed_but_cached", method: "hardcode", error_log: err.message } };
+    }
+}
+
+// ==========================================
+// TEST LOCAL
+// ==========================================
+if (require.main === module) {
+    console.log("🚀 Đang khởi động kiểm tra cào Giá Nhiên Liệu (Anti-Rounding hoàn chỉnh)...");
+    Promise.all([fetchRon95Price(), fetchDieselPrice(), fetchLpgPrice()]).then(results => {
+        console.log("\n✅ [XĂNG E10 RON 95-III] KẾT QUẢ:", JSON.stringify(results[0], null, 2));
+        console.log("\n✅ [DẦU DO 0,05S-II] KẾT QUẢ:", JSON.stringify(results[1], null, 2));
+        console.log("\n✅ [GAS LPG 12KG] KẾT QUẢ:", JSON.stringify(results[2], null, 2));
+    }).catch(console.error);
+}
+
+module.exports = { fetchRon95Price, fetchDieselPrice, fetchLpgPrice };
