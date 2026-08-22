@@ -12,7 +12,7 @@ async function fetchFuelData() {
     };
     
     try {
-        // TẦNG 1: BÁO MỚI (Ưu tiên số 1)
+        // TẦNG 1: BÁO MỚI
         const url1 = 'https://baomoi.com/tien-ich-gia-xang-dau.epi';
         const html1 = await fetchHtmlSafe(url1, 10000); 
         const $1 = cheerio.load(html1);
@@ -21,16 +21,17 @@ async function fetchFuelData() {
         const targetElement = $1('a[href*="ron-95"]');
         if (targetElement.length > 0) {
             const parentText = targetElement.parent().parent().text();
-            const match = parentText.match(/([1-3][0-9][.,\s]?[0-9]{3})/);
+            // CHỈ BẮT SỐ CÓ 5 CHỮ SỐ (VD: 23.450)
+            const match = parentText.match(/([2-3][0-9][.,\s]?[0-9]{3})/);
             if (match) priceVal1 = parseInt(match[1].replace(/[^\d]/g, ''));
         }
 
         if (!priceVal1) {
-             const valStr = extractPriceFlexible(html1, ['body'], /(?:RON\s*95(?:-III)?).*?([1-3][0-9]{0,3}[.,\s]?[0-9]{3})/i);
+             const valStr = extractPriceFlexible(html1, ['body'], /(?:RON\s*95(?:-III)?).*?([2-3][0-9][.,\s]?[0-9]{3})/i);
              if (valStr) priceVal1 = parseInt(valStr.replace(/[^\d]/g, ''));
         }
 
-        if (!priceVal1 || isNaN(priceVal1)) throw new Error("Không bắt được giá xăng từ Báo Mới");
+        if (!priceVal1 || isNaN(priceVal1)) throw new Error("Không bắt được giá 5 chữ số từ Báo Mới");
 
         return { ...rawResult, value: priceVal1, source: { name: "Báo Mới", url: url1, type: "official" }, quality: { status: "verified", method: "html_text" } };
 
@@ -38,7 +39,7 @@ async function fetchFuelData() {
         console.warn(`[Fuel] Lỗi Tầng 1 (Báo Mới): ${errTier1.message}. Chuyển sang Tầng 2...`);
         
         try {
-            // TẦNG 2: CHỢ GIÁ (Nguồn mới bổ sung, dữ liệu cập nhật rất tốt)
+            // TẦNG 2: CHỢ GIÁ
             const url2 = 'https://chogia.vn/gia-xang-dau/';
             const html2 = await fetchHtmlSafe(url2, 10000);
             let priceVal2 = null;
@@ -46,12 +47,11 @@ async function fetchFuelData() {
             const valStr2 = extractPriceFlexible(
                 html2, 
                 ['body'], 
-                // Regex linh hoạt bắt RON 95, RON95-III, v.v.
-                /(?:RON\s*95(?:-III)?).*?([2-3][0-9][.,][0-9]{3})/i
+                /(?:RON\s*95(?:-III)?).*?([2-3][0-9][.,\s]?[0-9]{3})/i
             );
             if (valStr2) priceVal2 = parseInt(valStr2.replace(/[^\d]/g, ''));
 
-            if (!priceVal2 || isNaN(priceVal2)) throw new Error("Không tìm thấy giá trên Chợ Giá");
+            if (!priceVal2 || isNaN(priceVal2)) throw new Error("Không tìm thấy giá 5 chữ số trên Chợ Giá");
 
             return { ...rawResult, value: priceVal2, source: { name: "Chợ Giá", url: url2, type: "secondary" }, quality: { status: "secondary", method: "html_text" } };
 
@@ -59,7 +59,7 @@ async function fetchFuelData() {
             console.warn(`[Fuel] Lỗi Tầng 2 (Chợ Giá): ${errTier2.message}. Chuyển sang Tầng 3...`);
             
             try {
-                // TẦNG 3: WEBGIA (Bị đẩy xuống cuối vì đang bị lỗi "--")
+                // TẦNG 3: WEBGIA
                 const url3 = 'https://webgia.com/gia-xang-dau/petrolimex/';
                 const html3 = await fetchHtmlSafe(url3, 10000);
                 let priceVal3 = null;
@@ -67,14 +67,13 @@ async function fetchFuelData() {
 
                 $3('table tbody tr').each((i, el) => {
                     const text = $3(el).text().trim();
-                    // KIỂM TRA NGHIÊM NGẶT: Bỏ qua ngay dòng có chứa "--" để chống lỗi
                     if (text.includes('RON 95-III') && !text.includes('--')) {
-                        const match = text.match(/([2-3][0-9][.,][0-9]{3})/);
+                        const match = text.match(/([2-3][0-9][.,\s]?[0-9]{3})/);
                         if (match) priceVal3 = parseInt(match[1].replace(/[^\d]/g, ''));
                     }
                 });
 
-                if (!priceVal3) throw new Error("WebGia đang hiển thị '--' (trống dữ liệu)");
+                if (!priceVal3) throw new Error("WebGia đang hiển thị '--' hoặc không có giá 5 chữ số");
 
                 return { ...rawResult, value: priceVal3, source: { name: "WebGia", url: url3, type: "tertiary" }, quality: { status: "tertiary", method: "html_text" } };
 
@@ -92,9 +91,8 @@ async function fetchFuelData() {
     }
 }
 
-module.exports = { fetchFuelData };
 // ==========================================
-// TEST MÔI TRƯỜNG LOCAL (Chỉ chạy khi gọi trực tiếp file này)
+// TEST MÔI TRƯỜNG LOCAL
 // ==========================================
 if (require.main === module) {
     console.log("🚀 Đang khởi động kiểm tra cào giá xăng độc lập...");
@@ -107,3 +105,5 @@ if (require.main === module) {
             console.error("\n❌ LỖI NGHIÊM TRỌNG:", err);
         });
 }
+
+module.exports = { fetchFuelData };
