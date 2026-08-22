@@ -45820,5 +45820,150 @@
       "sentiment": 0,
       "scope": "business"
     }
+  },
+  "evt_f17b8c32": {
+    "created_at": 1787414489686,
+    "expires_at": 1790006489686,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_efb6cfc5": {
+    "created_at": 1787414523061,
+    "expires_at": 1790006523061,
+    "version": "4.5",
+    "checksum": "dca1d5272a9fe97c18b8f52f2da5d2ff",
+    "data": {
+      "cluster_title": "Giảm 30% thuế cho hộ kinh doanh",
+      "short_summary": "Bộ trưởng Tài chính thông báo hầu hết hộ kinh doanh có doanh thu dưới 10 tỷ đồng một năm (chiếm 99,98%) đều có thể được hưởng chính sách giảm 30% thuế, hỗ trợ mạnh mẽ cho lực lượng kinh tế này.",
+      "detailed_summary": "Bộ trưởng Tài chính thông tin rằng hiện nay có tới 99,98% hộ kinh doanh sở hữu mức doanh thu dưới ngưỡng 10 tỷ đồng trong một năm. Do đó, phần lớn các đối tượng này đều thuộc diện có thể được xem xét giảm 30% thuế theo quy định.",
+      "causes": [
+        "Hộ kinh doanh có doanh thu dưới ngưỡng 10 tỷ đồng một năm chiếm tỷ lệ lớn",
+        "Chính sách hỗ trợ tài chính cho hộ kinh doanh"
+      ],
+      "effects": [
+        "99,98% hộ kinh doanh có thể được giảm 30% thuế",
+        "Giảm bớt gánh nặng tài chính cho đa số hộ kinh doanh"
+      ],
+      "affected_groups": [
+        "Hộ kinh doanh",
+        "Cơ quan quản lý thuế"
+      ],
+      "market_impact": "Tạo điều kiện thuận lợi và giảm áp lực tài chính cho phần lớn các hộ kinh doanh trên thị trường.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "finance"
+      ],
+      "regions": [
+        "JP"
+      ],
+      "significance": "Sự kiện phản ánh chính sách hỗ trợ tài chính quy mô lớn nhắm đến đại đa số hộ kinh doanh có doanh thu vừa và nhỏ.",
+      "unknowns": [
+        "Thời điểm chính thức áp dụng chính sách giảm 30% thuế",
+        "Các điều kiện đi kèm ngoài tiêu chí doanh thu dưới 10 tỷ đồng"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên phát biểu trực tiếp của Bộ trưởng Tài chính.",
+      "scenarios": [
+        {
+          "text": "Chính sách giảm 30% thuế chính thức được triển khai và áp dụng cho các hộ kinh doanh đủ điều kiện.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Cần thêm các văn bản hướng dẫn chi tiết về thủ tục để các hộ kinh doanh tiếp cận mức giảm thuế.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Bộ trưởng Tài chính",
+          "target": "Hộ kinh doanh",
+          "relation_type": "cause_effect",
+          "label": "Đề xuất hoặc thông tin về chính sách giảm 30% thuế"
+        }
+      ],
+      "entities": [
+        "Bộ trưởng Tài chính"
+      ],
+      "keywords": [
+        "giảm thuế",
+        "hộ kinh doanh",
+        "Bộ trưởng Tài chính",
+        "thuế thu nhập"
+      ],
+      "importance": 80,
+      "severity": 3,
+      "sentiment": 1,
+      "scope": "national"
+    }
+  },
+  "evt_281ca0cc": {
+    "created_at": 1787414587987,
+    "expires_at": 1790006587987,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_2c3059e5": {
+    "created_at": 1787414642471,
+    "expires_at": 1790006642471,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
   }
 }

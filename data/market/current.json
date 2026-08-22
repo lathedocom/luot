@@ -42,22 +42,21 @@
   "vn_gold_sjc": {
     "indicator_id": "vn_gold_sjc",
     "name": "Vàng miếng SJC",
-    "value": 14.4,
     "unit": "Tr/lượng",
-    "period": "2026-08-21",
-    "frequency": "daily",
     "country": "VN",
+    "frequency": "daily",
+    "retrieved_at": "2026-08-22T16:04:08.155Z",
+    "value": 147.6,
     "source": {
-      "name": "WebGia SJC",
-      "url": "https://webgia.com/gia-vang/sjc/",
-      "type": "secondary"
+      "name": "Báo chí (Google News)",
+      "url": "https://news.google.com/rss/search?q=%22v%C3%A0ng%20SJC%22%20%22tri%E1%BB%87u%20%C4%91%E1%BB%93ng%22&hl=vi&gl=VN&ceid=VN:vi",
+      "type": "news_scraping"
     },
-    "retrieved_at": "2026-08-21T16:07:18.265Z",
     "quality": {
       "status": "verified",
-      "method": "html_text",
-      "error_log": null
-    }
+      "method": "google_spider"
+    },
+    "category": "Kinh tế & Tài sản"
   },
   "usd_vnd": {
     "indicator_id": "usd_vnd",
@@ -314,5 +313,63 @@
       "method": "xml_rss_scraping"
     },
     "category": "Kinh tế & Tài sản"
+  },
+  "vn_rice": {
+    "indicator_id": "vn_rice",
+    "name": "Gạo tẻ thường",
+    "unit": "VNĐ/kg",
+    "country": "VN",
+    "frequency": "daily",
+    "retrieved_at": "2026-08-22T16:04:08.152Z",
+    "value": 16000,
+    "status": "offline_fallback",
+    "source": {
+      "name": "Giá tham chiếu",
+      "type": "fallback"
+    },
+    "quality": {
+      "status": "failed_but_cached",
+      "method": "hardcode",
+      "error_log": "Không bắt được mức giá hợp lệ từ báo chí"
+    },
+    "category": "Chi phí sinh hoạt"
+  },
+  "vn_pork": {
+    "indicator_id": "vn_pork",
+    "name": "Thịt heo hơi",
+    "unit": "VNĐ/kg",
+    "country": "VN",
+    "frequency": "daily",
+    "retrieved_at": "2026-08-22T16:04:08.153Z",
+    "value": 58000,
+    "source": {
+      "name": "Báo chí (Google News)",
+      "url": "https://news.google.com/rss/search?q=%22gi%C3%A1%20heo%20h%C6%A1i%22%20%22h%C3%B4m%20nay%22&hl=vi&gl=VN&ceid=VN:vi",
+      "type": "news_scraping"
+    },
+    "quality": {
+      "status": "verified",
+      "method": "google_spider"
+    },
+    "category": "Chi phí sinh hoạt"
+  },
+  "vn_egg": {
+    "indicator_id": "vn_egg",
+    "name": "Trứng gà công nghiệp",
+    "unit": "VNĐ/quả",
+    "country": "VN",
+    "frequency": "daily",
+    "retrieved_at": "2026-08-22T16:04:08.154Z",
+    "value": 3300,
+    "source": {
+      "name": "Báo chí (Google News)",
+      "url": "https://news.google.com/rss/search?q=%22gi%C3%A1%20tr%E1%BB%A9ng%20g%C3%A0%22%20%22b%C3%A1n%20l%E1%BA%BB%22&hl=vi&gl=VN&ceid=VN:vi",
+      "type": "news_scraping"
+    },
+    "quality": {
+      "status": "verified",
+      "method": "google_spider"
+    },
+    "category": "Chi phí sinh hoạt"
   }
 }

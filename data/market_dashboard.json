@@ -48,17 +48,17 @@
       "category": "💰 Chi phí sinh hoạt",
       "type": "daily",
       "unit": "Tr/lượng",
-      "price": "14,4",
+      "price": "147,6",
       "change_percent": "0%",
       "trend": "→",
       "history": [
-        14.4
+        147.6
       ],
       "history_labels": [
         "Hiện tại"
       ],
-      "updated_at": 1787328438265,
-      "display_source": "WebGia SJC",
+      "updated_at": 1787414648155,
+      "display_source": "Báo chí (Google News)",
       "status": "online",
       "is_alert": false,
       "context": null
@@ -335,6 +335,69 @@
       "status": "online",
       "is_alert": false,
       "context": null
+    },
+    {
+      "id": "vn_rice",
+      "name": "Gạo tẻ thường",
+      "category": "🌾 Hàng hóa & Nông sản",
+      "type": "daily",
+      "unit": "VNĐ/kg",
+      "price": "16.000",
+      "change_percent": "0%",
+      "trend": "→",
+      "history": [
+        16000
+      ],
+      "history_labels": [
+        "Hiện tại"
+      ],
+      "updated_at": 1787414648152,
+      "display_source": "Giá tham chiếu",
+      "status": "online",
+      "is_alert": false,
+      "context": null
+    },
+    {
+      "id": "vn_pork",
+      "name": "Thịt heo hơi",
+      "category": "📌 Các chỉ số khác",
+      "type": "daily",
+      "unit": "VNĐ/kg",
+      "price": "58.000",
+      "change_percent": "0%",
+      "trend": "→",
+      "history": [
+        58000
+      ],
+      "history_labels": [
+        "Hiện tại"
+      ],
+      "updated_at": 1787414648153,
+      "display_source": "Báo chí (Google News)",
+      "status": "online",
+      "is_alert": false,
+      "context": null
+    },
+    {
+      "id": "vn_egg",
+      "name": "Trứng gà công nghiệp",
+      "category": "📌 Các chỉ số khác",
+      "type": "daily",
+      "unit": "VNĐ/quả",
+      "price": "3.300",
+      "change_percent": "0%",
+      "trend": "→",
+      "history": [
+        3300
+      ],
+      "history_labels": [
+        "Hiện tại"
+      ],
+      "updated_at": 1787414648154,
+      "display_source": "Báo chí (Google News)",
+      "status": "online",
+      "is_alert": false,
+      "context": null
     }
   ],
   "macro_health": [
@@ -379,10 +442,10 @@
       "color": "#f97316",
       "trend_icon": "↓",
       "reasons": [
-        "Dữ liệu duy trì ổn định theo chu kỳ."
+        "..."
       ],
       "target_audience": "Doanh nghiệp sản xuất, Công nhân",
-      "meaning": "Nhà máy thiếu đơn hàng, có nguy cơ phải giảm giờ làm hoặc cắt giảm nhân sự.",
+      "meaning": "...",
       "impact_level": "🟡 Trung bình",
       "duration": "Trung hạn"
     },
@@ -406,16 +469,16 @@
       "id": "xay_dung",
       "name": "Xây dựng & Bất động sản",
       "icon": "🏗️",
-      "score": -23.333333333333332,
-      "status": "Có dấu hiệu suy yếu",
-      "color": "#f97316",
-      "trend_icon": "↓",
+      "score": -9.333333333333334,
+      "status": "Bình thường / Ổn định",
+      "color": "#facc15",
+      "trend_icon": "→",
       "reasons": [
         "Dữ liệu duy trì ổn định theo chu kỳ."
       ],
       "target_audience": "Người mua nhà, Nhà thầu xây dựng",
-      "meaning": "Chi phí vật liệu tăng cao đẩy giá nhà lên, giao dịch trầm lắng.",
-      "impact_level": "🟡 Trung bình",
+      "meaning": "Vật liệu bình ổn, nhiều dự án được tái khởi động.",
+      "impact_level": "🟢 Thấp",
       "duration": "Dài hạn"
     },
     {
@@ -475,10 +538,10 @@
       "color": "#ef4444",
       "trend_icon": "↓",
       "reasons": [
-        "Dữ liệu duy trì ổn định theo chu kỳ."
+        "..."
       ],
       "target_audience": "Hầu hết mọi người (Tác động gián tiếp)",
-      "meaning": "Chuỗi cung ứng có thể đứt gãy, giá dầu và vàng dễ biến động mạnh.",
+      "meaning": "...",
       "impact_level": "🔴 Cao",
       "duration": "Trung hạn"
     }
