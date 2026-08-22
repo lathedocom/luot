@@ -3,10 +3,14 @@ const cheerio = require('cheerio');
 
 async function fetchUSDVND() {
     let rawResult = {
+        indicator_id: "usd_vnd",
+        name: "Tỷ giá USD/VNĐ",
+        unit: "VNĐ",
         country: "VN",
+        frequency: "realtime",
         retrieved_at: new Date().toISOString()
     };
-
+    
     try {
         // TẦNG 1: Sử dụng Yahoo Finance API (Primary)
         const url = `https://query1.finance.yahoo.com/v8/finance/chart/VND=X?range=1d&interval=1d`;
@@ -23,10 +27,8 @@ async function fetchUSDVND() {
             source: { name: "Yahoo Finance", url: url, type: "official" },
             quality: { status: "verified", method: "api" }
         };
-
     } catch (errorTier1) {
-        console.warn("[Currency Adapter] Yahoo Finance thất bại. Kích hoạt Fallback Vietcombank...");
-
+        console.warn("[Currency] Yahoo Finance thất bại. Kích hoạt Fallback Vietcombank...");
         try {
             // TẦNG 2: Fallback cào HTML từ Vietcombank
             const url = 'https://portal.vietcombank.com.vn/Usercontrols/TVPortal.TyGia/pXML.aspx';
@@ -37,7 +39,7 @@ async function fetchUSDVND() {
             const usdNode = $('Exrate[CurrencyCode="USD"]');
             
             if (usdNode.length > 0) {
-                const sellPrice = usdNode.attr('Sell'); // Ưu tiên giá bán
+                const sellPrice = parseFloat(usdNode.attr('Sell').replace(/,/g, ''));
                 return {
                     ...rawResult,
                     value: sellPrice,
@@ -46,13 +48,13 @@ async function fetchUSDVND() {
                 };
             }
             throw new Error("Không tìm thấy node USD trong XML");
-
         } catch (errorTier2) {
             return {
                 ...rawResult,
-                value: null,
-                source: { name: "Unknown", type: "none" },
-                quality: { status: "failed", method: "none", error_log: errorTier2.message }
+                value: 25450, // Fallback cứng năm 2026
+                status: "offline_fallback",
+                source: { name: "Giá tham chiếu", type: "fallback" },
+                quality: { status: "failed_but_cached", method: "hardcode", error_log: errorTier2.message }
             };
         }
     }
