@@ -45,7 +45,7 @@
     {
       "id": "vn_gold_sjc",
       "name": "Vàng miếng SJC",
-      "category": "💰 Chi phí sinh hoạt",
+      "category": "📈 Tài chính & Tài sản",
       "type": "daily",
       "unit": "Tr/lượng",
       "price": "147,6",
@@ -57,7 +57,7 @@
       "history_labels": [
         "Hiện tại"
       ],
-      "updated_at": 1787414648155,
+      "updated_at": 1787417925321,
       "display_source": "Báo chí (Google News)",
       "status": "online",
       "is_alert": false,
@@ -87,7 +87,7 @@
     {
       "id": "global_btc",
       "name": "Bitcoin",
-      "category": "📈 Thị trường tài chính",
+      "category": "📈 Tài chính & Tài sản",
       "type": "realtime",
       "unit": "USD",
       "price": "78.535",
@@ -108,7 +108,7 @@
     {
       "id": "global_brent",
       "name": "Dầu Brent",
-      "category": "🌾 Hàng hóa & Nông sản",
+      "category": "🌾 Hàng hóa Toàn cầu",
       "type": "realtime",
       "unit": "USD/thùng",
       "price": "94,39",
@@ -129,7 +129,7 @@
     {
       "id": "vn_index",
       "name": "VN-Index",
-      "category": "📈 Thị trường tài chính",
+      "category": "📈 Tài chính & Tài sản",
       "type": "daily",
       "unit": "Điểm",
       "price": "1.768,12",
@@ -150,7 +150,7 @@
     {
       "id": "vn_coffee",
       "name": "Cà phê Robusta",
-      "category": "🌾 Hàng hóa & Nông sản",
+      "category": "🌾 Hàng hóa Toàn cầu",
       "type": "daily",
       "unit": "VNĐ/kg",
       "price": "98.000",
@@ -171,7 +171,7 @@
     {
       "id": "vn_pepper",
       "name": "Hồ tiêu",
-      "category": "🌾 Hàng hóa & Nông sản",
+      "category": "🌾 Hàng hóa Toàn cầu",
       "type": "daily",
       "unit": "VNĐ/kg",
       "price": "139.000",
@@ -192,7 +192,7 @@
     {
       "id": "vn_ron95",
       "name": "Xăng RON95-III",
-      "category": "💰 Chi phí sinh hoạt",
+      "category": "🛒 Chi phí sinh hoạt & Thiết yếu",
       "type": "daily",
       "unit": "VNĐ/Lít",
       "price": "22.660",
@@ -234,7 +234,7 @@
     {
       "id": "vn_electricity",
       "name": "Giá điện sinh hoạt (Bình quân)",
-      "category": "📌 Các chỉ số khác",
+      "category": "🛒 Chi phí sinh hoạt & Thiết yếu",
       "type": "monthly",
       "unit": "VNĐ/kWh",
       "price": "2.204",
@@ -255,7 +255,7 @@
     {
       "id": "vn_water",
       "name": "Giá nước sinh hoạt (Bậc 1)",
-      "category": "📌 Các chỉ số khác",
+      "category": "🛒 Chi phí sinh hoạt & Thiết yếu",
       "type": "monthly",
       "unit": "VNĐ/m³",
       "price": "8.000",
@@ -276,7 +276,7 @@
     {
       "id": "vn_cpi",
       "name": "Lạm phát (CPI)",
-      "category": "💰 Chi phí sinh hoạt",
+      "category": "🛒 Chi phí sinh hoạt & Thiết yếu",
       "type": "monthly",
       "unit": "%",
       "price": "4,45",
@@ -297,7 +297,7 @@
     {
       "id": "vn_mortgage_rate",
       "name": "Lãi suất vay BĐS (Vietcombank)",
-      "category": "📌 Các chỉ số khác",
+      "category": "💵 Thu nhập & Sức mua",
       "type": "monthly",
       "unit": "%/năm",
       "price": "6,5",
@@ -339,7 +339,7 @@
     {
       "id": "vn_rice",
       "name": "Gạo tẻ thường",
-      "category": "🌾 Hàng hóa & Nông sản",
+      "category": "🛒 Chi phí sinh hoạt & Thiết yếu",
       "type": "daily",
       "unit": "VNĐ/kg",
       "price": "16.000",
@@ -351,7 +351,7 @@
       "history_labels": [
         "Hiện tại"
       ],
-      "updated_at": 1787414648152,
+      "updated_at": 1787417925319,
       "display_source": "Giá tham chiếu",
       "status": "online",
       "is_alert": false,
@@ -360,7 +360,7 @@
     {
       "id": "vn_pork",
       "name": "Thịt heo hơi",
-      "category": "📌 Các chỉ số khác",
+      "category": "🛒 Chi phí sinh hoạt & Thiết yếu",
       "type": "daily",
       "unit": "VNĐ/kg",
       "price": "58.000",
@@ -372,7 +372,7 @@
       "history_labels": [
         "Hiện tại"
       ],
-      "updated_at": 1787414648153,
+      "updated_at": 1787417925320,
       "display_source": "Báo chí (Google News)",
       "status": "online",
       "is_alert": false,
@@ -381,7 +381,7 @@
     {
       "id": "vn_egg",
       "name": "Trứng gà công nghiệp",
-      "category": "📌 Các chỉ số khác",
+      "category": "🛒 Chi phí sinh hoạt & Thiết yếu",
       "type": "daily",
       "unit": "VNĐ/quả",
       "price": "3.300",
@@ -393,7 +393,7 @@
       "history_labels": [
         "Hiện tại"
       ],
-      "updated_at": 1787414648154,
+      "updated_at": 1787417925321,
       "display_source": "Báo chí (Google News)",
       "status": "online",
       "is_alert": false,
@@ -405,17 +405,33 @@
       "id": "chi_phi",
       "name": "Chi phí sinh hoạt",
       "icon": "🛒",
-      "score": -40,
-      "status": "Có dấu hiệu tăng",
-      "color": "#f97316",
-      "trend_icon": "↓",
+      "score": -16,
+      "status": "Bình thường / Ổn định",
+      "color": "#facc15",
+      "trend_icon": "→",
       "reasons": [
         "Dữ liệu duy trì ổn định theo chu kỳ."
       ],
       "target_audience": "Người tiêu dùng, Hộ gia đình",
-      "meaning": "Thực phẩm, đi lại đắt đỏ hơn. Nguy cơ phải thắt chặt chi tiêu.",
-      "impact_level": "🟡 Trung bình",
+      "meaning": "Áp lực giá cả ổn định, dễ thở hơn cho người dân.",
+      "impact_level": "🟢 Thấp",
       "duration": "Ngắn & Trung hạn"
+    },
+    {
+      "id": "thu_nhap",
+      "name": "Thu nhập & Sức mua",
+      "icon": "💵",
+      "score": -10.666666666666668,
+      "status": "Bình thường / Ổn định",
+      "color": "#facc15",
+      "trend_icon": "→",
+      "reasons": [
+        "Dữ liệu duy trì ổn định theo chu kỳ."
+      ],
+      "target_audience": "Người đi làm, Hộ gia đình vay vốn",
+      "meaning": "Thu nhập cải thiện, lãi suất dễ chịu kích thích mua sắm và đầu tư.",
+      "impact_level": "🟢 Thấp",
+      "duration": "Dài hạn"
     },
     {
       "id": "viec_lam",
@@ -437,16 +453,16 @@
       "id": "san_xuat",
       "name": "Sản xuất & Công nghiệp",
       "icon": "🏭",
-      "score": -24,
-      "status": "Có dấu hiệu suy yếu",
-      "color": "#f97316",
-      "trend_icon": "↓",
+      "score": -9.600000000000001,
+      "status": "Bình thường / Ổn định",
+      "color": "#facc15",
+      "trend_icon": "→",
       "reasons": [
-        "..."
+        "Dữ liệu duy trì ổn định theo chu kỳ."
       ],
       "target_audience": "Doanh nghiệp sản xuất, Công nhân",
-      "meaning": "...",
-      "impact_level": "🟡 Trung bình",
+      "meaning": "Nhà máy hoạt động hết công suất, nhu cầu tuyển dụng tăng cao.",
+      "impact_level": "🟢 Thấp",
       "duration": "Trung hạn"
     },
     {
@@ -485,23 +501,23 @@
       "id": "nong_nghiep",
       "name": "Nông nghiệp & Hàng hóa",
       "icon": "🌾",
-      "score": -60,
-      "status": "Suy yếu mạnh",
-      "color": "#ef4444",
+      "score": -24,
+      "status": "Có dấu hiệu suy yếu",
+      "color": "#f97316",
       "trend_icon": "↓",
       "reasons": [
         "Dữ liệu duy trì ổn định theo chu kỳ."
       ],
       "target_audience": "Nông dân, Doanh nghiệp chế biến thực phẩm",
       "meaning": "Chi phí phân bón tăng, giá bán nông sản rớt gây khó khăn cho nông dân.",
-      "impact_level": "🔴 Cao",
+      "impact_level": "🟡 Trung bình",
       "duration": "Trung hạn"
     },
     {
       "id": "tien_te",
       "name": "Tiền tệ & Tín dụng",
       "icon": "💰",
-      "score": -48.23529411764706,
+      "score": -19.294117647058826,
       "status": "Có dấu hiệu suy yếu",
       "color": "#f97316",
       "trend_icon": "↓",
@@ -517,7 +533,7 @@
       "id": "tai_chinh",
       "name": "Thị trường tài chính",
       "icon": "📈",
-      "score": -13.333333333333334,
+      "score": -5.333333333333334,
       "status": "Bình thường / Ổn định",
       "color": "#facc15",
       "trend_icon": "→",
@@ -538,10 +554,10 @@
       "color": "#ef4444",
       "trend_icon": "↓",
       "reasons": [
-        "..."
+        "Dữ liệu duy trì ổn định theo chu kỳ."
       ],
       "target_audience": "Hầu hết mọi người (Tác động gián tiếp)",
-      "meaning": "...",
+      "meaning": "Chuỗi cung ứng có thể đứt gãy, giá dầu và vàng dễ biến động mạnh.",
       "impact_level": "🔴 Cao",
       "duration": "Trung hạn"
     }
