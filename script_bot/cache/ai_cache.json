@@ -46154,5 +46154,274 @@
       "sentiment": -1,
       "scope": "global"
     }
+  },
+  "evt_0d15807b": {
+    "created_at": 1787451416868,
+    "expires_at": 1790043416868,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_d5a55724": {
+    "created_at": 1787451454214,
+    "expires_at": 1790043454214,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_ff09ec42": {
+    "created_at": 1787451511718,
+    "expires_at": 1790043511718,
+    "version": "4.5",
+    "checksum": "1c5d1b75d65d80d9687999c3c17a1176",
+    "data": {
+      "cluster_title": "...",
+      "short_summary": "...",
+      "detailed_summary": "Trong bản tin thế giới ngày 23-8, Tổng thống Nga Putin tuyên bố sẽ đánh vào hạ tầng kinh tế của Ukraine và cho rằng Kiev đã mở hộp Pandora. Trong khi đó, Pháp cam kết sẽ chuyển tên lửa đánh chặn cho Ukraine nhằm đối phó với các cuộc tấn công từ phía Nga. Ở một diễn biến khác, Canada thực hiện các biện pháp trả đũa nhắm vào Mỹ.",
+      "causes": [
+        "Xung đột leo thang giữa Nga và Ukraine",
+        "Các cuộc tấn công quân sự liên tục của Nga nhằm vào Ukraine",
+        "Căng thẳng thương mại hoặc chính sách giữa Canada và Mỹ"
+      ],
+      "effects": [
+        "Hạ tầng kinh tế Ukraine đối mặt nguy cơ bị tàn phá nặng nề",
+        "Ukraine nhận thêm viện trợ quân sự và tên lửa đánh chặn từ Pháp",
+        "Quan hệ kinh tế và ngoại giao giữa Canada và Mỹ gia tăng căng thẳng"
+      ],
+      "affected_groups": [
+        "Chính phủ và người dân Ukraine",
+        "Doanh nghiệp và nền kinh tế Ukraine",
+        "Quan hệ ngoại giao Nga - phương Tây",
+        "Quan hệ thương mại Canada - Mỹ"
+      ],
+      "market_impact": "Gia tăng rủi ro bất ổn đối với thị trường năng lượng và chuỗi cung ứng toàn cầu do xung đột địa chính trị leo thang tại Đông Âu.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "military"
+      ],
+      "regions": [
+        "RU",
+        "UA",
+        "CA",
+        "US",
+        "FR"
+      ],
+      "significance": "Sự kiện phản ánh sự leo thang nghiêm trọng của xung đột Nga - Ukraine và sự phân cực sâu sắc trong quan hệ quốc tế, đồng thời cho thấy phương Tây tiếp tục gia tăng hỗ trợ quân sự cho Kiev.",
+      "unknowns": [
+        "Chi tiết cụ thể về các mục tiêu hạ tầng kinh tế mà Nga nhắm tới",
+        "Nội dung và hình thức cụ thể của đòn trả đũa mà Canada áp dụng lên Mỹ",
+        "Thời gian biểu chính xác và số lượng tên lửa đánh chặn Pháp chuyển giao cho Ukraine"
+      ],
+      "confidence_note": "Thông tin dựa trên các bản tin thời sự quốc tế chuẩn mực, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Nga gia tăng các cuộc không kích vào hạ tầng kinh tế Ukraine, buộc phương Tây đẩy mạnh viện trợ phòng không.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Căng thẳng thương mại giữa Canada và Mỹ nhanh chóng được hạ nhiệt thông qua đàm phán song phương.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Nga",
+          "target": "Ukraine",
+          "relation_type": "conflict",
+          "label": "Tấn công hạ tầng kinh tế"
+        },
+        {
+          "source": "Pháp",
+          "target": "Ukraine",
+          "relation_type": "cooperation",
+          "label": "Chuyển giao tên lửa đánh chặn"
+        },
+        {
+          "source": "Canada",
+          "target": "Mỹ",
+          "relation_type": "conflict",
+          "label": "Tung đòn trả đũa"
+        },
+        {
+          "source": "Nga",
+          "target": "Ukraine",
+          "relation_type": "cause_effect",
+          "label": "Tuyên bố mở hộp Pandora"
+        }
+      ],
+      "entities": [],
+      "keywords": [],
+      "importance": 85,
+      "severity": 5,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_5bce264f": {
+    "created_at": 1787451561032,
+    "expires_at": 1790043561032,
+    "version": "4.5",
+    "checksum": "79c7e0e246da595943b3f59036e03eb0",
+    "data": {
+      "cluster_title": "Nga tăng tốc tiến công tại Ukraine",
+      "short_summary": "Tổng thống Vladimir Putin tuyên bố quân đội Nga đang đẩy mạnh tiến công trên mọi mặt trận tại Ukraine để đạt được các mục tiêu quân sự đề ra, cho thấy sự leo thang mới của cuộc xung đột này.",
+      "detailed_summary": "Trong một tuyên bố mới đây, Tổng thống Vladimir Putin cho biết quân đội Nga đang tăng tốc các chiến dịch tấn công trên mọi hướng tại Ukraine và khẳng định chiến dịch quân sự sẽ tiếp tục được duy trì cho đến khi đạt được toàn bộ các mục tiêu đề ra.",
+      "causes": [
+        "Quyết tâm đạt được các mục tiêu đề ra trong chiến dịch quân sự của Nga"
+      ],
+      "effects": [
+        "Gia tăng áp lực quân sự lên các lực lượng phòng thủ của Ukraine trên mọi mặt trận"
+      ],
+      "affected_groups": [
+        "Lực lượng vũ trang Nga",
+        "Lực lượng vũ trang Ukraine",
+        "Dân thường tại khu vực xung đột"
+      ],
+      "market_impact": "Xung đột tiếp tục leo thang có thể gây ảnh hưởng đến thị trường năng lượng và lương thực toàn cầu.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "military"
+      ],
+      "regions": [
+        "RU",
+        "UA"
+      ],
+      "significance": "Tuyên bố này thể hiện quyết tâm chiến lược của Nga trong việc duy trì và đẩy mạnh cường độ chiến dịch quân sự tại Ukraine.",
+      "unknowns": [
+        "Thời gian cụ thể kết thúc chiến dịch quân sự",
+        "Quy mô chi tiết của các mũi tiến công mới"
+      ],
+      "confidence_note": "Thông tin dựa trên phát biểu chính thức của nguyên thủ quốc gia, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Nga tiếp tục gia tăng áp lực quân sự và mở rộng các hướng tiến công tại Ukraine.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Giao tranh kéo dài làm gia tăng căng thẳng địa chính trị toàn cầu và ảnh hưởng đến các nỗ lực ngoại giao.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Vladimir Putin",
+          "target": "Nga",
+          "relation_type": "cooperation",
+          "label": "Lãnh đạo quốc gia"
+        },
+        {
+          "source": "Nga",
+          "target": "Ukraine",
+          "relation_type": "conflict",
+          "label": "Tiến công quân sự"
+        }
+      ],
+      "entities": [
+        "Vladimir Putin",
+        "Nga",
+        "Ukraine"
+      ],
+      "keywords": [
+        "Nga",
+        "Ukraine",
+        "xung đột quân sự",
+        "Vladimir Putin",
+        "tấn công"
+      ],
+      "importance": 90,
+      "severity": 5,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_e50d3785": {
+    "created_at": 1787451594681,
+    "expires_at": 1790043594681,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_17828a17": {
+    "created_at": 1787451632113,
+    "expires_at": 1790043632113,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
   }
 }
