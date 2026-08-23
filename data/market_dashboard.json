@@ -1,0 +1,520 @@
+{
+  "market_board": [
+    {
+      "id": "vn_rice",
+      "name": "Gạo tẻ thường",
+      "category": "🛒 Chi phí sinh hoạt & Thiết yếu",
+      "type": "daily",
+      "unit": "VNĐ/kg",
+      "price": "16.000",
+      "change_percent": "0%",
+      "trend": "→",
+      "history": [
+        16000
+      ],
+      "history_labels": [
+        "Hiện tại"
+      ],
+      "updated_at": 1787474308995,
+      "display_source": "Giá tham chiếu",
+      "status": "online",
+      "is_alert": false,
+      "context": null
+    },
+    {
+      "id": "vn_pork",
+      "name": "Thịt heo hơi",
+      "category": "🛒 Chi phí sinh hoạt & Thiết yếu",
+      "type": "daily",
+      "unit": "VNĐ/kg",
+      "price": "58.000",
+      "change_percent": "0%",
+      "trend": "→",
+      "history": [
+        58000
+      ],
+      "history_labels": [
+        "Hiện tại"
+      ],
+      "updated_at": 1787474308996,
+      "display_source": "Báo chí (Google News)",
+      "status": "online",
+      "is_alert": false,
+      "context": null
+    },
+    {
+      "id": "vn_egg",
+      "name": "Trứng gà công nghiệp",
+      "category": "🛒 Chi phí sinh hoạt & Thiết yếu",
+      "type": "daily",
+      "unit": "VNĐ/quả",
+      "price": "3.700",
+      "change_percent": "0%",
+      "trend": "→",
+      "history": [
+        3700
+      ],
+      "history_labels": [
+        "Hiện tại"
+      ],
+      "updated_at": 1787474308997,
+      "display_source": "Báo chí (Google News)",
+      "status": "online",
+      "is_alert": false,
+      "context": null
+    },
+    {
+      "id": "vn_ron95",
+      "name": "Xăng E10 RON 95-III",
+      "category": "🛒 Chi phí sinh hoạt & Thiết yếu",
+      "type": "weekly",
+      "unit": "VNĐ/lít",
+      "price": "22.660",
+      "change_percent": "0%",
+      "trend": "→",
+      "history": [
+        22660
+      ],
+      "history_labels": [
+        "Hiện tại"
+      ],
+      "updated_at": 1787474308998,
+      "display_source": "Báo Mới Tiện Ích",
+      "status": "online",
+      "is_alert": false,
+      "context": null
+    },
+    {
+      "id": "vn_diesel",
+      "name": "Dầu DO 0,05S-II",
+      "category": "🛒 Chi phí sinh hoạt & Thiết yếu",
+      "type": "weekly",
+      "unit": "VNĐ/lít",
+      "price": "28.540",
+      "change_percent": "0%",
+      "trend": "→",
+      "history": [
+        28540
+      ],
+      "history_labels": [
+        "Hiện tại"
+      ],
+      "updated_at": 1787474308998,
+      "display_source": "Báo Mới Tiện Ích",
+      "status": "online",
+      "is_alert": false,
+      "context": null
+    },
+    {
+      "id": "vn_lpg_12kg",
+      "name": "Gas LPG (Bình 12kg)",
+      "category": "📌 Các chỉ số khác",
+      "type": "monthly",
+      "unit": "VNĐ/bình",
+      "price": "598.104",
+      "change_percent": "0%",
+      "trend": "→",
+      "history": [
+        598104
+      ],
+      "history_labels": [
+        "Hiện tại"
+      ],
+      "updated_at": 1787474308999,
+      "display_source": "Google News",
+      "status": "online",
+      "is_alert": false,
+      "context": null
+    },
+    {
+      "id": "vn_electricity",
+      "name": "Giá điện sinh hoạt (Bình quân)",
+      "category": "🛒 Chi phí sinh hoạt & Thiết yếu",
+      "type": "monthly",
+      "unit": "VNĐ/kWh",
+      "price": "2.204",
+      "change_percent": "0%",
+      "trend": "→",
+      "history": [
+        2204
+      ],
+      "history_labels": [
+        "Hiện tại"
+      ],
+      "updated_at": 1787474309000,
+      "display_source": "Thông cáo Báo chí",
+      "status": "online",
+      "is_alert": false,
+      "context": null
+    },
+    {
+      "id": "vn_water",
+      "name": "Giá nước sinh hoạt (Bậc 1)",
+      "category": "🛒 Chi phí sinh hoạt & Thiết yếu",
+      "type": "monthly",
+      "unit": "VNĐ/m³",
+      "price": "8.000",
+      "change_percent": "0%",
+      "trend": "→",
+      "history": [
+        8000
+      ],
+      "history_labels": [
+        "Hiện tại"
+      ],
+      "updated_at": 1787474309000,
+      "display_source": "Thông cáo Báo chí",
+      "status": "online",
+      "is_alert": false,
+      "context": null
+    },
+    {
+      "id": "vn_cpi",
+      "name": "Lạm phát (CPI)",
+      "category": "🛒 Chi phí sinh hoạt & Thiết yếu",
+      "type": "monthly",
+      "unit": "%",
+      "price": "4,45",
+      "change_percent": "0%",
+      "trend": "→",
+      "history": [
+        4.45
+      ],
+      "history_labels": [
+        "Hiện tại"
+      ],
+      "updated_at": 1787474309001,
+      "display_source": "TradingView",
+      "status": "online",
+      "is_alert": false,
+      "context": null
+    },
+    {
+      "id": "vn_wage_tier1",
+      "name": "Lương tối thiểu (Vùng 1)",
+      "category": "💵 Thu nhập & Sức mua",
+      "type": "yearly",
+      "unit": "VNĐ/tháng",
+      "price": "5.310.000",
+      "change_percent": "0%",
+      "trend": "→",
+      "history": [
+        5310000
+      ],
+      "history_labels": [
+        "Hiện tại"
+      ],
+      "updated_at": 1787474309001,
+      "display_source": "Báo chí (Google News)",
+      "status": "online",
+      "is_alert": false,
+      "context": null
+    },
+    {
+      "id": "vn_mortgage_rate",
+      "name": "Lãi suất vay BĐS (Vietcombank)",
+      "category": "💵 Thu nhập & Sức mua",
+      "type": "monthly",
+      "unit": "%/năm",
+      "price": "6,5",
+      "change_percent": "0%",
+      "trend": "→",
+      "history": [
+        6.5
+      ],
+      "history_labels": [
+        "Hiện tại"
+      ],
+      "updated_at": 1787474309002,
+      "display_source": "Báo chí (Google News)",
+      "status": "online",
+      "is_alert": false,
+      "context": null
+    },
+    {
+      "id": "usd_vnd",
+      "name": "Tỷ giá USD/VNĐ",
+      "category": "🏦 Tiền tệ",
+      "type": "realtime",
+      "unit": "VNĐ",
+      "price": "26.113",
+      "change_percent": "0%",
+      "trend": "→",
+      "history": [
+        26113
+      ],
+      "history_labels": [
+        "Hiện tại"
+      ],
+      "updated_at": 1787474309002,
+      "display_source": "Yahoo Finance",
+      "status": "online",
+      "is_alert": false,
+      "context": null
+    },
+    {
+      "id": "vn_gold_sjc",
+      "name": "Vàng miếng SJC",
+      "category": "📈 Tài chính & Tài sản",
+      "type": "daily",
+      "unit": "Tr/lượng",
+      "price": "150",
+      "change_percent": "0%",
+      "trend": "→",
+      "history": [
+        150
+      ],
+      "history_labels": [
+        "Hiện tại"
+      ],
+      "updated_at": 1787474309003,
+      "display_source": "Báo chí (Google News)",
+      "status": "online",
+      "is_alert": false,
+      "context": null
+    },
+    {
+      "id": "vn_index",
+      "name": "VN-Index",
+      "category": "📈 Tài chính & Tài sản",
+      "unit": "Điểm",
+      "price": "1.768,12",
+      "change_percent": "0%",
+      "trend": "→",
+      "history": [
+        1768.12
+      ],
+      "history_labels": [
+        "Hiện tại"
+      ],
+      "updated_at": 1787474309004,
+      "display_source": "TradingView",
+      "status": "online",
+      "is_alert": false,
+      "context": null
+    },
+    {
+      "id": "global_brent",
+      "name": "Dầu Brent",
+      "category": "🌾 Hàng hóa Toàn cầu",
+      "unit": "USD/thùng",
+      "price": "94,39",
+      "change_percent": "0%",
+      "trend": "→",
+      "history": [
+        94.39
+      ],
+      "history_labels": [
+        "Hiện tại"
+      ],
+      "updated_at": 1787474309004,
+      "display_source": "Yahoo Finance",
+      "status": "online",
+      "is_alert": false,
+      "context": null
+    },
+    {
+      "id": "vn_pmi",
+      "name": "Chỉ số PMI",
+      "category": "🏭 Sản xuất & Xây dựng",
+      "type": "monthly",
+      "unit": "Điểm",
+      "price": "52,9",
+      "change_percent": "0%",
+      "trend": "→",
+      "history": [
+        52.9
+      ],
+      "history_labels": [
+        "Hiện tại"
+      ],
+      "updated_at": 1787474309005,
+      "display_source": "Báo chí (via Google News)",
+      "status": "online",
+      "is_alert": false,
+      "context": null
+    },
+    {
+      "id": "global_btc",
+      "name": "Bitcoin",
+      "category": "📈 Tài chính & Tài sản",
+      "unit": "USD",
+      "price": "76.305",
+      "change_percent": "0%",
+      "trend": "→",
+      "history": [
+        76305
+      ],
+      "history_labels": [
+        "Hiện tại"
+      ],
+      "updated_at": 1787474309005,
+      "display_source": "CoinGecko",
+      "status": "online",
+      "is_alert": false,
+      "context": null
+    }
+  ],
+  "macro_health": [
+    {
+      "id": "chi_phi",
+      "name": "Chi phí sinh hoạt",
+      "icon": "🛒",
+      "score": 0,
+      "status": "Bình thường / Ổn định",
+      "color": "#facc15",
+      "trend_icon": "→",
+      "reasons": [
+        "Dữ liệu duy trì ổn định theo chu kỳ."
+      ],
+      "target_audience": "Người tiêu dùng, Hộ gia đình",
+      "meaning": "Áp lực giá cả ổn định, dễ thở hơn cho người dân.",
+      "impact_level": "🟢 Thấp",
+      "duration": "Ngắn & Trung hạn"
+    },
+    {
+      "id": "thu_nhap",
+      "name": "Thu nhập & Sức mua",
+      "icon": "💵",
+      "score": 0,
+      "status": "Bình thường / Ổn định",
+      "color": "#facc15",
+      "trend_icon": "→",
+      "reasons": [
+        "Dữ liệu duy trì ổn định theo chu kỳ."
+      ],
+      "target_audience": "Người đi làm, Hộ gia đình vay vốn",
+      "meaning": "Thu nhập cải thiện, lãi suất dễ chịu kích thích mua sắm và đầu tư.",
+      "impact_level": "🟢 Thấp",
+      "duration": "Dài hạn"
+    },
+    {
+      "id": "viec_lam",
+      "name": "Thị trường việc làm",
+      "icon": "💼",
+      "score": 0,
+      "status": "Bình thường / Ổn định",
+      "color": "#facc15",
+      "trend_icon": "→",
+      "reasons": [
+        "Dữ liệu duy trì ổn định theo chu kỳ."
+      ],
+      "target_audience": "Người lao động, Sinh viên mới ra trường",
+      "meaning": "Nhiều cơ hội việc làm mở ra, dễ thỏa thuận lương.",
+      "impact_level": "🟢 Thấp",
+      "duration": "Trung & Dài hạn"
+    },
+    {
+      "id": "san_xuat",
+      "name": "Sản xuất & Công nghiệp",
+      "icon": "🏭",
+      "score": 0,
+      "status": "Bình thường / Ổn định",
+      "color": "#facc15",
+      "trend_icon": "→",
+      "reasons": [
+        "Dữ liệu duy trì ổn định theo chu kỳ."
+      ],
+      "target_audience": "Doanh nghiệp sản xuất, Công nhân",
+      "meaning": "Nhà máy hoạt động hết công suất, nhu cầu tuyển dụng tăng cao.",
+      "impact_level": "🟢 Thấp",
+      "duration": "Trung hạn"
+    },
+    {
+      "id": "thuong_mai",
+      "name": "Thương mại & XNK",
+      "icon": "🚢",
+      "score": 0,
+      "status": "Bình thường / Ổn định",
+      "color": "#facc15",
+      "trend_icon": "→",
+      "reasons": [
+        "Dữ liệu duy trì ổn định theo chu kỳ."
+      ],
+      "target_audience": "Doanh nghiệp xuất nhập khẩu, Logistics",
+      "meaning": "Đơn hàng quốc tế tăng, dòng tiền ngoại tệ đổ về tích cực.",
+      "impact_level": "🟢 Thấp",
+      "duration": "Trung hạn"
+    },
+    {
+      "id": "xay_dung",
+      "name": "Xây dựng & Bất động sản",
+      "icon": "🏗️",
+      "score": 0,
+      "status": "Bình thường / Ổn định",
+      "color": "#facc15",
+      "trend_icon": "→",
+      "reasons": [
+        "Dữ liệu duy trì ổn định theo chu kỳ."
+      ],
+      "target_audience": "Người mua nhà, Nhà thầu xây dựng",
+      "meaning": "Vật liệu bình ổn, nhiều dự án được tái khởi động.",
+      "impact_level": "🟢 Thấp",
+      "duration": "Dài hạn"
+    },
+    {
+      "id": "nong_nghiep",
+      "name": "Nông nghiệp & Hàng hóa",
+      "icon": "🌾",
+      "score": 0,
+      "status": "Bình thường / Ổn định",
+      "color": "#facc15",
+      "trend_icon": "→",
+      "reasons": [
+        "Dữ liệu duy trì ổn định theo chu kỳ."
+      ],
+      "target_audience": "Nông dân, Doanh nghiệp chế biến thực phẩm",
+      "meaning": "Nông sản được giá, lợi nhuận ngành nông nghiệp khởi sắc.",
+      "impact_level": "🟢 Thấp",
+      "duration": "Trung hạn"
+    },
+    {
+      "id": "tien_te",
+      "name": "Tiền tệ & Tín dụng",
+      "icon": "💰",
+      "score": 0,
+      "status": "Bình thường / Ổn định",
+      "color": "#facc15",
+      "trend_icon": "→",
+      "reasons": [
+        "Dữ liệu duy trì ổn định theo chu kỳ."
+      ],
+      "target_audience": "Doanh nghiệp vay vốn, Người mua nhà, Du học sinh",
+      "meaning": "Lãi suất dễ chịu, thuận lợi cho việc vay mượn mở rộng kinh doanh.",
+      "impact_level": "🟢 Thấp",
+      "duration": "Trung hạn"
+    },
+    {
+      "id": "tai_chinh",
+      "name": "Thị trường tài chính",
+      "icon": "📈",
+      "score": 0,
+      "status": "Bình thường / Ổn định",
+      "color": "#facc15",
+      "trend_icon": "→",
+      "reasons": [
+        "Dữ liệu duy trì ổn định theo chu kỳ."
+      ],
+      "target_audience": "Nhà đầu tư cá nhân, Quỹ đầu tư",
+      "meaning": "Kênh đầu tư sinh lời tốt, tâm lý thị trường hưng phấn.",
+      "impact_level": "🟢 Thấp",
+      "duration": "Ngắn hạn"
+    },
+    {
+      "id": "rui_ro",
+      "name": "Rủi ro toàn cầu",
+      "icon": "🌍",
+      "score": 0,
+      "status": "Bình thường / Ổn định",
+      "color": "#facc15",
+      "trend_icon": "→",
+      "reasons": [
+        "Dữ liệu duy trì ổn định theo chu kỳ."
+      ],
+      "target_audience": "Hầu hết mọi người (Tác động gián tiếp)",
+      "meaning": "Tình hình địa chính trị êm dịu, dòng vốn đầu tư an tâm giải ngân.",
+      "impact_level": "🟢 Thấp",
+      "duration": "Trung hạn"
+    }
+  ]
+}
