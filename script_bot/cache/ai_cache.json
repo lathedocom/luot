@@ -46423,5 +46423,227 @@
       "sentiment": 0,
       "scope": "business"
     }
+  },
+  "evt_525164ec": {
+    "created_at": 1787458701101,
+    "expires_at": 1790050701101,
+    "version": "4.5",
+    "checksum": "b5402d10a1ff6b45de4997ae100bfe99",
+    "data": {
+      "cluster_title": "Canada áp thuế trả đũa lên hàng hóa của Mỹ",
+      "short_summary": "Canada thông báo sẽ áp dụng các biện pháp thuế trả đũa đối với nhiều mặt hàng của Mỹ kể từ ngày 8/9. Quyết định này được đưa ra sau khi các cuộc đàm phán thương mại giữa hai quốc gia đổ vỡ, nhằm đáp trả các mức thuế mới từ phía Mỹ.",
+      "detailed_summary": "Chính phủ Canada quyết định áp dụng các biện pháp thuế trả đũa nhắm vào nhiều mặt hàng của Mỹ theo nguyên tắc ăn miếng trả miếng. Động thái này diễn ra sau khi các cuộc đàm phán thương mại song phương chính thức đổ vỡ, mở ra nguy cơ về một cuộc chiến tranh thương mại mới giữa hai quốc gia láng giềng.",
+      "causes": [
+        "Đàm phán thương mại giữa Canada và Mỹ đổ vỡ",
+        "Mỹ áp dụng các mức thuế mới đối với hàng hóa"
+      ],
+      "effects": [
+        "Canada áp thuế đáp trả lên nhiều hàng hóa của Mỹ",
+        "Quan hệ thương mại song phương căng thẳng"
+      ],
+      "affected_groups": [
+        "Doanh nghiệp xuất nhập khẩu của Mỹ",
+        "Doanh nghiệp sản xuất của Canada",
+        "Người tiêu dùng hai nước"
+      ],
+      "market_impact": "Gây bất ổn cho thị trường hàng hóa xuất nhập khẩu giữa Canada và Mỹ, ảnh hưởng đến chuỗi cung ứng khu vực Bắc Mỹ.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "diplomacy"
+      ],
+      "regions": [
+        "CA",
+        "US"
+      ],
+      "significance": "Sự đổ vỡ đàm phán thương mại và quyết định trả đũa thuế quan phản ánh sự gia tăng các biện pháp bảo hộ mậu dịch, có nguy cơ leo thang thành xung đột thương mại lớn.",
+      "unknowns": [
+        "Danh sách cụ thể các mặt hàng của Mỹ bị Canada áp thuế trả đũa",
+        "Mức thuế suất cụ thể mà Canada sẽ áp dụng"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên tuyên bố chính thức từ chính phủ Canada.",
+      "scenarios": [
+        {
+          "text": "Mỹ tiếp tục có các biện pháp đáp trả thuế quan bổ sung đối với Canada, làm leo thang căng thẳng thương mại.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Hai nước nối lại đàm phán và đạt được thỏa thuận nhượng bộ trước thời điểm tháng 9.",
+          "likelihood": "thấp"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Mỹ",
+          "target": "Canada",
+          "relation_type": "cause_effect",
+          "label": "Mỹ áp thuế mới dẫn đến việc Canada trả đũa"
+        },
+        {
+          "source": "Canada",
+          "target": "Mỹ",
+          "relation_type": "conflict",
+          "label": "Áp thuế trả đũa lẫn nhau"
+        }
+      ],
+      "entities": [
+        "Canada",
+        "Mỹ"
+      ],
+      "keywords": [
+        "Canada",
+        "Mỹ",
+        "thuế trả đũa",
+        "đàm phán thương mại",
+        "thuế quan"
+      ],
+      "importance": 80,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_1275ed00": {
+    "created_at": 1787458741719,
+    "expires_at": 1790050741719,
+    "version": "4.5",
+    "checksum": "2d3684d79c5ffc8795d911d95a898857",
+    "data": {
+      "cluster_title": "Căng thẳng ngoại giao do bế tắc trong chiến sự Iran",
+      "short_summary": "Tổng thống Trump gia tăng sức ép và trút giận lên các đồng minh trước tình trạng bế tắc trong nỗ lực buộc Iran khuất phục trong chiến sự, làm gia tăng căng thẳng địa chính trị quốc tế.",
+      "detailed_summary": "Chiến sự giữa Mỹ và Iran rơi vào tình trạng bế tắc trong nỗ lực buộc quốc gia này khuất phục. Điều này khiến Tổng thống Donald Trump gia tăng áp lực mạnh mẽ, đồng thời trút giận lên các đồng minh từng đóng vai trò là trung gian trong quan hệ ngoại giao.",
+      "causes": [
+        "Nỗ lực buộc Iran khuất phục không đạt kết quả như mong đợi",
+        "Chiến sự và tình hình ngoại giao với Iran rơi vào bế tắc"
+      ],
+      "effects": [
+        "Tổng thống Trump gia tăng sức ép chính trị",
+        "Quan hệ giữa Mỹ và các đồng minh trung gian trở nên căng thẳng"
+      ],
+      "affected_groups": [
+        "Chính quyền Mỹ",
+        "Các quốc gia đồng minh đóng vai trò trung gian",
+        "Iran"
+      ],
+      "market_impact": "Chưa ghi nhận tác động trực tiếp đáng kể nào đến thị trường tài chính toàn cầu từ thông tin này.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "diplomacy"
+      ],
+      "regions": [
+        "US",
+        "IR"
+      ],
+      "significance": "Sự kiện phản ánh áp lực gia tăng từ phía lãnh đạo Mỹ khi các mục tiêu chiến lược tại Trung Đông không đạt được tiến triển mong muốn, ảnh hưởng đến quan hệ ngoại giao với các đồng minh.",
+      "unknowns": [
+        "Danh tính cụ thể của các đồng minh bị trút giận",
+        "Các biện pháp sức ép cụ thể mà Tổng thống Trump đang áp dụng"
+      ],
+      "confidence_note": "Thông tin dựa trên bản tin ngắn gọn về động thái ngoại giao và chính trị, mức độ chi tiết còn hạn chế.",
+      "scenarios": [
+        {
+          "text": "Mỹ tiếp tục gia tăng các biện pháp trừng phạt và sức ép ngoại giao đối với Iran và các bên liên quan.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các đồng minh trung gian rút lui khỏi vai trò hòa giải do áp lực quá lớn từ phía Mỹ.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Tổng thống Trump",
+          "target": "Iran",
+          "relation_type": "conflict",
+          "label": "Chiến sự bế tắc và gia tăng sức ép"
+        },
+        {
+          "source": "Tổng thống Trump",
+          "target": "Đồng minh trung gian",
+          "relation_type": "conflict",
+          "label": "Trút giận do bế tắc chiến sự"
+        }
+      ],
+      "entities": [
+        "Donald Trump",
+        "Iran"
+      ],
+      "keywords": [
+        "Trump",
+        "Iran",
+        "chiến sự",
+        "đồng minh",
+        "ngoại giao"
+      ],
+      "importance": 80,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_545b7c22": {
+    "created_at": 1787458791368,
+    "expires_at": 1790050791368,
+    "version": "4.5",
+    "checksum": "22391f549757f6ed79d84182fdcab05b",
+    "data": {
+      "cluster_title": "Sinh nhật lần thứ 117 của cụ bà Ethel Caterham",
+      "short_summary": "Cụ bà Ethel Caterham đã vui vẻ đón mừng sinh nhật lần thứ 117 bên gia đình và bạn bè. Cụ tiết lộ bí quyết sống thọ đơn giản là luôn lắng nghe, thực hiện những điều mình yêu thích và đặc biệt là không tham gia vào các cuộc tranh cãi.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "categories": [
+        "Đời sống",
+        "Sức khỏe"
+      ],
+      "regions": [
+        "GLOBAL"
+      ],
+      "follow_up": "",
+      "entities": [
+        "Ethel Caterham"
+      ],
+      "keywords": [
+        "sinh nhật",
+        "sống thọ",
+        "Ethel Caterham",
+        "bí quyết sống thọ"
+      ],
+      "importance": 10,
+      "severity": 1,
+      "sentiment": 1,
+      "scope": "personal"
+    }
+  },
+  "evt_0486e00c": {
+    "created_at": 1787458829290,
+    "expires_at": 1790050829290,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
   }
 }
