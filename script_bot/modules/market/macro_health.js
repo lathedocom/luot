@@ -76,16 +76,10 @@ async function buildMacroHealth(topics, marketData = [], historyDb = { monthly: 
 
         // 2. Quét Tin tức tổng hợp (LỌC THẬT KỸ TIN TỨC LIÊN QUAN ĐẾN VN)
         const relatedTopics = recentTopics.filter(t => {
-            // Check xem tin có chứa từ khóa của chuyên mục đang xét (sản xuất, thương mại...) không
             const hasKeyword = category.keywords.some(kw => (t.title + ' ' + (t.short_summary || '')).toLowerCase().includes(kw));
-            
-            // [QUAN TRỌNG] Chống nhiễu địa lý: 
-            // Nếu sự kiện ở nước ngoài VÀ AI đã phán "Không tác động", lập tức VỨT BỎ, không cho cộng điểm.
             const isVN = t.regions && t.regions.includes('VN');
             const impactText = (t.vn_impact || "").toLowerCase();
             const hasNoImpactOnVN = impactText.includes('không tác động trực tiếp') || impactText.includes('không ảnh hưởng');
-            
-            // Chỉ lấy tin nếu: Nó xảy ra ở VN HOẶC nó thực sự có tác động đến VN
             return hasKeyword && (isVN || !hasNoImpactOnVN);
         });
 
@@ -124,18 +118,24 @@ async function buildMacroHealth(topics, marketData = [], historyDb = { monthly: 
             try {
                 logger.info(`[Economic Intelligence] Đang dùng AI phân tích thẻ: ${category.name}`);
                 
-                // Ép AI chỉ được đọc phần vn_impact thay vì tóm tắt sự kiện chung chung
                 const contextNews = relatedTopics.slice(0, 3).map(t => `- SỰ KIỆN: ${t.title}. TÁC ĐỘNG TỚI VN: ${t.vn_impact || t.short_summary}`).join('\n');
                 
-                const prompt = `Bạn là Chuyên gia Kinh tế Vĩ mô của Việt Nam. Hệ thống thuật toán đánh giá lĩnh vực "${category.name}" của Việt Nam đang ở trạng thái: ${status}.
-Căn cứ vào tác động của các sự kiện 7 ngày qua đối với Việt Nam:
+                // [SỬA LỖI ĐÓNG VAI] Bỏ câu nhập vai "Bạn là chuyên gia...". Ra lệnh thẳng
+                const prompt = `Lĩnh vực phân tích: "${category.name}". Trạng thái: ${status}.
+Sự kiện nổi bật trong 7 ngày qua:
 ${contextNews}
-Nhiệm vụ: Giải thích ngắn gọn tại sao lại có trạng thái này và dự báo hệ quả cho nền kinh tế Việt Nam. BẮT BUỘC TRẢ VỀ JSON:
+
+LỆNH TUYỆT ĐỐI: CHỈ trả về đúng JSON định dạng dưới đây. KHÔNG giải thích. KHÔNG đóng vai (roleplay). KHÔNG kèm text bên ngoài ngoặc nhọn.
 {
-  "reason_from_news": "1 câu giải thích nguyên nhân tác động đến VN rút ra từ tin tức",
-  "ai_meaning": "Hệ quả thực tiễn ngắn gọn cho doanh nghiệp/người dân Việt Nam (thay thế cho nhận định máy móc)"
+  "reason_from_news": "1 câu nguyên nhân rút ra từ sự kiện",
+  "ai_meaning": "1 câu hệ quả thực tiễn cho doanh nghiệp/người dân"
 }`;
-                const aiResp = await gateway.executeTask('SHORT_SUMMARY', prompt); 
+                // [SỬA LỖI JSON] Cài System Instruction cực mạnh ép AI khóa mọi văn bản tự do
+                const sysInstruction = "BẠN LÀ MÁY XUẤT JSON. CHỈ IN RA DUY NHẤT MỘT ĐỐI TƯỢNG JSON VÀ TUYỆT ĐỐI KHÔNG CÓ BẤT KỲ VĂN BẢN NÀO KHÁC.";
+
+                // Gửi kèm sysInstruction vào luồng xử lý
+                const aiResp = await gateway.executeTask('SHORT_SUMMARY', prompt, sysInstruction); 
+                
                 if (aiResp && aiResp.reason_from_news) {
                     reasons.unshift(aiResp.reason_from_news);
                     aiInsightText = aiResp.ai_meaning;
@@ -159,7 +159,7 @@ Nhiệm vụ: Giải thích ngắn gọn tại sao lại có trạng thái này 
             trend_icon: trendIcon,
             reasons: uniqueReasons,
             target_audience: insight.target, 
-            meaning: aiInsightText || insight.meaning, // Ưu tiên giải thích AI
+            meaning: aiInsightText || insight.meaning, 
             impact_level: impactLevel, 
             duration: insight.duration
         });
