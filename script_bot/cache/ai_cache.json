@@ -49003,5 +49003,839 @@
       "sentiment": 0,
       "scope": "business"
     }
+  },
+  "evt_46b4cc49": {
+    "created_at": 1787573887601,
+    "expires_at": 1790165887601,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_c87f65f5": {
+    "created_at": 1787573930910,
+    "expires_at": 1790165930910,
+    "version": "4.5",
+    "checksum": "538f0403f3b0f8b9a33dea6bb01b40fa",
+    "data": {
+      "cluster_title": "Máy bay Yak-52 Ukraine truy đuổi UAV Nga",
+      "short_summary": "Video mới công bố cho thấy máy bay Yak-52 của Ukraine đang bám đuổi sát một thiết bị bay không người lái (UAV) của Nga. Hành vi bay vòng quanh của UAV Nga khi bị truy đuổi hiện chưa rõ là đang thực hiện động tác né tránh hay gặp sự cố kỹ thuật.",
+      "detailed_summary": "Một video mới được công bố ghi lại khoảnh khắc máy bay Yak-52 của Ukraine bay bám sát và truy đuổi một máy bay không người lái của Nga. Trong video, thiết bị bay không người lái liên tục quần vòng khi bị truy đuổi, hiện chưa rõ đây là hành động cơ động né tránh hay do phương tiện gặp sự cố kỹ thuật.",
+      "causes": [
+        "Sự xuất hiện của máy bay không người lái Nga trên không phận Ukraine",
+        "Hoạt động tuần tra và đánh chặn của lực lượng vũ trang Ukraine"
+      ],
+      "effects": [
+        "Ghi lại hình thức tác chiến không đối không giữa máy bay cánh quạt và máy bay không người lái",
+        "Tăng cường thông tin về các hoạt động quân sự chiến thuật trên không"
+      ],
+      "affected_groups": [
+        "Lực lượng vũ trang Ukraine",
+        "Lực lượng quân sự Nga"
+      ],
+      "market_impact": "Không có tác động đáng kể đến thị trường tài chính hoặc kinh tế.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "military"
+      ],
+      "regions": [
+        "UA",
+        "RU"
+      ],
+      "significance": "Sự kiện phản ánh các hình thức chiến thuật quân sự mới và sự hiện diện của các phương tiện bay trong xung đột.",
+      "unknowns": [
+        "Mục đích thực sự của động thái quần vòng từ máy bay không người lái Nga",
+        "Kết quả cuối cùng của cuộc truy đuổi giữa hai phương tiện"
+      ],
+      "confidence_note": "Thông tin dựa trên video mới được công bố, độ tin cậy trung bình do thiếu chi tiết bối cảnh đầy đủ.",
+      "scenarios": [
+        {
+          "text": "Máy bay không người lái Nga bị bắn hạ hoặc buộc phải rời khỏi khu vực.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Máy bay không người lái thoát khỏi sự truy đuổi nhờ cơ động hoặc sự cố của bên đuổi theo.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Ukraine",
+          "target": "Nga",
+          "relation_type": "conflict",
+          "label": "Truy đuổi quân sự"
+        }
+      ],
+      "entities": [
+        "Ukraine",
+        "Nga",
+        "Yak-52",
+        "UAV"
+      ],
+      "keywords": [
+        "Yak-52",
+        "UAV Nga",
+        "Ukraine",
+        "truy đuổi",
+        "xung đột quân sự"
+      ],
+      "importance": 75,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_4060e62f": {
+    "created_at": 1787573990753,
+    "expires_at": 1790165990753,
+    "version": "4.5",
+    "checksum": "920737baa4fe81bf614c305f0622e912",
+    "data": {
+      "cluster_title": "Anh sắp chuyển giao bí quyết tên lửa Storm Shadow cho Ukraine",
+      "short_summary": "Thủ tướng Anh dự kiến công bố thỏa thuận cho phép Ukraine tiếp cận dữ liệu mật về tên lửa Storm Shadow. Việc chuyển giao bí quyết này nhằm hỗ trợ Ukraine tự phát triển phiên bản nội địa, giúp tăng cường năng lực phòng thủ quân sự.",
+      "detailed_summary": "Trong chuyến thăm thủ đô Kiev, Thủ tướng Anh dự kiến công bố thỏa thuận cung cấp cho Ukraine quyền tiếp cận các dữ liệu mật. Việc này nhằm giúp Ukraine phát triển phiên bản nội địa của dòng tên lửa hành trình Storm Shadow.",
+      "causes": [
+        "Nhu cầu tăng cường năng lực quốc phòng nội địa của Ukraine",
+        "Chính sách hỗ trợ quân sự lâu dài của Anh dành cho Ukraine"
+      ],
+      "effects": [
+        "Ukraine tiếp cận được dữ liệu mật về tên lửa Storm Shadow",
+        "Ukraine có khả năng tự phát triển phiên bản tên lửa nội địa"
+      ],
+      "affected_groups": [
+        "Quân đội Ukraine",
+        "Bộ Quốc phòng Anh"
+      ],
+      "market_impact": "Không có tác động trực tiếp đến thị trường tài chính hoặc kinh tế thương mại.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "military",
+        "diplomacy"
+      ],
+      "regions": [
+        "GB",
+        "UA"
+      ],
+      "significance": "Sự kiện đánh dấu bước tiến mới trong hợp tác quốc phòng song phương, giúp Ukraine chủ động hơn trong việc sản xuất vũ khí công nghệ cao.",
+      "unknowns": [
+        "Thời điểm cụ thể thỏa thuận được ký kết và triển khai",
+        "Chi tiết kỹ thuật cụ thể của dữ liệu mật được chia sẻ"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên kế hoạch chuyến thăm và công bố chính thức của lãnh đạo.",
+      "scenarios": [
+        {
+          "text": "Anh chính thức ký kết thỏa thuận chuyển giao dữ liệu mật, giúp Ukraine nhanh chóng bắt tay vào chế tạo phiên bản tên lửa nội địa.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Thỏa thuận bị hoãn lại do các yếu tố về bảo mật kỹ thuật hoặc tình hình chiến sự thay đổi đột ngột.",
+          "likelihood": "thấp"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Anh",
+          "target": "Ukraine",
+          "relation_type": "cooperation",
+          "label": "Hợp tác chuyển giao công nghệ quốc phòng"
+        },
+        {
+          "source": "Thủ tướng Anh",
+          "target": "Kiev",
+          "relation_type": "neutral",
+          "label": "Thăm chính thức"
+        }
+      ],
+      "entities": [
+        "Anh",
+        "Ukraine",
+        "Storm Shadow"
+      ],
+      "keywords": [
+        "tên lửa Storm Shadow",
+        "bí quyết quân sự",
+        "Ukraine",
+        "Anh",
+        "quốc phòng"
+      ],
+      "importance": 85,
+      "severity": 4,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_3e18a7d9": {
+    "created_at": 1787574060368,
+    "expires_at": 1790166060368,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_1b849c61": {
+    "created_at": 1787574138769,
+    "expires_at": 1790166138769,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_12d3f324": {
+    "created_at": 1787574181942,
+    "expires_at": 1790166181942,
+    "version": "4.5",
+    "checksum": "b957ecaef1d51647cdca29687baf7fed",
+    "data": {
+      "cluster_title": "...",
+      "short_summary": "...",
+      "detailed_summary": "Vào ngày 24-8, một phái đoàn nghị sĩ Nhật Bản đại diện cho nhiều đảng phái khác nhau, trong đó có sự tham gia của thành viên thuộc đảng cầm quyền của Thủ tướng Takaichi Sanae, đã khởi hành đi Bắc Kinh. Chuyến đi nhằm mục đích tiến hành các cuộc gặp gỡ và làm việc với giới chức trách Trung Quốc.",
+      "causes": [
+        "Nhu cầu đối thoại và ngoại giao nghị viện giữa các nhà lập pháp Nhật Bản và quan chức Trung Quốc",
+        "Sáng kiến trao đổi giữa các đảng phái chính trị của hai nước"
+      ],
+      "effects": [
+        "Thúc đẩy các cuộc gặp gỡ và trao đổi ngoại giao giữa nghị sĩ Nhật Bản và quan chức Trung Quốc",
+        "Mở ra kênh giao tiếp chính trị song phương"
+      ],
+      "affected_groups": [
+        "Chính phủ Nhật Bản",
+        "Chính phủ Trung Quốc",
+        "Giới lập pháp hai nước"
+      ],
+      "market_impact": "Không có tác động trực tiếp đáng kể nào đến thị trường tài chính.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "diplomacy"
+      ],
+      "regions": [
+        "JP",
+        "CN"
+      ],
+      "significance": "Chuyến thăm thể hiện nỗ lực duy trì kênh đối thoại ngoại giao giữa các cơ quan lập pháp của Nhật Bản và Trung Quốc trong bối cảnh quan hệ song phương cần sự gắn kết.",
+      "unknowns": [
+        "Nội dung chi tiết và chương trình nghị sự cụ thể của các cuộc gặp",
+        "Phản ứng chính thức và các tuyên bố từ phía Bắc Kinh sau các buổi làm việc"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên nguồn tin tức thời sự ghi nhận ngày diễn ra sự kiện.",
+      "scenarios": [
+        {
+          "text": "Hai bên duy trì đối thoại mang tính xây dựng, góp phần làm dịu các căng thẳng ngoại giao tiềm ẩn.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các cuộc gặp chỉ mang tính hình thức, không đạt được bước tiến đáng kể nào trong quan hệ song phương.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Nhóm nghị sĩ Nhật Bản",
+          "target": "Bắc Kinh",
+          "relation_type": "cooperation",
+          "label": "Thực hiện chuyến thăm và gặp gỡ quan chức"
+        }
+      ],
+      "entities": [],
+      "keywords": [],
+      "importance": 75,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "national"
+    }
+  },
+  "evt_7791725c": {
+    "created_at": 1787574242311,
+    "expires_at": 1790166242311,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_b5f92215": {
+    "created_at": 1787574273016,
+    "expires_at": 1790166273016,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_dfe82567": {
+    "created_at": 1787574321027,
+    "expires_at": 1790166321027,
+    "version": "4.5",
+    "checksum": "27ca0ab21d835a80fb38e01d9c20414f",
+    "data": {
+      "cluster_title": "Mỹ phát động chiến tranh kinh tế với Iran",
+      "short_summary": "Mỹ ấn định thời điểm khởi động chiến dịch tấn công tài chính quy mô lớn nhất lịch sử nhắm vào Iran vào ngày 24/8 (giờ Mỹ). Sự kiện này được xem là một bước đi quyết liệt trong chiến tranh kinh tế nhằm gây áp lực cực lớn lên quốc gia này.",
+      "detailed_summary": "Mỹ đã chính thức ấn định thời điểm phát động chiến dịch tấn công tài chính lớn nhất từ trước đến nay nhằm vào Iran. Theo thông tin, chiến dịch này sẽ bắt đầu từ 0 giờ ngày 24 tháng 8 theo giờ Mỹ, đánh dấu một bước leo thang mới trong chiến tranh kinh tế giữa hai quốc gia.",
+      "causes": [
+        "Căng thẳng ngoại giao và chính trị kéo dài giữa Mỹ và Iran",
+        "Chiến lược gia tăng áp lực kinh tế và tài chính lên Tehran của chính quyền Mỹ"
+      ],
+      "effects": [
+        "Gia tăng áp lực tài chính nghiêm trọng lên nền kinh tế Iran",
+        "Tác động đến thị trường tài chính và năng lượng toàn cầu"
+      ],
+      "affected_groups": [
+        "Chính phủ Iran",
+        "Hệ thống tài chính Iran",
+        "Các thị trường năng lượng và tài chính quốc tế"
+      ],
+      "market_impact": "Có thể gây ra biến động mạnh trên thị trường năng lượng và tài chính quốc tế do tâm lý lo ngại rủi ro địa chính trị.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "finance"
+      ],
+      "regions": [
+        "US",
+        "IR"
+      ],
+      "significance": "Đánh dấu bước ngoặt quan trọng trong việc sử dụng công cụ tài chính làm vũ khí chiến lược trong quan hệ quốc tế.",
+      "unknowns": [
+        "Chi tiết cụ thể về các biện pháp trừng phạt tài chính trong chiến dịch",
+        "Phản ứng đáp trả chính xác từ phía Iran"
+      ],
+      "confidence_note": "Thông tin dựa trên tuyên bố chính thức về thời điểm và quy mô của chiến dịch.",
+      "scenarios": [
+        {
+          "text": "Mỹ triển khai toàn diện các biện pháp trừng phạt tài chính quy mô lớn, khiến nền kinh tế Iran đối mặt với khủng hoảng trầm trọng.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Iran tìm kiếm các biện pháp lẩn tránh trừng phạt thông qua hợp tác với các quốc gia thứ ba để giảm thiểu thiệt hại.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Mỹ",
+          "target": "Iran",
+          "relation_type": "conflict",
+          "label": "Chiến tranh kinh tế và tấn công tài chính"
+        }
+      ],
+      "entities": [
+        "Mỹ",
+        "Iran"
+      ],
+      "keywords": [
+        "chiến tranh kinh tế",
+        "tấn công tài chính",
+        "Mỹ",
+        "Iran"
+      ],
+      "importance": 90,
+      "severity": 5,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_0ef0f6e9": {
+    "created_at": 1787574363067,
+    "expires_at": 1790166363067,
+    "version": "4.5",
+    "checksum": "3e62ba146e5d418dacbd9fa33f878f80",
+    "data": {
+      "cluster_title": "Cổ phiếu PNJ tăng mạnh sau khi được minh oan liên quan vụ buôn lậu",
+      "short_summary": "Cổ phiếu PNJ tăng mạnh 4 phiên liên tiếp, đạt mức gần 43.000 đồng sau khi cơ quan điều tra kết luận doanh nghiệp không liên quan đến vụ án buôn lậu kim cương, giúp gỡ bỏ áp lực pháp lý.",
+      "detailed_summary": "Cổ phiếu PNJ ghi nhận chuỗi tăng giá mạnh mẽ với 4 phiên liên tiếp đi lên, trong đó có 2 phiên chạm mức giá trần, đẩy thị giá lên gần 43.000 đồng một cổ phiếu. Động lực chính đến từ việc cơ quan điều tra chính thức có kết luận khẳng định doanh nghiệp không liên quan đến vụ án buôn lậu kim cương trước đó.",
+      "causes": [
+        "Cơ quan điều tra kết luận doanh nghiệp không liên quan vụ buôn lậu kim cương",
+        "Tâm lý nhà đầu tư được giải tỏa sau khi những thông tin tiêu cực bị bác bỏ"
+      ],
+      "effects": [
+        "Cổ phiếu PNJ nối dài mạch tăng 4 phiên liên tiếp",
+        "Cổ phiếu PNJ có 2 phiên chạm giá trần",
+        "Thị giá cổ phiếu PNJ tăng lên gần 43.000 đồng"
+      ],
+      "affected_groups": [
+        "Cổ đông và nhà đầu tư nắm giữ mã cổ phiếu PNJ",
+        "Doanh nghiệp PNJ"
+      ],
+      "market_impact": "Giải tỏa tâm lý tiêu cực cho nhà đầu tư, giúp dòng tiền quay trở lại và tạo đà hồi phục mạnh mẽ cho cổ phiếu PNJ trên thị trường chứng khoán.",
+      "vn_impact": "Củng cố lòng tin của nhà đầu tư đối với tính minh bạch và tuân thủ pháp luật của các doanh nghiệp lớn niêm yết trên thị trường chứng khoán Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "finance"
+      ],
+      "regions": [
+        "VN"
+      ],
+      "significance": "Sự việc minh oan pháp lý đã trực tiếp tháo gỡ rủi ro tâm lý và vực dậy giá trị cổ phiếu của một doanh nghiệp lớn trên thị trường.",
+      "unknowns": [
+        "Phản ứng tiếp theo của dòng tiền lớn trên thị trường đối với cổ phiếu PNJ",
+        "Kết quả kinh doanh cụ thể trong quý hiện tại của doanh nghiệp"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên kết luận chính thức của cơ quan điều tra và diễn biến thực tế trên thị trường chứng khoán.",
+      "scenarios": [
+        {
+          "text": "Cổ phiếu PNJ tiếp tục duy trì đà tăng trưởng hoặc ổn định ở mức giá cao khi tâm lý thị trường hoàn toàn được ổn định.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Cổ phiếu có thể chịu áp lực chốt lời ngắn hạn từ các nhà đầu tư đã mua ở vùng giá thấp trong những phiên vừa qua.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Cơ quan điều tra",
+          "target": "PNJ",
+          "relation_type": "cause_effect",
+          "label": "Kết luận không liên quan vụ buôn lậu kim cương"
+        },
+        {
+          "source": "Kết luận không liên quan vụ buôn lậu kim cương",
+          "target": "Cổ phiếu PNJ",
+          "relation_type": "cause_effect",
+          "label": "Làm tăng trần cổ phiếu PNJ liên tiếp"
+        }
+      ],
+      "entities": [
+        "PNJ"
+      ],
+      "keywords": [
+        "PNJ",
+        "cổ phiếu",
+        "tăng trần",
+        "buôn lậu kim cương",
+        "thị trường chứng khoán"
+      ],
+      "importance": 80,
+      "severity": 3,
+      "sentiment": 1,
+      "scope": "business"
+    }
+  },
+  "evt_3c9cbb7a": {
+    "created_at": 1787574415607,
+    "expires_at": 1790166415607,
+    "version": "4.5",
+    "checksum": "e37b8a2c82d9d6ebd92bc2eab70938ba",
+    "data": {
+      "cluster_title": "Tách dự án điện hạt nhân Ninh Thuận thành 3 dự án độc lập",
+      "short_summary": "Dự án điện hạt nhân Ninh Thuận được chia tách thành ba dự án độc lập, bao gồm việc đầu tư xây dựng nhà máy điện hạt nhân Ninh Thuận 1, 2 và một dự án riêng về bồi thường, hỗ trợ, tái định cư.",
+      "detailed_summary": "Dự án điện hạt nhân Ninh Thuận chính thức được chia tách thành ba dự án độc lập bao gồm: đầu tư xây dựng nhà máy điện hạt nhân Ninh Thuận 1, đầu tư xây dựng nhà máy điện hạt nhân Ninh Thuận 2, và dự án bồi thường, hỗ trợ, tái định cư.",
+      "causes": [
+        "Yêu cầu quản lý và triển khai chi tiết các hợp phần của dự án lớn",
+        "Tối ưu hóa công tác bồi thường và hỗ trợ tái định cư cho người dân"
+      ],
+      "effects": [
+        "Thành lập ba dự án độc lập phục vụ cho việc xây dựng hai nhà máy điện hạt nhân và công tác tái định cư",
+        "Làm rõ trách nhiệm và nguồn lực cho từng hợp phần cụ thể"
+      ],
+      "affected_groups": [
+        "Người dân khu vực tái định cư",
+        "Cơ quan quản lý năng lượng quốc gia"
+      ],
+      "market_impact": "Tạo cơ sở pháp lý và triển khai rõ ràng hơn cho các hạng mục đầu tư hạ tầng năng lượng.",
+      "vn_impact": "Tối ưu hóa quá trình triển khai dự án trọng điểm quốc gia về năng lượng tại Ninh Thuận, nâng cao hiệu quả quản lý và thực hiện công tác giải phóng mặt bằng, tái định cư.",
+      "follow_up": "",
+      "categories": [
+        "energy",
+        "economy"
+      ],
+      "regions": [
+        "VN"
+      ],
+      "significance": "Việc phân tách dự án giúp chuyên môn hóa từng hợp phần, tạo điều kiện thuận lợi hơn cho việc triển khai xây dựng nhà máy điện hạt nhân và chăm lo đời sống người dân trong vùng dự án.",
+      "unknowns": [
+        "Tiến độ cụ thể của từng dự án sau khi tách",
+        "Tổng mức đầu tư chi tiết cho từng cấu phần độc lập"
+      ],
+      "confidence_note": "Thông tin rõ ràng, dựa trên quyết định phân tách dự án đã công bố.",
+      "scenarios": [
+        {
+          "text": "Công tác bồi thường và tái định cư được đẩy nhanh tiến độ nhờ tách thành dự án độc lập.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Quá trình triển khai xây dựng hai nhà máy điện hạt nhân gặp vướng mắc về nguồn vốn và kỹ thuật.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Dự án điện hạt nhân Ninh Thuận",
+          "target": "Nhà máy điện hạt nhân Ninh Thuận 1",
+          "relation_type": "cause_effect",
+          "label": "Tách thành dự án độc lập"
+        },
+        {
+          "source": "Dự án điện hạt nhân Ninh Thuận",
+          "target": "Nhà máy điện hạt nhân Ninh Thuận 2",
+          "relation_type": "cause_effect",
+          "label": "Tách thành dự án độc lập"
+        },
+        {
+          "source": "Dự án điện hạt nhân Ninh Thuận",
+          "target": "Bồi thường, hỗ trợ, tái định cư",
+          "relation_type": "cause_effect",
+          "label": "Tách thành dự án độc lập"
+        }
+      ],
+      "entities": [
+        "Dự án điện hạt nhân Ninh Thuận 1",
+        "Dự án điện hạt nhân Ninh Thuận 2",
+        "Dự án bồi thường, hỗ trợ, tái định cư"
+      ],
+      "keywords": [
+        "điện hạt nhân",
+        "Ninh Thuận",
+        "tách dự án",
+        "năng lượng",
+        "tái định cư"
+      ],
+      "importance": 80,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "national"
+    }
+  },
+  "evt_358c8747": {
+    "created_at": 1787574453621,
+    "expires_at": 1790166453621,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_16310a33": {
+    "created_at": 1787574485169,
+    "expires_at": 1790166485169,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_79511837": {
+    "created_at": 1787574533971,
+    "expires_at": 1790166533971,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_4c1d05f4": {
+    "created_at": 1787574584659,
+    "expires_at": 1790166584659,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_ed7da8ca": {
+    "created_at": 1787574619942,
+    "expires_at": 1790166619942,
+    "version": "4.5",
+    "checksum": "9cadc32dc193f049f9786120ebb2d385",
+    "data": {
+      "cluster_title": "Ukraine thay đổi chiến thuật quân sự do thiếu hụt tên lửa Patriot",
+      "short_summary": "Ukraine đang chuyển hướng chiến thuật sang săn lùng các bệ phóng tên lửa đạn đạo của Nga nhằm ứng phó với tình trạng cạn kiệt đạn tên lửa Patriot, một động thái phản ứng trước sự thiếu hụt nguồn cung vũ khí phòng không quan trọng.",
+      "detailed_summary": "Do cạn kiệt đạn tên lửa phòng thủ Patriot, Ukraine buộc phải điều chỉnh chiến thuật chiến đấu. Thay vì đánh chặn các đợt tấn công từ đối phương, lực lượng Ukraine đã mở chiến dịch chủ động săn lùng các bệ phóng tên lửa đạn đạo của Nga.",
+      "causes": [
+        "Ukraine cạn kiệt đạn tên lửa phòng không Patriot",
+        "Áp lực từ các cuộc tấn công bằng tên lửa đạn đạo của Nga"
+      ],
+      "effects": [
+        "Ukraine thay đổi chiến thuật quân sự từ phòng thủ sang săn lùng bệ phóng",
+        "Gia tăng rủi ro và cường độ giao tranh tại các khu vực tiền tuyến"
+      ],
+      "affected_groups": [
+        "Quân đội Ukraine",
+        "Quân đội Nga",
+        "Dân thường Ukraine"
+      ],
+      "market_impact": "Không có thông tin về tác động trực tiếp đến thị trường tài chính hoặc kinh tế.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "military",
+        "politics"
+      ],
+      "regions": [
+        "UA",
+        "RU"
+      ],
+      "significance": "Sự kiện phản ánh áp lực thiếu hụt nguồn lực quốc phòng nghiêm trọng của Ukraine, buộc họ phải mạo hiểm thay đổi chiến thuật đối phó với hỏa lực áp đảo từ Nga.",
+      "unknowns": [
+        "Số lượng đạn tên lửa Patriot còn lại chính xác của Ukraine là bao nhiêu",
+        "Hiệu quả thực tế của chiến dịch săn lùng bệ phóng tên lửa Nga"
+      ],
+      "confidence_note": "Thông tin được tổng hợp từ nguồn báo chí chính thống nhưng cần thêm dữ liệu tình báo chiến trường để kiểm chứng độ hiệu quả của chiến thuật mới.",
+      "scenarios": [
+        {
+          "text": "Ukraine gặp nhiều khó khăn hơn trong việc bảo vệ các mục tiêu quan trọng do thiếu đạn đánh chặn.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Chiến thuật săn lùng bệ phóng mang lại hiệu quả bất ngờ, làm giảm tần suất các cuộc tập kích của Nga.",
+          "likelihood": "thấp"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Ukraine",
+          "target": "Nga",
+          "relation_type": "conflict",
+          "label": "Tiến hành chiến dịch săn lùng bệ phóng tên lửa"
+        },
+        {
+          "source": "Cạn kiệt tên lửa Patriot",
+          "target": "Ukraine thay đổi chiến thuật",
+          "relation_type": "cause_effect",
+          "label": "Nguyên nhân dẫn đến thay đổi chiến thuật"
+        }
+      ],
+      "entities": [
+        "Ukraine",
+        "Nga",
+        "Patriot"
+      ],
+      "keywords": [
+        "Ukraine",
+        "Nga",
+        "tên lửa Patriot",
+        "chiến thuật quân sự",
+        "thiếu hụt đạn dược"
+      ],
+      "importance": 80,
+      "severity": 4,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_91f14252": {
+    "created_at": 1787574665292,
+    "expires_at": 1790166665292,
+    "version": "4.5",
+    "checksum": "c93b522d97652d9427d7b3956ddf1105",
+    "data": {
+      "cluster_title": "Nga hoài nghi đề xuất chấm dứt xung đột từ Ukraine",
+      "short_summary": "Nga bày tỏ sự thiếu tin tưởng đối với đề xuất nhằm chấm dứt cuộc xung đột kéo dài hơn 4 năm của Ukraine, cho thấy triển vọng đạt được thỏa thuận hòa bình vẫn còn rất mong manh và đầy thách thức.",
+      "detailed_summary": "Nga đã đưa ra phản hồi chính thức, thể hiện thái độ hoài nghi về đề xuất của Ukraine nhằm chấm dứt cuộc xung đột đã kéo dài hơn 4 năm giữa hai quốc gia.",
+      "causes": [
+        "Ukraine đưa ra đề xuất chấm dứt xung đột",
+        "Xung đột kéo dài giữa Nga và Ukraine"
+      ],
+      "effects": [
+        "Nga bày tỏ sự hoài nghi về đề xuất của Ukraine",
+        "Quá trình đàm phán hòa bình tiếp tục gặp trở ngại"
+      ],
+      "affected_groups": [
+        "Chính phủ Nga",
+        "Chính phủ Ukraine"
+      ],
+      "market_impact": "Thông tin về phản ứng của Nga hiện chưa tạo ra tác động lớn trực tiếp đến thị trường tài chính toàn cầu.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "diplomacy"
+      ],
+      "regions": [
+        "RU",
+        "UA"
+      ],
+      "significance": "Sự kiện phản ánh khoảng cách lớn trong lập trường giữa Nga và Ukraine, cho thấy tiến trình hòa bình vẫn còn nhiều thách thức.",
+      "unknowns": [
+        "Nội dung chi tiết cụ thể của đề xuất do Ukraine đưa ra",
+        "Phản ứng tiếp theo của Ukraine và các bên trung gian quốc tế"
+      ],
+      "confidence_note": "Thông tin dựa trên bản tin ngắn từ cơ quan báo chí, mức độ xác thực của sự phản hồi từ Nga là chính xác theo ngữ cảnh bài báo.",
+      "scenarios": [
+        {
+          "text": "Hai bên tiếp tục duy trì lập trường hiện tại và chưa đạt được đồng thuận về hòa bình.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các bên trung gian quốc tế can thiệp để thúc đẩy một vòng đàm phán mới dựa trên các đề xuất điều chỉnh.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Ukraine",
+          "target": "Nga",
+          "relation_type": "conflict",
+          "label": "Đề xuất chấm dứt xung đột bị hoài nghi"
+        }
+      ],
+      "entities": [
+        "Nga",
+        "Ukraine"
+      ],
+      "keywords": [
+        "Nga",
+        "Ukraine",
+        "xung đột",
+        "hòa bình",
+        "đề xuất chấm dứt xung đột"
+      ],
+      "importance": 90,
+      "severity": 4,
+      "sentiment": -1,
+      "scope": "global"
+    }
   }
 }
