@@ -52021,5 +52021,102 @@
       "sentiment": 0,
       "scope": "business"
     }
+  },
+  "evt_bac10de6": {
+    "created_at": 1787699888637,
+    "expires_at": 1790291888637,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_edde0bf9": {
+    "created_at": 1787699941228,
+    "expires_at": 1790291941228,
+    "version": "4.5",
+    "checksum": "0d46afdd508ebb297be2df2c9dfebedc",
+    "data": {
+      "cluster_title": "Mỹ đề xuất tăng phí thị thực H-1B lên hơn 100.000 USD",
+      "short_summary": "Chính quyền Tổng thống Donald Trump đề xuất tăng mức phí thị thực H-1B dành cho lao động tay nghề cao lên mức 103.265 USD. Đề xuất này nhằm thay đổi chính sách di trú lao động và có thể gây áp lực lớn lên chi phí tuyển dụng của các doanh nghiệp.",
+      "detailed_summary": "Chính quyền của Tổng thống Donald Trump đã đưa ra đề xuất áp dụng mức phí mới rất cao, lên tới 103.265 USD, đối với loại thị thực H-1B chuyên cấp cho lao động có tay nghề cao làm việc tại Mỹ.",
+      "causes": [
+        "Chính sách quản lý lao động nước ngoài của chính quyền Tổng thống Donald Trump"
+      ],
+      "effects": [
+        "Tăng mạnh chi phí tuyển dụng lao động tay nghề cao nước ngoài tại Mỹ",
+        "Gây tranh cãi và áp lực lớn cho các doanh nghiệp sử dụng thị thực H-1B"
+      ],
+      "affected_groups": [
+        "Lao động tay nghề cao nước ngoài",
+        "Các doanh nghiệp Mỹ tuyển dụng lao động quốc tế",
+        "Người lao động nộp hồ sơ xin thị thực H-1B"
+      ],
+      "market_impact": "Làm gia tăng đáng kể chi phí nhân sự đối với các doanh nghiệp phụ thuộc vào nguồn lao động tay nghề cao nước ngoài tại Mỹ, đặc biệt là các công ty công nghệ.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "business"
+      ],
+      "regions": [
+        "US"
+      ],
+      "significance": "Động thái này phản ánh sự thay đổi mạnh mẽ trong chính sách nhập cư và thị thực lao động nhằm hạn chế hoặc thắt chặt việc sử dụng lao động nước ngoài tại Mỹ.",
+      "unknowns": [
+        "Thời điểm chính thức áp dụng mức phí mới",
+        "Phản ứng và quyết định cuối cùng của cơ quan lập pháp hoặc tòa án Mỹ đối với đề xuất này"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên tuyên bố từ chính quyền.",
+      "scenarios": [
+        {
+          "text": "Đề xuất được thông qua và chính thức áp dụng, khiến chi phí tuyển dụng lao động nước ngoài tăng vọt.",
+          "likelihood": "trung bình"
+        },
+        {
+          "text": "Đề xuất vấp phải sự phản đối mạnh mẽ từ giới doanh nghiệp và bị đình chỉ hoặc sửa đổi.",
+          "likelihood": "cao"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Chính quyền Tổng thống Donald Trump",
+          "target": "Thị thực H-1B",
+          "relation_type": "cause_effect",
+          "label": "Đề xuất áp mức phí mới cao hơn cho loại thị thực này"
+        }
+      ],
+      "entities": [
+        "Mỹ",
+        "Donald Trump"
+      ],
+      "keywords": [
+        "thị thực H-1B",
+        "phí thị thực",
+        "lao động tay nghề cao",
+        "Mỹ",
+        "Donald Trump"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "business"
+    }
   }
 }
