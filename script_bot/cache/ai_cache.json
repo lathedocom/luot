@@ -52118,5 +52118,315 @@
       "sentiment": -1,
       "scope": "business"
     }
+  },
+  "evt_1f533ac9": {
+    "created_at": 1787717892007,
+    "expires_at": 1790309892007,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_905e0c5f": {
+    "created_at": 1787717957344,
+    "expires_at": 1790309957344,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_73a8a71a": {
+    "created_at": 1787718030156,
+    "expires_at": 1790310030156,
+    "version": "4.5",
+    "checksum": "d38d1e89e2f8addc2ff96b0d28b48976",
+    "data": {
+      "cluster_title": "Mỹ tạm dừng phỏng vấn visa toàn cầu",
+      "short_summary": "Chính quyền Tổng thống Donald Trump thông báo tạm dừng tất cả các cuộc hẹn phỏng vấn xin visa đối với người nộp đơn trên phạm vi toàn thế giới, gây tác động lớn đến quy trình di trú và di chuyển quốc tế.",
+      "detailed_summary": "Chính quyền của Tổng thống Mỹ Donald Trump đã chính thức đưa ra thông báo về việc tạm dừng tất cả các cuộc hẹn phỏng vấn xin visa. Quyết định này áp dụng đối với những người nộp đơn xin thị thực ở khắp nơi trên thế giới.",
+      "causes": [
+        "Quyết định từ chính quyền Tổng thống Donald Trump"
+      ],
+      "effects": [
+        "Người nộp đơn xin visa trên toàn cầu phải tạm hoãn lịch phỏng vấn",
+        "Hoạt động cấp thị thực của Mỹ trên toàn thế giới bị đình trệ"
+      ],
+      "affected_groups": [
+        "Người nộp đơn xin visa trên toàn cầu"
+      ],
+      "market_impact": "Gây gián đoạn và không chắc chắn cho các kế hoạch di chuyển quốc tế, du học, lao động và kinh doanh liên quan đến Mỹ.",
+      "vn_impact": "Công dân Việt Nam có hồ sơ xin visa Mỹ sẽ bị hoãn lịch phỏng vấn, ảnh hưởng trực tiếp đến kế hoạch du học, du lịch, thăm thân và công tác.",
+      "follow_up": "",
+      "categories": [
+        "diplomacy",
+        "politics"
+      ],
+      "regions": [
+        "US",
+        "GLOBAL"
+      ],
+      "significance": "Sự kiện này thể hiện sự thay đổi lớn trong chính sách quản lý biên giới và xuất nhập cảnh của Mỹ dưới thời chính quyền mới, gây tác động tức thì trên quy mô toàn cầu.",
+      "unknowns": [
+        "Thời gian cụ thể việc tạm dừng phỏng vấn sẽ kéo dài bao lâu",
+        "Các trường hợp ngoại lệ nào được miễn trừ khỏi lệnh tạm dừng này"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên thông báo chính thức từ chính quyền Mỹ.",
+      "scenarios": [
+        {
+          "text": "Lệnh tạm dừng được kéo dài để chính quyền rà soát toàn bộ quy trình xét duyệt visa.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các cơ quan ngoại giao Mỹ sớm khôi phục một phần dịch vụ phỏng vấn cho các diện ưu tiên đặc biệt.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Chính quyền Tổng thống Donald Trump",
+          "target": "Phỏng vấn visa toàn cầu",
+          "relation_type": "cause_effect",
+          "label": "Tạm dừng toàn bộ"
+        }
+      ],
+      "entities": [
+        "Mỹ",
+        "Donald Trump"
+      ],
+      "keywords": [
+        "Mỹ",
+        "visa",
+        "tạm dừng phỏng vấn visa",
+        "Donald Trump"
+      ],
+      "importance": 85,
+      "severity": 4,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_5594c5be": {
+    "created_at": 1787718096760,
+    "expires_at": 1790310096760,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_88f3006d": {
+    "created_at": 1787718142789,
+    "expires_at": 1790310142789,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_de0a8d8c": {
+    "created_at": 1787718194230,
+    "expires_at": 1790310194230,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_75e2916c": {
+    "created_at": 1787718224521,
+    "expires_at": 1790310224521,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_ca1f22c5": {
+    "created_at": 1787718289236,
+    "expires_at": 1790310289236,
+    "version": "4.5",
+    "checksum": "350fa08727a9a3603cc80eea8748833f",
+    "data": {
+      "cluster_title": "Nga bác bỏ đề xuất hòa bình của Ukraine về Donbass",
+      "short_summary": "Nga chính thức bác bỏ đề xuất hòa bình của Ukraine và Mỹ về việc thành lập khu kinh tế tự do tại Donbass, cho thấy sự bế tắc trong các nỗ lực ngoại giao nhằm chấm dứt xung đột.",
+      "detailed_summary": "Nga đã từ chối ý tưởng thành lập khu kinh tế tự do tại Donbass. Đề xuất này là một phần trong kế hoạch hòa bình mới nhất do Ukraine phối hợp cùng Mỹ đưa ra nhằm tìm kiếm giải pháp cho tình hình căng thẳng tại khu vực này.",
+      "causes": [
+        "Ukraine và Mỹ đưa ra đề xuất hòa bình mới bao gồm việc thành lập khu kinh tế tự do tại Donbass",
+        "Sự khác biệt về lập trường chính trị và giải pháp hòa bình giữa Nga với Ukraine và Mỹ"
+      ],
+      "effects": [
+        "Đề xuất hòa bình mới của Ukraine và Mỹ gặp bế tắc",
+        "Căng thẳng ngoại giao liên quan đến khu vực Donbass tiếp tục kéo dài"
+      ],
+      "affected_groups": [
+        "Chính phủ Nga",
+        "Chính phủ Ukraine",
+        "Chính phủ Mỹ"
+      ],
+      "market_impact": "Không có tác động trực tiếp đáng kể nào đến thị trường tài chính toàn cầu được ghi nhận từ sự kiện này.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "diplomacy"
+      ],
+      "regions": [
+        "RU",
+        "UA",
+        "US"
+      ],
+      "significance": "Sự kiện phản ánh khoảng cách lớn trong lập trường giữa các bên liên quan, khiến nỗ lực ngoại giao nhằm giải quyết xung đột tại Donbass chưa thể đạt được tiếng nói chung.",
+      "unknowns": [
+        "Chi tiết cụ thể của toàn bộ gói đề xuất hòa bình từ Ukraine và Mỹ",
+        "Phản ứng tiếp theo của Mỹ và Ukraine sau khi Nga bác bỏ đề xuất"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên tuyên bố chính thức được truyền thông ghi nhận.",
+      "scenarios": [
+        {
+          "text": "Ukraine và Mỹ tiếp tục điều chỉnh đề xuất hòa bình để tìm kiếm một giải pháp khác.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các bên hoàn toàn bế tắc trong đàm phán ngoại giao về tương lai khu vực Donbass.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Nga",
+          "target": "Ukraine",
+          "relation_type": "conflict",
+          "label": "Bác bỏ đề xuất hòa bình"
+        },
+        {
+          "source": "Mỹ",
+          "target": "Nga",
+          "relation_type": "conflict",
+          "label": "Đề xuất hòa bình bị từ chối"
+        },
+        {
+          "source": "Ukraine",
+          "target": "Mỹ",
+          "relation_type": "cooperation",
+          "label": "Cùng đưa ra đề xuất hòa bình"
+        }
+      ],
+      "entities": [
+        "Nga",
+        "Ukraine",
+        "Mỹ",
+        "Donbass"
+      ],
+      "keywords": [
+        "Nga",
+        "Ukraine",
+        "Donbass",
+        "hòa bình",
+        "khu kinh tế tự do",
+        "Mỹ"
+      ],
+      "importance": 85,
+      "severity": 4,
+      "sentiment": -1,
+      "scope": "global"
+    }
   }
 }
