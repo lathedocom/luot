@@ -55160,5 +55160,549 @@
       "sentiment": 0,
       "scope": "business"
     }
+  },
+  "evt_2b34279b": {
+    "created_at": 1787846489804,
+    "expires_at": 1790438489804,
+    "version": "4.5",
+    "checksum": "81f4e16d96ebf317ce4a0b806071a3d7",
+    "data": {
+      "cluster_title": "Ukraine tấn công Nga và Nga cảnh báo đáp trả Anh",
+      "short_summary": "Ukraine liên tục tập kích vào các cơ sở hạ tầng kinh tế của Nga khiến Điện Kremlin cảnh báo sẽ có đòn đáp trả mạnh mẽ. Bên cạnh đó, Nga cũng đe dọa tấn công các mục tiêu quân sự của Anh để đáp trả việc London cung cấp tên lửa cho Ukraine.",
+      "detailed_summary": "Điện Kremlin đã đưa ra cảnh báo về việc sẽ có những đòn đáp trả mạnh mẽ nhằm vào các cuộc tấn công liên dồn dập của Ukraine nhắm vào cơ sở hạ tầng kinh tế và thương mại của Nga. Song song với đó, Moscow tuyên bố có thể tấn công các mục tiêu quân sự của Anh cả ở trong và ngoài lãnh thổ Ukraine, coi đây là hành động đáp trả việc London cung cấp tên lửa để Kiev tập kích lãnh thổ Nga.",
+      "causes": [
+        "Ukraine thực hiện các cuộc tập kích dồn dập vào cơ sở hạ tầng kinh tế và thương mại của Nga",
+        "Anh cung cấp tên lửa cho Ukraine để tập kích lãnh thổ Nga"
+      ],
+      "effects": [
+        "Điện Kremlin cảnh báo đáp trả mạnh mẽ các cuộc tấn công của Ukraine",
+        "Nga cảnh báo khả năng tấn công các mục tiêu quân sự của Anh ở cả trong và ngoài lãnh thổ Ukraine"
+      ],
+      "affected_groups": [
+        "Chính phủ và quân đội Ukraine",
+        "Chính phủ và quân đội Nga",
+        "Chính phủ và quân đội Anh"
+      ],
+      "market_impact": "Gây lo ngại về rủi ro leo thang xung đột tại khu vực Đông Âu, có thể ảnh hưởng đến chuỗi cung ứng năng lượng và hàng hóa toàn cầu.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "military"
+      ],
+      "regions": [
+        "UA",
+        "RU",
+        "GB"
+      ],
+      "significance": "Sự kiện cho thấy xung đột Nga - Ukraine đang có xu hướng lan rộng về không gian địa lý và mức độ leo thang, kéo theo các quốc gia hậu thuẫn trực tiếp như Anh vào vòng xoáy đối đầu trực diện với Moscow.",
+      "unknowns": [
+        "Thời điểm và hình thức cụ thể của các đòn đáp trả từ phía Nga đối với Ukraine và Anh",
+        "Phạm vi chính xác của các mục tiêu quân sự Anh mà Nga có thể tấn công"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên các tuyên bố chính thức từ phía Điện Kremlin và các cơ quan truyền thông.",
+      "scenarios": [
+        {
+          "text": "Nga tiến hành các cuộc tấn công mạng hoặc tập kích quân sự nhằm vào các mục tiêu liên quan đến Anh, làm gia tăng căng thẳng ngoại giao giữa Moscow và London.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Ukraine tiếp tục gia tăng các cuộc tập kích vào hạ tầng kinh tế Nga, dẫn đến các biện pháp trả đũa quân sự quy mô lớn hơn từ phía Moscow.",
+          "likelihood": "cao"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Ukraine",
+          "target": "Nga",
+          "relation_type": "conflict",
+          "label": "Tập kích lãnh thổ và cơ sở hạ tầng kinh tế"
+        },
+        {
+          "source": "Nga",
+          "target": "Ukraine",
+          "relation_type": "cause_effect",
+          "label": "Cảnh báo đáp trả mạnh mẽ các cuộc tấn công"
+        },
+        {
+          "source": "Anh",
+          "target": "Ukraine",
+          "relation_type": "cooperation",
+          "label": "Cấp tên lửa để tập kích Nga"
+        },
+        {
+          "source": "Nga",
+          "target": "Anh",
+          "relation_type": "cause_effect",
+          "label": "Cảnh báo tấn công các mục tiêu quân sự"
+        }
+      ],
+      "entities": [
+        "Ukraine",
+        "Nga",
+        "Anh",
+        "Điện Kremlin"
+      ],
+      "keywords": [
+        "tập kích",
+        "cơ sở hạ tầng",
+        "mục tiêu quân sự",
+        "tên lửa",
+        "địa chính trị"
+      ],
+      "importance": 90,
+      "severity": 4,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_affc2285": {
+    "created_at": 1787846533200,
+    "expires_at": 1790438533200,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_1caf534c": {
+    "created_at": 1787846578076,
+    "expires_at": 1790438578076,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_d0bafd28": {
+    "created_at": 1787846635628,
+    "expires_at": 1790438635628,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_6a7a25fc": {
+    "created_at": 1787846669277,
+    "expires_at": 1790438669277,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_d75b672c": {
+    "created_at": 1787846714633,
+    "expires_at": 1790438714633,
+    "version": "4.5",
+    "checksum": "b78ab754104282b1318446e84e822a9a",
+    "data": {
+      "cluster_title": "Qualcomm dự kiến đưa Việt Nam thành trung tâm R&D AI lớn thứ ba toàn cầu",
+      "short_summary": "Lãnh đạo tập đoàn Qualcomm chia sẻ mục tiêu đưa Việt Nam trở thành trung tâm nghiên cứu và phát triển AI lớn thứ ba của tập đoàn trên toàn cầu trong cuộc gặp với Tổng Bí thư, Chủ tịch nước Tô Lâm.",
+      "detailed_summary": "Trong cuộc gặp với Tổng Bí thư, Chủ tịch nước Tô Lâm, Chủ tịch kiêm Tổng giám đốc điều hành Tập đoàn Qualcomm của Mỹ đã chia sẻ định hướng chiến lược muốn đưa Việt Nam trở thành trung tâm nghiên cứu và phát triển trí tuệ nhân tạo lớn thứ ba của tập đoàn này trên quy mô toàn cầu.",
+      "causes": [
+        "Cuộc gặp cấp cao giữa lãnh đạo Việt Nam và lãnh đạo Tập đoàn Qualcomm",
+        "Tiềm năng phát triển công nghệ và trí tuệ nhân tạo tại thị trường Việt Nam"
+      ],
+      "effects": [
+        "Qualcomm định hướng đưa Việt Nam thành trung tâm nghiên cứu và phát triển trí tuệ nhân tạo lớn thứ ba toàn cầu",
+        "Thúc đẩy hợp tác công nghệ cao giữa doanh nghiệp Mỹ và Việt Nam"
+      ],
+      "affected_groups": [
+        "Tập đoàn Qualcomm",
+        "Ngành công nghệ thông tin Việt Nam",
+        "Lực lượng lao động kỹ thuật cao tại Việt Nam"
+      ],
+      "market_impact": "Tạo hiệu ứng tích cực đối với thị trường công nghệ và thu hút đầu tư nước ngoài vào lĩnh vực trí tuệ nhân tạo tại Việt Nam.",
+      "vn_impact": "Góp phần nâng cao năng lực công nghệ trong nước, thu hút vốn đầu tư nước ngoài vào lĩnh vực trí tuệ nhân tạo và tạo ra nhiều việc làm chất lượng cao cho nhân sự Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "tech",
+        "diplomacy"
+      ],
+      "regions": [
+        "US",
+        "VN"
+      ],
+      "significance": "Sự kiện khẳng định tiềm năng và vị thế ngày càng cao của Việt Nam trong chuỗi giá trị công nghệ và trí tuệ nhân tạo toàn cầu.",
+      "unknowns": [
+        "Thời gian cụ thể để hiện thực hóa kế hoạch thành lập trung tâm nghiên cứu và phát triển",
+        "Quy mô vốn đầu tư chi tiết và các điều kiện đi kèm từ phía Qualcomm"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên nội dung cuộc gặp cấp cao chính thức.",
+      "scenarios": [
+        {
+          "text": "Qualcomm hiện thực hóa kế hoạch đầu tư và xây dựng trung tâm nghiên cứu và phát triển trí tuệ nhân tạo tại Việt Nam theo đúng định hướng.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Kế hoạch bị chậm tiến độ hoặc thay đổi quy mô do các yếu tố biến động về kinh tế hoặc chính sách toàn cầu.",
+          "likelihood": "thấp"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Qualcomm",
+          "target": "Việt Nam",
+          "relation_type": "cooperation",
+          "label": "Hợp tác phát triển công nghệ trí tuệ nhân tạo"
+        },
+        {
+          "source": "Tô Lâm",
+          "target": "Qualcomm",
+          "relation_type": "cooperation",
+          "label": "Tiếp đón và trao đổi định hướng đầu tư"
+        }
+      ],
+      "entities": [
+        "Qualcomm",
+        "Tô Lâm"
+      ],
+      "keywords": [
+        "Qualcomm",
+        "R&D AI",
+        "Việt Nam",
+        "đầu tư công nghệ"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": 1,
+      "scope": "national"
+    }
+  },
+  "evt_22ea299e": {
+    "created_at": 1787846761216,
+    "expires_at": 1790438761216,
+    "version": "4.5",
+    "checksum": "06671b902d5ee1d2076ae2e205f3849e",
+    "data": {
+      "cluster_title": "Điện Kremlin bác bỏ tin đồn Nga có thể tấn công NATO",
+      "short_summary": "Điện Kremlin đã chính thức bác bỏ các báo cáo từ truyền thông Mỹ cho rằng Nga có thể thực hiện cuộc tấn công vào Tổ chức Hiệp ước Bắc Đại Tây Dương (NATO). Phía Nga khẳng định đây chỉ là những thông tin mang tính chất gây hù dọa và không có cơ sở thực tế.",
+      "detailed_summary": "Truyền thông Mỹ gần đây đưa tin cho rằng Nga có thể tiến hành một cuộc tấn công nhằm vào Tổ chức Hiệp ước Bắc Đại Tây Dương (NATO). Phản ứng trước thông tin này, Điện Kremlin đã lên tiếng bác bỏ hoàn toàn, đồng thời khẳng định đây chỉ là những câu chuyện mang tính chất hù dọa.",
+      "causes": [
+        "Thông tin lan truyền trên truyền thông Mỹ về khả năng Nga tấn công NATO"
+      ],
+      "effects": [
+        "Điện Kremlin lên tiếng bác bỏ thông tin từ truyền thông Mỹ",
+        "Quan hệ Nga và phương Tây tiếp tục duy trì trạng thái căng thẳng thông tin"
+      ],
+      "affected_groups": [
+        "Chính phủ Nga",
+        "Liên minh NATO",
+        "Giới truyền thông Mỹ"
+      ],
+      "market_impact": "Sự kiện chưa tạo ra tác động đáng kể nào đến thị trường tài chính hoặc kinh tế toàn cầu.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "military"
+      ],
+      "regions": [
+        "RU",
+        "US"
+      ],
+      "significance": "Sự kiện phản ánh cuộc chiến thông tin và sự bất đồng sâu sắc về mặt ngoại giao giữa Nga và phương Tây.",
+      "unknowns": [
+        "Cơ sở cụ thể hoặc nguồn tin chính xác đằng sau bài báo của truyền thông Mỹ là gì",
+        "Phản ứng chính thức tiếp theo của NATO đối với tuyên bố từ Điện Kremlin"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao về mặt ghi nhận phát ngôn chính thức từ phía Điện Kremlin.",
+      "scenarios": [
+        {
+          "text": "Căng thẳng ngoại giao và chiến tranh thông tin giữa Nga và phương Tây tiếp tục gia tăng trong thời gian tới.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các bên tiếp tục đưa ra các tuyên bố đáp trả qua lại trên truyền thông mà không dẫn đến xung đột quân sự trực tiếp.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Truyền thông Mỹ",
+          "target": "Nga",
+          "relation_type": "cause_effect",
+          "label": "Đưa tin đồn đoán về khả năng tấn công"
+        },
+        {
+          "source": "Điện Kremlin",
+          "target": "Truyền thông Mỹ",
+          "relation_type": "conflict",
+          "label": "Bác bỏ thông tin hù dọa"
+        },
+        {
+          "source": "Nga",
+          "target": "NATO",
+          "relation_type": "neutral",
+          "label": "Tâm điểm của các cáo buộc an ninh"
+        }
+      ],
+      "entities": [
+        "Nga",
+        "NATO",
+        "Điện Kremlin",
+        "Mỹ"
+      ],
+      "keywords": [
+        "Nga",
+        "NATO",
+        "Điện Kremlin",
+        "xung đột",
+        "Mỹ"
+      ],
+      "importance": 85,
+      "severity": 4,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_c2c7e015": {
+    "created_at": 1787846807799,
+    "expires_at": 1790438807799,
+    "version": "4.5",
+    "checksum": "f8cef1b9cb0e2c340601ded6295ae3d8",
+    "data": {
+      "cluster_title": "Ông Mai Hữu Tín được bầu làm Chủ tịch Liên đoàn Doanh nghiệp TP.HCM (HUBA)",
+      "short_summary": "Ông Mai Hữu Tín, Chủ tịch HĐQT kiêm CEO Công ty cổ phần Đầu tư U&I, đã được bầu giữ chức Chủ tịch Liên đoàn Doanh nghiệp TP.HCM (HUBA) nhiệm kỳ 2026-2031, hứa hẹn mang lại những chuyển biến mới cho cộng đồng doanh nghiệp thành phố.",
+      "detailed_summary": "Ông Mai Hữu Tín, Chủ tịch Hội đồng quản trị kiêm Tổng Giám đốc Công ty cổ phần Đầu tư U&I, chính thức được bầu giữ chức vụ Chủ tịch Liên đoàn Doanh nghiệp Thành phố Hồ Chí Minh (HUBA) trong nhiệm kỳ 2026-2031.",
+      "causes": [
+        "Đại hội nhiệm kỳ mới của Liên đoàn Doanh nghiệp Thành phố Hồ Chí Minh",
+        "Năng lực và uy tín cá nhân của ông Mai Hữu Tín trong lĩnh vực quản trị doanh nghiệp"
+      ],
+      "effects": [
+        "Ông Mai Hữu Tín đảm nhận vai trò lãnh đạo mới tại Liên đoàn Doanh nghiệp Thành phố Hồ Chí Minh",
+        "Định hướng các hoạt động và chiến lược phát triển của liên đoàn trong nhiệm kỳ 2026-2031"
+      ],
+      "affected_groups": [
+        "Liên đoàn Doanh nghiệp Thành phố Hồ Chí Minh",
+        "Cộng đồng doanh nghiệp tại Thành phố Hồ Chí Minh",
+        "Công ty cổ phần Đầu tư U&I"
+      ],
+      "market_impact": "Tạo sự ổn định và định hướng mới cho cộng đồng doanh nghiệp tại Thành phố Hồ Chí Minh trong nhiệm kỳ mới.",
+      "vn_impact": "Góp phần thúc đẩy sự phát triển của cộng đồng doanh nghiệp và hoạt động kinh tế tại Thành phố Hồ Chí Minh.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "business"
+      ],
+      "regions": [
+        "VN"
+      ],
+      "significance": "Sự kiện kiện toàn bộ máy lãnh đạo của tổ chức đại diện doanh nghiệp cấp thành phố, tạo nền tảng cho sự phát triển kinh tế địa phương.",
+      "unknowns": [
+        "Danh sách cụ thể các thành viên ban chấp hành cùng nhiệm kỳ",
+        "Kế hoạch hành động cụ thể cho nhiệm kỳ 2026-2031"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao, dựa trên quyết định bầu cử nhân sự tổ chức.",
+      "scenarios": [
+        {
+          "text": "Liên đoàn Doanh nghiệp Thành phố Hồ Chí Minh dưới sự lãnh đạo mới sẽ đẩy mạnh các hoạt động hỗ trợ doanh nghiệp hội nhập và phát triển.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các chương trình hợp tác giữa doanh nghiệp và chính quyền thành phố được củng cố mạnh mẽ hơn.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Ông Mai Hữu Tín",
+          "target": "Liên đoàn Doanh nghiệp TP HCM",
+          "relation_type": "cooperation",
+          "label": "Đảm nhận chức vụ Chủ tịch nhiệm kỳ 2026-2031"
+        },
+        {
+          "source": "Ông Mai Hữu Tín",
+          "target": "Công ty cổ phần Đầu tư U&I",
+          "relation_type": "cooperation",
+          "label": "Giữ chức Chủ tịch HĐQT kiêm CEO"
+        }
+      ],
+      "entities": [
+        "Mai Hữu Tín",
+        "Công ty cổ phần Đầu tư U&I",
+        "Liên đoàn Doanh nghiệp TP.HCM"
+      ],
+      "keywords": [
+        "Mai Hữu Tín",
+        "HUBA",
+        "Liên đoàn Doanh nghiệp TP.HCM",
+        "U&I Group",
+        "Bầu cử lãnh đạo"
+      ],
+      "importance": 75,
+      "severity": 2,
+      "sentiment": 1,
+      "scope": "business"
+    }
+  },
+  "evt_355261f2": {
+    "created_at": 1787846846679,
+    "expires_at": 1790438846679,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_061bf05c": {
+    "created_at": 1787846887836,
+    "expires_at": 1790438887836,
+    "version": "4.5",
+    "checksum": "d698dbb0692bb42eb6722c3043f261ab",
+    "data": {
+      "cluster_title": "Nestlé mở rộng năng lực chế biến cà phê xuất khẩu tại Việt Nam",
+      "short_summary": "Nestlé đã đưa vào vận hành dây chuyền mới tại Trị An với công suất hơn 350.000 hũ mỗi ngày. Việc mở rộng này nhằm nâng cao năng lực chế biến và đóng gói cà phê để phục vụ 11 thị trường xuất khẩu khác nhau.",
+      "detailed_summary": "Tập đoàn Nestlé đã đưa vào vận hành một dây chuyền mới tại nhà máy Trị An với công suất đạt hơn 350.000 hũ mỗi ngày. Việc này nhằm phục vụ cho 11 thị trường, đồng thời mở rộng năng lực chế biến và đóng gói các sản phẩm cà phê xuất khẩu tại Việt Nam.",
+      "causes": [
+        "Nhu cầu mở rộng thị trường và nâng cao năng lực sản xuất của Nestlé",
+        "Chiến lược phát triển ngành hàng cà phê xuất khẩu tại Việt Nam"
+      ],
+      "effects": [
+        "Gia tăng công suất chế biến cà phê lên hơn 350.000 hũ mỗi ngày tại Trị An",
+        "Mở rộng khả năng cung ứng sản phẩm ra 11 thị trường"
+      ],
+      "affected_groups": [
+        "Nestlé",
+        "Người lao động tại nhà máy Trị An",
+        "Nông dân trồng cà phê và đối tác cung ứng"
+      ],
+      "market_impact": "Tăng cường nguồn cung cà phê chế biến chất lượng cao cho thị trường quốc tế, củng cố vị thế của Nestlé trong chuỗi cung ứng cà phê toàn cầu.",
+      "vn_impact": "Góp phần thúc đẩy kim ngạch xuất khẩu nông sản (cà phê) của Việt Nam, tạo thêm việc làm và nâng cao giá trị gia tăng cho ngành công nghiệp chế biến trong nước.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "business"
+      ],
+      "regions": [
+        "VN"
+      ],
+      "significance": "Sự kiện này đánh dấu bước phát triển mới trong chiến lược đầu tư dài hạn và mở rộng quy mô sản xuất của các tập đoàn đa quốc gia tại Việt Nam.",
+      "unknowns": [
+        "Tổng mức đầu tư cho dây chuyền mới tại Trị An",
+        "Danh tính cụ thể của 11 thị trường tiếp nhận sản phẩm"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên sự kiện vận hành thực tế được công bố.",
+      "scenarios": [
+        {
+          "text": "Nestlé tiếp tục mở rộng quy mô đầu tư và gia tăng số lượng thị trường xuất khẩu trong thời gian tới.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Sản lượng xuất khẩu cà phê chế biến sâu của Việt Nam ghi nhận mức tăng trưởng ổn định.",
+          "likelihood": "cao"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Nestlé",
+          "target": "Nhà máy Trị An",
+          "relation_type": "cooperation",
+          "label": "Đầu tư và vận hành dây chuyền sản xuất"
+        },
+        {
+          "source": "Nhà máy Trị An",
+          "target": "Việt Nam",
+          "relation_type": "cause_effect",
+          "label": "Mở rộng năng lực xuất khẩu quốc gia"
+        }
+      ],
+      "entities": [
+        "Nestlé"
+      ],
+      "keywords": [
+        "Nestlé",
+        "cà phê",
+        "xuất khẩu",
+        "dây chuyền sản xuất",
+        "Trị An"
+      ],
+      "importance": 75,
+      "severity": 3,
+      "sentiment": 1,
+      "scope": "business"
+    }
   }
 }
