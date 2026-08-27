@@ -54343,5 +54343,822 @@
       "sentiment": 0,
       "scope": "global"
     }
+  },
+  "evt_b51d4324": {
+    "created_at": 1787833102708,
+    "expires_at": 1790425102708,
+    "version": "4.5",
+    "checksum": "5d6b13d4409ed3a3d561df3a5f5d5ad6",
+    "data": {
+      "cluster_title": "Ukraine tuyên bố bắn hạ nhiều tên lửa và UAV của Nga",
+      "short_summary": "Ukraine thông báo đã bắn hạ hơn 220 UAV cùng nhiều tên lửa đạn đạo Iskander-M và tên lửa siêu thanh Oniks của Nga. Tuy nhiên, lực lượng phòng không thừa nhận vẫn có một số mục tiêu chưa thể ngăn chặn thành công.",
+      "detailed_summary": "Theo thông báo từ Ukraine, hệ thống phòng nước này đã đánh chặn thành công hơn 220 thiết bị bay không người lái (UAV), nhiều tên lửa đạn đạo Iskander-M và tên lửa siêu thanh Oniks do Nga phóng. Tuy nhiên, một số mục tiêu vẫn vượt qua hệ thống phòng không và đánh trúng mục tiêu.",
+      "causes": [
+        "Cuộc xung đột vũ trang kéo dài giữa Nga và Ukraine",
+        "Các cuộc không kích và phóng tên lửa quy mô lớn từ phía Nga nhằm vào các mục tiêu tại Ukraine"
+      ],
+      "effects": [
+        "Lực lượng phòng không Ukraine tiêu diệt phần lớn vũ khí tấn công trên không của Nga",
+        "Một số mục tiêu bị bỏ lọt gây ra thiệt hại tại thực địa"
+      ],
+      "affected_groups": [
+        "Quân đội Ukraine",
+        "Quân đội Nga",
+        "Dân thường tại các khu vực bị tấn công"
+      ],
+      "market_impact": "Sự kiện tiếp tục duy trì rủi ro địa chính trị ở mức cao đối với chuỗi cung ứng khu vực Đông Âu nhưng chưa tạo ra biến động lớn mới trên thị trường toàn cầu.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "military"
+      ],
+      "regions": [
+        "UA",
+        "RU"
+      ],
+      "significance": "Phản ánh cường độ giao tranh trên không vẫn rất ác liệt giữa Nga và Ukraine, đồng thời cho thấy năng lực phòng không của Ukraine đã chặn được phần lớn nhưng chưa thể vô hiệu hóa hoàn toàn các loại vũ khí tiên tiến.",
+      "unknowns": [
+        "Số lượng chính xác và vị trí cụ thể của các mục tiêu bị bỏ lọt",
+        "Mức độ thiệt hại cụ thể tại các mục tiêu không bị đánh chặn"
+      ],
+      "confidence_note": "Thông tin dựa trên tuyên bố từ phía Ukraine, cần thêm nguồn độc lập xác thực về số lượng cụ thể.",
+      "scenarios": [
+        {
+          "text": "Nga tiếp tục duy trì các đợt tập kích đường không tầm xa với quy mô lớn nhằm áp đảo hệ thống phòng không Ukraine.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Ukraine nhận thêm các hệ thống phòng không tiên tiến giúp nâng cao tỷ lệ đánh chặn các loại tên lửa siêu thanh và đạn đạo.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Nga",
+          "target": "Ukraine",
+          "relation_type": "conflict",
+          "label": "Tấn công tên lửa và UAV"
+        },
+        {
+          "source": "Ukraine",
+          "target": "Nga",
+          "relation_type": "conflict",
+          "label": "Đánh chặn tên lửa và UAV"
+        }
+      ],
+      "entities": [
+        "Ukraine",
+        "Nga",
+        "Iskander-M",
+        "Oniks"
+      ],
+      "keywords": [
+        "Ukraine",
+        "Nga",
+        "tên lửa đạn đạo",
+        "tên lửa siêu thanh",
+        "UAV",
+        "Iskander-M",
+        "Oniks"
+      ],
+      "importance": 85,
+      "severity": 4,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_1dbddfbd": {
+    "created_at": 1787833147781,
+    "expires_at": 1790425147781,
+    "version": "4.5",
+    "checksum": "3d098baf2b13e5d4dff10d7b86ca6156",
+    "data": {
+      "cluster_title": "Xung đột thương mại giữa Canada và Mỹ",
+      "short_summary": "Thủ hiến Doug Ford đang đóng vai trò là tiếng nói quyết liệt của Canada trong cuộc đối đầu thương mại với Mỹ. Sự cứng rắn này nhằm đối phó với các áp lực từ chính sách của Donald Trump, nhằm bảo vệ lợi ích kinh tế quốc gia.",
+      "detailed_summary": "Trước sức ép thương mại từ phía Mỹ dưới thời ông Trump, Canada cần một lập trường vững chắc. Thủ hiến Doug Ford đã sẵn sàng đảm nhận vai trò tuyến đầu, đưa ra những lời lẽ và động thái quyết liệt để bảo vệ lợi ích kinh tế của Canada trong cuộc đấu thương mại này.",
+      "causes": [
+        "Áp lực thương mại từ phía Mỹ và ông Trump đối với Canada",
+        "Nhu cầu cần một tiếng nói cứng rắn để bảo vệ lợi ích quốc gia của Canada"
+      ],
+      "effects": [
+        "Thủ hiến Doug Ford bước lên tuyến đầu đối đầu thương mại",
+        "Gia tăng sức ép chính trị và ngoại giao giữa hai nước"
+      ],
+      "affected_groups": [
+        "Doanh nghiệp Canada",
+        "Chính phủ Canada",
+        "Chính phủ Mỹ"
+      ],
+      "market_impact": "Gây ra tâm lý thận trọng đối với các thị trường tài chính và thương mại liên quan đến chuỗi cung ứng xuyên biên giới giữa Canada và Mỹ.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "economy"
+      ],
+      "regions": [
+        "CA",
+        "US"
+      ],
+      "significance": "Sự kiện phản ánh cách các nhà lãnh đạo địa phương cấp cao tại Canada tham gia vào chính sách đối ngoại và thương mại quốc gia để đối phó với sức ép bên ngoài.",
+      "unknowns": [
+        "Các biện pháp trả đũa thương mại cụ thể mà Doug Ford sẽ thực hiện",
+        "Phản ứng chi tiết từ chính quyền Mỹ đối với lập trường của Doug Ford"
+      ],
+      "confidence_note": "Thông tin mang tính tổng quan, phản ánh đúng tình hình thực tế được nêu trong bài báo.",
+      "scenarios": [
+        {
+          "text": "Căng thẳng thương mại tiếp tục leo thang, đòi hỏi Canada phải duy trì lập trường cứng rắn.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Hai bên đạt được thỏa hiệp thông qua đàm phán ngoại giao để hạ nhiệt căng thẳng.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Doug Ford",
+          "target": "Mỹ",
+          "relation_type": "conflict",
+          "label": "Đối đầu thương mại và bảo vệ lợi ích Canada"
+        },
+        {
+          "source": "Donald Trump",
+          "target": "Canada",
+          "relation_type": "cause_effect",
+          "label": "Tạo áp lực thương mại buộc Canada phản ứng"
+        }
+      ],
+      "entities": [
+        "Canada",
+        "Mỹ",
+        "Doug Ford",
+        "Donald Trump"
+      ],
+      "keywords": [
+        "thương mại",
+        "Canada",
+        "Mỹ",
+        "Doug Ford",
+        "Trump"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_52845035": {
+    "created_at": 1787833184101,
+    "expires_at": 1790425184101,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_efebb56a": {
+    "created_at": 1787833225290,
+    "expires_at": 1790425225290,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_c29cf3d9": {
+    "created_at": 1787833277204,
+    "expires_at": 1790425277204,
+    "version": "4.5",
+    "checksum": "64eaf93d0c31ffcef045a94fcfde18f5",
+    "data": {
+      "cluster_title": "Ukraine phóng tên lửa Storm Shadow vào thành phố Donetsk",
+      "short_summary": "Ukraine đã phóng loạt tên lửa hành trình Storm Shadow vào thành phố Donetsk. Phía Nga cáo buộc vụ tấn công này đã gây thương vong cho nhiều người dân, làm gia tăng căng thẳng trong khu vực.",
+      "detailed_summary": "Quan chức Nga đưa ra cáo buộc cho rằng Ukraine đã tiến hành một cuộc tấn công sử dụng tên lửa hành trình Storm Shadow nhằm vào thành phố Donetsk. Vụ việc này đã dẫn đến hậu quả là nhiều người dân sinh sống tại khu vực bị thương.",
+      "causes": [
+        "Ukraine phóng tên lửa hành trình Storm Shadow vào thành phố Donetsk",
+        "Xung đột vũ trang kéo dài giữa Nga và Ukraine"
+      ],
+      "effects": [
+        "Nhiều người dân tại thành phố Donetsk bị thương",
+        "Gia tăng căng thẳng và cáo buộc lẫn nhau giữa Nga và Ukraine"
+      ],
+      "affected_groups": [
+        "Dân thường tại thành phố Donetsk",
+        "Lực lượng quân sự và quan chức Nga",
+        "Quân đội Ukraine"
+      ],
+      "market_impact": "Không có tác động đáng kể trực tiếp đến thị trường tài chính toàn cầu.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "military",
+        "politics"
+      ],
+      "regions": [
+        "UA",
+        "RU"
+      ],
+      "significance": "Sự kiện phản ánh sự leo thang trong việc sử dụng vũ khí tầm xa trong cuộc xung đột vũ trang, đồng thời làm rõ những tổn thất về người đối với dân thường.",
+      "unknowns": [
+        "Mức độ thiệt hại cụ thể về cơ sở hạ tầng",
+        "Phản ứng quân sự cụ thể tiếp theo từ phía Nga"
+      ],
+      "confidence_note": "Thông tin dựa trên cáo buộc từ phía quan chức Nga, cần thêm các nguồn xác thực độc lập.",
+      "scenarios": [
+        {
+          "text": "Nga gia tăng các cuộc không kích trả đũa nhắm vào các vị trí do Ukraine kiểm soát.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Cộng đồng quốc tế kêu gọi kiềm chế và tránh làm gia tăng thương vong cho dân thường.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Ukraine",
+          "target": "Thành phố Donetsk",
+          "relation_type": "conflict",
+          "label": "Tấn công bằng tên lửa"
+        },
+        {
+          "source": "Ukraine",
+          "target": "Nga",
+          "relation_type": "conflict",
+          "label": "Xung đột quân sự"
+        }
+      ],
+      "entities": [
+        "Ukraine",
+        "Nga",
+        "Donetsk",
+        "Storm Shadow"
+      ],
+      "keywords": [
+        "Ukraine",
+        "Storm Shadow",
+        "Donetsk",
+        "tên lửa hành trình",
+        "Nga"
+      ],
+      "importance": 85,
+      "severity": 4,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_b023dc22": {
+    "created_at": 1787833313311,
+    "expires_at": 1790425313311,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_d5fc1c0e": {
+    "created_at": 1787833351655,
+    "expires_at": 1790425351655,
+    "version": "4.5",
+    "checksum": "07bbd242f691ab297a29f4ffd54ad40c",
+    "data": {
+      "cluster_title": "Đầu tư của Việt Nam sang Lào tăng mạnh",
+      "short_summary": "Trong 7 tháng đầu năm 2026, số lượng dự án và tổng vốn đăng ký từ Việt Nam đầu tư sang Lào ghi nhận sự tăng trưởng mạnh mẽ so với năm 2025, khẳng định xu hướng mở rộng đầu tư của Việt Nam tại Lào.",
+      "detailed_summary": "Theo số liệu từ Bộ Tài chính, tính trong 7 tháng đầu năm 2026, số lượng dự án cũng như tổng vốn đăng ký đầu tư từ Việt Nam sang Lào đã ghi nhận mức tăng gấp nhiều lần so với cùng kỳ năm 2025.",
+      "causes": [
+        "Sự gia tăng nguồn vốn đăng ký và số lượng dự án từ các nhà đầu tư Việt Nam",
+        "Chính sách thúc đẩy hợp tác đầu tư giữa Việt Nam và Lào"
+      ],
+      "effects": [
+        "Số dự án đầu tư sang Lào tăng gấp nhiều lần",
+        "Tổng vốn đầu tư đăng ký sang Lào tăng mạnh"
+      ],
+      "affected_groups": [
+        "Bộ Tài chính",
+        "Các doanh nghiệp đầu tư Việt Nam tại Lào"
+      ],
+      "market_impact": "Thúc đẩy các hoạt động hợp tác kinh tế và đầu tư song phương giữa hai nước, mở rộng thị trường cho doanh nghiệp Việt Nam tại Lào.",
+      "vn_impact": "Gia tăng hoạt động đầu tư ra nước ngoài của các doanh nghiệp Việt Nam, góp phần củng cố mối quan hệ hợp tác kinh tế chiến lược giữa Việt Nam và Lào.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "finance"
+      ],
+      "regions": [
+        "VN",
+        "LA"
+      ],
+      "significance": "Sự kiện phản ánh xu hướng mở rộng đầu tư tài chính và dự án của Việt Nam sang thị trường Lào trong giai đoạn 2025 - 2026.",
+      "unknowns": [
+        "Cơ cấu chi tiết của các ngành nghề thu hút vốn đầu tư",
+        "Quy mô vốn cụ thể tính bằng giá trị tiền tệ ngoài tỷ lệ tăng trưởng"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên số liệu công bố từ Bộ Tài chính.",
+      "scenarios": [
+        {
+          "text": "Dòng vốn đầu tư tiếp tục duy trì đà tăng trưởng mạnh mẽ trong những tháng cuối năm 2026.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các dự án mới đi vào hoạt động và đem lại hiệu quả kinh tế rõ rệt cho cả hai bên.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Việt Nam",
+          "target": "Lào",
+          "relation_type": "cooperation",
+          "label": "Đầu tư tài chính và dự án"
+        },
+        {
+          "source": "Bộ Tài chính",
+          "target": "Việt Nam",
+          "relation_type": "cause_effect",
+          "label": "Công bố số liệu thống kê đầu tư"
+        }
+      ],
+      "entities": [
+        "Bộ Tài chính",
+        "Việt Nam",
+        "Lào"
+      ],
+      "keywords": [
+        "đầu tư",
+        "Việt Nam",
+        "Lào",
+        "vốn đăng ký",
+        "Bộ Tài chính"
+      ],
+      "importance": 80,
+      "severity": 3,
+      "sentiment": 1,
+      "scope": "national"
+    }
+  },
+  "evt_8f6eed9f": {
+    "created_at": 1787833389697,
+    "expires_at": 1790425389697,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_ed0787ba": {
+    "created_at": 1787833426900,
+    "expires_at": 1790425426900,
+    "version": "4.5",
+    "checksum": "7231a5b27c8e38a6c91e68c82818d7e1",
+    "data": {
+      "cluster_title": "Vụ cụ ông tử vong tại quán bài và tranh chấp tiền bồi thường",
+      "short_summary": "Một cụ ông đã tử vong tại một quán bài, dẫn đến những tranh chấp về tài chính. Gia đình ông La đã hoàn trả 19.000 nhân dân tệ và lên tiếng làm rõ các tình tiết liên quan, tuy nhiên vẫn có những khẳng định về việc không hoàn trả tiền cho chủ quán.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "categories": [
+        "Xã hội",
+        "Hình sự"
+      ],
+      "regions": [
+        "CN"
+      ],
+      "follow_up": "",
+      "entities": [
+        "Gia đình ông La"
+      ],
+      "keywords": [
+        "tử vong",
+        "quán bài",
+        "tranh chấp",
+        "nhân dân tệ"
+      ],
+      "importance": 20,
+      "severity": 2,
+      "sentiment": -1,
+      "scope": "personal"
+    }
+  },
+  "evt_a0a62aef": {
+    "created_at": 1787833467493,
+    "expires_at": 1790425467493,
+    "version": "4.5",
+    "checksum": "75c2ba2be600488cb7db45f4ea2cb6ea",
+    "data": {
+      "cluster_title": "Mỹ ấn định ngày xét xử nghi phạm chủ mưu vụ khủng bố 11/9",
+      "short_summary": "Mỹ đã ấn định lịch xét xử Khalid Sheikh Mohammed, nghi phạm bị cáo buộc chủ mưu vụ tấn công khủng bố ngày 11/9. Phiên tòa dự kiến diễn ra vào tháng 6 năm 2028, là sự kiện pháp lý quan trọng liên quan đến thảm kịch gây chấn động thế giới.",
+      "detailed_summary": "Nước Mỹ đã chính thức ấn định thời gian đưa nghi phạm Khalid Sheikh Mohammed, người bị cáo buộc là chủ mưu vụ khủng bố ngày 11 tháng 9 khiến 3.000 người thiệt mạng, ra xét xử trước tòa án vào tháng 6 năm 2028.",
+      "causes": [
+        "Quá trình điều tra và chuẩn bị pháp lý kéo dài liên quan đến vụ khủng bố ngày 11-9"
+      ],
+      "effects": [
+        "Xác định thời điểm diễn ra phiên tòa xét xử nghi phạm chủ mưu vụ khủng bố 11-9 vào tháng 6-2028"
+      ],
+      "affected_groups": [
+        "Hệ thống tư pháp Mỹ",
+        "Gia đình các nạn nhân vụ khủng bố 11-9"
+      ],
+      "market_impact": "Không có tác động đáng kể đến thị trường tài chính.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "military"
+      ],
+      "regions": [
+        "US"
+      ],
+      "significance": "Sự kiện đánh dấu một bước tiến pháp lý quan trọng trong vụ án lịch sử liên quan đến thảm kịch khủng bố 11-9.",
+      "unknowns": [
+        "Diễn biến chi tiết của quá trình xét xử cho đến năm 2028",
+        "Các thủ tục pháp lý phát sinh có thể làm thay đổi lịch trình"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên tuyên bố chính thức về lịch trình xét xử.",
+      "scenarios": [
+        {
+          "text": "Phiên tòa diễn ra đúng lịch trình vào tháng 6 năm 2028.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Lịch xét xử bị trì hoãn do các tranh chấp pháp lý phát sinh.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Mỹ",
+          "target": "Khalid Sheikh Mohammed",
+          "relation_type": "cause_effect",
+          "label": "Ấn định ngày xét xử"
+        }
+      ],
+      "entities": [
+        "Mỹ",
+        "Khalid Sheikh Mohammed"
+      ],
+      "keywords": [
+        "xét xử",
+        "khủng bố 11-9",
+        "Khalid Sheikh Mohammed",
+        "nghi phạm chủ mưu"
+      ],
+      "importance": 85,
+      "severity": 4,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_70e153aa": {
+    "created_at": 1787833514056,
+    "expires_at": 1790425514056,
+    "version": "4.5",
+    "checksum": "d0d0765a40eaf344157ace59129ff888",
+    "data": {
+      "cluster_title": "...",
+      "short_summary": "...",
+      "detailed_summary": "Liên hợp quốc đã đưa ra lời kêu gọi khẩn cấp nhằm ngăn chặn khủng hoảng lương thực toàn cầu. Tổ chức này nhấn mạnh rằng các cuộc xung đột vẫn tiếp tục là nguyên nhân chính dẫn đến tình trạng mất an ninh lương thực, qua đó làm cho mục tiêu xóa bỏ nạn đói ngày càng trở nên khó khăn hơn.",
+      "causes": [
+        "Xung đột tiếp diễn trên thế giới",
+        "Mất an ninh lương thực gia tăng"
+      ],
+      "effects": [
+        "Nguy cơ khủng hoảng lương thực toàn cầu",
+        "Mục tiêu xóa bỏ nạn đói gặp nhiều khó khăn"
+      ],
+      "affected_groups": [
+        "Người dân tại các vùng có xung đột",
+        "Các quốc gia đang phát triển đối mặt với nguy cơ đói nghèo"
+      ],
+      "market_impact": "Gây áp lực lên giá cả lương thực toàn cầu và làm gián đoạn chuỗi cung ứng nông sản.",
+      "vn_impact": "Việt Nam là quốc gia xuất khẩu nông sản lớn, tình hình mất an ninh lương thực toàn cầu có thể tạo ra cả thách thức về chi phí đầu vào lẫn cơ hội gia tăng xuất khẩu gạo và lương thực.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "economy"
+      ],
+      "regions": [
+        "GLOBAL"
+      ],
+      "significance": "Sự kiện nhấn mạnh mối liên hệ trực tiếp giữa xung đột vũ trang và sự sụp đổ của hệ thống an ninh lương thực toàn cầu.",
+      "unknowns": [
+        "Các khu vực cụ thể chịu ảnh hưởng nặng nề nhất không được nêu chi tiết",
+        "Các biện pháp cụ thể của Liên hợp quốc để ngăn chặn khủng hoảng chưa được tiết lộ"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên cảnh báo chính thức từ Liên hợp quốc.",
+      "scenarios": [
+        {
+          "text": "Tình trạng mất an ninh lương thực trầm trọng hơn nếu xung đột tiếp tục leo thang.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Cộng đồng quốc tế phối hợp đưa ra các gói cứu trợ khẩn cấp để xoa dịu khủng hoảng.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Xung đột",
+          "target": "Mất an ninh lương thực",
+          "relation_type": "cause_effect",
+          "label": "Nguyên nhân dẫn đến kết quả"
+        },
+        {
+          "source": "Liên hợp quốc",
+          "target": "Khủng hoảng lương thực",
+          "relation_type": "cause_effect",
+          "label": "Nguyên nhân dẫn đến kết quả"
+        }
+      ],
+      "entities": [],
+      "keywords": [],
+      "importance": 80,
+      "severity": 4,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_47f9e479": {
+    "created_at": 1787833548534,
+    "expires_at": 1790425548534,
+    "version": "4.5",
+    "checksum": "141f4f936fd9d16ab7dff4ed60c9646e",
+    "data": {
+      "cluster_title": "Thiệt hại kinh tế do lừa đảo tại Singapore",
+      "short_summary": "Trong 6 tháng đầu năm, các vụ lừa đảo tại Singapore đã gây thiệt hại khoảng 320 triệu USD. Mặc dù con số này vẫn ở mức cao, nhưng cả số lượng vụ việc và tổng thiệt hại đều có xu hướng giảm so với trước đó.",
+      "detailed_summary": "Trong 6 tháng đầu năm, các vụ lừa đảo đã gây ra thiệt hại kinh tế khoảng 320 triệu USD tại Singapore. Mặc dù số lượng vụ việc và tổng mức thiệt hại đều có chiều hướng giảm, con số này vẫn phản ánh mức độ nghiêm trọng của vấn đề tội phạm lừa đảo tại quốc gia này.",
+      "causes": [
+        "Hành vi phạm tội lừa đảo diễn ra tại Singapore"
+      ],
+      "effects": [
+        "Gây thiệt hại tài chính hơn 300 triệu USD cho nền kinh tế Singapore trong 6 tháng đầu năm"
+      ],
+      "affected_groups": [
+        "Nạn nhân bị lừa đảo tại Singapore",
+        "Nền kinh tế Singapore"
+      ],
+      "market_impact": "Thiệt hại tài chính cục bộ do lừa đảo không gây tác động lớn đến thị trường tài chính quốc tế nhưng ảnh hưởng đến niềm tin người tiêu dùng.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "finance"
+      ],
+      "regions": [
+        "SG"
+      ],
+      "significance": "Sự việc cho thấy tội phạm lừa đảo vẫn tiếp tục là mối đe dọa tài chính lớn tại Singapore dù các chỉ số về số vụ và tổng thiệt hại đã giảm.",
+      "unknowns": [
+        "Chi tiết về các thủ đoạn lừa đảo cụ thể được sử dụng",
+        "Tỷ lệ số tiền bị chiếm đoạt có thể thu hồi"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao, dựa trên thống kê được công bố qua VTV.vn.",
+      "scenarios": [
+        {
+          "text": "Singapore tiếp tục siết chặt các biện pháp quản lý an ninh mạng và tài chính để giảm thiểu hơn nữa thiệt hại.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các hình thức lừa đảo công nghệ cao tinh vi hơn xuất hiện làm tăng trở lại mức độ thiệt hại tài chính.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Singapore",
+          "target": "Các vụ lừa đảo",
+          "relation_type": "cause_effect",
+          "label": "Gây thiệt hại tài chính"
+        }
+      ],
+      "entities": [
+        "Singapore"
+      ],
+      "keywords": [
+        "lừa đảo",
+        "thiệt hại kinh tế",
+        "Singapore"
+      ],
+      "importance": 65,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_85a38f07": {
+    "created_at": 1787833586030,
+    "expires_at": 1790425586030,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_9552e965": {
+    "created_at": 1787833628799,
+    "expires_at": 1790425628799,
+    "version": "4.5",
+    "checksum": "964723d9ec60da7798ed9cc08bff2597",
+    "data": {
+      "cluster_title": "Các ngân hàng đẩy mạnh huy động vốn qua khuyến mãi nhân dịp tuyển Việt Nam chiến thắng",
+      "short_summary": "Tận dụng sức nóng từ chiến thắng của đội tuyển Việt Nam tại ASEAN Cup 2026, các ngân hàng đang triển khai chiến dịch tăng lãi suất và tặng voucher để thu hút khách hàng gửi tiền, nhằm đẩy mạnh hoạt động huy động vốn.",
+      "detailed_summary": "Sự kiện tuyển Việt Nam giành chiến thắng tại ASEAN Cup 2026 đã tạo ra hiệu ứng lan tỏa mạnh mẽ trong xã hội. Nắm bắt tâm lý và sức nóng này, một số ngân hàng thương mại đã triển khai các chương trình kích cầu tiền gửi tiết kiệm thông qua các hình thức ưu đãi như cộng thêm lãi suất cho người gửi tiền và tặng voucher quà tặng.",
+      "causes": [
+        "Tuyển Việt Nam giành chiến thắng tại ASEAN Cup 2026",
+        "Nhu cầu thu hút tiền gửi tiết kiệm của các ngân hàng thương mại"
+      ],
+      "effects": [
+        "Thu hút lượng lớn khách hàng đến gửi tiền tại ngân hàng",
+        "Gia tăng các chương trình ưu đãi, khuyến khích tài chính ăn theo sự kiện thể thao"
+      ],
+      "affected_groups": [
+        "Ngân hàng thương mại",
+        "Khách hàng gửi tiền tiết kiệm"
+      ],
+      "market_impact": "Tạo ra bầu không khí cạnh tranh sôi động trong phân khúc huy động vốn tiết kiệm cá nhân giữa các nhà băng thông qua các chương trình khuyến mãi ngắn hạn.",
+      "vn_impact": "Góp phần thúc đẩy thị trường huy động vốn trong nước và kích thích nhu cầu gửi tiết kiệm của người dân nhờ vào hiệu ứng tâm lý tích cực từ bóng đá.",
+      "follow_up": "",
+      "categories": [
+        "finance",
+        "business"
+      ],
+      "regions": [
+        "VN"
+      ],
+      "significance": "Sự kiện minh chứng cho xu hướng kết hợp linh hoạt giữa các sự kiện thể thao lớn và chiến lược marketing tài chính nhằm thu hút khách hàng của ngành ngân hàng.",
+      "unknowns": [
+        "Tên cụ thể của các ngân hàng áp dụng chương trình ưu đãi",
+        "Quy mô và tổng giá trị dòng vốn huy động được từ chiến dịch này"
+      ],
+      "confidence_note": "Thông tin rõ ràng về xu hướng thị trường nhưng thiếu dữ liệu chi tiết về các tổ chức cụ thể.",
+      "scenarios": [
+        {
+          "text": "Các ngân hàng khác sẽ tiếp tục áp dụng các chiến dịch marketing gắn liền với các sự kiện thể thao lớn để thu hút khách hàng.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Chương trình ưu đãi lãi suất ăn theo thể thao chỉ diễn ra trong ngắn hạn và kết thúc khi sức nóng của giải đấu hạ nhiệt.",
+          "likelihood": "cao"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Tuyển bóng đá quốc gia Việt Nam",
+          "target": "Ngân hàng thương mại",
+          "relation_type": "cause_effect",
+          "label": "Chiến thắng thể thao làm cơ sở cho ngân hàng tung ưu đãi hút khách"
+        }
+      ],
+      "entities": [
+        "Tuyển Việt Nam",
+        "Các ngân hàng thương mại"
+      ],
+      "keywords": [
+        "ngân hàng",
+        "lãi suất",
+        "huy động vốn",
+        "tuyển Việt Nam",
+        "ASEAN Cup 2026"
+      ],
+      "importance": 40,
+      "severity": 1,
+      "sentiment": 1,
+      "scope": "business"
+    }
+  },
+  "evt_4227b486": {
+    "created_at": 1787833671511,
+    "expires_at": 1790425671511,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_217ec72a": {
+    "created_at": 1787833715426,
+    "expires_at": 1790425715426,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
   }
 }
