@@ -5,7 +5,7 @@
     "unit": "VNĐ/kg",
     "country": "VN",
     "frequency": "daily",
-    "retrieved_at": "2026-08-27T23:20:02.713Z",
+    "retrieved_at": "2026-08-28T04:22:52.872Z",
     "value": 16000,
     "status": "offline_fallback",
     "source": {
@@ -25,8 +25,8 @@
     "unit": "VNĐ/kg",
     "country": "VN",
     "frequency": "daily",
-    "retrieved_at": "2026-08-27T23:20:02.715Z",
-    "value": 60000,
+    "retrieved_at": "2026-08-28T04:22:52.873Z",
+    "value": 57000,
     "source": {
       "name": "Báo chí (Google News)",
       "url": "https://news.google.com/rss/search?q=%22gi%C3%A1%20heo%20h%C6%A1i%22%20%22h%C3%B4m%20nay%22&hl=vi&gl=VN&ceid=VN:vi",
@@ -44,7 +44,7 @@
     "unit": "VNĐ/quả",
     "country": "VN",
     "frequency": "daily",
-    "retrieved_at": "2026-08-27T23:20:02.716Z",
+    "retrieved_at": "2026-08-28T04:22:52.874Z",
     "value": 3700,
     "source": {
       "name": "Báo chí (Google News)",
@@ -63,16 +63,17 @@
     "unit": "VNĐ/lít",
     "country": "VN",
     "frequency": "weekly",
-    "retrieved_at": "2026-08-27T23:20:02.717Z",
-    "value": 22600,
+    "retrieved_at": "2026-08-28T04:22:52.875Z",
+    "value": 60,
+    "status": "offline_fallback",
     "source": {
-      "name": "Báo Mới Tiện Ích",
-      "url": "https://baomoi.com/tien-ich-gia-xang-dau.epi",
-      "type": "html_table"
+      "name": "Giá tham chiếu",
+      "type": "fallback"
     },
     "quality": {
-      "status": "verified",
-      "method": "direct_scrape"
+      "status": "failed_but_cached",
+      "method": "hardcode",
+      "error_log": "fetch failed"
     },
     "category": "Chi phí sinh hoạt"
   },
@@ -82,16 +83,17 @@
     "unit": "VNĐ/lít",
     "country": "VN",
     "frequency": "weekly",
-    "retrieved_at": "2026-08-27T23:20:02.717Z",
-    "value": 28080,
+    "retrieved_at": "2026-08-28T04:22:52.876Z",
+    "value": 40,
+    "status": "offline_fallback",
     "source": {
-      "name": "Báo Mới Tiện Ích",
-      "url": "https://baomoi.com/tien-ich-gia-xang-dau.epi",
-      "type": "html_table"
+      "name": "Giá tham chiếu",
+      "type": "fallback"
     },
     "quality": {
-      "status": "verified",
-      "method": "direct_scrape"
+      "status": "failed_but_cached",
+      "method": "hardcode",
+      "error_log": "fetch failed"
     },
     "category": "Chi phí sinh hoạt"
   },
@@ -101,7 +103,7 @@
     "unit": "VNĐ/bình",
     "country": "VN",
     "frequency": "monthly",
-    "retrieved_at": "2026-08-27T23:20:02.718Z",
+    "retrieved_at": "2026-08-28T04:22:52.876Z",
     "value": 598104,
     "source": {
       "name": "Google News",
@@ -120,7 +122,7 @@
     "unit": "VNĐ/kWh",
     "country": "VN",
     "frequency": "monthly",
-    "retrieved_at": "2026-08-27T23:20:02.719Z",
+    "retrieved_at": "2026-08-28T04:22:52.877Z",
     "value": 2204,
     "source": {
       "name": "Thông cáo Báo chí",
@@ -139,7 +141,7 @@
     "unit": "VNĐ/m³",
     "country": "VN",
     "frequency": "monthly",
-    "retrieved_at": "2026-08-27T23:20:02.719Z",
+    "retrieved_at": "2026-08-28T04:22:52.878Z",
     "value": 8000,
     "source": {
       "name": "Thông cáo Báo chí",
@@ -158,7 +160,7 @@
     "unit": "%",
     "country": "VN",
     "frequency": "monthly",
-    "retrieved_at": "2026-08-27T23:20:02.720Z",
+    "retrieved_at": "2026-08-28T04:22:52.878Z",
     "value": 4.45,
     "period": "2026-08",
     "source": {
@@ -178,7 +180,7 @@
     "unit": "VNĐ/tháng",
     "country": "VN",
     "frequency": "yearly",
-    "retrieved_at": "2026-08-27T23:20:02.720Z",
+    "retrieved_at": "2026-08-28T04:22:52.879Z",
     "value": 5310000,
     "source": {
       "name": "Báo chí (Google News)",
@@ -197,7 +199,7 @@
     "unit": "%/năm",
     "country": "VN",
     "frequency": "monthly",
-    "retrieved_at": "2026-08-27T23:20:02.721Z",
+    "retrieved_at": "2026-08-28T04:22:52.879Z",
     "value": 6.5,
     "source": {
       "name": "Báo chí (Google News)",
@@ -216,7 +218,7 @@
     "unit": "VNĐ",
     "country": "VN",
     "frequency": "realtime",
-    "retrieved_at": "2026-08-27T23:20:02.722Z",
+    "retrieved_at": "2026-08-28T04:22:52.880Z",
     "value": 26075,
     "source": {
       "name": "Yahoo Finance",
@@ -235,8 +237,8 @@
     "unit": "Tr/lượng",
     "country": "VN",
     "frequency": "daily",
-    "retrieved_at": "2026-08-27T23:20:02.723Z",
-    "value": 150,
+    "retrieved_at": "2026-08-28T04:22:52.881Z",
+    "value": 149.7,
     "source": {
       "name": "Báo chí (Google News)",
       "url": "https://news.google.com/rss/search?q=%22v%C3%A0ng%20SJC%22%20%22tri%E1%BB%87u%20%C4%91%E1%BB%93ng%22&hl=vi&gl=VN&ceid=VN:vi",
@@ -253,8 +255,8 @@
     "name": "VN-Index",
     "unit": "Điểm",
     "country": "VN",
-    "retrieved_at": "2026-08-27T23:20:02.723Z",
-    "value": 1831.56,
+    "retrieved_at": "2026-08-28T04:22:52.881Z",
+    "value": 1831.05,
     "source": {
       "name": "TradingView",
       "url": "https://www.tradingview.com",
@@ -271,8 +273,8 @@
     "name": "Dầu Brent",
     "unit": "USD/thùng",
     "country": "Global",
-    "retrieved_at": "2026-08-27T23:20:02.724Z",
-    "value": 88.63,
+    "retrieved_at": "2026-08-28T04:22:52.882Z",
+    "value": 88.2,
     "source": {
       "name": "Yahoo Finance",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/BZ=F?range=1d&interval=1d",
@@ -290,7 +292,7 @@
     "unit": "Điểm",
     "country": "VN",
     "frequency": "monthly",
-    "retrieved_at": "2026-08-27T23:20:02.724Z",
+    "retrieved_at": "2026-08-28T04:22:52.882Z",
     "value": 52.9,
     "period": "2026-08",
     "source": {
@@ -309,8 +311,8 @@
     "name": "Bitcoin",
     "unit": "USD",
     "country": "Global",
-    "retrieved_at": "2026-08-27T23:20:02.725Z",
-    "value": 80242,
+    "retrieved_at": "2026-08-28T04:22:52.883Z",
+    "value": 79891,
     "source": {
       "name": "CoinGecko",
       "url": "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd",

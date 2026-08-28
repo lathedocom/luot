@@ -55931,5 +55931,407 @@
       "sentiment": -1,
       "scope": "global"
     }
+  },
+  "evt_4ba3c43d": {
+    "created_at": 1787890681290,
+    "expires_at": 1790482681290,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_8089d7f9": {
+    "created_at": 1787890720505,
+    "expires_at": 1790482720505,
+    "version": "4.5",
+    "checksum": "629533bb6eb39b682619d68cc7a77688",
+    "data": {
+      "cluster_title": "Triều Tiên đe dọa trả đũa sau khi Mỹ phê duyệt bán tên lửa cho Hàn Quốc",
+      "short_summary": "Triều Tiên lên án việc Mỹ phê duyệt bán lô tên lửa đối không AIM-9X cho Hàn Quốc và cảnh báo sẽ thực hiện các biện pháp đáp trả mạnh mẽ, làm gia tăng sự căng thẳng về địa chính trị trong khu vực.",
+      "detailed_summary": "Triều Tiên chính thức lên án quyết định của Mỹ trong việc phê duyệt bán lô tên lửa đối không AIM-9X cho Hàn Quốc. Đồng thời, Triều Tiên đưa ra cảnh báo sẽ có những biện pháp đáp trả mạnh mẽ đối với động thái này.",
+      "causes": [
+        "Mỹ phê duyệt bán lô tên lửa đối không AIM-9X cho Hàn Quốc",
+        "Căng thẳng lâu năm trên Bán đảo Triều Tiên"
+      ],
+      "effects": [
+        "Triều Tiên lên án hành động của Mỹ",
+        "Triều Tiên đe dọa trả đũa mạnh tay"
+      ],
+      "affected_groups": [
+        "Chính phủ Triều Tiên",
+        "Chính phủ Hàn Quốc",
+        "Chính phủ Mỹ"
+      ],
+      "market_impact": "Không có tác động trực tiếp đến thị trường tài chính toàn cầu, chỉ làm gia tăng rủi ro địa chính trị khu vực.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "military"
+      ],
+      "regions": [
+        "KP",
+        "KR",
+        "US"
+      ],
+      "significance": "Sự kiện phản ánh sự gia tăng căng thẳng quân sự và ngoại giao giữa các bên liên quan trên Bán đảo Triều Tiên.",
+      "unknowns": [
+        "Hình thức trả đũa cụ thể mà Triều Tiên sẽ thực hiện",
+        "Thời gian cụ thể bàn giao lô tên lửa AIM-9X"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên tuyên bố chính thức được ghi nhận.",
+      "scenarios": [
+        {
+          "text": "Triều Tiên thực hiện các vụ thử nghiệm vũ khí hoặc phóng tên lửa tầm ngắn để đáp trả.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Mỹ và Hàn Quốc tiếp tục tăng cường tập trận chung và gia tăng hiện diện quân sự.",
+          "likelihood": "cao"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Mỹ",
+          "target": "Hàn Quốc",
+          "relation_type": "cooperation",
+          "label": "Phê duyệt bán tên lửa"
+        },
+        {
+          "source": "Triều Tiên",
+          "target": "Mỹ",
+          "relation_type": "conflict",
+          "label": "Lên án và đe dọa trả đũa"
+        },
+        {
+          "source": "Mỹ",
+          "target": "Triều Tiên",
+          "relation_type": "cause_effect",
+          "label": "Nguyên nhân dẫn đến phản ứng đe dọa từ Triều Tiên"
+        }
+      ],
+      "entities": [
+        "Triều Tiên",
+        "Mỹ",
+        "Hàn Quốc"
+      ],
+      "keywords": [
+        "Triều Tiên",
+        "Mỹ",
+        "Hàn Quốc",
+        "tên lửa AIM-9X",
+        "đối không"
+      ],
+      "importance": 80,
+      "severity": 4,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_d4d10ea0": {
+    "created_at": 1787890770992,
+    "expires_at": 1790482770992,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_22add85c": {
+    "created_at": 1787890812166,
+    "expires_at": 1790482812166,
+    "version": "4.5",
+    "checksum": "4519c4eb519b0b8c3955ebe00b74fc90",
+    "data": {
+      "cluster_title": "Lũ quét phá hủy cửa khẩu biên giới Nepal - Trung Quốc",
+      "short_summary": "Trận lũ quét dữ dội tại khu vực biên giới Nepal - Trung Quốc đã phá hủy hoàn toàn cửa khẩu biên giới và nhiều công trình hạ tầng quan trọng. Sự cố gây thiệt hại nặng nề về tài sản và ảnh hưởng đến hoạt động giao thương giữa hai quốc gia.",
+      "detailed_summary": "Dựa trên dữ liệu ảnh vệ tinh, một trận lũ quét nghiêm trọng đã xảy ra tại khu vực biên giới giữa Nepal và Trung Quốc. Thảm họa thiên tai này đã tàn phá và xóa sổ hoàn toàn cửa khẩu biên giới cùng nhiều công trình hạ tầng quan trọng nằm dọc theo khu vực này.",
+      "causes": [
+        "Thiên tai lũ quét"
+      ],
+      "effects": [
+        "Xóa sổ cửa khẩu biên giới Nepal - Trung Quốc",
+        "Phá hủy nhiều công trình dọc biên giới"
+      ],
+      "affected_groups": [
+        "Cư dân vùng biên giới Nepal - Trung Quốc",
+        "Cơ quan quản lý cửa khẩu hai nước"
+      ],
+      "market_impact": "Gây gián đoạn hoạt động giao thương qua cửa khẩu biên giới giữa Nepal và Trung Quốc.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "environment"
+      ],
+      "regions": [
+        "NP",
+        "CN"
+      ],
+      "significance": "Sự kiện cho thấy mức độ tàn phá nghiêm trọng của thiên tai đối với cơ sở hạ tầng giao thương biên giới.",
+      "unknowns": [
+        "Nguyên nhân cụ thể dẫn đến trận lũ quét",
+        "Thống kê chi tiết về thiệt hại về người và tài sản"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên bằng chứng từ ảnh vệ tinh.",
+      "scenarios": [
+        {
+          "text": "Hai nước sẽ tiến hành khảo sát thiệt hại và lên kế hoạch khôi phục lại khu vực cửa khẩu biên giới.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Hoạt động giao thương qua biên giới bị đình trệ kéo dài do quy mô tàn phá lớn của lũ quét.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Lũ quét",
+          "target": "Cửa khẩu biên giới Nepal - Trung Quốc",
+          "relation_type": "cause_effect",
+          "label": "Xóa sổ cửa khẩu"
+        }
+      ],
+      "entities": [
+        "Nepal",
+        "Trung Quốc"
+      ],
+      "keywords": [
+        "lũ quét",
+        "biên giới",
+        "Nepal",
+        "Trung Quốc",
+        "thiên tai"
+      ],
+      "importance": 75,
+      "severity": 4,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_57f43e68": {
+    "created_at": 1787890875585,
+    "expires_at": 1790482875585,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_b5b25243": {
+    "created_at": 1787890921745,
+    "expires_at": 1790482921745,
+    "version": "4.5",
+    "checksum": "d3a49da870cccc4acdadec8e18cd65a3",
+    "data": {
+      "cluster_title": "Cập nhật tin tức thiên tai và địa chính trị thế giới",
+      "short_summary": "Tin tức thế giới ngày 28-8 tập trung vào thảm họa lũ quét tại biên giới Nepal - Trung Quốc khiến 1.468 người mất tích, diễn biến về eo biển Hormuz tại Iran và tuyên bố của ông Trump liên quan đến quan hệ Nga - NATO.",
+      "detailed_summary": "Bản tin thế giới cập nhật hai sự kiện lớn: Thứ nhất, thảm họa lũ quét xảy ra tại khu vực biên giới giữa Nepal và Trung Quốc, ghi nhận số lượng người mất tích lên tới 1.468 người. Thứ hai, Iran thông báo sắp mở lại eo biển Hormuz, đồng thời ông Trump đưa ra khẳng định rằng Nga sẽ không tấn công Tổ chức Hiệp ước Bắc Đại Tây Dương (NATO).",
+      "causes": [
+        "Thiên tai mưa lũ tại khu vực biên giới Nepal và Trung Quốc",
+        "Các quyết định về chính sách ngoại giao và hàng hải của Iran liên quan đến eo biển Hormuz"
+      ],
+      "effects": [
+        "1.468 người mất tích do lũ quét tại biên giới Nepal - Trung Quốc",
+        "Khả năng lưu thông hàng hải qua eo biển Hormuz được khôi phục",
+        "Giảm bớt căng thẳng liên quan đến các tuyên bố về an ninh của NATO"
+      ],
+      "affected_groups": [
+        "Cư dân sinh sống tại khu vực biên giới Nepal và Trung Quốc",
+        "Các quốc gia và doanh nghiệp phụ thuộc vào tuyến vận tải hàng hải qua eo biển Hormuz",
+        "Các quốc gia thành viên NATO"
+      ],
+      "market_impact": "Việc eo biển Hormuz sắp mở cửa trở lại có thể giúp ổn định tuyến vận tải hàng hải và chuỗi cung ứng năng lượng quốc tế.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "environment",
+        "diplomacy"
+      ],
+      "regions": [
+        "NP",
+        "CN",
+        "IR",
+        "US"
+      ],
+      "significance": "Sự kiện phản ánh các thách thức kép từ thiên tai thảm khốc tại khu vực châu Á và những diễn biến an ninh, địa chính trị quan trọng tại Trung Đông và quan hệ quốc tế.",
+      "unknowns": [
+        "Tình hình chi tiết và công tác cứu hộ cụ thể đối với 1.468 người mất tích tại biên giới Nepal - Trung Quốc",
+        "Thời điểm chính xác và các điều kiện đi kèm khi Iran mở lại eo biển Hormuz"
+      ],
+      "confidence_note": "Thông tin dựa trên bản tin tổng hợp ngắn, phản ánh các dữ liệu thực tế được cung cấp.",
+      "scenarios": [
+        {
+          "text": "Công tác tìm kiếm cứu nạn tại Nepal và Trung Quốc gặp nhiều khó khăn do quy mô thảm họa lớn, trong khi Iran tiến hành mở lại eo biển Hormuz theo đúng kế hoạch.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Tình hình thời tiết tiếp tục diễn biến phức tạp tại khu vực biên giới Nepal - Trung Quốc làm chậm trễ các nỗ lực cứu hộ.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Nepal",
+          "target": "Trung Quốc",
+          "relation_type": "cause_effect",
+          "label": "Lũ quét tại khu vực biên giới"
+        },
+        {
+          "source": "Iran",
+          "target": "Eo biển Hormuz",
+          "relation_type": "cooperation",
+          "label": "Mở lại tuyến hàng hải"
+        },
+        {
+          "source": "Ông Trump",
+          "target": "NATO",
+          "relation_type": "neutral",
+          "label": "Đưa ra khẳng định về an ninh"
+        }
+      ],
+      "entities": [
+        "Nepal",
+        "Trung Quốc",
+        "Iran",
+        "Donald Trump",
+        "Nga",
+        "NATO"
+      ],
+      "keywords": [
+        "lũ quét",
+        "Nepal",
+        "Trung Quốc",
+        "Iran",
+        "eo biển Hormuz",
+        "Trump",
+        "Nga",
+        "NATO"
+      ],
+      "importance": 85,
+      "severity": 4,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_38d43202": {
+    "created_at": 1787890962246,
+    "expires_at": 1790482962246,
+    "version": "4.5",
+    "checksum": "24413858db2f4053b77815bac4a678bd",
+    "data": {
+      "cluster_title": "Giải thích quy trình chuyển mã số thuế sang trạng thái không hoạt động",
+      "short_summary": "Giải thích lý do doanh nghiệp bị chuyển mã số thuế sang trạng thái 06 (không hoạt động tại địa chỉ đăng ký). Quy trình này chỉ được thực hiện sau khi cơ quan thuế đã thực hiện rà soát, yêu cầu giải trình và xác minh thực tế tại địa chỉ đăng ký.",
+      "detailed_summary": "Sự việc giải thích nguyên nhân vì sao doanh nghiệp bị chuyển mã số thuế sang trạng thái không hoạt động tại địa chỉ đăng ký. Cụ thể, việc này chỉ xảy ra khi cơ quan thuế thực hiện các bước rà soát, yêu cầu doanh nghiệp giải trình và tiến hành xác minh thực tế.",
+      "causes": [
+        "Cơ quan thuế rà soát doanh nghiệp",
+        "Yêu cầu giải trình và xác minh thực tế không đáp ứng"
+      ],
+      "effects": [
+        "Doanh nghiệp bị chuyển mã số thuế sang trạng thái không hoạt động tại địa chỉ",
+        "Mã số thuế chuyển sang trạng thái 06"
+      ],
+      "affected_groups": [
+        "Doanh nghiệp",
+        "Cơ quan thuế"
+      ],
+      "market_impact": "Làm rõ quy trình kiểm tra và xử lý trạng thái mã số thuế đối với các doanh nghiệp không hoạt động tại địa chỉ đăng ký, giúp minh bạch hóa công tác quản lý thuế.",
+      "vn_impact": "Sự kiện phản ánh trực tiếp quy trình quản lý thuế tại Việt Nam, giúp các doanh nghiệp nắm rõ các bước rà soát, giải trình và xác minh thực tế của cơ quan thuế.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "business"
+      ],
+      "regions": [
+        "VN"
+      ],
+      "significance": "Làm sáng tỏ quy trình pháp lý và nghiệp vụ thuế khi xử lý các trường hợp doanh nghiệp không hoạt động tại địa chỉ đăng ký.",
+      "unknowns": [
+        "Thời gian cụ thể cho từng bước rà soát và xác minh",
+        "Hậu quả pháp lý chi tiết tiếp theo đối với doanh nghiệp ngoài việc đổi trạng thái mã số thuế"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao, dựa trên quy trình nghiệp vụ thuế chuẩn hóa.",
+      "scenarios": [
+        {
+          "text": "Doanh nghiệp phối hợp giải trình và chứng minh hoạt động đúng địa chỉ để giữ nguyên mã số thuế.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Doanh nghiệp không liên lạc được, bị chuyển chính thức sang trạng thái 06 và xử lý theo quy định pháp luật.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Cơ quan thuế",
+          "target": "Doanh nghiệp",
+          "relation_type": "cause_effect",
+          "label": "Rà soát và chuyển trạng thái mã số thuế"
+        }
+      ],
+      "entities": [
+        "Cơ quan thuế",
+        "Doanh nghiệp"
+      ],
+      "keywords": [
+        "mã số thuế",
+        "trạng thái 06",
+        "doanh nghiệp",
+        "cơ quan thuế",
+        "địa chỉ đăng ký"
+      ],
+      "importance": 40,
+      "severity": 2,
+      "sentiment": 0,
+      "scope": "business"
+    }
   }
 }
