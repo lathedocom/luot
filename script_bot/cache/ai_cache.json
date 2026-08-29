@@ -58284,5 +58284,383 @@
       "sentiment": -1,
       "scope": "global"
     }
+  },
+  "evt_21a6b7de": {
+    "created_at": 1788019301162,
+    "expires_at": 1790611301162,
+    "version": "4.5",
+    "checksum": "677c15d6d653a8420ba0ac6d5175a3f1",
+    "data": {
+      "cluster_title": "Lũ quét thảm khốc tại Nepal gây thiệt hại kinh tế nặng nề",
+      "short_summary": "Trận lũ quét thảm khốc tại Nepal ước tính gây thiệt hại kinh tế khoảng 4-5 tỷ USD, tương đương 10% GDP quốc gia. Bộ trưởng Tài chính Swarnim Wagle cho biết Nepal sẽ cần nguồn lực lớn để tái thiết đất nước sau thảm họa thiên tai này.",
+      "detailed_summary": "Trận lũ quét thảm khốc xảy ra tại Nepal vào ngày 26/8 đã gây ra thiệt hại sơ bộ khoảng từ 4 đến 5 tỷ USD. Theo Bộ trưởng Tài chính Nepal Swarnim Wagle, con số này tương đương với ít nhất 10% tổng sản phẩm quốc nội (GDP) của quốc gia này, đặt ra thách thức lớn về nguồn lực tài chính để tái thiết nền kinh tế.",
+      "causes": [
+        "Trận lũ quét thảm khốc xảy ra tuần này tại Nepal"
+      ],
+      "effects": [
+        "Thiệt hại sơ bộ từ 4-5 tỷ USD",
+        "Nền kinh tế Nepal có thể mất ít nhất 10% GDP",
+        "Nepal cần nguồn vốn lớn để tái thiết đất nước"
+      ],
+      "affected_groups": [
+        "Chính phủ Nepal",
+        "Người dân Nepal chịu ảnh hưởng bởi lũ quét",
+        "Nền kinh tế Nepal"
+      ],
+      "market_impact": "Gây áp lực tài chính lớn lên nền kinh tế Nepal và làm gián đoạn các hoạt động kinh tế nội địa.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "environment"
+      ],
+      "regions": [
+        "NP"
+      ],
+      "significance": "Sự kiện phản ánh mức độ tổn thương nặng nề của các quốc gia đang phát triển trước thiên tai thảm khốc, đe dọa trực tiếp đến sự ổn định kinh tế vĩ mô.",
+      "unknowns": [
+        "Số lượng thương vong chính xác của người dân chưa được đề cập",
+        "Nguồn vốn cụ thể để tái thiết đất nước sẽ được huy động từ đâu chưa được làm rõ"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên phát biểu trực tiếp của Bộ trưởng Tài chính Nepal.",
+      "scenarios": [
+        {
+          "text": "Nepal phải vay mượn quốc tế hoặc kêu gọi viện trợ nước ngoài để có đủ 4-5 tỷ USD tái thiết kinh tế.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Tốc độ tăng trưởng GDP của Nepal suy giảm mạnh trong năm nay do nguồn lực phải dồn cho công tác khắc phục hậu quả thiên tai.",
+          "likelihood": "cao"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Trận lũ quét",
+          "target": "Nepal",
+          "relation_type": "cause_effect",
+          "label": "Gây thiệt hại kinh tế nặng nề"
+        },
+        {
+          "source": "Swarnim Wagle",
+          "target": "Nepal",
+          "relation_type": "neutral",
+          "label": "Đưa ra đánh giá thiệt hại tài chính"
+        }
+      ],
+      "entities": [
+        "Nepal",
+        "Swarnim Wagle"
+      ],
+      "keywords": [
+        "lũ quét",
+        "Nepal",
+        "GDP",
+        "thiệt hại kinh tế",
+        "tái thiết"
+      ],
+      "importance": 85,
+      "severity": 4,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_3af41479": {
+    "created_at": 1788019346637,
+    "expires_at": 1790611346637,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_cf17d29b": {
+    "created_at": 1788019394843,
+    "expires_at": 1790611394843,
+    "version": "4.5",
+    "checksum": "b3e9247f0bcd5dfb77b31856ea1c8c0d",
+    "data": {
+      "cluster_title": "Tổng thống Iran thừa nhận lệnh trừng phạt của Mỹ gây tổn hại kinh tế",
+      "short_summary": "Tổng thống Iran Masoud Pezeshkian thừa nhận rằng các lệnh trừng phạt kinh tế do Hoa Kỳ áp đặt đang gây ra áp lực nặng nề và gây thiệt hại trực tiếp đến nền kinh tế của quốc gia này.",
+      "detailed_summary": "Trong một tuyên bố gần đây, Tổng thống Iran Masoud Pezeshkian đã thừa nhận rằng các biện pháp trừng phạt kinh tế do Mỹ áp đặt đang tạo ra những tổn hại và gây áp lực nghiêm trọng lên nền kinh tế Iran.",
+      "causes": [
+        "Mỹ áp đặt các lệnh trừng phạt kinh tế lên Iran"
+      ],
+      "effects": [
+        "Nền kinh tế Iran chịu tổn hại và áp lực lớn"
+      ],
+      "affected_groups": [
+        "Chính phủ Iran",
+        "Người dân Iran"
+      ],
+      "market_impact": "Gây tâm lý bất ổn đối với thị trường nội địa Iran và ảnh hưởng đến các đối tác thương mại có liên quan.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "politics"
+      ],
+      "regions": [
+        "IR",
+        "US"
+      ],
+      "significance": "Sự thừa nhận hiếm hoi từ cấp lãnh đạo cao nhất của Iran về tác động tiêu cực của các biện pháp trừng phạt từ phương Tây.",
+      "unknowns": [
+        "Các biện pháp cụ thể mà chính quyền Iran sẽ thực hiện để giảm thiểu thiệt hại",
+        "Phản ứng tiếp theo từ phía chính phủ Mỹ"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên tuyên bố trực tiếp từ nguyên thủ quốc gia.",
+      "scenarios": [
+        {
+          "text": "Iran tìm kiếm các đối tác thương mại thay thế để giảm bớt áp lực kinh tế từ các lệnh trừng phạt.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Iran và Mỹ tiến hành các bước thăm dò nhằm giảm bớt căng thẳng kinh tế và ngoại giao.",
+          "likelihood": "thấp"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Mỹ",
+          "target": "Iran",
+          "relation_type": "conflict",
+          "label": "Áp lực trừng phạt kinh tế"
+        },
+        {
+          "source": "Tổng thống Iran Masoud Pezeshkian",
+          "target": "Nền kinh tế Iran",
+          "relation_type": "cause_effect",
+          "label": "Thừa nhận tổn hại kinh tế"
+        }
+      ],
+      "entities": [
+        "Masoud Pezeshkian",
+        "Iran",
+        "Mỹ"
+      ],
+      "keywords": [
+        "trừng phạt Mỹ",
+        "kinh tế Iran",
+        "Masoud Pezeshkian",
+        "sức ép kinh tế"
+      ],
+      "importance": 80,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_013ffa26": {
+    "created_at": 1788019436117,
+    "expires_at": 1790611436117,
+    "version": "4.5",
+    "checksum": "6f633ec152281c99eca1c884d6de8f47",
+    "data": {
+      "cluster_title": "Sụp đổ sông băng tại Nepal do biến đổi khí hậu",
+      "short_summary": "Tình trạng sụp đổ sông băng tại Nepal đang gia tăng mạnh mẽ trong thập kỷ qua do lớp băng vĩnh cửu tan nhanh vì biến đổi khí hậu, tạo ra những nguy cơ thảm họa môi trường nghiêm trọng.",
+      "detailed_summary": "Giới khoa học ghi nhận số lượng thảm họa sụp đổ sông băng ngày một tăng trong thập kỷ qua. Nguyên nhân chính là do lớp băng vĩnh cửu đang tan nhanh hơn trước tác động của biến đổi khí hậu, gây ra mối nguy hiểm lớn về khí hậu từ việc sụp đổ sông băng ở Nepal.",
+      "causes": [
+        "Biến đổi khí hậu",
+        "Lớp băng vĩnh cửu tan nhanh hơn trước"
+      ],
+      "effects": [
+        "Số lượng thảm họa sụp đổ sông băng ngày một tăng trong thập kỷ qua",
+        "Gia tăng mối nguy hiểm về khí hậu"
+      ],
+      "affected_groups": [
+        "Người dân sinh sống tại khu vực lân cận sông băng",
+        "Giới khoa học và nghiên cứu khí hậu",
+        "Cộng đồng cư dân Nepal"
+      ],
+      "market_impact": "Không có tác động trực tiếp đáng kể đến thị trường tài chính.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "environment"
+      ],
+      "regions": [
+        "NP"
+      ],
+      "significance": "Sự kiện phản ánh rõ nét tác động khốc liệt và nhanh chóng của biến đổi khí hậu toàn cầu đối với các hệ sinh thái băng giá.",
+      "unknowns": [
+        "Mức độ thiệt hại cụ thể về người và tài sản trong các vụ sụp đổ sông băng",
+        "Các biện pháp can thiệp cụ thể từ chính quyền địa phương"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên ghi nhận của giới khoa học.",
+      "scenarios": [
+        {
+          "text": "Các thảm họa sụp đổ sông băng tiếp tục gia tăng tần suất nếu biến đổi khí hậu không được kìm chế.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Chính quyền và giới khoa học đưa ra các biện pháp cảnh báo sớm và sơ tán kịp thời để giảm thiểu thiệt hại.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Biến đổi khí hậu",
+          "target": "Sông băng Nepal",
+          "relation_type": "cause_effect",
+          "label": "Làm tan lớp băng vĩnh cửu và gây sụp đổ"
+        },
+        {
+          "source": "Sông băng Nepal",
+          "target": "Thảm họa sụp đổ sông băng",
+          "relation_type": "cause_effect",
+          "label": "Dẫn đến số lượng thảm họa gia tăng"
+        }
+      ],
+      "entities": [
+        "Nepal"
+      ],
+      "keywords": [
+        "sụp đổ sông băng",
+        "biến đổi khí hậu",
+        "Nepal",
+        "lớp băng vĩnh cửu"
+      ],
+      "importance": 75,
+      "severity": 4,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_d2365de9": {
+    "created_at": 1788019477617,
+    "expires_at": 1790611477617,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_d93e8a36": {
+    "created_at": 1788019519449,
+    "expires_at": 1790611519449,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_50cc3769": {
+    "created_at": 1788019566527,
+    "expires_at": 1790611566527,
+    "version": "4.5",
+    "checksum": "49a9408bf29e7db441cb79a307a2f8a2",
+    "data": {
+      "cluster_title": "CoolFly ra mắt máy bay cá nhân mẫu Urban",
+      "short_summary": "Công ty công nghệ CoolFly tại Chiết Giang, Trung Quốc đã ra mắt mẫu Urban, một phương tiện bay cá nhân cho phép cất cánh thẳng đứng với mức giá hơn 2,5 tỷ đồng, mở ra hướng đi mới trong lĩnh vực vận chuyển cá nhân.",
+      "detailed_summary": "Công ty công nghệ máy bay CoolFly có trụ sở tại Chiết Giang, Trung Quốc, đã chính thức mở bán mẫu Urban. Đây là phương tiện bay cá nhân cho phép người sử dụng đứng trực tiếp trên đó để bay thẳng đứng lên không trung, có mức giá bán ra hơn 2,5 tỷ đồng.",
+      "causes": [
+        "Sự phát triển công nghệ máy bay cá nhân của công ty CoolFly tại Chiết Giang, Trung Quốc."
+      ],
+      "effects": [
+        "Mở bán phương tiện bay cá nhân Urban với giá hơn 2,5 tỷ đồng trên thị trường."
+      ],
+      "affected_groups": [
+        "Người tiêu dùng có thu nhập cao",
+        "Các doanh nghiệp công nghệ hàng không"
+      ],
+      "market_impact": "Đưa ra một lựa chọn mới trong phân khúc phương tiện bay cá nhân, tạo thêm sự cạnh tranh trên thị trường công nghệ bay.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "tech",
+        "economy"
+      ],
+      "regions": [
+        "CN"
+      ],
+      "significance": "Đánh dấu bước tiến mới trong việc thương mại hóa các phương tiện bay cá nhân phục vụ con người ở tư thế đứng.",
+      "unknowns": [
+        "Chưa rõ thời gian giao hàng cụ thể cho khách hàng",
+        "Chưa có thông tin về các tiêu chuẩn cấp phép bay tại các quốc gia khác ngoài Trung Quốc"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao, dựa trên bài báo gốc về sự kiện ra mắt sản phẩm.",
+      "scenarios": [
+        {
+          "text": "Sản phẩm thu hút sự quan tâm của giới thượng lưu và mở rộng thị trường tại Trung Quốc.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Sản phẩm gặp rào cản pháp lý về quy định vùng trời khi mở rộng sang các thị trường quốc tế.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "CoolFly",
+          "target": "Urban",
+          "relation_type": "cause_effect",
+          "label": "Sản xuất và mở bán"
+        }
+      ],
+      "entities": [
+        "CoolFly",
+        "Chiết Giang",
+        "Trung Quốc"
+      ],
+      "keywords": [
+        "máy bay cá nhân",
+        "Urban",
+        "CoolFly",
+        "công nghệ hàng không",
+        "Trung Quốc"
+      ],
+      "importance": 75,
+      "severity": 3,
+      "sentiment": 1,
+      "scope": "business"
+    }
   }
 }
