@@ -58662,5 +58662,81 @@
       "sentiment": 1,
       "scope": "business"
     }
+  },
+  "evt_fb82d787": {
+    "created_at": 1788045490362,
+    "expires_at": 1790637490362,
+    "version": "4.5",
+    "checksum": "ffed5efaff5b7807d34021d175fc8030",
+    "data": {
+      "cluster_title": "...",
+      "short_summary": "...",
+      "detailed_summary": "Cuộc chiến tranh thương mại thông qua các đòn thuế quan áp lên Canada do ông Trump thúc đẩy có nguy cơ làm gia tăng lạm phát và đẩy giá cả hàng hóa tại thị trường Mỹ lên cao. Tình trạng này tạo ra hệ quả tiêu cực cho cử tri Mỹ, qua đó đe dọa trực tiếp đến cơ hội và sự ủng hộ dành cho đảng Cộng hòa trong kỳ bầu cử giữa kỳ sắp tới.",
+      "causes": [
+        "Việc áp dụng đòn thuế quan đối với Canada từ phía ông Trump",
+        "Chiến tranh thuế quan giữa Mỹ và Canada"
+      ],
+      "effects": [
+        "Vật giá tại Mỹ tăng cao",
+        "Đe dọa bất lợi cho đảng Cộng hòa trong cuộc bầu cử giữa kỳ"
+      ],
+      "affected_groups": [
+        "Đảng Cộng hòa",
+        "Người tiêu dùng Mỹ"
+      ],
+      "market_impact": "Gây áp lực lạm phát và làm tăng giá cả hàng hóa tại thị trường Mỹ do chi phí nhập khẩu leo thang từ đòn thuế quan.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "politics"
+      ],
+      "regions": [
+        "US",
+        "CA"
+      ],
+      "significance": "Chính sách thuế quan bảo hộ có thể tạo ra tác dụng ngược về kinh tế đối nội, làm tổn hại đến uy tín chính trị của đảng cầm quyền trong các cuộc bầu cử quan trọng.",
+      "unknowns": [
+        "Mức thuế cụ thể và thời điểm áp dụng chính xác",
+        "Phản ứng trả đũa chi tiết từ phía chính phủ Canada"
+      ],
+      "confidence_note": "Thông tin dựa trên nhận định về rủi ro chính trị và kinh tế từ chính sách thuế quan, mức độ tin cậy trung bình.",
+      "scenarios": [
+        {
+          "text": "Đảng Cộng hòa gặp khó khăn lớn trong cuộc bầu cử giữa kỳ do cử tri bất mãn vì vật giá leo thang.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Mỹ và Canada đạt được thỏa thuận thương mại mới, làm dịu đi nguy cơ chiến tranh thuế quan.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Ông Trump",
+          "target": "Canada",
+          "relation_type": "conflict",
+          "label": "Áp dụng đòn thuế quan"
+        },
+        {
+          "source": "Đòn thuế quan",
+          "target": "Vật giá tại Mỹ",
+          "relation_type": "cause_effect",
+          "label": "Làm tăng vật giá"
+        },
+        {
+          "source": "Vật giá tại Mỹ",
+          "target": "Đảng Cộng hòa",
+          "relation_type": "cause_effect",
+          "label": "Đe dọa vị thế bầu cử"
+        }
+      ],
+      "entities": [],
+      "keywords": [],
+      "importance": 80,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
   }
 }
