@@ -57860,5 +57860,429 @@
       "sentiment": -1,
       "scope": "..."
     }
+  },
+  "evt_f5d83741": {
+    "created_at": 1788005890963,
+    "expires_at": 1790597890963,
+    "version": "4.5",
+    "checksum": "a4f7b4a583a522a08271b6279caec209",
+    "data": {
+      "cluster_title": "Vụ trộm vòng cổ hoàng gia trị giá 4 triệu USD tại Áo",
+      "short_summary": "Hai nghi phạm đã đột nhập vào Bảo tàng Nghệ thuật Ứng dụng (MAK) tại Vienna, Áo, dùng búa đập kính để lấy trộm chiếc vòng cổ bạch kim đính 673 viên kim cương thuộc về Hoàng gia Ai Cập, trị giá khoảng 4 triệu USD.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "categories": [
+        "Tội phạm",
+        "Văn hóa"
+      ],
+      "regions": [
+        "AT"
+      ],
+      "follow_up": "",
+      "entities": [
+        "Bảo tàng Nghệ thuật Ứng dụng (MAK)",
+        "Vienna",
+        "Áo",
+        "Hoàng gia Ai Cập"
+      ],
+      "keywords": [
+        "trộm cắp",
+        "vòng cổ kim cương",
+        "Bảo tàng MAK",
+        "Vienna",
+        "Hoàng gia Ai Cập"
+      ],
+      "importance": 65,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "personal"
+    }
+  },
+  "evt_2a45e51b": {
+    "created_at": 1788005938479,
+    "expires_at": 1790597938479,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_a23e9cdd": {
+    "created_at": 1788005972861,
+    "expires_at": 1790597972861,
+    "version": "4.5",
+    "checksum": "761c004648517c8f0239efaacc152e75",
+    "data": {
+      "cluster_title": "Lũ quét tại Nepal gây thiệt hại kinh tế lớn",
+      "short_summary": "Trận lũ quét nghiêm trọng tại Nepal vào ngày 26/8 ước tính gây thiệt hại sơ bộ khoảng 4-5 tỷ USD, tương đương với 10% GDP của quốc gia này, gây tác động nặng nề đến nền kinh tế.",
+      "detailed_summary": "Trận lũ quét xảy ra tại Nepal vào ngày 26/8 đã gây ra những tổn thất nặng nề về kinh tế. Các ước tính sơ bộ cho thấy thiệt hại do thiên tai này gây ra có giá trị từ 4 đến 5 tỷ USD, tương đương với khoảng 10% tổng sản phẩm quốc nội (GDP) của quốc gia này.",
+      "causes": [
+        "Trận lũ quét xảy ra ngày 26/8"
+      ],
+      "effects": [
+        "Thiệt hại sơ bộ từ 4 đến 5 tỷ USD",
+        "Có nguy cơ mất ít nhất 10% GDP quốc gia"
+      ],
+      "affected_groups": [
+        "Nền kinh tế Nepal",
+        "Người dân vùng lũ quét"
+      ],
+      "market_impact": "Thiệt hại kinh tế lớn ở cấp quốc gia có thể làm suy yếu thị trường nội địa và gia tăng áp lực tài chính công của Nepal.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "environment"
+      ],
+      "regions": [
+        "NP"
+      ],
+      "significance": "Sự kiện cho thấy mức độ tổn thương nặng nề của nền kinh tế các quốc gia đang phát triển trước thảm họa thiên tai cực đoan.",
+      "unknowns": [
+        "Thiệt hại cụ thể về người và cơ sở hạ tầng chi tiết chưa được công bố",
+        "Khả năng phục hồi và nguồn lực tài chính thay thế của chính phủ Nepal"
+      ],
+      "confidence_note": "Thông tin dựa trên ước tính thiệt hại sơ bộ do cơ quan chức năng ghi nhận.",
+      "scenarios": [
+        {
+          "text": "Nepal cần sự hỗ trợ tài chính quốc tế để khắc phục hậu quả nặng nề của lũ quét.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Tăng trưởng GDP năm nay của Nepal sụt giảm nghiêm trọng so với kế hoạch ban đầu.",
+          "likelihood": "cao"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Lũ quét",
+          "target": "Nepal",
+          "relation_type": "cause_effect",
+          "label": "Gây thiệt hại kinh tế nghiêm trọng"
+        }
+      ],
+      "entities": [
+        "Nepal"
+      ],
+      "keywords": [
+        "lũ quét",
+        "GDP",
+        "Nepal",
+        "thiệt hại kinh tế"
+      ],
+      "importance": 85,
+      "severity": 5,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_590e80ac": {
+    "created_at": 1788006046011,
+    "expires_at": 1790598046011,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_f7a98b3a": {
+    "created_at": 1788006084300,
+    "expires_at": 1790598084300,
+    "version": "4.5",
+    "checksum": "5a3277b26c05b9a9cc5e54ca6c1c0c3e",
+    "data": {
+      "cluster_title": "Drone Nga tấn công kho hàng tại Kiev",
+      "short_summary": "Một cuộc tấn công bằng máy bay không người lái (drone) của Nga đã nhắm vào một kho hàng ở ngoại ô phía tây Kiev, Ukraine. Vụ việc xảy ra vào ban đêm, gây ra thương vong nghiêm trọng với ít nhất 27 người thiệt mạng.",
+      "detailed_summary": "Trong một cuộc tập kích ban đêm, máy bay không người lái của Nga đã tấn công trực diện vào một nhà kho nằm ở khu vực ngoại ô phía tây thủ đô Kiev của Ukraine. Vụ tấn công này đã gây thiệt hại nghiêm trọng về người với ít nhất 27 người đã tử vong.",
+      "causes": [
+        "Cuộc tấn công bằng drone của Nga nhắm vào cơ sở hạ tầng và kho hàng tại Ukraine"
+      ],
+      "effects": [
+        "Ít nhất 27 người thiệt mạng",
+        "Phá hủy kho hàng và gây mất an ninh trầm trọng tại khu vực ngoại ô Kiev"
+      ],
+      "affected_groups": [
+        "Dân thường tại Ukraine",
+        "Nhân sự làm việc tại khu vực kho hàng"
+      ],
+      "market_impact": "Không ghi nhận tác động trực tiếp đáng kể nào đến thị trường tài chính toàn cầu từ sự kiện đơn lẻ này.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "military",
+        "politics"
+      ],
+      "regions": [
+        "UA",
+        "RU"
+      ],
+      "significance": "Sự việc cho thấy cường độ và mức độ tàn khốc của các cuộc tập kích bằng drone trong cuộc xung đột, tiếp tục gây tổn thất lớn về nhân mạng.",
+      "unknowns": [
+        "Mục đích quân sự cụ thể của kho hàng bị tấn công",
+        "Danh tính và vai trò cụ thể của các nạn nhân thiệt mạng"
+      ],
+      "confidence_note": "Thông tin dựa trên số liệu thương vong sơ bộ từ nguồn tin tức thô, mức độ tin cậy trung bình và cần thêm thời gian để xác thực toàn diện.",
+      "scenarios": [
+        {
+          "text": "Xung đột tiếp tục leo thang với các cuộc tập kích đường không gia tăng nhằm vào các đô thị lớn của Ukraine.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Ukraine củng cố hệ thống phòng không tại khu vực ngoại ô Kiev để ngăn chặn các cuộc tấn công tương tự.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Nga",
+          "target": "Kiev",
+          "relation_type": "conflict",
+          "label": "Tập kích quân sự gây thương vong"
+        },
+        {
+          "source": "Drone Nga",
+          "target": "Kho hàng",
+          "relation_type": "cause_effect",
+          "label": "Gây phá hủy và thiệt mạng 27 người"
+        }
+      ],
+      "entities": [
+        "Nga",
+        "Ukraine",
+        "Kiev"
+      ],
+      "keywords": [
+        "Drone Nga",
+        "tập kích",
+        "Kiev",
+        "kho hàng",
+        "thương vong"
+      ],
+      "importance": 85,
+      "severity": 4,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_cf27c540": {
+    "created_at": 1788006136187,
+    "expires_at": 1790598136187,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_1368e385": {
+    "created_at": 1788006184876,
+    "expires_at": 1790598184876,
+    "version": "4.5",
+    "checksum": "45b379b5f5b0501fa123e2b4c4467ffd",
+    "data": {
+      "cluster_title": "Phát triển công nghệ 'gián lai máy' hỗ trợ cứu trợ y tế",
+      "short_summary": "Các nhà khoa học Australia đang phát triển những con 'gián lai máy' nhằm hỗ trợ các hoạt động tìm kiếm, cứu nạn và cung cấp dịch vụ y tế cơ bản sau thảm họa, góp phần nâng cao năng lực ứng phó khẩn cấp.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "categories": [
+        "Công nghệ",
+        "Y tế",
+        "Cứu hộ cứu nạn"
+      ],
+      "regions": [
+        "AU"
+      ],
+      "follow_up": "",
+      "entities": [
+        "Các nhà khoa học Australia"
+      ],
+      "keywords": [
+        "gián lai máy",
+        "cứu trợ y tế",
+        "tìm kiếm cứu nạn",
+        "công nghệ robot",
+        "Australia"
+      ],
+      "importance": 70,
+      "severity": 3,
+      "sentiment": 1,
+      "scope": "global"
+    }
+  },
+  "evt_ce3070a8": {
+    "created_at": 1788006227099,
+    "expires_at": 1790598227099,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_b232efe2": {
+    "created_at": 1788006330071,
+    "expires_at": 1790598330071,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_30c85f80": {
+    "created_at": 1788006369239,
+    "expires_at": 1790598369239,
+    "version": "4.5",
+    "checksum": "f02307eb58b2b4e0f08abe56fdcd090f",
+    "data": {
+      "cluster_title": "...",
+      "short_summary": "...",
+      "detailed_summary": "Theo thông tin chiến sự ngày 29/8, các nhóm trinh sát, đặc nhiệm và bộ binh xung kích của Nga đã đồng loạt thực hiện các cuộc tấn công đột phá vào khu vực Dobropillia từ nhiều hướng khác nhau. Đợt tiến công này đã gây sức ép lớn và đánh bật lực lượng phòng thủ của Ukraine khỏi một số vị trí đã kiểm soát trước đó.",
+      "causes": [
+        "Chiến dịch tấn công và đột phá của lực lượng vũ trang Nga nhằm vào các vị trí phòng thủ của Ukraine.",
+        "Hoạt động phối hợp giữa các nhóm trinh sát, đặc nhiệm và bộ binh xung kích Nga trên chiến trường."
+      ],
+      "effects": [
+        "Lực lượng Ukraine bị đánh bật khỏi một số vị trí tại Dobropillia.",
+        "Tình hình chiến sự tại khu vực Dobropillia trở nên căng thẳng và phức tạp hơn."
+      ],
+      "affected_groups": [
+        "Lực lượng vũ trang Ukraine",
+        "Lực lượng vũ trang Nga",
+        "Dân thường sinh sống tại khu vực Dobropillia"
+      ],
+      "market_impact": "Không có tác động trực tiếp đáng kể nào đến thị trường tài chính toàn cầu được ghi nhận từ bản tin chiến sự này.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "military",
+        "politics"
+      ],
+      "regions": [
+        "UA",
+        "RU"
+      ],
+      "significance": "Sự kiện phản ánh diễn biến chiến sự tiếp tục căng thẳng với các đợt tiến công của Nga nhằm thay đổi cục diện kiểm soát lãnh thổ tại Ukraine.",
+      "unknowns": [
+        "Quy mô thương vong và tổn thất trang thiết bị cụ thể của cả hai bên sau trận chiến.",
+        "Diễn biến tiếp theo về khả năng phòng thủ hay phản công của lực lượng Ukraine tại Dobropillia."
+      ],
+      "confidence_note": "Thông tin dựa trên bản tin chiến sự ngắn từ nguồn báo chí, cần thêm dữ liệu từ nhiều phía để xác thực toàn diện quy mô chiến dịch.",
+      "scenarios": [
+        {
+          "text": "Quân đội Nga tiếp tục mở rộng vùng kiểm soát xung quanh Dobropillia nếu lực lượng Ukraine không kịp thời củng cố phòng tuyến.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Lực lượng Ukraine tổ chức phản công để giành lại các vị trí đã mất tại khu vực này.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Nga",
+          "target": "Ukraine",
+          "relation_type": "conflict",
+          "label": "Tấn công và giao tranh quân sự"
+        },
+        {
+          "source": "Lực lượng Nga",
+          "target": "Dobropillia",
+          "relation_type": "cause_effect",
+          "label": "Đột phá và đánh bật lực lượng đối phương"
+        }
+      ],
+      "entities": [],
+      "keywords": [],
+      "importance": 85,
+      "severity": 4,
+      "sentiment": -1,
+      "scope": "global"
+    }
   }
 }
