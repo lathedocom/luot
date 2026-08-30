@@ -59162,5 +59162,459 @@
       "sentiment": 0,
       "scope": "business"
     }
+  },
+  "evt_c22bdac7": {
+    "created_at": 1788092291033,
+    "expires_at": 1790684291033,
+    "version": "4.5",
+    "checksum": "e9ad1663fee1531e249dfe6fc16e7d4b",
+    "data": {
+      "cluster_title": "Sự cố máy bay dân dụng áp sát trực thăng Marine One",
+      "short_summary": "Điều tra sơ bộ cho thấy hoạt động xây dựng tại Nhà Trắng có thể là nguyên nhân khiến một máy bay dân dụng bay rất gần trực thăng Marine One của Tổng thống Hoa Kỳ, gây lo ngại về vấn đề an ninh hàng không.",
+      "detailed_summary": "Kết quả điều tra sơ bộ cho thấy các công trình xây dựng diễn ra tại khu vực Nhà Trắng có khả năng là một trong những yếu tố dẫn đến việc một phi cơ dân dụng bay rất gần trực thăng Marine One của Tổng thống Mỹ vào đầu tháng này.",
+      "causes": [
+        "Hoạt động xây dựng tại Nhà Trắng"
+      ],
+      "effects": [
+        "Phi cơ dân dụng bay áp sát trực thăng Marine One của Tổng thống"
+      ],
+      "affected_groups": [
+        "Cơ quan an ninh hàng không",
+        "Chính quyền Tổng thống Mỹ"
+      ],
+      "market_impact": "Không có tác động đáng kể đến thị trường tài chính.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "military"
+      ],
+      "regions": [
+        "US"
+      ],
+      "significance": "Sự việc phơi bày những rủi ro tiềm ẩn về an ninh hàng không khu vực quanh các cơ quan đầu não nhà nước do các yếu tố ngoại cảnh.",
+      "unknowns": [
+        "Mức độ ảnh hưởng chính xác của công trình xây dựng đối với hệ thống định vị hoặc điều hướng",
+        "Các biện pháp cụ thể sẽ được áp dụng để ngăn chặn sự cố tương tự"
+      ],
+      "confidence_note": "Thông tin dựa trên kết quả điều tra sơ bộ, cần thêm thời gian để xác thực toàn diện.",
+      "scenarios": [
+        {
+          "text": "Nhà chức trách siết chặt vùng cấm bay và điều chỉnh quy trình không lưu quanh khu vực Nhà Trắng.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Sự cố tương tiếp diễn do công trình xây dựng kéo dài và thiếu biện pháp kiểm soát bổ sung.",
+          "likelihood": "thấp"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Công trình ở Nhà Trắng",
+          "target": "Phi cơ dân dụng áp sát Marine One",
+          "relation_type": "cause_effect",
+          "label": "Nguyên nhân dẫn đến sự cố hàng không"
+        }
+      ],
+      "entities": [
+        "Nhà Trắng",
+        "Marine One"
+      ],
+      "keywords": [
+        "Marine One",
+        "Nhà Trắng",
+        "an ninh hàng không",
+        "máy bay dân dụng"
+      ],
+      "importance": 65,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_58847bd7": {
+    "created_at": 1788092455820,
+    "expires_at": 1790684455820,
+    "version": "4.5",
+    "checksum": "6e969005caa57d06f4cf2355034b6f97",
+    "data": {
+      "cluster_title": "...",
+      "short_summary": "...",
+      "detailed_summary": "Bộ Quốc phòng Nga đưa ra tuyên bố cảnh báo về việc chuẩn bị thực hiện các đòn tập kích diện rộng nhắm vào cơ sở hạ tầng năng lượng của Ukraine. Quyết định này được đưa ra nhằm đáp trả những động thái tấn công tương tự mà phía Kiev đã thực hiện trước đó.",
+      "causes": [
+        "Động thái tập kích hạ tầng năng lượng tương tự từ phía Kiev",
+        "Sự leo thang căng thẳng quân sự giữa Nga và Ukraine"
+      ],
+      "effects": [
+        "Nguy cơ hạ tầng năng lượng Ukraine bị tàn phá diện rộng",
+        "Căng thẳng chiến sự giữa hai nước tiếp tục gia tăng"
+      ],
+      "affected_groups": [
+        "Người dân Ukraine chịu ảnh hưởng mất điện và thiếu năng lượng",
+        "Quân đội và cơ quan quản lý năng lượng Ukraine"
+      ],
+      "market_impact": "Gây biến động tiềm tàng đối với thị trường năng lượng khu vực và chuỗi cung ứng liên quan.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "military",
+        "energy"
+      ],
+      "regions": [
+        "RU",
+        "UA"
+      ],
+      "significance": "Sự kiện cho thấy xung đột Nga - Ukraine tiếp tục leo thang vào các mục tiêu hạ tầng thiết yếu, làm trầm trọng thêm khủng hoảng nhân đạo và năng lượng.",
+      "unknowns": [
+        "Thời điểm chính xác diễn ra các đòn tập kích của Nga",
+        "Quy mô thiệt hại thực tế đối với hệ thống năng lượng Ukraine"
+      ],
+      "confidence_note": "Thông tin dựa trên tuyên bố chính thức từ Bộ Quốc phòng Nga, có độ tin cậy cao về mặt ý định nhưng cần kiểm chứng thực tế triển khai.",
+      "scenarios": [
+        {
+          "text": "Nga tiến hành các cuộc không kích quy mô lớn nhằm vào lưới điện và cơ sở năng lượng của Ukraine theo đúng cảnh báo.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các bên đạt được một thỏa thuận ngừng bắn hoặc giảm nhiệt tạm thời trước khi cuộc tập kích diễn ra.",
+          "likelihood": "thấp"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Nga",
+          "target": "Ukraine",
+          "relation_type": "conflict",
+          "label": "Chuẩn bị tập kích quân sự"
+        },
+        {
+          "source": "Bộ Quốc phòng Nga",
+          "target": "Hạ tầng năng lượng Ukraine",
+          "relation_type": "cause_effect",
+          "label": "Mục tiêu tập kích đáp trả"
+        }
+      ],
+      "entities": [],
+      "keywords": [],
+      "importance": 85,
+      "severity": 4,
+      "sentiment": -1,
+      "scope": "..."
+    }
+  },
+  "evt_6631e598": {
+    "created_at": 1788092487702,
+    "expires_at": 1790684487702,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_7a62c76d": {
+    "created_at": 1788092579135,
+    "expires_at": 1790684579135,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_b2eb67e9": {
+    "created_at": 1788092747470,
+    "expires_at": 1790684747470,
+    "version": "4.5",
+    "checksum": "138ec5e14cc3c3c143afd8a7ee404db6",
+    "data": {
+      "cluster_title": "Người Canada tẩy chay hàng hóa Mỹ",
+      "short_summary": "Người dân Canada đang tiến hành tẩy chay hàng hóa từ Mỹ nhằm phản đối các chính sách của ông Trump. Hành động này diễn ra trong bối cảnh căng thẳng thương mại giữa Canada và Hoa Kỳ đang có dấu hiệu leo thang nghiêm trọng.",
+      "detailed_summary": "Trước tình hình căng thẳng thương mại leo thang giữa hai quốc gia, nhiều người dân Canada đã thể hiện sự bất mãn với các chính sách của ông Trump bằng hành động đồng loạt tẩy chay các sản phẩm và hàng hóa có xuất xứ từ Mỹ.",
+      "causes": [
+        "Chính sách của ông Trump gây bất mãn cho người dân Canada",
+        "Căng thẳng thương mại leo thang giữa Canada và Mỹ"
+      ],
+      "effects": [
+        "Người Canada đồng loạt tẩy chay hàng hóa Mỹ",
+        "Ảnh hưởng đến hoạt động thương mại song phương giữa hai nước"
+      ],
+      "affected_groups": [
+        "Người tiêu dùng Canada",
+        "Doanh nghiệp xuất khẩu Mỹ"
+      ],
+      "market_impact": "Gây áp lực giảm doanh số đối với các doanh nghiệp Mỹ có thị trường xuất khẩu sang Canada trong bối cảnh căng thẳng thương mại.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "diplomacy"
+      ],
+      "regions": [
+        "US",
+        "CA"
+      ],
+      "significance": "Sự việc phản ánh sự bất mãn của người dân đối với các biện pháp thương mại song phương, có thể làm gia tăng rủi ro kinh tế giữa hai quốc gia láng giềng.",
+      "unknowns": [
+        "Quy mô và mức độ tổn thất tài chính cụ thể của chiến dịch tẩy chay chưa được đo lường",
+        "Phản ứng chính thức tiếp theo từ chính quyền hai nước"
+      ],
+      "confidence_note": "Thông tin dựa trên diễn biến thực tế về phản ứng của người dân trước căng thẳng thương mại.",
+      "scenarios": [
+        {
+          "text": "Căng thẳng thương mại tiếp tục kéo dài dẫn đến làn sóng tẩy chay lan rộng hơn.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Hai bên đạt được thỏa thuận thương mại làm dịu bớt tình hình và chấm dứt làn sóng tẩy chay.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Mỹ",
+          "target": "Canada",
+          "relation_type": "conflict",
+          "label": "Căng thẳng thương mại"
+        },
+        {
+          "source": "Chính sách của ông Trump",
+          "target": "Người Canada",
+          "relation_type": "cause_effect",
+          "label": "Nguyên nhân gây bất mãn"
+        },
+        {
+          "source": "Người Canada",
+          "target": "Hàng Mỹ",
+          "relation_type": "conflict",
+          "label": "Tẩy chay hàng hóa"
+        }
+      ],
+      "entities": [
+        "Canada",
+        "Mỹ",
+        "Donald Trump"
+      ],
+      "keywords": [
+        "tẩy chay",
+        "hàng Mỹ",
+        "Canada",
+        "căng thẳng thương mại",
+        "ông Trump"
+      ],
+      "importance": 75,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_5973dff9": {
+    "created_at": 1788092923500,
+    "expires_at": 1790684923500,
+    "version": "4.5",
+    "checksum": "69344ec93efbff0b71d906001902617d",
+    "data": {
+      "cluster_title": "Vingroup thoái vốn mảng sản xuất VinFast tại Việt Nam",
+      "short_summary": "Vingroup ghi nhận khoản lợi nhuận hơn 12.500 tỷ đồng từ việc thoái vốn khỏi VinFast Trading & Production, đơn vị nắm giữ mảng sản xuất của VinFast tại Việt Nam, qua đó thực hiện tái cấu trúc doanh nghiệp.",
+      "detailed_summary": "Tập đoàn Vingroup đã thu về khoản lãi 12.542 tỷ đồng sau khi hoàn tất việc thoái vốn khỏi VinFast Trading & Production, đây là doanh nghiệp trực tiếp nắm giữ và vận hành mảng sản xuất xe của hãng VinFast tại thị trường Việt Nam.",
+      "causes": [
+        "Quyết định thoái vốn khỏi mảng sản xuất của VinFast Trading & Production tại Việt Nam",
+        "Hoạt động tái cấu trúc hoặc giao dịch tài chính của tập đoàn Vingroup"
+      ],
+      "effects": [
+        "Vingroup ghi nhận khoản lợi nhuận tài chính hơn 12.500 tỷ đồng",
+        "Thay đổi cơ cấu sở hữu tại doanh nghiệp sở hữu mảng sản xuất của VinFast ở trong nước"
+      ],
+      "affected_groups": [
+        "Tập đoàn Vingroup",
+        "Công ty VinFast Trading & Production",
+        "Các cổ đông và nhà đầu tư liên quan"
+      ],
+      "market_impact": "Ghi nhận dòng tiền và khoản lợi nhuận lớn về mặt tài chính cho Vingroup từ hoạt động thoái vốn mảng sản xuất.",
+      "vn_impact": "Góp phần làm nổi bật các hoạt động tái cấu trúc tài chính và đầu tư quy mô lớn của doanh nghiệp tư nhân hàng đầu tại thị trường Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "finance"
+      ],
+      "regions": [
+        "VN"
+      ],
+      "significance": "Sự kiện phản ánh các bước đi chiến lược về tài chính và tái cơ cấu danh mục đầu tư của Vingroup đối với các dự án thành viên.",
+      "unknowns": [
+        "Danh tính của bên nhận chuyển nhượng vốn hoặc đối tác mua lại mảng sản xuất",
+        "Kế hoạch sử dụng nguồn lợi nhuận sau thoái vốn của Vingroup"
+      ],
+      "confidence_note": "Thông tin dựa trên báo cáo tài chính hoặc thông cáo chính thức về mức lợi nhuận cụ thể, độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Vingroup tiếp tục tối ưu hóa danh mục đầu tư và tập trung nguồn lực cho các lĩnh vực trọng điểm khác.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Cơ cấu sở hữu mới của VinFast Trading & Production dẫn đến những thay đổi trong chiến lược vận hành sản xuất trong nước.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Vingroup",
+          "target": "VinFast Trading & Production",
+          "relation_type": "cause_effect",
+          "label": "Thoái vốn mang lại lợi nhuận tài chính"
+        }
+      ],
+      "entities": [
+        "Vingroup",
+        "VinFast",
+        "VinFast Trading & Production"
+      ],
+      "keywords": [
+        "Vingroup",
+        "VinFast",
+        "thoái vốn",
+        "lợi nhuận",
+        "mảng sản xuất"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": 1,
+      "scope": "business"
+    }
+  },
+  "evt_c8c05adf": {
+    "created_at": 1788092961373,
+    "expires_at": 1790684961373,
+    "version": "4.5",
+    "checksum": "6ea8522f8bf28c373a258b0d3787900b",
+    "data": {
+      "cluster_title": "Tranh cãi về việc tổ chức bầu cử tại Ukraine trong thời chiến",
+      "short_summary": "Ukraine đối mặt với sự chia rẽ quan điểm về việc tổ chức bầu cử trong bối cảnh chiến sự. Cựu Bộ trưởng Quốc phòng Fedorov đề xuất tổ chức bầu cử, trong khi Tổng thống Zelensky cảnh báo hành động này có thể gây tổn hại đến sự đoàn kết quốc gia.",
+      "detailed_summary": "Cựu Bộ trưởng Quốc phòng Ukraine Fedorov đã gây ra tranh cãi trong dư luận khi lên tiếng kêu gọi tổ chức bầu cử giữa lúc đất nước vẫn đang đối mặt với chiến sự. Tuy nhiên, Tổng thống Ukraine Volodymyr Zelensky đã bác bỏ quan điểm này, cho rằng việc tổ chức bầu cử trong thời kỳ chiến tranh có thể dẫn đến hậu quả hủy hoại đất nước, làm nổi bật bất đồng nội bộ về vấn đề duy trì đoàn kết thời chiến.",
+      "causes": [
+        "Cựu Bộ trưởng Quốc phòng Fedorov kêu gọi tổ chức bầu cử trong bối cảnh chiến sự.",
+        "Quan điểm trái chiều giữa giới chức chính trị Ukraine về việc quản lý đất nước thời chiến."
+      ],
+      "effects": [
+        "Gây tranh cãi trong nội bộ chính quyền và dư luận Ukraine.",
+        "Làm nổi bật thách thức trong việc duy trì sự đoàn kết quốc gia giữa thời chiến."
+      ],
+      "affected_groups": [
+        "Chính phủ Ukraine",
+        "Người dân Ukraine"
+      ],
+      "market_impact": "Không có tác động trực tiếp đến thị trường tài chính toàn cầu.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "military"
+      ],
+      "regions": [
+        "UA"
+      ],
+      "significance": "Sự kiện phản ánh những thách thức về mặt chính trị nội bộ và bài toán cân bằng giữa quyền lợi dân chủ với sự ổn định quốc gia trong bối cảnh chiến tranh kéo dài.",
+      "unknowns": [
+        "Phản ứng cụ thể tiếp theo của các lực lượng chính trị khác tại Ukraine đối với lời kêu gọi của ông Fedorov.",
+        "Mức độ ảnh hưởng thực tế từ tranh cãi này đối với sự ủng hộ của người dân dành cho chính phủ."
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên tường thuật của báo chí.",
+      "scenarios": [
+        {
+          "text": "Tranh cãi nội bộ tạm lắng xuống và chính phủ tiếp tục duy trì lập trường không tổ chức bầu cử trong thời chiến.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Áp lực từ việc đòi cải cách và bầu cử gia tăng, tạo thêm khó khăn cho sự đoàn kết chính trị tại Ukraine.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Fedorov",
+          "target": "Zelensky",
+          "relation_type": "conflict",
+          "label": "Mâu thuẫn về việc tổ chức bầu cử thời chiến"
+        },
+        {
+          "source": "Fedorov",
+          "target": "Ukraine",
+          "relation_type": "cause_effect",
+          "label": "Gây tranh cãi trong nội bộ quốc gia"
+        }
+      ],
+      "entities": [
+        "Ukraine",
+        "Fedorov",
+        "Zelensky"
+      ],
+      "keywords": [
+        "Ukraine",
+        "bầu cử",
+        "chiến tranh",
+        "Zelensky",
+        "Fedorov",
+        "đoàn kết"
+      ],
+      "importance": 75,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_95569d65": {
+    "created_at": 1788093073037,
+    "expires_at": 1790685073037,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
   }
 }
