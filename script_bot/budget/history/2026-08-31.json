@@ -648,5 +648,35 @@
     "completionTokens": 609,
     "latency": 18225,
     "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-08-31T23:18:01.926Z",
+    "model": "gemma-4-26b-a4b-it",
+    "provider": "google",
+    "task": "SHORT_SUMMARY",
+    "promptTokens": 218,
+    "completionTokens": 550,
+    "latency": 14385,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-08-31T23:18:13.899Z",
+    "model": "gemma-4-26b-a4b-it",
+    "provider": "google",
+    "task": "SHORT_SUMMARY",
+    "promptTokens": 213,
+    "completionTokens": 461,
+    "latency": 11970,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-08-31T23:19:45.062Z",
+    "model": "gemini-3.7-flash",
+    "provider": "google",
+    "task": "DAILY_BRIEFING",
+    "promptTokens": 1323,
+    "completionTokens": 600,
+    "latency": 17977,
+    "status": "SUCCESS"
   }
 ]
