@@ -60071,5 +60071,282 @@
       "sentiment": 0,
       "scope": "business"
     }
+  },
+  "evt_0f8fdfb8": {
+    "created_at": 1788149882304,
+    "expires_at": 1790741882304,
+    "version": "4.5",
+    "checksum": "5819208666fd0e9e76d9240ef9a9ca2c",
+    "data": {
+      "cluster_title": "Ông Trump đe dọa trừng phạt nhà báo NBC",
+      "short_summary": "Ông Trump bày tỏ sự thất vọng về cách đưa tin của nữ nhà báo Welke thuộc NBC trong kỳ bầu cử giữa kỳ và đe dọa sẽ thực hiện các biện pháp trừng phạt đối với cô.",
+      "detailed_summary": "Ông Donald Trump đã đưa ra lời kêu gọi trừng phạt đối với nữ nhà báo Welke của đài NBC, người từng điều hành các cuộc tranh luận tổng thống. Động thái này xuất phát từ việc ông bày tỏ sự thất vọng và bất mãn trước cách thức nữ nhà báo này đưa tin liên quan đến diễn biến cuộc bầu cử giữa kỳ.",
+      "causes": [
+        "Ông Trump không hài lòng với cách đưa tin về cuộc bầu cử giữa kỳ của nhà báo Welke",
+        "Sự mâu thuẫn giữa cựu Tổng thống Mỹ và các cơ quan truyền thông"
+      ],
+      "effects": [
+        "Gia tăng căng thẳng giữa ông Trump và giới truyền thông báo chí",
+        "Đặt ra câu hỏi về quyền tự do báo chí và quan hệ giữa chính trị gia với cơ quan truyền thông tại Mỹ"
+      ],
+      "affected_groups": [
+        "Giới truyền thông và nhà báo tại Mỹ",
+        "Đảng Cộng hòa và những người ủng hộ ông Trump"
+      ],
+      "market_impact": "Không có tác động đáng kể đến thị trường tài chính.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "diplomacy"
+      ],
+      "regions": [
+        "US"
+      ],
+      "significance": "Sự việc phản ánh mối quan hệ căng thẳng kéo dài giữa các chính trị gia cấp cao và giới truyền thông trong đời sống chính trị Mỹ.",
+      "unknowns": [
+        "Hình thức trừng phạt cụ thể mà ông Trump muốn nhắm đến nhà báo Welke là gì",
+        "Phản hồi chính thức từ phía nhà báo Welke và đài NBC về lời đe dọa này"
+      ],
+      "confidence_note": "Thông tin dựa trên tuyên bố công khai của nhân vật, mức độ xác thực cao về mặt sự kiện phát ngôn.",
+      "scenarios": [
+        {
+          "text": "Căng thẳng giữa ông Trump và giới truyền thông tiếp tục leo thang thông qua các tuyên bố công khai.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Đài NBC và nhà báo Welke đưa ra phản ứng pháp lý hoặc tuyên bố bảo vệ quyền tự do báo chí.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Donald Trump",
+          "target": "Welke",
+          "relation_type": "conflict",
+          "label": "Đe dọa trừng phạt và chỉ trích cách đưa tin"
+        },
+        {
+          "source": "Welke",
+          "target": "NBC",
+          "relation_type": "cooperation",
+          "label": "Nhà báo làm việc cho tổ chức truyền thông"
+        }
+      ],
+      "entities": [
+        "Donald Trump",
+        "Welke",
+        "NBC"
+      ],
+      "keywords": [
+        "Donald Trump",
+        "NBC",
+        "trừng phạt",
+        "nhà báo",
+        "bầu cử giữa kỳ"
+      ],
+      "importance": 75,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_1aad2f2b": {
+    "created_at": 1788149925760,
+    "expires_at": 1790741925760,
+    "version": "4.5",
+    "checksum": "6e89a2ab261ef3194a36ffc44d5cff5a",
+    "data": {
+      "cluster_title": "Căng thẳng Mỹ - Iran và biến động địa chính trị tại Trung Đông",
+      "short_summary": "Căng thẳng giữa Mỹ và Iran leo thang với các cuộc tấn công trả đũa, kết hợp với việc Tổng thống Venezuela gửi thông điệp từ nhà tù Mỹ, gây biến động giá dầu thế giới và làm giảm lưu lượng tàu thuyền qua eo biển Hormuz.",
+      "detailed_summary": "Sự kiện ngày 31 tháng 8 ghi nhận các cuộc tấn công ăn miếng trả miếng giữa Mỹ và Iran, dẫn đến hệ quả là số lượng tàu thuyền qua eo biển Hormuz giảm mạnh xuống chỉ còn 5 tàu mỗi ngày, đồng thời khiến giá dầu thế giới tăng cao. Song song đó, Tổng thống Venezuela đã gửi hình ảnh và thông điệp từ nhà tù tại Mỹ.",
+      "causes": [
+        "Mỹ và Iran tiến hành tấn công ăn miếng trả miếng",
+        "Căng thẳng leo thang quân sự tại khu vực Trung Đông"
+      ],
+      "effects": [
+        "Giá dầu thế giới tăng",
+        "Tàu thuyền qua eo biển Hormuz giảm mạnh chỉ còn 5 tàu mỗi ngày",
+        "Tổng thống Venezuela gửi hình ảnh và thông điệp từ nhà tù ở Mỹ"
+      ],
+      "affected_groups": [
+        "Các quốc gia phụ thuộc vào năng lượng nhập khẩu",
+        "Các doanh nghiệp vận tải biển quốc tế",
+        "Thị trường tài chính và năng lượng toàn cầu"
+      ],
+      "market_impact": "Giá dầu thế giới tăng do lo ngại gián đoạn nguồn cung năng lượng qua eo biển Hormuz.",
+      "vn_impact": "Tác động gián tiếp thông qua biến động giá dầu thế giới, có thể ảnh hưởng đến chi phí năng lượng và áp lực lạm phát trong nước.",
+      "follow_up": "",
+      "categories": [
+        "military",
+        "energy"
+      ],
+      "regions": [
+        "US",
+        "IR",
+        "VE",
+        "GLOBAL"
+      ],
+      "significance": "Sự leo thang căng thẳng giữa Mỹ và Iran đe dọa trực tiếp đến an ninh năng lượng toàn cầu và các tuyến hàng hải chiến lược.",
+      "unknowns": [
+        "Chi tiết cụ thể về quy mô và thiệt hại của các cuộc tấn công giữa Mỹ và Iran",
+        "Nội dung chi tiết và thông điệp chính xác từ Tổng thống Venezuela"
+      ],
+      "confidence_note": "Thông tin dựa trên bản tin tổng hợp sự kiện thế giới ngày 31 tháng 8.",
+      "scenarios": [
+        {
+          "text": "Căng thẳng Mỹ - Iran tiếp tục leo thang làm giá dầu biến động mạnh hơn và gián đoạn chuỗi cung ứng năng lượng.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các bên đạt được thỏa thuận giảm nhiệt tại eo biển Hormuz giúp khôi phục hoạt động hàng hải.",
+          "likelihood": "thấp"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Mỹ",
+          "target": "Iran",
+          "relation_type": "conflict",
+          "label": "Tấn công ăn miếng trả miếng"
+        },
+        {
+          "source": "Iran",
+          "target": "Eo biển Hormuz",
+          "relation_type": "cause_effect",
+          "label": "Làm giảm lượng tàu qua lại"
+        },
+        {
+          "source": "Eo biển Hormuz",
+          "target": "Giá dầu thế giới",
+          "relation_type": "cause_effect",
+          "label": "Làm tăng giá dầu"
+        }
+      ],
+      "entities": [
+        "Mỹ",
+        "Iran",
+        "Venezuela",
+        "eo biển Hormuz"
+      ],
+      "keywords": [
+        "Mỹ",
+        "Iran",
+        "Venezuela",
+        "giá dầu",
+        "eo biển Hormuz",
+        "xung đột"
+      ],
+      "importance": 90,
+      "severity": 4,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_d6249065": {
+    "created_at": 1788149966629,
+    "expires_at": 1790741966629,
+    "version": "4.5",
+    "checksum": "2f28249bb4c644de47303731f74aba68",
+    "data": {
+      "cluster_title": "Mỹ sử dụng dầu mỏ Venezuela để bổ sung kho dự trữ chiến lược",
+      "short_summary": "Tổng thống Mỹ khẳng định sẽ sử dụng nguồn dầu mỏ từ thỏa thuận mới công bố với Venezuela để bổ sung vào kho dự trữ chiến lược của Mỹ, nhằm bù đắp tình trạng cạn kiệt sau nhiều năm biến động trên thị trường.",
+      "detailed_summary": "Tổng thống Mỹ Donald Trump khẳng định Washington sẽ sử dụng nguồn dầu mỏ có được từ thỏa thuận mới công bố với Venezuela nhằm bù đắp cho kho dự trữ chiến lược của quốc gia này. Kho dự trữ này đã cạn kiệt sau nhiều năm đối mặt với các biến động thị trường.",
+      "causes": [
+        "Kho dự trữ dầu mỏ chiến lược của Mỹ bị cạn kiệt sau nhiều năm biến động",
+        "Mỹ đạt được thỏa thuận mới về dầu mỏ với Venezuela"
+      ],
+      "effects": [
+        "Bổ sung nguồn cung cho kho dự trữ chiến lược dầu mỏ của Mỹ",
+        "Tạo ra bước ngoặt mới trong quan hệ năng lượng giữa Mỹ và Venezuela"
+      ],
+      "affected_groups": [
+        "Chính phủ Mỹ",
+        "Chính phủ Venezuela",
+        "Thị trường năng lượng thế giới"
+      ],
+      "market_impact": "Có thể tác động đến nguồn cung và giá dầu thô trên thị trường năng lượng quốc tế khi có sự tham gia của nguồn dầu từ Venezuela vào kho dự trữ của Mỹ.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "energy",
+        "economy"
+      ],
+      "regions": [
+        "US",
+        "VE"
+      ],
+      "significance": "Sự kiện đánh dấu bước thay đổi trong chiến lược đảm bảo an ninh năng lượng của Mỹ thông qua việc khai thác nguồn cung từ Venezuela.",
+      "unknowns": [
+        "Chi tiết cụ thể và các điều khoản trong thỏa thuận dầu mỏ mới giữa Mỹ và Venezuela",
+        "Khối lượng và thời gian cụ thể để vận chuyển dầu từ Venezuela sang Mỹ"
+      ],
+      "confidence_note": "Thông tin dựa trên tuyên bố trực tiếp của Tổng thống Mỹ, có độ tin cậy cao về mặt chính sách.",
+      "scenarios": [
+        {
+          "text": "Thỏa thuận được triển khai suôn sẻ, giúp Mỹ từng bước lấp đầy kho dự trữ chiến lược.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Thỏa thuận gặp trở ngại do các yếu tố chính trị hoặc lệnh trừng phạt phức tạp giữa hai nước.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Mỹ",
+          "target": "Venezuela",
+          "relation_type": "cooperation",
+          "label": "Thỏa thuận cung cấp dầu mỏ"
+        },
+        {
+          "source": "Thỏa thuận dầu mỏ",
+          "target": "Kho dự trữ chiến lược",
+          "relation_type": "cause_effect",
+          "label": "Bổ sung nguồn dầu cạn kiệt"
+        }
+      ],
+      "entities": [
+        "Donald Trump",
+        "Mỹ",
+        "Venezuela"
+      ],
+      "keywords": [
+        "Mỹ",
+        "Venezuela",
+        "dầu mỏ",
+        "kho dự trữ chiến lược",
+        "Donald Trump"
+      ],
+      "importance": 80,
+      "severity": 3,
+      "sentiment": 1,
+      "scope": "global"
+    }
+  },
+  "evt_231bfea2": {
+    "created_at": 1788150016871,
+    "expires_at": 1790742016871,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
   }
 }
