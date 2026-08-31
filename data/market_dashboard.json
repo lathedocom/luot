@@ -15,7 +15,7 @@
       "history_labels": [
         "Hiện tại"
       ],
-      "updated_at": 1788179085045,
+      "updated_at": 1788192205854,
       "display_source": "Giá tham chiếu",
       "status": "online",
       "is_alert": false,
@@ -36,7 +36,7 @@
       "history_labels": [
         "Hiện tại"
       ],
-      "updated_at": 1788179085047,
+      "updated_at": 1788192205855,
       "display_source": "Báo chí (Google News)",
       "status": "online",
       "is_alert": false,
@@ -57,7 +57,7 @@
       "history_labels": [
         "Hiện tại"
       ],
-      "updated_at": 1788179085048,
+      "updated_at": 1788192205856,
       "display_source": "Báo chí (Google News)",
       "status": "online",
       "is_alert": false,
@@ -267,7 +267,7 @@
       "history_labels": [
         "Hiện tại"
       ],
-      "updated_at": 1788179085055,
+      "updated_at": 1788192205857,
       "display_source": "Báo chí (Google News)",
       "status": "online",
       "is_alert": false,
@@ -360,7 +360,7 @@
       "id": "chi_phi",
       "name": "Chi phí sinh hoạt",
       "icon": "🛒",
-      "score": 8,
+      "score": 12,
       "status": "Bình thường / Ổn định",
       "color": "#facc15",
       "trend_icon": "→",
@@ -408,16 +408,16 @@
       "id": "san_xuat",
       "name": "Sản xuất & Công nghiệp",
       "icon": "🏭",
-      "score": 16,
-      "status": "Bình thường / Ổn định",
-      "color": "#facc15",
-      "trend_icon": "→",
+      "score": 24,
+      "status": "Đang cải thiện",
+      "color": "#10b981",
+      "trend_icon": "↑",
       "reasons": [
         "Dữ liệu duy trì ổn định theo chu kỳ."
       ],
       "target_audience": "Doanh nghiệp sản xuất, Công nhân",
       "meaning": "Nhà máy hoạt động hết công suất, nhu cầu tuyển dụng tăng cao.",
-      "impact_level": "🟢 Thấp",
+      "impact_level": "🟡 Trung bình",
       "duration": "Trung hạn"
     },
     {
@@ -429,10 +429,10 @@
       "color": "#10b981",
       "trend_icon": "↑",
       "reasons": [
-        "Việc tăng cường quan hệ ngoại giao song phương và sự mở rộng đầu tư của các tập đoàn đa quốc gia vào chế biến nông sản đang thúc đẩy mạnh mẽ động lực xuất khẩu."
+        "Việc tăng cường quan hệ ngoại giao và mở rộng đầu tư vào năng lực chế biến nông sản đang thúc đẩy sự phát triển của ngành thương mại và xuất nhập khẩu."
       ],
       "target_audience": "Doanh nghiệp xuất nhập khẩu, Logistics",
-      "meaning": "Các doanh nghiệp và hộ sản xuất sẽ có cơ hội nâng cao giá trị sản phẩm và tiếp cận thị trường quốc tế thuận lợi hơn thông qua chuỗi cung ứng toàn cầu.",
+      "meaning": "Doanh nghiệp có thêm cơ hội gia tăng giá trị sản phẩm và mở rộng thị trường xuất khẩu nhờ các chính sách ngoại giao thuận lợi và hạ tầng chế biến nâng cao.",
       "impact_level": "🔴 Cao (Tích cực)",
       "duration": "Trung hạn"
     },
@@ -488,16 +488,16 @@
       "id": "tai_chinh",
       "name": "Thị trường tài chính",
       "icon": "📈",
-      "score": 20,
-      "status": "Đang cải thiện",
-      "color": "#10b981",
-      "trend_icon": "↑",
+      "score": 18.666666666666668,
+      "status": "Bình thường / Ổn định",
+      "color": "#facc15",
+      "trend_icon": "→",
       "reasons": [
         "Dữ liệu duy trì ổn định theo chu kỳ."
       ],
       "target_audience": "Nhà đầu tư cá nhân, Quỹ đầu tư",
       "meaning": "Kênh đầu tư sinh lời tốt, tâm lý thị trường hưng phấn.",
-      "impact_level": "🟡 Trung bình",
+      "impact_level": "🟢 Thấp",
       "duration": "Ngắn hạn"
     },
     {
