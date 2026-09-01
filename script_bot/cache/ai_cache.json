@@ -56820,8 +56820,8 @@
     }
   },
   "evt_39a73818": {
-    "created_at": 1788278473760,
-    "expires_at": 1790870473760,
+    "created_at": 1788278476394,
+    "expires_at": 1790870476394,
     "version": "4.5",
     "checksum": "d7710381179f52cf9ec617e67e62d27d",
     "data": {
@@ -56845,8 +56845,8 @@
     }
   },
   "evt_c3396d7e": {
-    "created_at": 1788278508455,
-    "expires_at": 1790870508455,
+    "created_at": 1788278512689,
+    "expires_at": 1790870512689,
     "version": "4.5",
     "checksum": "d7710381179f52cf9ec617e67e62d27d",
     "data": {
@@ -56867,79 +56867,209 @@
       "severity": 3,
       "sentiment": 0,
       "scope": "business"
+    }
+  },
+  "evt_9be3163b": {
+    "created_at": 1788278553734,
+    "expires_at": 1790870553734,
+    "version": "4.5",
+    "checksum": "e1d8fa4d2ee147a80f9ffbd82d8a53bd",
+    "data": {
+      "cluster_title": "Tổng thống Nga gặp Tổng thống Iran",
+      "short_summary": "Tổng thống Nga Putin gặp Tổng thống Iran, cam kết tiếp tục duy trì và thắt chặt quan hệ song phương. Nga khẳng định sẽ luôn sát cánh và đoàn kết cùng người dân Iran trong các vấn đề quốc tế quan trọng.",
+      "detailed_summary": "Trong cuộc gặp giữa Tổng thống Vladimir Putin và Tổng thống Iran, nhà lãnh đạo Nga đã khẳng định nước này sẽ đoàn kết với người dân Iran. Đồng thời, ông cam kết sẽ tiếp tục sát cánh cùng Tehran và duy trì quan hệ hợp tác song phương giữa hai nước.",
+      "causes": [
+        "Cuộc gặp cấp cao giữa lãnh đạo hai nước Nga và Iran",
+        "Nhu cầu củng cố và duy trì quan hệ ngoại giao song phương"
+      ],
+      "effects": [
+        "Tăng cường cam kết đoàn kết và hỗ trợ lẫn nhau giữa Nga và Iran",
+        "Duy trì và thúc đẩy quan hệ hợp tác song phương trong thời gian tới"
+      ],
+      "affected_groups": [
+        "Chính phủ Nga",
+        "Chính phủ và người dân Iran"
+      ],
+      "market_impact": "Không có tác động trực tiếp đến thị trường tài chính quốc tế dựa trên thông tin được cung cấp.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "diplomacy"
+      ],
+      "regions": [
+        "RU",
+        "IR"
+      ],
+      "significance": "Sự kiện tái khẳng định mối quan hệ ngoại giao ổn định và sự cam kết gắn bó giữa hai quốc gia trong bối cảnh quốc tế hiện nay.",
+      "unknowns": [
+        "Chi tiết cụ thể về các lĩnh vực hợp tác song phương được thảo luận",
+        "Thời gian và địa điểm cụ thể diễn ra cuộc gặp"
+      ],
+      "confidence_note": "Thông tin dựa trên tuyên bố chính thức từ nguồn tin thô, có độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Quan hệ ngoại giao và hợp tác song phương giữa Nga và Iran tiếp tục được duy trì và củng cố.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Hai nước ký kết thêm các thỏa thuận hợp tác mới trong các lĩnh vực kinh tế hoặc chiến lược.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Nga",
+          "target": "Iran",
+          "relation_type": "cooperation",
+          "label": "Duy trì quan hệ song phương và cam kết sát cánh"
+        }
+      ],
+      "entities": [
+        "Vladimir Putin",
+        "Iran",
+        "Nga"
+      ],
+      "keywords": [
+        "Putin",
+        "Iran",
+        "Nga",
+        "quan hệ song phương",
+        "ngoại giao"
+      ],
+      "importance": 80,
+      "severity": 3,
+      "sentiment": 1,
+      "scope": "global"
     }
   },
   "evt_a2b8a0cd": {
-    "created_at": 1788278543259,
-    "expires_at": 1790870543259,
+    "created_at": 1788278618822,
+    "expires_at": 1790870618822,
     "version": "4.5",
-    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "checksum": "31712b4c96ac2ae2a39a22587f245a6b",
     "data": {
-      "cluster_title": "Đang cập nhật sự kiện",
-      "short_summary": "Nội dung đang được AI cập nhật lại.",
-      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
-      "causes": [],
-      "effects": [],
-      "affected_groups": [],
-      "market_impact": "",
-      "vn_impact": "Không tác động trực tiếp.",
-      "categories": [],
-      "regions": [],
+      "cluster_title": "Thiệt hại kinh tế do thiên tai toàn cầu",
+      "short_summary": "Thiên tai đang gây ra thiệt hại kinh tế cực lớn, ước tính hơn 1,2 tỷ USD mỗi ngày. Con số này phản ánh tác động tiêu cực ngày càng tăng của biến đổi khí hậu kết hợp với tình trạng đô thị hóa nhanh chóng trên phạm vi toàn cầu.",
+      "detailed_summary": "Dữ liệu cho thấy thiên tai đang gây ra tổn thất tài chính lớn cho con người, vượt mức 1,2 tỷ USD mỗi ngày. Mức độ thiệt hại khổng lồ này phản ánh rõ tác động ngày càng nghiêm trọng của biến đổi khí hậu cùng với xu hướng đô thị hóa đang gia tăng nhanh chóng.",
+      "causes": [
+        "Biến đổi khí hậu",
+        "Tình trạng đô thị hóa gia tăng"
+      ],
+      "effects": [
+        "Thiệt hại kinh tế hơn 1,2 tỷ USD mỗi ngày",
+        "Ảnh hưởng trực tiếp đến đời sống con người"
+      ],
+      "affected_groups": [
+        "Cư dân đô thị",
+        "Người dân các khu vực chịu ảnh hưởng bởi thiên tai",
+        "Nền kinh tế toàn cầu"
+      ],
+      "market_impact": "Gia tăng áp lực tài chính lên các ngành bảo hiểm, ngân hàng và chi ngân sách công cho công tác cứu trợ, khắc phục hậu quả thiên tai.",
+      "vn_impact": "Việt Nam là một trong những quốc gia chịu ảnh hưởng nặng nề bởi biến đổi khí hậu và đô thị hóa nhanh, do đó sự kiện này phản ánh rủi ro tiềm tàng về thiệt hại kinh tế và đời sống người dân đối với các đợt thiên tai trong nước.",
       "follow_up": "",
+      "categories": [
+        "environment",
+        "economy"
+      ],
+      "regions": [
+        "GLOBAL"
+      ],
+      "significance": "Sự kiện làm nổi bật quy mô tổn thất kinh tế do thiên tai gây ra, nhấn mạnh tính cấp bách của việc thích ứng với biến đổi khí hậu và quản lý đô thị.",
+      "unknowns": [
+        "Phạm vi phân bổ cụ thể của thiệt hại theo từng khu vực địa lý",
+        "Tỷ lệ đóng góp chính xác của từng loại hình thiên tai vào tổng thiệt hại"
+      ],
+      "confidence_note": "Thông tin dựa trên số liệu tổng hợp về thiệt hại kinh tế do thiên tai, có độ tin cậy cao.",
+      "scenarios": [
+        {
+          "text": "Thiệt hại kinh tế tiếp tục gia tăng nếu biến đổi khí hậu không được kiểm soát và đô thị hóa thiếu bền vững.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các quốc gia đẩy mạnh đầu tư vào cơ sở hạ tầng chống chịu thiên tai giúp làm giảm tốc độ tăng trưởng thiệt hại.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Biến đổi khí hậu",
+          "target": "Thiên tai",
+          "relation_type": "cause_effect",
+          "label": "Làm gia tăng mức độ và tần suất"
+        },
+        {
+          "source": "Đô thị hóa",
+          "target": "Thiệt hại kinh tế",
+          "relation_type": "cause_effect",
+          "label": "Làm tăng tổn thất khi xảy ra thiên tai"
+        },
+        {
+          "source": "Thiên tai",
+          "target": "Thiệt hại hơn 1,2 tỷ USD mỗi ngày",
+          "relation_type": "cause_effect",
+          "label": "Gây ra tổn thất tài chính"
+        }
+      ],
       "entities": [],
-      "keywords": [],
-      "importance": 50,
-      "severity": 3,
-      "sentiment": 0,
-      "scope": "business"
+      "keywords": [
+        "thiên tai",
+        "biến đổi khí hậu",
+        "đô thị hóa",
+        "thiệt hại kinh tế"
+      ],
+      "importance": 85,
+      "severity": 4,
+      "sentiment": -1,
+      "scope": "global"
     }
   },
   "evt_ad28e666": {
-    "created_at": 1788278611514,
-    "expires_at": 1790870611514,
+    "created_at": 1788278667629,
+    "expires_at": 1790870667629,
     "version": "4.5",
-    "checksum": "024881d0a5a5b385b5078e8319bde502",
+    "checksum": "829af36127a8476f66660135bfa9582e",
     "data": {
-      "cluster_title": "Các nhà máy Samsung tại Việt Nam báo lãi hơn 2 tỷ USD trong nửa đầu năm",
-      "short_summary": "Bốn nhà máy của Samsung tại Việt Nam đạt lợi nhuận 2,31 tỷ USD trong nửa đầu năm, tăng 23,5% so với cùng kỳ năm trước, khẳng định hiệu quả hoạt động kinh doanh mạnh mẽ tại thị trường này.",
-      "detailed_summary": "Trong nửa đầu năm, bốn nhà máy của Samsung tại Việt Nam đã báo cáo tổng mức lợi nhuận đạt 2,31 tỷ USD. Con số này ghi nhận mức tăng trưởng 23,5% so với cùng kỳ năm ngoái, phản ánh kết quả kinh doanh tích cực của các cơ sở sản xuất này.",
+      "cluster_title": "Samsung Việt Nam đạt lợi nhuận hơn 2 tỷ USD trong nửa đầu năm",
+      "short_summary": "Bốn nhà máy của Samsung tại Việt Nam ghi nhận lợi nhuận 2,31 tỷ USD trong nửa đầu năm, tăng 23,5% so với cùng kỳ năm ngoái, cho thấy sự phát triển mạnh mẽ và đóng góp lớn vào kinh tế quốc gia.",
+      "detailed_summary": "Trong nửa đầu năm nay, bốn nhà máy của tập đoàn Samsung tại Việt Nam đã báo cáo tổng mức lợi nhuận đạt 2,31 tỷ USD. Con số này ghi nhận mức tăng trưởng 23,5% khi so sánh với cùng kỳ của năm ngoái.",
       "causes": [
         "Hoạt động sản xuất kinh doanh hiệu quả của các nhà máy Samsung tại Việt Nam",
-        "Sự tăng trưởng về nhu cầu thị trường so với cùng kỳ năm trước"
+        "Nhu cầu thị trường tăng trưởng so với cùng kỳ năm ngoái"
       ],
       "effects": [
-        "Đóng góp vào kết quả tài chính chung của tập đoàn Samsung",
-        "Củng cố vai trò của các cơ sở tại Việt Nam trong mạng lưới toàn cầu của Samsung"
+        "Đóng góp lớn vào kết quả kinh doanh chung của tập đoàn Samsung",
+        "Gia tăng giá trị xuất khẩu và đóng góp vào nền kinh tế Việt Nam"
       ],
       "affected_groups": [
         "Tập đoàn Samsung",
         "Người lao động tại các nhà máy Samsung Việt Nam",
-        "Khu vực công nghiệp chế biến chế tạo tại Việt Nam"
+        "Cơ quan quản lý kinh tế Việt Nam"
       ],
-      "market_impact": "Cho thấy sự hồi phục và phát triển ổn định của lĩnh vực sản xuất điện tử và thiết bị công nghệ tại Việt Nam.",
-      "vn_impact": "Gia tăng nguồn thu ngoại tệ, đóng góp tích cực vào kim ngạch xuất khẩu, duy trì việc làm cho hàng vạn lao động và khẳng định môi trường đầu tư thuận lợi tại Việt Nam.",
+      "market_impact": "Cho thấy sự ổn định và hiệu quả trong hoạt động sản xuất của khối doanh nghiệp có vốn đầu tư nước ngoài tại Việt Nam.",
+      "vn_impact": "Góp phần tích cực vào kim ngạch xuất khẩu, tăng trưởng GDP, thu hút đầu tư nước ngoài và tạo việc làm cho hàng trăm nghìn lao động tại Việt Nam.",
       "follow_up": "",
       "categories": [
         "economy",
-        "finance"
+        "business"
       ],
       "regions": [
         "VN",
         "KR"
       ],
-      "significance": "Sự tăng trưởng lợi nhuận của Samsung tại Việt Nam minh chứng cho sức hút và hiệu quả của các dự án vốn đầu tư nước ngoài quy mô lớn trong nền kinh tế.",
+      "significance": "Sự kiện này phản ánh năng lực sản xuất và vai trò chiến lược của các cơ sở gia công, lắp ráp của Samsung tại Việt Nam trong chuỗi cung ứng toàn cầu.",
       "unknowns": [
-        "Chi tiết đóng góp lợi nhuận cụ thể của từng nhà máy trong số bốn nhà máy",
-        "Các yếu tố chi phí cụ thể tác động đến biên lợi nhuận trong kỳ"
+        "Chi tiết kết quả kinh doanh của từng nhà máy riêng lẻ trong số bốn nhà máy",
+        "Các yếu tố chi phí cụ thể tác động đến biên độ lợi nhuận trong kỳ"
       ],
-      "confidence_note": "Thông tin có độ tin cậy cao dựa trên báo cáo tài chính được công bố.",
+      "confidence_note": "Thông tin có độ tin cậy cao, dựa trên số liệu báo cáo tài chính được công bố.",
       "scenarios": [
         {
-          "text": "Các nhà máy Samsung tiếp tục duy trì đà tăng trưởng lợi nhuận trong nửa cuối năm.",
+          "text": "Samsung tiếp tục duy trì đà tăng trưởng lợi nhuận trong nửa cuối năm nhờ các dòng sản phẩm mới ra mắt.",
           "likelihood": "cao"
         },
         {
-          "text": "Biến động thị trường toàn cầu có thể ảnh hưởng đến kết quả kinh doanh giai đoạn tiếp theo.",
+          "text": "Lợi nhuận có thể biến động do các yếu tố bất định từ kinh tế toàn cầu và chuỗi cung ứng linh kiện.",
           "likelihood": "trung bình"
         }
       ],
@@ -56954,108 +57084,52 @@
           "source": "Hoạt động sản xuất",
           "target": "Lợi nhuận",
           "relation_type": "cause_effect",
-          "label": "Tạo ra kết quả tài chính dương"
+          "label": "Tạo ra kết quả tài chính tích cực"
         }
       ],
       "entities": [
-        "Samsung"
+        "Samsung Việt Nam"
       ],
       "keywords": [
-        "Samsung Việt Nam",
+        "Samsung",
         "lợi nhuận",
-        "tăng trưởng",
-        "sản xuất"
+        "Việt Nam",
+        "tăng trưởng"
       ],
       "importance": 85,
       "severity": 3,
       "sentiment": 1,
-      "scope": "business"
+      "scope": "national"
     }
   },
   "evt_505f2a2f": {
-    "created_at": 1788278660520,
-    "expires_at": 1790870660520,
+    "created_at": 1788278708227,
+    "expires_at": 1790870708227,
     "version": "4.5",
-    "checksum": "895f96cdf0e3dff3fa897ec483347d52",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
     "data": {
-      "cluster_title": "Bán tháo trái phiếu chính phủ toàn cầu",
-      "short_summary": "Thị trường trái phiếu chính phủ toàn cầu đang chứng kiến làn sóng bán tháo mạnh mẽ, khiến lợi suất tăng vọt. Nguyên nhân bắt nguồn từ xung đột tại Trung Đông, làm gia tăng lo ngại về lạm phát và khả năng các ngân hàng trung ương sẽ tăng lãi suất.",
-      "detailed_summary": "Thị trường tài chính toàn cầu ghi nhận tình trạng bán tháo trái phiếu chính phủ ở nhiều quốc gia. Diễn biến này làm lợi suất trái phiếu tăng vọt, nguyên nhân xuất phát từ xung đột tại Trung Đông khiến giới đầu tư lo ngại về nguy cơ lạm phát gia tăng và các ngân hàng trung ương có thể phải nâng lãi suất.",
-      "causes": [
-        "Xung đột tại Trung Đông",
-        "Lo ngại lạm phát gia tăng",
-        "Kỳ vọng tăng lãi suất"
-      ],
-      "effects": [
-        "Trái phiếu chính phủ toàn cầu bị bán tháo",
-        "Lợi suất trái phiếu tăng vọt"
-      ],
-      "affected_groups": [
-        "Giới đầu tư tài chính",
-        "Các chính phủ phát hành trái phiếu",
-        "Thị trường tài chính toàn cầu"
-      ],
-      "market_impact": "Lợi suất trái phiếu tăng vọt tạo áp lực lớn lên thị trường tài chính quốc tế, phản ánh tâm lý lo ngại rủi ro của nhà đầu tư trước tình hình địa chính trị.",
-      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
       "follow_up": "",
-      "categories": [
-        "finance",
-        "economy"
-      ],
-      "regions": [
-        "GLOBAL"
-      ],
-      "significance": "Sự kiện cho thấy mức độ nhạy cảm của thị trường tài chính toàn cầu đối với các căng thẳng địa chính trị và rủi ro lạm phát.",
-      "unknowns": [
-        "Mức độ tổn thất cụ thể của từng quỹ đầu tư",
-        "Phản ứng chính sách cụ thể của các ngân hàng trung ương lớn"
-      ],
-      "confidence_note": "Thông tin dựa trên diễn biến thị trường thực tế được ghi nhận ngắn gọn, độ tin cậy cao.",
-      "scenarios": [
-        {
-          "text": "Xung đột Trung Đông kéo dài tiếp tục duy trì áp lực lạm phát, buộc các ngân hàng trung ương duy trì chính sách lãi suất cao.",
-          "likelihood": "cao"
-        },
-        {
-          "text": "Căng thẳng địa chính trị hạ nhiệt giúp thị trường trái phiếu phục hồi và lợi suất ổn định trở lại.",
-          "likelihood": "trung bình"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Xung đột Trung Đông",
-          "target": "Lo ngại lạm phát",
-          "relation_type": "cause_effect",
-          "label": "Nguyên nhân dẫn đến"
-        },
-        {
-          "source": "Lo ngại lạm phát",
-          "target": "Trái phiếu chính phủ",
-          "relation_type": "cause_effect",
-          "label": "Nguyên nhân dẫn đến bán tháo"
-        }
-      ],
-      "entities": [
-        "Trái phiếu chính phủ",
-        "Trung Đông"
-      ],
-      "keywords": [
-        "trái phiếu chính phủ",
-        "bán tháo",
-        "lợi suất",
-        "xung đột Trung Đông",
-        "lạm phát",
-        "lãi suất"
-      ],
-      "importance": 85,
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
       "severity": 3,
-      "sentiment": -1,
-      "scope": "global"
+      "sentiment": 0,
+      "scope": "business"
     }
   },
   "evt_03e66433": {
-    "created_at": 1788278700578,
-    "expires_at": 1790870700578,
+    "created_at": 1788278739490,
+    "expires_at": 1790870739490,
     "version": "4.5",
     "checksum": "d7710381179f52cf9ec617e67e62d27d",
     "data": {
@@ -57079,8 +57153,8 @@
     }
   },
   "evt_4b81bd89": {
-    "created_at": 1788278733299,
-    "expires_at": 1790870733299,
+    "created_at": 1788278770693,
+    "expires_at": 1790870770693,
     "version": "4.5",
     "checksum": "d7710381179f52cf9ec617e67e62d27d",
     "data": {
