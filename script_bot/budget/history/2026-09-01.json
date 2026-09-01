@@ -628,5 +628,245 @@
     "completionTokens": 572,
     "latency": 15972,
     "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-09-01T16:00:46.446Z",
+    "model": "gemini-embedding-2",
+    "provider": "google",
+    "task": "BATCH_EMBEDDING",
+    "promptTokens": 354,
+    "completionTokens": 0,
+    "latency": 776,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-09-01T16:01:13.741Z",
+    "model": "gemma-4-26b-a4b-it",
+    "provider": "google",
+    "task": "EXTRACT_METADATA",
+    "promptTokens": 592,
+    "completionTokens": 914,
+    "latency": 26855,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-09-01T16:01:19.502Z",
+    "model": "gemini-3.5-flash-lite",
+    "provider": "google",
+    "task": "MATCH_TIMELINE",
+    "promptTokens": 542,
+    "completionTokens": 43,
+    "latency": 716,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-09-01T16:01:48.439Z",
+    "model": "gemma-4-26b-a4b-it",
+    "provider": "google",
+    "task": "EXTRACT_METADATA",
+    "promptTokens": 598,
+    "completionTokens": 955,
+    "latency": 28898,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-09-01T16:01:54.216Z",
+    "model": "gemini-3.5-flash-lite",
+    "provider": "google",
+    "task": "MATCH_TIMELINE",
+    "promptTokens": 789,
+    "completionTokens": 48,
+    "latency": 689,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-09-01T16:02:23.244Z",
+    "model": "gemma-4-26b-a4b-it",
+    "provider": "google",
+    "task": "EXTRACT_METADATA",
+    "promptTokens": 588,
+    "completionTokens": 1010,
+    "latency": 28993,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-09-01T16:02:50.301Z",
+    "model": "gemini-3.5-flash-lite",
+    "provider": "google",
+    "task": "MATCH_TIMELINE",
+    "promptTokens": 318,
+    "completionTokens": 45,
+    "latency": 22019,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-09-01T16:03:28.845Z",
+    "model": "gemma-4-26b-a4b-it",
+    "provider": "google",
+    "task": "EXTRACT_METADATA",
+    "promptTokens": 584,
+    "completionTokens": 1359,
+    "latency": 38510,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-09-01T16:03:31.493Z",
+    "model": "gemini-3.5-flash-lite",
+    "provider": "google",
+    "task": "DEEP_ANALYSIS",
+    "promptTokens": 994,
+    "completionTokens": 622,
+    "latency": 2648,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-09-01T16:03:41.680Z",
+    "model": "gemini-3.5-flash-lite",
+    "provider": "google",
+    "task": "MATCH_TIMELINE",
+    "promptTokens": 393,
+    "completionTokens": 44,
+    "latency": 5142,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-09-01T16:04:17.868Z",
+    "model": "gemma-4-26b-a4b-it",
+    "provider": "google",
+    "task": "EXTRACT_METADATA",
+    "promptTokens": 591,
+    "completionTokens": 1223,
+    "latency": 35955,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-09-01T16:04:20.503Z",
+    "model": "gemini-3.5-flash-lite",
+    "provider": "google",
+    "task": "DEEP_ANALYSIS",
+    "promptTokens": 1001,
+    "completionTokens": 580,
+    "latency": 2635,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-09-01T16:04:30.941Z",
+    "model": "gemini-3.5-flash-lite",
+    "provider": "google",
+    "task": "MATCH_TIMELINE",
+    "promptTokens": 905,
+    "completionTokens": 58,
+    "latency": 5398,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-09-01T16:05:00.562Z",
+    "model": "gemma-4-26b-a4b-it",
+    "provider": "google",
+    "task": "EXTRACT_METADATA",
+    "promptTokens": 595,
+    "completionTokens": 975,
+    "latency": 29585,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-09-01T16:05:08.090Z",
+    "model": "gemini-3.5-flash-lite",
+    "provider": "google",
+    "task": "MATCH_TIMELINE",
+    "promptTokens": 452,
+    "completionTokens": 45,
+    "latency": 2414,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-09-01T16:05:33.283Z",
+    "model": "gemma-4-26b-a4b-it",
+    "provider": "google",
+    "task": "EXTRACT_METADATA",
+    "promptTokens": 593,
+    "completionTokens": 773,
+    "latency": 25130,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-09-01T16:05:40.422Z",
+    "model": "gemini-3.5-flash-lite",
+    "provider": "google",
+    "task": "MATCH_TIMELINE",
+    "promptTokens": 371,
+    "completionTokens": 51,
+    "latency": 2096,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-09-01T16:06:40.385Z",
+    "model": "gemma-4-26b-a4b-it",
+    "provider": "google",
+    "task": "SHORT_SUMMARY",
+    "promptTokens": 214,
+    "completionTokens": 762,
+    "latency": 18790,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-09-01T16:06:55.230Z",
+    "model": "gemma-4-26b-a4b-it",
+    "provider": "google",
+    "task": "SHORT_SUMMARY",
+    "promptTokens": 217,
+    "completionTokens": 624,
+    "latency": 14841,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-09-01T16:07:09.116Z",
+    "model": "gemma-4-26b-a4b-it",
+    "provider": "google",
+    "task": "SHORT_SUMMARY",
+    "promptTokens": 213,
+    "completionTokens": 503,
+    "latency": 13885,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-09-01T16:08:21.470Z",
+    "model": "gemini-3.7-flash",
+    "provider": "google",
+    "task": "DAILY_BRIEFING",
+    "promptTokens": 0,
+    "completionTokens": 0,
+    "latency": 851,
+    "status": "FAILED_RETRY"
+  },
+  {
+    "timestamp": "2026-09-01T16:08:33.849Z",
+    "model": "gemini-3.7-flash",
+    "provider": "googleBackup",
+    "task": "DAILY_BRIEFING",
+    "promptTokens": 0,
+    "completionTokens": 0,
+    "latency": 10377,
+    "status": "FAILED_RETRY"
+  },
+  {
+    "timestamp": "2026-09-01T16:08:45.553Z",
+    "model": "gemini-3.7-flash",
+    "provider": "googleBackup2",
+    "task": "DAILY_BRIEFING",
+    "promptTokens": 0,
+    "completionTokens": 0,
+    "latency": 9703,
+    "status": "FAILED_RETRY"
+  },
+  {
+    "timestamp": "2026-09-01T16:09:13.714Z",
+    "model": "gemini-3.6-flash",
+    "provider": "google",
+    "task": "DAILY_BRIEFING",
+    "promptTokens": 1332,
+    "completionTokens": 593,
+    "latency": 26160,
+    "status": "SUCCESS"
   }
 ]
