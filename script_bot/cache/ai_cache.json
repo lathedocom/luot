@@ -1,492 +1,4 @@
 {
-  "evt_40d3e8c9": {
-    "created_at": 1785626261316,
-    "expires_at": 1788218261316,
-    "version": "4.5",
-    "checksum": "da6f30677fa85ccbfbe5b62bb55b14a3",
-    "data": {
-      "cluster_title": "Bắn phá Kyiv",
-      "short_summary": "Bắn phá Kyiv khiến 9 người thiệt mạng, Nga và Mỹ tiếp tục tranh chấp về phòng thủ không gian.",
-      "detailed_summary": "Vào rạng sáng thứ Bảy, Nga đã thực hiện một cuộc tấn công bằng tên lửa đạn đạo vào năm quận tại thủ đô Kyiv của Ukraine, gây thương vong cho 9 người. Đồng thời, chính quyền Tổng thống Trump được cho là đang thay đổi quan điểm, rút lại cam kết tăng cường hệ thống phòng thủ tên lửa đã hứa trước đó cho Ukraine.",
-      "causes": [
-        "Cuộc tấn công quân sự của Nga nhắm vào cơ sở hạ tầng và dân cư tại Kyiv",
-        "Sự thay đổi chính sách từ phía chính quyền Mỹ về viện trợ quân sự"
-      ],
-      "effects": [
-        "Gia tăng số người thiệt mạng và tổn thất tại Ukraine",
-        "Sự suy giảm năng lực phòng thủ của Ukraine trước các cuộc tấn công đường không",
-        "Gia tăng áp lực đối với chính quyền Ukraine"
-      ],
-      "affected_groups": [
-        "Người dân tại Kyiv",
-        "Chính phủ Ukraine",
-        "Quân đội Ukraine"
-      ],
-      "market_impact": "Gây tâm lý bất ổn trên thị trường tài chính quốc tế, đặc biệt là giá năng lượng và các mặt hàng nông nghiệp liên quan đến hai quốc gia này.",
-      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
-      "follow_up": "",
-      "categories": [
-        "military",
-        "diplomacy"
-      ],
-      "regions": [
-        "UA",
-        "RU",
-        "US"
-      ],
-      "significance": "Sự kiện phản ánh tình hình an ninh ngày càng nguy cấp tại Ukraine khi Nga gia tăng cường độ tấn công trong bối cảnh các cam kết hỗ trợ quốc tế từ phía Mỹ trở nên bất định.",
-      "unknowns": [
-        "Chi tiết cụ thể về lý do chính quyền Mỹ thay đổi quyết định hỗ trợ hệ thống phòng thủ",
-        "Khả năng thích nghi của hệ thống phòng không Ukraine trước các đợt tấn công mới"
-      ],
-      "confidence_note": "Thông tin dựa trên báo cáo thời sự trực tiếp, độ tin cậy cao về sự kiện tấn công, cần theo dõi thêm các tuyên bố chính thức từ Mỹ.",
-      "scenarios": [
-        {
-          "text": "Ukraine tiếp tục chịu áp lực lớn từ các cuộc không kích khi nguồn lực phòng thủ bị cắt giảm.",
-          "likelihood": "cao"
-        },
-        {
-          "text": "Các đồng minh khác của Mỹ trong khối NATO tăng cường hỗ trợ thay thế cho Ukraine.",
-          "likelihood": "trung bình"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Nga",
-          "target": "Kyiv",
-          "relation_type": "conflict",
-          "label": "Tấn công quân sự gây thương vong"
-        },
-        {
-          "source": "Mỹ",
-          "target": "Ukraine",
-          "relation_type": "conflict",
-          "label": "Rút lại cam kết hỗ trợ phòng thủ"
-        },
-        {
-          "source": "Nga",
-          "target": "Ukraine",
-          "relation_type": "conflict",
-          "label": "Xung đột vũ trang"
-        }
-      ],
-      "entities": [
-        "Nga",
-        "Mỹ",
-        "Ukraine",
-        "Trung Quốc"
-      ],
-      "keywords": [
-        "Kyiv",
-        "Ukraine",
-        "Trung Quốc",
-        "Phòng thủ không gian"
-      ],
-      "importance": 85,
-      "severity": 3,
-      "sentiment": -1,
-      "scope": "national"
-    }
-  },
-  "evt_672ecbe7": {
-    "created_at": 1785626272771,
-    "expires_at": 1788218272771,
-    "version": "4.5",
-    "checksum": "1b787932fe77fc560935ba023e6fe4fa",
-    "data": {
-      "cluster_title": "Tăng chi phí vay cho các công ty AI",
-      "short_summary": "Loan investors đang yêu cầu các công ty AI phải trả chi phí vay cao hơn, ảnh hưởng đến các công ty tư nhân và công ty AI.",
-      "detailed_summary": "Lần đầu tiên sau nhiều năm, các nhà đầu tư vào thị trường cho vay AI đã chuyển sang thế chủ động, gây sức ép buộc bên đi vay phải cung cấp các điều khoản có lợi hơn cho nhà đầu tư. Sự thay đổi này được dự báo sẽ làm tăng chi phí đi vay đối với các doanh nghiệp, từ các quỹ đầu tư tư nhân cho đến các công ty AI đang gánh khoản nợ lớn.",
-      "causes": [
-        "Sự thay đổi tâm lý và vị thế đàm phán của nhà đầu tư",
-        "Nhu cầu kiểm soát rủi ro đối với các doanh nghiệp AI thâm dụng vốn"
-      ],
-      "effects": [
-        "Tăng chi phí vay vốn cho các doanh nghiệp",
-        "Thay đổi các điều khoản cho vay theo hướng có lợi hơn cho bên cấp vốn"
-      ],
-      "affected_groups": [
-        "Các công ty AI",
-        "Các quỹ đầu tư tư nhân",
-        "Các đơn vị cung cấp vốn vay"
-      ],
-      "market_impact": "Thị trường tín dụng đối với ngành công nghệ AI sẽ trở nên đắt đỏ hơn và các tiêu chuẩn phê duyệt vay vốn sẽ thắt chặt hơn.",
-      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
-      "follow_up": "",
-      "categories": [
-        "economy",
-        "finance"
-      ],
-      "regions": [
-        "GLOBAL"
-      ],
-      "significance": "Sự kiện đánh dấu bước ngoặt trong tư duy quản trị rủi ro của giới tài chính đối với cơn sốt đầu tư vào trí tuệ nhân tạo.",
-      "unknowns": [
-        "Mức tăng chi phí lãi vay cụ thể đối với các doanh nghiệp",
-        "Phạm vi áp dụng của các điều khoản mới đối với các công ty AI quy mô nhỏ"
-      ],
-      "confidence_note": "Thông tin dựa trên diễn biến thị trường thực tế, độ tin cậy cao.",
-      "scenarios": [
-        {
-          "text": "Chi phí vốn tăng cao khiến các công ty AI nhỏ lẻ gặp khó khăn trong việc duy trì hoạt động.",
-          "likelihood": "cao"
-        },
-        {
-          "text": "Các doanh nghiệp AI phải tái cơ cấu nợ để thích nghi với môi trường tài chính khắc nghiệt hơn.",
-          "likelihood": "trung bình"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Nhà đầu tư",
-          "target": "Công ty AI",
-          "relation_type": "cause_effect",
-          "label": "Tăng áp lực điều khoản vay"
-        },
-        {
-          "source": "Nhà đầu tư",
-          "target": "Quỹ đầu tư tư nhân",
-          "relation_type": "cause_effect",
-          "label": "Thay đổi chính sách chi phí vay"
-        }
-      ],
-      "entities": [
-        "Loan investors",
-        "Private equity firms",
-        "AI companies"
-      ],
-      "keywords": [
-        "AI Loan Market",
-        "Investor Demands",
-        "Borrowers Offer"
-      ],
-      "importance": 85,
-      "severity": 3,
-      "sentiment": -1,
-      "scope": "global"
-    }
-  },
-  "evt_general_1785626278466": {
-    "created_at": 1785626284204,
-    "expires_at": 1788218284204,
-    "version": "4.5",
-    "checksum": "8572af3a62f71549be0e7a10769f5a52",
-    "data": {
-      "cluster_title": "Mỹ khẳng định tôn trọng vai trò trung tâm của ASEAN",
-      "short_summary": "Mỹ khẳng định tôn trọng vai trò trung tâm của ASEAN trong vấn đề Biển Đông.",
-      "detailed_summary": "Đại sứ Mỹ tái khẳng định cam kết tôn trọng vai trò trung tâm của ASEAN trong việc giải quyết vấn đề Biển Đông. Đồng thời, phía Mỹ nhấn mạnh Biển Đông là tuyến đường hàng hải chiến lược, đóng vai trò sống còn đối với các luồng thương mại và kinh tế toàn cầu.",
-      "causes": [
-        "Tầm quan trọng chiến lược của tuyến hàng hải Biển Đông",
-        "Nhu cầu duy trì trật tự dựa trên luật lệ quốc tế tại khu vực"
-      ],
-      "effects": [
-        "Củng cố sự ủng hộ của Mỹ đối với các quốc gia ASEAN",
-        "Gia tăng sự chú ý đối với an ninh hàng hải tại khu vực"
-      ],
-      "affected_groups": [
-        "Các quốc gia thành viên ASEAN",
-        "Các doanh nghiệp có chuỗi cung ứng hàng hải quốc tế"
-      ],
-      "market_impact": "Việc nhấn mạnh sự ổn định tại Biển Đông giúp trấn an tâm lý các đơn vị vận tải biển và nhà đầu tư trong khu vực về an ninh hàng hóa.",
-      "vn_impact": "Sự kiện củng cố vị thế của Việt Nam trong việc duy trì ổn định tại Biển Đông thông qua các cơ chế hợp tác ASEAN, tạo tiền đề thuận lợi cho các hoạt động ngoại giao và thương mại biển.",
-      "follow_up": "",
-      "categories": [
-        "politics",
-        "diplomacy"
-      ],
-      "regions": [
-        "US",
-        "VN"
-      ],
-      "significance": "Tuyên bố này tái khẳng định cam kết của Mỹ trong việc duy trì vai trò của ASEAN như một thực thể dẫn dắt trong các vấn đề an ninh khu vực.",
-      "unknowns": [
-        "Cụ thể các biện pháp triển khai của Mỹ để hỗ trợ vai trò trung tâm của ASEAN",
-        "Phản ứng chi tiết của các quốc gia khác trong khu vực đối với tuyên bố này"
-      ],
-      "confidence_note": "Thông tin mang tính khẳng định chính sách từ đại diện ngoại giao, độ tin cậy cao.",
-      "scenarios": [
-        {
-          "text": "Mỹ tăng cường các hoạt động hợp tác an ninh biển với các nước ASEAN",
-          "likelihood": "cao"
-        },
-        {
-          "text": "ASEAN đẩy mạnh các cuộc đàm phán về Bộ quy tắc ứng xử trên Biển Đông với sự ủng hộ từ Mỹ",
-          "likelihood": "trung bình"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Mỹ",
-          "target": "ASEAN",
-          "relation_type": "cooperation",
-          "label": "Ủng hộ vai trò trung tâm"
-        },
-        {
-          "source": "Biển Đông",
-          "target": "Kinh tế toàn cầu",
-          "relation_type": "cause_effect",
-          "label": "Tuyến hàng hải huyết mạch"
-        }
-      ],
-      "entities": [
-        "Mỹ",
-        "ASEAN"
-      ],
-      "keywords": [
-        "ASEAN",
-        "Biển Đông",
-        "Mỹ"
-      ],
-      "importance": 85,
-      "severity": 3,
-      "sentiment": -1,
-      "scope": "global"
-    }
-  },
-  "evt_general_1785626293981": {
-    "created_at": 1785626299978,
-    "expires_at": 1788218299978,
-    "version": "4.5",
-    "checksum": "b53f008253a6dd53752f7209e2c7f4dd",
-    "data": {
-      "cluster_title": "Sự kiện di cư tại Ceuta",
-      "short_summary": "Ceuta - điểm nóng di cư hàng chục năm qua. Làn sóng 60.000 người di cư ồ ạt vào vùng lãnh thổ Ceuta được cho là hệ quả của nhiều yếu tố pháp lý, địa chính trị.",
-      "detailed_summary": "Vùng lãnh thổ Ceuta đang đối mặt với cuộc khủng hoảng di cư nghiêm trọng khi khoảng 60.000 người di cư ồ ạt tiến vào. Sự kiện này được đánh giá là kết quả của sự giao thoa giữa các yếu tố pháp lý phức tạp và những căng thẳng địa chính trị tồn tại kéo dài nhiều thập kỷ tại khu vực biên giới này.",
-      "causes": [
-        "Yếu tố pháp lý quy định về di trú",
-        "Căng thẳng địa chính trị kéo dài"
-      ],
-      "effects": [
-        "Gây quá tải hệ thống an ninh và xã hội tại Ceuta",
-        "Tạo ra điểm nóng bất ổn biên giới"
-      ],
-      "affected_groups": [
-        "Cư dân vùng Ceuta",
-        "Người di cư",
-        "Chính quyền sở tại"
-      ],
-      "market_impact": "Chưa có dữ liệu về tác động trực tiếp đến thị trường tài chính toàn cầu.",
-      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
-      "follow_up": "",
-      "categories": [
-        "politics",
-        "diplomacy"
-      ],
-      "regions": [
-        "ES",
-        "MA"
-      ],
-      "significance": "Sự kiện phản ánh tính chất mong manh của các điểm nóng địa chính trị nơi biên giới quốc gia, đòi hỏi các giải pháp ngoại giao và pháp lý dài hạn.",
-      "unknowns": [
-        "Danh tính và quốc tịch cụ thể của nhóm người di cư",
-        "Phản ứng chính sách cụ thể của các bên liên quan để giải quyết làn sóng"
-      ],
-      "confidence_note": "Thông tin dựa trên báo cáo thực trạng, độ tin cậy cao.",
-      "scenarios": [
-        {
-          "text": "Chính quyền tăng cường kiểm soát và thực hiện các biện pháp trục xuất hành chính.",
-          "likelihood": "cao"
-        },
-        {
-          "text": "Các bên liên quan tiến hành đàm phán ngoại giao cấp cao để giải quyết tận gốc nguyên nhân địa chính trị.",
-          "likelihood": "trung bình"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Các yếu tố địa chính trị",
-          "target": "Làn sóng di cư",
-          "relation_type": "cause_effect",
-          "label": "Nguyên nhân dẫn đến sự gia tăng đột biến số lượng người di cư"
-        },
-        {
-          "source": "Người di cư",
-          "target": "Ceuta",
-          "relation_type": "conflict",
-          "label": "Áp lực xâm nhập trái phép vào lãnh thổ"
-        }
-      ],
-      "entities": [
-        "Ceuta",
-        "Hàn Quốc"
-      ],
-      "keywords": [
-        "di cư",
-        "Ceuta",
-        "địa chính trị"
-      ],
-      "importance": 85,
-      "severity": 3,
-      "sentiment": -1,
-      "scope": "national"
-    }
-  },
-  "evt_da5976ff": {
-    "created_at": 1785626311643,
-    "expires_at": 1788218311643,
-    "version": "4.5",
-    "checksum": "c52abfb12895406bf19553144aa36ac9",
-    "data": {
-      "cluster_title": "Drone Ukraine đánh chìm tàu container của Nga",
-      "short_summary": "Chiếc tàu container bị chìm ở Biển Đen sau cuộc tấn công của Drone Ukraine",
-      "detailed_summary": "Lực lượng Ukraine sử dụng thiết bị bay không người lái (drone) thực hiện cuộc tấn công trực tiếp vào một tàu chở hàng của Nga tại khu vực Biển Đen. Vụ tấn công đã gây hư hại nghiêm trọng khiến con tàu bị chìm, buộc các thành viên thủy thủ đoàn phải rời bỏ phương tiện để đảm bảo an toàn.",
-      "causes": [
-        "Xung đột quân sự đang diễn ra giữa Ukraine và Nga",
-        "Chiến lược sử dụng drone của Ukraine trong tác chiến trên biển"
-      ],
-      "effects": [
-        "Tàu container bị chìm hoàn toàn",
-        "Thủy thủ đoàn phải sơ tán khẩn cấp",
-        "Gia tăng căng thẳng an ninh hàng hải tại Biển Đen"
-      ],
-      "affected_groups": [
-        "Chủ sở hữu tàu",
-        "Thủy thủ đoàn",
-        "Các đơn vị vận tải hàng hải tại khu vực"
-      ],
-      "market_impact": "Gia tăng rủi ro cho hoạt động vận tải biển tại Biển Đen, có khả năng đẩy giá cước bảo hiểm hàng hải và gây gián đoạn chuỗi cung ứng hàng hóa trong khu vực.",
-      "vn_impact": "Có thể gây ảnh hưởng gián tiếp đến chi phí vận chuyển hàng hóa xuất nhập khẩu của Việt Nam thông qua khu vực Biển Đen và đẩy giá cước vận tải biển toàn cầu tăng nhẹ.",
-      "follow_up": "",
-      "categories": [
-        "military",
-        "business"
-      ],
-      "regions": [
-        "UA",
-        "RU"
-      ],
-      "significance": "Sự kiện cho thấy sự chuyển dịch trong chiến thuật tác chiến trên biển của Ukraine, sử dụng drone giá rẻ để vô hiệu hóa tài sản vận tải lớn của đối phương.",
-      "unknowns": [
-        "Danh tính và tải trọng cụ thể của con tàu bị chìm",
-        "Số lượng thương vong chính xác của thủy thủ đoàn",
-        "Loại drone được Ukraine sử dụng trong cuộc tấn công"
-      ],
-      "confidence_note": "Thông tin dựa trên báo cáo về vụ việc, mức độ tin cậy trung bình do thiếu xác nhận từ phía chính quyền Nga.",
-      "scenarios": [
-        {
-          "text": "Nga tăng cường các biện pháp phòng vệ và kiểm soát an ninh tại Biển Đen để bảo vệ tàu thương mại.",
-          "likelihood": "cao"
-        },
-        {
-          "text": "Các hãng vận tải quốc tế hạn chế lộ trình qua Biển Đen do lo ngại rủi ro an ninh, làm ảnh hưởng đến dòng chảy hàng hóa.",
-          "likelihood": "trung bình"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Ukraine",
-          "target": "Tàu container Nga",
-          "relation_type": "conflict",
-          "label": "Tấn công quân sự"
-        },
-        {
-          "source": "Drone Ukraine",
-          "target": "Tàu container Nga",
-          "relation_type": "cause_effect",
-          "label": "Tấn công dẫn đến chìm tàu"
-        }
-      ],
-      "entities": [
-        "Drone Ukraine",
-        "Nga",
-        "Biển Đen"
-      ],
-      "keywords": [
-        "Drone Ukraine",
-        "tàu container",
-        "Nga",
-        "Biển Đen"
-      ],
-      "importance": 85,
-      "severity": 3,
-      "sentiment": -1,
-      "scope": "national"
-    }
-  },
-  "evt_general_1785626317449": {
-    "created_at": 1785626323459,
-    "expires_at": 1788218323459,
-    "version": "4.5",
-    "checksum": "b284d9d8b31290130774102bf61cf331",
-    "data": {
-      "cluster_title": "Việt Nam trở thành mỏ neo kinh tế của châu Âu",
-      "short_summary": "Việt Nam trở thành mỏ neo kinh tế của châu Âu nhờ EVFTA",
-      "detailed_summary": "Chủ tịch EuroCham khẳng định vị thế chiến lược của Việt Nam trong quan hệ kinh tế với châu Âu. Sự phát triển này được thúc đẩy mạnh mẽ bởi Hiệp định Thương mại tự do Việt Nam - EU (EVFTA), biến Việt Nam thành đối tác kinh tế then chốt tại khu vực châu Á.",
-      "causes": [
-        "Hiệp định Thương mại tự do Việt Nam - EU (EVFTA)",
-        "Chiến lược đa dạng hóa và mở rộng kinh tế của châu Âu tại châu Á"
-      ],
-      "effects": [
-        "Củng cố vị thế của Việt Nam trong chuỗi cung ứng toàn cầu",
-        "Thúc đẩy dòng vốn đầu tư từ châu Âu vào Việt Nam"
-      ],
-      "affected_groups": [
-        "Các doanh nghiệp xuất nhập khẩu Việt Nam",
-        "Nhà đầu tư châu Âu",
-        "Cộng đồng doanh nghiệp tại Việt Nam"
-      ],
-      "market_impact": "Dự báo gia tăng niềm tin của nhà đầu tư, thúc đẩy các dự án hợp tác thương mại và dòng vốn FDI từ châu Âu vào Việt Nam.",
-      "vn_impact": "Việt Nam gia tăng vị thế ngoại giao kinh tế, mở rộng cơ hội xuất khẩu và tiếp nhận công nghệ cao từ thị trường EU, đồng thời nâng cao tiêu chuẩn sản xuất nội địa để đáp ứng quy định khắt khe của đối tác.",
-      "follow_up": "",
-      "categories": [
-        "economy",
-        "diplomacy"
-      ],
-      "regions": [
-        "VN",
-        "EU"
-      ],
-      "significance": "Sự kiện khẳng định mối quan hệ đối tác chiến lược giữa Việt Nam và châu Âu, tạo nền tảng vững chắc cho sự tăng trưởng kinh tế dài hạn thông qua các cam kết thương mại quốc tế.",
-      "unknowns": [
-        "Số liệu chi tiết về dự kiến tăng trưởng đầu tư sau tuyên bố",
-        "Các thách thức cụ thể về rào cản kỹ thuật thương mại có thể phát sinh trong tương lai"
-      ],
-      "confidence_note": "Thông tin dựa trên nhận định chính thức từ lãnh đạo hiệp hội doanh nghiệp uy tín, độ tin cậy cao.",
-      "scenarios": [
-        {
-          "text": "Dòng vốn đầu tư trực tiếp từ châu Âu vào Việt Nam tăng mạnh trong các năm tới.",
-          "likelihood": "cao"
-        },
-        {
-          "text": "Hai bên mở rộng thêm các lĩnh vực hợp tác mới như kinh tế xanh và chuyển đổi số.",
-          "likelihood": "trung bình"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "EVFTA",
-          "target": "Việt Nam",
-          "relation_type": "cause_effect",
-          "label": "Là động lực then chốt thúc đẩy phát triển kinh tế"
-        },
-        {
-          "source": "EuroCham",
-          "target": "Việt Nam",
-          "relation_type": "cooperation",
-          "label": "Đánh giá và thúc đẩy quan hệ đối tác chiến lược"
-        },
-        {
-          "source": "Châu Âu",
-          "target": "Việt Nam",
-          "relation_type": "cooperation",
-          "label": "Thiết lập mối quan hệ kinh tế bền vững"
-        }
-      ],
-      "entities": [
-        "EuroCham",
-        "Chủ tịch EuroCham"
-      ],
-      "keywords": [
-        "Việt Nam",
-        "châu Âu",
-        "EVFTA"
-      ],
-      "importance": 85,
-      "severity": 3,
-      "sentiment": -1,
-      "scope": "national"
-    }
-  },
   "evt_788e1899": {
     "created_at": 1785644258940,
     "expires_at": 1788236258940,
@@ -58404,6 +57916,827 @@
       "severity": 3,
       "sentiment": 0,
       "scope": "business"
+    }
+  },
+  "evt_22fec5ad": {
+    "created_at": 1788236287884,
+    "expires_at": 1790828287884,
+    "version": "4.5",
+    "checksum": "7096a73344b93dce141a19ba49dc50c3",
+    "data": {
+      "cluster_title": "Tòa án Tối cao Mỹ cho phép ông Trump tiếp tục xây dựng phòng khiêu vũ",
+      "short_summary": "Tòa án Tối cao Mỹ đã dỡ bỏ lệnh đình chỉ thi công dự án phòng khiêu vũ trị giá 400 triệu USD tại Nhà Trắng, cho phép ông Trump tiếp tục triển khai xây dựng mặc dù các thách thức pháp lý vẫn đang tiếp diễn.",
+      "detailed_summary": "Tòa án Tối cao Mỹ đã quyết định dỡ bỏ lệnh dừng thi công dự án phòng khiêu vũ trị giá 400 triệu USD tại Nhà Trắng do tòa án cấp dưới ban hành trước đó. Quyết định này được đưa ra sau khi chính quyền ông Trump tiến hành kháng cáo, cho phép việc xây dựng được tiếp tục trong khi các thách thức pháp lý đối với dự án vẫn đang được xem xét tại tòa.",
+      "causes": [
+        "Chính quyền ông Trump nộp đơn kháng cáo lệnh dừng thi công của tòa án cấp dưới",
+        "Tòa án Tối cao Mỹ xem xét và chấp thuận việc tiếp tục triển khai dự án"
+      ],
+      "effects": [
+        "Dự án phòng khiêu vũ 400 triệu USD tại Nhà Trắng được phép tiếp tục xây dựng",
+        "Các thách thức pháp lý đối với dự án vẫn tiếp tục được xem xét trong thời gian thi công"
+      ],
+      "affected_groups": [
+        "Chính quyền ông Trump",
+        "Cơ quan tư pháp Mỹ"
+      ],
+      "market_impact": "Không có tác động đáng kể đến thị trường tài chính.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics"
+      ],
+      "regions": [
+        "US"
+      ],
+      "significance": "Sự kiện phản ánh diễn biến pháp lý liên quan đến một dự án xây dựng công cộng tại Mỹ và thẩm quyền của Tòa án Tối cao trong việc gỡ bỏ lệnh dừng thi công từ tòa cấp dưới.",
+      "unknowns": [
+        "Kết quả cuối cùng của các thách thức pháp lý đối với dự án",
+        "Thời gian hoàn thành cụ thể của công trình phòng khiêu vũ"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao, dựa trên phán quyết chính thức được đưa tin.",
+      "scenarios": [
+        {
+          "text": "Dự án tiếp tục được triển khai xây dựng cho đến khi hoàn thành mà không gặp trở ngại pháp lý lớn nào khác.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Các thách thức pháp lý tiếp tục kéo dài và có thể tạo ra những tranh chấp mới về sau.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Tòa án Tối cao Mỹ",
+          "target": "Chính quyền ông Trump",
+          "relation_type": "cooperation",
+          "label": "Dỡ bỏ lệnh dừng thi công và cho phép tiếp tục xây dựng"
+        },
+        {
+          "source": "Chính quyền ông Trump",
+          "target": "Phòng khiêu vũ Nhà Trắng",
+          "relation_type": "cause_effect",
+          "label": "Tiếp tục tiến hành xây dựng dự án"
+        }
+      ],
+      "entities": [
+        "Tòa án Tối cao Mỹ",
+        "Donald Trump",
+        "Nhà Trắng"
+      ],
+      "keywords": [
+        "Tòa án Tối cao Mỹ",
+        "Donald Trump",
+        "phòng khiêu vũ",
+        "Nhà Trắng"
+      ],
+      "importance": 75,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "national"
+    }
+  },
+  "evt_5c480dd5": {
+    "created_at": 1788236325271,
+    "expires_at": 1790828325271,
+    "version": "4.5",
+    "checksum": "fb92f198be5793c8e11f7823b7a34a32",
+    "data": {
+      "cluster_title": "Mỹ mời Nga dự hội nghị G20 gây bất bình cho châu Âu",
+      "short_summary": "Việc Mỹ mời Bộ trưởng Tài chính Nga tham gia hội nghị G20 đã gây ra phản ứng bất bình và không hài lòng từ phía các quốc gia châu Âu, làm gia tăng căng thẳng về mặt ngoại giao giữa các bên.",
+      "detailed_summary": "Mỹ đã gửi lời mời Bộ trưởng Tài chính Nga tham dự hội nghị G20 do nước này tổ chức. Động thái này đã vấp phải sự không hài lòng và phản ứng bất bình từ phía các nước châu Âu.",
+      "causes": [
+        "Mỹ mời Bộ trưởng Tài chính Nga tham dự hội nghị G20 do Mỹ tổ chức"
+      ],
+      "effects": [
+        "Các nước châu Âu bày tỏ sự không hài lòng và bất bình"
+      ],
+      "affected_groups": [
+        "Mỹ",
+        "Nga",
+        "Các nước châu Âu"
+      ],
+      "market_impact": "Không ghi nhận tác động trực tiếp đáng kể nào đến thị trường tài chính toàn cầu từ sự kiện ngoại giao này.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "diplomacy",
+        "finance"
+      ],
+      "regions": [
+        "US",
+        "RU"
+      ],
+      "significance": "Sự kiện phản ánh những khác biệt trong quan điểm ngoại giao giữa Mỹ và các nước châu Âu đối với Nga trong khuôn khổ các diễn đàn đa phương.",
+      "unknowns": [
+        "Phản ứng chính thức tiếp theo của Nga đối với lời mời",
+        "Biện pháp cụ thể mà châu Âu có thể thực hiện để bày tỏ sự không hài lòng"
+      ],
+      "confidence_note": "Thông tin dựa trên bản tin ngắn, độ tin cậy cao về mặt sự kiện ngoại giao nhưng thiếu chi tiết sâu.",
+      "scenarios": [
+        {
+          "text": "Nga nhận lời tham dự hội nghị G20, khiến khoảng cách ngoại giao giữa châu Âu và Mỹ tiếp tục duy trì trạng thái căng thẳng nhẹ.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Mỹ điều chỉnh lại cách thức tổ chức hoặc châu Âu hạ nhiệt quan điểm sau các cuộc trao đổi ngoại giao nội bộ.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Mỹ",
+          "target": "Nga",
+          "relation_type": "cooperation",
+          "label": "Mời tham dự hội nghị G20"
+        },
+        {
+          "source": "Châu Âu",
+          "target": "Mỹ",
+          "relation_type": "conflict",
+          "label": "Bày tỏ bất bình về lời mời"
+        }
+      ],
+      "entities": [
+        "Mỹ",
+        "Nga",
+        "Châu Âu",
+        "G20",
+        "Bộ trưởng Tài chính Nga"
+      ],
+      "keywords": [
+        "G20",
+        "Mỹ",
+        "Nga",
+        "Châu Âu",
+        "Bộ trưởng Tài chính Nga",
+        "ngoại giao"
+      ],
+      "importance": 80,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_28e242d4": {
+    "created_at": 1788236361092,
+    "expires_at": 1790828361092,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_1dc9c0a1": {
+    "created_at": 1788236412314,
+    "expires_at": 1790828412314,
+    "version": "4.5",
+    "checksum": "8a48380c5722bfd6ee88dc8bde093f0d",
+    "data": {
+      "cluster_title": "...",
+      "short_summary": "...",
+      "detailed_summary": "Trong bản tin thế giới, ông Trump đã nhận được một phán quyết có lợi về mặt pháp lý hoặc chính trị. Tại Ukraine, giới chức nước này đang tăng cường các biện pháp an ninh và bố trí hầm trú ẩn cho các nghị sĩ nhằm chuẩn bị cho khả năng Nga tiến hành một cuộc tấn công quy mô lớn. Ở diễn biến kinh tế quốc tế, Bộ trưởng Tài chính Nga đã bất ngờ xuất hiện tại cuộc họp của nhóm G20.",
+      "causes": [
+        "Nguy cơ Nga chuẩn bị thực hiện một cuộc tấn công lớn vào Ukraine",
+        "Sự thay đổi trong các diễn biến pháp lý liên quan đến ông Trump"
+      ],
+      "effects": [
+        "Ukraine siết chặt an ninh và chuẩn bị hầm trú ẩn cho nghị sĩ",
+        "Bộ trưởng Tài chính Nga tham gia cuộc họp G20"
+      ],
+      "affected_groups": [
+        "Các nhà lập pháp Ukraine",
+        "Giới chức chính trị Mỹ",
+        "Các thành viên tham gia hội nghị G20"
+      ],
+      "market_impact": "Thông tin chưa đủ để tác động mạnh trực tiếp đến thị trường tài chính toàn cầu ngoài các biến động địa chính trị thông thường.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "military"
+      ],
+      "regions": [
+        "US",
+        "UA",
+        "RU"
+      ],
+      "significance": "Sự kiện phản ánh đồng thời các diễn biến căng thẳng quân sự tại Đông Âu, tiến trình chính trị tại Mỹ và sự hiện diện ngoại giao kinh tế của Nga tại diễn đàn quốc tế.",
+      "unknowns": [
+        "Nội dung chi tiết và hậu quả của phán quyết có lợi cho ông Trump",
+        "Quy mô và thời điểm chính xác của cuộc tấn công lớn mà Ukraine đang chuẩn bị đối phó"
+      ],
+      "confidence_note": "Thông tin dựa trên bản tin tổng hợp ngắn, độ tin cậy ở mức trung bình và cần được kiểm chứng thêm từ các nguồn chính thống.",
+      "scenarios": [
+        {
+          "text": "Nga tiến hành các đợt tấn công quy mô lớn mới nhằm vào Ukraine, buộc nước này phải duy trì tình trạng an ninh cấp cao.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Nga tiếp tục duy trì sự hiện diện và tham gia tại các diễn đàn đa phương như G20 bất chấp sức ép từ phương Tây.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Nga",
+          "target": "Ukraine",
+          "relation_type": "conflict",
+          "label": "Chuẩn bị tấn công lớn"
+        },
+        {
+          "source": "Ukraine",
+          "target": "Nghị sĩ Ukraine",
+          "relation_type": "cause_effect",
+          "label": "Bố trí hầm trú ẩn an ninh"
+        }
+      ],
+      "entities": [],
+      "keywords": [],
+      "importance": 85,
+      "severity": 4,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_f77d54aa": {
+    "created_at": 1788236456306,
+    "expires_at": 1790828456306,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_cdbbc2a5": {
+    "created_at": 1788236492225,
+    "expires_at": 1790828492225,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_6d2ef9f6": {
+    "created_at": 1788236525021,
+    "expires_at": 1790828525021,
+    "version": "4.5",
+    "checksum": "1e6a5df7d3eedae6c6a8f45816171f21",
+    "data": {
+      "cluster_title": "Kinh tế Ấn Độ tăng trưởng vượt dự báo trong quý II",
+      "short_summary": "Kinh tế Ấn Độ đạt mức tăng trưởng ấn tượng 7,8% trong quý II, vượt xa các dự báo trước đó. Thành quả này có được nhờ sự thúc đẩy mạnh mẽ từ dòng vốn đầu tư và các hoạt động sản xuất trong nước.",
+      "detailed_summary": "Kinh tế Ấn Độ ghi nhận mức tăng trưởng 7,8% trong quý II, vượt xa kỳ vọng của thị trường. Động lực chính thúc đẩy sự tăng trưởng này đến từ việc đầu tư và hoạt động sản xuất tăng mạnh.",
+      "causes": [
+        "Đầu tư tăng mạnh",
+        "Hoạt động sản xuất gia tăng"
+      ],
+      "effects": [
+        "Kinh tế Ấn Độ tăng trưởng 7,8% trong quý II",
+        "Vượt xa kỳ vọng của thị trường"
+      ],
+      "affected_groups": [
+        "Doanh nghiệp sản xuất Ấn Độ",
+        "Nhà đầu tư thị trường Ấn Độ"
+      ],
+      "market_impact": "Tạo tâm lý tích cực cho thị trường tài chính và thu hút đầu tư vào Ấn Độ.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "finance"
+      ],
+      "regions": [
+        "IN"
+      ],
+      "significance": "Kết quả tăng trưởng vượt kỳ vọng khẳng định sức chống chịu và đà phục hồi tích cực của nền kinh tế Ấn Độ nhờ nội lực sản xuất và đầu tư.",
+      "unknowns": [
+        "Các yếu tố chi tiết đóng góp vào mức độ tăng trưởng của từng ngành sản xuất cụ thể",
+        "Dự báo chính xác cho các quý tiếp theo trong năm"
+      ],
+      "confidence_note": "Thông tin dựa trên dữ liệu công bố chính thức về kinh tế quý II của Ấn Độ.",
+      "scenarios": [
+        {
+          "text": "Đà tăng trưởng tiếp tục được duy trì nhờ chính sách thúc đẩy đầu tư và sản xuất.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Tăng trưởng có thể chậm lại nếu các biến động kinh tế toàn cầu ảnh hưởng đến sản xuất.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Đầu tư và sản xuất",
+          "target": "Kinh tế Ấn Độ",
+          "relation_type": "cause_effect",
+          "label": "Thúc đẩy tăng trưởng kinh tế vượt dự báo"
+        }
+      ],
+      "entities": [
+        "Ấn Độ"
+      ],
+      "keywords": [
+        "Ấn Độ",
+        "tăng trưởng kinh tế",
+        "quý II",
+        "đầu tư",
+        "sản xuất"
+      ],
+      "importance": 80,
+      "severity": 3,
+      "sentiment": 1,
+      "scope": "national"
+    }
+  },
+  "evt_fcb7b83a": {
+    "created_at": 1788236566767,
+    "expires_at": 1790828566767,
+    "version": "4.5",
+    "checksum": "78d8ec6b484d929280cf28c7cb14416e",
+    "data": {
+      "cluster_title": "Miền Bắc tăng đầu tư hệ thống pin lưu trữ hỗ trợ lưới điện",
+      "short_summary": "Ngành điện miền Bắc triển khai các hệ thống pin lưu trữ nhằm tối ưu hóa vận hành lưới điện. Hệ thống sẽ tích điện vào giờ nhu cầu thấp và phát trở lại vào giờ cao điểm, giúp giảm áp lực lên hạ tầng điện năng.",
+      "detailed_summary": "Ngành điện miền Bắc đã đưa vào vận hành các hệ thống pin lưu trữ với chức năng tích trữ điện năng trong thời điểm nhu cầu sử dụng thấp và phát điện trở lại vào các khung giờ cao điểm. Giải pháp này nhằm mục đích hỗ trợ lưới điện và giảm bớt áp lực quá tải trong những thời điểm tiêu thụ điện ở mức cao.",
+      "causes": [
+        "Nhu cầu sử dụng điện tăng cao đột biến vào giờ cao điểm tại khu vực miền Bắc",
+        "Yêu cầu giảm áp lực và đảm bảo vận hành ổn định cho hệ thống lưới điện"
+      ],
+      "effects": [
+        "Giảm áp lực lên hệ thống lưới điện miền Bắc trong giờ cao điểm",
+        "Nâng cao hiệu quả sử dụng và ổn định nguồn cung điện năng"
+      ],
+      "affected_groups": [
+        "Ngành điện miền Bắc",
+        "Người tiêu dùng điện tại miền Bắc"
+      ],
+      "market_impact": "Hỗ trợ ổn định nguồn cung điện, giảm thiểu rủi ro thiếu điện cục bộ và tối ưu hóa chi phí vận hành hệ thống năng lượng.",
+      "vn_impact": "Góp phần nâng cao độ tin cậy của hệ thống cung cấp điện quốc gia tại khu vực miền Bắc, đảm bảo an ninh năng lượng phục vụ phát triển kinh tế và sinh hoạt của người dân.",
+      "follow_up": "",
+      "categories": [
+        "energy",
+        "economy"
+      ],
+      "regions": [
+        "VN"
+      ],
+      "significance": "Đánh dấu bước tiến trong việc ứng dụng công nghệ lưu trữ năng lượng nhằm giải quyết bài toán quá tải lưới điện vào giờ cao điểm.",
+      "unknowns": [
+        "Quy mô công suất cụ thể của các hệ thống pin lưu trữ đã được đưa vào vận hành",
+        "Tổng mức đầu tư tài chính cho dự án tăng cường pin lưu trữ"
+      ],
+      "confidence_note": "Thông tin rõ ràng, phản ánh đúng thực tế triển khai của ngành điện.",
+      "scenarios": [
+        {
+          "text": "Hệ thống pin lưu trữ hoạt động hiệu quả, giúp giảm tải đáng kể cho lưới điện miền Bắc trong các mùa cao điểm sắp tới.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Ngành điện tiếp tục mở rộng quy mô đầu tư hệ thống lưu trữ năng lượng sang các khu vực khác trên toàn quốc.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Ngành điện miền Bắc",
+          "target": "Hệ thống pin lưu trữ",
+          "relation_type": "cooperation",
+          "label": "Đầu tư và vận hành"
+        },
+        {
+          "source": "Hệ thống pin lưu trữ",
+          "target": "Lưới điện miền Bắc",
+          "relation_type": "cause_effect",
+          "label": "Giảm áp lực giờ cao điểm"
+        }
+      ],
+      "entities": [
+        "Ngành điện miền Bắc"
+      ],
+      "keywords": [
+        "pin lưu trữ",
+        "lưới điện",
+        "ngành điện",
+        "năng lượng",
+        "miền Bắc"
+      ],
+      "importance": 75,
+      "severity": 3,
+      "sentiment": 1,
+      "scope": "national"
+    }
+  },
+  "evt_511e5b8f": {
+    "created_at": 1788236620118,
+    "expires_at": 1790828620118,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_bb374cfc": {
+    "created_at": 1788236666558,
+    "expires_at": 1790828666558,
+    "version": "4.5",
+    "checksum": "ef6163bb2a98e665a068c068b0525065",
+    "data": {
+      "cluster_title": "Bộ trưởng Lục quân Mỹ Dan Driscoll từ chức",
+      "short_summary": "Bộ trưởng Lục quân Mỹ Dan Driscoll đã đệ đơn từ chức lên Tổng thống Donald Trump do những căng thẳng kéo dài với Bộ trưởng Quốc phòng. Sự kiện chính trị quan trọng này đang nhận được sự quan tâm đặc biệt từ giới truyền thông Mỹ và quốc tế.",
+      "detailed_summary": "Các kênh truyền thông Mỹ đồng loạt đưa tin Bộ trưởng Lục quân Dan Driscoll đã đệ đơn từ chức lên Tổng thống Donald Trump. Quyết định này diễn ra sau khi xuất hiện những căng thẳng nội bộ giữa ông và Bộ trưởng Quốc phòng.",
+      "causes": [
+        "Căng thẳng giữa Bộ trưởng Lục quân Dan Driscoll và Bộ trưởng Quốc phòng"
+      ],
+      "effects": [
+        "Bộ trưởng Lục quân Dan Driscoll từ chức",
+        "Phát sinh sự chú ý từ truyền thông và công luận Mỹ đối với nội bộ Lầu Năm Góc"
+      ],
+      "affected_groups": [
+        "Bộ Quốc phòng Mỹ",
+        "Lục quân Mỹ"
+      ],
+      "market_impact": "Sự kiện mang tính chất nhân sự nội bộ chính quyền Mỹ, không gây tác động đáng kể đến thị trường tài chính.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "military"
+      ],
+      "regions": [
+        "US"
+      ],
+      "significance": "Sự việc phản ánh những biến động và mâu thuẫn trong nội bộ giới chức quốc phòng cấp cao của Mỹ dưới thời chính quyền.",
+      "unknowns": [
+        "Nguyên nhân cụ thể dẫn đến căng thẳng giữa Bộ trưởng Lục quân và Bộ trưởng Quốc phòng",
+        "Phản ứng chính thức và quyết định phê duyệt đơn từ chức từ Tổng thống Donald Trump"
+      ],
+      "confidence_note": "Thông tin dựa trên các bản tin đồng loạt từ truyền thông Mỹ, mức độ tin cậy cao về sự việc từ chức.",
+      "scenarios": [
+        {
+          "text": "Tổng thống Donald Trump nhanh chóng chấp thuận đơn từ chức và bổ nhiệm nhân sự tạm quyền thay thế vị trí Bộ trưởng Lục quân.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Tòa Bạch Ốc đứng ra hòa giải mâu thuẫn nhưng không thành công, dẫn đến việc phải cải tổ thêm một số vị trí nhân sự cấp cao khác.",
+          "likelihood": "thấp"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Dan Driscoll",
+          "target": "Bộ trưởng Quốc phòng Mỹ",
+          "relation_type": "conflict",
+          "label": "Căng thẳng nội bộ dẫn đến từ chức"
+        },
+        {
+          "source": "Dan Driscoll",
+          "target": "Donald Trump",
+          "relation_type": "cause_effect",
+          "label": "Đệ đơn từ chức lên Tổng thống"
+        }
+      ],
+      "entities": [
+        "Dan Driscoll",
+        "Donald Trump",
+        "Bộ trưởng Quốc phòng",
+        "Mỹ"
+      ],
+      "keywords": [
+        "từ chức",
+        "Bộ trưởng Lục quân",
+        "Dan Driscoll",
+        "Donald Trump",
+        "căng thẳng nội bộ"
+      ],
+      "importance": 80,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_76b1e872": {
+    "created_at": 1788236714273,
+    "expires_at": 1790828714273,
+    "version": "4.5",
+    "checksum": "5f1e7268ac850319146283a94e1d0583",
+    "data": {
+      "cluster_title": "Nga tăng cường sử dụng UAV phản lực tấn công Ukraine",
+      "short_summary": "Nga đang gia tăng cường độ sử dụng các loại UAV tấn công chạy bằng động cơ phản lực với sức mạnh vượt trội tại Ukraine. Sự leo thang này buộc phía Kiev phải nhanh chóng tìm kiếm và triển khai các biện pháp đối phó cấp bách nhằm ngăn chặn các đợt tấn công.",
+      "detailed_summary": "Ukraine ghi nhận Nga ngày càng tăng cường sử dụng thiết bị bay không người lái (UAV) tấn công hoạt động bằng động cơ phản lực, có tốc độ mạnh gấp ba lần thông thường. Diễn biến này tạo ra sức ép lớn, buộc lực lượng Kiev phải khẩn trương tìm kiếm các biện pháp hiệu quả để ngăn chặn và đối phó.",
+      "causes": [
+        "Nga gia tăng sử dụng UAV tấn công chạy bằng động cơ phản lực có tốc độ cao trên chiến trường."
+      ],
+      "effects": [
+        "Ukraine phải cấp tốc tìm kiếm cách thức và giải pháp để ngăn chặn loại vũ khí mới này."
+      ],
+      "affected_groups": [
+        "Quân đội Ukraine",
+        "Người dân Ukraine"
+      ],
+      "market_impact": "Sự kiện hiện tại chưa có thông tin tác động trực tiếp đến thị trường tài chính hoặc kinh tế toàn cầu.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "military",
+        "politics"
+      ],
+      "regions": [
+        "RU",
+        "UA"
+      ],
+      "significance": "Sự thích ứng và nâng cấp công nghệ vũ khí trên chiến trường tiếp tục làm gia tăng mức độ khốc liệt của xung đột, buộc các bên phải liên tục thay đổi chiến thuật phòng thủ.",
+      "unknowns": [
+        "Số lượng cụ thể và khả năng sản xuất hàng loạt của loại UAV động cơ phản lực này phía Nga.",
+        "Các biện pháp kỹ thuật cụ thể mà Ukraine dự định áp dụng để vô hiệu hóa mối đe dọa."
+      ],
+      "confidence_note": "Thông tin dựa trên ghi nhận thực tế từ chiến trường được truyền thông đăng tải, độ tin cậy ở mức trung bình khá.",
+      "scenarios": [
+        {
+          "text": "Ukraine có thể sẽ yêu cầu các đồng minh phương Tây viện trợ thêm các hệ thống phòng không tầm ngắn tiên tiến hơn để đối phó với UAV tốc độ cao.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Nga tiếp tục mở rộng quy mô sử dụng loại UAV phản lực này nhằm gây quá tải cho hệ thống phòng thủ của Ukraine.",
+          "likelihood": "cao"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Nga",
+          "target": "Ukraine",
+          "relation_type": "conflict",
+          "label": "Tấn công bằng UAV phản lực"
+        },
+        {
+          "source": "Nga",
+          "target": "UAV động cơ phản lực",
+          "relation_type": "cause_effect",
+          "label": "Sử dụng vũ khí mới"
+        },
+        {
+          "source": "UAV động cơ phản lực",
+          "target": "Ukraine",
+          "relation_type": "cause_effect",
+          "label": "Buộc Ukraine tìm cách đối phó"
+        }
+      ],
+      "entities": [
+        "Nga",
+        "Ukraine",
+        "Kiev"
+      ],
+      "keywords": [
+        "UAV",
+        "Nga",
+        "Ukraine",
+        "động cơ phản lực",
+        "chiến tranh"
+      ],
+      "importance": 85,
+      "severity": 4,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_b46804f7": {
+    "created_at": 1788236750442,
+    "expires_at": 1790828750442,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_77b16d0a": {
+    "created_at": 1788236794877,
+    "expires_at": 1790828794877,
+    "version": "4.5",
+    "checksum": "54e6458726950add483e9a70e214d7f3",
+    "data": {
+      "cluster_title": "Tổng thống Nga gặp Chủ tịch Trung Quốc",
+      "short_summary": "Trong cuộc gặp giữa Tổng thống Nga Vladimir Putin và Chủ tịch Trung Quốc Tập Cận Bình, hai nhà lãnh đạo đã ca ngợi và đánh giá cao mối quan hệ song phương giữa hai nước, gọi đây là mối quan hệ hình mẫu.",
+      "detailed_summary": "Trong cuộc gặp với Tổng Bí thư, Chủ tịch nước Trung Quốc Tập Cận Bình, Tổng thống Nga Vladimir Putin đã đánh giá rất cao mối quan hệ song phương giữa hai nước và gọi đây là mối quan hệ mang tính hình mẫu.",
+      "causes": [
+        "Nhu cầu củng cố quan hệ ngoại giao song phương giữa Nga và Trung Quốc",
+        "Mong muốn khẳng định sự hợp tác chặt chẽ giữa hai quốc gia trên trường quốc tế"
+      ],
+      "effects": [
+        "Thắt chặt hơn nữa quan hệ ngoại giao giữa Nga và Trung Quốc",
+        "Phát tín hiệu về sự phối hợp chiến lược giữa hai nước"
+      ],
+      "affected_groups": [
+        "Giới chức ngoại giao Nga và Trung Quốc",
+        "Cộng đồng quốc tế và các quốc gia quan tâm đến quan hệ hai nước"
+      ],
+      "market_impact": "Không ghi nhận tác động trực tiếp đáng kể ngay lập tức đến thị trường tài chính toàn cầu từ bản tin này.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "diplomacy",
+        "politics"
+      ],
+      "regions": [
+        "RU",
+        "CN"
+      ],
+      "significance": "Sự kiện củng cố thông điệp về mối quan hệ ngoại giao bền chặt và sự gắn kết chiến lược giữa Nga và Trung Quốc trong bối cảnh địa chính trị toàn cầu.",
+      "unknowns": [
+        "Nội dung chi tiết của các thỏa thuận cụ thể được bàn thảo trong cuộc gặp",
+        "Các bước đi tiếp theo cụ thể trong chương trình nghị sự hợp tác giữa hai nhà lãnh đạo"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên tuyên bố chính thức được ghi nhận.",
+      "scenarios": [
+        {
+          "text": "Hai nước tiếp tục duy trì các cuộc gặp cấp cao và gia tăng hợp tác trong các lĩnh vực song phương.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Hai bên mở rộng các hiệp định hợp tác chiến lược mới dựa trên nền tảng quan hệ hiện tại.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Tổng thống Nga",
+          "target": "Chủ tịch Trung Quốc",
+          "relation_type": "cooperation",
+          "label": "Gặp gỡ và đánh giá cao quan hệ song phương"
+        }
+      ],
+      "entities": [
+        "Vladimir Putin",
+        "Tập Cận Bình"
+      ],
+      "keywords": [
+        "Nga",
+        "Trung Quốc",
+        "Vladimir Putin",
+        "Tập Cận Bình",
+        "quan hệ song phương"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": 1,
+      "scope": "global"
+    }
+  },
+  "evt_7bbce293": {
+    "created_at": 1788236837145,
+    "expires_at": 1790828837145,
+    "version": "4.5",
+    "checksum": "b3f6f6d3fa9b75cc135e08f70cb599e8",
+    "data": {
+      "cluster_title": "Nga đề nghị đàm phán chấm dứt xung đột tại Ukraine",
+      "short_summary": "Tổng thống Nga Vladimir Putin tuyên bố Nga đang nỗ lực chấm dứt cuộc xung đột tại Ukraine và đưa ra lời mời Tổng thống Ukraine tới Moscow để thực hiện các cuộc đàm phán hòa bình sau hơn 4 năm chiến sự diễn ra.",
+      "detailed_summary": "Tổng thống Vladimir Putin đã đưa ra tuyên bố về việc Nga sẵn sàng chấm dứt cuộc xung đột kéo dài hơn 4 năm qua tại Ukraine. Đồng thời, nhà lãnh đạo Nga đã ngỏ lời mời Tổng thống Ukraine sang thủ đô Moscow để tiến hành các cuộc đàm phán hòa bình.",
+      "causes": [
+        "Xung đột vũ trang kéo dài hơn 4 năm gây tổn thất lớn",
+        "Áp lực ngoại giao và nhu cầu tìm kiếm giải pháp chính trị cho chiến sự"
+      ],
+      "effects": [
+        "Mở ra khả năng đối thoại trực tiếp giữa nguyên thủ hai nước",
+        "Thu hút sự chú ý và quan tâm của cộng đồng quốc tế về tiến trình hòa bình"
+      ],
+      "affected_groups": [
+        "Chính phủ và người dân Nga",
+        "Chính phủ và người dân Ukraine",
+        "Cộng đồng quốc tế"
+      ],
+      "market_impact": "Có thể tạo ra tâm lý tích cực tạm thời trên thị trường tài chính và hàng hóa quốc tế nếu triển vọng hòa bình rõ ràng hơn.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "diplomacy"
+      ],
+      "regions": [
+        "RU",
+        "UA"
+      ],
+      "significance": "Động thái này đánh dấu một bước chuyển biến tiềm năng trong lập trường ngoại giao nhằm giải quyết cuộc khủng hoảng kéo dài giữa Nga và Ukraine.",
+      "unknowns": [
+        "Phản hồi chính thức từ phía Tổng thống Ukraine về lời mời đàm phán",
+        "Các điều kiện cụ thể kèm theo cho cuộc gặp và đàm phán"
+      ],
+      "confidence_note": "Thông tin dựa trên tuyên bố trực tiếp từ nguyên thủ quốc gia, mức độ tin cậy cao về mặt sự kiện nhưng cần kiểm chứng động thái thực tế tiếp theo.",
+      "scenarios": [
+        {
+          "text": "Phía Ukraine từ chối lời mời đàm phán tại Moscow do những bất đồng sâu sắc về lãnh thổ và chủ quyền.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Hai bên đồng ý mở các kênh liên lạc sơ bộ dưới sự trung gian của bên thứ ba để thảo luận về địa điểm đàm phán.",
+          "likelihood": "thấp"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Nga",
+          "target": "Ukraine",
+          "relation_type": "conflict",
+          "label": "Xung đột vũ trang kéo dài"
+        },
+        {
+          "source": "Vladimir Putin",
+          "target": "Ukraine",
+          "relation_type": "cooperation",
+          "label": "Mời đàm phán chấm dứt xung đột"
+        }
+      ],
+      "entities": [
+        "Nga",
+        "Ukraine",
+        "Vladimir Putin"
+      ],
+      "keywords": [
+        "Nga",
+        "Ukraine",
+        "Vladimir Putin",
+        "đàm phán",
+        "chấm dứt xung đột"
+      ],
+      "importance": 90,
+      "severity": 4,
+      "sentiment": 1,
+      "scope": "global"
     }
   }
 }
