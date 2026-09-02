@@ -1,3333 +1,4 @@
 {
-  "evt_92010478": {
-    "created_at": 1785730660775,
-    "expires_at": 1788322660775,
-    "version": "4.5",
-    "checksum": "8a3f93ef3a41c6b2b426fb28283d2983",
-    "data": {
-      "cluster_title": "US Sử Dụng Euro Để Mua Yen Để Tránh Giảm Giá Tiền Đô La",
-      "short_summary": "Hoa Kỳ có thể đang sử dụng euro để mua yen để tránh giảm giá tiền đô la và gây ra sự nghi ngờ về chính sách tiền tệ mạnh mẽ của mình.",
-      "detailed_summary": "Các chuyên gia chiến lược cho rằng Mỹ đã sử dụng đồng Euro để mua Yên nhằm tránh tạo áp lực giảm giá đối với đồng USD, từ đó bảo vệ chính sách đồng bạc xanh mạnh. Hành động này nằm trong khuôn khổ phối hợp can thiệp cùng Nhật Bản, bao gồm các cơ chế thanh khoản nhằm bảo vệ thị trường trái phiếu Mỹ khỏi các tác động tiêu cực, đồng thời gây sức ép lên những nhà đầu tư đang đặt cược chống lại đồng Yên.",
-      "causes": [
-        "Đồng Yên mất giá mạnh tạo ra bất ổn thị trường",
-        "Nhu cầu ngăn chặn tác động tiêu cực lan sang thị trường trái phiếu Mỹ"
-      ],
-      "effects": [
-        "Tăng rủi ro cho các nhà đầu tư đặt cược chống đồng Yên",
-        "Gây áp lực giảm điểm lên cổ phiếu Nhật Bản",
-        "Củng cố sự phối hợp tiền tệ giữa Mỹ và Nhật Bản"
-      ],
-      "affected_groups": [
-        "Nhà đầu tư tiền tệ",
-        "Thị trường chứng khoán Nhật Bản",
-        "Các quỹ quản lý danh mục đầu tư trái phiếu"
-      ],
-      "market_impact": "Việc can thiệp phối hợp làm tăng tính biến động của cặp tỷ giá USD/JPY và tạo tâm lý thận trọng đối với các vị thế bán khống đồng Yên.",
-      "vn_impact": "Việt Nam có thể chịu ảnh hưởng gián tiếp thông qua biến động tỷ giá hối đoái và chính sách tiền tệ nếu đồng USD biến động mạnh trên thị trường quốc tế.",
-      "follow_up": "",
-      "categories": [
-        "economy",
-        "finance"
-      ],
-      "regions": [
-        "US",
-        "JP"
-      ],
-      "significance": "Sự kiện cho thấy sự phối hợp chính sách tiền tệ cấp cao nhằm duy trì ổn định thị trường tài chính toàn cầu trước các đợt đầu cơ tiền tệ.",
-      "unknowns": [
-        "Quy mô cụ thể của các đợt can thiệp tiền tệ",
-        "Thời gian duy trì cơ chế phối hợp giữa Mỹ và Nhật Bản"
-      ],
-      "confidence_note": "Thông tin dựa trên nhận định của các chuyên gia chiến lược thị trường, độ tin cậy cao về xu hướng chính sách.",
-      "scenarios": [
-        {
-          "text": "Đồng Yên dần ổn định và giảm áp lực đầu cơ nhờ can thiệp mạnh tay.",
-          "likelihood": "cao"
-        },
-        {
-          "text": "Thị trường tài chính Nhật Bản phản ứng tiêu cực ngắn hạn do lo ngại về chính sách thắt chặt.",
-          "likelihood": "trung bình"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "US",
-          "target": "JP",
-          "relation_type": "cooperation",
-          "label": "Phối hợp can thiệp thị trường tiền tệ"
-        },
-        {
-          "source": "US",
-          "target": "USD",
-          "relation_type": "cause_effect",
-          "label": "Chính sách tránh làm suy yếu đồng tiền"
-        },
-        {
-          "source": "US",
-          "target": "US Bond Market",
-          "relation_type": "cooperation",
-          "label": "Bảo vệ thị trường trái phiếu khỏi tác động ngoại biên"
-        },
-        {
-          "source": "Joint US-Japan Action",
-          "target": "Yen Bears",
-          "relation_type": "conflict",
-          "label": "Tăng rủi ro cho nhà đầu cơ"
-        },
-        {
-          "source": "Joint US-Japan Action",
-          "target": "Japanese Stocks",
-          "relation_type": "cause_effect",
-          "label": "Gây áp lực điều chỉnh lên thị trường chứng khoán"
-        }
-      ],
-      "entities": [
-        "Hoa Kỳ",
-        "Nhật Bản",
-        "Dolar",
-        "Yên Nhật"
-      ],
-      "keywords": [
-        "US",
-        "euro",
-        "yen",
-        "dollar",
-        "trung ương"
-      ],
-      "importance": 85,
-      "severity": 3,
-      "sentiment": -1,
-      "scope": "global"
-    }
-  },
-  "evt_19c6b012": {
-    "created_at": 1785730672914,
-    "expires_at": 1788322672914,
-    "version": "4.5",
-    "checksum": "01cab9475986fbe9ea113583ce678b01",
-    "data": {
-      "cluster_title": "Tăng cường cạnh tranh AI giữa Mỹ và Trung Quốc",
-      "short_summary": "Tăng cường cạnh tranh AI giữa Mỹ và Trung Quốc với sự ra đời của các mô hình AI mới của Alibaba và Anthropic.",
-      "detailed_summary": "Alibaba đã giới thiệu một hệ thống AI mới được đánh giá có hiệu suất tương đương với mô hình của Anthropic, làm tăng sự cạnh tranh chiến lược trong lĩnh vực AI giữa Mỹ và Trung Quốc. Tuy nhiên, dữ liệu từ nền tảng đánh giá Artificial Analysis chỉ ra rằng các mô hình AI tiên tiến nhất của Trung Quốc vẫn duy trì khoảng cách chậm hơn từ 3 đến 9 tháng so với các đối thủ hàng đầu tại Mỹ, bất chấp việc các doanh nghiệp Trung Quốc liên tục tung ra các công nghệ mới.",
-      "causes": [
-        "Sự đầu tư mạnh mẽ vào phát triển AI của các doanh nghiệp công nghệ lớn Trung Quốc",
-        "Nỗ lực đuổi kịp khoảng cách về năng lực tính toán và thuật toán của các tập đoàn Trung Quốc so với Mỹ"
-      ],
-      "effects": [
-        "Gia tăng sự cạnh tranh chiến lược về công nghệ giữa Mỹ và Trung Quốc",
-        "Áp lực buộc các doanh nghiệp công nghệ phải liên tục cập nhật và cải thiện hiệu suất mô hình"
-      ],
-      "affected_groups": [
-        "Các tập đoàn công nghệ lớn tại Mỹ và Trung Quốc",
-        "Các đơn vị nghiên cứu AI toàn cầu",
-        "Nhà đầu tư trong lĩnh vực công nghệ"
-      ],
-      "market_impact": "Thị trường AI toàn cầu đang chịu tác động từ cuộc đua song mã, thúc đẩy sự cạnh tranh về đổi mới sáng tạo và có khả năng ảnh hưởng đến chuỗi cung ứng linh kiện AI.",
-      "vn_impact": "Việt Nam chịu ảnh hưởng gián tiếp thông qua việc tiếp cận công nghệ AI toàn cầu, các doanh nghiệp trong nước có thêm lựa chọn công nghệ nhưng cũng đối mặt với thách thức trong việc chọn lọc nền tảng AI phù hợp.",
-      "follow_up": "",
-      "categories": [
-        "tech",
-        "business"
-      ],
-      "regions": [
-        "US",
-        "CN"
-      ],
-      "significance": "Sự kiện phản ánh nỗ lực thu hẹp khoảng cách công nghệ của Trung Quốc trong lĩnh vực AI, đồng thời nhấn mạnh ưu thế dẫn đầu vẫn đang nghiêng về phía Mỹ.",
-      "unknowns": [
-        "Khả năng duy trì hiệu suất lâu dài của các mô hình AI Trung Quốc trong điều kiện thực tế",
-        "Ảnh hưởng của các lệnh kiểm soát xuất khẩu chip AI đối với tốc độ phát triển thực tế của các mô hình Trung Quốc"
-      ],
-      "confidence_note": "Thông tin dựa trên báo cáo từ Bloomberg và dữ liệu từ nền tảng đánh giá Artificial Analysis, có độ tin cậy cao.",
-      "scenarios": [
-        {
-          "text": "Trung Quốc tiếp tục thu hẹp khoảng cách công nghệ bằng cách tăng cường đầu tư và tối ưu hóa thuật toán nội địa.",
-          "likelihood": "cao"
-        },
-        {
-          "text": "Khoảng cách giữa AI Trung Quốc và Mỹ không thể bị thu hẹp đáng kể do hạn chế về nguồn lực phần cứng và chip xử lý.",
-          "likelihood": "trung bình"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Alibaba",
-          "target": "Anthropic",
-          "relation_type": "conflict",
-          "label": "Cạnh tranh trực tiếp về hiệu suất mô hình AI"
-        },
-        {
-          "source": "Mỹ",
-          "target": "Trung Quốc",
-          "relation_type": "conflict",
-          "label": "Cạnh tranh chiến lược trong lĩnh vực công nghệ AI"
-        },
-        {
-          "source": "Artificial Analysis",
-          "target": "Trung Quốc",
-          "relation_type": "neutral",
-          "label": "Đánh giá hiệu suất các mô hình AI của Trung Quốc"
-        }
-      ],
-      "entities": [
-        "Alibaba",
-        "Anthropic",
-        "Bloomberg"
-      ],
-      "keywords": [
-        "AI",
-        "Trung Quốc",
-        "Mỹ",
-        "cạnh tranh"
-      ],
-      "importance": 85,
-      "severity": 3,
-      "sentiment": -1,
-      "scope": "global"
-    }
-  },
-  "evt_e2e929be": {
-    "created_at": 1785730684656,
-    "expires_at": 1788322684656,
-    "version": "4.5",
-    "checksum": "7e97341e8128cd72bbbd03badd4bb828",
-    "data": {
-      "cluster_title": "Nhật Bản cam kết can thiệp lại với Mỹ về yen",
-      "short_summary": "Nhật Bản cam kết can thiệp lại với Mỹ về yen nếu cần thiết để chống lại 'những chuyển động không lành mạnh'.",
-      "detailed_summary": "Bộ trưởng Tài chính Nhật Bản Satsuki Katayama khẳng định sẽ tiếp tục phối hợp với Washington để ngăn chặn các biến động bất lợi của đồng Yên. Động thái này diễn ra sau khi đồng nội tệ Nhật Bản ghi nhận mức tăng giá mạnh nhất trong 3 tháng qua và đây là phiên tăng giá thứ 3 liên tiếp so với USD, nối tiếp các hành động can thiệp thị trường trước đó.",
-      "causes": [
-        "Sự biến động giá trị đồng Yên không ổn định",
-        "Ý chí chính trị của chính phủ Nhật Bản trong việc quản lý tỷ giá"
-      ],
-      "effects": [
-        "Đồng Yên tăng giá mạnh so với USD",
-        "Tăng cường hợp tác tài chính giữa Nhật Bản và Mỹ"
-      ],
-      "affected_groups": [
-        "Các nhà đầu tư tài chính toàn cầu",
-        "Các doanh nghiệp xuất nhập khẩu tại Nhật Bản",
-        "Các ngân hàng trung ương"
-      ],
-      "market_impact": "Thị trường ngoại hối phản ứng mạnh với các tín hiệu can thiệp, dẫn đến xu hướng tăng giá của đồng Yên và gây áp lực lên các chiến lược đầu tư chênh lệch lãi suất.",
-      "vn_impact": "Sự biến động tỷ giá Yên/USD có thể làm thay đổi chi phí vay nợ bằng đồng Yên của Việt Nam và ảnh hưởng tới kim ngạch xuất nhập khẩu với Nhật Bản.",
-      "follow_up": "",
-      "categories": [
-        "economy",
-        "finance"
-      ],
-      "regions": [
-        "JP",
-        "US"
-      ],
-      "significance": "Sự can thiệp phối hợp giữa Mỹ và Nhật Bản phản ánh nỗ lực ngăn chặn tình trạng biến động tiền tệ cực đoan, ảnh hưởng trực tiếp đến sự ổn định của hệ thống tài chính quốc tế.",
-      "unknowns": [
-        "Cường độ và thời điểm cụ thể cho các đợt can thiệp tiếp theo",
-        "Ngưỡng tỷ giá mục tiêu mà các bên muốn duy trì"
-      ],
-      "confidence_note": "Thông tin dựa trên tuyên bố chính thức từ phía Nhật Bản, mức độ tin cậy cao.",
-      "scenarios": [
-        {
-          "text": "Đồng Yên tiếp tục tăng giá nhờ các biện pháp can thiệp quyết liệt hơn.",
-          "likelihood": "cao"
-        },
-        {
-          "text": "Thị trường ổn định trở lại và không cần thêm các biện pháp can thiệp trực tiếp.",
-          "likelihood": "trung bình"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Chính phủ Nhật Bản",
-          "target": "Chính phủ Mỹ",
-          "relation_type": "cooperation",
-          "label": "Hợp tác can thiệp thị trường ngoại hối"
-        },
-        {
-          "source": "Biến động thị trường",
-          "target": "Can thiệp ngoại hối",
-          "relation_type": "cause_effect",
-          "label": "Biến động gây ra các lệnh can thiệp"
-        }
-      ],
-      "entities": [
-        "Nhật Bản",
-        "Mỹ",
-        "Satsuki Katayama"
-      ],
-      "keywords": [
-        "yen Nhật",
-        "Nhật Bản",
-        "Mỹ",
-        "thị trường ngoại hối"
-      ],
-      "importance": 85,
-      "severity": 3,
-      "sentiment": -1,
-      "scope": "national"
-    }
-  },
-  "evt_29d3d6f8": {
-    "created_at": 1785730696496,
-    "expires_at": 1788322696496,
-    "version": "4.5",
-    "checksum": "eaf3d56ecbb35a18bdf2a20c071ae7d9",
-    "data": {
-      "cluster_title": "Trump nối lại đàm phán với Iran",
-      "short_summary": "Tổng thống Trump thông báo nối lại đàm phán với Iran sau khi Mỹ hủy kế hoạch tấn công lớn chưa từng có.",
-      "detailed_summary": "Sau khi quyết định dừng kế hoạch tấn công quân sự quy mô lớn nhắm vào Iran vào phút chót, Tổng thống Donald Trump đã xác nhận thông tin về việc chuẩn bị khởi động vòng đàm phán mới. Mục tiêu trọng tâm của các cuộc thảo luận này là giải quyết các bất đồng liên quan đến chương trình hạt nhân của Iran và đảm bảo an ninh tại khu vực chiến lược eo biển Hormuz.",
-      "causes": [
-        "Căng thẳng gia tăng giữa Mỹ và Iran",
-        "Quyết định hủy bỏ tấn công quân sự của Mỹ vào phút chót"
-      ],
-      "effects": [
-        "Mở ra triển vọng đối thoại ngoại giao thay vì xung đột quân sự",
-        "Tạm thời hạ nhiệt căng thẳng địa chính trị"
-      ],
-      "affected_groups": [
-        "Chính phủ Mỹ",
-        "Chính phủ Iran",
-        "Các quốc gia phụ thuộc vào nguồn cung năng lượng qua eo biển Hormuz"
-      ],
-      "market_impact": "Việc giảm bớt nguy cơ xung đột vũ trang có thể giúp ổn định giá dầu thô trên thị trường quốc tế.",
-      "vn_impact": "Giá dầu thế giới biến động do căng thẳng khu vực có thể ảnh hưởng gián tiếp đến chi phí nhập khẩu xăng dầu và lạm phát tại Việt Nam.",
-      "follow_up": "",
-      "categories": [
-        "politics",
-        "diplomacy"
-      ],
-      "regions": [
-        "US",
-        "IR"
-      ],
-      "significance": "Sự kiện cho thấy sự chuyển dịch từ đối đầu quân sự sang tìm kiếm giải pháp ngoại giao trong quan hệ Mỹ - Iran, có ý nghĩa quan trọng đối với an ninh khu vực Trung Đông.",
-      "unknowns": [
-        "Nội dung chi tiết và điều kiện tiên quyết của vòng đàm phán",
-        "Phản ứng chính thức và thiện chí thực tế từ phía chính phủ Iran"
-      ],
-      "confidence_note": "Thông tin dựa trên tuyên bố trực tiếp từ Tổng thống Mỹ, mức độ tin cậy cao về mặt sự kiện nhưng chưa rõ kết quả đàm phán.",
-      "scenarios": [
-        {
-          "text": "Mỹ và Iran đạt được thỏa thuận tạm thời để giảm căng thẳng và ổn định khu vực.",
-          "likelihood": "trung bình"
-        },
-        {
-          "text": "Đàm phán bế tắc dẫn đến việc Mỹ tiếp tục các biện pháp trừng phạt hoặc gia tăng áp lực quân sự.",
-          "likelihood": "cao"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Mỹ",
-          "target": "Iran",
-          "relation_type": "conflict",
-          "label": "Căng thẳng về chương trình hạt nhân và an ninh eo biển"
-        },
-        {
-          "source": "Donald Trump",
-          "target": "Đàm phán",
-          "relation_type": "cause_effect",
-          "label": "Quyết định khởi động đối thoại ngoại giao"
-        },
-        {
-          "source": "Kế hoạch tấn công",
-          "target": "Đàm phán",
-          "relation_type": "cause_effect",
-          "label": "Việc hủy tấn công dẫn đến việc nối lại đàm phán"
-        }
-      ],
-      "entities": [
-        "Donald Trump",
-        "Iran"
-      ],
-      "keywords": [
-        "Trump",
-        "Iran",
-        "đàm phán",
-        "Hormuz",
-        "hạt nhân"
-      ],
-      "importance": 85,
-      "severity": 3,
-      "sentiment": -1,
-      "scope": "global"
-    }
-  },
-  "evt_d02a7287": {
-    "created_at": 1785730707954,
-    "expires_at": 1788322707954,
-    "version": "4.5",
-    "checksum": "d3503acbc44ff2164197cb763100be0f",
-    "data": {
-      "cluster_title": "Maduro đăng thông điệp từ phòng giam ở Mỹ",
-      "short_summary": "Cựu Tổng thống Venezuela Nicolas Maduro đăng thông điệp từ phòng giam ở New York, hoan nghênh 'mọi con đường đối thoại' tại quốc gia Mỹ Latinh.",
-      "detailed_summary": "Ông Nicolas Maduro bất ngờ đăng tải thông điệp trên mạng xã hội trong khi đang bị giam giữ tại New York, Mỹ. Nội dung thông điệp khẳng định sự sẵn sàng đón nhận mọi con đường đối thoại tại Venezuela, cho thấy một sự thay đổi tiềm năng trong lập trường chính trị của ông trong bối cảnh bị giới hạn tự do.",
-      "causes": [
-        "Tình trạng bị giam giữ tại Mỹ",
-        "Áp lực chính trị nội bộ tại Venezuela"
-      ],
-      "effects": [
-        "Gây chú ý trên truyền thông quốc tế",
-        "Tạo kỳ vọng về khả năng đàm phán chính trị"
-      ],
-      "affected_groups": [
-        "Chính phủ Venezuela",
-        "Cộng đồng quốc tế",
-        "Người dân Venezuela"
-      ],
-      "market_impact": "Thông tin có thể gây biến động tâm lý ngắn hạn đối với thị trường dầu mỏ và tài sản liên quan đến Venezuela do sự bất ổn chính trị kéo dài.",
-      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
-      "follow_up": "",
-      "categories": [
-        "politics",
-        "diplomacy"
-      ],
-      "regions": [
-        "VE",
-        "US"
-      ],
-      "significance": "Sự kiện cho thấy nỗ lực của ông Maduro trong việc duy trì tiếng nói và ảnh hưởng chính trị ngay cả khi đang chịu sự kiểm soát của chính quyền Mỹ.",
-      "unknowns": [
-        "Cách thức kỹ thuật ông Maduro sử dụng mạng xã hội từ trong tù",
-        "Phản ứng chính thức từ phía chính quyền Mỹ về thông điệp này"
-      ],
-      "confidence_note": "Thông tin dựa trên báo cáo từ báo chí, cần kiểm chứng thêm về tính xác thực của tài khoản mạng xã hội.",
-      "scenarios": [
-        {
-          "text": "Sự kiện mở đường cho các cuộc đàm phán chính trị giữa các bên liên quan tại Venezuela.",
-          "likelihood": "trung bình"
-        },
-        {
-          "text": "Thông điệp chỉ mang tính cá nhân, không làm thay đổi cục diện chính trị thực tế tại quốc gia này.",
-          "likelihood": "cao"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Nicolas Maduro",
-          "target": "Mỹ",
-          "relation_type": "conflict",
-          "label": "Tình trạng giam giữ và xung đột pháp lý"
-        },
-        {
-          "source": "Nicolas Maduro",
-          "target": "Venezuela",
-          "relation_type": "cause_effect",
-          "label": "Nhân vật chính trị tìm cách tác động đến tình hình trong nước"
-        }
-      ],
-      "entities": [
-        "Nicolas Maduro",
-        "Venezuela",
-        "Mỹ"
-      ],
-      "keywords": [
-        "Maduro",
-        "Venezuela",
-        "Mỹ"
-      ],
-      "importance": 85,
-      "severity": 3,
-      "sentiment": -1,
-      "scope": "national"
-    }
-  },
-  "evt_8bffa70d": {
-    "created_at": 1785730719745,
-    "expires_at": 1788322719745,
-    "version": "4.5",
-    "checksum": "f5bcca8123f5601c4370579c751c4592",
-    "data": {
-      "cluster_title": "Căng thẳng Hormuz và tác động đến giá dầu",
-      "short_summary": "Căng thẳng Hormuz có thể dẫn đến sự gián đoạn cung cấp dầu mỏ và ảnh hưởng đến giá dầu toàn cầu.",
-      "detailed_summary": "Chuyên gia từ Goldman Sachs thảo luận về các kịch bản biến động giá dầu trong bối cảnh xung đột tại eo biển Hormuz leo thang. Bên cạnh rủi ro gián đoạn nguồn cung từ khu vực này, báo cáo cũng nêu lên thách thức về tình trạng dư thừa nguồn cung có thể gây áp lực lên giá dầu ngay cả khi nguồn cung không bị gián đoạn.",
-      "causes": [
-        "Căng thẳng địa chính trị leo thang tại eo biển Hormuz",
-        "Rủi ro gián đoạn chuỗi cung ứng năng lượng toàn cầu"
-      ],
-      "effects": [
-        "Biến động giá dầu trên thị trường thế giới",
-        "Thách thức về cân bằng cung cầu năng lượng"
-      ],
-      "affected_groups": [
-        "Các quốc gia xuất khẩu dầu mỏ",
-        "Các doanh nghiệp năng lượng toàn cầu",
-        "Nhà đầu tư thị trường hàng hóa"
-      ],
-      "market_impact": "Thị trường dầu mỏ dự kiến sẽ đối mặt với sự biến động mạnh do lo ngại về địa chính trị đi kèm với áp lực dư thừa cung nội tại.",
-      "vn_impact": "Việt Nam có thể chịu tác động gián tiếp thông qua biến động giá xăng dầu thế giới, ảnh hưởng đến chi phí vận tải, giá cả hàng hóa trong nước và cán cân thanh toán.",
-      "follow_up": "",
-      "categories": [
-        "economy",
-        "energy"
-      ],
-      "regions": [
-        "GLOBAL"
-      ],
-      "significance": "Sự kiện cho thấy sự phức tạp của thị trường dầu mỏ khi phải cân bằng giữa rủi ro địa chính trị tức thời và bài toán dư thừa cung dài hạn.",
-      "unknowns": [
-        "Mức độ leo thang thực tế của xung đột tại eo biển Hormuz",
-        "Tác động cụ thể của chính sách sản lượng từ các quốc gia xuất khẩu dầu (OPEC+)"
-      ],
-      "confidence_note": "Thông tin dựa trên đánh giá chuyên môn từ tổ chức tài chính uy tín, độ tin cậy cao về mặt phân tích thị trường.",
-      "scenarios": [
-        {
-          "text": "Giá dầu tăng vọt do gián đoạn nguồn cung thực tế tại eo biển Hormuz.",
-          "likelihood": "cao"
-        },
-        {
-          "text": "Giá dầu giảm do tình trạng dư thừa nguồn cung vượt xa tác động của căng thẳng địa chính trị.",
-          "likelihood": "trung bình"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Căng thẳng eo biển Hormuz",
-          "target": "Giá dầu",
-          "relation_type": "cause_effect",
-          "label": "Gây biến động giá"
-        },
-        {
-          "source": "Samantha Dart",
-          "target": "Goldman Sachs",
-          "relation_type": "cooperation",
-          "label": "Đại diện nghiên cứu"
-        }
-      ],
-      "entities": [
-        "Samantha Dart",
-        "Goldman Sachs"
-      ],
-      "keywords": [
-        "Hormuz",
-        "giá dầu",
-        "căng thẳng"
-      ],
-      "importance": 85,
-      "severity": 3,
-      "sentiment": -1,
-      "scope": "global"
-    }
-  },
-  "evt_ed1ccc7d": {
-    "created_at": 1785730731941,
-    "expires_at": 1788322731941,
-    "version": "4.5",
-    "checksum": "9e0f3b209cc5f5739d2891b87401e7ad",
-    "data": {
-      "cluster_title": "Sụt giảm hoạt động sản xuất tại Trung Quốc",
-      "short_summary": "Sụt giảm hoạt động sản xuất tại Trung Quốc đã thêm vào dấu hiệu suy thoái kinh tế",
-      "detailed_summary": "Theo một khảo sát tư nhân, hoạt động sản xuất tại các doanh nghiệp tập trung vào xuất khẩu của Trung Quốc đã ghi nhận sự sụt giảm ngoài dự kiến trong tháng 7. Kết quả này bổ sung vào chuỗi dữ liệu cho thấy nền kinh tế Trung Quốc đang đối mặt với những dấu hiệu suy yếu đáng kể.",
-      "causes": [
-        "Sức cầu quốc tế suy giảm",
-        "Hoạt động sản xuất công nghiệp tại Trung Quốc giảm tốc"
-      ],
-      "effects": [
-        "Gia tăng lo ngại về tăng trưởng kinh tế Trung Quốc",
-        "Áp lực lên chuỗi cung ứng toàn cầu"
-      ],
-      "affected_groups": [
-        "Doanh nghiệp xuất khẩu Trung Quốc",
-        "Các đối tác thương mại quốc tế"
-      ],
-      "market_impact": "Gây lo ngại cho các nhà đầu tư về triển vọng tăng trưởng kinh tế của Trung Quốc, có thể ảnh hưởng tiêu cực đến tâm lý thị trường chứng khoán và hàng hóa.",
-      "vn_impact": "Tác động tiêu cực đến Việt Nam thông qua sự suy giảm nhu cầu nhập khẩu nguyên liệu từ Việt Nam hoặc sự cạnh tranh gay gắt hơn về xuất khẩu nếu Trung Quốc đẩy mạnh bán phá giá hàng tồn kho.",
-      "follow_up": "",
-      "categories": [
-        "economy",
-        "business"
-      ],
-      "regions": [
-        "CN"
-      ],
-      "significance": "Sự suy yếu của lĩnh vực sản xuất Trung Quốc phản ánh rủi ro đối với sự phục hồi của nền kinh tế toàn cầu vốn đang phụ thuộc nhiều vào công xưởng này.",
-      "unknowns": [
-        "Các yếu tố cụ thể khiến khảo sát tư nhân cho kết quả thấp hơn kỳ vọng",
-        "Phản ứng chính sách cụ thể từ chính phủ Trung Quốc trong thời gian tới"
-      ],
-      "confidence_note": "Thông tin dựa trên khảo sát tư nhân, độ tin cậy cao về xu hướng thị trường nhưng chưa phản ánh đầy đủ bức tranh kinh tế vĩ mô chính thức.",
-      "scenarios": [
-        {
-          "text": "Trung Quốc công bố thêm các gói kích thích kinh tế để vực dậy lĩnh vực sản xuất.",
-          "likelihood": "cao"
-        },
-        {
-          "text": "Tình trạng đình trệ kéo dài gây ảnh hưởng sâu rộng đến tăng trưởng GDP quý 3 và quý 4.",
-          "likelihood": "trung bình"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Hoạt động sản xuất Trung Quốc",
-          "target": "Nền kinh tế Trung Quốc",
-          "relation_type": "cause_effect",
-          "label": "Sự suy giảm sản xuất dẫn đến tăng trưởng kinh tế chậm lại"
-        },
-        {
-          "source": "Nhu cầu xuất khẩu",
-          "target": "Doanh nghiệp Trung Quốc",
-          "relation_type": "cause_effect",
-          "label": "Sức cầu yếu làm giảm hiệu suất hoạt động"
-        }
-      ],
-      "entities": [
-        "Trung Quốc"
-      ],
-      "keywords": [
-        "Trung Quốc",
-        "sản xuất",
-        "thị trường xuất khẩu"
-      ],
-      "importance": 80,
-      "severity": 3,
-      "sentiment": -1,
-      "scope": "global"
-    }
-  },
-  "evt_b3e2c384": {
-    "created_at": 1785730743393,
-    "expires_at": 1788322743393,
-    "version": "4.5",
-    "checksum": "698225e27b3704c8b3aa6bd8336bf289",
-    "data": {
-      "cluster_title": "Chinese Government Bond Futures Kick Off Trading in Hong Kong",
-      "short_summary": "Chinese government bond futures bắt đầu giao dịch tại Hong Kong, mở rộng thị trường nợ của nước này.",
-      "detailed_summary": "Vào thứ Hai, Hồng Kông đã chính thức khởi động giao dịch hợp đồng tương lai trái phiếu chính phủ Trung Quốc. Đây là nỗ lực lần thứ ba của chính quyền nhằm cung cấp công cụ phòng ngừa rủi ro, qua đó thúc đẩy quá trình mở cửa thị trường nợ nội địa với các nhà đầu tư quốc tế.",
-      "causes": [
-        "Nhu cầu cung cấp công cụ phòng ngừa rủi ro cho nhà đầu tư",
-        "Chiến lược mở cửa thị trường tài chính của Trung Quốc"
-      ],
-      "effects": [
-        "Tăng cường khả năng tiếp cận thị trường trái phiếu Trung Quốc cho nhà đầu tư nước ngoài",
-        "Nâng cao vị thế của Hồng Kông như một trung tâm tài chính quốc tế"
-      ],
-      "affected_groups": [
-        "Nhà đầu tư tổ chức quốc tế",
-        "Các định chế tài chính tại Hồng Kông",
-        "Thị trường tài chính Trung Quốc"
-      ],
-      "market_impact": "Việc ra mắt công cụ này giúp nhà đầu tư giảm thiểu rủi ro biến động lãi suất, từ đó có thể thúc đẩy dòng vốn vào thị trường trái phiếu Trung Quốc.",
-      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
-      "follow_up": "",
-      "categories": [
-        "economy",
-        "finance"
-      ],
-      "regions": [
-        "CN",
-        "HK"
-      ],
-      "significance": "Đây là cột mốc quan trọng trong lộ trình quốc tế hóa thị trường tài chính Trung Quốc, tăng tính thanh khoản và tính minh bạch cho các loại tài sản nợ.",
-      "unknowns": [
-        "Mức độ thanh khoản thực tế trong giai đoạn đầu vận hành",
-        "Phản ứng và tỷ lệ tham gia của các nhà đầu tư nước ngoài trong dài hạn"
-      ],
-      "confidence_note": "Thông tin dựa trên thông báo chính thức về sự kiện, độ tin cậy cao.",
-      "scenarios": [
-        {
-          "text": "Thị trường trái phiếu Trung Quốc thu hút thêm vốn đầu tư ngoại nhờ công cụ phòng ngừa rủi ro mới.",
-          "likelihood": "cao"
-        },
-        {
-          "text": "Giao dịch gặp khó khăn do các rào cản về quy định hoặc chênh lệch kỳ vọng giữa các bên tham gia.",
-          "likelihood": "trung bình"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Chính phủ Trung Quốc",
-          "target": "Thị trường nợ Trung Quốc",
-          "relation_type": "cause_effect",
-          "label": "Chính sách mở cửa thị trường"
-        },
-        {
-          "source": "Hồng Kông",
-          "target": "Thị trường nợ Trung Quốc",
-          "relation_type": "cooperation",
-          "label": "Cung cấp nền tảng giao dịch và công cụ tài chính"
-        }
-      ],
-      "entities": [
-        "China",
-        "Hong Kong"
-      ],
-      "keywords": [
-        "Chinese Government Bond",
-        "Hong Kong",
-        "Futures"
-      ],
-      "importance": 85,
-      "severity": 3,
-      "sentiment": -1,
-      "scope": "national"
-    }
-  },
-  "evt_f08e0ceb": {
-    "created_at": 1785730755060,
-    "expires_at": 1788322755060,
-    "version": "4.5",
-    "checksum": "734e88176a937fd943031252231b6ff9",
-    "data": {
-      "cluster_title": "CXMT Price Targets Are $1 Trillion Apart as Analysts Differ",
-      "short_summary": "CXMT Corp. là một trong những cổ phiếu cực kỳ phân cực ở châu Á, với sự khác biệt trong quan điểm của các nhà phân tích dẫn đến sự bất ổn trong thị trường cổ phiếu nhớ-chip.",
-      "detailed_summary": "CXMT Corp hiện là một trong những mã cổ phiếu gây chia rẽ sâu sắc nhất tại thị trường châu Á. Các chuyên gia phân tích đưa ra những nhận định đối nghịch, dẫn đến khoảng cách định giá khổng lồ. Sự bất đồng này phản ánh những quan điểm trái chiều về tiềm năng tăng trưởng và rủi ro trong lĩnh vực sản xuất chip nhớ, trực tiếp thúc đẩy sự biến động của cổ phiếu này.",
-      "causes": [
-        "Sự khác biệt trong mô hình định giá của các chuyên gia",
-        "Quan điểm trái chiều về triển vọng thị trường chip nhớ",
-        "Tính phức tạp trong việc dự báo tăng trưởng của CXMT Corp"
-      ],
-      "effects": [
-        "Biến động mạnh về giá cổ phiếu",
-        "Khó khăn cho nhà đầu tư trong việc xác định chiến lược",
-        "Gia tăng sự chú ý của thị trường đối với ngành sản xuất bán dẫn"
-      ],
-      "affected_groups": [
-        "Nhà đầu tư cá nhân và tổ chức",
-        "Các chuyên gia phân tích thị trường tài chính",
-        "Cổ đông của CXMT Corp"
-      ],
-      "market_impact": "Gây nhiễu thông tin cho thị trường tài chính và làm tăng rủi ro biến động giá cho các cổ phiếu thuộc cùng ngành hàng.",
-      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
-      "follow_up": "",
-      "categories": [
-        "finance",
-        "business"
-      ],
-      "regions": [
-        "CN"
-      ],
-      "significance": "Sự kiện phản ánh tính chất không ổn định và sự phân hóa quan điểm cực đoan của thị trường đối với các doanh nghiệp trong chuỗi cung ứng công nghệ cao.",
-      "unknowns": [
-        "Lý do cụ thể dẫn đến sự chênh lệch định giá 1 nghìn tỷ đô la",
-        "Thời điểm thị trường đạt được sự đồng thuận về giá trị thực của doanh nghiệp"
-      ],
-      "confidence_note": "Thông tin dựa trên diễn biến thị trường thực tế, độ tin cậy cao về mặt ghi nhận hiện tượng.",
-      "scenarios": [
-        {
-          "text": "Giá cổ phiếu tiếp tục biến động mạnh khi có thêm thông tin tài chính mới từ doanh nghiệp.",
-          "likelihood": "cao"
-        },
-        {
-          "text": "Thị trường dần ổn định sau khi các báo cáo tài chính minh bạch hơn được công bố.",
-          "likelihood": "trung bình"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Các chuyên gia phân tích",
-          "target": "Cổ phiếu CXMT Corp",
-          "relation_type": "cause_effect",
-          "label": "Tác động đến biến động giá thông qua dự báo"
-        },
-        {
-          "source": "Sự bất đồng quan điểm",
-          "target": "Biến động thị trường",
-          "relation_type": "cause_effect",
-          "label": "Gây ra sự không ổn định trong giao dịch cổ phiếu"
-        }
-      ],
-      "entities": [
-        "CXMT Corp.",
-        "Analysts"
-      ],
-      "keywords": [
-        "CXMT",
-        "Analysts",
-        "Price Targets",
-        "Stocks",
-        "Memory-Chip"
-      ],
-      "importance": 85,
-      "severity": 3,
-      "sentiment": -1,
-      "scope": "global"
-    }
-  },
-  "evt_901bad19": {
-    "created_at": 1785730766987,
-    "expires_at": 1788322766987,
-    "version": "4.5",
-    "checksum": "56e928ec1cbc5f5b977fbb69e05ee890",
-    "data": {
-      "cluster_title": "Fanuc Shares Dive Most in 40 Years",
-      "short_summary": "Fanuc Corp. shares plunged sau khi công ty tăng dự báo lợi nhuận ít hơn dự kiến, làm tăng lo ngại về giá nguyên liệu tăng cao.",
-      "detailed_summary": "Tập đoàn chế tạo robot công nghiệp Fanuc đã chứng kiến cổ phiếu giảm sâu nhất trong bốn thập kỷ. Nguyên nhân chính đến từ việc công ty công bố triển vọng lợi nhuận không đạt như kỳ vọng của giới đầu tư, kết hợp với áp lực ngày càng tăng từ việc chi phí nguyên liệu đầu vào tăng cao.",
-      "causes": [
-        "Dự báo lợi nhuận thấp hơn mong đợi",
-        "Áp lực tăng giá chi phí nguyên liệu đầu vào"
-      ],
-      "effects": [
-        "Cổ phiếu lao dốc mạnh nhất trong 40 năm",
-        "Tăng trưởng tâm lý lo ngại về chuỗi cung ứng trong ngành sản xuất"
-      ],
-      "affected_groups": [
-        "Nhà đầu tư chứng khoán",
-        "Các doanh nghiệp trong ngành sản xuất robot và tự động hóa"
-      ],
-      "market_impact": "Gây tâm lý tiêu cực đối với nhóm cổ phiếu công nghệ và sản xuất Nhật Bản, làm dấy lên lo ngại về áp lực lạm phát chi phí sản xuất.",
-      "vn_impact": "Có thể tác động gián tiếp đến Việt Nam thông qua chuỗi cung ứng linh kiện và máy móc tự động hóa, nếu chi phí đầu vào của các doanh nghiệp robot tăng lên sẽ ảnh hưởng đến chi phí đầu tư công nghệ tại thị trường Việt Nam.",
-      "follow_up": "",
-      "categories": [
-        "economy",
-        "finance"
-      ],
-      "regions": [
-        "JP"
-      ],
-      "significance": "Sự kiện phản ánh áp lực chi phí đầu vào đang đè nặng lên các tập đoàn công nghiệp lớn, ảnh hưởng trực tiếp đến niềm tin của thị trường tài chính.",
-      "unknowns": [
-        "Mức độ ảnh hưởng thực tế của giá nguyên liệu đến biên lợi nhuận dài hạn của công ty",
-        "Khả năng chuyển dịch chi phí này vào giá thành sản phẩm cuối cùng"
-      ],
-      "confidence_note": "Thông tin dựa trên diễn biến thực tế của thị trường chứng khoán, độ tin cậy cao.",
-      "scenarios": [
-        {
-          "text": "Fanuc thực hiện các biện pháp tiết giảm chi phí và ổn định nguồn cung để cải thiện biên lợi nhuận.",
-          "likelihood": "cao"
-        },
-        {
-          "text": "Áp lực chi phí nguyên liệu kéo dài khiến lợi nhuận các quý tiếp theo tiếp tục gây thất vọng cho nhà đầu tư.",
-          "likelihood": "trung bình"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Giá nguyên liệu tăng",
-          "target": "Cổ phiếu Fanuc",
-          "relation_type": "cause_effect",
-          "label": "Gây áp lực làm giảm giá cổ phiếu"
-        },
-        {
-          "source": "Fanuc",
-          "target": "Nhà đầu tư",
-          "relation_type": "cause_effect",
-          "label": "Dự báo lợi nhuận thấp gây thất vọng cho nhà đầu tư"
-        }
-      ],
-      "entities": [
-        "Fanuc Corp.",
-        "factory robots"
-      ],
-      "keywords": [
-        "Fanuc",
-        "Shares",
-        "Dive",
-        "Materials"
-      ],
-      "importance": 85,
-      "severity": 3,
-      "sentiment": -1,
-      "scope": "global"
-    }
-  },
-  "evt_3423b099": {
-    "created_at": 1785730778603,
-    "expires_at": 1788322778603,
-    "version": "4.5",
-    "checksum": "193b790ad43ab5e7a0ab039d19ea9ba8",
-    "data": {
-      "cluster_title": "Wall Street học cách yêu thích blockchain",
-      "short_summary": "Wall Street học cách yêu thích blockchain để hiện đại hóa thị trường nhưng vẫn còn những rủi ro hệ thống.",
-      "detailed_summary": "Các tổ chức tài chính tại Phố Wall đang chuyển đổi thái độ từ hoài nghi sang chấp nhận công nghệ chuỗi khối. Mục tiêu chính là cải thiện hiệu quả và hiện đại hóa hạ tầng thị trường tài chính truyền thống. Tuy nhiên, các chuyên gia cảnh báo rằng việc tích hợp công nghệ này vào các quy trình tài chính phức tạp vẫn tiềm ẩn những rủi ro hệ thống chưa được kiểm soát đầy đủ.",
-      "causes": [
-        "Nhu cầu hiện đại hóa hạ tầng tài chính lỗi thời",
-        "Tiềm năng tối ưu hóa quy trình giao dịch của công nghệ chuỗi khối"
-      ],
-      "effects": [
-        "Cải thiện tốc độ và tính minh bạch của thị trường",
-        "Gia tăng áp lực kiểm soát rủi ro hệ thống trong tài chính"
-      ],
-      "affected_groups": [
-        "Các tổ chức tài chính quốc tế",
-        "Nhà đầu tư trên thị trường vốn",
-        "Các cơ quan quản lý tài chính"
-      ],
-      "market_impact": "Thị trường dự báo sẽ chứng kiến sự dịch chuyển dòng vốn đầu tư vào cơ sở hạ tầng công nghệ, tạo điều kiện cho các dịch vụ tài chính thế hệ mới phát triển.",
-      "vn_impact": "Không tác động trực tiếp đến Việt Nam, tuy nhiên tạo ra bài học kinh nghiệm về quản lý rủi ro công nghệ cho các định chế tài chính trong nước khi tiếp cận xu hướng chuyển đổi số toàn cầu.",
-      "follow_up": "",
-      "categories": [
-        "finance",
-        "tech"
-      ],
-      "regions": [
-        "US"
-      ],
-      "significance": "Sự giao thoa giữa tài chính truyền thống và công nghệ chuỗi khối đánh dấu một giai đoạn chuyển đổi quan trọng, đòi hỏi sự cân bằng giữa đổi mới sáng tạo và ổn định tài chính.",
-      "unknowns": [
-        "Mức độ rủi ro hệ thống cụ thể khi triển khai quy mô lớn",
-        "Phản ứng của các cơ quan quản lý trong việc thiết lập khung pháp lý cho công nghệ chuỗi khối"
-      ],
-      "confidence_note": "Thông tin dựa trên xu hướng thị trường tài chính hiện tại, có độ tin cậy cao.",
-      "scenarios": [
-        {
-          "text": "Các tổ chức tài chính thành công trong việc tích hợp chuỗi khối, giúp tăng đáng kể hiệu suất thị trường.",
-          "likelihood": "cao"
-        },
-        {
-          "text": "Sự cố kỹ thuật hoặc lỗ hổng trong công nghệ chuỗi khối gây ra biến động lớn trên thị trường tài chính.",
-          "likelihood": "trung bình"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Công nghệ chuỗi khối",
-          "target": "Thị trường tài chính",
-          "relation_type": "cause_effect",
-          "label": "Động lực hiện đại hóa"
-        },
-        {
-          "source": "Tổ chức tài chính",
-          "target": "Công nghệ chuỗi khối",
-          "relation_type": "cooperation",
-          "label": "Đầu tư và ứng dụng công nghệ"
-        }
-      ],
-      "entities": [
-        "Wall Street",
-        "blockchain"
-      ],
-      "keywords": [
-        "Wall Street",
-        "blockchain",
-        "financial"
-      ],
-      "importance": 85,
-      "severity": 2,
-      "sentiment": -1,
-      "scope": "global"
-    }
-  },
-  "evt_b11f203e": {
-    "created_at": 1785730790156,
-    "expires_at": 1788322790156,
-    "version": "4.5",
-    "checksum": "8f5c0891e1815e469be23709bfabee89",
-    "data": {
-      "cluster_title": "Threatening Global Economy",
-      "short_summary": "Một bức tường sắt kỹ thuật số đang đe dọa nền kinh tế toàn cầu. Châu Âu có thể trở thành một kết nối đáng tin cậy trong bối cảnh các rào cản địa chính trị có thể làm chậm tiến độ và thương mại.",
-      "detailed_summary": "Sự hình thành của bức màn sắt kỹ thuật số đang trở thành thách thức lớn đối với nền kinh tế thế giới. Các rào cản địa chính trị ngày càng gia tăng, gây ra nguy cơ kìm hãm tiến trình phát triển và dòng chảy thương mại quốc tế. Trong bối cảnh này, châu Âu được định vị như một trung tâm kết nối đáng tin cậy để duy trì sự liên thông của nền kinh tế toàn cầu.",
-      "causes": [
-        "Sự gia tăng của các rào cản địa chính trị",
-        "Sự phân mảnh trong quản trị hạ tầng kỹ thuật số"
-      ],
-      "effects": [
-        "Làm chậm đà phát triển kinh tế toàn cầu",
-        "Gián đoạn dòng chảy thương mại quốc tế"
-      ],
-      "affected_groups": [
-        "Các doanh nghiệp đa quốc gia",
-        "Các nền kinh tế đang phát triển",
-        "Các nhà hoạch định chính sách toàn cầu"
-      ],
-      "market_impact": "Gây bất ổn cho chuỗi cung ứng toàn cầu và làm gia tăng chi phí vận hành cho các tập đoàn công nghệ và thương mại.",
-      "vn_impact": "Việt Nam có thể chịu ảnh hưởng từ sự gián đoạn chuỗi cung ứng toàn cầu, nhưng đồng thời có cơ hội thúc đẩy hợp tác chuyển đổi số với châu Âu để đa dạng hóa đối tác chiến lược.",
-      "follow_up": "",
-      "categories": [
-        "economy",
-        "diplomacy"
-      ],
-      "regions": [
-        "GLOBAL"
-      ],
-      "significance": "Sự phân mảnh kỹ thuật số đang làm suy yếu hệ thống thương mại tự do toàn cầu, đòi hỏi các khối kinh tế phải thiết lập những cơ chế kết nối mới.",
-      "unknowns": [
-        "Chưa rõ lộ trình cụ thể để châu Âu thực hiện vai trò cầu nối",
-        "Mức độ sẵn sàng của các quốc gia trong việc tháo gỡ rào cản kỹ thuật số"
-      ],
-      "confidence_note": "Thông tin mang tính chất phân tích chiến lược, dựa trên xu hướng địa chính trị hiện tại.",
-      "scenarios": [
-        {
-          "text": "Châu Âu thành công trong việc xây dựng các tiêu chuẩn kỹ thuật số chung để kết nối các thị trường bị chia cắt.",
-          "likelihood": "trung bình"
-        },
-        {
-          "text": "Các rào cản địa chính trị tiếp tục leo thang dẫn đến sự đứt gãy hoàn toàn của các hệ thống hạ tầng kỹ thuật số giữa các khối kinh tế.",
-          "likelihood": "cao"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Bức màn sắt kỹ thuật số",
-          "target": "Kinh tế toàn cầu",
-          "relation_type": "cause_effect",
-          "label": "Gây kìm hãm tăng trưởng và thương mại"
-        },
-        {
-          "source": "Châu Âu",
-          "target": "Kinh tế toàn cầu",
-          "relation_type": "cooperation",
-          "label": "Đóng vai trò cầu nối và kết nối đáng tin cậy"
-        }
-      ],
-      "entities": [
-        "Europe"
-      ],
-      "keywords": [
-        "digital iron curtain",
-        "global economy",
-        "Europe"
-      ],
-      "importance": 85,
-      "severity": 3,
-      "sentiment": -1,
-      "scope": "global"
-    }
-  },
-  "evt_aa0db396": {
-    "created_at": 1785730796519,
-    "expires_at": 1788322796519,
-    "version": "4.5",
-    "checksum": "b580ae72ae4fe905781ed9823fda5c8a",
-    "data": {
-      "cluster_title": "Sông cạn nước, nhà máy hạt nhân Hungary ngừng hoạt động",
-      "short_summary": "Sông cạn nước, nhà máy hạt nhân Hungary phải ngừng hoạt động do tình trạng hạn hán kéo dài.",
-      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
-      "causes": [],
-      "effects": [],
-      "affected_groups": [],
-      "market_impact": "",
-      "vn_impact": "Không tác động trực tiếp đến Việt Nam",
-      "categories": [
-        "Kinh tế",
-        "Môi trường"
-      ],
-      "regions": [
-        "HU",
-        "EU"
-      ],
-      "follow_up": "",
-      "entities": [
-        "Sông",
-        "Nhà máy hạt nhân",
-        "Hungary"
-      ],
-      "keywords": [
-        "sông cạn nước",
-        "nhà máy hạt nhân",
-        "Hungary"
-      ],
-      "importance": 80,
-      "severity": 3,
-      "sentiment": -1,
-      "scope": "national"
-    }
-  },
-  "evt_11d4b89d": {
-    "created_at": 1785730807922,
-    "expires_at": 1788322807922,
-    "version": "4.5",
-    "checksum": "8f49661d583764f08526d1368354f5c3",
-    "data": {
-      "cluster_title": "Lula tái tranh cử tổng thống Brazil",
-      "short_summary": "Tổng thống Lula da Silva tái tranh cử ở tuổi 80 nhằm chống lại tuổi già.",
-      "detailed_summary": "Tổng thống Brazil Lula da Silva đã chính thức bày tỏ mong muốn tiếp tục tranh cử cho nhiệm kỳ thứ tư. Trong bối cảnh dư luận quan tâm đến độ tuổi 80, ông khẳng định bản thân đang ở trong trạng thái sức khỏe tốt để đảm đương trọng trách quốc gia.",
-      "causes": [
-        "Mong muốn duy trì chính sách và chương trình nghị sự của cá nhân",
-        "Niềm tin vào tình trạng sức khỏe hiện tại"
-      ],
-      "effects": [
-        "Gây ra các cuộc tranh luận về giới hạn tuổi tác trong chính trị tại Brazil",
-        "Tạo sự chú ý từ dư luận về tương lai chính trị của quốc gia"
-      ],
-      "affected_groups": [
-        "Cử tri Brazil",
-        "Các đảng phái chính trị đối lập tại Brazil"
-      ],
-      "market_impact": "Các nhà đầu tư có thể thận trọng theo dõi vì sự bất ổn hoặc thay đổi trong chính sách kinh tế nếu quá trình tranh cử gây ra biến động chính trị.",
-      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
-      "follow_up": "",
-      "categories": [
-        "politics"
-      ],
-      "regions": [
-        "BR"
-      ],
-      "significance": "Sự kiện phản ánh xu hướng các chính trị gia kỳ cựu tiếp tục nắm quyền và sự chú ý ngày càng tăng vào vấn đề sức khỏe của lãnh đạo cao cấp trong chính trường thế giới.",
-      "unknowns": [
-        "Quyết định chính thức của đảng phái về việc đề cử",
-        "Phản ứng thực tế từ các cử tri và đối thủ chính trị trong kỳ bầu cử tới"
-      ],
-      "confidence_note": "Thông tin dựa trên tuyên bố trực tiếp của nhân vật, cần theo dõi thêm các động thái pháp lý và bầu cử cụ thể.",
-      "scenarios": [
-        {
-          "text": "Ông Lula da Silva nhận được sự ủng hộ và tiếp tục tranh cử nhiệm kỳ thứ tư.",
-          "likelihood": "cao"
-        },
-        {
-          "text": "Các rào cản về độ tuổi hoặc sự phản đối chính trị khiến ông phải thay đổi kế hoạch.",
-          "likelihood": "trung bình"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Lula da Silva",
-          "target": "Chính trường Brazil",
-          "relation_type": "cause_effect",
-          "label": "Người lãnh đạo nỗ lực củng cố vị thế chính trị thông qua việc tái tranh cử"
-        }
-      ],
-      "entities": [
-        "Lula da Silva",
-        "Brazil"
-      ],
-      "keywords": [
-        "Lula da Silva",
-        "Brazil",
-        "tổng thống"
-      ],
-      "importance": 85,
-      "severity": 3,
-      "sentiment": -1,
-      "scope": "national"
-    }
-  },
-  "evt_general_1785730813665": {
-    "created_at": 1785730819480,
-    "expires_at": 1788322819480,
-    "version": "4.5",
-    "checksum": "9860af031bae30f0ed6d46dd8950ac8d",
-    "data": {
-      "cluster_title": "Sinh vật khổng lồ xuất hiện dưới đáy Biển Đông",
-      "short_summary": "Các nhà khoa học đã thả xác một con bò xuống độ sâu 1.629m ở Biển Đông và quan sát.",
-      "detailed_summary": "Nhóm nghiên cứu đã thực hiện thí nghiệm thả xác một con bò xuống vùng nước sâu 1.629m tại Biển Đông. Hoạt động này được hỗ trợ bởi hệ thống camera quan sát để theo dõi quá trình phân hủy và thu hút các loài sinh vật biển khổng lồ đến sinh sống hoặc kiếm ăn tại khu vực này.",
-      "causes": [
-        "Nghiên cứu sinh thái biển sâu",
-        "Quan sát sự thích nghi của sinh vật với nguồn thức ăn từ xác động vật trên cạn"
-      ],
-      "effects": [
-        "Gia tăng dữ liệu về đa dạng sinh học tầng sâu",
-        "Phát hiện các loài sinh vật biển hiếm gặp tại độ sâu lớn"
-      ],
-      "affected_groups": [
-        "Cộng đồng khoa học hải dương",
-        "Các tổ chức bảo tồn biển"
-      ],
-      "market_impact": "Không có tác động trực tiếp đến thị trường tài chính.",
-      "vn_impact": "Cung cấp thêm dữ liệu khoa học về hệ sinh thái biển tại Biển Đông, hỗ trợ công tác nghiên cứu khoa học và bảo tồn đa dạng sinh học của Việt Nam.",
-      "follow_up": "",
-      "categories": [
-        "environment",
-        "tech"
-      ],
-      "regions": [
-        "VN"
-      ],
-      "significance": "Sự kiện này cho thấy nỗ lực tìm hiểu hệ sinh thái tầng sâu, một lĩnh vực còn nhiều ẩn số tại vùng biển quan trọng.",
-      "unknowns": [
-        "Danh tính cụ thể của nhóm nghiên cứu",
-        "Kết quả quan sát chi tiết về các loại sinh vật đã xuất hiện",
-        "Mục tiêu dài hạn của dự án nghiên cứu này"
-      ],
-      "confidence_note": "Thông tin mang tính chất quan sát khoa học ban đầu, cần thêm báo cáo chính thức từ các tổ chức nghiên cứu để xác thực chi tiết.",
-      "scenarios": [
-        {
-          "text": "Dự án công bố phát hiện các loài sinh vật mới hoặc dữ liệu quan trọng về chuỗi thức ăn dưới đáy biển.",
-          "likelihood": "cao"
-        },
-        {
-          "text": "Dự án chỉ dừng lại ở mức thí nghiệm cục bộ và không có công bố khoa học rộng rãi.",
-          "likelihood": "trung bình"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Nhóm nhà khoa học",
-          "target": "Hệ sinh thái Biển Đông",
-          "relation_type": "cause_effect",
-          "label": "Thực hiện quan sát và nghiên cứu môi trường"
-        },
-        {
-          "source": "Xác bò",
-          "target": "Sinh vật biển sâu",
-          "relation_type": "cause_effect",
-          "label": "Cung cấp nguồn thức ăn thu hút sinh vật"
-        }
-      ],
-      "entities": [
-        "Biển Đông",
-        "các nhà khoa học"
-      ],
-      "keywords": [
-        "Biển Đông",
-        "sinh vật khổng lồ",
-        "các nhà khoa học"
-      ],
-      "importance": 85,
-      "severity": 3,
-      "sentiment": -1,
-      "scope": "national"
-    }
-  },
-  "evt_2e8463fe": {
-    "created_at": 1785730827679,
-    "expires_at": 1788322827679,
-    "version": "4.5",
-    "checksum": "2401766dcc27a9ca164cb7bbad77ca6c",
-    "data": {
-      "cluster_title": "Hanoi Metro lãi kỷ lục nửa đầu năm",
-      "short_summary": "Hanoi Metro lãi kỷ lục nửa đầu năm với doanh thu tăng trên 39% và lãi sau thuế hơn 33 tỷ đồng.",
-      "detailed_summary": "Công ty TNHH MTV Đường sắt Hà Nội (Hanoi Metro) ghi nhận kết quả kinh doanh tích cực trong 6 tháng đầu năm với mức lợi nhuận sau thuế đạt hơn 33 tỷ đồng. Kết quả này đến từ việc doanh thu tăng trưởng 39%, đánh dấu mức lợi nhuận cao nhất trong lịch sử các kỳ báo cáo nửa đầu năm của đơn vị.",
-      "causes": [
-        "Doanh thu tăng trưởng mạnh 39%",
-        "Hiệu quả trong quản lý vận hành"
-      ],
-      "effects": [
-        "Đạt lợi nhuận sau thuế kỷ lục hơn 33 tỷ đồng",
-        "Củng cố năng lực tài chính của doanh nghiệp"
-      ],
-      "affected_groups": [
-        "Cổ đông và nhà đầu tư",
-        "Người dân sử dụng dịch vụ công cộng tại Hà Nội",
-        "Cơ quan quản lý nhà nước về giao thông"
-      ],
-      "market_impact": "Khẳng định xu hướng phục hồi và tăng trưởng của mảng vận tải hành khách công cộng đường sắt đô thị.",
-      "vn_impact": "Phản ánh hiệu quả của việc đầu tư hạ tầng giao thông đô thị tại Việt Nam, góp phần khuyến khích sử dụng phương tiện công cộng và giảm áp lực giao thông cá nhân.",
-      "follow_up": "",
-      "categories": [
-        "economy",
-        "business"
-      ],
-      "regions": [
-        "VN"
-      ],
-      "significance": "Sự kiện cho thấy mô hình vận hành đường sắt đô thị tại Hà Nội đang dần đạt hiệu quả kinh tế, tạo tiền đề cho việc mở rộng các tuyến khác.",
-      "unknowns": [
-        "Chi tiết cụ thể về các loại hình doanh thu đóng góp vào mức tăng 39%",
-        "Tỷ trọng nguồn thu từ vé so với các nguồn thu khác (nếu có)"
-      ],
-      "confidence_note": "Thông tin dựa trên báo cáo tài chính của doanh nghiệp, có độ tin cậy cao.",
-      "scenarios": [
-        {
-          "text": "Lợi nhuận tiếp tục duy trì đà tăng trưởng trong nửa cuối năm nhờ lượng khách ổn định.",
-          "likelihood": "cao"
-        },
-        {
-          "text": "Doanh nghiệp tái đầu tư lợi nhuận để cải thiện chất lượng dịch vụ vận hành.",
-          "likelihood": "trung bình"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Doanh thu tăng 39%",
-          "target": "Hanoi Metro",
-          "relation_type": "cause_effect",
-          "label": "Nguyên nhân chính dẫn đến lợi nhuận kỷ lục"
-        },
-        {
-          "source": "Hanoi Metro",
-          "target": "Hạ tầng giao thông Hà Nội",
-          "relation_type": "cooperation",
-          "label": "Đơn vị vận hành chịu trách nhiệm phát triển hạ tầng công cộng"
-        }
-      ],
-      "entities": [
-        "Hanoi Metro"
-      ],
-      "keywords": [
-        "Hanoi Metro",
-        "doanh thu",
-        "lãi"
-      ],
-      "importance": 85,
-      "severity": 3,
-      "sentiment": 1,
-      "scope": "business"
-    }
-  },
-  "evt_666c4177": {
-    "created_at": 1785730847341,
-    "expires_at": 1788322847341,
-    "version": "4.5",
-    "checksum": "f4e84dc7cc40691fa6da7d145ea4d51c",
-    "data": {
-      "cluster_title": "Romania xuất kích F-16, chặn UAV Nga",
-      "short_summary": "Romania tuyên bố điều 2 tiêm kích F-16 để ứng phó tình hình sau khi phát hiện UAV Nga áp sát không phận.",
-      "detailed_summary": "Romania đã điều động 2 máy bay tiêm kích F-16 sau khi hệ thống radar phát hiện một thiết bị bay không người lái của Nga tiến sát khu vực biên giới và có nguy cơ xâm phạm không phận nước này, nhằm mục đích giám sát và ứng phó kịp thời.",
-      "causes": [
-        "Nga triển khai máy bay không người lái gần biên giới Romania",
-        "Yêu cầu an ninh quốc gia của Romania trong bối cảnh xung đột khu vực"
-      ],
-      "effects": [
-        "Gia tăng căng thẳng giữa Romania và Nga",
-        "Nâng cao mức độ sẵn sàng chiến đấu của không quân Romania"
-      ],
-      "affected_groups": [
-        "Quân đội Romania",
-        "Cư dân khu vực biên giới Romania"
-      ],
-      "market_impact": "Tác động không đáng kể đến thị trường tài chính quốc tế.",
-      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
-      "follow_up": "",
-      "categories": [
-        "military",
-        "diplomacy"
-      ],
-      "regions": [
-        "RO",
-        "RU"
-      ],
-      "significance": "Sự kiện phản ánh mức độ căng thẳng an ninh tại Đông Âu, nơi các quốc gia NATO duy trì cảnh giác cao độ trước các hoạt động quân sự của Nga gần biên giới.",
-      "unknowns": [
-        "Mục đích cụ thể của thiết bị bay không người lái Nga",
-        "Thiết bị bay có thực sự đi vào không phận Romania hay chỉ ở vùng lân cận"
-      ],
-      "confidence_note": "Thông tin dựa trên thông báo chính thức từ phía Romania, có độ tin cậy cao.",
-      "scenarios": [
-        {
-          "text": "Các chuyến bay giám sát của NATO sẽ được tăng cường dọc biên giới Romania.",
-          "likelihood": "cao"
-        },
-        {
-          "text": "Nga tiếp tục các hoạt động quân sự tương tự dẫn đến nguy cơ va chạm quân sự trực tiếp.",
-          "likelihood": "trung bình"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Nga",
-          "target": "Romania",
-          "relation_type": "conflict",
-          "label": "Gây áp lực an ninh biên giới"
-        },
-        {
-          "source": "Romania",
-          "target": "NATO",
-          "relation_type": "cooperation",
-          "label": "Thực hiện nhiệm vụ bảo vệ không phận thành viên"
-        }
-      ],
-      "entities": [
-        "Romania",
-        "F-16",
-        "UAV Nga"
-      ],
-      "keywords": [
-        "Romania",
-        "F-16",
-        "UAV Nga"
-      ],
-      "importance": 85,
-      "severity": 3,
-      "sentiment": -1,
-      "scope": "national"
-    }
-  },
-  "evt_6af2ecd3": {
-    "created_at": 1785732681091,
-    "expires_at": 1788324681091,
-    "version": "4.5",
-    "checksum": "755a842bb594a27695b1df08c4a203e4",
-    "data": {
-      "cluster_title": "US và Nhật hỗ trợ Yên",
-      "short_summary": "US và Nhật hỗ trợ Yên để tránh làm yếu đồng tiền của họ.",
-      "detailed_summary": "Bộ Tài chính Mỹ và Nhật Bản đang phối hợp chặt chẽ trong việc can thiệp thị trường tiền tệ để củng cố giá trị đồng Yên. Các chuyên gia phân tích cho rằng Mỹ sử dụng đồng Euro thay vì đồng USD để mua Yên nhằm tránh làm suy yếu đồng USD và giữ vững chính sách tiền tệ mạnh của Mỹ. Động thái này cũng nhằm bảo vệ thị trường trái phiếu Mỹ khỏi các tác động tiêu cực, gây áp lực lên các nhà đầu tư đang đặt cược chống lại đồng Yên và thị trường chứng khoán Nhật Bản.",
-      "causes": [
-        "Đồng Yên mất giá sâu gây bất ổn thị trường tài chính",
-        "Nhu cầu ngăn chặn rủi ro lan tỏa từ thị trường tiền tệ sang thị trường trái phiếu Mỹ"
-      ],
-      "effects": [
-        "Áp lực giảm giá đối với cổ phiếu Nhật Bản",
-        "Gia tăng rủi ro cho các nhà đầu tư bán khống đồng Yên",
-        "Tăng cường tính thanh khoản và ổn định tỷ giá Yên-USD"
-      ],
-      "affected_groups": [
-        "Nhà đầu tư tài chính quốc tế",
-        "Các doanh nghiệp Nhật Bản",
-        "Ngân hàng trung ương Mỹ và Nhật Bản"
-      ],
-      "market_impact": "Gây biến động mạnh lên cặp tỷ giá USD/JPY và tạo tâm lý thận trọng cho giới đầu tư chứng khoán Nhật Bản.",
-      "vn_impact": "Tác động gián tiếp thông qua biến động tỷ giá giữa các đồng tiền chủ chốt, có thể ảnh hưởng đến chi phí nhập khẩu nguyên liệu từ Nhật Bản và áp lực lên tỷ giá VND.",
-      "follow_up": "",
-      "categories": [
-        "economy",
-        "finance"
-      ],
-      "regions": [
-        "US",
-        "JP"
-      ],
-      "significance": "Sự hợp tác ở mức độ cao giữa hai nền kinh tế lớn cho thấy tầm quan trọng của việc kiểm soát biến động tiền tệ để duy trì ổn định hệ thống tài chính toàn cầu.",
-      "unknowns": [
-        "Khối lượng cụ thể của các giao dịch can thiệp",
-        "Thời hạn duy trì chiến lược can thiệp phối hợp này"
-      ],
-      "confidence_note": "Thông tin dựa trên đánh giá của các chuyên gia chiến lược và Bloomberg Intelligence, mức độ tin cậy cao về xu hướng chính sách.",
-      "scenarios": [
-        {
-          "text": "Đồng Yên dần hồi phục và ổn định nhờ các đợt can thiệp có kiểm soát của Mỹ và Nhật.",
-          "likelihood": "cao"
-        },
-        {
-          "text": "Thị trường tiếp tục phản ứng tiêu cực nếu các đợt can thiệp không đạt hiệu quả dài hạn như kỳ vọng.",
-          "likelihood": "trung bình"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Bộ Tài chính Mỹ",
-          "target": "Chính phủ Nhật Bản",
-          "relation_type": "cooperation",
-          "label": "Phối hợp can thiệp thị trường tiền tệ để hỗ trợ đồng Yên"
-        },
-        {
-          "source": "Đồng Yên suy yếu",
-          "target": "Can thiệp tài chính",
-          "relation_type": "cause_effect",
-          "label": "Tình trạng mất giá là lý do kích hoạt hành động can thiệp"
-        }
-      ],
-      "entities": [
-        "Dự trữ",
-        "Thương mại"
-      ],
-      "keywords": [
-        "US",
-        "Nhật",
-        "Yên",
-        "Dự trữ",
-        "Thương mại"
-      ],
-      "importance": 85,
-      "severity": 3,
-      "sentiment": -1,
-      "scope": "global"
-    }
-  },
-  "evt_a3af071a": {
-    "created_at": 1785732693066,
-    "expires_at": 1788324693066,
-    "version": "4.5",
-    "checksum": "0fece57d26343bb59ad3d452341aecbc",
-    "data": {
-      "cluster_title": "Iran-Oman tiến gần đến thỏa thuận về Hormuz",
-      "short_summary": "Iran và Oman tiến gần đến thỏa thuận về quản lý eo biển Hormuz, trong khi Tổng thống Trump cho biết đàm phán với Iran sắp bắt đầu.",
-      "detailed_summary": "Iran thông báo đang tiến gần đến một thỏa thuận với Oman để kiểm soát eo biển Hormuz, khẳng định tình trạng tại đây sẽ thay đổi. Song song đó, Tổng thống Mỹ Donald Trump xác nhận các cuộc đàm phán mới với Iran sắp diễn ra, đề cập đến cả vấn đề kiểm soát Hormuz và hạt nhân. Các bên trung gian quốc tế cũng đang nỗ lực thúc đẩy việc khôi phục thỏa thuận nhằm hạ nhiệt căng thẳng giữa Tehran và Washington.",
-      "causes": [
-        "Căng thẳng kéo dài tại khu vực eo biển Hormuz",
-        "Nhu cầu của các bên trong việc ổn định an ninh năng lượng",
-        "Sự trung gian của các quốc gia thứ ba nhằm làm dịu quan hệ Mỹ - Iran"
-      ],
-      "effects": [
-        "Tín hiệu giảm căng thẳng địa chính trị",
-        "Tiềm năng ổn định giá dầu toàn cầu thông qua việc đảm bảo an ninh vận tải",
-        "Khả năng tái lập khuôn khổ pháp lý cho chương trình hạt nhân Iran"
-      ],
-      "affected_groups": [
-        "Các quốc gia xuất khẩu dầu mỏ",
-        "Các công ty vận tải biển quốc tế",
-        "Cộng đồng quốc tế quan tâm đến an ninh vùng Vịnh"
-      ],
-      "market_impact": "Thông tin về đàm phán có khả năng làm giảm áp lực lên giá dầu thô do lo ngại rủi ro về nguồn cung qua eo biển Hormuz giảm xuống.",
-      "vn_impact": "Việt Nam có thể hưởng lợi gián tiếp từ sự ổn định giá nhiên liệu đầu vào và an toàn của các tuyến vận tải biển quốc tế mà hàng hóa Việt Nam sử dụng.",
-      "follow_up": "",
-      "categories": [
-        "diplomacy",
-        "energy"
-      ],
-      "regions": [
-        "IR",
-        "OM",
-        "US"
-      ],
-      "significance": "Sự kiện cho thấy sự chuyển dịch từ đối đầu sang ưu tiên đàm phán trong việc kiểm soát các điểm nóng địa chính trị quan trọng nhất thế giới.",
-      "unknowns": [
-        "Chi tiết cụ thể của cơ chế quản lý eo biển Hormuz giữa Iran và Oman",
-        "Nội dung và phạm vi chính xác của thỏa thuận hạt nhân mà phía Mỹ kỳ vọng"
-      ],
-      "confidence_note": "Thông tin dựa trên tuyên bố trực tiếp từ các bên liên quan, độ tin cậy ở mức cao về mặt diễn biến sự kiện.",
-      "scenarios": [
-        {
-          "text": "Các bên đạt được thỏa thuận khung về kiểm soát eo biển Hormuz, giúp hạ nhiệt căng thẳng vùng Vịnh.",
-          "likelihood": "cao"
-        },
-        {
-          "text": "Đàm phán gặp bế tắc do các điều kiện tiên quyết về hạt nhân không được chấp thuận.",
-          "likelihood": "trung bình"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Iran",
-          "target": "Oman",
-          "relation_type": "cooperation",
-          "label": "Thỏa thuận kiểm soát eo biển Hormuz"
-        },
-        {
-          "source": "Mỹ",
-          "target": "Iran",
-          "relation_type": "cooperation",
-          "label": "Đàm phán nối lại thỏa thuận"
-        },
-        {
-          "source": "Bên trung gian",
-          "target": "Mỹ - Iran",
-          "relation_type": "cooperation",
-          "label": "Thúc đẩy đối thoại"
-        },
-        {
-          "source": "Mỹ",
-          "target": "Iran",
-          "relation_type": "conflict",
-          "label": "Xung đột về vấn đề hạt nhân"
-        }
-      ],
-      "entities": [
-        "Iran",
-        "Oman",
-        "Tổng thống Trump"
-      ],
-      "keywords": [
-        "Iran",
-        "Oman",
-        "Hormuz",
-        "Thỏa thuận",
-        "Đàm phán"
-      ],
-      "importance": 85,
-      "severity": 3,
-      "sentiment": -1,
-      "scope": "global"
-    }
-  },
-  "evt_08802d4d": {
-    "created_at": 1785732705045,
-    "expires_at": 1788324705045,
-    "version": "4.5",
-    "checksum": "01fa82d7a26340b6684ff1cf165e09e1",
-    "data": {
-      "cluster_title": "Iran Talks",
-      "short_summary": "Iran Talks sẽ bắt đầu vào thứ Hai, theo tuyên bố của Tổng thống Donald Trump.",
-      "detailed_summary": "Tổng thống Hoa Kỳ Donald Trump xác nhận việc khởi động các cuộc đối thoại mới với Iran vào thứ Hai. Quyết định này được đưa ra ngay sau khi ông thông báo hủy bỏ một chiến dịch tấn công quân sự đã được lên kế hoạch trước đó nhằm vào quốc gia này. Bloomberg đang theo sát các diễn biến liên quan đến các cuộc đàm phán và phản ứng của thị trường dầu mỏ trước tình hình căng thẳng địa chính trị.",
-      "causes": [
-        "Căng thẳng leo thang giữa Hoa Kỳ và Iran",
-        "Quyết định hủy bỏ kế hoạch tấn công quân sự của Tổng thống Trump"
-      ],
-      "effects": [
-        "Sự khởi động tiến trình đàm phán ngoại giao",
-        "Ảnh hưởng đến tâm lý và giá cả trên thị trường dầu mỏ toàn cầu"
-      ],
-      "affected_groups": [
-        "Chính phủ Hoa Kỳ",
-        "Chính phủ Iran",
-        "Nhà đầu tư thị trường năng lượng",
-        "Các quốc gia chịu ảnh hưởng bởi giá dầu"
-      ],
-      "market_impact": "Thông tin về đàm phán có khả năng làm giảm bớt tâm lý lo ngại rủi ro, gây áp lực điều chỉnh lên giá dầu thô sau giai đoạn tăng nóng do căng thẳng quân sự.",
-      "vn_impact": "Biến động giá dầu thế giới có thể ảnh hưởng đến chi phí nhập khẩu xăng dầu và giá cả hàng hóa trong nước tại Việt Nam.",
-      "follow_up": "",
-      "categories": [
-        "politics",
-        "diplomacy"
-      ],
-      "regions": [
-        "US",
-        "IR"
-      ],
-      "significance": "Sự kiện cho thấy sự chuyển hướng từ phương án quân sự sang đối thoại ngoại giao, là yếu tố then chốt giúp hạ nhiệt căng thẳng tại khu vực Trung Đông.",
-      "unknowns": [
-        "Nội dung cụ thể và mục tiêu chính của các cuộc đàm phán",
-        "Phản ứng chính thức và điều kiện tiên quyết từ phía Iran"
-      ],
-      "confidence_note": "Thông tin dựa trên tuyên bố chính thức của Tổng thống Hoa Kỳ, độ tin cậy cao về việc xác nhận sự tồn tại của cuộc đàm phán.",
-      "scenarios": [
-        {
-          "text": "Các bên đạt được thỏa thuận tạm thời nhằm hạ nhiệt căng thẳng quân sự",
-          "likelihood": "trung bình"
-        },
-        {
-          "text": "Đàm phán không đạt kết quả và căng thẳng quân sự tiếp tục leo thang",
-          "likelihood": "cao"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Donald Trump",
-          "target": "Iran",
-          "relation_type": "conflict",
-          "label": "Mối quan hệ căng thẳng và xung đột lợi ích"
-        },
-        {
-          "source": "Donald Trump",
-          "target": "Iran",
-          "relation_type": "cooperation",
-          "label": "Thiết lập đối thoại ngoại giao"
-        },
-        {
-          "source": "Căng thẳng quân sự",
-          "target": "Giá dầu",
-          "relation_type": "cause_effect",
-          "label": "Yếu tố tác động đến thị trường năng lượng"
-        }
-      ],
-      "entities": [
-        "Donald Trump",
-        "Iran",
-        "Bloomberg"
-      ],
-      "keywords": [
-        "Iran",
-        "Trump",
-        "Bloomberg"
-      ],
-      "importance": 85,
-      "severity": 3,
-      "sentiment": -1,
-      "scope": "national"
-    }
-  },
-  "evt_c07e7e8a": {
-    "created_at": 1785732711379,
-    "expires_at": 1788324711379,
-    "version": "4.5",
-    "checksum": "f84b6d9976af207de74b42d2628e1cc3",
-    "data": {
-      "cluster_title": "Vua Morocco giải thích lý do đặt tên Tổng thống Trump cho cao tốc 1 tỷ USD",
-      "short_summary": "Vua Morocco cho biết quốc gia châu Phi này đặt tên cao tốc trị giá 1 tỷ USD theo tên Tổng thống Mỹ Donald Trump để bày tỏ lòng biết ơn sâu sắc.",
-      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
-      "causes": [],
-      "effects": [],
-      "affected_groups": [],
-      "market_impact": "",
-      "vn_impact": "Không tác động trực tiếp đến Việt Nam",
-      "categories": [
-        "Chính trị",
-        "Kinh tế"
-      ],
-      "regions": [
-        "MA"
-      ],
-      "follow_up": "",
-      "entities": [
-        "Vua Morocco",
-        "Tổng thống Trump"
-      ],
-      "keywords": [
-        "Morocco",
-        "Tổng thống Trump",
-        "cao tốc"
-      ],
-      "importance": 85,
-      "severity": 1,
-      "sentiment": 0,
-      "scope": "national"
-    }
-  },
-  "evt_55568c4f": {
-    "created_at": 1785751983825,
-    "expires_at": 1788343983825,
-    "version": "4.5",
-    "checksum": "6b1964e7fd1af638d3e9eb8b87216db2",
-    "data": {
-      "cluster_title": "Nhật Bản và Mỹ can thiệp vào thị trường tiền tệ",
-      "short_summary": "Nhật Bản và Mỹ đã can thiệp vào thị trường tiền tệ để ổn định đồng yen Nhật Bản.",
-      "detailed_summary": "Bộ trưởng Tài chính Nhật Bản Satsuki Katayama và chính quyền Tổng thống Donald Trump đã xác nhận thực hiện hành động can thiệp chung vào thị trường tiền tệ. Đây là lần đầu tiên hai quốc gia thực hiện động thái này trong 15 năm qua nhằm đối phó với các biến động mất trật tự của đồng Yên, từ đó khiến đồng Đô la Mỹ suy yếu nhanh chóng trên thị trường quốc tế.",
-      "causes": [
-        "Sự mất giá nghiêm trọng của đồng Yên Nhật",
-        "Biến động thị trường tiền tệ diễn ra thiếu trật tự"
-      ],
-      "effects": [
-        "Đồng Yên phục hồi giá trị",
-        "Đồng Đô la Mỹ suy yếu trên thị trường",
-        "Củng cố mối quan hệ hợp tác tài chính Mỹ - Nhật"
-      ],
-      "affected_groups": [
-        "Nhà đầu tư tài chính quốc tế",
-        "Các doanh nghiệp xuất nhập khẩu Nhật Bản",
-        "Thị trường ngoại hối toàn cầu"
-      ],
-      "market_impact": "Thị trường ngoại hối có sự biến động mạnh với xu hướng đồng Đô la Mỹ mất giá so với Yên Nhật sau khi thông tin can thiệp được công bố.",
-      "vn_impact": "Sự can thiệp này có thể gây biến động gián tiếp đến tỷ giá VND/JPY và VND/USD, ảnh hưởng đến các doanh nghiệp Việt Nam có quan hệ giao thương hoặc nợ vay bằng các đồng tiền này.",
-      "follow_up": "",
-      "categories": [
-        "economy",
-        "finance"
-      ],
-      "regions": [
-        "JP",
-        "US"
-      ],
-      "significance": "Động thái phối hợp sau 15 năm cho thấy mức độ quyết tâm cao độ của Mỹ và Nhật Bản trong việc ổn định đồng tiền chủ chốt tại châu Á.",
-      "unknowns": [
-        "Khối lượng tiền tệ thực tế được can thiệp vào thị trường",
-        "Thời hạn duy trì chính sách can thiệp này trong tương lai"
-      ],
-      "confidence_note": "Thông tin có độ tin cậy cao dựa trên xác nhận từ quan chức cấp cao của cả hai quốc gia.",
-      "scenarios": [
-        {
-          "text": "Đồng Yên ổn định dần và nhu cầu can thiệp bổ sung giảm bớt.",
-          "likelihood": "cao"
-        },
-        {
-          "text": "Thị trường tiếp tục biến động mạnh đòi hỏi các đợt can thiệp tiếp theo từ hai chính phủ.",
-          "likelihood": "trung bình"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Chính phủ Mỹ",
-          "target": "Chính phủ Nhật Bản",
-          "relation_type": "cooperation",
-          "label": "Hợp tác can thiệp thị trường tiền tệ"
-        },
-        {
-          "source": "Sự mất giá của Yên Nhật",
-          "target": "Can thiệp thị trường",
-          "relation_type": "cause_effect",
-          "label": "Nguyên nhân dẫn đến hành động can thiệp"
-        }
-      ],
-      "entities": [
-        "Nhật Bản",
-        "Mỹ",
-        "Donald Trump",
-        "Satsuki Katayama"
-      ],
-      "keywords": [
-        "Nhật Bản",
-        "Mỹ",
-        "tiền tệ",
-        "can thiệp"
-      ],
-      "importance": 95,
-      "severity": 3,
-      "sentiment": -1,
-      "scope": "global"
-    }
-  },
-  "evt_677baa67": {
-    "created_at": 1785751995463,
-    "expires_at": 1788343995463,
-    "version": "4.5",
-    "checksum": "e01fa9895dd2a7e716409348a5b851a2",
-    "data": {
-      "cluster_title": "Israel nói có mối quan ngại nghiêm trọng về thỏa thuận giải giáp Hamas",
-      "short_summary": "Israel nói có mối quan ngại nghiêm trọng về thỏa thuận giải giáp Hamas, trong khi các cuộc tấn công của Israel đã khiến ít nhất 17 người thiệt mạng tại Gaza.",
-      "detailed_summary": "Tổng thống Donald Trump vừa công bố đề xuất giải giáp tổ chức Hamas vào tuần trước, tuy nhiên Israel đã lên tiếng bày tỏ sự lo ngại nghiêm trọng đối với kế hoạch này. Song song đó, các cuộc không kích của Israel vào Dải Gaza từ đêm đến chiều Chủ nhật đã khiến ít nhất 17 người thiệt mạng, bao gồm cả trẻ em.",
-      "causes": [
-        "Đề xuất giải giáp Hamas của Tổng thống Mỹ",
-        "Tình trạng xung đột vũ trang liên tục giữa Israel và Hamas"
-      ],
-      "effects": [
-        "Gia tăng thương vong dân sự tại Dải Gaza",
-        "Xuất hiện rạn nứt trong quan điểm giữa Israel và đồng minh về phương án giải quyết Hamas"
-      ],
-      "affected_groups": [
-        "Người dân tại Dải Gaza",
-        "Chính phủ Israel",
-        "Tổ chức Hamas"
-      ],
-      "market_impact": "Gây bất ổn tâm lý thị trường, có khả năng đẩy giá dầu và chi phí bảo hiểm rủi ro địa chính trị tăng cao.",
-      "vn_impact": "Không tác động trực tiếp đến Việt Nam, tuy nhiên có thể gây ảnh hưởng gián tiếp đến giá năng lượng toàn cầu và tâm lý thị trường tài chính quốc tế.",
-      "follow_up": "",
-      "categories": [
-        "politics",
-        "military"
-      ],
-      "regions": [
-        "IL",
-        "PS",
-        "US"
-      ],
-      "significance": "Sự kiện phản ánh sự bất đồng trong chiến lược xử lý Hamas giữa Israel và Mỹ, đồng thời cho thấy nỗ lực ngoại giao đang gặp trở ngại lớn bởi tình hình thực địa căng thẳng.",
-      "unknowns": [
-        "Chi tiết cụ thể của kế hoạch giải giáp mà Tổng thống Trump đề xuất",
-        "Phản ứng tiếp theo của Hamas đối với đề xuất giải giáp"
-      ],
-      "confidence_note": "Thông tin dựa trên báo cáo sự kiện thực tế, độ tin cậy cao về diễn biến chính.",
-      "scenarios": [
-        {
-          "text": "Xung đột tiếp tục leo thang làm đổ vỡ các nỗ lực ngoại giao của Mỹ.",
-          "likelihood": "cao"
-        },
-        {
-          "text": "Israel và Mỹ đạt được tiếng nói chung để điều chỉnh kế hoạch giải giáp.",
-          "likelihood": "trung bình"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Israel",
-          "target": "Hamas",
-          "relation_type": "conflict",
-          "label": "Xung đột quân sự trực tiếp"
-        },
-        {
-          "source": "Donald Trump",
-          "target": "Hamas",
-          "relation_type": "cause_effect",
-          "label": "Đưa ra đề xuất giải giáp"
-        },
-        {
-          "source": "Israel",
-          "target": "Donald Trump",
-          "relation_type": "conflict",
-          "label": "Bất đồng quan điểm về kế hoạch giải giáp"
-        }
-      ],
-      "entities": [
-        "Israel",
-        "Hamas"
-      ],
-      "keywords": [
-        "Israel",
-        "Hamas",
-        "thỏa thuận giải giáp"
-      ],
-      "importance": 85,
-      "severity": 3,
-      "sentiment": -1,
-      "scope": "national"
-    }
-  },
-  "evt_bc7eef46": {
-    "created_at": 1785752007214,
-    "expires_at": 1788344007214,
-    "version": "4.5",
-    "checksum": "30ac7f8b42f82bb285d552451d645c0b",
-    "data": {
-      "cluster_title": "Hàn Quốc bỏ chiến lược 'denuclearization-first'",
-      "short_summary": "Hàn Quốc bỏ chiến lược 'denuclearization-first', Triều Tiên có thể phản ứng thế nào?",
-      "detailed_summary": "Chính phủ Hàn Quốc đã quyết định chuyển hướng chính sách ngoại giao, từ bỏ ưu tiên hàng đầu là việc giải trừ hạt nhân ngay lập tức của Triều Tiên. Tuy nhiên, giới chuyên gia bày tỏ sự nghi ngại về khả năng Triều Tiên sẽ quay lại bàn đàm phán dù phía Hàn Quốc đã điều chỉnh lập trường.",
-      "causes": [
-        "Sự bế tắc kéo dài trong tiến trình giải trừ hạt nhân",
-        "Thực tế về khả năng đàm phán hạn chế với Triều Tiên"
-      ],
-      "effects": [
-        "Thay đổi trong cấu trúc đàm phán trên bán đảo Triều Tiên",
-        "Sự nghi ngờ về khả năng cải thiện quan hệ hai miền"
-      ],
-      "affected_groups": [
-        "Chính phủ Hàn Quốc",
-        "Chính phủ Triều Tiên",
-        "Các quốc gia có liên quan đến an ninh khu vực"
-      ],
-      "market_impact": "Có thể gây ra tâm lý thận trọng đối với các nhà đầu tư tại thị trường Hàn Quốc do lo ngại bất ổn địa chính trị tiềm tàng.",
-      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
-      "follow_up": "",
-      "categories": [
-        "politics",
-        "diplomacy"
-      ],
-      "regions": [
-        "KR",
-        "KP"
-      ],
-      "significance": "Sự chuyển hướng chiến lược của Hàn Quốc đánh dấu một nỗ lực tìm kiếm hướng đi mới trong quan hệ liên Triều, dù triển vọng hòa giải vẫn rất khó dự đoán.",
-      "unknowns": [
-        "Phản ứng chính thức và hành động tiếp theo của Triều Tiên",
-        "Mục tiêu cụ thể mà Hàn Quốc kỳ vọng đạt được qua sự thay đổi chiến lược này"
-      ],
-      "confidence_note": "Thông tin dựa trên bản tin gốc, độ tin cậy cao về việc thay đổi chính sách nhưng dự báo về phản ứng của Triều Tiên chỉ mang tính phân tích chuyên gia.",
-      "scenarios": [
-        {
-          "text": "Triều Tiên tiếp tục giữ vững lập trường cứng rắn và từ chối các đề xuất đối thoại mới.",
-          "likelihood": "cao"
-        },
-        {
-          "text": "Các bên tìm kiếm một khung đàm phán thay thế ít áp lực hơn để giảm thiểu căng thẳng.",
-          "likelihood": "trung bình"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Hàn Quốc",
-          "target": "Triều Tiên",
-          "relation_type": "conflict",
-          "label": "Bế tắc trong đàm phán giải trừ hạt nhân"
-        },
-        {
-          "source": "Hàn Quốc",
-          "target": "Chiến lược giải trừ hạt nhân",
-          "relation_type": "cause_effect",
-          "label": "Hàn Quốc từ bỏ ưu tiên giải trừ hạt nhân"
-        }
-      ],
-      "entities": [
-        "Hàn Quốc",
-        "Triều Tiên"
-      ],
-      "keywords": [
-        "Hàn Quốc",
-        "Triều Tiên",
-        "denuclearization"
-      ],
-      "importance": 85,
-      "severity": 3,
-      "sentiment": -1,
-      "scope": "global"
-    }
-  },
-  "evt_9c21a192": {
-    "created_at": 1785752018734,
-    "expires_at": 1788344018734,
-    "version": "4.5",
-    "checksum": "b662c4f7acbc599b62c982623e31f962",
-    "data": {
-      "cluster_title": "Fed xem xét thay đổi tần suất họp chính sách",
-      "short_summary": "Fed xem xét thay đổi tần suất họp chính sách để phản ứng với tình hình kinh tế.",
-      "detailed_summary": "Theo nguồn tin từ Bloomberg, ông Kevin Warsh, Chủ tịch Cục Dự trữ Liên bang Mỹ, đang cân nhắc việc điều chỉnh tần suất các cuộc họp quyết định về chính sách tiền tệ. Động thái này cho thấy khả năng Fed có thể cải tổ cơ chế vận hành truyền thống nhằm tăng tính linh hoạt hoặc hiệu quả trong việc ứng phó với tình hình kinh tế.",
-      "causes": [
-        "Nhu cầu tái cấu trúc quy trình điều hành chính sách tiền tệ",
-        "Định hướng quản lý của lãnh đạo mới tại Fed"
-      ],
-      "effects": [
-        "Có thể làm thay đổi tốc độ phản ứng của Fed với các biến động thị trường",
-        "Tạo ra luồng dư luận và kỳ vọng mới trong giới đầu tư tài chính"
-      ],
-      "affected_groups": [
-        "Các nhà hoạch định chính sách tiền tệ",
-        "Các tổ chức tài chính toàn cầu",
-        "Nhà đầu tư thị trường vốn"
-      ],
-      "market_impact": "Thông tin gây xôn xao dư luận, khiến giới đầu tư theo dõi sát sao mọi thay đổi tiềm tàng trong cơ chế truyền thông và ra quyết định của Fed.",
-      "vn_impact": "Không tác động trực tiếp đến Việt Nam, nhưng những thay đổi trong tần suất họp của Fed sẽ ảnh hưởng gián tiếp đến kỳ vọng về chính sách tiền tệ của Mỹ, từ đó có thể tác động đến tỷ giá và dòng vốn quốc tế.",
-      "follow_up": "",
-      "categories": [
-        "economy",
-        "finance"
-      ],
-      "regions": [
-        "US"
-      ],
-      "significance": "Đây là bước chuyển động tiềm tàng trong cơ chế vận hành của cơ quan quyền lực tài chính hàng đầu thế giới, có thể định hình lại cách thức Mỹ phản ứng với các dữ liệu kinh tế vĩ mô.",
-      "unknowns": [
-        "Lý do chi tiết dẫn đến việc cân nhắc thay đổi",
-        "Tần suất họp mới dự kiến là bao nhiêu",
-        "Thời điểm triển khai thay đổi"
-      ],
-      "confidence_note": "Thông tin dựa trên nguồn tin nội bộ từ báo cáo của Bloomberg, cần thêm thông báo chính thức từ phía Fed để xác nhận.",
-      "scenarios": [
-        {
-          "text": "Fed chính thức công bố lộ trình giảm tần suất các cuộc họp chính sách.",
-          "likelihood": "trung bình"
-        },
-        {
-          "text": "Đề xuất này chỉ dừng lại ở mức cân nhắc nội bộ và không được hiện thực hóa.",
-          "likelihood": "cao"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Kevin Warsh",
-          "target": "FOMC",
-          "relation_type": "cause_effect",
-          "label": "Đề xuất thay đổi cơ chế hoạt động của tổ chức"
-        }
-      ],
-      "entities": [
-        "Federal Reserve",
-        "Kevin Warsh"
-      ],
-      "keywords": [
-        "Fed",
-        "FOMC",
-        "chính sách",
-        "thay đổi"
-      ],
-      "importance": 85,
-      "severity": 3,
-      "sentiment": -1,
-      "scope": "national"
-    }
-  },
-  "evt_b69541e3": {
-    "created_at": 1785752024978,
-    "expires_at": 1788344024978,
-    "version": "4.5",
-    "checksum": "73182f058fe6ee4b8c56813661cfbf88",
-    "data": {
-      "cluster_title": "Morgan Stanley dự đoán sự phục hồi của đầu tư theo phong cách Momentum",
-      "short_summary": "Morgan Stanley dự đoán sự phục hồi của đầu tư theo phong cách Momentum, với các ngành có lợi nhuận cao sẽ dẫn đầu thị trường.",
-      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
-      "causes": [],
-      "effects": [],
-      "affected_groups": [],
-      "market_impact": "",
-      "vn_impact": "Không tác động trực tiếp đến Việt Nam",
-      "categories": [
-        "Tài chính",
-        "Chứng khoán"
-      ],
-      "regions": [
-        "US",
-        "GLOBAL"
-      ],
-      "follow_up": "",
-      "entities": [
-        "Morgan Stanley",
-        "Michael Wilson"
-      ],
-      "keywords": [
-        "Morgan Stanley",
-        "Wilson",
-        "Momentum",
-        "Earnings"
-      ],
-      "importance": 85,
-      "severity": 3,
-      "sentiment": 1,
-      "scope": "global"
-    }
-  },
-  "evt_1b9ef0e7": {
-    "created_at": 1785752036316,
-    "expires_at": 1788344036316,
-    "version": "4.5",
-    "checksum": "c6048e697d225021318e58c0909cbac9",
-    "data": {
-      "cluster_title": "Hughes Satellite Đệm Bankruptcy",
-      "short_summary": "Hughes Satellite Systems Corp. đã đệ đơn xin bảo vệ Chapter 11 vì cạnh tranh gay gắt ảnh hưởng đến kinh doanh băng thông rộng.",
-      "detailed_summary": "Công ty Hughes Satellite Systems Corp. đã nộp đơn xin bảo hộ phá sản theo Chương 11 vào Chủ nhật do áp lực nợ đến hạn và tình trạng cạnh tranh gay gắt trong lĩnh vực cung cấp dịch vụ băng thông rộng.",
-      "causes": [
-        "Cạnh tranh thị trường ngày càng gia tăng",
-        "Áp lực từ các khoản nợ đến hạn thanh toán"
-      ],
-      "effects": [
-        "Gián đoạn hoạt động kinh doanh của đơn vị con",
-        "Ảnh hưởng đến cấu trúc tài chính của công ty mẹ EchoStar"
-      ],
-      "affected_groups": [
-        "Các chủ nợ",
-        "Nhà đầu tư EchoStar",
-        "Khách hàng sử dụng dịch vụ băng thông rộng"
-      ],
-      "market_impact": "Gây tâm lý tiêu cực đối với cổ phiếu của EchoStar và làm dấy lên lo ngại về khả năng cạnh tranh của các nhà cung cấp internet vệ tinh truyền thống.",
-      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
-      "follow_up": "",
-      "categories": [
-        "economy",
-        "business"
-      ],
-      "regions": [
-        "US"
-      ],
-      "significance": "Sự kiện này phản ánh khó khăn tài chính nghiêm trọng của các doanh nghiệp hạ tầng viễn thông vệ tinh trước áp lực cạnh tranh từ các công nghệ mới.",
-      "unknowns": [
-        "Kế hoạch tái cấu trúc cụ thể sau khi phá sản",
-        "Số nợ chính xác mà đơn vị này đang đối mặt"
-      ],
-      "confidence_note": "Thông tin có độ tin cậy cao dựa trên báo cáo nộp hồ sơ phá sản chính thức.",
-      "scenarios": [
-        {
-          "text": "Hughes Satellite Systems thực hiện tái cấu trúc thành công dưới sự bảo hộ của Chương 11.",
-          "likelihood": "cao"
-        },
-        {
-          "text": "EchoStar phải thoái vốn hoặc bán lại tài sản của đơn vị này để trả nợ.",
-          "likelihood": "trung bình"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Cạnh tranh thị trường",
-          "target": "Hughes Satellite Systems",
-          "relation_type": "cause_effect",
-          "label": "Nguyên nhân chính dẫn đến sự suy yếu của doanh nghiệp"
-        },
-        {
-          "source": "Hughes Satellite Systems",
-          "target": "EchoStar",
-          "relation_type": "cause_effect",
-          "label": "Sự kiện phá sản tạo ra áp lực tài chính cho công ty mẹ"
-        }
-      ],
-      "entities": [
-        "Hughes Satellite Systems Corp."
-      ],
-      "keywords": [
-        "Hughes Satellite",
-        "Chapter 11",
-        "bankruptcy"
-      ],
-      "importance": 85,
-      "severity": 3,
-      "sentiment": -1,
-      "scope": "business"
-    }
-  },
-  "evt_6db1716e": {
-    "created_at": 1785752048176,
-    "expires_at": 1788344048176,
-    "version": "4.5",
-    "checksum": "03f7194d5f50aaea07d2ab730c684519",
-    "data": {
-      "cluster_title": "Milei's Money Man Shuns Foreign Markets",
-      "short_summary": "Milei's Money Man Shuns Foreign Markets After Failed Bond Binge",
-      "detailed_summary": "Luis Caputo, người từng được mệnh danh là 'kẻ vay nợ hàng loạt' với thành tích huy động hơn 40 tỷ USD thông qua trái phiếu quốc tế trong nhiệm kỳ trước, hiện đang thực hiện chính sách ngược lại dưới chính quyền của Tổng thống Milei. Thay vì tiếp tục phụ thuộc vào nợ nước ngoài, ông đang hạn chế huy động vốn từ các thị trường này sau những nỗ lực không thành công trước đó.",
-      "causes": [
-        "Những thất bại trong việc huy động vốn qua trái phiếu trong quá khứ",
-        "Sự thay đổi chiến lược quản lý tài chính dưới thời Tổng thống Milei"
-      ],
-      "effects": [
-        "Giảm sự phụ thuộc vào nợ nước ngoài",
-        "Thay đổi vị thế của Luis Caputo từ người huy động nợ sang người thận trọng với thị trường ngoại"
-      ],
-      "affected_groups": [
-        "Chính phủ Argentina",
-        "Các nhà đầu tư trái phiếu quốc tế",
-        "Cơ quan tài chính Argentina"
-      ],
-      "market_impact": "Việc Argentina rút khỏi thị trường trái phiếu quốc tế có thể làm giảm nguồn cung nợ mới, gây áp lực lên thanh khoản nhưng cũng giúp ổn định tâm lý về nợ công.",
-      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
-      "follow_up": "",
-      "categories": [
-        "economy",
-        "finance"
-      ],
-      "regions": [
-        "AR"
-      ],
-      "significance": "Sự kiện phản ánh bước ngoặt trong tư duy quản lý nợ công của Argentina dưới thời Tổng thống Milei nhằm giảm bớt gánh nặng tài chính quốc tế.",
-      "unknowns": [
-        "Chiến lược thay thế để huy động vốn trong nước của ông Caputo là gì",
-        "Thời hạn cụ thể cho việc duy trì chính sách tránh xa thị trường trái phiếu quốc tế"
-      ],
-      "confidence_note": "Thông tin dựa trên diễn biến thực tế về chính sách tài chính của nhân vật, độ tin cậy cao.",
-      "scenarios": [
-        {
-          "text": "Argentina duy trì chính sách hạn chế nợ nước ngoài để ổn định kinh tế trong nước.",
-          "likelihood": "cao"
-        },
-        {
-          "text": "Chính phủ buộc phải quay lại thị trường quốc tế nếu nguồn vốn nội địa không đáp ứng đủ nhu cầu chi tiêu.",
-          "likelihood": "trung bình"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Luis Caputo",
-          "target": "Thị trường trái phiếu quốc tế",
-          "relation_type": "conflict",
-          "label": "Chuyển từ trạng thái vay nợ tích cực sang tránh né huy động vốn"
-        },
-        {
-          "source": "Chính quyền Milei",
-          "target": "Luis Caputo",
-          "relation_type": "cooperation",
-          "label": "Chỉ đạo điều hành chính sách tài chính quốc gia"
-        }
-      ],
-      "entities": [
-        "Milei",
-        "Luis Caputo",
-        "Argentina"
-      ],
-      "keywords": [
-        "Milei",
-        "Luis Caputo",
-        "Argentina",
-        "foreign bond markets"
-      ],
-      "importance": 85,
-      "severity": 3,
-      "sentiment": -1,
-      "scope": "national"
-    }
-  },
-  "evt_50ee8693": {
-    "created_at": 1785752064273,
-    "expires_at": 1788344064273,
-    "version": "4.5",
-    "checksum": "87224d115c96efbb3ced4d363c98a11f",
-    "data": {
-      "cluster_title": "Beer Dynasty Families Sell Stake in AB InBev",
-      "short_summary": "Beer Dynasty Families bán cổ phần €731 triệu trong AB InBev sau khi cổ phiếu tăng mạnh.",
-      "detailed_summary": "Nhóm các cổ đông gia tộc lịch sử của tập đoàn bia lớn nhất thế giới Anheuser-Busch InBev đã quyết định bán ra lượng cổ phần trị giá 731 triệu Euro (tương đương 843 triệu USD). Động thái này diễn ra trong bối cảnh giá cổ phiếu của tập đoàn đã ghi nhận mức tăng trưởng mạnh mẽ kể từ đầu năm nay.",
-      "causes": [
-        "Cổ phiếu Anheuser-Busch InBev tăng giá mạnh đầu năm",
-        "Chiến lược thoái vốn hoặc cơ cấu lại danh mục đầu tư của các gia tộc"
-      ],
-      "effects": [
-        "Các cổ đông gia tộc thu về lượng tiền mặt lớn",
-        "Thay đổi tỷ lệ sở hữu tại tập đoàn bia lớn nhất thế giới"
-      ],
-      "affected_groups": [
-        "Các gia tộc sở hữu Anheuser-Busch InBev",
-        "Nhà đầu tư trên thị trường chứng khoán",
-        "Tập đoàn Anheuser-Busch InBev"
-      ],
-      "market_impact": "Việc thoái vốn quy mô lớn có thể gây áp lực điều chỉnh tạm thời lên giá cổ phiếu của Anheuser-Busch InBev nhưng không ảnh hưởng đến hoạt động kinh doanh cốt lõi.",
-      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
-      "follow_up": "",
-      "categories": [
-        "economy",
-        "finance"
-      ],
-      "regions": [
-        "BE"
-      ],
-      "significance": "Sự kiện phản ánh quyết định chốt lời của các nhà đầu tư chiến lược khi tận dụng đà tăng giá của cổ phiếu trong giai đoạn thị trường thuận lợi.",
-      "unknowns": [
-        "Danh tính cụ thể của các gia tộc thực hiện việc bán cổ phần",
-        "Mục đích sử dụng số tiền thoái vốn của các gia tộc này"
-      ],
-      "confidence_note": "Thông tin có độ tin cậy cao dựa trên dữ liệu báo cáo tài chính và thị trường công khai.",
-      "scenarios": [
-        {
-          "text": "Các gia tộc tiếp tục duy trì tỷ lệ sở hữu còn lại để hưởng cổ tức dài hạn.",
-          "likelihood": "cao"
-        },
-        {
-          "text": "Có thêm các đợt thoái vốn khác từ nhóm cổ đông gia tộc nếu thị trường tiếp tục đi lên.",
-          "likelihood": "trung bình"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Các gia tộc sở hữu",
-          "target": "Anheuser-Busch InBev",
-          "relation_type": "cause_effect",
-          "label": "Các gia tộc bán cổ phần của tập đoàn"
-        },
-        {
-          "source": "Giá cổ phiếu tăng",
-          "target": "Các gia tộc sở hữu",
-          "relation_type": "cause_effect",
-          "label": "Động lực thúc đẩy quyết định chốt lời"
-        }
-      ],
-      "entities": [
-        "Beer Dynasty",
-        "AB InBev",
-        "Anheuser-Busch InBev"
-      ],
-      "keywords": [
-        "Beer Dynasty",
-        "AB InBev",
-        "Anheuser-Busch InBev"
-      ],
-      "importance": 85,
-      "severity": 3,
-      "sentiment": -1,
-      "scope": "global"
-    }
-  },
-  "evt_general_1785752069982": {
-    "created_at": 1785752075869,
-    "expires_at": 1788344075869,
-    "version": "4.5",
-    "checksum": "0592faae198e40be868254c46dcf3c51",
-    "data": {
-      "cluster_title": "Mỹ kêu gọi gây sức ép lên Iran",
-      "short_summary": "Mỹ kêu gọi các chuyên gia quân sự 'hiến kế' nhằm gây sức ép lên Iran.",
-      "detailed_summary": "Bộ Tư lệnh Trung tâm Mỹ (CENTCOM) đã công khai đề nghị giới phân tích và các chuyên gia quân sự cung cấp những ý tưởng mới, sáng tạo để gia tăng áp lực đối với Iran. Động thái này cho thấy Mỹ đang tìm kiếm các phương thức tiếp cận phi truyền thống hoặc tối ưu hóa các biện pháp hiện có nhằm đối phó với các hoạt động của Iran trong khu vực.",
-      "causes": [
-        "Nhu cầu tìm kiếm giải pháp mới trong đối phó với Iran",
-        "Mong muốn duy trì sức ép chính trị và quân sự của Mỹ tại Trung Đông"
-      ],
-      "effects": [
-        "Gia tăng sự chú ý của giới chuyên gia vào chính sách đối ngoại với Iran",
-        "Tạo thêm cơ sở lý luận cho các quyết định điều chỉnh chính sách của Mỹ trong tương lai"
-      ],
-      "affected_groups": [
-        "Giới chuyên gia quân sự",
-        "Chính phủ Iran",
-        "Các quốc gia tại khu vực Trung Đông"
-      ],
-      "market_impact": "Có thể gây ra tâm lý thận trọng ngắn hạn trên thị trường năng lượng do lo ngại về leo thang căng thẳng địa chính trị.",
-      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
-      "follow_up": "",
-      "categories": [
-        "military",
-        "diplomacy"
-      ],
-      "regions": [
-        "US",
-        "IR"
-      ],
-      "significance": "Sự kiện phản ánh nỗ lực của Mỹ trong việc đa dạng hóa chiến lược đối phó với Iran thông qua việc huy động trí tuệ từ giới phân tích độc lập.",
-      "unknowns": [
-        "Các giải pháp cụ thể mà CENTCOM đang tìm kiếm là gì",
-        "Mức độ cam kết của chính quyền Mỹ trong việc triển khai các ý tưởng đề xuất"
-      ],
-      "confidence_note": "Thông tin dựa trên tuyên bố từ cơ quan có thẩm quyền của Mỹ, độ tin cậy cao.",
-      "scenarios": [
-        {
-          "text": "Mỹ áp dụng các biện pháp trừng phạt hoặc gây áp lực mới dựa trên đề xuất thu thập được.",
-          "likelihood": "cao"
-        },
-        {
-          "text": "Sự kiện chỉ dừng lại ở mức độ nghiên cứu, không dẫn đến thay đổi chính sách đột phá.",
-          "likelihood": "trung bình"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "CENTCOM",
-          "target": "Iran",
-          "relation_type": "conflict",
-          "label": "Gây sức ép quân sự và chính trị"
-        },
-        {
-          "source": "CENTCOM",
-          "target": "Chuyên gia quân sự",
-          "relation_type": "cooperation",
-          "label": "Hợp tác tìm kiếm giải pháp chiến lược"
-        }
-      ],
-      "entities": [
-        "Mỹ",
-        "Iran",
-        "Bộ Tư lệnh Trung tâm Mỹ (CENTCOM)"
-      ],
-      "keywords": [
-        "Mỹ",
-        "Iran",
-        "giấy kêu gọi",
-        "sức ép"
-      ],
-      "importance": 85,
-      "severity": 3,
-      "sentiment": -1,
-      "scope": "national"
-    }
-  },
-  "evt_e80952b5": {
-    "created_at": 1785752087263,
-    "expires_at": 1788344087263,
-    "version": "4.5",
-    "checksum": "a526526e0378339e0bdda411c2315fd8",
-    "data": {
-      "cluster_title": "Tổng thống Iran khẳng định tương lai đất nước",
-      "short_summary": "Tổng thống Iran Masoud Pezeshkian khẳng định tương lai đất nước sẽ do người dân Iran quyết định.",
-      "detailed_summary": "Trong một tuyên bố mới nhất, Tổng thống Iran Masoud Pezeshkian nhấn mạnh vai trò trung tâm của người dân trong việc định hình quỹ đạo và tương lai của đất nước, khẳng định quyền tự quyết của quốc gia này.",
-      "causes": [
-        "Nhu cầu khẳng định quyền tự chủ chính trị",
-        "Sự định hướng chính sách từ chính quyền mới"
-      ],
-      "effects": [
-        "Củng cố tinh thần đoàn kết quốc gia",
-        "Gửi đi tín hiệu về quan điểm quản trị trong nước"
-      ],
-      "affected_groups": [
-        "Người dân Iran",
-        "Chính phủ Iran"
-      ],
-      "market_impact": "Chưa có tác động rõ rệt đến thị trường tài chính quốc tế từ thông điệp chính trị này.",
-      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
-      "follow_up": "",
-      "categories": [
-        "politics",
-        "diplomacy"
-      ],
-      "regions": [
-        "IR"
-      ],
-      "significance": "Sự kiện phản ánh thông điệp củng cố quyền tự chủ nội bộ của chính quyền Iran trong bối cảnh các thách thức chính trị.",
-      "unknowns": [
-        "Các bước triển khai cụ thể để hiện thực hóa quyền tự quyết của người dân",
-        "Phản ứng từ các nhóm chính trị đối lập trong và ngoài nước"
-      ],
-      "confidence_note": "Thông tin dựa trên tuyên bố trực tiếp từ người đứng đầu quốc gia, có độ tin cậy cao về mặt nội dung phát ngôn.",
-      "scenarios": [
-        {
-          "text": "Chính phủ Iran thực hiện các thay đổi chính sách nhằm tăng cường sự tham gia của người dân.",
-          "likelihood": "trung bình"
-        },
-        {
-          "text": "Tuyên bố dừng lại ở mức độ định hướng tư tưởng, không kéo theo thay đổi chính sách đột phá.",
-          "likelihood": "cao"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Masoud Pezeshkian",
-          "target": "Người dân Iran",
-          "relation_type": "cooperation",
-          "label": "Tái khẳng định vai trò quyết định của người dân đối với đất nước"
-        }
-      ],
-      "entities": [
-        "Tổng thống Iran",
-        "Masoud Pezeshkian"
-      ],
-      "keywords": [
-        "Tổng thống Iran",
-        "Masoud Pezeshkian",
-        "tương lai đất nước"
-      ],
-      "importance": 85,
-      "severity": 3,
-      "sentiment": -1,
-      "scope": "national"
-    }
-  },
-  "evt_fd4953e7": {
-    "created_at": 1785752098888,
-    "expires_at": 1788344098888,
-    "version": "4.5",
-    "checksum": "5d41a1cb6ca2ab2274dcaf56136ca55a",
-    "data": {
-      "cluster_title": "Bà Aung San Suu Kyi tái xuất",
-      "short_summary": "Bà Aung San Suu Kyi tái xuất, gặp đại diện Hội Chữ thập đỏ quốc tế.",
-      "detailed_summary": "Chính quyền Myanmar đã cho phép bà Aung San Suu Kyi gặp gỡ đại diện của Ủy ban Chữ thập đỏ quốc tế (ICRC). Đây là lần đầu tiên sau một thời gian dài, những hình ảnh trực tiếp về bà trong tình trạng quản thúc tại gia được phía chính phủ công khai tới công chúng.",
-      "causes": [
-        "Nỗ lực truyền thông của chính phủ Myanmar nhằm giải tỏa áp lực quốc tế",
-        "Sự can thiệp hoặc yêu cầu từ các tổ chức nhân đạo quốc tế"
-      ],
-      "effects": [
-        "Tạo ra sự chú ý mới từ cộng đồng quốc tế về tình trạng của bà Aung San Suu Kyi",
-        "Tín hiệu về khả năng thay đổi trong cách tiếp cận quản thúc đối với nhân vật chính trị đối lập"
-      ],
-      "affected_groups": [
-        "Bà Aung San Suu Kyi",
-        "Chính phủ Myanmar",
-        "Cộng đồng quốc tế",
-        "Người dân Myanmar"
-      ],
-      "market_impact": "Không tác động trực tiếp đến thị trường tài chính quốc tế.",
-      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
-      "follow_up": "",
-      "categories": [
-        "politics",
-        "diplomacy"
-      ],
-      "regions": [
-        "MM"
-      ],
-      "significance": "Sự kiện này đánh dấu một động thái ngoại giao cởi mở hiếm hoi của chính quyền Myanmar nhằm cải thiện hình ảnh hoặc làm giảm căng thẳng với dư luận quốc tế.",
-      "unknowns": [
-        "Mục đích thực sự của chính quyền khi công bố hình ảnh này vào thời điểm hiện tại",
-        "Tình trạng sức khỏe thực tế và điều kiện quản thúc của bà Aung San Suu Kyi"
-      ],
-      "confidence_note": "Thông tin dựa trên hình ảnh được công bố chính thức, có độ tin cậy về sự kiện xảy ra nhưng cần thận trọng về bối cảnh dàn dựng.",
-      "scenarios": [
-        {
-          "text": "Chính phủ Myanmar tiếp tục mở rộng các cuộc gặp gỡ nhân đạo để xoa dịu áp lực trừng phạt từ phương Tây.",
-          "likelihood": "trung bình"
-        },
-        {
-          "text": "Đây chỉ là động thái mang tính hình thức nhằm mục đích truyền thông, không thay đổi thực trạng quản thúc.",
-          "likelihood": "cao"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Chính phủ Myanmar",
-          "target": "Aung San Suu Kyi",
-          "relation_type": "conflict",
-          "label": "Giam giữ và quản thúc tại gia"
-        },
-        {
-          "source": "Hội Chữ thập đỏ quốc tế",
-          "target": "Aung San Suu Kyi",
-          "relation_type": "cooperation",
-          "label": "Thăm khám và kiểm tra tình trạng nhân đạo"
-        },
-        {
-          "source": "Chính phủ Myanmar",
-          "target": "Hội Chữ thập đỏ quốc tế",
-          "relation_type": "cooperation",
-          "label": "Cấp phép tiếp cận nhân đạo"
-        }
-      ],
-      "entities": [
-        "Aung San Suu Kyi",
-        "Myanmar",
-        "Hội Chữ thập đỏ quốc tế"
-      ],
-      "keywords": [
-        "Aung San Suu Kyi",
-        "Myanmar",
-        "Hội Chữ thập đỏ quốc tế"
-      ],
-      "importance": 85,
-      "severity": 3,
-      "sentiment": -1,
-      "scope": "national"
-    }
-  },
-  "evt_general_1785752104597": {
-    "created_at": 1785752110673,
-    "expires_at": 1788344110673,
-    "version": "4.5",
-    "checksum": "376464359cb007bc7fe3ddf9c930af04",
-    "data": {
-      "cluster_title": "El Nino và những sức ép mới đối với châu Âu",
-      "short_summary": "El Nino hình thành tại Thái Bình Dương nhưng tác động có thể lan tới châu Âu qua thời tiết, nguồn cung và giá cả, tạo thêm sức ép đối với kinh tế khu vực.",
-      "detailed_summary": "Hiện tượng El Nino phát sinh tại Thái Bình Dương đang tạo ra những lo ngại về tác động dây chuyền tới châu Âu. Sự thay đổi thời tiết cực đoan do El Nino gây ra có khả năng làm gián đoạn chuỗi cung ứng hàng hóa, gây khó khăn cho hoạt động sản xuất và dẫn đến áp lực tăng giá cả tại khu vực này.",
-      "causes": [
-        "Sự hình thành hiện tượng El Nino tại Thái Bình Dương",
-        "Sự thay đổi mô hình thời tiết toàn cầu ảnh hưởng đến châu Âu"
-      ],
-      "effects": [
-        "Gián đoạn nguồn cung hàng hóa tại châu Âu",
-        "Tạo áp lực tăng giá tiêu dùng và sản xuất",
-        "Gia tăng rủi ro cho nền kinh tế khu vực"
-      ],
-      "affected_groups": [
-        "Các doanh nghiệp sản xuất tại châu Âu",
-        "Người tiêu dùng châu Âu",
-        "Các nhà hoạch định chính sách kinh tế khu vực"
-      ],
-      "market_impact": "Có khả năng gây biến động giá cả hàng hóa, đặc biệt là các mặt hàng nông sản và năng lượng, làm gia tăng lạm phát tại châu Âu.",
-      "vn_impact": "Việt Nam có thể chịu ảnh hưởng gián tiếp qua biến động giá cả hàng hóa toàn cầu và sự đứt gãy chuỗi cung ứng xuất nhập khẩu với thị trường châu Âu.",
-      "follow_up": "",
-      "categories": [
-        "economy",
-        "environment"
-      ],
-      "regions": [
-        "GLOBAL"
-      ],
-      "significance": "Sự kiện này nhấn mạnh tầm quan trọng của các yếu tố khí hậu toàn cầu trong việc gây mất ổn định kinh tế khu vực thông qua cơ chế lan tỏa giá cả và nguồn cung.",
-      "unknowns": [
-        "Mức độ nghiêm trọng cụ thể của El Nino trong giai đoạn tới",
-        "Khả năng thích ứng của chuỗi cung ứng châu Âu trước các biến động thời tiết"
-      ],
-      "confidence_note": "Thông tin dựa trên dự báo về mối liên hệ giữa thời tiết cực đoan và kinh tế, có độ tin cậy cao về mặt lý thuyết.",
-      "scenarios": [
-        {
-          "text": "El Nino gây thời tiết khắc nghiệt khiến giá lương thực và năng lượng tại châu Âu tăng cao, làm suy yếu tăng trưởng kinh tế.",
-          "likelihood": "cao"
-        },
-        {
-          "text": "Tác động của El Nino yếu hơn dự kiến, giúp nền kinh tế châu Âu duy trì sự ổn định về nguồn cung và giá cả.",
-          "likelihood": "trung bình"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "El Nino",
-          "target": "Thời tiết châu Âu",
-          "relation_type": "cause_effect",
-          "label": "Thay đổi điều kiện thời tiết"
-        },
-        {
-          "source": "Thời tiết châu Âu",
-          "target": "Nền kinh tế châu Âu",
-          "relation_type": "cause_effect",
-          "label": "Gây áp lực lên cung và giá"
-        }
-      ],
-      "entities": [
-        "Thái Bình Dương",
-        "châu Âu"
-      ],
-      "keywords": [
-        "El Nino",
-        "châu Âu",
-        "thời tiết",
-        "năng lượng",
-        "giá cả"
-      ],
-      "importance": 85,
-      "severity": 3,
-      "sentiment": -1,
-      "scope": "global"
-    }
-  },
-  "evt_7b5e02d1": {
-    "created_at": 1785752121801,
-    "expires_at": 1788344121801,
-    "version": "4.5",
-    "checksum": "19c36b3aa5c8451d5210d3fc91e4eaed",
-    "data": {
-      "cluster_title": "Người dân Gaza kỳ vọng chấm dứt xung đột",
-      "short_summary": "Người dân Gaza hy vọng thỏa thuận mới sẽ giúp chấm dứt xung đột và đưa cuộc sống sớm trở lại bình thường.",
-      "detailed_summary": "Trước thông tin về khả năng đạt được thỏa thuận mới, người dân tại Gaza bày tỏ hy vọng sự kiện này sẽ dẫn đến việc chấm dứt các hoạt động xung đột, từ đó tạo điều kiện để tái thiết và đưa nhịp sống trở lại trạng thái bình thường.",
-      "causes": [
-        "Sự kỳ vọng của người dân về một thỏa thuận ngừng bắn",
-        "Tình trạng xung đột kéo dài ảnh hưởng nghiêm trọng đến đời sống"
-      ],
-      "effects": [
-        "Tâm lý lạc quan về khả năng chấm dứt xung đột",
-        "Hướng tới sự ổn định đời sống xã hội tại Gaza"
-      ],
-      "affected_groups": [
-        "Người dân Gaza"
-      ],
-      "market_impact": "Thông tin mang tính địa chính trị, chưa có tác động trực tiếp rõ rệt lên thị trường tài chính toàn cầu.",
-      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
-      "follow_up": "",
-      "categories": [
-        "politics",
-        "diplomacy"
-      ],
-      "regions": [
-        "PS"
-      ],
-      "significance": "Phản ánh khát vọng hòa bình và sự mong đợi của người dân về các nỗ lực đàm phán ngoại giao nhằm kết thúc xung đột.",
-      "unknowns": [
-        "Chi tiết cụ thể của thỏa thuận mới",
-        "Thời gian dự kiến thực thi thỏa thuận"
-      ],
-      "confidence_note": "Thông tin dựa trên nguyện vọng của người dân địa phương, cần theo dõi các xác nhận chính thức từ các bên tham gia đàm phán.",
-      "scenarios": [
-        {
-          "text": "Các bên đạt được thỏa thuận ngừng bắn và xung đột tạm thời hạ nhiệt.",
-          "likelihood": "trung bình"
-        },
-        {
-          "text": "Các cuộc đàm phán gặp bế tắc khiến xung đột tiếp diễn.",
-          "likelihood": "cao"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Người dân Gaza",
-          "target": "Thỏa thuận mới",
-          "relation_type": "cause_effect",
-          "label": "Đặt hy vọng vào sự chấm dứt xung đột"
-        }
-      ],
-      "entities": [
-        "Người dân Gaza",
-        "thỏa thuận mới"
-      ],
-      "keywords": [
-        "Gaza",
-        "xung đột",
-        "thỏa thuận"
-      ],
-      "importance": 85,
-      "severity": 3,
-      "sentiment": -1,
-      "scope": "global"
-    }
-  },
-  "evt_general_1785752131622": {
-    "created_at": 1785752137690,
-    "expires_at": 1788344137690,
-    "version": "4.5",
-    "checksum": "e54687eb2026ea250ad8ffc71d6bab02",
-    "data": {
-      "cluster_title": "Mỹ áp dụng quy định đặt cọc visa",
-      "short_summary": "Từ ngày 3/8, Mỹ áp dụng quy định cho phép yêu cầu công dân 50 nước đặt cọc 10.000 - 20.000 USD khi xin visa.",
-      "detailed_summary": "Từ ngày 3/8, Mỹ chính thức áp dụng quy định mới về quản lý di trú, yêu cầu công dân thuộc 50 quốc gia nằm trong danh sách phải nộp khoản tiền đặt cọc từ 10.000 - 20.000 USD khi thực hiện hồ sơ xin thị thực nhập cảnh vào nước này.",
-      "causes": [
-        "Siết chặt quản lý an ninh biên giới và kiểm soát nhập cư",
-        "Giảm thiểu tỷ lệ lưu trú quá hạn thời hạn thị thực tại Mỹ"
-      ],
-      "effects": [
-        "Tăng gánh nặng tài chính cho người nộp đơn",
-        "Có thể làm giảm số lượng người xin thị thực từ các quốc gia trong danh sách",
-        "Tăng cường quy trình hành chính tại các cơ quan lãnh sự"
-      ],
-      "affected_groups": [
-        "Công dân của 50 quốc gia nằm trong danh sách",
-        "Người lao động và khách du lịch từ các nước thuộc diện áp dụng"
-      ],
-      "market_impact": "Có thể tác động đến doanh thu của các ngành dịch vụ liên quan đến du lịch, du học và nhân lực quốc tế tại Mỹ đối với các nước bị ảnh hưởng.",
-      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
-      "follow_up": "",
-      "categories": [
-        "diplomacy",
-        "finance"
-      ],
-      "regions": [
-        "US"
-      ],
-      "significance": "Đây là bước thay đổi chính sách nhập cư mạnh mẽ của Mỹ nhằm kiểm soát chặt chẽ đối tượng nhập cảnh và lưu trú.",
-      "unknowns": [
-        "Danh sách 50 quốc gia cụ thể chịu ảnh hưởng",
-        "Tiêu chí lựa chọn 50 quốc gia này là gì",
-        "Quy trình hoàn trả hoặc tịch thu khoản tiền đặt cọc"
-      ],
-      "confidence_note": "Thông tin mang tính xác thực dựa trên dữ liệu báo cáo, cần theo dõi thêm văn bản hướng dẫn chi tiết từ chính phủ Mỹ.",
-      "scenarios": [
-        {
-          "text": "Số lượng người nộp đơn xin thị thực giảm mạnh do rào cản tài chính.",
-          "likelihood": "cao"
-        },
-        {
-          "text": "Các quốc gia bị ảnh hưởng thực hiện chính sách đáp trả tương ứng với công dân Mỹ.",
-          "likelihood": "trung bình"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Chính phủ Mỹ",
-          "target": "Công dân 50 quốc gia",
-          "relation_type": "cause_effect",
-          "label": "Ban hành quy định yêu cầu đặt cọc tiền mặt"
-        },
-        {
-          "source": "Quy định thị thực",
-          "target": "Nhập cư Mỹ",
-          "relation_type": "cause_effect",
-          "label": "Công cụ kiểm soát lưu lượng nhập cư"
-        }
-      ],
-      "entities": [
-        "Mỹ"
-      ],
-      "keywords": [
-        "visa",
-        "Mỹ",
-        "quy định"
-      ],
-      "importance": 85,
-      "severity": 3,
-      "sentiment": -1,
-      "scope": "global"
-    }
-  },
-  "evt_general_1785752151445": {
-    "created_at": 1785752158062,
-    "expires_at": 1788344158062,
-    "version": "4.5",
-    "checksum": "6ed33bab22d0e697b6c6945f35c65baa",
-    "data": {
-      "cluster_title": "Nỗ lực hạ lãi suất bất thành của Trump",
-      "short_summary": "Nỗ lực hạ lãi suất của Trump bất thành, dẫn đến lạm phát neo cao và lợi suất trái phiếu kho bạc đi lên.",
-      "detailed_summary": "Nỗ lực tác động vào chính sách tiền tệ của ông Trump đang đối mặt với trở ngại lớn do các chính sách kinh tế của ông được cho là nguyên nhân thúc đẩy lạm phát duy trì ở mức cao. Điều này khiến Fed không thể thực hiện lộ trình cắt giảm lãi suất cơ bản như kỳ vọng, đồng thời phản ứng của thị trường tài chính đã làm tăng lợi suất trái phiếu kho bạc Mỹ.",
-      "causes": [
-        "Các chính sách kinh tế của ông Trump gây áp lực lạm phát",
-        "Lạm phát neo cao cản trở mục tiêu nới lỏng tiền tệ của Fed"
-      ],
-      "effects": [
-        "Fed không thể hạ lãi suất cơ bản",
-        "Lợi suất trái phiếu kho bạc Mỹ tăng lên"
-      ],
-      "affected_groups": [
-        "Nhà đầu tư trái phiếu",
-        "Doanh nghiệp vay vốn",
-        "Cử tri Mỹ"
-      ],
-      "market_impact": "Thị trường tài chính chịu áp lực do chi phí vay vốn ở mức cao, lợi suất trái phiếu tăng gây sức ép lên định giá các loại tài sản khác.",
-      "vn_impact": "Lãi suất USD neo cao làm gia tăng áp lực lên tỷ giá VND/USD và chi phí trả nợ nước ngoài của Việt Nam, đồng thời ảnh hưởng đến dòng vốn đầu tư gián tiếp.",
-      "follow_up": "",
-      "categories": [
-        "politics",
-        "finance"
-      ],
-      "regions": [
-        "US"
-      ],
-      "significance": "Sự kiện phản ánh xung đột giữa tư duy điều hành kinh tế của giới chính trị và tính độc lập của cơ quan quản lý tiền tệ trong việc kiềm chế lạm phát.",
-      "unknowns": [
-        "Quy mô và lộ trình cụ thể của các chính sách kinh tế được nhắc tới",
-        "Phản ứng chính thức từ các quan chức Fed đối với các áp lực chính trị"
-      ],
-      "confidence_note": "Thông tin dựa trên diễn biến thị trường và bối cảnh chính sách được nêu, độ tin cậy ở mức trung bình.",
-      "scenarios": [
-        {
-          "text": "Lạm phát vẫn tiếp tục dai dẳng khiến Fed phải duy trì lãi suất ở mức cao trong thời gian dài hơn dự kiến.",
-          "likelihood": "cao"
-        },
-        {
-          "text": "Chính phủ Mỹ điều chỉnh các chính sách kinh tế để giảm bớt áp lực lạm phát, tạo điều kiện cho Fed hạ lãi suất.",
-          "likelihood": "trung bình"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Chính sách của ông Trump",
-          "target": "Lạm phát",
-          "relation_type": "cause_effect",
-          "label": "Gây ra áp lực lạm phát cao"
-        },
-        {
-          "source": "Lạm phát",
-          "target": "Fed",
-          "relation_type": "cause_effect",
-          "label": "Ngăn cản Fed hạ lãi suất"
-        },
-        {
-          "source": "Ông Trump",
-          "target": "Fed",
-          "relation_type": "conflict",
-          "label": "Xung đột về định hướng chính sách tiền tệ"
-        },
-        {
-          "source": "Lạm phát",
-          "target": "Lợi suất trái phiếu",
-          "relation_type": "cause_effect",
-          "label": "Đẩy lợi suất trái phiếu tăng cao"
-        }
-      ],
-      "entities": [
-        "Donald Trump",
-        "Fed",
-        "Lạm phát"
-      ],
-      "keywords": [
-        "lãi suất",
-        "Trump",
-        "lạm phát",
-        "Fed"
-      ],
-      "importance": 85,
-      "severity": 3,
-      "sentiment": -1,
-      "scope": "global"
-    }
-  },
-  "evt_general_1785752163829": {
-    "created_at": 1785752170072,
-    "expires_at": 1788344170072,
-    "version": "4.5",
-    "checksum": "7c61cf69382e201fbeb14e978b7db847",
-    "data": {
-      "cluster_title": "Đề xuất cấm kinh doanh khí cười N2O",
-      "short_summary": "Chính phủ đề xuất cấm kinh doanh khí cười N2O trừ phục vụ y tế, công nghệ thực phẩm và nghiên cứu khoa học",
-      "detailed_summary": "Chính phủ đang xem xét sửa đổi Luật Đầu tư với đề xuất đưa khí N2O vào danh mục ngành nghề cấm kinh doanh. Việc sử dụng chất này sẽ bị siết chặt, chỉ cho phép phục vụ các mục đích chính đáng gồm y tế, sản xuất thực phẩm và nghiên cứu khoa học, nhằm quản lý rủi ro từ việc lạm dụng khí cười gây ảnh hưởng sức khỏe cộng đồng.",
-      "causes": [
-        "Tình trạng lạm dụng khí cười trái mục đích gây nguy hại sức khỏe cộng đồng",
-        "Nhu cầu quản lý chặt chẽ hơn đối với các hóa chất có khả năng gây nghiện hoặc lạm dụng"
-      ],
-      "effects": [
-        "Giảm thiểu các hành vi kinh doanh khí cười trái phép",
-        "Siết chặt quy trình cung ứng khí N2O trong các ngành được cấp phép"
-      ],
-      "affected_groups": [
-        "Các doanh nghiệp kinh doanh hóa chất",
-        "Các cơ sở kinh doanh dịch vụ giải trí",
-        "Các đơn vị trong ngành y tế và thực phẩm"
-      ],
-      "market_impact": "Các doanh nghiệp kinh doanh hóa chất N2O sẽ đối mặt với rào cản pháp lý mới, yêu cầu phải chứng minh mục đích sử dụng rõ ràng hơn, có thể làm giảm nguồn cung trôi nổi trên thị trường.",
-      "vn_impact": "Sự kiện này trực tiếp ảnh hưởng đến các doanh nghiệp hóa chất tại Việt Nam, buộc họ phải điều chỉnh danh mục kinh doanh và tuân thủ các quy định khắt khe hơn về an toàn, quản lý chất gây nghiện.",
-      "follow_up": "",
-      "categories": [
-        "politics",
-        "business"
-      ],
-      "regions": [
-        "VN"
-      ],
-      "significance": "Đây là bước đi pháp lý quan trọng nhằm nâng cao công tác quản lý chất gây nghiện và bảo vệ an toàn sức khỏe xã hội.",
-      "unknowns": [
-        "Thời điểm chính thức dự thảo Luật Đầu tư sửa đổi được thông qua",
-        "Danh mục các loại giấy phép hoặc thủ tục hành chính cụ thể cho các doanh nghiệp được phép kinh doanh N2O"
-      ],
-      "confidence_note": "Thông tin có độ tin cậy cao dựa trên đề xuất chính thức của Chính phủ.",
-      "scenarios": [
-        {
-          "text": "Dự thảo được thông qua và siết chặt kiểm soát thị trường N2O trên toàn quốc.",
-          "likelihood": "cao"
-        },
-        {
-          "text": "Có thêm các quy định chi tiết trong nghị định hướng dẫn để đảm bảo hoạt động sản xuất thực phẩm không bị đình trệ.",
-          "likelihood": "trung bình"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Chính phủ Việt Nam",
-          "target": "Luật Đầu tư",
-          "relation_type": "cause_effect",
-          "label": "Đề xuất sửa đổi luật để quản lý mặt hàng kinh doanh"
-        },
-        {
-          "source": "Khí N2O",
-          "target": "Sức khỏe cộng đồng",
-          "relation_type": "cause_effect",
-          "label": "Sử dụng sai mục đích gây tác động tiêu cực đến sức khỏe"
-        }
-      ],
-      "entities": [
-        "Chính phủ",
-        "Luật Đầu tư"
-      ],
-      "keywords": [
-        "khí cười N2O",
-        "chính phủ",
-        "dự thảo Luật Đầu tư"
-      ],
-      "importance": 85,
-      "severity": 3,
-      "sentiment": -1,
-      "scope": "national"
-    }
-  },
-  "evt_92b207ea": {
-    "created_at": 1785752181906,
-    "expires_at": 1788344181906,
-    "version": "4.5",
-    "checksum": "1acece092b3544200848b1bceb597f19",
-    "data": {
-      "cluster_title": "Cuộc chiến giữa Mỹ và Iran",
-      "short_summary": "Tổng thống Mỹ Donald Trump đối mặt với bài toán khó trong cuộc đối đầu với Iran khi liên tục dọa tấn công mạnh nhưng hủy kế hoạch vào phút chót.",
-      "detailed_summary": "Tổng thống Mỹ Donald Trump đang đối mặt với thách thức trong chiến lược đối ngoại đối với Iran. Mặc dù ông thường xuyên đưa ra các lời đe dọa tấn công quân sự mạnh mẽ để gây áp lực, nhưng thực tế các chiến dịch này thường bị hủy bỏ vào thời điểm cuối cùng, tạo ra thế khó trong việc khẳng định uy tín và năng lực răn đe của Mỹ.",
-      "causes": [
-        "Căng thẳng leo thang giữa Mỹ và Iran",
-        "Sự đắn đo trong việc lựa chọn giữa biện pháp quân sự và ngoại giao"
-      ],
-      "effects": [
-        "Gây hoài nghi về tính nhất quán của chính sách đối ngoại Mỹ",
-        "Tạo ra trạng thái bất định trong quan hệ song phương"
-      ],
-      "affected_groups": [
-        "Chính phủ Mỹ",
-        "Chính phủ Iran",
-        "Cộng đồng quốc tế"
-      ],
-      "market_impact": "Sự bất định về nguy cơ xung đột tại khu vực Trung Đông có thể gây biến động giá dầu thô và tâm lý lo ngại trên các thị trường tài chính quốc tế.",
-      "vn_impact": "Việc giá dầu biến động do căng thẳng Mỹ - Iran có thể ảnh hưởng gián tiếp đến chi phí nhiên liệu và lạm phát tại Việt Nam.",
-      "follow_up": "",
-      "categories": [
-        "politics",
-        "military"
-      ],
-      "regions": [
-        "US",
-        "IR"
-      ],
-      "significance": "Sự kiện phản ánh khó khăn của Mỹ trong việc cân bằng giữa áp lực răn đe bằng sức mạnh quân sự và những rủi ro địa chính trị khi thực hiện tấn công trực diện.",
-      "unknowns": [
-        "Lý do cụ thể dẫn đến việc hủy bỏ các kế hoạch tấn công vào phút chót",
-        "Phản ứng chiến lược tiếp theo của phía Iran trước các lời đe dọa từ Mỹ"
-      ],
-      "confidence_note": "Thông tin dựa trên diễn biến thực tế được ghi nhận qua các phương tiện truyền thông chính thống.",
-      "scenarios": [
-        {
-          "text": "Mỹ duy trì áp lực trừng phạt kinh tế thay vì can thiệp quân sự trực tiếp.",
-          "likelihood": "cao"
-        },
-        {
-          "text": "Xung đột quân sự bất ngờ xảy ra do một sự cố leo thang ngoài tầm kiểm soát.",
-          "likelihood": "trung bình"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Donald Trump",
-          "target": "Iran",
-          "relation_type": "conflict",
-          "label": "Mối quan hệ đối đầu và đe dọa quân sự"
-        },
-        {
-          "source": "Đe dọa tấn công",
-          "target": "Chính sách đối ngoại Mỹ",
-          "relation_type": "cause_effect",
-          "label": "Gây hoài nghi về tính nhất quán"
-        }
-      ],
-      "entities": [
-        "Tổng thống Mỹ",
-        "Tổng thống Iran"
-      ],
-      "keywords": [
-        "Mỹ",
-        "Iran",
-        "Donald Trump"
-      ],
-      "importance": 85,
-      "severity": 3,
-      "sentiment": -1,
-      "scope": "global"
-    }
-  },
-  "evt_7f1e8970": {
-    "created_at": 1785753200322,
-    "expires_at": 1788345200322,
-    "version": "4.5",
-    "checksum": "95c23e66f0c532ce66d3e9f08736e423",
-    "data": {
-      "cluster_title": "Mỹ giúp Nhật Bản \"cứu\" đồng yen",
-      "short_summary": "Tổng thống Donald Trump cho biết, việc hỗ trợ đồng yen sẽ tốt cho nền kinh tế thế giới và Mỹ sẽ thu được lợi ích tài chính từ động thái này.",
-      "detailed_summary": "Tổng thống Donald Trump thông báo Mỹ sẽ hỗ trợ Nhật Bản trong việc vực dậy giá trị đồng yen. Ông Trump nhận định rằng động thái này không chỉ giúp ổn định nền kinh tế toàn cầu mà còn mang lại những lợi ích tài chính trực tiếp cho phía Mỹ.",
-      "causes": [
-        "Sự mất giá của đồng yen ảnh hưởng đến sự ổn định tài chính quốc tế",
-        "Kỳ vọng về lợi ích tài chính từ việc can thiệp thị trường tiền tệ"
-      ],
-      "effects": [
-        "Thị trường tài chính Nhật Bản có dấu hiệu nhận được sự hỗ trợ",
-        "Thay đổi trong chính sách tiền tệ và quan hệ kinh tế Mỹ - Nhật"
-      ],
-      "affected_groups": [
-        "Chính phủ Nhật Bản",
-        "Chính phủ Mỹ",
-        "Các nhà đầu tư quốc tế",
-        "Các doanh nghiệp xuất nhập khẩu"
-      ],
-      "market_impact": "Việc Mỹ can thiệp hoặc hỗ trợ đồng tiền quốc gia khác có thể gây biến động mạnh trên thị trường ngoại hối và tác động đến tâm lý nhà đầu tư toàn cầu.",
-      "vn_impact": "Việt Nam có thể chịu tác động gián tiếp từ sự thay đổi tỷ giá giữa đồng USD và đồng JPY, ảnh hưởng đến hoạt động xuất nhập khẩu và các khoản vay nợ bằng ngoại tệ.",
-      "follow_up": "",
-      "categories": [
-        "economy",
-        "finance"
-      ],
-      "regions": [
-        "US",
-        "JP"
-      ],
-      "significance": "Động thái này cho thấy sự can thiệp trực tiếp của Mỹ vào các vấn đề tiền tệ quốc tế nhằm mục tiêu ổn định kinh tế và tối ưu hóa lợi ích quốc gia.",
-      "unknowns": [
-        "Phương thức hỗ trợ cụ thể mà Mỹ dự định áp dụng là gì",
-        "Phản ứng của các tổ chức tài chính quốc tế đối với kế hoạch can thiệp này"
-      ],
-      "confidence_note": "Thông tin dựa trên tuyên bố chính thức của Tổng thống Mỹ, cần theo dõi các bước triển khai cụ thể để đánh giá mức độ tin cậy.",
-      "scenarios": [
-        {
-          "text": "Mỹ và Nhật Bản đạt thỏa thuận chung về chính sách tiền tệ giúp đồng yen phục hồi ổn định.",
-          "likelihood": "cao"
-        },
-        {
-          "text": "Các thị trường tài chính quốc tế phản ứng trái chiều gây ra những đợt biến động tỷ giá ngoài dự kiến.",
-          "likelihood": "trung bình"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Mỹ",
-          "target": "Nhật Bản",
-          "relation_type": "cooperation",
-          "label": "Hợp tác hỗ trợ phục hồi đồng tiền"
-        },
-        {
-          "source": "Đồng yen",
-          "target": "Kinh tế thế giới",
-          "relation_type": "cause_effect",
-          "label": "Sự ổn định của đồng tiền ảnh hưởng đến toàn cầu"
-        },
-        {
-          "source": "Mỹ",
-          "target": "Lợi ích tài chính",
-          "relation_type": "cause_effect",
-          "label": "Động thái chính sách tạo ra thu nhập tài chính"
-        }
-      ],
-      "entities": [
-        "Tổng thống Donald Trump"
-      ],
-      "keywords": [
-        "Mỹ",
-        "Nhật Bản",
-        "đồng yen"
-      ],
-      "importance": 85,
-      "severity": 3,
-      "sentiment": -1,
-      "scope": "global"
-    }
-  },
-  "evt_39cbd897": {
-    "created_at": 1785753211602,
-    "expires_at": 1788345211602,
-    "version": "4.5",
-    "checksum": "7638a1daa46eba4f78536e499ab0b355",
-    "data": {
-      "cluster_title": "Ukraine tập kích kho của Wildberries",
-      "short_summary": "Ukraine tập kích kho của Wildberries ở Nga",
-      "detailed_summary": "Lực lượng Ukraine đã thực hiện cuộc tập kích bằng máy bay không người lái loại FP-1 vào một trung tâm phân phối quan trọng của Wildberries - tập đoàn bán lẻ hàng đầu của Nga - đặt tại vùng Vladimir.",
-      "causes": [
-        "Xung đột quân sự đang diễn ra giữa Ukraine và Nga",
-        "Chiến lược nhắm mục tiêu vào cơ sở hạ tầng kinh tế của đối phương"
-      ],
-      "effects": [
-        "Gây gián đoạn hoạt động của trung tâm logistics",
-        "Gia tăng áp lực an ninh tại các khu vực nội địa Nga"
-      ],
-      "affected_groups": [
-        "Tập đoàn Wildberries",
-        "Người tiêu dùng Nga sử dụng dịch vụ của Wildberries"
-      ],
-      "market_impact": "Có khả năng gây gián đoạn chuỗi cung ứng bán lẻ tại địa phương và ảnh hưởng tâm lý đối với các doanh nghiệp hoạt động tại Nga.",
-      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
-      "follow_up": "",
-      "categories": [
-        "military",
-        "business"
-      ],
-      "regions": [
-        "RU",
-        "UA"
-      ],
-      "significance": "Sự kiện cho thấy xu hướng mở rộng phạm vi tấn công vào các cơ sở kinh tế của Ukraine nhằm gây áp lực lên hậu phương nước Nga.",
-      "unknowns": [
-        "Mức độ thiệt hại cụ thể về cơ sở vật chất và hàng hóa",
-        "Số lượng máy bay không người lái được huy động trong cuộc tấn công"
-      ],
-      "confidence_note": "Thông tin dựa trên báo cáo thực tế về cuộc tấn công, cần theo dõi thêm các xác nhận từ phía chính quyền sở tại.",
-      "scenarios": [
-        {
-          "text": "Nga gia tăng hệ thống phòng không bảo vệ các trung tâm thương mại lớn",
-          "likelihood": "cao"
-        },
-        {
-          "text": "Tập đoàn Wildberries tạm thời thay đổi quy trình vận hành để giảm thiểu rủi ro",
-          "likelihood": "trung bình"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Ukraine",
-          "target": "Wildberries",
-          "relation_type": "conflict",
-          "label": "Tấn công cơ sở hạ tầng kinh tế"
-        },
-        {
-          "source": "Ukraine",
-          "target": "Nga",
-          "relation_type": "conflict",
-          "label": "Xung đột quân sự trực tiếp"
-        }
-      ],
-      "entities": [
-        "Ukraine",
-        "Wildberries",
-        "Nga"
-      ],
-      "keywords": [
-        "Ukraine",
-        "Wildberries",
-        "Nga"
-      ],
-      "importance": 85,
-      "severity": 3,
-      "sentiment": -1,
-      "scope": "national"
-    }
-  },
-  "evt_general_1785755862161": {
-    "created_at": 1785755862658,
-    "expires_at": 1788347862658,
-    "version": "4.5",
-    "checksum": "19e6cfeac3066e5e5cf56d1b5339f36b",
-    "data": {
-      "cluster_title": "Whey protein trở thành 'gà đẻ trứng vàng' mới ở Mỹ",
-      "short_summary": "Whey protein trở thành 'gà đẻ trứng vàng' mới ở Mỹ, thúc đẩy làn sóng đầu tư hàng tỷ USD và tái định hình ngành sữa Mỹ.",
-      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
-      "causes": [],
-      "effects": [],
-      "affected_groups": [],
-      "market_impact": "",
-      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
-      "categories": [
-        "kinh tế",
-        "sữa"
-      ],
-      "regions": [
-        "US"
-      ],
-      "follow_up": "",
-      "entities": [
-        "Mỹ",
-        "whey protein"
-      ],
-      "keywords": [
-        "whey protein",
-        "sữa",
-        "đầu tư"
-      ],
-      "importance": 85,
-      "severity": 3,
-      "sentiment": -1,
-      "scope": "national"
-    }
-  },
-  "evt_general_1785755868365": {
-    "created_at": 1785755873896,
-    "expires_at": 1788347873896,
-    "version": "4.5",
-    "checksum": "18f2f72396821f9d88c04dbcc6687872",
-    "data": {
-      "cluster_title": "Tên lửa SpaceX trôi dạt có nguy cơ va chạm với Mặt Trăng",
-      "short_summary": "Tên lửa SpaceX trôi dạt có nguy cơ va chạm với Mặt Trăng.",
-      "detailed_summary": "Một tầng tên lửa thuộc sở hữu của SpaceX hiện đang trôi dạt không kiểm soát trong không gian. Các tính toán dự báo cho thấy vật thể này có khả năng sẽ va chạm với bề mặt Mặt Trăng trong thời gian tới.",
-      "causes": [
-        "Tên lửa không còn nhiên liệu để thực hiện hành trình trở về hoặc tự hủy",
-        "Quỹ đạo bay sau khi tách tầng dẫn đến việc trôi dạt tự do"
-      ],
-      "effects": [
-        "Nguy cơ tạo ra va chạm vật lý trên bề mặt Mặt Trăng",
-        "Gia tăng sự chú ý về vấn đề rác thải không gian"
-      ],
-      "affected_groups": [
-        "Ngành công nghiệp hàng không vũ trụ",
-        "Các cơ quan nghiên cứu thiên văn học"
-      ],
-      "market_impact": "Sự kiện gây ra những thảo luận về trách nhiệm quản lý rác thải không gian, có thể dẫn đến các quy định nghiêm ngặt hơn cho các công ty tư nhân trong tương lai.",
-      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
-      "follow_up": "",
-      "categories": [
-        "tech",
-        "environment"
-      ],
-      "regions": [
-        "GLOBAL"
-      ],
-      "significance": "Sự kiện phản ánh những thách thức thực tế trong việc quản lý rác thải vũ trụ khi các hoạt động thám hiểm không gian tư nhân ngày càng phát triển.",
-      "unknowns": [
-        "Thời điểm va chạm chính xác",
-        "Tác động cụ thể lên bề mặt Mặt Trăng sau va chạm"
-      ],
-      "confidence_note": "Thông tin dựa trên dự báo kỹ thuật về quỹ đạo, độ tin cậy ở mức cao.",
-      "scenarios": [
-        {
-          "text": "Tầng tên lửa va chạm trực tiếp với bề mặt Mặt Trăng theo dự báo.",
-          "likelihood": "cao"
-        },
-        {
-          "text": "Tầng tên lửa thay đổi quỹ đạo do lực hấp dẫn và không xảy ra va chạm.",
-          "likelihood": "thấp"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "SpaceX",
-          "target": "Mặt Trăng",
-          "relation_type": "cause_effect",
-          "label": "Tầng tên lửa trôi dạt gây nguy cơ va chạm"
-        }
-      ],
-      "entities": [
-        "SpaceX",
-        "Mặt Trăng"
-      ],
-      "keywords": [
-        "Tên lửa SpaceX",
-        "Mặt Trăng"
-      ],
-      "importance": 85,
-      "severity": 3,
-      "sentiment": -1,
-      "scope": "global"
-    }
-  },
-  "evt_10aee7ed": {
-    "created_at": 1785759284671,
-    "expires_at": 1788351284671,
-    "version": "4.5",
-    "checksum": "191610fe503ff419a0bbce03b8e06a72",
-    "data": {
-      "cluster_title": "Mỹ Sẵn Sàng Đánh Iran Lớn Nhất Kể Từ Thế Chiến 2",
-      "short_summary": "Mỹ sẵn sàng đánh Iran lớn nhất kể từ Thế chiến 2, theo tiết lộ từ chính quyền ông Trump.",
-      "detailed_summary": "Dựa trên tiết lộ từ chính quyền cựu Tổng thống Donald Trump, Bộ trưởng Chiến tranh Pete Hegseth cho biết Mỹ đã từng có ý định thực hiện một chiến dịch quân sự tấn công Iran với quy mô lớn nhất kể từ sau Thế chiến 2.",
-      "causes": [
-        "Căng thẳng chính trị và ngoại giao kéo dài giữa Mỹ và Iran.",
-        "Ý đồ của chính quyền ông Trump trong việc áp dụng các biện pháp quân sự quyết liệt nhằm thay đổi cục diện tại khu vực Trung Đông."
-      ],
-      "effects": [
-        "Gia tăng tâm lý lo ngại về một cuộc xung đột quân sự quy mô lớn tại khu vực Trung Đông.",
-        "Làm trầm trọng thêm quan hệ ngoại giao vốn đã căng thẳng giữa Mỹ và Iran."
-      ],
-      "affected_groups": [
-        "Người dân tại khu vực Trung Đông",
-        "Các đối tác chiến lược của Mỹ và Iran",
-        "Thị trường tài chính và năng lượng toàn cầu"
-      ],
-      "market_impact": "Gây bất ổn tâm lý trên thị trường dầu mỏ, có khả năng đẩy giá năng lượng tăng cao do lo ngại gián đoạn nguồn cung tại khu vực Vịnh Ba Tư.",
-      "vn_impact": "Có thể gây biến động giá xăng dầu và cước phí vận tải biển quốc tế, tác động gián tiếp đến lạm phát và chi phí sản xuất, xuất nhập khẩu của Việt Nam.",
-      "follow_up": "",
-      "categories": [
-        "politics",
-        "military"
-      ],
-      "regions": [
-        "US",
-        "IR"
-      ],
-      "significance": "Thông tin này phơi bày mức độ nghiêm trọng trong các kế hoạch dự phòng quân sự của Mỹ đối với Iran, cho thấy rủi ro xung đột vũ trang luôn tồn tại dưới các chính sách cứng rắn.",
-      "unknowns": [
-        "Thời điểm cụ thể mà kế hoạch này được cân nhắc.",
-        "Lý do chính xác khiến Mỹ quyết định không thực thi kế hoạch tấn công này."
-      ],
-      "confidence_note": "Thông tin dựa trên tiết lộ cá nhân từ quan chức, cần đối chiếu thêm với các tài liệu chính thức từ phía chính phủ để xác minh tính thời điểm và quy mô thực tế.",
-      "scenarios": [
-        {
-          "text": "Các bên tiếp tục duy trì trạng thái đối đầu căng thẳng bằng các biện pháp trừng phạt và đe dọa quân sự.",
-          "likelihood": "cao"
-        },
-        {
-          "text": "Các bên tìm kiếm các kênh ngoại giao để hạ nhiệt căng thẳng nhằm tránh một cuộc đối đầu trực diện ngoài tầm kiểm soát.",
-          "likelihood": "trung bình"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Mỹ",
-          "target": "Iran",
-          "relation_type": "conflict",
-          "label": "Căng thẳng quân sự và đối đầu trực tiếp"
-        },
-        {
-          "source": "Chính quyền Trump",
-          "target": "Pete Hegseth",
-          "relation_type": "cooperation",
-          "label": "Chia sẻ thông tin và quan điểm chiến lược"
-        }
-      ],
-      "entities": [
-        "Pete Hegseth",
-        "Mỹ",
-        "Iran"
-      ],
-      "keywords": [
-        "Mỹ",
-        "Iran",
-        "Pete Hegseth",
-        "Cuộc Tấn Công"
-      ],
-      "importance": 95,
-      "severity": 5,
-      "sentiment": -1,
-      "scope": "global"
-    }
-  },
-  "evt_general_1785759302909": {
-    "created_at": 1785759308623,
-    "expires_at": 1788351308623,
-    "version": "4.5",
-    "checksum": "97dab3f24356846384b22de114c7269a",
-    "data": {
-      "cluster_title": "Vụ sát hại 5 người rúng động Thái Lan",
-      "short_summary": "Vụ sát hại 5 người ở Chon Buri, Thái Lan gây phẫn nộ dư luận và đặt du lịch Thái Lan trước phép thử lớn.",
-      "detailed_summary": "Một vụ án mạng gây phẫn nộ dư luận đã xảy ra tại Chon Buri, Thái Lan, cướp đi sinh mạng của 5 người. Sự việc đang trở thành tâm điểm chú ý và được coi là một phép thử lớn đối với khả năng duy trì an ninh, trật tự cũng như hình ảnh của ngành du lịch nước này trong mắt du khách quốc tế.",
-      "causes": [
-        "Hành vi tội phạm gây hậu quả nghiêm trọng",
-        "Sự lo ngại về an toàn an ninh trong lòng dư luận"
-      ],
-      "effects": [
-        "Gây phẫn nộ trong cộng đồng",
-        "Tạo ra rủi ro cho hình ảnh ngành du lịch",
-        "Đặt ra yêu cầu về việc thắt chặt an ninh tại các địa điểm công cộng"
-      ],
-      "affected_groups": [
-        "Ngành du lịch Thái Lan",
-        "Cư dân địa phương",
-        "Du khách quốc tế"
-      ],
-      "market_impact": "Có thể gây áp lực ngắn hạn đến tâm lý du khách, ảnh hưởng đến các doanh nghiệp dịch vụ lữ hành tại Thái Lan.",
-      "vn_impact": "Không tác động trực tiếp đến Việt Nam, nhưng có thể tạo ra xu hướng chuyển dịch tâm lý khách du lịch trong khu vực Đông Nam Á nếu tình hình an ninh tại Thái Lan kéo dài.",
-      "follow_up": "",
-      "categories": [
-        "economy",
-        "business"
-      ],
-      "regions": [
-        "TH"
-      ],
-      "significance": "Sự kiện phản ánh tầm quan trọng của an ninh đối với nền kinh tế phụ thuộc nhiều vào du lịch như Thái Lan.",
-      "unknowns": [
-        "Động cơ cụ thể của vụ sát hại",
-        "Danh tính và tình trạng pháp lý của các nghi phạm liên quan"
-      ],
-      "confidence_note": "Thông tin dựa trên dữ liệu báo cáo về vụ án, mức độ tin cậy cao về sự kiện nhưng đang chờ kết quả điều tra chi tiết từ cơ quan chức năng.",
-      "scenarios": [
-        {
-          "text": "Chính phủ Thái Lan siết chặt an ninh, hình ảnh du lịch phục hồi nhanh chóng.",
-          "likelihood": "cao"
-        },
-        {
-          "text": "Sự kiện gây ám ảnh dài hạn, làm sụt giảm lượt khách du lịch tại khu vực xảy ra án mạng.",
-          "likelihood": "trung bình"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Vụ án mạng",
-          "target": "Du lịch Thái Lan",
-          "relation_type": "cause_effect",
-          "label": "Tạo ra rủi ro hình ảnh và thách thức kinh tế"
-        }
-      ],
-      "entities": [
-        "Thái Lan",
-        "Chon Buri"
-      ],
-      "keywords": [
-        "Thái Lan",
-        "sát hại",
-        "du lịch"
-      ],
-      "importance": 85,
-      "severity": 5,
-      "sentiment": -1,
-      "scope": "national"
-    }
-  },
   "evt_general_1785762043479": {
     "created_at": 1785762048666,
     "expires_at": 1788354048666,
@@ -55791,6 +52462,474 @@
       "severity": 5,
       "sentiment": -1,
       "scope": "global"
+    }
+  },
+  "evt_1d9e8db7": {
+    "created_at": 1788351494426,
+    "expires_at": 1790943494426,
+    "version": "4.5",
+    "checksum": "c4d627e3bfabc550068fb30b31415932",
+    "data": {
+      "cluster_title": "Quốc vương Na Uy Haakon VIII tuyên thệ nhậm chức",
+      "short_summary": "Quốc vương Haakon VIII của Na Uy đã chính thức tuyên thệ nhậm chức trước Quốc hội sau khi vua cha Harald V qua đời, đánh dấu sự chuyển giao quyền lực chính thức trong hoàng gia Na Uy.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "categories": [
+        "Chính trị",
+        "Xã hội"
+      ],
+      "regions": [
+        "NO"
+      ],
+      "follow_up": "",
+      "entities": [
+        "Haakon VIII",
+        "Harald V",
+        "Na Uy"
+      ],
+      "keywords": [
+        "Na Uy",
+        "Haakon VIII",
+        "tuyên thệ nhậm chức",
+        "hoàng gia"
+      ],
+      "importance": 70,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "national"
+    }
+  },
+  "evt_4b4fed01": {
+    "created_at": 1788351530581,
+    "expires_at": 1790943530581,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_20d64e33": {
+    "created_at": 1788351579634,
+    "expires_at": 1790943579634,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_889c88b7": {
+    "created_at": 1788351622227,
+    "expires_at": 1790943622227,
+    "version": "4.5",
+    "checksum": "ea704ec49c69a6242b29d133363e6dd1",
+    "data": {
+      "cluster_title": "Lũ quét gây thiệt hại cho các ngân hàng tại Nepal",
+      "short_summary": "Lũ quét tại Nepal đã gây thiệt hại nặng nề cho ít nhất 20 ngân hàng, khiến nhiều két sắt chứa tiền và vàng bị cuốn trôi hoặc vùi lấp, gây tổn thất tài sản đáng kể cho các tổ chức tài chính địa phương.",
+      "detailed_summary": "Do ảnh hưởng của lũ quét tại Nepal, ít nhất 20 ngân hàng đã hứng chịu thiệt hại nặng nề. Dòng nước lũ hung dữ đã cuốn phăng nhiều két sắt chứa tiền mặt và vàng, hoặc làm chúng bị vùi lấp sâu trong bùn đất.",
+      "causes": [
+        "Lũ quét xảy ra tại Nepal"
+      ],
+      "effects": [
+        "Ít nhất 20 ngân hàng tại Nepal bị thiệt hại tài sản",
+        "Nhiều két sắt chứa tiền và vàng bị cuốn trôi hoặc vùi lấp"
+      ],
+      "affected_groups": [
+        "Các ngân hàng tại Nepal",
+        "Khách hàng gửi tiền và tài sản tại các ngân hàng bị ảnh hưởng"
+      ],
+      "market_impact": "Gây gián đoạn hoạt động giao dịch và rủi ro mất mát tài sản đối với các ngân hàng thương mại chịu ảnh hưởng trực tiếp.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "finance"
+      ],
+      "regions": [
+        "NP"
+      ],
+      "significance": "Sự kiện cho thấy mức độ tàn phá khốc liệt của thiên tai đối với cơ sở hạ tầng tài chính và kho lưu trữ tài sản vật chất của ngành ngân hàng địa phương.",
+      "unknowns": [
+        "Tổng giá trị tiền và vàng bị thiệt hại chính xác là bao nhiêu",
+        "Khả năng phục hồi và khôi phục lại các tài sản bị cuốn trôi"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cơ bản dựa trên báo cáo thực tế về thiệt hại do thiên tai.",
+      "scenarios": [
+        {
+          "text": "Các ngân hàng phải mất nhiều thời gian và chi phí để tìm kiếm, khai quật hoặc xử lý số tài sản bị vùi lấp.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Phát sinh tranh chấp hoặc khiếu nại từ phía khách hàng về việc thất lạc tài sản gửi trong két sắt ngân hàng.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Lũ quét",
+          "target": "Các ngân hàng Nepal",
+          "relation_type": "cause_effect",
+          "label": "Gây thiệt hại tài sản và cuốn trôi két sắt"
+        }
+      ],
+      "entities": [
+        "ngân hàng tại Nepal"
+      ],
+      "keywords": [
+        "lũ quét",
+        "ngân hàng",
+        "Nepal",
+        "thiệt hại tài sản"
+      ],
+      "importance": 70,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_5afac81c": {
+    "created_at": 1788351661638,
+    "expires_at": 1790943661638,
+    "version": "4.5",
+    "checksum": "27c1ae216e30f8a73b1a744db179393a",
+    "data": {
+      "cluster_title": "Chính sách thu hút nhân tài kiều bào",
+      "short_summary": "Việt Nam đã ban hành ba văn bản chỉ đạo trong chưa đầy một tháng qua nhằm thu hút các chuyên gia, nhà khoa học kiều bào về tham gia xây dựng đất nước bằng cách giao cho họ những trọng trách lớn.",
+      "detailed_summary": "Trong chưa đầy một tháng qua, Việt Nam đã ban hành ba văn bản chỉ đạo quan trọng nhằm thu hút nguồn nhân lực chất lượng cao là các chuyên gia và nhà khoa học kiều bào. Tinh thần cốt lõi được nhấn mạnh là cần phải giao những nhiệm vụ và công việc có quy mô đủ lớn để họ phát huy năng lực tham gia xây dựng và phát triển đất nước.",
+      "causes": [
+        "Nhu cầu huy động nguồn lực chất lượng cao từ đội ngũ chuyên gia và trí thức kiều bào phục vụ phát triển đất nước",
+        "Chủ trương và chỉ đạo mới của cơ quan chức năng trong việc hoàn thiện chính sách thu hút nhân tài"
+      ],
+      "effects": [
+        "Thúc đẩy việc xây dựng các cơ chế, chính sách cụ thể để thu hút trí thức kiều bào",
+        "Tạo cơ hội để các chuyên gia kiều bào tham gia trực tiếp vào các dự án trọng điểm trong nước"
+      ],
+      "affected_groups": [
+        "Chuyên gia kiều bào",
+        "Nhà khoa học kiều bào",
+        "Các cơ quan quản lý nhà nước"
+      ],
+      "market_impact": "Tác động gián tiếp tích cực đến nguồn nhân lực chất lượng cao và năng lực đổi mới sáng tạo trong dài hạn.",
+      "vn_impact": "Góp phần thu hút chất xám, nguồn lực tri thức và tài chính từ kiều bào về đóng góp cho sự phát triển kinh tế, khoa học và công nghệ của Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "economy"
+      ],
+      "regions": [
+        "VN"
+      ],
+      "significance": "Sự kiện thể hiện quyết tâm và bước chuyển biến trong chính sách thu hút nguồn nhân lực người Việt Nam ở nước ngoài bằng cách tạo ra môi trường làm việc xứng tầm.",
+      "unknowns": [
+        "Chi tiết cụ thể của ba văn bản chỉ đạo vừa được ban hành",
+        "Các cơ chế đãi ngộ và điều kiện cụ thể để giao việc cho kiều bào"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên các văn bản chỉ đạo thực tế được ghi nhận trong thời gian ngắn.",
+      "scenarios": [
+        {
+          "text": "Các cơ quan ban ngành cụ thể hóa các văn bản thành các cơ chế, chính sách đột phá để thu hút hiệu quả nguồn lực kiều bào.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Quá trình triển khai gặp vướng mắc về thủ tục hành chính khiến việc thu hút nhân tài diễn ra chậm hơn kỳ vọng.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Việt Nam",
+          "target": "Chuyên gia kiều bào",
+          "relation_type": "cooperation",
+          "label": "Thu hút nhân tài tham gia xây dựng đất nước"
+        }
+      ],
+      "entities": [
+        "Việt Nam"
+      ],
+      "keywords": [
+        "nhân tài kiều bào",
+        "chuyên gia",
+        "nhà khoa học",
+        "chính sách"
+      ],
+      "importance": 80,
+      "severity": 3,
+      "sentiment": 1,
+      "scope": "national"
+    }
+  },
+  "evt_973b0767": {
+    "created_at": 1788351726288,
+    "expires_at": 1790943726288,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_aa3ee9e2": {
+    "created_at": 1788351766788,
+    "expires_at": 1790943766788,
+    "version": "4.5",
+    "checksum": "1a72bb1fe839094eaf0c8bf832dab05d",
+    "data": {
+      "cluster_title": "Tranh luận về tương lai AI tại hội nghị G20",
+      "short_summary": "Tại hội nghị G20, các lãnh đạo công nghệ hàng đầu từ Google, Meta và SpaceX đã cùng thảo luận và chia sẻ về tương lai của trí tuệ nhân tạo (AI), đóng góp quan điểm quan trọng về định hướng phát triển công nghệ toàn cầu.",
+      "detailed_summary": "Tại hội nghị G20, các lãnh đạo cấp cao của các tập đoàn công nghệ hàng đầu thế giới bao gồm Google, Meta và SpaceX đã cùng nhau tham gia thảo luận, chia sẻ quan điểm về định hướng và tương lai phát triển của trí tuệ nhân tạo.",
+      "causes": [
+        "Sự phát triển bùng nổ của công nghệ trí tuệ nhân tạo trên quy mô toàn cầu",
+        "Nhu cầu trao đổi và định hình tương lai công nghệ tại diễn đàn quốc tế lớn như G20"
+      ],
+      "effects": [
+        "Thúc đẩy các cuộc thảo luận chiến lược về quản trị và phát triển trí tuệ nhân tạo",
+        "Tăng cường sự quan tâm của giới lãnh đạo toàn cầu đối với xu hướng công nghệ"
+      ],
+      "affected_groups": [
+        "Các doanh nghiệp công nghệ lớn",
+        "Giới hoạch định chính sách toàn cầu",
+        "Cộng đồng nghiên cứu và phát triển trí tuệ nhân tạo"
+      ],
+      "market_impact": "Tạo ra xu hướng tích cực cho cổ phiếu ngành công nghệ và định hình kỳ vọng của nhà đầu tư vào các giải pháp trí tuệ nhân tạo.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "tech",
+        "diplomacy"
+      ],
+      "regions": [
+        "GLOBAL"
+      ],
+      "significance": "Sự kiện đánh dấu việc trí tuệ nhân tạo trở thành chủ đề trọng tâm trong chương trình nghị sự của các nhà lãnh đạo và tập đoàn lớn hàng đầu thế giới.",
+      "unknowns": [
+        "Nội dung chi tiết và các thỏa thuận cụ thể được đưa ra trong buổi thảo luận",
+        "Cam kết cụ thể từ các bên tham gia sau hội nghị"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên nguồn tin tức tổng hợp về sự kiện hội nghị G20.",
+      "scenarios": [
+        {
+          "text": "Các tập đoàn công nghệ lớn đạt được đồng thuận chung về khung pháp lý và định hướng phát triển trí tuệ nhân tạo.",
+          "likelihood": "trung bình"
+        },
+        {
+          "text": "Cuộc thảo luận dừng lại ở mức chia sẻ quan điểm và chưa đưa ra được các cam kết hay hành động cụ thể.",
+          "likelihood": "cao"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Google",
+          "target": "G20",
+          "relation_type": "cooperation",
+          "label": "Tham gia thảo luận tại hội nghị"
+        },
+        {
+          "source": "Meta",
+          "target": "G20",
+          "relation_type": "cooperation",
+          "label": "Tham gia thảo luận tại hội nghị"
+        },
+        {
+          "source": "SpaceX",
+          "target": "G20",
+          "relation_type": "cooperation",
+          "label": "Tham gia thảo luận tại hội nghị"
+        }
+      ],
+      "entities": [
+        "Google",
+        "Meta",
+        "SpaceX",
+        "G20"
+      ],
+      "keywords": [
+        "AI",
+        "G20",
+        "công nghệ",
+        "trí tuệ nhân tạo"
+      ],
+      "importance": 80,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "global"
+    }
+  },
+  "evt_db5ff0f9": {
+    "created_at": 1788351822012,
+    "expires_at": 1790943822012,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_7ec92ef4": {
+    "created_at": 1788351917974,
+    "expires_at": 1790943917974,
+    "version": "4.5",
+    "checksum": "93f04ad0e6ad5dfd9c8e52c9a4781191",
+    "data": {
+      "cluster_title": "Lời khuyên phân bổ tiền gửi tiết kiệm để tối ưu hóa lãi suất",
+      "short_summary": "Chuyên gia đưa ra lời khuyên về việc tận dụng lãi suất cao tại các ngân hàng nhỏ, đồng thời cảnh báo không nên dồn quá nhiều tiền vào một ngân hàng duy nhất mà cần phân bổ theo kỳ hạn và nhu cầu thanh khoản để đảm bảo an toàn.",
+      "detailed_summary": "Bài viết đề cập đến bài toán gửi tiết kiệm tại các ngân hàng quy mô nhỏ nhằm hưởng mức lãi suất cao hơn. Với khoản tiền 1 tỷ đồng, việc chênh lệch lãi suất có thể đem lại thêm 11 triệu đồng mỗi năm. Tuy nhiên, các chuyên gia tài chính đưa ra lời khuyên người gửi tiền không nên tập trung toàn bộ nguồn vốn vào một ngân hàng duy nhất để tránh rủi ro, mà thay vào đó nên phân bổ dòng tiền theo các kỳ hạn khác nhau và tùy thuộc vào nhu cầu thanh khoản thực tế.",
+      "causes": [
+        "Sự chênh lệch về mức lãi suất giữa các ngân hàng nhỏ và các ngân hàng lớn",
+        "Nhu cầu tối ưu hóa lợi nhuận từ tiền gửi tiết kiệm của người dân"
+      ],
+      "effects": [
+        "Tăng thêm lợi nhuận khoảng 11 triệu đồng mỗi năm cho khoản tiền gửi 1 tỷ đồng tại ngân hàng nhỏ",
+        "Giúp người gửi tiền giảm thiểu rủi ro nhờ chiến lược phân bổ nguồn vốn"
+      ],
+      "affected_groups": [
+        "Người gửi tiết kiệm cá nhân",
+        "Các ngân hàng quy mô nhỏ",
+        "Hệ thống các tổ chức tín dụng"
+      ],
+      "market_impact": "Tạo ra xu hướng dịch chuyển một phần dòng tiền nhàn rỗi của người dân sang các ngân hàng nhỏ để săn lãi suất cao, đồng thời nâng cao nhận thức về quản trị rủi ro thanh khoản.",
+      "vn_impact": "Giúp người gửi tiền tại Việt Nam nâng cao cảnh giác, biết cách quản lý danh mục tài chính cá nhân an toàn hơn và tránh rủi ro tập trung khi gửi tiết kiệm.",
+      "follow_up": "",
+      "categories": [
+        "finance",
+        "economy"
+      ],
+      "regions": [
+        "VN"
+      ],
+      "significance": "Cân bằng giữa mục tiêu tối ưu hóa lợi nhuận và việc quản trị rủi ro an toàn vốn là nguyên tắc cốt lõi khi gửi tiết kiệm.",
+      "unknowns": [
+        "Tên cụ thể của các ngân hàng nhỏ được đề cập trong bài viết",
+        "Biên độ chênh lệch lãi suất cụ thể giữa các nhóm ngân hàng"
+      ],
+      "confidence_note": "Thông tin dựa trên khuyến nghị chuyên gia tài chính, có độ tin cậy cao về mặt quản trị tài chính cá nhân.",
+      "scenarios": [
+        {
+          "text": "Người gửi tiền áp dụng chiến lược chia nhỏ tiền gửi vào nhiều ngân hàng và kỳ hạn khác nhau để vừa hưởng lãi cao vừa đảm bảo thanh khoản.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Người gửi tiền dồn toàn bộ vốn vào ngân hàng nhỏ để tối đa hóa lợi nhuận và tiềm ẩn rủi ro khi cần rút tiền gấp.",
+          "likelihood": "thấp"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Ngân hàng nhỏ",
+          "target": "Lãi suất",
+          "relation_type": "cause_effect",
+          "label": "Đưa ra mức lãi suất cao hơn để thu hút người gửi tiền"
+        },
+        {
+          "source": "Chuyên gia tài chính",
+          "target": "Người gửi tiết kiệm",
+          "relation_type": "cooperation",
+          "label": "Đưa ra lời khuyên phân bổ dòng vốn và quản lý rủi ro"
+        }
+      ],
+      "entities": [
+        "ngân hàng"
+      ],
+      "keywords": [
+        "gửi tiết kiệm",
+        "lãi suất",
+        "ngân hàng",
+        "thanh khoản",
+        "phân bổ vốn"
+      ],
+      "importance": 40,
+      "severity": 2,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_b3735b97": {
+    "created_at": 1788351972818,
+    "expires_at": 1790943972818,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
     }
   }
 }
