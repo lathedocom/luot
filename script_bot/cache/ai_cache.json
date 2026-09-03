@@ -52070,5 +52070,730 @@
       "sentiment": 0,
       "scope": "business"
     }
+  },
+  "evt_e073511c": {
+    "created_at": 1788437891910,
+    "expires_at": 1791029891910,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_e7249756": {
+    "created_at": 1788437966866,
+    "expires_at": 1791029966866,
+    "version": "4.5",
+    "checksum": "d16403cb03c47d8dba2c6eab358fc04f",
+    "data": {
+      "cluster_title": "Căng thẳng leo thang giữa Ukraine và Nga liên quan đến không phận và tấn công UAV",
+      "short_summary": "Căng thẳng giữa Ukraine và Nga leo thang sau cảnh báo của ông Zelensky về việc có thể khóa không phận Nga bằng drone. Phía Nga coi đây là hành động tuyên chiến và đã đưa ra phản hồi cứng rắn trước các nguy cơ tập kích UAV từ Kiev.",
+      "detailed_summary": "Ukraine và Nga đang đẩy mạnh sức ép lẫn nhau trong cuộc xung đột trên không. Tổng thống Ukraine Volodymyr Zelensky đưa ra cảnh báo rằng không phận Nga có thể bị khóa do các cuộc tấn công bằng máy bay không người lái của Ukraine. Đáp lại, phía Nga, thông qua Tổng thống Vladimir Putin, xem đây là lời tuyên chiến. Moscow cũng đưa ra phản ứng cứng rắn, cáo buộc Kiev đang cố tình tìm cách gây bất ổn tình hình thông qua các kế hoạch tập kích bằng UAV vào lãnh thổ Nga.",
+      "causes": [
+        "Ukraine sử dụng máy bay không người lái nhằm đe dọa hoặc kiểm soát không phận Nga.",
+        "Cáo buộc qua lại giữa hai bên về việc làm gia tăng bất ổn tình hình chiến sự."
+      ],
+      "effects": [
+        "Căng thẳng leo thang đỉnh điểm giữa Ukraine và Nga trong lĩnh vực chiến tranh đường không.",
+        "Nga đưa ra phản ứng cứng rắn và coi cảnh báo của Ukraine là hành động tuyên chiến."
+      ],
+      "affected_groups": [
+        "Quân đội Ukraine",
+        "Quân đội Nga",
+        "Dân thường tại các khu vực biên giới và không phận chịu ảnh hưởng"
+      ],
+      "market_impact": "Gây tâm lý bất ổn ngắn hạn trên thị trường năng lượng và hàng hóa toàn cầu do rủi ro leo thang xung đột vũ trang.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "military"
+      ],
+      "regions": [
+        "UA",
+        "RU"
+      ],
+      "significance": "Sự kiện cho thấy cuộc xung đột Nga - Ukraine đang mở rộng quy mô và mức độ khốc liệt sang không phận, làm sâu sắc thêm khoảng cách ngoại giao và khả năng đàm phán hòa bình giữa hai bên.",
+      "unknowns": [
+        "Quy mô và thời điểm cụ thể mà Ukraine dự định triển khai để khóa không phận Nga.",
+        "Phản ứng quân sự cụ thể tiếp theo của Nga để đáp trả các mối đe dọa từ máy bay không người lái."
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên phát biểu trực tiếp từ lãnh đạo hai nước được truyền thông ghi nhận.",
+      "scenarios": [
+        {
+          "text": "Nga gia tăng các cuộc không kích quy mô lớn nhằm phá hủy hạ tầng sản xuất và điều khiển máy bay không người lái của Ukraine.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Ukraine thực hiện các đợt tập kích bằng UAV sâu hơn vào lãnh thổ Nga nhằm hiện thực hóa cảnh báo đóng cửa không phận.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Ukraine",
+          "target": "Nga",
+          "relation_type": "conflict",
+          "label": "Tăng sức ép và đe dọa không phận"
+        },
+        {
+          "source": "Nga",
+          "target": "Ukraine",
+          "relation_type": "conflict",
+          "label": "Đáp trả cứng rắn và cáo buộc gây bất ổn"
+        }
+      ],
+      "entities": [
+        "Ukraine",
+        "Nga",
+        "Zelensky",
+        "Putin"
+      ],
+      "keywords": [
+        "Ukraine",
+        "Nga",
+        "không phận",
+        "drone",
+        "UAV",
+        "Zelensky",
+        "Putin"
+      ],
+      "importance": 85,
+      "severity": 4,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_5e2d705a": {
+    "created_at": 1788438030601,
+    "expires_at": 1791030030601,
+    "version": "4.5",
+    "checksum": "f3af94e5aef8fb4866ed9d161a57b482",
+    "data": {
+      "cluster_title": "Quân đội Mỹ hộ tống 40 tàu dầu qua eo biển Hormuz",
+      "short_summary": "Quân đội Mỹ đã thực hiện việc hộ tống 40 tàu chở khoảng 18 triệu thùng dầu đi qua eo biển Hormuz trong vòng một ngày. Đây là mức vận tải cao nhất kể từ khi xung đột bắt đầu, nhằm đảm bảo an ninh năng lượng tại khu vực.",
+      "detailed_summary": "Theo thông tin từ CNN, quân đội Mỹ đã thực hiện nhiệm vụ hộ tống 40 tàu chở dầu với tổng khối lượng 18 triệu thùng dầu đi qua eo biển Hormuz chỉ trong một ngày. Đây được ghi nhận là mức độ hộ tống cao nhất kể từ thời điểm xung đột bắt đầu xảy ra.",
+      "causes": [
+        "Sự gia tăng căng thẳng và xung đột tại khu vực Trung Đông",
+        "Nhu cầu bảo vệ các tuyến đường hàng hải chiến lược và đảm bảo nguồn cung năng lượng"
+      ],
+      "effects": [
+        "Đảm bảo an toàn cho các chuyến tàu chở dầu đi qua eo biển Hormuz",
+        "Duy trì lưu lượng vận chuyển dầu mỏ lớn trong bối cảnh xung đột"
+      ],
+      "affected_groups": [
+        "Các doanh nghiệp vận tải biển quốc tế",
+        "Các quốc gia phụ thuộc vào nguồn cung dầu mỏ qua eo biển Hormuz"
+      ],
+      "market_impact": "Góp phần ổn định tâm lý thị trường năng lượng toàn cầu nhờ việc đảm bảo an toàn cho các lô hàng dầu lớn.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "military",
+        "energy"
+      ],
+      "regions": [
+        "US",
+        "GLOBAL"
+      ],
+      "significance": "Sự kiện phản ánh nỗ lực của Mỹ trong việc duy trì an ninh hàng hải và đảm bảo dòng chảy năng lượng toàn cầu trước những rủi ro từ xung đột.",
+      "unknowns": [
+        "Nguyên nhân cụ thể dẫn đến sự gia tăng đột biến lượng tàu cần hộ tống chỉ trong một ngày",
+        "Kế hoạch dài hạn của quân đội Mỹ đối với việc duy trì tần suất hộ tống này"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên nguồn tin từ CNN.",
+      "scenarios": [
+        {
+          "text": "Quân đội Mỹ tiếp tục duy trì hoặc tăng cường các hoạt động hộ tống tàu dầu nếu căng thẳng tại khu vực tiếp tục leo thang.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Lưu lượng tàu dầu cần hộ tống giảm xuống khi tình hình an ninh tại eo biển Hormuz có dấu hiệu hạ nhiệt.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Quân đội Mỹ",
+          "target": "Eo biển Hormuz",
+          "relation_type": "cooperation",
+          "label": "Hộ tống tàu dầu qua khu vực"
+        }
+      ],
+      "entities": [
+        "Mỹ",
+        "Quân đội Mỹ",
+        "CNN",
+        "eo biển Hormuz"
+      ],
+      "keywords": [
+        "hộ tống tàu dầu",
+        "eo biển Hormuz",
+        "quân đội Mỹ",
+        "dầu mỏ",
+        "xung đột"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_67406e43": {
+    "created_at": 1788438072766,
+    "expires_at": 1791030072766,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_9d927dc1": {
+    "created_at": 1788438138865,
+    "expires_at": 1791030138865,
+    "version": "4.5",
+    "checksum": "5efff4a6782455ca1b20d950ef6bcdb6",
+    "data": {
+      "cluster_title": "...",
+      "short_summary": "...",
+      "detailed_summary": "Bộ trưởng Tài chính Mỹ, ông Bessent, đưa ra đánh giá cho rằng các hoạt động tập kích của Ukraine nhằm vào cơ sở hạ tầng dầu mỏ của Nga đang gây ra cú sốc đối với thị trường năng lượng trên phạm vi toàn cầu, dẫn đến sự gia tăng của giá năng lượng.",
+      "causes": [
+        "Ukraine tập kích vào các cơ sở dầu mỏ của Nga",
+        "Sự gián đoạn trong nguồn cung dầu mỏ từ Nga"
+      ],
+      "effects": [
+        "Giá năng lượng toàn cầu tăng cao",
+        "Gây ra cú sốc cho thị trường năng lượng quốc tế"
+      ],
+      "affected_groups": [
+        "Người tiêu dùng toàn cầu",
+        "Các doanh nghiệp năng lượng",
+        "Nền kinh tế các nước phụ thuộc vào năng lượng nhập khẩu"
+      ],
+      "market_impact": "Giá năng lượng toàn cầu có xu hướng tăng do lo ngại gián đoạn nguồn cung từ Nga.",
+      "vn_impact": "Việt Nam có thể chịu áp lực gián tiếp từ việc giá năng lượng và nhiên liệu thế giới tăng cao, ảnh hưởng đến chi phí vận tải và giá cả hàng hóa trong nước.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "energy"
+      ],
+      "regions": [
+        "US",
+        "UA",
+        "RU",
+        "GLOBAL"
+      ],
+      "significance": "Sự kiện phản ánh mối liên hệ trực tiếp giữa các hành động quân sự trong xung đột Nga - Ukraine và sự ổn định của thị trường tài chính, năng lượng thế giới.",
+      "unknowns": [
+        "Mức độ tăng cụ thể của giá năng lượng sau các cuộc tập kích",
+        "Phản ứng chính thức tiếp theo từ phía chính phủ Ukraine và Nga"
+      ],
+      "confidence_note": "Thông tin dựa trên phát biểu trực tiếp của Bộ trưởng Tài chính Mỹ, có độ tin cậy cao về mặt quan điểm chính trị kinh tế.",
+      "scenarios": [
+        {
+          "text": "Giá năng lượng tiếp tục biến động mạnh nếu các cuộc tập kích vào cơ sở dầu mỏ vẫn tiếp diễn.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Mỹ và các đồng minh có thể đưa ra các biện pháp can thiệp hoặc điều chỉnh chính sách để hạ nhiệt thị trường năng lượng.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Ukraine",
+          "target": "Nga",
+          "relation_type": "conflict",
+          "label": "Tập kích cơ sở dầu mỏ"
+        },
+        {
+          "source": "Ukraine",
+          "target": "Thị trường năng lượng toàn cầu",
+          "relation_type": "cause_effect",
+          "label": "Gây tăng giá năng lượng"
+        },
+        {
+          "source": "Bộ trưởng Tài chính Mỹ",
+          "target": "Thị trường năng lượng toàn cầu",
+          "relation_type": "cause_effect",
+          "label": "Đưa ra đánh giá về cú sốc năng lượng"
+        }
+      ],
+      "entities": [],
+      "keywords": [],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "..."
+    }
+  },
+  "evt_49d93eb4": {
+    "created_at": 1788438181635,
+    "expires_at": 1791030181635,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_4d668dc9": {
+    "created_at": 1788438266750,
+    "expires_at": 1791030266750,
+    "version": "4.5",
+    "checksum": "f0b52268fd4da4a37e18347ed5b984b0",
+    "data": {
+      "cluster_title": "Nghiên cứu về nguyên nhân tốc độ hình thành sao trong vũ trụ giảm",
+      "short_summary": "Các nhà khoa học quốc tế, dẫn dắt bởi đội ngũ từ Trung Quốc, đã công bố nghiên cứu mới giải thích nguyên nhân dẫn đến việc tốc độ hình thành sao trong vũ trụ đang có xu hướng giảm dần, mở ra cái nhìn mới về lịch sử vũ trụ.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "categories": [
+        "Khoa học",
+        "Thiên văn học"
+      ],
+      "regions": [
+        "GLOBAL",
+        "CN"
+      ],
+      "follow_up": "",
+      "entities": [
+        "Nhà khoa học Trung Quốc",
+        "VTV.vn"
+      ],
+      "keywords": [
+        "vũ trụ",
+        "hình thành sao",
+        "nghiên cứu khoa học",
+        "thiên văn học"
+      ],
+      "importance": 85,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "global"
+    }
+  },
+  "evt_4d4e2376": {
+    "created_at": 1788438328481,
+    "expires_at": 1791030328481,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_40e4160a": {
+    "created_at": 1788438381825,
+    "expires_at": 1791030381825,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_7ecb64b2": {
+    "created_at": 1788438423749,
+    "expires_at": 1791030423749,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_f5107e36": {
+    "created_at": 1788438451871,
+    "expires_at": 1791030451871,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_d6aed0bc": {
+    "created_at": 1788438515284,
+    "expires_at": 1791030515284,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_2d557458": {
+    "created_at": 1788438549441,
+    "expires_at": 1791030549441,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_8839e649": {
+    "created_at": 1788438596447,
+    "expires_at": 1791030596447,
+    "version": "4.5",
+    "checksum": "83b81927ccee589649022a5f4cd9492c",
+    "data": {
+      "cluster_title": "Masan Consumer đẩy mạnh chiến lược Go Global",
+      "short_summary": "Masan Consumer (MCH) đẩy mạnh chiến lược vươn ra toàn cầu với các thương hiệu chủ lực như Chin-su, Nam Ngư và Omachi, đặt mục tiêu nâng tỷ trọng doanh thu quốc tế lên mức 15-20% vào năm 2030.",
+      "detailed_summary": "Công ty Masan Consumer (MCH) đang triển khai chiến lược Go Global nhằm mở rộng mảng xuất khẩu. Các nhóm thương hiệu chủ lực được tập trung đẩy mạnh bao gồm Chin-su, Nam Ngư và Omachi. Thông qua chiến lược này, công ty đặt mục tiêu nâng tỷ trọng doanh thu quốc tế chiếm từ 15% đến 20% tổng doanh thu vào năm 2030.",
+      "causes": [
+        "Chiến lược mở rộng mảng xuất khẩu của Masan Consumer",
+        "Định hướng phát triển các thương hiệu chủ lực ra thị trường quốc tế"
+      ],
+      "effects": [
+        "Nâng cao tỷ trọng doanh thu quốc tế của Masan Consumer đạt 15-20% vào năm 2030",
+        "Tăng cường sự hiện diện của các thương hiệu Chin-su, Nam Ngư, Omachi trên thị trường toàn cầu"
+      ],
+      "affected_groups": [
+        "Masan Consumer",
+        "Người tiêu dùng quốc tế",
+        "Cổ đông của Masan Consumer"
+      ],
+      "market_impact": "Gia tăng sức cạnh tranh của hàng tiêu dùng Việt Nam trên thị trường quốc tế và mở rộng kênh doanh thu ngoại tệ cho doanh nghiệp.",
+      "vn_impact": "Góp phần nâng tầm thương hiệu hàng tiêu dùng Việt Nam trên bản đồ quốc tế, thúc đẩy chuỗi giá trị sản xuất trong nước gắn liền với xuất khẩu.",
+      "follow_up": "",
+      "categories": [
+        "economy",
+        "business"
+      ],
+      "regions": [
+        "VN"
+      ],
+      "significance": "Đánh dấu bước chuyển dịch chiến lược của doanh nghiệp hàng tiêu dùng nội địa trong việc chinh phục thị trường toàn cầu và gia tăng tỷ trọng doanh thu quốc tế.",
+      "unknowns": [
+        "Các thị trường quốc tế trọng điểm mà Masan Consumer sẽ tập trung khai thác",
+        "Chi tiết các bước thực hiện cụ thể để đạt mục tiêu doanh thu 15-20% vào năm 2030"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên kế hoạch và mục tiêu công bố của doanh nghiệp.",
+      "scenarios": [
+        {
+          "text": "Masan Consumer hoàn thành mục tiêu nâng tỷ trọng doanh thu quốc tế lên 15-20% vào năm 2030 nhờ sự đón nhận tích cực của thị trường toàn cầu.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Mục tiêu doanh thu quốc tế gặp khó khăn do sự cạnh tranh gay gắt từ các thương hiệu tiêu dùng lớn trên thế giới.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Masan Consumer",
+          "target": "Chin-su",
+          "relation_type": "cooperation",
+          "label": "Thương hiệu chủ lực trong chiến lược xuất khẩu"
+        },
+        {
+          "source": "Masan Consumer",
+          "target": "Nam Ngư",
+          "relation_type": "cooperation",
+          "label": "Thương hiệu chủ lực trong chiến lược xuất khẩu"
+        },
+        {
+          "source": "Masan Consumer",
+          "target": "Omachi",
+          "relation_type": "cooperation",
+          "label": "Thương hiệu chủ lực trong chiến lược xuất khẩu"
+        },
+        {
+          "source": "Masan Consumer",
+          "target": "Doanh thu quốc tế",
+          "relation_type": "cause_effect",
+          "label": "Chiến lược Go Global dẫn đến mục tiêu tăng tỷ trọng doanh thu"
+        }
+      ],
+      "entities": [
+        "Masan Consumer",
+        "MCH",
+        "Chin-su",
+        "Nam Ngư",
+        "Omachi"
+      ],
+      "keywords": [
+        "Masan Consumer",
+        "xuất khẩu",
+        "Go Global",
+        "Chin-su",
+        "Nam Ngư",
+        "Omachi"
+      ],
+      "importance": 75,
+      "severity": 3,
+      "sentiment": 1,
+      "scope": "business"
+    }
+  },
+  "evt_2b523730": {
+    "created_at": 1788438652013,
+    "expires_at": 1791030652013,
+    "version": "4.5",
+    "checksum": "ba076f9fdce103e29dafc5dfdb04840c",
+    "data": {
+      "cluster_title": "Thủ tướng Singapore và Thủ tướng Thái Lan biểu diễn âm nhạc ngẫu hứng",
+      "short_summary": "Trong một khoảnh khắc giao lưu thân mật, Thủ tướng Singapore đã chơi đàn guitar đệm cho Thủ tướng Thái Lan hát. Màn kết hợp âm nhạc ngẫu hứng này cho thấy sự gắn kết và không khí cởi mở giữa lãnh đạo hai quốc gia.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "categories": [
+        "Chính trị",
+        "Xã hội"
+      ],
+      "regions": [
+        "SG",
+        "TH"
+      ],
+      "follow_up": "",
+      "entities": [
+        "Thủ tướng Singapore",
+        "Thủ tướng Thái Lan"
+      ],
+      "keywords": [
+        "Thủ tướng Singapore",
+        "Thủ tướng Thái Lan",
+        "âm nhạc",
+        "ngoại giao"
+      ],
+      "importance": 15,
+      "severity": 1,
+      "sentiment": 1,
+      "scope": "personal"
+    }
+  },
+  "evt_cf738b34": {
+    "created_at": 1788438699074,
+    "expires_at": 1791030699074,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_6a6f7b9d": {
+    "created_at": 1788438728737,
+    "expires_at": 1791030728737,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_805d5756": {
+    "created_at": 1788438776775,
+    "expires_at": 1791030776775,
+    "version": "4.5",
+    "checksum": "f4f4d293a4979bab8c76fc3cce7954aa",
+    "data": {
+      "cluster_title": "Lũ quét tại Nepal và công tác cứu hộ của quân đội",
+      "short_summary": "Sau khi lũ quét phá hủy nhiều cầu đường tại Nepal, quân đội nước này đã dựng tuyến cáp tạm dài 250m bắc qua sông Trishuli để hỗ trợ người dân vượt sông an toàn.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "categories": [
+        "Thiên tai",
+        "Xã hội"
+      ],
+      "regions": [
+        "NP"
+      ],
+      "follow_up": "",
+      "entities": [
+        "Nepal",
+        "quân đội Nepal",
+        "sông Trishuli"
+      ],
+      "keywords": [
+        "lũ quét",
+        "Nepal",
+        "quân đội Nepal",
+        "sông Trishuli"
+      ],
+      "importance": 60,
+      "severity": 4,
+      "sentiment": -1,
+      "scope": "national"
+    }
   }
 }

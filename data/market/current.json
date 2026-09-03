@@ -5,7 +5,7 @@
     "unit": "VNĐ/kg",
     "country": "VN",
     "frequency": "daily",
-    "retrieved_at": "2026-09-03T04:28:57.146Z",
+    "retrieved_at": "2026-09-03T12:33:02.803Z",
     "value": 16000,
     "status": "offline_fallback",
     "source": {
@@ -25,7 +25,7 @@
     "unit": "VNĐ/kg",
     "country": "VN",
     "frequency": "daily",
-    "retrieved_at": "2026-09-03T04:28:57.148Z",
+    "retrieved_at": "2026-09-03T12:33:02.805Z",
     "value": 57000,
     "source": {
       "name": "Báo chí (Google News)",
@@ -44,16 +44,17 @@
     "unit": "VNĐ/quả",
     "country": "VN",
     "frequency": "daily",
-    "retrieved_at": "2026-09-03T04:28:57.148Z",
-    "value": 3700,
+    "retrieved_at": "2026-09-03T12:33:02.806Z",
+    "value": 2600,
+    "status": "offline_fallback",
     "source": {
-      "name": "Báo chí (Google News)",
-      "url": "https://news.google.com/rss/search?q=%22gi%C3%A1%20tr%E1%BB%A9ng%20g%C3%A0%22%20%22b%C3%A1n%20l%E1%BA%BB%22&hl=vi&gl=VN&ceid=VN:vi",
-      "type": "news_scraping"
+      "name": "Giá tham chiếu",
+      "type": "fallback"
     },
     "quality": {
-      "status": "verified",
-      "method": "google_spider"
+      "status": "failed_but_cached",
+      "method": "hardcode",
+      "error_log": "Không bắt được mức giá hợp lệ từ báo chí"
     },
     "category": "Chi phí sinh hoạt"
   },
@@ -63,8 +64,8 @@
     "unit": "VNĐ/lít",
     "country": "VN",
     "frequency": "weekly",
-    "retrieved_at": "2026-09-03T04:28:57.149Z",
-    "value": 22600,
+    "retrieved_at": "2026-09-03T12:33:02.806Z",
+    "value": 23270,
     "source": {
       "name": "Báo Mới Tiện Ích",
       "url": "https://baomoi.com/tien-ich-gia-xang-dau.epi",
@@ -82,8 +83,8 @@
     "unit": "VNĐ/lít",
     "country": "VN",
     "frequency": "weekly",
-    "retrieved_at": "2026-09-03T04:28:57.150Z",
-    "value": 28080,
+    "retrieved_at": "2026-09-03T12:33:02.807Z",
+    "value": 27740,
     "source": {
       "name": "Báo Mới Tiện Ích",
       "url": "https://baomoi.com/tien-ich-gia-xang-dau.epi",
@@ -101,7 +102,7 @@
     "unit": "VNĐ/bình",
     "country": "VN",
     "frequency": "monthly",
-    "retrieved_at": "2026-09-03T04:28:57.150Z",
+    "retrieved_at": "2026-09-03T12:33:02.808Z",
     "value": 506088,
     "source": {
       "name": "Google News",
@@ -120,7 +121,7 @@
     "unit": "VNĐ/kWh",
     "country": "VN",
     "frequency": "monthly",
-    "retrieved_at": "2026-09-03T04:28:57.151Z",
+    "retrieved_at": "2026-09-03T12:33:02.809Z",
     "value": 2204,
     "source": {
       "name": "Thông cáo Báo chí",
@@ -139,8 +140,8 @@
     "unit": "VNĐ/m³",
     "country": "VN",
     "frequency": "monthly",
-    "retrieved_at": "2026-09-03T04:28:57.152Z",
-    "value": 8000,
+    "retrieved_at": "2026-09-03T12:33:02.809Z",
+    "value": 9500,
     "source": {
       "name": "Thông cáo Báo chí",
       "url": "https://news.google.com/rss/search?q=%22gi%C3%A1%20n%C6%B0%E1%BB%9Bc%20sinh%20ho%E1%BA%A1t%22%20%22%C4%91%E1%BB%93ng%2Fm3%22&hl=vi&gl=VN&ceid=VN:vi",
@@ -158,7 +159,7 @@
     "unit": "%",
     "country": "VN",
     "frequency": "monthly",
-    "retrieved_at": "2026-09-03T04:28:57.153Z",
+    "retrieved_at": "2026-09-03T12:33:02.810Z",
     "value": 4.89,
     "period": "2026-09",
     "source": {
@@ -178,7 +179,7 @@
     "unit": "VNĐ/tháng",
     "country": "VN",
     "frequency": "yearly",
-    "retrieved_at": "2026-09-03T04:28:57.153Z",
+    "retrieved_at": "2026-09-03T12:33:02.810Z",
     "value": 4960000,
     "source": {
       "name": "Báo chí (Google News)",
@@ -197,7 +198,7 @@
     "unit": "%/năm",
     "country": "VN",
     "frequency": "monthly",
-    "retrieved_at": "2026-09-03T04:28:57.154Z",
+    "retrieved_at": "2026-09-03T12:33:02.811Z",
     "value": 6.5,
     "source": {
       "name": "Báo chí (Google News)",
@@ -216,7 +217,7 @@
     "unit": "VNĐ",
     "country": "VN",
     "frequency": "realtime",
-    "retrieved_at": "2026-09-03T04:28:57.154Z",
+    "retrieved_at": "2026-09-03T12:33:02.812Z",
     "value": 26070,
     "source": {
       "name": "Yahoo Finance",
@@ -235,16 +236,17 @@
     "unit": "Tr/lượng",
     "country": "VN",
     "frequency": "daily",
-    "retrieved_at": "2026-09-03T04:28:57.155Z",
-    "value": 147.4,
+    "retrieved_at": "2026-09-03T12:33:02.812Z",
+    "value": 85.5,
+    "status": "offline_fallback",
     "source": {
-      "name": "Báo chí (Google News)",
-      "url": "https://news.google.com/rss/search?q=%22v%C3%A0ng%20SJC%22%20%22tri%E1%BB%87u%20%C4%91%E1%BB%93ng%22&hl=vi&gl=VN&ceid=VN:vi",
-      "type": "news_scraping"
+      "name": "Giá tham chiếu",
+      "type": "fallback"
     },
     "quality": {
-      "status": "verified",
-      "method": "google_spider"
+      "status": "failed_but_cached",
+      "method": "hardcode",
+      "error_log": "Không tìm thấy mức giá chuẩn trong bài báo"
     },
     "category": "Kinh tế & Tài sản"
   },
@@ -253,8 +255,8 @@
     "name": "VN-Index",
     "unit": "Điểm",
     "country": "VN",
-    "retrieved_at": "2026-09-03T04:28:57.156Z",
-    "value": 1818.43,
+    "retrieved_at": "2026-09-03T12:33:02.813Z",
+    "value": 1827.72,
     "source": {
       "name": "TradingView",
       "url": "https://www.tradingview.com",
@@ -271,8 +273,8 @@
     "name": "Dầu Brent",
     "unit": "USD/thùng",
     "country": "Global",
-    "retrieved_at": "2026-09-03T04:28:57.156Z",
-    "value": 95.2,
+    "retrieved_at": "2026-09-03T12:33:02.813Z",
+    "value": 96.42,
     "source": {
       "name": "Yahoo Finance",
       "url": "https://query1.finance.yahoo.com/v8/finance/chart/BZ=F?range=1d&interval=1d",
@@ -290,7 +292,7 @@
     "unit": "Điểm",
     "country": "VN",
     "frequency": "monthly",
-    "retrieved_at": "2026-09-03T04:28:57.157Z",
+    "retrieved_at": "2026-09-03T12:33:02.814Z",
     "value": 53.3,
     "period": "2026-09",
     "source": {
@@ -309,8 +311,8 @@
     "name": "Bitcoin",
     "unit": "USD",
     "country": "Global",
-    "retrieved_at": "2026-09-03T04:28:57.158Z",
-    "value": 77572,
+    "retrieved_at": "2026-09-03T12:33:02.814Z",
+    "value": 78086,
     "source": {
       "name": "CoinGecko",
       "url": "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd",
