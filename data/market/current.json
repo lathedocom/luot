@@ -5,7 +5,7 @@
     "unit": "VNĐ/kg",
     "country": "VN",
     "frequency": "daily",
-    "retrieved_at": "2026-09-03T12:33:02.803Z",
+    "retrieved_at": "2026-09-03T16:14:24.845Z",
     "value": 16000,
     "status": "offline_fallback",
     "source": {
@@ -25,7 +25,7 @@
     "unit": "VNĐ/kg",
     "country": "VN",
     "frequency": "daily",
-    "retrieved_at": "2026-09-03T12:33:02.805Z",
+    "retrieved_at": "2026-09-03T16:14:24.846Z",
     "value": 57000,
     "source": {
       "name": "Báo chí (Google News)",
@@ -44,17 +44,16 @@
     "unit": "VNĐ/quả",
     "country": "VN",
     "frequency": "daily",
-    "retrieved_at": "2026-09-03T12:33:02.806Z",
-    "value": 2600,
-    "status": "offline_fallback",
+    "retrieved_at": "2026-09-03T16:14:24.847Z",
+    "value": 3300,
     "source": {
-      "name": "Giá tham chiếu",
-      "type": "fallback"
+      "name": "Báo chí (Google News)",
+      "url": "https://news.google.com/rss/search?q=%22gi%C3%A1%20tr%E1%BB%A9ng%20g%C3%A0%22%20%22b%C3%A1n%20l%E1%BA%BB%22&hl=vi&gl=VN&ceid=VN:vi",
+      "type": "news_scraping"
     },
     "quality": {
-      "status": "failed_but_cached",
-      "method": "hardcode",
-      "error_log": "Không bắt được mức giá hợp lệ từ báo chí"
+      "status": "verified",
+      "method": "google_spider"
     },
     "category": "Chi phí sinh hoạt"
   },
@@ -236,17 +235,16 @@
     "unit": "Tr/lượng",
     "country": "VN",
     "frequency": "daily",
-    "retrieved_at": "2026-09-03T12:33:02.812Z",
-    "value": 85.5,
-    "status": "offline_fallback",
+    "retrieved_at": "2026-09-03T16:14:24.848Z",
+    "value": 147.4,
     "source": {
-      "name": "Giá tham chiếu",
-      "type": "fallback"
+      "name": "Báo chí (Google News)",
+      "url": "https://news.google.com/rss/search?q=%22v%C3%A0ng%20SJC%22%20%22tri%E1%BB%87u%20%C4%91%E1%BB%93ng%22&hl=vi&gl=VN&ceid=VN:vi",
+      "type": "news_scraping"
     },
     "quality": {
-      "status": "failed_but_cached",
-      "method": "hardcode",
-      "error_log": "Không tìm thấy mức giá chuẩn trong bài báo"
+      "status": "verified",
+      "method": "google_spider"
     },
     "category": "Kinh tế & Tài sản"
   },

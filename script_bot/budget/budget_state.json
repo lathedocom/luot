@@ -82,24 +82,24 @@
       "rpmMinuteKey": ""
     },
     "gemma-4-26b-a4b-it": {
-      "rpd": 46,
-      "rpm": 5,
-      "promptTokens": 22850,
-      "completionTokens": 49974,
+      "rpd": 66,
+      "rpm": 4,
+      "promptTokens": 32325,
+      "completionTokens": 72390,
       "cost": 0,
-      "successCount": 4675,
+      "successCount": 4695,
       "failCount": 816,
-      "rpmMinuteKey": "2026-09-03T12:34"
+      "rpmMinuteKey": "2026-09-03T16:15"
     },
     "gemini-embedding-2": {
-      "rpd": 2,
+      "rpd": 3,
       "rpm": 1,
-      "promptTokens": 2347,
+      "promptTokens": 3193,
       "completionTokens": 0,
       "cost": 0,
-      "successCount": 220,
+      "successCount": 221,
       "failCount": 81,
-      "rpmMinuteKey": "2026-09-03T12:17"
+      "rpmMinuteKey": "2026-09-03T16:00"
     },
     "llama-3.3-70b-versatile": {
       "rpd": 0,
@@ -132,24 +132,24 @@
       "failCount": 2
     },
     "gemini-3.7-flash": {
-      "rpd": 2,
-      "rpm": 1,
-      "rpmMinuteKey": "2026-09-03T12:36",
+      "rpd": 5,
+      "rpm": 3,
+      "rpmMinuteKey": "2026-09-03T16:17",
       "promptTokens": 2833,
       "completionTokens": 1248,
       "cost": 0,
       "successCount": 26,
-      "failCount": 158
+      "failCount": 161
     },
     "gemini-3.6-flash": {
-      "rpd": 0,
-      "rpm": 0,
-      "rpmMinuteKey": "",
-      "promptTokens": 0,
-      "completionTokens": 0,
+      "rpd": 3,
+      "rpm": 1,
+      "rpmMinuteKey": "2026-09-03T16:18",
+      "promptTokens": 1833,
+      "completionTokens": 593,
       "cost": 0,
-      "successCount": 38,
-      "failCount": 21
+      "successCount": 39,
+      "failCount": 23
     },
     "gemma-4-26b-it": {
       "rpd": 0,
@@ -172,13 +172,13 @@
       "failCount": 20
     },
     "gemini-3.5-flash-lite": {
-      "rpd": 39,
-      "rpm": 1,
-      "rpmMinuteKey": "2026-09-03T12:33",
-      "promptTokens": 19436,
-      "completionTokens": 5297,
+      "rpd": 58,
+      "rpm": 2,
+      "rpmMinuteKey": "2026-09-03T16:14",
+      "promptTokens": 28887,
+      "completionTokens": 8312,
       "cost": 0,
-      "successCount": 720,
+      "successCount": 739,
       "failCount": 14
     },
     "gemini-3.5-flash": {
