@@ -1,309 +1,4 @@
 {
-  "evt_general_1785971855020": {
-    "created_at": 1785971858397,
-    "expires_at": 1788563858397,
-    "version": "4.5",
-    "checksum": "1fbd171ec9a9664afa9eab30ec84483e",
-    "data": {
-      "cluster_title": "Cạn kiệt nguồn cung tên lửa Patriot",
-      "short_summary": "Nguồn cung tên lửa Patriot đang cạn kiệt do xung đột Trung Đông và Ukraine.",
-      "detailed_summary": "Hệ thống phòng thủ Patriot đang đối mặt với tình trạng thiếu hụt nguồn cung tên lửa nghiêm trọng. Sự tiêu hao nhanh chóng tại Ukraine và các khu vực xung đột ở Trung Đông vượt quá tốc độ sản xuất công nghiệp quốc phòng hiện tại, tạo ra áp lực lớn lên khả năng duy trì năng lực phòng thủ trên phạm vi toàn cầu.",
-      "causes": [
-        "Xung đột vũ trang gia tăng tại Trung Đông và Ukraine",
-        "Tốc độ sản xuất công nghiệp quốc phòng không bắt kịp nhu cầu tiêu thụ"
-      ],
-      "effects": [
-        "Nguy cơ suy giảm năng lực phòng thủ của các quốc gia phụ thuộc vào Patriot",
-        "Gia tăng áp lực lên chuỗi cung ứng linh kiện quốc phòng",
-        "Đẩy nhanh yêu cầu tăng ngân sách quốc phòng để mở rộng sản xuất"
-      ],
-      "affected_groups": [
-        "Các quốc gia vận hành hệ thống Patriot",
-        "Các nhà thầu quốc phòng",
-        "Bộ chỉ huy quân sự các nước liên quan"
-      ],
-      "market_impact": "Các doanh nghiệp quốc phòng có thể nhận được đơn đặt hàng tăng vọt, trong khi chuỗi cung ứng vật liệu quân sự đối mặt với thách thức về tính sẵn sàng.",
-      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
-      "follow_up": "",
-      "categories": [
-        "military",
-        "politics"
-      ],
-      "regions": [
-        "UA",
-        "GLOBAL"
-      ],
-      "significance": "Sự mất cân bằng giữa cung và cầu tên lửa phòng thủ cho thấy lỗ hổng trong năng lực sản xuất quốc phòng dài hạn của phương Tây trước các xung đột kéo dài.",
-      "unknowns": [
-        "Thời gian cụ thể để các cơ sở sản xuất đạt công suất tối đa",
-        "Thứ tự ưu tiên phân phối tên lửa cho các vùng chiến sự"
-      ],
-      "confidence_note": "Thông tin dựa trên đánh giá về tình trạng tiêu hao nguồn lực quân sự thực tế tại các điểm nóng xung đột.",
-      "scenarios": [
-        {
-          "text": "Các nhà sản xuất đẩy mạnh mở rộng dây chuyền, giảm dần tình trạng khan hiếm trong dài hạn.",
-          "likelihood": "cao"
-        },
-        {
-          "text": "Tình trạng thiếu hụt trầm trọng hơn do các điểm nóng xung đột mới phát sinh.",
-          "likelihood": "trung bình"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Xung đột Trung Đông và Ukraine",
-          "target": "Nguồn cung tên lửa Patriot",
-          "relation_type": "cause_effect",
-          "label": "Gây tiêu hao dự trữ tên lửa"
-        },
-        {
-          "source": "Tốc độ sản xuất",
-          "target": "Nguồn cung tên lửa Patriot",
-          "relation_type": "cause_effect",
-          "label": "Không đủ đáp ứng nhu cầu"
-        }
-      ],
-      "entities": [
-        "Patriot"
-      ],
-      "keywords": [
-        "Patriot",
-        "thiên khí",
-        "cạn kiệt",
-        "nguồn cung"
-      ],
-      "importance": 85,
-      "severity": 3,
-      "sentiment": -1,
-      "scope": "global"
-    }
-  },
-  "evt_general_1785971864329": {
-    "created_at": 1785971870043,
-    "expires_at": 1788563870043,
-    "version": "4.5",
-    "checksum": "c86566f64f89c7152d8323d9fdee20af",
-    "data": {
-      "cluster_title": "Mỹ cam kết hỗ trợ Việt Nam",
-      "short_summary": "Mỹ cam kết hỗ trợ Việt Nam trong Chiến dịch 500 ngày đêm và cảm ơn sự hỗ trợ của Việt Nam trong tìm kiếm quân nhân Mỹ mất tích.",
-      "detailed_summary": "Đô đốc Mỹ bày tỏ lòng biết ơn đối với Việt Nam trong công tác phối hợp tìm kiếm quân nhân Mỹ mất tích trong chiến tranh. Đồng thời, phía Mỹ khẳng định cam kết tiếp tục đồng hành và hỗ trợ Việt Nam thực hiện Chiến dịch 500 ngày đêm nhằm khắc phục hậu quả chiến tranh, tăng cường hợp tác song phương.",
-      "causes": [
-        "Nỗ lực tìm kiếm quân nhân Mỹ mất tích của Việt Nam",
-        "Nhu cầu khắc phục hậu quả chiến tranh tại Việt Nam"
-      ],
-      "effects": [
-        "Thắt chặt quan hệ ngoại giao giữa Mỹ và Việt Nam",
-        "Đẩy nhanh tiến độ tìm kiếm và khắc phục hậu quả chiến tranh"
-      ],
-      "affected_groups": [
-        "Cơ quan chính phủ Việt Nam",
-        "Các gia đình quân nhân Mỹ mất tích",
-        "Cộng đồng chịu ảnh hưởng bởi hậu quả chiến tranh"
-      ],
-      "market_impact": "Không có tác động trực tiếp đến thị trường tài chính.",
-      "vn_impact": "Củng cố lòng tin chiến lược giữa hai quốc gia, tạo tiền đề thuận lợi cho việc hợp tác trong các lĩnh vực khác, đồng thời hỗ trợ trực tiếp cho mục tiêu giải quyết các vấn đề tồn đọng từ lịch sử.",
-      "follow_up": "",
-      "categories": [
-        "diplomacy",
-        "military"
-      ],
-      "regions": [
-        "US",
-        "VN"
-      ],
-      "significance": "Sự kiện khẳng định sự thiện chí và cam kết của Mỹ trong việc cùng Việt Nam đối diện với các di sản chiến tranh, củng cố quan hệ đối tác tin cậy giữa hai nước.",
-      "unknowns": [
-        "Chi tiết cụ thể về ngân sách hỗ trợ cho Chiến dịch 500 ngày đêm",
-        "Danh sách các dự án cụ thể sẽ được triển khai trong thời gian tới"
-      ],
-      "confidence_note": "Thông tin dựa trên tuyên bố chính thức từ phía đại diện Mỹ, mức độ tin cậy cao.",
-      "scenarios": [
-        {
-          "text": "Mối quan hệ ngoại giao giữa hai nước tiếp tục phát triển theo chiều sâu thông qua các hoạt động hợp tác nhân đạo.",
-          "likelihood": "cao"
-        },
-        {
-          "text": "Các chương trình hợp tác khắc phục hậu quả chiến tranh đạt được những kết quả cụ thể trong thời gian 500 ngày đêm.",
-          "likelihood": "trung bình"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Mỹ",
-          "target": "Việt Nam",
-          "relation_type": "cooperation",
-          "label": "Hợp tác tìm kiếm quân nhân và khắc phục hậu quả chiến tranh"
-        },
-        {
-          "source": "Việt Nam",
-          "target": "Chiến dịch 500 ngày đêm",
-          "relation_type": "cooperation",
-          "label": "Thực hiện cam kết khắc phục hậu quả chiến tranh"
-        }
-      ],
-      "entities": [
-        "Đô đốc Mỹ",
-        "Việt Nam"
-      ],
-      "keywords": [
-        "Việt Nam",
-        "Mỹ",
-        "Chiến dịch 500 ngày đêm"
-      ],
-      "importance": 85,
-      "severity": 3,
-      "sentiment": -1,
-      "scope": "national"
-    }
-  },
-  "evt_general_1785971875945": {
-    "created_at": 1785971881855,
-    "expires_at": 1788563881855,
-    "version": "4.5",
-    "checksum": "bcf4c67697562ec003660e4087b3ac9b",
-    "data": {
-      "cluster_title": "Trung Quốc siết chặt xuất khẩu thiết bị bay không người lái sang Mỹ",
-      "short_summary": "Trung Quốc sẽ siết chặt kiểm soát xuất khẩu các sản phẩm liên quan đến thiết bị bay không người lái sang Mỹ.",
-      "detailed_summary": "Chính phủ Trung Quốc đã chính thức thông báo về việc tăng cường các biện pháp kiểm soát xuất khẩu đối với các mặt hàng, linh kiện và công nghệ liên quan đến thiết bị bay không người lái (drone) hướng tới Mỹ, nhằm siết chặt quản lý chuỗi cung ứng trong lĩnh vực này.",
-      "causes": [
-        "Sự cạnh tranh chiến lược về công nghệ giữa hai siêu cường",
-        "Nỗ lực kiểm soát an ninh quốc gia và bảo vệ công nghệ lõi"
-      ],
-      "effects": [
-        "Gia tăng rào cản thương mại trong ngành công nghệ không người lái",
-        "Tác động đến khả năng tiếp cận linh kiện drone của các doanh nghiệp Mỹ"
-      ],
-      "affected_groups": [
-        "Nhà sản xuất drone tại Mỹ",
-        "Các đơn vị nhập khẩu thiết bị công nghệ Trung Quốc",
-        "Chuỗi cung ứng công nghệ toàn cầu"
-      ],
-      "market_impact": "Dự báo làm gián đoạn chuỗi cung ứng tạm thời và gây biến động giá đối với các thiết bị hoặc phụ tùng drone phụ thuộc vào nguồn cung từ Trung Quốc.",
-      "vn_impact": "Việt Nam có thể chịu tác động gián tiếp từ việc điều chỉnh chuỗi cung ứng toàn cầu, tạo ra cơ hội hoặc thách thức cho các đơn vị gia công và lắp ráp công nghệ tại Việt Nam.",
-      "follow_up": "",
-      "categories": [
-        "economy",
-        "tech"
-      ],
-      "regions": [
-        "CN",
-        "US"
-      ],
-      "significance": "Động thái này phản ánh xu hướng bảo hộ công nghệ và sử dụng các biện pháp kiểm soát xuất khẩu làm công cụ trong quan hệ ngoại giao kinh tế giữa hai nền kinh tế lớn nhất thế giới.",
-      "unknowns": [
-        "Danh mục cụ thể các mặt hàng bị hạn chế xuất khẩu",
-        "Thời điểm hiệu lực chi tiết và lộ trình triển khai các giấy phép xuất khẩu"
-      ],
-      "confidence_note": "Thông tin dựa trên thông báo chính thức từ nguồn tin báo chí, độ tin cậy cao.",
-      "scenarios": [
-        {
-          "text": "Mỹ đáp trả bằng các biện pháp hạn chế thương mại đối ứng hoặc tìm nguồn cung thay thế.",
-          "likelihood": "cao"
-        },
-        {
-          "text": "Hai bên tiến hành đàm phán để nới lỏng các quy định nhằm duy trì ổn định chuỗi cung ứng.",
-          "likelihood": "trung bình"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Trung Quốc",
-          "target": "Mỹ",
-          "relation_type": "conflict",
-          "label": "Hạn chế xuất khẩu công nghệ chiến lược"
-        },
-        {
-          "source": "Trung Quốc",
-          "target": "Ngành công nghệ không người lái",
-          "relation_type": "cause_effect",
-          "label": "Thay đổi quy định kiểm soát xuất khẩu"
-        }
-      ],
-      "entities": [
-        "Trung Quốc",
-        "Mỹ"
-      ],
-      "keywords": [
-        "Trung Quốc",
-        "Mỹ",
-        "thiết bị bay không người lái"
-      ],
-      "importance": 85,
-      "severity": 3,
-      "sentiment": -1,
-      "scope": "global"
-    }
-  },
-  "evt_general_1785971887783": {
-    "created_at": 1785971893738,
-    "expires_at": 1788563893738,
-    "version": "4.5",
-    "checksum": "89f2248d356ae15ae924ef4bd35589e7",
-    "data": {
-      "cluster_title": "Sacombank phát hành trái phiếu",
-      "short_summary": "Sacombank phát hành trái phiếu với lãi suất 10% và hút 3.650 tỷ đồng qua kênh này.",
-      "detailed_summary": "Ngân hàng Sacombank vừa thực hiện đợt phát hành trái phiếu thành công với tổng giá trị 3.650 tỷ đồng. Mức lãi suất ấn định là 10% mỗi năm, ghi nhận là mức lãi suất cao nhất trong số các đợt phát hành trái phiếu của khối ngân hàng tính từ đầu năm đến nay.",
-      "causes": [
-        "Nhu cầu bổ sung nguồn vốn trung và dài hạn của ngân hàng",
-        "Áp lực tăng lãi suất huy động trên thị trường để cạnh tranh nguồn vốn"
-      ],
-      "effects": [
-        "Tăng chi phí vốn cho ngân hàng phát hành",
-        "Tạo ra một tham chiếu mới về lãi suất trái phiếu ngân hàng trên thị trường"
-      ],
-      "affected_groups": [
-        "Nhà đầu tư trái phiếu",
-        "Các ngân hàng thương mại khác",
-        "Sacombank"
-      ],
-      "market_impact": "Việc Sacombank phát hành trái phiếu lãi suất 10% có thể gây áp lực lên mặt bằng lãi suất huy động chung của toàn hệ thống ngân hàng.",
-      "vn_impact": "Sự kiện phản ánh xu hướng cạnh tranh gay gắt về nguồn vốn trong hệ thống ngân hàng Việt Nam, có thể khiến chi phí vay vốn của doanh nghiệp tăng theo.",
-      "follow_up": "",
-      "categories": [
-        "economy",
-        "finance"
-      ],
-      "regions": [
-        "VN"
-      ],
-      "significance": "Đây là tín hiệu cho thấy các ngân hàng đang sẵn sàng chi trả mức phí cao hơn để thu hút dòng tiền trong bối cảnh thanh khoản cần ổn định.",
-      "unknowns": [
-        "Kỳ hạn cụ thể của lô trái phiếu này",
-        "Mục đích sử dụng vốn chi tiết của đợt phát hành"
-      ],
-      "confidence_note": "Thông tin dựa trên số liệu thực tế được công bố về đợt phát hành, độ tin cậy cao.",
-      "scenarios": [
-        {
-          "text": "Các ngân hàng khác sẽ tăng lãi suất trái phiếu để thu hút nhà đầu tư tương tự Sacombank.",
-          "likelihood": "cao"
-        },
-        {
-          "text": "Áp lực lãi suất khiến các ngân hàng thận trọng hơn trong việc phát hành trái phiếu mới.",
-          "likelihood": "trung bình"
-        }
-      ],
-      "entity_relations": [
-        {
-          "source": "Sacombank",
-          "target": "Thị trường trái phiếu",
-          "relation_type": "cause_effect",
-          "label": "Tạo mặt bằng lãi suất trái phiếu mới cao hơn"
-        }
-      ],
-      "entities": [
-        "Sacombank"
-      ],
-      "keywords": [
-        "Sacombank",
-        "trái phiếu",
-        "lãi suất"
-      ],
-      "importance": 85,
-      "severity": 2,
-      "sentiment": -1,
-      "scope": "business"
-    }
-  },
   "evt_e9e410ce": {
     "created_at": 1785989858443,
     "expires_at": 1788581858443,
@@ -51875,6 +51570,280 @@
       "importance": 85,
       "severity": 4,
       "sentiment": -1,
+      "scope": "global"
+    }
+  },
+  "evt_e4496f30": {
+    "created_at": 1788581882094,
+    "expires_at": 1791173882094,
+    "version": "4.5",
+    "checksum": "d7710381179f52cf9ec617e67e62d27d",
+    "data": {
+      "cluster_title": "Đang cập nhật sự kiện",
+      "short_summary": "Nội dung đang được AI cập nhật lại.",
+      "detailed_summary": "Sự kiện nhỏ hoặc mang tính cập nhật nhanh, không yêu cầu phân tích chuyên sâu.",
+      "causes": [],
+      "effects": [],
+      "affected_groups": [],
+      "market_impact": "",
+      "vn_impact": "Không tác động trực tiếp.",
+      "categories": [],
+      "regions": [],
+      "follow_up": "",
+      "entities": [],
+      "keywords": [],
+      "importance": 50,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "business"
+    }
+  },
+  "evt_61506a20": {
+    "created_at": 1788581957926,
+    "expires_at": 1791173957926,
+    "version": "4.5",
+    "checksum": "f5923d53b20c3f8ce11b0167d5259270",
+    "data": {
+      "cluster_title": "Biến động trái phiếu chính phủ Việt Nam trước làn sóng bán tháo toàn cầu",
+      "short_summary": "Giữa bối cảnh lợi suất trái phiếu tại Nhật Bản, Anh và Đức tăng mạnh do áp lực bán tháo toàn cầu, trái phiếu chính phủ Việt Nam được đánh giá là có biến động ôn hòa và ổn định hơn.",
+      "detailed_summary": "Giới quan sát đánh giá trái phiếu chính phủ Việt Nam duy trì sự biến động ôn hòa. Trong khi đó, thị trường trái phiếu tại nhiều quốc gia như Nhật Bản, Anh và Đức đang chịu áp lực bán lan rộng, khiến lợi suất lập đỉnh trong nhiều thập kỷ.",
+      "causes": [
+        "Áp lực bán tháo lan rộng trên thị trường trái phiếu toàn cầu",
+        "Lợi suất trái phiếu tại Nhật Bản, Anh và Đức lập đỉnh hàng chục năm"
+      ],
+      "effects": [
+        "Trái phiếu chính phủ Việt Nam ghi nhận mức biến động ôn hòa",
+        "Thị trường tài chính quốc tế biến động mạnh tại một số nước lớn"
+      ],
+      "affected_groups": [
+        "Nhà đầu tư trái phiếu",
+        "Các cơ quan quản lý tài chính",
+        "Thị trường tài chính toàn cầu"
+      ],
+      "market_impact": "Thị trường trái phiếu quốc tế chịu áp lực bán tháo và lợi suất tăng cao, trong khi thị trường Việt Nam ổn định hơn.",
+      "vn_impact": "Trái phiếu chính phủ Việt Nam duy trì biến động ôn hòa, thể hiện khả năng chống chịu nhất định trước các biến động tiêu cực từ làn sóng bán tháo trên thị trường tài chính toàn cầu.",
+      "follow_up": "",
+      "categories": [
+        "finance",
+        "economy"
+      ],
+      "regions": [
+        "VN",
+        "JP",
+        "GB",
+        "DE"
+      ],
+      "significance": "Sự kiện cho thấy sự khác biệt về mức độ chịu đựng và phản ứng của thị trường trái phiếu Việt Nam so với xu hướng suy giảm chung của các nền kinh tế lớn.",
+      "unknowns": [
+        "Nguyên nhân cụ thể dẫn đến biến động ôn hòa của trái phiếu Việt Nam",
+        "Thời gian kéo dài của làn sóng bán tháo trái phiếu tại các nước phát triển"
+      ],
+      "confidence_note": "Thông tin có độ tin cậy cao dựa trên đánh giá của giới quan sát về thị trường trái phiếu trong và ngoài nước.",
+      "scenarios": [
+        {
+          "text": "Làn sóng bán tháo quốc tế tiếp tục lan rộng, tạo thêm áp lực tâm lý nhưng thị trường Việt Nam vẫn duy trì được sự ổn định tương đối.",
+          "likelihood": "trung bình"
+        },
+        {
+          "text": "Thị trường tài chính toàn cầu hạ nhiệt, giúp lợi suất trái phiếu tại các nước Nhật Bản, Anh, Đức ổn định trở lại.",
+          "likelihood": "cao"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Nhật Bản",
+          "target": "Lợi suất trái phiếu",
+          "relation_type": "cause_effect",
+          "label": "Lập đỉnh hàng chục năm do áp lực bán"
+        },
+        {
+          "source": "Việt Nam",
+          "target": "Trái phiếu chính phủ",
+          "relation_type": "neutral",
+          "label": "Biến động ôn hòa giữa làn sóng bán tháo"
+        }
+      ],
+      "entities": [
+        "Trái phiếu chính phủ Việt Nam",
+        "Nhật Bản",
+        "Anh",
+        "Đức"
+      ],
+      "keywords": [
+        "trái phiếu chính phủ",
+        "lợi suất",
+        "bán tháo",
+        "biến động ôn hòa",
+        "thị trường tài chính"
+      ],
+      "importance": 80,
+      "severity": 3,
+      "sentiment": 0,
+      "scope": "global"
+    }
+  },
+  "evt_85dd87b1": {
+    "created_at": 1788582019273,
+    "expires_at": 1791174019273,
+    "version": "4.5",
+    "checksum": "f50dce5102816cafbfcb9b3f93f1340f",
+    "data": {
+      "cluster_title": "Na Uy hỗ trợ công dân Nga sau vụ tịch thu tàu",
+      "short_summary": "Chính phủ Na Uy cam kết sẽ hỗ trợ các công dân Nga đang gặp khó khăn sau khi tàu của Moscow bị tịch thu. Sự việc này phản ánh những căng thẳng trong quan hệ ngoại giao và quản lý tài sản quốc tế giữa hai quốc gia.",
+      "detailed_summary": "Chính phủ Na Uy quyết định cung cấp sự hỗ trợ cho các công dân Nga đang bị kẹt lại tại nước này sau sự việc tàu thuyền của Nga bị phía cơ quan chức năng Na Uy tiến hành bắt giữ và tịch thu.",
+      "causes": [
+        "Vụ bắt giữ và tịch thu tàu của Nga tại Na Uy",
+        "Công dân Nga bị mắc kẹt lại sau khi phương tiện bị giữ"
+      ],
+      "effects": [
+        "Công dân Nga nhận được sự hỗ trợ từ Chính phủ Na Uy",
+        "Phát sinh các hoạt động ngoại giao và giải quyết tình huống nhân đạo"
+      ],
+      "affected_groups": [
+        "Công dân Nga bị mắc kẹt",
+        "Chính phủ Na Uy",
+        "Chủ tàu phía Nga"
+      ],
+      "market_impact": "Không có tác động đáng kể đến thị trường tài chính hoặc kinh tế vĩ mô.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "diplomacy",
+        "politics"
+      ],
+      "regions": [
+        "NO",
+        "RU"
+      ],
+      "significance": "Sự việc thể hiện cách giải quyết mang tính hỗ trợ nhân đạo đối với công dân nước ngoài bị ảnh hưởng bởi các biện pháp pháp lý hoặc hành chính tại Na Uy.",
+      "unknowns": [
+        "Nguyên nhân cụ thể dẫn đến việc tàu Nga bị bắt giữ",
+        "Số lượng chính xác công dân Nga đang bị mắc kẹt"
+      ],
+      "confidence_note": "Thông tin dựa trên bản tin ngắn được cung cấp, có độ tin cậy cơ bản về mặt sự kiện ngoại giao.",
+      "scenarios": [
+        {
+          "text": "Chính phủ Na Uy hỗ trợ thủ tục để công dân Nga sớm về nước hoặc giải quyết xong vấn đề lưu trú.",
+          "likelihood": "cao"
+        },
+        {
+          "text": "Phía Nga đưa ra các biện pháp ngoại giao phản ứng lại quyết định tịch thu tàu.",
+          "likelihood": "trung bình"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Chính phủ Na Uy",
+          "target": "Công dân Nga",
+          "relation_type": "cooperation",
+          "label": "Hỗ trợ nhân đạo"
+        },
+        {
+          "source": "Chính phủ Na Uy",
+          "target": "Tàu của Moscow",
+          "relation_type": "cause_effect",
+          "label": "Bắt giữ và tịch thu tàu"
+        }
+      ],
+      "entities": [
+        "Na Uy",
+        "Nga",
+        "Moscow"
+      ],
+      "keywords": [
+        "Na Uy",
+        "Nga",
+        "hỗ trợ công dân",
+        "tịch thu tàu",
+        "ngoại giao"
+      ],
+      "importance": 65,
+      "severity": 3,
+      "sentiment": -1,
+      "scope": "national"
+    }
+  },
+  "evt_8134c07c": {
+    "created_at": 1788582064718,
+    "expires_at": 1791174064718,
+    "version": "4.5",
+    "checksum": "b06afd317c8f0ff1106c8a107af1411a",
+    "data": {
+      "cluster_title": "Đặc phái viên Mỹ đề xuất hòa bình cho Nga và Ukraine",
+      "short_summary": "Các đặc phái viên Mỹ là Steve Witkoff và Jared Kushner dự kiến sẽ mang một đề xuất hòa bình nhằm chấm dứt xung đột tại Ukraine đến Moscow và Kiev trong thời gian tới nhằm tìm kiếm giải pháp giải quyết căng thẳng.",
+      "detailed_summary": "Các phái viên của Mỹ gồm Steve Witkoff và Jared Kushner có kế hoạch mang một đề xuất cụ thể nhằm mục đích chấm dứt cuộc xung đột hiện tại tại Ukraine đến làm việc tại thủ đô Moscow của Nga và thủ đô Kiev của Ukraine trong thời gian tới.",
+      "causes": [
+        "Xung đột kéo dài giữa Nga và Ukraine",
+        "Nỗ lực ngoại giao từ phía Mỹ nhằm tìm kiếm giải pháp hòa bình"
+      ],
+      "effects": [
+        "Thúc đẩy các bước đi ngoại giao giữa các bên liên quan",
+        "Mở ra khả năng đàm phán hòa bình để chấm dứt xung đột"
+      ],
+      "affected_groups": [
+        "Chính phủ và người dân Nga",
+        "Chính phủ và người dân Ukraine",
+        "Chính quyền Mỹ"
+      ],
+      "market_impact": "Có thể tạo ra tâm lý thận trọng nhưng tích cực trên thị trường toàn cầu nếu tiến trình hòa bình có dấu hiệu khả quan.",
+      "vn_impact": "Không tác động trực tiếp đến Việt Nam.",
+      "follow_up": "",
+      "categories": [
+        "politics",
+        "diplomacy"
+      ],
+      "regions": [
+        "US",
+        "RU",
+        "UA"
+      ],
+      "significance": "Sự kiện đánh dấu nỗ lực ngoại giao cấp cao của Mỹ nhằm tìm kiếm giải pháp chấm dứt xung đột vũ trang giữa Nga và Ukraine.",
+      "unknowns": [
+        "Nội dung chi tiết của đề xuất hòa bình là gì",
+        "Phản ứng chính thức của cả Nga và Ukraine đối với đề xuất này"
+      ],
+      "confidence_note": "Thông tin dựa trên kế hoạch dự kiến của phái viên Mỹ được truyền thông đăng tải.",
+      "scenarios": [
+        {
+          "text": "Đề xuất hòa bình tạo được tiếng nói chung, làm tiền đề cho các vòng đàm phán chính thức tiếp theo giữa Nga và Ukraine.",
+          "likelihood": "trung bình"
+        },
+        {
+          "text": "Đề xuất không đạt được sự đồng thuận do lập trường của các bên quá khác biệt.",
+          "likelihood": "cao"
+        }
+      ],
+      "entity_relations": [
+        {
+          "source": "Steve Witkoff và Jared Kushner",
+          "target": "Nga",
+          "relation_type": "cooperation",
+          "label": "Mang đề xuất hòa bình đến làm việc"
+        },
+        {
+          "source": "Steve Witkoff và Jared Kushner",
+          "target": "Ukraine",
+          "relation_type": "cooperation",
+          "label": "Mang đề xuất hòa bình đến làm việc"
+        }
+      ],
+      "entities": [
+        "Steve Witkoff",
+        "Jared Kushner",
+        "Mỹ",
+        "Nga",
+        "Ukraine"
+      ],
+      "keywords": [
+        "hòa bình",
+        "Ukraine",
+        "Nga",
+        "Mỹ",
+        "xung đột"
+      ],
+      "importance": 85,
+      "severity": 4,
+      "sentiment": 1,
       "scope": "global"
     }
   }
